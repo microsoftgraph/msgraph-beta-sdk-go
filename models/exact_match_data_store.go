@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchDataStore 
 type ExactMatchDataStore struct {
     ExactMatchDataStoreBase
 }
-// NewExactMatchDataStore instantiates a new exactMatchDataStore and sets the default values.
+// NewExactMatchDataStore instantiates a new ExactMatchDataStore and sets the default values.
 func NewExactMatchDataStore()(*ExactMatchDataStore) {
     m := &ExactMatchDataStore{
         ExactMatchDataStoreBase: *NewExactMatchDataStoreBase(),
@@ -16,10 +15,12 @@ func NewExactMatchDataStore()(*ExactMatchDataStore) {
     return m
 }
 // CreateExactMatchDataStoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExactMatchDataStoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExactMatchDataStore(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExactMatchDataStore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ExactMatchDataStoreBase.GetFieldDeserializers()
     res["sessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ExactMatchDataStore) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetSessions gets the sessions property value. The sessions property
+// returns a []ExactMatchSessionable when successful
 func (m *ExactMatchDataStore) GetSessions()([]ExactMatchSessionable) {
     val, err := m.GetBackingStore().Get("sessions")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ExactMatchDataStore) SetSessions(value []ExactMatchSessionable)() {
         panic(err)
     }
 }
-// ExactMatchDataStoreable 
 type ExactMatchDataStoreable interface {
     ExactMatchDataStoreBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

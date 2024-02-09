@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RemoveContentFooterAction 
 type RemoveContentFooterAction struct {
     InformationProtectionAction
 }
-// NewRemoveContentFooterAction instantiates a new removeContentFooterAction and sets the default values.
+// NewRemoveContentFooterAction instantiates a new RemoveContentFooterAction and sets the default values.
 func NewRemoveContentFooterAction()(*RemoveContentFooterAction) {
     m := &RemoveContentFooterAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
@@ -18,10 +17,12 @@ func NewRemoveContentFooterAction()(*RemoveContentFooterAction) {
     return m
 }
 // CreateRemoveContentFooterActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRemoveContentFooterActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoveContentFooterAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RemoveContentFooterAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InformationProtectionAction.GetFieldDeserializers()
     res["uiElementNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *RemoveContentFooterAction) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetUiElementNames gets the uiElementNames property value. The name of the UI element of the footer to be removed.
+// returns a []string when successful
 func (m *RemoveContentFooterAction) GetUiElementNames()([]string) {
     val, err := m.GetBackingStore().Get("uiElementNames")
     if err != nil {
@@ -74,7 +76,6 @@ func (m *RemoveContentFooterAction) SetUiElementNames(value []string)() {
         panic(err)
     }
 }
-// RemoveContentFooterActionable 
 type RemoveContentFooterActionable interface {
     InformationProtectionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

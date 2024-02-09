@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsImpactingProcess struct {
     Entity
 }
-// NewUserExperienceAnalyticsImpactingProcess instantiates a new userExperienceAnalyticsImpactingProcess and sets the default values.
+// NewUserExperienceAnalyticsImpactingProcess instantiates a new UserExperienceAnalyticsImpactingProcess and sets the default values.
 func NewUserExperienceAnalyticsImpactingProcess()(*UserExperienceAnalyticsImpactingProcess) {
     m := &UserExperienceAnalyticsImpactingProcess{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsImpactingProcess()(*UserExperienceAnalyticsImpact
     return m
 }
 // CreateUserExperienceAnalyticsImpactingProcessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsImpactingProcessFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsImpactingProcess(), nil
 }
 // GetCategory gets the category property value. The category of impacting process.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsImpactingProcess) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetCategory()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The description of process.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsImpactingProcess) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetDescription()(*string) {
     return nil
 }
 // GetDeviceId gets the deviceId property value. The unique identifier of the impacted device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsImpactingProcess) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetDeviceId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +123,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetFieldDeserializers()(map[st
     return res
 }
 // GetImpactValue gets the impactValue property value. The impact value of the process. Valid values 0 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsImpactingProcess) GetImpactValue()(*float64) {
     val, err := m.GetBackingStore().Get("impactValue")
     if err != nil {
@@ -129,6 +135,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetImpactValue()(*float64) {
     return nil
 }
 // GetProcessName gets the processName property value. The process name.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsImpactingProcess) GetProcessName()(*string) {
     val, err := m.GetBackingStore().Get("processName")
     if err != nil {
@@ -140,6 +147,7 @@ func (m *UserExperienceAnalyticsImpactingProcess) GetProcessName()(*string) {
     return nil
 }
 // GetPublisher gets the publisher property value. The publisher of the process.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsImpactingProcess) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -236,7 +244,6 @@ func (m *UserExperienceAnalyticsImpactingProcess) SetPublisher(value *string)() 
         panic(err)
     }
 }
-// UserExperienceAnalyticsImpactingProcessable 
 type UserExperienceAnalyticsImpactingProcessable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

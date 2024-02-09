@@ -8,7 +8,7 @@ import (
 type DeviceHealthScriptTimeSchedule struct {
     DeviceHealthScriptRunSchedule
 }
-// NewDeviceHealthScriptTimeSchedule instantiates a new deviceHealthScriptTimeSchedule and sets the default values.
+// NewDeviceHealthScriptTimeSchedule instantiates a new DeviceHealthScriptTimeSchedule and sets the default values.
 func NewDeviceHealthScriptTimeSchedule()(*DeviceHealthScriptTimeSchedule) {
     m := &DeviceHealthScriptTimeSchedule{
         DeviceHealthScriptRunSchedule: *NewDeviceHealthScriptRunSchedule(),
@@ -18,6 +18,7 @@ func NewDeviceHealthScriptTimeSchedule()(*DeviceHealthScriptTimeSchedule) {
     return m
 }
 // CreateDeviceHealthScriptTimeScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceHealthScriptTimeScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +43,7 @@ func CreateDeviceHealthScriptTimeScheduleFromDiscriminatorValue(parseNode i878a8
     return NewDeviceHealthScriptTimeSchedule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceHealthScriptTimeSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceHealthScriptRunSchedule.GetFieldDeserializers()
     res["time"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +69,7 @@ func (m *DeviceHealthScriptTimeSchedule) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetTime gets the time property value. At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.
+// returns a *TimeOnly when successful
 func (m *DeviceHealthScriptTimeSchedule) GetTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
     val, err := m.GetBackingStore().Get("time")
     if err != nil {
@@ -78,6 +81,7 @@ func (m *DeviceHealthScriptTimeSchedule) GetTime()(*i878a80d2330e89d26896388a3f4
     return nil
 }
 // GetUseUtc gets the useUtc property value. Indicate if the time is Utc or client local time.
+// returns a *bool when successful
 func (m *DeviceHealthScriptTimeSchedule) GetUseUtc()(*bool) {
     val, err := m.GetBackingStore().Get("useUtc")
     if err != nil {
@@ -122,7 +126,6 @@ func (m *DeviceHealthScriptTimeSchedule) SetUseUtc(value *bool)() {
         panic(err)
     }
 }
-// DeviceHealthScriptTimeScheduleable 
 type DeviceHealthScriptTimeScheduleable interface {
     DeviceHealthScriptRunScheduleable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,7 +2,6 @@ package networkaccess
 import (
     "errors"
 )
-// 
 type UsageStatus int
 
 const (

@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Subject Alternative Name Options.
@@ -8,24 +9,26 @@ type SubjectAlternativeNameType int
 
 const (
     // No subject alternative name.
-    NONE_SUBJECTALTERNATIVENAMETYPE SubjectAlternativeNameType = iota
+    NONE_SUBJECTALTERNATIVENAMETYPE = 1
     // Email address.
-    EMAILADDRESS_SUBJECTALTERNATIVENAMETYPE
+    EMAILADDRESS_SUBJECTALTERNATIVENAMETYPE = 2
     // User Principal Name (UPN).
-    USERPRINCIPALNAME_SUBJECTALTERNATIVENAMETYPE
+    USERPRINCIPALNAME_SUBJECTALTERNATIVENAMETYPE = 4
     // Custom Azure AD Attribute.
-    CUSTOMAZUREADATTRIBUTE_SUBJECTALTERNATIVENAMETYPE
+    CUSTOMAZUREADATTRIBUTE_SUBJECTALTERNATIVENAMETYPE = 8
     // Domain Name Service (DNS).
-    DOMAINNAMESERVICE_SUBJECTALTERNATIVENAMETYPE
+    DOMAINNAMESERVICE_SUBJECTALTERNATIVENAMETYPE = 16
     // Universal Resource Identifier (URI).
-    UNIVERSALRESOURCEIDENTIFIER_SUBJECTALTERNATIVENAMETYPE
+    UNIVERSALRESOURCEIDENTIFIER_SUBJECTALTERNATIVENAMETYPE = 32
 )
 
 func (i SubjectAlternativeNameType) String() string {
     var values []string
-    for p := SubjectAlternativeNameType(1); p <= UNIVERSALRESOURCEIDENTIFIER_SUBJECTALTERNATIVENAMETYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "emailAddress", "userPrincipalName", "customAzureADAttribute", "domainNameService", "universalResourceIdentifier"}[p])
+    options := []string{"none", "emailAddress", "userPrincipalName", "customAzureADAttribute", "domainNameService", "universalResourceIdentifier"}
+    for p := 0; p < 6; p++ {
+        mantis := SubjectAlternativeNameType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

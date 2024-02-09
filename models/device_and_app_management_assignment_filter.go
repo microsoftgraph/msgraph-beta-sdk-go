@@ -9,7 +9,7 @@ import (
 type DeviceAndAppManagementAssignmentFilter struct {
     Entity
 }
-// NewDeviceAndAppManagementAssignmentFilter instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
+// NewDeviceAndAppManagementAssignmentFilter instantiates a new DeviceAndAppManagementAssignmentFilter and sets the default values.
 func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignmentFilter) {
     m := &DeviceAndAppManagementAssignmentFilter{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewDeviceAndAppManagementAssignmentFilter()(*DeviceAndAppManagementAssignme
     return m
 }
 // CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +40,7 @@ func CreateDeviceAndAppManagementAssignmentFilterFromDiscriminatorValue(parseNod
     return NewDeviceAndAppManagementAssignmentFilter(), nil
 }
 // GetAssignmentFilterManagementType gets the assignmentFilterManagementType property value. Supported filter management types whether its devices or apps.
+// returns a *AssignmentFilterManagementType when successful
 func (m *DeviceAndAppManagementAssignmentFilter) GetAssignmentFilterManagementType()(*AssignmentFilterManagementType) {
     val, err := m.GetBackingStore().Get("assignmentFilterManagementType")
     if err != nil {
@@ -50,6 +52,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetAssignmentFilterManagementTy
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+// returns a *Time when successful
 func (m *DeviceAndAppManagementAssignmentFilter) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -61,6 +64,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetCreatedDateTime()(*i33607480
     return nil
 }
 // GetDescription gets the description property value. Optional description of the Assignment Filter.
+// returns a *string when successful
 func (m *DeviceAndAppManagementAssignmentFilter) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -72,6 +76,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the Assignment Filter.
+// returns a *string when successful
 func (m *DeviceAndAppManagementAssignmentFilter) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -83,6 +88,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignmentFilterManagementType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,6 +196,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetFieldDeserializers()(map[str
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+// returns a *Time when successful
 func (m *DeviceAndAppManagementAssignmentFilter) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -201,6 +208,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetLastModifiedDateTime()(*i336
     return nil
 }
 // GetPayloads gets the payloads property value. Indicates associated assignments for a specific filter.
+// returns a []PayloadByFilterable when successful
 func (m *DeviceAndAppManagementAssignmentFilter) GetPayloads()([]PayloadByFilterable) {
     val, err := m.GetBackingStore().Get("payloads")
     if err != nil {
@@ -212,6 +220,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetPayloads()([]PayloadByFilter
     return nil
 }
 // GetPlatform gets the platform property value. Supported platform types.
+// returns a *DevicePlatformType when successful
 func (m *DeviceAndAppManagementAssignmentFilter) GetPlatform()(*DevicePlatformType) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -223,6 +232,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetPlatform()(*DevicePlatformTy
     return nil
 }
 // GetRoleScopeTags gets the roleScopeTags property value. Indicates role scope tags assigned for the assignment filter.
+// returns a []string when successful
 func (m *DeviceAndAppManagementAssignmentFilter) GetRoleScopeTags()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTags")
     if err != nil {
@@ -234,6 +244,7 @@ func (m *DeviceAndAppManagementAssignmentFilter) GetRoleScopeTags()([]string) {
     return nil
 }
 // GetRule gets the rule property value. Rule definition of the assignment filter.
+// returns a *string when successful
 func (m *DeviceAndAppManagementAssignmentFilter) GetRule()(*string) {
     val, err := m.GetBackingStore().Get("rule")
     if err != nil {
@@ -377,7 +388,6 @@ func (m *DeviceAndAppManagementAssignmentFilter) SetRule(value *string)() {
         panic(err)
     }
 }
-// DeviceAndAppManagementAssignmentFilterable 
 type DeviceAndAppManagementAssignmentFilterable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

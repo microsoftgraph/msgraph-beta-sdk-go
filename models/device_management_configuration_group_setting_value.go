@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationGroupSettingValue struct {
     DeviceManagementConfigurationSettingValue
 }
-// NewDeviceManagementConfigurationGroupSettingValue instantiates a new deviceManagementConfigurationGroupSettingValue and sets the default values.
+// NewDeviceManagementConfigurationGroupSettingValue instantiates a new DeviceManagementConfigurationGroupSettingValue and sets the default values.
 func NewDeviceManagementConfigurationGroupSettingValue()(*DeviceManagementConfigurationGroupSettingValue) {
     m := &DeviceManagementConfigurationGroupSettingValue{
         DeviceManagementConfigurationSettingValue: *NewDeviceManagementConfigurationSettingValue(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationGroupSettingValue()(*DeviceManagementConfig
     return m
 }
 // CreateDeviceManagementConfigurationGroupSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationGroupSettingValueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationGroupSettingValue(), nil
 }
 // GetChildren gets the children property value. Collection of child setting instances contained within this GroupSetting
+// returns a []DeviceManagementConfigurationSettingInstanceable when successful
 func (m *DeviceManagementConfigurationGroupSettingValue) GetChildren()([]DeviceManagementConfigurationSettingInstanceable) {
     val, err := m.GetBackingStore().Get("children")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceManagementConfigurationGroupSettingValue) GetChildren()([]DeviceM
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationGroupSettingValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingValue.GetFieldDeserializers()
     res["children"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,7 +83,6 @@ func (m *DeviceManagementConfigurationGroupSettingValue) SetChildren(value []Dev
         panic(err)
     }
 }
-// DeviceManagementConfigurationGroupSettingValueable 
 type DeviceManagementConfigurationGroupSettingValueable interface {
     DeviceManagementConfigurationSettingValueable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

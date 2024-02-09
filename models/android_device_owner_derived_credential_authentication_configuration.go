@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration instantiates a new androidDeviceOwnerDerivedCredentialAuthenticationConfiguration and sets the default values.
+// NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration instantiates a new AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration and sets the default values.
 func NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration()(*AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) {
     m := &AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration()(*Androi
     return m
 }
 // CreateAndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration(), nil
 }
 // GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
+// returns a *AndroidDeviceOwnerCertificateAccessType when successful
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
     val, err := m.GetBackingStore().Get("certificateAccessType")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetCert
     return nil
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
+// returns a DeviceManagementDerivedCredentialSettingsable when successful
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
     val, err := m.GetBackingStore().Get("derivedCredentialSettings")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetDeri
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["certificateAccessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +89,7 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetFiel
     return res
 }
 // GetSilentCertificateAccessDetails gets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
+// returns a []AndroidDeviceOwnerSilentCertificateAccessable when successful
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable) {
     val, err := m.GetBackingStore().Get("silentCertificateAccessDetails")
     if err != nil {
@@ -149,7 +154,6 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetSile
         panic(err)
     }
 }
-// AndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationable 
 type AndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TenantGroup 
 type TenantGroup struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewTenantGroup instantiates a new tenantGroup and sets the default values.
+// NewTenantGroup instantiates a new TenantGroup and sets the default values.
 func NewTenantGroup()(*TenantGroup) {
     m := &TenantGroup{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewTenantGroup()(*TenantGroup) {
     return m
 }
 // CreateTenantGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTenantGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTenantGroup(), nil
 }
 // GetAllTenantsIncluded gets the allTenantsIncluded property value. A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
+// returns a *bool when successful
 func (m *TenantGroup) GetAllTenantsIncluded()(*bool) {
     val, err := m.GetBackingStore().Get("allTenantsIncluded")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TenantGroup) GetAllTenantsIncluded()(*bool) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the tenant group. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantGroup) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TenantGroup) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TenantGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allTenantsIncluded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +119,7 @@ func (m *TenantGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetManagementActions gets the managementActions property value. The collection of management action associated with the tenant group. Optional. Read-only.
+// returns a []ManagementActionInfoable when successful
 func (m *TenantGroup) GetManagementActions()([]ManagementActionInfoable) {
     val, err := m.GetBackingStore().Get("managementActions")
     if err != nil {
@@ -127,6 +131,7 @@ func (m *TenantGroup) GetManagementActions()([]ManagementActionInfoable) {
     return nil
 }
 // GetManagementIntents gets the managementIntents property value. The collection of management intents associated with the tenant group. Optional. Read-only.
+// returns a []ManagementIntentInfoable when successful
 func (m *TenantGroup) GetManagementIntents()([]ManagementIntentInfoable) {
     val, err := m.GetBackingStore().Get("managementIntents")
     if err != nil {
@@ -138,6 +143,7 @@ func (m *TenantGroup) GetManagementIntents()([]ManagementIntentInfoable) {
     return nil
 }
 // GetTenantIds gets the tenantIds property value. The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
+// returns a []string when successful
 func (m *TenantGroup) GetTenantIds()([]string) {
     val, err := m.GetBackingStore().Get("tenantIds")
     if err != nil {
@@ -233,7 +239,6 @@ func (m *TenantGroup) SetTenantIds(value []string)() {
         panic(err)
     }
 }
-// TenantGroupable 
 type TenantGroupable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

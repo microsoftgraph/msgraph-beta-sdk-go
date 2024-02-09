@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SensitivityPolicySettings 
 type SensitivityPolicySettings struct {
     Entity
 }
-// NewSensitivityPolicySettings instantiates a new sensitivityPolicySettings and sets the default values.
+// NewSensitivityPolicySettings instantiates a new SensitivityPolicySettings and sets the default values.
 func NewSensitivityPolicySettings()(*SensitivityPolicySettings) {
     m := &SensitivityPolicySettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewSensitivityPolicySettings()(*SensitivityPolicySettings) {
     return m
 }
 // CreateSensitivityPolicySettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSensitivityPolicySettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSensitivityPolicySettings(), nil
 }
 // GetApplicableTo gets the applicableTo property value. The applicableTo property
+// returns a *SensitivityLabelTarget when successful
 func (m *SensitivityPolicySettings) GetApplicableTo()(*SensitivityLabelTarget) {
     val, err := m.GetBackingStore().Get("applicableTo")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *SensitivityPolicySettings) GetApplicableTo()(*SensitivityLabelTarget) {
     return nil
 }
 // GetDowngradeSensitivityRequiresJustification gets the downgradeSensitivityRequiresJustification property value. The downgradeSensitivityRequiresJustification property
+// returns a *bool when successful
 func (m *SensitivityPolicySettings) GetDowngradeSensitivityRequiresJustification()(*bool) {
     val, err := m.GetBackingStore().Get("downgradeSensitivityRequiresJustification")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *SensitivityPolicySettings) GetDowngradeSensitivityRequiresJustification
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicableTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +90,7 @@ func (m *SensitivityPolicySettings) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetHelpWebUrl gets the helpWebUrl property value. The helpWebUrl property
+// returns a *string when successful
 func (m *SensitivityPolicySettings) GetHelpWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("helpWebUrl")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *SensitivityPolicySettings) GetHelpWebUrl()(*string) {
     return nil
 }
 // GetIsMandatory gets the isMandatory property value. The isMandatory property
+// returns a *bool when successful
 func (m *SensitivityPolicySettings) GetIsMandatory()(*bool) {
     val, err := m.GetBackingStore().Get("isMandatory")
     if err != nil {
@@ -169,7 +174,6 @@ func (m *SensitivityPolicySettings) SetIsMandatory(value *bool)() {
         panic(err)
     }
 }
-// SensitivityPolicySettingsable 
 type SensitivityPolicySettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

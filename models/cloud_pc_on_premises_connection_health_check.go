@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcOnPremisesConnectionHealthCheck 
 type CloudPcOnPremisesConnectionHealthCheck struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcOnPremisesConnectionHealthCheck instantiates a new cloudPcOnPremisesConnectionHealthCheck and sets the default values.
+// NewCloudPcOnPremisesConnectionHealthCheck instantiates a new CloudPcOnPremisesConnectionHealthCheck and sets the default values.
 func NewCloudPcOnPremisesConnectionHealthCheck()(*CloudPcOnPremisesConnectionHealthCheck) {
     m := &CloudPcOnPremisesConnectionHealthCheck{
     }
@@ -20,10 +19,12 @@ func NewCloudPcOnPremisesConnectionHealthCheck()(*CloudPcOnPremisesConnectionHea
     return m
 }
 // CreateCloudPcOnPremisesConnectionHealthCheckFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcOnPremisesConnectionHealthCheckFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcOnPremisesConnectionHealthCheck(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalData()(map[string]
     return val.(map[string]any)
 }
 // GetAdditionalDetail gets the additionalDetail property value. The additionalDetail property
+// returns a *string when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetail()(*string) {
     val, err := m.GetBackingStore().Get("additionalDetail")
     if err != nil {
@@ -47,6 +49,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetail()(*string) 
     return nil
 }
 // GetAdditionalDetails gets the additionalDetails property value. More details about the health check or the recommended action.
+// returns a *string when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetails()(*string) {
     val, err := m.GetBackingStore().Get("additionalDetails")
     if err != nil {
@@ -58,10 +61,12 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetails()(*string)
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCorrelationId gets the correlationId property value. The unique identifier of the health check item-related activities. This identifier can be useful in troubleshooting.
+// returns a *string when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetCorrelationId()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for this health check item.
+// returns a *string when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetDisplayName()(*string) {
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The end time of the health check item. Read-only.
+// returns a *Time when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -95,6 +102,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetEndDateTime()(*i336074805fc8
     return nil
 }
 // GetErrorType gets the errorType property value. The type of error that occurred during this health check.
+// returns a *CloudPcOnPremisesConnectionHealthCheckErrorType when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetErrorType()(*CloudPcOnPremisesConnectionHealthCheckErrorType) {
     val, err := m.GetBackingStore().Get("errorType")
     if err != nil {
@@ -106,6 +114,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetErrorType()(*CloudPcOnPremis
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["additionalDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -211,6 +220,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetFieldDeserializers()(map[str
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -222,6 +232,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetOdataType()(*string) {
     return nil
 }
 // GetRecommendedAction gets the recommendedAction property value. The recommended action to fix the corresponding error.
+// returns a *string when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetRecommendedAction()(*string) {
     val, err := m.GetBackingStore().Get("recommendedAction")
     if err != nil {
@@ -233,6 +244,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetRecommendedAction()(*string)
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The start time of the health check item. Read-only.
+// returns a *Time when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -244,6 +256,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetStartDateTime()(*i336074805f
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *CloudPcOnPremisesConnectionStatus when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetStatus()(*CloudPcOnPremisesConnectionStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -407,7 +420,6 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) SetStatus(value *CloudPcOnPremi
         panic(err)
     }
 }
-// CloudPcOnPremisesConnectionHealthCheckable 
 type CloudPcOnPremisesConnectionHealthCheckable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

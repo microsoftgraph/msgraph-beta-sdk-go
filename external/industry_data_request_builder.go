@@ -30,7 +30,7 @@ type IndustryDataRequestBuilderGetRequestConfiguration struct {
 // NewIndustryDataRequestBuilderInternal instantiates a new IndustryDataRequestBuilder and sets the default values.
 func NewIndustryDataRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataRequestBuilder) {
     m := &IndustryDataRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -41,18 +41,20 @@ func NewIndustryDataRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewIndustryDataRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DataConnectors provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
+// returns a *IndustryDataDataConnectorsRequestBuilder when successful
 func (m *IndustryDataRequestBuilder) DataConnectors()(*IndustryDataDataConnectorsRequestBuilder) {
     return NewIndustryDataDataConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get industryData from external
+// returns a IndustryDataRootable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IndustryDataRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateIndustryDataRootFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -64,30 +66,37 @@ func (m *IndustryDataRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRootable), nil
 }
 // InboundFlows provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
+// returns a *IndustryDataInboundFlowsRequestBuilder when successful
 func (m *IndustryDataRequestBuilder) InboundFlows()(*IndustryDataInboundFlowsRequestBuilder) {
     return NewIndustryDataInboundFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.industryData.industryDataRoot entity.
+// returns a *IndustryDataOperationsRequestBuilder when successful
 func (m *IndustryDataRequestBuilder) Operations()(*IndustryDataOperationsRequestBuilder) {
     return NewIndustryDataOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ReferenceDefinitions provides operations to manage the referenceDefinitions property of the microsoft.graph.industryData.industryDataRoot entity.
+// returns a *IndustryDataReferenceDefinitionsRequestBuilder when successful
 func (m *IndustryDataRequestBuilder) ReferenceDefinitions()(*IndustryDataReferenceDefinitionsRequestBuilder) {
     return NewIndustryDataReferenceDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleGroups provides operations to manage the roleGroups property of the microsoft.graph.industryData.industryDataRoot entity.
+// returns a *IndustryDataRoleGroupsRequestBuilder when successful
 func (m *IndustryDataRequestBuilder) RoleGroups()(*IndustryDataRoleGroupsRequestBuilder) {
     return NewIndustryDataRoleGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Runs provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.
+// returns a *IndustryDataRunsRequestBuilder when successful
 func (m *IndustryDataRequestBuilder) Runs()(*IndustryDataRunsRequestBuilder) {
     return NewIndustryDataRunsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SourceSystems provides operations to manage the sourceSystems property of the microsoft.graph.industryData.industryDataRoot entity.
+// returns a *IndustryDataSourceSystemsRequestBuilder when successful
 func (m *IndustryDataRequestBuilder) SourceSystems()(*IndustryDataSourceSystemsRequestBuilder) {
     return NewIndustryDataSourceSystemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get industryData from external
+// returns a *RequestInformation when successful
 func (m *IndustryDataRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -101,10 +110,12 @@ func (m *IndustryDataRequestBuilder) ToGetRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IndustryDataRequestBuilder when successful
 func (m *IndustryDataRequestBuilder) WithUrl(rawUrl string)(*IndustryDataRequestBuilder) {
     return NewIndustryDataRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }
 // Years provides operations to manage the years property of the microsoft.graph.industryData.industryDataRoot entity.
+// returns a *IndustryDataYearsRequestBuilder when successful
 func (m *IndustryDataRequestBuilder) Years()(*IndustryDataYearsRequestBuilder) {
     return NewIndustryDataYearsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsResponse 
-// Deprecated: This class is obsolete. Use getApplicablePolicyRequirementsPostResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsResponse struct {
     EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponse
 }
@@ -17,11 +16,11 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplica
     return m
 }
 // CreateEntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsResponse(), nil
 }
-// EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsResponseable 
-// Deprecated: This class is obsolete. Use getApplicablePolicyRequirementsPostResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsResponseable interface {
     EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

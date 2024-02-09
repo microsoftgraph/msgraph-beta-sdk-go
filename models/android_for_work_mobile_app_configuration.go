@@ -8,7 +8,7 @@ import (
 type AndroidForWorkMobileAppConfiguration struct {
     ManagedDeviceMobileAppConfiguration
 }
-// NewAndroidForWorkMobileAppConfiguration instantiates a new androidForWorkMobileAppConfiguration and sets the default values.
+// NewAndroidForWorkMobileAppConfiguration instantiates a new AndroidForWorkMobileAppConfiguration and sets the default values.
 func NewAndroidForWorkMobileAppConfiguration()(*AndroidForWorkMobileAppConfiguration) {
     m := &AndroidForWorkMobileAppConfiguration{
         ManagedDeviceMobileAppConfiguration: *NewManagedDeviceMobileAppConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidForWorkMobileAppConfiguration()(*AndroidForWorkMobileAppConfigura
     return m
 }
 // CreateAndroidForWorkMobileAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidForWorkMobileAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidForWorkMobileAppConfiguration(), nil
 }
 // GetConnectedAppsEnabled gets the connectedAppsEnabled property value. Setting to specify whether to allow ConnectedApps experience for this app.
+// returns a *bool when successful
 func (m *AndroidForWorkMobileAppConfiguration) GetConnectedAppsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("connectedAppsEnabled")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidForWorkMobileAppConfiguration) GetConnectedAppsEnabled()(*bool) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidForWorkMobileAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedDeviceMobileAppConfiguration.GetFieldDeserializers()
     res["connectedAppsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,6 +97,7 @@ func (m *AndroidForWorkMobileAppConfiguration) GetFieldDeserializers()(map[strin
     return res
 }
 // GetPackageId gets the packageId property value. Android For Work app configuration package id.
+// returns a *string when successful
 func (m *AndroidForWorkMobileAppConfiguration) GetPackageId()(*string) {
     val, err := m.GetBackingStore().Get("packageId")
     if err != nil {
@@ -105,6 +109,7 @@ func (m *AndroidForWorkMobileAppConfiguration) GetPackageId()(*string) {
     return nil
 }
 // GetPayloadJson gets the payloadJson property value. Android For Work app configuration JSON payload.
+// returns a *string when successful
 func (m *AndroidForWorkMobileAppConfiguration) GetPayloadJson()(*string) {
     val, err := m.GetBackingStore().Get("payloadJson")
     if err != nil {
@@ -116,6 +121,7 @@ func (m *AndroidForWorkMobileAppConfiguration) GetPayloadJson()(*string) {
     return nil
 }
 // GetPermissionActions gets the permissionActions property value. List of Android app permissions and corresponding permission actions.
+// returns a []AndroidPermissionActionable when successful
 func (m *AndroidForWorkMobileAppConfiguration) GetPermissionActions()([]AndroidPermissionActionable) {
     val, err := m.GetBackingStore().Get("permissionActions")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *AndroidForWorkMobileAppConfiguration) GetPermissionActions()([]AndroidP
     return nil
 }
 // GetProfileApplicability gets the profileApplicability property value. Android profile applicability
+// returns a *AndroidProfileApplicability when successful
 func (m *AndroidForWorkMobileAppConfiguration) GetProfileApplicability()(*AndroidProfileApplicability) {
     val, err := m.GetBackingStore().Get("profileApplicability")
     if err != nil {
@@ -217,7 +224,6 @@ func (m *AndroidForWorkMobileAppConfiguration) SetProfileApplicability(value *An
         panic(err)
     }
 }
-// AndroidForWorkMobileAppConfigurationable 
 type AndroidForWorkMobileAppConfigurationable interface {
     ManagedDeviceMobileAppConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

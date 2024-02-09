@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting 
 type CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting struct {
     CloudPcDisasterRecoveryNetworkSetting
 }
-// NewCloudPcDisasterRecoveryMicrosoftHostedNetworkSetting instantiates a new cloudPcDisasterRecoveryMicrosoftHostedNetworkSetting and sets the default values.
+// NewCloudPcDisasterRecoveryMicrosoftHostedNetworkSetting instantiates a new CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting and sets the default values.
 func NewCloudPcDisasterRecoveryMicrosoftHostedNetworkSetting()(*CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) {
     m := &CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting{
         CloudPcDisasterRecoveryNetworkSetting: *NewCloudPcDisasterRecoveryNetworkSetting(),
@@ -18,10 +17,12 @@ func NewCloudPcDisasterRecoveryMicrosoftHostedNetworkSetting()(*CloudPcDisasterR
     return m
 }
 // CreateCloudPcDisasterRecoveryMicrosoftHostedNetworkSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcDisasterRecoveryMicrosoftHostedNetworkSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcDisasterRecoveryMicrosoftHostedNetworkSetting(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CloudPcDisasterRecoveryNetworkSetting.GetFieldDeserializers()
     res["regionGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) GetFieldDeseriali
     return res
 }
 // GetRegionGroup gets the regionGroup property value. The regionGroup property
+// returns a *CloudPcRegionGroup when successful
 func (m *CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) GetRegionGroup()(*CloudPcRegionGroup) {
     val, err := m.GetBackingStore().Get("regionGroup")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) GetRegionGroup()(
     return nil
 }
 // GetRegionName gets the regionName property value. The regionName property
+// returns a *string when successful
 func (m *CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) GetRegionName()(*string) {
     val, err := m.GetBackingStore().Get("regionName")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) SetRegionName(val
         panic(err)
     }
 }
-// CloudPcDisasterRecoveryMicrosoftHostedNetworkSettingable 
 type CloudPcDisasterRecoveryMicrosoftHostedNetworkSettingable interface {
     CloudPcDisasterRecoveryNetworkSettingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

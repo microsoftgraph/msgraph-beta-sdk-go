@@ -1,23 +1,25 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type CloudPcManagementService int
 
 const (
-    WINDOWS365_CLOUDPCMANAGEMENTSERVICE CloudPcManagementService = iota
-    DEVBOX_CLOUDPCMANAGEMENTSERVICE
-    UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE
-    RPABOX_CLOUDPCMANAGEMENTSERVICE
+    WINDOWS365_CLOUDPCMANAGEMENTSERVICE = 1
+    DEVBOX_CLOUDPCMANAGEMENTSERVICE = 2
+    UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE = 4
+    RPABOX_CLOUDPCMANAGEMENTSERVICE = 8
 )
 
 func (i CloudPcManagementService) String() string {
     var values []string
-    for p := CloudPcManagementService(1); p <= RPABOX_CLOUDPCMANAGEMENTSERVICE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"windows365", "devBox", "unknownFutureValue", "rpaBox"}[p])
+    options := []string{"windows365", "devBox", "unknownFutureValue", "rpaBox"}
+    for p := 0; p < 4; p++ {
+        mantis := CloudPcManagementService(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

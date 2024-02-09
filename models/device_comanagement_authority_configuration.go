@@ -8,7 +8,7 @@ import (
 type DeviceComanagementAuthorityConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceComanagementAuthorityConfiguration instantiates a new deviceComanagementAuthorityConfiguration and sets the default values.
+// NewDeviceComanagementAuthorityConfiguration instantiates a new DeviceComanagementAuthorityConfiguration and sets the default values.
 func NewDeviceComanagementAuthorityConfiguration()(*DeviceComanagementAuthorityConfiguration) {
     m := &DeviceComanagementAuthorityConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
@@ -18,10 +18,12 @@ func NewDeviceComanagementAuthorityConfiguration()(*DeviceComanagementAuthorityC
     return m
 }
 // CreateDeviceComanagementAuthorityConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceComanagementAuthorityConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceComanagementAuthorityConfiguration(), nil
 }
 // GetConfigurationManagerAgentCommandLineArgument gets the configurationManagerAgentCommandLineArgument property value. CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument
+// returns a *string when successful
 func (m *DeviceComanagementAuthorityConfiguration) GetConfigurationManagerAgentCommandLineArgument()(*string) {
     val, err := m.GetBackingStore().Get("configurationManagerAgentCommandLineArgument")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceComanagementAuthorityConfiguration) GetConfigurationManagerAgentC
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceComanagementAuthorityConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
     res["configurationManagerAgentCommandLineArgument"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +71,7 @@ func (m *DeviceComanagementAuthorityConfiguration) GetFieldDeserializers()(map[s
     return res
 }
 // GetInstallConfigurationManagerAgent gets the installConfigurationManagerAgent property value. CoManagement Authority configuration InstallConfigurationManagerAgent
+// returns a *bool when successful
 func (m *DeviceComanagementAuthorityConfiguration) GetInstallConfigurationManagerAgent()(*bool) {
     val, err := m.GetBackingStore().Get("installConfigurationManagerAgent")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *DeviceComanagementAuthorityConfiguration) GetInstallConfigurationManage
     return nil
 }
 // GetManagedDeviceAuthority gets the managedDeviceAuthority property value. CoManagement Authority configuration ManagedDeviceAuthority
+// returns a *int32 when successful
 func (m *DeviceComanagementAuthorityConfiguration) GetManagedDeviceAuthority()(*int32) {
     val, err := m.GetBackingStore().Get("managedDeviceAuthority")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *DeviceComanagementAuthorityConfiguration) SetManagedDeviceAuthority(val
         panic(err)
     }
 }
-// DeviceComanagementAuthorityConfigurationable 
 type DeviceComanagementAuthorityConfigurationable interface {
     DeviceEnrollmentConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

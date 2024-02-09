@@ -10,7 +10,7 @@ type HardwareInformation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewHardwareInformation instantiates a new hardwareInformation and sets the default values.
+// NewHardwareInformation instantiates a new HardwareInformation and sets the default values.
 func NewHardwareInformation()(*HardwareInformation) {
     m := &HardwareInformation{
     }
@@ -19,10 +19,12 @@ func NewHardwareInformation()(*HardwareInformation) {
     return m
 }
 // CreateHardwareInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHardwareInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHardwareInformation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *HardwareInformation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *HardwareInformation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *HardwareInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBatteryChargeCycles gets the batteryChargeCycles property value. The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *HardwareInformation) GetBatteryChargeCycles()(*int32) {
     val, err := m.GetBackingStore().Get("batteryChargeCycles")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *HardwareInformation) GetBatteryChargeCycles()(*int32) {
     return nil
 }
 // GetBatteryHealthPercentage gets the batteryHealthPercentage property value. The device’s current battery’s health percentage. Valid values 0 to 100
+// returns a *int32 when successful
 func (m *HardwareInformation) GetBatteryHealthPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("batteryHealthPercentage")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *HardwareInformation) GetBatteryHealthPercentage()(*int32) {
     return nil
 }
 // GetBatteryLevelPercentage gets the batteryLevelPercentage property value. The battery level, between 0.0 and 100, or null if the battery level cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 5.0 and later, and is available only when Device Information access right is obtained. Valid values 0 to 100
+// returns a *float64 when successful
 func (m *HardwareInformation) GetBatteryLevelPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("batteryLevelPercentage")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *HardwareInformation) GetBatteryLevelPercentage()(*float64) {
     return nil
 }
 // GetBatterySerialNumber gets the batterySerialNumber property value. The serial number of the device’s current battery
+// returns a *string when successful
 func (m *HardwareInformation) GetBatterySerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("batterySerialNumber")
     if err != nil {
@@ -83,6 +90,7 @@ func (m *HardwareInformation) GetBatterySerialNumber()(*string) {
     return nil
 }
 // GetCellularTechnology gets the cellularTechnology property value. Cellular technology of the device
+// returns a *string when successful
 func (m *HardwareInformation) GetCellularTechnology()(*string) {
     val, err := m.GetBackingStore().Get("cellularTechnology")
     if err != nil {
@@ -94,6 +102,7 @@ func (m *HardwareInformation) GetCellularTechnology()(*string) {
     return nil
 }
 // GetDeviceFullQualifiedDomainName gets the deviceFullQualifiedDomainName property value. Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.
+// returns a *string when successful
 func (m *HardwareInformation) GetDeviceFullQualifiedDomainName()(*string) {
     val, err := m.GetBackingStore().Get("deviceFullQualifiedDomainName")
     if err != nil {
@@ -105,6 +114,7 @@ func (m *HardwareInformation) GetDeviceFullQualifiedDomainName()(*string) {
     return nil
 }
 // GetDeviceGuardLocalSystemAuthorityCredentialGuardState gets the deviceGuardLocalSystemAuthorityCredentialGuardState property value. The deviceGuardLocalSystemAuthorityCredentialGuardState property
+// returns a *DeviceGuardLocalSystemAuthorityCredentialGuardState when successful
 func (m *HardwareInformation) GetDeviceGuardLocalSystemAuthorityCredentialGuardState()(*DeviceGuardLocalSystemAuthorityCredentialGuardState) {
     val, err := m.GetBackingStore().Get("deviceGuardLocalSystemAuthorityCredentialGuardState")
     if err != nil {
@@ -116,6 +126,7 @@ func (m *HardwareInformation) GetDeviceGuardLocalSystemAuthorityCredentialGuardS
     return nil
 }
 // GetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState gets the deviceGuardVirtualizationBasedSecurityHardwareRequirementState property value. The deviceGuardVirtualizationBasedSecurityHardwareRequirementState property
+// returns a *DeviceGuardVirtualizationBasedSecurityHardwareRequirementState when successful
 func (m *HardwareInformation) GetDeviceGuardVirtualizationBasedSecurityHardwareRequirementState()(*DeviceGuardVirtualizationBasedSecurityHardwareRequirementState) {
     val, err := m.GetBackingStore().Get("deviceGuardVirtualizationBasedSecurityHardwareRequirementState")
     if err != nil {
@@ -127,6 +138,7 @@ func (m *HardwareInformation) GetDeviceGuardVirtualizationBasedSecurityHardwareR
     return nil
 }
 // GetDeviceGuardVirtualizationBasedSecurityState gets the deviceGuardVirtualizationBasedSecurityState property value. The deviceGuardVirtualizationBasedSecurityState property
+// returns a *DeviceGuardVirtualizationBasedSecurityState when successful
 func (m *HardwareInformation) GetDeviceGuardVirtualizationBasedSecurityState()(*DeviceGuardVirtualizationBasedSecurityState) {
     val, err := m.GetBackingStore().Get("deviceGuardVirtualizationBasedSecurityState")
     if err != nil {
@@ -138,6 +150,7 @@ func (m *HardwareInformation) GetDeviceGuardVirtualizationBasedSecurityState()(*
     return nil
 }
 // GetDeviceLicensingLastErrorCode gets the deviceLicensingLastErrorCode property value. A standard error code indicating the last error, or 0 indicating no error (default). The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *HardwareInformation) GetDeviceLicensingLastErrorCode()(*int32) {
     val, err := m.GetBackingStore().Get("deviceLicensingLastErrorCode")
     if err != nil {
@@ -149,6 +162,7 @@ func (m *HardwareInformation) GetDeviceLicensingLastErrorCode()(*int32) {
     return nil
 }
 // GetDeviceLicensingLastErrorDescription gets the deviceLicensingLastErrorDescription property value. Error text message as a descripition for deviceLicensingLastErrorCode. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing.
+// returns a *string when successful
 func (m *HardwareInformation) GetDeviceLicensingLastErrorDescription()(*string) {
     val, err := m.GetBackingStore().Get("deviceLicensingLastErrorDescription")
     if err != nil {
@@ -160,6 +174,7 @@ func (m *HardwareInformation) GetDeviceLicensingLastErrorDescription()(*string) 
     return nil
 }
 // GetDeviceLicensingStatus gets the deviceLicensingStatus property value. Indicates the device licensing status after Windows device based subscription has been enabled.
+// returns a *DeviceLicensingStatus when successful
 func (m *HardwareInformation) GetDeviceLicensingStatus()(*DeviceLicensingStatus) {
     val, err := m.GetBackingStore().Get("deviceLicensingStatus")
     if err != nil {
@@ -171,6 +186,7 @@ func (m *HardwareInformation) GetDeviceLicensingStatus()(*DeviceLicensingStatus)
     return nil
 }
 // GetEsimIdentifier gets the esimIdentifier property value. eSIM identifier
+// returns a *string when successful
 func (m *HardwareInformation) GetEsimIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("esimIdentifier")
     if err != nil {
@@ -182,6 +198,7 @@ func (m *HardwareInformation) GetEsimIdentifier()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["batteryChargeCycles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -609,6 +626,7 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFreeStorageSpace gets the freeStorageSpace property value. Free storage space of the device.
+// returns a *int64 when successful
 func (m *HardwareInformation) GetFreeStorageSpace()(*int64) {
     val, err := m.GetBackingStore().Get("freeStorageSpace")
     if err != nil {
@@ -620,6 +638,7 @@ func (m *HardwareInformation) GetFreeStorageSpace()(*int64) {
     return nil
 }
 // GetImei gets the imei property value. IMEI
+// returns a *string when successful
 func (m *HardwareInformation) GetImei()(*string) {
     val, err := m.GetBackingStore().Get("imei")
     if err != nil {
@@ -631,6 +650,7 @@ func (m *HardwareInformation) GetImei()(*string) {
     return nil
 }
 // GetIpAddressV4 gets the ipAddressV4 property value. IPAddressV4
+// returns a *string when successful
 func (m *HardwareInformation) GetIpAddressV4()(*string) {
     val, err := m.GetBackingStore().Get("ipAddressV4")
     if err != nil {
@@ -642,6 +662,7 @@ func (m *HardwareInformation) GetIpAddressV4()(*string) {
     return nil
 }
 // GetIsEncrypted gets the isEncrypted property value. Encryption status of the device
+// returns a *bool when successful
 func (m *HardwareInformation) GetIsEncrypted()(*bool) {
     val, err := m.GetBackingStore().Get("isEncrypted")
     if err != nil {
@@ -653,6 +674,7 @@ func (m *HardwareInformation) GetIsEncrypted()(*bool) {
     return nil
 }
 // GetIsSharedDevice gets the isSharedDevice property value. Shared iPad
+// returns a *bool when successful
 func (m *HardwareInformation) GetIsSharedDevice()(*bool) {
     val, err := m.GetBackingStore().Get("isSharedDevice")
     if err != nil {
@@ -664,6 +686,7 @@ func (m *HardwareInformation) GetIsSharedDevice()(*bool) {
     return nil
 }
 // GetIsSupervised gets the isSupervised property value. Supervised mode of the device
+// returns a *bool when successful
 func (m *HardwareInformation) GetIsSupervised()(*bool) {
     val, err := m.GetBackingStore().Get("isSupervised")
     if err != nil {
@@ -675,6 +698,7 @@ func (m *HardwareInformation) GetIsSupervised()(*bool) {
     return nil
 }
 // GetManufacturer gets the manufacturer property value. Manufacturer of the device
+// returns a *string when successful
 func (m *HardwareInformation) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -686,6 +710,7 @@ func (m *HardwareInformation) GetManufacturer()(*string) {
     return nil
 }
 // GetMeid gets the meid property value. MEID
+// returns a *string when successful
 func (m *HardwareInformation) GetMeid()(*string) {
     val, err := m.GetBackingStore().Get("meid")
     if err != nil {
@@ -697,6 +722,7 @@ func (m *HardwareInformation) GetMeid()(*string) {
     return nil
 }
 // GetModel gets the model property value. Model of the device
+// returns a *string when successful
 func (m *HardwareInformation) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -708,6 +734,7 @@ func (m *HardwareInformation) GetModel()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *HardwareInformation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -719,6 +746,7 @@ func (m *HardwareInformation) GetOdataType()(*string) {
     return nil
 }
 // GetOperatingSystemEdition gets the operatingSystemEdition property value. String that specifies the OS edition.
+// returns a *string when successful
 func (m *HardwareInformation) GetOperatingSystemEdition()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystemEdition")
     if err != nil {
@@ -730,6 +758,7 @@ func (m *HardwareInformation) GetOperatingSystemEdition()(*string) {
     return nil
 }
 // GetOperatingSystemLanguage gets the operatingSystemLanguage property value. Operating system language of the device
+// returns a *string when successful
 func (m *HardwareInformation) GetOperatingSystemLanguage()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystemLanguage")
     if err != nil {
@@ -741,6 +770,7 @@ func (m *HardwareInformation) GetOperatingSystemLanguage()(*string) {
     return nil
 }
 // GetOperatingSystemProductType gets the operatingSystemProductType property value. Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *HardwareInformation) GetOperatingSystemProductType()(*int32) {
     val, err := m.GetBackingStore().Get("operatingSystemProductType")
     if err != nil {
@@ -752,6 +782,7 @@ func (m *HardwareInformation) GetOperatingSystemProductType()(*int32) {
     return nil
 }
 // GetOsBuildNumber gets the osBuildNumber property value. Operating System Build Number on Android device
+// returns a *string when successful
 func (m *HardwareInformation) GetOsBuildNumber()(*string) {
     val, err := m.GetBackingStore().Get("osBuildNumber")
     if err != nil {
@@ -763,6 +794,7 @@ func (m *HardwareInformation) GetOsBuildNumber()(*string) {
     return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. Phone number of the device
+// returns a *string when successful
 func (m *HardwareInformation) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
     if err != nil {
@@ -774,6 +806,7 @@ func (m *HardwareInformation) GetPhoneNumber()(*string) {
     return nil
 }
 // GetProductName gets the productName property value. The product name, e.g. iPad8,12 etc. The update frequency of this property is weekly. Note this property is currently supported only on iOS/MacOS devices, and is available only when Device Information access right is obtained.
+// returns a *string when successful
 func (m *HardwareInformation) GetProductName()(*string) {
     val, err := m.GetBackingStore().Get("productName")
     if err != nil {
@@ -785,6 +818,7 @@ func (m *HardwareInformation) GetProductName()(*string) {
     return nil
 }
 // GetResidentUsersCount gets the residentUsersCount property value. The number of users currently on this device, or null (default) if the value of this property cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 13.4 and later, and is available only when Device Information access right is obtained. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *HardwareInformation) GetResidentUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("residentUsersCount")
     if err != nil {
@@ -796,6 +830,7 @@ func (m *HardwareInformation) GetResidentUsersCount()(*int32) {
     return nil
 }
 // GetSerialNumber gets the serialNumber property value. Serial number.
+// returns a *string when successful
 func (m *HardwareInformation) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -807,6 +842,7 @@ func (m *HardwareInformation) GetSerialNumber()(*string) {
     return nil
 }
 // GetSharedDeviceCachedUsers gets the sharedDeviceCachedUsers property value. All users on the shared Apple device
+// returns a []SharedAppleDeviceUserable when successful
 func (m *HardwareInformation) GetSharedDeviceCachedUsers()([]SharedAppleDeviceUserable) {
     val, err := m.GetBackingStore().Get("sharedDeviceCachedUsers")
     if err != nil {
@@ -818,6 +854,7 @@ func (m *HardwareInformation) GetSharedDeviceCachedUsers()([]SharedAppleDeviceUs
     return nil
 }
 // GetSubnetAddress gets the subnetAddress property value. SubnetAddress
+// returns a *string when successful
 func (m *HardwareInformation) GetSubnetAddress()(*string) {
     val, err := m.GetBackingStore().Get("subnetAddress")
     if err != nil {
@@ -829,6 +866,7 @@ func (m *HardwareInformation) GetSubnetAddress()(*string) {
     return nil
 }
 // GetSubscriberCarrier gets the subscriberCarrier property value. Subscriber carrier of the device
+// returns a *string when successful
 func (m *HardwareInformation) GetSubscriberCarrier()(*string) {
     val, err := m.GetBackingStore().Get("subscriberCarrier")
     if err != nil {
@@ -840,6 +878,7 @@ func (m *HardwareInformation) GetSubscriberCarrier()(*string) {
     return nil
 }
 // GetSystemManagementBIOSVersion gets the systemManagementBIOSVersion property value. BIOS version as reported by SMBIOS
+// returns a *string when successful
 func (m *HardwareInformation) GetSystemManagementBIOSVersion()(*string) {
     val, err := m.GetBackingStore().Get("systemManagementBIOSVersion")
     if err != nil {
@@ -851,6 +890,7 @@ func (m *HardwareInformation) GetSystemManagementBIOSVersion()(*string) {
     return nil
 }
 // GetTotalStorageSpace gets the totalStorageSpace property value. Total storage space of the device.
+// returns a *int64 when successful
 func (m *HardwareInformation) GetTotalStorageSpace()(*int64) {
     val, err := m.GetBackingStore().Get("totalStorageSpace")
     if err != nil {
@@ -862,6 +902,7 @@ func (m *HardwareInformation) GetTotalStorageSpace()(*int64) {
     return nil
 }
 // GetTpmManufacturer gets the tpmManufacturer property value. The identifying information that uniquely names the TPM manufacturer
+// returns a *string when successful
 func (m *HardwareInformation) GetTpmManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("tpmManufacturer")
     if err != nil {
@@ -873,6 +914,7 @@ func (m *HardwareInformation) GetTpmManufacturer()(*string) {
     return nil
 }
 // GetTpmSpecificationVersion gets the tpmSpecificationVersion property value. String that specifies the specification version.
+// returns a *string when successful
 func (m *HardwareInformation) GetTpmSpecificationVersion()(*string) {
     val, err := m.GetBackingStore().Get("tpmSpecificationVersion")
     if err != nil {
@@ -884,6 +926,7 @@ func (m *HardwareInformation) GetTpmSpecificationVersion()(*string) {
     return nil
 }
 // GetTpmVersion gets the tpmVersion property value. The version of the TPM, as specified by the manufacturer
+// returns a *string when successful
 func (m *HardwareInformation) GetTpmVersion()(*string) {
     val, err := m.GetBackingStore().Get("tpmVersion")
     if err != nil {
@@ -895,6 +938,7 @@ func (m *HardwareInformation) GetTpmVersion()(*string) {
     return nil
 }
 // GetWifiMac gets the wifiMac property value. WiFi MAC address of the device
+// returns a *string when successful
 func (m *HardwareInformation) GetWifiMac()(*string) {
     val, err := m.GetBackingStore().Get("wifiMac")
     if err != nil {
@@ -906,6 +950,7 @@ func (m *HardwareInformation) GetWifiMac()(*string) {
     return nil
 }
 // GetWiredIPv4Addresses gets the wiredIPv4Addresses property value. A list of wired IPv4 addresses. The update frequency (the maximum delay for the change of property value to be synchronized from the device to the cloud storage) of this property is daily. Note this property is currently supported only on devices running on Windows.
+// returns a []string when successful
 func (m *HardwareInformation) GetWiredIPv4Addresses()([]string) {
     val, err := m.GetBackingStore().Get("wiredIPv4Addresses")
     if err != nil {
@@ -1480,7 +1525,6 @@ func (m *HardwareInformation) SetWiredIPv4Addresses(value []string)() {
         panic(err)
     }
 }
-// HardwareInformationable 
 type HardwareInformationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

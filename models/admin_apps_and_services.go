@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AdminAppsAndServices 
 type AdminAppsAndServices struct {
     Entity
 }
-// NewAdminAppsAndServices instantiates a new adminAppsAndServices and sets the default values.
+// NewAdminAppsAndServices instantiates a new AdminAppsAndServices and sets the default values.
 func NewAdminAppsAndServices()(*AdminAppsAndServices) {
     m := &AdminAppsAndServices{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAdminAppsAndServices()(*AdminAppsAndServices) {
     return m
 }
 // CreateAdminAppsAndServicesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAdminAppsAndServicesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdminAppsAndServices(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AdminAppsAndServices) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *AdminAppsAndServices) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetSettings gets the settings property value. The settings property
+// returns a AppsAndServicesSettingsable when successful
 func (m *AdminAppsAndServices) GetSettings()(AppsAndServicesSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *AdminAppsAndServices) SetSettings(value AppsAndServicesSettingsable)() 
         panic(err)
     }
 }
-// AdminAppsAndServicesable 
 type AdminAppsAndServicesable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

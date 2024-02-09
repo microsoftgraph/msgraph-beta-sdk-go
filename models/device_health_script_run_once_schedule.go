@@ -8,7 +8,7 @@ import (
 type DeviceHealthScriptRunOnceSchedule struct {
     DeviceHealthScriptTimeSchedule
 }
-// NewDeviceHealthScriptRunOnceSchedule instantiates a new deviceHealthScriptRunOnceSchedule and sets the default values.
+// NewDeviceHealthScriptRunOnceSchedule instantiates a new DeviceHealthScriptRunOnceSchedule and sets the default values.
 func NewDeviceHealthScriptRunOnceSchedule()(*DeviceHealthScriptRunOnceSchedule) {
     m := &DeviceHealthScriptRunOnceSchedule{
         DeviceHealthScriptTimeSchedule: *NewDeviceHealthScriptTimeSchedule(),
@@ -18,10 +18,12 @@ func NewDeviceHealthScriptRunOnceSchedule()(*DeviceHealthScriptRunOnceSchedule) 
     return m
 }
 // CreateDeviceHealthScriptRunOnceScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceHealthScriptRunOnceScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceHealthScriptRunOnceSchedule(), nil
 }
 // GetDate gets the date property value. The date the script is scheduled to run. This collection can contain a maximum of 20 elements.
+// returns a *DateOnly when successful
 func (m *DeviceHealthScriptRunOnceSchedule) GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("date")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceHealthScriptRunOnceSchedule) GetDate()(*i878a80d2330e89d26896388a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceHealthScriptRunOnceSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceHealthScriptTimeSchedule.GetFieldDeserializers()
     res["date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *DeviceHealthScriptRunOnceSchedule) SetDate(value *i878a80d2330e89d26896
         panic(err)
     }
 }
-// DeviceHealthScriptRunOnceScheduleable 
 type DeviceHealthScriptRunOnceScheduleable interface {
     DeviceHealthScriptTimeScheduleable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

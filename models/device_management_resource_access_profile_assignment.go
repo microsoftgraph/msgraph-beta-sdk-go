@@ -8,7 +8,7 @@ import (
 type DeviceManagementResourceAccessProfileAssignment struct {
     Entity
 }
-// NewDeviceManagementResourceAccessProfileAssignment instantiates a new deviceManagementResourceAccessProfileAssignment and sets the default values.
+// NewDeviceManagementResourceAccessProfileAssignment instantiates a new DeviceManagementResourceAccessProfileAssignment and sets the default values.
 func NewDeviceManagementResourceAccessProfileAssignment()(*DeviceManagementResourceAccessProfileAssignment) {
     m := &DeviceManagementResourceAccessProfileAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementResourceAccessProfileAssignment()(*DeviceManagementResou
     return m
 }
 // CreateDeviceManagementResourceAccessProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementResourceAccessProfileAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementResourceAccessProfileAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementResourceAccessProfileAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["intent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,6 +57,7 @@ func (m *DeviceManagementResourceAccessProfileAssignment) GetFieldDeserializers(
     return res
 }
 // GetIntent gets the intent property value. The administrator intent for the assignment of the profile.
+// returns a *DeviceManagementResourceAccessProfileIntent when successful
 func (m *DeviceManagementResourceAccessProfileAssignment) GetIntent()(*DeviceManagementResourceAccessProfileIntent) {
     val, err := m.GetBackingStore().Get("intent")
     if err != nil {
@@ -66,6 +69,7 @@ func (m *DeviceManagementResourceAccessProfileAssignment) GetIntent()(*DeviceMan
     return nil
 }
 // GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
+// returns a *string when successful
 func (m *DeviceManagementResourceAccessProfileAssignment) GetSourceId()(*string) {
     val, err := m.GetBackingStore().Get("sourceId")
     if err != nil {
@@ -77,6 +81,7 @@ func (m *DeviceManagementResourceAccessProfileAssignment) GetSourceId()(*string)
     return nil
 }
 // GetTarget gets the target property value. Base type for assignment targets.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *DeviceManagementResourceAccessProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -135,7 +140,6 @@ func (m *DeviceManagementResourceAccessProfileAssignment) SetTarget(value Device
         panic(err)
     }
 }
-// DeviceManagementResourceAccessProfileAssignmentable 
 type DeviceManagementResourceAccessProfileAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

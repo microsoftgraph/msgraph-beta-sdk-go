@@ -17,20 +17,21 @@ type ItemRemovePasswordRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemRemovePasswordRequestBuilderInternal instantiates a new RemovePasswordRequestBuilder and sets the default values.
+// NewItemRemovePasswordRequestBuilderInternal instantiates a new ItemRemovePasswordRequestBuilder and sets the default values.
 func NewItemRemovePasswordRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRemovePasswordRequestBuilder) {
     m := &ItemRemovePasswordRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/removePassword", pathParameters),
     }
     return m
 }
-// NewItemRemovePasswordRequestBuilder instantiates a new RemovePasswordRequestBuilder and sets the default values.
+// NewItemRemovePasswordRequestBuilder instantiates a new ItemRemovePasswordRequestBuilder and sets the default values.
 func NewItemRemovePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRemovePasswordRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemRemovePasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post removes a password from an application.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemRemovePasswordRequestBuilder) Post(ctx context.Context, body ItemRe
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemRemovePasswordRequestBuilder) Post(ctx context.Context, body ItemRe
     return nil
 }
 // ToPostRequestInformation removes a password from an application.
+// returns a *RequestInformation when successful
 func (m *ItemRemovePasswordRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemRemovePasswordPostRequestBodyable, requestConfiguration *ItemRemovePasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemRemovePasswordRequestBuilder) ToPostRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemRemovePasswordRequestBuilder when successful
 func (m *ItemRemovePasswordRequestBuilder) WithUrl(rawUrl string)(*ItemRemovePasswordRequestBuilder) {
     return NewItemRemovePasswordRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

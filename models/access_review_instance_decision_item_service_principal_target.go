@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewInstanceDecisionItemServicePrincipalTarget 
 type AccessReviewInstanceDecisionItemServicePrincipalTarget struct {
     AccessReviewInstanceDecisionItemTarget
 }
-// NewAccessReviewInstanceDecisionItemServicePrincipalTarget instantiates a new accessReviewInstanceDecisionItemServicePrincipalTarget and sets the default values.
+// NewAccessReviewInstanceDecisionItemServicePrincipalTarget instantiates a new AccessReviewInstanceDecisionItemServicePrincipalTarget and sets the default values.
 func NewAccessReviewInstanceDecisionItemServicePrincipalTarget()(*AccessReviewInstanceDecisionItemServicePrincipalTarget) {
     m := &AccessReviewInstanceDecisionItemServicePrincipalTarget{
         AccessReviewInstanceDecisionItemTarget: *NewAccessReviewInstanceDecisionItemTarget(),
@@ -18,10 +17,12 @@ func NewAccessReviewInstanceDecisionItemServicePrincipalTarget()(*AccessReviewIn
     return m
 }
 // CreateAccessReviewInstanceDecisionItemServicePrincipalTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewInstanceDecisionItemServicePrincipalTargetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewInstanceDecisionItemServicePrincipalTarget(), nil
 }
 // GetAppId gets the appId property value. The appId for the service principal entity being reviewed.
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetAppId()(*str
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewInstanceDecisionItemTarget.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +70,7 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetFieldDeseria
     return res
 }
 // GetServicePrincipalDisplayName gets the servicePrincipalDisplayName property value. The display name of the service principal whose access is being reviewed.
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetServicePrincipalDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalDisplayName")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetServicePrinc
     return nil
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. The servicePrincipalId property
+// returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetServicePrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalId")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetServicePrinc
         panic(err)
     }
 }
-// AccessReviewInstanceDecisionItemServicePrincipalTargetable 
 type AccessReviewInstanceDecisionItemServicePrincipalTargetable interface {
     AccessReviewInstanceDecisionItemTargetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type MacOSDeviceFeaturesConfiguration struct {
     AppleDeviceFeaturesConfigurationBase
 }
-// NewMacOSDeviceFeaturesConfiguration instantiates a new macOSDeviceFeaturesConfiguration and sets the default values.
+// NewMacOSDeviceFeaturesConfiguration instantiates a new MacOSDeviceFeaturesConfiguration and sets the default values.
 func NewMacOSDeviceFeaturesConfiguration()(*MacOSDeviceFeaturesConfiguration) {
     m := &MacOSDeviceFeaturesConfiguration{
         AppleDeviceFeaturesConfigurationBase: *NewAppleDeviceFeaturesConfigurationBase(),
@@ -18,10 +18,12 @@ func NewMacOSDeviceFeaturesConfiguration()(*MacOSDeviceFeaturesConfiguration) {
     return m
 }
 // CreateMacOSDeviceFeaturesConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSDeviceFeaturesConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSDeviceFeaturesConfiguration(), nil
 }
 // GetAdminShowHostInfo gets the adminShowHostInfo property value. Whether to show admin host information on the login window.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetAdminShowHostInfo()(*bool) {
     val, err := m.GetBackingStore().Get("adminShowHostInfo")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetAdminShowHostInfo()(*bool) {
     return nil
 }
 // GetAppAssociatedDomains gets the appAssociatedDomains property value. Gets or sets a list that maps apps to their associated domains. Application identifiers must be unique. This collection can contain a maximum of 500 elements.
+// returns a []MacOSAssociatedDomainsItemable when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetAppAssociatedDomains()([]MacOSAssociatedDomainsItemable) {
     val, err := m.GetBackingStore().Get("appAssociatedDomains")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetAppAssociatedDomains()([]MacOSAsso
     return nil
 }
 // GetAssociatedDomains gets the associatedDomains property value. DEPRECATED: use appAssociatedDomains instead. Gets or sets a list that maps apps to their associated domains. The key should match the app's ID, and the value should be a string in the form of 'service:domain' where domain is a fully qualified hostname (e.g. webcredentials:example.com). This collection can contain a maximum of 500 elements.
+// returns a []KeyValuePairable when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetAssociatedDomains()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("associatedDomains")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetAssociatedDomains()([]KeyValuePair
     return nil
 }
 // GetAuthorizedUsersListHidden gets the authorizedUsersListHidden property value. Whether to show the name and password dialog or a list of users on the login window.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHidden()(*bool) {
     val, err := m.GetBackingStore().Get("authorizedUsersListHidden")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHidden()(*bool)
     return nil
 }
 // GetAuthorizedUsersListHideAdminUsers gets the authorizedUsersListHideAdminUsers property value. Whether to hide admin users in the authorized users list on the login window.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHideAdminUsers()(*bool) {
     val, err := m.GetBackingStore().Get("authorizedUsersListHideAdminUsers")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHideAdminUsers(
     return nil
 }
 // GetAuthorizedUsersListHideLocalUsers gets the authorizedUsersListHideLocalUsers property value. Whether to show only network and system users in the authorized users list on the login window.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHideLocalUsers()(*bool) {
     val, err := m.GetBackingStore().Get("authorizedUsersListHideLocalUsers")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHideLocalUsers(
     return nil
 }
 // GetAuthorizedUsersListHideMobileAccounts gets the authorizedUsersListHideMobileAccounts property value. Whether to hide mobile users in the authorized users list on the login window.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHideMobileAccounts()(*bool) {
     val, err := m.GetBackingStore().Get("authorizedUsersListHideMobileAccounts")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListHideMobileAccou
     return nil
 }
 // GetAuthorizedUsersListIncludeNetworkUsers gets the authorizedUsersListIncludeNetworkUsers property value. Whether to show network users in the authorized users list on the login window.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListIncludeNetworkUsers()(*bool) {
     val, err := m.GetBackingStore().Get("authorizedUsersListIncludeNetworkUsers")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListIncludeNetworkU
     return nil
 }
 // GetAuthorizedUsersListShowOtherManagedUsers gets the authorizedUsersListShowOtherManagedUsers property value. Whether to show other users in the authorized users list on the login window.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListShowOtherManagedUsers()(*bool) {
     val, err := m.GetBackingStore().Get("authorizedUsersListShowOtherManagedUsers")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetAuthorizedUsersListShowOtherManage
     return nil
 }
 // GetAutoLaunchItems gets the autoLaunchItems property value. List of applications, files, folders, and other items to launch when the user logs in. This collection can contain a maximum of 500 elements.
+// returns a []MacOSLaunchItemable when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetAutoLaunchItems()([]MacOSLaunchItemable) {
     val, err := m.GetBackingStore().Get("autoLaunchItems")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetAutoLaunchItems()([]MacOSLaunchIte
     return nil
 }
 // GetConsoleAccessDisabled gets the consoleAccessDisabled property value. Whether the Other user will disregard use of the console special user name.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetConsoleAccessDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("consoleAccessDisabled")
     if err != nil {
@@ -143,6 +155,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetConsoleAccessDisabled()(*bool) {
     return nil
 }
 // GetContentCachingBlockDeletion gets the contentCachingBlockDeletion property value. Prevents content caches from purging content to free up disk space for other apps.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingBlockDeletion()(*bool) {
     val, err := m.GetBackingStore().Get("contentCachingBlockDeletion")
     if err != nil {
@@ -154,6 +167,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingBlockDeletion()(*boo
     return nil
 }
 // GetContentCachingClientListenRanges gets the contentCachingClientListenRanges property value. A list of custom IP ranges content caches will use to listen for clients. This collection can contain a maximum of 500 elements.
+// returns a []IpRangeable when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingClientListenRanges()([]IpRangeable) {
     val, err := m.GetBackingStore().Get("contentCachingClientListenRanges")
     if err != nil {
@@ -165,6 +179,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingClientListenRanges()
     return nil
 }
 // GetContentCachingClientPolicy gets the contentCachingClientPolicy property value. Determines which clients a content cache will serve.
+// returns a *MacOSContentCachingClientPolicy when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingClientPolicy()(*MacOSContentCachingClientPolicy) {
     val, err := m.GetBackingStore().Get("contentCachingClientPolicy")
     if err != nil {
@@ -176,6 +191,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingClientPolicy()(*MacO
     return nil
 }
 // GetContentCachingDataPath gets the contentCachingDataPath property value. The path to the directory used to store cached content. The value must be (or end with) /Library/Application Support/Apple/AssetCache/Data
+// returns a *string when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingDataPath()(*string) {
     val, err := m.GetBackingStore().Get("contentCachingDataPath")
     if err != nil {
@@ -187,6 +203,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingDataPath()(*string) 
     return nil
 }
 // GetContentCachingDisableConnectionSharing gets the contentCachingDisableConnectionSharing property value. Disables internet connection sharing.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingDisableConnectionSharing()(*bool) {
     val, err := m.GetBackingStore().Get("contentCachingDisableConnectionSharing")
     if err != nil {
@@ -198,6 +215,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingDisableConnectionSha
     return nil
 }
 // GetContentCachingEnabled gets the contentCachingEnabled property value. Enables content caching and prevents it from being disabled by the user.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("contentCachingEnabled")
     if err != nil {
@@ -209,6 +227,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingEnabled()(*bool) {
     return nil
 }
 // GetContentCachingForceConnectionSharing gets the contentCachingForceConnectionSharing property value. Forces internet connection sharing. contentCachingDisableConnectionSharing overrides this setting.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingForceConnectionSharing()(*bool) {
     val, err := m.GetBackingStore().Get("contentCachingForceConnectionSharing")
     if err != nil {
@@ -220,6 +239,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingForceConnectionShari
     return nil
 }
 // GetContentCachingKeepAwake gets the contentCachingKeepAwake property value. Prevent the device from sleeping if content caching is enabled.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingKeepAwake()(*bool) {
     val, err := m.GetBackingStore().Get("contentCachingKeepAwake")
     if err != nil {
@@ -231,6 +251,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingKeepAwake()(*bool) {
     return nil
 }
 // GetContentCachingLogClientIdentities gets the contentCachingLogClientIdentities property value. Enables logging of IP addresses and ports of clients that request cached content.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingLogClientIdentities()(*bool) {
     val, err := m.GetBackingStore().Get("contentCachingLogClientIdentities")
     if err != nil {
@@ -242,6 +263,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingLogClientIdentities(
     return nil
 }
 // GetContentCachingMaxSizeBytes gets the contentCachingMaxSizeBytes property value. The maximum number of bytes of disk space that will be used for the content cache. A value of 0 (default) indicates unlimited disk space.
+// returns a *int64 when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingMaxSizeBytes()(*int64) {
     val, err := m.GetBackingStore().Get("contentCachingMaxSizeBytes")
     if err != nil {
@@ -253,6 +275,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingMaxSizeBytes()(*int6
     return nil
 }
 // GetContentCachingParents gets the contentCachingParents property value. A list of IP addresses representing parent content caches.
+// returns a []string when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingParents()([]string) {
     val, err := m.GetBackingStore().Get("contentCachingParents")
     if err != nil {
@@ -264,6 +287,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingParents()([]string) 
     return nil
 }
 // GetContentCachingParentSelectionPolicy gets the contentCachingParentSelectionPolicy property value. Determines how content caches select a parent cache.
+// returns a *MacOSContentCachingParentSelectionPolicy when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingParentSelectionPolicy()(*MacOSContentCachingParentSelectionPolicy) {
     val, err := m.GetBackingStore().Get("contentCachingParentSelectionPolicy")
     if err != nil {
@@ -275,6 +299,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingParentSelectionPolic
     return nil
 }
 // GetContentCachingPeerFilterRanges gets the contentCachingPeerFilterRanges property value. A list of custom IP ranges content caches will use to query for content from peers caches. This collection can contain a maximum of 500 elements.
+// returns a []IpRangeable when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerFilterRanges()([]IpRangeable) {
     val, err := m.GetBackingStore().Get("contentCachingPeerFilterRanges")
     if err != nil {
@@ -286,6 +311,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerFilterRanges()([
     return nil
 }
 // GetContentCachingPeerListenRanges gets the contentCachingPeerListenRanges property value. A list of custom IP ranges content caches will use to listen for peer caches. This collection can contain a maximum of 500 elements.
+// returns a []IpRangeable when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerListenRanges()([]IpRangeable) {
     val, err := m.GetBackingStore().Get("contentCachingPeerListenRanges")
     if err != nil {
@@ -297,6 +323,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerListenRanges()([
     return nil
 }
 // GetContentCachingPeerPolicy gets the contentCachingPeerPolicy property value. Determines which content caches other content caches will peer with.
+// returns a *MacOSContentCachingPeerPolicy when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerPolicy()(*MacOSContentCachingPeerPolicy) {
     val, err := m.GetBackingStore().Get("contentCachingPeerPolicy")
     if err != nil {
@@ -308,6 +335,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPeerPolicy()(*MacOSC
     return nil
 }
 // GetContentCachingPort gets the contentCachingPort property value. Sets the port used for content caching. If the value is 0, a random available port will be selected. Valid values 0 to 65535
+// returns a *int32 when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPort()(*int32) {
     val, err := m.GetBackingStore().Get("contentCachingPort")
     if err != nil {
@@ -319,6 +347,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPort()(*int32) {
     return nil
 }
 // GetContentCachingPublicRanges gets the contentCachingPublicRanges property value. A list of custom IP ranges that Apple's content caching service should use to match clients to content caches. This collection can contain a maximum of 500 elements.
+// returns a []IpRangeable when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPublicRanges()([]IpRangeable) {
     val, err := m.GetBackingStore().Get("contentCachingPublicRanges")
     if err != nil {
@@ -330,6 +359,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingPublicRanges()([]IpR
     return nil
 }
 // GetContentCachingShowAlerts gets the contentCachingShowAlerts property value. Display content caching alerts as system notifications.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingShowAlerts()(*bool) {
     val, err := m.GetBackingStore().Get("contentCachingShowAlerts")
     if err != nil {
@@ -341,6 +371,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingShowAlerts()(*bool) 
     return nil
 }
 // GetContentCachingType gets the contentCachingType property value. Indicates the type of content allowed to be cached by Apple's content caching service.
+// returns a *MacOSContentCachingType when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingType()(*MacOSContentCachingType) {
     val, err := m.GetBackingStore().Get("contentCachingType")
     if err != nil {
@@ -352,6 +383,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetContentCachingType()(*MacOSContent
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppleDeviceFeaturesConfigurationBase.GetFieldDeserializers()
     res["adminShowHostInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -825,6 +857,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetLoginWindowText gets the loginWindowText property value. Custom text to be displayed on the login window.
+// returns a *string when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetLoginWindowText()(*string) {
     val, err := m.GetBackingStore().Get("loginWindowText")
     if err != nil {
@@ -836,6 +869,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetLoginWindowText()(*string) {
     return nil
 }
 // GetLogOutDisabledWhileLoggedIn gets the logOutDisabledWhileLoggedIn property value. Whether the Log Out menu item on the login window will be disabled while the user is logged in.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetLogOutDisabledWhileLoggedIn()(*bool) {
     val, err := m.GetBackingStore().Get("logOutDisabledWhileLoggedIn")
     if err != nil {
@@ -847,6 +881,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetLogOutDisabledWhileLoggedIn()(*boo
     return nil
 }
 // GetMacOSSingleSignOnExtension gets the macOSSingleSignOnExtension property value. Gets or sets a single sign-on extension profile.
+// returns a MacOSSingleSignOnExtensionable when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetMacOSSingleSignOnExtension()(MacOSSingleSignOnExtensionable) {
     val, err := m.GetBackingStore().Get("macOSSingleSignOnExtension")
     if err != nil {
@@ -858,6 +893,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetMacOSSingleSignOnExtension()(MacOS
     return nil
 }
 // GetPowerOffDisabledWhileLoggedIn gets the powerOffDisabledWhileLoggedIn property value. Whether the Power Off menu item on the login window will be disabled while the user is logged in.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetPowerOffDisabledWhileLoggedIn()(*bool) {
     val, err := m.GetBackingStore().Get("powerOffDisabledWhileLoggedIn")
     if err != nil {
@@ -869,6 +905,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetPowerOffDisabledWhileLoggedIn()(*b
     return nil
 }
 // GetRestartDisabled gets the restartDisabled property value. Whether to hide the Restart button item on the login window.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetRestartDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("restartDisabled")
     if err != nil {
@@ -880,6 +917,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetRestartDisabled()(*bool) {
     return nil
 }
 // GetRestartDisabledWhileLoggedIn gets the restartDisabledWhileLoggedIn property value. Whether the Restart menu item on the login window will be disabled while the user is logged in.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetRestartDisabledWhileLoggedIn()(*bool) {
     val, err := m.GetBackingStore().Get("restartDisabledWhileLoggedIn")
     if err != nil {
@@ -891,6 +929,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetRestartDisabledWhileLoggedIn()(*bo
     return nil
 }
 // GetScreenLockDisableImmediate gets the screenLockDisableImmediate property value. Whether to disable the immediate screen lock functions.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetScreenLockDisableImmediate()(*bool) {
     val, err := m.GetBackingStore().Get("screenLockDisableImmediate")
     if err != nil {
@@ -902,6 +941,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetScreenLockDisableImmediate()(*bool
     return nil
 }
 // GetShutDownDisabled gets the shutDownDisabled property value. Whether to hide the Shut Down button item on the login window.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetShutDownDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("shutDownDisabled")
     if err != nil {
@@ -913,6 +953,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetShutDownDisabled()(*bool) {
     return nil
 }
 // GetShutDownDisabledWhileLoggedIn gets the shutDownDisabledWhileLoggedIn property value. Whether the Shut Down menu item on the login window will be disabled while the user is logged in.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetShutDownDisabledWhileLoggedIn()(*bool) {
     val, err := m.GetBackingStore().Get("shutDownDisabledWhileLoggedIn")
     if err != nil {
@@ -924,6 +965,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetShutDownDisabledWhileLoggedIn()(*b
     return nil
 }
 // GetSingleSignOnExtension gets the singleSignOnExtension property value. Gets or sets a single sign-on extension profile. Deprecated: use MacOSSingleSignOnExtension instead.
+// returns a SingleSignOnExtensionable when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetSingleSignOnExtension()(SingleSignOnExtensionable) {
     val, err := m.GetBackingStore().Get("singleSignOnExtension")
     if err != nil {
@@ -935,6 +977,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetSingleSignOnExtension()(SingleSign
     return nil
 }
 // GetSingleSignOnExtensionPkinitCertificate gets the singleSignOnExtensionPkinitCertificate property value. PKINIT Certificate for the authentication with single sign-on extensions.
+// returns a MacOSCertificateProfileBaseable when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetSingleSignOnExtensionPkinitCertificate()(MacOSCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("singleSignOnExtensionPkinitCertificate")
     if err != nil {
@@ -946,6 +989,7 @@ func (m *MacOSDeviceFeaturesConfiguration) GetSingleSignOnExtensionPkinitCertifi
     return nil
 }
 // GetSleepDisabled gets the sleepDisabled property value. Whether to hide the Sleep menu item on the login window.
+// returns a *bool when successful
 func (m *MacOSDeviceFeaturesConfiguration) GetSleepDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("sleepDisabled")
     if err != nil {
@@ -1556,7 +1600,6 @@ func (m *MacOSDeviceFeaturesConfiguration) SetSleepDisabled(value *bool)() {
         panic(err)
     }
 }
-// MacOSDeviceFeaturesConfigurationable 
 type MacOSDeviceFeaturesConfigurationable interface {
     AppleDeviceFeaturesConfigurationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

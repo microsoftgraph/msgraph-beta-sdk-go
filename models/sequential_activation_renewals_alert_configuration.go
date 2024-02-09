@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SequentialActivationRenewalsAlertConfiguration 
 type SequentialActivationRenewalsAlertConfiguration struct {
     UnifiedRoleManagementAlertConfiguration
 }
-// NewSequentialActivationRenewalsAlertConfiguration instantiates a new sequentialActivationRenewalsAlertConfiguration and sets the default values.
+// NewSequentialActivationRenewalsAlertConfiguration instantiates a new SequentialActivationRenewalsAlertConfiguration and sets the default values.
 func NewSequentialActivationRenewalsAlertConfiguration()(*SequentialActivationRenewalsAlertConfiguration) {
     m := &SequentialActivationRenewalsAlertConfiguration{
         UnifiedRoleManagementAlertConfiguration: *NewUnifiedRoleManagementAlertConfiguration(),
@@ -18,10 +17,12 @@ func NewSequentialActivationRenewalsAlertConfiguration()(*SequentialActivationRe
     return m
 }
 // CreateSequentialActivationRenewalsAlertConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSequentialActivationRenewalsAlertConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSequentialActivationRenewalsAlertConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SequentialActivationRenewalsAlertConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementAlertConfiguration.GetFieldDeserializers()
     res["sequentialActivationCounterThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *SequentialActivationRenewalsAlertConfiguration) GetFieldDeserializers()
     return res
 }
 // GetSequentialActivationCounterThreshold gets the sequentialActivationCounterThreshold property value. The minimum number of activations within the timeIntervalBetweenActivations period to trigger an alert.
+// returns a *int32 when successful
 func (m *SequentialActivationRenewalsAlertConfiguration) GetSequentialActivationCounterThreshold()(*int32) {
     val, err := m.GetBackingStore().Get("sequentialActivationCounterThreshold")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *SequentialActivationRenewalsAlertConfiguration) GetSequentialActivation
     return nil
 }
 // GetTimeIntervalBetweenActivations gets the timeIntervalBetweenActivations property value. Time interval between activations to trigger an alert.
+// returns a *ISODuration when successful
 func (m *SequentialActivationRenewalsAlertConfiguration) GetTimeIntervalBetweenActivations()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("timeIntervalBetweenActivations")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *SequentialActivationRenewalsAlertConfiguration) SetTimeIntervalBetweenA
         panic(err)
     }
 }
-// SequentialActivationRenewalsAlertConfigurationable 
 type SequentialActivationRenewalsAlertConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementAlertConfigurationable

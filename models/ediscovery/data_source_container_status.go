@@ -2,7 +2,6 @@ package ediscovery
 import (
     "errors"
 )
-// 
 type DataSourceContainerStatus int
 
 const (

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalIdentitiesPolicy 
 type ExternalIdentitiesPolicy struct {
     PolicyBase
 }
-// NewExternalIdentitiesPolicy instantiates a new externalIdentitiesPolicy and sets the default values.
+// NewExternalIdentitiesPolicy instantiates a new ExternalIdentitiesPolicy and sets the default values.
 func NewExternalIdentitiesPolicy()(*ExternalIdentitiesPolicy) {
     m := &ExternalIdentitiesPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -18,10 +17,12 @@ func NewExternalIdentitiesPolicy()(*ExternalIdentitiesPolicy) {
     return m
 }
 // CreateExternalIdentitiesPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternalIdentitiesPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalIdentitiesPolicy(), nil
 }
 // GetAllowDeletedIdentitiesDataRemoval gets the allowDeletedIdentitiesDataRemoval property value. Reserved for future use.
+// returns a *bool when successful
 func (m *ExternalIdentitiesPolicy) GetAllowDeletedIdentitiesDataRemoval()(*bool) {
     val, err := m.GetBackingStore().Get("allowDeletedIdentitiesDataRemoval")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ExternalIdentitiesPolicy) GetAllowDeletedIdentitiesDataRemoval()(*bool)
     return nil
 }
 // GetAllowExternalIdentitiesToLeave gets the allowExternalIdentitiesToLeave property value. Defines whether external users can leave the guest tenant. If set to false, self-service controls are disabled, and the admin of the guest tenant must manually remove the external user from the guest tenant. When the external user leaves the tenant, their data in the guest tenant is first soft-deleted then permanently deleted in 30 days.
+// returns a *bool when successful
 func (m *ExternalIdentitiesPolicy) GetAllowExternalIdentitiesToLeave()(*bool) {
     val, err := m.GetBackingStore().Get("allowExternalIdentitiesToLeave")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ExternalIdentitiesPolicy) GetAllowExternalIdentitiesToLeave()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternalIdentitiesPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["allowDeletedIdentitiesDataRemoval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,7 +105,6 @@ func (m *ExternalIdentitiesPolicy) SetAllowExternalIdentitiesToLeave(value *bool
         panic(err)
     }
 }
-// ExternalIdentitiesPolicyable 
 type ExternalIdentitiesPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable

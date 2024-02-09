@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DataSharingConsentCollectionResponse 
 type DataSharingConsentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDataSharingConsentCollectionResponse instantiates a new dataSharingConsentCollectionResponse and sets the default values.
+// NewDataSharingConsentCollectionResponse instantiates a new DataSharingConsentCollectionResponse and sets the default values.
 func NewDataSharingConsentCollectionResponse()(*DataSharingConsentCollectionResponse) {
     m := &DataSharingConsentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDataSharingConsentCollectionResponse()(*DataSharingConsentCollectionResp
     return m
 }
 // CreateDataSharingConsentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDataSharingConsentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDataSharingConsentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DataSharingConsentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DataSharingConsentCollectionResponse) GetFieldDeserializers()(map[strin
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DataSharingConsentable when successful
 func (m *DataSharingConsentCollectionResponse) GetValue()([]DataSharingConsentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DataSharingConsentCollectionResponse) SetValue(value []DataSharingConse
         panic(err)
     }
 }
-// DataSharingConsentCollectionResponseable 
 type DataSharingConsentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

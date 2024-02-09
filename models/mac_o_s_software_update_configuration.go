@@ -8,7 +8,7 @@ import (
 type MacOSSoftwareUpdateConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSSoftwareUpdateConfiguration instantiates a new macOSSoftwareUpdateConfiguration and sets the default values.
+// NewMacOSSoftwareUpdateConfiguration instantiates a new MacOSSoftwareUpdateConfiguration and sets the default values.
 func NewMacOSSoftwareUpdateConfiguration()(*MacOSSoftwareUpdateConfiguration) {
     m := &MacOSSoftwareUpdateConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewMacOSSoftwareUpdateConfiguration()(*MacOSSoftwareUpdateConfiguration) {
     return m
 }
 // CreateMacOSSoftwareUpdateConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSSoftwareUpdateConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSSoftwareUpdateConfiguration(), nil
 }
 // GetAllOtherUpdateBehavior gets the allOtherUpdateBehavior property value. Update behavior options for macOS software updates.
+// returns a *MacOSSoftwareUpdateBehavior when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetAllOtherUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
     val, err := m.GetBackingStore().Get("allOtherUpdateBehavior")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetAllOtherUpdateBehavior()(*MacOSSof
     return nil
 }
 // GetConfigDataUpdateBehavior gets the configDataUpdateBehavior property value. Update behavior options for macOS software updates.
+// returns a *MacOSSoftwareUpdateBehavior when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetConfigDataUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
     val, err := m.GetBackingStore().Get("configDataUpdateBehavior")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetConfigDataUpdateBehavior()(*MacOSS
     return nil
 }
 // GetCriticalUpdateBehavior gets the criticalUpdateBehavior property value. Update behavior options for macOS software updates.
+// returns a *MacOSSoftwareUpdateBehavior when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetCriticalUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
     val, err := m.GetBackingStore().Get("criticalUpdateBehavior")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetCriticalUpdateBehavior()(*MacOSSof
     return nil
 }
 // GetCustomUpdateTimeWindows gets the customUpdateTimeWindows property value. Custom Time windows when updates will be allowed or blocked. This collection can contain a maximum of 20 elements.
+// returns a []CustomUpdateTimeWindowable when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetCustomUpdateTimeWindows()([]CustomUpdateTimeWindowable) {
     val, err := m.GetBackingStore().Get("customUpdateTimeWindows")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetCustomUpdateTimeWindows()([]Custom
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["allOtherUpdateBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -167,6 +173,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetFirmwareUpdateBehavior gets the firmwareUpdateBehavior property value. Update behavior options for macOS software updates.
+// returns a *MacOSSoftwareUpdateBehavior when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetFirmwareUpdateBehavior()(*MacOSSoftwareUpdateBehavior) {
     val, err := m.GetBackingStore().Get("firmwareUpdateBehavior")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetFirmwareUpdateBehavior()(*MacOSSof
     return nil
 }
 // GetMaxUserDeferralsCount gets the maxUserDeferralsCount property value. The maximum number of times the system allows the user to postpone an update before it’s installed. Supported values: 0 - 366. Valid values 0 to 365
+// returns a *int32 when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetMaxUserDeferralsCount()(*int32) {
     val, err := m.GetBackingStore().Get("maxUserDeferralsCount")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetMaxUserDeferralsCount()(*int32) {
     return nil
 }
 // GetPriority gets the priority property value. The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.
+// returns a *MacOSPriority when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetPriority()(*MacOSPriority) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -200,6 +209,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetPriority()(*MacOSPriority) {
     return nil
 }
 // GetUpdateScheduleType gets the updateScheduleType property value. Update schedule type for macOS software updates.
+// returns a *MacOSSoftwareUpdateScheduleType when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetUpdateScheduleType()(*MacOSSoftwareUpdateScheduleType) {
     val, err := m.GetBackingStore().Get("updateScheduleType")
     if err != nil {
@@ -211,6 +221,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetUpdateScheduleType()(*MacOSSoftwar
     return nil
 }
 // GetUpdateTimeWindowUtcOffsetInMinutes gets the updateTimeWindowUtcOffsetInMinutes property value. Minutes indicating UTC offset for each update time window
+// returns a *int32 when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetUpdateTimeWindowUtcOffsetInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("updateTimeWindowUtcOffsetInMinutes")
     if err != nil {
@@ -358,7 +369,6 @@ func (m *MacOSSoftwareUpdateConfiguration) SetUpdateTimeWindowUtcOffsetInMinutes
         panic(err)
     }
 }
-// MacOSSoftwareUpdateConfigurationable 
 type MacOSSoftwareUpdateConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

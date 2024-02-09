@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityStorage 
 type Office365GroupsActivityStorage struct {
     Entity
 }
-// NewOffice365GroupsActivityStorage instantiates a new office365GroupsActivityStorage and sets the default values.
+// NewOffice365GroupsActivityStorage instantiates a new Office365GroupsActivityStorage and sets the default values.
 func NewOffice365GroupsActivityStorage()(*Office365GroupsActivityStorage) {
     m := &Office365GroupsActivityStorage{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOffice365GroupsActivityStorage()(*Office365GroupsActivityStorage) {
     return m
 }
 // CreateOffice365GroupsActivityStorageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOffice365GroupsActivityStorageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOffice365GroupsActivityStorage(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["mailboxStorageUsedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +76,7 @@ func (m *Office365GroupsActivityStorage) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetMailboxStorageUsedInBytes gets the mailboxStorageUsedInBytes property value. The storage used in group mailbox.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityStorage) GetMailboxStorageUsedInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("mailboxStorageUsedInBytes")
     if err != nil {
@@ -86,6 +88,7 @@ func (m *Office365GroupsActivityStorage) GetMailboxStorageUsedInBytes()(*int64) 
     return nil
 }
 // GetReportDate gets the reportDate property value. The snapshot date for Exchange and SharePoint used storage.
+// returns a *DateOnly when successful
 func (m *Office365GroupsActivityStorage) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("reportDate")
     if err != nil {
@@ -97,6 +100,7 @@ func (m *Office365GroupsActivityStorage) GetReportDate()(*i878a80d2330e89d268963
     return nil
 }
 // GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
+// returns a *string when successful
 func (m *Office365GroupsActivityStorage) GetReportPeriod()(*string) {
     val, err := m.GetBackingStore().Get("reportPeriod")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *Office365GroupsActivityStorage) GetReportPeriod()(*string) {
     return nil
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
+// returns a *DateOnly when successful
 func (m *Office365GroupsActivityStorage) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("reportRefreshDate")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *Office365GroupsActivityStorage) GetReportRefreshDate()(*i878a80d2330e89
     return nil
 }
 // GetSiteStorageUsedInBytes gets the siteStorageUsedInBytes property value. The storage used in SharePoint document library.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityStorage) GetSiteStorageUsedInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("siteStorageUsedInBytes")
     if err != nil {
@@ -202,7 +208,6 @@ func (m *Office365GroupsActivityStorage) SetSiteStorageUsedInBytes(value *int64)
         panic(err)
     }
 }
-// Office365GroupsActivityStorageable 
 type Office365GroupsActivityStorageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

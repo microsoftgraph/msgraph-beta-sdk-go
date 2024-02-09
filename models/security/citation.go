@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Citation 
 type Citation struct {
     FilePlanDescriptorBase
 }
-// NewCitation instantiates a new citation and sets the default values.
+// NewCitation instantiates a new Citation and sets the default values.
 func NewCitation()(*Citation) {
     m := &Citation{
         FilePlanDescriptorBase: *NewFilePlanDescriptorBase(),
@@ -16,10 +15,12 @@ func NewCitation()(*Citation) {
     return m
 }
 // CreateCitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCitationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCitation(), nil
 }
 // GetCitationJurisdiction gets the citationJurisdiction property value. Represents the jurisdiction or agency that published the citation.
+// returns a *string when successful
 func (m *Citation) GetCitationJurisdiction()(*string) {
     val, err := m.GetBackingStore().Get("citationJurisdiction")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Citation) GetCitationJurisdiction()(*string) {
     return nil
 }
 // GetCitationUrl gets the citationUrl property value. Represents the URL to the published citation.
+// returns a *string when successful
 func (m *Citation) GetCitationUrl()(*string) {
     val, err := m.GetBackingStore().Get("citationUrl")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Citation) GetCitationUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Citation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.FilePlanDescriptorBase.GetFieldDeserializers()
     res["citationJurisdiction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,7 +103,6 @@ func (m *Citation) SetCitationUrl(value *string)() {
         panic(err)
     }
 }
-// Citationable 
 type Citationable interface {
     FilePlanDescriptorBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

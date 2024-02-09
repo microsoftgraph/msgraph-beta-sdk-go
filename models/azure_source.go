@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AzureSource 
 type AzureSource struct {
     AuthorizationSystemIdentitySource
 }
-// NewAzureSource instantiates a new azureSource and sets the default values.
+// NewAzureSource instantiates a new AzureSource and sets the default values.
 func NewAzureSource()(*AzureSource) {
     m := &AzureSource{
         AuthorizationSystemIdentitySource: *NewAuthorizationSystemIdentitySource(),
@@ -18,10 +17,12 @@ func NewAzureSource()(*AzureSource) {
     return m
 }
 // CreateAzureSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAzureSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureSource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthorizationSystemIdentitySource.GetFieldDeserializers()
     res["subscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *AzureSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetSubscriptionId gets the subscriptionId property value. Azure subscription ID.
+// returns a *string when successful
 func (m *AzureSource) GetSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionId")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *AzureSource) SetSubscriptionId(value *string)() {
         panic(err)
     }
 }
-// AzureSourceable 
 type AzureSourceable interface {
     AuthorizationSystemIdentitySourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

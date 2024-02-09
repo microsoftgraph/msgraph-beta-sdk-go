@@ -10,7 +10,7 @@ type AssignmentFilterStatusDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAssignmentFilterStatusDetails instantiates a new assignmentFilterStatusDetails and sets the default values.
+// NewAssignmentFilterStatusDetails instantiates a new AssignmentFilterStatusDetails and sets the default values.
 func NewAssignmentFilterStatusDetails()(*AssignmentFilterStatusDetails) {
     m := &AssignmentFilterStatusDetails{
     }
@@ -19,10 +19,12 @@ func NewAssignmentFilterStatusDetails()(*AssignmentFilterStatusDetails) {
     return m
 }
 // CreateAssignmentFilterStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAssignmentFilterStatusDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignmentFilterStatusDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AssignmentFilterStatusDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *AssignmentFilterStatusDetails) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AssignmentFilterStatusDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDeviceProperties gets the deviceProperties property value. Device properties used for filter evaluation during device check-in time.
+// returns a []KeyValuePairable when successful
 func (m *AssignmentFilterStatusDetails) GetDeviceProperties()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("deviceProperties")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *AssignmentFilterStatusDetails) GetDeviceProperties()([]KeyValuePairable
     return nil
 }
 // GetEvalutionSummaries gets the evalutionSummaries property value. Evaluation result summaries for each filter associated to device and payload
+// returns a []AssignmentFilterEvaluationSummaryable when successful
 func (m *AssignmentFilterStatusDetails) GetEvalutionSummaries()([]AssignmentFilterEvaluationSummaryable) {
     val, err := m.GetBackingStore().Get("evalutionSummaries")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *AssignmentFilterStatusDetails) GetEvalutionSummaries()([]AssignmentFilt
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deviceProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,6 +144,7 @@ func (m *AssignmentFilterStatusDetails) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Unique identifier for the device object.
+// returns a *string when successful
 func (m *AssignmentFilterStatusDetails) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *AssignmentFilterStatusDetails) GetManagedDeviceId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AssignmentFilterStatusDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *AssignmentFilterStatusDetails) GetOdataType()(*string) {
     return nil
 }
 // GetPayloadId gets the payloadId property value. Unique identifier for payload object.
+// returns a *string when successful
 func (m *AssignmentFilterStatusDetails) GetPayloadId()(*string) {
     val, err := m.GetBackingStore().Get("payloadId")
     if err != nil {
@@ -171,6 +180,7 @@ func (m *AssignmentFilterStatusDetails) GetPayloadId()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. Unique identifier for UserId object. Can be null
+// returns a *string when successful
 func (m *AssignmentFilterStatusDetails) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -292,7 +302,6 @@ func (m *AssignmentFilterStatusDetails) SetUserId(value *string)() {
         panic(err)
     }
 }
-// AssignmentFilterStatusDetailsable 
 type AssignmentFilterStatusDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

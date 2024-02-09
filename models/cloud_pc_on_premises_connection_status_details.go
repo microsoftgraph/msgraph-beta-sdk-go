@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcOnPremisesConnectionStatusDetails 
 type CloudPcOnPremisesConnectionStatusDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcOnPremisesConnectionStatusDetails instantiates a new cloudPcOnPremisesConnectionStatusDetails and sets the default values.
+// NewCloudPcOnPremisesConnectionStatusDetails instantiates a new CloudPcOnPremisesConnectionStatusDetails and sets the default values.
 func NewCloudPcOnPremisesConnectionStatusDetails()(*CloudPcOnPremisesConnectionStatusDetails) {
     m := &CloudPcOnPremisesConnectionStatusDetails{
     }
@@ -20,10 +19,12 @@ func NewCloudPcOnPremisesConnectionStatusDetails()(*CloudPcOnPremisesConnectionS
     return m
 }
 // CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcOnPremisesConnectionStatusDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcOnPremisesConnectionStatusDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcOnPremisesConnectionStatusDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetAdditionalData()(map[strin
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcOnPremisesConnectionStatusDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEndDateTime gets the endDateTime property value. The end time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPcOnPremisesConnectionStatusDetails) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetEndDateTime()(*i336074805f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcOnPremisesConnectionStatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,6 +106,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetFieldDeserializers()(map[s
     return res
 }
 // GetHealthChecks gets the healthChecks property value. All checks that are done on the connection.
+// returns a []CloudPcOnPremisesConnectionHealthCheckable when successful
 func (m *CloudPcOnPremisesConnectionStatusDetails) GetHealthChecks()([]CloudPcOnPremisesConnectionHealthCheckable) {
     val, err := m.GetBackingStore().Get("healthChecks")
     if err != nil {
@@ -113,6 +118,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetHealthChecks()([]CloudPcOn
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcOnPremisesConnectionStatusDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -124,6 +130,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) GetOdataType()(*string) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The start time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPcOnPremisesConnectionStatusDetails) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -213,7 +220,6 @@ func (m *CloudPcOnPremisesConnectionStatusDetails) SetStartDateTime(value *i3360
         panic(err)
     }
 }
-// CloudPcOnPremisesConnectionStatusDetailsable 
 type CloudPcOnPremisesConnectionStatusDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

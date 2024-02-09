@@ -9,7 +9,7 @@ import (
 type WindowsDriverUpdateProfile struct {
     Entity
 }
-// NewWindowsDriverUpdateProfile instantiates a new windowsDriverUpdateProfile and sets the default values.
+// NewWindowsDriverUpdateProfile instantiates a new WindowsDriverUpdateProfile and sets the default values.
 func NewWindowsDriverUpdateProfile()(*WindowsDriverUpdateProfile) {
     m := &WindowsDriverUpdateProfile{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewWindowsDriverUpdateProfile()(*WindowsDriverUpdateProfile) {
     return m
 }
 // CreateWindowsDriverUpdateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDriverUpdateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDriverUpdateProfile(), nil
 }
 // GetApprovalType gets the approvalType property value. An enum type to represent approval type of a driver update profile.
+// returns a *DriverUpdateProfileApprovalType when successful
 func (m *WindowsDriverUpdateProfile) GetApprovalType()(*DriverUpdateProfileApprovalType) {
     val, err := m.GetBackingStore().Get("approvalType")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *WindowsDriverUpdateProfile) GetApprovalType()(*DriverUpdateProfileAppro
     return nil
 }
 // GetAssignments gets the assignments property value. The list of group assignments of the profile.
+// returns a []WindowsDriverUpdateProfileAssignmentable when successful
 func (m *WindowsDriverUpdateProfile) GetAssignments()([]WindowsDriverUpdateProfileAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *WindowsDriverUpdateProfile) GetAssignments()([]WindowsDriverUpdateProfi
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date time that the profile was created.
+// returns a *Time when successful
 func (m *WindowsDriverUpdateProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *WindowsDriverUpdateProfile) GetCreatedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetDeploymentDeferralInDays gets the deploymentDeferralInDays property value. Deployment deferral settings in days, only applicable when ApprovalType is set to automatic approval.
+// returns a *int32 when successful
 func (m *WindowsDriverUpdateProfile) GetDeploymentDeferralInDays()(*int32) {
     val, err := m.GetBackingStore().Get("deploymentDeferralInDays")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *WindowsDriverUpdateProfile) GetDeploymentDeferralInDays()(*int32) {
     return nil
 }
 // GetDescription gets the description property value. The description of the profile which is specified by the user.
+// returns a *string when successful
 func (m *WindowsDriverUpdateProfile) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *WindowsDriverUpdateProfile) GetDescription()(*string) {
     return nil
 }
 // GetDeviceReporting gets the deviceReporting property value. Number of devices reporting for this profile
+// returns a *int32 when successful
 func (m *WindowsDriverUpdateProfile) GetDeviceReporting()(*int32) {
     val, err := m.GetBackingStore().Get("deviceReporting")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *WindowsDriverUpdateProfile) GetDeviceReporting()(*int32) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the profile.
+// returns a *string when successful
 func (m *WindowsDriverUpdateProfile) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *WindowsDriverUpdateProfile) GetDisplayName()(*string) {
     return nil
 }
 // GetDriverInventories gets the driverInventories property value. Driver inventories for this profile.
+// returns a []WindowsDriverUpdateInventoryable when successful
 func (m *WindowsDriverUpdateProfile) GetDriverInventories()([]WindowsDriverUpdateInventoryable) {
     val, err := m.GetBackingStore().Get("driverInventories")
     if err != nil {
@@ -109,6 +118,7 @@ func (m *WindowsDriverUpdateProfile) GetDriverInventories()([]WindowsDriverUpdat
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["approvalType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -252,6 +262,7 @@ func (m *WindowsDriverUpdateProfile) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetInventorySyncStatus gets the inventorySyncStatus property value. Driver inventory sync status for this profile.
+// returns a WindowsDriverUpdateProfileInventorySyncStatusable when successful
 func (m *WindowsDriverUpdateProfile) GetInventorySyncStatus()(WindowsDriverUpdateProfileInventorySyncStatusable) {
     val, err := m.GetBackingStore().Get("inventorySyncStatus")
     if err != nil {
@@ -263,6 +274,7 @@ func (m *WindowsDriverUpdateProfile) GetInventorySyncStatus()(WindowsDriverUpdat
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
+// returns a *Time when successful
 func (m *WindowsDriverUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -274,6 +286,7 @@ func (m *WindowsDriverUpdateProfile) GetLastModifiedDateTime()(*i336074805fc8539
     return nil
 }
 // GetNewUpdates gets the newUpdates property value. Number of new driver updates available for this profile.
+// returns a *int32 when successful
 func (m *WindowsDriverUpdateProfile) GetNewUpdates()(*int32) {
     val, err := m.GetBackingStore().Get("newUpdates")
     if err != nil {
@@ -285,6 +298,7 @@ func (m *WindowsDriverUpdateProfile) GetNewUpdates()(*int32) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Driver Update entity.
+// returns a []string when successful
 func (m *WindowsDriverUpdateProfile) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -472,7 +486,6 @@ func (m *WindowsDriverUpdateProfile) SetRoleScopeTagIds(value []string)() {
         panic(err)
     }
 }
-// WindowsDriverUpdateProfileable 
 type WindowsDriverUpdateProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

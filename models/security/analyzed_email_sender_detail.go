@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AnalyzedEmailSenderDetail 
 type AnalyzedEmailSenderDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAnalyzedEmailSenderDetail instantiates a new analyzedEmailSenderDetail and sets the default values.
+// NewAnalyzedEmailSenderDetail instantiates a new AnalyzedEmailSenderDetail and sets the default values.
 func NewAnalyzedEmailSenderDetail()(*AnalyzedEmailSenderDetail) {
     m := &AnalyzedEmailSenderDetail{
     }
@@ -19,10 +18,12 @@ func NewAnalyzedEmailSenderDetail()(*AnalyzedEmailSenderDetail) {
     return m
 }
 // CreateAnalyzedEmailSenderDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAnalyzedEmailSenderDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAnalyzedEmailSenderDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AnalyzedEmailSenderDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AnalyzedEmailSenderDetail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AnalyzedEmailSenderDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AnalyzedEmailSenderDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fromAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *AnalyzedEmailSenderDetail) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetFromAddress gets the fromAddress property value. The fromAddress property
+// returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetFromAddress()(*string) {
     val, err := m.GetBackingStore().Get("fromAddress")
     if err != nil {
@@ -95,6 +99,7 @@ func (m *AnalyzedEmailSenderDetail) GetFromAddress()(*string) {
     return nil
 }
 // GetIpv4 gets the ipv4 property value. The ipv4 property
+// returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetIpv4()(*string) {
     val, err := m.GetBackingStore().Get("ipv4")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *AnalyzedEmailSenderDetail) GetIpv4()(*string) {
     return nil
 }
 // GetMailFromAddress gets the mailFromAddress property value. The mailFromAddress property
+// returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetMailFromAddress()(*string) {
     val, err := m.GetBackingStore().Get("mailFromAddress")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *AnalyzedEmailSenderDetail) GetMailFromAddress()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *AnalyzedEmailSenderDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// AnalyzedEmailSenderDetailable 
 type AnalyzedEmailSenderDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -17,28 +17,29 @@ type ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal instantiates a new GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder and sets the default values.
+// NewReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal instantiates a new ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder and sets the default values.
 func NewReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) {
     m := &ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/reports/getDeviceManagementIntentPerSettingContributingProfiles", pathParameters),
     }
     return m
 }
-// NewReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder instantiates a new GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder and sets the default values.
+// NewReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder instantiates a new ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder and sets the default values.
 func NewReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getDeviceManagementIntentPerSettingContributingProfiles
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) Post(ctx context.Context, body ReportsGetDeviceManagementIntentPerSettingContributingProfilesPostRequestBodyable, requestConfiguration *ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -50,6 +51,7 @@ func (m *ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBu
     return res.([]byte), nil
 }
 // ToPostRequestInformation invoke action getDeviceManagementIntentPerSettingContributingProfiles
+// returns a *RequestInformation when successful
 func (m *ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ReportsGetDeviceManagementIntentPerSettingContributingProfilesPostRequestBodyable, requestConfiguration *ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +66,7 @@ func (m *ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder when successful
 func (m *ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) WithUrl(rawUrl string)(*ReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder) {
     return NewReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Goals 
 type Goals struct {
     Entity
 }
-// NewGoals instantiates a new goals and sets the default values.
+// NewGoals instantiates a new Goals and sets the default values.
 func NewGoals()(*Goals) {
     m := &Goals{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewGoals()(*Goals) {
     return m
 }
 // CreateGoalsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGoalsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGoals(), nil
 }
 // GetExportJobs gets the exportJobs property value. Represents a collection of goals export jobs for Viva Goals.
+// returns a []GoalsExportJobable when successful
 func (m *Goals) GetExportJobs()([]GoalsExportJobable) {
     val, err := m.GetBackingStore().Get("exportJobs")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Goals) GetExportJobs()([]GoalsExportJobable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Goals) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["exportJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,7 +80,6 @@ func (m *Goals) SetExportJobs(value []GoalsExportJobable)() {
         panic(err)
     }
 }
-// Goalsable 
 type Goalsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DeviceManagementConfigurationSettingDependedOnBy 
 type DeviceManagementConfigurationSettingDependedOnBy struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceManagementConfigurationSettingDependedOnBy instantiates a new deviceManagementConfigurationSettingDependedOnBy and sets the default values.
+// NewDeviceManagementConfigurationSettingDependedOnBy instantiates a new DeviceManagementConfigurationSettingDependedOnBy and sets the default values.
 func NewDeviceManagementConfigurationSettingDependedOnBy()(*DeviceManagementConfigurationSettingDependedOnBy) {
     m := &DeviceManagementConfigurationSettingDependedOnBy{
     }
@@ -19,10 +18,12 @@ func NewDeviceManagementConfigurationSettingDependedOnBy()(*DeviceManagementConf
     return m
 }
 // CreateDeviceManagementConfigurationSettingDependedOnByFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationSettingDependedOnByFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationSettingDependedOnBy(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) GetAdditionalData()(m
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDependedOnBy gets the dependedOnBy property value. Identifier of child setting that is dependent on the current setting
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetDependedOnBy()(*string) {
     val, err := m.GetBackingStore().Get("dependedOnBy")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) GetDependedOnBy()(*st
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dependedOnBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +89,7 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) GetFieldDeserializers
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) GetOdataType()(*strin
     return nil
 }
 // GetRequired gets the required property value. Value that determines if the child setting is required based on the parent setting's selection
+// returns a *bool when successful
 func (m *DeviceManagementConfigurationSettingDependedOnBy) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *DeviceManagementConfigurationSettingDependedOnBy) SetRequired(value *bo
         panic(err)
     }
 }
-// DeviceManagementConfigurationSettingDependedOnByable 
 type DeviceManagementConfigurationSettingDependedOnByable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

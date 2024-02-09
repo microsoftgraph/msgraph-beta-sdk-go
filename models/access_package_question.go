@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AccessPackageQuestion 
 type AccessPackageQuestion struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAccessPackageQuestion instantiates a new accessPackageQuestion and sets the default values.
+// NewAccessPackageQuestion instantiates a new AccessPackageQuestion and sets the default values.
 func NewAccessPackageQuestion()(*AccessPackageQuestion) {
     m := &AccessPackageQuestion{
     }
@@ -19,6 +18,7 @@ func NewAccessPackageQuestion()(*AccessPackageQuestion) {
     return m
 }
 // CreateAccessPackageQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +43,7 @@ func CreateAccessPackageQuestionFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewAccessPackageQuestion(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AccessPackageQuestion) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -55,10 +56,12 @@ func (m *AccessPackageQuestion) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AccessPackageQuestion) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -124,6 +127,7 @@ func (m *AccessPackageQuestion) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetId gets the id property value. ID of the question.
+// returns a *string when successful
 func (m *AccessPackageQuestion) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -135,6 +139,7 @@ func (m *AccessPackageQuestion) GetId()(*string) {
     return nil
 }
 // GetIsAnswerEditable gets the isAnswerEditable property value. Specifies whether the requestor is allowed to edit answers to questions.
+// returns a *bool when successful
 func (m *AccessPackageQuestion) GetIsAnswerEditable()(*bool) {
     val, err := m.GetBackingStore().Get("isAnswerEditable")
     if err != nil {
@@ -146,6 +151,7 @@ func (m *AccessPackageQuestion) GetIsAnswerEditable()(*bool) {
     return nil
 }
 // GetIsRequired gets the isRequired property value. Whether the requestor is required to supply an answer or not.
+// returns a *bool when successful
 func (m *AccessPackageQuestion) GetIsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isRequired")
     if err != nil {
@@ -157,6 +163,7 @@ func (m *AccessPackageQuestion) GetIsRequired()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AccessPackageQuestion) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -168,6 +175,7 @@ func (m *AccessPackageQuestion) GetOdataType()(*string) {
     return nil
 }
 // GetSequence gets the sequence property value. Relative position of this question when displaying a list of questions to the requestor.
+// returns a *int32 when successful
 func (m *AccessPackageQuestion) GetSequence()(*int32) {
     val, err := m.GetBackingStore().Get("sequence")
     if err != nil {
@@ -179,6 +187,7 @@ func (m *AccessPackageQuestion) GetSequence()(*int32) {
     return nil
 }
 // GetText gets the text property value. The text of the question to show to the requestor.
+// returns a AccessPackageLocalizedContentable when successful
 func (m *AccessPackageQuestion) GetText()(AccessPackageLocalizedContentable) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -288,7 +297,6 @@ func (m *AccessPackageQuestion) SetText(value AccessPackageLocalizedContentable)
         panic(err)
     }
 }
-// AccessPackageQuestionable 
 type AccessPackageQuestionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

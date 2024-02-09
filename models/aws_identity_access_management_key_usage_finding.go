@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsIdentityAccessManagementKeyUsageFinding 
 type AwsIdentityAccessManagementKeyUsageFinding struct {
     Finding
 }
-// NewAwsIdentityAccessManagementKeyUsageFinding instantiates a new awsIdentityAccessManagementKeyUsageFinding and sets the default values.
+// NewAwsIdentityAccessManagementKeyUsageFinding instantiates a new AwsIdentityAccessManagementKeyUsageFinding and sets the default values.
 func NewAwsIdentityAccessManagementKeyUsageFinding()(*AwsIdentityAccessManagementKeyUsageFinding) {
     m := &AwsIdentityAccessManagementKeyUsageFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewAwsIdentityAccessManagementKeyUsageFinding()(*AwsIdentityAccessManagemen
     return m
 }
 // CreateAwsIdentityAccessManagementKeyUsageFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsIdentityAccessManagementKeyUsageFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsIdentityAccessManagementKeyUsageFinding(), nil
 }
 // GetAccessKey gets the accessKey property value. The accessKey property
+// returns a AwsAccessKeyable when successful
 func (m *AwsIdentityAccessManagementKeyUsageFinding) GetAccessKey()(AwsAccessKeyable) {
     val, err := m.GetBackingStore().Get("accessKey")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AwsIdentityAccessManagementKeyUsageFinding) GetAccessKey()(AwsAccessKey
     return nil
 }
 // GetActionSummary gets the actionSummary property value. The actionSummary property
+// returns a ActionSummaryable when successful
 func (m *AwsIdentityAccessManagementKeyUsageFinding) GetActionSummary()(ActionSummaryable) {
     val, err := m.GetBackingStore().Get("actionSummary")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AwsIdentityAccessManagementKeyUsageFinding) GetActionSummary()(ActionSu
     return nil
 }
 // GetAwsAccessKeyDetails gets the awsAccessKeyDetails property value. The awsAccessKeyDetails property
+// returns a AwsAccessKeyDetailsable when successful
 func (m *AwsIdentityAccessManagementKeyUsageFinding) GetAwsAccessKeyDetails()(AwsAccessKeyDetailsable) {
     val, err := m.GetBackingStore().Get("awsAccessKeyDetails")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *AwsIdentityAccessManagementKeyUsageFinding) GetAwsAccessKeyDetails()(Aw
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsIdentityAccessManagementKeyUsageFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["accessKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +112,7 @@ func (m *AwsIdentityAccessManagementKeyUsageFinding) GetFieldDeserializers()(map
     return res
 }
 // GetPermissionsCreepIndex gets the permissionsCreepIndex property value. The permissionsCreepIndex property
+// returns a PermissionsCreepIndexable when successful
 func (m *AwsIdentityAccessManagementKeyUsageFinding) GetPermissionsCreepIndex()(PermissionsCreepIndexable) {
     val, err := m.GetBackingStore().Get("permissionsCreepIndex")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *AwsIdentityAccessManagementKeyUsageFinding) GetPermissionsCreepIndex()(
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *IamStatus when successful
 func (m *AwsIdentityAccessManagementKeyUsageFinding) GetStatus()(*IamStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -203,7 +209,6 @@ func (m *AwsIdentityAccessManagementKeyUsageFinding) SetStatus(value *IamStatus)
         panic(err)
     }
 }
-// AwsIdentityAccessManagementKeyUsageFindingable 
 type AwsIdentityAccessManagementKeyUsageFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

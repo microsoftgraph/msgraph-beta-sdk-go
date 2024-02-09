@@ -9,7 +9,7 @@ import (
 type DeviceManagementScript struct {
     Entity
 }
-// NewDeviceManagementScript instantiates a new deviceManagementScript and sets the default values.
+// NewDeviceManagementScript instantiates a new DeviceManagementScript and sets the default values.
 func NewDeviceManagementScript()(*DeviceManagementScript) {
     m := &DeviceManagementScript{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceManagementScript()(*DeviceManagementScript) {
     return m
 }
 // CreateDeviceManagementScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementScriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementScript(), nil
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device management script.
+// returns a []DeviceManagementScriptAssignmentable when successful
 func (m *DeviceManagementScript) GetAssignments()([]DeviceManagementScriptAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceManagementScript) GetAssignments()([]DeviceManagementScriptAssign
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the device management script was created. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceManagementScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceManagementScript) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDescription gets the description property value. Optional description for the device management script.
+// returns a *string when successful
 func (m *DeviceManagementScript) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *DeviceManagementScript) GetDescription()(*string) {
     return nil
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for this script across all devices.
+// returns a []DeviceManagementScriptDeviceStateable when successful
 func (m *DeviceManagementScript) GetDeviceRunStates()([]DeviceManagementScriptDeviceStateable) {
     val, err := m.GetBackingStore().Get("deviceRunStates")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *DeviceManagementScript) GetDeviceRunStates()([]DeviceManagementScriptDe
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the device management script.
+// returns a *string when successful
 func (m *DeviceManagementScript) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *DeviceManagementScript) GetDisplayName()(*string) {
     return nil
 }
 // GetEnforceSignatureCheck gets the enforceSignatureCheck property value. Indicate whether the script signature needs be checked.
+// returns a *bool when successful
 func (m *DeviceManagementScript) GetEnforceSignatureCheck()(*bool) {
     val, err := m.GetBackingStore().Get("enforceSignatureCheck")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *DeviceManagementScript) GetEnforceSignatureCheck()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -272,6 +280,7 @@ func (m *DeviceManagementScript) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetFileName gets the fileName property value. Script file name.
+// returns a *string when successful
 func (m *DeviceManagementScript) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -283,6 +292,7 @@ func (m *DeviceManagementScript) GetFileName()(*string) {
     return nil
 }
 // GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device management script.
+// returns a []DeviceManagementScriptGroupAssignmentable when successful
 func (m *DeviceManagementScript) GetGroupAssignments()([]DeviceManagementScriptGroupAssignmentable) {
     val, err := m.GetBackingStore().Get("groupAssignments")
     if err != nil {
@@ -294,6 +304,7 @@ func (m *DeviceManagementScript) GetGroupAssignments()([]DeviceManagementScriptG
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the device management script was last modified. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceManagementScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -305,6 +316,7 @@ func (m *DeviceManagementScript) GetLastModifiedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for this PowerShellScript instance.
+// returns a []string when successful
 func (m *DeviceManagementScript) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -316,6 +328,7 @@ func (m *DeviceManagementScript) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetRunAs32Bit gets the runAs32Bit property value. A value indicating whether the PowerShell script should run as 32-bit
+// returns a *bool when successful
 func (m *DeviceManagementScript) GetRunAs32Bit()(*bool) {
     val, err := m.GetBackingStore().Get("runAs32Bit")
     if err != nil {
@@ -327,6 +340,7 @@ func (m *DeviceManagementScript) GetRunAs32Bit()(*bool) {
     return nil
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
+// returns a *RunAsAccountType when successful
 func (m *DeviceManagementScript) GetRunAsAccount()(*RunAsAccountType) {
     val, err := m.GetBackingStore().Get("runAsAccount")
     if err != nil {
@@ -338,6 +352,7 @@ func (m *DeviceManagementScript) GetRunAsAccount()(*RunAsAccountType) {
     return nil
 }
 // GetRunSummary gets the runSummary property value. Run summary for device management script.
+// returns a DeviceManagementScriptRunSummaryable when successful
 func (m *DeviceManagementScript) GetRunSummary()(DeviceManagementScriptRunSummaryable) {
     val, err := m.GetBackingStore().Get("runSummary")
     if err != nil {
@@ -349,6 +364,7 @@ func (m *DeviceManagementScript) GetRunSummary()(DeviceManagementScriptRunSummar
     return nil
 }
 // GetScriptContent gets the scriptContent property value. The script content.
+// returns a []byte when successful
 func (m *DeviceManagementScript) GetScriptContent()([]byte) {
     val, err := m.GetBackingStore().Get("scriptContent")
     if err != nil {
@@ -360,6 +376,7 @@ func (m *DeviceManagementScript) GetScriptContent()([]byte) {
     return nil
 }
 // GetUserRunStates gets the userRunStates property value. List of run states for this script across all users.
+// returns a []DeviceManagementScriptUserStateable when successful
 func (m *DeviceManagementScript) GetUserRunStates()([]DeviceManagementScriptUserStateable) {
     val, err := m.GetBackingStore().Get("userRunStates")
     if err != nil {
@@ -586,7 +603,6 @@ func (m *DeviceManagementScript) SetUserRunStates(value []DeviceManagementScript
         panic(err)
     }
 }
-// DeviceManagementScriptable 
 type DeviceManagementScriptable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

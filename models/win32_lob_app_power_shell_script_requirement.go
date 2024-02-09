@@ -8,7 +8,7 @@ import (
 type Win32LobAppPowerShellScriptRequirement struct {
     Win32LobAppRequirement
 }
-// NewWin32LobAppPowerShellScriptRequirement instantiates a new win32LobAppPowerShellScriptRequirement and sets the default values.
+// NewWin32LobAppPowerShellScriptRequirement instantiates a new Win32LobAppPowerShellScriptRequirement and sets the default values.
 func NewWin32LobAppPowerShellScriptRequirement()(*Win32LobAppPowerShellScriptRequirement) {
     m := &Win32LobAppPowerShellScriptRequirement{
         Win32LobAppRequirement: *NewWin32LobAppRequirement(),
@@ -18,10 +18,12 @@ func NewWin32LobAppPowerShellScriptRequirement()(*Win32LobAppPowerShellScriptReq
     return m
 }
 // CreateWin32LobAppPowerShellScriptRequirementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWin32LobAppPowerShellScriptRequirementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobAppPowerShellScriptRequirement(), nil
 }
 // GetDetectionType gets the detectionType property value. Contains all supported Powershell Script output detection type.
+// returns a *Win32LobAppPowerShellScriptDetectionType when successful
 func (m *Win32LobAppPowerShellScriptRequirement) GetDetectionType()(*Win32LobAppPowerShellScriptDetectionType) {
     val, err := m.GetBackingStore().Get("detectionType")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Win32LobAppPowerShellScriptRequirement) GetDetectionType()(*Win32LobApp
     return nil
 }
 // GetDisplayName gets the displayName property value. The unique display name for this rule
+// returns a *string when successful
 func (m *Win32LobAppPowerShellScriptRequirement) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Win32LobAppPowerShellScriptRequirement) GetDisplayName()(*string) {
     return nil
 }
 // GetEnforceSignatureCheck gets the enforceSignatureCheck property value. A value indicating whether signature check is enforced
+// returns a *bool when successful
 func (m *Win32LobAppPowerShellScriptRequirement) GetEnforceSignatureCheck()(*bool) {
     val, err := m.GetBackingStore().Get("enforceSignatureCheck")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *Win32LobAppPowerShellScriptRequirement) GetEnforceSignatureCheck()(*boo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobAppPowerShellScriptRequirement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Win32LobAppRequirement.GetFieldDeserializers()
     res["detectionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -120,6 +125,7 @@ func (m *Win32LobAppPowerShellScriptRequirement) GetFieldDeserializers()(map[str
     return res
 }
 // GetRunAs32Bit gets the runAs32Bit property value. A value indicating whether this script should run as 32-bit
+// returns a *bool when successful
 func (m *Win32LobAppPowerShellScriptRequirement) GetRunAs32Bit()(*bool) {
     val, err := m.GetBackingStore().Get("runAs32Bit")
     if err != nil {
@@ -131,6 +137,7 @@ func (m *Win32LobAppPowerShellScriptRequirement) GetRunAs32Bit()(*bool) {
     return nil
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
+// returns a *RunAsAccountType when successful
 func (m *Win32LobAppPowerShellScriptRequirement) GetRunAsAccount()(*RunAsAccountType) {
     val, err := m.GetBackingStore().Get("runAsAccount")
     if err != nil {
@@ -142,6 +149,7 @@ func (m *Win32LobAppPowerShellScriptRequirement) GetRunAsAccount()(*RunAsAccount
     return nil
 }
 // GetScriptContent gets the scriptContent property value. The base64 encoded script content to detect Win32 Line of Business (LoB) app
+// returns a *string when successful
 func (m *Win32LobAppPowerShellScriptRequirement) GetScriptContent()(*string) {
     val, err := m.GetBackingStore().Get("scriptContent")
     if err != nil {
@@ -240,7 +248,6 @@ func (m *Win32LobAppPowerShellScriptRequirement) SetScriptContent(value *string)
         panic(err)
     }
 }
-// Win32LobAppPowerShellScriptRequirementable 
 type Win32LobAppPowerShellScriptRequirementable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Win32LobAppRequirementable

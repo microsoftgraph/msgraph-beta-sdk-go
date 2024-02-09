@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PlannerTaskRecurrence 
 type PlannerTaskRecurrence struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPlannerTaskRecurrence instantiates a new plannerTaskRecurrence and sets the default values.
+// NewPlannerTaskRecurrence instantiates a new PlannerTaskRecurrence and sets the default values.
 func NewPlannerTaskRecurrence()(*PlannerTaskRecurrence) {
     m := &PlannerTaskRecurrence{
     }
@@ -20,10 +19,12 @@ func NewPlannerTaskRecurrence()(*PlannerTaskRecurrence) {
     return m
 }
 // CreatePlannerTaskRecurrenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerTaskRecurrenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskRecurrence(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PlannerTaskRecurrence) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *PlannerTaskRecurrence) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PlannerTaskRecurrence) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerTaskRecurrence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["nextInSeriesTaskId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +118,7 @@ func (m *PlannerTaskRecurrence) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetNextInSeriesTaskId gets the nextInSeriesTaskId property value. The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.
+// returns a *string when successful
 func (m *PlannerTaskRecurrence) GetNextInSeriesTaskId()(*string) {
     val, err := m.GetBackingStore().Get("nextInSeriesTaskId")
     if err != nil {
@@ -126,6 +130,7 @@ func (m *PlannerTaskRecurrence) GetNextInSeriesTaskId()(*string) {
     return nil
 }
 // GetOccurrenceId gets the occurrenceId property value. The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.
+// returns a *int32 when successful
 func (m *PlannerTaskRecurrence) GetOccurrenceId()(*int32) {
     val, err := m.GetBackingStore().Get("occurrenceId")
     if err != nil {
@@ -137,6 +142,7 @@ func (m *PlannerTaskRecurrence) GetOccurrenceId()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PlannerTaskRecurrence) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -148,6 +154,7 @@ func (m *PlannerTaskRecurrence) GetOdataType()(*string) {
     return nil
 }
 // GetPreviousInSeriesTaskId gets the previousInSeriesTaskId property value. The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
+// returns a *string when successful
 func (m *PlannerTaskRecurrence) GetPreviousInSeriesTaskId()(*string) {
     val, err := m.GetBackingStore().Get("previousInSeriesTaskId")
     if err != nil {
@@ -159,6 +166,7 @@ func (m *PlannerTaskRecurrence) GetPreviousInSeriesTaskId()(*string) {
     return nil
 }
 // GetRecurrenceStartDateTime gets the recurrenceStartDateTime property value. The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *PlannerTaskRecurrence) GetRecurrenceStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("recurrenceStartDateTime")
     if err != nil {
@@ -170,6 +178,7 @@ func (m *PlannerTaskRecurrence) GetRecurrenceStartDateTime()(*i336074805fc853987
     return nil
 }
 // GetSchedule gets the schedule property value. The schedule for recurrence. Clients define and edit recurrence by specifying the schedule. If nextInSeriesTaskId isn't assigned, clients may terminate the series by assigning null to this property.
+// returns a PlannerRecurrenceScheduleable when successful
 func (m *PlannerTaskRecurrence) GetSchedule()(PlannerRecurrenceScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
     if err != nil {
@@ -181,6 +190,7 @@ func (m *PlannerTaskRecurrence) GetSchedule()(PlannerRecurrenceScheduleable) {
     return nil
 }
 // GetSeriesId gets the seriesId property value. The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
+// returns a *string when successful
 func (m *PlannerTaskRecurrence) GetSeriesId()(*string) {
     val, err := m.GetBackingStore().Get("seriesId")
     if err != nil {
@@ -303,7 +313,6 @@ func (m *PlannerTaskRecurrence) SetSeriesId(value *string)() {
         panic(err)
     }
 }
-// PlannerTaskRecurrenceable 
 type PlannerTaskRecurrenceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

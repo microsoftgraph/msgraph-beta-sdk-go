@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WebPartData 
 type WebPartData struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWebPartData instantiates a new webPartData and sets the default values.
+// NewWebPartData instantiates a new WebPartData and sets the default values.
 func NewWebPartData()(*WebPartData) {
     m := &WebPartData{
     }
@@ -19,10 +18,12 @@ func NewWebPartData()(*WebPartData) {
     return m
 }
 // CreateWebPartDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebPartDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebPartData(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WebPartData) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *WebPartData) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAudiences gets the audiences property value. Audience information of the web part. By using this property, specific content is prioritized to specific audiences.
+// returns a []string when successful
 func (m *WebPartData) GetAudiences()([]string) {
     val, err := m.GetBackingStore().Get("audiences")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *WebPartData) GetAudiences()([]string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WebPartData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDataVersion gets the dataVersion property value. Data version of the web part. The value is defined by the web part developer. Different dataVersions usually refers to a different property structure.
+// returns a *string when successful
 func (m *WebPartData) GetDataVersion()(*string) {
     val, err := m.GetBackingStore().Get("dataVersion")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *WebPartData) GetDataVersion()(*string) {
     return nil
 }
 // GetDescription gets the description property value. Description of the web part.
+// returns a *string when successful
 func (m *WebPartData) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *WebPartData) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WebPartData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["audiences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -153,6 +159,7 @@ func (m *WebPartData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WebPartData) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -164,6 +171,7 @@ func (m *WebPartData) GetOdataType()(*string) {
     return nil
 }
 // GetProperties gets the properties property value. Properties bag of the web part.
+// returns a Jsonable when successful
 func (m *WebPartData) GetProperties()(Jsonable) {
     val, err := m.GetBackingStore().Get("properties")
     if err != nil {
@@ -175,6 +183,7 @@ func (m *WebPartData) GetProperties()(Jsonable) {
     return nil
 }
 // GetServerProcessedContent gets the serverProcessedContent property value. Contains collections of data that can be processed by server side services like search index and link fixup.
+// returns a ServerProcessedContentable when successful
 func (m *WebPartData) GetServerProcessedContent()(ServerProcessedContentable) {
     val, err := m.GetBackingStore().Get("serverProcessedContent")
     if err != nil {
@@ -186,6 +195,7 @@ func (m *WebPartData) GetServerProcessedContent()(ServerProcessedContentable) {
     return nil
 }
 // GetTitle gets the title property value. Title of the web part.
+// returns a *string when successful
 func (m *WebPartData) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -308,7 +318,6 @@ func (m *WebPartData) SetTitle(value *string)() {
         panic(err)
     }
 }
-// WebPartDataable 
 type WebPartDataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

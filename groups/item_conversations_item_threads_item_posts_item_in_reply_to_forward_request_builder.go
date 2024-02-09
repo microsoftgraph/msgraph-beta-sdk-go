@@ -17,20 +17,21 @@ type ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilderInternal instantiates a new ForwardRequestBuilder and sets the default values.
+// NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilderInternal instantiates a new ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder) {
     m := &ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/forward", pathParameters),
     }
     return m
 }
-// NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder instantiates a new ForwardRequestBuilder and sets the default values.
+// NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder instantiates a new ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder and sets the default values.
 func NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder
     return nil
 }
 // ToPostRequestInformation forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
+// returns a *RequestInformation when successful
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemConversationsItemThreadsItemPostsItemInReplyToForwardPostRequestBodyable, requestConfiguration *ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder when successful
 func (m *ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder) WithUrl(rawUrl string)(*ItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder) {
     return NewItemConversationsItemThreadsItemPostsItemInReplyToForwardRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

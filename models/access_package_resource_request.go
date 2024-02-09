@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceRequest 
 type AccessPackageResourceRequest struct {
     Entity
 }
-// NewAccessPackageResourceRequest instantiates a new accessPackageResourceRequest and sets the default values.
+// NewAccessPackageResourceRequest instantiates a new AccessPackageResourceRequest and sets the default values.
 func NewAccessPackageResourceRequest()(*AccessPackageResourceRequest) {
     m := &AccessPackageResourceRequest{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessPackageResourceRequest()(*AccessPackageResourceRequest) {
     return m
 }
 // CreateAccessPackageResourceRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageResourceRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceRequest(), nil
 }
 // GetAccessPackageResource gets the accessPackageResource property value. The accessPackageResource property
+// returns a AccessPackageResourceable when successful
 func (m *AccessPackageResourceRequest) GetAccessPackageResource()(AccessPackageResourceable) {
     val, err := m.GetBackingStore().Get("accessPackageResource")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessPackageResourceRequest) GetAccessPackageResource()(AccessPackageR
     return nil
 }
 // GetCatalogId gets the catalogId property value. The unique ID of the access package catalog.
+// returns a *string when successful
 func (m *AccessPackageResourceRequest) GetCatalogId()(*string) {
     val, err := m.GetBackingStore().Get("catalogId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessPackageResourceRequest) GetCatalogId()(*string) {
     return nil
 }
 // GetExecuteImmediately gets the executeImmediately property value. The executeImmediately property
+// returns a *bool when successful
 func (m *AccessPackageResourceRequest) GetExecuteImmediately()(*bool) {
     val, err := m.GetBackingStore().Get("executeImmediately")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessPackageResourceRequest) GetExecuteImmediately()(*bool) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *AccessPackageResourceRequest) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessPackageResourceRequest) GetExpirationDateTime()(*i336074805fc8539
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageResource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -170,6 +175,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetIsValidationOnly gets the isValidationOnly property value. If set, does not add the resource.
+// returns a *bool when successful
 func (m *AccessPackageResourceRequest) GetIsValidationOnly()(*bool) {
     val, err := m.GetBackingStore().Get("isValidationOnly")
     if err != nil {
@@ -181,6 +187,7 @@ func (m *AccessPackageResourceRequest) GetIsValidationOnly()(*bool) {
     return nil
 }
 // GetJustification gets the justification property value. The requestor's justification for adding or removing the resource.
+// returns a *string when successful
 func (m *AccessPackageResourceRequest) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
     if err != nil {
@@ -192,6 +199,7 @@ func (m *AccessPackageResourceRequest) GetJustification()(*string) {
     return nil
 }
 // GetRequestor gets the requestor property value. Read-only. Nullable. Supports $expand.
+// returns a AccessPackageSubjectable when successful
 func (m *AccessPackageResourceRequest) GetRequestor()(AccessPackageSubjectable) {
     val, err := m.GetBackingStore().Get("requestor")
     if err != nil {
@@ -203,6 +211,7 @@ func (m *AccessPackageResourceRequest) GetRequestor()(AccessPackageSubjectable) 
     return nil
 }
 // GetRequestState gets the requestState property value. The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
+// returns a *string when successful
 func (m *AccessPackageResourceRequest) GetRequestState()(*string) {
     val, err := m.GetBackingStore().Get("requestState")
     if err != nil {
@@ -214,6 +223,7 @@ func (m *AccessPackageResourceRequest) GetRequestState()(*string) {
     return nil
 }
 // GetRequestStatus gets the requestStatus property value. The requestStatus property
+// returns a *string when successful
 func (m *AccessPackageResourceRequest) GetRequestStatus()(*string) {
     val, err := m.GetBackingStore().Get("requestStatus")
     if err != nil {
@@ -225,6 +235,7 @@ func (m *AccessPackageResourceRequest) GetRequestStatus()(*string) {
     return nil
 }
 // GetRequestType gets the requestType property value. Use AdminAdd to add a resource, if the caller is an administrator or resource owner, AdminUpdate to update a resource, or AdminRemove to remove a resource.
+// returns a *string when successful
 func (m *AccessPackageResourceRequest) GetRequestType()(*string) {
     val, err := m.GetBackingStore().Get("requestType")
     if err != nil {
@@ -373,7 +384,6 @@ func (m *AccessPackageResourceRequest) SetRequestType(value *string)() {
         panic(err)
     }
 }
-// AccessPackageResourceRequestable 
 type AccessPackageResourceRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

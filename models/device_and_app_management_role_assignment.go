@@ -8,7 +8,7 @@ import (
 type DeviceAndAppManagementRoleAssignment struct {
     RoleAssignment
 }
-// NewDeviceAndAppManagementRoleAssignment instantiates a new deviceAndAppManagementRoleAssignment and sets the default values.
+// NewDeviceAndAppManagementRoleAssignment instantiates a new DeviceAndAppManagementRoleAssignment and sets the default values.
 func NewDeviceAndAppManagementRoleAssignment()(*DeviceAndAppManagementRoleAssignment) {
     m := &DeviceAndAppManagementRoleAssignment{
         RoleAssignment: *NewRoleAssignment(),
@@ -16,10 +16,12 @@ func NewDeviceAndAppManagementRoleAssignment()(*DeviceAndAppManagementRoleAssign
     return m
 }
 // CreateDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceAndAppManagementRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceAndAppManagementRoleAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RoleAssignment.GetFieldDeserializers()
     res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
     return res
 }
 // GetMembers gets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
+// returns a []string when successful
 func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
     return nil
 }
 // GetRoleScopeTags gets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
+// returns a []RoleScopeTagable when successful
 func (m *DeviceAndAppManagementRoleAssignment) GetRoleScopeTags()([]RoleScopeTagable) {
     val, err := m.GetBackingStore().Get("roleScopeTags")
     if err != nil {
@@ -118,7 +122,6 @@ func (m *DeviceAndAppManagementRoleAssignment) SetRoleScopeTags(value []RoleScop
         panic(err)
     }
 }
-// DeviceAndAppManagementRoleAssignmentable 
 type DeviceAndAppManagementRoleAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RoleAssignmentable

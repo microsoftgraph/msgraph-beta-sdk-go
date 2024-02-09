@@ -8,7 +8,7 @@ import (
 type EmbeddedSIMActivationCodePoolAssignment struct {
     Entity
 }
-// NewEmbeddedSIMActivationCodePoolAssignment instantiates a new embeddedSIMActivationCodePoolAssignment and sets the default values.
+// NewEmbeddedSIMActivationCodePoolAssignment instantiates a new EmbeddedSIMActivationCodePoolAssignment and sets the default values.
 func NewEmbeddedSIMActivationCodePoolAssignment()(*EmbeddedSIMActivationCodePoolAssignment) {
     m := &EmbeddedSIMActivationCodePoolAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewEmbeddedSIMActivationCodePoolAssignment()(*EmbeddedSIMActivationCodePool
     return m
 }
 // CreateEmbeddedSIMActivationCodePoolAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEmbeddedSIMActivationCodePoolAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmbeddedSIMActivationCodePoolAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmbeddedSIMActivationCodePoolAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *EmbeddedSIMActivationCodePoolAssignment) GetFieldDeserializers()(map[st
     return res
 }
 // GetTarget gets the target property value. Base type for assignment targets.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *EmbeddedSIMActivationCodePoolAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *EmbeddedSIMActivationCodePoolAssignment) SetTarget(value DeviceAndAppMa
         panic(err)
     }
 }
-// EmbeddedSIMActivationCodePoolAssignmentable 
 type EmbeddedSIMActivationCodePoolAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

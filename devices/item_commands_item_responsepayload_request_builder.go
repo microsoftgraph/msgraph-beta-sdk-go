@@ -27,28 +27,29 @@ type ItemCommandsItemResponsepayloadRequestBuilderGetRequestConfiguration struct
     // Request query parameters
     QueryParameters *ItemCommandsItemResponsepayloadRequestBuilderGetQueryParameters
 }
-// NewItemCommandsItemResponsepayloadRequestBuilderInternal instantiates a new ResponsepayloadRequestBuilder and sets the default values.
+// NewItemCommandsItemResponsepayloadRequestBuilderInternal instantiates a new ItemCommandsItemResponsepayloadRequestBuilder and sets the default values.
 func NewItemCommandsItemResponsepayloadRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCommandsItemResponsepayloadRequestBuilder) {
     m := &ItemCommandsItemResponsepayloadRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemCommandsItemResponsepayloadRequestBuilder instantiates a new ResponsepayloadRequestBuilder and sets the default values.
+// NewItemCommandsItemResponsepayloadRequestBuilder instantiates a new ItemCommandsItemResponsepayloadRequestBuilder and sets the default values.
 func NewItemCommandsItemResponsepayloadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCommandsItemResponsepayloadRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCommandsItemResponsepayloadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get responsepayload from devices
+// returns a PayloadResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCommandsItemResponsepayloadRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCommandsItemResponsepayloadRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PayloadResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePayloadResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemCommandsItemResponsepayloadRequestBuilder) Get(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PayloadResponseable), nil
 }
 // ToGetRequestInformation get responsepayload from devices
+// returns a *RequestInformation when successful
 func (m *ItemCommandsItemResponsepayloadRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCommandsItemResponsepayloadRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemCommandsItemResponsepayloadRequestBuilder) ToGetRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCommandsItemResponsepayloadRequestBuilder when successful
 func (m *ItemCommandsItemResponsepayloadRequestBuilder) WithUrl(rawUrl string)(*ItemCommandsItemResponsepayloadRequestBuilder) {
     return NewItemCommandsItemResponsepayloadRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

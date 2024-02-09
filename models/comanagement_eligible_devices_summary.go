@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ComanagementEligibleDevicesSummary 
 type ComanagementEligibleDevicesSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewComanagementEligibleDevicesSummary instantiates a new comanagementEligibleDevicesSummary and sets the default values.
+// NewComanagementEligibleDevicesSummary instantiates a new ComanagementEligibleDevicesSummary and sets the default values.
 func NewComanagementEligibleDevicesSummary()(*ComanagementEligibleDevicesSummary) {
     m := &ComanagementEligibleDevicesSummary{
     }
@@ -19,10 +18,12 @@ func NewComanagementEligibleDevicesSummary()(*ComanagementEligibleDevicesSummary
     return m
 }
 // CreateComanagementEligibleDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateComanagementEligibleDevicesSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewComanagementEligibleDevicesSummary(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ComanagementEligibleDevicesSummary) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ComanagementEligibleDevicesSummary) GetAdditionalData()(map[string]any)
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ComanagementEligibleDevicesSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetComanagedCount gets the comanagedCount property value. Count of devices already Co-Managed
+// returns a *int32 when successful
 func (m *ComanagementEligibleDevicesSummary) GetComanagedCount()(*int32) {
     val, err := m.GetBackingStore().Get("comanagedCount")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ComanagementEligibleDevicesSummary) GetComanagedCount()(*int32) {
     return nil
 }
 // GetEligibleButNotAzureAdJoinedCount gets the eligibleButNotAzureAdJoinedCount property value. Count of devices eligible for Co-Management but not yet joined to Azure Active Directory
+// returns a *int32 when successful
 func (m *ComanagementEligibleDevicesSummary) GetEligibleButNotAzureAdJoinedCount()(*int32) {
     val, err := m.GetBackingStore().Get("eligibleButNotAzureAdJoinedCount")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ComanagementEligibleDevicesSummary) GetEligibleButNotAzureAdJoinedCount
     return nil
 }
 // GetEligibleCount gets the eligibleCount property value. Count of devices fully eligible for Co-Management
+// returns a *int32 when successful
 func (m *ComanagementEligibleDevicesSummary) GetEligibleCount()(*int32) {
     val, err := m.GetBackingStore().Get("eligibleCount")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *ComanagementEligibleDevicesSummary) GetEligibleCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["comanagedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +153,7 @@ func (m *ComanagementEligibleDevicesSummary) GetFieldDeserializers()(map[string]
     return res
 }
 // GetIneligibleCount gets the ineligibleCount property value. Count of devices ineligible for Co-Management
+// returns a *int32 when successful
 func (m *ComanagementEligibleDevicesSummary) GetIneligibleCount()(*int32) {
     val, err := m.GetBackingStore().Get("ineligibleCount")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *ComanagementEligibleDevicesSummary) GetIneligibleCount()(*int32) {
     return nil
 }
 // GetNeedsOsUpdateCount gets the needsOsUpdateCount property value. Count of devices that will be eligible for Co-Management after an OS update
+// returns a *int32 when successful
 func (m *ComanagementEligibleDevicesSummary) GetNeedsOsUpdateCount()(*int32) {
     val, err := m.GetBackingStore().Get("needsOsUpdateCount")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *ComanagementEligibleDevicesSummary) GetNeedsOsUpdateCount()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ComanagementEligibleDevicesSummary) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *ComanagementEligibleDevicesSummary) GetOdataType()(*string) {
     return nil
 }
 // GetScheduledForEnrollmentCount gets the scheduledForEnrollmentCount property value. Count of devices scheduled for Co-Management enrollment. Valid values 0 to 9999999
+// returns a *int32 when successful
 func (m *ComanagementEligibleDevicesSummary) GetScheduledForEnrollmentCount()(*int32) {
     val, err := m.GetBackingStore().Get("scheduledForEnrollmentCount")
     if err != nil {
@@ -302,7 +312,6 @@ func (m *ComanagementEligibleDevicesSummary) SetScheduledForEnrollmentCount(valu
         panic(err)
     }
 }
-// ComanagementEligibleDevicesSummaryable 
 type ComanagementEligibleDevicesSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

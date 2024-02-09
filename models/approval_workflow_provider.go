@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApprovalWorkflowProvider 
 type ApprovalWorkflowProvider struct {
     Entity
 }
-// NewApprovalWorkflowProvider instantiates a new approvalWorkflowProvider and sets the default values.
+// NewApprovalWorkflowProvider instantiates a new ApprovalWorkflowProvider and sets the default values.
 func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
     m := &ApprovalWorkflowProvider{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewApprovalWorkflowProvider()(*ApprovalWorkflowProvider) {
     return m
 }
 // CreateApprovalWorkflowProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApprovalWorkflowProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApprovalWorkflowProvider(), nil
 }
 // GetBusinessFlows gets the businessFlows property value. The businessFlows property
+// returns a []BusinessFlowable when successful
 func (m *ApprovalWorkflowProvider) GetBusinessFlows()([]BusinessFlowable) {
     val, err := m.GetBackingStore().Get("businessFlows")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ApprovalWorkflowProvider) GetBusinessFlows()([]BusinessFlowable) {
     return nil
 }
 // GetBusinessFlowsWithRequestsAwaitingMyDecision gets the businessFlowsWithRequestsAwaitingMyDecision property value. The businessFlowsWithRequestsAwaitingMyDecision property
+// returns a []BusinessFlowable when successful
 func (m *ApprovalWorkflowProvider) GetBusinessFlowsWithRequestsAwaitingMyDecision()([]BusinessFlowable) {
     val, err := m.GetBackingStore().Get("businessFlowsWithRequestsAwaitingMyDecision")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ApprovalWorkflowProvider) GetBusinessFlowsWithRequestsAwaitingMyDecisio
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *ApprovalWorkflowProvider) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *ApprovalWorkflowProvider) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["businessFlows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +120,7 @@ func (m *ApprovalWorkflowProvider) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetPolicyTemplates gets the policyTemplates property value. The policyTemplates property
+// returns a []GovernancePolicyTemplateable when successful
 func (m *ApprovalWorkflowProvider) GetPolicyTemplates()([]GovernancePolicyTemplateable) {
     val, err := m.GetBackingStore().Get("policyTemplates")
     if err != nil {
@@ -204,7 +209,6 @@ func (m *ApprovalWorkflowProvider) SetPolicyTemplates(value []GovernancePolicyTe
         panic(err)
     }
 }
-// ApprovalWorkflowProviderable 
 type ApprovalWorkflowProviderable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type TermsAndConditionsGroupAssignment struct {
     Entity
 }
-// NewTermsAndConditionsGroupAssignment instantiates a new termsAndConditionsGroupAssignment and sets the default values.
+// NewTermsAndConditionsGroupAssignment instantiates a new TermsAndConditionsGroupAssignment and sets the default values.
 func NewTermsAndConditionsGroupAssignment()(*TermsAndConditionsGroupAssignment) {
     m := &TermsAndConditionsGroupAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewTermsAndConditionsGroupAssignment()(*TermsAndConditionsGroupAssignment) 
     return m
 }
 // CreateTermsAndConditionsGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTermsAndConditionsGroupAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTermsAndConditionsGroupAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TermsAndConditionsGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["targetGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +47,7 @@ func (m *TermsAndConditionsGroupAssignment) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetTargetGroupId gets the targetGroupId property value. Unique identifier of a group that the T&C policy is assigned to.
+// returns a *string when successful
 func (m *TermsAndConditionsGroupAssignment) GetTargetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("targetGroupId")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *TermsAndConditionsGroupAssignment) GetTargetGroupId()(*string) {
     return nil
 }
 // GetTermsAndConditions gets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
+// returns a TermsAndConditionsable when successful
 func (m *TermsAndConditionsGroupAssignment) GetTermsAndConditions()(TermsAndConditionsable) {
     val, err := m.GetBackingStore().Get("termsAndConditions")
     if err != nil {
@@ -100,7 +104,6 @@ func (m *TermsAndConditionsGroupAssignment) SetTermsAndConditions(value TermsAnd
         panic(err)
     }
 }
-// TermsAndConditionsGroupAssignmentable 
 type TermsAndConditionsGroupAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

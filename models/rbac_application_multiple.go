@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RbacApplicationMultiple 
 type RbacApplicationMultiple struct {
     Entity
 }
-// NewRbacApplicationMultiple instantiates a new rbacApplicationMultiple and sets the default values.
+// NewRbacApplicationMultiple instantiates a new RbacApplicationMultiple and sets the default values.
 func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
     m := &RbacApplicationMultiple{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewRbacApplicationMultiple()(*RbacApplicationMultiple) {
     return m
 }
 // CreateRbacApplicationMultipleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRbacApplicationMultipleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRbacApplicationMultiple(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["resourceNamespaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,6 +74,7 @@ func (m *RbacApplicationMultiple) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetResourceNamespaces gets the resourceNamespaces property value. The resourceNamespaces property
+// returns a []UnifiedRbacResourceNamespaceable when successful
 func (m *RbacApplicationMultiple) GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable) {
     val, err := m.GetBackingStore().Get("resourceNamespaces")
     if err != nil {
@@ -84,6 +86,7 @@ func (m *RbacApplicationMultiple) GetResourceNamespaces()([]UnifiedRbacResourceN
     return nil
 }
 // GetRoleAssignments gets the roleAssignments property value. The roleAssignments property
+// returns a []UnifiedRoleAssignmentMultipleable when successful
 func (m *RbacApplicationMultiple) GetRoleAssignments()([]UnifiedRoleAssignmentMultipleable) {
     val, err := m.GetBackingStore().Get("roleAssignments")
     if err != nil {
@@ -95,6 +98,7 @@ func (m *RbacApplicationMultiple) GetRoleAssignments()([]UnifiedRoleAssignmentMu
     return nil
 }
 // GetRoleDefinitions gets the roleDefinitions property value. The roleDefinitions property
+// returns a []UnifiedRoleDefinitionable when successful
 func (m *RbacApplicationMultiple) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinitions")
     if err != nil {
@@ -170,7 +174,6 @@ func (m *RbacApplicationMultiple) SetRoleDefinitions(value []UnifiedRoleDefiniti
         panic(err)
     }
 }
-// RbacApplicationMultipleable 
 type RbacApplicationMultipleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupMembershipGovernanceCriteria 
 type GroupMembershipGovernanceCriteria struct {
     GovernanceCriteria
 }
-// NewGroupMembershipGovernanceCriteria instantiates a new groupMembershipGovernanceCriteria and sets the default values.
+// NewGroupMembershipGovernanceCriteria instantiates a new GroupMembershipGovernanceCriteria and sets the default values.
 func NewGroupMembershipGovernanceCriteria()(*GroupMembershipGovernanceCriteria) {
     m := &GroupMembershipGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),
@@ -18,10 +17,12 @@ func NewGroupMembershipGovernanceCriteria()(*GroupMembershipGovernanceCriteria) 
     return m
 }
 // CreateGroupMembershipGovernanceCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupMembershipGovernanceCriteriaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupMembershipGovernanceCriteria(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupMembershipGovernanceCriteria) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GovernanceCriteria.GetFieldDeserializers()
     res["groupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *GroupMembershipGovernanceCriteria) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetGroupId gets the groupId property value. The groupId property
+// returns a *string when successful
 func (m *GroupMembershipGovernanceCriteria) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *GroupMembershipGovernanceCriteria) SetGroupId(value *string)() {
         panic(err)
     }
 }
-// GroupMembershipGovernanceCriteriaable 
 type GroupMembershipGovernanceCriteriaable interface {
     GovernanceCriteriaable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

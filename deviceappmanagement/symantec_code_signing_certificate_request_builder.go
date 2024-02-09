@@ -44,7 +44,7 @@ type SymantecCodeSigningCertificateRequestBuilderPatchRequestConfiguration struc
 // NewSymantecCodeSigningCertificateRequestBuilderInternal instantiates a new SymantecCodeSigningCertificateRequestBuilder and sets the default values.
 func NewSymantecCodeSigningCertificateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SymantecCodeSigningCertificateRequestBuilder) {
     m := &SymantecCodeSigningCertificateRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/symantecCodeSigningCertificate{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/symantecCodeSigningCertificate{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -55,14 +55,14 @@ func NewSymantecCodeSigningCertificateRequestBuilder(rawUrl string, requestAdapt
     return NewSymantecCodeSigningCertificateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property symantecCodeSigningCertificate for deviceAppManagement
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SymantecCodeSigningCertificateRequestBuilder) Delete(ctx context.Context, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) Delete(ctx context.Contex
     return nil
 }
 // Get the WinPhone Symantec Code Signing Certificate.
+// returns a SymantecCodeSigningCertificateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SymantecCodeSigningCertificateRequestBuilder) Get(ctx context.Context, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSymantecCodeSigningCertificateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable), nil
 }
 // Patch update the navigation property symantecCodeSigningCertificate in deviceAppManagement
+// returns a SymantecCodeSigningCertificateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SymantecCodeSigningCertificateRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSymantecCodeSigningCertificateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) Patch(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable), nil
 }
 // ToDeleteRequestInformation delete navigation property symantecCodeSigningCertificate for deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *SymantecCodeSigningCertificateRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceAppManagement/symantecCodeSigningCertificate", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) ToDeleteRequestInformatio
     return requestInfo, nil
 }
 // ToGetRequestInformation the WinPhone Symantec Code Signing Certificate.
+// returns a *RequestInformation when successful
 func (m *SymantecCodeSigningCertificateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property symantecCodeSigningCertificate in deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *SymantecCodeSigningCertificateRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SymantecCodeSigningCertificateable, requestConfiguration *SymantecCodeSigningCertificateRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceAppManagement/symantecCodeSigningCertificate", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *SymantecCodeSigningCertificateRequestBuilder) ToPatchRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SymantecCodeSigningCertificateRequestBuilder when successful
 func (m *SymantecCodeSigningCertificateRequestBuilder) WithUrl(rawUrl string)(*SymantecCodeSigningCertificateRequestBuilder) {
     return NewSymantecCodeSigningCertificateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

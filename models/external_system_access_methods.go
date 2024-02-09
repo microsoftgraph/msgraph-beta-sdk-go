@@ -1,22 +1,24 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type ExternalSystemAccessMethods int
 
 const (
-    DIRECT_EXTERNALSYSTEMACCESSMETHODS ExternalSystemAccessMethods = iota
-    ROLECHAINING_EXTERNALSYSTEMACCESSMETHODS
-    UNKNOWNFUTUREVALUE_EXTERNALSYSTEMACCESSMETHODS
+    DIRECT_EXTERNALSYSTEMACCESSMETHODS = 1
+    ROLECHAINING_EXTERNALSYSTEMACCESSMETHODS = 2
+    UNKNOWNFUTUREVALUE_EXTERNALSYSTEMACCESSMETHODS = 4
 )
 
 func (i ExternalSystemAccessMethods) String() string {
     var values []string
-    for p := ExternalSystemAccessMethods(1); p <= UNKNOWNFUTUREVALUE_EXTERNALSYSTEMACCESSMETHODS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"direct", "roleChaining", "unknownFutureValue"}[p])
+    options := []string{"direct", "roleChaining", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := ExternalSystemAccessMethods(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

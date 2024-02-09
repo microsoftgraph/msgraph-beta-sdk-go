@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate struct {
     DeviceManagementConfigurationChoiceSettingValueDefaultTemplate
 }
-// NewDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate instantiates a new deviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate and sets the default values.
+// NewDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate instantiates a new DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate()(*DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) {
     m := &DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate{
         DeviceManagementConfigurationChoiceSettingValueDefaultTemplate: *NewDeviceManagementConfigurationChoiceSettingValueDefaultTemplate(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate()
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate(), nil
 }
 // GetChildren gets the children property value. Option Children
+// returns a []DeviceManagementConfigurationSettingInstanceTemplateable when successful
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) GetChildren()([]DeviceManagementConfigurationSettingInstanceTemplateable) {
     val, err := m.GetBackingStore().Get("children")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationChoiceSettingValueDefaultTemplate.GetFieldDeserializers()
     res["children"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +67,7 @@ func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate)
     return res
 }
 // GetSettingDefinitionOptionId gets the settingDefinitionOptionId property value. Default Constant Value
+// returns a *string when successful
 func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate) GetSettingDefinitionOptionId()(*string) {
     val, err := m.GetBackingStore().Get("settingDefinitionOptionId")
     if err != nil {
@@ -114,7 +118,6 @@ func (m *DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate)
         panic(err)
     }
 }
-// DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplateable 
 type DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplateable interface {
     DeviceManagementConfigurationChoiceSettingValueDefaultTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

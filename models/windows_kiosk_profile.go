@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WindowsKioskProfile 
 type WindowsKioskProfile struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWindowsKioskProfile instantiates a new windowsKioskProfile and sets the default values.
+// NewWindowsKioskProfile instantiates a new WindowsKioskProfile and sets the default values.
 func NewWindowsKioskProfile()(*WindowsKioskProfile) {
     m := &WindowsKioskProfile{
     }
@@ -19,10 +18,12 @@ func NewWindowsKioskProfile()(*WindowsKioskProfile) {
     return m
 }
 // CreateWindowsKioskProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsKioskProfile(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsKioskProfile) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *WindowsKioskProfile) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAppConfiguration gets the appConfiguration property value. The app base class used to identify the application info for the kiosk configuration
+// returns a WindowsKioskAppConfigurationable when successful
 func (m *WindowsKioskProfile) GetAppConfiguration()(WindowsKioskAppConfigurationable) {
     val, err := m.GetBackingStore().Get("appConfiguration")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *WindowsKioskProfile) GetAppConfiguration()(WindowsKioskAppConfiguration
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsKioskProfile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,6 +115,7 @@ func (m *WindowsKioskProfile) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WindowsKioskProfile) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *WindowsKioskProfile) GetOdataType()(*string) {
     return nil
 }
 // GetProfileId gets the profileId property value. Key of the entity.
+// returns a *string when successful
 func (m *WindowsKioskProfile) GetProfileId()(*string) {
     val, err := m.GetBackingStore().Get("profileId")
     if err != nil {
@@ -133,6 +139,7 @@ func (m *WindowsKioskProfile) GetProfileId()(*string) {
     return nil
 }
 // GetProfileName gets the profileName property value. This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.
+// returns a *string when successful
 func (m *WindowsKioskProfile) GetProfileName()(*string) {
     val, err := m.GetBackingStore().Get("profileName")
     if err != nil {
@@ -144,6 +151,7 @@ func (m *WindowsKioskProfile) GetProfileName()(*string) {
     return nil
 }
 // GetUserAccountsConfiguration gets the userAccountsConfiguration property value. The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.
+// returns a []WindowsKioskUserable when successful
 func (m *WindowsKioskProfile) GetUserAccountsConfiguration()([]WindowsKioskUserable) {
     val, err := m.GetBackingStore().Get("userAccountsConfiguration")
     if err != nil {
@@ -246,7 +254,6 @@ func (m *WindowsKioskProfile) SetUserAccountsConfiguration(value []WindowsKioskU
         panic(err)
     }
 }
-// WindowsKioskProfileable 
 type WindowsKioskProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

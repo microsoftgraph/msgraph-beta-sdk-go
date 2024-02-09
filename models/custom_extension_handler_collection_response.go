@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomExtensionHandlerCollectionResponse 
 type CustomExtensionHandlerCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCustomExtensionHandlerCollectionResponse instantiates a new customExtensionHandlerCollectionResponse and sets the default values.
+// NewCustomExtensionHandlerCollectionResponse instantiates a new CustomExtensionHandlerCollectionResponse and sets the default values.
 func NewCustomExtensionHandlerCollectionResponse()(*CustomExtensionHandlerCollectionResponse) {
     m := &CustomExtensionHandlerCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCustomExtensionHandlerCollectionResponse()(*CustomExtensionHandlerCollec
     return m
 }
 // CreateCustomExtensionHandlerCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomExtensionHandlerCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomExtensionHandlerCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomExtensionHandlerCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CustomExtensionHandlerCollectionResponse) GetFieldDeserializers()(map[s
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []CustomExtensionHandlerable when successful
 func (m *CustomExtensionHandlerCollectionResponse) GetValue()([]CustomExtensionHandlerable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CustomExtensionHandlerCollectionResponse) SetValue(value []CustomExtens
         panic(err)
     }
 }
-// CustomExtensionHandlerCollectionResponseable 
 type CustomExtensionHandlerCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

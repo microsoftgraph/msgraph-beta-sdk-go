@@ -17,20 +17,21 @@ type PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderInternal instantiates a new CancelRequestBuilder and sets the default values.
+// NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderInternal instantiates a new PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder and sets the default values.
 func NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder) {
     m := &PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/privilegedAccess/group/assignmentScheduleRequests/{privilegedAccessGroupAssignmentScheduleRequest%2Did}/cancel", pathParameters),
     }
     return m
 }
-// NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder instantiates a new CancelRequestBuilder and sets the default values.
+// NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder instantiates a new PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder and sets the default values.
 func NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post cancel an access assignment request to a group whose membership and ownership are governed by PIM.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-cancel?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder
     return nil
 }
 // ToPostRequestInformation cancel an access assignment request to a group whose membership and ownership are governed by PIM.
+// returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder) WithUrl(rawUrl string)(*PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder) {
     return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

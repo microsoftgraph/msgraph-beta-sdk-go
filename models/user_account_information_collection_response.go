@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserAccountInformationCollectionResponse 
 type UserAccountInformationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserAccountInformationCollectionResponse instantiates a new userAccountInformationCollectionResponse and sets the default values.
+// NewUserAccountInformationCollectionResponse instantiates a new UserAccountInformationCollectionResponse and sets the default values.
 func NewUserAccountInformationCollectionResponse()(*UserAccountInformationCollectionResponse) {
     m := &UserAccountInformationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUserAccountInformationCollectionResponse()(*UserAccountInformationCollec
     return m
 }
 // CreateUserAccountInformationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserAccountInformationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserAccountInformationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserAccountInformationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UserAccountInformationCollectionResponse) GetFieldDeserializers()(map[s
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UserAccountInformationable when successful
 func (m *UserAccountInformationCollectionResponse) GetValue()([]UserAccountInformationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UserAccountInformationCollectionResponse) SetValue(value []UserAccountI
         panic(err)
     }
 }
-// UserAccountInformationCollectionResponseable 
 type UserAccountInformationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

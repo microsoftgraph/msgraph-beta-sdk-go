@@ -10,7 +10,7 @@ type BulkDriverActionResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBulkDriverActionResult instantiates a new bulkDriverActionResult and sets the default values.
+// NewBulkDriverActionResult instantiates a new BulkDriverActionResult and sets the default values.
 func NewBulkDriverActionResult()(*BulkDriverActionResult) {
     m := &BulkDriverActionResult{
     }
@@ -19,10 +19,12 @@ func NewBulkDriverActionResult()(*BulkDriverActionResult) {
     return m
 }
 // CreateBulkDriverActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBulkDriverActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBulkDriverActionResult(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BulkDriverActionResult) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *BulkDriverActionResult) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *BulkDriverActionResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFailedDriverIds gets the failedDriverIds property value. List of driver Ids where the action is failed.
+// returns a []string when successful
 func (m *BulkDriverActionResult) GetFailedDriverIds()([]string) {
     val, err := m.GetBackingStore().Get("failedDriverIds")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *BulkDriverActionResult) GetFailedDriverIds()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BulkDriverActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["failedDriverIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -113,6 +118,7 @@ func (m *BulkDriverActionResult) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetNotFoundDriverIds gets the notFoundDriverIds property value. List of driver Ids that are not found.
+// returns a []string when successful
 func (m *BulkDriverActionResult) GetNotFoundDriverIds()([]string) {
     val, err := m.GetBackingStore().Get("notFoundDriverIds")
     if err != nil {
@@ -124,6 +130,7 @@ func (m *BulkDriverActionResult) GetNotFoundDriverIds()([]string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *BulkDriverActionResult) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -135,6 +142,7 @@ func (m *BulkDriverActionResult) GetOdataType()(*string) {
     return nil
 }
 // GetSuccessfulDriverIds gets the successfulDriverIds property value. List of driver Ids where the action is successful.
+// returns a []string when successful
 func (m *BulkDriverActionResult) GetSuccessfulDriverIds()([]string) {
     val, err := m.GetBackingStore().Get("successfulDriverIds")
     if err != nil {
@@ -218,7 +226,6 @@ func (m *BulkDriverActionResult) SetSuccessfulDriverIds(value []string)() {
         panic(err)
     }
 }
-// BulkDriverActionResultable 
 type BulkDriverActionResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

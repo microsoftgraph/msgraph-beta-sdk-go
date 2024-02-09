@@ -8,7 +8,7 @@ import (
 type DeviceManagementIntentSettingSecretConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementIntentSettingSecretConstraint instantiates a new deviceManagementIntentSettingSecretConstraint and sets the default values.
+// NewDeviceManagementIntentSettingSecretConstraint instantiates a new DeviceManagementIntentSettingSecretConstraint and sets the default values.
 func NewDeviceManagementIntentSettingSecretConstraint()(*DeviceManagementIntentSettingSecretConstraint) {
     m := &DeviceManagementIntentSettingSecretConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -18,10 +18,12 @@ func NewDeviceManagementIntentSettingSecretConstraint()(*DeviceManagementIntentS
     return m
 }
 // CreateDeviceManagementIntentSettingSecretConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementIntentSettingSecretConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementIntentSettingSecretConstraint(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementIntentSettingSecretConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *DeviceManagementIntentSettingSecretConstraint) Serialize(writer i878a80
     }
     return nil
 }
-// DeviceManagementIntentSettingSecretConstraintable 
 type DeviceManagementIntentSettingSecretConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

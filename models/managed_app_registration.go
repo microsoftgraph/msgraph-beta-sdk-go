@@ -9,7 +9,7 @@ import (
 type ManagedAppRegistration struct {
     Entity
 }
-// NewManagedAppRegistration instantiates a new managedAppRegistration and sets the default values.
+// NewManagedAppRegistration instantiates a new ManagedAppRegistration and sets the default values.
 func NewManagedAppRegistration()(*ManagedAppRegistration) {
     m := &ManagedAppRegistration{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewManagedAppRegistration()(*ManagedAppRegistration) {
     return m
 }
 // CreateManagedAppRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedAppRegistrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +44,7 @@ func CreateManagedAppRegistrationFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewManagedAppRegistration(), nil
 }
 // GetAppIdentifier gets the appIdentifier property value. The app package Identifier
+// returns a MobileAppIdentifierable when successful
 func (m *ManagedAppRegistration) GetAppIdentifier()(MobileAppIdentifierable) {
     val, err := m.GetBackingStore().Get("appIdentifier")
     if err != nil {
@@ -54,6 +56,7 @@ func (m *ManagedAppRegistration) GetAppIdentifier()(MobileAppIdentifierable) {
     return nil
 }
 // GetApplicationVersion gets the applicationVersion property value. App version
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetApplicationVersion()(*string) {
     val, err := m.GetBackingStore().Get("applicationVersion")
     if err != nil {
@@ -65,6 +68,7 @@ func (m *ManagedAppRegistration) GetApplicationVersion()(*string) {
     return nil
 }
 // GetAppliedPolicies gets the appliedPolicies property value. Zero or more policys already applied on the registered app when it last synchronized with managment service.
+// returns a []ManagedAppPolicyable when successful
 func (m *ManagedAppRegistration) GetAppliedPolicies()([]ManagedAppPolicyable) {
     val, err := m.GetBackingStore().Get("appliedPolicies")
     if err != nil {
@@ -76,6 +80,7 @@ func (m *ManagedAppRegistration) GetAppliedPolicies()([]ManagedAppPolicyable) {
     return nil
 }
 // GetAzureADDeviceId gets the azureADDeviceId property value. The Azure Active Directory Device identifier of the host device. Value could be empty even when the host device is Azure Active Directory registered.
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetAzureADDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("azureADDeviceId")
     if err != nil {
@@ -87,6 +92,7 @@ func (m *ManagedAppRegistration) GetAzureADDeviceId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time of creation
+// returns a *Time when successful
 func (m *ManagedAppRegistration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -98,6 +104,7 @@ func (m *ManagedAppRegistration) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDeviceManufacturer gets the deviceManufacturer property value. The device manufacturer for the current app registration
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetDeviceManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("deviceManufacturer")
     if err != nil {
@@ -109,6 +116,7 @@ func (m *ManagedAppRegistration) GetDeviceManufacturer()(*string) {
     return nil
 }
 // GetDeviceModel gets the deviceModel property value. The device model for the current app registration
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -120,6 +128,7 @@ func (m *ManagedAppRegistration) GetDeviceModel()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. Host device name
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -131,6 +140,7 @@ func (m *ManagedAppRegistration) GetDeviceName()(*string) {
     return nil
 }
 // GetDeviceTag gets the deviceTag property value. App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetDeviceTag()(*string) {
     val, err := m.GetBackingStore().Get("deviceTag")
     if err != nil {
@@ -142,6 +152,7 @@ func (m *ManagedAppRegistration) GetDeviceTag()(*string) {
     return nil
 }
 // GetDeviceType gets the deviceType property value. Host device type
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetDeviceType()(*string) {
     val, err := m.GetBackingStore().Get("deviceType")
     if err != nil {
@@ -153,6 +164,7 @@ func (m *ManagedAppRegistration) GetDeviceType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -372,6 +384,7 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetFlaggedReasons gets the flaggedReasons property value. Zero or more reasons an app registration is flagged. E.g. app running on rooted device
+// returns a []ManagedAppFlaggedReason when successful
 func (m *ManagedAppRegistration) GetFlaggedReasons()([]ManagedAppFlaggedReason) {
     val, err := m.GetBackingStore().Get("flaggedReasons")
     if err != nil {
@@ -383,6 +396,7 @@ func (m *ManagedAppRegistration) GetFlaggedReasons()([]ManagedAppFlaggedReason) 
     return nil
 }
 // GetIntendedPolicies gets the intendedPolicies property value. Zero or more policies admin intended for the app as of now.
+// returns a []ManagedAppPolicyable when successful
 func (m *ManagedAppRegistration) GetIntendedPolicies()([]ManagedAppPolicyable) {
     val, err := m.GetBackingStore().Get("intendedPolicies")
     if err != nil {
@@ -394,6 +408,7 @@ func (m *ManagedAppRegistration) GetIntendedPolicies()([]ManagedAppPolicyable) {
     return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Date and time of last the app synced with management service.
+// returns a *Time when successful
 func (m *ManagedAppRegistration) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -405,6 +420,7 @@ func (m *ManagedAppRegistration) GetLastSyncDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The Managed Device identifier of the host device. Value could be empty even when the host device is managed.
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -416,6 +432,7 @@ func (m *ManagedAppRegistration) GetManagedDeviceId()(*string) {
     return nil
 }
 // GetManagementSdkVersion gets the managementSdkVersion property value. App management SDK version
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetManagementSdkVersion()(*string) {
     val, err := m.GetBackingStore().Get("managementSdkVersion")
     if err != nil {
@@ -427,6 +444,7 @@ func (m *ManagedAppRegistration) GetManagementSdkVersion()(*string) {
     return nil
 }
 // GetOperations gets the operations property value. Zero or more long running operations triggered on the app registration.
+// returns a []ManagedAppOperationable when successful
 func (m *ManagedAppRegistration) GetOperations()([]ManagedAppOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -438,6 +456,7 @@ func (m *ManagedAppRegistration) GetOperations()([]ManagedAppOperationable) {
     return nil
 }
 // GetPlatformVersion gets the platformVersion property value. Operating System version
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetPlatformVersion()(*string) {
     val, err := m.GetBackingStore().Get("platformVersion")
     if err != nil {
@@ -449,6 +468,7 @@ func (m *ManagedAppRegistration) GetPlatformVersion()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The user Id to who this app registration belongs.
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -460,6 +480,7 @@ func (m *ManagedAppRegistration) GetUserId()(*string) {
     return nil
 }
 // GetVersion gets the version property value. Version of the entity.
+// returns a *string when successful
 func (m *ManagedAppRegistration) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -743,7 +764,6 @@ func (m *ManagedAppRegistration) SetVersion(value *string)() {
         panic(err)
     }
 }
-// ManagedAppRegistrationable 
 type ManagedAppRegistrationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

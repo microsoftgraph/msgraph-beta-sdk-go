@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DlpEvaluatePoliciesJobResponse 
 type DlpEvaluatePoliciesJobResponse struct {
     JobResponseBase
 }
-// NewDlpEvaluatePoliciesJobResponse instantiates a new dlpEvaluatePoliciesJobResponse and sets the default values.
+// NewDlpEvaluatePoliciesJobResponse instantiates a new DlpEvaluatePoliciesJobResponse and sets the default values.
 func NewDlpEvaluatePoliciesJobResponse()(*DlpEvaluatePoliciesJobResponse) {
     m := &DlpEvaluatePoliciesJobResponse{
         JobResponseBase: *NewJobResponseBase(),
@@ -16,10 +15,12 @@ func NewDlpEvaluatePoliciesJobResponse()(*DlpEvaluatePoliciesJobResponse) {
     return m
 }
 // CreateDlpEvaluatePoliciesJobResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDlpEvaluatePoliciesJobResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDlpEvaluatePoliciesJobResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DlpEvaluatePoliciesJobResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.JobResponseBase.GetFieldDeserializers()
     res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *DlpEvaluatePoliciesJobResponse) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetResult gets the result property value. The result property
+// returns a DlpPoliciesJobResultable when successful
 func (m *DlpEvaluatePoliciesJobResponse) GetResult()(DlpPoliciesJobResultable) {
     val, err := m.GetBackingStore().Get("result")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *DlpEvaluatePoliciesJobResponse) SetResult(value DlpPoliciesJobResultabl
         panic(err)
     }
 }
-// DlpEvaluatePoliciesJobResponseable 
 type DlpEvaluatePoliciesJobResponseable interface {
     JobResponseBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

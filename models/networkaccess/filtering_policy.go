@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FilteringPolicy 
 type FilteringPolicy struct {
     Policy
 }
-// NewFilteringPolicy instantiates a new filteringPolicy and sets the default values.
+// NewFilteringPolicy instantiates a new FilteringPolicy and sets the default values.
 func NewFilteringPolicy()(*FilteringPolicy) {
     m := &FilteringPolicy{
         Policy: *NewPolicy(),
@@ -19,10 +18,12 @@ func NewFilteringPolicy()(*FilteringPolicy) {
     return m
 }
 // CreateFilteringPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFilteringPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFilteringPolicy(), nil
 }
 // GetAction gets the action property value. The action property
+// returns a *FilteringPolicyAction when successful
 func (m *FilteringPolicy) GetAction()(*FilteringPolicyAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *FilteringPolicy) GetAction()(*FilteringPolicyAction) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the filtering Policy was originally created.
+// returns a *Time when successful
 func (m *FilteringPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *FilteringPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FilteringPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Policy.GetFieldDeserializers()
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,6 +83,7 @@ func (m *FilteringPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when a particular profile was last modified or updated.
+// returns a *Time when successful
 func (m *FilteringPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -138,7 +142,6 @@ func (m *FilteringPolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// FilteringPolicyable 
 type FilteringPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Policyable

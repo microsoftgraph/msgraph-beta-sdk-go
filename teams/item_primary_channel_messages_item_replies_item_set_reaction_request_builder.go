@@ -17,28 +17,28 @@ type ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilderInternal instantiates a new SetReactionRequestBuilder and sets the default values.
+// NewItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilderInternal instantiates a new ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder and sets the default values.
 func NewItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder) {
     m := &ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/setReaction", pathParameters),
     }
     return m
 }
-// NewItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder instantiates a new SetReactionRequestBuilder and sets the default values.
+// NewItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder instantiates a new ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder and sets the default values.
 func NewItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action setReaction
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder) Post(ctx context.Context, body ItemPrimaryChannelMessagesItemRepliesItemSetReactionPostRequestBodyable, requestConfiguration *ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder) Pos
     return nil
 }
 // ToPostRequestInformation invoke action setReaction
+// returns a *RequestInformation when successful
 func (m *ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPrimaryChannelMessagesItemRepliesItemSetReactionPostRequestBodyable, requestConfiguration *ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder) ToP
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder when successful
 func (m *ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder) WithUrl(rawUrl string)(*ItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder) {
     return NewItemPrimaryChannelMessagesItemRepliesItemSetReactionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

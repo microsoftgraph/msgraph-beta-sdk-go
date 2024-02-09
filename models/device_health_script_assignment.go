@@ -8,7 +8,7 @@ import (
 type DeviceHealthScriptAssignment struct {
     Entity
 }
-// NewDeviceHealthScriptAssignment instantiates a new deviceHealthScriptAssignment and sets the default values.
+// NewDeviceHealthScriptAssignment instantiates a new DeviceHealthScriptAssignment and sets the default values.
 func NewDeviceHealthScriptAssignment()(*DeviceHealthScriptAssignment) {
     m := &DeviceHealthScriptAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceHealthScriptAssignment()(*DeviceHealthScriptAssignment) {
     return m
 }
 // CreateDeviceHealthScriptAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceHealthScriptAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceHealthScriptAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["runRemediationScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,6 +57,7 @@ func (m *DeviceHealthScriptAssignment) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetRunRemediationScript gets the runRemediationScript property value. Determine whether we want to run detection script only or run both detection script and remediation script
+// returns a *bool when successful
 func (m *DeviceHealthScriptAssignment) GetRunRemediationScript()(*bool) {
     val, err := m.GetBackingStore().Get("runRemediationScript")
     if err != nil {
@@ -66,6 +69,7 @@ func (m *DeviceHealthScriptAssignment) GetRunRemediationScript()(*bool) {
     return nil
 }
 // GetRunSchedule gets the runSchedule property value. Script run schedule for the target group
+// returns a DeviceHealthScriptRunScheduleable when successful
 func (m *DeviceHealthScriptAssignment) GetRunSchedule()(DeviceHealthScriptRunScheduleable) {
     val, err := m.GetBackingStore().Get("runSchedule")
     if err != nil {
@@ -77,6 +81,7 @@ func (m *DeviceHealthScriptAssignment) GetRunSchedule()(DeviceHealthScriptRunSch
     return nil
 }
 // GetTarget gets the target property value. The Azure Active Directory group we are targeting the script to
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *DeviceHealthScriptAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -134,7 +139,6 @@ func (m *DeviceHealthScriptAssignment) SetTarget(value DeviceAndAppManagementAss
         panic(err)
     }
 }
-// DeviceHealthScriptAssignmentable 
 type DeviceHealthScriptAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

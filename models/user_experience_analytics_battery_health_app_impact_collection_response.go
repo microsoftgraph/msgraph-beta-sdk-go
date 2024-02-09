@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse 
 type UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse instantiates a new userExperienceAnalyticsBatteryHealthAppImpactCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse instantiates a new UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse()(*UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse) {
     m := &UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse()(*UserE
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthAppImpactCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsBatteryHealthAppImpactCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse) GetFie
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UserExperienceAnalyticsBatteryHealthAppImpactable when successful
 func (m *UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse) GetValue()([]UserExperienceAnalyticsBatteryHealthAppImpactable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse) SetVal
         panic(err)
     }
 }
-// UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponseable 
 type UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

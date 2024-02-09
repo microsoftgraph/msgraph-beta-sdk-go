@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryFile 
 type EdiscoveryFile struct {
     File
 }
-// NewEdiscoveryFile instantiates a new ediscoveryFile and sets the default values.
+// NewEdiscoveryFile instantiates a new EdiscoveryFile and sets the default values.
 func NewEdiscoveryFile()(*EdiscoveryFile) {
     m := &EdiscoveryFile{
         File: *NewFile(),
@@ -16,10 +15,12 @@ func NewEdiscoveryFile()(*EdiscoveryFile) {
     return m
 }
 // CreateEdiscoveryFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdiscoveryFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryFile(), nil
 }
 // GetCustodian gets the custodian property value. Custodians associated with the file.
+// returns a EdiscoveryCustodianable when successful
 func (m *EdiscoveryFile) GetCustodian()(EdiscoveryCustodianable) {
     val, err := m.GetBackingStore().Get("custodian")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *EdiscoveryFile) GetCustodian()(EdiscoveryCustodianable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdiscoveryFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.File.GetFieldDeserializers()
     res["custodian"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -62,6 +64,7 @@ func (m *EdiscoveryFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetTags gets the tags property value. Tags associated with the file.
+// returns a []EdiscoveryReviewTagable when successful
 func (m *EdiscoveryFile) GetTags()([]EdiscoveryReviewTagable) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -112,7 +115,6 @@ func (m *EdiscoveryFile) SetTags(value []EdiscoveryReviewTagable)() {
         panic(err)
     }
 }
-// EdiscoveryFileable 
 type EdiscoveryFileable interface {
     Fileable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

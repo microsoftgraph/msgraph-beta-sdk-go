@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsSecurityToolAdministrationFinding 
 type AwsSecurityToolAdministrationFinding struct {
     Finding
 }
-// NewAwsSecurityToolAdministrationFinding instantiates a new awsSecurityToolAdministrationFinding and sets the default values.
+// NewAwsSecurityToolAdministrationFinding instantiates a new AwsSecurityToolAdministrationFinding and sets the default values.
 func NewAwsSecurityToolAdministrationFinding()(*AwsSecurityToolAdministrationFinding) {
     m := &AwsSecurityToolAdministrationFinding{
         Finding: *NewFinding(),
@@ -16,6 +15,7 @@ func NewAwsSecurityToolAdministrationFinding()(*AwsSecurityToolAdministrationFin
     return m
 }
 // CreateAwsSecurityToolAdministrationFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsSecurityToolAdministrationFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -44,6 +44,7 @@ func CreateAwsSecurityToolAdministrationFindingFromDiscriminatorValue(parseNode 
     return NewAwsSecurityToolAdministrationFinding(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsSecurityToolAdministrationFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["identity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -89,6 +90,7 @@ func (m *AwsSecurityToolAdministrationFinding) GetFieldDeserializers()(map[strin
     return res
 }
 // GetIdentity gets the identity property value. The identity property
+// returns a AuthorizationSystemIdentityable when successful
 func (m *AwsSecurityToolAdministrationFinding) GetIdentity()(AuthorizationSystemIdentityable) {
     val, err := m.GetBackingStore().Get("identity")
     if err != nil {
@@ -100,6 +102,7 @@ func (m *AwsSecurityToolAdministrationFinding) GetIdentity()(AuthorizationSystem
     return nil
 }
 // GetIdentityDetails gets the identityDetails property value. The identityDetails property
+// returns a IdentityDetailsable when successful
 func (m *AwsSecurityToolAdministrationFinding) GetIdentityDetails()(IdentityDetailsable) {
     val, err := m.GetBackingStore().Get("identityDetails")
     if err != nil {
@@ -111,6 +114,7 @@ func (m *AwsSecurityToolAdministrationFinding) GetIdentityDetails()(IdentityDeta
     return nil
 }
 // GetPermissionsCreepIndex gets the permissionsCreepIndex property value. The permissionsCreepIndex property
+// returns a PermissionsCreepIndexable when successful
 func (m *AwsSecurityToolAdministrationFinding) GetPermissionsCreepIndex()(PermissionsCreepIndexable) {
     val, err := m.GetBackingStore().Get("permissionsCreepIndex")
     if err != nil {
@@ -122,6 +126,7 @@ func (m *AwsSecurityToolAdministrationFinding) GetPermissionsCreepIndex()(Permis
     return nil
 }
 // GetSecurityTools gets the securityTools property value. The securityTools property
+// returns a *AwsSecurityToolWebServices when successful
 func (m *AwsSecurityToolAdministrationFinding) GetSecurityTools()(*AwsSecurityToolWebServices) {
     val, err := m.GetBackingStore().Get("securityTools")
     if err != nil {
@@ -193,7 +198,6 @@ func (m *AwsSecurityToolAdministrationFinding) SetSecurityTools(value *AwsSecuri
         panic(err)
     }
 }
-// AwsSecurityToolAdministrationFindingable 
 type AwsSecurityToolAdministrationFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

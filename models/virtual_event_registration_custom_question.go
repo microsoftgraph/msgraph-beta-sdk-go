@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEventRegistrationCustomQuestion 
 type VirtualEventRegistrationCustomQuestion struct {
     VirtualEventRegistrationQuestionBase
 }
-// NewVirtualEventRegistrationCustomQuestion instantiates a new virtualEventRegistrationCustomQuestion and sets the default values.
+// NewVirtualEventRegistrationCustomQuestion instantiates a new VirtualEventRegistrationCustomQuestion and sets the default values.
 func NewVirtualEventRegistrationCustomQuestion()(*VirtualEventRegistrationCustomQuestion) {
     m := &VirtualEventRegistrationCustomQuestion{
         VirtualEventRegistrationQuestionBase: *NewVirtualEventRegistrationQuestionBase(),
@@ -18,10 +17,12 @@ func NewVirtualEventRegistrationCustomQuestion()(*VirtualEventRegistrationCustom
     return m
 }
 // CreateVirtualEventRegistrationCustomQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualEventRegistrationCustomQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventRegistrationCustomQuestion(), nil
 }
 // GetAnswerChoices gets the answerChoices property value. The answerChoices property
+// returns a []string when successful
 func (m *VirtualEventRegistrationCustomQuestion) GetAnswerChoices()([]string) {
     val, err := m.GetBackingStore().Get("answerChoices")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *VirtualEventRegistrationCustomQuestion) GetAnswerChoices()([]string) {
     return nil
 }
 // GetAnswerInputType gets the answerInputType property value. The answerInputType property
+// returns a *VirtualEventRegistrationQuestionAnswerInputType when successful
 func (m *VirtualEventRegistrationCustomQuestion) GetAnswerInputType()(*VirtualEventRegistrationQuestionAnswerInputType) {
     val, err := m.GetBackingStore().Get("answerInputType")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *VirtualEventRegistrationCustomQuestion) GetAnswerInputType()(*VirtualEv
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEventRegistrationCustomQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VirtualEventRegistrationQuestionBase.GetFieldDeserializers()
     res["answerChoices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,7 +112,6 @@ func (m *VirtualEventRegistrationCustomQuestion) SetAnswerInputType(value *Virtu
         panic(err)
     }
 }
-// VirtualEventRegistrationCustomQuestionable 
 type VirtualEventRegistrationCustomQuestionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VirtualEventRegistrationQuestionBaseable

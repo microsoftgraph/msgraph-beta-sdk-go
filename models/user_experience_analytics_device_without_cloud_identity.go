@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsDeviceWithoutCloudIdentity struct {
     Entity
 }
-// NewUserExperienceAnalyticsDeviceWithoutCloudIdentity instantiates a new userExperienceAnalyticsDeviceWithoutCloudIdentity and sets the default values.
+// NewUserExperienceAnalyticsDeviceWithoutCloudIdentity instantiates a new UserExperienceAnalyticsDeviceWithoutCloudIdentity and sets the default values.
 func NewUserExperienceAnalyticsDeviceWithoutCloudIdentity()(*UserExperienceAnalyticsDeviceWithoutCloudIdentity) {
     m := &UserExperienceAnalyticsDeviceWithoutCloudIdentity{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsDeviceWithoutCloudIdentity()(*UserExperienceAnaly
     return m
 }
 // CreateUserExperienceAnalyticsDeviceWithoutCloudIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsDeviceWithoutCloudIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsDeviceWithoutCloudIdentity(), nil
 }
 // GetAzureAdDeviceId gets the azureAdDeviceId property value. Azure Active Directory Device Id
+// returns a *string when successful
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetAzureAdDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("azureAdDeviceId")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetAzureAdDeviceId()
     return nil
 }
 // GetDeviceName gets the deviceName property value. The tenant attach device's name.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetDeviceName()(*str
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["azureAdDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,7 +104,6 @@ func (m *UserExperienceAnalyticsDeviceWithoutCloudIdentity) SetDeviceName(value 
         panic(err)
     }
 }
-// UserExperienceAnalyticsDeviceWithoutCloudIdentityable 
 type UserExperienceAnalyticsDeviceWithoutCloudIdentityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

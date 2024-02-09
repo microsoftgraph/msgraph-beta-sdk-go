@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CustomerPayment 
 type CustomerPayment struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCustomerPayment instantiates a new customerPayment and sets the default values.
+// NewCustomerPayment instantiates a new CustomerPayment and sets the default values.
 func NewCustomerPayment()(*CustomerPayment) {
     m := &CustomerPayment{
     }
@@ -21,10 +20,12 @@ func NewCustomerPayment()(*CustomerPayment) {
     return m
 }
 // CreateCustomerPaymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomerPaymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomerPayment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CustomerPayment) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -37,6 +38,7 @@ func (m *CustomerPayment) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAmount gets the amount property value. The amount property
+// returns a *float64 when successful
 func (m *CustomerPayment) GetAmount()(*float64) {
     val, err := m.GetBackingStore().Get("amount")
     if err != nil {
@@ -48,6 +50,7 @@ func (m *CustomerPayment) GetAmount()(*float64) {
     return nil
 }
 // GetAppliesToInvoiceId gets the appliesToInvoiceId property value. The appliesToInvoiceId property
+// returns a *UUID when successful
 func (m *CustomerPayment) GetAppliesToInvoiceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("appliesToInvoiceId")
     if err != nil {
@@ -59,6 +62,7 @@ func (m *CustomerPayment) GetAppliesToInvoiceId()(*i561e97a8befe7661a44c8f546009
     return nil
 }
 // GetAppliesToInvoiceNumber gets the appliesToInvoiceNumber property value. The appliesToInvoiceNumber property
+// returns a *string when successful
 func (m *CustomerPayment) GetAppliesToInvoiceNumber()(*string) {
     val, err := m.GetBackingStore().Get("appliesToInvoiceNumber")
     if err != nil {
@@ -70,10 +74,12 @@ func (m *CustomerPayment) GetAppliesToInvoiceNumber()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CustomerPayment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetComment gets the comment property value. The comment property
+// returns a *string when successful
 func (m *CustomerPayment) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -85,6 +91,7 @@ func (m *CustomerPayment) GetComment()(*string) {
     return nil
 }
 // GetContactId gets the contactId property value. The contactId property
+// returns a *string when successful
 func (m *CustomerPayment) GetContactId()(*string) {
     val, err := m.GetBackingStore().Get("contactId")
     if err != nil {
@@ -96,6 +103,7 @@ func (m *CustomerPayment) GetContactId()(*string) {
     return nil
 }
 // GetCustomer gets the customer property value. The customer property
+// returns a Customerable when successful
 func (m *CustomerPayment) GetCustomer()(Customerable) {
     val, err := m.GetBackingStore().Get("customer")
     if err != nil {
@@ -107,6 +115,7 @@ func (m *CustomerPayment) GetCustomer()(Customerable) {
     return nil
 }
 // GetCustomerId gets the customerId property value. The customerId property
+// returns a *UUID when successful
 func (m *CustomerPayment) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("customerId")
     if err != nil {
@@ -118,6 +127,7 @@ func (m *CustomerPayment) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a
     return nil
 }
 // GetCustomerNumber gets the customerNumber property value. The customerNumber property
+// returns a *string when successful
 func (m *CustomerPayment) GetCustomerNumber()(*string) {
     val, err := m.GetBackingStore().Get("customerNumber")
     if err != nil {
@@ -129,6 +139,7 @@ func (m *CustomerPayment) GetCustomerNumber()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *CustomerPayment) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -140,6 +151,7 @@ func (m *CustomerPayment) GetDescription()(*string) {
     return nil
 }
 // GetDocumentNumber gets the documentNumber property value. The documentNumber property
+// returns a *string when successful
 func (m *CustomerPayment) GetDocumentNumber()(*string) {
     val, err := m.GetBackingStore().Get("documentNumber")
     if err != nil {
@@ -151,6 +163,7 @@ func (m *CustomerPayment) GetDocumentNumber()(*string) {
     return nil
 }
 // GetExternalDocumentNumber gets the externalDocumentNumber property value. The externalDocumentNumber property
+// returns a *string when successful
 func (m *CustomerPayment) GetExternalDocumentNumber()(*string) {
     val, err := m.GetBackingStore().Get("externalDocumentNumber")
     if err != nil {
@@ -162,6 +175,7 @@ func (m *CustomerPayment) GetExternalDocumentNumber()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["amount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -337,6 +351,7 @@ func (m *CustomerPayment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *CustomerPayment) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -348,6 +363,7 @@ func (m *CustomerPayment) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf677
     return nil
 }
 // GetJournalDisplayName gets the journalDisplayName property value. The journalDisplayName property
+// returns a *string when successful
 func (m *CustomerPayment) GetJournalDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("journalDisplayName")
     if err != nil {
@@ -359,6 +375,7 @@ func (m *CustomerPayment) GetJournalDisplayName()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *CustomerPayment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -370,6 +387,7 @@ func (m *CustomerPayment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetLineNumber gets the lineNumber property value. The lineNumber property
+// returns a *int32 when successful
 func (m *CustomerPayment) GetLineNumber()(*int32) {
     val, err := m.GetBackingStore().Get("lineNumber")
     if err != nil {
@@ -381,6 +399,7 @@ func (m *CustomerPayment) GetLineNumber()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CustomerPayment) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -392,6 +411,7 @@ func (m *CustomerPayment) GetOdataType()(*string) {
     return nil
 }
 // GetPostingDate gets the postingDate property value. The postingDate property
+// returns a *DateOnly when successful
 func (m *CustomerPayment) GetPostingDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("postingDate")
     if err != nil {
@@ -644,7 +664,6 @@ func (m *CustomerPayment) SetPostingDate(value *i878a80d2330e89d26896388a3f487ee
         panic(err)
     }
 }
-// CustomerPaymentable 
 type CustomerPaymentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

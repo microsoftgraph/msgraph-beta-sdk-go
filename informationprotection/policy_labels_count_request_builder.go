@@ -26,14 +26,14 @@ type PolicyLabelsCountRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *PolicyLabelsCountRequestBuilderGetQueryParameters
 }
-// NewPolicyLabelsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewPolicyLabelsCountRequestBuilderInternal instantiates a new PolicyLabelsCountRequestBuilder and sets the default values.
 func NewPolicyLabelsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicyLabelsCountRequestBuilder) {
     m := &PolicyLabelsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/policy/labels/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/policy/labels/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewPolicyLabelsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewPolicyLabelsCountRequestBuilder instantiates a new PolicyLabelsCountRequestBuilder and sets the default values.
 func NewPolicyLabelsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicyLabelsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -41,14 +41,15 @@ func NewPolicyLabelsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Get get the number of the resource
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PolicyLabelsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *PolicyLabelsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -61,6 +62,7 @@ func (m *PolicyLabelsCountRequestBuilder) Get(ctx context.Context, requestConfig
 }
 // ToGetRequestInformation get the number of the resource
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *RequestInformation when successful
 func (m *PolicyLabelsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PolicyLabelsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -75,6 +77,7 @@ func (m *PolicyLabelsCountRequestBuilder) ToGetRequestInformation(ctx context.Co
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *PolicyLabelsCountRequestBuilder when successful
 func (m *PolicyLabelsCountRequestBuilder) WithUrl(rawUrl string)(*PolicyLabelsCountRequestBuilder) {
     return NewPolicyLabelsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

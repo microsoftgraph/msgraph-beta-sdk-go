@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AzureAuthorizationSystem 
 type AzureAuthorizationSystem struct {
     AuthorizationSystem
 }
-// NewAzureAuthorizationSystem instantiates a new azureAuthorizationSystem and sets the default values.
+// NewAzureAuthorizationSystem instantiates a new AzureAuthorizationSystem and sets the default values.
 func NewAzureAuthorizationSystem()(*AzureAuthorizationSystem) {
     m := &AzureAuthorizationSystem{
         AuthorizationSystem: *NewAuthorizationSystem(),
@@ -18,10 +17,12 @@ func NewAzureAuthorizationSystem()(*AzureAuthorizationSystem) {
     return m
 }
 // CreateAzureAuthorizationSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAzureAuthorizationSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureAuthorizationSystem(), nil
 }
 // GetActions gets the actions property value. List of actions for service in authorization system.
+// returns a []AzureAuthorizationSystemTypeActionable when successful
 func (m *AzureAuthorizationSystem) GetActions()([]AzureAuthorizationSystemTypeActionable) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AzureAuthorizationSystem) GetActions()([]AzureAuthorizationSystemTypeAc
     return nil
 }
 // GetAssociatedIdentities gets the associatedIdentities property value. Identities in the authorization system.
+// returns a AzureAssociatedIdentitiesable when successful
 func (m *AzureAuthorizationSystem) GetAssociatedIdentities()(AzureAssociatedIdentitiesable) {
     val, err := m.GetBackingStore().Get("associatedIdentities")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AzureAuthorizationSystem) GetAssociatedIdentities()(AzureAssociatedIden
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureAuthorizationSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthorizationSystem.GetFieldDeserializers()
     res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -123,6 +126,7 @@ func (m *AzureAuthorizationSystem) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetResources gets the resources property value. Resources associated with the authorization system type.
+// returns a []AzureAuthorizationSystemResourceable when successful
 func (m *AzureAuthorizationSystem) GetResources()([]AzureAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -134,6 +138,7 @@ func (m *AzureAuthorizationSystem) GetResources()([]AzureAuthorizationSystemReso
     return nil
 }
 // GetRoleDefinitions gets the roleDefinitions property value. Roles associated with the authorization system type.
+// returns a []AzureRoleDefinitionable when successful
 func (m *AzureAuthorizationSystem) GetRoleDefinitions()([]AzureRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinitions")
     if err != nil {
@@ -145,6 +150,7 @@ func (m *AzureAuthorizationSystem) GetRoleDefinitions()([]AzureRoleDefinitionabl
     return nil
 }
 // GetServices gets the services property value. Services associated with the authorization system type.
+// returns a []AuthorizationSystemTypeServiceable when successful
 func (m *AzureAuthorizationSystem) GetServices()([]AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("services")
     if err != nil {
@@ -252,7 +258,6 @@ func (m *AzureAuthorizationSystem) SetServices(value []AuthorizationSystemTypeSe
         panic(err)
     }
 }
-// AzureAuthorizationSystemable 
 type AzureAuthorizationSystemable interface {
     AuthorizationSystemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

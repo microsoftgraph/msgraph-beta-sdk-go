@@ -1,21 +1,23 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type DeviceIdEntityIdentifier int
 
 const (
-    DEVICEID_DEVICEIDENTITYIDENTIFIER DeviceIdEntityIdentifier = iota
-    UNKNOWNFUTUREVALUE_DEVICEIDENTITYIDENTIFIER
+    DEVICEID_DEVICEIDENTITYIDENTIFIER = 1
+    UNKNOWNFUTUREVALUE_DEVICEIDENTITYIDENTIFIER = 2
 )
 
 func (i DeviceIdEntityIdentifier) String() string {
     var values []string
-    for p := DeviceIdEntityIdentifier(1); p <= UNKNOWNFUTUREVALUE_DEVICEIDENTITYIDENTIFIER; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"deviceId", "unknownFutureValue"}[p])
+    options := []string{"deviceId", "unknownFutureValue"}
+    for p := 0; p < 2; p++ {
+        mantis := DeviceIdEntityIdentifier(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

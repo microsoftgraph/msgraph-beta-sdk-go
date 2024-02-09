@@ -8,7 +8,7 @@ import (
 type Windows81VpnConfiguration struct {
     WindowsVpnConfiguration
 }
-// NewWindows81VpnConfiguration instantiates a new windows81VpnConfiguration and sets the default values.
+// NewWindows81VpnConfiguration instantiates a new Windows81VpnConfiguration and sets the default values.
 func NewWindows81VpnConfiguration()(*Windows81VpnConfiguration) {
     m := &Windows81VpnConfiguration{
         WindowsVpnConfiguration: *NewWindowsVpnConfiguration(),
@@ -18,6 +18,7 @@ func NewWindows81VpnConfiguration()(*Windows81VpnConfiguration) {
     return m
 }
 // CreateWindows81VpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows81VpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateWindows81VpnConfigurationFromDiscriminatorValue(parseNode i878a80d233
     return NewWindows81VpnConfiguration(), nil
 }
 // GetApplyOnlyToWindows81 gets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
+// returns a *bool when successful
 func (m *Windows81VpnConfiguration) GetApplyOnlyToWindows81()(*bool) {
     val, err := m.GetBackingStore().Get("applyOnlyToWindows81")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *Windows81VpnConfiguration) GetApplyOnlyToWindows81()(*bool) {
     return nil
 }
 // GetConnectionType gets the connectionType property value. Windows VPN connection type.
+// returns a *WindowsVpnConnectionType when successful
 func (m *Windows81VpnConfiguration) GetConnectionType()(*WindowsVpnConnectionType) {
     val, err := m.GetBackingStore().Get("connectionType")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *Windows81VpnConfiguration) GetConnectionType()(*WindowsVpnConnectionTyp
     return nil
 }
 // GetEnableSplitTunneling gets the enableSplitTunneling property value. Enable split tunneling for the VPN.
+// returns a *bool when successful
 func (m *Windows81VpnConfiguration) GetEnableSplitTunneling()(*bool) {
     val, err := m.GetBackingStore().Get("enableSplitTunneling")
     if err != nil {
@@ -73,6 +77,7 @@ func (m *Windows81VpnConfiguration) GetEnableSplitTunneling()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows81VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsVpnConfiguration.GetFieldDeserializers()
     res["applyOnlyToWindows81"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -128,6 +133,7 @@ func (m *Windows81VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetLoginGroupOrDomain gets the loginGroupOrDomain property value. Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.
+// returns a *string when successful
 func (m *Windows81VpnConfiguration) GetLoginGroupOrDomain()(*string) {
     val, err := m.GetBackingStore().Get("loginGroupOrDomain")
     if err != nil {
@@ -139,6 +145,7 @@ func (m *Windows81VpnConfiguration) GetLoginGroupOrDomain()(*string) {
     return nil
 }
 // GetProxyServer gets the proxyServer property value. Proxy Server.
+// returns a Windows81VpnProxyServerable when successful
 func (m *Windows81VpnConfiguration) GetProxyServer()(Windows81VpnProxyServerable) {
     val, err := m.GetBackingStore().Get("proxyServer")
     if err != nil {
@@ -217,7 +224,6 @@ func (m *Windows81VpnConfiguration) SetProxyServer(value Windows81VpnProxyServer
         panic(err)
     }
 }
-// Windows81VpnConfigurationable 
 type Windows81VpnConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsVpnConfigurationable

@@ -27,28 +27,29 @@ type CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilderGetRequ
     // Request query parameters
     QueryParameters *CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilderGetQueryParameters
 }
-// NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilderInternal instantiates a new AccountRequestBuilder and sets the default values.
+// NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilderInternal instantiates a new CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder and sets the default values.
 func NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder) {
     m := &CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/salesQuoteLines/{salesQuoteLine%2Did}/account{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/salesQuoteLines/{salesQuoteLine%2Did}/account{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder instantiates a new AccountRequestBuilder and sets the default values.
+// NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder instantiates a new CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder and sets the default values.
 func NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get account from financials
+// returns a Accountable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Accountable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccountFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder) G
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Accountable), nil
 }
 // ToGetRequestInformation get account from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder) T
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder when successful
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder) {
     return NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemAccountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

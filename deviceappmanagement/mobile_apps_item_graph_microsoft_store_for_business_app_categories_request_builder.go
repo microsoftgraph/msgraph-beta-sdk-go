@@ -40,6 +40,7 @@ type MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilderGetR
     QueryParameters *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilderGetQueryParameters
 }
 // ByMobileAppCategoryId provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesMobileAppCategoryItemRequestBuilder when successful
 func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder) ByMobileAppCategoryId(mobileAppCategoryId string)(*MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesMobileAppCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder
     }
     return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesMobileAppCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilderInternal instantiates a new CategoriesRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilderInternal instantiates a new MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder) {
     m := &MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.microsoftStoreForBusinessApp/categories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.microsoftStoreForBusinessApp/categories{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder instantiates a new CategoriesRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder instantiates a new MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesCountRequestBuilder when successful
 func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder) Count()(*MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesCountRequestBuilder) {
     return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of categories for this app.
+// returns a MobileAppCategoryCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppCategoryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileAppCategoryCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppCategoryCollectionResponseable), nil
 }
 // ToGetRequestInformation the list of categories for this app.
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder when successful
 func (m *MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder) {
     return NewMobileAppsItemGraphMicrosoftStoreForBusinessAppCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

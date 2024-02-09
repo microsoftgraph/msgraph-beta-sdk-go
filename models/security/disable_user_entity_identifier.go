@@ -1,24 +1,26 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type DisableUserEntityIdentifier int
 
 const (
-    ACCOUNTSID_DISABLEUSERENTITYIDENTIFIER DisableUserEntityIdentifier = iota
-    INITIATINGPROCESSACCOUNTSID_DISABLEUSERENTITYIDENTIFIER
-    REQUESTACCOUNTSID_DISABLEUSERENTITYIDENTIFIER
-    ONPREMSID_DISABLEUSERENTITYIDENTIFIER
-    UNKNOWNFUTUREVALUE_DISABLEUSERENTITYIDENTIFIER
+    ACCOUNTSID_DISABLEUSERENTITYIDENTIFIER = 1
+    INITIATINGPROCESSACCOUNTSID_DISABLEUSERENTITYIDENTIFIER = 2
+    REQUESTACCOUNTSID_DISABLEUSERENTITYIDENTIFIER = 4
+    ONPREMSID_DISABLEUSERENTITYIDENTIFIER = 8
+    UNKNOWNFUTUREVALUE_DISABLEUSERENTITYIDENTIFIER = 16
 )
 
 func (i DisableUserEntityIdentifier) String() string {
     var values []string
-    for p := DisableUserEntityIdentifier(1); p <= UNKNOWNFUTUREVALUE_DISABLEUSERENTITYIDENTIFIER; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"accountSid", "initiatingProcessAccountSid", "requestAccountSid", "onPremSid", "unknownFutureValue"}[p])
+    options := []string{"accountSid", "initiatingProcessAccountSid", "requestAccountSid", "onPremSid", "unknownFutureValue"}
+    for p := 0; p < 5; p++ {
+        mantis := DisableUserEntityIdentifier(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

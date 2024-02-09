@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DeploymentAudience 
 type DeploymentAudience struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewDeploymentAudience instantiates a new deploymentAudience and sets the default values.
+// NewDeploymentAudience instantiates a new DeploymentAudience and sets the default values.
 func NewDeploymentAudience()(*DeploymentAudience) {
     m := &DeploymentAudience{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewDeploymentAudience()(*DeploymentAudience) {
     return m
 }
 // CreateDeploymentAudienceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeploymentAudienceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeploymentAudience(), nil
 }
 // GetApplicableContent gets the applicableContent property value. Content eligible to deploy to devices in the audience. Not nullable. Read-only.
+// returns a []ApplicableContentable when successful
 func (m *DeploymentAudience) GetApplicableContent()([]ApplicableContentable) {
     val, err := m.GetBackingStore().Get("applicableContent")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *DeploymentAudience) GetApplicableContent()([]ApplicableContentable) {
     return nil
 }
 // GetExclusions gets the exclusions property value. Specifies the assets to exclude from the audience.
+// returns a []UpdatableAssetable when successful
 func (m *DeploymentAudience) GetExclusions()([]UpdatableAssetable) {
     val, err := m.GetBackingStore().Get("exclusions")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *DeploymentAudience) GetExclusions()([]UpdatableAssetable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicableContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,6 +99,7 @@ func (m *DeploymentAudience) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetMembers gets the members property value. Specifies the assets to include in the audience.
+// returns a []UpdatableAssetable when successful
 func (m *DeploymentAudience) GetMembers()([]UpdatableAssetable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -171,7 +175,6 @@ func (m *DeploymentAudience) SetMembers(value []UpdatableAssetable)() {
         panic(err)
     }
 }
-// DeploymentAudienceable 
 type DeploymentAudienceable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

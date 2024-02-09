@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProtectOnlineMeetingAction 
 type ProtectOnlineMeetingAction struct {
     LabelActionBase
 }
-// NewProtectOnlineMeetingAction instantiates a new protectOnlineMeetingAction and sets the default values.
+// NewProtectOnlineMeetingAction instantiates a new ProtectOnlineMeetingAction and sets the default values.
 func NewProtectOnlineMeetingAction()(*ProtectOnlineMeetingAction) {
     m := &ProtectOnlineMeetingAction{
         LabelActionBase: *NewLabelActionBase(),
@@ -18,10 +17,12 @@ func NewProtectOnlineMeetingAction()(*ProtectOnlineMeetingAction) {
     return m
 }
 // CreateProtectOnlineMeetingActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProtectOnlineMeetingActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProtectOnlineMeetingAction(), nil
 }
 // GetAllowedForwarders gets the allowedForwarders property value. The allowedForwarders property
+// returns a *OnlineMeetingForwarders when successful
 func (m *ProtectOnlineMeetingAction) GetAllowedForwarders()(*OnlineMeetingForwarders) {
     val, err := m.GetBackingStore().Get("allowedForwarders")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ProtectOnlineMeetingAction) GetAllowedForwarders()(*OnlineMeetingForwar
     return nil
 }
 // GetAllowedPresenters gets the allowedPresenters property value. The allowedPresenters property
+// returns a *OnlineMeetingPresenters when successful
 func (m *ProtectOnlineMeetingAction) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     val, err := m.GetBackingStore().Get("allowedPresenters")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ProtectOnlineMeetingAction) GetAllowedPresenters()(*OnlineMeetingPresen
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProtectOnlineMeetingAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LabelActionBase.GetFieldDeserializers()
     res["allowedForwarders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,6 +102,7 @@ func (m *ProtectOnlineMeetingAction) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetIsCopyToClipboardEnabled gets the isCopyToClipboardEnabled property value. The isCopyToClipboardEnabled property
+// returns a *bool when successful
 func (m *ProtectOnlineMeetingAction) GetIsCopyToClipboardEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isCopyToClipboardEnabled")
     if err != nil {
@@ -110,6 +114,7 @@ func (m *ProtectOnlineMeetingAction) GetIsCopyToClipboardEnabled()(*bool) {
     return nil
 }
 // GetIsLobbyEnabled gets the isLobbyEnabled property value. The isLobbyEnabled property
+// returns a *bool when successful
 func (m *ProtectOnlineMeetingAction) GetIsLobbyEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isLobbyEnabled")
     if err != nil {
@@ -121,6 +126,7 @@ func (m *ProtectOnlineMeetingAction) GetIsLobbyEnabled()(*bool) {
     return nil
 }
 // GetLobbyBypassSettings gets the lobbyBypassSettings property value. The lobbyBypassSettings property
+// returns a LobbyBypassSettingsable when successful
 func (m *ProtectOnlineMeetingAction) GetLobbyBypassSettings()(LobbyBypassSettingsable) {
     val, err := m.GetBackingStore().Get("lobbyBypassSettings")
     if err != nil {
@@ -206,7 +212,6 @@ func (m *ProtectOnlineMeetingAction) SetLobbyBypassSettings(value LobbyBypassSet
         panic(err)
     }
 }
-// ProtectOnlineMeetingActionable 
 type ProtectOnlineMeetingActionable interface {
     LabelActionBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

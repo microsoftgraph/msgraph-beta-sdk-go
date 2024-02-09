@@ -8,7 +8,7 @@ import (
 type Windows10VpnConfiguration struct {
     WindowsVpnConfiguration
 }
-// NewWindows10VpnConfiguration instantiates a new windows10VpnConfiguration and sets the default values.
+// NewWindows10VpnConfiguration instantiates a new Windows10VpnConfiguration and sets the default values.
 func NewWindows10VpnConfiguration()(*Windows10VpnConfiguration) {
     m := &Windows10VpnConfiguration{
         WindowsVpnConfiguration: *NewWindowsVpnConfiguration(),
@@ -18,10 +18,12 @@ func NewWindows10VpnConfiguration()(*Windows10VpnConfiguration) {
     return m
 }
 // CreateWindows10VpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10VpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10VpnConfiguration(), nil
 }
 // GetAssociatedApps gets the associatedApps property value. Associated Apps. This collection can contain a maximum of 10000 elements.
+// returns a []Windows10AssociatedAppsable when successful
 func (m *Windows10VpnConfiguration) GetAssociatedApps()([]Windows10AssociatedAppsable) {
     val, err := m.GetBackingStore().Get("associatedApps")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows10VpnConfiguration) GetAssociatedApps()([]Windows10AssociatedApp
     return nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Windows 10 VPN connection types.
+// returns a *Windows10VpnAuthenticationMethod when successful
 func (m *Windows10VpnConfiguration) GetAuthenticationMethod()(*Windows10VpnAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Windows10VpnConfiguration) GetAuthenticationMethod()(*Windows10VpnAuthe
     return nil
 }
 // GetConnectionType gets the connectionType property value. VPN connection types.
+// returns a *Windows10VpnConnectionType when successful
 func (m *Windows10VpnConfiguration) GetConnectionType()(*Windows10VpnConnectionType) {
     val, err := m.GetBackingStore().Get("connectionType")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *Windows10VpnConfiguration) GetConnectionType()(*Windows10VpnConnectionT
     return nil
 }
 // GetCryptographySuite gets the cryptographySuite property value. Cryptography Suite security settings for IKEv2 VPN in Windows10 and above
+// returns a CryptographySuiteable when successful
 func (m *Windows10VpnConfiguration) GetCryptographySuite()(CryptographySuiteable) {
     val, err := m.GetBackingStore().Get("cryptographySuite")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *Windows10VpnConfiguration) GetCryptographySuite()(CryptographySuiteable
     return nil
 }
 // GetDnsRules gets the dnsRules property value. DNS rules. This collection can contain a maximum of 1000 elements.
+// returns a []VpnDnsRuleable when successful
 func (m *Windows10VpnConfiguration) GetDnsRules()([]VpnDnsRuleable) {
     val, err := m.GetBackingStore().Get("dnsRules")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *Windows10VpnConfiguration) GetDnsRules()([]VpnDnsRuleable) {
     return nil
 }
 // GetDnsSuffixes gets the dnsSuffixes property value. Specify DNS suffixes to add to the DNS search list to properly route short names.
+// returns a []string when successful
 func (m *Windows10VpnConfiguration) GetDnsSuffixes()([]string) {
     val, err := m.GetBackingStore().Get("dnsSuffixes")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *Windows10VpnConfiguration) GetDnsSuffixes()([]string) {
     return nil
 }
 // GetEapXml gets the eapXml property value. Extensible Authentication Protocol (EAP) XML. (UTF8 encoded byte array)
+// returns a []byte when successful
 func (m *Windows10VpnConfiguration) GetEapXml()([]byte) {
     val, err := m.GetBackingStore().Get("eapXml")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *Windows10VpnConfiguration) GetEapXml()([]byte) {
     return nil
 }
 // GetEnableAlwaysOn gets the enableAlwaysOn property value. Enable Always On mode.
+// returns a *bool when successful
 func (m *Windows10VpnConfiguration) GetEnableAlwaysOn()(*bool) {
     val, err := m.GetBackingStore().Get("enableAlwaysOn")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *Windows10VpnConfiguration) GetEnableAlwaysOn()(*bool) {
     return nil
 }
 // GetEnableConditionalAccess gets the enableConditionalAccess property value. Enable conditional access.
+// returns a *bool when successful
 func (m *Windows10VpnConfiguration) GetEnableConditionalAccess()(*bool) {
     val, err := m.GetBackingStore().Get("enableConditionalAccess")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *Windows10VpnConfiguration) GetEnableConditionalAccess()(*bool) {
     return nil
 }
 // GetEnableDeviceTunnel gets the enableDeviceTunnel property value. Enable device tunnel.
+// returns a *bool when successful
 func (m *Windows10VpnConfiguration) GetEnableDeviceTunnel()(*bool) {
     val, err := m.GetBackingStore().Get("enableDeviceTunnel")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *Windows10VpnConfiguration) GetEnableDeviceTunnel()(*bool) {
     return nil
 }
 // GetEnableDnsRegistration gets the enableDnsRegistration property value. Enable IP address registration with internal DNS.
+// returns a *bool when successful
 func (m *Windows10VpnConfiguration) GetEnableDnsRegistration()(*bool) {
     val, err := m.GetBackingStore().Get("enableDnsRegistration")
     if err != nil {
@@ -143,6 +155,7 @@ func (m *Windows10VpnConfiguration) GetEnableDnsRegistration()(*bool) {
     return nil
 }
 // GetEnableSingleSignOnWithAlternateCertificate gets the enableSingleSignOnWithAlternateCertificate property value. Enable single sign-on (SSO) with alternate certificate.
+// returns a *bool when successful
 func (m *Windows10VpnConfiguration) GetEnableSingleSignOnWithAlternateCertificate()(*bool) {
     val, err := m.GetBackingStore().Get("enableSingleSignOnWithAlternateCertificate")
     if err != nil {
@@ -154,6 +167,7 @@ func (m *Windows10VpnConfiguration) GetEnableSingleSignOnWithAlternateCertificat
     return nil
 }
 // GetEnableSplitTunneling gets the enableSplitTunneling property value. Enable split tunneling.
+// returns a *bool when successful
 func (m *Windows10VpnConfiguration) GetEnableSplitTunneling()(*bool) {
     val, err := m.GetBackingStore().Get("enableSplitTunneling")
     if err != nil {
@@ -165,6 +179,7 @@ func (m *Windows10VpnConfiguration) GetEnableSplitTunneling()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsVpnConfiguration.GetFieldDeserializers()
     res["associatedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -456,6 +471,7 @@ func (m *Windows10VpnConfiguration) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
+// returns a WindowsCertificateProfileBaseable when successful
 func (m *Windows10VpnConfiguration) GetIdentityCertificate()(WindowsCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificate")
     if err != nil {
@@ -467,6 +483,7 @@ func (m *Windows10VpnConfiguration) GetIdentityCertificate()(WindowsCertificateP
     return nil
 }
 // GetMicrosoftTunnelSiteId gets the microsoftTunnelSiteId property value. ID of the Microsoft Tunnel site associated with the VPN profile.
+// returns a *string when successful
 func (m *Windows10VpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
     val, err := m.GetBackingStore().Get("microsoftTunnelSiteId")
     if err != nil {
@@ -478,6 +495,7 @@ func (m *Windows10VpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
     return nil
 }
 // GetOnlyAssociatedAppsCanUseConnection gets the onlyAssociatedAppsCanUseConnection property value. Only associated Apps can use connection (per-app VPN).
+// returns a *bool when successful
 func (m *Windows10VpnConfiguration) GetOnlyAssociatedAppsCanUseConnection()(*bool) {
     val, err := m.GetBackingStore().Get("onlyAssociatedAppsCanUseConnection")
     if err != nil {
@@ -489,6 +507,7 @@ func (m *Windows10VpnConfiguration) GetOnlyAssociatedAppsCanUseConnection()(*boo
     return nil
 }
 // GetProfileTarget gets the profileTarget property value. Profile target type. Possible values are: user, device, autoPilotDevice.
+// returns a *Windows10VpnProfileTarget when successful
 func (m *Windows10VpnConfiguration) GetProfileTarget()(*Windows10VpnProfileTarget) {
     val, err := m.GetBackingStore().Get("profileTarget")
     if err != nil {
@@ -500,6 +519,7 @@ func (m *Windows10VpnConfiguration) GetProfileTarget()(*Windows10VpnProfileTarge
     return nil
 }
 // GetProxyServer gets the proxyServer property value. Proxy Server.
+// returns a Windows10VpnProxyServerable when successful
 func (m *Windows10VpnConfiguration) GetProxyServer()(Windows10VpnProxyServerable) {
     val, err := m.GetBackingStore().Get("proxyServer")
     if err != nil {
@@ -511,6 +531,7 @@ func (m *Windows10VpnConfiguration) GetProxyServer()(Windows10VpnProxyServerable
     return nil
 }
 // GetRememberUserCredentials gets the rememberUserCredentials property value. Remember user credentials.
+// returns a *bool when successful
 func (m *Windows10VpnConfiguration) GetRememberUserCredentials()(*bool) {
     val, err := m.GetBackingStore().Get("rememberUserCredentials")
     if err != nil {
@@ -522,6 +543,7 @@ func (m *Windows10VpnConfiguration) GetRememberUserCredentials()(*bool) {
     return nil
 }
 // GetRoutes gets the routes property value. Routes (optional for third-party providers). This collection can contain a maximum of 1000 elements.
+// returns a []VpnRouteable when successful
 func (m *Windows10VpnConfiguration) GetRoutes()([]VpnRouteable) {
     val, err := m.GetBackingStore().Get("routes")
     if err != nil {
@@ -533,6 +555,7 @@ func (m *Windows10VpnConfiguration) GetRoutes()([]VpnRouteable) {
     return nil
 }
 // GetSingleSignOnEku gets the singleSignOnEku property value. Single sign-on Extended Key Usage (EKU).
+// returns a ExtendedKeyUsageable when successful
 func (m *Windows10VpnConfiguration) GetSingleSignOnEku()(ExtendedKeyUsageable) {
     val, err := m.GetBackingStore().Get("singleSignOnEku")
     if err != nil {
@@ -544,6 +567,7 @@ func (m *Windows10VpnConfiguration) GetSingleSignOnEku()(ExtendedKeyUsageable) {
     return nil
 }
 // GetSingleSignOnIssuerHash gets the singleSignOnIssuerHash property value. Single sign-on issuer hash.
+// returns a *string when successful
 func (m *Windows10VpnConfiguration) GetSingleSignOnIssuerHash()(*string) {
     val, err := m.GetBackingStore().Get("singleSignOnIssuerHash")
     if err != nil {
@@ -555,6 +579,7 @@ func (m *Windows10VpnConfiguration) GetSingleSignOnIssuerHash()(*string) {
     return nil
 }
 // GetTrafficRules gets the trafficRules property value. Traffic rules. This collection can contain a maximum of 1000 elements.
+// returns a []VpnTrafficRuleable when successful
 func (m *Windows10VpnConfiguration) GetTrafficRules()([]VpnTrafficRuleable) {
     val, err := m.GetBackingStore().Get("trafficRules")
     if err != nil {
@@ -566,6 +591,7 @@ func (m *Windows10VpnConfiguration) GetTrafficRules()([]VpnTrafficRuleable) {
     return nil
 }
 // GetTrustedNetworkDomains gets the trustedNetworkDomains property value. Trusted Network Domains
+// returns a []string when successful
 func (m *Windows10VpnConfiguration) GetTrustedNetworkDomains()([]string) {
     val, err := m.GetBackingStore().Get("trustedNetworkDomains")
     if err != nil {
@@ -577,6 +603,7 @@ func (m *Windows10VpnConfiguration) GetTrustedNetworkDomains()([]string) {
     return nil
 }
 // GetWindowsInformationProtectionDomain gets the windowsInformationProtectionDomain property value. Windows Information Protection (WIP) domain to associate with this connection.
+// returns a *string when successful
 func (m *Windows10VpnConfiguration) GetWindowsInformationProtectionDomain()(*string) {
     val, err := m.GetBackingStore().Get("windowsInformationProtectionDomain")
     if err != nil {
@@ -947,7 +974,6 @@ func (m *Windows10VpnConfiguration) SetWindowsInformationProtectionDomain(value 
         panic(err)
     }
 }
-// Windows10VpnConfigurationable 
 type Windows10VpnConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsVpnConfigurationable

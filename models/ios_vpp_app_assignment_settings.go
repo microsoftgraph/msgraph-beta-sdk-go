@@ -8,7 +8,7 @@ import (
 type IosVppAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewIosVppAppAssignmentSettings instantiates a new iosVppAppAssignmentSettings and sets the default values.
+// NewIosVppAppAssignmentSettings instantiates a new IosVppAppAssignmentSettings and sets the default values.
 func NewIosVppAppAssignmentSettings()(*IosVppAppAssignmentSettings) {
     m := &IosVppAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -18,10 +18,12 @@ func NewIosVppAppAssignmentSettings()(*IosVppAppAssignmentSettings) {
     return m
 }
 // CreateIosVppAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosVppAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosVppAppAssignmentSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosVppAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
     res["isRemovable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +89,7 @@ func (m *IosVppAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetIsRemovable gets the isRemovable property value. Whether or not the app can be removed by the user.
+// returns a *bool when successful
 func (m *IosVppAppAssignmentSettings) GetIsRemovable()(*bool) {
     val, err := m.GetBackingStore().Get("isRemovable")
     if err != nil {
@@ -98,6 +101,7 @@ func (m *IosVppAppAssignmentSettings) GetIsRemovable()(*bool) {
     return nil
 }
 // GetPreventAutoAppUpdate gets the preventAutoAppUpdate property value. When TRUE, indicates that the app should not be automatically updated with the latest version from Apple app store. When FALSE, indicates that the app may be auto updated. By default, this property is set to null which internally is treated as FALSE.
+// returns a *bool when successful
 func (m *IosVppAppAssignmentSettings) GetPreventAutoAppUpdate()(*bool) {
     val, err := m.GetBackingStore().Get("preventAutoAppUpdate")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *IosVppAppAssignmentSettings) GetPreventAutoAppUpdate()(*bool) {
     return nil
 }
 // GetPreventManagedAppBackup gets the preventManagedAppBackup property value. When TRUE, indicates that the app should not be backed up to iCloud. When FALSE, indicates that the app may be backed up to iCloud. By default, this property is set to null which internally is treated as FALSE.
+// returns a *bool when successful
 func (m *IosVppAppAssignmentSettings) GetPreventManagedAppBackup()(*bool) {
     val, err := m.GetBackingStore().Get("preventManagedAppBackup")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *IosVppAppAssignmentSettings) GetPreventManagedAppBackup()(*bool) {
     return nil
 }
 // GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
+// returns a *bool when successful
 func (m *IosVppAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     val, err := m.GetBackingStore().Get("uninstallOnDeviceRemoval")
     if err != nil {
@@ -131,6 +137,7 @@ func (m *IosVppAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     return nil
 }
 // GetUseDeviceLicensing gets the useDeviceLicensing property value. Whether or not to use device licensing.
+// returns a *bool when successful
 func (m *IosVppAppAssignmentSettings) GetUseDeviceLicensing()(*bool) {
     val, err := m.GetBackingStore().Get("useDeviceLicensing")
     if err != nil {
@@ -142,6 +149,7 @@ func (m *IosVppAppAssignmentSettings) GetUseDeviceLicensing()(*bool) {
     return nil
 }
 // GetVpnConfigurationId gets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
+// returns a *string when successful
 func (m *IosVppAppAssignmentSettings) GetVpnConfigurationId()(*string) {
     val, err := m.GetBackingStore().Get("vpnConfigurationId")
     if err != nil {
@@ -238,7 +246,6 @@ func (m *IosVppAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
         panic(err)
     }
 }
-// IosVppAppAssignmentSettingsable 
 type IosVppAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

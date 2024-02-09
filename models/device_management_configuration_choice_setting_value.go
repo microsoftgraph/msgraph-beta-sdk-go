@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationChoiceSettingValue struct {
     DeviceManagementConfigurationSettingValue
 }
-// NewDeviceManagementConfigurationChoiceSettingValue instantiates a new deviceManagementConfigurationChoiceSettingValue and sets the default values.
+// NewDeviceManagementConfigurationChoiceSettingValue instantiates a new DeviceManagementConfigurationChoiceSettingValue and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingValue()(*DeviceManagementConfigurationChoiceSettingValue) {
     m := &DeviceManagementConfigurationChoiceSettingValue{
         DeviceManagementConfigurationSettingValue: *NewDeviceManagementConfigurationSettingValue(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationChoiceSettingValue()(*DeviceManagementConfi
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationChoiceSettingValueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationChoiceSettingValue(), nil
 }
 // GetChildren gets the children property value. Child settings.
+// returns a []DeviceManagementConfigurationSettingInstanceable when successful
 func (m *DeviceManagementConfigurationChoiceSettingValue) GetChildren()([]DeviceManagementConfigurationSettingInstanceable) {
     val, err := m.GetBackingStore().Get("children")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceManagementConfigurationChoiceSettingValue) GetChildren()([]Device
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationChoiceSettingValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingValue.GetFieldDeserializers()
     res["children"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +67,7 @@ func (m *DeviceManagementConfigurationChoiceSettingValue) GetFieldDeserializers(
     return res
 }
 // GetValue gets the value property value. Choice setting value: an OptionDefinition ItemId.
+// returns a *string when successful
 func (m *DeviceManagementConfigurationChoiceSettingValue) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -114,7 +118,6 @@ func (m *DeviceManagementConfigurationChoiceSettingValue) SetValue(value *string
         panic(err)
     }
 }
-// DeviceManagementConfigurationChoiceSettingValueable 
 type DeviceManagementConfigurationChoiceSettingValueable interface {
     DeviceManagementConfigurationSettingValueable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Profile 
 type Profile struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewProfile instantiates a new profile and sets the default values.
+// NewProfile instantiates a new Profile and sets the default values.
 func NewProfile()(*Profile) {
     m := &Profile{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,6 +17,7 @@ func NewProfile()(*Profile) {
     return m
 }
 // CreateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +42,7 @@ func CreateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
     return NewProfile(), nil
 }
 // GetDescription gets the description property value. Description.
+// returns a *string when successful
 func (m *Profile) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,6 +54,7 @@ func (m *Profile) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -124,6 +126,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Profile last modified time.
+// returns a *Time when successful
 func (m *Profile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -135,6 +138,7 @@ func (m *Profile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetName gets the name property value. Profile name.
+// returns a *string when successful
 func (m *Profile) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -146,6 +150,7 @@ func (m *Profile) GetName()(*string) {
     return nil
 }
 // GetPolicies gets the policies property value. Traffic forwarding policies associated with this profile.
+// returns a []PolicyLinkable when successful
 func (m *Profile) GetPolicies()([]PolicyLinkable) {
     val, err := m.GetBackingStore().Get("policies")
     if err != nil {
@@ -157,6 +162,7 @@ func (m *Profile) GetPolicies()([]PolicyLinkable) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *Status when successful
 func (m *Profile) GetState()(*Status) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -168,6 +174,7 @@ func (m *Profile) GetState()(*Status) {
     return nil
 }
 // GetVersion gets the version property value. Profile version.
+// returns a *string when successful
 func (m *Profile) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -271,7 +278,6 @@ func (m *Profile) SetVersion(value *string)() {
         panic(err)
     }
 }
-// Profileable 
 type Profileable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

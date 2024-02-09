@@ -17,21 +17,23 @@ type VirtualEndpointCloudPCsValidateBulkResizeRequestBuilderPostRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilderInternal instantiates a new ValidateBulkResizeRequestBuilder and sets the default values.
+// NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilderInternal instantiates a new VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) {
     m := &VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/validateBulkResize", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilder instantiates a new ValidateBulkResizeRequestBuilder and sets the default values.
+// NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilder instantiates a new VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post validate that a set of cloudPC devices meet the requirements to be bulk resized.
-// Deprecated: This method is obsolete. Use PostAsValidateBulkResizePostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a VirtualEndpointCloudPCsValidateBulkResizeResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) Post(ctx conte
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEndpointCloudPCsValidateBulkResizeResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) Post(ctx conte
     return res.(VirtualEndpointCloudPCsValidateBulkResizeResponseable), nil
 }
 // PostAsValidateBulkResizePostResponse validate that a set of cloudPC devices meet the requirements to be bulk resized.
+// returns a VirtualEndpointCloudPCsValidateBulkResizePostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) PostAsValidate
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEndpointCloudPCsValidateBulkResizePostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) PostAsValidate
     return res.(VirtualEndpointCloudPCsValidateBulkResizePostResponseable), nil
 }
 // ToPostRequestInformation validate that a set of cloudPC devices meet the requirements to be bulk resized.
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointCloudPCsValidateBulkResizePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointCloudPCsValidateBulkResizeRequestBuilder) {
     return NewVirtualEndpointCloudPCsValidateBulkResizeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

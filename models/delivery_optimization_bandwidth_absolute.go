@@ -8,7 +8,7 @@ import (
 type DeliveryOptimizationBandwidthAbsolute struct {
     DeliveryOptimizationBandwidth
 }
-// NewDeliveryOptimizationBandwidthAbsolute instantiates a new deliveryOptimizationBandwidthAbsolute and sets the default values.
+// NewDeliveryOptimizationBandwidthAbsolute instantiates a new DeliveryOptimizationBandwidthAbsolute and sets the default values.
 func NewDeliveryOptimizationBandwidthAbsolute()(*DeliveryOptimizationBandwidthAbsolute) {
     m := &DeliveryOptimizationBandwidthAbsolute{
         DeliveryOptimizationBandwidth: *NewDeliveryOptimizationBandwidth(),
@@ -18,10 +18,12 @@ func NewDeliveryOptimizationBandwidthAbsolute()(*DeliveryOptimizationBandwidthAb
     return m
 }
 // CreateDeliveryOptimizationBandwidthAbsoluteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeliveryOptimizationBandwidthAbsoluteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeliveryOptimizationBandwidthAbsolute(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeliveryOptimizationBandwidthAbsolute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeliveryOptimizationBandwidth.GetFieldDeserializers()
     res["maximumDownloadBandwidthInKilobytesPerSecond"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *DeliveryOptimizationBandwidthAbsolute) GetFieldDeserializers()(map[stri
     return res
 }
 // GetMaximumDownloadBandwidthInKilobytesPerSecond gets the maximumDownloadBandwidthInKilobytesPerSecond property value. Specifies the maximum download bandwidth in KiloBytes/second that the device can use across all concurrent download activities using Delivery Optimization. Valid values 0 to 4294967295
+// returns a *int64 when successful
 func (m *DeliveryOptimizationBandwidthAbsolute) GetMaximumDownloadBandwidthInKilobytesPerSecond()(*int64) {
     val, err := m.GetBackingStore().Get("maximumDownloadBandwidthInKilobytesPerSecond")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *DeliveryOptimizationBandwidthAbsolute) GetMaximumDownloadBandwidthInKil
     return nil
 }
 // GetMaximumUploadBandwidthInKilobytesPerSecond gets the maximumUploadBandwidthInKilobytesPerSecond property value. Specifies the maximum upload bandwidth in KiloBytes/second that a device will use across all concurrent upload activity using Delivery Optimization (0-4000000). Valid values 0 to 4000000
+// returns a *int64 when successful
 func (m *DeliveryOptimizationBandwidthAbsolute) GetMaximumUploadBandwidthInKilobytesPerSecond()(*int64) {
     val, err := m.GetBackingStore().Get("maximumUploadBandwidthInKilobytesPerSecond")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *DeliveryOptimizationBandwidthAbsolute) SetMaximumUploadBandwidthInKilob
         panic(err)
     }
 }
-// DeliveryOptimizationBandwidthAbsoluteable 
 type DeliveryOptimizationBandwidthAbsoluteable interface {
     DeliveryOptimizationBandwidthable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

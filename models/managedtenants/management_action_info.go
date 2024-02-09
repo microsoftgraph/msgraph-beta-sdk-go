@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ManagementActionInfo 
 type ManagementActionInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewManagementActionInfo instantiates a new managementActionInfo and sets the default values.
+// NewManagementActionInfo instantiates a new ManagementActionInfo and sets the default values.
 func NewManagementActionInfo()(*ManagementActionInfo) {
     m := &ManagementActionInfo{
     }
@@ -19,10 +18,12 @@ func NewManagementActionInfo()(*ManagementActionInfo) {
     return m
 }
 // CreateManagementActionInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagementActionInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementActionInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ManagementActionInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ManagementActionInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ManagementActionInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagementActionInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["managementActionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *ManagementActionInfo) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetManagementActionId gets the managementActionId property value. The identifier for the management action. Required. Read-only.
+// returns a *string when successful
 func (m *ManagementActionInfo) GetManagementActionId()(*string) {
     val, err := m.GetBackingStore().Get("managementActionId")
     if err != nil {
@@ -95,6 +99,7 @@ func (m *ManagementActionInfo) GetManagementActionId()(*string) {
     return nil
 }
 // GetManagementTemplateId gets the managementTemplateId property value. The identifier for the management template. Required. Read-only.
+// returns a *string when successful
 func (m *ManagementActionInfo) GetManagementTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("managementTemplateId")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *ManagementActionInfo) GetManagementTemplateId()(*string) {
     return nil
 }
 // GetManagementTemplateVersion gets the managementTemplateVersion property value. The managementTemplateVersion property
+// returns a *int32 when successful
 func (m *ManagementActionInfo) GetManagementTemplateVersion()(*int32) {
     val, err := m.GetBackingStore().Get("managementTemplateVersion")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *ManagementActionInfo) GetManagementTemplateVersion()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ManagementActionInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *ManagementActionInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// ManagementActionInfoable 
 type ManagementActionInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

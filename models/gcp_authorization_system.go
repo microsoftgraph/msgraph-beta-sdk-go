@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GcpAuthorizationSystem 
 type GcpAuthorizationSystem struct {
     AuthorizationSystem
 }
-// NewGcpAuthorizationSystem instantiates a new gcpAuthorizationSystem and sets the default values.
+// NewGcpAuthorizationSystem instantiates a new GcpAuthorizationSystem and sets the default values.
 func NewGcpAuthorizationSystem()(*GcpAuthorizationSystem) {
     m := &GcpAuthorizationSystem{
         AuthorizationSystem: *NewAuthorizationSystem(),
@@ -18,10 +17,12 @@ func NewGcpAuthorizationSystem()(*GcpAuthorizationSystem) {
     return m
 }
 // CreateGcpAuthorizationSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGcpAuthorizationSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGcpAuthorizationSystem(), nil
 }
 // GetActions gets the actions property value. List of actions for service in authorization system.
+// returns a []GcpAuthorizationSystemTypeActionable when successful
 func (m *GcpAuthorizationSystem) GetActions()([]GcpAuthorizationSystemTypeActionable) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *GcpAuthorizationSystem) GetActions()([]GcpAuthorizationSystemTypeAction
     return nil
 }
 // GetAssociatedIdentities gets the associatedIdentities property value. Identities in the authorization system.
+// returns a GcpAssociatedIdentitiesable when successful
 func (m *GcpAuthorizationSystem) GetAssociatedIdentities()(GcpAssociatedIdentitiesable) {
     val, err := m.GetBackingStore().Get("associatedIdentities")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *GcpAuthorizationSystem) GetAssociatedIdentities()(GcpAssociatedIdentiti
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GcpAuthorizationSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthorizationSystem.GetFieldDeserializers()
     res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -123,6 +126,7 @@ func (m *GcpAuthorizationSystem) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetResources gets the resources property value. Resources associated with the authorization system type.
+// returns a []GcpAuthorizationSystemResourceable when successful
 func (m *GcpAuthorizationSystem) GetResources()([]GcpAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -134,6 +138,7 @@ func (m *GcpAuthorizationSystem) GetResources()([]GcpAuthorizationSystemResource
     return nil
 }
 // GetRoles gets the roles property value. Roles associated with the authorization system type.
+// returns a []GcpRoleable when successful
 func (m *GcpAuthorizationSystem) GetRoles()([]GcpRoleable) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -145,6 +150,7 @@ func (m *GcpAuthorizationSystem) GetRoles()([]GcpRoleable) {
     return nil
 }
 // GetServices gets the services property value. Services associated with the authorization system type.
+// returns a []AuthorizationSystemTypeServiceable when successful
 func (m *GcpAuthorizationSystem) GetServices()([]AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("services")
     if err != nil {
@@ -252,7 +258,6 @@ func (m *GcpAuthorizationSystem) SetServices(value []AuthorizationSystemTypeServ
         panic(err)
     }
 }
-// GcpAuthorizationSystemable 
 type GcpAuthorizationSystemable interface {
     AuthorizationSystemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

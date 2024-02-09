@@ -32,29 +32,30 @@ type VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfigura
     // Request query parameters
     QueryParameters *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetQueryParameters
 }
-// NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilderInternal instantiates a new GetSourceImagesRequestBuilder and sets the default values.
+// NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilderInternal instantiates a new VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder and sets the default values.
 func NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) {
     m := &VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages/getSourceImages(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages/getSourceImages(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilder instantiates a new GetSourceImagesRequestBuilder and sets the default values.
+// NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilder instantiates a new VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder and sets the default values.
 func NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getSourceImages
-// Deprecated: This method is obsolete. Use GetAsGetSourceImagesGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a VirtualEndpointDeviceImagesGetSourceImagesResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration)(VirtualEndpointDeviceImagesGetSourceImagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEndpointDeviceImagesGetSourceImagesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) Get(ctx conte
     return res.(VirtualEndpointDeviceImagesGetSourceImagesResponseable), nil
 }
 // GetAsGetSourceImagesGetResponse invoke function getSourceImages
+// returns a VirtualEndpointDeviceImagesGetSourceImagesGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) GetAsGetSourceImagesGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration)(VirtualEndpointDeviceImagesGetSourceImagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEndpointDeviceImagesGetSourceImagesGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) GetAsGetSourc
     return res.(VirtualEndpointDeviceImagesGetSourceImagesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getSourceImages
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder when successful
 func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) {
     return NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

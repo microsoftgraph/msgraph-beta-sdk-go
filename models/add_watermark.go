@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AddWatermark 
 type AddWatermark struct {
     MarkContent
 }
-// NewAddWatermark instantiates a new addWatermark and sets the default values.
+// NewAddWatermark instantiates a new AddWatermark and sets the default values.
 func NewAddWatermark()(*AddWatermark) {
     m := &AddWatermark{
         MarkContent: *NewMarkContent(),
@@ -18,10 +17,12 @@ func NewAddWatermark()(*AddWatermark) {
     return m
 }
 // CreateAddWatermarkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAddWatermarkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAddWatermark(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AddWatermark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MarkContent.GetFieldDeserializers()
     res["orientation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *AddWatermark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetOrientation gets the orientation property value. The orientation property
+// returns a *PageOrientation when successful
 func (m *AddWatermark) GetOrientation()(*PageOrientation) {
     val, err := m.GetBackingStore().Get("orientation")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *AddWatermark) SetOrientation(value *PageOrientation)() {
         panic(err)
     }
 }
-// AddWatermarkable 
 type AddWatermarkable interface {
     MarkContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

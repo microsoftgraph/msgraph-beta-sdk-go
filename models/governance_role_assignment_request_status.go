@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// GovernanceRoleAssignmentRequestStatus 
 type GovernanceRoleAssignmentRequestStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewGovernanceRoleAssignmentRequestStatus instantiates a new governanceRoleAssignmentRequestStatus and sets the default values.
+// NewGovernanceRoleAssignmentRequestStatus instantiates a new GovernanceRoleAssignmentRequestStatus and sets the default values.
 func NewGovernanceRoleAssignmentRequestStatus()(*GovernanceRoleAssignmentRequestStatus) {
     m := &GovernanceRoleAssignmentRequestStatus{
     }
@@ -19,10 +18,12 @@ func NewGovernanceRoleAssignmentRequestStatus()(*GovernanceRoleAssignmentRequest
     return m
 }
 // CreateGovernanceRoleAssignmentRequestStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGovernanceRoleAssignmentRequestStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceRoleAssignmentRequestStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GovernanceRoleAssignmentRequestStatus) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetAdditionalData()(map[string]a
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *GovernanceRoleAssignmentRequestStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,6 +93,7 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetFieldDeserializers()(map[stri
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *GovernanceRoleAssignmentRequestStatus) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -101,6 +105,7 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetOdataType()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status of the role assignment request. The value can be InProgress or Closed.
+// returns a *string when successful
 func (m *GovernanceRoleAssignmentRequestStatus) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetStatus()(*string) {
     return nil
 }
 // GetStatusDetails gets the statusDetails property value. The details of the status of the role assignment request. It represents the evaluation results of different rules.
+// returns a []KeyValueable when successful
 func (m *GovernanceRoleAssignmentRequestStatus) GetStatusDetails()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("statusDetails")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *GovernanceRoleAssignmentRequestStatus) GetStatusDetails()([]KeyValueabl
     return nil
 }
 // GetSubStatus gets the subStatus property value. The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
+// returns a *string when successful
 func (m *GovernanceRoleAssignmentRequestStatus) GetSubStatus()(*string) {
     val, err := m.GetBackingStore().Get("subStatus")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *GovernanceRoleAssignmentRequestStatus) SetSubStatus(value *string)() {
         panic(err)
     }
 }
-// GovernanceRoleAssignmentRequestStatusable 
 type GovernanceRoleAssignmentRequestStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

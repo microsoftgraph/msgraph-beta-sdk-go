@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TaxGroup 
 type TaxGroup struct {
     Entity
 }
-// NewTaxGroup instantiates a new taxGroup and sets the default values.
+// NewTaxGroup instantiates a new TaxGroup and sets the default values.
 func NewTaxGroup()(*TaxGroup) {
     m := &TaxGroup{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTaxGroup()(*TaxGroup) {
     return m
 }
 // CreateTaxGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTaxGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTaxGroup(), nil
 }
 // GetCode gets the code property value. The code property
+// returns a *string when successful
 func (m *TaxGroup) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TaxGroup) GetCode()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *TaxGroup) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TaxGroup) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TaxGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,6 +91,7 @@ func (m *TaxGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *TaxGroup) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -99,6 +103,7 @@ func (m *TaxGroup) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetTaxType gets the taxType property value. The taxType property
+// returns a *string when successful
 func (m *TaxGroup) GetTaxType()(*string) {
     val, err := m.GetBackingStore().Get("taxType")
     if err != nil {
@@ -169,7 +174,6 @@ func (m *TaxGroup) SetTaxType(value *string)() {
         panic(err)
     }
 }
-// TaxGroupable 
 type TaxGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

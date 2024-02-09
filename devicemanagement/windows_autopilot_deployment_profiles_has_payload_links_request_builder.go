@@ -17,29 +17,30 @@ type WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewWindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilderInternal instantiates a new HasPayloadLinksRequestBuilder and sets the default values.
+// NewWindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilderInternal instantiates a new WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder) {
     m := &WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/hasPayloadLinks", pathParameters),
     }
     return m
 }
-// NewWindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder instantiates a new HasPayloadLinksRequestBuilder and sets the default values.
+// NewWindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder instantiates a new WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action hasPayloadLinks
-// Deprecated: This method is obsolete. Use PostAsHasPayloadLinksPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a WindowsAutopilotDeploymentProfilesHasPayloadLinksResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder) Post(ctx context.Context, body WindowsAutopilotDeploymentProfilesHasPayloadLinksPostRequestBodyable, requestConfiguration *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilderPostRequestConfiguration)(WindowsAutopilotDeploymentProfilesHasPayloadLinksResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateWindowsAutopilotDeploymentProfilesHasPayloadLinksResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder) Post(c
     return res.(WindowsAutopilotDeploymentProfilesHasPayloadLinksResponseable), nil
 }
 // PostAsHasPayloadLinksPostResponse invoke action hasPayloadLinks
+// returns a WindowsAutopilotDeploymentProfilesHasPayloadLinksPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder) PostAsHasPayloadLinksPostResponse(ctx context.Context, body WindowsAutopilotDeploymentProfilesHasPayloadLinksPostRequestBodyable, requestConfiguration *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilderPostRequestConfiguration)(WindowsAutopilotDeploymentProfilesHasPayloadLinksPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateWindowsAutopilotDeploymentProfilesHasPayloadLinksPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder) PostAs
     return res.(WindowsAutopilotDeploymentProfilesHasPayloadLinksPostResponseable), nil
 }
 // ToPostRequestInformation invoke action hasPayloadLinks
+// returns a *RequestInformation when successful
 func (m *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder) ToPostRequestInformation(ctx context.Context, body WindowsAutopilotDeploymentProfilesHasPayloadLinksPostRequestBodyable, requestConfiguration *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -84,6 +87,7 @@ func (m *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder when successful
 func (m *WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder) WithUrl(rawUrl string)(*WindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder) {
     return NewWindowsAutopilotDeploymentProfilesHasPayloadLinksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

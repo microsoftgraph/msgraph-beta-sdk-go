@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CanvasLayout 
 type CanvasLayout struct {
     Entity
 }
-// NewCanvasLayout instantiates a new canvasLayout and sets the default values.
+// NewCanvasLayout instantiates a new CanvasLayout and sets the default values.
 func NewCanvasLayout()(*CanvasLayout) {
     m := &CanvasLayout{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCanvasLayout()(*CanvasLayout) {
     return m
 }
 // CreateCanvasLayoutFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCanvasLayoutFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCanvasLayout(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CanvasLayout) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["horizontalSections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -51,6 +52,7 @@ func (m *CanvasLayout) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetHorizontalSections gets the horizontalSections property value. Collection of horizontal sections on the SharePoint page.
+// returns a []HorizontalSectionable when successful
 func (m *CanvasLayout) GetHorizontalSections()([]HorizontalSectionable) {
     val, err := m.GetBackingStore().Get("horizontalSections")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *CanvasLayout) GetHorizontalSections()([]HorizontalSectionable) {
     return nil
 }
 // GetVerticalSection gets the verticalSection property value. Vertical section on the SharePoint page.
+// returns a VerticalSectionable when successful
 func (m *CanvasLayout) GetVerticalSection()(VerticalSectionable) {
     val, err := m.GetBackingStore().Get("verticalSection")
     if err != nil {
@@ -112,7 +115,6 @@ func (m *CanvasLayout) SetVerticalSection(value VerticalSectionable)() {
         panic(err)
     }
 }
-// CanvasLayoutable 
 type CanvasLayoutable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

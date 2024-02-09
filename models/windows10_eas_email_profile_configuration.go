@@ -8,7 +8,7 @@ import (
 type Windows10EasEmailProfileConfiguration struct {
     EasEmailProfileConfigurationBase
 }
-// NewWindows10EasEmailProfileConfiguration instantiates a new windows10EasEmailProfileConfiguration and sets the default values.
+// NewWindows10EasEmailProfileConfiguration instantiates a new Windows10EasEmailProfileConfiguration and sets the default values.
 func NewWindows10EasEmailProfileConfiguration()(*Windows10EasEmailProfileConfiguration) {
     m := &Windows10EasEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),
@@ -18,10 +18,12 @@ func NewWindows10EasEmailProfileConfiguration()(*Windows10EasEmailProfileConfigu
     return m
 }
 // CreateWindows10EasEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10EasEmailProfileConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10EasEmailProfileConfiguration(), nil
 }
 // GetAccountName gets the accountName property value. Account name.
+// returns a *string when successful
 func (m *Windows10EasEmailProfileConfiguration) GetAccountName()(*string) {
     val, err := m.GetBackingStore().Get("accountName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetAccountName()(*string) {
     return nil
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
+// returns a *EmailSyncDuration when successful
 func (m *Windows10EasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncDuration) {
     val, err := m.GetBackingStore().Get("durationOfEmailToSync")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetDurationOfEmailToSync()(*Emai
     return nil
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
+// returns a *UserEmailSource when successful
 func (m *Windows10EasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
     val, err := m.GetBackingStore().Get("emailAddressSource")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetEmailAddressSource()(*UserEma
     return nil
 }
 // GetEmailSyncSchedule gets the emailSyncSchedule property value. Possible values for email sync schedule.
+// returns a *EmailSyncSchedule when successful
 func (m *Windows10EasEmailProfileConfiguration) GetEmailSyncSchedule()(*EmailSyncSchedule) {
     val, err := m.GetBackingStore().Get("emailSyncSchedule")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetEmailSyncSchedule()(*EmailSyn
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10EasEmailProfileConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EasEmailProfileConfigurationBase.GetFieldDeserializers()
     res["accountName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -161,6 +167,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetFieldDeserializers()(map[stri
     return res
 }
 // GetHostName gets the hostName property value. Exchange location that (URL) that the native mail app connects to.
+// returns a *string when successful
 func (m *Windows10EasEmailProfileConfiguration) GetHostName()(*string) {
     val, err := m.GetBackingStore().Get("hostName")
     if err != nil {
@@ -172,6 +179,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetHostName()(*string) {
     return nil
 }
 // GetRequireSsl gets the requireSsl property value. Indicates whether or not to use SSL.
+// returns a *bool when successful
 func (m *Windows10EasEmailProfileConfiguration) GetRequireSsl()(*bool) {
     val, err := m.GetBackingStore().Get("requireSsl")
     if err != nil {
@@ -183,6 +191,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetRequireSsl()(*bool) {
     return nil
 }
 // GetSyncCalendar gets the syncCalendar property value. Whether or not to sync the calendar.
+// returns a *bool when successful
 func (m *Windows10EasEmailProfileConfiguration) GetSyncCalendar()(*bool) {
     val, err := m.GetBackingStore().Get("syncCalendar")
     if err != nil {
@@ -194,6 +203,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetSyncCalendar()(*bool) {
     return nil
 }
 // GetSyncContacts gets the syncContacts property value. Whether or not to sync contacts.
+// returns a *bool when successful
 func (m *Windows10EasEmailProfileConfiguration) GetSyncContacts()(*bool) {
     val, err := m.GetBackingStore().Get("syncContacts")
     if err != nil {
@@ -205,6 +215,7 @@ func (m *Windows10EasEmailProfileConfiguration) GetSyncContacts()(*bool) {
     return nil
 }
 // GetSyncTasks gets the syncTasks property value. Whether or not to sync tasks.
+// returns a *bool when successful
 func (m *Windows10EasEmailProfileConfiguration) GetSyncTasks()(*bool) {
     val, err := m.GetBackingStore().Get("syncTasks")
     if err != nil {
@@ -343,7 +354,6 @@ func (m *Windows10EasEmailProfileConfiguration) SetSyncTasks(value *bool)() {
         panic(err)
     }
 }
-// Windows10EasEmailProfileConfigurationable 
 type Windows10EasEmailProfileConfigurationable interface {
     EasEmailProfileConfigurationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

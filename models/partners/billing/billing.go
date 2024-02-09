@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Billing 
 type Billing struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewBilling instantiates a new billing and sets the default values.
+// NewBilling instantiates a new Billing and sets the default values.
 func NewBilling()(*Billing) {
     m := &Billing{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewBilling()(*Billing) {
     return m
 }
 // CreateBillingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBillingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBilling(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Billing) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["manifests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +69,7 @@ func (m *Billing) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetManifests gets the manifests property value. Represents metadata for the exported data.
+// returns a []Manifestable when successful
 func (m *Billing) GetManifests()([]Manifestable) {
     val, err := m.GetBackingStore().Get("manifests")
     if err != nil {
@@ -79,6 +81,7 @@ func (m *Billing) GetManifests()([]Manifestable) {
     return nil
 }
 // GetOperations gets the operations property value. Represents an operation to export the billing data of a partner.
+// returns a []Operationable when successful
 func (m *Billing) GetOperations()([]Operationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -90,6 +93,7 @@ func (m *Billing) GetOperations()([]Operationable) {
     return nil
 }
 // GetUsage gets the usage property value. The usage property
+// returns a AzureUsageable when successful
 func (m *Billing) GetUsage()(AzureUsageable) {
     val, err := m.GetBackingStore().Get("usage")
     if err != nil {
@@ -159,7 +163,6 @@ func (m *Billing) SetUsage(value AzureUsageable)() {
         panic(err)
     }
 }
-// Billingable 
 type Billingable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

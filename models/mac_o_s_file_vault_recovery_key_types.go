@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Recovery key types for macOS FileVault
@@ -8,18 +9,20 @@ type MacOSFileVaultRecoveryKeyTypes int
 
 const (
     // Device default value, no intent.
-    NOTCONFIGURED_MACOSFILEVAULTRECOVERYKEYTYPES MacOSFileVaultRecoveryKeyTypes = iota
+    NOTCONFIGURED_MACOSFILEVAULTRECOVERYKEYTYPES = 1
     // An institutional recovery key is like a “master” recovery key that can be used to unlock any device whose password has been lost.
-    INSTITUTIONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES
+    INSTITUTIONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES = 2
     // A personal recovery key is a unique code that can be used to unlock the user’s device, even if the password to the device is lost.
-    PERSONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES
+    PERSONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES = 4
 )
 
 func (i MacOSFileVaultRecoveryKeyTypes) String() string {
     var values []string
-    for p := MacOSFileVaultRecoveryKeyTypes(1); p <= PERSONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"notConfigured", "institutionalRecoveryKey", "personalRecoveryKey"}[p])
+    options := []string{"notConfigured", "institutionalRecoveryKey", "personalRecoveryKey"}
+    for p := 0; p < 3; p++ {
+        mantis := MacOSFileVaultRecoveryKeyTypes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

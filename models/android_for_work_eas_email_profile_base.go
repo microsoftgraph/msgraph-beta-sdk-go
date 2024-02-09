@@ -8,7 +8,7 @@ import (
 type AndroidForWorkEasEmailProfileBase struct {
     DeviceConfiguration
 }
-// NewAndroidForWorkEasEmailProfileBase instantiates a new androidForWorkEasEmailProfileBase and sets the default values.
+// NewAndroidForWorkEasEmailProfileBase instantiates a new AndroidForWorkEasEmailProfileBase and sets the default values.
 func NewAndroidForWorkEasEmailProfileBase()(*AndroidForWorkEasEmailProfileBase) {
     m := &AndroidForWorkEasEmailProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewAndroidForWorkEasEmailProfileBase()(*AndroidForWorkEasEmailProfileBase) 
     return m
 }
 // CreateAndroidForWorkEasEmailProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidForWorkEasEmailProfileBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +43,7 @@ func CreateAndroidForWorkEasEmailProfileBaseFromDiscriminatorValue(parseNode i87
     return NewAndroidForWorkEasEmailProfileBase(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Exchange Active Sync authentication method.
+// returns a *EasAuthenticationMethod when successful
 func (m *AndroidForWorkEasEmailProfileBase) GetAuthenticationMethod()(*EasAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -53,6 +55,7 @@ func (m *AndroidForWorkEasEmailProfileBase) GetAuthenticationMethod()(*EasAuthen
     return nil
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
+// returns a *EmailSyncDuration when successful
 func (m *AndroidForWorkEasEmailProfileBase) GetDurationOfEmailToSync()(*EmailSyncDuration) {
     val, err := m.GetBackingStore().Get("durationOfEmailToSync")
     if err != nil {
@@ -64,6 +67,7 @@ func (m *AndroidForWorkEasEmailProfileBase) GetDurationOfEmailToSync()(*EmailSyn
     return nil
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
+// returns a *UserEmailSource when successful
 func (m *AndroidForWorkEasEmailProfileBase) GetEmailAddressSource()(*UserEmailSource) {
     val, err := m.GetBackingStore().Get("emailAddressSource")
     if err != nil {
@@ -75,6 +79,7 @@ func (m *AndroidForWorkEasEmailProfileBase) GetEmailAddressSource()(*UserEmailSo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidForWorkEasEmailProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -150,6 +155,7 @@ func (m *AndroidForWorkEasEmailProfileBase) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetHostName gets the hostName property value. Exchange location (URL) that the mail app connects to.
+// returns a *string when successful
 func (m *AndroidForWorkEasEmailProfileBase) GetHostName()(*string) {
     val, err := m.GetBackingStore().Get("hostName")
     if err != nil {
@@ -161,6 +167,7 @@ func (m *AndroidForWorkEasEmailProfileBase) GetHostName()(*string) {
     return nil
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate.
+// returns a AndroidForWorkCertificateProfileBaseable when successful
 func (m *AndroidForWorkEasEmailProfileBase) GetIdentityCertificate()(AndroidForWorkCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificate")
     if err != nil {
@@ -172,6 +179,7 @@ func (m *AndroidForWorkEasEmailProfileBase) GetIdentityCertificate()(AndroidForW
     return nil
 }
 // GetRequireSsl gets the requireSsl property value. Indicates whether or not to use SSL.
+// returns a *bool when successful
 func (m *AndroidForWorkEasEmailProfileBase) GetRequireSsl()(*bool) {
     val, err := m.GetBackingStore().Get("requireSsl")
     if err != nil {
@@ -183,6 +191,7 @@ func (m *AndroidForWorkEasEmailProfileBase) GetRequireSsl()(*bool) {
     return nil
 }
 // GetUsernameSource gets the usernameSource property value. Android username source.
+// returns a *AndroidUsernameSource when successful
 func (m *AndroidForWorkEasEmailProfileBase) GetUsernameSource()(*AndroidUsernameSource) {
     val, err := m.GetBackingStore().Get("usernameSource")
     if err != nil {
@@ -296,7 +305,6 @@ func (m *AndroidForWorkEasEmailProfileBase) SetUsernameSource(value *AndroidUser
         panic(err)
     }
 }
-// AndroidForWorkEasEmailProfileBaseable 
 type AndroidForWorkEasEmailProfileBaseable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

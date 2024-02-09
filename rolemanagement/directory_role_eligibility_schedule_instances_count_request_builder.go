@@ -26,28 +26,29 @@ type DirectoryRoleEligibilityScheduleInstancesCountRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *DirectoryRoleEligibilityScheduleInstancesCountRequestBuilderGetQueryParameters
 }
-// NewDirectoryRoleEligibilityScheduleInstancesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewDirectoryRoleEligibilityScheduleInstancesCountRequestBuilderInternal instantiates a new DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder and sets the default values.
 func NewDirectoryRoleEligibilityScheduleInstancesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder) {
     m := &DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleEligibilityScheduleInstances/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleEligibilityScheduleInstances/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewDirectoryRoleEligibilityScheduleInstancesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewDirectoryRoleEligibilityScheduleInstancesCountRequestBuilder instantiates a new DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder and sets the default values.
 func NewDirectoryRoleEligibilityScheduleInstancesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleEligibilityScheduleInstancesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleEligibilityScheduleInstancesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder) Get(ctx c
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleEligibilityScheduleInstancesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder when successful
 func (m *DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleEligibilityScheduleInstancesCountRequestBuilder) {
     return NewDirectoryRoleEligibilityScheduleInstancesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

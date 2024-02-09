@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WebAccount 
 type WebAccount struct {
     ItemFacet
 }
-// NewWebAccount instantiates a new webAccount and sets the default values.
+// NewWebAccount instantiates a new WebAccount and sets the default values.
 func NewWebAccount()(*WebAccount) {
     m := &WebAccount{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewWebAccount()(*WebAccount) {
     return m
 }
 // CreateWebAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebAccount(), nil
 }
 // GetDescription gets the description property value. Contains the description the user has provided for the account on the service being referenced.
+// returns a *string when successful
 func (m *WebAccount) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *WebAccount) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WebAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +100,7 @@ func (m *WebAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetService gets the service property value. The service property
+// returns a ServiceInformationable when successful
 func (m *WebAccount) GetService()(ServiceInformationable) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -109,6 +112,7 @@ func (m *WebAccount) GetService()(ServiceInformationable) {
     return nil
 }
 // GetStatusMessage gets the statusMessage property value. Contains a status message from the cloud service if provided or synchronized.
+// returns a *string when successful
 func (m *WebAccount) GetStatusMessage()(*string) {
     val, err := m.GetBackingStore().Get("statusMessage")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *WebAccount) GetStatusMessage()(*string) {
     return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
+// returns a *string when successful
 func (m *WebAccount) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *WebAccount) GetThumbnailUrl()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The user name  displayed for the webaccount.
+// returns a *string when successful
 func (m *WebAccount) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *WebAccount) GetUserId()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. Contains a link to the user's profile on the cloud service if one exists.
+// returns a *string when successful
 func (m *WebAccount) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *WebAccount) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// WebAccountable 
 type WebAccountable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

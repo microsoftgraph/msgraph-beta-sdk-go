@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserSignUpMetric 
 type UserSignUpMetric struct {
     Entity
 }
-// NewUserSignUpMetric instantiates a new userSignUpMetric and sets the default values.
+// NewUserSignUpMetric instantiates a new UserSignUpMetric and sets the default values.
 func NewUserSignUpMetric()(*UserSignUpMetric) {
     m := &UserSignUpMetric{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUserSignUpMetric()(*UserSignUpMetric) {
     return m
 }
 // CreateUserSignUpMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserSignUpMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserSignUpMetric(), nil
 }
 // GetCount gets the count property value. The total number of users who signed up in the specified period. Supports $filter (eq).
+// returns a *int64 when successful
 func (m *UserSignUpMetric) GetCount()(*int64) {
     val, err := m.GetBackingStore().Get("count")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UserSignUpMetric) GetCount()(*int64) {
     return nil
 }
 // GetFactDate gets the factDate property value. The date of the user insight.
+// returns a *DateOnly when successful
 func (m *UserSignUpMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *UserSignUpMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserSignUpMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +80,7 @@ func (m *UserSignUpMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetOs gets the os property value. The device plaform that the customers used. Supports $filter (eq).
+// returns a *string when successful
 func (m *UserSignUpMetric) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -134,7 +138,6 @@ func (m *UserSignUpMetric) SetOs(value *string)() {
         panic(err)
     }
 }
-// UserSignUpMetricable 
 type UserSignUpMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

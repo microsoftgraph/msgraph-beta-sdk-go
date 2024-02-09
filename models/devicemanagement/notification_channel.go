@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// NotificationChannel 
 type NotificationChannel struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewNotificationChannel instantiates a new notificationChannel and sets the default values.
+// NewNotificationChannel instantiates a new NotificationChannel and sets the default values.
 func NewNotificationChannel()(*NotificationChannel) {
     m := &NotificationChannel{
     }
@@ -19,10 +18,12 @@ func NewNotificationChannel()(*NotificationChannel) {
     return m
 }
 // CreateNotificationChannelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNotificationChannelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNotificationChannel(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *NotificationChannel) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *NotificationChannel) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *NotificationChannel) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NotificationChannel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["notificationChannelType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,6 +83,7 @@ func (m *NotificationChannel) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetNotificationChannelType gets the notificationChannelType property value. The type of the notification channel. The possible values are: portal, email, phoneCall, sms, unknownFutureValue.
+// returns a *NotificationChannelType when successful
 func (m *NotificationChannel) GetNotificationChannelType()(*NotificationChannelType) {
     val, err := m.GetBackingStore().Get("notificationChannelType")
     if err != nil {
@@ -91,6 +95,7 @@ func (m *NotificationChannel) GetNotificationChannelType()(*NotificationChannelT
     return nil
 }
 // GetNotificationReceivers gets the notificationReceivers property value. Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
+// returns a []NotificationReceiverable when successful
 func (m *NotificationChannel) GetNotificationReceivers()([]NotificationReceiverable) {
     val, err := m.GetBackingStore().Get("notificationReceivers")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *NotificationChannel) GetNotificationReceivers()([]NotificationReceivera
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *NotificationChannel) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -179,7 +185,6 @@ func (m *NotificationChannel) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// NotificationChannelable 
 type NotificationChannelable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

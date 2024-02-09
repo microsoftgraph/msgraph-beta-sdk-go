@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcAuditEvent 
 type CloudPcAuditEvent struct {
     Entity
 }
-// NewCloudPcAuditEvent instantiates a new cloudPcAuditEvent and sets the default values.
+// NewCloudPcAuditEvent instantiates a new CloudPcAuditEvent and sets the default values.
 func NewCloudPcAuditEvent()(*CloudPcAuditEvent) {
     m := &CloudPcAuditEvent{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCloudPcAuditEvent()(*CloudPcAuditEvent) {
     return m
 }
 // CreateCloudPcAuditEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcAuditEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcAuditEvent(), nil
 }
 // GetActivity gets the activity property value. Friendly name of the activity. Optional.
+// returns a *string when successful
 func (m *CloudPcAuditEvent) GetActivity()(*string) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CloudPcAuditEvent) GetActivity()(*string) {
     return nil
 }
 // GetActivityDateTime gets the activityDateTime property value. The date time in UTC when the activity was performed. Read-only.
+// returns a *Time when successful
 func (m *CloudPcAuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("activityDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *CloudPcAuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetActivityOperationType gets the activityOperationType property value. The activityOperationType property
+// returns a *CloudPcAuditActivityOperationType when successful
 func (m *CloudPcAuditEvent) GetActivityOperationType()(*CloudPcAuditActivityOperationType) {
     val, err := m.GetBackingStore().Get("activityOperationType")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *CloudPcAuditEvent) GetActivityOperationType()(*CloudPcAuditActivityOper
     return nil
 }
 // GetActivityResult gets the activityResult property value. The activityResult property
+// returns a *CloudPcAuditActivityResult when successful
 func (m *CloudPcAuditEvent) GetActivityResult()(*CloudPcAuditActivityResult) {
     val, err := m.GetBackingStore().Get("activityResult")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *CloudPcAuditEvent) GetActivityResult()(*CloudPcAuditActivityResult) {
     return nil
 }
 // GetActivityType gets the activityType property value. The type of activity that was performed. Read-only.
+// returns a *string when successful
 func (m *CloudPcAuditEvent) GetActivityType()(*string) {
     val, err := m.GetBackingStore().Get("activityType")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *CloudPcAuditEvent) GetActivityType()(*string) {
     return nil
 }
 // GetActor gets the actor property value. The actor property
+// returns a CloudPcAuditActorable when successful
 func (m *CloudPcAuditEvent) GetActor()(CloudPcAuditActorable) {
     val, err := m.GetBackingStore().Get("actor")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *CloudPcAuditEvent) GetActor()(CloudPcAuditActorable) {
     return nil
 }
 // GetCategory gets the category property value. The category property
+// returns a *CloudPcAuditCategory when successful
 func (m *CloudPcAuditEvent) GetCategory()(*CloudPcAuditCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *CloudPcAuditEvent) GetCategory()(*CloudPcAuditCategory) {
     return nil
 }
 // GetComponentName gets the componentName property value. Component name. Read-only.
+// returns a *string when successful
 func (m *CloudPcAuditEvent) GetComponentName()(*string) {
     val, err := m.GetBackingStore().Get("componentName")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *CloudPcAuditEvent) GetComponentName()(*string) {
     return nil
 }
 // GetCorrelationId gets the correlationId property value. The client request identifier, used to correlate activity within the system. Read-only.
+// returns a *string when successful
 func (m *CloudPcAuditEvent) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *CloudPcAuditEvent) GetCorrelationId()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Event display name. Read-only.
+// returns a *string when successful
 func (m *CloudPcAuditEvent) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -131,6 +141,7 @@ func (m *CloudPcAuditEvent) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -252,6 +263,7 @@ func (m *CloudPcAuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetResources gets the resources property value. List of cloudPcAuditResource objects. Read-only.
+// returns a []CloudPcAuditResourceable when successful
 func (m *CloudPcAuditEvent) GetResources()([]CloudPcAuditResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -422,7 +434,6 @@ func (m *CloudPcAuditEvent) SetResources(value []CloudPcAuditResourceable)() {
         panic(err)
     }
 }
-// CloudPcAuditEventable 
 type CloudPcAuditEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

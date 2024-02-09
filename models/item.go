@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Item 
 type Item struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewItem instantiates a new item and sets the default values.
+// NewItem instantiates a new Item and sets the default values.
 func NewItem()(*Item) {
     m := &Item{
     }
@@ -21,10 +20,12 @@ func NewItem()(*Item) {
     return m
 }
 // CreateItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Item) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -37,10 +38,12 @@ func (m *Item) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Item) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBaseUnitOfMeasureId gets the baseUnitOfMeasureId property value. The baseUnitOfMeasureId property
+// returns a *UUID when successful
 func (m *Item) GetBaseUnitOfMeasureId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("baseUnitOfMeasureId")
     if err != nil {
@@ -52,6 +55,7 @@ func (m *Item) GetBaseUnitOfMeasureId()(*i561e97a8befe7661a44c8f54600992b4207a3a
     return nil
 }
 // GetBlocked gets the blocked property value. The blocked property
+// returns a *bool when successful
 func (m *Item) GetBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("blocked")
     if err != nil {
@@ -63,6 +67,7 @@ func (m *Item) GetBlocked()(*bool) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *Item) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -74,6 +79,7 @@ func (m *Item) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Item) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["baseUnitOfMeasureId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -275,6 +281,7 @@ func (m *Item) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetGtin gets the gtin property value. The gtin property
+// returns a *string when successful
 func (m *Item) GetGtin()(*string) {
     val, err := m.GetBackingStore().Get("gtin")
     if err != nil {
@@ -286,6 +293,7 @@ func (m *Item) GetGtin()(*string) {
     return nil
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *Item) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -297,6 +305,7 @@ func (m *Item) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc
     return nil
 }
 // GetInventory gets the inventory property value. The inventory property
+// returns a *float64 when successful
 func (m *Item) GetInventory()(*float64) {
     val, err := m.GetBackingStore().Get("inventory")
     if err != nil {
@@ -308,6 +317,7 @@ func (m *Item) GetInventory()(*float64) {
     return nil
 }
 // GetItemCategory gets the itemCategory property value. The itemCategory property
+// returns a ItemCategoryable when successful
 func (m *Item) GetItemCategory()(ItemCategoryable) {
     val, err := m.GetBackingStore().Get("itemCategory")
     if err != nil {
@@ -319,6 +329,7 @@ func (m *Item) GetItemCategory()(ItemCategoryable) {
     return nil
 }
 // GetItemCategoryCode gets the itemCategoryCode property value. The itemCategoryCode property
+// returns a *string when successful
 func (m *Item) GetItemCategoryCode()(*string) {
     val, err := m.GetBackingStore().Get("itemCategoryCode")
     if err != nil {
@@ -330,6 +341,7 @@ func (m *Item) GetItemCategoryCode()(*string) {
     return nil
 }
 // GetItemCategoryId gets the itemCategoryId property value. The itemCategoryId property
+// returns a *UUID when successful
 func (m *Item) GetItemCategoryId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("itemCategoryId")
     if err != nil {
@@ -341,6 +353,7 @@ func (m *Item) GetItemCategoryId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf67
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *Item) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -352,6 +365,7 @@ func (m *Item) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetNumber gets the number property value. The number property
+// returns a *string when successful
 func (m *Item) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
     if err != nil {
@@ -363,6 +377,7 @@ func (m *Item) GetNumber()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Item) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -374,6 +389,7 @@ func (m *Item) GetOdataType()(*string) {
     return nil
 }
 // GetPicture gets the picture property value. The picture property
+// returns a []Pictureable when successful
 func (m *Item) GetPicture()([]Pictureable) {
     val, err := m.GetBackingStore().Get("picture")
     if err != nil {
@@ -385,6 +401,7 @@ func (m *Item) GetPicture()([]Pictureable) {
     return nil
 }
 // GetPriceIncludesTax gets the priceIncludesTax property value. The priceIncludesTax property
+// returns a *bool when successful
 func (m *Item) GetPriceIncludesTax()(*bool) {
     val, err := m.GetBackingStore().Get("priceIncludesTax")
     if err != nil {
@@ -396,6 +413,7 @@ func (m *Item) GetPriceIncludesTax()(*bool) {
     return nil
 }
 // GetTaxGroupCode gets the taxGroupCode property value. The taxGroupCode property
+// returns a *string when successful
 func (m *Item) GetTaxGroupCode()(*string) {
     val, err := m.GetBackingStore().Get("taxGroupCode")
     if err != nil {
@@ -407,6 +425,7 @@ func (m *Item) GetTaxGroupCode()(*string) {
     return nil
 }
 // GetTaxGroupId gets the taxGroupId property value. The taxGroupId property
+// returns a *UUID when successful
 func (m *Item) GetTaxGroupId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("taxGroupId")
     if err != nil {
@@ -418,6 +437,7 @@ func (m *Item) GetTaxGroupId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *Item) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -429,6 +449,7 @@ func (m *Item) GetTypeEscaped()(*string) {
     return nil
 }
 // GetUnitCost gets the unitCost property value. The unitCost property
+// returns a *float64 when successful
 func (m *Item) GetUnitCost()(*float64) {
     val, err := m.GetBackingStore().Get("unitCost")
     if err != nil {
@@ -440,6 +461,7 @@ func (m *Item) GetUnitCost()(*float64) {
     return nil
 }
 // GetUnitPrice gets the unitPrice property value. The unitPrice property
+// returns a *float64 when successful
 func (m *Item) GetUnitPrice()(*float64) {
     val, err := m.GetBackingStore().Get("unitPrice")
     if err != nil {
@@ -724,7 +746,6 @@ func (m *Item) SetUnitPrice(value *float64)() {
         panic(err)
     }
 }
-// Itemable 
 type Itemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

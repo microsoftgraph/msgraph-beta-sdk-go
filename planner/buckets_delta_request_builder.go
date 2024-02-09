@@ -14,6 +14,8 @@ type BucketsDeltaRequestBuilder struct {
 type BucketsDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,29 +38,30 @@ type BucketsDeltaRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *BucketsDeltaRequestBuilderGetQueryParameters
 }
-// NewBucketsDeltaRequestBuilderInternal instantiates a new DeltaRequestBuilder and sets the default values.
+// NewBucketsDeltaRequestBuilderInternal instantiates a new BucketsDeltaRequestBuilder and sets the default values.
 func NewBucketsDeltaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsDeltaRequestBuilder) {
     m := &BucketsDeltaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/buckets/delta(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/buckets/delta(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewBucketsDeltaRequestBuilder instantiates a new DeltaRequestBuilder and sets the default values.
+// NewBucketsDeltaRequestBuilder instantiates a new BucketsDeltaRequestBuilder and sets the default values.
 func NewBucketsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsDeltaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBucketsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a BucketsDeltaResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BucketsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *BucketsDeltaRequestBuilderGetRequestConfiguration)(BucketsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateBucketsDeltaResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *BucketsDeltaRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(BucketsDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse invoke function delta
+// returns a BucketsDeltaGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BucketsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *BucketsDeltaRequestBuilderGetRequestConfiguration)(BucketsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateBucketsDeltaGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *BucketsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, 
     return res.(BucketsDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
+// returns a *RequestInformation when successful
 func (m *BucketsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BucketsDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *BucketsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *BucketsDeltaRequestBuilder when successful
 func (m *BucketsDeltaRequestBuilder) WithUrl(rawUrl string)(*BucketsDeltaRequestBuilder) {
     return NewBucketsDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

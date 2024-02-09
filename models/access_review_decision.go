@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewDecision 
 type AccessReviewDecision struct {
     Entity
 }
-// NewAccessReviewDecision instantiates a new accessReviewDecision and sets the default values.
+// NewAccessReviewDecision instantiates a new AccessReviewDecision and sets the default values.
 func NewAccessReviewDecision()(*AccessReviewDecision) {
     m := &AccessReviewDecision{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessReviewDecision()(*AccessReviewDecision) {
     return m
 }
 // CreateAccessReviewDecisionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewDecisionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewDecision(), nil
 }
 // GetAccessRecommendation gets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
+// returns a *string when successful
 func (m *AccessReviewDecision) GetAccessRecommendation()(*string) {
     val, err := m.GetBackingStore().Get("accessRecommendation")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessReviewDecision) GetAccessRecommendation()(*string) {
     return nil
 }
 // GetAccessReviewId gets the accessReviewId property value. The feature-generated ID of the access review.
+// returns a *string when successful
 func (m *AccessReviewDecision) GetAccessReviewId()(*string) {
     val, err := m.GetBackingStore().Get("accessReviewId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessReviewDecision) GetAccessReviewId()(*string) {
     return nil
 }
 // GetAppliedBy gets the appliedBy property value. When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was autoapplied, the userPrincipalName is empty.
+// returns a UserIdentityable when successful
 func (m *AccessReviewDecision) GetAppliedBy()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("appliedBy")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessReviewDecision) GetAppliedBy()(UserIdentityable) {
     return nil
 }
 // GetAppliedDateTime gets the appliedDateTime property value. The date and time when the review decision was applied.
+// returns a *Time when successful
 func (m *AccessReviewDecision) GetAppliedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("appliedDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessReviewDecision) GetAppliedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetApplyResult gets the applyResult property value. The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
+// returns a *string when successful
 func (m *AccessReviewDecision) GetApplyResult()(*string) {
     val, err := m.GetBackingStore().Get("applyResult")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AccessReviewDecision) GetApplyResult()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewDecision) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessRecommendation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -171,6 +177,7 @@ func (m *AccessReviewDecision) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetJustification gets the justification property value. The reviewer's business justification, if supplied.
+// returns a *string when successful
 func (m *AccessReviewDecision) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
     if err != nil {
@@ -182,6 +189,7 @@ func (m *AccessReviewDecision) GetJustification()(*string) {
     return nil
 }
 // GetReviewedBy gets the reviewedBy property value. The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.
+// returns a UserIdentityable when successful
 func (m *AccessReviewDecision) GetReviewedBy()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("reviewedBy")
     if err != nil {
@@ -193,6 +201,7 @@ func (m *AccessReviewDecision) GetReviewedBy()(UserIdentityable) {
     return nil
 }
 // GetReviewedDateTime gets the reviewedDateTime property value. The reviewedDateTime property
+// returns a *Time when successful
 func (m *AccessReviewDecision) GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewedDateTime")
     if err != nil {
@@ -204,6 +213,7 @@ func (m *AccessReviewDecision) GetReviewedDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetReviewResult gets the reviewResult property value. The result of the review, one of NotReviewed, Deny, DontKnow or Approve.
+// returns a *string when successful
 func (m *AccessReviewDecision) GetReviewResult()(*string) {
     val, err := m.GetBackingStore().Get("reviewResult")
     if err != nil {
@@ -339,7 +349,6 @@ func (m *AccessReviewDecision) SetReviewResult(value *string)() {
         panic(err)
     }
 }
-// AccessReviewDecisionable 
 type AccessReviewDecisionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

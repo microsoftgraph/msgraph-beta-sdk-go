@@ -2,7 +2,6 @@ package industrydata
 import (
     "errors"
 )
-// 
 type InboundDomain int
 
 const (

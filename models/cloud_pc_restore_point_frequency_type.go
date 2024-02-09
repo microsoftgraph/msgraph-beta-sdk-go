@@ -2,11 +2,10 @@ package models
 import (
     "errors"
 )
-// 
 type CloudPcRestorePointFrequencyType int
 
 const (
-    DEFAULTESCAPED_CLOUDPCRESTOREPOINTFREQUENCYTYPE CloudPcRestorePointFrequencyType = iota
+    DEFAULT_CLOUDPCRESTOREPOINTFREQUENCYTYPE CloudPcRestorePointFrequencyType = iota
     FOURHOURS_CLOUDPCRESTOREPOINTFREQUENCYTYPE
     SIXHOURS_CLOUDPCRESTOREPOINTFREQUENCYTYPE
     TWELVEHOURS_CLOUDPCRESTOREPOINTFREQUENCYTYPE
@@ -19,10 +18,10 @@ func (i CloudPcRestorePointFrequencyType) String() string {
     return []string{"default", "fourHours", "sixHours", "twelveHours", "sixteenHours", "twentyFourHours", "unknownFutureValue"}[i]
 }
 func ParseCloudPcRestorePointFrequencyType(v string) (any, error) {
-    result := DEFAULTESCAPED_CLOUDPCRESTOREPOINTFREQUENCYTYPE
+    result := DEFAULT_CLOUDPCRESTOREPOINTFREQUENCYTYPE
     switch v {
         case "default":
-            result = DEFAULTESCAPED_CLOUDPCRESTOREPOINTFREQUENCYTYPE
+            result = DEFAULT_CLOUDPCRESTOREPOINTFREQUENCYTYPE
         case "fourHours":
             result = FOURHOURS_CLOUDPCRESTOREPOINTFREQUENCYTYPE
         case "sixHours":

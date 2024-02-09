@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AggregatedPolicyCompliance 
 type AggregatedPolicyCompliance struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewAggregatedPolicyCompliance instantiates a new aggregatedPolicyCompliance and sets the default values.
+// NewAggregatedPolicyCompliance instantiates a new AggregatedPolicyCompliance and sets the default values.
 func NewAggregatedPolicyCompliance()(*AggregatedPolicyCompliance) {
     m := &AggregatedPolicyCompliance{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewAggregatedPolicyCompliance()(*AggregatedPolicyCompliance) {
     return m
 }
 // CreateAggregatedPolicyComplianceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAggregatedPolicyComplianceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAggregatedPolicyCompliance(), nil
 }
 // GetCompliancePolicyId gets the compliancePolicyId property value. Identifier for the device compliance policy. Optional. Read-only.
+// returns a *string when successful
 func (m *AggregatedPolicyCompliance) GetCompliancePolicyId()(*string) {
     val, err := m.GetBackingStore().Get("compliancePolicyId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AggregatedPolicyCompliance) GetCompliancePolicyId()(*string) {
     return nil
 }
 // GetCompliancePolicyName gets the compliancePolicyName property value. Name of the device compliance policy. Optional. Read-only.
+// returns a *string when successful
 func (m *AggregatedPolicyCompliance) GetCompliancePolicyName()(*string) {
     val, err := m.GetBackingStore().Get("compliancePolicyName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AggregatedPolicyCompliance) GetCompliancePolicyName()(*string) {
     return nil
 }
 // GetCompliancePolicyPlatform gets the compliancePolicyPlatform property value. Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
+// returns a *string when successful
 func (m *AggregatedPolicyCompliance) GetCompliancePolicyPlatform()(*string) {
     val, err := m.GetBackingStore().Get("compliancePolicyPlatform")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *AggregatedPolicyCompliance) GetCompliancePolicyPlatform()(*string) {
     return nil
 }
 // GetCompliancePolicyType gets the compliancePolicyType property value. The type of compliance policy. Optional. Read-only.
+// returns a *string when successful
 func (m *AggregatedPolicyCompliance) GetCompliancePolicyType()(*string) {
     val, err := m.GetBackingStore().Get("compliancePolicyType")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *AggregatedPolicyCompliance) GetCompliancePolicyType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["compliancePolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -181,6 +186,7 @@ func (m *AggregatedPolicyCompliance) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
+// returns a *Time when successful
 func (m *AggregatedPolicyCompliance) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshedDateTime")
     if err != nil {
@@ -192,6 +198,7 @@ func (m *AggregatedPolicyCompliance) GetLastRefreshedDateTime()(*i336074805fc853
     return nil
 }
 // GetNumberOfCompliantDevices gets the numberOfCompliantDevices property value. The number of devices that are in a compliant status. Optional. Read-only.
+// returns a *int64 when successful
 func (m *AggregatedPolicyCompliance) GetNumberOfCompliantDevices()(*int64) {
     val, err := m.GetBackingStore().Get("numberOfCompliantDevices")
     if err != nil {
@@ -203,6 +210,7 @@ func (m *AggregatedPolicyCompliance) GetNumberOfCompliantDevices()(*int64) {
     return nil
 }
 // GetNumberOfErrorDevices gets the numberOfErrorDevices property value. The number of devices that are in an error status. Optional. Read-only.
+// returns a *int64 when successful
 func (m *AggregatedPolicyCompliance) GetNumberOfErrorDevices()(*int64) {
     val, err := m.GetBackingStore().Get("numberOfErrorDevices")
     if err != nil {
@@ -214,6 +222,7 @@ func (m *AggregatedPolicyCompliance) GetNumberOfErrorDevices()(*int64) {
     return nil
 }
 // GetNumberOfNonCompliantDevices gets the numberOfNonCompliantDevices property value. The number of device that are in a non-compliant status. Optional. Read-only.
+// returns a *int64 when successful
 func (m *AggregatedPolicyCompliance) GetNumberOfNonCompliantDevices()(*int64) {
     val, err := m.GetBackingStore().Get("numberOfNonCompliantDevices")
     if err != nil {
@@ -225,6 +234,7 @@ func (m *AggregatedPolicyCompliance) GetNumberOfNonCompliantDevices()(*int64) {
     return nil
 }
 // GetPolicyModifiedDateTime gets the policyModifiedDateTime property value. The date and time the device policy was last modified. Optional. Read-only.
+// returns a *Time when successful
 func (m *AggregatedPolicyCompliance) GetPolicyModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("policyModifiedDateTime")
     if err != nil {
@@ -236,6 +246,7 @@ func (m *AggregatedPolicyCompliance) GetPolicyModifiedDateTime()(*i336074805fc85
     return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *AggregatedPolicyCompliance) GetTenantDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("tenantDisplayName")
     if err != nil {
@@ -247,6 +258,7 @@ func (m *AggregatedPolicyCompliance) GetTenantDisplayName()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *AggregatedPolicyCompliance) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -408,7 +420,6 @@ func (m *AggregatedPolicyCompliance) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// AggregatedPolicyComplianceable 
 type AggregatedPolicyComplianceable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

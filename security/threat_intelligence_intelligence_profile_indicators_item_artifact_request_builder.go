@@ -27,28 +27,29 @@ type ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilderGe
     // Request query parameters
     QueryParameters *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilderGetQueryParameters
 }
-// NewThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilderInternal instantiates a new ArtifactRequestBuilder and sets the default values.
+// NewThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilderInternal instantiates a new ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder and sets the default values.
 func NewThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder) {
     m := &ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/intelligenceProfileIndicators/{intelligenceProfileIndicator%2Did}/artifact{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/intelligenceProfileIndicators/{intelligenceProfileIndicator%2Did}/artifact{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder instantiates a new ArtifactRequestBuilder and sets the default values.
+// NewThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder instantiates a new ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder and sets the default values.
 func NewThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the artifact related to this indicator.
+// returns a Artifactable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Artifactable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateArtifactFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuild
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Artifactable), nil
 }
 // ToGetRequestInformation the artifact related to this indicator.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder when successful
 func (m *ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder) {
     return NewThreatIntelligenceIntelligenceProfileIndicatorsItemArtifactRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryHoldPolicy 
 type EdiscoveryHoldPolicy struct {
     PolicyBase
 }
-// NewEdiscoveryHoldPolicy instantiates a new ediscoveryHoldPolicy and sets the default values.
+// NewEdiscoveryHoldPolicy instantiates a new EdiscoveryHoldPolicy and sets the default values.
 func NewEdiscoveryHoldPolicy()(*EdiscoveryHoldPolicy) {
     m := &EdiscoveryHoldPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -18,10 +17,12 @@ func NewEdiscoveryHoldPolicy()(*EdiscoveryHoldPolicy) {
     return m
 }
 // CreateEdiscoveryHoldPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdiscoveryHoldPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryHoldPolicy(), nil
 }
 // GetContentQuery gets the contentQuery property value. KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
+// returns a *string when successful
 func (m *EdiscoveryHoldPolicy) GetContentQuery()(*string) {
     val, err := m.GetBackingStore().Get("contentQuery")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EdiscoveryHoldPolicy) GetContentQuery()(*string) {
     return nil
 }
 // GetErrors gets the errors property value. Lists any errors that happened while placing the hold.
+// returns a []string when successful
 func (m *EdiscoveryHoldPolicy) GetErrors()([]string) {
     val, err := m.GetBackingStore().Get("errors")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *EdiscoveryHoldPolicy) GetErrors()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdiscoveryHoldPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["contentQuery"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +120,7 @@ func (m *EdiscoveryHoldPolicy) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether the hold is enabled and actively holding content.
+// returns a *bool when successful
 func (m *EdiscoveryHoldPolicy) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -128,6 +132,7 @@ func (m *EdiscoveryHoldPolicy) GetIsEnabled()(*bool) {
     return nil
 }
 // GetSiteSources gets the siteSources property value. Data sources that represent SharePoint sites.
+// returns a []SiteSourceable when successful
 func (m *EdiscoveryHoldPolicy) GetSiteSources()([]SiteSourceable) {
     val, err := m.GetBackingStore().Get("siteSources")
     if err != nil {
@@ -139,6 +144,7 @@ func (m *EdiscoveryHoldPolicy) GetSiteSources()([]SiteSourceable) {
     return nil
 }
 // GetUserSources gets the userSources property value. Data sources that represent Exchange mailboxes.
+// returns a []UserSourceable when successful
 func (m *EdiscoveryHoldPolicy) GetUserSources()([]UserSourceable) {
     val, err := m.GetBackingStore().Get("userSources")
     if err != nil {
@@ -234,7 +240,6 @@ func (m *EdiscoveryHoldPolicy) SetUserSources(value []UserSourceable)() {
         panic(err)
     }
 }
-// EdiscoveryHoldPolicyable 
 type EdiscoveryHoldPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable

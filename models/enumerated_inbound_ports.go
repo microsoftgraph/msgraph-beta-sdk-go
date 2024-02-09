@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EnumeratedInboundPorts 
 type EnumeratedInboundPorts struct {
     InboundPorts
 }
-// NewEnumeratedInboundPorts instantiates a new enumeratedInboundPorts and sets the default values.
+// NewEnumeratedInboundPorts instantiates a new EnumeratedInboundPorts and sets the default values.
 func NewEnumeratedInboundPorts()(*EnumeratedInboundPorts) {
     m := &EnumeratedInboundPorts{
         InboundPorts: *NewInboundPorts(),
@@ -18,10 +17,12 @@ func NewEnumeratedInboundPorts()(*EnumeratedInboundPorts) {
     return m
 }
 // CreateEnumeratedInboundPortsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnumeratedInboundPortsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnumeratedInboundPorts(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EnumeratedInboundPorts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InboundPorts.GetFieldDeserializers()
     res["ports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *EnumeratedInboundPorts) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetPorts gets the ports property value. Collection of ports that allow inbound traffic.
+// returns a []string when successful
 func (m *EnumeratedInboundPorts) GetPorts()([]string) {
     val, err := m.GetBackingStore().Get("ports")
     if err != nil {
@@ -74,7 +76,6 @@ func (m *EnumeratedInboundPorts) SetPorts(value []string)() {
         panic(err)
     }
 }
-// EnumeratedInboundPortsable 
 type EnumeratedInboundPortsable interface {
     InboundPortsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

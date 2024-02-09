@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionsManagement 
 type PermissionsManagement struct {
     Entity
 }
-// NewPermissionsManagement instantiates a new permissionsManagement and sets the default values.
+// NewPermissionsManagement instantiates a new PermissionsManagement and sets the default values.
 func NewPermissionsManagement()(*PermissionsManagement) {
     m := &PermissionsManagement{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPermissionsManagement()(*PermissionsManagement) {
     return m
 }
 // CreatePermissionsManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePermissionsManagementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionsManagement(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PermissionsManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["permissionsRequestChanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,22 @@ func (m *PermissionsManagement) GetFieldDeserializers()(map[string]func(i878a80d
                 }
             }
             m.SetPermissionsRequestChanges(res)
+        }
+        return nil
+    }
+    res["scheduledPermissionsApprovals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateApprovalFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Approvalable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Approvalable)
+                }
+            }
+            m.SetScheduledPermissionsApprovals(res)
         }
         return nil
     }
@@ -57,6 +74,7 @@ func (m *PermissionsManagement) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetPermissionsRequestChanges gets the permissionsRequestChanges property value. Represents a change event of the scheduledPermissionsRequest entity.
+// returns a []PermissionsRequestChangeable when successful
 func (m *PermissionsManagement) GetPermissionsRequestChanges()([]PermissionsRequestChangeable) {
     val, err := m.GetBackingStore().Get("permissionsRequestChanges")
     if err != nil {
@@ -67,7 +85,20 @@ func (m *PermissionsManagement) GetPermissionsRequestChanges()([]PermissionsRequ
     }
     return nil
 }
+// GetScheduledPermissionsApprovals gets the scheduledPermissionsApprovals property value. The scheduledPermissionsApprovals property
+// returns a []Approvalable when successful
+func (m *PermissionsManagement) GetScheduledPermissionsApprovals()([]Approvalable) {
+    val, err := m.GetBackingStore().Get("scheduledPermissionsApprovals")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Approvalable)
+    }
+    return nil
+}
 // GetScheduledPermissionsRequests gets the scheduledPermissionsRequests property value. Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.
+// returns a []ScheduledPermissionsRequestable when successful
 func (m *PermissionsManagement) GetScheduledPermissionsRequests()([]ScheduledPermissionsRequestable) {
     val, err := m.GetBackingStore().Get("scheduledPermissionsRequests")
     if err != nil {
@@ -96,6 +127,18 @@ func (m *PermissionsManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetScheduledPermissionsApprovals() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScheduledPermissionsApprovals()))
+        for i, v := range m.GetScheduledPermissionsApprovals() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("scheduledPermissionsApprovals", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetScheduledPermissionsRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScheduledPermissionsRequests()))
         for i, v := range m.GetScheduledPermissionsRequests() {
@@ -117,6 +160,13 @@ func (m *PermissionsManagement) SetPermissionsRequestChanges(value []Permissions
         panic(err)
     }
 }
+// SetScheduledPermissionsApprovals sets the scheduledPermissionsApprovals property value. The scheduledPermissionsApprovals property
+func (m *PermissionsManagement) SetScheduledPermissionsApprovals(value []Approvalable)() {
+    err := m.GetBackingStore().Set("scheduledPermissionsApprovals", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScheduledPermissionsRequests sets the scheduledPermissionsRequests property value. Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.
 func (m *PermissionsManagement) SetScheduledPermissionsRequests(value []ScheduledPermissionsRequestable)() {
     err := m.GetBackingStore().Set("scheduledPermissionsRequests", value)
@@ -124,12 +174,13 @@ func (m *PermissionsManagement) SetScheduledPermissionsRequests(value []Schedule
         panic(err)
     }
 }
-// PermissionsManagementable 
 type PermissionsManagementable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetPermissionsRequestChanges()([]PermissionsRequestChangeable)
+    GetScheduledPermissionsApprovals()([]Approvalable)
     GetScheduledPermissionsRequests()([]ScheduledPermissionsRequestable)
     SetPermissionsRequestChanges(value []PermissionsRequestChangeable)()
+    SetScheduledPermissionsApprovals(value []Approvalable)()
     SetScheduledPermissionsRequests(value []ScheduledPermissionsRequestable)()
 }

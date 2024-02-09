@@ -8,7 +8,7 @@ import (
 type DeviceConfigurationAssignment struct {
     Entity
 }
-// NewDeviceConfigurationAssignment instantiates a new deviceConfigurationAssignment and sets the default values.
+// NewDeviceConfigurationAssignment instantiates a new DeviceConfigurationAssignment and sets the default values.
 func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
     m := &DeviceConfigurationAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceConfigurationAssignment()(*DeviceConfigurationAssignment) {
     return m
 }
 // CreateDeviceConfigurationAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["intent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -65,6 +67,7 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetIntent gets the intent property value. The admin intent to apply or remove the profile. Possible values are: apply, remove.
+// returns a *DeviceConfigAssignmentIntent when successful
 func (m *DeviceConfigurationAssignment) GetIntent()(*DeviceConfigAssignmentIntent) {
     val, err := m.GetBackingStore().Get("intent")
     if err != nil {
@@ -76,6 +79,7 @@ func (m *DeviceConfigurationAssignment) GetIntent()(*DeviceConfigAssignmentInten
     return nil
 }
 // GetSource gets the source property value. Represents source of assignment.
+// returns a *DeviceAndAppManagementAssignmentSource when successful
 func (m *DeviceConfigurationAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -87,6 +91,7 @@ func (m *DeviceConfigurationAssignment) GetSource()(*DeviceAndAppManagementAssig
     return nil
 }
 // GetSourceId gets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
+// returns a *string when successful
 func (m *DeviceConfigurationAssignment) GetSourceId()(*string) {
     val, err := m.GetBackingStore().Get("sourceId")
     if err != nil {
@@ -98,6 +103,7 @@ func (m *DeviceConfigurationAssignment) GetSourceId()(*string) {
     return nil
 }
 // GetTarget gets the target property value. The assignment target for the device configuration.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *DeviceConfigurationAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -164,7 +170,6 @@ func (m *DeviceConfigurationAssignment) SetTarget(value DeviceAndAppManagementAs
         panic(err)
     }
 }
-// DeviceConfigurationAssignmentable 
 type DeviceConfigurationAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

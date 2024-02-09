@@ -1,22 +1,24 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type EmailEntityIdentifier int
 
 const (
-    NETWORKMESSAGEID_EMAILENTITYIDENTIFIER EmailEntityIdentifier = iota
-    RECIPIENTEMAILADDRESS_EMAILENTITYIDENTIFIER
-    UNKNOWNFUTUREVALUE_EMAILENTITYIDENTIFIER
+    NETWORKMESSAGEID_EMAILENTITYIDENTIFIER = 1
+    RECIPIENTEMAILADDRESS_EMAILENTITYIDENTIFIER = 2
+    UNKNOWNFUTUREVALUE_EMAILENTITYIDENTIFIER = 4
 )
 
 func (i EmailEntityIdentifier) String() string {
     var values []string
-    for p := EmailEntityIdentifier(1); p <= UNKNOWNFUTUREVALUE_EMAILENTITYIDENTIFIER; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"networkMessageId", "recipientEmailAddress", "unknownFutureValue"}[p])
+    options := []string{"networkMessageId", "recipientEmailAddress", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := EmailEntityIdentifier(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

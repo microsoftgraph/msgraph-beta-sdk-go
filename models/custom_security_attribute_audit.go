@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomSecurityAttributeAudit 
 type CustomSecurityAttributeAudit struct {
     Entity
 }
-// NewCustomSecurityAttributeAudit instantiates a new customSecurityAttributeAudit and sets the default values.
+// NewCustomSecurityAttributeAudit instantiates a new CustomSecurityAttributeAudit and sets the default values.
 func NewCustomSecurityAttributeAudit()(*CustomSecurityAttributeAudit) {
     m := &CustomSecurityAttributeAudit{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCustomSecurityAttributeAudit()(*CustomSecurityAttributeAudit) {
     return m
 }
 // CreateCustomSecurityAttributeAuditFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomSecurityAttributeAuditFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomSecurityAttributeAudit(), nil
 }
 // GetActivityDateTime gets the activityDateTime property value. The activityDateTime property
+// returns a *Time when successful
 func (m *CustomSecurityAttributeAudit) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("activityDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CustomSecurityAttributeAudit) GetActivityDateTime()(*i336074805fc853987
     return nil
 }
 // GetActivityDisplayName gets the activityDisplayName property value. The activityDisplayName property
+// returns a *string when successful
 func (m *CustomSecurityAttributeAudit) GetActivityDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("activityDisplayName")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *CustomSecurityAttributeAudit) GetActivityDisplayName()(*string) {
     return nil
 }
 // GetAdditionalDetails gets the additionalDetails property value. The additionalDetails property
+// returns a []KeyValueable when successful
 func (m *CustomSecurityAttributeAudit) GetAdditionalDetails()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("additionalDetails")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *CustomSecurityAttributeAudit) GetAdditionalDetails()([]KeyValueable) {
     return nil
 }
 // GetCategory gets the category property value. The category property
+// returns a *string when successful
 func (m *CustomSecurityAttributeAudit) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *CustomSecurityAttributeAudit) GetCategory()(*string) {
     return nil
 }
 // GetCorrelationId gets the correlationId property value. The correlationId property
+// returns a *string when successful
 func (m *CustomSecurityAttributeAudit) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *CustomSecurityAttributeAudit) GetCorrelationId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomSecurityAttributeAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -213,6 +219,7 @@ func (m *CustomSecurityAttributeAudit) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetInitiatedBy gets the initiatedBy property value. The initiatedBy property
+// returns a AuditActivityInitiatorable when successful
 func (m *CustomSecurityAttributeAudit) GetInitiatedBy()(AuditActivityInitiatorable) {
     val, err := m.GetBackingStore().Get("initiatedBy")
     if err != nil {
@@ -224,6 +231,7 @@ func (m *CustomSecurityAttributeAudit) GetInitiatedBy()(AuditActivityInitiatorab
     return nil
 }
 // GetLoggedByService gets the loggedByService property value. The loggedByService property
+// returns a *string when successful
 func (m *CustomSecurityAttributeAudit) GetLoggedByService()(*string) {
     val, err := m.GetBackingStore().Get("loggedByService")
     if err != nil {
@@ -235,6 +243,7 @@ func (m *CustomSecurityAttributeAudit) GetLoggedByService()(*string) {
     return nil
 }
 // GetOperationType gets the operationType property value. The operationType property
+// returns a *string when successful
 func (m *CustomSecurityAttributeAudit) GetOperationType()(*string) {
     val, err := m.GetBackingStore().Get("operationType")
     if err != nil {
@@ -246,6 +255,7 @@ func (m *CustomSecurityAttributeAudit) GetOperationType()(*string) {
     return nil
 }
 // GetResult gets the result property value. The result property
+// returns a *OperationResult when successful
 func (m *CustomSecurityAttributeAudit) GetResult()(*OperationResult) {
     val, err := m.GetBackingStore().Get("result")
     if err != nil {
@@ -257,6 +267,7 @@ func (m *CustomSecurityAttributeAudit) GetResult()(*OperationResult) {
     return nil
 }
 // GetResultReason gets the resultReason property value. The resultReason property
+// returns a *string when successful
 func (m *CustomSecurityAttributeAudit) GetResultReason()(*string) {
     val, err := m.GetBackingStore().Get("resultReason")
     if err != nil {
@@ -268,6 +279,7 @@ func (m *CustomSecurityAttributeAudit) GetResultReason()(*string) {
     return nil
 }
 // GetTargetResources gets the targetResources property value. The targetResources property
+// returns a []TargetResourceable when successful
 func (m *CustomSecurityAttributeAudit) GetTargetResources()([]TargetResourceable) {
     val, err := m.GetBackingStore().Get("targetResources")
     if err != nil {
@@ -279,6 +291,7 @@ func (m *CustomSecurityAttributeAudit) GetTargetResources()([]TargetResourceable
     return nil
 }
 // GetUserAgent gets the userAgent property value. The userAgent property
+// returns a *string when successful
 func (m *CustomSecurityAttributeAudit) GetUserAgent()(*string) {
     val, err := m.GetBackingStore().Get("userAgent")
     if err != nil {
@@ -466,7 +479,6 @@ func (m *CustomSecurityAttributeAudit) SetUserAgent(value *string)() {
         panic(err)
     }
 }
-// CustomSecurityAttributeAuditable 
 type CustomSecurityAttributeAuditable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

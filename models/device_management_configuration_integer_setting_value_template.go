@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationIntegerSettingValueTemplate struct {
     DeviceManagementConfigurationSimpleSettingValueTemplate
 }
-// NewDeviceManagementConfigurationIntegerSettingValueTemplate instantiates a new deviceManagementConfigurationIntegerSettingValueTemplate and sets the default values.
+// NewDeviceManagementConfigurationIntegerSettingValueTemplate instantiates a new DeviceManagementConfigurationIntegerSettingValueTemplate and sets the default values.
 func NewDeviceManagementConfigurationIntegerSettingValueTemplate()(*DeviceManagementConfigurationIntegerSettingValueTemplate) {
     m := &DeviceManagementConfigurationIntegerSettingValueTemplate{
         DeviceManagementConfigurationSimpleSettingValueTemplate: *NewDeviceManagementConfigurationSimpleSettingValueTemplate(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationIntegerSettingValueTemplate()(*DeviceManage
     return m
 }
 // CreateDeviceManagementConfigurationIntegerSettingValueTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationIntegerSettingValueTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationIntegerSettingValueTemplate(), nil
 }
 // GetDefaultValue gets the defaultValue property value. Integer Setting Value Default Template.
+// returns a DeviceManagementConfigurationIntegerSettingValueDefaultTemplateable when successful
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetDefaultValue()(DeviceManagementConfigurationIntegerSettingValueDefaultTemplateable) {
     val, err := m.GetBackingStore().Get("defaultValue")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetDefaultVal
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSimpleSettingValueTemplate.GetFieldDeserializers()
     res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +71,7 @@ func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetFieldDeser
     return res
 }
 // GetRecommendedValueDefinition gets the recommendedValueDefinition property value. Recommended value definition.
+// returns a DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable when successful
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetRecommendedValueDefinition()(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable) {
     val, err := m.GetBackingStore().Get("recommendedValueDefinition")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetRecommende
     return nil
 }
 // GetRequiredValueDefinition gets the requiredValueDefinition property value. Required value definition.
+// returns a DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable when successful
 func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) GetRequiredValueDefinition()(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplateable) {
     val, err := m.GetBackingStore().Get("requiredValueDefinition")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *DeviceManagementConfigurationIntegerSettingValueTemplate) SetRequiredVa
         panic(err)
     }
 }
-// DeviceManagementConfigurationIntegerSettingValueTemplateable 
 type DeviceManagementConfigurationIntegerSettingValueTemplateable interface {
     DeviceManagementConfigurationSimpleSettingValueTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

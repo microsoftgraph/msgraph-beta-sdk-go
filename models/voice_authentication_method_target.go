@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VoiceAuthenticationMethodTarget 
 type VoiceAuthenticationMethodTarget struct {
     AuthenticationMethodTarget
 }
-// NewVoiceAuthenticationMethodTarget instantiates a new voiceAuthenticationMethodTarget and sets the default values.
+// NewVoiceAuthenticationMethodTarget instantiates a new VoiceAuthenticationMethodTarget and sets the default values.
 func NewVoiceAuthenticationMethodTarget()(*VoiceAuthenticationMethodTarget) {
     m := &VoiceAuthenticationMethodTarget{
         AuthenticationMethodTarget: *NewAuthenticationMethodTarget(),
@@ -16,10 +15,12 @@ func NewVoiceAuthenticationMethodTarget()(*VoiceAuthenticationMethodTarget) {
     return m
 }
 // CreateVoiceAuthenticationMethodTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVoiceAuthenticationMethodTargetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVoiceAuthenticationMethodTarget(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VoiceAuthenticationMethodTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodTarget.GetFieldDeserializers()
     return res
@@ -32,7 +33,6 @@ func (m *VoiceAuthenticationMethodTarget) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// VoiceAuthenticationMethodTargetable 
 type VoiceAuthenticationMethodTargetable interface {
     AuthenticationMethodTargetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

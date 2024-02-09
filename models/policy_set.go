@@ -9,7 +9,7 @@ import (
 type PolicySet struct {
     Entity
 }
-// NewPolicySet instantiates a new policySet and sets the default values.
+// NewPolicySet instantiates a new PolicySet and sets the default values.
 func NewPolicySet()(*PolicySet) {
     m := &PolicySet{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewPolicySet()(*PolicySet) {
     return m
 }
 // CreatePolicySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePolicySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPolicySet(), nil
 }
 // GetAssignments gets the assignments property value. Assignments of the PolicySet.
+// returns a []PolicySetAssignmentable when successful
 func (m *PolicySet) GetAssignments()([]PolicySetAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *PolicySet) GetAssignments()([]PolicySetAssignmentable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Creation time of the PolicySet.
+// returns a *Time when successful
 func (m *PolicySet) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *PolicySet) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetDescription gets the description property value. Description of the PolicySet.
+// returns a *string when successful
 func (m *PolicySet) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *PolicySet) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. DisplayName of the PolicySet.
+// returns a *string when successful
 func (m *PolicySet) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *PolicySet) GetDisplayName()(*string) {
     return nil
 }
 // GetErrorCode gets the errorCode property value. The errorCode property
+// returns a *ErrorCode when successful
 func (m *PolicySet) GetErrorCode()(*ErrorCode) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *PolicySet) GetErrorCode()(*ErrorCode) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PolicySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -205,6 +212,7 @@ func (m *PolicySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetGuidedDeploymentTags gets the guidedDeploymentTags property value. Tags of the guided deployment
+// returns a []string when successful
 func (m *PolicySet) GetGuidedDeploymentTags()([]string) {
     val, err := m.GetBackingStore().Get("guidedDeploymentTags")
     if err != nil {
@@ -216,6 +224,7 @@ func (m *PolicySet) GetGuidedDeploymentTags()([]string) {
     return nil
 }
 // GetItems gets the items property value. Items of the PolicySet with maximum count 100.
+// returns a []PolicySetItemable when successful
 func (m *PolicySet) GetItems()([]PolicySetItemable) {
     val, err := m.GetBackingStore().Get("items")
     if err != nil {
@@ -227,6 +236,7 @@ func (m *PolicySet) GetItems()([]PolicySetItemable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified time of the PolicySet.
+// returns a *Time when successful
 func (m *PolicySet) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -238,6 +248,7 @@ func (m *PolicySet) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetRoleScopeTags gets the roleScopeTags property value. RoleScopeTags of the PolicySet
+// returns a []string when successful
 func (m *PolicySet) GetRoleScopeTags()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTags")
     if err != nil {
@@ -249,6 +260,7 @@ func (m *PolicySet) GetRoleScopeTags()([]string) {
     return nil
 }
 // GetStatus gets the status property value. The enum to specify the status of PolicySet.
+// returns a *PolicySetStatus when successful
 func (m *PolicySet) GetStatus()(*PolicySetStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -411,7 +423,6 @@ func (m *PolicySet) SetStatus(value *PolicySetStatus)() {
         panic(err)
     }
 }
-// PolicySetable 
 type PolicySetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

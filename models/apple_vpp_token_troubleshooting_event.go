@@ -8,7 +8,7 @@ import (
 type AppleVppTokenTroubleshootingEvent struct {
     DeviceManagementTroubleshootingEvent
 }
-// NewAppleVppTokenTroubleshootingEvent instantiates a new appleVppTokenTroubleshootingEvent and sets the default values.
+// NewAppleVppTokenTroubleshootingEvent instantiates a new AppleVppTokenTroubleshootingEvent and sets the default values.
 func NewAppleVppTokenTroubleshootingEvent()(*AppleVppTokenTroubleshootingEvent) {
     m := &AppleVppTokenTroubleshootingEvent{
         DeviceManagementTroubleshootingEvent: *NewDeviceManagementTroubleshootingEvent(),
@@ -16,10 +16,12 @@ func NewAppleVppTokenTroubleshootingEvent()(*AppleVppTokenTroubleshootingEvent) 
     return m
 }
 // CreateAppleVppTokenTroubleshootingEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppleVppTokenTroubleshootingEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppleVppTokenTroubleshootingEvent(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppleVppTokenTroubleshootingEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementTroubleshootingEvent.GetFieldDeserializers()
     res["tokenId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *AppleVppTokenTroubleshootingEvent) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetTokenId gets the tokenId property value. Apple Volume Purchase Program Token Identifier.
+// returns a *string when successful
 func (m *AppleVppTokenTroubleshootingEvent) GetTokenId()(*string) {
     val, err := m.GetBackingStore().Get("tokenId")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *AppleVppTokenTroubleshootingEvent) SetTokenId(value *string)() {
         panic(err)
     }
 }
-// AppleVppTokenTroubleshootingEventable 
 type AppleVppTokenTroubleshootingEventable interface {
     DeviceManagementTroubleshootingEventable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

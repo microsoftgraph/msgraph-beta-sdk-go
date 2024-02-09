@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EmailThreatSubmission 
 type EmailThreatSubmission struct {
     ThreatSubmission
 }
-// NewEmailThreatSubmission instantiates a new emailThreatSubmission and sets the default values.
+// NewEmailThreatSubmission instantiates a new EmailThreatSubmission and sets the default values.
 func NewEmailThreatSubmission()(*EmailThreatSubmission) {
     m := &EmailThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),
@@ -19,6 +18,7 @@ func NewEmailThreatSubmission()(*EmailThreatSubmission) {
     return m
 }
 // CreateEmailThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEmailThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +43,7 @@ func CreateEmailThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewEmailThreatSubmission(), nil
 }
 // GetAttackSimulationInfo gets the attackSimulationInfo property value. If the email is phishing simulation, this field won't be null.
+// returns a AttackSimulationInfoable when successful
 func (m *EmailThreatSubmission) GetAttackSimulationInfo()(AttackSimulationInfoable) {
     val, err := m.GetBackingStore().Get("attackSimulationInfo")
     if err != nil {
@@ -54,6 +55,7 @@ func (m *EmailThreatSubmission) GetAttackSimulationInfo()(AttackSimulationInfoab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmailThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ThreatSubmission.GetFieldDeserializers()
     res["attackSimulationInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -149,6 +151,7 @@ func (m *EmailThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetInternetMessageId gets the internetMessageId property value. Specifies the internet message ID of the email being submitted. This information is present in the email header.
+// returns a *string when successful
 func (m *EmailThreatSubmission) GetInternetMessageId()(*string) {
     val, err := m.GetBackingStore().Get("internetMessageId")
     if err != nil {
@@ -160,6 +163,7 @@ func (m *EmailThreatSubmission) GetInternetMessageId()(*string) {
     return nil
 }
 // GetOriginalCategory gets the originalCategory property value. The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.
+// returns a *SubmissionCategory when successful
 func (m *EmailThreatSubmission) GetOriginalCategory()(*SubmissionCategory) {
     val, err := m.GetBackingStore().Get("originalCategory")
     if err != nil {
@@ -171,6 +175,7 @@ func (m *EmailThreatSubmission) GetOriginalCategory()(*SubmissionCategory) {
     return nil
 }
 // GetReceivedDateTime gets the receivedDateTime property value. Specifies the date and time stamp when the email was received.
+// returns a *Time when successful
 func (m *EmailThreatSubmission) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("receivedDateTime")
     if err != nil {
@@ -182,6 +187,7 @@ func (m *EmailThreatSubmission) GetReceivedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetRecipientEmailAddress gets the recipientEmailAddress property value. Specifies the email address (in smtp format) of the recipient who received the email.
+// returns a *string when successful
 func (m *EmailThreatSubmission) GetRecipientEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("recipientEmailAddress")
     if err != nil {
@@ -193,6 +199,7 @@ func (m *EmailThreatSubmission) GetRecipientEmailAddress()(*string) {
     return nil
 }
 // GetSender gets the sender property value. Specifies the email address of the sender.
+// returns a *string when successful
 func (m *EmailThreatSubmission) GetSender()(*string) {
     val, err := m.GetBackingStore().Get("sender")
     if err != nil {
@@ -204,6 +211,7 @@ func (m *EmailThreatSubmission) GetSender()(*string) {
     return nil
 }
 // GetSenderIP gets the senderIP property value. Specifies the IP address of the sender.
+// returns a *string when successful
 func (m *EmailThreatSubmission) GetSenderIP()(*string) {
     val, err := m.GetBackingStore().Get("senderIP")
     if err != nil {
@@ -215,6 +223,7 @@ func (m *EmailThreatSubmission) GetSenderIP()(*string) {
     return nil
 }
 // GetSubject gets the subject property value. Specifies the subject of the email.
+// returns a *string when successful
 func (m *EmailThreatSubmission) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -226,6 +235,7 @@ func (m *EmailThreatSubmission) GetSubject()(*string) {
     return nil
 }
 // GetTenantAllowOrBlockListAction gets the tenantAllowOrBlockListAction property value. It's used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.
+// returns a TenantAllowOrBlockListActionable when successful
 func (m *EmailThreatSubmission) GetTenantAllowOrBlockListAction()(TenantAllowOrBlockListActionable) {
     val, err := m.GetBackingStore().Get("tenantAllowOrBlockListAction")
     if err != nil {
@@ -362,7 +372,6 @@ func (m *EmailThreatSubmission) SetTenantAllowOrBlockListAction(value TenantAllo
         panic(err)
     }
 }
-// EmailThreatSubmissionable 
 type EmailThreatSubmissionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ThreatSubmissionable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MultiTenantOrganization 
 type MultiTenantOrganization struct {
     Entity
 }
-// NewMultiTenantOrganization instantiates a new multiTenantOrganization and sets the default values.
+// NewMultiTenantOrganization instantiates a new MultiTenantOrganization and sets the default values.
 func NewMultiTenantOrganization()(*MultiTenantOrganization) {
     m := &MultiTenantOrganization{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewMultiTenantOrganization()(*MultiTenantOrganization) {
     return m
 }
 // CreateMultiTenantOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMultiTenantOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMultiTenantOrganization(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date when multitenant organization was created. Read-only.
+// returns a *Time when successful
 func (m *MultiTenantOrganization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *MultiTenantOrganization) GetCreatedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetDescription gets the description property value. Description of the multitenant organization.
+// returns a *string when successful
 func (m *MultiTenantOrganization) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *MultiTenantOrganization) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the multitenant organization.
+// returns a *string when successful
 func (m *MultiTenantOrganization) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *MultiTenantOrganization) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MultiTenantOrganization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +129,7 @@ func (m *MultiTenantOrganization) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetJoinRequest gets the joinRequest property value. Defines the status of a tenant joining a multitenant organization.
+// returns a MultiTenantOrganizationJoinRequestRecordable when successful
 func (m *MultiTenantOrganization) GetJoinRequest()(MultiTenantOrganizationJoinRequestRecordable) {
     val, err := m.GetBackingStore().Get("joinRequest")
     if err != nil {
@@ -136,6 +141,7 @@ func (m *MultiTenantOrganization) GetJoinRequest()(MultiTenantOrganizationJoinRe
     return nil
 }
 // GetState gets the state property value. State of the multitenant organization. The possible values are: active, inactive, unknownFutureValue. active indicates the multitenant organization is created. inactive indicates the multitenant organization isn't created. Read-only.
+// returns a *MultiTenantOrganizationState when successful
 func (m *MultiTenantOrganization) GetState()(*MultiTenantOrganizationState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *MultiTenantOrganization) GetState()(*MultiTenantOrganizationState) {
     return nil
 }
 // GetTenants gets the tenants property value. Defines tenants added to a multitenant organization.
+// returns a []MultiTenantOrganizationMemberable when successful
 func (m *MultiTenantOrganization) GetTenants()([]MultiTenantOrganizationMemberable) {
     val, err := m.GetBackingStore().Get("tenants")
     if err != nil {
@@ -250,7 +257,6 @@ func (m *MultiTenantOrganization) SetTenants(value []MultiTenantOrganizationMemb
         panic(err)
     }
 }
-// MultiTenantOrganizationable 
 type MultiTenantOrganizationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

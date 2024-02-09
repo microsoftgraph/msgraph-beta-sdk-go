@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationListener 
 type AuthenticationListener struct {
     Entity
 }
-// NewAuthenticationListener instantiates a new authenticationListener and sets the default values.
+// NewAuthenticationListener instantiates a new AuthenticationListener and sets the default values.
 func NewAuthenticationListener()(*AuthenticationListener) {
     m := &AuthenticationListener{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewAuthenticationListener()(*AuthenticationListener) {
     return m
 }
 // CreateAuthenticationListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationListenerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +38,7 @@ func CreateAuthenticationListenerFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewAuthenticationListener(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationListener) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -63,6 +64,7 @@ func (m *AuthenticationListener) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetPriority gets the priority property value. The priority of the listener. Determines the order of evaluation when an event has multiple listeners. The priority is evaluated from low to high.
+// returns a *int32 when successful
 func (m *AuthenticationListener) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -74,6 +76,7 @@ func (m *AuthenticationListener) GetPriority()(*int32) {
     return nil
 }
 // GetSourceFilter gets the sourceFilter property value. Filter based on the source of the authentication that is used to determine whether the listener is evaluated, and is currently limited to evaluations based on application the user is authenticating to.
+// returns a AuthenticationSourceFilterable when successful
 func (m *AuthenticationListener) GetSourceFilter()(AuthenticationSourceFilterable) {
     val, err := m.GetBackingStore().Get("sourceFilter")
     if err != nil {
@@ -118,7 +121,6 @@ func (m *AuthenticationListener) SetSourceFilter(value AuthenticationSourceFilte
         panic(err)
     }
 }
-// AuthenticationListenerable 
 type AuthenticationListenerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

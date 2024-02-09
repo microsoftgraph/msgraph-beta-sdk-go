@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BusinessScenarioPlanReference 
 type BusinessScenarioPlanReference struct {
     Entity
 }
-// NewBusinessScenarioPlanReference instantiates a new businessScenarioPlanReference and sets the default values.
+// NewBusinessScenarioPlanReference instantiates a new BusinessScenarioPlanReference and sets the default values.
 func NewBusinessScenarioPlanReference()(*BusinessScenarioPlanReference) {
     m := &BusinessScenarioPlanReference{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewBusinessScenarioPlanReference()(*BusinessScenarioPlanReference) {
     return m
 }
 // CreateBusinessScenarioPlanReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBusinessScenarioPlanReferenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBusinessScenarioPlanReference(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BusinessScenarioPlanReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *BusinessScenarioPlanReference) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetTitle gets the title property value. The title property of the plannerPlan.
+// returns a *string when successful
 func (m *BusinessScenarioPlanReference) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *BusinessScenarioPlanReference) SetTitle(value *string)() {
         panic(err)
     }
 }
-// BusinessScenarioPlanReferenceable 
 type BusinessScenarioPlanReferenceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

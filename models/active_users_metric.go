@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActiveUsersMetric 
 type ActiveUsersMetric struct {
     Entity
 }
-// NewActiveUsersMetric instantiates a new activeUsersMetric and sets the default values.
+// NewActiveUsersMetric instantiates a new ActiveUsersMetric and sets the default values.
 func NewActiveUsersMetric()(*ActiveUsersMetric) {
     m := &ActiveUsersMetric{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewActiveUsersMetric()(*ActiveUsersMetric) {
     return m
 }
 // CreateActiveUsersMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActiveUsersMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActiveUsersMetric(), nil
 }
 // GetCount gets the count property value. The total number of users who made at least one authentication request within the specified time period.
+// returns a *int64 when successful
 func (m *ActiveUsersMetric) GetCount()(*int64) {
     val, err := m.GetBackingStore().Get("count")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ActiveUsersMetric) GetCount()(*int64) {
     return nil
 }
 // GetFactDate gets the factDate property value. Date of the insight.
+// returns a *DateOnly when successful
 func (m *ActiveUsersMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ActiveUsersMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ActiveUsersMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,7 +103,6 @@ func (m *ActiveUsersMetric) SetFactDate(value *i878a80d2330e89d26896388a3f487eef
         panic(err)
     }
 }
-// ActiveUsersMetricable 
 type ActiveUsersMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

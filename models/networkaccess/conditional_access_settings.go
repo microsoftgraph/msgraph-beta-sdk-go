@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ConditionalAccessSettings 
 type ConditionalAccessSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewConditionalAccessSettings instantiates a new conditionalAccessSettings and sets the default values.
+// NewConditionalAccessSettings instantiates a new ConditionalAccessSettings and sets the default values.
 func NewConditionalAccessSettings()(*ConditionalAccessSettings) {
     m := &ConditionalAccessSettings{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewConditionalAccessSettings()(*ConditionalAccessSettings) {
     return m
 }
 // CreateConditionalAccessSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConditionalAccessSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["signalingStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -36,6 +37,7 @@ func (m *ConditionalAccessSettings) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetSignalingStatus gets the signalingStatus property value. The signalingStatus property
+// returns a *Status when successful
 func (m *ConditionalAccessSettings) GetSignalingStatus()(*Status) {
     val, err := m.GetBackingStore().Get("signalingStatus")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *ConditionalAccessSettings) SetSignalingStatus(value *Status)() {
         panic(err)
     }
 }
-// ConditionalAccessSettingsable 
 type ConditionalAccessSettingsable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

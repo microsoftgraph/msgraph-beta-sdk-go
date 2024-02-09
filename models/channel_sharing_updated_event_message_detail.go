@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChannelSharingUpdatedEventMessageDetail 
 type ChannelSharingUpdatedEventMessageDetail struct {
     EventMessageDetail
 }
-// NewChannelSharingUpdatedEventMessageDetail instantiates a new channelSharingUpdatedEventMessageDetail and sets the default values.
+// NewChannelSharingUpdatedEventMessageDetail instantiates a new ChannelSharingUpdatedEventMessageDetail and sets the default values.
 func NewChannelSharingUpdatedEventMessageDetail()(*ChannelSharingUpdatedEventMessageDetail) {
     m := &ChannelSharingUpdatedEventMessageDetail{
         EventMessageDetail: *NewEventMessageDetail(),
@@ -18,10 +17,12 @@ func NewChannelSharingUpdatedEventMessageDetail()(*ChannelSharingUpdatedEventMes
     return m
 }
 // CreateChannelSharingUpdatedEventMessageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChannelSharingUpdatedEventMessageDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChannelSharingUpdatedEventMessageDetail(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChannelSharingUpdatedEventMessageDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EventMessageDetail.GetFieldDeserializers()
     res["initiator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +68,7 @@ func (m *ChannelSharingUpdatedEventMessageDetail) GetFieldDeserializers()(map[st
     return res
 }
 // GetInitiator gets the initiator property value. Initiator of the event.
+// returns a IdentitySetable when successful
 func (m *ChannelSharingUpdatedEventMessageDetail) GetInitiator()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("initiator")
     if err != nil {
@@ -78,6 +80,7 @@ func (m *ChannelSharingUpdatedEventMessageDetail) GetInitiator()(IdentitySetable
     return nil
 }
 // GetOwnerTeamId gets the ownerTeamId property value. The ID of the team to which the shared channel belongs.
+// returns a *string when successful
 func (m *ChannelSharingUpdatedEventMessageDetail) GetOwnerTeamId()(*string) {
     val, err := m.GetBackingStore().Get("ownerTeamId")
     if err != nil {
@@ -89,6 +92,7 @@ func (m *ChannelSharingUpdatedEventMessageDetail) GetOwnerTeamId()(*string) {
     return nil
 }
 // GetOwnerTenantId gets the ownerTenantId property value. The ID of the tenant to which the shared channel belongs.
+// returns a *string when successful
 func (m *ChannelSharingUpdatedEventMessageDetail) GetOwnerTenantId()(*string) {
     val, err := m.GetBackingStore().Get("ownerTenantId")
     if err != nil {
@@ -100,6 +104,7 @@ func (m *ChannelSharingUpdatedEventMessageDetail) GetOwnerTenantId()(*string) {
     return nil
 }
 // GetSharedChannelId gets the sharedChannelId property value. The ID of the shared channel.
+// returns a *string when successful
 func (m *ChannelSharingUpdatedEventMessageDetail) GetSharedChannelId()(*string) {
     val, err := m.GetBackingStore().Get("sharedChannelId")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *ChannelSharingUpdatedEventMessageDetail) SetSharedChannelId(value *stri
         panic(err)
     }
 }
-// ChannelSharingUpdatedEventMessageDetailable 
 type ChannelSharingUpdatedEventMessageDetailable interface {
     EventMessageDetailable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

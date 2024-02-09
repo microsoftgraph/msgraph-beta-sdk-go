@@ -8,7 +8,7 @@ import (
 type IosVpnConfiguration struct {
     AppleVpnConfiguration
 }
-// NewIosVpnConfiguration instantiates a new iosVpnConfiguration and sets the default values.
+// NewIosVpnConfiguration instantiates a new IosVpnConfiguration and sets the default values.
 func NewIosVpnConfiguration()(*IosVpnConfiguration) {
     m := &IosVpnConfiguration{
         AppleVpnConfiguration: *NewAppleVpnConfiguration(),
@@ -18,6 +18,7 @@ func NewIosVpnConfiguration()(*IosVpnConfiguration) {
     return m
 }
 // CreateIosVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateIosVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewIosVpnConfiguration(), nil
 }
 // GetCloudName gets the cloudName property value. Zscaler only. Zscaler cloud which the user is assigned to.
+// returns a *string when successful
 func (m *IosVpnConfiguration) GetCloudName()(*string) {
     val, err := m.GetBackingStore().Get("cloudName")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *IosVpnConfiguration) GetCloudName()(*string) {
     return nil
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
+// returns a DeviceManagementDerivedCredentialSettingsable when successful
 func (m *IosVpnConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
     val, err := m.GetBackingStore().Get("derivedCredentialSettings")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *IosVpnConfiguration) GetDerivedCredentialSettings()(DeviceManagementDer
     return nil
 }
 // GetExcludeList gets the excludeList property value. Zscaler only. List of network addresses which are not sent through the Zscaler cloud.
+// returns a []string when successful
 func (m *IosVpnConfiguration) GetExcludeList()([]string) {
     val, err := m.GetBackingStore().Get("excludeList")
     if err != nil {
@@ -73,6 +77,7 @@ func (m *IosVpnConfiguration) GetExcludeList()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppleVpnConfiguration.GetFieldDeserializers()
     res["cloudName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -170,6 +175,7 @@ func (m *IosVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
+// returns a IosCertificateProfileBaseable when successful
 func (m *IosVpnConfiguration) GetIdentityCertificate()(IosCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificate")
     if err != nil {
@@ -181,6 +187,7 @@ func (m *IosVpnConfiguration) GetIdentityCertificate()(IosCertificateProfileBase
     return nil
 }
 // GetMicrosoftTunnelSiteId gets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
+// returns a *string when successful
 func (m *IosVpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
     val, err := m.GetBackingStore().Get("microsoftTunnelSiteId")
     if err != nil {
@@ -192,6 +199,7 @@ func (m *IosVpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
     return nil
 }
 // GetStrictEnforcement gets the strictEnforcement property value. Zscaler only. Blocks network traffic until the user signs into Zscaler app. 'True' means traffic is blocked.
+// returns a *bool when successful
 func (m *IosVpnConfiguration) GetStrictEnforcement()(*bool) {
     val, err := m.GetBackingStore().Get("strictEnforcement")
     if err != nil {
@@ -203,6 +211,7 @@ func (m *IosVpnConfiguration) GetStrictEnforcement()(*bool) {
     return nil
 }
 // GetTargetedMobileApps gets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *IosVpnConfiguration) GetTargetedMobileApps()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("targetedMobileApps")
     if err != nil {
@@ -214,6 +223,7 @@ func (m *IosVpnConfiguration) GetTargetedMobileApps()([]AppListItemable) {
     return nil
 }
 // GetUserDomain gets the userDomain property value. Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user's Azure Active Directory domain will be used instead.
+// returns a *string when successful
 func (m *IosVpnConfiguration) GetUserDomain()(*string) {
     val, err := m.GetBackingStore().Get("userDomain")
     if err != nil {
@@ -342,7 +352,6 @@ func (m *IosVpnConfiguration) SetUserDomain(value *string)() {
         panic(err)
     }
 }
-// IosVpnConfigurationable 
 type IosVpnConfigurationable interface {
     AppleVpnConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

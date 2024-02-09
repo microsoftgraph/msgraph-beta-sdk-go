@@ -8,7 +8,7 @@ import (
 type DeviceManagementSettingInstance struct {
     Entity
 }
-// NewDeviceManagementSettingInstance instantiates a new deviceManagementSettingInstance and sets the default values.
+// NewDeviceManagementSettingInstance instantiates a new DeviceManagementSettingInstance and sets the default values.
 func NewDeviceManagementSettingInstance()(*DeviceManagementSettingInstance) {
     m := &DeviceManagementSettingInstance{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewDeviceManagementSettingInstance()(*DeviceManagementSettingInstance) {
     return m
 }
 // CreateDeviceManagementSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -48,6 +49,7 @@ func CreateDeviceManagementSettingInstanceFromDiscriminatorValue(parseNode i878a
     return NewDeviceManagementSettingInstance(), nil
 }
 // GetDefinitionId gets the definitionId property value. The ID of the setting definition for this instance
+// returns a *string when successful
 func (m *DeviceManagementSettingInstance) GetDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("definitionId")
     if err != nil {
@@ -59,6 +61,7 @@ func (m *DeviceManagementSettingInstance) GetDefinitionId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["definitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *DeviceManagementSettingInstance) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetValueJson gets the valueJson property value. JSON representation of the value
+// returns a *string when successful
 func (m *DeviceManagementSettingInstance) GetValueJson()(*string) {
     val, err := m.GetBackingStore().Get("valueJson")
     if err != nil {
@@ -128,7 +132,6 @@ func (m *DeviceManagementSettingInstance) SetValueJson(value *string)() {
         panic(err)
     }
 }
-// DeviceManagementSettingInstanceable 
 type DeviceManagementSettingInstanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

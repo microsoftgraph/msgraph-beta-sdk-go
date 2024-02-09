@@ -8,7 +8,7 @@ import (
 type DeviceManagementTemplateInsightsDefinition struct {
     Entity
 }
-// NewDeviceManagementTemplateInsightsDefinition instantiates a new deviceManagementTemplateInsightsDefinition and sets the default values.
+// NewDeviceManagementTemplateInsightsDefinition instantiates a new DeviceManagementTemplateInsightsDefinition and sets the default values.
 func NewDeviceManagementTemplateInsightsDefinition()(*DeviceManagementTemplateInsightsDefinition) {
     m := &DeviceManagementTemplateInsightsDefinition{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementTemplateInsightsDefinition()(*DeviceManagementTemplateIn
     return m
 }
 // CreateDeviceManagementTemplateInsightsDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementTemplateInsightsDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementTemplateInsightsDefinition(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementTemplateInsightsDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["settingInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +43,7 @@ func (m *DeviceManagementTemplateInsightsDefinition) GetFieldDeserializers()(map
     return res
 }
 // GetSettingInsights gets the settingInsights property value. Setting insights in a template
+// returns a []DeviceManagementSettingInsightsDefinitionable when successful
 func (m *DeviceManagementTemplateInsightsDefinition) GetSettingInsights()([]DeviceManagementSettingInsightsDefinitionable) {
     val, err := m.GetBackingStore().Get("settingInsights")
     if err != nil {
@@ -78,7 +81,6 @@ func (m *DeviceManagementTemplateInsightsDefinition) SetSettingInsights(value []
         panic(err)
     }
 }
-// DeviceManagementTemplateInsightsDefinitionable 
 type DeviceManagementTemplateInsightsDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

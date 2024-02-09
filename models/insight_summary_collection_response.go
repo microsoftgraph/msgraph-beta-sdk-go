@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InsightSummaryCollectionResponse 
 type InsightSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewInsightSummaryCollectionResponse instantiates a new insightSummaryCollectionResponse and sets the default values.
+// NewInsightSummaryCollectionResponse instantiates a new InsightSummaryCollectionResponse and sets the default values.
 func NewInsightSummaryCollectionResponse()(*InsightSummaryCollectionResponse) {
     m := &InsightSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewInsightSummaryCollectionResponse()(*InsightSummaryCollectionResponse) {
     return m
 }
 // CreateInsightSummaryCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInsightSummaryCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInsightSummaryCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InsightSummaryCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *InsightSummaryCollectionResponse) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []InsightSummaryable when successful
 func (m *InsightSummaryCollectionResponse) GetValue()([]InsightSummaryable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *InsightSummaryCollectionResponse) SetValue(value []InsightSummaryable)(
         panic(err)
     }
 }
-// InsightSummaryCollectionResponseable 
 type InsightSummaryCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

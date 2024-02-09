@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationsMetric 
 type AuthenticationsMetric struct {
     Entity
 }
-// NewAuthenticationsMetric instantiates a new authenticationsMetric and sets the default values.
+// NewAuthenticationsMetric instantiates a new AuthenticationsMetric and sets the default values.
 func NewAuthenticationsMetric()(*AuthenticationsMetric) {
     m := &AuthenticationsMetric{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAuthenticationsMetric()(*AuthenticationsMetric) {
     return m
 }
 // CreateAuthenticationsMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationsMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationsMetric(), nil
 }
 // GetAppid gets the appid property value. The ID of the Microsoft Entra application. Supports $filter (eq).
+// returns a *string when successful
 func (m *AuthenticationsMetric) GetAppid()(*string) {
     val, err := m.GetBackingStore().Get("appid")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AuthenticationsMetric) GetAppid()(*string) {
     return nil
 }
 // GetAttemptsCount gets the attemptsCount property value. The number of authentication requests made in the specified period. Supports $filter (eq).
+// returns a *int64 when successful
 func (m *AuthenticationsMetric) GetAttemptsCount()(*int64) {
     val, err := m.GetBackingStore().Get("attemptsCount")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AuthenticationsMetric) GetAttemptsCount()(*int64) {
     return nil
 }
 // GetCountry gets the country property value. The location where the customers authenticated from. Supports $filter (eq).
+// returns a *string when successful
 func (m *AuthenticationsMetric) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *AuthenticationsMetric) GetCountry()(*string) {
     return nil
 }
 // GetFactDate gets the factDate property value. The date of the user insight.
+// returns a *DateOnly when successful
 func (m *AuthenticationsMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *AuthenticationsMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationsMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -129,6 +134,7 @@ func (m *AuthenticationsMetric) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetOs gets the os property value. The platform for the device that the customers used. Supports $filter (eq).
+// returns a *string when successful
 func (m *AuthenticationsMetric) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *AuthenticationsMetric) GetOs()(*string) {
     return nil
 }
 // GetSuccessCount gets the successCount property value. Number of successful authentication requests. Supports $filter (eq).
+// returns a *int64 when successful
 func (m *AuthenticationsMetric) GetSuccessCount()(*int64) {
     val, err := m.GetBackingStore().Get("successCount")
     if err != nil {
@@ -236,7 +243,6 @@ func (m *AuthenticationsMetric) SetSuccessCount(value *int64)() {
         panic(err)
     }
 }
-// AuthenticationsMetricable 
 type AuthenticationsMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

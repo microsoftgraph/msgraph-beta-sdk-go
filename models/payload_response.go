@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PayloadResponse 
 type PayloadResponse struct {
     Entity
 }
-// NewPayloadResponse instantiates a new payloadResponse and sets the default values.
+// NewPayloadResponse instantiates a new PayloadResponse and sets the default values.
 func NewPayloadResponse()(*PayloadResponse) {
     m := &PayloadResponse{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPayloadResponse()(*PayloadResponse) {
     return m
 }
 // CreatePayloadResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePayloadResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPayloadResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PayloadResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     return res
@@ -32,7 +33,6 @@ func (m *PayloadResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// PayloadResponseable 
 type PayloadResponseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

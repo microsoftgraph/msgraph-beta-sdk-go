@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Manifest 
 type Manifest struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManifest instantiates a new manifest and sets the default values.
+// NewManifest instantiates a new Manifest and sets the default values.
 func NewManifest()(*Manifest) {
     m := &Manifest{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManifest()(*Manifest) {
     return m
 }
 // CreateManifestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManifestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManifest(), nil
 }
 // GetBlobCount gets the blobCount property value. The total file count for this partner tenant ID.
+// returns a *int32 when successful
 func (m *Manifest) GetBlobCount()(*int32) {
     val, err := m.GetBackingStore().Get("blobCount")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Manifest) GetBlobCount()(*int32) {
     return nil
 }
 // GetBlobs gets the blobs property value. A collection of blob objects that contain details of all the files for the partner tenant ID.
+// returns a []Blobable when successful
 func (m *Manifest) GetBlobs()([]Blobable) {
     val, err := m.GetBackingStore().Get("blobs")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Manifest) GetBlobs()([]Blobable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when a manifest resource was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *Manifest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Manifest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetDataFormat gets the dataFormat property value. The billing data file format. The possible value is: compressedJSONLines. Each blob is a compressed file and data in the file is in JSON lines format. Decompress the file to access the data.
+// returns a *string when successful
 func (m *Manifest) GetDataFormat()(*string) {
     val, err := m.GetBackingStore().Get("dataFormat")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *Manifest) GetDataFormat()(*string) {
     return nil
 }
 // GetETag gets the eTag property value. Version of data represented by the manifest. Any change in eTag indicates a new data version.
+// returns a *string when successful
 func (m *Manifest) GetETag()(*string) {
     val, err := m.GetBackingStore().Get("eTag")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *Manifest) GetETag()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Manifest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["blobCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -188,6 +194,7 @@ func (m *Manifest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetPartitionType gets the partitionType property value. Indicates the division of data. If a given partition has more than the supported number, the data is split into multiple files, each file representing a specific partitionValue. By default, the data in the file is partitioned by the number of line items.
+// returns a *string when successful
 func (m *Manifest) GetPartitionType()(*string) {
     val, err := m.GetBackingStore().Get("partitionType")
     if err != nil {
@@ -199,6 +206,7 @@ func (m *Manifest) GetPartitionType()(*string) {
     return nil
 }
 // GetPartnerTenantId gets the partnerTenantId property value. The Microsoft Entra tenant ID of the partner.
+// returns a *string when successful
 func (m *Manifest) GetPartnerTenantId()(*string) {
     val, err := m.GetBackingStore().Get("partnerTenantId")
     if err != nil {
@@ -210,6 +218,7 @@ func (m *Manifest) GetPartnerTenantId()(*string) {
     return nil
 }
 // GetRootDirectory gets the rootDirectory property value. The root directory that contains all the files.
+// returns a *string when successful
 func (m *Manifest) GetRootDirectory()(*string) {
     val, err := m.GetBackingStore().Get("rootDirectory")
     if err != nil {
@@ -221,6 +230,7 @@ func (m *Manifest) GetRootDirectory()(*string) {
     return nil
 }
 // GetSasToken gets the sasToken property value. The SAS token for accessing the directory or an individual file in the directory.
+// returns a *string when successful
 func (m *Manifest) GetSasToken()(*string) {
     val, err := m.GetBackingStore().Get("sasToken")
     if err != nil {
@@ -232,6 +242,7 @@ func (m *Manifest) GetSasToken()(*string) {
     return nil
 }
 // GetSchemaVersion gets the schemaVersion property value. The version of the manifest schema.
+// returns a *string when successful
 func (m *Manifest) GetSchemaVersion()(*string) {
     val, err := m.GetBackingStore().Get("schemaVersion")
     if err != nil {
@@ -386,7 +397,6 @@ func (m *Manifest) SetSchemaVersion(value *string)() {
         panic(err)
     }
 }
-// Manifestable 
 type Manifestable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

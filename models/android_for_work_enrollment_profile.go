@@ -9,7 +9,7 @@ import (
 type AndroidForWorkEnrollmentProfile struct {
     Entity
 }
-// NewAndroidForWorkEnrollmentProfile instantiates a new androidForWorkEnrollmentProfile and sets the default values.
+// NewAndroidForWorkEnrollmentProfile instantiates a new AndroidForWorkEnrollmentProfile and sets the default values.
 func NewAndroidForWorkEnrollmentProfile()(*AndroidForWorkEnrollmentProfile) {
     m := &AndroidForWorkEnrollmentProfile{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewAndroidForWorkEnrollmentProfile()(*AndroidForWorkEnrollmentProfile) {
     return m
 }
 // CreateAndroidForWorkEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidForWorkEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidForWorkEnrollmentProfile(), nil
 }
 // GetAccountId gets the accountId property value. Tenant GUID the enrollment profile belongs to.
+// returns a *string when successful
 func (m *AndroidForWorkEnrollmentProfile) GetAccountId()(*string) {
     val, err := m.GetBackingStore().Get("accountId")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetAccountId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date time the enrollment profile was created.
+// returns a *Time when successful
 func (m *AndroidForWorkEnrollmentProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetCreatedDateTime()(*i336074805fc8539
     return nil
 }
 // GetDescription gets the description property value. Description for the enrollment profile.
+// returns a *string when successful
 func (m *AndroidForWorkEnrollmentProfile) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name for the enrollment profile.
+// returns a *string when successful
 func (m *AndroidForWorkEnrollmentProfile) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetDisplayName()(*string) {
     return nil
 }
 // GetEnrolledDeviceCount gets the enrolledDeviceCount property value. Total number of Android devices that have enrolled using this enrollment profile.
+// returns a *int32 when successful
 func (m *AndroidForWorkEnrollmentProfile) GetEnrolledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("enrolledDeviceCount")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetEnrolledDeviceCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidForWorkEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -181,6 +188,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date time the enrollment profile was last modified.
+// returns a *Time when successful
 func (m *AndroidForWorkEnrollmentProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -192,6 +200,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetLastModifiedDateTime()(*i336074805f
     return nil
 }
 // GetQrCodeContent gets the qrCodeContent property value. String used to generate a QR code for the token.
+// returns a *string when successful
 func (m *AndroidForWorkEnrollmentProfile) GetQrCodeContent()(*string) {
     val, err := m.GetBackingStore().Get("qrCodeContent")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetQrCodeContent()(*string) {
     return nil
 }
 // GetQrCodeImage gets the qrCodeImage property value. String used to generate a QR code for the token.
+// returns a MimeContentable when successful
 func (m *AndroidForWorkEnrollmentProfile) GetQrCodeImage()(MimeContentable) {
     val, err := m.GetBackingStore().Get("qrCodeImage")
     if err != nil {
@@ -214,6 +224,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetQrCodeImage()(MimeContentable) {
     return nil
 }
 // GetTokenExpirationDateTime gets the tokenExpirationDateTime property value. Date time the most recently created token will expire.
+// returns a *Time when successful
 func (m *AndroidForWorkEnrollmentProfile) GetTokenExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("tokenExpirationDateTime")
     if err != nil {
@@ -225,6 +236,7 @@ func (m *AndroidForWorkEnrollmentProfile) GetTokenExpirationDateTime()(*i3360748
     return nil
 }
 // GetTokenValue gets the tokenValue property value. Value of the most recently created token for this enrollment profile.
+// returns a *string when successful
 func (m *AndroidForWorkEnrollmentProfile) GetTokenValue()(*string) {
     val, err := m.GetBackingStore().Get("tokenValue")
     if err != nil {
@@ -373,7 +385,6 @@ func (m *AndroidForWorkEnrollmentProfile) SetTokenValue(value *string)() {
         panic(err)
     }
 }
-// AndroidForWorkEnrollmentProfileable 
 type AndroidForWorkEnrollmentProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

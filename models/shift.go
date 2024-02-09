@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Shift 
 type Shift struct {
     ChangeTrackedEntity
 }
-// NewShift instantiates a new shift and sets the default values.
+// NewShift instantiates a new Shift and sets the default values.
 func NewShift()(*Shift) {
     m := &Shift{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
@@ -18,10 +17,12 @@ func NewShift()(*Shift) {
     return m
 }
 // CreateShiftFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateShiftFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewShift(), nil
 }
-// GetDraftShift gets the draftShift property value. Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.
+// GetDraftShift gets the draftShift property value. Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they're shared, which copies the changes from the draftShift to the sharedShift property.
+// returns a ShiftItemable when successful
 func (m *Shift) GetDraftShift()(ShiftItemable) {
     val, err := m.GetBackingStore().Get("draftShift")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Shift) GetDraftShift()(ShiftItemable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["draftShift"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -65,6 +67,16 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["schedulingGroupInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSchedulingGroupInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSchedulingGroupInfo(val.(SchedulingGroupInfoable))
+        }
+        return nil
+    }
     res["sharedShift"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateShiftItemFromDiscriminatorValue)
         if err != nil {
@@ -72,6 +84,16 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetSharedShift(val.(ShiftItemable))
+        }
+        return nil
+    }
+    res["teamInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateShiftsTeamInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamInfo(val.(ShiftsTeamInfoable))
         }
         return nil
     }
@@ -85,9 +107,20 @@ func (m *Shift) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["userInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateShiftsUserInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserInfo(val.(ShiftsUserInfoable))
+        }
+        return nil
+    }
     return res
 }
 // GetIsStagedForDeletion gets the isStagedForDeletion property value. The shift is marked for deletion, a process that is finalized when the schedule is shared.
+// returns a *bool when successful
 func (m *Shift) GetIsStagedForDeletion()(*bool) {
     val, err := m.GetBackingStore().Get("isStagedForDeletion")
     if err != nil {
@@ -99,6 +132,7 @@ func (m *Shift) GetIsStagedForDeletion()(*bool) {
     return nil
 }
 // GetSchedulingGroupId gets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
+// returns a *string when successful
 func (m *Shift) GetSchedulingGroupId()(*string) {
     val, err := m.GetBackingStore().Get("schedulingGroupId")
     if err != nil {
@@ -109,7 +143,20 @@ func (m *Shift) GetSchedulingGroupId()(*string) {
     }
     return nil
 }
+// GetSchedulingGroupInfo gets the schedulingGroupInfo property value. Information of the scheduling group the shift is part of.
+// returns a SchedulingGroupInfoable when successful
+func (m *Shift) GetSchedulingGroupInfo()(SchedulingGroupInfoable) {
+    val, err := m.GetBackingStore().Get("schedulingGroupInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SchedulingGroupInfoable)
+    }
+    return nil
+}
 // GetSharedShift gets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.
+// returns a ShiftItemable when successful
 func (m *Shift) GetSharedShift()(ShiftItemable) {
     val, err := m.GetBackingStore().Get("sharedShift")
     if err != nil {
@@ -120,7 +167,20 @@ func (m *Shift) GetSharedShift()(ShiftItemable) {
     }
     return nil
 }
+// GetTeamInfo gets the teamInfo property value. Information of the team that the shift is in.
+// returns a ShiftsTeamInfoable when successful
+func (m *Shift) GetTeamInfo()(ShiftsTeamInfoable) {
+    val, err := m.GetBackingStore().Get("teamInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ShiftsTeamInfoable)
+    }
+    return nil
+}
 // GetUserId gets the userId property value. ID of the user assigned to the shift. Required.
+// returns a *string when successful
 func (m *Shift) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -128,6 +188,18 @@ func (m *Shift) GetUserId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetUserInfo gets the userInfo property value. Information of the user assigned to the shift.
+// returns a ShiftsUserInfoable when successful
+func (m *Shift) GetUserInfo()(ShiftsUserInfoable) {
+    val, err := m.GetBackingStore().Get("userInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ShiftsUserInfoable)
     }
     return nil
 }
@@ -169,7 +241,7 @@ func (m *Shift) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     return nil
 }
-// SetDraftShift sets the draftShift property value. Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.
+// SetDraftShift sets the draftShift property value. Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they're shared, which copies the changes from the draftShift to the sharedShift property.
 func (m *Shift) SetDraftShift(value ShiftItemable)() {
     err := m.GetBackingStore().Set("draftShift", value)
     if err != nil {
@@ -190,9 +262,23 @@ func (m *Shift) SetSchedulingGroupId(value *string)() {
         panic(err)
     }
 }
+// SetSchedulingGroupInfo sets the schedulingGroupInfo property value. Information of the scheduling group the shift is part of.
+func (m *Shift) SetSchedulingGroupInfo(value SchedulingGroupInfoable)() {
+    err := m.GetBackingStore().Set("schedulingGroupInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSharedShift sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.
 func (m *Shift) SetSharedShift(value ShiftItemable)() {
     err := m.GetBackingStore().Set("sharedShift", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTeamInfo sets the teamInfo property value. Information of the team that the shift is in.
+func (m *Shift) SetTeamInfo(value ShiftsTeamInfoable)() {
+    err := m.GetBackingStore().Set("teamInfo", value)
     if err != nil {
         panic(err)
     }
@@ -204,18 +290,30 @@ func (m *Shift) SetUserId(value *string)() {
         panic(err)
     }
 }
-// Shiftable 
+// SetUserInfo sets the userInfo property value. Information of the user assigned to the shift.
+func (m *Shift) SetUserInfo(value ShiftsUserInfoable)() {
+    err := m.GetBackingStore().Set("userInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Shiftable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDraftShift()(ShiftItemable)
     GetIsStagedForDeletion()(*bool)
     GetSchedulingGroupId()(*string)
+    GetSchedulingGroupInfo()(SchedulingGroupInfoable)
     GetSharedShift()(ShiftItemable)
+    GetTeamInfo()(ShiftsTeamInfoable)
     GetUserId()(*string)
+    GetUserInfo()(ShiftsUserInfoable)
     SetDraftShift(value ShiftItemable)()
     SetIsStagedForDeletion(value *bool)()
     SetSchedulingGroupId(value *string)()
+    SetSchedulingGroupInfo(value SchedulingGroupInfoable)()
     SetSharedShift(value ShiftItemable)()
+    SetTeamInfo(value ShiftsTeamInfoable)()
     SetUserId(value *string)()
+    SetUserInfo(value ShiftsUserInfoable)()
 }

@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Catalog 
 type Catalog struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewCatalog instantiates a new catalog and sets the default values.
+// NewCatalog instantiates a new Catalog and sets the default values.
 func NewCatalog()(*Catalog) {
     m := &Catalog{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewCatalog()(*Catalog) {
     return m
 }
 // CreateCatalogFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCatalogFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCatalog(), nil
 }
 // GetEntries gets the entries property value. Lists the content that you can approve for deployment. Read-only.
+// returns a []CatalogEntryable when successful
 func (m *Catalog) GetEntries()([]CatalogEntryable) {
     val, err := m.GetBackingStore().Get("entries")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Catalog) GetEntries()([]CatalogEntryable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Catalog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["entries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,7 +81,6 @@ func (m *Catalog) SetEntries(value []CatalogEntryable)() {
         panic(err)
     }
 }
-// Catalogable 
 type Catalogable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

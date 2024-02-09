@@ -40,6 +40,7 @@ type UserInsightsDailySummaryRequestBuilderGetRequestConfiguration struct {
     QueryParameters *UserInsightsDailySummaryRequestBuilderGetQueryParameters
 }
 // ByInsightSummaryId provides operations to manage the summary property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
+// returns a *UserInsightsDailySummaryInsightSummaryItemRequestBuilder when successful
 func (m *UserInsightsDailySummaryRequestBuilder) ByInsightSummaryId(insightSummaryId string)(*UserInsightsDailySummaryInsightSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *UserInsightsDailySummaryRequestBuilder) ByInsightSummaryId(insightSumma
     }
     return NewUserInsightsDailySummaryInsightSummaryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewUserInsightsDailySummaryRequestBuilderInternal instantiates a new SummaryRequestBuilder and sets the default values.
+// NewUserInsightsDailySummaryRequestBuilderInternal instantiates a new UserInsightsDailySummaryRequestBuilder and sets the default values.
 func NewUserInsightsDailySummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserInsightsDailySummaryRequestBuilder) {
     m := &UserInsightsDailySummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/daily/summary{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/daily/summary{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewUserInsightsDailySummaryRequestBuilder instantiates a new SummaryRequestBuilder and sets the default values.
+// NewUserInsightsDailySummaryRequestBuilder instantiates a new UserInsightsDailySummaryRequestBuilder and sets the default values.
 func NewUserInsightsDailySummaryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserInsightsDailySummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserInsightsDailySummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *UserInsightsDailySummaryCountRequestBuilder when successful
 func (m *UserInsightsDailySummaryRequestBuilder) Count()(*UserInsightsDailySummaryCountRequestBuilder) {
     return NewUserInsightsDailySummaryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get summary of all usage insights on apps registered in the tenant for a specified period.
+// returns a InsightSummaryCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserInsightsDailySummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsDailySummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightSummaryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateInsightSummaryCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *UserInsightsDailySummaryRequestBuilder) Get(ctx context.Context, reques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InsightSummaryCollectionResponseable), nil
 }
 // ToGetRequestInformation summary of all usage insights on apps registered in the tenant for a specified period.
+// returns a *RequestInformation when successful
 func (m *UserInsightsDailySummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsDailySummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *UserInsightsDailySummaryRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *UserInsightsDailySummaryRequestBuilder when successful
 func (m *UserInsightsDailySummaryRequestBuilder) WithUrl(rawUrl string)(*UserInsightsDailySummaryRequestBuilder) {
     return NewUserInsightsDailySummaryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

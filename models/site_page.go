@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SitePage 
 type SitePage struct {
     BaseSitePage
 }
-// NewSitePage instantiates a new sitePage and sets the default values.
+// NewSitePage instantiates a new SitePage and sets the default values.
 func NewSitePage()(*SitePage) {
     m := &SitePage{
         BaseSitePage: *NewBaseSitePage(),
@@ -16,10 +15,12 @@ func NewSitePage()(*SitePage) {
     return m
 }
 // CreateSitePageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSitePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSitePage(), nil
 }
 // GetCanvasLayout gets the canvasLayout property value. Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.
+// returns a CanvasLayoutable when successful
 func (m *SitePage) GetCanvasLayout()(CanvasLayoutable) {
     val, err := m.GetBackingStore().Get("canvasLayout")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *SitePage) GetCanvasLayout()(CanvasLayoutable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseSitePage.GetFieldDeserializers()
     res["canvasLayout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -122,6 +124,7 @@ func (m *SitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetPromotionKind gets the promotionKind property value. Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.
+// returns a *PagePromotionType when successful
 func (m *SitePage) GetPromotionKind()(*PagePromotionType) {
     val, err := m.GetBackingStore().Get("promotionKind")
     if err != nil {
@@ -133,6 +136,7 @@ func (m *SitePage) GetPromotionKind()(*PagePromotionType) {
     return nil
 }
 // GetReactions gets the reactions property value. Reactions information for the page.
+// returns a ReactionsFacetable when successful
 func (m *SitePage) GetReactions()(ReactionsFacetable) {
     val, err := m.GetBackingStore().Get("reactions")
     if err != nil {
@@ -144,6 +148,7 @@ func (m *SitePage) GetReactions()(ReactionsFacetable) {
     return nil
 }
 // GetShowComments gets the showComments property value. Determines whether or not to show comments at the bottom of the page.
+// returns a *bool when successful
 func (m *SitePage) GetShowComments()(*bool) {
     val, err := m.GetBackingStore().Get("showComments")
     if err != nil {
@@ -155,6 +160,7 @@ func (m *SitePage) GetShowComments()(*bool) {
     return nil
 }
 // GetShowRecommendedPages gets the showRecommendedPages property value. Determines whether or not to show recommended pages at the bottom of the page.
+// returns a *bool when successful
 func (m *SitePage) GetShowRecommendedPages()(*bool) {
     val, err := m.GetBackingStore().Get("showRecommendedPages")
     if err != nil {
@@ -166,6 +172,7 @@ func (m *SitePage) GetShowRecommendedPages()(*bool) {
     return nil
 }
 // GetThumbnailWebUrl gets the thumbnailWebUrl property value. Url of the sitePage's thumbnail image
+// returns a *string when successful
 func (m *SitePage) GetThumbnailWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailWebUrl")
     if err != nil {
@@ -177,6 +184,7 @@ func (m *SitePage) GetThumbnailWebUrl()(*string) {
     return nil
 }
 // GetTitleArea gets the titleArea property value. Title area on the SharePoint page.
+// returns a TitleAreaable when successful
 func (m *SitePage) GetTitleArea()(TitleAreaable) {
     val, err := m.GetBackingStore().Get("titleArea")
     if err != nil {
@@ -188,6 +196,7 @@ func (m *SitePage) GetTitleArea()(TitleAreaable) {
     return nil
 }
 // GetWebParts gets the webParts property value. Collection of webparts on the SharePoint page.
+// returns a []WebPartable when successful
 func (m *SitePage) GetWebParts()([]WebPartable) {
     val, err := m.GetBackingStore().Get("webParts")
     if err != nil {
@@ -317,7 +326,6 @@ func (m *SitePage) SetWebParts(value []WebPartable)() {
         panic(err)
     }
 }
-// SitePageable 
 type SitePageable interface {
     BaseSitePageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

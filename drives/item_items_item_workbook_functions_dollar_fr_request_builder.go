@@ -18,28 +18,29 @@ type ItemItemsItemWorkbookFunctionsDollarFrRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookFunctionsDollarFrRequestBuilderInternal instantiates a new DollarFrRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsDollarFrRequestBuilderInternal instantiates a new ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsDollarFrRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder) {
     m := &ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/dollarFr", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookFunctionsDollarFrRequestBuilder instantiates a new DollarFrRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsDollarFrRequestBuilder instantiates a new ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsDollarFrRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookFunctionsDollarFrRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action dollarFr
+// returns a WorkbookFunctionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookFunctionsDollarFrPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsDollarFrRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookFunctionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder) Post(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionResultable), nil
 }
 // ToPostRequestInformation invoke action dollarFr
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookFunctionsDollarFrPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsDollarFrRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder) ToPostRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder when successful
 func (m *ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsDollarFrRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsDollarFrRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

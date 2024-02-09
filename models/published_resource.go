@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PublishedResource 
 type PublishedResource struct {
     Entity
 }
-// NewPublishedResource instantiates a new publishedResource and sets the default values.
+// NewPublishedResource instantiates a new PublishedResource and sets the default values.
 func NewPublishedResource()(*PublishedResource) {
     m := &PublishedResource{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPublishedResource()(*PublishedResource) {
     return m
 }
 // CreatePublishedResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePublishedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPublishedResource(), nil
 }
 // GetAgentGroups gets the agentGroups property value. List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.
+// returns a []OnPremisesAgentGroupable when successful
 func (m *PublishedResource) GetAgentGroups()([]OnPremisesAgentGroupable) {
     val, err := m.GetBackingStore().Get("agentGroups")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PublishedResource) GetAgentGroups()([]OnPremisesAgentGroupable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display Name of the publishedResource.
+// returns a *string when successful
 func (m *PublishedResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *PublishedResource) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PublishedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agentGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -93,6 +96,7 @@ func (m *PublishedResource) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetPublishingType gets the publishingType property value. The publishingType property
+// returns a *OnPremisesPublishingType when successful
 func (m *PublishedResource) GetPublishingType()(*OnPremisesPublishingType) {
     val, err := m.GetBackingStore().Get("publishingType")
     if err != nil {
@@ -104,6 +108,7 @@ func (m *PublishedResource) GetPublishingType()(*OnPremisesPublishingType) {
     return nil
 }
 // GetResourceName gets the resourceName property value. Name of the publishedResource.
+// returns a *string when successful
 func (m *PublishedResource) GetResourceName()(*string) {
     val, err := m.GetBackingStore().Get("resourceName")
     if err != nil {
@@ -181,7 +186,6 @@ func (m *PublishedResource) SetResourceName(value *string)() {
         panic(err)
     }
 }
-// PublishedResourceable 
 type PublishedResourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

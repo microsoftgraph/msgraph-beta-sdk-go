@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPC 
 type CloudPC struct {
     Entity
 }
-// NewCloudPC instantiates a new cloudPC and sets the default values.
+// NewCloudPC instantiates a new CloudPC and sets the default values.
 func NewCloudPC()(*CloudPC) {
     m := &CloudPC{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCloudPC()(*CloudPC) {
     return m
 }
 // CreateCloudPCFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPCFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPC(), nil
 }
 // GetAadDeviceId gets the aadDeviceId property value. The Microsoft Entra device ID of the Cloud PC.
+// returns a *string when successful
 func (m *CloudPC) GetAadDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("aadDeviceId")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CloudPC) GetAadDeviceId()(*string) {
     return nil
 }
 // GetConnectionSettings gets the connectionSettings property value. The connectionSettings property
+// returns a CloudPcConnectionSettingsable when successful
 func (m *CloudPC) GetConnectionSettings()(CloudPcConnectionSettingsable) {
     val, err := m.GetBackingStore().Get("connectionSettings")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *CloudPC) GetConnectionSettings()(CloudPcConnectionSettingsable) {
     return nil
 }
 // GetConnectivityResult gets the connectivityResult property value. The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.
+// returns a CloudPcConnectivityResultable when successful
 func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
     val, err := m.GetBackingStore().Get("connectivityResult")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
     return nil
 }
 // GetDisasterRecoveryCapability gets the disasterRecoveryCapability property value. The disasterRecoveryCapability property
+// returns a CloudPcDisasterRecoveryCapabilityable when successful
 func (m *CloudPC) GetDisasterRecoveryCapability()(CloudPcDisasterRecoveryCapabilityable) {
     val, err := m.GetBackingStore().Get("disasterRecoveryCapability")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *CloudPC) GetDisasterRecoveryCapability()(CloudPcDisasterRecoveryCapabil
     return nil
 }
 // GetDiskEncryptionState gets the diskEncryptionState property value. The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.
+// returns a *CloudPcDiskEncryptionState when successful
 func (m *CloudPC) GetDiskEncryptionState()(*CloudPcDiskEncryptionState) {
     val, err := m.GetBackingStore().Get("diskEncryptionState")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *CloudPC) GetDiskEncryptionState()(*CloudPcDiskEncryptionState) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the Cloud PC.
+// returns a *string when successful
 func (m *CloudPC) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *CloudPC) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["aadDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -384,6 +391,7 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetGracePeriodEndDateTime gets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPC) GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("gracePeriodEndDateTime")
     if err != nil {
@@ -395,6 +403,7 @@ func (m *CloudPC) GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetImageDisplayName gets the imageDisplayName property value. Name of the OS image that's on the Cloud PC.
+// returns a *string when successful
 func (m *CloudPC) GetImageDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("imageDisplayName")
     if err != nil {
@@ -406,6 +415,7 @@ func (m *CloudPC) GetImageDisplayName()(*string) {
     return nil
 }
 // GetLastLoginResult gets the lastLoginResult property value. The last login result of the Cloud PC. For example, { 'time': '2014-01-01T00:00:00Z'}.
+// returns a CloudPcLoginResultable when successful
 func (m *CloudPC) GetLastLoginResult()(CloudPcLoginResultable) {
     val, err := m.GetBackingStore().Get("lastLoginResult")
     if err != nil {
@@ -417,6 +427,7 @@ func (m *CloudPC) GetLastLoginResult()(CloudPcLoginResultable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPC) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -428,6 +439,7 @@ func (m *CloudPC) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetLastRemoteActionResult gets the lastRemoteActionResult property value. The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.
+// returns a CloudPcRemoteActionResultable when successful
 func (m *CloudPC) GetLastRemoteActionResult()(CloudPcRemoteActionResultable) {
     val, err := m.GetBackingStore().Get("lastRemoteActionResult")
     if err != nil {
@@ -439,6 +451,7 @@ func (m *CloudPC) GetLastRemoteActionResult()(CloudPcRemoteActionResultable) {
     return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The Intune device ID of the Cloud PC.
+// returns a *string when successful
 func (m *CloudPC) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -450,6 +463,7 @@ func (m *CloudPC) GetManagedDeviceId()(*string) {
     return nil
 }
 // GetManagedDeviceName gets the managedDeviceName property value. The Intune device name of the Cloud PC.
+// returns a *string when successful
 func (m *CloudPC) GetManagedDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceName")
     if err != nil {
@@ -461,6 +475,7 @@ func (m *CloudPC) GetManagedDeviceName()(*string) {
     return nil
 }
 // GetOnPremisesConnectionName gets the onPremisesConnectionName property value. The Azure network connection that is applied during the provisioning of Cloud PCs.
+// returns a *string when successful
 func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesConnectionName")
     if err != nil {
@@ -472,6 +487,7 @@ func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
     return nil
 }
 // GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.
+// returns a *CloudPcOperatingSystem when successful
 func (m *CloudPC) GetOsVersion()(*CloudPcOperatingSystem) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -483,6 +499,7 @@ func (m *CloudPC) GetOsVersion()(*CloudPcOperatingSystem) {
     return nil
 }
 // GetPartnerAgentInstallResults gets the partnerAgentInstallResults property value. The results of every partner agent's installation status on Cloud PC.
+// returns a []CloudPcPartnerAgentInstallResultable when successful
 func (m *CloudPC) GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallResultable) {
     val, err := m.GetBackingStore().Get("partnerAgentInstallResults")
     if err != nil {
@@ -494,6 +511,7 @@ func (m *CloudPC) GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallRe
     return nil
 }
 // GetPowerState gets the powerState property value. The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.
+// returns a *CloudPcPowerState when successful
 func (m *CloudPC) GetPowerState()(*CloudPcPowerState) {
     val, err := m.GetBackingStore().Get("powerState")
     if err != nil {
@@ -505,6 +523,7 @@ func (m *CloudPC) GetPowerState()(*CloudPcPowerState) {
     return nil
 }
 // GetProvisioningPolicyId gets the provisioningPolicyId property value. The provisioning policy ID of the Cloud PC.
+// returns a *string when successful
 func (m *CloudPC) GetProvisioningPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("provisioningPolicyId")
     if err != nil {
@@ -516,6 +535,7 @@ func (m *CloudPC) GetProvisioningPolicyId()(*string) {
     return nil
 }
 // GetProvisioningPolicyName gets the provisioningPolicyName property value. The provisioning policy that is applied during the provisioning of Cloud PCs.
+// returns a *string when successful
 func (m *CloudPC) GetProvisioningPolicyName()(*string) {
     val, err := m.GetBackingStore().Get("provisioningPolicyName")
     if err != nil {
@@ -527,6 +547,7 @@ func (m *CloudPC) GetProvisioningPolicyName()(*string) {
     return nil
 }
 // GetProvisioningType gets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue. Default value is dedicated.
+// returns a *CloudPcProvisioningType when successful
 func (m *CloudPC) GetProvisioningType()(*CloudPcProvisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
     if err != nil {
@@ -538,6 +559,7 @@ func (m *CloudPC) GetProvisioningType()(*CloudPcProvisioningType) {
     return nil
 }
 // GetScopeIds gets the scopeIds property value. The scopeIds property
+// returns a []string when successful
 func (m *CloudPC) GetScopeIds()([]string) {
     val, err := m.GetBackingStore().Get("scopeIds")
     if err != nil {
@@ -549,6 +571,7 @@ func (m *CloudPC) GetScopeIds()([]string) {
     return nil
 }
 // GetServicePlanId gets the servicePlanId property value. The service plan ID of the Cloud PC.
+// returns a *string when successful
 func (m *CloudPC) GetServicePlanId()(*string) {
     val, err := m.GetBackingStore().Get("servicePlanId")
     if err != nil {
@@ -560,6 +583,7 @@ func (m *CloudPC) GetServicePlanId()(*string) {
     return nil
 }
 // GetServicePlanName gets the servicePlanName property value. The service plan name of the Cloud PC.
+// returns a *string when successful
 func (m *CloudPC) GetServicePlanName()(*string) {
     val, err := m.GetBackingStore().Get("servicePlanName")
     if err != nil {
@@ -571,6 +595,7 @@ func (m *CloudPC) GetServicePlanName()(*string) {
     return nil
 }
 // GetServicePlanType gets the servicePlanType property value. The service plan type of the Cloud PC.
+// returns a *CloudPcServicePlanType when successful
 func (m *CloudPC) GetServicePlanType()(*CloudPcServicePlanType) {
     val, err := m.GetBackingStore().Get("servicePlanType")
     if err != nil {
@@ -582,6 +607,7 @@ func (m *CloudPC) GetServicePlanType()(*CloudPcServicePlanType) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *CloudPcStatus when successful
 func (m *CloudPC) GetStatus()(*CloudPcStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -593,6 +619,7 @@ func (m *CloudPC) GetStatus()(*CloudPcStatus) {
     return nil
 }
 // GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status.
+// returns a CloudPcStatusDetailsable when successful
 func (m *CloudPC) GetStatusDetails()(CloudPcStatusDetailsable) {
     val, err := m.GetBackingStore().Get("statusDetails")
     if err != nil {
@@ -604,6 +631,7 @@ func (m *CloudPC) GetStatusDetails()(CloudPcStatusDetailsable) {
     return nil
 }
 // GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, and unknownFutureValue.
+// returns a *CloudPcUserAccountType when successful
 func (m *CloudPC) GetUserAccountType()(*CloudPcUserAccountType) {
     val, err := m.GetBackingStore().Get("userAccountType")
     if err != nil {
@@ -615,6 +643,7 @@ func (m *CloudPC) GetUserAccountType()(*CloudPcUserAccountType) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user assigned to the Cloud PC.
+// returns a *string when successful
 func (m *CloudPC) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -1010,7 +1039,6 @@ func (m *CloudPC) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// CloudPCable 
 type CloudPCable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

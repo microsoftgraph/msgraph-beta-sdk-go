@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TimeCardBreak 
 type TimeCardBreak struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTimeCardBreak instantiates a new timeCardBreak and sets the default values.
+// NewTimeCardBreak instantiates a new TimeCardBreak and sets the default values.
 func NewTimeCardBreak()(*TimeCardBreak) {
     m := &TimeCardBreak{
     }
@@ -19,10 +18,12 @@ func NewTimeCardBreak()(*TimeCardBreak) {
     return m
 }
 // CreateTimeCardBreakFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimeCardBreakFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeCardBreak(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TimeCardBreak) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TimeCardBreak) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TimeCardBreak) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBreakId gets the breakId property value. ID of the timeCardBreak.
+// returns a *string when successful
 func (m *TimeCardBreak) GetBreakId()(*string) {
     val, err := m.GetBackingStore().Get("breakId")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TimeCardBreak) GetBreakId()(*string) {
     return nil
 }
 // GetEnd gets the end property value. The start event of the timeCardBreak.
+// returns a TimeCardEventable when successful
 func (m *TimeCardBreak) GetEnd()(TimeCardEventable) {
     val, err := m.GetBackingStore().Get("end")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *TimeCardBreak) GetEnd()(TimeCardEventable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimeCardBreak) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["breakId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *TimeCardBreak) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetNotes gets the notes property value. Notes about the timeCardBreak.
+// returns a ItemBodyable when successful
 func (m *TimeCardBreak) GetNotes()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *TimeCardBreak) GetNotes()(ItemBodyable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TimeCardBreak) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *TimeCardBreak) GetOdataType()(*string) {
     return nil
 }
 // GetStart gets the start property value. The start property
+// returns a TimeCardEventable when successful
 func (m *TimeCardBreak) GetStart()(TimeCardEventable) {
     val, err := m.GetBackingStore().Get("start")
     if err != nil {
@@ -234,7 +242,6 @@ func (m *TimeCardBreak) SetStart(value TimeCardEventable)() {
         panic(err)
     }
 }
-// TimeCardBreakable 
 type TimeCardBreakable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

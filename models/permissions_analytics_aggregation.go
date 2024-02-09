@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionsAnalyticsAggregation 
 type PermissionsAnalyticsAggregation struct {
     Entity
 }
-// NewPermissionsAnalyticsAggregation instantiates a new permissionsAnalyticsAggregation and sets the default values.
+// NewPermissionsAnalyticsAggregation instantiates a new PermissionsAnalyticsAggregation and sets the default values.
 func NewPermissionsAnalyticsAggregation()(*PermissionsAnalyticsAggregation) {
     m := &PermissionsAnalyticsAggregation{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPermissionsAnalyticsAggregation()(*PermissionsAnalyticsAggregation) {
     return m
 }
 // CreatePermissionsAnalyticsAggregationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePermissionsAnalyticsAggregationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionsAnalyticsAggregation(), nil
 }
 // GetAws gets the aws property value. The aws property
+// returns a PermissionsAnalyticsable when successful
 func (m *PermissionsAnalyticsAggregation) GetAws()(PermissionsAnalyticsable) {
     val, err := m.GetBackingStore().Get("aws")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PermissionsAnalyticsAggregation) GetAws()(PermissionsAnalyticsable) {
     return nil
 }
 // GetAzure gets the azure property value. The azure property
+// returns a PermissionsAnalyticsable when successful
 func (m *PermissionsAnalyticsAggregation) GetAzure()(PermissionsAnalyticsable) {
     val, err := m.GetBackingStore().Get("azure")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *PermissionsAnalyticsAggregation) GetAzure()(PermissionsAnalyticsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PermissionsAnalyticsAggregation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["aws"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +80,7 @@ func (m *PermissionsAnalyticsAggregation) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetGcp gets the gcp property value. The gcp property
+// returns a PermissionsAnalyticsable when successful
 func (m *PermissionsAnalyticsAggregation) GetGcp()(PermissionsAnalyticsable) {
     val, err := m.GetBackingStore().Get("gcp")
     if err != nil {
@@ -134,7 +138,6 @@ func (m *PermissionsAnalyticsAggregation) SetGcp(value PermissionsAnalyticsable)
         panic(err)
     }
 }
-// PermissionsAnalyticsAggregationable 
 type PermissionsAnalyticsAggregationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

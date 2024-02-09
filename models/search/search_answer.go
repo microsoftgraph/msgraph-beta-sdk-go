@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// SearchAnswer 
 type SearchAnswer struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewSearchAnswer instantiates a new searchAnswer and sets the default values.
+// NewSearchAnswer instantiates a new SearchAnswer and sets the default values.
 func NewSearchAnswer()(*SearchAnswer) {
     m := &SearchAnswer{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,6 +17,7 @@ func NewSearchAnswer()(*SearchAnswer) {
     return m
 }
 // CreateSearchAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSearchAnswerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -44,6 +44,7 @@ func CreateSearchAnswerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewSearchAnswer(), nil
 }
 // GetDescription gets the description property value. Search answer description shown on search results page.
+// returns a *string when successful
 func (m *SearchAnswer) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -55,6 +56,7 @@ func (m *SearchAnswer) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Search answer name displayed in search results.
+// returns a *string when successful
 func (m *SearchAnswer) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -66,6 +68,7 @@ func (m *SearchAnswer) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SearchAnswer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -121,6 +124,7 @@ func (m *SearchAnswer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Details of the user that created or last modified the search answer. Read-only.
+// returns a IdentitySetable when successful
 func (m *SearchAnswer) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -132,6 +136,7 @@ func (m *SearchAnswer) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp of when the search answer is created or edited. Read-only.
+// returns a *Time when successful
 func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -143,6 +148,7 @@ func (m *SearchAnswer) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetWebUrl gets the webUrl property value. Search answer URL link. When users click this search answer in search results, they'll go to this URL.
+// returns a *string when successful
 func (m *SearchAnswer) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -226,7 +232,6 @@ func (m *SearchAnswer) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// SearchAnswerable 
 type SearchAnswerable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

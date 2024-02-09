@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamworkMicrophoneConfiguration 
 type TeamworkMicrophoneConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamworkMicrophoneConfiguration instantiates a new teamworkMicrophoneConfiguration and sets the default values.
+// NewTeamworkMicrophoneConfiguration instantiates a new TeamworkMicrophoneConfiguration and sets the default values.
 func NewTeamworkMicrophoneConfiguration()(*TeamworkMicrophoneConfiguration) {
     m := &TeamworkMicrophoneConfiguration{
     }
@@ -19,10 +18,12 @@ func NewTeamworkMicrophoneConfiguration()(*TeamworkMicrophoneConfiguration) {
     return m
 }
 // CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkMicrophoneConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkMicrophoneConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamworkMicrophoneConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TeamworkMicrophoneConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamworkMicrophoneConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDefaultMicrophone gets the defaultMicrophone property value. The defaultMicrophone property
+// returns a TeamworkPeripheralable when successful
 func (m *TeamworkMicrophoneConfiguration) GetDefaultMicrophone()(TeamworkPeripheralable) {
     val, err := m.GetBackingStore().Get("defaultMicrophone")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TeamworkMicrophoneConfiguration) GetDefaultMicrophone()(TeamworkPeriphe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkMicrophoneConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["defaultMicrophone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +105,7 @@ func (m *TeamworkMicrophoneConfiguration) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetIsMicrophoneOptional gets the isMicrophoneOptional property value. True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
+// returns a *bool when successful
 func (m *TeamworkMicrophoneConfiguration) GetIsMicrophoneOptional()(*bool) {
     val, err := m.GetBackingStore().Get("isMicrophoneOptional")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *TeamworkMicrophoneConfiguration) GetIsMicrophoneOptional()(*bool) {
     return nil
 }
 // GetMicrophones gets the microphones property value. The microphones property
+// returns a []TeamworkPeripheralable when successful
 func (m *TeamworkMicrophoneConfiguration) GetMicrophones()([]TeamworkPeripheralable) {
     val, err := m.GetBackingStore().Get("microphones")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *TeamworkMicrophoneConfiguration) GetMicrophones()([]TeamworkPeripherala
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamworkMicrophoneConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *TeamworkMicrophoneConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// TeamworkMicrophoneConfigurationable 
 type TeamworkMicrophoneConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // FileVault State
@@ -8,20 +9,22 @@ type FileVaultState int
 
 const (
     // FileVault State Success
-    SUCCESS_FILEVAULTSTATE FileVaultState = iota
+    SUCCESS_FILEVAULTSTATE = 1
     // FileVault has been enabled by user and is not being managed by policy
-    DRIVEENCRYPTEDBYUSER_FILEVAULTSTATE
+    DRIVEENCRYPTEDBYUSER_FILEVAULTSTATE = 2
     // FileVault policy is successfully installed but user has not started encryption
-    USERDEFERREDENCRYPTION_FILEVAULTSTATE
+    USERDEFERREDENCRYPTION_FILEVAULTSTATE = 4
     // FileVault recovery key escrow is not enabled
-    ESCROWNOTENABLED_FILEVAULTSTATE
+    ESCROWNOTENABLED_FILEVAULTSTATE = 8
 )
 
 func (i FileVaultState) String() string {
     var values []string
-    for p := FileVaultState(1); p <= ESCROWNOTENABLED_FILEVAULTSTATE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"success", "driveEncryptedByUser", "userDeferredEncryption", "escrowNotEnabled"}[p])
+    options := []string{"success", "driveEncryptedByUser", "userDeferredEncryption", "escrowNotEnabled"}
+    for p := 0; p < 4; p++ {
+        mantis := FileVaultState(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

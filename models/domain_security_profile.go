@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DomainSecurityProfile 
 type DomainSecurityProfile struct {
     Entity
 }
-// NewDomainSecurityProfile instantiates a new domainSecurityProfile and sets the default values.
+// NewDomainSecurityProfile instantiates a new DomainSecurityProfile and sets the default values.
 func NewDomainSecurityProfile()(*DomainSecurityProfile) {
     m := &DomainSecurityProfile{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewDomainSecurityProfile()(*DomainSecurityProfile) {
     return m
 }
 // CreateDomainSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDomainSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDomainSecurityProfile(), nil
 }
 // GetActivityGroupNames gets the activityGroupNames property value. The activityGroupNames property
+// returns a []string when successful
 func (m *DomainSecurityProfile) GetActivityGroupNames()([]string) {
     val, err := m.GetBackingStore().Get("activityGroupNames")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *DomainSecurityProfile) GetActivityGroupNames()([]string) {
     return nil
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
+// returns a *string when successful
 func (m *DomainSecurityProfile) GetAzureSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("azureSubscriptionId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *DomainSecurityProfile) GetAzureSubscriptionId()(*string) {
     return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
+// returns a *string when successful
 func (m *DomainSecurityProfile) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *DomainSecurityProfile) GetAzureTenantId()(*string) {
     return nil
 }
 // GetCountHits gets the countHits property value. The countHits property
+// returns a *int32 when successful
 func (m *DomainSecurityProfile) GetCountHits()(*int32) {
     val, err := m.GetBackingStore().Get("countHits")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *DomainSecurityProfile) GetCountHits()(*int32) {
     return nil
 }
 // GetCountInOrg gets the countInOrg property value. The countInOrg property
+// returns a *int32 when successful
 func (m *DomainSecurityProfile) GetCountInOrg()(*int32) {
     val, err := m.GetBackingStore().Get("countInOrg")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *DomainSecurityProfile) GetCountInOrg()(*int32) {
     return nil
 }
 // GetDomainCategories gets the domainCategories property value. The domainCategories property
+// returns a []ReputationCategoryable when successful
 func (m *DomainSecurityProfile) GetDomainCategories()([]ReputationCategoryable) {
     val, err := m.GetBackingStore().Get("domainCategories")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *DomainSecurityProfile) GetDomainCategories()([]ReputationCategoryable) 
     return nil
 }
 // GetDomainRegisteredDateTime gets the domainRegisteredDateTime property value. The domainRegisteredDateTime property
+// returns a *Time when successful
 func (m *DomainSecurityProfile) GetDomainRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("domainRegisteredDateTime")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *DomainSecurityProfile) GetDomainRegisteredDateTime()(*i336074805fc85398
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activityGroupNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -261,6 +269,7 @@ func (m *DomainSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
+// returns a *Time when successful
 func (m *DomainSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -272,6 +281,7 @@ func (m *DomainSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
+// returns a *Time when successful
 func (m *DomainSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -283,6 +293,7 @@ func (m *DomainSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *DomainSecurityProfile) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -294,6 +305,7 @@ func (m *DomainSecurityProfile) GetName()(*string) {
     return nil
 }
 // GetRegistrant gets the registrant property value. The registrant property
+// returns a DomainRegistrantable when successful
 func (m *DomainSecurityProfile) GetRegistrant()(DomainRegistrantable) {
     val, err := m.GetBackingStore().Get("registrant")
     if err != nil {
@@ -305,6 +317,7 @@ func (m *DomainSecurityProfile) GetRegistrant()(DomainRegistrantable) {
     return nil
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
+// returns a *string when successful
 func (m *DomainSecurityProfile) GetRiskScore()(*string) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
@@ -316,6 +329,7 @@ func (m *DomainSecurityProfile) GetRiskScore()(*string) {
     return nil
 }
 // GetTags gets the tags property value. The tags property
+// returns a []string when successful
 func (m *DomainSecurityProfile) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -327,6 +341,7 @@ func (m *DomainSecurityProfile) GetTags()([]string) {
     return nil
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
+// returns a SecurityVendorInformationable when successful
 func (m *DomainSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
     val, err := m.GetBackingStore().Get("vendorInformation")
     if err != nil {
@@ -533,7 +548,6 @@ func (m *DomainSecurityProfile) SetVendorInformation(value SecurityVendorInforma
         panic(err)
     }
 }
-// DomainSecurityProfileable 
 type DomainSecurityProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

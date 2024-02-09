@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeeting 
 type OnlineMeeting struct {
     OnlineMeetingBase
 }
-// NewOnlineMeeting instantiates a new onlineMeeting and sets the default values.
+// NewOnlineMeeting instantiates a new OnlineMeeting and sets the default values.
 func NewOnlineMeeting()(*OnlineMeeting) {
     m := &OnlineMeeting{
         OnlineMeetingBase: *NewOnlineMeetingBase(),
@@ -19,10 +18,12 @@ func NewOnlineMeeting()(*OnlineMeeting) {
     return m
 }
 // CreateOnlineMeetingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnlineMeetingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnlineMeeting(), nil
 }
 // GetAlternativeRecording gets the alternativeRecording property value. The alternativeRecording property
+// returns a []byte when successful
 func (m *OnlineMeeting) GetAlternativeRecording()([]byte) {
     val, err := m.GetBackingStore().Get("alternativeRecording")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *OnlineMeeting) GetAlternativeRecording()([]byte) {
     return nil
 }
 // GetAttendeeReport gets the attendeeReport property value. The attendeeReport property
+// returns a []byte when successful
 func (m *OnlineMeeting) GetAttendeeReport()([]byte) {
     val, err := m.GetBackingStore().Get("attendeeReport")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *OnlineMeeting) GetAttendeeReport()([]byte) {
     return nil
 }
 // GetBroadcastRecording gets the broadcastRecording property value. The broadcastRecording property
+// returns a []byte when successful
 func (m *OnlineMeeting) GetBroadcastRecording()([]byte) {
     val, err := m.GetBackingStore().Get("broadcastRecording")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *OnlineMeeting) GetBroadcastRecording()([]byte) {
     return nil
 }
 // GetBroadcastSettings gets the broadcastSettings property value. The broadcastSettings property
+// returns a BroadcastMeetingSettingsable when successful
 func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
     val, err := m.GetBackingStore().Get("broadcastSettings")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
     return nil
 }
 // GetCapabilities gets the capabilities property value. The capabilities property
+// returns a []MeetingCapabilities when successful
 func (m *OnlineMeeting) GetCapabilities()([]MeetingCapabilities) {
     val, err := m.GetBackingStore().Get("capabilities")
     if err != nil {
@@ -78,6 +83,7 @@ func (m *OnlineMeeting) GetCapabilities()([]MeetingCapabilities) {
     return nil
 }
 // GetCreationDateTime gets the creationDateTime property value. The meeting creation time in UTC. Read-only.
+// returns a *Time when successful
 func (m *OnlineMeeting) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
     if err != nil {
@@ -89,6 +95,7 @@ func (m *OnlineMeeting) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The meeting end time in UTC.
+// returns a *Time when successful
 func (m *OnlineMeeting) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -100,6 +107,7 @@ func (m *OnlineMeeting) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetExternalId gets the externalId property value. The external ID. A custom ID. Optional.
+// returns a *string when successful
 func (m *OnlineMeeting) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -111,6 +119,7 @@ func (m *OnlineMeeting) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnlineMeetingBase.GetFieldDeserializers()
     res["alternativeRecording"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -304,6 +313,7 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIsBroadcast gets the isBroadcast property value. The isBroadcast property
+// returns a *bool when successful
 func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
     val, err := m.GetBackingStore().Get("isBroadcast")
     if err != nil {
@@ -315,6 +325,7 @@ func (m *OnlineMeeting) GetIsBroadcast()(*bool) {
     return nil
 }
 // GetJoinUrl gets the joinUrl property value. The joinUrl property
+// returns a *string when successful
 func (m *OnlineMeeting) GetJoinUrl()(*string) {
     val, err := m.GetBackingStore().Get("joinUrl")
     if err != nil {
@@ -326,6 +337,7 @@ func (m *OnlineMeeting) GetJoinUrl()(*string) {
     return nil
 }
 // GetMeetingAttendanceReport gets the meetingAttendanceReport property value. The meetingAttendanceReport property
+// returns a MeetingAttendanceReportable when successful
 func (m *OnlineMeeting) GetMeetingAttendanceReport()(MeetingAttendanceReportable) {
     val, err := m.GetBackingStore().Get("meetingAttendanceReport")
     if err != nil {
@@ -337,6 +349,7 @@ func (m *OnlineMeeting) GetMeetingAttendanceReport()(MeetingAttendanceReportable
     return nil
 }
 // GetParticipants gets the participants property value. The participants associated with the online meeting, including the organizer and the attendees.
+// returns a MeetingParticipantsable when successful
 func (m *OnlineMeeting) GetParticipants()(MeetingParticipantsable) {
     val, err := m.GetBackingStore().Get("participants")
     if err != nil {
@@ -348,6 +361,7 @@ func (m *OnlineMeeting) GetParticipants()(MeetingParticipantsable) {
     return nil
 }
 // GetRecording gets the recording property value. The recording property
+// returns a []byte when successful
 func (m *OnlineMeeting) GetRecording()([]byte) {
     val, err := m.GetBackingStore().Get("recording")
     if err != nil {
@@ -359,6 +373,7 @@ func (m *OnlineMeeting) GetRecording()([]byte) {
     return nil
 }
 // GetRecordings gets the recordings property value. The recordings of an online meeting. Read-only.
+// returns a []CallRecordingable when successful
 func (m *OnlineMeeting) GetRecordings()([]CallRecordingable) {
     val, err := m.GetBackingStore().Get("recordings")
     if err != nil {
@@ -370,6 +385,7 @@ func (m *OnlineMeeting) GetRecordings()([]CallRecordingable) {
     return nil
 }
 // GetRegistration gets the registration property value. The registration that is enabled for an online meeting. One online meeting can only have one registration enabled.
+// returns a MeetingRegistrationable when successful
 func (m *OnlineMeeting) GetRegistration()(MeetingRegistrationable) {
     val, err := m.GetBackingStore().Get("registration")
     if err != nil {
@@ -381,6 +397,7 @@ func (m *OnlineMeeting) GetRegistration()(MeetingRegistrationable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The meeting start time in UTC.
+// returns a *Time when successful
 func (m *OnlineMeeting) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -392,6 +409,7 @@ func (m *OnlineMeeting) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetTranscripts gets the transcripts property value. The transcripts of an online meeting. Read-only.
+// returns a []CallTranscriptable when successful
 func (m *OnlineMeeting) GetTranscripts()([]CallTranscriptable) {
     val, err := m.GetBackingStore().Get("transcripts")
     if err != nil {
@@ -643,7 +661,6 @@ func (m *OnlineMeeting) SetTranscripts(value []CallTranscriptable)() {
         panic(err)
     }
 }
-// OnlineMeetingable 
 type OnlineMeetingable interface {
     OnlineMeetingBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,7 +2,6 @@ package windowsupdates
 import (
     "errors"
 )
-// 
 type CveSeverityLevel int
 
 const (

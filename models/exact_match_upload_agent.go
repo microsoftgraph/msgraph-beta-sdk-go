@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchUploadAgent 
 type ExactMatchUploadAgent struct {
     Entity
 }
-// NewExactMatchUploadAgent instantiates a new exactMatchUploadAgent and sets the default values.
+// NewExactMatchUploadAgent instantiates a new ExactMatchUploadAgent and sets the default values.
 func NewExactMatchUploadAgent()(*ExactMatchUploadAgent) {
     m := &ExactMatchUploadAgent{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewExactMatchUploadAgent()(*ExactMatchUploadAgent) {
     return m
 }
 // CreateExactMatchUploadAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExactMatchUploadAgentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExactMatchUploadAgent(), nil
 }
 // GetCreationDateTime gets the creationDateTime property value. The creationDateTime property
+// returns a *Time when successful
 func (m *ExactMatchUploadAgent) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ExactMatchUploadAgent) GetCreationDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *ExactMatchUploadAgent) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ExactMatchUploadAgent) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExactMatchUploadAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["creationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,7 +104,6 @@ func (m *ExactMatchUploadAgent) SetDescription(value *string)() {
         panic(err)
     }
 }
-// ExactMatchUploadAgentable 
 type ExactMatchUploadAgentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

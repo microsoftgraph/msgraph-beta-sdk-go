@@ -40,6 +40,7 @@ type ItemDevicesItemMemberOfRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemDevicesItemMemberOfRequestBuilderGetQueryParameters
 }
 // ByDirectoryObjectId provides operations to manage the memberOf property of the microsoft.graph.device entity.
+// returns a *ItemDevicesItemMemberOfDirectoryObjectItemRequestBuilder when successful
 func (m *ItemDevicesItemMemberOfRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDevicesItemMemberOfDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ItemDevicesItemMemberOfRequestBuilder) ByDirectoryObjectId(directoryObj
     }
     return NewItemDevicesItemMemberOfDirectoryObjectItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemDevicesItemMemberOfRequestBuilderInternal instantiates a new MemberOfRequestBuilder and sets the default values.
+// NewItemDevicesItemMemberOfRequestBuilderInternal instantiates a new ItemDevicesItemMemberOfRequestBuilder and sets the default values.
 func NewItemDevicesItemMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemMemberOfRequestBuilder) {
     m := &ItemDevicesItemMemberOfRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/memberOf{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/memberOf{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemDevicesItemMemberOfRequestBuilder instantiates a new MemberOfRequestBuilder and sets the default values.
+// NewItemDevicesItemMemberOfRequestBuilder instantiates a new ItemDevicesItemMemberOfRequestBuilder and sets the default values.
 func NewItemDevicesItemMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemMemberOfRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemDevicesItemMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemDevicesItemMemberOfCountRequestBuilder when successful
 func (m *ItemDevicesItemMemberOfRequestBuilder) Count()(*ItemDevicesItemMemberOfCountRequestBuilder) {
     return NewItemDevicesItemMemberOfCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+// returns a DirectoryObjectCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ItemDevicesItemMemberOfRequestBuilder) Get(ctx context.Context, request
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDirectoryObjectCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +93,17 @@ func (m *ItemDevicesItemMemberOfRequestBuilder) Get(ctx context.Context, request
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
 // GraphAdministrativeUnit casts the previous resource to administrativeUnit.
+// returns a *ItemDevicesItemMemberOfGraphAdministrativeUnitRequestBuilder when successful
 func (m *ItemDevicesItemMemberOfRequestBuilder) GraphAdministrativeUnit()(*ItemDevicesItemMemberOfGraphAdministrativeUnitRequestBuilder) {
     return NewItemDevicesItemMemberOfGraphAdministrativeUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphGroup casts the previous resource to group.
+// returns a *ItemDevicesItemMemberOfGraphGroupRequestBuilder when successful
 func (m *ItemDevicesItemMemberOfRequestBuilder) GraphGroup()(*ItemDevicesItemMemberOfGraphGroupRequestBuilder) {
     return NewItemDevicesItemMemberOfGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+// returns a *RequestInformation when successful
 func (m *ItemDevicesItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -111,6 +117,7 @@ func (m *ItemDevicesItemMemberOfRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemDevicesItemMemberOfRequestBuilder when successful
 func (m *ItemDevicesItemMemberOfRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesItemMemberOfRequestBuilder) {
     return NewItemDevicesItemMemberOfRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

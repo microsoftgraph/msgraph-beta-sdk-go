@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsResponse 
-// Deprecated: This class is obsolete. Use evaluateClassificationResultsPostResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsResponse struct {
     ItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsPostResponse
 }
@@ -17,11 +16,11 @@ func NewItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResu
     return m
 }
 // CreateItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsResponse(), nil
 }
-// ItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsResponseable 
-// Deprecated: This class is obsolete. Use evaluateClassificationResultsPostResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsResponseable interface {
     ItemSitesItemInformationProtectionPolicyLabelsEvaluateClassificationResultsPostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

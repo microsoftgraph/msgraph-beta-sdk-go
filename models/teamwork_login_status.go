@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamworkLoginStatus 
 type TeamworkLoginStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamworkLoginStatus instantiates a new teamworkLoginStatus and sets the default values.
+// NewTeamworkLoginStatus instantiates a new TeamworkLoginStatus and sets the default values.
 func NewTeamworkLoginStatus()(*TeamworkLoginStatus) {
     m := &TeamworkLoginStatus{
     }
@@ -19,10 +18,12 @@ func NewTeamworkLoginStatus()(*TeamworkLoginStatus) {
     return m
 }
 // CreateTeamworkLoginStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkLoginStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkLoginStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamworkLoginStatus) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TeamworkLoginStatus) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamworkLoginStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExchangeConnection gets the exchangeConnection property value. Information about the Exchange connection.
+// returns a TeamworkConnectionable when successful
 func (m *TeamworkLoginStatus) GetExchangeConnection()(TeamworkConnectionable) {
     val, err := m.GetBackingStore().Get("exchangeConnection")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TeamworkLoginStatus) GetExchangeConnection()(TeamworkConnectionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkLoginStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["exchangeConnection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *TeamworkLoginStatus) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamworkLoginStatus) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *TeamworkLoginStatus) GetOdataType()(*string) {
     return nil
 }
 // GetSkypeConnection gets the skypeConnection property value. Information about the Skype for Business connection.
+// returns a TeamworkConnectionable when successful
 func (m *TeamworkLoginStatus) GetSkypeConnection()(TeamworkConnectionable) {
     val, err := m.GetBackingStore().Get("skypeConnection")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *TeamworkLoginStatus) GetSkypeConnection()(TeamworkConnectionable) {
     return nil
 }
 // GetTeamsConnection gets the teamsConnection property value. Information about the Teams connection.
+// returns a TeamworkConnectionable when successful
 func (m *TeamworkLoginStatus) GetTeamsConnection()(TeamworkConnectionable) {
     val, err := m.GetBackingStore().Get("teamsConnection")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *TeamworkLoginStatus) SetTeamsConnection(value TeamworkConnectionable)()
         panic(err)
     }
 }
-// TeamworkLoginStatusable 
 type TeamworkLoginStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -10,7 +10,7 @@ import (
 type GroupPolicyDefinition struct {
     Entity
 }
-// NewGroupPolicyDefinition instantiates a new groupPolicyDefinition and sets the default values.
+// NewGroupPolicyDefinition instantiates a new GroupPolicyDefinition and sets the default values.
 func NewGroupPolicyDefinition()(*GroupPolicyDefinition) {
     m := &GroupPolicyDefinition{
         Entity: *NewEntity(),
@@ -18,10 +18,12 @@ func NewGroupPolicyDefinition()(*GroupPolicyDefinition) {
     return m
 }
 // CreateGroupPolicyDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyDefinition(), nil
 }
 // GetCategory gets the category property value. The group policy category associated with the definition.
+// returns a GroupPolicyCategoryable when successful
 func (m *GroupPolicyDefinition) GetCategory()(GroupPolicyCategoryable) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *GroupPolicyDefinition) GetCategory()(GroupPolicyCategoryable) {
     return nil
 }
 // GetCategoryPath gets the categoryPath property value. The localized full category path for the policy.
+// returns a *string when successful
 func (m *GroupPolicyDefinition) GetCategoryPath()(*string) {
     val, err := m.GetBackingStore().Get("categoryPath")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *GroupPolicyDefinition) GetCategoryPath()(*string) {
     return nil
 }
 // GetClassType gets the classType property value. Group Policy Definition Class Type.
+// returns a *GroupPolicyDefinitionClassType when successful
 func (m *GroupPolicyDefinition) GetClassType()(*GroupPolicyDefinitionClassType) {
     val, err := m.GetBackingStore().Get("classType")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *GroupPolicyDefinition) GetClassType()(*GroupPolicyDefinitionClassType) 
     return nil
 }
 // GetDefinitionFile gets the definitionFile property value. The group policy file associated with the definition.
+// returns a GroupPolicyDefinitionFileable when successful
 func (m *GroupPolicyDefinition) GetDefinitionFile()(GroupPolicyDefinitionFileable) {
     val, err := m.GetBackingStore().Get("definitionFile")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *GroupPolicyDefinition) GetDefinitionFile()(GroupPolicyDefinitionFileabl
     return nil
 }
 // GetDisplayName gets the displayName property value. The localized policy name.
+// returns a *string when successful
 func (m *GroupPolicyDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *GroupPolicyDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetExplainText gets the explainText property value. The localized explanation or help text associated with the policy. The default value is empty.
+// returns a *string when successful
 func (m *GroupPolicyDefinition) GetExplainText()(*string) {
     val, err := m.GetBackingStore().Get("explainText")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *GroupPolicyDefinition) GetExplainText()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -269,6 +277,7 @@ func (m *GroupPolicyDefinition) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetGroupPolicyCategoryId gets the groupPolicyCategoryId property value. The category id of the parent category
+// returns a *UUID when successful
 func (m *GroupPolicyDefinition) GetGroupPolicyCategoryId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("groupPolicyCategoryId")
     if err != nil {
@@ -280,6 +289,7 @@ func (m *GroupPolicyDefinition) GetGroupPolicyCategoryId()(*i561e97a8befe7661a44
     return nil
 }
 // GetHasRelatedDefinitions gets the hasRelatedDefinitions property value. Signifies whether or not there are related definitions to this definition
+// returns a *bool when successful
 func (m *GroupPolicyDefinition) GetHasRelatedDefinitions()(*bool) {
     val, err := m.GetBackingStore().Get("hasRelatedDefinitions")
     if err != nil {
@@ -291,6 +301,7 @@ func (m *GroupPolicyDefinition) GetHasRelatedDefinitions()(*bool) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+// returns a *Time when successful
 func (m *GroupPolicyDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -302,6 +313,7 @@ func (m *GroupPolicyDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetMinDeviceCspVersion gets the minDeviceCspVersion property value. Minimum required CSP version for device configuration in this definition
+// returns a *string when successful
 func (m *GroupPolicyDefinition) GetMinDeviceCspVersion()(*string) {
     val, err := m.GetBackingStore().Get("minDeviceCspVersion")
     if err != nil {
@@ -313,6 +325,7 @@ func (m *GroupPolicyDefinition) GetMinDeviceCspVersion()(*string) {
     return nil
 }
 // GetMinUserCspVersion gets the minUserCspVersion property value. Minimum required CSP version for user configuration in this definition
+// returns a *string when successful
 func (m *GroupPolicyDefinition) GetMinUserCspVersion()(*string) {
     val, err := m.GetBackingStore().Get("minUserCspVersion")
     if err != nil {
@@ -324,6 +337,7 @@ func (m *GroupPolicyDefinition) GetMinUserCspVersion()(*string) {
     return nil
 }
 // GetNextVersionDefinition gets the nextVersionDefinition property value. Definition of the next version of this definition
+// returns a GroupPolicyDefinitionable when successful
 func (m *GroupPolicyDefinition) GetNextVersionDefinition()(GroupPolicyDefinitionable) {
     val, err := m.GetBackingStore().Get("nextVersionDefinition")
     if err != nil {
@@ -335,6 +349,7 @@ func (m *GroupPolicyDefinition) GetNextVersionDefinition()(GroupPolicyDefinition
     return nil
 }
 // GetPolicyType gets the policyType property value. Type of Group Policy File or Definition.
+// returns a *GroupPolicyType when successful
 func (m *GroupPolicyDefinition) GetPolicyType()(*GroupPolicyType) {
     val, err := m.GetBackingStore().Get("policyType")
     if err != nil {
@@ -346,6 +361,7 @@ func (m *GroupPolicyDefinition) GetPolicyType()(*GroupPolicyType) {
     return nil
 }
 // GetPresentations gets the presentations property value. The group policy presentations associated with the definition.
+// returns a []GroupPolicyPresentationable when successful
 func (m *GroupPolicyDefinition) GetPresentations()([]GroupPolicyPresentationable) {
     val, err := m.GetBackingStore().Get("presentations")
     if err != nil {
@@ -357,6 +373,7 @@ func (m *GroupPolicyDefinition) GetPresentations()([]GroupPolicyPresentationable
     return nil
 }
 // GetPreviousVersionDefinition gets the previousVersionDefinition property value. Definition of the previous version of this definition
+// returns a GroupPolicyDefinitionable when successful
 func (m *GroupPolicyDefinition) GetPreviousVersionDefinition()(GroupPolicyDefinitionable) {
     val, err := m.GetBackingStore().Get("previousVersionDefinition")
     if err != nil {
@@ -368,6 +385,7 @@ func (m *GroupPolicyDefinition) GetPreviousVersionDefinition()(GroupPolicyDefini
     return nil
 }
 // GetSupportedOn gets the supportedOn property value. Localized string used to specify what operating system or application version is affected by the policy.
+// returns a *string when successful
 func (m *GroupPolicyDefinition) GetSupportedOn()(*string) {
     val, err := m.GetBackingStore().Get("supportedOn")
     if err != nil {
@@ -379,6 +397,7 @@ func (m *GroupPolicyDefinition) GetSupportedOn()(*string) {
     return nil
 }
 // GetVersion gets the version property value. Setting definition version
+// returns a *string when successful
 func (m *GroupPolicyDefinition) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -626,7 +645,6 @@ func (m *GroupPolicyDefinition) SetVersion(value *string)() {
         panic(err)
     }
 }
-// GroupPolicyDefinitionable 
 type GroupPolicyDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

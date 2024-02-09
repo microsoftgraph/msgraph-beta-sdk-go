@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// SubmissionUserIdentity 
 type SubmissionUserIdentity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Identity
 }
-// NewSubmissionUserIdentity instantiates a new submissionUserIdentity and sets the default values.
+// NewSubmissionUserIdentity instantiates a new SubmissionUserIdentity and sets the default values.
 func NewSubmissionUserIdentity()(*SubmissionUserIdentity) {
     m := &SubmissionUserIdentity{
         Identity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewIdentity(),
@@ -19,10 +18,12 @@ func NewSubmissionUserIdentity()(*SubmissionUserIdentity) {
     return m
 }
 // CreateSubmissionUserIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSubmissionUserIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubmissionUserIdentity(), nil
 }
 // GetEmail gets the email property value. The email of user who is making the submission when logged in (delegated token case).
+// returns a *string when successful
 func (m *SubmissionUserIdentity) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *SubmissionUserIdentity) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SubmissionUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Identity.GetFieldDeserializers()
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +71,6 @@ func (m *SubmissionUserIdentity) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SubmissionUserIdentityable 
 type SubmissionUserIdentityable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

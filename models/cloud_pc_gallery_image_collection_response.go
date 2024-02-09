@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcGalleryImageCollectionResponse 
 type CloudPcGalleryImageCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcGalleryImageCollectionResponse instantiates a new cloudPcGalleryImageCollectionResponse and sets the default values.
+// NewCloudPcGalleryImageCollectionResponse instantiates a new CloudPcGalleryImageCollectionResponse and sets the default values.
 func NewCloudPcGalleryImageCollectionResponse()(*CloudPcGalleryImageCollectionResponse) {
     m := &CloudPcGalleryImageCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCloudPcGalleryImageCollectionResponse()(*CloudPcGalleryImageCollectionRe
     return m
 }
 // CreateCloudPcGalleryImageCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcGalleryImageCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcGalleryImageCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcGalleryImageCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CloudPcGalleryImageCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []CloudPcGalleryImageable when successful
 func (m *CloudPcGalleryImageCollectionResponse) GetValue()([]CloudPcGalleryImageable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CloudPcGalleryImageCollectionResponse) SetValue(value []CloudPcGalleryI
         panic(err)
     }
 }
-// CloudPcGalleryImageCollectionResponseable 
 type CloudPcGalleryImageCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

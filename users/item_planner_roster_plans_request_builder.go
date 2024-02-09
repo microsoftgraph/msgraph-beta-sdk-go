@@ -40,6 +40,7 @@ type ItemPlannerRosterPlansRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemPlannerRosterPlansRequestBuilderGetQueryParameters
 }
 // ByPlannerPlanId provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
+// returns a *ItemPlannerRosterPlansPlannerPlanItemRequestBuilder when successful
 func (m *ItemPlannerRosterPlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*ItemPlannerRosterPlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ItemPlannerRosterPlansRequestBuilder) ByPlannerPlanId(plannerPlanId str
     }
     return NewItemPlannerRosterPlansPlannerPlanItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemPlannerRosterPlansRequestBuilderInternal instantiates a new RosterPlansRequestBuilder and sets the default values.
+// NewItemPlannerRosterPlansRequestBuilderInternal instantiates a new ItemPlannerRosterPlansRequestBuilder and sets the default values.
 func NewItemPlannerRosterPlansRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerRosterPlansRequestBuilder) {
     m := &ItemPlannerRosterPlansRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/rosterPlans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/rosterPlans{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemPlannerRosterPlansRequestBuilder instantiates a new RosterPlansRequestBuilder and sets the default values.
+// NewItemPlannerRosterPlansRequestBuilder instantiates a new ItemPlannerRosterPlansRequestBuilder and sets the default values.
 func NewItemPlannerRosterPlansRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerRosterPlansRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPlannerRosterPlansRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemPlannerRosterPlansCountRequestBuilder when successful
 func (m *ItemPlannerRosterPlansRequestBuilder) Count()(*ItemPlannerRosterPlansCountRequestBuilder) {
     return NewItemPlannerRosterPlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
+// returns a PlannerPlanCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/planneruser-list-rosterplans?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ItemPlannerRosterPlansRequestBuilder) Get(ctx context.Context, requestC
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerPlanCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *ItemPlannerRosterPlansRequestBuilder) Get(ctx context.Context, requestC
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable), nil
 }
 // ToGetRequestInformation get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
+// returns a *RequestInformation when successful
 func (m *ItemPlannerRosterPlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRosterPlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *ItemPlannerRosterPlansRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPlannerRosterPlansRequestBuilder when successful
 func (m *ItemPlannerRosterPlansRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerRosterPlansRequestBuilder) {
     return NewItemPlannerRosterPlansRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

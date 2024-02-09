@@ -8,7 +8,7 @@ import (
 type AospDeviceOwnerDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewAospDeviceOwnerDeviceConfiguration instantiates a new aospDeviceOwnerDeviceConfiguration and sets the default values.
+// NewAospDeviceOwnerDeviceConfiguration instantiates a new AospDeviceOwnerDeviceConfiguration and sets the default values.
 func NewAospDeviceOwnerDeviceConfiguration()(*AospDeviceOwnerDeviceConfiguration) {
     m := &AospDeviceOwnerDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAospDeviceOwnerDeviceConfiguration()(*AospDeviceOwnerDeviceConfiguration
     return m
 }
 // CreateAospDeviceOwnerDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAospDeviceOwnerDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAospDeviceOwnerDeviceConfiguration(), nil
 }
 // GetAppsBlockInstallFromUnknownSources gets the appsBlockInstallFromUnknownSources property value. Indicates whether or not the user is allowed to enable unknown sources setting. When set to true, user is not allowed to enable unknown sources settings.
+// returns a *bool when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetAppsBlockInstallFromUnknownSources()(*bool) {
     val, err := m.GetBackingStore().Get("appsBlockInstallFromUnknownSources")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetAppsBlockInstallFromUnknownSourc
     return nil
 }
 // GetBluetoothBlockConfiguration gets the bluetoothBlockConfiguration property value. Indicates whether or not to block a user from configuring bluetooth.
+// returns a *bool when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetBluetoothBlockConfiguration()(*bool) {
     val, err := m.GetBackingStore().Get("bluetoothBlockConfiguration")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetBluetoothBlockConfiguration()(*b
     return nil
 }
 // GetBluetoothBlocked gets the bluetoothBlocked property value. Indicates whether or not to disable the use of bluetooth. When set to true, bluetooth cannot be enabled on the device.
+// returns a *bool when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetBluetoothBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("bluetoothBlocked")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetBluetoothBlocked()(*bool) {
     return nil
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to disable the use of the camera.
+// returns a *bool when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetCameraBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("cameraBlocked")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetCameraBlocked()(*bool) {
     return nil
 }
 // GetFactoryResetBlocked gets the factoryResetBlocked property value. Indicates whether or not the factory reset option in settings is disabled.
+// returns a *bool when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetFactoryResetBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("factoryResetBlocked")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetFactoryResetBlocked()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["appsBlockInstallFromUnknownSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -222,6 +229,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetFieldDeserializers()(map[string]
     return res
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Indicates the minimum length of the password required on the device. Valid values 4 to 16
+// returns a *int32 when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLength")
     if err != nil {
@@ -233,6 +241,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordMinimumLength()(*int32) 
     return nil
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
+// returns a *int32 when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeScreenTimeout")
     if err != nil {
@@ -244,6 +253,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordMinutesOfInactivityBefor
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// returns a *AndroidDeviceOwnerRequiredPasswordType when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
@@ -255,6 +265,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordRequiredType()(*AndroidD
     return nil
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11
+// returns a *int32 when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     val, err := m.GetBackingStore().Get("passwordSignInFailureCountBeforeFactoryReset")
     if err != nil {
@@ -266,6 +277,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordSignInFailureCountBefore
     return nil
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to disable the capability to take screenshots.
+// returns a *bool when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("screenCaptureBlocked")
     if err != nil {
@@ -277,6 +289,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
     return nil
 }
 // GetSecurityAllowDebuggingFeatures gets the securityAllowDebuggingFeatures property value. Indicates whether or not to block the user from enabling debugging features on the device.
+// returns a *bool when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetSecurityAllowDebuggingFeatures()(*bool) {
     val, err := m.GetBackingStore().Get("securityAllowDebuggingFeatures")
     if err != nil {
@@ -288,6 +301,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetSecurityAllowDebuggingFeatures()
     return nil
 }
 // GetStorageBlockExternalMedia gets the storageBlockExternalMedia property value. Indicates whether or not to block external media.
+// returns a *bool when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetStorageBlockExternalMedia()(*bool) {
     val, err := m.GetBackingStore().Get("storageBlockExternalMedia")
     if err != nil {
@@ -299,6 +313,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetStorageBlockExternalMedia()(*boo
     return nil
 }
 // GetStorageBlockUsbFileTransfer gets the storageBlockUsbFileTransfer property value. Indicates whether or not to block USB file transfer.
+// returns a *bool when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetStorageBlockUsbFileTransfer()(*bool) {
     val, err := m.GetBackingStore().Get("storageBlockUsbFileTransfer")
     if err != nil {
@@ -310,6 +325,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetStorageBlockUsbFileTransfer()(*b
     return nil
 }
 // GetWifiBlockEditConfigurations gets the wifiBlockEditConfigurations property value. Indicates whether or not to block the user from editing the wifi connection settings.
+// returns a *bool when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetWifiBlockEditConfigurations()(*bool) {
     val, err := m.GetBackingStore().Get("wifiBlockEditConfigurations")
     if err != nil {
@@ -511,7 +527,6 @@ func (m *AospDeviceOwnerDeviceConfiguration) SetWifiBlockEditConfigurations(valu
         panic(err)
     }
 }
-// AospDeviceOwnerDeviceConfigurationable 
 type AospDeviceOwnerDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

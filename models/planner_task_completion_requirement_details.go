@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PlannerTaskCompletionRequirementDetails 
 type PlannerTaskCompletionRequirementDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPlannerTaskCompletionRequirementDetails instantiates a new plannerTaskCompletionRequirementDetails and sets the default values.
+// NewPlannerTaskCompletionRequirementDetails instantiates a new PlannerTaskCompletionRequirementDetails and sets the default values.
 func NewPlannerTaskCompletionRequirementDetails()(*PlannerTaskCompletionRequirementDetails) {
     m := &PlannerTaskCompletionRequirementDetails{
     }
@@ -19,10 +18,12 @@ func NewPlannerTaskCompletionRequirementDetails()(*PlannerTaskCompletionRequirem
     return m
 }
 // CreatePlannerTaskCompletionRequirementDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerTaskCompletionRequirementDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskCompletionRequirementDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PlannerTaskCompletionRequirementDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *PlannerTaskCompletionRequirementDetails) GetAdditionalData()(map[string
     return val.(map[string]any)
 }
 // GetApprovalRequirement gets the approvalRequirement property value. The approvalRequirement property
+// returns a PlannerApprovalRequirementable when successful
 func (m *PlannerTaskCompletionRequirementDetails) GetApprovalRequirement()(PlannerApprovalRequirementable) {
     val, err := m.GetBackingStore().Get("approvalRequirement")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *PlannerTaskCompletionRequirementDetails) GetApprovalRequirement()(Plann
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PlannerTaskCompletionRequirementDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetChecklistRequirement gets the checklistRequirement property value. Information about the requirements for completing the checklist.
+// returns a PlannerChecklistRequirementable when successful
 func (m *PlannerTaskCompletionRequirementDetails) GetChecklistRequirement()(PlannerChecklistRequirementable) {
     val, err := m.GetBackingStore().Get("checklistRequirement")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PlannerTaskCompletionRequirementDetails) GetChecklistRequirement()(Plan
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerTaskCompletionRequirementDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["approvalRequirement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +111,7 @@ func (m *PlannerTaskCompletionRequirementDetails) GetFieldDeserializers()(map[st
     return res
 }
 // GetFormsRequirement gets the formsRequirement property value. The formsRequirement property
+// returns a PlannerFormsRequirementable when successful
 func (m *PlannerTaskCompletionRequirementDetails) GetFormsRequirement()(PlannerFormsRequirementable) {
     val, err := m.GetBackingStore().Get("formsRequirement")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *PlannerTaskCompletionRequirementDetails) GetFormsRequirement()(PlannerF
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PlannerTaskCompletionRequirementDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *PlannerTaskCompletionRequirementDetails) SetOdataType(value *string)() 
         panic(err)
     }
 }
-// PlannerTaskCompletionRequirementDetailsable 
 type PlannerTaskCompletionRequirementDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

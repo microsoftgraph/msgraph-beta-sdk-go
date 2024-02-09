@@ -8,7 +8,7 @@ import (
 type GroupPolicyPresentationLongDecimalTextBox struct {
     GroupPolicyUploadedPresentation
 }
-// NewGroupPolicyPresentationLongDecimalTextBox instantiates a new groupPolicyPresentationLongDecimalTextBox and sets the default values.
+// NewGroupPolicyPresentationLongDecimalTextBox instantiates a new GroupPolicyPresentationLongDecimalTextBox and sets the default values.
 func NewGroupPolicyPresentationLongDecimalTextBox()(*GroupPolicyPresentationLongDecimalTextBox) {
     m := &GroupPolicyPresentationLongDecimalTextBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
@@ -18,10 +18,12 @@ func NewGroupPolicyPresentationLongDecimalTextBox()(*GroupPolicyPresentationLong
     return m
 }
 // CreateGroupPolicyPresentationLongDecimalTextBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationLongDecimalTextBoxFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyPresentationLongDecimalTextBox(), nil
 }
 // GetDefaultValue gets the defaultValue property value. An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.
+// returns a *int64 when successful
 func (m *GroupPolicyPresentationLongDecimalTextBox) GetDefaultValue()(*int64) {
     val, err := m.GetBackingStore().Get("defaultValue")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *GroupPolicyPresentationLongDecimalTextBox) GetDefaultValue()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentationLongDecimalTextBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +101,7 @@ func (m *GroupPolicyPresentationLongDecimalTextBox) GetFieldDeserializers()(map[
     return res
 }
 // GetMaxValue gets the maxValue property value. An unsigned long that specifies the maximum allowed value. The default value is 9999.
+// returns a *int64 when successful
 func (m *GroupPolicyPresentationLongDecimalTextBox) GetMaxValue()(*int64) {
     val, err := m.GetBackingStore().Get("maxValue")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *GroupPolicyPresentationLongDecimalTextBox) GetMaxValue()(*int64) {
     return nil
 }
 // GetMinValue gets the minValue property value. An unsigned long that specifies the minimum allowed value. The default value is 0.
+// returns a *int64 when successful
 func (m *GroupPolicyPresentationLongDecimalTextBox) GetMinValue()(*int64) {
     val, err := m.GetBackingStore().Get("minValue")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *GroupPolicyPresentationLongDecimalTextBox) GetMinValue()(*int64) {
     return nil
 }
 // GetRequired gets the required property value. Requirement to enter a value in the parameter box. The default value is false.
+// returns a *bool when successful
 func (m *GroupPolicyPresentationLongDecimalTextBox) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
     if err != nil {
@@ -131,6 +137,7 @@ func (m *GroupPolicyPresentationLongDecimalTextBox) GetRequired()(*bool) {
     return nil
 }
 // GetSpin gets the spin property value. If true, create a spin control; otherwise, create a text box for numeric entry. The default value is true.
+// returns a *bool when successful
 func (m *GroupPolicyPresentationLongDecimalTextBox) GetSpin()(*bool) {
     val, err := m.GetBackingStore().Get("spin")
     if err != nil {
@@ -142,6 +149,7 @@ func (m *GroupPolicyPresentationLongDecimalTextBox) GetSpin()(*bool) {
     return nil
 }
 // GetSpinStep gets the spinStep property value. An unsigned integer that specifies the increment of change for the spin control. The default value is 1.
+// returns a *int64 when successful
 func (m *GroupPolicyPresentationLongDecimalTextBox) GetSpinStep()(*int64) {
     val, err := m.GetBackingStore().Get("spinStep")
     if err != nil {
@@ -238,7 +246,6 @@ func (m *GroupPolicyPresentationLongDecimalTextBox) SetSpinStep(value *int64)() 
         panic(err)
     }
 }
-// GroupPolicyPresentationLongDecimalTextBoxable 
 type GroupPolicyPresentationLongDecimalTextBoxable interface {
     GroupPolicyUploadedPresentationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

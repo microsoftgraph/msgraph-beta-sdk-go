@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimeCard 
 type TimeCard struct {
     ChangeTrackedEntity
 }
-// NewTimeCard instantiates a new timeCard and sets the default values.
+// NewTimeCard instantiates a new TimeCard and sets the default values.
 func NewTimeCard()(*TimeCard) {
     m := &TimeCard{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
@@ -18,10 +17,12 @@ func NewTimeCard()(*TimeCard) {
     return m
 }
 // CreateTimeCardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimeCardFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeCard(), nil
 }
 // GetBreaks gets the breaks property value. The list of breaks associated with the timeCard.
+// returns a []TimeCardBreakable when successful
 func (m *TimeCard) GetBreaks()([]TimeCardBreakable) {
     val, err := m.GetBackingStore().Get("breaks")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *TimeCard) GetBreaks()([]TimeCardBreakable) {
     return nil
 }
 // GetClockInEvent gets the clockInEvent property value. The clock-in event of the timeCard.
+// returns a TimeCardEventable when successful
 func (m *TimeCard) GetClockInEvent()(TimeCardEventable) {
     val, err := m.GetBackingStore().Get("clockInEvent")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *TimeCard) GetClockInEvent()(TimeCardEventable) {
     return nil
 }
 // GetClockOutEvent gets the clockOutEvent property value. The clock-out event of the timeCard.
+// returns a TimeCardEventable when successful
 func (m *TimeCard) GetClockOutEvent()(TimeCardEventable) {
     val, err := m.GetBackingStore().Get("clockOutEvent")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *TimeCard) GetClockOutEvent()(TimeCardEventable) {
     return nil
 }
 // GetConfirmedBy gets the confirmedBy property value. Indicates whether this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
+// returns a *ConfirmedBy when successful
 func (m *TimeCard) GetConfirmedBy()(*ConfirmedBy) {
     val, err := m.GetBackingStore().Get("confirmedBy")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *TimeCard) GetConfirmedBy()(*ConfirmedBy) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimeCard) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["breaks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -157,6 +162,7 @@ func (m *TimeCard) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetNotes gets the notes property value. Notes about the timeCard.
+// returns a ItemBodyable when successful
 func (m *TimeCard) GetNotes()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -168,6 +174,7 @@ func (m *TimeCard) GetNotes()(ItemBodyable) {
     return nil
 }
 // GetOriginalEntry gets the originalEntry property value. The original timeCardEntry of the timeCard, before user edits.
+// returns a TimeCardEntryable when successful
 func (m *TimeCard) GetOriginalEntry()(TimeCardEntryable) {
     val, err := m.GetBackingStore().Get("originalEntry")
     if err != nil {
@@ -179,6 +186,7 @@ func (m *TimeCard) GetOriginalEntry()(TimeCardEntryable) {
     return nil
 }
 // GetState gets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
+// returns a *TimeCardState when successful
 func (m *TimeCard) GetState()(*TimeCardState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -190,6 +198,7 @@ func (m *TimeCard) GetState()(*TimeCardState) {
     return nil
 }
 // GetUserId gets the userId property value. User ID to which  the timeCard belongs.
+// returns a *string when successful
 func (m *TimeCard) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -320,7 +329,6 @@ func (m *TimeCard) SetUserId(value *string)() {
         panic(err)
     }
 }
-// TimeCardable 
 type TimeCardable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

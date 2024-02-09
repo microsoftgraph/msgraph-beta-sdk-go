@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConnectedOrganizationMembers 
 type ConnectedOrganizationMembers struct {
     UserSet
 }
-// NewConnectedOrganizationMembers instantiates a new connectedOrganizationMembers and sets the default values.
+// NewConnectedOrganizationMembers instantiates a new ConnectedOrganizationMembers and sets the default values.
 func NewConnectedOrganizationMembers()(*ConnectedOrganizationMembers) {
     m := &ConnectedOrganizationMembers{
         UserSet: *NewUserSet(),
@@ -18,10 +17,12 @@ func NewConnectedOrganizationMembers()(*ConnectedOrganizationMembers) {
     return m
 }
 // CreateConnectedOrganizationMembersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConnectedOrganizationMembersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectedOrganizationMembers(), nil
 }
 // GetDescription gets the description property value. The name of the connected organization. Read only.
+// returns a *string when successful
 func (m *ConnectedOrganizationMembers) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ConnectedOrganizationMembers) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConnectedOrganizationMembers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UserSet.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *ConnectedOrganizationMembers) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetId gets the id property value. The ID of the connected organization in entitlement management.
+// returns a *string when successful
 func (m *ConnectedOrganizationMembers) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *ConnectedOrganizationMembers) SetId(value *string)() {
         panic(err)
     }
 }
-// ConnectedOrganizationMembersable 
 type ConnectedOrganizationMembersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UserSetable

@@ -8,7 +8,7 @@ import (
 type MicrosoftStoreForBusinessContainedApp struct {
     MobileContainedApp
 }
-// NewMicrosoftStoreForBusinessContainedApp instantiates a new microsoftStoreForBusinessContainedApp and sets the default values.
+// NewMicrosoftStoreForBusinessContainedApp instantiates a new MicrosoftStoreForBusinessContainedApp and sets the default values.
 func NewMicrosoftStoreForBusinessContainedApp()(*MicrosoftStoreForBusinessContainedApp) {
     m := &MicrosoftStoreForBusinessContainedApp{
         MobileContainedApp: *NewMobileContainedApp(),
@@ -18,10 +18,12 @@ func NewMicrosoftStoreForBusinessContainedApp()(*MicrosoftStoreForBusinessContai
     return m
 }
 // CreateMicrosoftStoreForBusinessContainedAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftStoreForBusinessContainedAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftStoreForBusinessContainedApp(), nil
 }
 // GetAppUserModelId gets the appUserModelId property value. The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.
+// returns a *string when successful
 func (m *MicrosoftStoreForBusinessContainedApp) GetAppUserModelId()(*string) {
     val, err := m.GetBackingStore().Get("appUserModelId")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MicrosoftStoreForBusinessContainedApp) GetAppUserModelId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftStoreForBusinessContainedApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileContainedApp.GetFieldDeserializers()
     res["appUserModelId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *MicrosoftStoreForBusinessContainedApp) SetAppUserModelId(value *string)
         panic(err)
     }
 }
-// MicrosoftStoreForBusinessContainedAppable 
 type MicrosoftStoreForBusinessContainedAppable interface {
     MobileContainedAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

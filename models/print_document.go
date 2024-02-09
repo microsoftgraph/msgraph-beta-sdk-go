@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintDocument 
 type PrintDocument struct {
     Entity
 }
-// NewPrintDocument instantiates a new printDocument and sets the default values.
+// NewPrintDocument instantiates a new PrintDocument and sets the default values.
 func NewPrintDocument()(*PrintDocument) {
     m := &PrintDocument{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPrintDocument()(*PrintDocument) {
     return m
 }
 // CreatePrintDocumentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrintDocumentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintDocument(), nil
 }
 // GetConfiguration gets the configuration property value. The configuration property
+// returns a PrinterDocumentConfigurationable when successful
 func (m *PrintDocument) GetConfiguration()(PrinterDocumentConfigurationable) {
     val, err := m.GetBackingStore().Get("configuration")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *PrintDocument) GetConfiguration()(PrinterDocumentConfigurationable) {
     return nil
 }
 // GetContentType gets the contentType property value. The document's content (MIME) type. Read-only.
+// returns a *string when successful
 func (m *PrintDocument) GetContentType()(*string) {
     val, err := m.GetBackingStore().Get("contentType")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *PrintDocument) GetContentType()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The document's name. Read-only.
+// returns a *string when successful
 func (m *PrintDocument) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *PrintDocument) GetDisplayName()(*string) {
     return nil
 }
 // GetDownloadedDateTime gets the downloadedDateTime property value. The downloadedDateTime property
+// returns a *Time when successful
 func (m *PrintDocument) GetDownloadedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("downloadedDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *PrintDocument) GetDownloadedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,6 +135,7 @@ func (m *PrintDocument) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetSize gets the size property value. The document's size in bytes. Read-only.
+// returns a *int64 when successful
 func (m *PrintDocument) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -141,6 +147,7 @@ func (m *PrintDocument) GetSize()(*int64) {
     return nil
 }
 // GetUploadedDateTime gets the uploadedDateTime property value. The uploadedDateTime property
+// returns a *Time when successful
 func (m *PrintDocument) GetUploadedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("uploadedDateTime")
     if err != nil {
@@ -237,7 +244,6 @@ func (m *PrintDocument) SetUploadedDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
-// PrintDocumentable 
 type PrintDocumentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

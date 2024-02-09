@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityGroupCounts 
 type Office365GroupsActivityGroupCounts struct {
     Entity
 }
-// NewOffice365GroupsActivityGroupCounts instantiates a new office365GroupsActivityGroupCounts and sets the default values.
+// NewOffice365GroupsActivityGroupCounts instantiates a new Office365GroupsActivityGroupCounts and sets the default values.
 func NewOffice365GroupsActivityGroupCounts()(*Office365GroupsActivityGroupCounts) {
     m := &Office365GroupsActivityGroupCounts{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOffice365GroupsActivityGroupCounts()(*Office365GroupsActivityGroupCounts
     return m
 }
 // CreateOffice365GroupsActivityGroupCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOffice365GroupsActivityGroupCountsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOffice365GroupsActivityGroupCounts(), nil
 }
 // GetActive gets the active property value. The number of active groups. A group is considered active if any of the following occurred: group mailbox received email, or  a user viewed, edited, shared, or synced files in SharePoint document library, or a user viewed SharePoint pages, or a user posted, read, or liked messages in Yammer groups.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityGroupCounts) GetActive()(*int64) {
     val, err := m.GetBackingStore().Get("active")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Office365GroupsActivityGroupCounts) GetActive()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["active"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +88,7 @@ func (m *Office365GroupsActivityGroupCounts) GetFieldDeserializers()(map[string]
     return res
 }
 // GetReportDate gets the reportDate property value. The date on which groups were active.
+// returns a *DateOnly when successful
 func (m *Office365GroupsActivityGroupCounts) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("reportDate")
     if err != nil {
@@ -97,6 +100,7 @@ func (m *Office365GroupsActivityGroupCounts) GetReportDate()(*i878a80d2330e89d26
     return nil
 }
 // GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
+// returns a *string when successful
 func (m *Office365GroupsActivityGroupCounts) GetReportPeriod()(*string) {
     val, err := m.GetBackingStore().Get("reportPeriod")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *Office365GroupsActivityGroupCounts) GetReportPeriod()(*string) {
     return nil
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
+// returns a *DateOnly when successful
 func (m *Office365GroupsActivityGroupCounts) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("reportRefreshDate")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *Office365GroupsActivityGroupCounts) GetReportRefreshDate()(*i878a80d233
     return nil
 }
 // GetTotal gets the total property value. The total number of groups.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityGroupCounts) GetTotal()(*int64) {
     val, err := m.GetBackingStore().Get("total")
     if err != nil {
@@ -202,7 +208,6 @@ func (m *Office365GroupsActivityGroupCounts) SetTotal(value *int64)() {
         panic(err)
     }
 }
-// Office365GroupsActivityGroupCountsable 
 type Office365GroupsActivityGroupCountsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

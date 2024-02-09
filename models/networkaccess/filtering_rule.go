@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FilteringRule 
 type FilteringRule struct {
     PolicyRule
 }
-// NewFilteringRule instantiates a new filteringRule and sets the default values.
+// NewFilteringRule instantiates a new FilteringRule and sets the default values.
 func NewFilteringRule()(*FilteringRule) {
     m := &FilteringRule{
         PolicyRule: *NewPolicyRule(),
@@ -18,6 +17,7 @@ func NewFilteringRule()(*FilteringRule) {
     return m
 }
 // CreateFilteringRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFilteringRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +42,7 @@ func CreateFilteringRuleFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewFilteringRule(), nil
 }
 // GetDestinations gets the destinations property value. Possible destinations and types of destinations accessed by the user in accordance with the network filtering policy, such as IP addresses and FQDNs/URLs.
+// returns a []RuleDestinationable when successful
 func (m *FilteringRule) GetDestinations()([]RuleDestinationable) {
     val, err := m.GetBackingStore().Get("destinations")
     if err != nil {
@@ -53,6 +54,7 @@ func (m *FilteringRule) GetDestinations()([]RuleDestinationable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FilteringRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyRule.GetFieldDeserializers()
     res["destinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +86,7 @@ func (m *FilteringRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetRuleType gets the ruleType property value. The ruleType property
+// returns a *NetworkDestinationType when successful
 func (m *FilteringRule) GetRuleType()(*NetworkDestinationType) {
     val, err := m.GetBackingStore().Get("ruleType")
     if err != nil {
@@ -135,7 +138,6 @@ func (m *FilteringRule) SetRuleType(value *NetworkDestinationType)() {
         panic(err)
     }
 }
-// FilteringRuleable 
 type FilteringRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyRuleable

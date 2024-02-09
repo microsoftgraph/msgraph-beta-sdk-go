@@ -8,7 +8,7 @@ import (
 type WindowsKioskConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsKioskConfiguration instantiates a new windowsKioskConfiguration and sets the default values.
+// NewWindowsKioskConfiguration instantiates a new WindowsKioskConfiguration and sets the default values.
 func NewWindowsKioskConfiguration()(*WindowsKioskConfiguration) {
     m := &WindowsKioskConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsKioskConfiguration()(*WindowsKioskConfiguration) {
     return m
 }
 // CreateWindowsKioskConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsKioskConfiguration(), nil
 }
 // GetEdgeKioskEnablePublicBrowsing gets the edgeKioskEnablePublicBrowsing property value. Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.
+// returns a *bool when successful
 func (m *WindowsKioskConfiguration) GetEdgeKioskEnablePublicBrowsing()(*bool) {
     val, err := m.GetBackingStore().Get("edgeKioskEnablePublicBrowsing")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsKioskConfiguration) GetEdgeKioskEnablePublicBrowsing()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["edgeKioskEnablePublicBrowsing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +159,7 @@ func (m *WindowsKioskConfiguration) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetKioskBrowserBlockedUrlExceptions gets the kioskBrowserBlockedUrlExceptions property value. Specify URLs that the kiosk browser is allowed to navigate to
+// returns a []string when successful
 func (m *WindowsKioskConfiguration) GetKioskBrowserBlockedUrlExceptions()([]string) {
     val, err := m.GetBackingStore().Get("kioskBrowserBlockedUrlExceptions")
     if err != nil {
@@ -167,6 +171,7 @@ func (m *WindowsKioskConfiguration) GetKioskBrowserBlockedUrlExceptions()([]stri
     return nil
 }
 // GetKioskBrowserBlockedURLs gets the kioskBrowserBlockedURLs property value. Specify URLs that the kiosk browsers should not navigate to
+// returns a []string when successful
 func (m *WindowsKioskConfiguration) GetKioskBrowserBlockedURLs()([]string) {
     val, err := m.GetBackingStore().Get("kioskBrowserBlockedURLs")
     if err != nil {
@@ -178,6 +183,7 @@ func (m *WindowsKioskConfiguration) GetKioskBrowserBlockedURLs()([]string) {
     return nil
 }
 // GetKioskBrowserDefaultUrl gets the kioskBrowserDefaultUrl property value. Specify the default URL the browser should navigate to on launch.
+// returns a *string when successful
 func (m *WindowsKioskConfiguration) GetKioskBrowserDefaultUrl()(*string) {
     val, err := m.GetBackingStore().Get("kioskBrowserDefaultUrl")
     if err != nil {
@@ -189,6 +195,7 @@ func (m *WindowsKioskConfiguration) GetKioskBrowserDefaultUrl()(*string) {
     return nil
 }
 // GetKioskBrowserEnableEndSessionButton gets the kioskBrowserEnableEndSessionButton property value. Enable the kiosk browser's end session button. By default, the end session button is disabled.
+// returns a *bool when successful
 func (m *WindowsKioskConfiguration) GetKioskBrowserEnableEndSessionButton()(*bool) {
     val, err := m.GetBackingStore().Get("kioskBrowserEnableEndSessionButton")
     if err != nil {
@@ -200,6 +207,7 @@ func (m *WindowsKioskConfiguration) GetKioskBrowserEnableEndSessionButton()(*boo
     return nil
 }
 // GetKioskBrowserEnableHomeButton gets the kioskBrowserEnableHomeButton property value. Enable the kiosk browser's home button. By default, the home button is disabled.
+// returns a *bool when successful
 func (m *WindowsKioskConfiguration) GetKioskBrowserEnableHomeButton()(*bool) {
     val, err := m.GetBackingStore().Get("kioskBrowserEnableHomeButton")
     if err != nil {
@@ -211,6 +219,7 @@ func (m *WindowsKioskConfiguration) GetKioskBrowserEnableHomeButton()(*bool) {
     return nil
 }
 // GetKioskBrowserEnableNavigationButtons gets the kioskBrowserEnableNavigationButtons property value. Enable the kiosk browser's navigation buttons(forward/back). By default, the navigation buttons are disabled.
+// returns a *bool when successful
 func (m *WindowsKioskConfiguration) GetKioskBrowserEnableNavigationButtons()(*bool) {
     val, err := m.GetBackingStore().Get("kioskBrowserEnableNavigationButtons")
     if err != nil {
@@ -222,6 +231,7 @@ func (m *WindowsKioskConfiguration) GetKioskBrowserEnableNavigationButtons()(*bo
     return nil
 }
 // GetKioskBrowserRestartOnIdleTimeInMinutes gets the kioskBrowserRestartOnIdleTimeInMinutes property value. Specify the number of minutes the session is idle until the kiosk browser restarts in a fresh state.  Valid values are 1-1440. Valid values 1 to 1440
+// returns a *int32 when successful
 func (m *WindowsKioskConfiguration) GetKioskBrowserRestartOnIdleTimeInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("kioskBrowserRestartOnIdleTimeInMinutes")
     if err != nil {
@@ -233,6 +243,7 @@ func (m *WindowsKioskConfiguration) GetKioskBrowserRestartOnIdleTimeInMinutes()(
     return nil
 }
 // GetKioskProfiles gets the kioskProfiles property value. This policy setting allows to define a list of Kiosk profiles for a Kiosk configuration. This collection can contain a maximum of 3 elements.
+// returns a []WindowsKioskProfileable when successful
 func (m *WindowsKioskConfiguration) GetKioskProfiles()([]WindowsKioskProfileable) {
     val, err := m.GetBackingStore().Get("kioskProfiles")
     if err != nil {
@@ -244,6 +255,7 @@ func (m *WindowsKioskConfiguration) GetKioskProfiles()([]WindowsKioskProfileable
     return nil
 }
 // GetWindowsKioskForceUpdateSchedule gets the windowsKioskForceUpdateSchedule property value. force update schedule for Kiosk devices.
+// returns a WindowsKioskForceUpdateScheduleable when successful
 func (m *WindowsKioskConfiguration) GetWindowsKioskForceUpdateSchedule()(WindowsKioskForceUpdateScheduleable) {
     val, err := m.GetBackingStore().Get("windowsKioskForceUpdateSchedule")
     if err != nil {
@@ -398,7 +410,6 @@ func (m *WindowsKioskConfiguration) SetWindowsKioskForceUpdateSchedule(value Win
         panic(err)
     }
 }
-// WindowsKioskConfigurationable 
 type WindowsKioskConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

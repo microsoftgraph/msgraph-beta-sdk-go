@@ -17,28 +17,28 @@ type ItemTeamDefinitionChannelsItemUnarchiveRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemTeamDefinitionChannelsItemUnarchiveRequestBuilderInternal instantiates a new UnarchiveRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsItemUnarchiveRequestBuilderInternal instantiates a new ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemUnarchiveRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/unarchive", pathParameters),
     }
     return m
 }
-// NewItemTeamDefinitionChannelsItemUnarchiveRequestBuilder instantiates a new UnarchiveRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsItemUnarchiveRequestBuilder instantiates a new ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemUnarchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionChannelsItemUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action unarchive
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemUnarchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder) Post(ctx context
     return nil
 }
 // ToPostRequestInformation invoke action unarchive
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemUnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -57,6 +58,7 @@ func (m *ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder when successful
 func (m *ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionChannelsItemUnarchiveRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemUnarchiveRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

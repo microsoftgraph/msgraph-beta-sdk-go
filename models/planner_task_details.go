@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerTaskDetails 
 type PlannerTaskDetails struct {
     PlannerDelta
 }
-// NewPlannerTaskDetails instantiates a new plannerTaskDetails and sets the default values.
+// NewPlannerTaskDetails instantiates a new PlannerTaskDetails and sets the default values.
 func NewPlannerTaskDetails()(*PlannerTaskDetails) {
     m := &PlannerTaskDetails{
         PlannerDelta: *NewPlannerDelta(),
@@ -16,10 +15,12 @@ func NewPlannerTaskDetails()(*PlannerTaskDetails) {
     return m
 }
 // CreatePlannerTaskDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerTaskDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskDetails(), nil
 }
 // GetApprovalAttachment gets the approvalAttachment property value. The approvalAttachment property
+// returns a PlannerBaseApprovalAttachmentable when successful
 func (m *PlannerTaskDetails) GetApprovalAttachment()(PlannerBaseApprovalAttachmentable) {
     val, err := m.GetBackingStore().Get("approvalAttachment")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PlannerTaskDetails) GetApprovalAttachment()(PlannerBaseApprovalAttachme
     return nil
 }
 // GetChecklist gets the checklist property value. The collection of checklist items on the task.
+// returns a PlannerChecklistItemsable when successful
 func (m *PlannerTaskDetails) GetChecklist()(PlannerChecklistItemsable) {
     val, err := m.GetBackingStore().Get("checklist")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *PlannerTaskDetails) GetChecklist()(PlannerChecklistItemsable) {
     return nil
 }
 // GetCompletionRequirements gets the completionRequirements property value. Contains detailed information about requirements on the task.
+// returns a PlannerTaskCompletionRequirementDetailsable when successful
 func (m *PlannerTaskDetails) GetCompletionRequirements()(PlannerTaskCompletionRequirementDetailsable) {
     val, err := m.GetBackingStore().Get("completionRequirements")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *PlannerTaskDetails) GetCompletionRequirements()(PlannerTaskCompletionRe
     return nil
 }
 // GetDescription gets the description property value. Description of the task.
+// returns a *string when successful
 func (m *PlannerTaskDetails) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *PlannerTaskDetails) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
     res["approvalAttachment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -149,6 +154,7 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetForms gets the forms property value. The forms property
+// returns a PlannerFormsDictionaryable when successful
 func (m *PlannerTaskDetails) GetForms()(PlannerFormsDictionaryable) {
     val, err := m.GetBackingStore().Get("forms")
     if err != nil {
@@ -160,6 +166,7 @@ func (m *PlannerTaskDetails) GetForms()(PlannerFormsDictionaryable) {
     return nil
 }
 // GetNotes gets the notes property value. Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the 'description' field. If this field hasn't previously been set but 'description' has been, the existing description is synchronized to 'notes' with minimal whitespace-preserving HTML markup. Setting both 'description' and 'notes' is an error and will result in an exception.
+// returns a ItemBodyable when successful
 func (m *PlannerTaskDetails) GetNotes()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -171,6 +178,7 @@ func (m *PlannerTaskDetails) GetNotes()(ItemBodyable) {
     return nil
 }
 // GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
+// returns a *PlannerPreviewType when successful
 func (m *PlannerTaskDetails) GetPreviewType()(*PlannerPreviewType) {
     val, err := m.GetBackingStore().Get("previewType")
     if err != nil {
@@ -182,6 +190,7 @@ func (m *PlannerTaskDetails) GetPreviewType()(*PlannerPreviewType) {
     return nil
 }
 // GetReferences gets the references property value. The collection of references on the task.
+// returns a PlannerExternalReferencesable when successful
 func (m *PlannerTaskDetails) GetReferences()(PlannerExternalReferencesable) {
     val, err := m.GetBackingStore().Get("references")
     if err != nil {
@@ -305,7 +314,6 @@ func (m *PlannerTaskDetails) SetReferences(value PlannerExternalReferencesable)(
         panic(err)
     }
 }
-// PlannerTaskDetailsable 
 type PlannerTaskDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerDeltaable

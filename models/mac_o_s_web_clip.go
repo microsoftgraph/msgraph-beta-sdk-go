@@ -8,7 +8,7 @@ import (
 type MacOSWebClip struct {
     MobileApp
 }
-// NewMacOSWebClip instantiates a new macOSWebClip and sets the default values.
+// NewMacOSWebClip instantiates a new MacOSWebClip and sets the default values.
 func NewMacOSWebClip()(*MacOSWebClip) {
     m := &MacOSWebClip{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewMacOSWebClip()(*MacOSWebClip) {
     return m
 }
 // CreateMacOSWebClipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSWebClipFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSWebClip(), nil
 }
 // GetAppUrl gets the appUrl property value. The web app URL starting with http:// or https://, such as https://learn.microsoft.com/mem/.
+// returns a *string when successful
 func (m *MacOSWebClip) GetAppUrl()(*string) {
     val, err := m.GetBackingStore().Get("appUrl")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSWebClip) GetAppUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSWebClip) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["appUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +71,7 @@ func (m *MacOSWebClip) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetFullScreenEnabled gets the fullScreenEnabled property value. Whether or not to open the web clip as a full-screen web app. Defaults to false. If TRUE, opens the web clip as a full-screen web app. If FALSE, the web clip opens inside of another app.
+// returns a *bool when successful
 func (m *MacOSWebClip) GetFullScreenEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("fullScreenEnabled")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *MacOSWebClip) GetFullScreenEnabled()(*bool) {
     return nil
 }
 // GetPreComposedIconEnabled gets the preComposedIconEnabled property value. Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding 'shine' to the icon. If FALSE, SpringBoard can add 'shine'.
+// returns a *bool when successful
 func (m *MacOSWebClip) GetPreComposedIconEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("preComposedIconEnabled")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *MacOSWebClip) SetPreComposedIconEnabled(value *bool)() {
         panic(err)
     }
 }
-// MacOSWebClipable 
 type MacOSWebClipable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

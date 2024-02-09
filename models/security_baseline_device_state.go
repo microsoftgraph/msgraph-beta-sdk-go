@@ -9,7 +9,7 @@ import (
 type SecurityBaselineDeviceState struct {
     Entity
 }
-// NewSecurityBaselineDeviceState instantiates a new securityBaselineDeviceState and sets the default values.
+// NewSecurityBaselineDeviceState instantiates a new SecurityBaselineDeviceState and sets the default values.
 func NewSecurityBaselineDeviceState()(*SecurityBaselineDeviceState) {
     m := &SecurityBaselineDeviceState{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewSecurityBaselineDeviceState()(*SecurityBaselineDeviceState) {
     return m
 }
 // CreateSecurityBaselineDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecurityBaselineDeviceStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityBaselineDeviceState(), nil
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Display name of the device
+// returns a *string when successful
 func (m *SecurityBaselineDeviceState) GetDeviceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deviceDisplayName")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *SecurityBaselineDeviceState) GetDeviceDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecurityBaselineDeviceState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +90,7 @@ func (m *SecurityBaselineDeviceState) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of the policy report
+// returns a *Time when successful
 func (m *SecurityBaselineDeviceState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastReportedDateTime")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *SecurityBaselineDeviceState) GetLastReportedDateTime()(*i336074805fc853
     return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Intune device id
+// returns a *string when successful
 func (m *SecurityBaselineDeviceState) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -109,6 +114,7 @@ func (m *SecurityBaselineDeviceState) GetManagedDeviceId()(*string) {
     return nil
 }
 // GetState gets the state property value. Security Baseline Compliance State
+// returns a *SecurityBaselineComplianceState when successful
 func (m *SecurityBaselineDeviceState) GetState()(*SecurityBaselineComplianceState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -120,6 +126,7 @@ func (m *SecurityBaselineDeviceState) GetState()(*SecurityBaselineComplianceStat
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
+// returns a *string when successful
 func (m *SecurityBaselineDeviceState) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -204,7 +211,6 @@ func (m *SecurityBaselineDeviceState) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// SecurityBaselineDeviceStateable 
 type SecurityBaselineDeviceStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

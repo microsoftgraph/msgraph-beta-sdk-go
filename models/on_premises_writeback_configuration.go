@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// OnPremisesWritebackConfiguration 
 type OnPremisesWritebackConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOnPremisesWritebackConfiguration instantiates a new onPremisesWritebackConfiguration and sets the default values.
+// NewOnPremisesWritebackConfiguration instantiates a new OnPremisesWritebackConfiguration and sets the default values.
 func NewOnPremisesWritebackConfiguration()(*OnPremisesWritebackConfiguration) {
     m := &OnPremisesWritebackConfiguration{
     }
@@ -19,10 +18,12 @@ func NewOnPremisesWritebackConfiguration()(*OnPremisesWritebackConfiguration) {
     return m
 }
 // CreateOnPremisesWritebackConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesWritebackConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesWritebackConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OnPremisesWritebackConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *OnPremisesWritebackConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OnPremisesWritebackConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesWritebackConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *OnPremisesWritebackConfiguration) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OnPremisesWritebackConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *OnPremisesWritebackConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetUnifiedGroupContainer gets the unifiedGroupContainer property value. The distinguished name of the on-premises container that the customer is using to store unified groups which are created in the cloud.
+// returns a *string when successful
 func (m *OnPremisesWritebackConfiguration) GetUnifiedGroupContainer()(*string) {
     val, err := m.GetBackingStore().Get("unifiedGroupContainer")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *OnPremisesWritebackConfiguration) GetUnifiedGroupContainer()(*string) {
     return nil
 }
 // GetUserContainer gets the userContainer property value. The distinguished name of the on-premises container that the customer is using to store users which are created in the cloud.
+// returns a *string when successful
 func (m *OnPremisesWritebackConfiguration) GetUserContainer()(*string) {
     val, err := m.GetBackingStore().Get("userContainer")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *OnPremisesWritebackConfiguration) SetUserContainer(value *string)() {
         panic(err)
     }
 }
-// OnPremisesWritebackConfigurationable 
 type OnPremisesWritebackConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

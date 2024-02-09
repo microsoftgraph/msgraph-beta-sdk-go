@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AuthenticationAppPolicyDetails 
 type AuthenticationAppPolicyDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuthenticationAppPolicyDetails instantiates a new authenticationAppPolicyDetails and sets the default values.
+// NewAuthenticationAppPolicyDetails instantiates a new AuthenticationAppPolicyDetails and sets the default values.
 func NewAuthenticationAppPolicyDetails()(*AuthenticationAppPolicyDetails) {
     m := &AuthenticationAppPolicyDetails{
     }
@@ -19,10 +18,12 @@ func NewAuthenticationAppPolicyDetails()(*AuthenticationAppPolicyDetails) {
     return m
 }
 // CreateAuthenticationAppPolicyDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationAppPolicyDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationAppPolicyDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuthenticationAppPolicyDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AuthenticationAppPolicyDetails) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAdminConfiguration gets the adminConfiguration property value. The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.
+// returns a *AuthenticationAppAdminConfiguration when successful
 func (m *AuthenticationAppPolicyDetails) GetAdminConfiguration()(*AuthenticationAppAdminConfiguration) {
     val, err := m.GetBackingStore().Get("adminConfiguration")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *AuthenticationAppPolicyDetails) GetAdminConfiguration()(*Authentication
     return nil
 }
 // GetAuthenticationEvaluation gets the authenticationEvaluation property value. Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user's client authentication app. The possible values are: success, failure, unknownFutureValue.
+// returns a *AuthenticationAppEvaluation when successful
 func (m *AuthenticationAppPolicyDetails) GetAuthenticationEvaluation()(*AuthenticationAppEvaluation) {
     val, err := m.GetBackingStore().Get("authenticationEvaluation")
     if err != nil {
@@ -57,10 +60,12 @@ func (m *AuthenticationAppPolicyDetails) GetAuthenticationEvaluation()(*Authenti
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuthenticationAppPolicyDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationAppPolicyDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["adminConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *AuthenticationAppPolicyDetails) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuthenticationAppPolicyDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *AuthenticationAppPolicyDetails) GetOdataType()(*string) {
     return nil
 }
 // GetPolicyName gets the policyName property value. The name of the policy enforced on the user's authentication app.
+// returns a *string when successful
 func (m *AuthenticationAppPolicyDetails) GetPolicyName()(*string) {
     val, err := m.GetBackingStore().Get("policyName")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *AuthenticationAppPolicyDetails) GetPolicyName()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Refers to whether the policy executed as expected on the user's client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.
+// returns a *AuthenticationAppPolicyStatus when successful
 func (m *AuthenticationAppPolicyDetails) GetStatus()(*AuthenticationAppPolicyStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -237,7 +245,6 @@ func (m *AuthenticationAppPolicyDetails) SetStatus(value *AuthenticationAppPolic
         panic(err)
     }
 }
-// AuthenticationAppPolicyDetailsable 
 type AuthenticationAppPolicyDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

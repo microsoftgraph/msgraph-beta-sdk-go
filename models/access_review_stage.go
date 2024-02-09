@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewStage 
 type AccessReviewStage struct {
     Entity
 }
-// NewAccessReviewStage instantiates a new accessReviewStage and sets the default values.
+// NewAccessReviewStage instantiates a new AccessReviewStage and sets the default values.
 func NewAccessReviewStage()(*AccessReviewStage) {
     m := &AccessReviewStage{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessReviewStage()(*AccessReviewStage) {
     return m
 }
 // CreateAccessReviewStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewStageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewStage(), nil
 }
 // GetDecisions gets the decisions property value. Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
+// returns a []AccessReviewInstanceDecisionItemable when successful
 func (m *AccessReviewStage) GetDecisions()([]AccessReviewInstanceDecisionItemable) {
     val, err := m.GetBackingStore().Get("decisions")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessReviewStage) GetDecisions()([]AccessReviewInstanceDecisionItemabl
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.
+// returns a *Time when successful
 func (m *AccessReviewStage) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessReviewStage) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetFallbackReviewers gets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This can occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
+// returns a []AccessReviewReviewerScopeable when successful
 func (m *AccessReviewStage) GetFallbackReviewers()([]AccessReviewReviewerScopeable) {
     val, err := m.GetBackingStore().Get("fallbackReviewers")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessReviewStage) GetFallbackReviewers()([]AccessReviewReviewerScopeab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["decisions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +141,7 @@ func (m *AccessReviewStage) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetReviewers gets the reviewers property value. This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
+// returns a []AccessReviewReviewerScopeable when successful
 func (m *AccessReviewStage) GetReviewers()([]AccessReviewReviewerScopeable) {
     val, err := m.GetBackingStore().Get("reviewers")
     if err != nil {
@@ -148,6 +153,7 @@ func (m *AccessReviewStage) GetReviewers()([]AccessReviewReviewerScopeable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *AccessReviewStage) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -159,6 +165,7 @@ func (m *AccessReviewStage) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetStatus gets the status property value. Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.
+// returns a *string when successful
 func (m *AccessReviewStage) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -273,7 +280,6 @@ func (m *AccessReviewStage) SetStatus(value *string)() {
         panic(err)
     }
 }
-// AccessReviewStageable 
 type AccessReviewStageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

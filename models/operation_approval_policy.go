@@ -9,7 +9,7 @@ import (
 type OperationApprovalPolicy struct {
     Entity
 }
-// NewOperationApprovalPolicy instantiates a new operationApprovalPolicy and sets the default values.
+// NewOperationApprovalPolicy instantiates a new OperationApprovalPolicy and sets the default values.
 func NewOperationApprovalPolicy()(*OperationApprovalPolicy) {
     m := &OperationApprovalPolicy{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewOperationApprovalPolicy()(*OperationApprovalPolicy) {
     return m
 }
 // CreateOperationApprovalPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOperationApprovalPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOperationApprovalPolicy(), nil
 }
 // GetApproverGroupIds gets the approverGroupIds property value. The Microsoft Entra ID (Azure AD) security group IDs for the approvers for the policy. This property is required when the policy is created, and is defined by the user to define the possible approvers for the policy.
+// returns a []string when successful
 func (m *OperationApprovalPolicy) GetApproverGroupIds()([]string) {
     val, err := m.GetBackingStore().Get("approverGroupIds")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *OperationApprovalPolicy) GetApproverGroupIds()([]string) {
     return nil
 }
 // GetDescription gets the description property value. Indicates the description of the policy. Maximum length of the description is 1024 characters. This property is not required, but can be used by the user to describe the policy.
+// returns a *string when successful
 func (m *OperationApprovalPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *OperationApprovalPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Indicates the display name of the policy. Maximum length of the display name is 128 characters. This property is required when the policy is created, and is defined by the user to identify the policy.
+// returns a *string when successful
 func (m *OperationApprovalPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *OperationApprovalPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OperationApprovalPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["approverGroupIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +117,16 @@ func (m *OperationApprovalPolicy) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["policySet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOperationApprovalPolicySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPolicySet(val.(OperationApprovalPolicySetable))
+        }
+        return nil
+    }
     res["policyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOperationApprovalPolicyType)
         if err != nil {
@@ -125,6 +140,7 @@ func (m *OperationApprovalPolicy) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Indicates the last DateTime that the policy was modified. The value cannot be modified and is automatically populated whenever values in the request are updated. For example, when the 'policyType' property changes from apps to scripts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only. This property is read-only.
+// returns a *Time when successful
 func (m *OperationApprovalPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -136,6 +152,7 @@ func (m *OperationApprovalPolicy) GetLastModifiedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetPolicyPlatform gets the policyPlatform property value. The set of available platforms for the OperationApprovalPolicy. Allows configuration of a policy to specific platform(s) for approval. If no specific platform is required or applicable, the platform is `notApplicable`.
+// returns a *OperationApprovalPolicyPlatform when successful
 func (m *OperationApprovalPolicy) GetPolicyPlatform()(*OperationApprovalPolicyPlatform) {
     val, err := m.GetBackingStore().Get("policyPlatform")
     if err != nil {
@@ -146,7 +163,20 @@ func (m *OperationApprovalPolicy) GetPolicyPlatform()(*OperationApprovalPolicyPl
     }
     return nil
 }
+// GetPolicySet gets the policySet property value. Indicates areas of the Intune UX that could support MAA UX for the current logged in user. This property is required, and is defined by the user in order to correctly show the expected experience.
+// returns a OperationApprovalPolicySetable when successful
+func (m *OperationApprovalPolicy) GetPolicySet()(OperationApprovalPolicySetable) {
+    val, err := m.GetBackingStore().Get("policySet")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OperationApprovalPolicySetable)
+    }
+    return nil
+}
 // GetPolicyType gets the policyType property value. The set of available policy types that can be configured for approval. There is no default value for this enum, indicating that the policy type must always be chosen.
+// returns a *OperationApprovalPolicyType when successful
 func (m *OperationApprovalPolicy) GetPolicyType()(*OperationApprovalPolicyType) {
     val, err := m.GetBackingStore().Get("policyType")
     if err != nil {
@@ -184,6 +214,12 @@ func (m *OperationApprovalPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
     if m.GetPolicyPlatform() != nil {
         cast := (*m.GetPolicyPlatform()).String()
         err = writer.WriteStringValue("policyPlatform", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("policySet", m.GetPolicySet())
         if err != nil {
             return err
         }
@@ -232,6 +268,13 @@ func (m *OperationApprovalPolicy) SetPolicyPlatform(value *OperationApprovalPoli
         panic(err)
     }
 }
+// SetPolicySet sets the policySet property value. Indicates areas of the Intune UX that could support MAA UX for the current logged in user. This property is required, and is defined by the user in order to correctly show the expected experience.
+func (m *OperationApprovalPolicy) SetPolicySet(value OperationApprovalPolicySetable)() {
+    err := m.GetBackingStore().Set("policySet", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicyType sets the policyType property value. The set of available policy types that can be configured for approval. There is no default value for this enum, indicating that the policy type must always be chosen.
 func (m *OperationApprovalPolicy) SetPolicyType(value *OperationApprovalPolicyType)() {
     err := m.GetBackingStore().Set("policyType", value)
@@ -239,7 +282,6 @@ func (m *OperationApprovalPolicy) SetPolicyType(value *OperationApprovalPolicyTy
         panic(err)
     }
 }
-// OperationApprovalPolicyable 
 type OperationApprovalPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -248,11 +290,13 @@ type OperationApprovalPolicyable interface {
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPolicyPlatform()(*OperationApprovalPolicyPlatform)
+    GetPolicySet()(OperationApprovalPolicySetable)
     GetPolicyType()(*OperationApprovalPolicyType)
     SetApproverGroupIds(value []string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPolicyPlatform(value *OperationApprovalPolicyPlatform)()
+    SetPolicySet(value OperationApprovalPolicySetable)()
     SetPolicyType(value *OperationApprovalPolicyType)()
 }

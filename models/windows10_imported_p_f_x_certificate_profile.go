@@ -8,7 +8,7 @@ import (
 type Windows10ImportedPFXCertificateProfile struct {
     WindowsCertificateProfileBase
 }
-// NewWindows10ImportedPFXCertificateProfile instantiates a new windows10ImportedPFXCertificateProfile and sets the default values.
+// NewWindows10ImportedPFXCertificateProfile instantiates a new Windows10ImportedPFXCertificateProfile and sets the default values.
 func NewWindows10ImportedPFXCertificateProfile()(*Windows10ImportedPFXCertificateProfile) {
     m := &Windows10ImportedPFXCertificateProfile{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),
@@ -18,10 +18,12 @@ func NewWindows10ImportedPFXCertificateProfile()(*Windows10ImportedPFXCertificat
     return m
 }
 // CreateWindows10ImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10ImportedPFXCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10ImportedPFXCertificateProfile(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10ImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsCertificateProfileBase.GetFieldDeserializers()
     res["intendedPurpose"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -53,6 +55,7 @@ func (m *Windows10ImportedPFXCertificateProfile) GetFieldDeserializers()(map[str
     return res
 }
 // GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
+// returns a *IntendedPurpose when successful
 func (m *Windows10ImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose) {
     val, err := m.GetBackingStore().Get("intendedPurpose")
     if err != nil {
@@ -64,6 +67,7 @@ func (m *Windows10ImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedP
     return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+// returns a []ManagedDeviceCertificateStateable when successful
 func (m *Windows10ImportedPFXCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
     if err != nil {
@@ -115,7 +119,6 @@ func (m *Windows10ImportedPFXCertificateProfile) SetManagedDeviceCertificateStat
         panic(err)
     }
 }
-// Windows10ImportedPFXCertificateProfileable 
 type Windows10ImportedPFXCertificateProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsCertificateProfileBaseable

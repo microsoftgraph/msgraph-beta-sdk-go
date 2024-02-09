@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcServicePlan 
 type CloudPcServicePlan struct {
     Entity
 }
-// NewCloudPcServicePlan instantiates a new cloudPcServicePlan and sets the default values.
+// NewCloudPcServicePlan instantiates a new CloudPcServicePlan and sets the default values.
 func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     m := &CloudPcServicePlan{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCloudPcServicePlan()(*CloudPcServicePlan) {
     return m
 }
 // CreateCloudPcServicePlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcServicePlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcServicePlan(), nil
 }
 // GetDisplayName gets the displayName property value. The name for the service plan. Read-only.
+// returns a *string when successful
 func (m *CloudPcServicePlan) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CloudPcServicePlan) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +118,7 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetProvisioningType gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
+// returns a *CloudPcProvisioningType when successful
 func (m *CloudPcServicePlan) GetProvisioningType()(*CloudPcProvisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
     if err != nil {
@@ -127,6 +130,7 @@ func (m *CloudPcServicePlan) GetProvisioningType()(*CloudPcProvisioningType) {
     return nil
 }
 // GetRamInGB gets the ramInGB property value. The size of the RAM in GB. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
     val, err := m.GetBackingStore().Get("ramInGB")
     if err != nil {
@@ -138,6 +142,7 @@ func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
     return nil
 }
 // GetStorageInGB gets the storageInGB property value. The size of the OS Disk in GB. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
     val, err := m.GetBackingStore().Get("storageInGB")
     if err != nil {
@@ -149,6 +154,7 @@ func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
     return nil
 }
 // GetSupportedSolution gets the supportedSolution property value. The supportedSolution property
+// returns a *CloudPcManagementService when successful
 func (m *CloudPcServicePlan) GetSupportedSolution()(*CloudPcManagementService) {
     val, err := m.GetBackingStore().Get("supportedSolution")
     if err != nil {
@@ -160,6 +166,7 @@ func (m *CloudPcServicePlan) GetSupportedSolution()(*CloudPcManagementService) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+// returns a *CloudPcServicePlanType when successful
 func (m *CloudPcServicePlan) GetTypeEscaped()(*CloudPcServicePlanType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -171,6 +178,7 @@ func (m *CloudPcServicePlan) GetTypeEscaped()(*CloudPcServicePlanType) {
     return nil
 }
 // GetUserProfileInGB gets the userProfileInGB property value. The size of the user profile disk in GB. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcServicePlan) GetUserProfileInGB()(*int32) {
     val, err := m.GetBackingStore().Get("userProfileInGB")
     if err != nil {
@@ -182,6 +190,7 @@ func (m *CloudPcServicePlan) GetUserProfileInGB()(*int32) {
     return nil
 }
 // GetVCpuCount gets the vCpuCount property value. The number of vCPUs. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcServicePlan) GetVCpuCount()(*int32) {
     val, err := m.GetBackingStore().Get("vCpuCount")
     if err != nil {
@@ -307,7 +316,6 @@ func (m *CloudPcServicePlan) SetVCpuCount(value *int32)() {
         panic(err)
     }
 }
-// CloudPcServicePlanable 
 type CloudPcServicePlanable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

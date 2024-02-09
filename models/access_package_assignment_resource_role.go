@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignmentResourceRole 
 type AccessPackageAssignmentResourceRole struct {
     Entity
 }
-// NewAccessPackageAssignmentResourceRole instantiates a new accessPackageAssignmentResourceRole and sets the default values.
+// NewAccessPackageAssignmentResourceRole instantiates a new AccessPackageAssignmentResourceRole and sets the default values.
 func NewAccessPackageAssignmentResourceRole()(*AccessPackageAssignmentResourceRole) {
     m := &AccessPackageAssignmentResourceRole{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAccessPackageAssignmentResourceRole()(*AccessPackageAssignmentResourceRo
     return m
 }
 // CreateAccessPackageAssignmentResourceRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageAssignmentResourceRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignmentResourceRole(), nil
 }
 // GetAccessPackageAssignments gets the accessPackageAssignments property value. The access package assignments resulting in this role assignment. Read-only. Nullable.
+// returns a []AccessPackageAssignmentable when successful
 func (m *AccessPackageAssignmentResourceRole) GetAccessPackageAssignments()([]AccessPackageAssignmentable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignments")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AccessPackageAssignmentResourceRole) GetAccessPackageAssignments()([]Ac
     return nil
 }
 // GetAccessPackageResourceRole gets the accessPackageResourceRole property value. The accessPackageResourceRole property
+// returns a AccessPackageResourceRoleable when successful
 func (m *AccessPackageAssignmentResourceRole) GetAccessPackageResourceRole()(AccessPackageResourceRoleable) {
     val, err := m.GetBackingStore().Get("accessPackageResourceRole")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AccessPackageAssignmentResourceRole) GetAccessPackageResourceRole()(Acc
     return nil
 }
 // GetAccessPackageResourceScope gets the accessPackageResourceScope property value. The accessPackageResourceScope property
+// returns a AccessPackageResourceScopeable when successful
 func (m *AccessPackageAssignmentResourceRole) GetAccessPackageResourceScope()(AccessPackageResourceScopeable) {
     val, err := m.GetBackingStore().Get("accessPackageResourceScope")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *AccessPackageAssignmentResourceRole) GetAccessPackageResourceScope()(Ac
     return nil
 }
 // GetAccessPackageSubject gets the accessPackageSubject property value. Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
+// returns a AccessPackageSubjectable when successful
 func (m *AccessPackageAssignmentResourceRole) GetAccessPackageSubject()(AccessPackageSubjectable) {
     val, err := m.GetBackingStore().Get("accessPackageSubject")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *AccessPackageAssignmentResourceRole) GetAccessPackageSubject()(AccessPa
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -145,6 +150,7 @@ func (m *AccessPackageAssignmentResourceRole) GetFieldDeserializers()(map[string
     return res
 }
 // GetOriginId gets the originId property value. A unique identifier relative to the origin system, corresponding to the originId property of the accessPackageResourceRole.
+// returns a *string when successful
 func (m *AccessPackageAssignmentResourceRole) GetOriginId()(*string) {
     val, err := m.GetBackingStore().Get("originId")
     if err != nil {
@@ -156,6 +162,7 @@ func (m *AccessPackageAssignmentResourceRole) GetOriginId()(*string) {
     return nil
 }
 // GetOriginSystem gets the originSystem property value. The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
+// returns a *string when successful
 func (m *AccessPackageAssignmentResourceRole) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
     if err != nil {
@@ -167,6 +174,7 @@ func (m *AccessPackageAssignmentResourceRole) GetOriginSystem()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The value is PendingFulfillment when the access package assignment hasn't yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
+// returns a *string when successful
 func (m *AccessPackageAssignmentResourceRole) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -282,7 +290,6 @@ func (m *AccessPackageAssignmentResourceRole) SetStatus(value *string)() {
         panic(err)
     }
 }
-// AccessPackageAssignmentResourceRoleable 
 type AccessPackageAssignmentResourceRoleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type DeviceManagementSettingProfileConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementSettingProfileConstraint instantiates a new deviceManagementSettingProfileConstraint and sets the default values.
+// NewDeviceManagementSettingProfileConstraint instantiates a new DeviceManagementSettingProfileConstraint and sets the default values.
 func NewDeviceManagementSettingProfileConstraint()(*DeviceManagementSettingProfileConstraint) {
     m := &DeviceManagementSettingProfileConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -18,10 +18,12 @@ func NewDeviceManagementSettingProfileConstraint()(*DeviceManagementSettingProfi
     return m
 }
 // CreateDeviceManagementSettingProfileConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingProfileConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementSettingProfileConstraint(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingProfileConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -53,6 +55,7 @@ func (m *DeviceManagementSettingProfileConstraint) GetFieldDeserializers()(map[s
     return res
 }
 // GetSource gets the source property value. The source of the entity
+// returns a *string when successful
 func (m *DeviceManagementSettingProfileConstraint) GetSource()(*string) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -64,6 +67,7 @@ func (m *DeviceManagementSettingProfileConstraint) GetSource()(*string) {
     return nil
 }
 // GetTypes gets the types property value. A collection of types this entity carries
+// returns a []string when successful
 func (m *DeviceManagementSettingProfileConstraint) GetTypes()([]string) {
     val, err := m.GetBackingStore().Get("types")
     if err != nil {
@@ -108,7 +112,6 @@ func (m *DeviceManagementSettingProfileConstraint) SetTypes(value []string)() {
         panic(err)
     }
 }
-// DeviceManagementSettingProfileConstraintable 
 type DeviceManagementSettingProfileConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

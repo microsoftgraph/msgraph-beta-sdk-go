@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerPkcsCertificateProfile struct {
     AndroidDeviceOwnerCertificateProfileBase
 }
-// NewAndroidDeviceOwnerPkcsCertificateProfile instantiates a new androidDeviceOwnerPkcsCertificateProfile and sets the default values.
+// NewAndroidDeviceOwnerPkcsCertificateProfile instantiates a new AndroidDeviceOwnerPkcsCertificateProfile and sets the default values.
 func NewAndroidDeviceOwnerPkcsCertificateProfile()(*AndroidDeviceOwnerPkcsCertificateProfile) {
     m := &AndroidDeviceOwnerPkcsCertificateProfile{
         AndroidDeviceOwnerCertificateProfileBase: *NewAndroidDeviceOwnerCertificateProfileBase(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceOwnerPkcsCertificateProfile()(*AndroidDeviceOwnerPkcsCertif
     return m
 }
 // CreateAndroidDeviceOwnerPkcsCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerPkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerPkcsCertificateProfile(), nil
 }
 // GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
+// returns a *AndroidDeviceOwnerCertificateAccessType when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
     val, err := m.GetBackingStore().Get("certificateAccessType")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificateAccessType()(*A
     return nil
 }
 // GetCertificateStore gets the certificateStore property value. CertificateStore types
+// returns a *CertificateStore when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificateStore()(*Certif
     return nil
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS Certificate Template Name
+// returns a *string when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificateTemplateName()(*string) {
     val, err := m.GetBackingStore().Get("certificateTemplateName")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificateTemplateName()(
     return nil
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS Certification Authority
+// returns a *string when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificationAuthority()(*string) {
     val, err := m.GetBackingStore().Get("certificationAuthority")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificationAuthority()(*
     return nil
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS Certification Authority Name
+// returns a *string when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificationAuthorityName()(*string) {
     val, err := m.GetBackingStore().Get("certificationAuthorityName")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificationAuthorityName
     return nil
 }
 // GetCertificationAuthorityType gets the certificationAuthorityType property value. Device Management Certification Authority Types.
+// returns a *DeviceManagementCertificationAuthority when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificationAuthorityType()(*DeviceManagementCertificationAuthority) {
     val, err := m.GetBackingStore().Get("certificationAuthorityType")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCertificationAuthorityType
     return nil
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
+// returns a []CustomSubjectAlternativeNameable when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
     val, err := m.GetBackingStore().Get("customSubjectAlternativeNames")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetCustomSubjectAlternativeNa
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidDeviceOwnerCertificateProfileBase.GetFieldDeserializers()
     res["certificateAccessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -232,6 +241,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetFieldDeserializers()(map[s
     return res
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+// returns a []ManagedDeviceCertificateStateable when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
     if err != nil {
@@ -243,6 +253,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetManagedDeviceCertificateSt
     return nil
 }
 // GetSilentCertificateAccessDetails gets the silentCertificateAccessDetails property value. Certificate access information. This collection can contain a maximum of 50 elements.
+// returns a []AndroidDeviceOwnerSilentCertificateAccessable when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetSilentCertificateAccessDetails()([]AndroidDeviceOwnerSilentCertificateAccessable) {
     val, err := m.GetBackingStore().Get("silentCertificateAccessDetails")
     if err != nil {
@@ -254,6 +265,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetSilentCertificateAccessDet
     return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
     if err != nil {
@@ -265,6 +277,7 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetSubjectAlternativeNameForm
     return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
+// returns a *string when successful
 func (m *AndroidDeviceOwnerPkcsCertificateProfile) GetSubjectNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectNameFormatString")
     if err != nil {
@@ -447,7 +460,6 @@ func (m *AndroidDeviceOwnerPkcsCertificateProfile) SetSubjectNameFormatString(va
         panic(err)
     }
 }
-// AndroidDeviceOwnerPkcsCertificateProfileable 
 type AndroidDeviceOwnerPkcsCertificateProfileable interface {
     AndroidDeviceOwnerCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

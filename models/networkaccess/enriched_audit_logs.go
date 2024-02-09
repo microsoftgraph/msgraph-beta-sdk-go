@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// EnrichedAuditLogs 
 type EnrichedAuditLogs struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewEnrichedAuditLogs instantiates a new enrichedAuditLogs and sets the default values.
+// NewEnrichedAuditLogs instantiates a new EnrichedAuditLogs and sets the default values.
 func NewEnrichedAuditLogs()(*EnrichedAuditLogs) {
     m := &EnrichedAuditLogs{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewEnrichedAuditLogs()(*EnrichedAuditLogs) {
     return m
 }
 // CreateEnrichedAuditLogsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnrichedAuditLogsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnrichedAuditLogs(), nil
 }
 // GetExchange gets the exchange property value. Exchange Online enriched audit logs settings.
+// returns a EnrichedAuditLogsSettingsable when successful
 func (m *EnrichedAuditLogs) GetExchange()(EnrichedAuditLogsSettingsable) {
     val, err := m.GetBackingStore().Get("exchange")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *EnrichedAuditLogs) GetExchange()(EnrichedAuditLogsSettingsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EnrichedAuditLogs) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["exchange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +69,7 @@ func (m *EnrichedAuditLogs) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetSharepoint gets the sharepoint property value. SharePoint Online enriched audit logs settings.
+// returns a EnrichedAuditLogsSettingsable when successful
 func (m *EnrichedAuditLogs) GetSharepoint()(EnrichedAuditLogsSettingsable) {
     val, err := m.GetBackingStore().Get("sharepoint")
     if err != nil {
@@ -78,6 +81,7 @@ func (m *EnrichedAuditLogs) GetSharepoint()(EnrichedAuditLogsSettingsable) {
     return nil
 }
 // GetTeams gets the teams property value. Teams enriched audit logs settings.
+// returns a EnrichedAuditLogsSettingsable when successful
 func (m *EnrichedAuditLogs) GetTeams()(EnrichedAuditLogsSettingsable) {
     val, err := m.GetBackingStore().Get("teams")
     if err != nil {
@@ -135,7 +139,6 @@ func (m *EnrichedAuditLogs) SetTeams(value EnrichedAuditLogsSettingsable)() {
         panic(err)
     }
 }
-// EnrichedAuditLogsable 
 type EnrichedAuditLogsable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

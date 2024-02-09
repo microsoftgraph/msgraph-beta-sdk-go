@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FilteringPolicyLink 
 type FilteringPolicyLink struct {
     PolicyLink
 }
-// NewFilteringPolicyLink instantiates a new filteringPolicyLink and sets the default values.
+// NewFilteringPolicyLink instantiates a new FilteringPolicyLink and sets the default values.
 func NewFilteringPolicyLink()(*FilteringPolicyLink) {
     m := &FilteringPolicyLink{
         PolicyLink: *NewPolicyLink(),
@@ -19,10 +18,12 @@ func NewFilteringPolicyLink()(*FilteringPolicyLink) {
     return m
 }
 // CreateFilteringPolicyLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFilteringPolicyLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFilteringPolicyLink(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the filtering Policy link was created.
+// returns a *Time when successful
 func (m *FilteringPolicyLink) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *FilteringPolicyLink) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FilteringPolicyLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyLink.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +81,7 @@ func (m *FilteringPolicyLink) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the policy was most recently modified.
+// returns a *Time when successful
 func (m *FilteringPolicyLink) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -90,6 +93,7 @@ func (m *FilteringPolicyLink) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetLoggingState gets the loggingState property value. The loggingState property
+// returns a *Status when successful
 func (m *FilteringPolicyLink) GetLoggingState()(*Status) {
     val, err := m.GetBackingStore().Get("loggingState")
     if err != nil {
@@ -101,6 +105,7 @@ func (m *FilteringPolicyLink) GetLoggingState()(*Status) {
     return nil
 }
 // GetPriority gets the priority property value. The priority property
+// returns a *int64 when successful
 func (m *FilteringPolicyLink) GetPriority()(*int64) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -172,7 +177,6 @@ func (m *FilteringPolicyLink) SetPriority(value *int64)() {
         panic(err)
     }
 }
-// FilteringPolicyLinkable 
 type FilteringPolicyLinkable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyLinkable

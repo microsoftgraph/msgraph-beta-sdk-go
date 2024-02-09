@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EntitlementManagement 
 type EntitlementManagement struct {
     Entity
 }
-// NewEntitlementManagement instantiates a new entitlementManagement and sets the default values.
+// NewEntitlementManagement instantiates a new EntitlementManagement and sets the default values.
 func NewEntitlementManagement()(*EntitlementManagement) {
     m := &EntitlementManagement{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewEntitlementManagement()(*EntitlementManagement) {
     return m
 }
 // CreateEntitlementManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEntitlementManagementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEntitlementManagement(), nil
 }
 // GetAccessPackageAssignmentApprovals gets the accessPackageAssignmentApprovals property value. The accessPackageAssignmentApprovals property
+// returns a []Approvalable when successful
 func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approvalable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignmentApprovals")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentApprovals()([]Approval
     return nil
 }
 // GetAccessPackageAssignmentPolicies gets the accessPackageAssignmentPolicies property value. Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
+// returns a []AccessPackageAssignmentPolicyable when successful
 func (m *EntitlementManagement) GetAccessPackageAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignmentPolicies")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentPolicies()([]AccessPac
     return nil
 }
 // GetAccessPackageAssignmentRequests gets the accessPackageAssignmentRequests property value. Represents access package assignment requests created by or on behalf of a user. DO NOT USE. TO BE RETIRED SOON. Use the assignmentRequests relationship instead.
+// returns a []AccessPackageAssignmentRequestable when successful
 func (m *EntitlementManagement) GetAccessPackageAssignmentRequests()([]AccessPackageAssignmentRequestable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignmentRequests")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentRequests()([]AccessPac
     return nil
 }
 // GetAccessPackageAssignmentResourceRoles gets the accessPackageAssignmentResourceRoles property value. Represents the resource-specific role which a subject has been assigned through an access package assignment.
+// returns a []AccessPackageAssignmentResourceRoleable when successful
 func (m *EntitlementManagement) GetAccessPackageAssignmentResourceRoles()([]AccessPackageAssignmentResourceRoleable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignmentResourceRoles")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignmentResourceRoles()([]Acce
     return nil
 }
 // GetAccessPackageAssignments gets the accessPackageAssignments property value. The assignment of an access package to a subject for a period of time.
+// returns a []AccessPackageAssignmentable when successful
 func (m *EntitlementManagement) GetAccessPackageAssignments()([]AccessPackageAssignmentable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignments")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *EntitlementManagement) GetAccessPackageAssignments()([]AccessPackageAss
     return nil
 }
 // GetAccessPackageCatalogs gets the accessPackageCatalogs property value. A container of access packages.
+// returns a []AccessPackageCatalogable when successful
 func (m *EntitlementManagement) GetAccessPackageCatalogs()([]AccessPackageCatalogable) {
     val, err := m.GetBackingStore().Get("accessPackageCatalogs")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *EntitlementManagement) GetAccessPackageCatalogs()([]AccessPackageCatalo
     return nil
 }
 // GetAccessPackageResourceEnvironments gets the accessPackageResourceEnvironments property value. A reference to the geolocation environment in which a resource is located.
+// returns a []AccessPackageResourceEnvironmentable when successful
 func (m *EntitlementManagement) GetAccessPackageResourceEnvironments()([]AccessPackageResourceEnvironmentable) {
     val, err := m.GetBackingStore().Get("accessPackageResourceEnvironments")
     if err != nil {
@@ -97,6 +104,7 @@ func (m *EntitlementManagement) GetAccessPackageResourceEnvironments()([]AccessP
     return nil
 }
 // GetAccessPackageResourceRequests gets the accessPackageResourceRequests property value. Represents a request to add or remove a resource to or from a catalog respectively.
+// returns a []AccessPackageResourceRequestable when successful
 func (m *EntitlementManagement) GetAccessPackageResourceRequests()([]AccessPackageResourceRequestable) {
     val, err := m.GetBackingStore().Get("accessPackageResourceRequests")
     if err != nil {
@@ -108,6 +116,7 @@ func (m *EntitlementManagement) GetAccessPackageResourceRequests()([]AccessPacka
     return nil
 }
 // GetAccessPackageResourceRoleScopes gets the accessPackageResourceRoleScopes property value. A reference to both a scope within a resource, and a role in that resource for that scope.
+// returns a []AccessPackageResourceRoleScopeable when successful
 func (m *EntitlementManagement) GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScopeable) {
     val, err := m.GetBackingStore().Get("accessPackageResourceRoleScopes")
     if err != nil {
@@ -119,6 +128,7 @@ func (m *EntitlementManagement) GetAccessPackageResourceRoleScopes()([]AccessPac
     return nil
 }
 // GetAccessPackageResources gets the accessPackageResources property value. A reference to a resource associated with an access package catalog.
+// returns a []AccessPackageResourceable when successful
 func (m *EntitlementManagement) GetAccessPackageResources()([]AccessPackageResourceable) {
     val, err := m.GetBackingStore().Get("accessPackageResources")
     if err != nil {
@@ -130,6 +140,7 @@ func (m *EntitlementManagement) GetAccessPackageResources()([]AccessPackageResou
     return nil
 }
 // GetAccessPackages gets the accessPackages property value. Represents access package objects.
+// returns a []AccessPackageable when successful
 func (m *EntitlementManagement) GetAccessPackages()([]AccessPackageable) {
     val, err := m.GetBackingStore().Get("accessPackages")
     if err != nil {
@@ -141,6 +152,7 @@ func (m *EntitlementManagement) GetAccessPackages()([]AccessPackageable) {
     return nil
 }
 // GetAssignmentRequests gets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
+// returns a []AccessPackageAssignmentRequestable when successful
 func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmentRequestable) {
     val, err := m.GetBackingStore().Get("assignmentRequests")
     if err != nil {
@@ -152,6 +164,7 @@ func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmen
     return nil
 }
 // GetConnectedOrganizations gets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
+// returns a []ConnectedOrganizationable when successful
 func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizationable) {
     val, err := m.GetBackingStore().Get("connectedOrganizations")
     if err != nil {
@@ -163,6 +176,7 @@ func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizat
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageAssignmentApprovals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -402,6 +416,7 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetSettings gets the settings property value. Represents the settings that control the behavior of Microsoft Entra entitlement management.
+// returns a EntitlementManagementSettingsable when successful
 func (m *EntitlementManagement) GetSettings()(EntitlementManagementSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -413,6 +428,7 @@ func (m *EntitlementManagement) GetSettings()(EntitlementManagementSettingsable)
     return nil
 }
 // GetSubjects gets the subjects property value. Represents the subjects within entitlement management.
+// returns a []AccessPackageSubjectable when successful
 func (m *EntitlementManagement) GetSubjects()([]AccessPackageSubjectable) {
     val, err := m.GetBackingStore().Get("subjects")
     if err != nil {
@@ -710,7 +726,6 @@ func (m *EntitlementManagement) SetSubjects(value []AccessPackageSubjectable)() 
         panic(err)
     }
 }
-// EntitlementManagementable 
 type EntitlementManagementable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,22 +4,25 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEventWebinar 
 type VirtualEventWebinar struct {
     VirtualEvent
 }
-// NewVirtualEventWebinar instantiates a new virtualEventWebinar and sets the default values.
+// NewVirtualEventWebinar instantiates a new VirtualEventWebinar and sets the default values.
 func NewVirtualEventWebinar()(*VirtualEventWebinar) {
     m := &VirtualEventWebinar{
         VirtualEvent: *NewVirtualEvent(),
     }
+    odataTypeValue := "#microsoft.graph.virtualEventWebinar"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateVirtualEventWebinarFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualEventWebinarFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventWebinar(), nil
 }
 // GetAudience gets the audience property value. To whom the webinar is visible.
+// returns a *MeetingAudience when successful
 func (m *VirtualEventWebinar) GetAudience()(*MeetingAudience) {
     val, err := m.GetBackingStore().Get("audience")
     if err != nil {
@@ -31,6 +34,7 @@ func (m *VirtualEventWebinar) GetAudience()(*MeetingAudience) {
     return nil
 }
 // GetCoOrganizers gets the coOrganizers property value. Identity information of coorganizers of the webinar.
+// returns a []CommunicationsUserIdentityable when successful
 func (m *VirtualEventWebinar) GetCoOrganizers()([]CommunicationsUserIdentityable) {
     val, err := m.GetBackingStore().Get("coOrganizers")
     if err != nil {
@@ -42,6 +46,7 @@ func (m *VirtualEventWebinar) GetCoOrganizers()([]CommunicationsUserIdentityable
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEventWebinar) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VirtualEvent.GetFieldDeserializers()
     res["audience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,6 +104,7 @@ func (m *VirtualEventWebinar) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetRegistrationConfiguration gets the registrationConfiguration property value. The registrationConfiguration property
+// returns a VirtualEventWebinarRegistrationConfigurationable when successful
 func (m *VirtualEventWebinar) GetRegistrationConfiguration()(VirtualEventWebinarRegistrationConfigurationable) {
     val, err := m.GetBackingStore().Get("registrationConfiguration")
     if err != nil {
@@ -110,6 +116,7 @@ func (m *VirtualEventWebinar) GetRegistrationConfiguration()(VirtualEventWebinar
     return nil
 }
 // GetRegistrations gets the registrations property value. Registration records of the webinar.
+// returns a []VirtualEventRegistrationable when successful
 func (m *VirtualEventWebinar) GetRegistrations()([]VirtualEventRegistrationable) {
     val, err := m.GetBackingStore().Get("registrations")
     if err != nil {
@@ -193,7 +200,6 @@ func (m *VirtualEventWebinar) SetRegistrations(value []VirtualEventRegistrationa
         panic(err)
     }
 }
-// VirtualEventWebinarable 
 type VirtualEventWebinarable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VirtualEventable

@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DeviceAppPerformance 
 type DeviceAppPerformance struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewDeviceAppPerformance instantiates a new deviceAppPerformance and sets the default values.
+// NewDeviceAppPerformance instantiates a new DeviceAppPerformance and sets the default values.
 func NewDeviceAppPerformance()(*DeviceAppPerformance) {
     m := &DeviceAppPerformance{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewDeviceAppPerformance()(*DeviceAppPerformance) {
     return m
 }
 // CreateDeviceAppPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceAppPerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceAppPerformance(), nil
 }
 // GetAppFriendlyName gets the appFriendlyName property value. The appFriendlyName property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetAppFriendlyName()(*string) {
     val, err := m.GetBackingStore().Get("appFriendlyName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DeviceAppPerformance) GetAppFriendlyName()(*string) {
     return nil
 }
 // GetAppName gets the appName property value. The appName property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetAppName()(*string) {
     val, err := m.GetBackingStore().Get("appName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *DeviceAppPerformance) GetAppName()(*string) {
     return nil
 }
 // GetAppPublisher gets the appPublisher property value. The appPublisher property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetAppPublisher()(*string) {
     val, err := m.GetBackingStore().Get("appPublisher")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *DeviceAppPerformance) GetAppPublisher()(*string) {
     return nil
 }
 // GetAppVersion gets the appVersion property value. The appVersion property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetAppVersion()(*string) {
     val, err := m.GetBackingStore().Get("appVersion")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *DeviceAppPerformance) GetAppVersion()(*string) {
     return nil
 }
 // GetDeviceId gets the deviceId property value. The deviceId property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *DeviceAppPerformance) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceManufacturer gets the deviceManufacturer property value. The deviceManufacturer property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetDeviceManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("deviceManufacturer")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *DeviceAppPerformance) GetDeviceManufacturer()(*string) {
     return nil
 }
 // GetDeviceModel gets the deviceModel property value. The deviceModel property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *DeviceAppPerformance) GetDeviceModel()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. The deviceName property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -110,6 +118,7 @@ func (m *DeviceAppPerformance) GetDeviceName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceAppPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appFriendlyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -275,6 +284,7 @@ func (m *DeviceAppPerformance) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetHealthStatus()(*string) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
@@ -286,6 +296,7 @@ func (m *DeviceAppPerformance) GetHealthStatus()(*string) {
     return nil
 }
 // GetIsLatestUsedVersion gets the isLatestUsedVersion property value. The isLatestUsedVersion property
+// returns a *int32 when successful
 func (m *DeviceAppPerformance) GetIsLatestUsedVersion()(*int32) {
     val, err := m.GetBackingStore().Get("isLatestUsedVersion")
     if err != nil {
@@ -297,6 +308,7 @@ func (m *DeviceAppPerformance) GetIsLatestUsedVersion()(*int32) {
     return nil
 }
 // GetIsMostUsedVersion gets the isMostUsedVersion property value. The isMostUsedVersion property
+// returns a *int32 when successful
 func (m *DeviceAppPerformance) GetIsMostUsedVersion()(*int32) {
     val, err := m.GetBackingStore().Get("isMostUsedVersion")
     if err != nil {
@@ -308,6 +320,7 @@ func (m *DeviceAppPerformance) GetIsMostUsedVersion()(*int32) {
     return nil
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// returns a *Time when successful
 func (m *DeviceAppPerformance) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -319,6 +332,7 @@ func (m *DeviceAppPerformance) GetLastUpdatedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The tenantDisplayName property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetTenantDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("tenantDisplayName")
     if err != nil {
@@ -330,6 +344,7 @@ func (m *DeviceAppPerformance) GetTenantDisplayName()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
+// returns a *string when successful
 func (m *DeviceAppPerformance) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -341,6 +356,7 @@ func (m *DeviceAppPerformance) GetTenantId()(*string) {
     return nil
 }
 // GetTotalAppCrashCount gets the totalAppCrashCount property value. The totalAppCrashCount property
+// returns a *int32 when successful
 func (m *DeviceAppPerformance) GetTotalAppCrashCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalAppCrashCount")
     if err != nil {
@@ -352,6 +368,7 @@ func (m *DeviceAppPerformance) GetTotalAppCrashCount()(*int32) {
     return nil
 }
 // GetTotalAppFreezeCount gets the totalAppFreezeCount property value. The totalAppFreezeCount property
+// returns a *int32 when successful
 func (m *DeviceAppPerformance) GetTotalAppFreezeCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalAppFreezeCount")
     if err != nil {
@@ -578,7 +595,6 @@ func (m *DeviceAppPerformance) SetTotalAppFreezeCount(value *int32)() {
         panic(err)
     }
 }
-// DeviceAppPerformanceable 
 type DeviceAppPerformanceable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

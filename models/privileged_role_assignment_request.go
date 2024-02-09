@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedRoleAssignmentRequest 
 type PrivilegedRoleAssignmentRequest struct {
     Entity
 }
-// NewPrivilegedRoleAssignmentRequest instantiates a new privilegedRoleAssignmentRequest and sets the default values.
+// NewPrivilegedRoleAssignmentRequest instantiates a new PrivilegedRoleAssignmentRequest and sets the default values.
 func NewPrivilegedRoleAssignmentRequest()(*PrivilegedRoleAssignmentRequest) {
     m := &PrivilegedRoleAssignmentRequest{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPrivilegedRoleAssignmentRequest()(*PrivilegedRoleAssignmentRequest) {
     return m
 }
 // CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedRoleAssignmentRequest(), nil
 }
 // GetAssignmentState gets the assignmentState property value. The assignmentState property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignmentRequest) GetAssignmentState()(*string) {
     val, err := m.GetBackingStore().Get("assignmentState")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetAssignmentState()(*string) {
     return nil
 }
 // GetDuration gets the duration property value. The duration property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignmentRequest) GetDuration()(*string) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetDuration()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegedRoleAssignmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignmentState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -168,6 +171,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetReason gets the reason property value. The reason property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignmentRequest) GetReason()(*string) {
     val, err := m.GetBackingStore().Get("reason")
     if err != nil {
@@ -179,6 +183,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetReason()(*string) {
     return nil
 }
 // GetRequestedDateTime gets the requestedDateTime property value. The requestedDateTime property
+// returns a *Time when successful
 func (m *PrivilegedRoleAssignmentRequest) GetRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestedDateTime")
     if err != nil {
@@ -190,6 +195,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetRequestedDateTime()(*i336074805fc85
     return nil
 }
 // GetRoleId gets the roleId property value. The roleId property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignmentRequest) GetRoleId()(*string) {
     val, err := m.GetBackingStore().Get("roleId")
     if err != nil {
@@ -201,6 +207,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetRoleId()(*string) {
     return nil
 }
 // GetRoleInfo gets the roleInfo property value. The roleInfo property
+// returns a PrivilegedRoleable when successful
 func (m *PrivilegedRoleAssignmentRequest) GetRoleInfo()(PrivilegedRoleable) {
     val, err := m.GetBackingStore().Get("roleInfo")
     if err != nil {
@@ -212,6 +219,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetRoleInfo()(PrivilegedRoleable) {
     return nil
 }
 // GetSchedule gets the schedule property value. The schedule property
+// returns a GovernanceScheduleable when successful
 func (m *PrivilegedRoleAssignmentRequest) GetSchedule()(GovernanceScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
     if err != nil {
@@ -223,6 +231,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetSchedule()(GovernanceScheduleable) 
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignmentRequest) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -234,6 +243,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetStatus()(*string) {
     return nil
 }
 // GetTicketNumber gets the ticketNumber property value. The ticketNumber property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignmentRequest) GetTicketNumber()(*string) {
     val, err := m.GetBackingStore().Get("ticketNumber")
     if err != nil {
@@ -245,6 +255,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetTicketNumber()(*string) {
     return nil
 }
 // GetTicketSystem gets the ticketSystem property value. The ticketSystem property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignmentRequest) GetTicketSystem()(*string) {
     val, err := m.GetBackingStore().Get("ticketSystem")
     if err != nil {
@@ -256,6 +267,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetTicketSystem()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignmentRequest) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -267,6 +279,7 @@ func (m *PrivilegedRoleAssignmentRequest) GetTypeEscaped()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The userId property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignmentRequest) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -441,7 +454,6 @@ func (m *PrivilegedRoleAssignmentRequest) SetUserId(value *string)() {
         panic(err)
     }
 }
-// PrivilegedRoleAssignmentRequestable 
 type PrivilegedRoleAssignmentRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

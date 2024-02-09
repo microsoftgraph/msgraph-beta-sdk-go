@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AuthenticationAttributeCollectionPageViewConfiguration 
 type AuthenticationAttributeCollectionPageViewConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuthenticationAttributeCollectionPageViewConfiguration instantiates a new authenticationAttributeCollectionPageViewConfiguration and sets the default values.
+// NewAuthenticationAttributeCollectionPageViewConfiguration instantiates a new AuthenticationAttributeCollectionPageViewConfiguration and sets the default values.
 func NewAuthenticationAttributeCollectionPageViewConfiguration()(*AuthenticationAttributeCollectionPageViewConfiguration) {
     m := &AuthenticationAttributeCollectionPageViewConfiguration{
     }
@@ -19,10 +18,12 @@ func NewAuthenticationAttributeCollectionPageViewConfiguration()(*Authentication
     return m
 }
 // CreateAuthenticationAttributeCollectionPageViewConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationAttributeCollectionPageViewConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationAttributeCollectionPageViewConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetAdditionalDa
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDescription gets the description property value. The description of the page.
+// returns a *string when successful
 func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetDescription(
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +105,7 @@ func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetFieldDeseria
     return res
 }
 // GetInputs gets the inputs property value. The display configuration of attributes being collected on the attribute collection page.
+// returns a []AuthenticationAttributeCollectionInputConfigurationable when successful
 func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetInputs()([]AuthenticationAttributeCollectionInputConfigurationable) {
     val, err := m.GetBackingStore().Get("inputs")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetInputs()([]A
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetOdataType()(
     return nil
 }
 // GetTitle gets the title property value. The title of the attribute collection page.
+// returns a *string when successful
 func (m *AuthenticationAttributeCollectionPageViewConfiguration) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *AuthenticationAttributeCollectionPageViewConfiguration) SetTitle(value 
         panic(err)
     }
 }
-// AuthenticationAttributeCollectionPageViewConfigurationable 
 type AuthenticationAttributeCollectionPageViewConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

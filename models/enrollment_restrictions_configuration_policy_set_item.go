@@ -8,7 +8,7 @@ import (
 type EnrollmentRestrictionsConfigurationPolicySetItem struct {
     PolicySetItem
 }
-// NewEnrollmentRestrictionsConfigurationPolicySetItem instantiates a new enrollmentRestrictionsConfigurationPolicySetItem and sets the default values.
+// NewEnrollmentRestrictionsConfigurationPolicySetItem instantiates a new EnrollmentRestrictionsConfigurationPolicySetItem and sets the default values.
 func NewEnrollmentRestrictionsConfigurationPolicySetItem()(*EnrollmentRestrictionsConfigurationPolicySetItem) {
     m := &EnrollmentRestrictionsConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
@@ -18,10 +18,12 @@ func NewEnrollmentRestrictionsConfigurationPolicySetItem()(*EnrollmentRestrictio
     return m
 }
 // CreateEnrollmentRestrictionsConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnrollmentRestrictionsConfigurationPolicySetItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnrollmentRestrictionsConfigurationPolicySetItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicySetItem.GetFieldDeserializers()
     res["limit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetFieldDeserializers
     return res
 }
 // GetLimit gets the limit property value. Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.
+// returns a *int32 when successful
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetLimit()(*int32) {
     val, err := m.GetBackingStore().Get("limit")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetLimit()(*int32) {
     return nil
 }
 // GetPriority gets the priority property value. Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.
+// returns a *int32 when successful
 func (m *EnrollmentRestrictionsConfigurationPolicySetItem) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *EnrollmentRestrictionsConfigurationPolicySetItem) SetPriority(value *in
         panic(err)
     }
 }
-// EnrollmentRestrictionsConfigurationPolicySetItemable 
 type EnrollmentRestrictionsConfigurationPolicySetItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicySetItemable

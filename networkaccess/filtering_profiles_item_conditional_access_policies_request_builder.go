@@ -40,6 +40,7 @@ type FilteringProfilesItemConditionalAccessPoliciesRequestBuilderGetRequestConfi
     QueryParameters *FilteringProfilesItemConditionalAccessPoliciesRequestBuilderGetQueryParameters
 }
 // ByConditionalAccessPolicyId provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.networkaccess.filteringProfile entity.
+// returns a *FilteringProfilesItemConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder when successful
 func (m *FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) ByConditionalAccessPolicyId(conditionalAccessPolicyId string)(*FilteringProfilesItemConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) ByConditi
     }
     return NewFilteringProfilesItemConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewFilteringProfilesItemConditionalAccessPoliciesRequestBuilderInternal instantiates a new ConditionalAccessPoliciesRequestBuilder and sets the default values.
+// NewFilteringProfilesItemConditionalAccessPoliciesRequestBuilderInternal instantiates a new FilteringProfilesItemConditionalAccessPoliciesRequestBuilder and sets the default values.
 func NewFilteringProfilesItemConditionalAccessPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) {
     m := &FilteringProfilesItemConditionalAccessPoliciesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/filteringProfiles/{filteringProfile%2Did}/conditionalAccessPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/filteringProfiles/{filteringProfile%2Did}/conditionalAccessPolicies{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewFilteringProfilesItemConditionalAccessPoliciesRequestBuilder instantiates a new ConditionalAccessPoliciesRequestBuilder and sets the default values.
+// NewFilteringProfilesItemConditionalAccessPoliciesRequestBuilder instantiates a new FilteringProfilesItemConditionalAccessPoliciesRequestBuilder and sets the default values.
 func NewFilteringProfilesItemConditionalAccessPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFilteringProfilesItemConditionalAccessPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *FilteringProfilesItemConditionalAccessPoliciesCountRequestBuilder when successful
 func (m *FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) Count()(*FilteringProfilesItemConditionalAccessPoliciesCountRequestBuilder) {
     return NewFilteringProfilesItemConditionalAccessPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a set of associated policies defined to regulate access to resources or systems based on specific conditions. Automatically expanded.
+// returns a ConditionalAccessPolicyCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *FilteringProfilesItemConditionalAccessPoliciesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConditionalAccessPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateConditionalAccessPolicyCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) Get(ctx c
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConditionalAccessPolicyCollectionResponseable), nil
 }
 // ToGetRequestInformation a set of associated policies defined to regulate access to resources or systems based on specific conditions. Automatically expanded.
+// returns a *RequestInformation when successful
 func (m *FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringProfilesItemConditionalAccessPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *FilteringProfilesItemConditionalAccessPoliciesRequestBuilder when successful
 func (m *FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) WithUrl(rawUrl string)(*FilteringProfilesItemConditionalAccessPoliciesRequestBuilder) {
     return NewFilteringProfilesItemConditionalAccessPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

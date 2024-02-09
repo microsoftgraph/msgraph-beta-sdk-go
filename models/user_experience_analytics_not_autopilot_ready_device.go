@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsNotAutopilotReadyDevice struct {
     Entity
 }
-// NewUserExperienceAnalyticsNotAutopilotReadyDevice instantiates a new userExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
+// NewUserExperienceAnalyticsNotAutopilotReadyDevice instantiates a new UserExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
 func NewUserExperienceAnalyticsNotAutopilotReadyDevice()(*UserExperienceAnalyticsNotAutopilotReadyDevice) {
     m := &UserExperienceAnalyticsNotAutopilotReadyDevice{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsNotAutopilotReadyDevice()(*UserExperienceAnalytic
     return m
 }
 // CreateUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsNotAutopilotReadyDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsNotAutopilotReadyDevice(), nil
 }
 // GetAutoPilotProfileAssigned gets the autoPilotProfileAssigned property value. The intune device's autopilotProfileAssigned.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAutoPilotProfileAssigned()(*bool) {
     val, err := m.GetBackingStore().Get("autoPilotProfileAssigned")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAutoPilotProfileAssi
     return nil
 }
 // GetAutoPilotRegistered gets the autoPilotRegistered property value. The intune device's autopilotRegistered.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAutoPilotRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("autoPilotRegistered")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAutoPilotRegistered(
     return nil
 }
 // GetAzureAdJoinType gets the azureAdJoinType property value. The intune device's azure Ad joinType.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAzureAdJoinType()(*string) {
     val, err := m.GetBackingStore().Get("azureAdJoinType")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAzureAdJoinType()(*s
     return nil
 }
 // GetAzureAdRegistered gets the azureAdRegistered property value. The intune device's azureAdRegistered.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAzureAdRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("azureAdRegistered")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetAzureAdRegistered()(
     return nil
 }
 // GetDeviceName gets the deviceName property value. The intune device's name.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -75,6 +81,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetDeviceName()(*string
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["autoPilotProfileAssigned"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -170,6 +177,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetFieldDeserializers()
     return res
 }
 // GetManagedBy gets the managedBy property value. The intune device's managed by.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManagedBy()(*string) {
     val, err := m.GetBackingStore().Get("managedBy")
     if err != nil {
@@ -181,6 +189,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManagedBy()(*string)
     return nil
 }
 // GetManufacturer gets the manufacturer property value. The intune device's manufacturer.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -192,6 +201,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetManufacturer()(*stri
     return nil
 }
 // GetModel gets the model property value. The intune device's model.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -203,6 +213,7 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetModel()(*string) {
     return nil
 }
 // GetSerialNumber gets the serialNumber property value. The intune device's serial number.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -338,7 +349,6 @@ func (m *UserExperienceAnalyticsNotAutopilotReadyDevice) SetSerialNumber(value *
         panic(err)
     }
 }
-// UserExperienceAnalyticsNotAutopilotReadyDeviceable 
 type UserExperienceAnalyticsNotAutopilotReadyDeviceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,7 +2,6 @@ package security
 import (
     "errors"
 )
-// 
 type SubmissionResultCategory int
 
 const (

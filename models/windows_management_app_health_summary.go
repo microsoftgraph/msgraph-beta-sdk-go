@@ -8,7 +8,7 @@ import (
 type WindowsManagementAppHealthSummary struct {
     Entity
 }
-// NewWindowsManagementAppHealthSummary instantiates a new windowsManagementAppHealthSummary and sets the default values.
+// NewWindowsManagementAppHealthSummary instantiates a new WindowsManagementAppHealthSummary and sets the default values.
 func NewWindowsManagementAppHealthSummary()(*WindowsManagementAppHealthSummary) {
     m := &WindowsManagementAppHealthSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewWindowsManagementAppHealthSummary()(*WindowsManagementAppHealthSummary) 
     return m
 }
 // CreateWindowsManagementAppHealthSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsManagementAppHealthSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsManagementAppHealthSummary(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsManagementAppHealthSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["healthyDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,6 +57,7 @@ func (m *WindowsManagementAppHealthSummary) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetHealthyDeviceCount gets the healthyDeviceCount property value. Healthy device count.
+// returns a *int32 when successful
 func (m *WindowsManagementAppHealthSummary) GetHealthyDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("healthyDeviceCount")
     if err != nil {
@@ -66,6 +69,7 @@ func (m *WindowsManagementAppHealthSummary) GetHealthyDeviceCount()(*int32) {
     return nil
 }
 // GetUnhealthyDeviceCount gets the unhealthyDeviceCount property value. Unhealthy device count.
+// returns a *int32 when successful
 func (m *WindowsManagementAppHealthSummary) GetUnhealthyDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("unhealthyDeviceCount")
     if err != nil {
@@ -77,6 +81,7 @@ func (m *WindowsManagementAppHealthSummary) GetUnhealthyDeviceCount()(*int32) {
     return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Unknown device count.
+// returns a *int32 when successful
 func (m *WindowsManagementAppHealthSummary) GetUnknownDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownDeviceCount")
     if err != nil {
@@ -134,7 +139,6 @@ func (m *WindowsManagementAppHealthSummary) SetUnknownDeviceCount(value *int32)(
         panic(err)
     }
 }
-// WindowsManagementAppHealthSummaryable 
 type WindowsManagementAppHealthSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

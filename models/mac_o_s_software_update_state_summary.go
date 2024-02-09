@@ -9,7 +9,7 @@ import (
 type MacOSSoftwareUpdateStateSummary struct {
     Entity
 }
-// NewMacOSSoftwareUpdateStateSummary instantiates a new macOSSoftwareUpdateStateSummary and sets the default values.
+// NewMacOSSoftwareUpdateStateSummary instantiates a new MacOSSoftwareUpdateStateSummary and sets the default values.
 func NewMacOSSoftwareUpdateStateSummary()(*MacOSSoftwareUpdateStateSummary) {
     m := &MacOSSoftwareUpdateStateSummary{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewMacOSSoftwareUpdateStateSummary()(*MacOSSoftwareUpdateStateSummary) {
     return m
 }
 // CreateMacOSSoftwareUpdateStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSSoftwareUpdateStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSSoftwareUpdateStateSummary(), nil
 }
 // GetDisplayName gets the displayName property value. Human readable name of the software update
+// returns a *string when successful
 func (m *MacOSSoftwareUpdateStateSummary) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -97,6 +100,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last date time the report for this device and product key was updated.
+// returns a *Time when successful
 func (m *MacOSSoftwareUpdateStateSummary) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetLastUpdatedDateTime()(*i336074805fc
     return nil
 }
 // GetProductKey gets the productKey property value. Product key of the software update.
+// returns a *string when successful
 func (m *MacOSSoftwareUpdateStateSummary) GetProductKey()(*string) {
     val, err := m.GetBackingStore().Get("productKey")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetProductKey()(*string) {
     return nil
 }
 // GetState gets the state property value. MacOS Software Update State
+// returns a *MacOSSoftwareUpdateState when successful
 func (m *MacOSSoftwareUpdateStateSummary) GetState()(*MacOSSoftwareUpdateState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -130,6 +136,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetState()(*MacOSSoftwareUpdateState) 
     return nil
 }
 // GetUpdateCategory gets the updateCategory property value. MacOS Software Update Category
+// returns a *MacOSSoftwareUpdateCategory when successful
 func (m *MacOSSoftwareUpdateStateSummary) GetUpdateCategory()(*MacOSSoftwareUpdateCategory) {
     val, err := m.GetBackingStore().Get("updateCategory")
     if err != nil {
@@ -141,6 +148,7 @@ func (m *MacOSSoftwareUpdateStateSummary) GetUpdateCategory()(*MacOSSoftwareUpda
     return nil
 }
 // GetUpdateVersion gets the updateVersion property value. Version of the software update
+// returns a *string when successful
 func (m *MacOSSoftwareUpdateStateSummary) GetUpdateVersion()(*string) {
     val, err := m.GetBackingStore().Get("updateVersion")
     if err != nil {
@@ -239,7 +247,6 @@ func (m *MacOSSoftwareUpdateStateSummary) SetUpdateVersion(value *string)() {
         panic(err)
     }
 }
-// MacOSSoftwareUpdateStateSummaryable 
 type MacOSSoftwareUpdateStateSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

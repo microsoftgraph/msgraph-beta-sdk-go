@@ -36,6 +36,7 @@ type ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetReque
     QueryParameters *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetQueryParameters
 }
 // ByUserConfigurationId provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
+// returns a *ItemMailFoldersItemChildFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder when successful
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) ByUserConfigurationId(userConfigurationId string)(*ItemMailFoldersItemChildFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -46,32 +47,34 @@ func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) By
     }
     return NewItemMailFoldersItemChildFoldersItemUserConfigurationsUserConfigurationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderInternal instantiates a new UserConfigurationsRequestBuilder and sets the default values.
+// NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderInternal instantiates a new ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder and sets the default values.
 func NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) {
     m := &ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/userConfigurations{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/userConfigurations{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder instantiates a new UserConfigurationsRequestBuilder and sets the default values.
+// NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder instantiates a new ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder and sets the default values.
 func NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemMailFoldersItemChildFoldersItemUserConfigurationsCountRequestBuilder when successful
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) Count()(*ItemMailFoldersItemChildFoldersItemUserConfigurationsCountRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemUserConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get userConfigurations from users
+// returns a UserConfigurationCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserConfigurationCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -83,6 +86,7 @@ func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) Ge
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationCollectionResponseable), nil
 }
 // ToGetRequestInformation get userConfigurations from users
+// returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -96,6 +100,7 @@ func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder when successful
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

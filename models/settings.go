@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Settings 
 type Settings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSettings instantiates a new settings and sets the default values.
+// NewSettings instantiates a new Settings and sets the default values.
 func NewSettings()(*Settings) {
     m := &Settings{
     }
@@ -19,10 +18,12 @@ func NewSettings()(*Settings) {
     return m
 }
 // CreateSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Settings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *Settings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Settings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["hasGraphMailbox"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetHasGraphMailbox gets the hasGraphMailbox property value. Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
+// returns a *bool when successful
 func (m *Settings) GetHasGraphMailbox()(*bool) {
     val, err := m.GetBackingStore().Get("hasGraphMailbox")
     if err != nil {
@@ -95,6 +99,7 @@ func (m *Settings) GetHasGraphMailbox()(*bool) {
     return nil
 }
 // GetHasLicense gets the hasLicense property value. Specifies if the user has a MyAnalytics license assigned.
+// returns a *bool when successful
 func (m *Settings) GetHasLicense()(*bool) {
     val, err := m.GetBackingStore().Get("hasLicense")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *Settings) GetHasLicense()(*bool) {
     return nil
 }
 // GetHasOptedOut gets the hasOptedOut property value. Specifies if the user opted out of MyAnalytics.
+// returns a *bool when successful
 func (m *Settings) GetHasOptedOut()(*bool) {
     val, err := m.GetBackingStore().Get("hasOptedOut")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *Settings) GetHasOptedOut()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Settings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *Settings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// Settingsable 
 type Settingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

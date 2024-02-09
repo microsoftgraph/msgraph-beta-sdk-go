@@ -47,6 +47,7 @@ type NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByLocalizedNotificationMessageId provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
+// returns a *NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilder when successful
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) ByLocalizedNotificationMessageId(localizedNotificationMessageId string)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBui
     }
     return NewNotificationMessageTemplatesItemLocalizedNotificationMessagesLocalizedNotificationMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderInternal instantiates a new LocalizedNotificationMessagesRequestBuilder and sets the default values.
+// NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderInternal instantiates a new NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder and sets the default values.
 func NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) {
     m := &NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}/localizedNotificationMessages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}/localizedNotificationMessages{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder instantiates a new LocalizedNotificationMessagesRequestBuilder and sets the default values.
+// NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder instantiates a new NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder and sets the default values.
 func NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *NotificationMessageTemplatesItemLocalizedNotificationMessagesCountRequestBuilder when successful
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) Count()(*NotificationMessageTemplatesItemLocalizedNotificationMessagesCountRequestBuilder) {
     return NewNotificationMessageTemplatesItemLocalizedNotificationMessagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of localized messages for this Notification Message Template.
+// returns a LocalizedNotificationMessageCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateLocalizedNotificationMessageCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBui
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageCollectionResponseable), nil
 }
 // Post create new navigation property to localizedNotificationMessages for deviceManagement
+// returns a LocalizedNotificationMessageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable, requestConfiguration *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateLocalizedNotificationMessageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBui
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable), nil
 }
 // ToGetRequestInformation the list of localized messages for this Notification Message Template.
+// returns a *RequestInformation when successful
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBui
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to localizedNotificationMessages for deviceManagement
+// returns a *RequestInformation when successful
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LocalizedNotificationMessageable, requestConfiguration *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}/localizedNotificationMessages", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBui
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder when successful
 func (m *NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) WithUrl(rawUrl string)(*NotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder) {
     return NewNotificationMessageTemplatesItemLocalizedNotificationMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

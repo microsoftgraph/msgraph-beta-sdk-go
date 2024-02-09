@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomExtensionCalloutResult 
 type CustomExtensionCalloutResult struct {
     AuthenticationEventHandlerResult
 }
-// NewCustomExtensionCalloutResult instantiates a new customExtensionCalloutResult and sets the default values.
+// NewCustomExtensionCalloutResult instantiates a new CustomExtensionCalloutResult and sets the default values.
 func NewCustomExtensionCalloutResult()(*CustomExtensionCalloutResult) {
     m := &CustomExtensionCalloutResult{
         AuthenticationEventHandlerResult: *NewAuthenticationEventHandlerResult(),
@@ -19,10 +18,12 @@ func NewCustomExtensionCalloutResult()(*CustomExtensionCalloutResult) {
     return m
 }
 // CreateCustomExtensionCalloutResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomExtensionCalloutResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomExtensionCalloutResult(), nil
 }
 // GetCalloutDateTime gets the calloutDateTime property value. When the API transaction was initiated, the date and time information uses ISO 8601 format and is always in UTC time. Example: midnight on Jan 1, 2014, is reported as 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CustomExtensionCalloutResult) GetCalloutDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("calloutDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *CustomExtensionCalloutResult) GetCalloutDateTime()(*i336074805fc853987a
     return nil
 }
 // GetCustomExtensionId gets the customExtensionId property value. Identifier of the custom extension that was called.
+// returns a *string when successful
 func (m *CustomExtensionCalloutResult) GetCustomExtensionId()(*string) {
     val, err := m.GetBackingStore().Get("customExtensionId")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *CustomExtensionCalloutResult) GetCustomExtensionId()(*string) {
     return nil
 }
 // GetErrorCode gets the errorCode property value. Error code that was returned when the last API attempt failed.
+// returns a *int32 when successful
 func (m *CustomExtensionCalloutResult) GetErrorCode()(*int32) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *CustomExtensionCalloutResult) GetErrorCode()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomExtensionCalloutResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationEventHandlerResult.GetFieldDeserializers()
     res["calloutDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,6 +115,7 @@ func (m *CustomExtensionCalloutResult) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetHttpStatus gets the httpStatus property value. The HTTP status code that was returned by the target API endpoint after the last API attempt.
+// returns a *int32 when successful
 func (m *CustomExtensionCalloutResult) GetHttpStatus()(*int32) {
     val, err := m.GetBackingStore().Get("httpStatus")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *CustomExtensionCalloutResult) GetHttpStatus()(*int32) {
     return nil
 }
 // GetNumberOfAttempts gets the numberOfAttempts property value. The number of API calls to the customer's API.
+// returns a *int32 when successful
 func (m *CustomExtensionCalloutResult) GetNumberOfAttempts()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfAttempts")
     if err != nil {
@@ -205,7 +211,6 @@ func (m *CustomExtensionCalloutResult) SetNumberOfAttempts(value *int32)() {
         panic(err)
     }
 }
-// CustomExtensionCalloutResultable 
 type CustomExtensionCalloutResultable interface {
     AuthenticationEventHandlerResultable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

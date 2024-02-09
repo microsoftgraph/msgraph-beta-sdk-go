@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BaseSitePage 
 type BaseSitePage struct {
     BaseItem
 }
-// NewBaseSitePage instantiates a new baseSitePage and sets the default values.
+// NewBaseSitePage instantiates a new BaseSitePage and sets the default values.
 func NewBaseSitePage()(*BaseSitePage) {
     m := &BaseSitePage{
         BaseItem: *NewBaseItem(),
@@ -18,6 +17,7 @@ func NewBaseSitePage()(*BaseSitePage) {
     return m
 }
 // CreateBaseSitePageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBaseSitePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateBaseSitePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
     return NewBaseSitePage(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BaseSitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["pageLayout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +76,7 @@ func (m *BaseSitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetPageLayout gets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
+// returns a *PageLayoutType when successful
 func (m *BaseSitePage) GetPageLayout()(*PageLayoutType) {
     val, err := m.GetBackingStore().Get("pageLayout")
     if err != nil {
@@ -86,6 +88,7 @@ func (m *BaseSitePage) GetPageLayout()(*PageLayoutType) {
     return nil
 }
 // GetPublishingState gets the publishingState property value. The publishing status and the MM.mm version of the page.
+// returns a PublicationFacetable when successful
 func (m *BaseSitePage) GetPublishingState()(PublicationFacetable) {
     val, err := m.GetBackingStore().Get("publishingState")
     if err != nil {
@@ -97,6 +100,7 @@ func (m *BaseSitePage) GetPublishingState()(PublicationFacetable) {
     return nil
 }
 // GetTitle gets the title property value. Title of the sitePage.
+// returns a *string when successful
 func (m *BaseSitePage) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -155,7 +159,6 @@ func (m *BaseSitePage) SetTitle(value *string)() {
         panic(err)
     }
 }
-// BaseSitePageable 
 type BaseSitePageable interface {
     BaseItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

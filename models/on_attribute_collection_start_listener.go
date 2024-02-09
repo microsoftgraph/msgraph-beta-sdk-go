@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnAttributeCollectionStartListener 
 type OnAttributeCollectionStartListener struct {
     AuthenticationEventListener
 }
-// NewOnAttributeCollectionStartListener instantiates a new onAttributeCollectionStartListener and sets the default values.
+// NewOnAttributeCollectionStartListener instantiates a new OnAttributeCollectionStartListener and sets the default values.
 func NewOnAttributeCollectionStartListener()(*OnAttributeCollectionStartListener) {
     m := &OnAttributeCollectionStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),
@@ -18,10 +17,12 @@ func NewOnAttributeCollectionStartListener()(*OnAttributeCollectionStartListener
     return m
 }
 // CreateOnAttributeCollectionStartListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnAttributeCollectionStartListenerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnAttributeCollectionStartListener(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnAttributeCollectionStartListener) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationEventListener.GetFieldDeserializers()
     res["handler"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *OnAttributeCollectionStartListener) GetFieldDeserializers()(map[string]
     return res
 }
 // GetHandler gets the handler property value. Configuration for what to invoke if the event resolves to this listener.
+// returns a OnAttributeCollectionStartHandlerable when successful
 func (m *OnAttributeCollectionStartListener) GetHandler()(OnAttributeCollectionStartHandlerable) {
     val, err := m.GetBackingStore().Get("handler")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *OnAttributeCollectionStartListener) SetHandler(value OnAttributeCollect
         panic(err)
     }
 }
-// OnAttributeCollectionStartListenerable 
 type OnAttributeCollectionStartListenerable interface {
     AuthenticationEventListenerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

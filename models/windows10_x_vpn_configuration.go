@@ -9,7 +9,7 @@ import (
 type Windows10XVpnConfiguration struct {
     DeviceManagementResourceAccessProfileBase
 }
-// NewWindows10XVpnConfiguration instantiates a new windows10XVpnConfiguration and sets the default values.
+// NewWindows10XVpnConfiguration instantiates a new Windows10XVpnConfiguration and sets the default values.
 func NewWindows10XVpnConfiguration()(*Windows10XVpnConfiguration) {
     m := &Windows10XVpnConfiguration{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),
@@ -19,10 +19,12 @@ func NewWindows10XVpnConfiguration()(*Windows10XVpnConfiguration) {
     return m
 }
 // CreateWindows10XVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10XVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10XVpnConfiguration(), nil
 }
 // GetAuthenticationCertificateId gets the authenticationCertificateId property value. ID to the Authentication Certificate
+// returns a *UUID when successful
 func (m *Windows10XVpnConfiguration) GetAuthenticationCertificateId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("authenticationCertificateId")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *Windows10XVpnConfiguration) GetAuthenticationCertificateId()(*i561e97a8
     return nil
 }
 // GetCustomXml gets the customXml property value. Custom XML commands that configures the VPN connection. (UTF8 byte encoding)
+// returns a []byte when successful
 func (m *Windows10XVpnConfiguration) GetCustomXml()([]byte) {
     val, err := m.GetBackingStore().Get("customXml")
     if err != nil {
@@ -45,6 +48,7 @@ func (m *Windows10XVpnConfiguration) GetCustomXml()([]byte) {
     return nil
 }
 // GetCustomXmlFileName gets the customXmlFileName property value. Custom Xml file name.
+// returns a *string when successful
 func (m *Windows10XVpnConfiguration) GetCustomXmlFileName()(*string) {
     val, err := m.GetBackingStore().Get("customXmlFileName")
     if err != nil {
@@ -56,6 +60,7 @@ func (m *Windows10XVpnConfiguration) GetCustomXmlFileName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10XVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementResourceAccessProfileBase.GetFieldDeserializers()
     res["authenticationCertificateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,7 +142,6 @@ func (m *Windows10XVpnConfiguration) SetCustomXmlFileName(value *string)() {
         panic(err)
     }
 }
-// Windows10XVpnConfigurationable 
 type Windows10XVpnConfigurationable interface {
     DeviceManagementResourceAccessProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

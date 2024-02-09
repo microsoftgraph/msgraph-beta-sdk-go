@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GetOffice365GroupsActivityCountsWithPeriodResponse 
-// Deprecated: This class is obsolete. Use getOffice365GroupsActivityCountsWithPeriodGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type GetOffice365GroupsActivityCountsWithPeriodResponse struct {
     GetOffice365GroupsActivityCountsWithPeriodGetResponse
 }
@@ -17,11 +16,11 @@ func NewGetOffice365GroupsActivityCountsWithPeriodResponse()(*GetOffice365Groups
     return m
 }
 // CreateGetOffice365GroupsActivityCountsWithPeriodResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGetOffice365GroupsActivityCountsWithPeriodResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetOffice365GroupsActivityCountsWithPeriodResponse(), nil
 }
-// GetOffice365GroupsActivityCountsWithPeriodResponseable 
-// Deprecated: This class is obsolete. Use getOffice365GroupsActivityCountsWithPeriodGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type GetOffice365GroupsActivityCountsWithPeriodResponseable interface {
     GetOffice365GroupsActivityCountsWithPeriodGetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type DepEnrollmentBaseProfile struct {
     EnrollmentProfile
 }
-// NewDepEnrollmentBaseProfile instantiates a new depEnrollmentBaseProfile and sets the default values.
+// NewDepEnrollmentBaseProfile instantiates a new DepEnrollmentBaseProfile and sets the default values.
 func NewDepEnrollmentBaseProfile()(*DepEnrollmentBaseProfile) {
     m := &DepEnrollmentBaseProfile{
         EnrollmentProfile: *NewEnrollmentProfile(),
@@ -19,6 +19,7 @@ func NewDepEnrollmentBaseProfile()(*DepEnrollmentBaseProfile) {
     return m
 }
 // CreateDepEnrollmentBaseProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDepEnrollmentBaseProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +44,7 @@ func CreateDepEnrollmentBaseProfileFromDiscriminatorValue(parseNode i878a80d2330
     return NewDepEnrollmentBaseProfile(), nil
 }
 // GetAppleIdDisabled gets the appleIdDisabled property value. Indicates if Apple id setup pane is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetAppleIdDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("appleIdDisabled")
     if err != nil {
@@ -54,6 +56,7 @@ func (m *DepEnrollmentBaseProfile) GetAppleIdDisabled()(*bool) {
     return nil
 }
 // GetApplePayDisabled gets the applePayDisabled property value. Indicates if Apple pay setup pane is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetApplePayDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("applePayDisabled")
     if err != nil {
@@ -65,6 +68,7 @@ func (m *DepEnrollmentBaseProfile) GetApplePayDisabled()(*bool) {
     return nil
 }
 // GetConfigurationWebUrl gets the configurationWebUrl property value. URL for setup assistant login
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetConfigurationWebUrl()(*bool) {
     val, err := m.GetBackingStore().Get("configurationWebUrl")
     if err != nil {
@@ -76,6 +80,7 @@ func (m *DepEnrollmentBaseProfile) GetConfigurationWebUrl()(*bool) {
     return nil
 }
 // GetDeviceNameTemplate gets the deviceNameTemplate property value. Sets a literal or name pattern.
+// returns a *string when successful
 func (m *DepEnrollmentBaseProfile) GetDeviceNameTemplate()(*string) {
     val, err := m.GetBackingStore().Get("deviceNameTemplate")
     if err != nil {
@@ -87,6 +92,7 @@ func (m *DepEnrollmentBaseProfile) GetDeviceNameTemplate()(*string) {
     return nil
 }
 // GetDiagnosticsDisabled gets the diagnosticsDisabled property value. Indicates if diagnostics setup pane is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetDiagnosticsDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("diagnosticsDisabled")
     if err != nil {
@@ -98,6 +104,7 @@ func (m *DepEnrollmentBaseProfile) GetDiagnosticsDisabled()(*bool) {
     return nil
 }
 // GetDisplayToneSetupDisabled gets the displayToneSetupDisabled property value. Indicates if displaytone setup screen is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetDisplayToneSetupDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("displayToneSetupDisabled")
     if err != nil {
@@ -109,6 +116,7 @@ func (m *DepEnrollmentBaseProfile) GetDisplayToneSetupDisabled()(*bool) {
     return nil
 }
 // GetEnabledSkipKeys gets the enabledSkipKeys property value. enabledSkipKeys contains all the enabled skip keys as strings
+// returns a []string when successful
 func (m *DepEnrollmentBaseProfile) GetEnabledSkipKeys()([]string) {
     val, err := m.GetBackingStore().Get("enabledSkipKeys")
     if err != nil {
@@ -120,6 +128,7 @@ func (m *DepEnrollmentBaseProfile) GetEnabledSkipKeys()([]string) {
     return nil
 }
 // GetEnrollmentTimeAzureAdGroupIds gets the enrollmentTimeAzureAdGroupIds property value. EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile
+// returns a []UUID when successful
 func (m *DepEnrollmentBaseProfile) GetEnrollmentTimeAzureAdGroupIds()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("enrollmentTimeAzureAdGroupIds")
     if err != nil {
@@ -131,6 +140,7 @@ func (m *DepEnrollmentBaseProfile) GetEnrollmentTimeAzureAdGroupIds()([]i561e97a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EnrollmentProfile.GetFieldDeserializers()
     res["appleIdDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -368,6 +378,7 @@ func (m *DepEnrollmentBaseProfile) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIsDefault gets the isDefault property value. Indicates if this is the default profile
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
     if err != nil {
@@ -379,6 +390,7 @@ func (m *DepEnrollmentBaseProfile) GetIsDefault()(*bool) {
     return nil
 }
 // GetIsMandatory gets the isMandatory property value. Indicates if the profile is mandatory
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetIsMandatory()(*bool) {
     val, err := m.GetBackingStore().Get("isMandatory")
     if err != nil {
@@ -390,6 +402,7 @@ func (m *DepEnrollmentBaseProfile) GetIsMandatory()(*bool) {
     return nil
 }
 // GetLocationDisabled gets the locationDisabled property value. Indicates if Location service setup pane is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetLocationDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("locationDisabled")
     if err != nil {
@@ -401,6 +414,7 @@ func (m *DepEnrollmentBaseProfile) GetLocationDisabled()(*bool) {
     return nil
 }
 // GetPrivacyPaneDisabled gets the privacyPaneDisabled property value. Indicates if privacy screen is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetPrivacyPaneDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("privacyPaneDisabled")
     if err != nil {
@@ -412,6 +426,7 @@ func (m *DepEnrollmentBaseProfile) GetPrivacyPaneDisabled()(*bool) {
     return nil
 }
 // GetProfileRemovalDisabled gets the profileRemovalDisabled property value. Indicates if the profile removal option is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetProfileRemovalDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("profileRemovalDisabled")
     if err != nil {
@@ -423,6 +438,7 @@ func (m *DepEnrollmentBaseProfile) GetProfileRemovalDisabled()(*bool) {
     return nil
 }
 // GetRestoreBlocked gets the restoreBlocked property value. Indicates if Restore setup pane is blocked
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetRestoreBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("restoreBlocked")
     if err != nil {
@@ -434,6 +450,7 @@ func (m *DepEnrollmentBaseProfile) GetRestoreBlocked()(*bool) {
     return nil
 }
 // GetScreenTimeScreenDisabled gets the screenTimeScreenDisabled property value. Indicates if screen timeout setup is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetScreenTimeScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("screenTimeScreenDisabled")
     if err != nil {
@@ -445,6 +462,7 @@ func (m *DepEnrollmentBaseProfile) GetScreenTimeScreenDisabled()(*bool) {
     return nil
 }
 // GetSiriDisabled gets the siriDisabled property value. Indicates if siri setup pane is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetSiriDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("siriDisabled")
     if err != nil {
@@ -456,6 +474,7 @@ func (m *DepEnrollmentBaseProfile) GetSiriDisabled()(*bool) {
     return nil
 }
 // GetSupervisedModeEnabled gets the supervisedModeEnabled property value. Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetSupervisedModeEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("supervisedModeEnabled")
     if err != nil {
@@ -467,6 +486,7 @@ func (m *DepEnrollmentBaseProfile) GetSupervisedModeEnabled()(*bool) {
     return nil
 }
 // GetSupportDepartment gets the supportDepartment property value. Support department information
+// returns a *string when successful
 func (m *DepEnrollmentBaseProfile) GetSupportDepartment()(*string) {
     val, err := m.GetBackingStore().Get("supportDepartment")
     if err != nil {
@@ -478,6 +498,7 @@ func (m *DepEnrollmentBaseProfile) GetSupportDepartment()(*string) {
     return nil
 }
 // GetSupportPhoneNumber gets the supportPhoneNumber property value. Support phone number
+// returns a *string when successful
 func (m *DepEnrollmentBaseProfile) GetSupportPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("supportPhoneNumber")
     if err != nil {
@@ -489,6 +510,7 @@ func (m *DepEnrollmentBaseProfile) GetSupportPhoneNumber()(*string) {
     return nil
 }
 // GetTermsAndConditionsDisabled gets the termsAndConditionsDisabled property value. Indicates if 'Terms and Conditions' setup pane is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetTermsAndConditionsDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("termsAndConditionsDisabled")
     if err != nil {
@@ -500,6 +522,7 @@ func (m *DepEnrollmentBaseProfile) GetTermsAndConditionsDisabled()(*bool) {
     return nil
 }
 // GetTouchIdDisabled gets the touchIdDisabled property value. Indicates if touch id setup pane is disabled
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetTouchIdDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("touchIdDisabled")
     if err != nil {
@@ -511,6 +534,7 @@ func (m *DepEnrollmentBaseProfile) GetTouchIdDisabled()(*bool) {
     return nil
 }
 // GetWaitForDeviceConfiguredConfirmation gets the waitForDeviceConfiguredConfirmation property value. Indicates if the device will need to wait for configured confirmation
+// returns a *bool when successful
 func (m *DepEnrollmentBaseProfile) GetWaitForDeviceConfiguredConfirmation()(*bool) {
     val, err := m.GetBackingStore().Get("waitForDeviceConfiguredConfirmation")
     if err != nil {
@@ -815,7 +839,6 @@ func (m *DepEnrollmentBaseProfile) SetWaitForDeviceConfiguredConfirmation(value 
         panic(err)
     }
 }
-// DepEnrollmentBaseProfileable 
 type DepEnrollmentBaseProfileable interface {
     EnrollmentProfileable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

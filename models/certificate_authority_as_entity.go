@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CertificateAuthorityAsEntity 
 type CertificateAuthorityAsEntity struct {
     Entity
 }
-// NewCertificateAuthorityAsEntity instantiates a new certificateAuthorityAsEntity and sets the default values.
+// NewCertificateAuthorityAsEntity instantiates a new CertificateAuthorityAsEntity and sets the default values.
 func NewCertificateAuthorityAsEntity()(*CertificateAuthorityAsEntity) {
     m := &CertificateAuthorityAsEntity{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCertificateAuthorityAsEntity()(*CertificateAuthorityAsEntity) {
     return m
 }
 // CreateCertificateAuthorityAsEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCertificateAuthorityAsEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertificateAuthorityAsEntity(), nil
 }
 // GetCertificate gets the certificate property value. The trusted certificate.
+// returns a []byte when successful
 func (m *CertificateAuthorityAsEntity) GetCertificate()([]byte) {
     val, err := m.GetBackingStore().Get("certificate")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CertificateAuthorityAsEntity) GetCertificate()([]byte) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CertificateAuthorityAsEntity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["certificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +78,7 @@ func (m *CertificateAuthorityAsEntity) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetIsRootAuthority gets the isRootAuthority property value. Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.
+// returns a *bool when successful
 func (m *CertificateAuthorityAsEntity) GetIsRootAuthority()(*bool) {
     val, err := m.GetBackingStore().Get("isRootAuthority")
     if err != nil {
@@ -87,6 +90,7 @@ func (m *CertificateAuthorityAsEntity) GetIsRootAuthority()(*bool) {
     return nil
 }
 // GetIssuer gets the issuer property value. The issuer of the trusted certificate.
+// returns a *string when successful
 func (m *CertificateAuthorityAsEntity) GetIssuer()(*string) {
     val, err := m.GetBackingStore().Get("issuer")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *CertificateAuthorityAsEntity) GetIssuer()(*string) {
     return nil
 }
 // GetIssuerSubjectKeyIdentifier gets the issuerSubjectKeyIdentifier property value. The subject key identifier of the trusted certificate.
+// returns a *string when successful
 func (m *CertificateAuthorityAsEntity) GetIssuerSubjectKeyIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("issuerSubjectKeyIdentifier")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *CertificateAuthorityAsEntity) SetIssuerSubjectKeyIdentifier(value *stri
         panic(err)
     }
 }
-// CertificateAuthorityAsEntityable 
 type CertificateAuthorityAsEntityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

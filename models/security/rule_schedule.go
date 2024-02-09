@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// RuleSchedule 
 type RuleSchedule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewRuleSchedule instantiates a new ruleSchedule and sets the default values.
+// NewRuleSchedule instantiates a new RuleSchedule and sets the default values.
 func NewRuleSchedule()(*RuleSchedule) {
     m := &RuleSchedule{
     }
@@ -20,10 +19,12 @@ func NewRuleSchedule()(*RuleSchedule) {
     return m
 }
 // CreateRuleScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRuleScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRuleSchedule(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RuleSchedule) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *RuleSchedule) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *RuleSchedule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RuleSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["nextRunDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,7 +77,8 @@ func (m *RuleSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetNextRunDateTime gets the nextRunDateTime property value. The nextRunDateTime property
+// GetNextRunDateTime gets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run.
+// returns a *Time when successful
 func (m *RuleSchedule) GetNextRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("nextRunDateTime")
     if err != nil {
@@ -86,6 +90,7 @@ func (m *RuleSchedule) GetNextRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *RuleSchedule) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,7 +101,8 @@ func (m *RuleSchedule) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPeriod gets the period property value. The period property
+// GetPeriod gets the period property value. How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
+// returns a *string when successful
 func (m *RuleSchedule) GetPeriod()(*string) {
     val, err := m.GetBackingStore().Get("period")
     if err != nil {
@@ -146,7 +152,7 @@ func (m *RuleSchedule) SetAdditionalData(value map[string]any)() {
 func (m *RuleSchedule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetNextRunDateTime sets the nextRunDateTime property value. The nextRunDateTime property
+// SetNextRunDateTime sets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run.
 func (m *RuleSchedule) SetNextRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("nextRunDateTime", value)
     if err != nil {
@@ -160,14 +166,13 @@ func (m *RuleSchedule) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPeriod sets the period property value. The period property
+// SetPeriod sets the period property value. How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
 func (m *RuleSchedule) SetPeriod(value *string)() {
     err := m.GetBackingStore().Set("period", value)
     if err != nil {
         panic(err)
     }
 }
-// RuleScheduleable 
 type RuleScheduleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

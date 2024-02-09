@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PolicyTemplate 
 type PolicyTemplate struct {
     Entity
 }
-// NewPolicyTemplate instantiates a new policyTemplate and sets the default values.
+// NewPolicyTemplate instantiates a new PolicyTemplate and sets the default values.
 func NewPolicyTemplate()(*PolicyTemplate) {
     m := &PolicyTemplate{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPolicyTemplate()(*PolicyTemplate) {
     return m
 }
 // CreatePolicyTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePolicyTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPolicyTemplate(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PolicyTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["multiTenantOrganizationIdentitySynchronization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *PolicyTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetMultiTenantOrganizationIdentitySynchronization gets the multiTenantOrganizationIdentitySynchronization property value. Defines an optional cross-tenant access policy template with user synchronization settings for a multi-tenant organization.
+// returns a MultiTenantOrganizationIdentitySyncPolicyTemplateable when successful
 func (m *PolicyTemplate) GetMultiTenantOrganizationIdentitySynchronization()(MultiTenantOrganizationIdentitySyncPolicyTemplateable) {
     val, err := m.GetBackingStore().Get("multiTenantOrganizationIdentitySynchronization")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *PolicyTemplate) GetMultiTenantOrganizationIdentitySynchronization()(Mul
     return nil
 }
 // GetMultiTenantOrganizationPartnerConfiguration gets the multiTenantOrganizationPartnerConfiguration property value. Defines an optional cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.
+// returns a MultiTenantOrganizationPartnerConfigurationTemplateable when successful
 func (m *PolicyTemplate) GetMultiTenantOrganizationPartnerConfiguration()(MultiTenantOrganizationPartnerConfigurationTemplateable) {
     val, err := m.GetBackingStore().Get("multiTenantOrganizationPartnerConfiguration")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *PolicyTemplate) SetMultiTenantOrganizationPartnerConfiguration(value Mu
         panic(err)
     }
 }
-// PolicyTemplateable 
 type PolicyTemplateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

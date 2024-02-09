@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceRoleSetting 
 type GovernanceRoleSetting struct {
     Entity
 }
-// NewGovernanceRoleSetting instantiates a new governanceRoleSetting and sets the default values.
+// NewGovernanceRoleSetting instantiates a new GovernanceRoleSetting and sets the default values.
 func NewGovernanceRoleSetting()(*GovernanceRoleSetting) {
     m := &GovernanceRoleSetting{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewGovernanceRoleSetting()(*GovernanceRoleSetting) {
     return m
 }
 // CreateGovernanceRoleSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGovernanceRoleSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceRoleSetting(), nil
 }
 // GetAdminEligibleSettings gets the adminEligibleSettings property value. The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
+// returns a []GovernanceRuleSettingable when successful
 func (m *GovernanceRoleSetting) GetAdminEligibleSettings()([]GovernanceRuleSettingable) {
     val, err := m.GetBackingStore().Get("adminEligibleSettings")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *GovernanceRoleSetting) GetAdminEligibleSettings()([]GovernanceRuleSetti
     return nil
 }
 // GetAdminMemberSettings gets the adminMemberSettings property value. The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
+// returns a []GovernanceRuleSettingable when successful
 func (m *GovernanceRoleSetting) GetAdminMemberSettings()([]GovernanceRuleSettingable) {
     val, err := m.GetBackingStore().Get("adminMemberSettings")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *GovernanceRoleSetting) GetAdminMemberSettings()([]GovernanceRuleSetting
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GovernanceRoleSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["adminEligibleSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -182,6 +185,7 @@ func (m *GovernanceRoleSetting) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetIsDefault gets the isDefault property value. Read-only. Indicate if the roleSetting is a default roleSetting
+// returns a *bool when successful
 func (m *GovernanceRoleSetting) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
     if err != nil {
@@ -193,6 +197,7 @@ func (m *GovernanceRoleSetting) GetIsDefault()(*bool) {
     return nil
 }
 // GetLastUpdatedBy gets the lastUpdatedBy property value. Read-only. The display name of the administrator who last updated the roleSetting.
+// returns a *string when successful
 func (m *GovernanceRoleSetting) GetLastUpdatedBy()(*string) {
     val, err := m.GetBackingStore().Get("lastUpdatedBy")
     if err != nil {
@@ -204,6 +209,7 @@ func (m *GovernanceRoleSetting) GetLastUpdatedBy()(*string) {
     return nil
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *GovernanceRoleSetting) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -215,6 +221,7 @@ func (m *GovernanceRoleSetting) GetLastUpdatedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetResource gets the resource property value. Read-only. The associated resource for this role setting.
+// returns a GovernanceResourceable when successful
 func (m *GovernanceRoleSetting) GetResource()(GovernanceResourceable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -226,6 +233,7 @@ func (m *GovernanceRoleSetting) GetResource()(GovernanceResourceable) {
     return nil
 }
 // GetResourceId gets the resourceId property value. Required. The id of the resource that the role setting is associated with.
+// returns a *string when successful
 func (m *GovernanceRoleSetting) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -237,6 +245,7 @@ func (m *GovernanceRoleSetting) GetResourceId()(*string) {
     return nil
 }
 // GetRoleDefinition gets the roleDefinition property value. Read-only. The role definition that is enforced with this role setting.
+// returns a GovernanceRoleDefinitionable when successful
 func (m *GovernanceRoleSetting) GetRoleDefinition()(GovernanceRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinition")
     if err != nil {
@@ -248,6 +257,7 @@ func (m *GovernanceRoleSetting) GetRoleDefinition()(GovernanceRoleDefinitionable
     return nil
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. Required. The id of the role definition that the role setting is associated with.
+// returns a *string when successful
 func (m *GovernanceRoleSetting) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -259,6 +269,7 @@ func (m *GovernanceRoleSetting) GetRoleDefinitionId()(*string) {
     return nil
 }
 // GetUserEligibleSettings gets the userEligibleSettings property value. The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
+// returns a []GovernanceRuleSettingable when successful
 func (m *GovernanceRoleSetting) GetUserEligibleSettings()([]GovernanceRuleSettingable) {
     val, err := m.GetBackingStore().Get("userEligibleSettings")
     if err != nil {
@@ -270,6 +281,7 @@ func (m *GovernanceRoleSetting) GetUserEligibleSettings()([]GovernanceRuleSettin
     return nil
 }
 // GetUserMemberSettings gets the userMemberSettings property value. The rule settings that are evaluated when a user tries to activate his role assignment.
+// returns a []GovernanceRuleSettingable when successful
 func (m *GovernanceRoleSetting) GetUserMemberSettings()([]GovernanceRuleSettingable) {
     val, err := m.GetBackingStore().Get("userMemberSettings")
     if err != nil {
@@ -455,7 +467,6 @@ func (m *GovernanceRoleSetting) SetUserMemberSettings(value []GovernanceRuleSett
         panic(err)
     }
 }
-// GovernanceRoleSettingable 
 type GovernanceRoleSettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

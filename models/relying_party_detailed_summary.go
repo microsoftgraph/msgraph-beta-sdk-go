@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RelyingPartyDetailedSummary 
 type RelyingPartyDetailedSummary struct {
     Entity
 }
-// NewRelyingPartyDetailedSummary instantiates a new relyingPartyDetailedSummary and sets the default values.
+// NewRelyingPartyDetailedSummary instantiates a new RelyingPartyDetailedSummary and sets the default values.
 func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
     m := &RelyingPartyDetailedSummary{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewRelyingPartyDetailedSummary()(*RelyingPartyDetailedSummary) {
     return m
 }
 // CreateRelyingPartyDetailedSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRelyingPartyDetailedSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRelyingPartyDetailedSummary(), nil
 }
 // GetFailedSignInCount gets the failedSignInCount property value. Number of failed sign in on Active Directory Federation Service in the period specified.
+// returns a *int64 when successful
 func (m *RelyingPartyDetailedSummary) GetFailedSignInCount()(*int64) {
     val, err := m.GetBackingStore().Get("failedSignInCount")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *RelyingPartyDetailedSummary) GetFailedSignInCount()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["failedSignInCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -158,6 +160,7 @@ func (m *RelyingPartyDetailedSummary) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetMigrationStatus gets the migrationStatus property value. The migrationStatus property
+// returns a *MigrationStatus when successful
 func (m *RelyingPartyDetailedSummary) GetMigrationStatus()(*MigrationStatus) {
     val, err := m.GetBackingStore().Get("migrationStatus")
     if err != nil {
@@ -169,6 +172,7 @@ func (m *RelyingPartyDetailedSummary) GetMigrationStatus()(*MigrationStatus) {
     return nil
 }
 // GetMigrationValidationDetails gets the migrationValidationDetails property value. Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Microsoft Entra ID.
+// returns a []KeyValuePairable when successful
 func (m *RelyingPartyDetailedSummary) GetMigrationValidationDetails()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("migrationValidationDetails")
     if err != nil {
@@ -180,6 +184,7 @@ func (m *RelyingPartyDetailedSummary) GetMigrationValidationDetails()([]KeyValue
     return nil
 }
 // GetRelyingPartyId gets the relyingPartyId property value. This identifier is used to identify the relying party to this Federation Service. It's used when issuing claims to the relying party.
+// returns a *string when successful
 func (m *RelyingPartyDetailedSummary) GetRelyingPartyId()(*string) {
     val, err := m.GetBackingStore().Get("relyingPartyId")
     if err != nil {
@@ -191,6 +196,7 @@ func (m *RelyingPartyDetailedSummary) GetRelyingPartyId()(*string) {
     return nil
 }
 // GetRelyingPartyName gets the relyingPartyName property value. Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to sign in.
+// returns a *string when successful
 func (m *RelyingPartyDetailedSummary) GetRelyingPartyName()(*string) {
     val, err := m.GetBackingStore().Get("relyingPartyName")
     if err != nil {
@@ -202,6 +208,7 @@ func (m *RelyingPartyDetailedSummary) GetRelyingPartyName()(*string) {
     return nil
 }
 // GetReplyUrls gets the replyUrls property value. Specifies where the relying party expects to receive the token.
+// returns a []string when successful
 func (m *RelyingPartyDetailedSummary) GetReplyUrls()([]string) {
     val, err := m.GetBackingStore().Get("replyUrls")
     if err != nil {
@@ -213,6 +220,7 @@ func (m *RelyingPartyDetailedSummary) GetReplyUrls()([]string) {
     return nil
 }
 // GetServiceId gets the serviceId property value. Uniquely identifies the Active Directory forest.
+// returns a *string when successful
 func (m *RelyingPartyDetailedSummary) GetServiceId()(*string) {
     val, err := m.GetBackingStore().Get("serviceId")
     if err != nil {
@@ -224,6 +232,7 @@ func (m *RelyingPartyDetailedSummary) GetServiceId()(*string) {
     return nil
 }
 // GetSignInSuccessRate gets the signInSuccessRate property value. Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.
+// returns a *float64 when successful
 func (m *RelyingPartyDetailedSummary) GetSignInSuccessRate()(*float64) {
     val, err := m.GetBackingStore().Get("signInSuccessRate")
     if err != nil {
@@ -235,6 +244,7 @@ func (m *RelyingPartyDetailedSummary) GetSignInSuccessRate()(*float64) {
     return nil
 }
 // GetSuccessfulSignInCount gets the successfulSignInCount property value. Number of successful sign ins on Active Directory Federation Service.
+// returns a *int64 when successful
 func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int64) {
     val, err := m.GetBackingStore().Get("successfulSignInCount")
     if err != nil {
@@ -246,6 +256,7 @@ func (m *RelyingPartyDetailedSummary) GetSuccessfulSignInCount()(*int64) {
     return nil
 }
 // GetTotalSignInCount gets the totalSignInCount property value. Number of successful + failed sign ins on Active Directory Federation Service in the period specified.
+// returns a *int64 when successful
 func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int64) {
     val, err := m.GetBackingStore().Get("totalSignInCount")
     if err != nil {
@@ -257,6 +268,7 @@ func (m *RelyingPartyDetailedSummary) GetTotalSignInCount()(*int64) {
     return nil
 }
 // GetUniqueUserCount gets the uniqueUserCount property value. Number of unique users that have signed into the application.
+// returns a *int64 when successful
 func (m *RelyingPartyDetailedSummary) GetUniqueUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("uniqueUserCount")
     if err != nil {
@@ -425,7 +437,6 @@ func (m *RelyingPartyDetailedSummary) SetUniqueUserCount(value *int64)() {
         panic(err)
     }
 }
-// RelyingPartyDetailedSummaryable 
 type RelyingPartyDetailedSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

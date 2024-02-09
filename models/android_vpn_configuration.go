@@ -8,7 +8,7 @@ import (
 type AndroidVpnConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidVpnConfiguration instantiates a new androidVpnConfiguration and sets the default values.
+// NewAndroidVpnConfiguration instantiates a new AndroidVpnConfiguration and sets the default values.
 func NewAndroidVpnConfiguration()(*AndroidVpnConfiguration) {
     m := &AndroidVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidVpnConfiguration()(*AndroidVpnConfiguration) {
     return m
 }
 // CreateAndroidVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidVpnConfiguration(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
+// returns a *VpnAuthenticationMethod when successful
 func (m *AndroidVpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidVpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMe
     return nil
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
+// returns a *string when successful
 func (m *AndroidVpnConfiguration) GetConnectionName()(*string) {
     val, err := m.GetBackingStore().Get("connectionName")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidVpnConfiguration) GetConnectionName()(*string) {
     return nil
 }
 // GetConnectionType gets the connectionType property value. Android VPN connection type.
+// returns a *AndroidVpnConnectionType when successful
 func (m *AndroidVpnConfiguration) GetConnectionType()(*AndroidVpnConnectionType) {
     val, err := m.GetBackingStore().Get("connectionType")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidVpnConfiguration) GetConnectionType()(*AndroidVpnConnectionType)
     return nil
 }
 // GetCustomData gets the customData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
+// returns a []KeyValueable when successful
 func (m *AndroidVpnConfiguration) GetCustomData()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("customData")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AndroidVpnConfiguration) GetCustomData()([]KeyValueable) {
     return nil
 }
 // GetCustomKeyValueData gets the customKeyValueData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
+// returns a []KeyValuePairable when successful
 func (m *AndroidVpnConfiguration) GetCustomKeyValueData()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("customKeyValueData")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AndroidVpnConfiguration) GetCustomKeyValueData()([]KeyValuePairable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -200,6 +207,7 @@ func (m *AndroidVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetFingerprint gets the fingerprint property value. Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
+// returns a *string when successful
 func (m *AndroidVpnConfiguration) GetFingerprint()(*string) {
     val, err := m.GetBackingStore().Get("fingerprint")
     if err != nil {
@@ -211,6 +219,7 @@ func (m *AndroidVpnConfiguration) GetFingerprint()(*string) {
     return nil
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
+// returns a AndroidCertificateProfileBaseable when successful
 func (m *AndroidVpnConfiguration) GetIdentityCertificate()(AndroidCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificate")
     if err != nil {
@@ -222,6 +231,7 @@ func (m *AndroidVpnConfiguration) GetIdentityCertificate()(AndroidCertificatePro
     return nil
 }
 // GetRealm gets the realm property value. Realm when connection type is set to Pulse Secure.
+// returns a *string when successful
 func (m *AndroidVpnConfiguration) GetRealm()(*string) {
     val, err := m.GetBackingStore().Get("realm")
     if err != nil {
@@ -233,6 +243,7 @@ func (m *AndroidVpnConfiguration) GetRealm()(*string) {
     return nil
 }
 // GetRole gets the role property value. Role when connection type is set to Pulse Secure.
+// returns a *string when successful
 func (m *AndroidVpnConfiguration) GetRole()(*string) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -244,6 +255,7 @@ func (m *AndroidVpnConfiguration) GetRole()(*string) {
     return nil
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
+// returns a []VpnServerable when successful
 func (m *AndroidVpnConfiguration) GetServers()([]VpnServerable) {
     val, err := m.GetBackingStore().Get("servers")
     if err != nil {
@@ -412,7 +424,6 @@ func (m *AndroidVpnConfiguration) SetServers(value []VpnServerable)() {
         panic(err)
     }
 }
-// AndroidVpnConfigurationable 
 type AndroidVpnConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -26,28 +26,29 @@ type AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderG
     // Request query parameters
     QueryParameters *AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderGetQueryParameters
 }
-// NewAccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewAccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderInternal instantiates a new AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder and sets the default values.
 func NewAccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder) {
     m := &AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/decisions/{accessReviewInstanceDecisionItem%2Did1}/insights/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/decisions/{accessReviewInstanceDecisionItem%2Did1}/insights/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewAccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewAccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder instantiates a new AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder and sets the default values.
 func NewAccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuil
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuil
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceDecisionsItemInsightsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TenantStatusInformation 
 type TenantStatusInformation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTenantStatusInformation instantiates a new tenantStatusInformation and sets the default values.
+// NewTenantStatusInformation instantiates a new TenantStatusInformation and sets the default values.
 func NewTenantStatusInformation()(*TenantStatusInformation) {
     m := &TenantStatusInformation{
     }
@@ -20,10 +19,12 @@ func NewTenantStatusInformation()(*TenantStatusInformation) {
     return m
 }
 // CreateTenantStatusInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTenantStatusInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTenantStatusInformation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TenantStatusInformation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *TenantStatusInformation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TenantStatusInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDelegatedPrivilegeStatus gets the delegatedPrivilegeStatus property value. The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
+// returns a *DelegatedPrivilegeStatus when successful
 func (m *TenantStatusInformation) GetDelegatedPrivilegeStatus()(*DelegatedPrivilegeStatus) {
     val, err := m.GetBackingStore().Get("delegatedPrivilegeStatus")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *TenantStatusInformation) GetDelegatedPrivilegeStatus()(*DelegatedPrivil
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["delegatedPrivilegeStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -162,6 +166,7 @@ func (m *TenantStatusInformation) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetLastDelegatedPrivilegeRefreshDateTime gets the lastDelegatedPrivilegeRefreshDateTime property value. The date and time the delegated admin privileges status was updated. Optional. Read-only.
+// returns a *Time when successful
 func (m *TenantStatusInformation) GetLastDelegatedPrivilegeRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastDelegatedPrivilegeRefreshDateTime")
     if err != nil {
@@ -173,6 +178,7 @@ func (m *TenantStatusInformation) GetLastDelegatedPrivilegeRefreshDateTime()(*i3
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TenantStatusInformation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -184,6 +190,7 @@ func (m *TenantStatusInformation) GetOdataType()(*string) {
     return nil
 }
 // GetOffboardedByUserId gets the offboardedByUserId property value. The identifier for the account that offboarded the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantStatusInformation) GetOffboardedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("offboardedByUserId")
     if err != nil {
@@ -195,6 +202,7 @@ func (m *TenantStatusInformation) GetOffboardedByUserId()(*string) {
     return nil
 }
 // GetOffboardedDateTime gets the offboardedDateTime property value. The date and time when the managed tenant was offboarded. Optional. Read-only.
+// returns a *Time when successful
 func (m *TenantStatusInformation) GetOffboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("offboardedDateTime")
     if err != nil {
@@ -206,6 +214,7 @@ func (m *TenantStatusInformation) GetOffboardedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetOnboardedByUserId gets the onboardedByUserId property value. The identifier for the account that onboarded the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantStatusInformation) GetOnboardedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("onboardedByUserId")
     if err != nil {
@@ -217,6 +226,7 @@ func (m *TenantStatusInformation) GetOnboardedByUserId()(*string) {
     return nil
 }
 // GetOnboardedDateTime gets the onboardedDateTime property value. The date and time when the managed tenant was onboarded. Optional. Read-only.
+// returns a *Time when successful
 func (m *TenantStatusInformation) GetOnboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("onboardedDateTime")
     if err != nil {
@@ -228,6 +238,7 @@ func (m *TenantStatusInformation) GetOnboardedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetOnboardingStatus gets the onboardingStatus property value. The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.
+// returns a *TenantOnboardingStatus when successful
 func (m *TenantStatusInformation) GetOnboardingStatus()(*TenantOnboardingStatus) {
     val, err := m.GetBackingStore().Get("onboardingStatus")
     if err != nil {
@@ -239,6 +250,7 @@ func (m *TenantStatusInformation) GetOnboardingStatus()(*TenantOnboardingStatus)
     return nil
 }
 // GetTenantOnboardingEligibilityReason gets the tenantOnboardingEligibilityReason property value. Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
+// returns a *TenantOnboardingEligibilityReason when successful
 func (m *TenantStatusInformation) GetTenantOnboardingEligibilityReason()(*TenantOnboardingEligibilityReason) {
     val, err := m.GetBackingStore().Get("tenantOnboardingEligibilityReason")
     if err != nil {
@@ -250,6 +262,7 @@ func (m *TenantStatusInformation) GetTenantOnboardingEligibilityReason()(*Tenant
     return nil
 }
 // GetWorkloadStatuses gets the workloadStatuses property value. The collection of workload statues for the managed tenant. Optional. Read-only.
+// returns a []WorkloadStatusable when successful
 func (m *TenantStatusInformation) GetWorkloadStatuses()([]WorkloadStatusable) {
     val, err := m.GetBackingStore().Get("workloadStatuses")
     if err != nil {
@@ -420,7 +433,6 @@ func (m *TenantStatusInformation) SetWorkloadStatuses(value []WorkloadStatusable
         panic(err)
     }
 }
-// TenantStatusInformationable 
 type TenantStatusInformationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

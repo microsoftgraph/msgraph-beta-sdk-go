@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerPlanConfigurationLocalization 
 type PlannerPlanConfigurationLocalization struct {
     Entity
 }
-// NewPlannerPlanConfigurationLocalization instantiates a new plannerPlanConfigurationLocalization and sets the default values.
+// NewPlannerPlanConfigurationLocalization instantiates a new PlannerPlanConfigurationLocalization and sets the default values.
 func NewPlannerPlanConfigurationLocalization()(*PlannerPlanConfigurationLocalization) {
     m := &PlannerPlanConfigurationLocalization{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPlannerPlanConfigurationLocalization()(*PlannerPlanConfigurationLocaliza
     return m
 }
 // CreatePlannerPlanConfigurationLocalizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerPlanConfigurationLocalizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerPlanConfigurationLocalization(), nil
 }
 // GetBuckets gets the buckets property value. Localized names for configured buckets in the plan configuration.
+// returns a []PlannerPlanConfigurationBucketLocalizationable when successful
 func (m *PlannerPlanConfigurationLocalization) GetBuckets()([]PlannerPlanConfigurationBucketLocalizationable) {
     val, err := m.GetBackingStore().Get("buckets")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PlannerPlanConfigurationLocalization) GetBuckets()([]PlannerPlanConfigu
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerPlanConfigurationLocalization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["buckets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -72,6 +74,7 @@ func (m *PlannerPlanConfigurationLocalization) GetFieldDeserializers()(map[strin
     return res
 }
 // GetLanguageTag gets the languageTag property value. The language code associated with the localized names in this object.
+// returns a *string when successful
 func (m *PlannerPlanConfigurationLocalization) GetLanguageTag()(*string) {
     val, err := m.GetBackingStore().Get("languageTag")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *PlannerPlanConfigurationLocalization) GetLanguageTag()(*string) {
     return nil
 }
 // GetPlanTitle gets the planTitle property value. Localized title of the plan.
+// returns a *string when successful
 func (m *PlannerPlanConfigurationLocalization) GetPlanTitle()(*string) {
     val, err := m.GetBackingStore().Get("planTitle")
     if err != nil {
@@ -146,7 +150,6 @@ func (m *PlannerPlanConfigurationLocalization) SetPlanTitle(value *string)() {
         panic(err)
     }
 }
-// PlannerPlanConfigurationLocalizationable 
 type PlannerPlanConfigurationLocalizationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

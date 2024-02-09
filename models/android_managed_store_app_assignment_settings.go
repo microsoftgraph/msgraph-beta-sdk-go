@@ -8,7 +8,7 @@ import (
 type AndroidManagedStoreAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewAndroidManagedStoreAppAssignmentSettings instantiates a new androidManagedStoreAppAssignmentSettings and sets the default values.
+// NewAndroidManagedStoreAppAssignmentSettings instantiates a new AndroidManagedStoreAppAssignmentSettings and sets the default values.
 func NewAndroidManagedStoreAppAssignmentSettings()(*AndroidManagedStoreAppAssignmentSettings) {
     m := &AndroidManagedStoreAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -18,10 +18,12 @@ func NewAndroidManagedStoreAppAssignmentSettings()(*AndroidManagedStoreAppAssign
     return m
 }
 // CreateAndroidManagedStoreAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidManagedStoreAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidManagedStoreAppAssignmentSettings(), nil
 }
 // GetAndroidManagedStoreAppTrackIds gets the androidManagedStoreAppTrackIds property value. The track IDs to enable for this app assignment.
+// returns a []string when successful
 func (m *AndroidManagedStoreAppAssignmentSettings) GetAndroidManagedStoreAppTrackIds()([]string) {
     val, err := m.GetBackingStore().Get("androidManagedStoreAppTrackIds")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidManagedStoreAppAssignmentSettings) GetAndroidManagedStoreAppTrac
     return nil
 }
 // GetAutoUpdateMode gets the autoUpdateMode property value. Prioritization for automatic updates of Android Managed Store apps set on assignment.
+// returns a *AndroidManagedStoreAutoUpdateMode when successful
 func (m *AndroidManagedStoreAppAssignmentSettings) GetAutoUpdateMode()(*AndroidManagedStoreAutoUpdateMode) {
     val, err := m.GetBackingStore().Get("autoUpdateMode")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidManagedStoreAppAssignmentSettings) GetAutoUpdateMode()(*AndroidM
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidManagedStoreAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
     res["androidManagedStoreAppTrackIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,7 +113,6 @@ func (m *AndroidManagedStoreAppAssignmentSettings) SetAutoUpdateMode(value *Andr
         panic(err)
     }
 }
-// AndroidManagedStoreAppAssignmentSettingsable 
 type AndroidManagedStoreAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

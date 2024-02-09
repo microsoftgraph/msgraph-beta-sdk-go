@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AddContentFooterAction 
 type AddContentFooterAction struct {
     InformationProtectionAction
 }
-// NewAddContentFooterAction instantiates a new addContentFooterAction and sets the default values.
+// NewAddContentFooterAction instantiates a new AddContentFooterAction and sets the default values.
 func NewAddContentFooterAction()(*AddContentFooterAction) {
     m := &AddContentFooterAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
@@ -18,10 +17,12 @@ func NewAddContentFooterAction()(*AddContentFooterAction) {
     return m
 }
 // CreateAddContentFooterActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAddContentFooterActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAddContentFooterAction(), nil
 }
 // GetAlignment gets the alignment property value. The alignment property
+// returns a *ContentAlignment when successful
 func (m *AddContentFooterAction) GetAlignment()(*ContentAlignment) {
     val, err := m.GetBackingStore().Get("alignment")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AddContentFooterAction) GetAlignment()(*ContentAlignment) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AddContentFooterAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InformationProtectionAction.GetFieldDeserializers()
     res["alignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +110,7 @@ func (m *AddContentFooterAction) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetFontColor gets the fontColor property value. Color of the font to use for the footer.
+// returns a *string when successful
 func (m *AddContentFooterAction) GetFontColor()(*string) {
     val, err := m.GetBackingStore().Get("fontColor")
     if err != nil {
@@ -119,6 +122,7 @@ func (m *AddContentFooterAction) GetFontColor()(*string) {
     return nil
 }
 // GetFontName gets the fontName property value. Name of the font to use for the footer.
+// returns a *string when successful
 func (m *AddContentFooterAction) GetFontName()(*string) {
     val, err := m.GetBackingStore().Get("fontName")
     if err != nil {
@@ -130,6 +134,7 @@ func (m *AddContentFooterAction) GetFontName()(*string) {
     return nil
 }
 // GetFontSize gets the fontSize property value. Font size to use for the footer.
+// returns a *int32 when successful
 func (m *AddContentFooterAction) GetFontSize()(*int32) {
     val, err := m.GetBackingStore().Get("fontSize")
     if err != nil {
@@ -141,6 +146,7 @@ func (m *AddContentFooterAction) GetFontSize()(*int32) {
     return nil
 }
 // GetMargin gets the margin property value. The margin of the header from the bottom of the document.
+// returns a *int32 when successful
 func (m *AddContentFooterAction) GetMargin()(*int32) {
     val, err := m.GetBackingStore().Get("margin")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *AddContentFooterAction) GetMargin()(*int32) {
     return nil
 }
 // GetText gets the text property value. The contents of the footer itself.
+// returns a *string when successful
 func (m *AddContentFooterAction) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -163,6 +170,7 @@ func (m *AddContentFooterAction) GetText()(*string) {
     return nil
 }
 // GetUiElementName gets the uiElementName property value. The name of the UI element where the footer should be placed.
+// returns a *string when successful
 func (m *AddContentFooterAction) GetUiElementName()(*string) {
     val, err := m.GetBackingStore().Get("uiElementName")
     if err != nil {
@@ -273,7 +281,6 @@ func (m *AddContentFooterAction) SetUiElementName(value *string)() {
         panic(err)
     }
 }
-// AddContentFooterActionable 
 type AddContentFooterActionable interface {
     InformationProtectionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

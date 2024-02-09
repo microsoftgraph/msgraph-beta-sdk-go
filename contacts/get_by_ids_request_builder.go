@@ -31,7 +31,9 @@ func NewGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
-// Deprecated: This method is obsolete. Use PostAsGetByIdsPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a GetByIdsResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *GetByIdsRequestBuilder) Post(ctx context.Context, body GetByIdsPostRequ
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetByIdsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *GetByIdsRequestBuilder) Post(ctx context.Context, body GetByIdsPostRequ
     return res.(GetByIdsResponseable), nil
 }
 // PostAsGetByIdsPostResponse return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// returns a GetByIdsPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *GetByIdsRequestBuilder) PostAsGetByIdsPostResponse(ctx context.Context,
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetByIdsPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *GetByIdsRequestBuilder) PostAsGetByIdsPostResponse(ctx context.Context,
     return res.(GetByIdsPostResponseable), nil
 }
 // ToPostRequestInformation return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// returns a *RequestInformation when successful
 func (m *GetByIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body GetByIdsPostRequestBodyable, requestConfiguration *GetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *GetByIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, b
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GetByIdsRequestBuilder when successful
 func (m *GetByIdsRequestBuilder) WithUrl(rawUrl string)(*GetByIdsRequestBuilder) {
     return NewGetByIdsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

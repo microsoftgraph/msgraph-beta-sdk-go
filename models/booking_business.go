@@ -9,7 +9,7 @@ import (
 type BookingBusiness struct {
     BookingNamedEntity
 }
-// NewBookingBusiness instantiates a new bookingBusiness and sets the default values.
+// NewBookingBusiness instantiates a new BookingBusiness and sets the default values.
 func NewBookingBusiness()(*BookingBusiness) {
     m := &BookingBusiness{
         BookingNamedEntity: *NewBookingNamedEntity(),
@@ -19,10 +19,12 @@ func NewBookingBusiness()(*BookingBusiness) {
     return m
 }
 // CreateBookingBusinessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingBusinessFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingBusiness(), nil
 }
 // GetAddress gets the address property value. The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
+// returns a PhysicalAddressable when successful
 func (m *BookingBusiness) GetAddress()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *BookingBusiness) GetAddress()(PhysicalAddressable) {
     return nil
 }
 // GetAppointments gets the appointments property value. All the appointments of this business. Read-only. Nullable.
+// returns a []BookingAppointmentable when successful
 func (m *BookingBusiness) GetAppointments()([]BookingAppointmentable) {
     val, err := m.GetBackingStore().Get("appointments")
     if err != nil {
@@ -44,7 +47,8 @@ func (m *BookingBusiness) GetAppointments()([]BookingAppointmentable) {
     }
     return nil
 }
-// GetBookingPageSettings gets the bookingPageSettings property value. The bookingPageSettings property
+// GetBookingPageSettings gets the bookingPageSettings property value. Settings for the published booking page.
+// returns a BookingPageSettingsable when successful
 func (m *BookingBusiness) GetBookingPageSettings()(BookingPageSettingsable) {
     val, err := m.GetBackingStore().Get("bookingPageSettings")
     if err != nil {
@@ -56,6 +60,7 @@ func (m *BookingBusiness) GetBookingPageSettings()(BookingPageSettingsable) {
     return nil
 }
 // GetBusinessHours gets the businessHours property value. The hours of operation for the business.
+// returns a []BookingWorkHoursable when successful
 func (m *BookingBusiness) GetBusinessHours()([]BookingWorkHoursable) {
     val, err := m.GetBackingStore().Get("businessHours")
     if err != nil {
@@ -67,6 +72,7 @@ func (m *BookingBusiness) GetBusinessHours()([]BookingWorkHoursable) {
     return nil
 }
 // GetBusinessType gets the businessType property value. The type of business.
+// returns a *string when successful
 func (m *BookingBusiness) GetBusinessType()(*string) {
     val, err := m.GetBackingStore().Get("businessType")
     if err != nil {
@@ -78,6 +84,7 @@ func (m *BookingBusiness) GetBusinessType()(*string) {
     return nil
 }
 // GetCalendarView gets the calendarView property value. The set of appointments of this business in a specified date range. Read-only. Nullable.
+// returns a []BookingAppointmentable when successful
 func (m *BookingBusiness) GetCalendarView()([]BookingAppointmentable) {
     val, err := m.GetBackingStore().Get("calendarView")
     if err != nil {
@@ -88,7 +95,8 @@ func (m *BookingBusiness) GetCalendarView()([]BookingAppointmentable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date, time and timezone when the booking business was created.
+// returns a *Time when successful
 func (m *BookingBusiness) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -100,6 +108,7 @@ func (m *BookingBusiness) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetCustomers gets the customers property value. All the customers of this business. Read-only. Nullable.
+// returns a []BookingCustomerable when successful
 func (m *BookingBusiness) GetCustomers()([]BookingCustomerable) {
     val, err := m.GetBackingStore().Get("customers")
     if err != nil {
@@ -110,7 +119,8 @@ func (m *BookingBusiness) GetCustomers()([]BookingCustomerable) {
     }
     return nil
 }
-// GetCustomQuestions gets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
+// GetCustomQuestions gets the customQuestions property value. All custom questions of this business.
+// returns a []BookingCustomQuestionable when successful
 func (m *BookingBusiness) GetCustomQuestions()([]BookingCustomQuestionable) {
     val, err := m.GetBackingStore().Get("customQuestions")
     if err != nil {
@@ -122,6 +132,7 @@ func (m *BookingBusiness) GetCustomQuestions()([]BookingCustomQuestionable) {
     return nil
 }
 // GetDefaultCurrencyIso gets the defaultCurrencyIso property value. The code for the currency that the business operates in on Microsoft Bookings.
+// returns a *string when successful
 func (m *BookingBusiness) GetDefaultCurrencyIso()(*string) {
     val, err := m.GetBackingStore().Get("defaultCurrencyIso")
     if err != nil {
@@ -133,6 +144,7 @@ func (m *BookingBusiness) GetDefaultCurrencyIso()(*string) {
     return nil
 }
 // GetEmail gets the email property value. The email address for the business.
+// returns a *string when successful
 func (m *BookingBusiness) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -144,6 +156,7 @@ func (m *BookingBusiness) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BookingNamedEntity.GetFieldDeserializers()
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -391,6 +404,7 @@ func (m *BookingBusiness) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetIsPublished gets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
+// returns a *bool when successful
 func (m *BookingBusiness) GetIsPublished()(*bool) {
     val, err := m.GetBackingStore().Get("isPublished")
     if err != nil {
@@ -402,6 +416,7 @@ func (m *BookingBusiness) GetIsPublished()(*bool) {
     return nil
 }
 // GetLanguageTag gets the languageTag property value. The language of the self service booking page
+// returns a *string when successful
 func (m *BookingBusiness) GetLanguageTag()(*string) {
     val, err := m.GetBackingStore().Get("languageTag")
     if err != nil {
@@ -412,7 +427,8 @@ func (m *BookingBusiness) GetLanguageTag()(*string) {
     }
     return nil
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date, time and timezone when the booking business was last updated.
+// returns a *Time when successful
 func (m *BookingBusiness) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -424,6 +440,7 @@ func (m *BookingBusiness) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetPhone gets the phone property value. The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.
+// returns a *string when successful
 func (m *BookingBusiness) GetPhone()(*string) {
     val, err := m.GetBackingStore().Get("phone")
     if err != nil {
@@ -435,6 +452,7 @@ func (m *BookingBusiness) GetPhone()(*string) {
     return nil
 }
 // GetPublicUrl gets the publicUrl property value. The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
+// returns a *string when successful
 func (m *BookingBusiness) GetPublicUrl()(*string) {
     val, err := m.GetBackingStore().Get("publicUrl")
     if err != nil {
@@ -446,6 +464,7 @@ func (m *BookingBusiness) GetPublicUrl()(*string) {
     return nil
 }
 // GetSchedulingPolicy gets the schedulingPolicy property value. Specifies how bookings can be created for this business.
+// returns a BookingSchedulingPolicyable when successful
 func (m *BookingBusiness) GetSchedulingPolicy()(BookingSchedulingPolicyable) {
     val, err := m.GetBackingStore().Get("schedulingPolicy")
     if err != nil {
@@ -457,6 +476,7 @@ func (m *BookingBusiness) GetSchedulingPolicy()(BookingSchedulingPolicyable) {
     return nil
 }
 // GetServices gets the services property value. All the services offered by this business. Read-only. Nullable.
+// returns a []BookingServiceable when successful
 func (m *BookingBusiness) GetServices()([]BookingServiceable) {
     val, err := m.GetBackingStore().Get("services")
     if err != nil {
@@ -468,6 +488,7 @@ func (m *BookingBusiness) GetServices()([]BookingServiceable) {
     return nil
 }
 // GetStaffMembers gets the staffMembers property value. All the staff members that provide services in this business. Read-only. Nullable.
+// returns a []BookingStaffMemberable when successful
 func (m *BookingBusiness) GetStaffMembers()([]BookingStaffMemberable) {
     val, err := m.GetBackingStore().Get("staffMembers")
     if err != nil {
@@ -479,6 +500,7 @@ func (m *BookingBusiness) GetStaffMembers()([]BookingStaffMemberable) {
     return nil
 }
 // GetWebSiteUrl gets the webSiteUrl property value. The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
+// returns a *string when successful
 func (m *BookingBusiness) GetWebSiteUrl()(*string) {
     val, err := m.GetBackingStore().Get("webSiteUrl")
     if err != nil {
@@ -661,7 +683,7 @@ func (m *BookingBusiness) SetAppointments(value []BookingAppointmentable)() {
         panic(err)
     }
 }
-// SetBookingPageSettings sets the bookingPageSettings property value. The bookingPageSettings property
+// SetBookingPageSettings sets the bookingPageSettings property value. Settings for the published booking page.
 func (m *BookingBusiness) SetBookingPageSettings(value BookingPageSettingsable)() {
     err := m.GetBackingStore().Set("bookingPageSettings", value)
     if err != nil {
@@ -689,7 +711,7 @@ func (m *BookingBusiness) SetCalendarView(value []BookingAppointmentable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date, time and timezone when the booking business was created.
 func (m *BookingBusiness) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -703,7 +725,7 @@ func (m *BookingBusiness) SetCustomers(value []BookingCustomerable)() {
         panic(err)
     }
 }
-// SetCustomQuestions sets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
+// SetCustomQuestions sets the customQuestions property value. All custom questions of this business.
 func (m *BookingBusiness) SetCustomQuestions(value []BookingCustomQuestionable)() {
     err := m.GetBackingStore().Set("customQuestions", value)
     if err != nil {
@@ -738,7 +760,7 @@ func (m *BookingBusiness) SetLanguageTag(value *string)() {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date, time and timezone when the booking business was last updated.
 func (m *BookingBusiness) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
@@ -787,7 +809,6 @@ func (m *BookingBusiness) SetWebSiteUrl(value *string)() {
         panic(err)
     }
 }
-// BookingBusinessable 
 type BookingBusinessable interface {
     BookingNamedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

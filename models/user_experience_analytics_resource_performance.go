@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsResourcePerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsResourcePerformance instantiates a new userExperienceAnalyticsResourcePerformance and sets the default values.
+// NewUserExperienceAnalyticsResourcePerformance instantiates a new UserExperienceAnalyticsResourcePerformance and sets the default values.
 func NewUserExperienceAnalyticsResourcePerformance()(*UserExperienceAnalyticsResourcePerformance) {
     m := &UserExperienceAnalyticsResourcePerformance{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsResourcePerformance()(*UserExperienceAnalyticsRes
     return m
 }
 // CreateUserExperienceAnalyticsResourcePerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsResourcePerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsResourcePerformance(), nil
 }
 // GetAverageSpikeTimeScore gets the averageSpikeTimeScore property value. AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetAverageSpikeTimeScore()(*int32) {
     val, err := m.GetBackingStore().Get("averageSpikeTimeScore")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetAverageSpikeTimeScore()(
     return nil
 }
 // GetCpuClockSpeedInMHz gets the cpuClockSpeedInMHz property value. The clock speed of the processor, in MHz. Valid values 0 to 1000000
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetCpuClockSpeedInMHz()(*float64) {
     val, err := m.GetBackingStore().Get("cpuClockSpeedInMHz")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetCpuClockSpeedInMHz()(*fl
     return nil
 }
 // GetCpuDisplayName gets the cpuDisplayName property value. The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetCpuDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("cpuDisplayName")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetCpuDisplayName()(*string
     return nil
 }
 // GetCpuSpikeTimePercentage gets the cpuSpikeTimePercentage property value. CPU spike time in percentage. Valid values 0 to 100
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentage()(*float64) {
     val, err := m.GetBackingStore().Get("cpuSpikeTimePercentage")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentage()
     return nil
 }
 // GetCpuSpikeTimePercentageThreshold gets the cpuSpikeTimePercentageThreshold property value. Threshold of cpuSpikeTimeScore. Valid values 0 to 100
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentageThreshold()(*float64) {
     val, err := m.GetBackingStore().Get("cpuSpikeTimePercentageThreshold")
     if err != nil {
@@ -75,6 +81,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentageTh
     return nil
 }
 // GetCpuSpikeTimeScore gets the cpuSpikeTimeScore property value. The user experience analytics device CPU spike time score. Valid values 0 to 100
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimeScore()(*int32) {
     val, err := m.GetBackingStore().Get("cpuSpikeTimeScore")
     if err != nil {
@@ -86,6 +93,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimeScore()(*int
     return nil
 }
 // GetDeviceCount gets the deviceCount property value. User experience analytics summarized device count.
+// returns a *int64 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceCount()(*int64) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -97,6 +105,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceCount()(*int64) {
     return nil
 }
 // GetDeviceId gets the deviceId property value. The id of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -108,6 +117,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. The name of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -119,6 +129,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceName()(*string) {
     return nil
 }
 // GetDeviceResourcePerformanceScore gets the deviceResourcePerformanceScore property value. Resource performance score of a specific device. Valid values 0 to 100
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceResourcePerformanceScore()(*int32) {
     val, err := m.GetBackingStore().Get("deviceResourcePerformanceScore")
     if err != nil {
@@ -130,6 +141,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDeviceResourcePerformanc
     return nil
 }
 // GetDiskType gets the diskType property value. The diskType property
+// returns a *DiskType when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetDiskType()(*DiskType) {
     val, err := m.GetBackingStore().Get("diskType")
     if err != nil {
@@ -141,6 +153,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetDiskType()(*DiskType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["averageSpikeTimeScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -346,6 +359,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
     return res
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
+// returns a *UserExperienceAnalyticsHealthState when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
@@ -357,6 +371,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetHealthStatus()(*UserExpe
     return nil
 }
 // GetMachineType gets the machineType property value. Indicates if machine is physical or virtual. Possible values are: physical or virtual
+// returns a *UserExperienceAnalyticsMachineType when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetMachineType()(*UserExperienceAnalyticsMachineType) {
     val, err := m.GetBackingStore().Get("machineType")
     if err != nil {
@@ -368,6 +383,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetMachineType()(*UserExper
     return nil
 }
 // GetManufacturer gets the manufacturer property value. The user experience analytics device manufacturer.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -379,6 +395,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetManufacturer()(*string) 
     return nil
 }
 // GetModel gets the model property value. The user experience analytics device model.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -390,6 +407,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetModel()(*string) {
     return nil
 }
 // GetRamSpikeTimePercentage gets the ramSpikeTimePercentage property value. RAM spike time in percentage. Valid values 0 to 100
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentage()(*float64) {
     val, err := m.GetBackingStore().Get("ramSpikeTimePercentage")
     if err != nil {
@@ -401,6 +419,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentage()
     return nil
 }
 // GetRamSpikeTimePercentageThreshold gets the ramSpikeTimePercentageThreshold property value. Threshold of ramSpikeTimeScore. Valid values 0 to 100
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentageThreshold()(*float64) {
     val, err := m.GetBackingStore().Get("ramSpikeTimePercentageThreshold")
     if err != nil {
@@ -412,6 +431,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentageTh
     return nil
 }
 // GetRamSpikeTimeScore gets the ramSpikeTimeScore property value. The user experience analytics device RAM spike time score. Valid values 0 to 100
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimeScore()(*int32) {
     val, err := m.GetBackingStore().Get("ramSpikeTimeScore")
     if err != nil {
@@ -423,6 +443,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimeScore()(*int
     return nil
 }
 // GetTotalProcessorCoreCount gets the totalProcessorCoreCount property value. The count of cores of the processor of device. Valid values 0 to 512
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetTotalProcessorCoreCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalProcessorCoreCount")
     if err != nil {
@@ -434,6 +455,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetTotalProcessorCoreCount(
     return nil
 }
 // GetTotalRamInMB gets the totalRamInMB property value. The total RAM of the device, in MB. Valid values 0 to 1000000
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsResourcePerformance) GetTotalRamInMB()(*float64) {
     val, err := m.GetBackingStore().Get("totalRamInMB")
     if err != nil {
@@ -715,7 +737,6 @@ func (m *UserExperienceAnalyticsResourcePerformance) SetTotalRamInMB(value *floa
         panic(err)
     }
 }
-// UserExperienceAnalyticsResourcePerformanceable 
 type UserExperienceAnalyticsResourcePerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

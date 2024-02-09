@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContentApproval 
 type ContentApproval struct {
     ComplianceChange
 }
-// NewContentApproval instantiates a new contentApproval and sets the default values.
+// NewContentApproval instantiates a new ContentApproval and sets the default values.
 func NewContentApproval()(*ContentApproval) {
     m := &ContentApproval{
         ComplianceChange: *NewComplianceChange(),
@@ -18,10 +17,12 @@ func NewContentApproval()(*ContentApproval) {
     return m
 }
 // CreateContentApprovalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContentApprovalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContentApproval(), nil
 }
 // GetContent gets the content property value. The content property
+// returns a DeployableContentable when successful
 func (m *ContentApproval) GetContent()(DeployableContentable) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ContentApproval) GetContent()(DeployableContentable) {
     return nil
 }
 // GetDeployments gets the deployments property value. Deployments created as a result of applying the approval.
+// returns a []Deploymentable when successful
 func (m *ContentApproval) GetDeployments()([]Deploymentable) {
     val, err := m.GetBackingStore().Get("deployments")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ContentApproval) GetDeployments()([]Deploymentable) {
     return nil
 }
 // GetDeploymentSettings gets the deploymentSettings property value. Settings for governing how to deploy content.
+// returns a DeploymentSettingsable when successful
 func (m *ContentApproval) GetDeploymentSettings()(DeploymentSettingsable) {
     val, err := m.GetBackingStore().Get("deploymentSettings")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ContentApproval) GetDeploymentSettings()(DeploymentSettingsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContentApproval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ComplianceChange.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -148,7 +152,6 @@ func (m *ContentApproval) SetDeploymentSettings(value DeploymentSettingsable)() 
         panic(err)
     }
 }
-// ContentApprovalable 
 type ContentApprovalable interface {
     ComplianceChangeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

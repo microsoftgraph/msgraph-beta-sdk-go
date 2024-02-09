@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoverySearchExportOperation 
 type EdiscoverySearchExportOperation struct {
     CaseOperation
 }
-// NewEdiscoverySearchExportOperation instantiates a new ediscoverySearchExportOperation and sets the default values.
+// NewEdiscoverySearchExportOperation instantiates a new EdiscoverySearchExportOperation and sets the default values.
 func NewEdiscoverySearchExportOperation()(*EdiscoverySearchExportOperation) {
     m := &EdiscoverySearchExportOperation{
         CaseOperation: *NewCaseOperation(),
@@ -16,10 +15,12 @@ func NewEdiscoverySearchExportOperation()(*EdiscoverySearchExportOperation) {
     return m
 }
 // CreateEdiscoverySearchExportOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdiscoverySearchExportOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoverySearchExportOperation(), nil
 }
 // GetAdditionalOptions gets the additionalOptions property value. The additionalOptions property
+// returns a *AdditionalOptions when successful
 func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOptions) {
     val, err := m.GetBackingStore().Get("additionalOptions")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOpti
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *EdiscoverySearchExportOperation) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *EdiscoverySearchExportOperation) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *EdiscoverySearchExportOperation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *EdiscoverySearchExportOperation) GetDisplayName()(*string) {
     return nil
 }
 // GetExportCriteria gets the exportCriteria property value. The exportCriteria property
+// returns a *ExportCriteria when successful
 func (m *EdiscoverySearchExportOperation) GetExportCriteria()(*ExportCriteria) {
     val, err := m.GetBackingStore().Get("exportCriteria")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *EdiscoverySearchExportOperation) GetExportCriteria()(*ExportCriteria) {
     return nil
 }
 // GetExportFileMetadata gets the exportFileMetadata property value. The exportFileMetadata property
+// returns a []ExportFileMetadataable when successful
 func (m *EdiscoverySearchExportOperation) GetExportFileMetadata()([]ExportFileMetadataable) {
     val, err := m.GetBackingStore().Get("exportFileMetadata")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *EdiscoverySearchExportOperation) GetExportFileMetadata()([]ExportFileMe
     return nil
 }
 // GetExportFormat gets the exportFormat property value. The exportFormat property
+// returns a *ExportFormat when successful
 func (m *EdiscoverySearchExportOperation) GetExportFormat()(*ExportFormat) {
     val, err := m.GetBackingStore().Get("exportFormat")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *EdiscoverySearchExportOperation) GetExportFormat()(*ExportFormat) {
     return nil
 }
 // GetExportLocation gets the exportLocation property value. The exportLocation property
+// returns a *ExportLocation when successful
 func (m *EdiscoverySearchExportOperation) GetExportLocation()(*ExportLocation) {
     val, err := m.GetBackingStore().Get("exportLocation")
     if err != nil {
@@ -97,6 +104,7 @@ func (m *EdiscoverySearchExportOperation) GetExportLocation()(*ExportLocation) {
     return nil
 }
 // GetExportSingleItems gets the exportSingleItems property value. The exportSingleItems property
+// returns a *bool when successful
 func (m *EdiscoverySearchExportOperation) GetExportSingleItems()(*bool) {
     val, err := m.GetBackingStore().Get("exportSingleItems")
     if err != nil {
@@ -108,6 +116,7 @@ func (m *EdiscoverySearchExportOperation) GetExportSingleItems()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdiscoverySearchExportOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CaseOperation.GetFieldDeserializers()
     res["additionalOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -209,6 +218,7 @@ func (m *EdiscoverySearchExportOperation) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetSearch gets the search property value. The search property
+// returns a EdiscoverySearchable when successful
 func (m *EdiscoverySearchExportOperation) GetSearch()(EdiscoverySearchable) {
     val, err := m.GetBackingStore().Get("search")
     if err != nil {
@@ -354,7 +364,6 @@ func (m *EdiscoverySearchExportOperation) SetSearch(value EdiscoverySearchable)(
         panic(err)
     }
 }
-// EdiscoverySearchExportOperationable 
 type EdiscoverySearchExportOperationable interface {
     CaseOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

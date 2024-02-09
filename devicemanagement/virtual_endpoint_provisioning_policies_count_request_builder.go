@@ -26,14 +26,14 @@ type VirtualEndpointProvisioningPoliciesCountRequestBuilderGetRequestConfigurati
     // Request query parameters
     QueryParameters *VirtualEndpointProvisioningPoliciesCountRequestBuilderGetQueryParameters
 }
-// NewVirtualEndpointProvisioningPoliciesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewVirtualEndpointProvisioningPoliciesCountRequestBuilderInternal instantiates a new VirtualEndpointProvisioningPoliciesCountRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesCountRequestBuilder) {
     m := &VirtualEndpointProvisioningPoliciesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointProvisioningPoliciesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewVirtualEndpointProvisioningPoliciesCountRequestBuilder instantiates a new VirtualEndpointProvisioningPoliciesCountRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -41,14 +41,15 @@ func NewVirtualEndpointProvisioningPoliciesCountRequestBuilder(rawUrl string, re
 }
 // Get get the number of the resource
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointProvisioningPoliciesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -61,6 +62,7 @@ func (m *VirtualEndpointProvisioningPoliciesCountRequestBuilder) Get(ctx context
 }
 // ToGetRequestInformation get the number of the resource
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -75,6 +77,7 @@ func (m *VirtualEndpointProvisioningPoliciesCountRequestBuilder) ToGetRequestInf
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *VirtualEndpointProvisioningPoliciesCountRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesCountRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointProvisioningPoliciesCountRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

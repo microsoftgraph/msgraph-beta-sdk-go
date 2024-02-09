@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkPositionCollectionResponse 
 type WorkPositionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWorkPositionCollectionResponse instantiates a new workPositionCollectionResponse and sets the default values.
+// NewWorkPositionCollectionResponse instantiates a new WorkPositionCollectionResponse and sets the default values.
 func NewWorkPositionCollectionResponse()(*WorkPositionCollectionResponse) {
     m := &WorkPositionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewWorkPositionCollectionResponse()(*WorkPositionCollectionResponse) {
     return m
 }
 // CreateWorkPositionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkPositionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkPositionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkPositionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *WorkPositionCollectionResponse) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []WorkPositionable when successful
 func (m *WorkPositionCollectionResponse) GetValue()([]WorkPositionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *WorkPositionCollectionResponse) SetValue(value []WorkPositionable)() {
         panic(err)
     }
 }
-// WorkPositionCollectionResponseable 
 type WorkPositionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

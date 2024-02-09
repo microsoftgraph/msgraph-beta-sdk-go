@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DriverUpdateCatalogEntry 
 type DriverUpdateCatalogEntry struct {
     SoftwareUpdateCatalogEntry
 }
-// NewDriverUpdateCatalogEntry instantiates a new driverUpdateCatalogEntry and sets the default values.
+// NewDriverUpdateCatalogEntry instantiates a new DriverUpdateCatalogEntry and sets the default values.
 func NewDriverUpdateCatalogEntry()(*DriverUpdateCatalogEntry) {
     m := &DriverUpdateCatalogEntry{
         SoftwareUpdateCatalogEntry: *NewSoftwareUpdateCatalogEntry(),
@@ -19,10 +18,12 @@ func NewDriverUpdateCatalogEntry()(*DriverUpdateCatalogEntry) {
     return m
 }
 // CreateDriverUpdateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDriverUpdateCatalogEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDriverUpdateCatalogEntry(), nil
 }
 // GetDescription gets the description property value. The description of the content.
+// returns a *string when successful
 func (m *DriverUpdateCatalogEntry) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *DriverUpdateCatalogEntry) GetDescription()(*string) {
     return nil
 }
 // GetDriverClass gets the driverClass property value. The classification of the driver.
+// returns a *string when successful
 func (m *DriverUpdateCatalogEntry) GetDriverClass()(*string) {
     val, err := m.GetBackingStore().Get("driverClass")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *DriverUpdateCatalogEntry) GetDriverClass()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DriverUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SoftwareUpdateCatalogEntry.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -120,6 +123,7 @@ func (m *DriverUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer of the driver.
+// returns a *string when successful
 func (m *DriverUpdateCatalogEntry) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -131,6 +135,7 @@ func (m *DriverUpdateCatalogEntry) GetManufacturer()(*string) {
     return nil
 }
 // GetProvider gets the provider property value. The provider of the driver.
+// returns a *string when successful
 func (m *DriverUpdateCatalogEntry) GetProvider()(*string) {
     val, err := m.GetBackingStore().Get("provider")
     if err != nil {
@@ -142,6 +147,7 @@ func (m *DriverUpdateCatalogEntry) GetProvider()(*string) {
     return nil
 }
 // GetSetupInformationFile gets the setupInformationFile property value. The setup information file of the driver.
+// returns a *string when successful
 func (m *DriverUpdateCatalogEntry) GetSetupInformationFile()(*string) {
     val, err := m.GetBackingStore().Get("setupInformationFile")
     if err != nil {
@@ -153,6 +159,7 @@ func (m *DriverUpdateCatalogEntry) GetSetupInformationFile()(*string) {
     return nil
 }
 // GetVersion gets the version property value. The unique version of the content.
+// returns a *string when successful
 func (m *DriverUpdateCatalogEntry) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -164,6 +171,7 @@ func (m *DriverUpdateCatalogEntry) GetVersion()(*string) {
     return nil
 }
 // GetVersionDateTime gets the versionDateTime property value. The date and time when a new version of content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *DriverUpdateCatalogEntry) GetVersionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("versionDateTime")
     if err != nil {
@@ -273,7 +281,6 @@ func (m *DriverUpdateCatalogEntry) SetVersionDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
-// DriverUpdateCatalogEntryable 
 type DriverUpdateCatalogEntryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SoftwareUpdateCatalogEntryable

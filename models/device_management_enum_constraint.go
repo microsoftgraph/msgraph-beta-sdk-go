@@ -8,7 +8,7 @@ import (
 type DeviceManagementEnumConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementEnumConstraint instantiates a new deviceManagementEnumConstraint and sets the default values.
+// NewDeviceManagementEnumConstraint instantiates a new DeviceManagementEnumConstraint and sets the default values.
 func NewDeviceManagementEnumConstraint()(*DeviceManagementEnumConstraint) {
     m := &DeviceManagementEnumConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -18,10 +18,12 @@ func NewDeviceManagementEnumConstraint()(*DeviceManagementEnumConstraint) {
     return m
 }
 // CreateDeviceManagementEnumConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementEnumConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementEnumConstraint(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementEnumConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
     res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +45,7 @@ func (m *DeviceManagementEnumConstraint) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetValues gets the values property value. List of valid values for this string
+// returns a []DeviceManagementEnumValueable when successful
 func (m *DeviceManagementEnumConstraint) GetValues()([]DeviceManagementEnumValueable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -80,7 +83,6 @@ func (m *DeviceManagementEnumConstraint) SetValues(value []DeviceManagementEnumV
         panic(err)
     }
 }
-// DeviceManagementEnumConstraintable 
 type DeviceManagementEnumConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

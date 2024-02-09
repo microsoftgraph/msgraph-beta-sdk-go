@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedTenant 
 type ManagedTenant struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedTenant instantiates a new managedTenant and sets the default values.
+// NewManagedTenant instantiates a new ManagedTenant and sets the default values.
 func NewManagedTenant()(*ManagedTenant) {
     m := &ManagedTenant{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewManagedTenant()(*ManagedTenant) {
     return m
 }
 // CreateManagedTenantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedTenantFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedTenant(), nil
 }
 // GetAggregatedPolicyCompliances gets the aggregatedPolicyCompliances property value. Aggregate view of device compliance policies across managed tenants.
+// returns a []AggregatedPolicyComplianceable when successful
 func (m *ManagedTenant) GetAggregatedPolicyCompliances()([]AggregatedPolicyComplianceable) {
     val, err := m.GetBackingStore().Get("aggregatedPolicyCompliances")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ManagedTenant) GetAggregatedPolicyCompliances()([]AggregatedPolicyCompl
     return nil
 }
 // GetAppPerformances gets the appPerformances property value. The appPerformances property
+// returns a []AppPerformanceable when successful
 func (m *ManagedTenant) GetAppPerformances()([]AppPerformanceable) {
     val, err := m.GetBackingStore().Get("appPerformances")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ManagedTenant) GetAppPerformances()([]AppPerformanceable) {
     return nil
 }
 // GetAuditEvents gets the auditEvents property value. The collection of audit events across managed tenants.
+// returns a []AuditEventable when successful
 func (m *ManagedTenant) GetAuditEvents()([]AuditEventable) {
     val, err := m.GetBackingStore().Get("auditEvents")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ManagedTenant) GetAuditEvents()([]AuditEventable) {
     return nil
 }
 // GetCloudPcConnections gets the cloudPcConnections property value. The collection of cloud PC connections across managed tenants.
+// returns a []CloudPcConnectionable when successful
 func (m *ManagedTenant) GetCloudPcConnections()([]CloudPcConnectionable) {
     val, err := m.GetBackingStore().Get("cloudPcConnections")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *ManagedTenant) GetCloudPcConnections()([]CloudPcConnectionable) {
     return nil
 }
 // GetCloudPcDevices gets the cloudPcDevices property value. The collection of cloud PC devices across managed tenants.
+// returns a []CloudPcDeviceable when successful
 func (m *ManagedTenant) GetCloudPcDevices()([]CloudPcDeviceable) {
     val, err := m.GetBackingStore().Get("cloudPcDevices")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *ManagedTenant) GetCloudPcDevices()([]CloudPcDeviceable) {
     return nil
 }
 // GetCloudPcsOverview gets the cloudPcsOverview property value. Overview of cloud PC information across managed tenants.
+// returns a []CloudPcOverviewable when successful
 func (m *ManagedTenant) GetCloudPcsOverview()([]CloudPcOverviewable) {
     val, err := m.GetBackingStore().Get("cloudPcsOverview")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *ManagedTenant) GetCloudPcsOverview()([]CloudPcOverviewable) {
     return nil
 }
 // GetConditionalAccessPolicyCoverages gets the conditionalAccessPolicyCoverages property value. Aggregate view of conditional access policy coverage across managed tenants.
+// returns a []ConditionalAccessPolicyCoverageable when successful
 func (m *ManagedTenant) GetConditionalAccessPolicyCoverages()([]ConditionalAccessPolicyCoverageable) {
     val, err := m.GetBackingStore().Get("conditionalAccessPolicyCoverages")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *ManagedTenant) GetConditionalAccessPolicyCoverages()([]ConditionalAcces
     return nil
 }
 // GetCredentialUserRegistrationsSummaries gets the credentialUserRegistrationsSummaries property value. Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+// returns a []CredentialUserRegistrationsSummaryable when successful
 func (m *ManagedTenant) GetCredentialUserRegistrationsSummaries()([]CredentialUserRegistrationsSummaryable) {
     val, err := m.GetBackingStore().Get("credentialUserRegistrationsSummaries")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *ManagedTenant) GetCredentialUserRegistrationsSummaries()([]CredentialUs
     return nil
 }
 // GetDeviceAppPerformances gets the deviceAppPerformances property value. The deviceAppPerformances property
+// returns a []DeviceAppPerformanceable when successful
 func (m *ManagedTenant) GetDeviceAppPerformances()([]DeviceAppPerformanceable) {
     val, err := m.GetBackingStore().Get("deviceAppPerformances")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *ManagedTenant) GetDeviceAppPerformances()([]DeviceAppPerformanceable) {
     return nil
 }
 // GetDeviceCompliancePolicySettingStateSummaries gets the deviceCompliancePolicySettingStateSummaries property value. Summary information for device compliance policy setting states across managed tenants.
+// returns a []DeviceCompliancePolicySettingStateSummaryable when successful
 func (m *ManagedTenant) GetDeviceCompliancePolicySettingStateSummaries()([]DeviceCompliancePolicySettingStateSummaryable) {
     val, err := m.GetBackingStore().Get("deviceCompliancePolicySettingStateSummaries")
     if err != nil {
@@ -131,6 +141,7 @@ func (m *ManagedTenant) GetDeviceCompliancePolicySettingStateSummaries()([]Devic
     return nil
 }
 // GetDeviceHealthStatuses gets the deviceHealthStatuses property value. The deviceHealthStatuses property
+// returns a []DeviceHealthStatusable when successful
 func (m *ManagedTenant) GetDeviceHealthStatuses()([]DeviceHealthStatusable) {
     val, err := m.GetBackingStore().Get("deviceHealthStatuses")
     if err != nil {
@@ -142,6 +153,7 @@ func (m *ManagedTenant) GetDeviceHealthStatuses()([]DeviceHealthStatusable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["aggregatedPolicyCompliances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -739,6 +751,7 @@ func (m *ManagedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetManagedDeviceCompliances gets the managedDeviceCompliances property value. The collection of compliance for managed devices across managed tenants.
+// returns a []ManagedDeviceComplianceable when successful
 func (m *ManagedTenant) GetManagedDeviceCompliances()([]ManagedDeviceComplianceable) {
     val, err := m.GetBackingStore().Get("managedDeviceCompliances")
     if err != nil {
@@ -750,6 +763,7 @@ func (m *ManagedTenant) GetManagedDeviceCompliances()([]ManagedDeviceCompliancea
     return nil
 }
 // GetManagedDeviceComplianceTrends gets the managedDeviceComplianceTrends property value. Trend insights for device compliance across managed tenants.
+// returns a []ManagedDeviceComplianceTrendable when successful
 func (m *ManagedTenant) GetManagedDeviceComplianceTrends()([]ManagedDeviceComplianceTrendable) {
     val, err := m.GetBackingStore().Get("managedDeviceComplianceTrends")
     if err != nil {
@@ -761,6 +775,7 @@ func (m *ManagedTenant) GetManagedDeviceComplianceTrends()([]ManagedDeviceCompli
     return nil
 }
 // GetManagedTenantAlertLogs gets the managedTenantAlertLogs property value. The managedTenantAlertLogs property
+// returns a []ManagedTenantAlertLogable when successful
 func (m *ManagedTenant) GetManagedTenantAlertLogs()([]ManagedTenantAlertLogable) {
     val, err := m.GetBackingStore().Get("managedTenantAlertLogs")
     if err != nil {
@@ -772,6 +787,7 @@ func (m *ManagedTenant) GetManagedTenantAlertLogs()([]ManagedTenantAlertLogable)
     return nil
 }
 // GetManagedTenantAlertRuleDefinitions gets the managedTenantAlertRuleDefinitions property value. The managedTenantAlertRuleDefinitions property
+// returns a []ManagedTenantAlertRuleDefinitionable when successful
 func (m *ManagedTenant) GetManagedTenantAlertRuleDefinitions()([]ManagedTenantAlertRuleDefinitionable) {
     val, err := m.GetBackingStore().Get("managedTenantAlertRuleDefinitions")
     if err != nil {
@@ -783,6 +799,7 @@ func (m *ManagedTenant) GetManagedTenantAlertRuleDefinitions()([]ManagedTenantAl
     return nil
 }
 // GetManagedTenantAlertRules gets the managedTenantAlertRules property value. The managedTenantAlertRules property
+// returns a []ManagedTenantAlertRuleable when successful
 func (m *ManagedTenant) GetManagedTenantAlertRules()([]ManagedTenantAlertRuleable) {
     val, err := m.GetBackingStore().Get("managedTenantAlertRules")
     if err != nil {
@@ -794,6 +811,7 @@ func (m *ManagedTenant) GetManagedTenantAlertRules()([]ManagedTenantAlertRuleabl
     return nil
 }
 // GetManagedTenantAlerts gets the managedTenantAlerts property value. The managedTenantAlerts property
+// returns a []ManagedTenantAlertable when successful
 func (m *ManagedTenant) GetManagedTenantAlerts()([]ManagedTenantAlertable) {
     val, err := m.GetBackingStore().Get("managedTenantAlerts")
     if err != nil {
@@ -805,6 +823,7 @@ func (m *ManagedTenant) GetManagedTenantAlerts()([]ManagedTenantAlertable) {
     return nil
 }
 // GetManagedTenantApiNotifications gets the managedTenantApiNotifications property value. The managedTenantApiNotifications property
+// returns a []ManagedTenantApiNotificationable when successful
 func (m *ManagedTenant) GetManagedTenantApiNotifications()([]ManagedTenantApiNotificationable) {
     val, err := m.GetBackingStore().Get("managedTenantApiNotifications")
     if err != nil {
@@ -816,6 +835,7 @@ func (m *ManagedTenant) GetManagedTenantApiNotifications()([]ManagedTenantApiNot
     return nil
 }
 // GetManagedTenantEmailNotifications gets the managedTenantEmailNotifications property value. The managedTenantEmailNotifications property
+// returns a []ManagedTenantEmailNotificationable when successful
 func (m *ManagedTenant) GetManagedTenantEmailNotifications()([]ManagedTenantEmailNotificationable) {
     val, err := m.GetBackingStore().Get("managedTenantEmailNotifications")
     if err != nil {
@@ -827,6 +847,7 @@ func (m *ManagedTenant) GetManagedTenantEmailNotifications()([]ManagedTenantEmai
     return nil
 }
 // GetManagedTenantTicketingEndpoints gets the managedTenantTicketingEndpoints property value. The managedTenantTicketingEndpoints property
+// returns a []ManagedTenantTicketingEndpointable when successful
 func (m *ManagedTenant) GetManagedTenantTicketingEndpoints()([]ManagedTenantTicketingEndpointable) {
     val, err := m.GetBackingStore().Get("managedTenantTicketingEndpoints")
     if err != nil {
@@ -838,6 +859,7 @@ func (m *ManagedTenant) GetManagedTenantTicketingEndpoints()([]ManagedTenantTick
     return nil
 }
 // GetManagementActions gets the managementActions property value. The collection of baseline management actions across managed tenants.
+// returns a []ManagementActionable when successful
 func (m *ManagedTenant) GetManagementActions()([]ManagementActionable) {
     val, err := m.GetBackingStore().Get("managementActions")
     if err != nil {
@@ -849,6 +871,7 @@ func (m *ManagedTenant) GetManagementActions()([]ManagementActionable) {
     return nil
 }
 // GetManagementActionTenantDeploymentStatuses gets the managementActionTenantDeploymentStatuses property value. The tenant level status of management actions across managed tenants.
+// returns a []ManagementActionTenantDeploymentStatusable when successful
 func (m *ManagedTenant) GetManagementActionTenantDeploymentStatuses()([]ManagementActionTenantDeploymentStatusable) {
     val, err := m.GetBackingStore().Get("managementActionTenantDeploymentStatuses")
     if err != nil {
@@ -860,6 +883,7 @@ func (m *ManagedTenant) GetManagementActionTenantDeploymentStatuses()([]Manageme
     return nil
 }
 // GetManagementIntents gets the managementIntents property value. The collection of baseline management intents across managed tenants.
+// returns a []ManagementIntentable when successful
 func (m *ManagedTenant) GetManagementIntents()([]ManagementIntentable) {
     val, err := m.GetBackingStore().Get("managementIntents")
     if err != nil {
@@ -871,6 +895,7 @@ func (m *ManagedTenant) GetManagementIntents()([]ManagementIntentable) {
     return nil
 }
 // GetManagementTemplateCollections gets the managementTemplateCollections property value. The managementTemplateCollections property
+// returns a []ManagementTemplateCollectionable when successful
 func (m *ManagedTenant) GetManagementTemplateCollections()([]ManagementTemplateCollectionable) {
     val, err := m.GetBackingStore().Get("managementTemplateCollections")
     if err != nil {
@@ -882,6 +907,7 @@ func (m *ManagedTenant) GetManagementTemplateCollections()([]ManagementTemplateC
     return nil
 }
 // GetManagementTemplateCollectionTenantSummaries gets the managementTemplateCollectionTenantSummaries property value. The managementTemplateCollectionTenantSummaries property
+// returns a []ManagementTemplateCollectionTenantSummaryable when successful
 func (m *ManagedTenant) GetManagementTemplateCollectionTenantSummaries()([]ManagementTemplateCollectionTenantSummaryable) {
     val, err := m.GetBackingStore().Get("managementTemplateCollectionTenantSummaries")
     if err != nil {
@@ -893,6 +919,7 @@ func (m *ManagedTenant) GetManagementTemplateCollectionTenantSummaries()([]Manag
     return nil
 }
 // GetManagementTemplates gets the managementTemplates property value. The collection of baseline management templates across managed tenants.
+// returns a []ManagementTemplateable when successful
 func (m *ManagedTenant) GetManagementTemplates()([]ManagementTemplateable) {
     val, err := m.GetBackingStore().Get("managementTemplates")
     if err != nil {
@@ -904,6 +931,7 @@ func (m *ManagedTenant) GetManagementTemplates()([]ManagementTemplateable) {
     return nil
 }
 // GetManagementTemplateSteps gets the managementTemplateSteps property value. The managementTemplateSteps property
+// returns a []ManagementTemplateStepable when successful
 func (m *ManagedTenant) GetManagementTemplateSteps()([]ManagementTemplateStepable) {
     val, err := m.GetBackingStore().Get("managementTemplateSteps")
     if err != nil {
@@ -915,6 +943,7 @@ func (m *ManagedTenant) GetManagementTemplateSteps()([]ManagementTemplateStepabl
     return nil
 }
 // GetManagementTemplateStepTenantSummaries gets the managementTemplateStepTenantSummaries property value. The managementTemplateStepTenantSummaries property
+// returns a []ManagementTemplateStepTenantSummaryable when successful
 func (m *ManagedTenant) GetManagementTemplateStepTenantSummaries()([]ManagementTemplateStepTenantSummaryable) {
     val, err := m.GetBackingStore().Get("managementTemplateStepTenantSummaries")
     if err != nil {
@@ -926,6 +955,7 @@ func (m *ManagedTenant) GetManagementTemplateStepTenantSummaries()([]ManagementT
     return nil
 }
 // GetManagementTemplateStepVersions gets the managementTemplateStepVersions property value. The managementTemplateStepVersions property
+// returns a []ManagementTemplateStepVersionable when successful
 func (m *ManagedTenant) GetManagementTemplateStepVersions()([]ManagementTemplateStepVersionable) {
     val, err := m.GetBackingStore().Get("managementTemplateStepVersions")
     if err != nil {
@@ -937,6 +967,7 @@ func (m *ManagedTenant) GetManagementTemplateStepVersions()([]ManagementTemplate
     return nil
 }
 // GetMyRoles gets the myRoles property value. The collection of role assignments to a signed-in user for a managed tenant.
+// returns a []MyRoleable when successful
 func (m *ManagedTenant) GetMyRoles()([]MyRoleable) {
     val, err := m.GetBackingStore().Get("myRoles")
     if err != nil {
@@ -948,6 +979,7 @@ func (m *ManagedTenant) GetMyRoles()([]MyRoleable) {
     return nil
 }
 // GetTenantGroups gets the tenantGroups property value. The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+// returns a []TenantGroupable when successful
 func (m *ManagedTenant) GetTenantGroups()([]TenantGroupable) {
     val, err := m.GetBackingStore().Get("tenantGroups")
     if err != nil {
@@ -959,6 +991,7 @@ func (m *ManagedTenant) GetTenantGroups()([]TenantGroupable) {
     return nil
 }
 // GetTenants gets the tenants property value. The collection of tenants associated with the managing entity.
+// returns a []Tenantable when successful
 func (m *ManagedTenant) GetTenants()([]Tenantable) {
     val, err := m.GetBackingStore().Get("tenants")
     if err != nil {
@@ -970,6 +1003,7 @@ func (m *ManagedTenant) GetTenants()([]Tenantable) {
     return nil
 }
 // GetTenantsCustomizedInformation gets the tenantsCustomizedInformation property value. The collection of tenant level customized information across managed tenants.
+// returns a []TenantCustomizedInformationable when successful
 func (m *ManagedTenant) GetTenantsCustomizedInformation()([]TenantCustomizedInformationable) {
     val, err := m.GetBackingStore().Get("tenantsCustomizedInformation")
     if err != nil {
@@ -981,6 +1015,7 @@ func (m *ManagedTenant) GetTenantsCustomizedInformation()([]TenantCustomizedInfo
     return nil
 }
 // GetTenantsDetailedInformation gets the tenantsDetailedInformation property value. The collection tenant level detailed information across managed tenants.
+// returns a []TenantDetailedInformationable when successful
 func (m *ManagedTenant) GetTenantsDetailedInformation()([]TenantDetailedInformationable) {
     val, err := m.GetBackingStore().Get("tenantsDetailedInformation")
     if err != nil {
@@ -992,6 +1027,7 @@ func (m *ManagedTenant) GetTenantsDetailedInformation()([]TenantDetailedInformat
     return nil
 }
 // GetTenantTags gets the tenantTags property value. The collection of tenant tags across managed tenants.
+// returns a []TenantTagable when successful
 func (m *ManagedTenant) GetTenantTags()([]TenantTagable) {
     val, err := m.GetBackingStore().Get("tenantTags")
     if err != nil {
@@ -1003,6 +1039,7 @@ func (m *ManagedTenant) GetTenantTags()([]TenantTagable) {
     return nil
 }
 // GetWindowsDeviceMalwareStates gets the windowsDeviceMalwareStates property value. The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// returns a []WindowsDeviceMalwareStateable when successful
 func (m *ManagedTenant) GetWindowsDeviceMalwareStates()([]WindowsDeviceMalwareStateable) {
     val, err := m.GetBackingStore().Get("windowsDeviceMalwareStates")
     if err != nil {
@@ -1014,6 +1051,7 @@ func (m *ManagedTenant) GetWindowsDeviceMalwareStates()([]WindowsDeviceMalwareSt
     return nil
 }
 // GetWindowsProtectionStates gets the windowsProtectionStates property value. The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+// returns a []WindowsProtectionStateable when successful
 func (m *ManagedTenant) GetWindowsProtectionStates()([]WindowsProtectionStateable) {
     val, err := m.GetBackingStore().Get("windowsProtectionStates")
     if err != nil {
@@ -1735,7 +1773,6 @@ func (m *ManagedTenant) SetWindowsProtectionStates(value []WindowsProtectionStat
         panic(err)
     }
 }
-// ManagedTenantable 
 type ManagedTenantable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

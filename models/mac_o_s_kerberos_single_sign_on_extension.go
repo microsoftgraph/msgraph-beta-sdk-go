@@ -8,7 +8,7 @@ import (
 type MacOSKerberosSingleSignOnExtension struct {
     MacOSSingleSignOnExtension
 }
-// NewMacOSKerberosSingleSignOnExtension instantiates a new macOSKerberosSingleSignOnExtension and sets the default values.
+// NewMacOSKerberosSingleSignOnExtension instantiates a new MacOSKerberosSingleSignOnExtension and sets the default values.
 func NewMacOSKerberosSingleSignOnExtension()(*MacOSKerberosSingleSignOnExtension) {
     m := &MacOSKerberosSingleSignOnExtension{
         MacOSSingleSignOnExtension: *NewMacOSSingleSignOnExtension(),
@@ -18,10 +18,12 @@ func NewMacOSKerberosSingleSignOnExtension()(*MacOSKerberosSingleSignOnExtension
     return m
 }
 // CreateMacOSKerberosSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSKerberosSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSKerberosSingleSignOnExtension(), nil
 }
 // GetActiveDirectorySiteCode gets the activeDirectorySiteCode property value. Gets or sets the Active Directory site.
+// returns a *string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetActiveDirectorySiteCode()(*string) {
     val, err := m.GetBackingStore().Get("activeDirectorySiteCode")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetActiveDirectorySiteCode()(*strin
     return nil
 }
 // GetBlockActiveDirectorySiteAutoDiscovery gets the blockActiveDirectorySiteAutoDiscovery property value. Enables or disables whether the Kerberos extension can automatically determine its site name.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetBlockActiveDirectorySiteAutoDiscovery()(*bool) {
     val, err := m.GetBackingStore().Get("blockActiveDirectorySiteAutoDiscovery")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetBlockActiveDirectorySiteAutoDisc
     return nil
 }
 // GetBlockAutomaticLogin gets the blockAutomaticLogin property value. Enables or disables Keychain usage.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetBlockAutomaticLogin()(*bool) {
     val, err := m.GetBackingStore().Get("blockAutomaticLogin")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetBlockAutomaticLogin()(*bool) {
     return nil
 }
 // GetCacheName gets the cacheName property value. Gets or sets the Generic Security Services name of the Kerberos cache to use for this profile.
+// returns a *string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetCacheName()(*string) {
     val, err := m.GetBackingStore().Get("cacheName")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetCacheName()(*string) {
     return nil
 }
 // GetCredentialBundleIdAccessControlList gets the credentialBundleIdAccessControlList property value. Gets or sets a list of app Bundle IDs allowed to access the Kerberos Ticket Granting Ticket.
+// returns a []string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetCredentialBundleIdAccessControlList()([]string) {
     val, err := m.GetBackingStore().Get("credentialBundleIdAccessControlList")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetCredentialBundleIdAccessControlL
     return nil
 }
 // GetCredentialsCacheMonitored gets the credentialsCacheMonitored property value. When set to True, the credential is requested on the next matching Kerberos challenge or network state change. When the credential is expired or missing, a new credential is created. Available for devices running macOS versions 12 and later.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetCredentialsCacheMonitored()(*bool) {
     val, err := m.GetBackingStore().Get("credentialsCacheMonitored")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetCredentialsCacheMonitored()(*boo
     return nil
 }
 // GetDomainRealms gets the domainRealms property value. Gets or sets a list of realms for custom domain-realm mapping. Realms are case sensitive.
+// returns a []string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetDomainRealms()([]string) {
     val, err := m.GetBackingStore().Get("domainRealms")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetDomainRealms()([]string) {
     return nil
 }
 // GetDomains gets the domains property value. Gets or sets a list of hosts or domain names for which the app extension performs SSO.
+// returns a []string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetDomains()([]string) {
     val, err := m.GetBackingStore().Get("domains")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetDomains()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MacOSSingleSignOnExtension.GetFieldDeserializers()
     res["activeDirectorySiteCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -439,6 +449,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetFieldDeserializers()(map[string]
     return res
 }
 // GetIsDefaultRealm gets the isDefaultRealm property value. When true, this profile's realm will be selected as the default. Necessary if multiple Kerberos-type profiles are configured.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetIsDefaultRealm()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultRealm")
     if err != nil {
@@ -450,6 +461,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetIsDefaultRealm()(*bool) {
     return nil
 }
 // GetKerberosAppsInBundleIdACLIncluded gets the kerberosAppsInBundleIdACLIncluded property value. When set to True, the Kerberos extension allows any apps entered with the app bundle ID, managed apps, and standard Kerberos utilities, such as TicketViewer and klist, to access and use the credential. Available for devices running macOS versions 12 and later.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetKerberosAppsInBundleIdACLIncluded()(*bool) {
     val, err := m.GetBackingStore().Get("kerberosAppsInBundleIdACLIncluded")
     if err != nil {
@@ -461,6 +473,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetKerberosAppsInBundleIdACLInclude
     return nil
 }
 // GetManagedAppsInBundleIdACLIncluded gets the managedAppsInBundleIdACLIncluded property value. When set to True, the Kerberos extension allows managed apps, and any apps entered with the app bundle ID to access the credential. When set to False, the Kerberos extension allows all apps to access the credential. Available for devices running iOS and iPadOS versions 14 and later.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetManagedAppsInBundleIdACLIncluded()(*bool) {
     val, err := m.GetBackingStore().Get("managedAppsInBundleIdACLIncluded")
     if err != nil {
@@ -472,6 +485,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetManagedAppsInBundleIdACLIncluded
     return nil
 }
 // GetModeCredentialUsed gets the modeCredentialUsed property value. Select how other processes use the Kerberos Extension credential.
+// returns a *string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetModeCredentialUsed()(*string) {
     val, err := m.GetBackingStore().Get("modeCredentialUsed")
     if err != nil {
@@ -483,6 +497,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetModeCredentialUsed()(*string) {
     return nil
 }
 // GetPasswordBlockModification gets the passwordBlockModification property value. Enables or disables password changes.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPasswordBlockModification()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockModification")
     if err != nil {
@@ -494,6 +509,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPasswordBlockModification()(*boo
     return nil
 }
 // GetPasswordChangeUrl gets the passwordChangeUrl property value. Gets or sets the URL that the user will be sent to when they initiate a password change.
+// returns a *string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPasswordChangeUrl()(*string) {
     val, err := m.GetBackingStore().Get("passwordChangeUrl")
     if err != nil {
@@ -505,6 +521,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPasswordChangeUrl()(*string) {
     return nil
 }
 // GetPasswordEnableLocalSync gets the passwordEnableLocalSync property value. Enables or disables password syncing. This won't affect users logged in with a mobile account on macOS.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPasswordEnableLocalSync()(*bool) {
     val, err := m.GetBackingStore().Get("passwordEnableLocalSync")
     if err != nil {
@@ -516,6 +533,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPasswordEnableLocalSync()(*bool)
     return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Overrides the default password expiration in days. For most domains, this value is calculated automatically.
+// returns a *int32 when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPasswordExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordExpirationDays")
     if err != nil {
@@ -527,6 +545,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPasswordExpirationDays()(*int32)
     return nil
 }
 // GetPasswordExpirationNotificationDays gets the passwordExpirationNotificationDays property value. Gets or sets the number of days until the user is notified that their password will expire (default is 15).
+// returns a *int32 when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPasswordExpirationNotificationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordExpirationNotificationDays")
     if err != nil {
@@ -538,6 +557,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPasswordExpirationNotificationDa
     return nil
 }
 // GetPasswordMinimumAgeDays gets the passwordMinimumAgeDays property value. Gets or sets the minimum number of days until a user can change their password again.
+// returns a *int32 when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPasswordMinimumAgeDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumAgeDays")
     if err != nil {
@@ -549,6 +569,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPasswordMinimumAgeDays()(*int32)
     return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Gets or sets the minimum length of a password.
+// returns a *int32 when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLength")
     if err != nil {
@@ -560,6 +581,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPasswordMinimumLength()(*int32) 
     return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Gets or sets the number of previous passwords to block.
+// returns a *int32 when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPasswordPreviousPasswordBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
     if err != nil {
@@ -571,6 +593,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPasswordPreviousPasswordBlockCou
     return nil
 }
 // GetPasswordRequireActiveDirectoryComplexity gets the passwordRequireActiveDirectoryComplexity property value. Enables or disables whether passwords must meet Active Directory's complexity requirements.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPasswordRequireActiveDirectoryComplexity()(*bool) {
     val, err := m.GetBackingStore().Get("passwordRequireActiveDirectoryComplexity")
     if err != nil {
@@ -582,6 +605,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPasswordRequireActiveDirectoryCo
     return nil
 }
 // GetPasswordRequirementsDescription gets the passwordRequirementsDescription property value. Gets or sets a description of the password complexity requirements.
+// returns a *string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPasswordRequirementsDescription()(*string) {
     val, err := m.GetBackingStore().Get("passwordRequirementsDescription")
     if err != nil {
@@ -593,6 +617,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPasswordRequirementsDescription(
     return nil
 }
 // GetPreferredKDCs gets the preferredKDCs property value. Add creates an ordered list of preferred Key Distribution Centers (KDCs) to use for Kerberos traffic. This list is used when the servers are not discoverable using DNS. When the servers are discoverable, the list is used for both connectivity checks, and used first for Kerberos traffic. If the servers don’t respond, then the device uses DNS discovery. Delete removes an existing list, and devices use DNS discovery. Available for devices running macOS versions 12 and later.
+// returns a []string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetPreferredKDCs()([]string) {
     val, err := m.GetBackingStore().Get("preferredKDCs")
     if err != nil {
@@ -604,6 +629,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetPreferredKDCs()([]string) {
     return nil
 }
 // GetRealm gets the realm property value. Gets or sets the case-sensitive realm name for this profile.
+// returns a *string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetRealm()(*string) {
     val, err := m.GetBackingStore().Get("realm")
     if err != nil {
@@ -615,6 +641,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetRealm()(*string) {
     return nil
 }
 // GetRequireUserPresence gets the requireUserPresence property value. Gets or sets whether to require authentication via Touch ID, Face ID, or a passcode to access the keychain entry.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetRequireUserPresence()(*bool) {
     val, err := m.GetBackingStore().Get("requireUserPresence")
     if err != nil {
@@ -626,6 +653,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetRequireUserPresence()(*bool) {
     return nil
 }
 // GetSignInHelpText gets the signInHelpText property value. Text displayed to the user at the Kerberos sign in window. Available for devices running iOS and iPadOS versions 14 and later.
+// returns a *string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetSignInHelpText()(*string) {
     val, err := m.GetBackingStore().Get("signInHelpText")
     if err != nil {
@@ -637,6 +665,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetSignInHelpText()(*string) {
     return nil
 }
 // GetTlsForLDAPRequired gets the tlsForLDAPRequired property value. When set to True, LDAP connections are required to use Transport Layer Security (TLS). Available for devices running macOS versions 11 and later.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetTlsForLDAPRequired()(*bool) {
     val, err := m.GetBackingStore().Get("tlsForLDAPRequired")
     if err != nil {
@@ -648,6 +677,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetTlsForLDAPRequired()(*bool) {
     return nil
 }
 // GetUsernameLabelCustom gets the usernameLabelCustom property value. This label replaces the user name shown in the Kerberos extension. You can enter a name to match the name of your company or organization. Available for devices running macOS versions 11 and later.
+// returns a *string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetUsernameLabelCustom()(*string) {
     val, err := m.GetBackingStore().Get("usernameLabelCustom")
     if err != nil {
@@ -659,6 +689,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetUsernameLabelCustom()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. Gets or sets the principle user name to use for this profile. The realm name does not need to be included.
+// returns a *string when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -670,6 +701,7 @@ func (m *MacOSKerberosSingleSignOnExtension) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUserSetupDelayed gets the userSetupDelayed property value. When set to True, the user isn’t prompted to set up the Kerberos extension until the extension is enabled by the admin, or a Kerberos challenge is received. Available for devices running macOS versions 11 and later.
+// returns a *bool when successful
 func (m *MacOSKerberosSingleSignOnExtension) GetUserSetupDelayed()(*bool) {
     val, err := m.GetBackingStore().Get("userSetupDelayed")
     if err != nil {
@@ -1078,7 +1110,6 @@ func (m *MacOSKerberosSingleSignOnExtension) SetUserSetupDelayed(value *bool)() 
         panic(err)
     }
 }
-// MacOSKerberosSingleSignOnExtensionable 
 type MacOSKerberosSingleSignOnExtensionable interface {
     MacOSSingleSignOnExtensionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

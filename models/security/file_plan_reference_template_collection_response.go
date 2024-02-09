@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// FilePlanReferenceTemplateCollectionResponse 
 type FilePlanReferenceTemplateCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewFilePlanReferenceTemplateCollectionResponse instantiates a new filePlanReferenceTemplateCollectionResponse and sets the default values.
+// NewFilePlanReferenceTemplateCollectionResponse instantiates a new FilePlanReferenceTemplateCollectionResponse and sets the default values.
 func NewFilePlanReferenceTemplateCollectionResponse()(*FilePlanReferenceTemplateCollectionResponse) {
     m := &FilePlanReferenceTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),
@@ -17,10 +16,12 @@ func NewFilePlanReferenceTemplateCollectionResponse()(*FilePlanReferenceTemplate
     return m
 }
 // CreateFilePlanReferenceTemplateCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFilePlanReferenceTemplateCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFilePlanReferenceTemplateCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FilePlanReferenceTemplateCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *FilePlanReferenceTemplateCollectionResponse) GetFieldDeserializers()(ma
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []FilePlanReferenceTemplateable when successful
 func (m *FilePlanReferenceTemplateCollectionResponse) GetValue()([]FilePlanReferenceTemplateable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *FilePlanReferenceTemplateCollectionResponse) SetValue(value []FilePlanR
         panic(err)
     }
 }
-// FilePlanReferenceTemplateCollectionResponseable 
 type FilePlanReferenceTemplateCollectionResponseable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

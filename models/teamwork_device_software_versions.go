@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamworkDeviceSoftwareVersions 
 type TeamworkDeviceSoftwareVersions struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamworkDeviceSoftwareVersions instantiates a new teamworkDeviceSoftwareVersions and sets the default values.
+// NewTeamworkDeviceSoftwareVersions instantiates a new TeamworkDeviceSoftwareVersions and sets the default values.
 func NewTeamworkDeviceSoftwareVersions()(*TeamworkDeviceSoftwareVersions) {
     m := &TeamworkDeviceSoftwareVersions{
     }
@@ -19,10 +18,12 @@ func NewTeamworkDeviceSoftwareVersions()(*TeamworkDeviceSoftwareVersions) {
     return m
 }
 // CreateTeamworkDeviceSoftwareVersionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkDeviceSoftwareVersionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkDeviceSoftwareVersions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamworkDeviceSoftwareVersions) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAdminAgentSoftwareVersion gets the adminAgentSoftwareVersion property value. The software version for the admin agent running on the device.
+// returns a *string when successful
 func (m *TeamworkDeviceSoftwareVersions) GetAdminAgentSoftwareVersion()(*string) {
     val, err := m.GetBackingStore().Get("adminAgentSoftwareVersion")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *TeamworkDeviceSoftwareVersions) GetAdminAgentSoftwareVersion()(*string)
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamworkDeviceSoftwareVersions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkDeviceSoftwareVersions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["adminAgentSoftwareVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +119,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetFirmwareSoftwareVersion gets the firmwareSoftwareVersion property value. The software version for the firmware running on the device.
+// returns a *string when successful
 func (m *TeamworkDeviceSoftwareVersions) GetFirmwareSoftwareVersion()(*string) {
     val, err := m.GetBackingStore().Get("firmwareSoftwareVersion")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetFirmwareSoftwareVersion()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamworkDeviceSoftwareVersions) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetOdataType()(*string) {
     return nil
 }
 // GetOperatingSystemSoftwareVersion gets the operatingSystemSoftwareVersion property value. The software version for the operating system on the device.
+// returns a *string when successful
 func (m *TeamworkDeviceSoftwareVersions) GetOperatingSystemSoftwareVersion()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystemSoftwareVersion")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetOperatingSystemSoftwareVersion()(*st
     return nil
 }
 // GetPartnerAgentSoftwareVersion gets the partnerAgentSoftwareVersion property value. The software version for the partner agent running on the device.
+// returns a *string when successful
 func (m *TeamworkDeviceSoftwareVersions) GetPartnerAgentSoftwareVersion()(*string) {
     val, err := m.GetBackingStore().Get("partnerAgentSoftwareVersion")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *TeamworkDeviceSoftwareVersions) GetPartnerAgentSoftwareVersion()(*strin
     return nil
 }
 // GetTeamsClientSoftwareVersion gets the teamsClientSoftwareVersion property value. The software version for the Teams client running on the device.
+// returns a *string when successful
 func (m *TeamworkDeviceSoftwareVersions) GetTeamsClientSoftwareVersion()(*string) {
     val, err := m.GetBackingStore().Get("teamsClientSoftwareVersion")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *TeamworkDeviceSoftwareVersions) SetTeamsClientSoftwareVersion(value *st
         panic(err)
     }
 }
-// TeamworkDeviceSoftwareVersionsable 
 type TeamworkDeviceSoftwareVersionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

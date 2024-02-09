@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerGlobalProxyDirect struct {
     AndroidDeviceOwnerGlobalProxy
 }
-// NewAndroidDeviceOwnerGlobalProxyDirect instantiates a new androidDeviceOwnerGlobalProxyDirect and sets the default values.
+// NewAndroidDeviceOwnerGlobalProxyDirect instantiates a new AndroidDeviceOwnerGlobalProxyDirect and sets the default values.
 func NewAndroidDeviceOwnerGlobalProxyDirect()(*AndroidDeviceOwnerGlobalProxyDirect) {
     m := &AndroidDeviceOwnerGlobalProxyDirect{
         AndroidDeviceOwnerGlobalProxy: *NewAndroidDeviceOwnerGlobalProxy(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceOwnerGlobalProxyDirect()(*AndroidDeviceOwnerGlobalProxyDire
     return m
 }
 // CreateAndroidDeviceOwnerGlobalProxyDirectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerGlobalProxyDirectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerGlobalProxyDirect(), nil
 }
 // GetExcludedHosts gets the excludedHosts property value. The excluded hosts
+// returns a []string when successful
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetExcludedHosts()([]string) {
     val, err := m.GetBackingStore().Get("excludedHosts")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidDeviceOwnerGlobalProxyDirect) GetExcludedHosts()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidDeviceOwnerGlobalProxy.GetFieldDeserializers()
     res["excludedHosts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *AndroidDeviceOwnerGlobalProxyDirect) GetFieldDeserializers()(map[string
     return res
 }
 // GetHost gets the host property value. The host name
+// returns a *string when successful
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetHost()(*string) {
     val, err := m.GetBackingStore().Get("host")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *AndroidDeviceOwnerGlobalProxyDirect) GetHost()(*string) {
     return nil
 }
 // GetPort gets the port property value. The port
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGlobalProxyDirect) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
     if err != nil {
@@ -142,7 +147,6 @@ func (m *AndroidDeviceOwnerGlobalProxyDirect) SetPort(value *int32)() {
         panic(err)
     }
 }
-// AndroidDeviceOwnerGlobalProxyDirectable 
 type AndroidDeviceOwnerGlobalProxyDirectable interface {
     AndroidDeviceOwnerGlobalProxyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

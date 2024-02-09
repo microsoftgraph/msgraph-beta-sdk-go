@@ -41,6 +41,7 @@ type EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetRequestConfiguration s
 }
 // ByTagId1 provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder when successful
 func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ByTagId1(tagId1 string)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -51,25 +52,28 @@ func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ByTagId1(tagId1 str
     }
     return NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal instantiates a new ChildTagsRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal instantiates a new EdiscoveryCasesItemTagsItemChildTagsRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) {
     m := &EdiscoveryCasesItemTagsItemChildTagsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilder instantiates a new ChildTagsRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilder instantiates a new EdiscoveryCasesItemTagsItemChildTagsRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *EdiscoveryCasesItemTagsItemChildTagsCountRequestBuilder when successful
 func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Count()(*EdiscoveryCasesItemTagsItemChildTagsCountRequestBuilder) {
     return NewEdiscoveryCasesItemTagsItemChildTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of child tag objects associated with a tag.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a TagCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-tag-childtags?view=graph-rest-1.0
@@ -79,8 +83,7 @@ func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Get(ctx context.Con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateTagCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,6 +96,7 @@ func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) Get(ctx context.Con
 }
 // ToGetRequestInformation get a list of child tag objects associated with a tag.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsItemChildTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -107,6 +111,7 @@ func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) ToGetRequestInforma
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder when successful
 func (m *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) {
     return NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

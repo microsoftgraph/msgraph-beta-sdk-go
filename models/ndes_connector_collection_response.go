@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NdesConnectorCollectionResponse 
 type NdesConnectorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewNdesConnectorCollectionResponse instantiates a new ndesConnectorCollectionResponse and sets the default values.
+// NewNdesConnectorCollectionResponse instantiates a new NdesConnectorCollectionResponse and sets the default values.
 func NewNdesConnectorCollectionResponse()(*NdesConnectorCollectionResponse) {
     m := &NdesConnectorCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewNdesConnectorCollectionResponse()(*NdesConnectorCollectionResponse) {
     return m
 }
 // CreateNdesConnectorCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNdesConnectorCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNdesConnectorCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NdesConnectorCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *NdesConnectorCollectionResponse) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []NdesConnectorable when successful
 func (m *NdesConnectorCollectionResponse) GetValue()([]NdesConnectorable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *NdesConnectorCollectionResponse) SetValue(value []NdesConnectorable)() 
         panic(err)
     }
 }
-// NdesConnectorCollectionResponseable 
 type NdesConnectorCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

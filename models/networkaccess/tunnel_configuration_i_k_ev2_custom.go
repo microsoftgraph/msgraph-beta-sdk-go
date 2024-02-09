@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TunnelConfigurationIKEv2Custom 
 type TunnelConfigurationIKEv2Custom struct {
     TunnelConfiguration
 }
-// NewTunnelConfigurationIKEv2Custom instantiates a new tunnelConfigurationIKEv2Custom and sets the default values.
+// NewTunnelConfigurationIKEv2Custom instantiates a new TunnelConfigurationIKEv2Custom and sets the default values.
 func NewTunnelConfigurationIKEv2Custom()(*TunnelConfigurationIKEv2Custom) {
     m := &TunnelConfigurationIKEv2Custom{
         TunnelConfiguration: *NewTunnelConfiguration(),
@@ -18,10 +17,12 @@ func NewTunnelConfigurationIKEv2Custom()(*TunnelConfigurationIKEv2Custom) {
     return m
 }
 // CreateTunnelConfigurationIKEv2CustomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTunnelConfigurationIKEv2CustomFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTunnelConfigurationIKEv2Custom(), nil
 }
 // GetDhGroup gets the dhGroup property value. The dhGroup property
+// returns a *DhGroup when successful
 func (m *TunnelConfigurationIKEv2Custom) GetDhGroup()(*DhGroup) {
     val, err := m.GetBackingStore().Get("dhGroup")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *TunnelConfigurationIKEv2Custom) GetDhGroup()(*DhGroup) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TunnelConfigurationIKEv2Custom) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TunnelConfiguration.GetFieldDeserializers()
     res["dhGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +110,7 @@ func (m *TunnelConfigurationIKEv2Custom) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetIkeEncryption gets the ikeEncryption property value. The ikeEncryption property
+// returns a *IkeEncryption when successful
 func (m *TunnelConfigurationIKEv2Custom) GetIkeEncryption()(*IkeEncryption) {
     val, err := m.GetBackingStore().Get("ikeEncryption")
     if err != nil {
@@ -119,6 +122,7 @@ func (m *TunnelConfigurationIKEv2Custom) GetIkeEncryption()(*IkeEncryption) {
     return nil
 }
 // GetIkeIntegrity gets the ikeIntegrity property value. The ikeIntegrity property
+// returns a *IkeIntegrity when successful
 func (m *TunnelConfigurationIKEv2Custom) GetIkeIntegrity()(*IkeIntegrity) {
     val, err := m.GetBackingStore().Get("ikeIntegrity")
     if err != nil {
@@ -130,6 +134,7 @@ func (m *TunnelConfigurationIKEv2Custom) GetIkeIntegrity()(*IkeIntegrity) {
     return nil
 }
 // GetIpSecEncryption gets the ipSecEncryption property value. The ipSecEncryption property
+// returns a *IpSecEncryption when successful
 func (m *TunnelConfigurationIKEv2Custom) GetIpSecEncryption()(*IpSecEncryption) {
     val, err := m.GetBackingStore().Get("ipSecEncryption")
     if err != nil {
@@ -141,6 +146,7 @@ func (m *TunnelConfigurationIKEv2Custom) GetIpSecEncryption()(*IpSecEncryption) 
     return nil
 }
 // GetIpSecIntegrity gets the ipSecIntegrity property value. The ipSecIntegrity property
+// returns a *IpSecIntegrity when successful
 func (m *TunnelConfigurationIKEv2Custom) GetIpSecIntegrity()(*IpSecIntegrity) {
     val, err := m.GetBackingStore().Get("ipSecIntegrity")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *TunnelConfigurationIKEv2Custom) GetIpSecIntegrity()(*IpSecIntegrity) {
     return nil
 }
 // GetPfsGroup gets the pfsGroup property value. The pfsGroup property
+// returns a *PfsGroup when successful
 func (m *TunnelConfigurationIKEv2Custom) GetPfsGroup()(*PfsGroup) {
     val, err := m.GetBackingStore().Get("pfsGroup")
     if err != nil {
@@ -163,6 +170,7 @@ func (m *TunnelConfigurationIKEv2Custom) GetPfsGroup()(*PfsGroup) {
     return nil
 }
 // GetSaLifeTimeSeconds gets the saLifeTimeSeconds property value. a standard specifiying Security Association lifetime with recommended values from an RFC standard.
+// returns a *int64 when successful
 func (m *TunnelConfigurationIKEv2Custom) GetSaLifeTimeSeconds()(*int64) {
     val, err := m.GetBackingStore().Get("saLifeTimeSeconds")
     if err != nil {
@@ -278,7 +286,6 @@ func (m *TunnelConfigurationIKEv2Custom) SetSaLifeTimeSeconds(value *int64)() {
         panic(err)
     }
 }
-// TunnelConfigurationIKEv2Customable 
 type TunnelConfigurationIKEv2Customable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TunnelConfigurationable

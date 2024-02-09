@@ -27,32 +27,34 @@ type ItemRootRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemRootRequestBuilderGetQueryParameters
 }
-// NewItemRootRequestBuilderInternal instantiates a new RootRequestBuilder and sets the default values.
+// NewItemRootRequestBuilderInternal instantiates a new ItemRootRequestBuilder and sets the default values.
 func NewItemRootRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRootRequestBuilder) {
     m := &ItemRootRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/root{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/root{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemRootRequestBuilder instantiates a new RootRequestBuilder and sets the default values.
+// NewItemRootRequestBuilder instantiates a new ItemRootRequestBuilder and sets the default values.
 func NewItemRootRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRootRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemRootRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Content provides operations to manage the media for the sharedDriveItem entity.
+// returns a *ItemRootContentRequestBuilder when successful
 func (m *ItemRootRequestBuilder) Content()(*ItemRootContentRequestBuilder) {
     return NewItemRootContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get root from shares
+// returns a DriveItemable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemRootRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRootRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDriveItemFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -64,6 +66,7 @@ func (m *ItemRootRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
 // ToGetRequestInformation get root from shares
+// returns a *RequestInformation when successful
 func (m *ItemRootRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRootRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -77,6 +80,7 @@ func (m *ItemRootRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemRootRequestBuilder when successful
 func (m *ItemRootRequestBuilder) WithUrl(rawUrl string)(*ItemRootRequestBuilder) {
     return NewItemRootRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -27,28 +27,29 @@ type GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilderGetRequestConfigur
     // Request query parameters
     QueryParameters *GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilderGetQueryParameters
 }
-// NewGroupsItemSetsItemTermsItemRelationsItemSetRequestBuilderInternal instantiates a new SetRequestBuilder and sets the default values.
+// NewGroupsItemSetsItemTermsItemRelationsItemSetRequestBuilderInternal instantiates a new GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder and sets the default values.
 func NewGroupsItemSetsItemTermsItemRelationsItemSetRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder) {
     m := &GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}/relations/{relation%2Did}/set{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}/relations/{relation%2Did}/set{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewGroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder instantiates a new SetRequestBuilder and sets the default values.
+// NewGroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder instantiates a new GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder and sets the default values.
 func NewGroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupsItemSetsItemTermsItemRelationsItemSetRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the [set] in which the relation is relevant.
+// returns a Setable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.CreateSetFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder) Get(ctx cont
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable), nil
 }
 // ToGetRequestInformation the [set] in which the relation is relevant.
+// returns a *RequestInformation when successful
 func (m *GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder when successful
 func (m *GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder) WithUrl(rawUrl string)(*GroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder) {
     return NewGroupsItemSetsItemTermsItemRelationsItemSetRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

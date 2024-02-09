@@ -8,7 +8,7 @@ import (
 type MobileAppSupersedence struct {
     MobileAppRelationship
 }
-// NewMobileAppSupersedence instantiates a new mobileAppSupersedence and sets the default values.
+// NewMobileAppSupersedence instantiates a new MobileAppSupersedence and sets the default values.
 func NewMobileAppSupersedence()(*MobileAppSupersedence) {
     m := &MobileAppSupersedence{
         MobileAppRelationship: *NewMobileAppRelationship(),
@@ -18,10 +18,12 @@ func NewMobileAppSupersedence()(*MobileAppSupersedence) {
     return m
 }
 // CreateMobileAppSupersedenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppSupersedenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppSupersedence(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppSupersedence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppRelationship.GetFieldDeserializers()
     res["supersededAppCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *MobileAppSupersedence) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetSupersededAppCount gets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app.
+// returns a *int32 when successful
 func (m *MobileAppSupersedence) GetSupersededAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("supersededAppCount")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *MobileAppSupersedence) GetSupersededAppCount()(*int32) {
     return nil
 }
 // GetSupersedenceType gets the supersedenceType property value. Indicates the supersedence type associated with a relationship between two mobile apps.
+// returns a *MobileAppSupersedenceType when successful
 func (m *MobileAppSupersedence) GetSupersedenceType()(*MobileAppSupersedenceType) {
     val, err := m.GetBackingStore().Get("supersedenceType")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *MobileAppSupersedence) GetSupersedenceType()(*MobileAppSupersedenceType
     return nil
 }
 // GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app.
+// returns a *int32 when successful
 func (m *MobileAppSupersedence) GetSupersedingAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("supersedingAppCount")
     if err != nil {
@@ -137,7 +142,6 @@ func (m *MobileAppSupersedence) SetSupersedingAppCount(value *int32)() {
         panic(err)
     }
 }
-// MobileAppSupersedenceable 
 type MobileAppSupersedenceable interface {
     MobileAppRelationshipable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

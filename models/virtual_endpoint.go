@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEndpoint 
 type VirtualEndpoint struct {
     Entity
 }
-// NewVirtualEndpoint instantiates a new virtualEndpoint and sets the default values.
+// NewVirtualEndpoint instantiates a new VirtualEndpoint and sets the default values.
 func NewVirtualEndpoint()(*VirtualEndpoint) {
     m := &VirtualEndpoint{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewVirtualEndpoint()(*VirtualEndpoint) {
     return m
 }
 // CreateVirtualEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEndpoint(), nil
 }
 // GetAuditEvents gets the auditEvents property value. Cloud PC audit event.
+// returns a []CloudPcAuditEventable when successful
 func (m *VirtualEndpoint) GetAuditEvents()([]CloudPcAuditEventable) {
     val, err := m.GetBackingStore().Get("auditEvents")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *VirtualEndpoint) GetAuditEvents()([]CloudPcAuditEventable) {
     return nil
 }
 // GetBulkActions gets the bulkActions property value. The bulkActions property
+// returns a []CloudPcBulkActionable when successful
 func (m *VirtualEndpoint) GetBulkActions()([]CloudPcBulkActionable) {
     val, err := m.GetBackingStore().Get("bulkActions")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *VirtualEndpoint) GetBulkActions()([]CloudPcBulkActionable) {
     return nil
 }
 // GetCloudPCs gets the cloudPCs property value. Cloud managed virtual desktops.
+// returns a []CloudPCable when successful
 func (m *VirtualEndpoint) GetCloudPCs()([]CloudPCable) {
     val, err := m.GetBackingStore().Get("cloudPCs")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *VirtualEndpoint) GetCloudPCs()([]CloudPCable) {
     return nil
 }
 // GetCrossCloudGovernmentOrganizationMapping gets the crossCloudGovernmentOrganizationMapping property value. Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+// returns a CloudPcCrossCloudGovernmentOrganizationMappingable when successful
 func (m *VirtualEndpoint) GetCrossCloudGovernmentOrganizationMapping()(CloudPcCrossCloudGovernmentOrganizationMappingable) {
     val, err := m.GetBackingStore().Get("crossCloudGovernmentOrganizationMapping")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *VirtualEndpoint) GetCrossCloudGovernmentOrganizationMapping()(CloudPcCr
     return nil
 }
 // GetDeviceImages gets the deviceImages property value. The image resource on Cloud PC.
+// returns a []CloudPcDeviceImageable when successful
 func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImageable) {
     val, err := m.GetBackingStore().Get("deviceImages")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImageable) {
     return nil
 }
 // GetExternalPartnerSettings gets the externalPartnerSettings property value. The external partner settings on a Cloud PC.
+// returns a []CloudPcExternalPartnerSettingable when successful
 func (m *VirtualEndpoint) GetExternalPartnerSettings()([]CloudPcExternalPartnerSettingable) {
     val, err := m.GetBackingStore().Get("externalPartnerSettings")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *VirtualEndpoint) GetExternalPartnerSettings()([]CloudPcExternalPartnerS
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["auditEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -345,6 +352,7 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetFrontLineServicePlans gets the frontLineServicePlans property value. Front-line service plans for a Cloud PC.
+// returns a []CloudPcFrontLineServicePlanable when successful
 func (m *VirtualEndpoint) GetFrontLineServicePlans()([]CloudPcFrontLineServicePlanable) {
     val, err := m.GetBackingStore().Get("frontLineServicePlans")
     if err != nil {
@@ -356,6 +364,7 @@ func (m *VirtualEndpoint) GetFrontLineServicePlans()([]CloudPcFrontLineServicePl
     return nil
 }
 // GetGalleryImages gets the galleryImages property value. The gallery image resource on Cloud PC.
+// returns a []CloudPcGalleryImageable when successful
 func (m *VirtualEndpoint) GetGalleryImages()([]CloudPcGalleryImageable) {
     val, err := m.GetBackingStore().Get("galleryImages")
     if err != nil {
@@ -367,6 +376,7 @@ func (m *VirtualEndpoint) GetGalleryImages()([]CloudPcGalleryImageable) {
     return nil
 }
 // GetOnPremisesConnections gets the onPremisesConnections property value. A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+// returns a []CloudPcOnPremisesConnectionable when successful
 func (m *VirtualEndpoint) GetOnPremisesConnections()([]CloudPcOnPremisesConnectionable) {
     val, err := m.GetBackingStore().Get("onPremisesConnections")
     if err != nil {
@@ -378,6 +388,7 @@ func (m *VirtualEndpoint) GetOnPremisesConnections()([]CloudPcOnPremisesConnecti
     return nil
 }
 // GetOrganizationSettings gets the organizationSettings property value. The Cloud PC organization settings for a tenant.
+// returns a CloudPcOrganizationSettingsable when successful
 func (m *VirtualEndpoint) GetOrganizationSettings()(CloudPcOrganizationSettingsable) {
     val, err := m.GetBackingStore().Get("organizationSettings")
     if err != nil {
@@ -389,6 +400,7 @@ func (m *VirtualEndpoint) GetOrganizationSettings()(CloudPcOrganizationSettingsa
     return nil
 }
 // GetProvisioningPolicies gets the provisioningPolicies property value. Cloud PC provisioning policy.
+// returns a []CloudPcProvisioningPolicyable when successful
 func (m *VirtualEndpoint) GetProvisioningPolicies()([]CloudPcProvisioningPolicyable) {
     val, err := m.GetBackingStore().Get("provisioningPolicies")
     if err != nil {
@@ -400,6 +412,7 @@ func (m *VirtualEndpoint) GetProvisioningPolicies()([]CloudPcProvisioningPolicya
     return nil
 }
 // GetReports gets the reports property value. Cloud PC related reports.
+// returns a CloudPcReportsable when successful
 func (m *VirtualEndpoint) GetReports()(CloudPcReportsable) {
     val, err := m.GetBackingStore().Get("reports")
     if err != nil {
@@ -411,6 +424,7 @@ func (m *VirtualEndpoint) GetReports()(CloudPcReportsable) {
     return nil
 }
 // GetServicePlans gets the servicePlans property value. Cloud PC service plans.
+// returns a []CloudPcServicePlanable when successful
 func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlanable) {
     val, err := m.GetBackingStore().Get("servicePlans")
     if err != nil {
@@ -422,6 +436,7 @@ func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlanable) {
     return nil
 }
 // GetSharedUseServicePlans gets the sharedUseServicePlans property value. The sharedUseServicePlans property
+// returns a []CloudPcSharedUseServicePlanable when successful
 func (m *VirtualEndpoint) GetSharedUseServicePlans()([]CloudPcSharedUseServicePlanable) {
     val, err := m.GetBackingStore().Get("sharedUseServicePlans")
     if err != nil {
@@ -433,6 +448,7 @@ func (m *VirtualEndpoint) GetSharedUseServicePlans()([]CloudPcSharedUseServicePl
     return nil
 }
 // GetSnapshots gets the snapshots property value. Cloud PC snapshots.
+// returns a []CloudPcSnapshotable when successful
 func (m *VirtualEndpoint) GetSnapshots()([]CloudPcSnapshotable) {
     val, err := m.GetBackingStore().Get("snapshots")
     if err != nil {
@@ -444,6 +460,7 @@ func (m *VirtualEndpoint) GetSnapshots()([]CloudPcSnapshotable) {
     return nil
 }
 // GetSupportedRegions gets the supportedRegions property value. Cloud PC supported regions.
+// returns a []CloudPcSupportedRegionable when successful
 func (m *VirtualEndpoint) GetSupportedRegions()([]CloudPcSupportedRegionable) {
     val, err := m.GetBackingStore().Get("supportedRegions")
     if err != nil {
@@ -455,6 +472,7 @@ func (m *VirtualEndpoint) GetSupportedRegions()([]CloudPcSupportedRegionable) {
     return nil
 }
 // GetUserSettings gets the userSettings property value. Cloud PC user settings.
+// returns a []CloudPcUserSettingable when successful
 func (m *VirtualEndpoint) GetUserSettings()([]CloudPcUserSettingable) {
     val, err := m.GetBackingStore().Get("userSettings")
     if err != nil {
@@ -778,7 +796,6 @@ func (m *VirtualEndpoint) SetUserSettings(value []CloudPcUserSettingable)() {
         panic(err)
     }
 }
-// VirtualEndpointable 
 type VirtualEndpointable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

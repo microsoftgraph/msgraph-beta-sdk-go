@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TrustFrameworkKeySet 
 type TrustFrameworkKeySet struct {
     Entity
 }
-// NewTrustFrameworkKeySet instantiates a new trustFrameworkKeySet and sets the default values.
+// NewTrustFrameworkKeySet instantiates a new TrustFrameworkKeySet and sets the default values.
 func NewTrustFrameworkKeySet()(*TrustFrameworkKeySet) {
     m := &TrustFrameworkKeySet{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTrustFrameworkKeySet()(*TrustFrameworkKeySet) {
     return m
 }
 // CreateTrustFrameworkKeySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTrustFrameworkKeySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTrustFrameworkKeySet(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TrustFrameworkKeySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["keys"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *TrustFrameworkKeySet) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetKeys gets the keys property value. A collection of the keys.
+// returns a []TrustFrameworkKeyable when successful
 func (m *TrustFrameworkKeySet) GetKeys()([]TrustFrameworkKeyable) {
     val, err := m.GetBackingStore().Get("keys")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *TrustFrameworkKeySet) SetKeys(value []TrustFrameworkKeyable)() {
         panic(err)
     }
 }
-// TrustFrameworkKeySetable 
 type TrustFrameworkKeySetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

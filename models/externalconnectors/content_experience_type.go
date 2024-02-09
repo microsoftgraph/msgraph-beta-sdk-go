@@ -1,22 +1,24 @@
 package externalconnectors
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type ContentExperienceType int
 
 const (
-    SEARCH_CONTENTEXPERIENCETYPE ContentExperienceType = iota
-    COMPLIANCE_CONTENTEXPERIENCETYPE
-    UNKNOWNFUTUREVALUE_CONTENTEXPERIENCETYPE
+    SEARCH_CONTENTEXPERIENCETYPE = 1
+    COMPLIANCE_CONTENTEXPERIENCETYPE = 2
+    UNKNOWNFUTUREVALUE_CONTENTEXPERIENCETYPE = 4
 )
 
 func (i ContentExperienceType) String() string {
     var values []string
-    for p := ContentExperienceType(1); p <= UNKNOWNFUTUREVALUE_CONTENTEXPERIENCETYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"search", "compliance", "unknownFutureValue"}[p])
+    options := []string{"search", "compliance", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := ContentExperienceType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

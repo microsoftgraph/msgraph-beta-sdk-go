@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamworkSoftwareUpdateHealth 
 type TeamworkSoftwareUpdateHealth struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamworkSoftwareUpdateHealth instantiates a new teamworkSoftwareUpdateHealth and sets the default values.
+// NewTeamworkSoftwareUpdateHealth instantiates a new TeamworkSoftwareUpdateHealth and sets the default values.
 func NewTeamworkSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
     m := &TeamworkSoftwareUpdateHealth{
     }
@@ -19,10 +18,12 @@ func NewTeamworkSoftwareUpdateHealth()(*TeamworkSoftwareUpdateHealth) {
     return m
 }
 // CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkSoftwareUpdateHealthFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkSoftwareUpdateHealth(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamworkSoftwareUpdateHealth) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAdminAgentSoftwareUpdateStatus gets the adminAgentSoftwareUpdateStatus property value. The software update available for the admin agent.
+// returns a TeamworkSoftwareUpdateStatusable when successful
 func (m *TeamworkSoftwareUpdateHealth) GetAdminAgentSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     val, err := m.GetBackingStore().Get("adminAgentSoftwareUpdateStatus")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *TeamworkSoftwareUpdateHealth) GetAdminAgentSoftwareUpdateStatus()(Teamw
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamworkSoftwareUpdateHealth) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCompanyPortalSoftwareUpdateStatus gets the companyPortalSoftwareUpdateStatus property value. The software update available for the company portal.
+// returns a TeamworkSoftwareUpdateStatusable when successful
 func (m *TeamworkSoftwareUpdateHealth) GetCompanyPortalSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     val, err := m.GetBackingStore().Get("companyPortalSoftwareUpdateStatus")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetCompanyPortalSoftwareUpdateStatus()(Te
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["adminAgentSoftwareUpdateStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -136,6 +141,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetFirmwareSoftwareUpdateStatus gets the firmwareSoftwareUpdateStatus property value. The software update available for the firmware.
+// returns a TeamworkSoftwareUpdateStatusable when successful
 func (m *TeamworkSoftwareUpdateHealth) GetFirmwareSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     val, err := m.GetBackingStore().Get("firmwareSoftwareUpdateStatus")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetFirmwareSoftwareUpdateStatus()(Teamwor
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamworkSoftwareUpdateHealth) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetOdataType()(*string) {
     return nil
 }
 // GetOperatingSystemSoftwareUpdateStatus gets the operatingSystemSoftwareUpdateStatus property value. The software update available for the operating system.
+// returns a TeamworkSoftwareUpdateStatusable when successful
 func (m *TeamworkSoftwareUpdateHealth) GetOperatingSystemSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     val, err := m.GetBackingStore().Get("operatingSystemSoftwareUpdateStatus")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetOperatingSystemSoftwareUpdateStatus()(
     return nil
 }
 // GetPartnerAgentSoftwareUpdateStatus gets the partnerAgentSoftwareUpdateStatus property value. The software update available for the partner agent.
+// returns a TeamworkSoftwareUpdateStatusable when successful
 func (m *TeamworkSoftwareUpdateHealth) GetPartnerAgentSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     val, err := m.GetBackingStore().Get("partnerAgentSoftwareUpdateStatus")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *TeamworkSoftwareUpdateHealth) GetPartnerAgentSoftwareUpdateStatus()(Tea
     return nil
 }
 // GetTeamsClientSoftwareUpdateStatus gets the teamsClientSoftwareUpdateStatus property value. The software update available for the Teams client.
+// returns a TeamworkSoftwareUpdateStatusable when successful
 func (m *TeamworkSoftwareUpdateHealth) GetTeamsClientSoftwareUpdateStatus()(TeamworkSoftwareUpdateStatusable) {
     val, err := m.GetBackingStore().Get("teamsClientSoftwareUpdateStatus")
     if err != nil {
@@ -302,7 +312,6 @@ func (m *TeamworkSoftwareUpdateHealth) SetTeamsClientSoftwareUpdateStatus(value 
         panic(err)
     }
 }
-// TeamworkSoftwareUpdateHealthable 
 type TeamworkSoftwareUpdateHealthable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

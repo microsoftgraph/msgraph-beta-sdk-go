@@ -14,6 +14,8 @@ type GetRoleScopeTagsByIdsWithIdsRequestBuilder struct {
 type GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -39,7 +41,7 @@ type GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration struct {
 // NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal instantiates a new GetRoleScopeTagsByIdsWithIdsRequestBuilder and sets the default values.
 func NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, ids *string)(*GetRoleScopeTagsByIdsWithIdsRequestBuilder) {
     m := &GetRoleScopeTagsByIdsWithIdsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/getRoleScopeTagsByIds(ids={ids}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/getRoleScopeTagsByIds(ids={ids}){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     if ids != nil {
         m.BaseRequestBuilder.PathParameters["ids"] = *ids
@@ -53,15 +55,16 @@ func NewGetRoleScopeTagsByIdsWithIdsRequestBuilder(rawUrl string, requestAdapter
     return NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getRoleScopeTagsByIds
-// Deprecated: This method is obsolete. Use GetAsGetRoleScopeTagsByIdsWithIdsGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a GetRoleScopeTagsByIdsWithIdsResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration)(GetRoleScopeTagsByIdsWithIdsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetRoleScopeTagsByIdsWithIdsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -73,14 +76,15 @@ func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) Get(ctx context.Context, re
     return res.(GetRoleScopeTagsByIdsWithIdsResponseable), nil
 }
 // GetAsGetRoleScopeTagsByIdsWithIdsGetResponse invoke function getRoleScopeTagsByIds
+// returns a GetRoleScopeTagsByIdsWithIdsGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) GetAsGetRoleScopeTagsByIdsWithIdsGetResponse(ctx context.Context, requestConfiguration *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration)(GetRoleScopeTagsByIdsWithIdsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetRoleScopeTagsByIdsWithIdsGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -92,6 +96,7 @@ func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) GetAsGetRoleScopeTagsByIdsW
     return res.(GetRoleScopeTagsByIdsWithIdsGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getRoleScopeTagsByIds
+// returns a *RequestInformation when successful
 func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -105,6 +110,7 @@ func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GetRoleScopeTagsByIdsWithIdsRequestBuilder when successful
 func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) WithUrl(rawUrl string)(*GetRoleScopeTagsByIdsWithIdsRequestBuilder) {
     return NewGetRoleScopeTagsByIdsWithIdsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

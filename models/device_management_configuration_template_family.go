@@ -36,12 +36,14 @@ const (
     DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Template Family for device configuration policies
     DEVICECONFIGURATIONPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+    // Template Family for windowsOsRecovery that can be applied during a Windows operating system recovery
+    WINDOWSOSRECOVERYPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Template Family for Company Portal settings
     COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
 )
 
 func (i DeviceManagementConfigurationTemplateFamily) String() string {
-    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts", "deviceConfigurationPolicies", "companyPortal"}[i]
+    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts", "deviceConfigurationPolicies", "windowsOsRecoveryPolicies", "companyPortal"}[i]
 }
 func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
@@ -76,6 +78,8 @@ func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
             result = DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "deviceConfigurationPolicies":
             result = DEVICECONFIGURATIONPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+        case "windowsOsRecoveryPolicies":
+            result = WINDOWSOSRECOVERYPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "companyPortal":
             result = COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         default:

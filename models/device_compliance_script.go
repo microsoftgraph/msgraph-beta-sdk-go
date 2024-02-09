@@ -9,7 +9,7 @@ import (
 type DeviceComplianceScript struct {
     Entity
 }
-// NewDeviceComplianceScript instantiates a new deviceComplianceScript and sets the default values.
+// NewDeviceComplianceScript instantiates a new DeviceComplianceScript and sets the default values.
 func NewDeviceComplianceScript()(*DeviceComplianceScript) {
     m := &DeviceComplianceScript{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceComplianceScript()(*DeviceComplianceScript) {
     return m
 }
 // CreateDeviceComplianceScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceComplianceScriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceComplianceScript(), nil
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device compliance script
+// returns a []DeviceHealthScriptAssignmentable when successful
 func (m *DeviceComplianceScript) GetAssignments()([]DeviceHealthScriptAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceComplianceScript) GetAssignments()([]DeviceHealthScriptAssignment
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The timestamp of when the device compliance script was created. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceComplianceScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceComplianceScript) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDescription gets the description property value. Description of the device compliance script
+// returns a *string when successful
 func (m *DeviceComplianceScript) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *DeviceComplianceScript) GetDescription()(*string) {
     return nil
 }
 // GetDetectionScriptContent gets the detectionScriptContent property value. The entire content of the detection powershell script
+// returns a []byte when successful
 func (m *DeviceComplianceScript) GetDetectionScriptContent()([]byte) {
     val, err := m.GetBackingStore().Get("detectionScriptContent")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *DeviceComplianceScript) GetDetectionScriptContent()([]byte) {
     return nil
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for the device compliance script across all devices
+// returns a []DeviceComplianceScriptDeviceStateable when successful
 func (m *DeviceComplianceScript) GetDeviceRunStates()([]DeviceComplianceScriptDeviceStateable) {
     val, err := m.GetBackingStore().Get("deviceRunStates")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *DeviceComplianceScript) GetDeviceRunStates()([]DeviceComplianceScriptDe
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the device compliance script
+// returns a *string when successful
 func (m *DeviceComplianceScript) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *DeviceComplianceScript) GetDisplayName()(*string) {
     return nil
 }
 // GetEnforceSignatureCheck gets the enforceSignatureCheck property value. Indicate whether the script signature needs be checked
+// returns a *bool when successful
 func (m *DeviceComplianceScript) GetEnforceSignatureCheck()(*bool) {
     val, err := m.GetBackingStore().Get("enforceSignatureCheck")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *DeviceComplianceScript) GetEnforceSignatureCheck()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceComplianceScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -261,6 +270,7 @@ func (m *DeviceComplianceScript) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The timestamp of when the device compliance script was modified. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceComplianceScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -272,6 +282,7 @@ func (m *DeviceComplianceScript) GetLastModifiedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetPublisher gets the publisher property value. Name of the device compliance script publisher
+// returns a *string when successful
 func (m *DeviceComplianceScript) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -283,6 +294,7 @@ func (m *DeviceComplianceScript) GetPublisher()(*string) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for the device compliance script
+// returns a []string when successful
 func (m *DeviceComplianceScript) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -294,6 +306,7 @@ func (m *DeviceComplianceScript) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetRunAs32Bit gets the runAs32Bit property value. Indicate whether PowerShell script(s) should run as 32-bit
+// returns a *bool when successful
 func (m *DeviceComplianceScript) GetRunAs32Bit()(*bool) {
     val, err := m.GetBackingStore().Get("runAs32Bit")
     if err != nil {
@@ -305,6 +318,7 @@ func (m *DeviceComplianceScript) GetRunAs32Bit()(*bool) {
     return nil
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
+// returns a *RunAsAccountType when successful
 func (m *DeviceComplianceScript) GetRunAsAccount()(*RunAsAccountType) {
     val, err := m.GetBackingStore().Get("runAsAccount")
     if err != nil {
@@ -316,6 +330,7 @@ func (m *DeviceComplianceScript) GetRunAsAccount()(*RunAsAccountType) {
     return nil
 }
 // GetRunSummary gets the runSummary property value. High level run summary for device compliance script.
+// returns a DeviceComplianceScriptRunSummaryable when successful
 func (m *DeviceComplianceScript) GetRunSummary()(DeviceComplianceScriptRunSummaryable) {
     val, err := m.GetBackingStore().Get("runSummary")
     if err != nil {
@@ -327,6 +342,7 @@ func (m *DeviceComplianceScript) GetRunSummary()(DeviceComplianceScriptRunSummar
     return nil
 }
 // GetVersion gets the version property value. Version of the device compliance script
+// returns a *string when successful
 func (m *DeviceComplianceScript) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -528,7 +544,6 @@ func (m *DeviceComplianceScript) SetVersion(value *string)() {
         panic(err)
     }
 }
-// DeviceComplianceScriptable 
 type DeviceComplianceScriptable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,20 +17,21 @@ type AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewAccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilderInternal instantiates a new RecordAllDecisionsRequestBuilder and sets the default values.
+// NewAccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilderInternal instantiates a new AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder and sets the default values.
 func NewAccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder) {
     m := &AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/decisions/recordAllDecisions", pathParameters),
     }
     return m
 }
-// NewAccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder instantiates a new RecordAllDecisionsRequestBuilder and sets the default values.
+// NewAccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder instantiates a new AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder and sets the default values.
 func NewAccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post as a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified. If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-recordalldecisions?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBui
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBui
     return nil
 }
 // ToPostRequestInformation as a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified. If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
+// returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBui
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceDecisionsRecordAllDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

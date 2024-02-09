@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsAppDashboardCardDefinition 
 type TeamsAppDashboardCardDefinition struct {
     Entity
 }
-// NewTeamsAppDashboardCardDefinition instantiates a new teamsAppDashboardCardDefinition and sets the default values.
+// NewTeamsAppDashboardCardDefinition instantiates a new TeamsAppDashboardCardDefinition and sets the default values.
 func NewTeamsAppDashboardCardDefinition()(*TeamsAppDashboardCardDefinition) {
     m := &TeamsAppDashboardCardDefinition{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTeamsAppDashboardCardDefinition()(*TeamsAppDashboardCardDefinition) {
     return m
 }
 // CreateTeamsAppDashboardCardDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamsAppDashboardCardDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsAppDashboardCardDefinition(), nil
 }
 // GetContentSource gets the contentSource property value. The contentSource property
+// returns a TeamsAppDashboardCardContentSourceable when successful
 func (m *TeamsAppDashboardCardDefinition) GetContentSource()(TeamsAppDashboardCardContentSourceable) {
     val, err := m.GetBackingStore().Get("contentSource")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *TeamsAppDashboardCardDefinition) GetContentSource()(TeamsAppDashboardCa
     return nil
 }
 // GetDefaultSize gets the defaultSize property value. The defaultSize property
+// returns a *TeamsAppDashboardCardSize when successful
 func (m *TeamsAppDashboardCardDefinition) GetDefaultSize()(*TeamsAppDashboardCardSize) {
     val, err := m.GetBackingStore().Get("defaultSize")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *TeamsAppDashboardCardDefinition) GetDefaultSize()(*TeamsAppDashboardCar
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *TeamsAppDashboardCardDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *TeamsAppDashboardCardDefinition) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *TeamsAppDashboardCardDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *TeamsAppDashboardCardDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamsAppDashboardCardDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contentSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -129,6 +134,7 @@ func (m *TeamsAppDashboardCardDefinition) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetIcon gets the icon property value. The icon property
+// returns a TeamsAppDashboardCardIconable when successful
 func (m *TeamsAppDashboardCardDefinition) GetIcon()(TeamsAppDashboardCardIconable) {
     val, err := m.GetBackingStore().Get("icon")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *TeamsAppDashboardCardDefinition) GetIcon()(TeamsAppDashboardCardIconabl
     return nil
 }
 // GetPickerGroupId gets the pickerGroupId property value. The pickerGroupId property
+// returns a *string when successful
 func (m *TeamsAppDashboardCardDefinition) GetPickerGroupId()(*string) {
     val, err := m.GetBackingStore().Get("pickerGroupId")
     if err != nil {
@@ -237,7 +244,6 @@ func (m *TeamsAppDashboardCardDefinition) SetPickerGroupId(value *string)() {
         panic(err)
     }
 }
-// TeamsAppDashboardCardDefinitionable 
 type TeamsAppDashboardCardDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

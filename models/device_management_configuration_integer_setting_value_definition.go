@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationIntegerSettingValueDefinition 
 type DeviceManagementConfigurationIntegerSettingValueDefinition struct {
     DeviceManagementConfigurationSettingValueDefinition
 }
-// NewDeviceManagementConfigurationIntegerSettingValueDefinition instantiates a new deviceManagementConfigurationIntegerSettingValueDefinition and sets the default values.
+// NewDeviceManagementConfigurationIntegerSettingValueDefinition instantiates a new DeviceManagementConfigurationIntegerSettingValueDefinition and sets the default values.
 func NewDeviceManagementConfigurationIntegerSettingValueDefinition()(*DeviceManagementConfigurationIntegerSettingValueDefinition) {
     m := &DeviceManagementConfigurationIntegerSettingValueDefinition{
         DeviceManagementConfigurationSettingValueDefinition: *NewDeviceManagementConfigurationSettingValueDefinition(),
@@ -18,10 +17,12 @@ func NewDeviceManagementConfigurationIntegerSettingValueDefinition()(*DeviceMana
     return m
 }
 // CreateDeviceManagementConfigurationIntegerSettingValueDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationIntegerSettingValueDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationIntegerSettingValueDefinition(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingValueDefinition.GetFieldDeserializers()
     res["maximumValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) GetFieldDes
     return res
 }
 // GetMaximumValue gets the maximumValue property value. Maximum allowed value of the integer
+// returns a *int64 when successful
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) GetMaximumValue()(*int64) {
     val, err := m.GetBackingStore().Get("maximumValue")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) GetMaximumV
     return nil
 }
 // GetMinimumValue gets the minimumValue property value. Minimum allowed value of the integer
+// returns a *int64 when successful
 func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) GetMinimumValue()(*int64) {
     val, err := m.GetBackingStore().Get("minimumValue")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *DeviceManagementConfigurationIntegerSettingValueDefinition) SetMinimumV
         panic(err)
     }
 }
-// DeviceManagementConfigurationIntegerSettingValueDefinitionable 
 type DeviceManagementConfigurationIntegerSettingValueDefinitionable interface {
     DeviceManagementConfigurationSettingValueDefinitionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

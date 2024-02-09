@@ -9,7 +9,7 @@ import (
 type DeviceManagementCachedReportConfiguration struct {
     Entity
 }
-// NewDeviceManagementCachedReportConfiguration instantiates a new deviceManagementCachedReportConfiguration and sets the default values.
+// NewDeviceManagementCachedReportConfiguration instantiates a new DeviceManagementCachedReportConfiguration and sets the default values.
 func NewDeviceManagementCachedReportConfiguration()(*DeviceManagementCachedReportConfiguration) {
     m := &DeviceManagementCachedReportConfiguration{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceManagementCachedReportConfiguration()(*DeviceManagementCachedRepor
     return m
 }
 // CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementCachedReportConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementCachedReportConfiguration(), nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Time that the cached report expires.
+// returns a *Time when successful
 func (m *DeviceManagementCachedReportConfiguration) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetExpirationDateTime()(*i33
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -129,6 +132,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFieldDeserializers()(map[
     return res
 }
 // GetFilter gets the filter property value. Filters applied on report creation.
+// returns a *string when successful
 func (m *DeviceManagementCachedReportConfiguration) GetFilter()(*string) {
     val, err := m.GetBackingStore().Get("filter")
     if err != nil {
@@ -140,6 +144,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetFilter()(*string) {
     return nil
 }
 // GetLastRefreshDateTime gets the lastRefreshDateTime property value. Time that the cached report was last refreshed.
+// returns a *Time when successful
 func (m *DeviceManagementCachedReportConfiguration) GetLastRefreshDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshDateTime")
     if err != nil {
@@ -151,6 +156,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetLastRefreshDateTime()(*i3
     return nil
 }
 // GetMetadata gets the metadata property value. Caller-managed metadata associated with the report.
+// returns a *string when successful
 func (m *DeviceManagementCachedReportConfiguration) GetMetadata()(*string) {
     val, err := m.GetBackingStore().Get("metadata")
     if err != nil {
@@ -162,6 +168,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetMetadata()(*string) {
     return nil
 }
 // GetOrderBy gets the orderBy property value. Ordering of columns in the report.
+// returns a []string when successful
 func (m *DeviceManagementCachedReportConfiguration) GetOrderBy()([]string) {
     val, err := m.GetBackingStore().Get("orderBy")
     if err != nil {
@@ -173,6 +180,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetOrderBy()([]string) {
     return nil
 }
 // GetReportName gets the reportName property value. Name of the report.
+// returns a *string when successful
 func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
     val, err := m.GetBackingStore().Get("reportName")
     if err != nil {
@@ -184,6 +192,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetReportName()(*string) {
     return nil
 }
 // GetSelectEscaped gets the select property value. Columns selected from the report.
+// returns a []string when successful
 func (m *DeviceManagementCachedReportConfiguration) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
@@ -195,6 +204,7 @@ func (m *DeviceManagementCachedReportConfiguration) GetSelectEscaped()([]string)
     return nil
 }
 // GetStatus gets the status property value. Possible statuses associated with a generated report.
+// returns a *DeviceManagementReportStatus when successful
 func (m *DeviceManagementCachedReportConfiguration) GetStatus()(*DeviceManagementReportStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -318,7 +328,6 @@ func (m *DeviceManagementCachedReportConfiguration) SetStatus(value *DeviceManag
         panic(err)
     }
 }
-// DeviceManagementCachedReportConfigurationable 
 type DeviceManagementCachedReportConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

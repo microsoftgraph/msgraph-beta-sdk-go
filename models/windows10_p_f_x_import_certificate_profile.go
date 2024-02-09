@@ -8,7 +8,7 @@ import (
 type Windows10PFXImportCertificateProfile struct {
     DeviceConfiguration
 }
-// NewWindows10PFXImportCertificateProfile instantiates a new windows10PFXImportCertificateProfile and sets the default values.
+// NewWindows10PFXImportCertificateProfile instantiates a new Windows10PFXImportCertificateProfile and sets the default values.
 func NewWindows10PFXImportCertificateProfile()(*Windows10PFXImportCertificateProfile) {
     m := &Windows10PFXImportCertificateProfile{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindows10PFXImportCertificateProfile()(*Windows10PFXImportCertificatePro
     return m
 }
 // CreateWindows10PFXImportCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10PFXImportCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10PFXImportCertificateProfile(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10PFXImportCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["keyStorageProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *Windows10PFXImportCertificateProfile) GetFieldDeserializers()(map[strin
     return res
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
+// returns a *KeyStorageProviderOption when successful
 func (m *Windows10PFXImportCertificateProfile) GetKeyStorageProvider()(*KeyStorageProviderOption) {
     val, err := m.GetBackingStore().Get("keyStorageProvider")
     if err != nil {
@@ -69,7 +72,6 @@ func (m *Windows10PFXImportCertificateProfile) SetKeyStorageProvider(value *KeyS
         panic(err)
     }
 }
-// Windows10PFXImportCertificateProfileable 
 type Windows10PFXImportCertificateProfileable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

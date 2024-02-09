@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BusinessFlow 
 type BusinessFlow struct {
     Entity
 }
-// NewBusinessFlow instantiates a new businessFlow and sets the default values.
+// NewBusinessFlow instantiates a new BusinessFlow and sets the default values.
 func NewBusinessFlow()(*BusinessFlow) {
     m := &BusinessFlow{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewBusinessFlow()(*BusinessFlow) {
     return m
 }
 // CreateBusinessFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBusinessFlowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBusinessFlow(), nil
 }
 // GetCustomData gets the customData property value. The customData property
+// returns a *string when successful
 func (m *BusinessFlow) GetCustomData()(*string) {
     val, err := m.GetBackingStore().Get("customData")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *BusinessFlow) GetCustomData()(*string) {
     return nil
 }
 // GetDeDuplicationId gets the deDuplicationId property value. The deDuplicationId property
+// returns a *string when successful
 func (m *BusinessFlow) GetDeDuplicationId()(*string) {
     val, err := m.GetBackingStore().Get("deDuplicationId")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *BusinessFlow) GetDeDuplicationId()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *BusinessFlow) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *BusinessFlow) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *BusinessFlow) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *BusinessFlow) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["customData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -159,6 +164,7 @@ func (m *BusinessFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetPolicy gets the policy property value. The policy property
+// returns a GovernancePolicyable when successful
 func (m *BusinessFlow) GetPolicy()(GovernancePolicyable) {
     val, err := m.GetBackingStore().Get("policy")
     if err != nil {
@@ -170,6 +176,7 @@ func (m *BusinessFlow) GetPolicy()(GovernancePolicyable) {
     return nil
 }
 // GetPolicyTemplateId gets the policyTemplateId property value. The policyTemplateId property
+// returns a *string when successful
 func (m *BusinessFlow) GetPolicyTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("policyTemplateId")
     if err != nil {
@@ -181,6 +188,7 @@ func (m *BusinessFlow) GetPolicyTemplateId()(*string) {
     return nil
 }
 // GetRecordVersion gets the recordVersion property value. The recordVersion property
+// returns a *string when successful
 func (m *BusinessFlow) GetRecordVersion()(*string) {
     val, err := m.GetBackingStore().Get("recordVersion")
     if err != nil {
@@ -192,6 +200,7 @@ func (m *BusinessFlow) GetRecordVersion()(*string) {
     return nil
 }
 // GetSchemaId gets the schemaId property value. The schemaId property
+// returns a *string when successful
 func (m *BusinessFlow) GetSchemaId()(*string) {
     val, err := m.GetBackingStore().Get("schemaId")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *BusinessFlow) GetSchemaId()(*string) {
     return nil
 }
 // GetSettings gets the settings property value. The settings property
+// returns a BusinessFlowSettingsable when successful
 func (m *BusinessFlow) GetSettings()(BusinessFlowSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -338,7 +348,6 @@ func (m *BusinessFlow) SetSettings(value BusinessFlowSettingsable)() {
         panic(err)
     }
 }
-// BusinessFlowable 
 type BusinessFlowable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

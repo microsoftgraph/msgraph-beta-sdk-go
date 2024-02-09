@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcLaunchInfo 
 type CloudPcLaunchInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcLaunchInfo instantiates a new cloudPcLaunchInfo and sets the default values.
+// NewCloudPcLaunchInfo instantiates a new CloudPcLaunchInfo and sets the default values.
 func NewCloudPcLaunchInfo()(*CloudPcLaunchInfo) {
     m := &CloudPcLaunchInfo{
     }
@@ -19,10 +18,12 @@ func NewCloudPcLaunchInfo()(*CloudPcLaunchInfo) {
     return m
 }
 // CreateCloudPcLaunchInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcLaunchInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcLaunchInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcLaunchInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *CloudPcLaunchInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcLaunchInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCloudPcId gets the cloudPcId property value. The unique identifier of the Cloud PC.
+// returns a *string when successful
 func (m *CloudPcLaunchInfo) GetCloudPcId()(*string) {
     val, err := m.GetBackingStore().Get("cloudPcId")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *CloudPcLaunchInfo) GetCloudPcId()(*string) {
     return nil
 }
 // GetCloudPcLaunchUrl gets the cloudPcLaunchUrl property value. The connect URL of the Cloud PC.
+// returns a *string when successful
 func (m *CloudPcLaunchInfo) GetCloudPcLaunchUrl()(*string) {
     val, err := m.GetBackingStore().Get("cloudPcLaunchUrl")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *CloudPcLaunchInfo) GetCloudPcLaunchUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcLaunchInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["cloudPcId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *CloudPcLaunchInfo) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcLaunchInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *CloudPcLaunchInfo) GetOdataType()(*string) {
     return nil
 }
 // GetWindows365SwitchCompatible gets the windows365SwitchCompatible property value. Indicates whether the Cloud PC supports switch functionality. If the value is true, it supports switch functionality; otherwise,  false.
+// returns a *bool when successful
 func (m *CloudPcLaunchInfo) GetWindows365SwitchCompatible()(*bool) {
     val, err := m.GetBackingStore().Get("windows365SwitchCompatible")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *CloudPcLaunchInfo) GetWindows365SwitchCompatible()(*bool) {
     return nil
 }
 // GetWindows365SwitchNotCompatibleReason gets the windows365SwitchNotCompatibleReason property value. Indicates the reason the Cloud PC doesn't support switch. CPCOsVersionNotMeetRequirement indicates that the user needs to update their Cloud PC operation system version. CPCHardwareNotMeetRequirement indicates that the Cloud PC needs more CPU or RAM to support the functionality.
+// returns a *string when successful
 func (m *CloudPcLaunchInfo) GetWindows365SwitchNotCompatibleReason()(*string) {
     val, err := m.GetBackingStore().Get("windows365SwitchNotCompatibleReason")
     if err != nil {
@@ -234,7 +242,6 @@ func (m *CloudPcLaunchInfo) SetWindows365SwitchNotCompatibleReason(value *string
         panic(err)
     }
 }
-// CloudPcLaunchInfoable 
 type CloudPcLaunchInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

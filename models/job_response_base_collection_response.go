@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// JobResponseBaseCollectionResponse 
 type JobResponseBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewJobResponseBaseCollectionResponse instantiates a new jobResponseBaseCollectionResponse and sets the default values.
+// NewJobResponseBaseCollectionResponse instantiates a new JobResponseBaseCollectionResponse and sets the default values.
 func NewJobResponseBaseCollectionResponse()(*JobResponseBaseCollectionResponse) {
     m := &JobResponseBaseCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewJobResponseBaseCollectionResponse()(*JobResponseBaseCollectionResponse) 
     return m
 }
 // CreateJobResponseBaseCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateJobResponseBaseCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewJobResponseBaseCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *JobResponseBaseCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *JobResponseBaseCollectionResponse) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []JobResponseBaseable when successful
 func (m *JobResponseBaseCollectionResponse) GetValue()([]JobResponseBaseable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *JobResponseBaseCollectionResponse) SetValue(value []JobResponseBaseable
         panic(err)
     }
 }
-// JobResponseBaseCollectionResponseable 
 type JobResponseBaseCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

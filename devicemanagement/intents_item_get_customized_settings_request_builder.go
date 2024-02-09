@@ -32,29 +32,30 @@ type IntentsItemGetCustomizedSettingsRequestBuilderGetRequestConfiguration struc
     // Request query parameters
     QueryParameters *IntentsItemGetCustomizedSettingsRequestBuilderGetQueryParameters
 }
-// NewIntentsItemGetCustomizedSettingsRequestBuilderInternal instantiates a new GetCustomizedSettingsRequestBuilder and sets the default values.
+// NewIntentsItemGetCustomizedSettingsRequestBuilderInternal instantiates a new IntentsItemGetCustomizedSettingsRequestBuilder and sets the default values.
 func NewIntentsItemGetCustomizedSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemGetCustomizedSettingsRequestBuilder) {
     m := &IntentsItemGetCustomizedSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/getCustomizedSettings(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/getCustomizedSettings(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewIntentsItemGetCustomizedSettingsRequestBuilder instantiates a new GetCustomizedSettingsRequestBuilder and sets the default values.
+// NewIntentsItemGetCustomizedSettingsRequestBuilder instantiates a new IntentsItemGetCustomizedSettingsRequestBuilder and sets the default values.
 func NewIntentsItemGetCustomizedSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemGetCustomizedSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIntentsItemGetCustomizedSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getCustomizedSettings
-// Deprecated: This method is obsolete. Use GetAsGetCustomizedSettingsGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a IntentsItemGetCustomizedSettingsResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IntentsItemGetCustomizedSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *IntentsItemGetCustomizedSettingsRequestBuilderGetRequestConfiguration)(IntentsItemGetCustomizedSettingsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateIntentsItemGetCustomizedSettingsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *IntentsItemGetCustomizedSettingsRequestBuilder) Get(ctx context.Context
     return res.(IntentsItemGetCustomizedSettingsResponseable), nil
 }
 // GetAsGetCustomizedSettingsGetResponse invoke function getCustomizedSettings
+// returns a IntentsItemGetCustomizedSettingsGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IntentsItemGetCustomizedSettingsRequestBuilder) GetAsGetCustomizedSettingsGetResponse(ctx context.Context, requestConfiguration *IntentsItemGetCustomizedSettingsRequestBuilderGetRequestConfiguration)(IntentsItemGetCustomizedSettingsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateIntentsItemGetCustomizedSettingsGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *IntentsItemGetCustomizedSettingsRequestBuilder) GetAsGetCustomizedSetti
     return res.(IntentsItemGetCustomizedSettingsGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getCustomizedSettings
+// returns a *RequestInformation when successful
 func (m *IntentsItemGetCustomizedSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IntentsItemGetCustomizedSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *IntentsItemGetCustomizedSettingsRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IntentsItemGetCustomizedSettingsRequestBuilder when successful
 func (m *IntentsItemGetCustomizedSettingsRequestBuilder) WithUrl(rawUrl string)(*IntentsItemGetCustomizedSettingsRequestBuilder) {
     return NewIntentsItemGetCustomizedSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

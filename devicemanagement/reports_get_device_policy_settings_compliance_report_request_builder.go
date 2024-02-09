@@ -17,28 +17,29 @@ type ReportsGetDevicePolicySettingsComplianceReportRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewReportsGetDevicePolicySettingsComplianceReportRequestBuilderInternal instantiates a new GetDevicePolicySettingsComplianceReportRequestBuilder and sets the default values.
+// NewReportsGetDevicePolicySettingsComplianceReportRequestBuilderInternal instantiates a new ReportsGetDevicePolicySettingsComplianceReportRequestBuilder and sets the default values.
 func NewReportsGetDevicePolicySettingsComplianceReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetDevicePolicySettingsComplianceReportRequestBuilder) {
     m := &ReportsGetDevicePolicySettingsComplianceReportRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/reports/getDevicePolicySettingsComplianceReport", pathParameters),
     }
     return m
 }
-// NewReportsGetDevicePolicySettingsComplianceReportRequestBuilder instantiates a new GetDevicePolicySettingsComplianceReportRequestBuilder and sets the default values.
+// NewReportsGetDevicePolicySettingsComplianceReportRequestBuilder instantiates a new ReportsGetDevicePolicySettingsComplianceReportRequestBuilder and sets the default values.
 func NewReportsGetDevicePolicySettingsComplianceReportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetDevicePolicySettingsComplianceReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetDevicePolicySettingsComplianceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getDevicePolicySettingsComplianceReport
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReportsGetDevicePolicySettingsComplianceReportRequestBuilder) Post(ctx context.Context, body ReportsGetDevicePolicySettingsComplianceReportPostRequestBodyable, requestConfiguration *ReportsGetDevicePolicySettingsComplianceReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -50,6 +51,7 @@ func (m *ReportsGetDevicePolicySettingsComplianceReportRequestBuilder) Post(ctx 
     return res.([]byte), nil
 }
 // ToPostRequestInformation invoke action getDevicePolicySettingsComplianceReport
+// returns a *RequestInformation when successful
 func (m *ReportsGetDevicePolicySettingsComplianceReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body ReportsGetDevicePolicySettingsComplianceReportPostRequestBodyable, requestConfiguration *ReportsGetDevicePolicySettingsComplianceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +66,7 @@ func (m *ReportsGetDevicePolicySettingsComplianceReportRequestBuilder) ToPostReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ReportsGetDevicePolicySettingsComplianceReportRequestBuilder when successful
 func (m *ReportsGetDevicePolicySettingsComplianceReportRequestBuilder) WithUrl(rawUrl string)(*ReportsGetDevicePolicySettingsComplianceReportRequestBuilder) {
     return NewReportsGetDevicePolicySettingsComplianceReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

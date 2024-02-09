@@ -10,7 +10,7 @@ type VppTokenLicenseSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewVppTokenLicenseSummary instantiates a new vppTokenLicenseSummary and sets the default values.
+// NewVppTokenLicenseSummary instantiates a new VppTokenLicenseSummary and sets the default values.
 func NewVppTokenLicenseSummary()(*VppTokenLicenseSummary) {
     m := &VppTokenLicenseSummary{
     }
@@ -19,10 +19,12 @@ func NewVppTokenLicenseSummary()(*VppTokenLicenseSummary) {
     return m
 }
 // CreateVppTokenLicenseSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVppTokenLicenseSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVppTokenLicenseSummary(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *VppTokenLicenseSummary) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +37,7 @@ func (m *VppTokenLicenseSummary) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAppleId gets the appleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
+// returns a *string when successful
 func (m *VppTokenLicenseSummary) GetAppleId()(*string) {
     val, err := m.GetBackingStore().Get("appleId")
     if err != nil {
@@ -46,6 +49,7 @@ func (m *VppTokenLicenseSummary) GetAppleId()(*string) {
     return nil
 }
 // GetAvailableLicenseCount gets the availableLicenseCount property value. The number of VPP licenses available.
+// returns a *int32 when successful
 func (m *VppTokenLicenseSummary) GetAvailableLicenseCount()(*int32) {
     val, err := m.GetBackingStore().Get("availableLicenseCount")
     if err != nil {
@@ -57,10 +61,12 @@ func (m *VppTokenLicenseSummary) GetAvailableLicenseCount()(*int32) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *VppTokenLicenseSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VppTokenLicenseSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +132,7 @@ func (m *VppTokenLicenseSummary) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *VppTokenLicenseSummary) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -137,6 +144,7 @@ func (m *VppTokenLicenseSummary) GetOdataType()(*string) {
     return nil
 }
 // GetOrganizationName gets the organizationName property value. The organization associated with the Apple Volume Purchase Program Token.
+// returns a *string when successful
 func (m *VppTokenLicenseSummary) GetOrganizationName()(*string) {
     val, err := m.GetBackingStore().Get("organizationName")
     if err != nil {
@@ -148,6 +156,7 @@ func (m *VppTokenLicenseSummary) GetOrganizationName()(*string) {
     return nil
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of VPP licenses in use.
+// returns a *int32 when successful
 func (m *VppTokenLicenseSummary) GetUsedLicenseCount()(*int32) {
     val, err := m.GetBackingStore().Get("usedLicenseCount")
     if err != nil {
@@ -159,6 +168,7 @@ func (m *VppTokenLicenseSummary) GetUsedLicenseCount()(*int32) {
     return nil
 }
 // GetVppTokenId gets the vppTokenId property value. Identifier of the VPP token.
+// returns a *string when successful
 func (m *VppTokenLicenseSummary) GetVppTokenId()(*string) {
     val, err := m.GetBackingStore().Get("vppTokenId")
     if err != nil {
@@ -268,7 +278,6 @@ func (m *VppTokenLicenseSummary) SetVppTokenId(value *string)() {
         panic(err)
     }
 }
-// VppTokenLicenseSummaryable 
 type VppTokenLicenseSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

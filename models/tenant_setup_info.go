@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TenantSetupInfo 
 type TenantSetupInfo struct {
     Entity
 }
-// NewTenantSetupInfo instantiates a new tenantSetupInfo and sets the default values.
+// NewTenantSetupInfo instantiates a new TenantSetupInfo and sets the default values.
 func NewTenantSetupInfo()(*TenantSetupInfo) {
     m := &TenantSetupInfo{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTenantSetupInfo()(*TenantSetupInfo) {
     return m
 }
 // CreateTenantSetupInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTenantSetupInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTenantSetupInfo(), nil
 }
 // GetDefaultRolesSettings gets the defaultRolesSettings property value. The defaultRolesSettings property
+// returns a PrivilegedRoleSettingsable when successful
 func (m *TenantSetupInfo) GetDefaultRolesSettings()(PrivilegedRoleSettingsable) {
     val, err := m.GetBackingStore().Get("defaultRolesSettings")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *TenantSetupInfo) GetDefaultRolesSettings()(PrivilegedRoleSettingsable) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["defaultRolesSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,6 +104,7 @@ func (m *TenantSetupInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetFirstTimeSetup gets the firstTimeSetup property value. The firstTimeSetup property
+// returns a *bool when successful
 func (m *TenantSetupInfo) GetFirstTimeSetup()(*bool) {
     val, err := m.GetBackingStore().Get("firstTimeSetup")
     if err != nil {
@@ -113,6 +116,7 @@ func (m *TenantSetupInfo) GetFirstTimeSetup()(*bool) {
     return nil
 }
 // GetRelevantRolesSettings gets the relevantRolesSettings property value. The relevantRolesSettings property
+// returns a []string when successful
 func (m *TenantSetupInfo) GetRelevantRolesSettings()([]string) {
     val, err := m.GetBackingStore().Get("relevantRolesSettings")
     if err != nil {
@@ -124,6 +128,7 @@ func (m *TenantSetupInfo) GetRelevantRolesSettings()([]string) {
     return nil
 }
 // GetSetupStatus gets the setupStatus property value. The setupStatus property
+// returns a *SetupStatus when successful
 func (m *TenantSetupInfo) GetSetupStatus()(*SetupStatus) {
     val, err := m.GetBackingStore().Get("setupStatus")
     if err != nil {
@@ -135,6 +140,7 @@ func (m *TenantSetupInfo) GetSetupStatus()(*SetupStatus) {
     return nil
 }
 // GetSkipSetup gets the skipSetup property value. The skipSetup property
+// returns a *bool when successful
 func (m *TenantSetupInfo) GetSkipSetup()(*bool) {
     val, err := m.GetBackingStore().Get("skipSetup")
     if err != nil {
@@ -146,6 +152,7 @@ func (m *TenantSetupInfo) GetSkipSetup()(*bool) {
     return nil
 }
 // GetUserRolesActions gets the userRolesActions property value. The userRolesActions property
+// returns a *string when successful
 func (m *TenantSetupInfo) GetUserRolesActions()(*string) {
     val, err := m.GetBackingStore().Get("userRolesActions")
     if err != nil {
@@ -243,7 +250,6 @@ func (m *TenantSetupInfo) SetUserRolesActions(value *string)() {
         panic(err)
     }
 }
-// TenantSetupInfoable 
 type TenantSetupInfoable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

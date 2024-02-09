@@ -8,7 +8,7 @@ import (
 type KeyIntegerValuePair struct {
     KeyTypedValuePair
 }
-// NewKeyIntegerValuePair instantiates a new keyIntegerValuePair and sets the default values.
+// NewKeyIntegerValuePair instantiates a new KeyIntegerValuePair and sets the default values.
 func NewKeyIntegerValuePair()(*KeyIntegerValuePair) {
     m := &KeyIntegerValuePair{
         KeyTypedValuePair: *NewKeyTypedValuePair(),
@@ -18,10 +18,12 @@ func NewKeyIntegerValuePair()(*KeyIntegerValuePair) {
     return m
 }
 // CreateKeyIntegerValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKeyIntegerValuePairFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKeyIntegerValuePair(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KeyIntegerValuePair) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.KeyTypedValuePair.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *KeyIntegerValuePair) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetValue gets the value property value. The integer value of the key-value pair.
+// returns a *int32 when successful
 func (m *KeyIntegerValuePair) GetValue()(*int32) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *KeyIntegerValuePair) SetValue(value *int32)() {
         panic(err)
     }
 }
-// KeyIntegerValuePairable 
 type KeyIntegerValuePairable interface {
     KeyTypedValuePairable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

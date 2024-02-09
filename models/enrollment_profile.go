@@ -8,7 +8,7 @@ import (
 type EnrollmentProfile struct {
     Entity
 }
-// NewEnrollmentProfile instantiates a new enrollmentProfile and sets the default values.
+// NewEnrollmentProfile instantiates a new EnrollmentProfile and sets the default values.
 func NewEnrollmentProfile()(*EnrollmentProfile) {
     m := &EnrollmentProfile{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewEnrollmentProfile()(*EnrollmentProfile) {
     return m
 }
 // CreateEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -44,6 +45,7 @@ func CreateEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewEnrollmentProfile(), nil
 }
 // GetConfigurationEndpointUrl gets the configurationEndpointUrl property value. Configuration endpoint url to use for Enrollment
+// returns a *string when successful
 func (m *EnrollmentProfile) GetConfigurationEndpointUrl()(*string) {
     val, err := m.GetBackingStore().Get("configurationEndpointUrl")
     if err != nil {
@@ -55,6 +57,7 @@ func (m *EnrollmentProfile) GetConfigurationEndpointUrl()(*string) {
     return nil
 }
 // GetDescription gets the description property value. Description of the profile
+// returns a *string when successful
 func (m *EnrollmentProfile) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -66,6 +69,7 @@ func (m *EnrollmentProfile) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the profile
+// returns a *string when successful
 func (m *EnrollmentProfile) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -77,6 +81,7 @@ func (m *EnrollmentProfile) GetDisplayName()(*string) {
     return nil
 }
 // GetEnableAuthenticationViaCompanyPortal gets the enableAuthenticationViaCompanyPortal property value. Indicates to authenticate with Apple Setup Assistant instead of Company Portal.
+// returns a *bool when successful
 func (m *EnrollmentProfile) GetEnableAuthenticationViaCompanyPortal()(*bool) {
     val, err := m.GetBackingStore().Get("enableAuthenticationViaCompanyPortal")
     if err != nil {
@@ -88,6 +93,7 @@ func (m *EnrollmentProfile) GetEnableAuthenticationViaCompanyPortal()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configurationEndpointUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -153,6 +159,7 @@ func (m *EnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetRequireCompanyPortalOnSetupAssistantEnrolledDevices gets the requireCompanyPortalOnSetupAssistantEnrolledDevices property value. Indicates that Company Portal is required on setup assistant enrolled devices
+// returns a *bool when successful
 func (m *EnrollmentProfile) GetRequireCompanyPortalOnSetupAssistantEnrolledDevices()(*bool) {
     val, err := m.GetBackingStore().Get("requireCompanyPortalOnSetupAssistantEnrolledDevices")
     if err != nil {
@@ -164,6 +171,7 @@ func (m *EnrollmentProfile) GetRequireCompanyPortalOnSetupAssistantEnrolledDevic
     return nil
 }
 // GetRequiresUserAuthentication gets the requiresUserAuthentication property value. Indicates if the profile requires user authentication
+// returns a *bool when successful
 func (m *EnrollmentProfile) GetRequiresUserAuthentication()(*bool) {
     val, err := m.GetBackingStore().Get("requiresUserAuthentication")
     if err != nil {
@@ -260,7 +268,6 @@ func (m *EnrollmentProfile) SetRequiresUserAuthentication(value *bool)() {
         panic(err)
     }
 }
-// EnrollmentProfileable 
 type EnrollmentProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

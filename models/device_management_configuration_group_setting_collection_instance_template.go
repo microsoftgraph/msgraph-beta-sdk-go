@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
 }
-// NewDeviceManagementConfigurationGroupSettingCollectionInstanceTemplate instantiates a new deviceManagementConfigurationGroupSettingCollectionInstanceTemplate and sets the default values.
+// NewDeviceManagementConfigurationGroupSettingCollectionInstanceTemplate instantiates a new DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationGroupSettingCollectionInstanceTemplate()(*DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) {
     m := &DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate{
         DeviceManagementConfigurationSettingInstanceTemplate: *NewDeviceManagementConfigurationSettingInstanceTemplate(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationGroupSettingCollectionInstanceTemplate()(*D
     return m
 }
 // CreateDeviceManagementConfigurationGroupSettingCollectionInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationGroupSettingCollectionInstanceTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationGroupSettingCollectionInstanceTemplate(), nil
 }
 // GetAllowUnmanagedValues gets the allowUnmanagedValues property value. Linked policy may append values which are not present in the template.
+// returns a *bool when successful
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) GetAllowUnmanagedValues()(*bool) {
     val, err := m.GetBackingStore().Get("allowUnmanagedValues")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Ge
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingInstanceTemplate.GetFieldDeserializers()
     res["allowUnmanagedValues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +67,7 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Ge
     return res
 }
 // GetGroupSettingCollectionValueTemplate gets the groupSettingCollectionValueTemplate property value. Group Setting Collection Value Template
+// returns a []DeviceManagementConfigurationGroupSettingValueTemplateable when successful
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) GetGroupSettingCollectionValueTemplate()([]DeviceManagementConfigurationGroupSettingValueTemplateable) {
     val, err := m.GetBackingStore().Get("groupSettingCollectionValueTemplate")
     if err != nil {
@@ -114,7 +118,6 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate) Se
         panic(err)
     }
 }
-// DeviceManagementConfigurationGroupSettingCollectionInstanceTemplateable 
 type DeviceManagementConfigurationGroupSettingCollectionInstanceTemplateable interface {
     DeviceManagementConfigurationSettingInstanceTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

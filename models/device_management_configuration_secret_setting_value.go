@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationSecretSettingValue struct {
     DeviceManagementConfigurationSimpleSettingValue
 }
-// NewDeviceManagementConfigurationSecretSettingValue instantiates a new deviceManagementConfigurationSecretSettingValue and sets the default values.
+// NewDeviceManagementConfigurationSecretSettingValue instantiates a new DeviceManagementConfigurationSecretSettingValue and sets the default values.
 func NewDeviceManagementConfigurationSecretSettingValue()(*DeviceManagementConfigurationSecretSettingValue) {
     m := &DeviceManagementConfigurationSecretSettingValue{
         DeviceManagementConfigurationSimpleSettingValue: *NewDeviceManagementConfigurationSimpleSettingValue(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationSecretSettingValue()(*DeviceManagementConfi
     return m
 }
 // CreateDeviceManagementConfigurationSecretSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationSecretSettingValueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationSecretSettingValue(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationSecretSettingValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSimpleSettingValue.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *DeviceManagementConfigurationSecretSettingValue) GetFieldDeserializers(
     return res
 }
 // GetValue gets the value property value. Value of the secret setting.
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSecretSettingValue) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *DeviceManagementConfigurationSecretSettingValue) GetValue()(*string) {
     return nil
 }
 // GetValueState gets the valueState property value. type tracking the encryption state of a secret setting value
+// returns a *DeviceManagementConfigurationSecretSettingValueState when successful
 func (m *DeviceManagementConfigurationSecretSettingValue) GetValueState()(*DeviceManagementConfigurationSecretSettingValueState) {
     val, err := m.GetBackingStore().Get("valueState")
     if err != nil {
@@ -103,7 +107,6 @@ func (m *DeviceManagementConfigurationSecretSettingValue) SetValueState(value *D
         panic(err)
     }
 }
-// DeviceManagementConfigurationSecretSettingValueable 
 type DeviceManagementConfigurationSecretSettingValueable interface {
     DeviceManagementConfigurationSimpleSettingValueable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

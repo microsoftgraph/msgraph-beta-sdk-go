@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalMeetingRegistrant 
 type ExternalMeetingRegistrant struct {
     MeetingRegistrantBase
 }
-// NewExternalMeetingRegistrant instantiates a new externalMeetingRegistrant and sets the default values.
+// NewExternalMeetingRegistrant instantiates a new ExternalMeetingRegistrant and sets the default values.
 func NewExternalMeetingRegistrant()(*ExternalMeetingRegistrant) {
     m := &ExternalMeetingRegistrant{
         MeetingRegistrantBase: *NewMeetingRegistrantBase(),
@@ -18,10 +17,12 @@ func NewExternalMeetingRegistrant()(*ExternalMeetingRegistrant) {
     return m
 }
 // CreateExternalMeetingRegistrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternalMeetingRegistrantFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalMeetingRegistrant(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternalMeetingRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MeetingRegistrantBase.GetFieldDeserializers()
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *ExternalMeetingRegistrant) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetTenantId gets the tenantId property value. The tenant ID of this registrant if in Microsoft Entra ID.
+// returns a *string when successful
 func (m *ExternalMeetingRegistrant) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *ExternalMeetingRegistrant) GetTenantId()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The user ID of this registrant if in Microsoft Entra ID.
+// returns a *string when successful
 func (m *ExternalMeetingRegistrant) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *ExternalMeetingRegistrant) SetUserId(value *string)() {
         panic(err)
     }
 }
-// ExternalMeetingRegistrantable 
 type ExternalMeetingRegistrantable interface {
     MeetingRegistrantBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

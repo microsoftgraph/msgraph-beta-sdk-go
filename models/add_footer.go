@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AddFooter 
 type AddFooter struct {
     MarkContent
 }
-// NewAddFooter instantiates a new addFooter and sets the default values.
+// NewAddFooter instantiates a new AddFooter and sets the default values.
 func NewAddFooter()(*AddFooter) {
     m := &AddFooter{
         MarkContent: *NewMarkContent(),
@@ -18,10 +17,12 @@ func NewAddFooter()(*AddFooter) {
     return m
 }
 // CreateAddFooterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAddFooterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAddFooter(), nil
 }
 // GetAlignment gets the alignment property value. The alignment property
+// returns a *Alignment when successful
 func (m *AddFooter) GetAlignment()(*Alignment) {
     val, err := m.GetBackingStore().Get("alignment")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AddFooter) GetAlignment()(*Alignment) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AddFooter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MarkContent.GetFieldDeserializers()
     res["alignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *AddFooter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetMargin gets the margin property value. The margin property
+// returns a *int32 when successful
 func (m *AddFooter) GetMargin()(*int32) {
     val, err := m.GetBackingStore().Get("margin")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *AddFooter) SetMargin(value *int32)() {
         panic(err)
     }
 }
-// AddFooterable 
 type AddFooterable interface {
     MarkContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

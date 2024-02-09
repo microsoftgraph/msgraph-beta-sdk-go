@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AppPerformance 
 type AppPerformance struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewAppPerformance instantiates a new appPerformance and sets the default values.
+// NewAppPerformance instantiates a new AppPerformance and sets the default values.
 func NewAppPerformance()(*AppPerformance) {
     m := &AppPerformance{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewAppPerformance()(*AppPerformance) {
     return m
 }
 // CreateAppPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppPerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppPerformance(), nil
 }
 // GetAppFriendlyName gets the appFriendlyName property value. The appFriendlyName property
+// returns a *string when successful
 func (m *AppPerformance) GetAppFriendlyName()(*string) {
     val, err := m.GetBackingStore().Get("appFriendlyName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AppPerformance) GetAppFriendlyName()(*string) {
     return nil
 }
 // GetAppName gets the appName property value. The appName property
+// returns a *string when successful
 func (m *AppPerformance) GetAppName()(*string) {
     val, err := m.GetBackingStore().Get("appName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AppPerformance) GetAppName()(*string) {
     return nil
 }
 // GetAppPublisher gets the appPublisher property value. The appPublisher property
+// returns a *string when successful
 func (m *AppPerformance) GetAppPublisher()(*string) {
     val, err := m.GetBackingStore().Get("appPublisher")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *AppPerformance) GetAppPublisher()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appFriendlyName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -160,6 +164,7 @@ func (m *AppPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// returns a *Time when successful
 func (m *AppPerformance) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -171,6 +176,7 @@ func (m *AppPerformance) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The meanTimeToFailureInMinutes property
+// returns a *int32 when successful
 func (m *AppPerformance) GetMeanTimeToFailureInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("meanTimeToFailureInMinutes")
     if err != nil {
@@ -182,6 +188,7 @@ func (m *AppPerformance) GetMeanTimeToFailureInMinutes()(*int32) {
     return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The tenantDisplayName property
+// returns a *string when successful
 func (m *AppPerformance) GetTenantDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("tenantDisplayName")
     if err != nil {
@@ -193,6 +200,7 @@ func (m *AppPerformance) GetTenantDisplayName()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
+// returns a *string when successful
 func (m *AppPerformance) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -204,6 +212,7 @@ func (m *AppPerformance) GetTenantId()(*string) {
     return nil
 }
 // GetTotalActiveDeviceCount gets the totalActiveDeviceCount property value. The totalActiveDeviceCount property
+// returns a *int32 when successful
 func (m *AppPerformance) GetTotalActiveDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalActiveDeviceCount")
     if err != nil {
@@ -215,6 +224,7 @@ func (m *AppPerformance) GetTotalActiveDeviceCount()(*int32) {
     return nil
 }
 // GetTotalAppCrashCount gets the totalAppCrashCount property value. The totalAppCrashCount property
+// returns a *int32 when successful
 func (m *AppPerformance) GetTotalAppCrashCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalAppCrashCount")
     if err != nil {
@@ -226,6 +236,7 @@ func (m *AppPerformance) GetTotalAppCrashCount()(*int32) {
     return nil
 }
 // GetTotalAppFreezeCount gets the totalAppFreezeCount property value. The totalAppFreezeCount property
+// returns a *int32 when successful
 func (m *AppPerformance) GetTotalAppFreezeCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalAppFreezeCount")
     if err != nil {
@@ -374,7 +385,6 @@ func (m *AppPerformance) SetTotalAppFreezeCount(value *int32)() {
         panic(err)
     }
 }
-// AppPerformanceable 
 type AppPerformanceable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

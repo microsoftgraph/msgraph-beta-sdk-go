@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HorizontalSection 
 type HorizontalSection struct {
     Entity
 }
-// NewHorizontalSection instantiates a new horizontalSection and sets the default values.
+// NewHorizontalSection instantiates a new HorizontalSection and sets the default values.
 func NewHorizontalSection()(*HorizontalSection) {
     m := &HorizontalSection{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewHorizontalSection()(*HorizontalSection) {
     return m
 }
 // CreateHorizontalSectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHorizontalSectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHorizontalSection(), nil
 }
 // GetColumns gets the columns property value. The set of vertical columns in this section.
+// returns a []HorizontalSectionColumnable when successful
 func (m *HorizontalSection) GetColumns()([]HorizontalSectionColumnable) {
     val, err := m.GetBackingStore().Get("columns")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *HorizontalSection) GetColumns()([]HorizontalSectionColumnable) {
     return nil
 }
 // GetEmphasis gets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
+// returns a *SectionEmphasisType when successful
 func (m *HorizontalSection) GetEmphasis()(*SectionEmphasisType) {
     val, err := m.GetBackingStore().Get("emphasis")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *HorizontalSection) GetEmphasis()(*SectionEmphasisType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HorizontalSection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["columns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -83,6 +86,7 @@ func (m *HorizontalSection) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetLayout gets the layout property value. Layout type of the section. The possible values are: none, oneColumn, twoColumns, threeColumns, oneThirdLeftColumn, oneThirdRightColumn, fullWidth, unknownFutureValue.
+// returns a *HorizontalSectionLayoutType when successful
 func (m *HorizontalSection) GetLayout()(*HorizontalSectionLayoutType) {
     val, err := m.GetBackingStore().Get("layout")
     if err != nil {
@@ -148,7 +152,6 @@ func (m *HorizontalSection) SetLayout(value *HorizontalSectionLayoutType)() {
         panic(err)
     }
 }
-// HorizontalSectionable 
 type HorizontalSectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CompanyDetail 
 type CompanyDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCompanyDetail instantiates a new companyDetail and sets the default values.
+// NewCompanyDetail instantiates a new CompanyDetail and sets the default values.
 func NewCompanyDetail()(*CompanyDetail) {
     m := &CompanyDetail{
     }
@@ -19,10 +18,12 @@ func NewCompanyDetail()(*CompanyDetail) {
     return m
 }
 // CreateCompanyDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCompanyDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCompanyDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CompanyDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *CompanyDetail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAddress gets the address property value. Address of the company.
+// returns a PhysicalAddressable when successful
 func (m *CompanyDetail) GetAddress()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *CompanyDetail) GetAddress()(PhysicalAddressable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CompanyDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDepartment gets the department property value. Department Name within a company.
+// returns a *string when successful
 func (m *CompanyDetail) GetDepartment()(*string) {
     val, err := m.GetBackingStore().Get("department")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *CompanyDetail) GetDepartment()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Company name.
+// returns a *string when successful
 func (m *CompanyDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *CompanyDetail) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +153,7 @@ func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CompanyDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *CompanyDetail) GetOdataType()(*string) {
     return nil
 }
 // GetOfficeLocation gets the officeLocation property value. Office Location of the person referred to.
+// returns a *string when successful
 func (m *CompanyDetail) GetOfficeLocation()(*string) {
     val, err := m.GetBackingStore().Get("officeLocation")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *CompanyDetail) GetOfficeLocation()(*string) {
     return nil
 }
 // GetPronunciation gets the pronunciation property value. Pronunciation guide for the company name.
+// returns a *string when successful
 func (m *CompanyDetail) GetPronunciation()(*string) {
     val, err := m.GetBackingStore().Get("pronunciation")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *CompanyDetail) GetPronunciation()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. Link to the company home page.
+// returns a *string when successful
 func (m *CompanyDetail) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -302,7 +312,6 @@ func (m *CompanyDetail) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// CompanyDetailable 
 type CompanyDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

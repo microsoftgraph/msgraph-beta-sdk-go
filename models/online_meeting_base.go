@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnlineMeetingBase 
 type OnlineMeetingBase struct {
     Entity
 }
-// NewOnlineMeetingBase instantiates a new onlineMeetingBase and sets the default values.
+// NewOnlineMeetingBase instantiates a new OnlineMeetingBase and sets the default values.
 func NewOnlineMeetingBase()(*OnlineMeetingBase) {
     m := &OnlineMeetingBase{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewOnlineMeetingBase()(*OnlineMeetingBase) {
     return m
 }
 // CreateOnlineMeetingBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnlineMeetingBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateOnlineMeetingBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewOnlineMeetingBase(), nil
 }
 // GetAllowAttendeeToEnableCamera gets the allowAttendeeToEnableCamera property value. Indicates whether attendees can turn on their camera.
+// returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowAttendeeToEnableCamera()(*bool) {
     val, err := m.GetBackingStore().Get("allowAttendeeToEnableCamera")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *OnlineMeetingBase) GetAllowAttendeeToEnableCamera()(*bool) {
     return nil
 }
 // GetAllowAttendeeToEnableMic gets the allowAttendeeToEnableMic property value. Indicates whether attendees can turn on their microphone.
+// returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowAttendeeToEnableMic()(*bool) {
     val, err := m.GetBackingStore().Get("allowAttendeeToEnableMic")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *OnlineMeetingBase) GetAllowAttendeeToEnableMic()(*bool) {
     return nil
 }
 // GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
+// returns a *OnlineMeetingPresenters when successful
 func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     val, err := m.GetBackingStore().Get("allowedPresenters")
     if err != nil {
@@ -73,6 +76,7 @@ func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     return nil
 }
 // GetAllowMeetingChat gets the allowMeetingChat property value. Specifies the mode of meeting chat.
+// returns a *MeetingChatMode when successful
 func (m *OnlineMeetingBase) GetAllowMeetingChat()(*MeetingChatMode) {
     val, err := m.GetBackingStore().Get("allowMeetingChat")
     if err != nil {
@@ -84,6 +88,7 @@ func (m *OnlineMeetingBase) GetAllowMeetingChat()(*MeetingChatMode) {
     return nil
 }
 // GetAllowParticipantsToChangeName gets the allowParticipantsToChangeName property value. Specifies if participants are allowed to rename themselves in an instance of the meeting.
+// returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowParticipantsToChangeName()(*bool) {
     val, err := m.GetBackingStore().Get("allowParticipantsToChangeName")
     if err != nil {
@@ -95,6 +100,7 @@ func (m *OnlineMeetingBase) GetAllowParticipantsToChangeName()(*bool) {
     return nil
 }
 // GetAllowRecording gets the allowRecording property value. Indicates whether recording is enabled for the meeting.
+// returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowRecording()(*bool) {
     val, err := m.GetBackingStore().Get("allowRecording")
     if err != nil {
@@ -106,6 +112,7 @@ func (m *OnlineMeetingBase) GetAllowRecording()(*bool) {
     return nil
 }
 // GetAllowTeamworkReactions gets the allowTeamworkReactions property value. Indicates if Teams reactions are enabled for the meeting.
+// returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowTeamworkReactions()(*bool) {
     val, err := m.GetBackingStore().Get("allowTeamworkReactions")
     if err != nil {
@@ -117,6 +124,7 @@ func (m *OnlineMeetingBase) GetAllowTeamworkReactions()(*bool) {
     return nil
 }
 // GetAllowTranscription gets the allowTranscription property value. Indicates whether transcription is enabled for the meeting.
+// returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowTranscription()(*bool) {
     val, err := m.GetBackingStore().Get("allowTranscription")
     if err != nil {
@@ -128,6 +136,7 @@ func (m *OnlineMeetingBase) GetAllowTranscription()(*bool) {
     return nil
 }
 // GetAnonymizeIdentityForRoles gets the anonymizeIdentityForRoles property value. Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
+// returns a []OnlineMeetingRole when successful
 func (m *OnlineMeetingBase) GetAnonymizeIdentityForRoles()([]OnlineMeetingRole) {
     val, err := m.GetBackingStore().Get("anonymizeIdentityForRoles")
     if err != nil {
@@ -139,6 +148,7 @@ func (m *OnlineMeetingBase) GetAnonymizeIdentityForRoles()([]OnlineMeetingRole) 
     return nil
 }
 // GetAttendanceReports gets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
+// returns a []MeetingAttendanceReportable when successful
 func (m *OnlineMeetingBase) GetAttendanceReports()([]MeetingAttendanceReportable) {
     val, err := m.GetBackingStore().Get("attendanceReports")
     if err != nil {
@@ -150,6 +160,7 @@ func (m *OnlineMeetingBase) GetAttendanceReports()([]MeetingAttendanceReportable
     return nil
 }
 // GetAudioConferencing gets the audioConferencing property value. The phone access (dial-in) information for an online meeting. Read-only.
+// returns a AudioConferencingable when successful
 func (m *OnlineMeetingBase) GetAudioConferencing()(AudioConferencingable) {
     val, err := m.GetBackingStore().Get("audioConferencing")
     if err != nil {
@@ -161,6 +172,7 @@ func (m *OnlineMeetingBase) GetAudioConferencing()(AudioConferencingable) {
     return nil
 }
 // GetChatInfo gets the chatInfo property value. The chat information associated with this online meeting.
+// returns a ChatInfoable when successful
 func (m *OnlineMeetingBase) GetChatInfo()(ChatInfoable) {
     val, err := m.GetBackingStore().Get("chatInfo")
     if err != nil {
@@ -172,6 +184,7 @@ func (m *OnlineMeetingBase) GetChatInfo()(ChatInfoable) {
     return nil
 }
 // GetChatRestrictions gets the chatRestrictions property value. The chatRestrictions property
+// returns a ChatRestrictionsable when successful
 func (m *OnlineMeetingBase) GetChatRestrictions()(ChatRestrictionsable) {
     val, err := m.GetBackingStore().Get("chatRestrictions")
     if err != nil {
@@ -183,6 +196,7 @@ func (m *OnlineMeetingBase) GetChatRestrictions()(ChatRestrictionsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowAttendeeToEnableCamera"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -440,6 +454,7 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetIsEndToEndEncryptionEnabled gets the isEndToEndEncryptionEnabled property value. The isEndToEndEncryptionEnabled property
+// returns a *bool when successful
 func (m *OnlineMeetingBase) GetIsEndToEndEncryptionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEndToEndEncryptionEnabled")
     if err != nil {
@@ -451,6 +466,7 @@ func (m *OnlineMeetingBase) GetIsEndToEndEncryptionEnabled()(*bool) {
     return nil
 }
 // GetIsEntryExitAnnounced gets the isEntryExitAnnounced property value. Indicates whether to announce when callers join or leave.
+// returns a *bool when successful
 func (m *OnlineMeetingBase) GetIsEntryExitAnnounced()(*bool) {
     val, err := m.GetBackingStore().Get("isEntryExitAnnounced")
     if err != nil {
@@ -462,6 +478,7 @@ func (m *OnlineMeetingBase) GetIsEntryExitAnnounced()(*bool) {
     return nil
 }
 // GetJoinInformation gets the joinInformation property value. The join information in the language and locale variant specified in 'Accept-Language' request HTTP header. Read-only.
+// returns a ItemBodyable when successful
 func (m *OnlineMeetingBase) GetJoinInformation()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("joinInformation")
     if err != nil {
@@ -473,6 +490,7 @@ func (m *OnlineMeetingBase) GetJoinInformation()(ItemBodyable) {
     return nil
 }
 // GetJoinMeetingIdSettings gets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings can't be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
+// returns a JoinMeetingIdSettingsable when successful
 func (m *OnlineMeetingBase) GetJoinMeetingIdSettings()(JoinMeetingIdSettingsable) {
     val, err := m.GetBackingStore().Get("joinMeetingIdSettings")
     if err != nil {
@@ -484,6 +502,7 @@ func (m *OnlineMeetingBase) GetJoinMeetingIdSettings()(JoinMeetingIdSettingsable
     return nil
 }
 // GetJoinWebUrl gets the joinWebUrl property value. The join URL of the online meeting. Read-only.
+// returns a *string when successful
 func (m *OnlineMeetingBase) GetJoinWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("joinWebUrl")
     if err != nil {
@@ -495,6 +514,7 @@ func (m *OnlineMeetingBase) GetJoinWebUrl()(*string) {
     return nil
 }
 // GetLobbyBypassSettings gets the lobbyBypassSettings property value. Specifies which participants can bypass the meeting lobby.
+// returns a LobbyBypassSettingsable when successful
 func (m *OnlineMeetingBase) GetLobbyBypassSettings()(LobbyBypassSettingsable) {
     val, err := m.GetBackingStore().Get("lobbyBypassSettings")
     if err != nil {
@@ -506,6 +526,7 @@ func (m *OnlineMeetingBase) GetLobbyBypassSettings()(LobbyBypassSettingsable) {
     return nil
 }
 // GetRecordAutomatically gets the recordAutomatically property value. Indicates whether to record the meeting automatically.
+// returns a *bool when successful
 func (m *OnlineMeetingBase) GetRecordAutomatically()(*bool) {
     val, err := m.GetBackingStore().Get("recordAutomatically")
     if err != nil {
@@ -517,6 +538,7 @@ func (m *OnlineMeetingBase) GetRecordAutomatically()(*bool) {
     return nil
 }
 // GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. The shareMeetingChatHistoryDefault property
+// returns a *MeetingChatHistoryDefaultMode when successful
 func (m *OnlineMeetingBase) GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode) {
     val, err := m.GetBackingStore().Get("shareMeetingChatHistoryDefault")
     if err != nil {
@@ -528,6 +550,7 @@ func (m *OnlineMeetingBase) GetShareMeetingChatHistoryDefault()(*MeetingChatHist
     return nil
 }
 // GetSubject gets the subject property value. The subject of the online meeting.
+// returns a *string when successful
 func (m *OnlineMeetingBase) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -539,6 +562,7 @@ func (m *OnlineMeetingBase) GetSubject()(*string) {
     return nil
 }
 // GetVideoTeleconferenceId gets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.
+// returns a *string when successful
 func (m *OnlineMeetingBase) GetVideoTeleconferenceId()(*string) {
     val, err := m.GetBackingStore().Get("videoTeleconferenceId")
     if err != nil {
@@ -550,6 +574,7 @@ func (m *OnlineMeetingBase) GetVideoTeleconferenceId()(*string) {
     return nil
 }
 // GetWatermarkProtection gets the watermarkProtection property value. Specifies whether the client application should apply a watermark to a content type.
+// returns a WatermarkProtectionValuesable when successful
 func (m *OnlineMeetingBase) GetWatermarkProtection()(WatermarkProtectionValuesable) {
     val, err := m.GetBackingStore().Get("watermarkProtection")
     if err != nil {
@@ -889,7 +914,6 @@ func (m *OnlineMeetingBase) SetWatermarkProtection(value WatermarkProtectionValu
         panic(err)
     }
 }
-// OnlineMeetingBaseable 
 type OnlineMeetingBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

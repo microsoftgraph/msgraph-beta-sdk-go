@@ -2,7 +2,6 @@ package windowsupdates
 import (
     "errors"
 )
-// 
 type DeploymentStateReasonValue int
 
 const (

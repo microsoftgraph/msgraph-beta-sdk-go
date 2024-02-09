@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InitiateInvestigationResponseAction 
 type InitiateInvestigationResponseAction struct {
     ResponseAction
 }
-// NewInitiateInvestigationResponseAction instantiates a new initiateInvestigationResponseAction and sets the default values.
+// NewInitiateInvestigationResponseAction instantiates a new InitiateInvestigationResponseAction and sets the default values.
 func NewInitiateInvestigationResponseAction()(*InitiateInvestigationResponseAction) {
     m := &InitiateInvestigationResponseAction{
         ResponseAction: *NewResponseAction(),
@@ -18,10 +17,12 @@ func NewInitiateInvestigationResponseAction()(*InitiateInvestigationResponseActi
     return m
 }
 // CreateInitiateInvestigationResponseActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInitiateInvestigationResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInitiateInvestigationResponseAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InitiateInvestigationResponseAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ResponseAction.GetFieldDeserializers()
     res["identifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *InitiateInvestigationResponseAction) GetFieldDeserializers()(map[string
     return res
 }
 // GetIdentifier gets the identifier property value. The identifier property
+// returns a *DeviceIdEntityIdentifier when successful
 func (m *InitiateInvestigationResponseAction) GetIdentifier()(*DeviceIdEntityIdentifier) {
     val, err := m.GetBackingStore().Get("identifier")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *InitiateInvestigationResponseAction) SetIdentifier(value *DeviceIdEntit
         panic(err)
     }
 }
-// InitiateInvestigationResponseActionable 
 type InitiateInvestigationResponseActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ResponseActionable

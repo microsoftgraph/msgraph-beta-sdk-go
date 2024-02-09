@@ -9,7 +9,7 @@ import (
 type WindowsDriverUpdateInventory struct {
     Entity
 }
-// NewWindowsDriverUpdateInventory instantiates a new windowsDriverUpdateInventory and sets the default values.
+// NewWindowsDriverUpdateInventory instantiates a new WindowsDriverUpdateInventory and sets the default values.
 func NewWindowsDriverUpdateInventory()(*WindowsDriverUpdateInventory) {
     m := &WindowsDriverUpdateInventory{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewWindowsDriverUpdateInventory()(*WindowsDriverUpdateInventory) {
     return m
 }
 // CreateWindowsDriverUpdateInventoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDriverUpdateInventoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDriverUpdateInventory(), nil
 }
 // GetApplicableDeviceCount gets the applicableDeviceCount property value. The number of devices for which this driver is applicable.
+// returns a *int32 when successful
 func (m *WindowsDriverUpdateInventory) GetApplicableDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("applicableDeviceCount")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *WindowsDriverUpdateInventory) GetApplicableDeviceCount()(*int32) {
     return nil
 }
 // GetApprovalStatus gets the approvalStatus property value. An enum type to represent approval status of a driver.
+// returns a *DriverApprovalStatus when successful
 func (m *WindowsDriverUpdateInventory) GetApprovalStatus()(*DriverApprovalStatus) {
     val, err := m.GetBackingStore().Get("approvalStatus")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *WindowsDriverUpdateInventory) GetApprovalStatus()(*DriverApprovalStatus
     return nil
 }
 // GetCategory gets the category property value. An enum type to represent which category a driver belongs to.
+// returns a *DriverCategory when successful
 func (m *WindowsDriverUpdateInventory) GetCategory()(*DriverCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *WindowsDriverUpdateInventory) GetCategory()(*DriverCategory) {
     return nil
 }
 // GetDeployDateTime gets the deployDateTime property value. The date time when a driver should be deployed if approvalStatus is approved.
+// returns a *Time when successful
 func (m *WindowsDriverUpdateInventory) GetDeployDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("deployDateTime")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *WindowsDriverUpdateInventory) GetDeployDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetDriverClass gets the driverClass property value. The class of the driver.
+// returns a *string when successful
 func (m *WindowsDriverUpdateInventory) GetDriverClass()(*string) {
     val, err := m.GetBackingStore().Get("driverClass")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *WindowsDriverUpdateInventory) GetDriverClass()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicableDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -171,6 +178,7 @@ func (m *WindowsDriverUpdateInventory) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer of the driver.
+// returns a *string when successful
 func (m *WindowsDriverUpdateInventory) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -182,6 +190,7 @@ func (m *WindowsDriverUpdateInventory) GetManufacturer()(*string) {
     return nil
 }
 // GetName gets the name property value. The name of the driver.
+// returns a *string when successful
 func (m *WindowsDriverUpdateInventory) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -193,6 +202,7 @@ func (m *WindowsDriverUpdateInventory) GetName()(*string) {
     return nil
 }
 // GetReleaseDateTime gets the releaseDateTime property value. The release date time of the driver.
+// returns a *Time when successful
 func (m *WindowsDriverUpdateInventory) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("releaseDateTime")
     if err != nil {
@@ -204,6 +214,7 @@ func (m *WindowsDriverUpdateInventory) GetReleaseDateTime()(*i336074805fc853987a
     return nil
 }
 // GetVersion gets the version property value. The version of the driver.
+// returns a *string when successful
 func (m *WindowsDriverUpdateInventory) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -341,7 +352,6 @@ func (m *WindowsDriverUpdateInventory) SetVersion(value *string)() {
         panic(err)
     }
 }
-// WindowsDriverUpdateInventoryable 
 type WindowsDriverUpdateInventoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

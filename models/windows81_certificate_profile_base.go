@@ -8,7 +8,7 @@ import (
 type Windows81CertificateProfileBase struct {
     WindowsCertificateProfileBase
 }
-// NewWindows81CertificateProfileBase instantiates a new windows81CertificateProfileBase and sets the default values.
+// NewWindows81CertificateProfileBase instantiates a new Windows81CertificateProfileBase and sets the default values.
 func NewWindows81CertificateProfileBase()(*Windows81CertificateProfileBase) {
     m := &Windows81CertificateProfileBase{
         WindowsCertificateProfileBase: *NewWindowsCertificateProfileBase(),
@@ -18,6 +18,7 @@ func NewWindows81CertificateProfileBase()(*Windows81CertificateProfileBase) {
     return m
 }
 // CreateWindows81CertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows81CertificateProfileBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateWindows81CertificateProfileBaseFromDiscriminatorValue(parseNode i878a
     return NewWindows81CertificateProfileBase(), nil
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
+// returns a []CustomSubjectAlternativeNameable when successful
 func (m *Windows81CertificateProfileBase) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
     val, err := m.GetBackingStore().Get("customSubjectAlternativeNames")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *Windows81CertificateProfileBase) GetCustomSubjectAlternativeNames()([]C
     return nil
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
+// returns a []ExtendedKeyUsageable when successful
 func (m *Windows81CertificateProfileBase) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
     val, err := m.GetBackingStore().Get("extendedKeyUsages")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *Windows81CertificateProfileBase) GetExtendedKeyUsages()([]ExtendedKeyUs
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows81CertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsCertificateProfileBase.GetFieldDeserializers()
     res["customSubjectAlternativeNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -144,7 +148,6 @@ func (m *Windows81CertificateProfileBase) SetExtendedKeyUsages(value []ExtendedK
         panic(err)
     }
 }
-// Windows81CertificateProfileBaseable 
 type Windows81CertificateProfileBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsCertificateProfileBaseable

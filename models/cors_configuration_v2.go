@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CorsConfiguration_v2 
 type CorsConfiguration_v2 struct {
     Entity
 }
-// NewCorsConfiguration_v2 instantiates a new corsConfiguration_v2 and sets the default values.
+// NewCorsConfiguration_v2 instantiates a new CorsConfiguration_v2 and sets the default values.
 func NewCorsConfiguration_v2()(*CorsConfiguration_v2) {
     m := &CorsConfiguration_v2{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCorsConfiguration_v2()(*CorsConfiguration_v2) {
     return m
 }
 // CreateCorsConfiguration_v2FromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCorsConfiguration_v2FromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCorsConfiguration_v2(), nil
 }
 // GetAllowedHeaders gets the allowedHeaders property value. The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.
+// returns a []string when successful
 func (m *CorsConfiguration_v2) GetAllowedHeaders()([]string) {
     val, err := m.GetBackingStore().Get("allowedHeaders")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CorsConfiguration_v2) GetAllowedHeaders()([]string) {
     return nil
 }
 // GetAllowedMethods gets the allowedMethods property value. The HTTP request methods that the origin domain may use for a CORS request.
+// returns a []string when successful
 func (m *CorsConfiguration_v2) GetAllowedMethods()([]string) {
     val, err := m.GetBackingStore().Get("allowedMethods")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *CorsConfiguration_v2) GetAllowedMethods()([]string) {
     return nil
 }
 // GetAllowedOrigins gets the allowedOrigins property value. The origin domains that are permitted to make a request against the service via CORS. The origin domain is the domain from which the request originates. The origin must be an exact case-sensitive match with the origin that the user agent sends to the service.
+// returns a []string when successful
 func (m *CorsConfiguration_v2) GetAllowedOrigins()([]string) {
     val, err := m.GetBackingStore().Get("allowedOrigins")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *CorsConfiguration_v2) GetAllowedOrigins()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CorsConfiguration_v2) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedHeaders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +130,7 @@ func (m *CorsConfiguration_v2) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetMaxAgeInSeconds gets the maxAgeInSeconds property value. The maximum amount of time that a browser should cache the response to the preflight OPTIONS request.
+// returns a *int32 when successful
 func (m *CorsConfiguration_v2) GetMaxAgeInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("maxAgeInSeconds")
     if err != nil {
@@ -137,6 +142,7 @@ func (m *CorsConfiguration_v2) GetMaxAgeInSeconds()(*int32) {
     return nil
 }
 // GetResource gets the resource property value. Resource within the application segment for which CORS permissions are granted. / grants permission for the whole app segment.
+// returns a *string when successful
 func (m *CorsConfiguration_v2) GetResource()(*string) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -220,7 +226,6 @@ func (m *CorsConfiguration_v2) SetResource(value *string)() {
         panic(err)
     }
 }
-// CorsConfiguration_v2able 
 type CorsConfiguration_v2able interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

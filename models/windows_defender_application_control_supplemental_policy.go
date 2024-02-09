@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicy 
 type WindowsDefenderApplicationControlSupplementalPolicy struct {
     Entity
 }
-// NewWindowsDefenderApplicationControlSupplementalPolicy instantiates a new windowsDefenderApplicationControlSupplementalPolicy and sets the default values.
+// NewWindowsDefenderApplicationControlSupplementalPolicy instantiates a new WindowsDefenderApplicationControlSupplementalPolicy and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderApplicationControlSupplementalPolicy) {
     m := &WindowsDefenderApplicationControlSupplementalPolicy{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewWindowsDefenderApplicationControlSupplementalPolicy()(*WindowsDefenderAp
     return m
 }
 // CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDefenderApplicationControlSupplementalPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderApplicationControlSupplementalPolicy(), nil
 }
 // GetAssignments gets the assignments property value. The associated group assignments for the Windows Defender Application Control Supplemental Policy.
+// returns a []WindowsDefenderApplicationControlSupplementalPolicyAssignmentable when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetAssignments()([]WindowsDefenderApplicationControlSupplementalPolicyAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetAssignments()([
     return nil
 }
 // GetContent gets the content property value. Indicates the content of the Windows Defender Application Control Supplemental Policy in byte array format.
+// returns a []byte when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetContent()([]byt
     return nil
 }
 // GetContentFileName gets the contentFileName property value. Indicates the file name associated with the content of the Windows Defender Application Control Supplemental Policy.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetContentFileName()(*string) {
     val, err := m.GetBackingStore().Get("contentFileName")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetContentFileName
     return nil
 }
 // GetCreationDateTime gets the creationDateTime property value. Indicates the created date and time when the Windows Defender Application Control Supplemental Policy was uploaded.
+// returns a *Time when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetCreationDateTim
     return nil
 }
 // GetDeploySummary gets the deploySummary property value. WindowsDefenderApplicationControl supplemental policy deployment summary.
+// returns a WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDeploySummary()(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable) {
     val, err := m.GetBackingStore().Get("deploySummary")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDeploySummary()
     return nil
 }
 // GetDescription gets the description property value. The description of the Windows Defender Application Control Supplemental Policy.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDescription()(*
     return nil
 }
 // GetDeviceStatuses gets the deviceStatuses property value. The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
+// returns a []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDeviceStatuses()([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable) {
     val, err := m.GetBackingStore().Get("deviceStatuses")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDeviceStatuses(
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the Windows Defender Application Control Supplemental Policy.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetDisplayName()(*
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -242,6 +251,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetFieldDeserializ
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Indicates the last modified date and time of the Windows Defender Application Control Supplemental Policy.
+// returns a *Time when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -253,6 +263,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetLastModifiedDat
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.
+// returns a []string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -264,6 +275,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetRoleScopeTagIds
     return nil
 }
 // GetVersion gets the version property value. Indicates the Windows Defender Application Control Supplemental Policy's version.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicy) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -437,7 +449,6 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicy) SetVersion(value *
         panic(err)
     }
 }
-// WindowsDefenderApplicationControlSupplementalPolicyable 
 type WindowsDefenderApplicationControlSupplementalPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

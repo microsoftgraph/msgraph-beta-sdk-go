@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnTokenIssuanceStartListener 
 type OnTokenIssuanceStartListener struct {
     AuthenticationEventListener
 }
-// NewOnTokenIssuanceStartListener instantiates a new onTokenIssuanceStartListener and sets the default values.
+// NewOnTokenIssuanceStartListener instantiates a new OnTokenIssuanceStartListener and sets the default values.
 func NewOnTokenIssuanceStartListener()(*OnTokenIssuanceStartListener) {
     m := &OnTokenIssuanceStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),
@@ -18,10 +17,12 @@ func NewOnTokenIssuanceStartListener()(*OnTokenIssuanceStartListener) {
     return m
 }
 // CreateOnTokenIssuanceStartListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnTokenIssuanceStartListenerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnTokenIssuanceStartListener(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnTokenIssuanceStartListener) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationEventListener.GetFieldDeserializers()
     res["handler"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *OnTokenIssuanceStartListener) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetHandler gets the handler property value. The handler to invoke when conditions are met for this onTokenIssuanceStartListener.
+// returns a OnTokenIssuanceStartHandlerable when successful
 func (m *OnTokenIssuanceStartListener) GetHandler()(OnTokenIssuanceStartHandlerable) {
     val, err := m.GetBackingStore().Get("handler")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *OnTokenIssuanceStartListener) SetHandler(value OnTokenIssuanceStartHand
         panic(err)
     }
 }
-// OnTokenIssuanceStartListenerable 
 type OnTokenIssuanceStartListenerable interface {
     AuthenticationEventListenerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

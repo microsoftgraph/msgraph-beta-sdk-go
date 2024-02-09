@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DetectionRule 
 type DetectionRule struct {
     ProtectionRule
 }
-// NewDetectionRule instantiates a new detectionRule and sets the default values.
+// NewDetectionRule instantiates a new DetectionRule and sets the default values.
 func NewDetectionRule()(*DetectionRule) {
     m := &DetectionRule{
         ProtectionRule: *NewProtectionRule(),
@@ -18,10 +17,12 @@ func NewDetectionRule()(*DetectionRule) {
     return m
 }
 // CreateDetectionRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDetectionRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDetectionRule(), nil
 }
-// GetDetectionAction gets the detectionAction property value. The detectionAction property
+// GetDetectionAction gets the detectionAction property value. Complex type representing the actions taken when a detection is made by this rule.
+// returns a DetectionActionable when successful
 func (m *DetectionRule) GetDetectionAction()(DetectionActionable) {
     val, err := m.GetBackingStore().Get("detectionAction")
     if err != nil {
@@ -32,7 +33,8 @@ func (m *DetectionRule) GetDetectionAction()(DetectionActionable) {
     }
     return nil
 }
-// GetDetectorId gets the detectorId property value. The detectorId property
+// GetDetectorId gets the detectorId property value. The ID of the detector that triggered the alert. Also see the 'detectorId' field in microsoft.graph.security.alert.
+// returns a *string when successful
 func (m *DetectionRule) GetDetectorId()(*string) {
     val, err := m.GetBackingStore().Get("detectorId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *DetectionRule) GetDetectorId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DetectionRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ProtectionRule.GetFieldDeserializers()
     res["detectionAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,7 +101,8 @@ func (m *DetectionRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetLastRunDetails gets the lastRunDetails property value. The lastRunDetails property
+// GetLastRunDetails gets the lastRunDetails property value. Complex type holding details about the last run of this rule.
+// returns a RunDetailsable when successful
 func (m *DetectionRule) GetLastRunDetails()(RunDetailsable) {
     val, err := m.GetBackingStore().Get("lastRunDetails")
     if err != nil {
@@ -109,7 +113,8 @@ func (m *DetectionRule) GetLastRunDetails()(RunDetailsable) {
     }
     return nil
 }
-// GetQueryCondition gets the queryCondition property value. The queryCondition property
+// GetQueryCondition gets the queryCondition property value. Complex type holding data about the advanced hunting query of this rule.
+// returns a QueryConditionable when successful
 func (m *DetectionRule) GetQueryCondition()(QueryConditionable) {
     val, err := m.GetBackingStore().Get("queryCondition")
     if err != nil {
@@ -120,7 +125,8 @@ func (m *DetectionRule) GetQueryCondition()(QueryConditionable) {
     }
     return nil
 }
-// GetSchedule gets the schedule property value. The schedule property
+// GetSchedule gets the schedule property value. Complex type holding data about the triggering schedule of this rule.
+// returns a RuleScheduleable when successful
 func (m *DetectionRule) GetSchedule()(RuleScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
     if err != nil {
@@ -169,42 +175,41 @@ func (m *DetectionRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetDetectionAction sets the detectionAction property value. The detectionAction property
+// SetDetectionAction sets the detectionAction property value. Complex type representing the actions taken when a detection is made by this rule.
 func (m *DetectionRule) SetDetectionAction(value DetectionActionable)() {
     err := m.GetBackingStore().Set("detectionAction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetectorId sets the detectorId property value. The detectorId property
+// SetDetectorId sets the detectorId property value. The ID of the detector that triggered the alert. Also see the 'detectorId' field in microsoft.graph.security.alert.
 func (m *DetectionRule) SetDetectorId(value *string)() {
     err := m.GetBackingStore().Set("detectorId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastRunDetails sets the lastRunDetails property value. The lastRunDetails property
+// SetLastRunDetails sets the lastRunDetails property value. Complex type holding details about the last run of this rule.
 func (m *DetectionRule) SetLastRunDetails(value RunDetailsable)() {
     err := m.GetBackingStore().Set("lastRunDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQueryCondition sets the queryCondition property value. The queryCondition property
+// SetQueryCondition sets the queryCondition property value. Complex type holding data about the advanced hunting query of this rule.
 func (m *DetectionRule) SetQueryCondition(value QueryConditionable)() {
     err := m.GetBackingStore().Set("queryCondition", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchedule sets the schedule property value. The schedule property
+// SetSchedule sets the schedule property value. Complex type holding data about the triggering schedule of this rule.
 func (m *DetectionRule) SetSchedule(value RuleScheduleable)() {
     err := m.GetBackingStore().Set("schedule", value)
     if err != nil {
         panic(err)
     }
 }
-// DetectionRuleable 
 type DetectionRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ProtectionRuleable

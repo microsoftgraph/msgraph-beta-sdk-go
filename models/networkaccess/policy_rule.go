@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// PolicyRule 
 type PolicyRule struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewPolicyRule instantiates a new policyRule and sets the default values.
+// NewPolicyRule instantiates a new PolicyRule and sets the default values.
 func NewPolicyRule()(*PolicyRule) {
     m := &PolicyRule{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,6 +16,7 @@ func NewPolicyRule()(*PolicyRule) {
     return m
 }
 // CreatePolicyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePolicyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -51,6 +51,7 @@ func CreatePolicyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewPolicyRule(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PolicyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,6 +67,7 @@ func (m *PolicyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetName gets the name property value. Name.
+// returns a *string when successful
 func (m *PolicyRule) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -97,7 +99,6 @@ func (m *PolicyRule) SetName(value *string)() {
         panic(err)
     }
 }
-// PolicyRuleable 
 type PolicyRuleable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

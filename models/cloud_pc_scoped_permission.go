@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcScopedPermission 
 type CloudPcScopedPermission struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcScopedPermission instantiates a new cloudPcScopedPermission and sets the default values.
+// NewCloudPcScopedPermission instantiates a new CloudPcScopedPermission and sets the default values.
 func NewCloudPcScopedPermission()(*CloudPcScopedPermission) {
     m := &CloudPcScopedPermission{
     }
@@ -19,10 +18,12 @@ func NewCloudPcScopedPermission()(*CloudPcScopedPermission) {
     return m
 }
 // CreateCloudPcScopedPermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcScopedPermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcScopedPermission(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcScopedPermission) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *CloudPcScopedPermission) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcScopedPermission) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcScopedPermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,6 +83,7 @@ func (m *CloudPcScopedPermission) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcScopedPermission) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -91,6 +95,7 @@ func (m *CloudPcScopedPermission) GetOdataType()(*string) {
     return nil
 }
 // GetPermission gets the permission property value. The operations allowed on scoped resources for the authenticated user. Example permission is Microsoft.CloudPC/ProvisioningPolicies/Create.
+// returns a *string when successful
 func (m *CloudPcScopedPermission) GetPermission()(*string) {
     val, err := m.GetBackingStore().Get("permission")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *CloudPcScopedPermission) GetPermission()(*string) {
     return nil
 }
 // GetScopeIds gets the scopeIds property value. The scope IDs of corresponding permission. Currently, it's Intune scope tag ID.
+// returns a []string when successful
 func (m *CloudPcScopedPermission) GetScopeIds()([]string) {
     val, err := m.GetBackingStore().Get("scopeIds")
     if err != nil {
@@ -172,7 +178,6 @@ func (m *CloudPcScopedPermission) SetScopeIds(value []string)() {
         panic(err)
     }
 }
-// CloudPcScopedPermissionable 
 type CloudPcScopedPermissionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

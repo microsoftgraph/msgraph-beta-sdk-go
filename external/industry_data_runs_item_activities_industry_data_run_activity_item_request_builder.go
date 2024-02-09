@@ -28,31 +28,33 @@ type IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilderGetR
     QueryParameters *IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilderGetQueryParameters
 }
 // Activity provides operations to manage the activity property of the microsoft.graph.industryData.industryDataRunActivity entity.
+// returns a *IndustryDataRunsItemActivitiesItemActivityRequestBuilder when successful
 func (m *IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder) Activity()(*IndustryDataRunsItemActivitiesItemActivityRequestBuilder) {
     return NewIndustryDataRunsItemActivitiesItemActivityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewIndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilderInternal instantiates a new IndustryDataRunActivityItemRequestBuilder and sets the default values.
+// NewIndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilderInternal instantiates a new IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder and sets the default values.
 func NewIndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder) {
     m := &IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}/activities/{industryDataRunActivity%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}/activities/{industryDataRunActivity%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewIndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder instantiates a new IndustryDataRunActivityItemRequestBuilder and sets the default values.
+// NewIndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder instantiates a new IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder and sets the default values.
 func NewIndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the set of activities performed during the run.
+// returns a IndustryDataRunActivityable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRunActivityable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateIndustryDataRunActivityFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -64,6 +66,7 @@ func (m *IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRunActivityable), nil
 }
 // ToGetRequestInformation the set of activities performed during the run.
+// returns a *RequestInformation when successful
 func (m *IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -77,6 +80,7 @@ func (m *IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder when successful
 func (m *IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder) WithUrl(rawUrl string)(*IndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder) {
     return NewIndustryDataRunsItemActivitiesIndustryDataRunActivityItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

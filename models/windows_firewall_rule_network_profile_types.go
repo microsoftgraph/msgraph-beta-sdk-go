@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Flags representing which network profile types apply to a firewall rule.
@@ -8,20 +9,22 @@ type WindowsFirewallRuleNetworkProfileTypes int
 
 const (
     // No flags set.
-    NOTCONFIGURED_WINDOWSFIREWALLRULENETWORKPROFILETYPES WindowsFirewallRuleNetworkProfileTypes = iota
+    NOTCONFIGURED_WINDOWSFIREWALLRULENETWORKPROFILETYPES = 1
     // The profile for networks that are connected to domains.
-    DOMAIN_WINDOWSFIREWALLRULENETWORKPROFILETYPES
+    DOMAIN_WINDOWSFIREWALLRULENETWORKPROFILETYPES = 2
     // The profile for private networks.
-    PRIVATE_WINDOWSFIREWALLRULENETWORKPROFILETYPES
+    PRIVATE_WINDOWSFIREWALLRULENETWORKPROFILETYPES = 4
     // The profile for public networks.
-    PUBLIC_WINDOWSFIREWALLRULENETWORKPROFILETYPES
+    PUBLIC_WINDOWSFIREWALLRULENETWORKPROFILETYPES = 8
 )
 
 func (i WindowsFirewallRuleNetworkProfileTypes) String() string {
     var values []string
-    for p := WindowsFirewallRuleNetworkProfileTypes(1); p <= PUBLIC_WINDOWSFIREWALLRULENETWORKPROFILETYPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"notConfigured", "domain", "private", "public"}[p])
+    options := []string{"notConfigured", "domain", "private", "public"}
+    for p := 0; p < 4; p++ {
+        mantis := WindowsFirewallRuleNetworkProfileTypes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

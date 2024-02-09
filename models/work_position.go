@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkPosition 
 type WorkPosition struct {
     ItemFacet
 }
-// NewWorkPosition instantiates a new workPosition and sets the default values.
+// NewWorkPosition instantiates a new WorkPosition and sets the default values.
 func NewWorkPosition()(*WorkPosition) {
     m := &WorkPosition{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewWorkPosition()(*WorkPosition) {
     return m
 }
 // CreateWorkPositionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkPositionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkPosition(), nil
 }
 // GetCategories gets the categories property value. Categories that the user has associated with this position.
+// returns a []string when successful
 func (m *WorkPosition) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *WorkPosition) GetCategories()([]string) {
     return nil
 }
 // GetColleagues gets the colleagues property value. Colleagues that are associated with this position.
+// returns a []RelatedPersonable when successful
 func (m *WorkPosition) GetColleagues()([]RelatedPersonable) {
     val, err := m.GetBackingStore().Get("colleagues")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *WorkPosition) GetColleagues()([]RelatedPersonable) {
     return nil
 }
 // GetDetail gets the detail property value. The detail property
+// returns a PositionDetailable when successful
 func (m *WorkPosition) GetDetail()(PositionDetailable) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *WorkPosition) GetDetail()(PositionDetailable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkPosition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -122,6 +126,7 @@ func (m *WorkPosition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetIsCurrent gets the isCurrent property value. Denotes whether or not the position is current.
+// returns a *bool when successful
 func (m *WorkPosition) GetIsCurrent()(*bool) {
     val, err := m.GetBackingStore().Get("isCurrent")
     if err != nil {
@@ -133,6 +138,7 @@ func (m *WorkPosition) GetIsCurrent()(*bool) {
     return nil
 }
 // GetManager gets the manager property value. Contains detail of the user's manager in this position.
+// returns a RelatedPersonable when successful
 func (m *WorkPosition) GetManager()(RelatedPersonable) {
     val, err := m.GetBackingStore().Get("manager")
     if err != nil {
@@ -222,7 +228,6 @@ func (m *WorkPosition) SetManager(value RelatedPersonable)() {
         panic(err)
     }
 }
-// WorkPositionable 
 type WorkPositionable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

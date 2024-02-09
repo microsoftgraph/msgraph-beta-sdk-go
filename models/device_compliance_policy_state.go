@@ -8,7 +8,7 @@ import (
 type DeviceCompliancePolicyState struct {
     Entity
 }
-// NewDeviceCompliancePolicyState instantiates a new deviceCompliancePolicyState and sets the default values.
+// NewDeviceCompliancePolicyState instantiates a new DeviceCompliancePolicyState and sets the default values.
 func NewDeviceCompliancePolicyState()(*DeviceCompliancePolicyState) {
     m := &DeviceCompliancePolicyState{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceCompliancePolicyState()(*DeviceCompliancePolicyState) {
     return m
 }
 // CreateDeviceCompliancePolicyStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceCompliancePolicyStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceCompliancePolicyState(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the policy for this policyBase
+// returns a *string when successful
 func (m *DeviceCompliancePolicyState) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceCompliancePolicyState) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceCompliancePolicyState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -122,6 +125,7 @@ func (m *DeviceCompliancePolicyState) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
+// returns a *PolicyPlatformType when successful
 func (m *DeviceCompliancePolicyState) GetPlatformType()(*PolicyPlatformType) {
     val, err := m.GetBackingStore().Get("platformType")
     if err != nil {
@@ -133,6 +137,7 @@ func (m *DeviceCompliancePolicyState) GetPlatformType()(*PolicyPlatformType) {
     return nil
 }
 // GetSettingCount gets the settingCount property value. Count of how many setting a policy holds
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyState) GetSettingCount()(*int32) {
     val, err := m.GetBackingStore().Get("settingCount")
     if err != nil {
@@ -144,6 +149,7 @@ func (m *DeviceCompliancePolicyState) GetSettingCount()(*int32) {
     return nil
 }
 // GetSettingStates gets the settingStates property value. The settingStates property
+// returns a []DeviceCompliancePolicySettingStateable when successful
 func (m *DeviceCompliancePolicyState) GetSettingStates()([]DeviceCompliancePolicySettingStateable) {
     val, err := m.GetBackingStore().Get("settingStates")
     if err != nil {
@@ -155,6 +161,7 @@ func (m *DeviceCompliancePolicyState) GetSettingStates()([]DeviceCompliancePolic
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *ComplianceStatus when successful
 func (m *DeviceCompliancePolicyState) GetState()(*ComplianceStatus) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -166,6 +173,7 @@ func (m *DeviceCompliancePolicyState) GetState()(*ComplianceStatus) {
     return nil
 }
 // GetUserId gets the userId property value. User unique identifier, must be Guid
+// returns a *string when successful
 func (m *DeviceCompliancePolicyState) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -177,6 +185,7 @@ func (m *DeviceCompliancePolicyState) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
+// returns a *string when successful
 func (m *DeviceCompliancePolicyState) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -188,6 +197,7 @@ func (m *DeviceCompliancePolicyState) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetVersion gets the version property value. The version of the policy
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicyState) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -318,7 +328,6 @@ func (m *DeviceCompliancePolicyState) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// DeviceCompliancePolicyStateable 
 type DeviceCompliancePolicyStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

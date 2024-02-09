@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConnectorGroup 
 type ConnectorGroup struct {
     Entity
 }
-// NewConnectorGroup instantiates a new connectorGroup and sets the default values.
+// NewConnectorGroup instantiates a new ConnectorGroup and sets the default values.
 func NewConnectorGroup()(*ConnectorGroup) {
     m := &ConnectorGroup{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewConnectorGroup()(*ConnectorGroup) {
     return m
 }
 // CreateConnectorGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConnectorGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectorGroup(), nil
 }
 // GetApplications gets the applications property value. The applications property
+// returns a []Applicationable when successful
 func (m *ConnectorGroup) GetApplications()([]Applicationable) {
     val, err := m.GetBackingStore().Get("applications")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ConnectorGroup) GetApplications()([]Applicationable) {
     return nil
 }
 // GetConnectorGroupType gets the connectorGroupType property value. The connectorGroupType property
+// returns a *ConnectorGroupType when successful
 func (m *ConnectorGroup) GetConnectorGroupType()(*ConnectorGroupType) {
     val, err := m.GetBackingStore().Get("connectorGroupType")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ConnectorGroup) GetConnectorGroupType()(*ConnectorGroupType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +122,7 @@ func (m *ConnectorGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetIsDefault gets the isDefault property value. Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.
+// returns a *bool when successful
 func (m *ConnectorGroup) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
     if err != nil {
@@ -130,6 +134,7 @@ func (m *ConnectorGroup) GetIsDefault()(*bool) {
     return nil
 }
 // GetMembers gets the members property value. The members property
+// returns a []Connectorable when successful
 func (m *ConnectorGroup) GetMembers()([]Connectorable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -141,6 +146,7 @@ func (m *ConnectorGroup) GetMembers()([]Connectorable) {
     return nil
 }
 // GetName gets the name property value. The name associated with the connectorGroup.
+// returns a *string when successful
 func (m *ConnectorGroup) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *ConnectorGroup) GetName()(*string) {
     return nil
 }
 // GetRegion gets the region property value. The region the connectorGroup is assigned to and will optimize traffic for. This region can only be set if no connectors or applications are assigned to the connectorGroup. The possible values are: nam (for North America), eur (for Europe), aus (for Australia), asia (for Asia), ind (for India), and unknownFutureValue.
+// returns a *ConnectorGroupRegion when successful
 func (m *ConnectorGroup) GetRegion()(*ConnectorGroupRegion) {
     val, err := m.GetBackingStore().Get("region")
     if err != nil {
@@ -262,7 +269,6 @@ func (m *ConnectorGroup) SetRegion(value *ConnectorGroupRegion)() {
         panic(err)
     }
 }
-// ConnectorGroupable 
 type ConnectorGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

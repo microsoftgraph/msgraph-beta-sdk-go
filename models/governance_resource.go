@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceResource 
 type GovernanceResource struct {
     Entity
 }
-// NewGovernanceResource instantiates a new governanceResource and sets the default values.
+// NewGovernanceResource instantiates a new GovernanceResource and sets the default values.
 func NewGovernanceResource()(*GovernanceResource) {
     m := &GovernanceResource{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewGovernanceResource()(*GovernanceResource) {
     return m
 }
 // CreateGovernanceResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGovernanceResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceResource(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of the resource.
+// returns a *string when successful
 func (m *GovernanceResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *GovernanceResource) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalId gets the externalId property value. The external id of the resource, representing its original id in the external system. For example, a subscription resource's external id can be '/subscriptions/c14ae696-5e0c-4e5d-88cc-bef6637737ac'.
+// returns a *string when successful
 func (m *GovernanceResource) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *GovernanceResource) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -182,6 +185,7 @@ func (m *GovernanceResource) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetParent gets the parent property value. Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
+// returns a GovernanceResourceable when successful
 func (m *GovernanceResource) GetParent()(GovernanceResourceable) {
     val, err := m.GetBackingStore().Get("parent")
     if err != nil {
@@ -193,6 +197,7 @@ func (m *GovernanceResource) GetParent()(GovernanceResourceable) {
     return nil
 }
 // GetRegisteredDateTime gets the registeredDateTime property value. Represents the date time when the resource is registered in PIM.
+// returns a *Time when successful
 func (m *GovernanceResource) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("registeredDateTime")
     if err != nil {
@@ -204,6 +209,7 @@ func (m *GovernanceResource) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetRegisteredRoot gets the registeredRoot property value. The externalId of the resource's root scope that is registered in PIM. The root scope can be the parent, grandparent, or higher ancestor resources.
+// returns a *string when successful
 func (m *GovernanceResource) GetRegisteredRoot()(*string) {
     val, err := m.GetBackingStore().Get("registeredRoot")
     if err != nil {
@@ -215,6 +221,7 @@ func (m *GovernanceResource) GetRegisteredRoot()(*string) {
     return nil
 }
 // GetRoleAssignmentRequests gets the roleAssignmentRequests property value. The collection of role assignment requests for the resource.
+// returns a []GovernanceRoleAssignmentRequestable when successful
 func (m *GovernanceResource) GetRoleAssignmentRequests()([]GovernanceRoleAssignmentRequestable) {
     val, err := m.GetBackingStore().Get("roleAssignmentRequests")
     if err != nil {
@@ -226,6 +233,7 @@ func (m *GovernanceResource) GetRoleAssignmentRequests()([]GovernanceRoleAssignm
     return nil
 }
 // GetRoleAssignments gets the roleAssignments property value. The collection of role assignments for the resource.
+// returns a []GovernanceRoleAssignmentable when successful
 func (m *GovernanceResource) GetRoleAssignments()([]GovernanceRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("roleAssignments")
     if err != nil {
@@ -237,6 +245,7 @@ func (m *GovernanceResource) GetRoleAssignments()([]GovernanceRoleAssignmentable
     return nil
 }
 // GetRoleDefinitions gets the roleDefinitions property value. The collection of role definitions for the resource.
+// returns a []GovernanceRoleDefinitionable when successful
 func (m *GovernanceResource) GetRoleDefinitions()([]GovernanceRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinitions")
     if err != nil {
@@ -248,6 +257,7 @@ func (m *GovernanceResource) GetRoleDefinitions()([]GovernanceRoleDefinitionable
     return nil
 }
 // GetRoleSettings gets the roleSettings property value. The collection of role settings for the resource.
+// returns a []GovernanceRoleSettingable when successful
 func (m *GovernanceResource) GetRoleSettings()([]GovernanceRoleSettingable) {
     val, err := m.GetBackingStore().Get("roleSettings")
     if err != nil {
@@ -259,6 +269,7 @@ func (m *GovernanceResource) GetRoleSettings()([]GovernanceRoleSettingable) {
     return nil
 }
 // GetStatus gets the status property value. The status of a given resource. For example, it could represent whether the resource is locked or not (values: Active/Locked). Note: This property may be extended in the future to support more scenarios.
+// returns a *string when successful
 func (m *GovernanceResource) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -270,6 +281,7 @@ func (m *GovernanceResource) GetStatus()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.
+// returns a *string when successful
 func (m *GovernanceResource) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -455,7 +467,6 @@ func (m *GovernanceResource) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// GovernanceResourceable 
 type GovernanceResourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

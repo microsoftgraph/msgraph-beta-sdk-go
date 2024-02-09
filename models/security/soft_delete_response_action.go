@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SoftDeleteResponseAction 
 type SoftDeleteResponseAction struct {
     ResponseAction
 }
-// NewSoftDeleteResponseAction instantiates a new softDeleteResponseAction and sets the default values.
+// NewSoftDeleteResponseAction instantiates a new SoftDeleteResponseAction and sets the default values.
 func NewSoftDeleteResponseAction()(*SoftDeleteResponseAction) {
     m := &SoftDeleteResponseAction{
         ResponseAction: *NewResponseAction(),
@@ -18,10 +17,12 @@ func NewSoftDeleteResponseAction()(*SoftDeleteResponseAction) {
     return m
 }
 // CreateSoftDeleteResponseActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSoftDeleteResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSoftDeleteResponseAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SoftDeleteResponseAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ResponseAction.GetFieldDeserializers()
     res["identifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *SoftDeleteResponseAction) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIdentifier gets the identifier property value. The identifier property
+// returns a *EmailEntityIdentifier when successful
 func (m *SoftDeleteResponseAction) GetIdentifier()(*EmailEntityIdentifier) {
     val, err := m.GetBackingStore().Get("identifier")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *SoftDeleteResponseAction) SetIdentifier(value *EmailEntityIdentifier)()
         panic(err)
     }
 }
-// SoftDeleteResponseActionable 
 type SoftDeleteResponseActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ResponseActionable

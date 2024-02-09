@@ -5,7 +5,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody 
 type WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -19,10 +18,12 @@ func NewWindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePro
     return m
 }
 // CreateWindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePr
     return val.(map[string]any)
 }
 // GetAddressableUserName gets the addressableUserName property value. The addressableUserName property
+// returns a *string when successful
 func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody) GetAddressableUserName()(*string) {
     val, err := m.GetBackingStore().Get("addressableUserName")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePr
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDeviceAccountPassword gets the deviceAccountPassword property value. The deviceAccountPassword property
+// returns a *string when successful
 func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody) GetDeviceAccountPassword()(*string) {
     val, err := m.GetBackingStore().Get("deviceAccountPassword")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePr
     return nil
 }
 // GetDeviceAccountUpn gets the deviceAccountUpn property value. The deviceAccountUpn property
+// returns a *string when successful
 func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody) GetDeviceAccountUpn()(*string) {
     val, err := m.GetBackingStore().Get("deviceAccountUpn")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePr
     return nil
 }
 // GetDeviceFriendlyName gets the deviceFriendlyName property value. The deviceFriendlyName property
+// returns a *string when successful
 func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody) GetDeviceFriendlyName()(*string) {
     val, err := m.GetBackingStore().Get("deviceFriendlyName")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePr
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePr
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["addressableUserName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -169,6 +177,7 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePr
     return res
 }
 // GetGroupTag gets the groupTag property value. The groupTag property
+// returns a *string when successful
 func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody) GetGroupTag()(*string) {
     val, err := m.GetBackingStore().Get("groupTag")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePr
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
+// returns a *string when successful
 func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBody) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -302,7 +312,6 @@ func (m *WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePr
         panic(err)
     }
 }
-// WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBodyable 
 type WindowsAutopilotDeploymentProfilesItemAssignedDevicesItemUpdateDevicePropertiesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

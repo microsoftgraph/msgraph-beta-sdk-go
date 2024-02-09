@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceAppManagementTaskCollectionResponse 
 type DeviceAppManagementTaskCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceAppManagementTaskCollectionResponse instantiates a new deviceAppManagementTaskCollectionResponse and sets the default values.
+// NewDeviceAppManagementTaskCollectionResponse instantiates a new DeviceAppManagementTaskCollectionResponse and sets the default values.
 func NewDeviceAppManagementTaskCollectionResponse()(*DeviceAppManagementTaskCollectionResponse) {
     m := &DeviceAppManagementTaskCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeviceAppManagementTaskCollectionResponse()(*DeviceAppManagementTaskColl
     return m
 }
 // CreateDeviceAppManagementTaskCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceAppManagementTaskCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceAppManagementTaskCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceAppManagementTaskCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeviceAppManagementTaskCollectionResponse) GetFieldDeserializers()(map[
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeviceAppManagementTaskable when successful
 func (m *DeviceAppManagementTaskCollectionResponse) GetValue()([]DeviceAppManagementTaskable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeviceAppManagementTaskCollectionResponse) SetValue(value []DeviceAppMa
         panic(err)
     }
 }
-// DeviceAppManagementTaskCollectionResponseable 
 type DeviceAppManagementTaskCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

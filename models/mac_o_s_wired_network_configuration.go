@@ -8,7 +8,7 @@ import (
 type MacOSWiredNetworkConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSWiredNetworkConfiguration instantiates a new macOSWiredNetworkConfiguration and sets the default values.
+// NewMacOSWiredNetworkConfiguration instantiates a new MacOSWiredNetworkConfiguration and sets the default values.
 func NewMacOSWiredNetworkConfiguration()(*MacOSWiredNetworkConfiguration) {
     m := &MacOSWiredNetworkConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewMacOSWiredNetworkConfiguration()(*MacOSWiredNetworkConfiguration) {
     return m
 }
 // CreateMacOSWiredNetworkConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSWiredNetworkConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSWiredNetworkConfiguration(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
+// returns a *WiFiAuthenticationMethod when successful
 func (m *MacOSWiredNetworkConfiguration) GetAuthenticationMethod()(*WiFiAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSWiredNetworkConfiguration) GetAuthenticationMethod()(*WiFiAuthenti
     return nil
 }
 // GetEapFastConfiguration gets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
+// returns a *EapFastConfiguration when successful
 func (m *MacOSWiredNetworkConfiguration) GetEapFastConfiguration()(*EapFastConfiguration) {
     val, err := m.GetBackingStore().Get("eapFastConfiguration")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MacOSWiredNetworkConfiguration) GetEapFastConfiguration()(*EapFastConfi
     return nil
 }
 // GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
+// returns a *EapType when successful
 func (m *MacOSWiredNetworkConfiguration) GetEapType()(*EapType) {
     val, err := m.GetBackingStore().Get("eapType")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *MacOSWiredNetworkConfiguration) GetEapType()(*EapType) {
     return nil
 }
 // GetEnableOuterIdentityPrivacy gets the enableOuterIdentityPrivacy property value. Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS, EAP-FAST or PEAP. This property masks usernames with the text you enter. For example, if you use 'anonymous', each user that authenticates with this wired network using their real username is displayed as 'anonymous'.
+// returns a *string when successful
 func (m *MacOSWiredNetworkConfiguration) GetEnableOuterIdentityPrivacy()(*string) {
     val, err := m.GetBackingStore().Get("enableOuterIdentityPrivacy")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *MacOSWiredNetworkConfiguration) GetEnableOuterIdentityPrivacy()(*string
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSWiredNetworkConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -177,6 +183,7 @@ func (m *MacOSWiredNetworkConfiguration) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetIdentityCertificateForClientAuthentication gets the identityCertificateForClientAuthentication property value. Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).
+// returns a MacOSCertificateProfileBaseable when successful
 func (m *MacOSWiredNetworkConfiguration) GetIdentityCertificateForClientAuthentication()(MacOSCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificateForClientAuthentication")
     if err != nil {
@@ -188,6 +195,7 @@ func (m *MacOSWiredNetworkConfiguration) GetIdentityCertificateForClientAuthenti
     return nil
 }
 // GetNetworkInterface gets the networkInterface property value. Apple network interface type.
+// returns a *WiredNetworkInterface when successful
 func (m *MacOSWiredNetworkConfiguration) GetNetworkInterface()(*WiredNetworkInterface) {
     val, err := m.GetBackingStore().Get("networkInterface")
     if err != nil {
@@ -199,6 +207,7 @@ func (m *MacOSWiredNetworkConfiguration) GetNetworkInterface()(*WiredNetworkInte
     return nil
 }
 // GetNetworkName gets the networkName property value. Network Name
+// returns a *string when successful
 func (m *MacOSWiredNetworkConfiguration) GetNetworkName()(*string) {
     val, err := m.GetBackingStore().Get("networkName")
     if err != nil {
@@ -210,6 +219,7 @@ func (m *MacOSWiredNetworkConfiguration) GetNetworkName()(*string) {
     return nil
 }
 // GetNonEapAuthenticationMethodForEapTtls gets the nonEapAuthenticationMethodForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
+// returns a *NonEapAuthenticationMethodForEapTtlsType when successful
 func (m *MacOSWiredNetworkConfiguration) GetNonEapAuthenticationMethodForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType) {
     val, err := m.GetBackingStore().Get("nonEapAuthenticationMethodForEapTtls")
     if err != nil {
@@ -221,6 +231,7 @@ func (m *MacOSWiredNetworkConfiguration) GetNonEapAuthenticationMethodForEapTtls
     return nil
 }
 // GetRootCertificateForServerValidation gets the rootCertificateForServerValidation property value. Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP.
+// returns a MacOSTrustedRootCertificateable when successful
 func (m *MacOSWiredNetworkConfiguration) GetRootCertificateForServerValidation()(MacOSTrustedRootCertificateable) {
     val, err := m.GetBackingStore().Get("rootCertificateForServerValidation")
     if err != nil {
@@ -232,6 +243,7 @@ func (m *MacOSWiredNetworkConfiguration) GetRootCertificateForServerValidation()
     return nil
 }
 // GetTrustedServerCertificateNames gets the trustedServerCertificateNames property value. Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users devices when they connect to this wired network.
+// returns a []string when successful
 func (m *MacOSWiredNetworkConfiguration) GetTrustedServerCertificateNames()([]string) {
     val, err := m.GetBackingStore().Get("trustedServerCertificateNames")
     if err != nil {
@@ -385,7 +397,6 @@ func (m *MacOSWiredNetworkConfiguration) SetTrustedServerCertificateNames(value 
         panic(err)
     }
 }
-// MacOSWiredNetworkConfigurationable 
 type MacOSWiredNetworkConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

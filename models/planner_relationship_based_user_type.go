@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerRelationshipBasedUserType 
 type PlannerRelationshipBasedUserType struct {
     PlannerTaskConfigurationRoleBase
 }
-// NewPlannerRelationshipBasedUserType instantiates a new plannerRelationshipBasedUserType and sets the default values.
+// NewPlannerRelationshipBasedUserType instantiates a new PlannerRelationshipBasedUserType and sets the default values.
 func NewPlannerRelationshipBasedUserType()(*PlannerRelationshipBasedUserType) {
     m := &PlannerRelationshipBasedUserType{
         PlannerTaskConfigurationRoleBase: *NewPlannerTaskConfigurationRoleBase(),
@@ -18,10 +17,12 @@ func NewPlannerRelationshipBasedUserType()(*PlannerRelationshipBasedUserType) {
     return m
 }
 // CreatePlannerRelationshipBasedUserTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerRelationshipBasedUserTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerRelationshipBasedUserType(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerRelationshipBasedUserType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerTaskConfigurationRoleBase.GetFieldDeserializers()
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *PlannerRelationshipBasedUserType) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetRole gets the role property value. The role property
+// returns a *PlannerRelationshipUserRoles when successful
 func (m *PlannerRelationshipBasedUserType) GetRole()(*PlannerRelationshipUserRoles) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *PlannerRelationshipBasedUserType) SetRole(value *PlannerRelationshipUse
         panic(err)
     }
 }
-// PlannerRelationshipBasedUserTypeable 
 type PlannerRelationshipBasedUserTypeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerTaskConfigurationRoleBaseable

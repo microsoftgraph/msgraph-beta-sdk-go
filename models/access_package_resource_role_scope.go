@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageResourceRoleScope 
 type AccessPackageResourceRoleScope struct {
     Entity
 }
-// NewAccessPackageResourceRoleScope instantiates a new accessPackageResourceRoleScope and sets the default values.
+// NewAccessPackageResourceRoleScope instantiates a new AccessPackageResourceRoleScope and sets the default values.
 func NewAccessPackageResourceRoleScope()(*AccessPackageResourceRoleScope) {
     m := &AccessPackageResourceRoleScope{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessPackageResourceRoleScope()(*AccessPackageResourceRoleScope) {
     return m
 }
 // CreateAccessPackageResourceRoleScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageResourceRoleScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageResourceRoleScope(), nil
 }
 // GetAccessPackageResourceRole gets the accessPackageResourceRole property value. Read-only. Nullable. Supports $expand.
+// returns a AccessPackageResourceRoleable when successful
 func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceRole()(AccessPackageResourceRoleable) {
     val, err := m.GetBackingStore().Get("accessPackageResourceRole")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceRole()(AccessPa
     return nil
 }
 // GetAccessPackageResourceScope gets the accessPackageResourceScope property value. The accessPackageResourceScope property
+// returns a AccessPackageResourceScopeable when successful
 func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceScope()(AccessPackageResourceScopeable) {
     val, err := m.GetBackingStore().Get("accessPackageResourceScope")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessPackageResourceRoleScope) GetAccessPackageResourceScope()(AccessP
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
+// returns a *string when successful
 func (m *AccessPackageResourceRoleScope) GetCreatedBy()(*string) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessPackageResourceRoleScope) GetCreatedBy()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *AccessPackageResourceRoleScope) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessPackageResourceRoleScope) GetCreatedDateTime()(*i336074805fc85398
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageResourceRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,6 +135,7 @@ func (m *AccessPackageResourceRoleScope) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetModifiedBy gets the modifiedBy property value. The modifiedBy property
+// returns a *string when successful
 func (m *AccessPackageResourceRoleScope) GetModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("modifiedBy")
     if err != nil {
@@ -141,6 +147,7 @@ func (m *AccessPackageResourceRoleScope) GetModifiedBy()(*string) {
     return nil
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *AccessPackageResourceRoleScope) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -237,7 +244,6 @@ func (m *AccessPackageResourceRoleScope) SetModifiedDateTime(value *i336074805fc
         panic(err)
     }
 }
-// AccessPackageResourceRoleScopeable 
 type AccessPackageResourceRoleScopeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

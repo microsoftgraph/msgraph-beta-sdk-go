@@ -17,28 +17,28 @@ type DeviceShellScriptsItemAssignRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewDeviceShellScriptsItemAssignRequestBuilderInternal instantiates a new AssignRequestBuilder and sets the default values.
+// NewDeviceShellScriptsItemAssignRequestBuilderInternal instantiates a new DeviceShellScriptsItemAssignRequestBuilder and sets the default values.
 func NewDeviceShellScriptsItemAssignRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptsItemAssignRequestBuilder) {
     m := &DeviceShellScriptsItemAssignRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript%2Did}/assign", pathParameters),
     }
     return m
 }
-// NewDeviceShellScriptsItemAssignRequestBuilder instantiates a new AssignRequestBuilder and sets the default values.
+// NewDeviceShellScriptsItemAssignRequestBuilder instantiates a new DeviceShellScriptsItemAssignRequestBuilder and sets the default values.
 func NewDeviceShellScriptsItemAssignRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptsItemAssignRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceShellScriptsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceShellScriptsItemAssignRequestBuilder) Post(ctx context.Context, body DeviceShellScriptsItemAssignPostRequestBodyable, requestConfiguration *DeviceShellScriptsItemAssignRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *DeviceShellScriptsItemAssignRequestBuilder) Post(ctx context.Context, b
     return nil
 }
 // ToPostRequestInformation invoke action assign
+// returns a *RequestInformation when successful
 func (m *DeviceShellScriptsItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeviceShellScriptsItemAssignPostRequestBodyable, requestConfiguration *DeviceShellScriptsItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *DeviceShellScriptsItemAssignRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceShellScriptsItemAssignRequestBuilder when successful
 func (m *DeviceShellScriptsItemAssignRequestBuilder) WithUrl(rawUrl string)(*DeviceShellScriptsItemAssignRequestBuilder) {
     return NewDeviceShellScriptsItemAssignRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

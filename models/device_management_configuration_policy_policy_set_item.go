@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationPolicyPolicySetItem struct {
     PolicySetItem
 }
-// NewDeviceManagementConfigurationPolicyPolicySetItem instantiates a new deviceManagementConfigurationPolicyPolicySetItem and sets the default values.
+// NewDeviceManagementConfigurationPolicyPolicySetItem instantiates a new DeviceManagementConfigurationPolicyPolicySetItem and sets the default values.
 func NewDeviceManagementConfigurationPolicyPolicySetItem()(*DeviceManagementConfigurationPolicyPolicySetItem) {
     m := &DeviceManagementConfigurationPolicyPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationPolicyPolicySetItem()(*DeviceManagementConf
     return m
 }
 // CreateDeviceManagementConfigurationPolicyPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationPolicyPolicySetItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationPolicyPolicySetItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationPolicyPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicySetItem.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *DeviceManagementConfigurationPolicyPolicySetItem) Serialize(writer i878
     }
     return nil
 }
-// DeviceManagementConfigurationPolicyPolicySetItemable 
 type DeviceManagementConfigurationPolicyPolicySetItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicySetItemable

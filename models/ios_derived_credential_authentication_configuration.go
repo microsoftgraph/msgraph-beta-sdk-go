@@ -8,7 +8,7 @@ import (
 type IosDerivedCredentialAuthenticationConfiguration struct {
     DeviceConfiguration
 }
-// NewIosDerivedCredentialAuthenticationConfiguration instantiates a new iosDerivedCredentialAuthenticationConfiguration and sets the default values.
+// NewIosDerivedCredentialAuthenticationConfiguration instantiates a new IosDerivedCredentialAuthenticationConfiguration and sets the default values.
 func NewIosDerivedCredentialAuthenticationConfiguration()(*IosDerivedCredentialAuthenticationConfiguration) {
     m := &IosDerivedCredentialAuthenticationConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewIosDerivedCredentialAuthenticationConfiguration()(*IosDerivedCredentialA
     return m
 }
 // CreateIosDerivedCredentialAuthenticationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosDerivedCredentialAuthenticationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosDerivedCredentialAuthenticationConfiguration(), nil
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
+// returns a DeviceManagementDerivedCredentialSettingsable when successful
 func (m *IosDerivedCredentialAuthenticationConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
     val, err := m.GetBackingStore().Get("derivedCredentialSettings")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosDerivedCredentialAuthenticationConfiguration) GetDerivedCredentialSe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosDerivedCredentialAuthenticationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["derivedCredentialSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *IosDerivedCredentialAuthenticationConfiguration) SetDerivedCredentialSe
         panic(err)
     }
 }
-// IosDerivedCredentialAuthenticationConfigurationable 
 type IosDerivedCredentialAuthenticationConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

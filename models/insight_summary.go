@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InsightSummary 
 type InsightSummary struct {
     Entity
 }
-// NewInsightSummary instantiates a new insightSummary and sets the default values.
+// NewInsightSummary instantiates a new InsightSummary and sets the default values.
 func NewInsightSummary()(*InsightSummary) {
     m := &InsightSummary{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewInsightSummary()(*InsightSummary) {
     return m
 }
 // CreateInsightSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInsightSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInsightSummary(), nil
 }
 // GetActiveUsers gets the activeUsers property value. Daily active users.
+// returns a *int64 when successful
 func (m *InsightSummary) GetActiveUsers()(*int64) {
     val, err := m.GetBackingStore().Get("activeUsers")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *InsightSummary) GetActiveUsers()(*int64) {
     return nil
 }
 // GetAppId gets the appId property value. The ID of the Microsoft Entra application.
+// returns a *string when successful
 func (m *InsightSummary) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *InsightSummary) GetAppId()(*string) {
     return nil
 }
 // GetAuthenticationCompletions gets the authenticationCompletions property value. Daily authentication completions.
+// returns a *int64 when successful
 func (m *InsightSummary) GetAuthenticationCompletions()(*int64) {
     val, err := m.GetBackingStore().Get("authenticationCompletions")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *InsightSummary) GetAuthenticationCompletions()(*int64) {
     return nil
 }
 // GetAuthenticationRequests gets the authenticationRequests property value. Daily authentication requests.
+// returns a *int64 when successful
 func (m *InsightSummary) GetAuthenticationRequests()(*int64) {
     val, err := m.GetBackingStore().Get("authenticationRequests")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *InsightSummary) GetAuthenticationRequests()(*int64) {
     return nil
 }
 // GetFactDate gets the factDate property value. The date of the insight.
+// returns a *DateOnly when successful
 func (m *InsightSummary) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *InsightSummary) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InsightSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -180,6 +186,7 @@ func (m *InsightSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetOs gets the os property value. The platform for the device that the customers used. Supports $filter (eq).
+// returns a *string when successful
 func (m *InsightSummary) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -191,6 +198,7 @@ func (m *InsightSummary) GetOs()(*string) {
     return nil
 }
 // GetSecurityTextCompletions gets the securityTextCompletions property value. Daily MFA SMS completions.
+// returns a *int64 when successful
 func (m *InsightSummary) GetSecurityTextCompletions()(*int64) {
     val, err := m.GetBackingStore().Get("securityTextCompletions")
     if err != nil {
@@ -202,6 +210,7 @@ func (m *InsightSummary) GetSecurityTextCompletions()(*int64) {
     return nil
 }
 // GetSecurityTextRequests gets the securityTextRequests property value. Daily MFA SMS requests.
+// returns a *int64 when successful
 func (m *InsightSummary) GetSecurityTextRequests()(*int64) {
     val, err := m.GetBackingStore().Get("securityTextRequests")
     if err != nil {
@@ -213,6 +222,7 @@ func (m *InsightSummary) GetSecurityTextRequests()(*int64) {
     return nil
 }
 // GetSecurityVoiceCompletions gets the securityVoiceCompletions property value. Daily MFA Voice completions.
+// returns a *int64 when successful
 func (m *InsightSummary) GetSecurityVoiceCompletions()(*int64) {
     val, err := m.GetBackingStore().Get("securityVoiceCompletions")
     if err != nil {
@@ -224,6 +234,7 @@ func (m *InsightSummary) GetSecurityVoiceCompletions()(*int64) {
     return nil
 }
 // GetSecurityVoiceRequests gets the securityVoiceRequests property value. Daily MFA Voice requests.
+// returns a *int64 when successful
 func (m *InsightSummary) GetSecurityVoiceRequests()(*int64) {
     val, err := m.GetBackingStore().Get("securityVoiceRequests")
     if err != nil {
@@ -372,7 +383,6 @@ func (m *InsightSummary) SetSecurityVoiceRequests(value *int64)() {
         panic(err)
     }
 }
-// InsightSummaryable 
 type InsightSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -27,28 +27,29 @@ type LabelsRetentionLabelsItemRetentionEventTypeRequestBuilderGetRequestConfigur
     // Request query parameters
     QueryParameters *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilderGetQueryParameters
 }
-// NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilderInternal instantiates a new RetentionEventTypeRequestBuilder and sets the default values.
+// NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilderInternal instantiates a new LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) {
     m := &LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/retentionEventType{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/retentionEventType{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilder instantiates a new RetentionEventTypeRequestBuilder and sets the default values.
+// NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilder instantiates a new LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get represents the type associated with a retention event.
+// returns a RetentionEventTypeable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateRetentionEventTypeFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) Get(ctx cont
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable), nil
 }
 // ToGetRequestInformation represents the type associated with a retention event.
+// returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder when successful
 func (m *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) WithUrl(rawUrl string)(*LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) {
     return NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

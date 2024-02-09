@@ -8,7 +8,7 @@ import (
 type KeyRealValuePair struct {
     KeyTypedValuePair
 }
-// NewKeyRealValuePair instantiates a new keyRealValuePair and sets the default values.
+// NewKeyRealValuePair instantiates a new KeyRealValuePair and sets the default values.
 func NewKeyRealValuePair()(*KeyRealValuePair) {
     m := &KeyRealValuePair{
         KeyTypedValuePair: *NewKeyTypedValuePair(),
@@ -18,10 +18,12 @@ func NewKeyRealValuePair()(*KeyRealValuePair) {
     return m
 }
 // CreateKeyRealValuePairFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKeyRealValuePairFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKeyRealValuePair(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KeyRealValuePair) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.KeyTypedValuePair.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *KeyRealValuePair) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetValue gets the value property value. The real (floating-point) value of the key-value pair.
+// returns a *float64 when successful
 func (m *KeyRealValuePair) GetValue()(*float64) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *KeyRealValuePair) SetValue(value *float64)() {
         panic(err)
     }
 }
-// KeyRealValuePairable 
 type KeyRealValuePairable interface {
     KeyTypedValuePairable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

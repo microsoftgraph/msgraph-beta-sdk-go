@@ -8,7 +8,7 @@ import (
 type Windows81SCEPCertificateProfile struct {
     Windows81CertificateProfileBase
 }
-// NewWindows81SCEPCertificateProfile instantiates a new windows81SCEPCertificateProfile and sets the default values.
+// NewWindows81SCEPCertificateProfile instantiates a new Windows81SCEPCertificateProfile and sets the default values.
 func NewWindows81SCEPCertificateProfile()(*Windows81SCEPCertificateProfile) {
     m := &Windows81SCEPCertificateProfile{
         Windows81CertificateProfileBase: *NewWindows81CertificateProfileBase(),
@@ -18,10 +18,12 @@ func NewWindows81SCEPCertificateProfile()(*Windows81SCEPCertificateProfile) {
     return m
 }
 // CreateWindows81SCEPCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows81SCEPCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows81SCEPCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
+// returns a *CertificateStore when successful
 func (m *Windows81SCEPCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows81SCEPCertificateProfile) GetCertificateStore()(*CertificateStor
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows81SCEPCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Windows81CertificateProfileBase.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,6 +143,7 @@ func (m *Windows81SCEPCertificateProfile) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. Hash Algorithm Options.
+// returns a *HashAlgorithms when successful
 func (m *Windows81SCEPCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
     val, err := m.GetBackingStore().Get("hashAlgorithm")
     if err != nil {
@@ -151,6 +155,7 @@ func (m *Windows81SCEPCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
     return nil
 }
 // GetKeySize gets the keySize property value. Key Size Options.
+// returns a *KeySize when successful
 func (m *Windows81SCEPCertificateProfile) GetKeySize()(*KeySize) {
     val, err := m.GetBackingStore().Get("keySize")
     if err != nil {
@@ -162,6 +167,7 @@ func (m *Windows81SCEPCertificateProfile) GetKeySize()(*KeySize) {
     return nil
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
+// returns a *KeyUsages when successful
 func (m *Windows81SCEPCertificateProfile) GetKeyUsage()(*KeyUsages) {
     val, err := m.GetBackingStore().Get("keyUsage")
     if err != nil {
@@ -173,6 +179,7 @@ func (m *Windows81SCEPCertificateProfile) GetKeyUsage()(*KeyUsages) {
     return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+// returns a []ManagedDeviceCertificateStateable when successful
 func (m *Windows81SCEPCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
     if err != nil {
@@ -184,6 +191,7 @@ func (m *Windows81SCEPCertificateProfile) GetManagedDeviceCertificateStates()([]
     return nil
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate
+// returns a Windows81TrustedRootCertificateable when successful
 func (m *Windows81SCEPCertificateProfile) GetRootCertificate()(Windows81TrustedRootCertificateable) {
     val, err := m.GetBackingStore().Get("rootCertificate")
     if err != nil {
@@ -195,6 +203,7 @@ func (m *Windows81SCEPCertificateProfile) GetRootCertificate()(Windows81TrustedR
     return nil
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s).
+// returns a []string when successful
 func (m *Windows81SCEPCertificateProfile) GetScepServerUrls()([]string) {
     val, err := m.GetBackingStore().Get("scepServerUrls")
     if err != nil {
@@ -206,6 +215,7 @@ func (m *Windows81SCEPCertificateProfile) GetScepServerUrls()([]string) {
     return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
+// returns a *string when successful
 func (m *Windows81SCEPCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
     if err != nil {
@@ -217,6 +227,7 @@ func (m *Windows81SCEPCertificateProfile) GetSubjectAlternativeNameFormatString(
     return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
+// returns a *string when successful
 func (m *Windows81SCEPCertificateProfile) GetSubjectNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectNameFormatString")
     if err != nil {
@@ -362,7 +373,6 @@ func (m *Windows81SCEPCertificateProfile) SetSubjectNameFormatString(value *stri
         panic(err)
     }
 }
-// Windows81SCEPCertificateProfileable 
 type Windows81SCEPCertificateProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Windows81CertificateProfileBaseable

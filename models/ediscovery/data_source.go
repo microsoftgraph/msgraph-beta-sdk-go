@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DataSource 
 type DataSource struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewDataSource instantiates a new dataSource and sets the default values.
+// NewDataSource instantiates a new DataSource and sets the default values.
 func NewDataSource()(*DataSource) {
     m := &DataSource{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,6 +17,7 @@ func NewDataSource()(*DataSource) {
     return m
 }
 // CreateDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -44,6 +44,7 @@ func CreateDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
     return NewDataSource(), nil
 }
 // GetCreatedBy gets the createdBy property value. The user who created the dataSource.
+// returns a IdentitySetable when successful
 func (m *DataSource) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -55,6 +56,7 @@ func (m *DataSource) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the dataSource was created.
+// returns a *Time when successful
 func (m *DataSource) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -66,6 +68,7 @@ func (m *DataSource) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the dataSource, and is the name of the SharePoint site.
+// returns a *string when successful
 func (m *DataSource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -77,6 +80,7 @@ func (m *DataSource) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -122,6 +126,7 @@ func (m *DataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetHoldStatus gets the holdStatus property value. The holdStatus property
+// returns a *DataSourceHoldStatus when successful
 func (m *DataSource) GetHoldStatus()(*DataSourceHoldStatus) {
     val, err := m.GetBackingStore().Get("holdStatus")
     if err != nil {
@@ -193,7 +198,6 @@ func (m *DataSource) SetHoldStatus(value *DataSourceHoldStatus)() {
         panic(err)
     }
 }
-// DataSourceable 
 type DataSourceable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

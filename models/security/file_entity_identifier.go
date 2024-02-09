@@ -1,24 +1,26 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type FileEntityIdentifier int
 
 const (
-    SHA1_FILEENTITYIDENTIFIER FileEntityIdentifier = iota
-    INITIATINGPROCESSSHA1_FILEENTITYIDENTIFIER
-    SHA256_FILEENTITYIDENTIFIER
-    INITIATINGPROCESSSHA256_FILEENTITYIDENTIFIER
-    UNKNOWNFUTUREVALUE_FILEENTITYIDENTIFIER
+    SHA1_FILEENTITYIDENTIFIER = 1
+    INITIATINGPROCESSSHA1_FILEENTITYIDENTIFIER = 2
+    SHA256_FILEENTITYIDENTIFIER = 4
+    INITIATINGPROCESSSHA256_FILEENTITYIDENTIFIER = 8
+    UNKNOWNFUTUREVALUE_FILEENTITYIDENTIFIER = 16
 )
 
 func (i FileEntityIdentifier) String() string {
     var values []string
-    for p := FileEntityIdentifier(1); p <= UNKNOWNFUTUREVALUE_FILEENTITYIDENTIFIER; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"sha1", "initiatingProcessSHA1", "sha256", "initiatingProcessSHA256", "unknownFutureValue"}[p])
+    options := []string{"sha1", "initiatingProcessSHA1", "sha256", "initiatingProcessSHA256", "unknownFutureValue"}
+    for p := 0; p < 5; p++ {
+        mantis := FileEntityIdentifier(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

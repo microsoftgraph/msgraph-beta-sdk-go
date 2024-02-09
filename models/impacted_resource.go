@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ImpactedResource 
 type ImpactedResource struct {
     Entity
 }
-// NewImpactedResource instantiates a new impactedResource and sets the default values.
+// NewImpactedResource instantiates a new ImpactedResource and sets the default values.
 func NewImpactedResource()(*ImpactedResource) {
     m := &ImpactedResource{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewImpactedResource()(*ImpactedResource) {
     return m
 }
 // CreateImpactedResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateImpactedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewImpactedResource(), nil
 }
 // GetAddedDateTime gets the addedDateTime property value. The date and time when the impactedResource object was initially associated with the recommendation.
+// returns a *Time when successful
 func (m *ImpactedResource) GetAddedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("addedDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ImpactedResource) GetAddedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetAdditionalDetails gets the additionalDetails property value. Additional information unique to the impactedResource to help contextualize the recommendation.
+// returns a []KeyValueable when successful
 func (m *ImpactedResource) GetAdditionalDetails()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("additionalDetails")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ImpactedResource) GetAdditionalDetails()([]KeyValueable) {
     return nil
 }
 // GetApiUrl gets the apiUrl property value. The URL link to the corresponding Microsoft Entra resource.
+// returns a *string when successful
 func (m *ImpactedResource) GetApiUrl()(*string) {
     val, err := m.GetBackingStore().Get("apiUrl")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ImpactedResource) GetApiUrl()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Friendly name of the Microsoft Entra resource.
+// returns a *string when successful
 func (m *ImpactedResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *ImpactedResource) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ImpactedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["addedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -216,6 +221,7 @@ func (m *ImpactedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Name of the user or service that last updated the status.
+// returns a *string when successful
 func (m *ImpactedResource) GetLastModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -227,6 +233,7 @@ func (m *ImpactedResource) GetLastModifiedBy()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the status was last updated.
+// returns a *string when successful
 func (m *ImpactedResource) GetLastModifiedDateTime()(*string) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -238,6 +245,7 @@ func (m *ImpactedResource) GetLastModifiedDateTime()(*string) {
     return nil
 }
 // GetOwner gets the owner property value. The user responsible for maintaining the resource.
+// returns a *string when successful
 func (m *ImpactedResource) GetOwner()(*string) {
     val, err := m.GetBackingStore().Get("owner")
     if err != nil {
@@ -249,6 +257,7 @@ func (m *ImpactedResource) GetOwner()(*string) {
     return nil
 }
 // GetPortalUrl gets the portalUrl property value. The URL link to the corresponding Microsoft Entra admin center page of the resource.
+// returns a *string when successful
 func (m *ImpactedResource) GetPortalUrl()(*string) {
     val, err := m.GetBackingStore().Get("portalUrl")
     if err != nil {
@@ -260,6 +269,7 @@ func (m *ImpactedResource) GetPortalUrl()(*string) {
     return nil
 }
 // GetPostponeUntilDateTime gets the postponeUntilDateTime property value. The future date and time when the status of a postponed impactedResource will be active again.
+// returns a *Time when successful
 func (m *ImpactedResource) GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("postponeUntilDateTime")
     if err != nil {
@@ -271,6 +281,7 @@ func (m *ImpactedResource) GetPostponeUntilDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetRank gets the rank property value. Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.
+// returns a *int32 when successful
 func (m *ImpactedResource) GetRank()(*int32) {
     val, err := m.GetBackingStore().Get("rank")
     if err != nil {
@@ -282,6 +293,7 @@ func (m *ImpactedResource) GetRank()(*int32) {
     return nil
 }
 // GetRecommendationId gets the recommendationId property value. The unique identifier of the recommendation that the resource is associated with.
+// returns a *string when successful
 func (m *ImpactedResource) GetRecommendationId()(*string) {
     val, err := m.GetBackingStore().Get("recommendationId")
     if err != nil {
@@ -293,6 +305,7 @@ func (m *ImpactedResource) GetRecommendationId()(*string) {
     return nil
 }
 // GetResourceType gets the resourceType property value. Indicates the type of Microsoft Entra resource. Examples include user, application.
+// returns a *string when successful
 func (m *ImpactedResource) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
     if err != nil {
@@ -304,6 +317,7 @@ func (m *ImpactedResource) GetResourceType()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *RecommendationStatus when successful
 func (m *ImpactedResource) GetStatus()(*RecommendationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -315,6 +329,7 @@ func (m *ImpactedResource) GetStatus()(*RecommendationStatus) {
     return nil
 }
 // GetSubjectId gets the subjectId property value. The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
+// returns a *string when successful
 func (m *ImpactedResource) GetSubjectId()(*string) {
     val, err := m.GetBackingStore().Get("subjectId")
     if err != nil {
@@ -522,7 +537,6 @@ func (m *ImpactedResource) SetSubjectId(value *string)() {
         panic(err)
     }
 }
-// ImpactedResourceable 
 type ImpactedResourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

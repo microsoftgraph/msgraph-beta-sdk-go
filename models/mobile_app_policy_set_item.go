@@ -8,7 +8,7 @@ import (
 type MobileAppPolicySetItem struct {
     PolicySetItem
 }
-// NewMobileAppPolicySetItem instantiates a new mobileAppPolicySetItem and sets the default values.
+// NewMobileAppPolicySetItem instantiates a new MobileAppPolicySetItem and sets the default values.
 func NewMobileAppPolicySetItem()(*MobileAppPolicySetItem) {
     m := &MobileAppPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
@@ -18,10 +18,12 @@ func NewMobileAppPolicySetItem()(*MobileAppPolicySetItem) {
     return m
 }
 // CreateMobileAppPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppPolicySetItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppPolicySetItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicySetItem.GetFieldDeserializers()
     res["intent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *MobileAppPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetIntent gets the intent property value. Possible values for the install intent chosen by the admin.
+// returns a *InstallIntent when successful
 func (m *MobileAppPolicySetItem) GetIntent()(*InstallIntent) {
     val, err := m.GetBackingStore().Get("intent")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *MobileAppPolicySetItem) GetIntent()(*InstallIntent) {
     return nil
 }
 // GetSettings gets the settings property value. Settings of the MobileAppPolicySetItem.
+// returns a MobileAppAssignmentSettingsable when successful
 func (m *MobileAppPolicySetItem) GetSettings()(MobileAppAssignmentSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -103,7 +107,6 @@ func (m *MobileAppPolicySetItem) SetSettings(value MobileAppAssignmentSettingsab
         panic(err)
     }
 }
-// MobileAppPolicySetItemable 
 type MobileAppPolicySetItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicySetItemable

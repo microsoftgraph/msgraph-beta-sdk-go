@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RoleManagementAlert 
 type RoleManagementAlert struct {
     Entity
 }
-// NewRoleManagementAlert instantiates a new roleManagementAlert and sets the default values.
+// NewRoleManagementAlert instantiates a new RoleManagementAlert and sets the default values.
 func NewRoleManagementAlert()(*RoleManagementAlert) {
     m := &RoleManagementAlert{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewRoleManagementAlert()(*RoleManagementAlert) {
     return m
 }
 // CreateRoleManagementAlertFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleManagementAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleManagementAlert(), nil
 }
 // GetAlertConfigurations gets the alertConfigurations property value. The various configurations of an alert for Microsoft Entra roles. The configurations are predefined and can't be created or deleted, but some of the configurations can be modified.
+// returns a []UnifiedRoleManagementAlertConfigurationable when successful
 func (m *RoleManagementAlert) GetAlertConfigurations()([]UnifiedRoleManagementAlertConfigurationable) {
     val, err := m.GetBackingStore().Get("alertConfigurations")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *RoleManagementAlert) GetAlertConfigurations()([]UnifiedRoleManagementAl
     return nil
 }
 // GetAlertDefinitions gets the alertDefinitions property value. Defines an alert, its impact, and measures to mitigate or prevent it.
+// returns a []UnifiedRoleManagementAlertDefinitionable when successful
 func (m *RoleManagementAlert) GetAlertDefinitions()([]UnifiedRoleManagementAlertDefinitionable) {
     val, err := m.GetBackingStore().Get("alertDefinitions")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *RoleManagementAlert) GetAlertDefinitions()([]UnifiedRoleManagementAlert
     return nil
 }
 // GetAlerts gets the alerts property value. Represents the alert entity.
+// returns a []UnifiedRoleManagementAlertable when successful
 func (m *RoleManagementAlert) GetAlerts()([]UnifiedRoleManagementAlertable) {
     val, err := m.GetBackingStore().Get("alerts")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *RoleManagementAlert) GetAlerts()([]UnifiedRoleManagementAlertable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleManagementAlert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alertConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -122,6 +126,7 @@ func (m *RoleManagementAlert) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetOperations gets the operations property value. Represents operations on resources that take a long time to complete and can run in the background until completion.
+// returns a []LongRunningOperationable when successful
 func (m *RoleManagementAlert) GetOperations()([]LongRunningOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -216,7 +221,6 @@ func (m *RoleManagementAlert) SetOperations(value []LongRunningOperationable)() 
         panic(err)
     }
 }
-// RoleManagementAlertable 
 type RoleManagementAlertable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

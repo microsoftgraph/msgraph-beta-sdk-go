@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonCertificationCollectionResponse 
 type PersonCertificationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPersonCertificationCollectionResponse instantiates a new personCertificationCollectionResponse and sets the default values.
+// NewPersonCertificationCollectionResponse instantiates a new PersonCertificationCollectionResponse and sets the default values.
 func NewPersonCertificationCollectionResponse()(*PersonCertificationCollectionResponse) {
     m := &PersonCertificationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewPersonCertificationCollectionResponse()(*PersonCertificationCollectionRe
     return m
 }
 // CreatePersonCertificationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePersonCertificationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonCertificationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PersonCertificationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *PersonCertificationCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []PersonCertificationable when successful
 func (m *PersonCertificationCollectionResponse) GetValue()([]PersonCertificationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *PersonCertificationCollectionResponse) SetValue(value []PersonCertifica
         panic(err)
     }
 }
-// PersonCertificationCollectionResponseable 
 type PersonCertificationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

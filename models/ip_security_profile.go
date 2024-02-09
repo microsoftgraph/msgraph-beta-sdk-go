@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IpSecurityProfile 
 type IpSecurityProfile struct {
     Entity
 }
-// NewIpSecurityProfile instantiates a new ipSecurityProfile and sets the default values.
+// NewIpSecurityProfile instantiates a new IpSecurityProfile and sets the default values.
 func NewIpSecurityProfile()(*IpSecurityProfile) {
     m := &IpSecurityProfile{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewIpSecurityProfile()(*IpSecurityProfile) {
     return m
 }
 // CreateIpSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIpSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpSecurityProfile(), nil
 }
 // GetActivityGroupNames gets the activityGroupNames property value. The activityGroupNames property
+// returns a []string when successful
 func (m *IpSecurityProfile) GetActivityGroupNames()([]string) {
     val, err := m.GetBackingStore().Get("activityGroupNames")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *IpSecurityProfile) GetActivityGroupNames()([]string) {
     return nil
 }
 // GetAddress gets the address property value. The address property
+// returns a *string when successful
 func (m *IpSecurityProfile) GetAddress()(*string) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *IpSecurityProfile) GetAddress()(*string) {
     return nil
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
+// returns a *string when successful
 func (m *IpSecurityProfile) GetAzureSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("azureSubscriptionId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *IpSecurityProfile) GetAzureSubscriptionId()(*string) {
     return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
+// returns a *string when successful
 func (m *IpSecurityProfile) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *IpSecurityProfile) GetAzureTenantId()(*string) {
     return nil
 }
 // GetCountHits gets the countHits property value. The countHits property
+// returns a *int32 when successful
 func (m *IpSecurityProfile) GetCountHits()(*int32) {
     val, err := m.GetBackingStore().Get("countHits")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *IpSecurityProfile) GetCountHits()(*int32) {
     return nil
 }
 // GetCountHosts gets the countHosts property value. The countHosts property
+// returns a *int32 when successful
 func (m *IpSecurityProfile) GetCountHosts()(*int32) {
     val, err := m.GetBackingStore().Get("countHosts")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *IpSecurityProfile) GetCountHosts()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activityGroupNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -246,6 +253,7 @@ func (m *IpSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
+// returns a *Time when successful
 func (m *IpSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -257,6 +265,7 @@ func (m *IpSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetIpCategories gets the ipCategories property value. The ipCategories property
+// returns a []IpCategoryable when successful
 func (m *IpSecurityProfile) GetIpCategories()([]IpCategoryable) {
     val, err := m.GetBackingStore().Get("ipCategories")
     if err != nil {
@@ -268,6 +277,7 @@ func (m *IpSecurityProfile) GetIpCategories()([]IpCategoryable) {
     return nil
 }
 // GetIpReferenceData gets the ipReferenceData property value. The ipReferenceData property
+// returns a []IpReferenceDataable when successful
 func (m *IpSecurityProfile) GetIpReferenceData()([]IpReferenceDataable) {
     val, err := m.GetBackingStore().Get("ipReferenceData")
     if err != nil {
@@ -279,6 +289,7 @@ func (m *IpSecurityProfile) GetIpReferenceData()([]IpReferenceDataable) {
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
+// returns a *Time when successful
 func (m *IpSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -290,6 +301,7 @@ func (m *IpSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
+// returns a *string when successful
 func (m *IpSecurityProfile) GetRiskScore()(*string) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
@@ -301,6 +313,7 @@ func (m *IpSecurityProfile) GetRiskScore()(*string) {
     return nil
 }
 // GetTags gets the tags property value. The tags property
+// returns a []string when successful
 func (m *IpSecurityProfile) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -312,6 +325,7 @@ func (m *IpSecurityProfile) GetTags()([]string) {
     return nil
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
+// returns a SecurityVendorInformationable when successful
 func (m *IpSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
     val, err := m.GetBackingStore().Get("vendorInformation")
     if err != nil {
@@ -511,7 +525,6 @@ func (m *IpSecurityProfile) SetVendorInformation(value SecurityVendorInformation
         panic(err)
     }
 }
-// IpSecurityProfileable 
 type IpSecurityProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

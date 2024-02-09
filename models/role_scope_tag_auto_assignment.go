@@ -8,7 +8,7 @@ import (
 type RoleScopeTagAutoAssignment struct {
     Entity
 }
-// NewRoleScopeTagAutoAssignment instantiates a new roleScopeTagAutoAssignment and sets the default values.
+// NewRoleScopeTagAutoAssignment instantiates a new RoleScopeTagAutoAssignment and sets the default values.
 func NewRoleScopeTagAutoAssignment()(*RoleScopeTagAutoAssignment) {
     m := &RoleScopeTagAutoAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewRoleScopeTagAutoAssignment()(*RoleScopeTagAutoAssignment) {
     return m
 }
 // CreateRoleScopeTagAutoAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleScopeTagAutoAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleScopeTagAutoAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleScopeTagAutoAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *RoleScopeTagAutoAssignment) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetTarget gets the target property value. The auto-assignment target for the specific Role Scope Tag.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *RoleScopeTagAutoAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *RoleScopeTagAutoAssignment) SetTarget(value DeviceAndAppManagementAssig
         panic(err)
     }
 }
-// RoleScopeTagAutoAssignmentable 
 type RoleScopeTagAutoAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

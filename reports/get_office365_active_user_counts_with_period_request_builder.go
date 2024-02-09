@@ -14,6 +14,8 @@ type GetOffice365ActiveUserCountsWithPeriodRequestBuilder struct {
 type GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -39,7 +41,7 @@ type GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetRequestConfiguration
 // NewGetOffice365ActiveUserCountsWithPeriodRequestBuilderInternal instantiates a new GetOffice365ActiveUserCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetOffice365ActiveUserCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetOffice365ActiveUserCountsWithPeriodRequestBuilder) {
     m := &GetOffice365ActiveUserCountsWithPeriodRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getOffice365ActiveUserCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getOffice365ActiveUserCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     if period != nil {
         m.BaseRequestBuilder.PathParameters["period"] = *period
@@ -53,15 +55,16 @@ func NewGetOffice365ActiveUserCountsWithPeriodRequestBuilder(rawUrl string, requ
     return NewGetOffice365ActiveUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getOffice365ActiveUserCounts
-// Deprecated: This method is obsolete. Use GetAsGetOffice365ActiveUserCountsWithPeriodGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a GetOffice365ActiveUserCountsWithPeriodResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetOffice365ActiveUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365ActiveUserCountsWithPeriodResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetOffice365ActiveUserCountsWithPeriodResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -73,14 +76,15 @@ func (m *GetOffice365ActiveUserCountsWithPeriodRequestBuilder) Get(ctx context.C
     return res.(GetOffice365ActiveUserCountsWithPeriodResponseable), nil
 }
 // GetAsGetOffice365ActiveUserCountsWithPeriodGetResponse invoke function getOffice365ActiveUserCounts
+// returns a GetOffice365ActiveUserCountsWithPeriodGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetOffice365ActiveUserCountsWithPeriodRequestBuilder) GetAsGetOffice365ActiveUserCountsWithPeriodGetResponse(ctx context.Context, requestConfiguration *GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365ActiveUserCountsWithPeriodGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetOffice365ActiveUserCountsWithPeriodGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -92,6 +96,7 @@ func (m *GetOffice365ActiveUserCountsWithPeriodRequestBuilder) GetAsGetOffice365
     return res.(GetOffice365ActiveUserCountsWithPeriodGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getOffice365ActiveUserCounts
+// returns a *RequestInformation when successful
 func (m *GetOffice365ActiveUserCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -105,6 +110,7 @@ func (m *GetOffice365ActiveUserCountsWithPeriodRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GetOffice365ActiveUserCountsWithPeriodRequestBuilder when successful
 func (m *GetOffice365ActiveUserCountsWithPeriodRequestBuilder) WithUrl(rawUrl string)(*GetOffice365ActiveUserCountsWithPeriodRequestBuilder) {
     return NewGetOffice365ActiveUserCountsWithPeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

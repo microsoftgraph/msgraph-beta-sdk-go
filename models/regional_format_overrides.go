@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// RegionalFormatOverrides 
 type RegionalFormatOverrides struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewRegionalFormatOverrides instantiates a new regionalFormatOverrides and sets the default values.
+// NewRegionalFormatOverrides instantiates a new RegionalFormatOverrides and sets the default values.
 func NewRegionalFormatOverrides()(*RegionalFormatOverrides) {
     m := &RegionalFormatOverrides{
     }
@@ -19,10 +18,12 @@ func NewRegionalFormatOverrides()(*RegionalFormatOverrides) {
     return m
 }
 // CreateRegionalFormatOverridesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRegionalFormatOverridesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRegionalFormatOverrides(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RegionalFormatOverrides) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *RegionalFormatOverrides) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *RegionalFormatOverrides) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCalendar gets the calendar property value. The calendar to use, e.g., Gregorian Calendar.Returned by default.
+// returns a *string when successful
 func (m *RegionalFormatOverrides) GetCalendar()(*string) {
     val, err := m.GetBackingStore().Get("calendar")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *RegionalFormatOverrides) GetCalendar()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["calendar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -135,6 +139,7 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetFirstDayOfWeek gets the firstDayOfWeek property value. The first day of the week to use, e.g., Sunday.Returned by default.
+// returns a *string when successful
 func (m *RegionalFormatOverrides) GetFirstDayOfWeek()(*string) {
     val, err := m.GetBackingStore().Get("firstDayOfWeek")
     if err != nil {
@@ -146,6 +151,7 @@ func (m *RegionalFormatOverrides) GetFirstDayOfWeek()(*string) {
     return nil
 }
 // GetLongDateFormat gets the longDateFormat property value. The long date time format to be used for displaying dates.Returned by default.
+// returns a *string when successful
 func (m *RegionalFormatOverrides) GetLongDateFormat()(*string) {
     val, err := m.GetBackingStore().Get("longDateFormat")
     if err != nil {
@@ -157,6 +163,7 @@ func (m *RegionalFormatOverrides) GetLongDateFormat()(*string) {
     return nil
 }
 // GetLongTimeFormat gets the longTimeFormat property value. The long time format to be used for displaying time.Returned by default.
+// returns a *string when successful
 func (m *RegionalFormatOverrides) GetLongTimeFormat()(*string) {
     val, err := m.GetBackingStore().Get("longTimeFormat")
     if err != nil {
@@ -168,6 +175,7 @@ func (m *RegionalFormatOverrides) GetLongTimeFormat()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *RegionalFormatOverrides) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -179,6 +187,7 @@ func (m *RegionalFormatOverrides) GetOdataType()(*string) {
     return nil
 }
 // GetShortDateFormat gets the shortDateFormat property value. The short date time format to be used for displaying dates.Returned by default.
+// returns a *string when successful
 func (m *RegionalFormatOverrides) GetShortDateFormat()(*string) {
     val, err := m.GetBackingStore().Get("shortDateFormat")
     if err != nil {
@@ -190,6 +199,7 @@ func (m *RegionalFormatOverrides) GetShortDateFormat()(*string) {
     return nil
 }
 // GetShortTimeFormat gets the shortTimeFormat property value. The short time format to be used for displaying time.Returned by default.
+// returns a *string when successful
 func (m *RegionalFormatOverrides) GetShortTimeFormat()(*string) {
     val, err := m.GetBackingStore().Get("shortTimeFormat")
     if err != nil {
@@ -201,6 +211,7 @@ func (m *RegionalFormatOverrides) GetShortTimeFormat()(*string) {
     return nil
 }
 // GetTimeZone gets the timeZone property value. The timezone to be used for displaying time.Returned by default.
+// returns a *string when successful
 func (m *RegionalFormatOverrides) GetTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("timeZone")
     if err != nil {
@@ -336,7 +347,6 @@ func (m *RegionalFormatOverrides) SetTimeZone(value *string)() {
         panic(err)
     }
 }
-// RegionalFormatOverridesable 
 type RegionalFormatOverridesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

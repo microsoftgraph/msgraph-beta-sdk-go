@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConfigManagerCollectionCollectionResponse 
 type ConfigManagerCollectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewConfigManagerCollectionCollectionResponse instantiates a new configManagerCollectionCollectionResponse and sets the default values.
+// NewConfigManagerCollectionCollectionResponse instantiates a new ConfigManagerCollectionCollectionResponse and sets the default values.
 func NewConfigManagerCollectionCollectionResponse()(*ConfigManagerCollectionCollectionResponse) {
     m := &ConfigManagerCollectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewConfigManagerCollectionCollectionResponse()(*ConfigManagerCollectionColl
     return m
 }
 // CreateConfigManagerCollectionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConfigManagerCollectionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigManagerCollectionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConfigManagerCollectionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ConfigManagerCollectionCollectionResponse) GetFieldDeserializers()(map[
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ConfigManagerCollectionable when successful
 func (m *ConfigManagerCollectionCollectionResponse) GetValue()([]ConfigManagerCollectionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ConfigManagerCollectionCollectionResponse) SetValue(value []ConfigManag
         panic(err)
     }
 }
-// ConfigManagerCollectionCollectionResponseable 
 type ConfigManagerCollectionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

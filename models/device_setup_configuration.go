@@ -9,7 +9,7 @@ import (
 type DeviceSetupConfiguration struct {
     Entity
 }
-// NewDeviceSetupConfiguration instantiates a new deviceSetupConfiguration and sets the default values.
+// NewDeviceSetupConfiguration instantiates a new DeviceSetupConfiguration and sets the default values.
 func NewDeviceSetupConfiguration()(*DeviceSetupConfiguration) {
     m := &DeviceSetupConfiguration{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceSetupConfiguration()(*DeviceSetupConfiguration) {
     return m
 }
 // CreateDeviceSetupConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceSetupConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceSetupConfiguration(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
+// returns a *Time when successful
 func (m *DeviceSetupConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceSetupConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
+// returns a *string when successful
 func (m *DeviceSetupConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceSetupConfiguration) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
+// returns a *string when successful
 func (m *DeviceSetupConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *DeviceSetupConfiguration) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceSetupConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +114,7 @@ func (m *DeviceSetupConfiguration) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// returns a *Time when successful
 func (m *DeviceSetupConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -120,6 +126,7 @@ func (m *DeviceSetupConfiguration) GetLastModifiedDateTime()(*i336074805fc853987
     return nil
 }
 // GetVersion gets the version property value. Version of the device configuration.
+// returns a *int32 when successful
 func (m *DeviceSetupConfiguration) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -203,7 +210,6 @@ func (m *DeviceSetupConfiguration) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// DeviceSetupConfigurationable 
 type DeviceSetupConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

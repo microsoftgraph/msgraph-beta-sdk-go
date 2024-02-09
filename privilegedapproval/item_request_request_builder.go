@@ -27,28 +27,29 @@ type ItemRequestRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemRequestRequestBuilderGetQueryParameters
 }
-// NewItemRequestRequestBuilderInternal instantiates a new RequestRequestBuilder and sets the default values.
+// NewItemRequestRequestBuilderInternal instantiates a new ItemRequestRequestBuilder and sets the default values.
 func NewItemRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRequestRequestBuilder) {
     m := &ItemRequestRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemRequestRequestBuilder instantiates a new RequestRequestBuilder and sets the default values.
+// NewItemRequestRequestBuilder instantiates a new ItemRequestRequestBuilder and sets the default values.
 func NewItemRequestRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get request from privilegedApproval
+// returns a PrivilegedRoleAssignmentRequestable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemRequestRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRequestRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrivilegedRoleAssignmentRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemRequestRequestBuilder) Get(ctx context.Context, requestConfiguratio
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable), nil
 }
 // ToGetRequestInformation get request from privilegedApproval
+// returns a *RequestInformation when successful
 func (m *ItemRequestRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRequestRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemRequestRequestBuilder) ToGetRequestInformation(ctx context.Context,
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemRequestRequestBuilder when successful
 func (m *ItemRequestRequestBuilder) WithUrl(rawUrl string)(*ItemRequestRequestBuilder) {
     return NewItemRequestRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

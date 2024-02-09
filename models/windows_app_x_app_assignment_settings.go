@@ -8,7 +8,7 @@ import (
 type WindowsAppXAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewWindowsAppXAppAssignmentSettings instantiates a new windowsAppXAppAssignmentSettings and sets the default values.
+// NewWindowsAppXAppAssignmentSettings instantiates a new WindowsAppXAppAssignmentSettings and sets the default values.
 func NewWindowsAppXAppAssignmentSettings()(*WindowsAppXAppAssignmentSettings) {
     m := &WindowsAppXAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -18,10 +18,12 @@ func NewWindowsAppXAppAssignmentSettings()(*WindowsAppXAppAssignmentSettings) {
     return m
 }
 // CreateWindowsAppXAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsAppXAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsAppXAppAssignmentSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsAppXAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
     res["useDeviceContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -36,7 +38,8 @@ func (m *WindowsAppXAppAssignmentSettings) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetUseDeviceContext gets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
+// GetUseDeviceContext gets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
+// returns a *bool when successful
 func (m *WindowsAppXAppAssignmentSettings) GetUseDeviceContext()(*bool) {
     val, err := m.GetBackingStore().Get("useDeviceContext")
     if err != nil {
@@ -61,14 +64,13 @@ func (m *WindowsAppXAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetUseDeviceContext sets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
+// SetUseDeviceContext sets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
 func (m *WindowsAppXAppAssignmentSettings) SetUseDeviceContext(value *bool)() {
     err := m.GetBackingStore().Set("useDeviceContext", value)
     if err != nil {
         panic(err)
     }
 }
-// WindowsAppXAppAssignmentSettingsable 
 type WindowsAppXAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

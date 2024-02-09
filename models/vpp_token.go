@@ -9,7 +9,7 @@ import (
 type VppToken struct {
     Entity
 }
-// NewVppToken instantiates a new vppToken and sets the default values.
+// NewVppToken instantiates a new VppToken and sets the default values.
 func NewVppToken()(*VppToken) {
     m := &VppToken{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewVppToken()(*VppToken) {
     return m
 }
 // CreateVppTokenFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVppTokenFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVppToken(), nil
 }
 // GetAppleId gets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
+// returns a *string when successful
 func (m *VppToken) GetAppleId()(*string) {
     val, err := m.GetBackingStore().Get("appleId")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *VppToken) GetAppleId()(*string) {
     return nil
 }
 // GetAutomaticallyUpdateApps gets the automaticallyUpdateApps property value. Whether or not apps for the VPP token will be automatically updated.
+// returns a *bool when successful
 func (m *VppToken) GetAutomaticallyUpdateApps()(*bool) {
     val, err := m.GetBackingStore().Get("automaticallyUpdateApps")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *VppToken) GetAutomaticallyUpdateApps()(*bool) {
     return nil
 }
 // GetClaimTokenManagementFromExternalMdm gets the claimTokenManagementFromExternalMdm property value. Admin consent to allow claiming token management from external MDM.
+// returns a *bool when successful
 func (m *VppToken) GetClaimTokenManagementFromExternalMdm()(*bool) {
     val, err := m.GetBackingStore().Get("claimTokenManagementFromExternalMdm")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *VppToken) GetClaimTokenManagementFromExternalMdm()(*bool) {
     return nil
 }
 // GetCountryOrRegion gets the countryOrRegion property value. Whether or not apps for the VPP token will be automatically updated.
+// returns a *string when successful
 func (m *VppToken) GetCountryOrRegion()(*string) {
     val, err := m.GetBackingStore().Get("countryOrRegion")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *VppToken) GetCountryOrRegion()(*string) {
     return nil
 }
 // GetDataSharingConsentGranted gets the dataSharingConsentGranted property value. Consent granted for data sharing with the Apple Volume Purchase Program.
+// returns a *bool when successful
 func (m *VppToken) GetDataSharingConsentGranted()(*bool) {
     val, err := m.GetBackingStore().Get("dataSharingConsentGranted")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *VppToken) GetDataSharingConsentGranted()(*bool) {
     return nil
 }
 // GetDisplayName gets the displayName property value. An admin specified token friendly name.
+// returns a *string when successful
 func (m *VppToken) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *VppToken) GetDisplayName()(*string) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expiration date time of the Apple Volume Purchase Program Token.
+// returns a *Time when successful
 func (m *VppToken) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *VppToken) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VppToken) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -285,6 +294,7 @@ func (m *VppToken) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modification date time associated with the Apple Volume Purchase Program Token.
+// returns a *Time when successful
 func (m *VppToken) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -296,6 +306,7 @@ func (m *VppToken) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
+// returns a *Time when successful
 func (m *VppToken) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -307,6 +318,7 @@ func (m *VppToken) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetLastSyncStatus gets the lastSyncStatus property value. Possible sync statuses associated with an Apple Volume Purchase Program token.
+// returns a *VppTokenSyncStatus when successful
 func (m *VppToken) GetLastSyncStatus()(*VppTokenSyncStatus) {
     val, err := m.GetBackingStore().Get("lastSyncStatus")
     if err != nil {
@@ -318,6 +330,7 @@ func (m *VppToken) GetLastSyncStatus()(*VppTokenSyncStatus) {
     return nil
 }
 // GetLocationName gets the locationName property value. Token location returned from Apple VPP.
+// returns a *string when successful
 func (m *VppToken) GetLocationName()(*string) {
     val, err := m.GetBackingStore().Get("locationName")
     if err != nil {
@@ -329,6 +342,7 @@ func (m *VppToken) GetLocationName()(*string) {
     return nil
 }
 // GetOrganizationName gets the organizationName property value. The organization associated with the Apple Volume Purchase Program Token
+// returns a *string when successful
 func (m *VppToken) GetOrganizationName()(*string) {
     val, err := m.GetBackingStore().Get("organizationName")
     if err != nil {
@@ -340,6 +354,7 @@ func (m *VppToken) GetOrganizationName()(*string) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. Role Scope Tags IDs assigned to this entity.
+// returns a []string when successful
 func (m *VppToken) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -351,6 +366,7 @@ func (m *VppToken) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetState gets the state property value. Possible states associated with an Apple Volume Purchase Program token.
+// returns a *VppTokenState when successful
 func (m *VppToken) GetState()(*VppTokenState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -362,6 +378,7 @@ func (m *VppToken) GetState()(*VppTokenState) {
     return nil
 }
 // GetToken gets the token property value. The Apple Volume Purchase Program Token string downloaded from the Apple Volume Purchase Program.
+// returns a *string when successful
 func (m *VppToken) GetToken()(*string) {
     val, err := m.GetBackingStore().Get("token")
     if err != nil {
@@ -373,6 +390,7 @@ func (m *VppToken) GetToken()(*string) {
     return nil
 }
 // GetTokenActionResults gets the tokenActionResults property value. The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.
+// returns a []VppTokenActionResultable when successful
 func (m *VppToken) GetTokenActionResults()([]VppTokenActionResultable) {
     val, err := m.GetBackingStore().Get("tokenActionResults")
     if err != nil {
@@ -384,6 +402,7 @@ func (m *VppToken) GetTokenActionResults()([]VppTokenActionResultable) {
     return nil
 }
 // GetVppTokenAccountType gets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
+// returns a *VppTokenAccountType when successful
 func (m *VppToken) GetVppTokenAccountType()(*VppTokenAccountType) {
     val, err := m.GetBackingStore().Get("vppTokenAccountType")
     if err != nil {
@@ -632,7 +651,6 @@ func (m *VppToken) SetVppTokenAccountType(value *VppTokenAccountType)() {
         panic(err)
     }
 }
-// VppTokenable 
 type VppTokenable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// OnPremisesApplicationSegment 
 type OnPremisesApplicationSegment struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOnPremisesApplicationSegment instantiates a new onPremisesApplicationSegment and sets the default values.
+// NewOnPremisesApplicationSegment instantiates a new OnPremisesApplicationSegment and sets the default values.
 func NewOnPremisesApplicationSegment()(*OnPremisesApplicationSegment) {
     m := &OnPremisesApplicationSegment{
     }
@@ -19,10 +18,12 @@ func NewOnPremisesApplicationSegment()(*OnPremisesApplicationSegment) {
     return m
 }
 // CreateOnPremisesApplicationSegmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesApplicationSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesApplicationSegment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OnPremisesApplicationSegment) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *OnPremisesApplicationSegment) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, contains the user-friendly URL that will point to the traffic manager.
+// returns a *string when successful
 func (m *OnPremisesApplicationSegment) GetAlternateUrl()(*string) {
     val, err := m.GetBackingStore().Get("alternateUrl")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *OnPremisesApplicationSegment) GetAlternateUrl()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OnPremisesApplicationSegment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCorsConfigurations gets the corsConfigurations property value. CORS Rule definition for a particular application segment.
+// returns a []CorsConfigurationable when successful
 func (m *OnPremisesApplicationSegment) GetCorsConfigurations()([]CorsConfigurationable) {
     val, err := m.GetBackingStore().Get("corsConfigurations")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *OnPremisesApplicationSegment) GetCorsConfigurations()([]CorsConfigurati
     return nil
 }
 // GetExternalUrl gets the externalUrl property value. The published external URL for the application segment; for example, https://intranet.contoso.com./
+// returns a *string when successful
 func (m *OnPremisesApplicationSegment) GetExternalUrl()(*string) {
     val, err := m.GetBackingStore().Get("externalUrl")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *OnPremisesApplicationSegment) GetExternalUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["alternateUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -133,6 +139,7 @@ func (m *OnPremisesApplicationSegment) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetInternalUrl gets the internalUrl property value. The internal URL of the application segment; for example, https://intranet/.
+// returns a *string when successful
 func (m *OnPremisesApplicationSegment) GetInternalUrl()(*string) {
     val, err := m.GetBackingStore().Get("internalUrl")
     if err != nil {
@@ -144,6 +151,7 @@ func (m *OnPremisesApplicationSegment) GetInternalUrl()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OnPremisesApplicationSegment) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -246,7 +254,6 @@ func (m *OnPremisesApplicationSegment) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// OnPremisesApplicationSegmentable 
 type OnPremisesApplicationSegmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

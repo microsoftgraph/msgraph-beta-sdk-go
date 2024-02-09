@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VerticalSection 
 type VerticalSection struct {
     Entity
 }
-// NewVerticalSection instantiates a new verticalSection and sets the default values.
+// NewVerticalSection instantiates a new VerticalSection and sets the default values.
 func NewVerticalSection()(*VerticalSection) {
     m := &VerticalSection{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewVerticalSection()(*VerticalSection) {
     return m
 }
 // CreateVerticalSectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVerticalSectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVerticalSection(), nil
 }
 // GetEmphasis gets the emphasis property value. Enumeration value that indicates the emphasis of the section background. The possible values are: none, netural, soft, strong, unknownFutureValue.
+// returns a *SectionEmphasisType when successful
 func (m *VerticalSection) GetEmphasis()(*SectionEmphasisType) {
     val, err := m.GetBackingStore().Get("emphasis")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *VerticalSection) GetEmphasis()(*SectionEmphasisType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VerticalSection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["emphasis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -62,6 +64,7 @@ func (m *VerticalSection) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetWebparts gets the webparts property value. The set of web parts in this section.
+// returns a []WebPartable when successful
 func (m *VerticalSection) GetWebparts()([]WebPartable) {
     val, err := m.GetBackingStore().Get("webparts")
     if err != nil {
@@ -113,7 +116,6 @@ func (m *VerticalSection) SetWebparts(value []WebPartable)() {
         panic(err)
     }
 }
-// VerticalSectionable 
 type VerticalSectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

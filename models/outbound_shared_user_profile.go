@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// OutboundSharedUserProfile 
 type OutboundSharedUserProfile struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOutboundSharedUserProfile instantiates a new outboundSharedUserProfile and sets the default values.
+// NewOutboundSharedUserProfile instantiates a new OutboundSharedUserProfile and sets the default values.
 func NewOutboundSharedUserProfile()(*OutboundSharedUserProfile) {
     m := &OutboundSharedUserProfile{
     }
@@ -19,10 +18,12 @@ func NewOutboundSharedUserProfile()(*OutboundSharedUserProfile) {
     return m
 }
 // CreateOutboundSharedUserProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOutboundSharedUserProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOutboundSharedUserProfile(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OutboundSharedUserProfile) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *OutboundSharedUserProfile) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OutboundSharedUserProfile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OutboundSharedUserProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,6 +83,7 @@ func (m *OutboundSharedUserProfile) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OutboundSharedUserProfile) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -91,6 +95,7 @@ func (m *OutboundSharedUserProfile) GetOdataType()(*string) {
     return nil
 }
 // GetTenants gets the tenants property value. The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+// returns a []TenantReferenceable when successful
 func (m *OutboundSharedUserProfile) GetTenants()([]TenantReferenceable) {
     val, err := m.GetBackingStore().Get("tenants")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *OutboundSharedUserProfile) GetTenants()([]TenantReferenceable) {
     return nil
 }
 // GetUserId gets the userId property value. The object id of the external user. Read-only.
+// returns a *string when successful
 func (m *OutboundSharedUserProfile) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -178,7 +184,6 @@ func (m *OutboundSharedUserProfile) SetUserId(value *string)() {
         panic(err)
     }
 }
-// OutboundSharedUserProfileable 
 type OutboundSharedUserProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

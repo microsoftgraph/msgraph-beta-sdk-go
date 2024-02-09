@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// KerberosSignOnSettings 
 type KerberosSignOnSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewKerberosSignOnSettings instantiates a new kerberosSignOnSettings and sets the default values.
+// NewKerberosSignOnSettings instantiates a new KerberosSignOnSettings and sets the default values.
 func NewKerberosSignOnSettings()(*KerberosSignOnSettings) {
     m := &KerberosSignOnSettings{
     }
@@ -19,10 +18,12 @@ func NewKerberosSignOnSettings()(*KerberosSignOnSettings) {
     return m
 }
 // CreateKerberosSignOnSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKerberosSignOnSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKerberosSignOnSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *KerberosSignOnSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *KerberosSignOnSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *KerberosSignOnSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KerberosSignOnSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["kerberosServicePrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *KerberosSignOnSettings) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetKerberosServicePrincipalName gets the kerberosServicePrincipalName property value. The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.
+// returns a *string when successful
 func (m *KerberosSignOnSettings) GetKerberosServicePrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("kerberosServicePrincipalName")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *KerberosSignOnSettings) GetKerberosServicePrincipalName()(*string) {
     return nil
 }
 // GetKerberosSignOnMappingAttributeType gets the kerberosSignOnMappingAttributeType property value. The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.
+// returns a *KerberosSignOnMappingAttributeType when successful
 func (m *KerberosSignOnSettings) GetKerberosSignOnMappingAttributeType()(*KerberosSignOnMappingAttributeType) {
     val, err := m.GetBackingStore().Get("kerberosSignOnMappingAttributeType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *KerberosSignOnSettings) GetKerberosSignOnMappingAttributeType()(*Kerber
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *KerberosSignOnSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *KerberosSignOnSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// KerberosSignOnSettingsable 
 type KerberosSignOnSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -8,7 +8,7 @@ import (
 type WindowsMobileMSI struct {
     MobileLobApp
 }
-// NewWindowsMobileMSI instantiates a new windowsMobileMSI and sets the default values.
+// NewWindowsMobileMSI instantiates a new WindowsMobileMSI and sets the default values.
 func NewWindowsMobileMSI()(*WindowsMobileMSI) {
     m := &WindowsMobileMSI{
         MobileLobApp: *NewMobileLobApp(),
@@ -18,10 +18,12 @@ func NewWindowsMobileMSI()(*WindowsMobileMSI) {
     return m
 }
 // CreateWindowsMobileMSIFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsMobileMSIFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsMobileMSI(), nil
 }
 // GetCommandLine gets the commandLine property value. The command line.
+// returns a *string when successful
 func (m *WindowsMobileMSI) GetCommandLine()(*string) {
     val, err := m.GetBackingStore().Get("commandLine")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsMobileMSI) GetCommandLine()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsMobileMSI) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
     res["commandLine"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +101,7 @@ func (m *WindowsMobileMSI) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetIdentityVersion gets the identityVersion property value. The identity version.
+// returns a *string when successful
 func (m *WindowsMobileMSI) GetIdentityVersion()(*string) {
     val, err := m.GetBackingStore().Get("identityVersion")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *WindowsMobileMSI) GetIdentityVersion()(*string) {
     return nil
 }
 // GetIgnoreVersionDetection gets the ignoreVersionDetection property value. A boolean to control whether the app's version will be used to detect the app after it is installed on a device. Set this to true for Windows Mobile MSI Line of Business (LoB) apps that use a self update feature.
+// returns a *bool when successful
 func (m *WindowsMobileMSI) GetIgnoreVersionDetection()(*bool) {
     val, err := m.GetBackingStore().Get("ignoreVersionDetection")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *WindowsMobileMSI) GetIgnoreVersionDetection()(*bool) {
     return nil
 }
 // GetProductCode gets the productCode property value. The product code.
+// returns a *string when successful
 func (m *WindowsMobileMSI) GetProductCode()(*string) {
     val, err := m.GetBackingStore().Get("productCode")
     if err != nil {
@@ -131,6 +137,7 @@ func (m *WindowsMobileMSI) GetProductCode()(*string) {
     return nil
 }
 // GetProductVersion gets the productVersion property value. The product version of Windows Mobile MSI Line of Business (LoB) app.
+// returns a *string when successful
 func (m *WindowsMobileMSI) GetProductVersion()(*string) {
     val, err := m.GetBackingStore().Get("productVersion")
     if err != nil {
@@ -142,6 +149,7 @@ func (m *WindowsMobileMSI) GetProductVersion()(*string) {
     return nil
 }
 // GetUseDeviceContext gets the useDeviceContext property value. Indicates whether to install a dual-mode MSI in the device context. If true, app will be installed for all users. If false, app will be installed per-user. If null, service will use the MSI package's default install context. In case of dual-mode MSI, this default will be per-user.  Cannot be set for non-dual-mode apps.  Cannot be changed after initial creation of the application.
+// returns a *bool when successful
 func (m *WindowsMobileMSI) GetUseDeviceContext()(*bool) {
     val, err := m.GetBackingStore().Get("useDeviceContext")
     if err != nil {
@@ -238,7 +246,6 @@ func (m *WindowsMobileMSI) SetUseDeviceContext(value *bool)() {
         panic(err)
     }
 }
-// WindowsMobileMSIable 
 type WindowsMobileMSIable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

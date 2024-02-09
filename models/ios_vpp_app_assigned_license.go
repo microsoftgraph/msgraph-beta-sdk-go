@@ -8,7 +8,7 @@ import (
 type IosVppAppAssignedLicense struct {
     Entity
 }
-// NewIosVppAppAssignedLicense instantiates a new iosVppAppAssignedLicense and sets the default values.
+// NewIosVppAppAssignedLicense instantiates a new IosVppAppAssignedLicense and sets the default values.
 func NewIosVppAppAssignedLicense()(*IosVppAppAssignedLicense) {
     m := &IosVppAppAssignedLicense{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewIosVppAppAssignedLicense()(*IosVppAppAssignedLicense) {
     return m
 }
 // CreateIosVppAppAssignedLicenseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosVppAppAssignedLicenseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateIosVppAppAssignedLicenseFromDiscriminatorValue(parseNode i878a80d2330
     return NewIosVppAppAssignedLicense(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosVppAppAssignedLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["userEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +87,7 @@ func (m *IosVppAppAssignedLicense) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetUserEmailAddress gets the userEmailAddress property value. The user email address.
+// returns a *string when successful
 func (m *IosVppAppAssignedLicense) GetUserEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("userEmailAddress")
     if err != nil {
@@ -96,6 +99,7 @@ func (m *IosVppAppAssignedLicense) GetUserEmailAddress()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The user ID.
+// returns a *string when successful
 func (m *IosVppAppAssignedLicense) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -107,6 +111,7 @@ func (m *IosVppAppAssignedLicense) GetUserId()(*string) {
     return nil
 }
 // GetUserName gets the userName property value. The user name.
+// returns a *string when successful
 func (m *IosVppAppAssignedLicense) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -118,6 +123,7 @@ func (m *IosVppAppAssignedLicense) GetUserName()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name.
+// returns a *string when successful
 func (m *IosVppAppAssignedLicense) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -188,7 +194,6 @@ func (m *IosVppAppAssignedLicense) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// IosVppAppAssignedLicenseable 
 type IosVppAppAssignedLicenseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

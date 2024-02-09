@@ -10,7 +10,7 @@ type MobileAppSupportedDeviceType struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMobileAppSupportedDeviceType instantiates a new mobileAppSupportedDeviceType and sets the default values.
+// NewMobileAppSupportedDeviceType instantiates a new MobileAppSupportedDeviceType and sets the default values.
 func NewMobileAppSupportedDeviceType()(*MobileAppSupportedDeviceType) {
     m := &MobileAppSupportedDeviceType{
     }
@@ -19,10 +19,12 @@ func NewMobileAppSupportedDeviceType()(*MobileAppSupportedDeviceType) {
     return m
 }
 // CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppSupportedDeviceTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppSupportedDeviceType(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MobileAppSupportedDeviceType) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *MobileAppSupportedDeviceType) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MobileAppSupportedDeviceType) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["maximumOperatingSystemVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +88,7 @@ func (m *MobileAppSupportedDeviceType) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetMaximumOperatingSystemVersion gets the maximumOperatingSystemVersion property value. Maximum OS version
+// returns a *string when successful
 func (m *MobileAppSupportedDeviceType) GetMaximumOperatingSystemVersion()(*string) {
     val, err := m.GetBackingStore().Get("maximumOperatingSystemVersion")
     if err != nil {
@@ -95,6 +100,7 @@ func (m *MobileAppSupportedDeviceType) GetMaximumOperatingSystemVersion()(*strin
     return nil
 }
 // GetMinimumOperatingSystemVersion gets the minimumOperatingSystemVersion property value. Minimum OS version
+// returns a *string when successful
 func (m *MobileAppSupportedDeviceType) GetMinimumOperatingSystemVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumOperatingSystemVersion")
     if err != nil {
@@ -106,6 +112,7 @@ func (m *MobileAppSupportedDeviceType) GetMinimumOperatingSystemVersion()(*strin
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MobileAppSupportedDeviceType) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +124,7 @@ func (m *MobileAppSupportedDeviceType) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Device type.
+// returns a *DeviceType when successful
 func (m *MobileAppSupportedDeviceType) GetTypeEscaped()(*DeviceType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -201,7 +209,6 @@ func (m *MobileAppSupportedDeviceType) SetTypeEscaped(value *DeviceType)() {
         panic(err)
     }
 }
-// MobileAppSupportedDeviceTypeable 
 type MobileAppSupportedDeviceTypeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

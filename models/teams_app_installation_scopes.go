@@ -1,23 +1,25 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type TeamsAppInstallationScopes int
 
 const (
-    TEAM_TEAMSAPPINSTALLATIONSCOPES TeamsAppInstallationScopes = iota
-    GROUPCHAT_TEAMSAPPINSTALLATIONSCOPES
-    PERSONAL_TEAMSAPPINSTALLATIONSCOPES
-    UNKNOWNFUTUREVALUE_TEAMSAPPINSTALLATIONSCOPES
+    TEAM_TEAMSAPPINSTALLATIONSCOPES = 1
+    GROUPCHAT_TEAMSAPPINSTALLATIONSCOPES = 2
+    PERSONAL_TEAMSAPPINSTALLATIONSCOPES = 4
+    UNKNOWNFUTUREVALUE_TEAMSAPPINSTALLATIONSCOPES = 8
 )
 
 func (i TeamsAppInstallationScopes) String() string {
     var values []string
-    for p := TeamsAppInstallationScopes(1); p <= UNKNOWNFUTUREVALUE_TEAMSAPPINSTALLATIONSCOPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"team", "groupChat", "personal", "unknownFutureValue"}[p])
+    options := []string{"team", "groupChat", "personal", "unknownFutureValue"}
+    for p := 0; p < 4; p++ {
+        mantis := TeamsAppInstallationScopes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

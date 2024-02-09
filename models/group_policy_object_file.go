@@ -10,7 +10,7 @@ import (
 type GroupPolicyObjectFile struct {
     Entity
 }
-// NewGroupPolicyObjectFile instantiates a new groupPolicyObjectFile and sets the default values.
+// NewGroupPolicyObjectFile instantiates a new GroupPolicyObjectFile and sets the default values.
 func NewGroupPolicyObjectFile()(*GroupPolicyObjectFile) {
     m := &GroupPolicyObjectFile{
         Entity: *NewEntity(),
@@ -18,10 +18,12 @@ func NewGroupPolicyObjectFile()(*GroupPolicyObjectFile) {
     return m
 }
 // CreateGroupPolicyObjectFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyObjectFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyObjectFile(), nil
 }
 // GetContent gets the content property value. The Group Policy Object file content.
+// returns a *string when successful
 func (m *GroupPolicyObjectFile) GetContent()(*string) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *GroupPolicyObjectFile) GetContent()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time at which the GroupPolicy was first uploaded.
+// returns a *Time when successful
 func (m *GroupPolicyObjectFile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *GroupPolicyObjectFile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyObjectFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +119,7 @@ func (m *GroupPolicyObjectFile) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetGroupPolicyObjectId gets the groupPolicyObjectId property value. The Group Policy Object GUID from GPO Xml content
+// returns a *UUID when successful
 func (m *GroupPolicyObjectFile) GetGroupPolicyObjectId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("groupPolicyObjectId")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *GroupPolicyObjectFile) GetGroupPolicyObjectId()(*i561e97a8befe7661a44c8
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time at which the GroupPolicyObjectFile was last modified.
+// returns a *Time when successful
 func (m *GroupPolicyObjectFile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *GroupPolicyObjectFile) GetLastModifiedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetOuDistinguishedName gets the ouDistinguishedName property value. The distinguished name of the OU.
+// returns a *string when successful
 func (m *GroupPolicyObjectFile) GetOuDistinguishedName()(*string) {
     val, err := m.GetBackingStore().Get("ouDistinguishedName")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *GroupPolicyObjectFile) GetOuDistinguishedName()(*string) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. The list of scope tags for the configuration.
+// returns a []string when successful
 func (m *GroupPolicyObjectFile) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -244,7 +252,6 @@ func (m *GroupPolicyObjectFile) SetRoleScopeTagIds(value []string)() {
         panic(err)
     }
 }
-// GroupPolicyObjectFileable 
 type GroupPolicyObjectFileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

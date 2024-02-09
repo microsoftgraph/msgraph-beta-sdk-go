@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DriveItemSource 
 type DriveItemSource struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDriveItemSource instantiates a new driveItemSource and sets the default values.
+// NewDriveItemSource instantiates a new DriveItemSource and sets the default values.
 func NewDriveItemSource()(*DriveItemSource) {
     m := &DriveItemSource{
     }
@@ -19,10 +18,12 @@ func NewDriveItemSource()(*DriveItemSource) {
     return m
 }
 // CreateDriveItemSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDriveItemSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDriveItemSource(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DriveItemSource) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *DriveItemSource) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApplication gets the application property value. Enumeration value that indicates the source application where the file was created.
+// returns a *DriveItemSourceApplication when successful
 func (m *DriveItemSource) GetApplication()(*DriveItemSourceApplication) {
     val, err := m.GetBackingStore().Get("application")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *DriveItemSource) GetApplication()(*DriveItemSourceApplication) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DriveItemSource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExternalId gets the externalId property value. The external identifier for the drive item from the source.
+// returns a *string when successful
 func (m *DriveItemSource) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *DriveItemSource) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DriveItemSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["application"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,6 +101,7 @@ func (m *DriveItemSource) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DriveItemSource) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *DriveItemSource) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// DriveItemSourceable 
 type DriveItemSourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

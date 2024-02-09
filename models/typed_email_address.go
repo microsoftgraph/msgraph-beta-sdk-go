@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TypedEmailAddress 
 type TypedEmailAddress struct {
     EmailAddress
 }
-// NewTypedEmailAddress instantiates a new typedEmailAddress and sets the default values.
+// NewTypedEmailAddress instantiates a new TypedEmailAddress and sets the default values.
 func NewTypedEmailAddress()(*TypedEmailAddress) {
     m := &TypedEmailAddress{
         EmailAddress: *NewEmailAddress(),
@@ -18,10 +17,12 @@ func NewTypedEmailAddress()(*TypedEmailAddress) {
     return m
 }
 // CreateTypedEmailAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTypedEmailAddressFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTypedEmailAddress(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EmailAddress.GetFieldDeserializers()
     res["otherLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *TypedEmailAddress) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetOtherLabel gets the otherLabel property value. To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.
+// returns a *string when successful
 func (m *TypedEmailAddress) GetOtherLabel()(*string) {
     val, err := m.GetBackingStore().Get("otherLabel")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *TypedEmailAddress) GetOtherLabel()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
+// returns a *EmailType when successful
 func (m *TypedEmailAddress) GetTypeEscaped()(*EmailType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *TypedEmailAddress) SetTypeEscaped(value *EmailType)() {
         panic(err)
     }
 }
-// TypedEmailAddressable 
 type TypedEmailAddressable interface {
     EmailAddressable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

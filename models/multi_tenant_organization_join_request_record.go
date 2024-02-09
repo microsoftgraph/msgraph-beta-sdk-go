@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MultiTenantOrganizationJoinRequestRecord 
 type MultiTenantOrganizationJoinRequestRecord struct {
     Entity
 }
-// NewMultiTenantOrganizationJoinRequestRecord instantiates a new multiTenantOrganizationJoinRequestRecord and sets the default values.
+// NewMultiTenantOrganizationJoinRequestRecord instantiates a new MultiTenantOrganizationJoinRequestRecord and sets the default values.
 func NewMultiTenantOrganizationJoinRequestRecord()(*MultiTenantOrganizationJoinRequestRecord) {
     m := &MultiTenantOrganizationJoinRequestRecord{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewMultiTenantOrganizationJoinRequestRecord()(*MultiTenantOrganizationJoinR
     return m
 }
 // CreateMultiTenantOrganizationJoinRequestRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMultiTenantOrganizationJoinRequestRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMultiTenantOrganizationJoinRequestRecord(), nil
 }
 // GetAddedByTenantId gets the addedByTenantId property value. Tenant ID of the Microsoft Entra tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.
+// returns a *string when successful
 func (m *MultiTenantOrganizationJoinRequestRecord) GetAddedByTenantId()(*string) {
     val, err := m.GetBackingStore().Get("addedByTenantId")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *MultiTenantOrganizationJoinRequestRecord) GetAddedByTenantId()(*string)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MultiTenantOrganizationJoinRequestRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["addedByTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +78,7 @@ func (m *MultiTenantOrganizationJoinRequestRecord) GetFieldDeserializers()(map[s
     return res
 }
 // GetMemberState gets the memberState property value. State of the tenant in the multi-tenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multi-tenant organization to participate in the multi-tenant organization. Tenants in the active state can participate in the multi-tenant organization. Tenants in the removed state are in the process of being removed from the multi-tenant organization. Read-only.
+// returns a *MultiTenantOrganizationMemberState when successful
 func (m *MultiTenantOrganizationJoinRequestRecord) GetMemberState()(*MultiTenantOrganizationMemberState) {
     val, err := m.GetBackingStore().Get("memberState")
     if err != nil {
@@ -87,6 +90,7 @@ func (m *MultiTenantOrganizationJoinRequestRecord) GetMemberState()(*MultiTenant
     return nil
 }
 // GetRole gets the role property value. Role of the tenant in the multi-tenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multi-tenant organization. There can be multiple tenants with the owner role in a multi-tenant organization. Tenants with the member role can participate in a multi-tenant organization.
+// returns a *MultiTenantOrganizationMemberRole when successful
 func (m *MultiTenantOrganizationJoinRequestRecord) GetRole()(*MultiTenantOrganizationMemberRole) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *MultiTenantOrganizationJoinRequestRecord) GetRole()(*MultiTenantOrganiz
     return nil
 }
 // GetTransitionDetails gets the transitionDetails property value. Details of the processing status for a tenant joining a multi-tenant organization. Read-only.
+// returns a MultiTenantOrganizationJoinRequestTransitionDetailsable when successful
 func (m *MultiTenantOrganizationJoinRequestRecord) GetTransitionDetails()(MultiTenantOrganizationJoinRequestTransitionDetailsable) {
     val, err := m.GetBackingStore().Get("transitionDetails")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *MultiTenantOrganizationJoinRequestRecord) SetTransitionDetails(value Mu
         panic(err)
     }
 }
-// MultiTenantOrganizationJoinRequestRecordable 
 type MultiTenantOrganizationJoinRequestRecordable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SubmissionResult 
 type SubmissionResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSubmissionResult instantiates a new submissionResult and sets the default values.
+// NewSubmissionResult instantiates a new SubmissionResult and sets the default values.
 func NewSubmissionResult()(*SubmissionResult) {
     m := &SubmissionResult{
     }
@@ -19,10 +18,12 @@ func NewSubmissionResult()(*SubmissionResult) {
     return m
 }
 // CreateSubmissionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSubmissionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSubmissionResult(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SubmissionResult) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SubmissionResult) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SubmissionResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCategory gets the category property value. The submission result category. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable and unkownFutureValue.
+// returns a *SubmissionResultCategory when successful
 func (m *SubmissionResult) GetCategory()(*SubmissionResultCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *SubmissionResult) GetCategory()(*SubmissionResultCategory) {
     return nil
 }
 // GetDetail gets the detail property value. Specifies the extra details provided by Microsoft to substantiate their analysis result.
+// returns a *SubmissionResultDetail when successful
 func (m *SubmissionResult) GetDetail()(*SubmissionResultDetail) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *SubmissionResult) GetDetail()(*SubmissionResultDetail) {
     return nil
 }
 // GetDetectedFiles gets the detectedFiles property value. Specifies the files detected by Microsoft in the submitted emails.
+// returns a []SubmissionDetectedFileable when successful
 func (m *SubmissionResult) GetDetectedFiles()([]SubmissionDetectedFileable) {
     val, err := m.GetBackingStore().Get("detectedFiles")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *SubmissionResult) GetDetectedFiles()([]SubmissionDetectedFileable) {
     return nil
 }
 // GetDetectedUrls gets the detectedUrls property value. Specifies the URLs detected by Microsoft in the submitted email.
+// returns a []string when successful
 func (m *SubmissionResult) GetDetectedUrls()([]string) {
     val, err := m.GetBackingStore().Get("detectedUrls")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *SubmissionResult) GetDetectedUrls()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SubmissionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -160,6 +167,7 @@ func (m *SubmissionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SubmissionResult) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -171,6 +179,7 @@ func (m *SubmissionResult) GetOdataType()(*string) {
     return nil
 }
 // GetUserMailboxSetting gets the userMailboxSetting property value. Specifies the setting for user mailbox denoted by a comma-separated string.
+// returns a *UserMailboxSetting when successful
 func (m *SubmissionResult) GetUserMailboxSetting()(*UserMailboxSetting) {
     val, err := m.GetBackingStore().Get("userMailboxSetting")
     if err != nil {
@@ -289,7 +298,6 @@ func (m *SubmissionResult) SetUserMailboxSetting(value *UserMailboxSetting)() {
         panic(err)
     }
 }
-// SubmissionResultable 
 type SubmissionResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

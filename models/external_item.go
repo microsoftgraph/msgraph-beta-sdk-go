@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalItem 
 type ExternalItem struct {
     Entity
 }
-// NewExternalItem instantiates a new externalItem and sets the default values.
+// NewExternalItem instantiates a new ExternalItem and sets the default values.
 func NewExternalItem()(*ExternalItem) {
     m := &ExternalItem{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewExternalItem()(*ExternalItem) {
     return m
 }
 // CreateExternalItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternalItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalItem(), nil
 }
 // GetAcl gets the acl property value. The acl property
+// returns a []Aclable when successful
 func (m *ExternalItem) GetAcl()([]Aclable) {
     val, err := m.GetBackingStore().Get("acl")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ExternalItem) GetAcl()([]Aclable) {
     return nil
 }
 // GetContent gets the content property value. The content property
+// returns a ExternalItemContentable when successful
 func (m *ExternalItem) GetContent()(ExternalItemContentable) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ExternalItem) GetContent()(ExternalItemContentable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["acl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -83,6 +86,7 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetProperties gets the properties property value. The properties property
+// returns a Propertiesable when successful
 func (m *ExternalItem) GetProperties()(Propertiesable) {
     val, err := m.GetBackingStore().Get("properties")
     if err != nil {
@@ -146,7 +150,6 @@ func (m *ExternalItem) SetProperties(value Propertiesable)() {
         panic(err)
     }
 }
-// ExternalItemable 
 type ExternalItemable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

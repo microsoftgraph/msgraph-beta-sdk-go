@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CallsItemRecordPostRequestBody 
 type CallsItemRecordPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewCallsItemRecordPostRequestBody()(*CallsItemRecordPostRequestBody) {
     return m
 }
 // CreateCallsItemRecordPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCallsItemRecordPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallsItemRecordPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CallsItemRecordPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *CallsItemRecordPostRequestBody) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CallsItemRecordPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBargeInAllowed gets the bargeInAllowed property value. The bargeInAllowed property
+// returns a *bool when successful
 func (m *CallsItemRecordPostRequestBody) GetBargeInAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("bargeInAllowed")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *CallsItemRecordPostRequestBody) GetBargeInAllowed()(*bool) {
     return nil
 }
 // GetClientContext gets the clientContext property value. The clientContext property
+// returns a *string when successful
 func (m *CallsItemRecordPostRequestBody) GetClientContext()(*string) {
     val, err := m.GetBackingStore().Get("clientContext")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *CallsItemRecordPostRequestBody) GetClientContext()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CallsItemRecordPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bargeInAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -169,6 +174,7 @@ func (m *CallsItemRecordPostRequestBody) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetInitialSilenceTimeoutInSeconds gets the initialSilenceTimeoutInSeconds property value. The initialSilenceTimeoutInSeconds property
+// returns a *int32 when successful
 func (m *CallsItemRecordPostRequestBody) GetInitialSilenceTimeoutInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("initialSilenceTimeoutInSeconds")
     if err != nil {
@@ -180,6 +186,7 @@ func (m *CallsItemRecordPostRequestBody) GetInitialSilenceTimeoutInSeconds()(*in
     return nil
 }
 // GetMaxRecordDurationInSeconds gets the maxRecordDurationInSeconds property value. The maxRecordDurationInSeconds property
+// returns a *int32 when successful
 func (m *CallsItemRecordPostRequestBody) GetMaxRecordDurationInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("maxRecordDurationInSeconds")
     if err != nil {
@@ -191,6 +198,7 @@ func (m *CallsItemRecordPostRequestBody) GetMaxRecordDurationInSeconds()(*int32)
     return nil
 }
 // GetMaxSilenceTimeoutInSeconds gets the maxSilenceTimeoutInSeconds property value. The maxSilenceTimeoutInSeconds property
+// returns a *int32 when successful
 func (m *CallsItemRecordPostRequestBody) GetMaxSilenceTimeoutInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("maxSilenceTimeoutInSeconds")
     if err != nil {
@@ -202,6 +210,7 @@ func (m *CallsItemRecordPostRequestBody) GetMaxSilenceTimeoutInSeconds()(*int32)
     return nil
 }
 // GetPlayBeep gets the playBeep property value. The playBeep property
+// returns a *bool when successful
 func (m *CallsItemRecordPostRequestBody) GetPlayBeep()(*bool) {
     val, err := m.GetBackingStore().Get("playBeep")
     if err != nil {
@@ -213,6 +222,7 @@ func (m *CallsItemRecordPostRequestBody) GetPlayBeep()(*bool) {
     return nil
 }
 // GetPrompts gets the prompts property value. The prompts property
+// returns a []Promptable when successful
 func (m *CallsItemRecordPostRequestBody) GetPrompts()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Promptable) {
     val, err := m.GetBackingStore().Get("prompts")
     if err != nil {
@@ -224,6 +234,7 @@ func (m *CallsItemRecordPostRequestBody) GetPrompts()([]ie233ee762e29b4ba6970aa2
     return nil
 }
 // GetStopTones gets the stopTones property value. The stopTones property
+// returns a []string when successful
 func (m *CallsItemRecordPostRequestBody) GetStopTones()([]string) {
     val, err := m.GetBackingStore().Get("stopTones")
     if err != nil {
@@ -235,6 +246,7 @@ func (m *CallsItemRecordPostRequestBody) GetStopTones()([]string) {
     return nil
 }
 // GetStreamWhileRecording gets the streamWhileRecording property value. The streamWhileRecording property
+// returns a *bool when successful
 func (m *CallsItemRecordPostRequestBody) GetStreamWhileRecording()(*bool) {
     val, err := m.GetBackingStore().Get("streamWhileRecording")
     if err != nil {
@@ -389,7 +401,6 @@ func (m *CallsItemRecordPostRequestBody) SetStreamWhileRecording(value *bool)() 
         panic(err)
     }
 }
-// CallsItemRecordPostRequestBodyable 
 type CallsItemRecordPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

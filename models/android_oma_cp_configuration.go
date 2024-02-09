@@ -8,7 +8,7 @@ import (
 type AndroidOmaCpConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidOmaCpConfiguration instantiates a new androidOmaCpConfiguration and sets the default values.
+// NewAndroidOmaCpConfiguration instantiates a new AndroidOmaCpConfiguration and sets the default values.
 func NewAndroidOmaCpConfiguration()(*AndroidOmaCpConfiguration) {
     m := &AndroidOmaCpConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidOmaCpConfiguration()(*AndroidOmaCpConfiguration) {
     return m
 }
 // CreateAndroidOmaCpConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidOmaCpConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidOmaCpConfiguration(), nil
 }
 // GetConfigurationXml gets the configurationXml property value. Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.
+// returns a []byte when successful
 func (m *AndroidOmaCpConfiguration) GetConfigurationXml()([]byte) {
     val, err := m.GetBackingStore().Get("configurationXml")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidOmaCpConfiguration) GetConfigurationXml()([]byte) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidOmaCpConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["configurationXml"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *AndroidOmaCpConfiguration) SetConfigurationXml(value []byte)() {
         panic(err)
     }
 }
-// AndroidOmaCpConfigurationable 
 type AndroidOmaCpConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

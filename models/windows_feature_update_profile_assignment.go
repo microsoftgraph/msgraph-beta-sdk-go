@@ -8,7 +8,7 @@ import (
 type WindowsFeatureUpdateProfileAssignment struct {
     Entity
 }
-// NewWindowsFeatureUpdateProfileAssignment instantiates a new windowsFeatureUpdateProfileAssignment and sets the default values.
+// NewWindowsFeatureUpdateProfileAssignment instantiates a new WindowsFeatureUpdateProfileAssignment and sets the default values.
 func NewWindowsFeatureUpdateProfileAssignment()(*WindowsFeatureUpdateProfileAssignment) {
     m := &WindowsFeatureUpdateProfileAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewWindowsFeatureUpdateProfileAssignment()(*WindowsFeatureUpdateProfileAssi
     return m
 }
 // CreateWindowsFeatureUpdateProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsFeatureUpdateProfileAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsFeatureUpdateProfileAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsFeatureUpdateProfileAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *WindowsFeatureUpdateProfileAssignment) GetFieldDeserializers()(map[stri
     return res
 }
 // GetTarget gets the target property value. The assignment target that the feature update profile is assigned to.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *WindowsFeatureUpdateProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *WindowsFeatureUpdateProfileAssignment) SetTarget(value DeviceAndAppMana
         panic(err)
     }
 }
-// WindowsFeatureUpdateProfileAssignmentable 
 type WindowsFeatureUpdateProfileAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

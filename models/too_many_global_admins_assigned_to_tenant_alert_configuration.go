@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TooManyGlobalAdminsAssignedToTenantAlertConfiguration 
 type TooManyGlobalAdminsAssignedToTenantAlertConfiguration struct {
     UnifiedRoleManagementAlertConfiguration
 }
-// NewTooManyGlobalAdminsAssignedToTenantAlertConfiguration instantiates a new tooManyGlobalAdminsAssignedToTenantAlertConfiguration and sets the default values.
+// NewTooManyGlobalAdminsAssignedToTenantAlertConfiguration instantiates a new TooManyGlobalAdminsAssignedToTenantAlertConfiguration and sets the default values.
 func NewTooManyGlobalAdminsAssignedToTenantAlertConfiguration()(*TooManyGlobalAdminsAssignedToTenantAlertConfiguration) {
     m := &TooManyGlobalAdminsAssignedToTenantAlertConfiguration{
         UnifiedRoleManagementAlertConfiguration: *NewUnifiedRoleManagementAlertConfiguration(),
@@ -18,10 +17,12 @@ func NewTooManyGlobalAdminsAssignedToTenantAlertConfiguration()(*TooManyGlobalAd
     return m
 }
 // CreateTooManyGlobalAdminsAssignedToTenantAlertConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTooManyGlobalAdminsAssignedToTenantAlertConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTooManyGlobalAdminsAssignedToTenantAlertConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementAlertConfiguration.GetFieldDeserializers()
     res["globalAdminCountThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) GetFieldDeserial
     return res
 }
 // GetGlobalAdminCountThreshold gets the globalAdminCountThreshold property value. The threshold for the number of accounts assigned the Global Administrator role in the tenant. Triggers an alert if the number of global administrators in the tenant reaches or crosses this threshold value.
+// returns a *int32 when successful
 func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) GetGlobalAdminCountThreshold()(*int32) {
     val, err := m.GetBackingStore().Get("globalAdminCountThreshold")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) GetGlobalAdminCo
     return nil
 }
 // GetPercentageOfGlobalAdminsOutOfRolesThreshold gets the percentageOfGlobalAdminsOutOfRolesThreshold property value. Threshold of the percentage of global administrators out of all the role assignments in the tenant. Triggers an alert if the percentage in the tenant reaches or crosses this threshold value.
+// returns a *int32 when successful
 func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) GetPercentageOfGlobalAdminsOutOfRolesThreshold()(*int32) {
     val, err := m.GetBackingStore().Get("percentageOfGlobalAdminsOutOfRolesThreshold")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *TooManyGlobalAdminsAssignedToTenantAlertConfiguration) SetPercentageOfG
         panic(err)
     }
 }
-// TooManyGlobalAdminsAssignedToTenantAlertConfigurationable 
 type TooManyGlobalAdminsAssignedToTenantAlertConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementAlertConfigurationable

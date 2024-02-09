@@ -17,29 +17,30 @@ type TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderInternal instantiates a new HasPayloadLinksRequestBuilder and sets the default values.
+// NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderInternal instantiates a new TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) {
     m := &TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/targetedManagedAppConfigurations/hasPayloadLinks", pathParameters),
     }
     return m
 }
-// NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder instantiates a new HasPayloadLinksRequestBuilder and sets the default values.
+// NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder instantiates a new TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder and sets the default values.
 func NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action hasPayloadLinks
-// Deprecated: This method is obsolete. Use PostAsHasPayloadLinksPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a TargetedManagedAppConfigurationsHasPayloadLinksResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) Post(ctx context.Context, body TargetedManagedAppConfigurationsHasPayloadLinksPostRequestBodyable, requestConfiguration *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderPostRequestConfiguration)(TargetedManagedAppConfigurationsHasPayloadLinksResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTargetedManagedAppConfigurationsHasPayloadLinksResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) Post(ctx
     return res.(TargetedManagedAppConfigurationsHasPayloadLinksResponseable), nil
 }
 // PostAsHasPayloadLinksPostResponse invoke action hasPayloadLinks
+// returns a TargetedManagedAppConfigurationsHasPayloadLinksPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) PostAsHasPayloadLinksPostResponse(ctx context.Context, body TargetedManagedAppConfigurationsHasPayloadLinksPostRequestBodyable, requestConfiguration *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderPostRequestConfiguration)(TargetedManagedAppConfigurationsHasPayloadLinksPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTargetedManagedAppConfigurationsHasPayloadLinksPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) PostAsHa
     return res.(TargetedManagedAppConfigurationsHasPayloadLinksPostResponseable), nil
 }
 // ToPostRequestInformation invoke action hasPayloadLinks
+// returns a *RequestInformation when successful
 func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) ToPostRequestInformation(ctx context.Context, body TargetedManagedAppConfigurationsHasPayloadLinksPostRequestBodyable, requestConfiguration *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -84,6 +87,7 @@ func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) ToPostRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder when successful
 func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) WithUrl(rawUrl string)(*TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) {
     return NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

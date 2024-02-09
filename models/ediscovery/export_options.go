@@ -1,25 +1,27 @@
 package ediscovery
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type ExportOptions int
 
 const (
-    ORIGINALFILES_EXPORTOPTIONS ExportOptions = iota
-    TEXT_EXPORTOPTIONS
-    PDFREPLACEMENT_EXPORTOPTIONS
-    FILEINFO_EXPORTOPTIONS
-    TAGS_EXPORTOPTIONS
-    UNKNOWNFUTUREVALUE_EXPORTOPTIONS
+    ORIGINALFILES_EXPORTOPTIONS = 1
+    TEXT_EXPORTOPTIONS = 2
+    PDFREPLACEMENT_EXPORTOPTIONS = 4
+    FILEINFO_EXPORTOPTIONS = 8
+    TAGS_EXPORTOPTIONS = 16
+    UNKNOWNFUTUREVALUE_EXPORTOPTIONS = 32
 )
 
 func (i ExportOptions) String() string {
     var values []string
-    for p := ExportOptions(1); p <= UNKNOWNFUTUREVALUE_EXPORTOPTIONS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"originalFiles", "text", "pdfReplacement", "fileInfo", "tags", "unknownFutureValue"}[p])
+    options := []string{"originalFiles", "text", "pdfReplacement", "fileInfo", "tags", "unknownFutureValue"}
+    for p := 0; p < 6; p++ {
+        mantis := ExportOptions(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

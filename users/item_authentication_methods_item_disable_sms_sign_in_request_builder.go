@@ -17,28 +17,28 @@ type ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderInternal instantiates a new DisableSmsSignInRequestBuilder and sets the default values.
+// NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderInternal instantiates a new ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder and sets the default values.
 func NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) {
     m := &ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/methods/{authenticationMethod%2Did}/disableSmsSignIn", pathParameters),
     }
     return m
 }
-// NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder instantiates a new DisableSmsSignInRequestBuilder and sets the default values.
+// NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder instantiates a new ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder and sets the default values.
 func NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action disableSmsSignIn
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) Post(ctx c
     return nil
 }
 // ToPostRequestInformation invoke action disableSmsSignIn
+// returns a *RequestInformation when successful
 func (m *ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -57,6 +58,7 @@ func (m *ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder when successful
 func (m *ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) {
     return NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedDeviceCompliance 
 type ManagedDeviceCompliance struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedDeviceCompliance instantiates a new managedDeviceCompliance and sets the default values.
+// NewManagedDeviceCompliance instantiates a new ManagedDeviceCompliance and sets the default values.
 func NewManagedDeviceCompliance()(*ManagedDeviceCompliance) {
     m := &ManagedDeviceCompliance{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManagedDeviceCompliance()(*ManagedDeviceCompliance) {
     return m
 }
 // CreateManagedDeviceComplianceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedDeviceComplianceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDeviceCompliance(), nil
 }
 // GetComplianceStatus gets the complianceStatus property value. Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetComplianceStatus()(*string) {
     val, err := m.GetBackingStore().Get("complianceStatus")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ManagedDeviceCompliance) GetComplianceStatus()(*string) {
     return nil
 }
 // GetDeviceType gets the deviceType property value. Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetDeviceType()(*string) {
     val, err := m.GetBackingStore().Get("deviceType")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ManagedDeviceCompliance) GetDeviceType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["complianceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -189,6 +192,7 @@ func (m *ManagedDeviceCompliance) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetInGracePeriodUntilDateTime gets the inGracePeriodUntilDateTime property value. The date and time when the grace period will expire. Optional. Read-only.
+// returns a *Time when successful
 func (m *ManagedDeviceCompliance) GetInGracePeriodUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("inGracePeriodUntilDateTime")
     if err != nil {
@@ -200,6 +204,7 @@ func (m *ManagedDeviceCompliance) GetInGracePeriodUntilDateTime()(*i336074805fc8
     return nil
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
+// returns a *Time when successful
 func (m *ManagedDeviceCompliance) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshedDateTime")
     if err != nil {
@@ -211,6 +216,7 @@ func (m *ManagedDeviceCompliance) GetLastRefreshedDateTime()(*i336074805fc853987
     return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Microsoft Endpoint Manager. Optional. Read-only.
+// returns a *Time when successful
 func (m *ManagedDeviceCompliance) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -222,6 +228,7 @@ func (m *ManagedDeviceCompliance) GetLastSyncDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The identifier for the managed device in Microsoft Endpoint Manager. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -233,6 +240,7 @@ func (m *ManagedDeviceCompliance) GetManagedDeviceId()(*string) {
     return nil
 }
 // GetManagedDeviceName gets the managedDeviceName property value. The display name for the managed device. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetManagedDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceName")
     if err != nil {
@@ -244,6 +252,7 @@ func (m *ManagedDeviceCompliance) GetManagedDeviceName()(*string) {
     return nil
 }
 // GetManufacturer gets the manufacturer property value. The manufacture for the device. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -255,6 +264,7 @@ func (m *ManagedDeviceCompliance) GetManufacturer()(*string) {
     return nil
 }
 // GetModel gets the model property value. The model for the device. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -266,6 +276,7 @@ func (m *ManagedDeviceCompliance) GetModel()(*string) {
     return nil
 }
 // GetOsDescription gets the osDescription property value. The description of the operating system for the managed device. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetOsDescription()(*string) {
     val, err := m.GetBackingStore().Get("osDescription")
     if err != nil {
@@ -277,6 +288,7 @@ func (m *ManagedDeviceCompliance) GetOsDescription()(*string) {
     return nil
 }
 // GetOsVersion gets the osVersion property value. The version of the operating system for the managed device. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -288,6 +300,7 @@ func (m *ManagedDeviceCompliance) GetOsVersion()(*string) {
     return nil
 }
 // GetOwnerType gets the ownerType property value. The type of owner for the managed device. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetOwnerType()(*string) {
     val, err := m.GetBackingStore().Get("ownerType")
     if err != nil {
@@ -299,6 +312,7 @@ func (m *ManagedDeviceCompliance) GetOwnerType()(*string) {
     return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetTenantDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("tenantDisplayName")
     if err != nil {
@@ -310,6 +324,7 @@ func (m *ManagedDeviceCompliance) GetTenantDisplayName()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceCompliance) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -510,7 +525,6 @@ func (m *ManagedDeviceCompliance) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// ManagedDeviceComplianceable 
 type ManagedDeviceComplianceable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

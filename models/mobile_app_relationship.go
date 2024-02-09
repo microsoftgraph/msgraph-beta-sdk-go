@@ -8,7 +8,7 @@ import (
 type MobileAppRelationship struct {
     Entity
 }
-// NewMobileAppRelationship instantiates a new mobileAppRelationship and sets the default values.
+// NewMobileAppRelationship instantiates a new MobileAppRelationship and sets the default values.
 func NewMobileAppRelationship()(*MobileAppRelationship) {
     m := &MobileAppRelationship{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewMobileAppRelationship()(*MobileAppRelationship) {
     return m
 }
 // CreateMobileAppRelationshipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppRelationshipFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateMobileAppRelationshipFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewMobileAppRelationship(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["targetDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +97,7 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetTargetDisplayName gets the targetDisplayName property value. The target mobile app's display name.
+// returns a *string when successful
 func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("targetDisplayName")
     if err != nil {
@@ -106,6 +109,7 @@ func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
     return nil
 }
 // GetTargetDisplayVersion gets the targetDisplayVersion property value. The target mobile app's display version.
+// returns a *string when successful
 func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
     val, err := m.GetBackingStore().Get("targetDisplayVersion")
     if err != nil {
@@ -117,6 +121,7 @@ func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
     return nil
 }
 // GetTargetId gets the targetId property value. The target mobile app's app id.
+// returns a *string when successful
 func (m *MobileAppRelationship) GetTargetId()(*string) {
     val, err := m.GetBackingStore().Get("targetId")
     if err != nil {
@@ -128,6 +133,7 @@ func (m *MobileAppRelationship) GetTargetId()(*string) {
     return nil
 }
 // GetTargetPublisher gets the targetPublisher property value. The target mobile app's publisher.
+// returns a *string when successful
 func (m *MobileAppRelationship) GetTargetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("targetPublisher")
     if err != nil {
@@ -139,6 +145,7 @@ func (m *MobileAppRelationship) GetTargetPublisher()(*string) {
     return nil
 }
 // GetTargetType gets the targetType property value. Indicates whether the target of a relationship is the parent or the child in the relationship.
+// returns a *MobileAppRelationshipType when successful
 func (m *MobileAppRelationship) GetTargetType()(*MobileAppRelationshipType) {
     val, err := m.GetBackingStore().Get("targetType")
     if err != nil {
@@ -223,7 +230,6 @@ func (m *MobileAppRelationship) SetTargetType(value *MobileAppRelationshipType)(
         panic(err)
     }
 }
-// MobileAppRelationshipable 
 type MobileAppRelationshipable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

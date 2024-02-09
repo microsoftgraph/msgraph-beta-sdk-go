@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReview 
 type AccessReview struct {
     Entity
 }
-// NewAccessReview instantiates a new accessReview and sets the default values.
+// NewAccessReview instantiates a new AccessReview and sets the default values.
 func NewAccessReview()(*AccessReview) {
     m := &AccessReview{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessReview()(*AccessReview) {
     return m
 }
 // CreateAccessReviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReview(), nil
 }
 // GetBusinessFlowTemplateId gets the businessFlowTemplateId property value. The business flow template identifier. Required on create.  This value is case sensitive.
+// returns a *string when successful
 func (m *AccessReview) GetBusinessFlowTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("businessFlowTemplateId")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessReview) GetBusinessFlowTemplateId()(*string) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The user who created this review.
+// returns a UserIdentityable when successful
 func (m *AccessReview) GetCreatedBy()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessReview) GetCreatedBy()(UserIdentityable) {
     return nil
 }
 // GetDecisions gets the decisions property value. The collection of decisions for this access review.
+// returns a []AccessReviewDecisionable when successful
 func (m *AccessReview) GetDecisions()([]AccessReviewDecisionable) {
     val, err := m.GetBackingStore().Get("decisions")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessReview) GetDecisions()([]AccessReviewDecisionable) {
     return nil
 }
 // GetDescription gets the description property value. The description provided by the access review creator, to show to the reviewers.
+// returns a *string when successful
 func (m *AccessReview) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessReview) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The access review name. Required on create.
+// returns a *string when successful
 func (m *AccessReview) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AccessReview) GetDisplayName()(*string) {
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
+// returns a *Time when successful
 func (m *AccessReview) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *AccessReview) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["businessFlowTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -256,6 +263,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetInstances gets the instances property value. The collection of access reviews instances past, present and future, if this object is a recurring access review.
+// returns a []AccessReviewable when successful
 func (m *AccessReview) GetInstances()([]AccessReviewable) {
     val, err := m.GetBackingStore().Get("instances")
     if err != nil {
@@ -267,6 +275,7 @@ func (m *AccessReview) GetInstances()([]AccessReviewable) {
     return nil
 }
 // GetMyDecisions gets the myDecisions property value. The collection of decisions for the caller, if the caller is a reviewer.
+// returns a []AccessReviewDecisionable when successful
 func (m *AccessReview) GetMyDecisions()([]AccessReviewDecisionable) {
     val, err := m.GetBackingStore().Get("myDecisions")
     if err != nil {
@@ -278,6 +287,7 @@ func (m *AccessReview) GetMyDecisions()([]AccessReviewDecisionable) {
     return nil
 }
 // GetReviewedEntity gets the reviewedEntity property value. The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
+// returns a Identityable when successful
 func (m *AccessReview) GetReviewedEntity()(Identityable) {
     val, err := m.GetBackingStore().Get("reviewedEntity")
     if err != nil {
@@ -289,6 +299,7 @@ func (m *AccessReview) GetReviewedEntity()(Identityable) {
     return nil
 }
 // GetReviewers gets the reviewers property value. The collection of reviewers for an access review, if access review reviewerType is of type delegated.
+// returns a []AccessReviewReviewerable when successful
 func (m *AccessReview) GetReviewers()([]AccessReviewReviewerable) {
     val, err := m.GetBackingStore().Get("reviewers")
     if err != nil {
@@ -300,6 +311,7 @@ func (m *AccessReview) GetReviewers()([]AccessReviewReviewerable) {
     return nil
 }
 // GetReviewerType gets the reviewerType property value. The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
+// returns a *string when successful
 func (m *AccessReview) GetReviewerType()(*string) {
     val, err := m.GetBackingStore().Get("reviewerType")
     if err != nil {
@@ -311,6 +323,7 @@ func (m *AccessReview) GetReviewerType()(*string) {
     return nil
 }
 // GetSettings gets the settings property value. The settings of an accessReview, see type definition below.
+// returns a AccessReviewSettingsable when successful
 func (m *AccessReview) GetSettings()(AccessReviewSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -322,6 +335,7 @@ func (m *AccessReview) GetSettings()(AccessReviewSettingsable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
+// returns a *Time when successful
 func (m *AccessReview) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -333,6 +347,7 @@ func (m *AccessReview) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetStatus gets the status property value. This read-only field specifies the status of an accessReview. The typical states include Initializing, NotStarted, Starting,InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.
+// returns a *string when successful
 func (m *AccessReview) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -557,7 +572,6 @@ func (m *AccessReview) SetStatus(value *string)() {
         panic(err)
     }
 }
-// AccessReviewable 
 type AccessReviewable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

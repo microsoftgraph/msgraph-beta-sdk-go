@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IpSegmentConfiguration 
 type IpSegmentConfiguration struct {
     SegmentConfiguration
 }
-// NewIpSegmentConfiguration instantiates a new ipSegmentConfiguration and sets the default values.
+// NewIpSegmentConfiguration instantiates a new IpSegmentConfiguration and sets the default values.
 func NewIpSegmentConfiguration()(*IpSegmentConfiguration) {
     m := &IpSegmentConfiguration{
         SegmentConfiguration: *NewSegmentConfiguration(),
@@ -18,10 +17,12 @@ func NewIpSegmentConfiguration()(*IpSegmentConfiguration) {
     return m
 }
 // CreateIpSegmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIpSegmentConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpSegmentConfiguration(), nil
 }
 // GetApplicationSegments gets the applicationSegments property value. The applicationSegments property
+// returns a []IpApplicationSegmentable when successful
 func (m *IpSegmentConfiguration) GetApplicationSegments()([]IpApplicationSegmentable) {
     val, err := m.GetBackingStore().Get("applicationSegments")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *IpSegmentConfiguration) GetApplicationSegments()([]IpApplicationSegment
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IpSegmentConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SegmentConfiguration.GetFieldDeserializers()
     res["applicationSegments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,7 +82,6 @@ func (m *IpSegmentConfiguration) SetApplicationSegments(value []IpApplicationSeg
         panic(err)
     }
 }
-// IpSegmentConfigurationable 
 type IpSegmentConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SegmentConfigurationable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalCreationPolicy 
 type ServicePrincipalCreationPolicy struct {
     PolicyBase
 }
-// NewServicePrincipalCreationPolicy instantiates a new servicePrincipalCreationPolicy and sets the default values.
+// NewServicePrincipalCreationPolicy instantiates a new ServicePrincipalCreationPolicy and sets the default values.
 func NewServicePrincipalCreationPolicy()(*ServicePrincipalCreationPolicy) {
     m := &ServicePrincipalCreationPolicy{
         PolicyBase: *NewPolicyBase(),
@@ -18,10 +17,12 @@ func NewServicePrincipalCreationPolicy()(*ServicePrincipalCreationPolicy) {
     return m
 }
 // CreateServicePrincipalCreationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServicePrincipalCreationPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalCreationPolicy(), nil
 }
 // GetExcludes gets the excludes property value. The excludes property
+// returns a []ServicePrincipalCreationConditionSetable when successful
 func (m *ServicePrincipalCreationPolicy) GetExcludes()([]ServicePrincipalCreationConditionSetable) {
     val, err := m.GetBackingStore().Get("excludes")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ServicePrincipalCreationPolicy) GetExcludes()([]ServicePrincipalCreatio
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyBase.GetFieldDeserializers()
     res["excludes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,6 +82,7 @@ func (m *ServicePrincipalCreationPolicy) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetIncludes gets the includes property value. The includes property
+// returns a []ServicePrincipalCreationConditionSetable when successful
 func (m *ServicePrincipalCreationPolicy) GetIncludes()([]ServicePrincipalCreationConditionSetable) {
     val, err := m.GetBackingStore().Get("includes")
     if err != nil {
@@ -91,6 +94,7 @@ func (m *ServicePrincipalCreationPolicy) GetIncludes()([]ServicePrincipalCreatio
     return nil
 }
 // GetIsBuiltIn gets the isBuiltIn property value. The isBuiltIn property
+// returns a *bool when successful
 func (m *ServicePrincipalCreationPolicy) GetIsBuiltIn()(*bool) {
     val, err := m.GetBackingStore().Get("isBuiltIn")
     if err != nil {
@@ -160,7 +164,6 @@ func (m *ServicePrincipalCreationPolicy) SetIsBuiltIn(value *bool)() {
         panic(err)
     }
 }
-// ServicePrincipalCreationPolicyable 
 type ServicePrincipalCreationPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// EducationIdentityMatchingOptions 
 type EducationIdentityMatchingOptions struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEducationIdentityMatchingOptions instantiates a new educationIdentityMatchingOptions and sets the default values.
+// NewEducationIdentityMatchingOptions instantiates a new EducationIdentityMatchingOptions and sets the default values.
 func NewEducationIdentityMatchingOptions()(*EducationIdentityMatchingOptions) {
     m := &EducationIdentityMatchingOptions{
     }
@@ -19,10 +18,12 @@ func NewEducationIdentityMatchingOptions()(*EducationIdentityMatchingOptions) {
     return m
 }
 // CreateEducationIdentityMatchingOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationIdentityMatchingOptionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationIdentityMatchingOptions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *EducationIdentityMatchingOptions) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *EducationIdentityMatchingOptions) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAppliesTo gets the appliesTo property value. The appliesTo property
+// returns a *EducationUserRole when successful
 func (m *EducationIdentityMatchingOptions) GetAppliesTo()(*EducationUserRole) {
     val, err := m.GetBackingStore().Get("appliesTo")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *EducationIdentityMatchingOptions) GetAppliesTo()(*EducationUserRole) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *EducationIdentityMatchingOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationIdentityMatchingOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +109,7 @@ func (m *EducationIdentityMatchingOptions) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *EducationIdentityMatchingOptions) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -116,6 +121,7 @@ func (m *EducationIdentityMatchingOptions) GetOdataType()(*string) {
     return nil
 }
 // GetSourcePropertyName gets the sourcePropertyName property value. The name of the source property, which should be a field name in the source data. This property is case-sensitive.
+// returns a *string when successful
 func (m *EducationIdentityMatchingOptions) GetSourcePropertyName()(*string) {
     val, err := m.GetBackingStore().Get("sourcePropertyName")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *EducationIdentityMatchingOptions) GetSourcePropertyName()(*string) {
     return nil
 }
 // GetTargetDomain gets the targetDomain property value. The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
+// returns a *string when successful
 func (m *EducationIdentityMatchingOptions) GetTargetDomain()(*string) {
     val, err := m.GetBackingStore().Get("targetDomain")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *EducationIdentityMatchingOptions) GetTargetDomain()(*string) {
     return nil
 }
 // GetTargetPropertyName gets the targetPropertyName property value. The name of the target property, which should be a valid property in Microsoft Entra ID. This property is case-sensitive.
+// returns a *string when successful
 func (m *EducationIdentityMatchingOptions) GetTargetPropertyName()(*string) {
     val, err := m.GetBackingStore().Get("targetPropertyName")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *EducationIdentityMatchingOptions) SetTargetPropertyName(value *string)(
         panic(err)
     }
 }
-// EducationIdentityMatchingOptionsable 
 type EducationIdentityMatchingOptionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

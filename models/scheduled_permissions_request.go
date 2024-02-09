@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ScheduledPermissionsRequest 
 type ScheduledPermissionsRequest struct {
     Entity
 }
-// NewScheduledPermissionsRequest instantiates a new scheduledPermissionsRequest and sets the default values.
+// NewScheduledPermissionsRequest instantiates a new ScheduledPermissionsRequest and sets the default values.
 func NewScheduledPermissionsRequest()(*ScheduledPermissionsRequest) {
     m := &ScheduledPermissionsRequest{
         Entity: *NewEntity(),
@@ -17,10 +16,24 @@ func NewScheduledPermissionsRequest()(*ScheduledPermissionsRequest) {
     return m
 }
 // CreateScheduledPermissionsRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateScheduledPermissionsRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewScheduledPermissionsRequest(), nil
 }
+// GetAction gets the action property value. The action property
+// returns a *UnifiedRoleScheduleRequestActions when successful
+func (m *ScheduledPermissionsRequest) GetAction()(*UnifiedRoleScheduleRequestActions) {
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UnifiedRoleScheduleRequestActions)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. Defines when the identity created the request.
+// returns a *Time when successful
 func (m *ScheduledPermissionsRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -32,8 +45,19 @@ func (m *ScheduledPermissionsRequest) GetCreatedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ScheduledPermissionsRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUnifiedRoleScheduleRequestActions)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAction(val.(*UnifiedRoleScheduleRequestActions))
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -107,6 +131,7 @@ func (m *ScheduledPermissionsRequest) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetJustification gets the justification property value. The identity's justification for the request.
+// returns a *string when successful
 func (m *ScheduledPermissionsRequest) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
     if err != nil {
@@ -118,6 +143,7 @@ func (m *ScheduledPermissionsRequest) GetJustification()(*string) {
     return nil
 }
 // GetNotes gets the notes property value. Additional context for the permissions request.
+// returns a *string when successful
 func (m *ScheduledPermissionsRequest) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -129,6 +155,7 @@ func (m *ScheduledPermissionsRequest) GetNotes()(*string) {
     return nil
 }
 // GetRequestedPermissions gets the requestedPermissions property value. The requestedPermissions property
+// returns a PermissionsDefinitionable when successful
 func (m *ScheduledPermissionsRequest) GetRequestedPermissions()(PermissionsDefinitionable) {
     val, err := m.GetBackingStore().Get("requestedPermissions")
     if err != nil {
@@ -140,6 +167,7 @@ func (m *ScheduledPermissionsRequest) GetRequestedPermissions()(PermissionsDefin
     return nil
 }
 // GetScheduleInfo gets the scheduleInfo property value. When to assign the requested permissions.
+// returns a RequestScheduleable when successful
 func (m *ScheduledPermissionsRequest) GetScheduleInfo()(RequestScheduleable) {
     val, err := m.GetBackingStore().Get("scheduleInfo")
     if err != nil {
@@ -151,6 +179,7 @@ func (m *ScheduledPermissionsRequest) GetScheduleInfo()(RequestScheduleable) {
     return nil
 }
 // GetStatusDetail gets the statusDetail property value. The statusDetail property
+// returns a *StatusDetail when successful
 func (m *ScheduledPermissionsRequest) GetStatusDetail()(*StatusDetail) {
     val, err := m.GetBackingStore().Get("statusDetail")
     if err != nil {
@@ -162,6 +191,7 @@ func (m *ScheduledPermissionsRequest) GetStatusDetail()(*StatusDetail) {
     return nil
 }
 // GetTicketInfo gets the ticketInfo property value. Ticketing-related metadata that you can use to correlate to the request.
+// returns a TicketInfoable when successful
 func (m *ScheduledPermissionsRequest) GetTicketInfo()(TicketInfoable) {
     val, err := m.GetBackingStore().Get("ticketInfo")
     if err != nil {
@@ -177,6 +207,13 @@ func (m *ScheduledPermissionsRequest) Serialize(writer i878a80d2330e89d26896388a
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    if m.GetAction() != nil {
+        cast := (*m.GetAction()).String()
+        err = writer.WriteStringValue("action", &cast)
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
@@ -222,6 +259,13 @@ func (m *ScheduledPermissionsRequest) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     return nil
+}
+// SetAction sets the action property value. The action property
+func (m *ScheduledPermissionsRequest) SetAction(value *UnifiedRoleScheduleRequestActions)() {
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedDateTime sets the createdDateTime property value. Defines when the identity created the request.
 func (m *ScheduledPermissionsRequest) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
@@ -272,10 +316,10 @@ func (m *ScheduledPermissionsRequest) SetTicketInfo(value TicketInfoable)() {
         panic(err)
     }
 }
-// ScheduledPermissionsRequestable 
 type ScheduledPermissionsRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAction()(*UnifiedRoleScheduleRequestActions)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetJustification()(*string)
     GetNotes()(*string)
@@ -283,6 +327,7 @@ type ScheduledPermissionsRequestable interface {
     GetScheduleInfo()(RequestScheduleable)
     GetStatusDetail()(*StatusDetail)
     GetTicketInfo()(TicketInfoable)
+    SetAction(value *UnifiedRoleScheduleRequestActions)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetJustification(value *string)()
     SetNotes(value *string)()

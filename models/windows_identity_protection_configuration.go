@@ -8,7 +8,7 @@ import (
 type WindowsIdentityProtectionConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsIdentityProtectionConfiguration instantiates a new windowsIdentityProtectionConfiguration and sets the default values.
+// NewWindowsIdentityProtectionConfiguration instantiates a new WindowsIdentityProtectionConfiguration and sets the default values.
 func NewWindowsIdentityProtectionConfiguration()(*WindowsIdentityProtectionConfiguration) {
     m := &WindowsIdentityProtectionConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsIdentityProtectionConfiguration()(*WindowsIdentityProtectionConfi
     return m
 }
 // CreateWindowsIdentityProtectionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsIdentityProtectionConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsIdentityProtectionConfiguration(), nil
 }
 // GetEnhancedAntiSpoofingForFacialFeaturesEnabled gets the enhancedAntiSpoofingForFacialFeaturesEnabled property value. Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.
+// returns a *bool when successful
 func (m *WindowsIdentityProtectionConfiguration) GetEnhancedAntiSpoofingForFacialFeaturesEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("enhancedAntiSpoofingForFacialFeaturesEnabled")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetEnhancedAntiSpoofingForFacia
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsIdentityProtectionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["enhancedAntiSpoofingForFacialFeaturesEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -178,6 +181,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetFieldDeserializers()(map[str
     return res
 }
 // GetPinExpirationInDays gets the pinExpirationInDays property value. Integer value specifies the period (in days) that a PIN can be used before the system requires the user to change it. Valid values are 0 to 730 inclusive. Valid values 0 to 730
+// returns a *int32 when successful
 func (m *WindowsIdentityProtectionConfiguration) GetPinExpirationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("pinExpirationInDays")
     if err != nil {
@@ -189,6 +193,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinExpirationInDays()(*int32
     return nil
 }
 // GetPinLowercaseCharactersUsage gets the pinLowercaseCharactersUsage property value. Possible values of the ConfigurationUsage list.
+// returns a *ConfigurationUsage when successful
 func (m *WindowsIdentityProtectionConfiguration) GetPinLowercaseCharactersUsage()(*ConfigurationUsage) {
     val, err := m.GetBackingStore().Get("pinLowercaseCharactersUsage")
     if err != nil {
@@ -200,6 +205,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinLowercaseCharactersUsage(
     return nil
 }
 // GetPinMaximumLength gets the pinMaximumLength property value. Integer value that sets the maximum number of characters allowed for the work PIN. Valid values are 4 to 127 inclusive and greater than or equal to the value set for the minimum PIN. Valid values 4 to 127
+// returns a *int32 when successful
 func (m *WindowsIdentityProtectionConfiguration) GetPinMaximumLength()(*int32) {
     val, err := m.GetBackingStore().Get("pinMaximumLength")
     if err != nil {
@@ -211,6 +217,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinMaximumLength()(*int32) {
     return nil
 }
 // GetPinMinimumLength gets the pinMinimumLength property value. Integer value that sets the minimum number of characters required for the Windows Hello for Business PIN. Valid values are 4 to 127 inclusive and less than or equal to the value set for the maximum PIN. Valid values 4 to 127
+// returns a *int32 when successful
 func (m *WindowsIdentityProtectionConfiguration) GetPinMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("pinMinimumLength")
     if err != nil {
@@ -222,6 +229,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinMinimumLength()(*int32) {
     return nil
 }
 // GetPinPreviousBlockCount gets the pinPreviousBlockCount property value. Controls the ability to prevent users from using past PINs. This must be set between 0 and 50, inclusive, and the current PIN of the user is included in that count. If set to 0, previous PINs are not stored. PIN history is not preserved through a PIN reset. Valid values 0 to 50
+// returns a *int32 when successful
 func (m *WindowsIdentityProtectionConfiguration) GetPinPreviousBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("pinPreviousBlockCount")
     if err != nil {
@@ -233,6 +241,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinPreviousBlockCount()(*int
     return nil
 }
 // GetPinRecoveryEnabled gets the pinRecoveryEnabled property value. Boolean value that enables a user to change their PIN by using the Windows Hello for Business PIN recovery service.
+// returns a *bool when successful
 func (m *WindowsIdentityProtectionConfiguration) GetPinRecoveryEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("pinRecoveryEnabled")
     if err != nil {
@@ -244,6 +253,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinRecoveryEnabled()(*bool) 
     return nil
 }
 // GetPinSpecialCharactersUsage gets the pinSpecialCharactersUsage property value. Possible values of the ConfigurationUsage list.
+// returns a *ConfigurationUsage when successful
 func (m *WindowsIdentityProtectionConfiguration) GetPinSpecialCharactersUsage()(*ConfigurationUsage) {
     val, err := m.GetBackingStore().Get("pinSpecialCharactersUsage")
     if err != nil {
@@ -255,6 +265,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinSpecialCharactersUsage()(
     return nil
 }
 // GetPinUppercaseCharactersUsage gets the pinUppercaseCharactersUsage property value. Possible values of the ConfigurationUsage list.
+// returns a *ConfigurationUsage when successful
 func (m *WindowsIdentityProtectionConfiguration) GetPinUppercaseCharactersUsage()(*ConfigurationUsage) {
     val, err := m.GetBackingStore().Get("pinUppercaseCharactersUsage")
     if err != nil {
@@ -266,6 +277,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetPinUppercaseCharactersUsage(
     return nil
 }
 // GetSecurityDeviceRequired gets the securityDeviceRequired property value. Controls whether to require a Trusted Platform Module (TPM) for provisioning Windows Hello for Business. A TPM provides an additional security benefit in that data stored on it cannot be used on other devices. If set to False, all devices can provision Windows Hello for Business even if there is not a usable TPM.
+// returns a *bool when successful
 func (m *WindowsIdentityProtectionConfiguration) GetSecurityDeviceRequired()(*bool) {
     val, err := m.GetBackingStore().Get("securityDeviceRequired")
     if err != nil {
@@ -277,6 +289,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetSecurityDeviceRequired()(*bo
     return nil
 }
 // GetUnlockWithBiometricsEnabled gets the unlockWithBiometricsEnabled property value. Controls the use of biometric gestures, such as face and fingerprint, as an alternative to the Windows Hello for Business PIN.  If set to False, biometric gestures are not allowed. Users must still configure a PIN as a backup in case of failures.
+// returns a *bool when successful
 func (m *WindowsIdentityProtectionConfiguration) GetUnlockWithBiometricsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("unlockWithBiometricsEnabled")
     if err != nil {
@@ -288,6 +301,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetUnlockWithBiometricsEnabled(
     return nil
 }
 // GetUseCertificatesForOnPremisesAuthEnabled gets the useCertificatesForOnPremisesAuthEnabled property value. Boolean value that enables Windows Hello for Business to use certificates to authenticate on-premise resources.
+// returns a *bool when successful
 func (m *WindowsIdentityProtectionConfiguration) GetUseCertificatesForOnPremisesAuthEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("useCertificatesForOnPremisesAuthEnabled")
     if err != nil {
@@ -299,6 +313,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetUseCertificatesForOnPremises
     return nil
 }
 // GetUseSecurityKeyForSignin gets the useSecurityKeyForSignin property value. Boolean value used to enable the Windows Hello security key as a logon credential.
+// returns a *bool when successful
 func (m *WindowsIdentityProtectionConfiguration) GetUseSecurityKeyForSignin()(*bool) {
     val, err := m.GetBackingStore().Get("useSecurityKeyForSignin")
     if err != nil {
@@ -310,6 +325,7 @@ func (m *WindowsIdentityProtectionConfiguration) GetUseSecurityKeyForSignin()(*b
     return nil
 }
 // GetWindowsHelloForBusinessBlocked gets the windowsHelloForBusinessBlocked property value. Boolean value that blocks Windows Hello for Business as a method for signing into Windows.
+// returns a *bool when successful
 func (m *WindowsIdentityProtectionConfiguration) GetWindowsHelloForBusinessBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("windowsHelloForBusinessBlocked")
     if err != nil {
@@ -513,7 +529,6 @@ func (m *WindowsIdentityProtectionConfiguration) SetWindowsHelloForBusinessBlock
         panic(err)
     }
 }
-// WindowsIdentityProtectionConfigurationable 
 type WindowsIdentityProtectionConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

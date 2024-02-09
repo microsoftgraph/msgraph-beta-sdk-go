@@ -10,7 +10,7 @@ type AssignmentFilterEvaluateRequest struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAssignmentFilterEvaluateRequest instantiates a new assignmentFilterEvaluateRequest and sets the default values.
+// NewAssignmentFilterEvaluateRequest instantiates a new AssignmentFilterEvaluateRequest and sets the default values.
 func NewAssignmentFilterEvaluateRequest()(*AssignmentFilterEvaluateRequest) {
     m := &AssignmentFilterEvaluateRequest{
     }
@@ -19,10 +19,12 @@ func NewAssignmentFilterEvaluateRequest()(*AssignmentFilterEvaluateRequest) {
     return m
 }
 // CreateAssignmentFilterEvaluateRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAssignmentFilterEvaluateRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignmentFilterEvaluateRequest(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AssignmentFilterEvaluateRequest) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *AssignmentFilterEvaluateRequest) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AssignmentFilterEvaluateRequest) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AssignmentFilterEvaluateRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -120,6 +124,7 @@ func (m *AssignmentFilterEvaluateRequest) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AssignmentFilterEvaluateRequest) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *AssignmentFilterEvaluateRequest) GetOdataType()(*string) {
     return nil
 }
 // GetOrderBy gets the orderBy property value. Order the devices should be sorted in. Default is ascending on device name.
+// returns a []string when successful
 func (m *AssignmentFilterEvaluateRequest) GetOrderBy()([]string) {
     val, err := m.GetBackingStore().Get("orderBy")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *AssignmentFilterEvaluateRequest) GetOrderBy()([]string) {
     return nil
 }
 // GetPlatform gets the platform property value. Supported platform types.
+// returns a *DevicePlatformType when successful
 func (m *AssignmentFilterEvaluateRequest) GetPlatform()(*DevicePlatformType) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -153,6 +160,7 @@ func (m *AssignmentFilterEvaluateRequest) GetPlatform()(*DevicePlatformType) {
     return nil
 }
 // GetRule gets the rule property value. Rule definition of the Assignment Filter.
+// returns a *string when successful
 func (m *AssignmentFilterEvaluateRequest) GetRule()(*string) {
     val, err := m.GetBackingStore().Get("rule")
     if err != nil {
@@ -164,6 +172,7 @@ func (m *AssignmentFilterEvaluateRequest) GetRule()(*string) {
     return nil
 }
 // GetSearch gets the search property value. Search keyword applied to scope found devices.
+// returns a *string when successful
 func (m *AssignmentFilterEvaluateRequest) GetSearch()(*string) {
     val, err := m.GetBackingStore().Get("search")
     if err != nil {
@@ -175,6 +184,7 @@ func (m *AssignmentFilterEvaluateRequest) GetSearch()(*string) {
     return nil
 }
 // GetSkip gets the skip property value. Number of records to skip. Default value is 0
+// returns a *int32 when successful
 func (m *AssignmentFilterEvaluateRequest) GetSkip()(*int32) {
     val, err := m.GetBackingStore().Get("skip")
     if err != nil {
@@ -186,6 +196,7 @@ func (m *AssignmentFilterEvaluateRequest) GetSkip()(*int32) {
     return nil
 }
 // GetTop gets the top property value. Limit of records per request. Default value is 100, if provided less than 0 or greater than 100
+// returns a *int32 when successful
 func (m *AssignmentFilterEvaluateRequest) GetTop()(*int32) {
     val, err := m.GetBackingStore().Get("top")
     if err != nil {
@@ -309,7 +320,6 @@ func (m *AssignmentFilterEvaluateRequest) SetTop(value *int32)() {
         panic(err)
     }
 }
-// AssignmentFilterEvaluateRequestable 
 type AssignmentFilterEvaluateRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

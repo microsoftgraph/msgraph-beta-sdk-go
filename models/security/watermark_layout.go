@@ -2,7 +2,6 @@ package security
 import (
     "errors"
 )
-// 
 type WatermarkLayout int
 
 const (

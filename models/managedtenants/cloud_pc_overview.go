@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// CloudPcOverview 
 type CloudPcOverview struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewCloudPcOverview instantiates a new cloudPcOverview and sets the default values.
+// NewCloudPcOverview instantiates a new CloudPcOverview and sets the default values.
 func NewCloudPcOverview()(*CloudPcOverview) {
     m := &CloudPcOverview{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewCloudPcOverview()(*CloudPcOverview) {
     return m
 }
 // CreateCloudPcOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcOverviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcOverview(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastRefreshedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -227,6 +228,7 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
+// returns a *Time when successful
 func (m *CloudPcOverview) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshedDateTime")
     if err != nil {
@@ -238,6 +240,7 @@ func (m *CloudPcOverview) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetNumberOfCloudPcConnectionStatusFailed gets the numberOfCloudPcConnectionStatusFailed property value. The number of cloud PC connections that have a status of failed. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusFailed()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcConnectionStatusFailed")
     if err != nil {
@@ -249,6 +252,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusFailed()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcConnectionStatusPassed gets the numberOfCloudPcConnectionStatusPassed property value. The number of cloud PC connections that have a status of passed. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusPassed()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcConnectionStatusPassed")
     if err != nil {
@@ -260,6 +264,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusPassed()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcConnectionStatusPending gets the numberOfCloudPcConnectionStatusPending property value. The number of cloud PC connections that have a status of pending. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusPending()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcConnectionStatusPending")
     if err != nil {
@@ -271,6 +276,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusPending()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcConnectionStatusRunning gets the numberOfCloudPcConnectionStatusRunning property value. The number of cloud PC connections that have a status of running. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusRunning()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcConnectionStatusRunning")
     if err != nil {
@@ -282,6 +288,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusRunning()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcConnectionStatusUnkownFutureValue gets the numberOfCloudPcConnectionStatusUnkownFutureValue property value. The number of cloud PC connections that have a status of unknownFutureValue. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusUnkownFutureValue()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcConnectionStatusUnkownFutureValue")
     if err != nil {
@@ -293,6 +300,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcConnectionStatusUnkownFutureValue()(
     return nil
 }
 // GetNumberOfCloudPcStatusDeprovisioning gets the numberOfCloudPcStatusDeprovisioning property value. The number of cloud PCs that have a status of deprovisioning. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusDeprovisioning()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcStatusDeprovisioning")
     if err != nil {
@@ -304,6 +312,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusDeprovisioning()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcStatusFailed gets the numberOfCloudPcStatusFailed property value. The number of cloud PCs that have a status of failed. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusFailed()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcStatusFailed")
     if err != nil {
@@ -315,6 +324,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusFailed()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcStatusInGracePeriod gets the numberOfCloudPcStatusInGracePeriod property value. The number of cloud PCs that have a status of inGracePeriod. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusInGracePeriod()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcStatusInGracePeriod")
     if err != nil {
@@ -326,6 +336,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusInGracePeriod()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcStatusNotProvisioned gets the numberOfCloudPcStatusNotProvisioned property value. The number of cloud PCs that have a status of notProvisioned. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusNotProvisioned()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcStatusNotProvisioned")
     if err != nil {
@@ -337,6 +348,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusNotProvisioned()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcStatusProvisioned gets the numberOfCloudPcStatusProvisioned property value. The number of cloud PCs that have a status of provisioned. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusProvisioned()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcStatusProvisioned")
     if err != nil {
@@ -348,6 +360,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusProvisioned()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcStatusProvisioning gets the numberOfCloudPcStatusProvisioning property value. The number of cloud PCs that have a status of provisioning. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusProvisioning()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcStatusProvisioning")
     if err != nil {
@@ -359,6 +372,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusProvisioning()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcStatusUnknown gets the numberOfCloudPcStatusUnknown property value. The number of cloud PCs that have a status of unknown. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusUnknown()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcStatusUnknown")
     if err != nil {
@@ -370,6 +384,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusUnknown()(*int32) {
     return nil
 }
 // GetNumberOfCloudPcStatusUpgrading gets the numberOfCloudPcStatusUpgrading property value. The number of cloud PCs that have a status of upgrading. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetNumberOfCloudPcStatusUpgrading()(*int32) {
     val, err := m.GetBackingStore().Get("numberOfCloudPcStatusUpgrading")
     if err != nil {
@@ -381,6 +396,7 @@ func (m *CloudPcOverview) GetNumberOfCloudPcStatusUpgrading()(*int32) {
     return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *CloudPcOverview) GetTenantDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("tenantDisplayName")
     if err != nil {
@@ -392,6 +408,7 @@ func (m *CloudPcOverview) GetTenantDisplayName()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
+// returns a *string when successful
 func (m *CloudPcOverview) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -403,6 +420,7 @@ func (m *CloudPcOverview) GetTenantId()(*string) {
     return nil
 }
 // GetTotalBusinessLicenses gets the totalBusinessLicenses property value. The total number of cloud PC devices that have the Business SKU. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetTotalBusinessLicenses()(*int32) {
     val, err := m.GetBackingStore().Get("totalBusinessLicenses")
     if err != nil {
@@ -414,6 +432,7 @@ func (m *CloudPcOverview) GetTotalBusinessLicenses()(*int32) {
     return nil
 }
 // GetTotalCloudPcConnectionStatus gets the totalCloudPcConnectionStatus property value. The total number of cloud PC connection statuses for the given managed tenant. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetTotalCloudPcConnectionStatus()(*int32) {
     val, err := m.GetBackingStore().Get("totalCloudPcConnectionStatus")
     if err != nil {
@@ -425,6 +444,7 @@ func (m *CloudPcOverview) GetTotalCloudPcConnectionStatus()(*int32) {
     return nil
 }
 // GetTotalCloudPcStatus gets the totalCloudPcStatus property value. The total number of cloud PC statues for the given managed tenant. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetTotalCloudPcStatus()(*int32) {
     val, err := m.GetBackingStore().Get("totalCloudPcStatus")
     if err != nil {
@@ -436,6 +456,7 @@ func (m *CloudPcOverview) GetTotalCloudPcStatus()(*int32) {
     return nil
 }
 // GetTotalEnterpriseLicenses gets the totalEnterpriseLicenses property value. The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcOverview) GetTotalEnterpriseLicenses()(*int32) {
     val, err := m.GetBackingStore().Get("totalEnterpriseLicenses")
     if err != nil {
@@ -714,7 +735,6 @@ func (m *CloudPcOverview) SetTotalEnterpriseLicenses(value *int32)() {
         panic(err)
     }
 }
-// CloudPcOverviewable 
 type CloudPcOverviewable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

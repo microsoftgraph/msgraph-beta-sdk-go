@@ -34,28 +34,28 @@ type ItemThreadsItemPostsItemMentionsMentionItemRequestBuilderGetRequestConfigur
     // Request query parameters
     QueryParameters *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilderGetQueryParameters
 }
-// NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal instantiates a new MentionItemRequestBuilder and sets the default values.
+// NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal instantiates a new ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder and sets the default values.
 func NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
     m := &ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/mentions/{mention%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/mentions/{mention%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilder instantiates a new MentionItemRequestBuilder and sets the default values.
+// NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilder instantiates a new ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder and sets the default values.
 func NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property mentions for groups
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -64,14 +64,15 @@ func (m *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) Delete(ctx c
     return nil
 }
 // Get get mentions from groups
+// returns a Mentionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Mentionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMentionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -83,8 +84,9 @@ func (m *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Mentionable), nil
 }
 // ToDeleteRequestInformation delete navigation property mentions for groups
+// returns a *RequestInformation when successful
 func (m *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/mentions/{mention%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -93,6 +95,7 @@ func (m *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) ToDeleteRequ
     return requestInfo, nil
 }
 // ToGetRequestInformation get mentions from groups
+// returns a *RequestInformation when successful
 func (m *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -106,6 +109,7 @@ func (m *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder when successful
 func (m *ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) WithUrl(rawUrl string)(*ItemThreadsItemPostsItemMentionsMentionItemRequestBuilder) {
     return NewItemThreadsItemPostsItemMentionsMentionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -9,7 +9,7 @@ import (
 type ConfigManagerCollection struct {
     Entity
 }
-// NewConfigManagerCollection instantiates a new configManagerCollection and sets the default values.
+// NewConfigManagerCollection instantiates a new ConfigManagerCollection and sets the default values.
 func NewConfigManagerCollection()(*ConfigManagerCollection) {
     m := &ConfigManagerCollection{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewConfigManagerCollection()(*ConfigManagerCollection) {
     return m
 }
 // CreateConfigManagerCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConfigManagerCollectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigManagerCollection(), nil
 }
 // GetCollectionIdentifier gets the collectionIdentifier property value. The collection identifier in SCCM.
+// returns a *string when successful
 func (m *ConfigManagerCollection) GetCollectionIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("collectionIdentifier")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *ConfigManagerCollection) GetCollectionIdentifier()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The created date.
+// returns a *Time when successful
 func (m *ConfigManagerCollection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *ConfigManagerCollection) GetCreatedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetDisplayName gets the displayName property value. The DisplayName.
+// returns a *string when successful
 func (m *ConfigManagerCollection) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *ConfigManagerCollection) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["collectionIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +124,7 @@ func (m *ConfigManagerCollection) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetHierarchyIdentifier gets the hierarchyIdentifier property value. The Hierarchy Identifier.
+// returns a *string when successful
 func (m *ConfigManagerCollection) GetHierarchyIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("hierarchyIdentifier")
     if err != nil {
@@ -130,6 +136,7 @@ func (m *ConfigManagerCollection) GetHierarchyIdentifier()(*string) {
     return nil
 }
 // GetHierarchyName gets the hierarchyName property value. The HierarchyName.
+// returns a *string when successful
 func (m *ConfigManagerCollection) GetHierarchyName()(*string) {
     val, err := m.GetBackingStore().Get("hierarchyName")
     if err != nil {
@@ -141,6 +148,7 @@ func (m *ConfigManagerCollection) GetHierarchyName()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified date.
+// returns a *Time when successful
 func (m *ConfigManagerCollection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -237,7 +245,6 @@ func (m *ConfigManagerCollection) SetLastModifiedDateTime(value *i336074805fc853
         panic(err)
     }
 }
-// ConfigManagerCollectionable 
 type ConfigManagerCollectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

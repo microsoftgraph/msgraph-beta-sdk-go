@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesAgent 
 type OnPremisesAgent struct {
     Entity
 }
-// NewOnPremisesAgent instantiates a new onPremisesAgent and sets the default values.
+// NewOnPremisesAgent instantiates a new OnPremisesAgent and sets the default values.
 func NewOnPremisesAgent()(*OnPremisesAgent) {
     m := &OnPremisesAgent{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOnPremisesAgent()(*OnPremisesAgent) {
     return m
 }
 // CreateOnPremisesAgentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesAgentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesAgent(), nil
 }
 // GetAgentGroups gets the agentGroups property value. List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
+// returns a []OnPremisesAgentGroupable when successful
 func (m *OnPremisesAgent) GetAgentGroups()([]OnPremisesAgentGroupable) {
     val, err := m.GetBackingStore().Get("agentGroups")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *OnPremisesAgent) GetAgentGroups()([]OnPremisesAgentGroupable) {
     return nil
 }
 // GetExternalIp gets the externalIp property value. The external IP address as detected by the service for the agent machine. Read-only
+// returns a *string when successful
 func (m *OnPremisesAgent) GetExternalIp()(*string) {
     val, err := m.GetBackingStore().Get("externalIp")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *OnPremisesAgent) GetExternalIp()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agentGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +112,7 @@ func (m *OnPremisesAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetMachineName gets the machineName property value. The name of the machine that the agent is running on. Read-only
+// returns a *string when successful
 func (m *OnPremisesAgent) GetMachineName()(*string) {
     val, err := m.GetBackingStore().Get("machineName")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *OnPremisesAgent) GetMachineName()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *AgentStatus when successful
 func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
     return nil
 }
 // GetSupportedPublishingTypes gets the supportedPublishingTypes property value. The supportedPublishingTypes property
+// returns a []OnPremisesPublishingType when successful
 func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]OnPremisesPublishingType) {
     val, err := m.GetBackingStore().Get("supportedPublishingTypes")
     if err != nil {
@@ -221,7 +227,6 @@ func (m *OnPremisesAgent) SetSupportedPublishingTypes(value []OnPremisesPublishi
         panic(err)
     }
 }
-// OnPremisesAgentable 
 type OnPremisesAgentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type NdesConnector struct {
     Entity
 }
-// NewNdesConnector instantiates a new ndesConnector and sets the default values.
+// NewNdesConnector instantiates a new NdesConnector and sets the default values.
 func NewNdesConnector()(*NdesConnector) {
     m := &NdesConnector{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewNdesConnector()(*NdesConnector) {
     return m
 }
 // CreateNdesConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNdesConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNdesConnector(), nil
 }
 // GetConnectorVersion gets the connectorVersion property value. The build version of the Ndes Connector.
+// returns a *string when successful
 func (m *NdesConnector) GetConnectorVersion()(*string) {
     val, err := m.GetBackingStore().Get("connectorVersion")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *NdesConnector) GetConnectorVersion()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The friendly name of the Ndes Connector.
+// returns a *string when successful
 func (m *NdesConnector) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *NdesConnector) GetDisplayName()(*string) {
     return nil
 }
 // GetEnrolledDateTime gets the enrolledDateTime property value. Timestamp when on-prem certificate connector was enrolled in Intune.
+// returns a *Time when successful
 func (m *NdesConnector) GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("enrolledDateTime")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *NdesConnector) GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NdesConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["connectorVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -135,6 +140,7 @@ func (m *NdesConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetLastConnectionDateTime gets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
+// returns a *Time when successful
 func (m *NdesConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastConnectionDateTime")
     if err != nil {
@@ -146,6 +152,7 @@ func (m *NdesConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetMachineName gets the machineName property value. Name of the machine running on-prem certificate connector service.
+// returns a *string when successful
 func (m *NdesConnector) GetMachineName()(*string) {
     val, err := m.GetBackingStore().Get("machineName")
     if err != nil {
@@ -157,6 +164,7 @@ func (m *NdesConnector) GetMachineName()(*string) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+// returns a []string when successful
 func (m *NdesConnector) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -168,6 +176,7 @@ func (m *NdesConnector) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetState gets the state property value. The current status of the Ndes Connector.
+// returns a *NdesConnectorState when successful
 func (m *NdesConnector) GetState()(*NdesConnectorState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -278,7 +287,6 @@ func (m *NdesConnector) SetState(value *NdesConnectorState)() {
         panic(err)
     }
 }
-// NdesConnectorable 
 type NdesConnectorable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

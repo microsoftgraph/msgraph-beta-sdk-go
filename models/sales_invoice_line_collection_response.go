@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SalesInvoiceLineCollectionResponse 
 type SalesInvoiceLineCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSalesInvoiceLineCollectionResponse instantiates a new salesInvoiceLineCollectionResponse and sets the default values.
+// NewSalesInvoiceLineCollectionResponse instantiates a new SalesInvoiceLineCollectionResponse and sets the default values.
 func NewSalesInvoiceLineCollectionResponse()(*SalesInvoiceLineCollectionResponse) {
     m := &SalesInvoiceLineCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSalesInvoiceLineCollectionResponse()(*SalesInvoiceLineCollectionResponse
     return m
 }
 // CreateSalesInvoiceLineCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSalesInvoiceLineCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSalesInvoiceLineCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SalesInvoiceLineCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SalesInvoiceLineCollectionResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []SalesInvoiceLineable when successful
 func (m *SalesInvoiceLineCollectionResponse) GetValue()([]SalesInvoiceLineable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SalesInvoiceLineCollectionResponse) SetValue(value []SalesInvoiceLineab
         panic(err)
     }
 }
-// SalesInvoiceLineCollectionResponseable 
 type SalesInvoiceLineCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

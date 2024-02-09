@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MonthlyInactiveUsersByApplicationMetric 
 type MonthlyInactiveUsersByApplicationMetric struct {
     InactiveUsersByApplicationMetricBase
 }
-// NewMonthlyInactiveUsersByApplicationMetric instantiates a new monthlyInactiveUsersByApplicationMetric and sets the default values.
+// NewMonthlyInactiveUsersByApplicationMetric instantiates a new MonthlyInactiveUsersByApplicationMetric and sets the default values.
 func NewMonthlyInactiveUsersByApplicationMetric()(*MonthlyInactiveUsersByApplicationMetric) {
     m := &MonthlyInactiveUsersByApplicationMetric{
         InactiveUsersByApplicationMetricBase: *NewInactiveUsersByApplicationMetricBase(),
@@ -16,10 +15,12 @@ func NewMonthlyInactiveUsersByApplicationMetric()(*MonthlyInactiveUsersByApplica
     return m
 }
 // CreateMonthlyInactiveUsersByApplicationMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMonthlyInactiveUsersByApplicationMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMonthlyInactiveUsersByApplicationMetric(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MonthlyInactiveUsersByApplicationMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InactiveUsersByApplicationMetricBase.GetFieldDeserializers()
     res["inactiveCalendarMonthCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *MonthlyInactiveUsersByApplicationMetric) GetFieldDeserializers()(map[st
     return res
 }
 // GetInactiveCalendarMonthCount gets the inactiveCalendarMonthCount property value. The inactiveCalendarMonthCount property
+// returns a *int64 when successful
 func (m *MonthlyInactiveUsersByApplicationMetric) GetInactiveCalendarMonthCount()(*int64) {
     val, err := m.GetBackingStore().Get("inactiveCalendarMonthCount")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *MonthlyInactiveUsersByApplicationMetric) SetInactiveCalendarMonthCount(
         panic(err)
     }
 }
-// MonthlyInactiveUsersByApplicationMetricable 
 type MonthlyInactiveUsersByApplicationMetricable interface {
     InactiveUsersByApplicationMetricBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

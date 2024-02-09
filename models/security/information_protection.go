@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// InformationProtection 
 type InformationProtection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewInformationProtection instantiates a new informationProtection and sets the default values.
+// NewInformationProtection instantiates a new InformationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
     m := &InformationProtection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewInformationProtection()(*InformationProtection) {
     return m
 }
 // CreateInformationProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInformationProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInformationProtection(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["labelPolicySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -52,6 +53,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetLabelPolicySettings gets the labelPolicySettings property value. Read the Microsoft Purview Information Protection policy settings for the user or organization.
+// returns a InformationProtectionPolicySettingable when successful
 func (m *InformationProtection) GetLabelPolicySettings()(InformationProtectionPolicySettingable) {
     val, err := m.GetBackingStore().Get("labelPolicySettings")
     if err != nil {
@@ -63,6 +65,7 @@ func (m *InformationProtection) GetLabelPolicySettings()(InformationProtectionPo
     return nil
 }
 // GetSensitivityLabels gets the sensitivityLabels property value. Read the Microsoft Purview Information Protection labels for the user or organization.
+// returns a []SensitivityLabelable when successful
 func (m *InformationProtection) GetSensitivityLabels()([]SensitivityLabelable) {
     val, err := m.GetBackingStore().Get("sensitivityLabels")
     if err != nil {
@@ -113,7 +116,6 @@ func (m *InformationProtection) SetSensitivityLabels(value []SensitivityLabelabl
         panic(err)
     }
 }
-// InformationProtectionable 
 type InformationProtectionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,28 +17,28 @@ type MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewMobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilderInternal instantiates a new RenewUploadRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilderInternal instantiates a new MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder) {
     m := &MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSPkgApp/contentVersions/{mobileAppContent%2Did}/files/{mobileAppContentFile%2Did}/renewUpload", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder instantiates a new RenewUploadRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder instantiates a new MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post renews the SAS URI for an application file upload.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder) Post(ctx context.Context, requestConfiguration *MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRe
     return nil
 }
 // ToPostRequestInformation renews the SAS URI for an application file upload.
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -57,6 +58,7 @@ func (m *MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder when successful
 func (m *MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder) {
     return NewMobileAppsItemGraphMacOSPkgAppContentVersionsItemFilesItemRenewUploadRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

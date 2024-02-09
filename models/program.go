@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Program 
 type Program struct {
     Entity
 }
-// NewProgram instantiates a new program and sets the default values.
+// NewProgram instantiates a new Program and sets the default values.
 func NewProgram()(*Program) {
     m := &Program{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewProgram()(*Program) {
     return m
 }
 // CreateProgramFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProgramFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProgram(), nil
 }
 // GetControls gets the controls property value. Controls associated with the program.
+// returns a []ProgramControlable when successful
 func (m *Program) GetControls()([]ProgramControlable) {
     val, err := m.GetBackingStore().Get("controls")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Program) GetControls()([]ProgramControlable) {
     return nil
 }
 // GetDescription gets the description property value. The description of the program.
+// returns a *string when successful
 func (m *Program) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Program) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the program.  Required on create.
+// returns a *string when successful
 func (m *Program) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *Program) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Program) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["controls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -146,7 +150,6 @@ func (m *Program) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// Programable 
 type Programable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

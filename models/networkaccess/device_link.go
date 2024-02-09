@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DeviceLink 
 type DeviceLink struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewDeviceLink instantiates a new deviceLink and sets the default values.
+// NewDeviceLink instantiates a new DeviceLink and sets the default values.
 func NewDeviceLink()(*DeviceLink) {
     m := &DeviceLink{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewDeviceLink()(*DeviceLink) {
     return m
 }
 // CreateDeviceLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceLink(), nil
 }
 // GetBandwidthCapacityInMbps gets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
+// returns a *BandwidthCapacityInMbps when successful
 func (m *DeviceLink) GetBandwidthCapacityInMbps()(*BandwidthCapacityInMbps) {
     val, err := m.GetBackingStore().Get("bandwidthCapacityInMbps")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DeviceLink) GetBandwidthCapacityInMbps()(*BandwidthCapacityInMbps) {
     return nil
 }
 // GetBgpConfiguration gets the bgpConfiguration property value. The bgpConfiguration property
+// returns a BgpConfigurationable when successful
 func (m *DeviceLink) GetBgpConfiguration()(BgpConfigurationable) {
     val, err := m.GetBackingStore().Get("bgpConfiguration")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *DeviceLink) GetBgpConfiguration()(BgpConfigurationable) {
     return nil
 }
 // GetDeviceVendor gets the deviceVendor property value. The deviceVendor property
+// returns a *DeviceVendor when successful
 func (m *DeviceLink) GetDeviceVendor()(*DeviceVendor) {
     val, err := m.GetBackingStore().Get("deviceVendor")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *DeviceLink) GetDeviceVendor()(*DeviceVendor) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bandwidthCapacityInMbps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,6 +144,7 @@ func (m *DeviceLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetIpAddress gets the ipAddress property value. Specifies the client IPv4 of the link
+// returns a *string when successful
 func (m *DeviceLink) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -151,6 +156,7 @@ func (m *DeviceLink) GetIpAddress()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. last modified time.
+// returns a *Time when successful
 func (m *DeviceLink) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -162,6 +168,7 @@ func (m *DeviceLink) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetName gets the name property value. Name.
+// returns a *string when successful
 func (m *DeviceLink) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -173,6 +180,7 @@ func (m *DeviceLink) GetName()(*string) {
     return nil
 }
 // GetRedundancyConfiguration gets the redundancyConfiguration property value. The redundancyConfiguration property
+// returns a RedundancyConfigurationable when successful
 func (m *DeviceLink) GetRedundancyConfiguration()(RedundancyConfigurationable) {
     val, err := m.GetBackingStore().Get("redundancyConfiguration")
     if err != nil {
@@ -184,6 +192,7 @@ func (m *DeviceLink) GetRedundancyConfiguration()(RedundancyConfigurationable) {
     return nil
 }
 // GetTunnelConfiguration gets the tunnelConfiguration property value. The tunnelConfiguration property
+// returns a TunnelConfigurationable when successful
 func (m *DeviceLink) GetTunnelConfiguration()(TunnelConfigurationable) {
     val, err := m.GetBackingStore().Get("tunnelConfiguration")
     if err != nil {
@@ -308,7 +317,6 @@ func (m *DeviceLink) SetTunnelConfiguration(value TunnelConfigurationable)() {
         panic(err)
     }
 }
-// DeviceLinkable 
 type DeviceLinkable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

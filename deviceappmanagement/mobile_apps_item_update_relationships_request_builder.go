@@ -17,28 +17,28 @@ type MobileAppsItemUpdateRelationshipsRequestBuilderPostRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewMobileAppsItemUpdateRelationshipsRequestBuilderInternal instantiates a new UpdateRelationshipsRequestBuilder and sets the default values.
+// NewMobileAppsItemUpdateRelationshipsRequestBuilderInternal instantiates a new MobileAppsItemUpdateRelationshipsRequestBuilder and sets the default values.
 func NewMobileAppsItemUpdateRelationshipsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemUpdateRelationshipsRequestBuilder) {
     m := &MobileAppsItemUpdateRelationshipsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/updateRelationships", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemUpdateRelationshipsRequestBuilder instantiates a new UpdateRelationshipsRequestBuilder and sets the default values.
+// NewMobileAppsItemUpdateRelationshipsRequestBuilder instantiates a new MobileAppsItemUpdateRelationshipsRequestBuilder and sets the default values.
 func NewMobileAppsItemUpdateRelationshipsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemUpdateRelationshipsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemUpdateRelationshipsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action updateRelationships
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemUpdateRelationshipsRequestBuilder) Post(ctx context.Context, body MobileAppsItemUpdateRelationshipsPostRequestBodyable, requestConfiguration *MobileAppsItemUpdateRelationshipsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *MobileAppsItemUpdateRelationshipsRequestBuilder) Post(ctx context.Conte
     return nil
 }
 // ToPostRequestInformation invoke action updateRelationships
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemUpdateRelationshipsRequestBuilder) ToPostRequestInformation(ctx context.Context, body MobileAppsItemUpdateRelationshipsPostRequestBodyable, requestConfiguration *MobileAppsItemUpdateRelationshipsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *MobileAppsItemUpdateRelationshipsRequestBuilder) ToPostRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemUpdateRelationshipsRequestBuilder when successful
 func (m *MobileAppsItemUpdateRelationshipsRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemUpdateRelationshipsRequestBuilder) {
     return NewMobileAppsItemUpdateRelationshipsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

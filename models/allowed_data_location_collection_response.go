@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AllowedDataLocationCollectionResponse 
 type AllowedDataLocationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAllowedDataLocationCollectionResponse instantiates a new allowedDataLocationCollectionResponse and sets the default values.
+// NewAllowedDataLocationCollectionResponse instantiates a new AllowedDataLocationCollectionResponse and sets the default values.
 func NewAllowedDataLocationCollectionResponse()(*AllowedDataLocationCollectionResponse) {
     m := &AllowedDataLocationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAllowedDataLocationCollectionResponse()(*AllowedDataLocationCollectionRe
     return m
 }
 // CreateAllowedDataLocationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAllowedDataLocationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAllowedDataLocationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AllowedDataLocationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AllowedDataLocationCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AllowedDataLocationable when successful
 func (m *AllowedDataLocationCollectionResponse) GetValue()([]AllowedDataLocationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AllowedDataLocationCollectionResponse) SetValue(value []AllowedDataLoca
         panic(err)
     }
 }
-// AllowedDataLocationCollectionResponseable 
 type AllowedDataLocationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

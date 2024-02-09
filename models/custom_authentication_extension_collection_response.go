@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomAuthenticationExtensionCollectionResponse 
 type CustomAuthenticationExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCustomAuthenticationExtensionCollectionResponse instantiates a new customAuthenticationExtensionCollectionResponse and sets the default values.
+// NewCustomAuthenticationExtensionCollectionResponse instantiates a new CustomAuthenticationExtensionCollectionResponse and sets the default values.
 func NewCustomAuthenticationExtensionCollectionResponse()(*CustomAuthenticationExtensionCollectionResponse) {
     m := &CustomAuthenticationExtensionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCustomAuthenticationExtensionCollectionResponse()(*CustomAuthenticationE
     return m
 }
 // CreateCustomAuthenticationExtensionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomAuthenticationExtensionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomAuthenticationExtensionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomAuthenticationExtensionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CustomAuthenticationExtensionCollectionResponse) GetFieldDeserializers(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []CustomAuthenticationExtensionable when successful
 func (m *CustomAuthenticationExtensionCollectionResponse) GetValue()([]CustomAuthenticationExtensionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CustomAuthenticationExtensionCollectionResponse) SetValue(value []Custo
         panic(err)
     }
 }
-// CustomAuthenticationExtensionCollectionResponseable 
 type CustomAuthenticationExtensionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

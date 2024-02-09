@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EmailUrlThreatSubmission 
 type EmailUrlThreatSubmission struct {
     EmailThreatSubmission
 }
-// NewEmailUrlThreatSubmission instantiates a new emailUrlThreatSubmission and sets the default values.
+// NewEmailUrlThreatSubmission instantiates a new EmailUrlThreatSubmission and sets the default values.
 func NewEmailUrlThreatSubmission()(*EmailUrlThreatSubmission) {
     m := &EmailUrlThreatSubmission{
         EmailThreatSubmission: *NewEmailThreatSubmission(),
@@ -18,10 +17,12 @@ func NewEmailUrlThreatSubmission()(*EmailUrlThreatSubmission) {
     return m
 }
 // CreateEmailUrlThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEmailUrlThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmailUrlThreatSubmission(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmailUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EmailThreatSubmission.GetFieldDeserializers()
     res["messageUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *EmailUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetMessageUrl gets the messageUrl property value. Specifies the url of the message to be submitted.
+// returns a *string when successful
 func (m *EmailUrlThreatSubmission) GetMessageUrl()(*string) {
     val, err := m.GetBackingStore().Get("messageUrl")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *EmailUrlThreatSubmission) SetMessageUrl(value *string)() {
         panic(err)
     }
 }
-// EmailUrlThreatSubmissionable 
 type EmailUrlThreatSubmissionable interface {
     EmailThreatSubmissionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

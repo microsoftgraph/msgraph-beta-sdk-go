@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcGalleryImage 
 type CloudPcGalleryImage struct {
     Entity
 }
-// NewCloudPcGalleryImage instantiates a new cloudPcGalleryImage and sets the default values.
+// NewCloudPcGalleryImage instantiates a new CloudPcGalleryImage and sets the default values.
 func NewCloudPcGalleryImage()(*CloudPcGalleryImage) {
     m := &CloudPcGalleryImage{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCloudPcGalleryImage()(*CloudPcGalleryImage) {
     return m
 }
 // CreateCloudPcGalleryImageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcGalleryImageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcGalleryImage(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of this gallery image. For example, Windows 11 Enterprise + Microsoft 365 Apps 22H2. Read-only.
+// returns a *string when successful
 func (m *CloudPcGalleryImage) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CloudPcGalleryImage) GetDisplayName()(*string) {
     return nil
 }
 // GetEndDate gets the endDate property value. The date when the status of image becomes supportedWithWarning. Users can still provision new Cloud PCs if the current time is later than endDate and earlier than expirationDate. For example, assume the endDate of a gallery image is 2023-9-14 and expirationDate is 2024-3-14, users are able to provision new Cloud PCs if today is 2023-10-01. Read-only.
+// returns a *DateOnly when successful
 func (m *CloudPcGalleryImage) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("endDate")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *CloudPcGalleryImage) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // GetExpirationDate gets the expirationDate property value. The date when the image is no longer available. Users are unable to provision new Cloud PCs if the current time is later than expirationDate. The value is usually endDate plus six months. For example, if the startDate is 2025-10-14, the expirationDate is usually 2026-04-14. Read-only.
+// returns a *DateOnly when successful
 func (m *CloudPcGalleryImage) GetExpirationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("expirationDate")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *CloudPcGalleryImage) GetExpirationDate()(*i878a80d2330e89d26896388a3f48
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -208,6 +212,7 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetOffer gets the offer property value. The offer property
+// returns a *string when successful
 func (m *CloudPcGalleryImage) GetOffer()(*string) {
     val, err := m.GetBackingStore().Get("offer")
     if err != nil {
@@ -219,6 +224,7 @@ func (m *CloudPcGalleryImage) GetOffer()(*string) {
     return nil
 }
 // GetOfferDisplayName gets the offerDisplayName property value. The offerDisplayName property
+// returns a *string when successful
 func (m *CloudPcGalleryImage) GetOfferDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("offerDisplayName")
     if err != nil {
@@ -230,6 +236,7 @@ func (m *CloudPcGalleryImage) GetOfferDisplayName()(*string) {
     return nil
 }
 // GetOfferName gets the offerName property value. The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.
+// returns a *string when successful
 func (m *CloudPcGalleryImage) GetOfferName()(*string) {
     val, err := m.GetBackingStore().Get("offerName")
     if err != nil {
@@ -241,6 +248,7 @@ func (m *CloudPcGalleryImage) GetOfferName()(*string) {
     return nil
 }
 // GetPublisher gets the publisher property value. The publisher property
+// returns a *string when successful
 func (m *CloudPcGalleryImage) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -252,6 +260,7 @@ func (m *CloudPcGalleryImage) GetPublisher()(*string) {
     return nil
 }
 // GetPublisherName gets the publisherName property value. The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.
+// returns a *string when successful
 func (m *CloudPcGalleryImage) GetPublisherName()(*string) {
     val, err := m.GetBackingStore().Get("publisherName")
     if err != nil {
@@ -263,6 +272,7 @@ func (m *CloudPcGalleryImage) GetPublisherName()(*string) {
     return nil
 }
 // GetRecommendedSku gets the recommendedSku property value. The recommendedSku property
+// returns a *string when successful
 func (m *CloudPcGalleryImage) GetRecommendedSku()(*string) {
     val, err := m.GetBackingStore().Get("recommendedSku")
     if err != nil {
@@ -274,6 +284,7 @@ func (m *CloudPcGalleryImage) GetRecommendedSku()(*string) {
     return nil
 }
 // GetSizeInGB gets the sizeInGB property value. Indicates the size of this image in gigabytes. For example, 64. Read-only.
+// returns a *int32 when successful
 func (m *CloudPcGalleryImage) GetSizeInGB()(*int32) {
     val, err := m.GetBackingStore().Get("sizeInGB")
     if err != nil {
@@ -285,6 +296,7 @@ func (m *CloudPcGalleryImage) GetSizeInGB()(*int32) {
     return nil
 }
 // GetSku gets the sku property value. The sku property
+// returns a *string when successful
 func (m *CloudPcGalleryImage) GetSku()(*string) {
     val, err := m.GetBackingStore().Get("sku")
     if err != nil {
@@ -296,6 +308,7 @@ func (m *CloudPcGalleryImage) GetSku()(*string) {
     return nil
 }
 // GetSkuDisplayName gets the skuDisplayName property value. The skuDisplayName property
+// returns a *string when successful
 func (m *CloudPcGalleryImage) GetSkuDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("skuDisplayName")
     if err != nil {
@@ -307,6 +320,7 @@ func (m *CloudPcGalleryImage) GetSkuDisplayName()(*string) {
     return nil
 }
 // GetSkuName gets the skuName property value. The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only.
+// returns a *string when successful
 func (m *CloudPcGalleryImage) GetSkuName()(*string) {
     val, err := m.GetBackingStore().Get("skuName")
     if err != nil {
@@ -318,6 +332,7 @@ func (m *CloudPcGalleryImage) GetSkuName()(*string) {
     return nil
 }
 // GetStartDate gets the startDate property value. The date when the Cloud PC image is available for provisioning new Cloud PCs. For example, 2022-09-20. Read-only.
+// returns a *DateOnly when successful
 func (m *CloudPcGalleryImage) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("startDate")
     if err != nil {
@@ -329,6 +344,7 @@ func (m *CloudPcGalleryImage) GetStartDate()(*i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // GetStatus gets the status property value. The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.
+// returns a *CloudPcGalleryImageStatus when successful
 func (m *CloudPcGalleryImage) GetStatus()(*CloudPcGalleryImageStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -543,7 +559,6 @@ func (m *CloudPcGalleryImage) SetStatus(value *CloudPcGalleryImageStatus)() {
         panic(err)
     }
 }
-// CloudPcGalleryImageable 
 type CloudPcGalleryImageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSimpleSettingCollectionDefinition 
 type DeviceManagementConfigurationSimpleSettingCollectionDefinition struct {
     DeviceManagementConfigurationSimpleSettingDefinition
 }
-// NewDeviceManagementConfigurationSimpleSettingCollectionDefinition instantiates a new deviceManagementConfigurationSimpleSettingCollectionDefinition and sets the default values.
+// NewDeviceManagementConfigurationSimpleSettingCollectionDefinition instantiates a new DeviceManagementConfigurationSimpleSettingCollectionDefinition and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingCollectionDefinition()(*DeviceManagementConfigurationSimpleSettingCollectionDefinition) {
     m := &DeviceManagementConfigurationSimpleSettingCollectionDefinition{
         DeviceManagementConfigurationSimpleSettingDefinition: *NewDeviceManagementConfigurationSimpleSettingDefinition(),
@@ -16,10 +15,12 @@ func NewDeviceManagementConfigurationSimpleSettingCollectionDefinition()(*Device
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingCollectionDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationSimpleSettingCollectionDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationSimpleSettingCollectionDefinition(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSimpleSettingDefinition.GetFieldDeserializers()
     res["maximumCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) GetFiel
     return res
 }
 // GetMaximumCount gets the maximumCount property value. Maximum number of simple settings in the collection
+// returns a *int32 when successful
 func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) GetMaximumCount()(*int32) {
     val, err := m.GetBackingStore().Get("maximumCount")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) GetMaxi
     return nil
 }
 // GetMinimumCount gets the minimumCount property value. Minimum number of simple settings in the collection
+// returns a *int32 when successful
 func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) GetMinimumCount()(*int32) {
     val, err := m.GetBackingStore().Get("minimumCount")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) SetMini
         panic(err)
     }
 }
-// DeviceManagementConfigurationSimpleSettingCollectionDefinitionable 
 type DeviceManagementConfigurationSimpleSettingCollectionDefinitionable interface {
     DeviceManagementConfigurationSimpleSettingDefinitionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

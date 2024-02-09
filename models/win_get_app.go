@@ -8,7 +8,7 @@ import (
 type WinGetApp struct {
     MobileApp
 }
-// NewWinGetApp instantiates a new winGetApp and sets the default values.
+// NewWinGetApp instantiates a new WinGetApp and sets the default values.
 func NewWinGetApp()(*WinGetApp) {
     m := &WinGetApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewWinGetApp()(*WinGetApp) {
     return m
 }
 // CreateWinGetAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWinGetAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWinGetApp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WinGetApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["installExperience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *WinGetApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetInstallExperience gets the installExperience property value. The install experience settings associated with this application, which are used to ensure the desired install experiences on the target device are taken into account. This includes the account type (System or User) that actions should be run as on target devices. Required at creation time.
+// returns a WinGetAppInstallExperienceable when successful
 func (m *WinGetApp) GetInstallExperience()(WinGetAppInstallExperienceable) {
     val, err := m.GetBackingStore().Get("installExperience")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *WinGetApp) GetInstallExperience()(WinGetAppInstallExperienceable) {
     return nil
 }
 // GetManifestHash gets the manifestHash property value. Hash of package metadata properties used to validate that the application matches the metadata in the source repository.
+// returns a *string when successful
 func (m *WinGetApp) GetManifestHash()(*string) {
     val, err := m.GetBackingStore().Get("manifestHash")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *WinGetApp) GetManifestHash()(*string) {
     return nil
 }
 // GetPackageIdentifier gets the packageIdentifier property value. The PackageIdentifier from the WinGet source repository REST API. This also maps to the Id when using the WinGet client command line application. Required at creation time, cannot be modified on existing objects.
+// returns a *string when successful
 func (m *WinGetApp) GetPackageIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("packageIdentifier")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *WinGetApp) SetPackageIdentifier(value *string)() {
         panic(err)
     }
 }
-// WinGetAppable 
 type WinGetAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

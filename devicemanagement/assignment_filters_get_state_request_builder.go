@@ -18,28 +18,29 @@ type AssignmentFiltersGetStateRequestBuilderGetRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewAssignmentFiltersGetStateRequestBuilderInternal instantiates a new GetStateRequestBuilder and sets the default values.
+// NewAssignmentFiltersGetStateRequestBuilderInternal instantiates a new AssignmentFiltersGetStateRequestBuilder and sets the default values.
 func NewAssignmentFiltersGetStateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AssignmentFiltersGetStateRequestBuilder) {
     m := &AssignmentFiltersGetStateRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/assignmentFilters/getState()", pathParameters),
     }
     return m
 }
-// NewAssignmentFiltersGetStateRequestBuilder instantiates a new GetStateRequestBuilder and sets the default values.
+// NewAssignmentFiltersGetStateRequestBuilder instantiates a new AssignmentFiltersGetStateRequestBuilder and sets the default values.
 func NewAssignmentFiltersGetStateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AssignmentFiltersGetStateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAssignmentFiltersGetStateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getState
+// returns a AssignmentFilterStateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AssignmentFiltersGetStateRequestBuilder) Get(ctx context.Context, requestConfiguration *AssignmentFiltersGetStateRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterStateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAssignmentFilterStateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *AssignmentFiltersGetStateRequestBuilder) Get(ctx context.Context, reque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentFilterStateable), nil
 }
 // ToGetRequestInformation invoke function getState
+// returns a *RequestInformation when successful
 func (m *AssignmentFiltersGetStateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AssignmentFiltersGetStateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +63,7 @@ func (m *AssignmentFiltersGetStateRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AssignmentFiltersGetStateRequestBuilder when successful
 func (m *AssignmentFiltersGetStateRequestBuilder) WithUrl(rawUrl string)(*AssignmentFiltersGetStateRequestBuilder) {
     return NewAssignmentFiltersGetStateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

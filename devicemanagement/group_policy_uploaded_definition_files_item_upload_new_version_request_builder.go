@@ -17,28 +17,28 @@ type GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilderInternal instantiates a new UploadNewVersionRequestBuilder and sets the default values.
+// NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilderInternal instantiates a new GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder and sets the default values.
 func NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder) {
     m := &GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyUploadedDefinitionFiles/{groupPolicyUploadedDefinitionFile%2Did}/uploadNewVersion", pathParameters),
     }
     return m
 }
-// NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder instantiates a new UploadNewVersionRequestBuilder and sets the default values.
+// NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder instantiates a new GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder and sets the default values.
 func NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action uploadNewVersion
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder) Post(ctx context.Context, body GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBodyable, requestConfiguration *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder) P
     return nil
 }
 // ToPostRequestInformation invoke action uploadNewVersion
+// returns a *RequestInformation when successful
 func (m *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder) ToPostRequestInformation(ctx context.Context, body GroupPolicyUploadedDefinitionFilesItemUploadNewVersionPostRequestBodyable, requestConfiguration *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder) T
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder when successful
 func (m *GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder) WithUrl(rawUrl string)(*GroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder) {
     return NewGroupPolicyUploadedDefinitionFilesItemUploadNewVersionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

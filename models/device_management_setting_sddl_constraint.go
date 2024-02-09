@@ -8,7 +8,7 @@ import (
 type DeviceManagementSettingSddlConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementSettingSddlConstraint instantiates a new deviceManagementSettingSddlConstraint and sets the default values.
+// NewDeviceManagementSettingSddlConstraint instantiates a new DeviceManagementSettingSddlConstraint and sets the default values.
 func NewDeviceManagementSettingSddlConstraint()(*DeviceManagementSettingSddlConstraint) {
     m := &DeviceManagementSettingSddlConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -18,10 +18,12 @@ func NewDeviceManagementSettingSddlConstraint()(*DeviceManagementSettingSddlCons
     return m
 }
 // CreateDeviceManagementSettingSddlConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingSddlConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementSettingSddlConstraint(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingSddlConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *DeviceManagementSettingSddlConstraint) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// DeviceManagementSettingSddlConstraintable 
 type DeviceManagementSettingSddlConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

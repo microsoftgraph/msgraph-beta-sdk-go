@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrant 
 type MeetingRegistrant struct {
     MeetingRegistrantBase
 }
-// NewMeetingRegistrant instantiates a new meetingRegistrant and sets the default values.
+// NewMeetingRegistrant instantiates a new MeetingRegistrant and sets the default values.
 func NewMeetingRegistrant()(*MeetingRegistrant) {
     m := &MeetingRegistrant{
         MeetingRegistrantBase: *NewMeetingRegistrantBase(),
@@ -19,10 +18,12 @@ func NewMeetingRegistrant()(*MeetingRegistrant) {
     return m
 }
 // CreateMeetingRegistrantFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMeetingRegistrantFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMeetingRegistrant(), nil
 }
 // GetCustomQuestionAnswers gets the customQuestionAnswers property value. The registrant's answer to custom questions.
+// returns a []CustomQuestionAnswerable when successful
 func (m *MeetingRegistrant) GetCustomQuestionAnswers()([]CustomQuestionAnswerable) {
     val, err := m.GetBackingStore().Get("customQuestionAnswers")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *MeetingRegistrant) GetCustomQuestionAnswers()([]CustomQuestionAnswerabl
     return nil
 }
 // GetEmail gets the email property value. The email address of the registrant.
+// returns a *string when successful
 func (m *MeetingRegistrant) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *MeetingRegistrant) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MeetingRegistrantBase.GetFieldDeserializers()
     res["customQuestionAnswers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +119,7 @@ func (m *MeetingRegistrant) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFirstName gets the firstName property value. The first name of the registrant.
+// returns a *string when successful
 func (m *MeetingRegistrant) GetFirstName()(*string) {
     val, err := m.GetBackingStore().Get("firstName")
     if err != nil {
@@ -127,6 +131,7 @@ func (m *MeetingRegistrant) GetFirstName()(*string) {
     return nil
 }
 // GetLastName gets the lastName property value. The last name of the registrant.
+// returns a *string when successful
 func (m *MeetingRegistrant) GetLastName()(*string) {
     val, err := m.GetBackingStore().Get("lastName")
     if err != nil {
@@ -138,6 +143,7 @@ func (m *MeetingRegistrant) GetLastName()(*string) {
     return nil
 }
 // GetRegistrationDateTime gets the registrationDateTime property value. Time in UTC when the registrant registers for the meeting. Read-only.
+// returns a *Time when successful
 func (m *MeetingRegistrant) GetRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("registrationDateTime")
     if err != nil {
@@ -149,6 +155,7 @@ func (m *MeetingRegistrant) GetRegistrationDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetStatus gets the status property value. The registration status of the registrant. Read-only.
+// returns a *MeetingRegistrantStatus when successful
 func (m *MeetingRegistrant) GetStatus()(*MeetingRegistrantStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -252,7 +259,6 @@ func (m *MeetingRegistrant) SetStatus(value *MeetingRegistrantStatus)() {
         panic(err)
     }
 }
-// MeetingRegistrantable 
 type MeetingRegistrantable interface {
     MeetingRegistrantBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

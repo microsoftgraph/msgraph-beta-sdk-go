@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementAlertCollectionResponse 
 type UnifiedRoleManagementAlertCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnifiedRoleManagementAlertCollectionResponse instantiates a new unifiedRoleManagementAlertCollectionResponse and sets the default values.
+// NewUnifiedRoleManagementAlertCollectionResponse instantiates a new UnifiedRoleManagementAlertCollectionResponse and sets the default values.
 func NewUnifiedRoleManagementAlertCollectionResponse()(*UnifiedRoleManagementAlertCollectionResponse) {
     m := &UnifiedRoleManagementAlertCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUnifiedRoleManagementAlertCollectionResponse()(*UnifiedRoleManagementAle
     return m
 }
 // CreateUnifiedRoleManagementAlertCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleManagementAlertCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementAlertCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleManagementAlertCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UnifiedRoleManagementAlertCollectionResponse) GetFieldDeserializers()(m
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UnifiedRoleManagementAlertable when successful
 func (m *UnifiedRoleManagementAlertCollectionResponse) GetValue()([]UnifiedRoleManagementAlertable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UnifiedRoleManagementAlertCollectionResponse) SetValue(value []UnifiedR
         panic(err)
     }
 }
-// UnifiedRoleManagementAlertCollectionResponseable 
 type UnifiedRoleManagementAlertCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

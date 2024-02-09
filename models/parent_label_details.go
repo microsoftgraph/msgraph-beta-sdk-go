@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ParentLabelDetails 
 type ParentLabelDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewParentLabelDetails instantiates a new parentLabelDetails and sets the default values.
+// NewParentLabelDetails instantiates a new ParentLabelDetails and sets the default values.
 func NewParentLabelDetails()(*ParentLabelDetails) {
     m := &ParentLabelDetails{
     }
@@ -19,6 +18,7 @@ func NewParentLabelDetails()(*ParentLabelDetails) {
     return m
 }
 // CreateParentLabelDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateParentLabelDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateParentLabelDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewParentLabelDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ParentLabelDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -53,10 +54,12 @@ func (m *ParentLabelDetails) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ParentLabelDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetColor gets the color property value. The color that the user interface should display for the label, if configured.
+// returns a *string when successful
 func (m *ParentLabelDetails) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *ParentLabelDetails) GetColor()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The admin-defined description for the label.
+// returns a *string when successful
 func (m *ParentLabelDetails) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *ParentLabelDetails) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ParentLabelDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -174,6 +179,7 @@ func (m *ParentLabelDetails) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetId gets the id property value. The label ID is a globally unique identifier (GUID).
+// returns a *string when successful
 func (m *ParentLabelDetails) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -185,6 +191,7 @@ func (m *ParentLabelDetails) GetId()(*string) {
     return nil
 }
 // GetIsActive gets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in user interfaces.
+// returns a *bool when successful
 func (m *ParentLabelDetails) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -196,6 +203,7 @@ func (m *ParentLabelDetails) GetIsActive()(*bool) {
     return nil
 }
 // GetName gets the name property value. The plaintext name of the label.
+// returns a *string when successful
 func (m *ParentLabelDetails) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -207,6 +215,7 @@ func (m *ParentLabelDetails) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ParentLabelDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -218,6 +227,7 @@ func (m *ParentLabelDetails) GetOdataType()(*string) {
     return nil
 }
 // GetParent gets the parent property value. The parent property
+// returns a ParentLabelDetailsable when successful
 func (m *ParentLabelDetails) GetParent()(ParentLabelDetailsable) {
     val, err := m.GetBackingStore().Get("parent")
     if err != nil {
@@ -229,6 +239,7 @@ func (m *ParentLabelDetails) GetParent()(ParentLabelDetailsable) {
     return nil
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
+// returns a *int32 when successful
 func (m *ParentLabelDetails) GetSensitivity()(*int32) {
     val, err := m.GetBackingStore().Get("sensitivity")
     if err != nil {
@@ -240,6 +251,7 @@ func (m *ParentLabelDetails) GetSensitivity()(*int32) {
     return nil
 }
 // GetTooltip gets the tooltip property value. The tooltip that should be displayed for the label in a user interface.
+// returns a *string when successful
 func (m *ParentLabelDetails) GetTooltip()(*string) {
     val, err := m.GetBackingStore().Get("tooltip")
     if err != nil {
@@ -388,7 +400,6 @@ func (m *ParentLabelDetails) SetTooltip(value *string)() {
         panic(err)
     }
 }
-// ParentLabelDetailsable 
 type ParentLabelDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

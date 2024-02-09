@@ -8,7 +8,7 @@ import (
 type WindowsPhone81StoreApp struct {
     MobileApp
 }
-// NewWindowsPhone81StoreApp instantiates a new windowsPhone81StoreApp and sets the default values.
+// NewWindowsPhone81StoreApp instantiates a new WindowsPhone81StoreApp and sets the default values.
 func NewWindowsPhone81StoreApp()(*WindowsPhone81StoreApp) {
     m := &WindowsPhone81StoreApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewWindowsPhone81StoreApp()(*WindowsPhone81StoreApp) {
     return m
 }
 // CreateWindowsPhone81StoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsPhone81StoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPhone81StoreApp(), nil
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Windows Phone 8.1 app store URL.
+// returns a *string when successful
 func (m *WindowsPhone81StoreApp) GetAppStoreUrl()(*string) {
     val, err := m.GetBackingStore().Get("appStoreUrl")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsPhone81StoreApp) GetAppStoreUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsPhone81StoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["appStoreUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *WindowsPhone81StoreApp) SetAppStoreUrl(value *string)() {
         panic(err)
     }
 }
-// WindowsPhone81StoreAppable 
 type WindowsPhone81StoreAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

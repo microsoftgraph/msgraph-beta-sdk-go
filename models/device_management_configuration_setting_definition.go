@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSettingDefinition 
 type DeviceManagementConfigurationSettingDefinition struct {
     Entity
 }
-// NewDeviceManagementConfigurationSettingDefinition instantiates a new deviceManagementConfigurationSettingDefinition and sets the default values.
+// NewDeviceManagementConfigurationSettingDefinition instantiates a new DeviceManagementConfigurationSettingDefinition and sets the default values.
 func NewDeviceManagementConfigurationSettingDefinition()(*DeviceManagementConfigurationSettingDefinition) {
     m := &DeviceManagementConfigurationSettingDefinition{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewDeviceManagementConfigurationSettingDefinition()(*DeviceManagementConfig
     return m
 }
 // CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -50,6 +50,7 @@ func CreateDeviceManagementConfigurationSettingDefinitionFromDiscriminatorValue(
     return NewDeviceManagementConfigurationSettingDefinition(), nil
 }
 // GetAccessTypes gets the accessTypes property value. The accessTypes property
+// returns a *DeviceManagementConfigurationSettingAccessTypes when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetAccessTypes()(*DeviceManagementConfigurationSettingAccessTypes) {
     val, err := m.GetBackingStore().Get("accessTypes")
     if err != nil {
@@ -61,6 +62,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetAccessTypes()(*Devic
     return nil
 }
 // GetApplicability gets the applicability property value. Details which device setting is applicable on
+// returns a DeviceManagementConfigurationSettingApplicabilityable when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetApplicability()(DeviceManagementConfigurationSettingApplicabilityable) {
     val, err := m.GetBackingStore().Get("applicability")
     if err != nil {
@@ -72,6 +74,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetApplicability()(Devi
     return nil
 }
 // GetBaseUri gets the baseUri property value. Base CSP Path
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetBaseUri()(*string) {
     val, err := m.GetBackingStore().Get("baseUri")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetBaseUri()(*string) {
     return nil
 }
 // GetCategoryId gets the categoryId property value. Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetCategoryId()(*string) {
     val, err := m.GetBackingStore().Get("categoryId")
     if err != nil {
@@ -94,6 +98,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetCategoryId()(*string
     return nil
 }
 // GetDescription gets the description property value. Description of the item
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -105,6 +110,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetDescription()(*strin
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the item
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -116,6 +122,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetDisplayName()(*strin
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -319,6 +326,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
     return res
 }
 // GetHelpText gets the helpText property value. Help text of the item
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetHelpText()(*string) {
     val, err := m.GetBackingStore().Get("helpText")
     if err != nil {
@@ -330,6 +338,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetHelpText()(*string) 
     return nil
 }
 // GetInfoUrls gets the infoUrls property value. List of links more info for the setting can be found at
+// returns a []string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetInfoUrls()([]string) {
     val, err := m.GetBackingStore().Get("infoUrls")
     if err != nil {
@@ -341,6 +350,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetInfoUrls()([]string)
     return nil
 }
 // GetKeywords gets the keywords property value. Tokens which to search settings on
+// returns a []string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetKeywords()([]string) {
     val, err := m.GetBackingStore().Get("keywords")
     if err != nil {
@@ -352,6 +362,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetKeywords()([]string)
     return nil
 }
 // GetName gets the name property value. Name of the item
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -363,6 +374,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetName()(*string) {
     return nil
 }
 // GetOccurrence gets the occurrence property value. Indicates whether the setting is required or not
+// returns a DeviceManagementConfigurationSettingOccurrenceable when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetOccurrence()(DeviceManagementConfigurationSettingOccurrenceable) {
     val, err := m.GetBackingStore().Get("occurrence")
     if err != nil {
@@ -374,6 +386,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetOccurrence()(DeviceM
     return nil
 }
 // GetOffsetUri gets the offsetUri property value. Offset CSP Path from Base
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetOffsetUri()(*string) {
     val, err := m.GetBackingStore().Get("offsetUri")
     if err != nil {
@@ -385,6 +398,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetOffsetUri()(*string)
     return nil
 }
 // GetReferredSettingInformationList gets the referredSettingInformationList property value. List of referred setting information.
+// returns a []DeviceManagementConfigurationReferredSettingInformationable when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetReferredSettingInformationList()([]DeviceManagementConfigurationReferredSettingInformationable) {
     val, err := m.GetBackingStore().Get("referredSettingInformationList")
     if err != nil {
@@ -396,6 +410,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetReferredSettingInfor
     return nil
 }
 // GetRootDefinitionId gets the rootDefinitionId property value. Root setting definition if the setting is a child setting.
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetRootDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("rootDefinitionId")
     if err != nil {
@@ -407,6 +422,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetRootDefinitionId()(*
     return nil
 }
 // GetSettingUsage gets the settingUsage property value. Supported setting types
+// returns a *DeviceManagementConfigurationSettingUsage when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
     val, err := m.GetBackingStore().Get("settingUsage")
     if err != nil {
@@ -418,6 +434,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetSettingUsage()(*Devi
     return nil
 }
 // GetUxBehavior gets the uxBehavior property value. Setting control type representation in the UX
+// returns a *DeviceManagementConfigurationControlType when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetUxBehavior()(*DeviceManagementConfigurationControlType) {
     val, err := m.GetBackingStore().Get("uxBehavior")
     if err != nil {
@@ -429,6 +446,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetUxBehavior()(*Device
     return nil
 }
 // GetVersion gets the version property value. Item Version
+// returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -440,6 +458,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetVersion()(*string) {
     return nil
 }
 // GetVisibility gets the visibility property value. Supported setting types
+// returns a *DeviceManagementConfigurationSettingVisibility when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetVisibility()(*DeviceManagementConfigurationSettingVisibility) {
     val, err := m.GetBackingStore().Get("visibility")
     if err != nil {
@@ -702,7 +721,6 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetVisibility(value *De
         panic(err)
     }
 }
-// DeviceManagementConfigurationSettingDefinitionable 
 type DeviceManagementConfigurationSettingDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

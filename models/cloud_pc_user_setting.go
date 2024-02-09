@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcUserSetting 
 type CloudPcUserSetting struct {
     Entity
 }
-// NewCloudPcUserSetting instantiates a new cloudPcUserSetting and sets the default values.
+// NewCloudPcUserSetting instantiates a new CloudPcUserSetting and sets the default values.
 func NewCloudPcUserSetting()(*CloudPcUserSetting) {
     m := &CloudPcUserSetting{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCloudPcUserSetting()(*CloudPcUserSetting) {
     return m
 }
 // CreateCloudPcUserSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcUserSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcUserSetting(), nil
 }
 // GetAssignments gets the assignments property value. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
+// returns a []CloudPcUserSettingAssignmentable when successful
 func (m *CloudPcUserSetting) GetAssignments()([]CloudPcUserSettingAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CloudPcUserSetting) GetAssignments()([]CloudPcUserSettingAssignmentable
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+// returns a *Time when successful
 func (m *CloudPcUserSetting) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *CloudPcUserSetting) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetCrossRegionDisasterRecoverySetting gets the crossRegionDisasterRecoverySetting property value. The crossRegionDisasterRecoverySetting property
+// returns a CloudPcCrossRegionDisasterRecoverySettingable when successful
 func (m *CloudPcUserSetting) GetCrossRegionDisasterRecoverySetting()(CloudPcCrossRegionDisasterRecoverySettingable) {
     val, err := m.GetBackingStore().Get("crossRegionDisasterRecoverySetting")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *CloudPcUserSetting) GetCrossRegionDisasterRecoverySetting()(CloudPcCros
     return nil
 }
 // GetDisplayName gets the displayName property value. The setting name displayed in the user interface.
+// returns a *string when successful
 func (m *CloudPcUserSetting) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *CloudPcUserSetting) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -166,6 +171,7 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last date and time the setting was modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+// returns a *Time when successful
 func (m *CloudPcUserSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -177,6 +183,7 @@ func (m *CloudPcUserSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetLocalAdminEnabled gets the localAdminEnabled property value. Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.
+// returns a *bool when successful
 func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("localAdminEnabled")
     if err != nil {
@@ -188,6 +195,7 @@ func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
     return nil
 }
 // GetResetEnabled gets the resetEnabled property value. Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.
+// returns a *bool when successful
 func (m *CloudPcUserSetting) GetResetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("resetEnabled")
     if err != nil {
@@ -199,6 +207,7 @@ func (m *CloudPcUserSetting) GetResetEnabled()(*bool) {
     return nil
 }
 // GetRestorePointSetting gets the restorePointSetting property value. Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
+// returns a CloudPcRestorePointSettingable when successful
 func (m *CloudPcUserSetting) GetRestorePointSetting()(CloudPcRestorePointSettingable) {
     val, err := m.GetBackingStore().Get("restorePointSetting")
     if err != nil {
@@ -210,6 +219,7 @@ func (m *CloudPcUserSetting) GetRestorePointSetting()(CloudPcRestorePointSetting
     return nil
 }
 // GetSelfServiceEnabled gets the selfServiceEnabled property value. The selfServiceEnabled property
+// returns a *bool when successful
 func (m *CloudPcUserSetting) GetSelfServiceEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("selfServiceEnabled")
     if err != nil {
@@ -351,7 +361,6 @@ func (m *CloudPcUserSetting) SetSelfServiceEnabled(value *bool)() {
         panic(err)
     }
 }
-// CloudPcUserSettingable 
 type CloudPcUserSettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

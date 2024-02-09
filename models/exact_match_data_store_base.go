@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchDataStoreBase 
 type ExactMatchDataStoreBase struct {
     Entity
 }
-// NewExactMatchDataStoreBase instantiates a new exactMatchDataStoreBase and sets the default values.
+// NewExactMatchDataStoreBase instantiates a new ExactMatchDataStoreBase and sets the default values.
 func NewExactMatchDataStoreBase()(*ExactMatchDataStoreBase) {
     m := &ExactMatchDataStoreBase{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewExactMatchDataStoreBase()(*ExactMatchDataStoreBase) {
     return m
 }
 // CreateExactMatchDataStoreBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExactMatchDataStoreBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +39,7 @@ func CreateExactMatchDataStoreBaseFromDiscriminatorValue(parseNode i878a80d2330e
     return NewExactMatchDataStoreBase(), nil
 }
 // GetColumns gets the columns property value. The columns property
+// returns a []ExactDataMatchStoreColumnable when successful
 func (m *ExactMatchDataStoreBase) GetColumns()([]ExactDataMatchStoreColumnable) {
     val, err := m.GetBackingStore().Get("columns")
     if err != nil {
@@ -50,6 +51,7 @@ func (m *ExactMatchDataStoreBase) GetColumns()([]ExactDataMatchStoreColumnable) 
     return nil
 }
 // GetDataLastUpdatedDateTime gets the dataLastUpdatedDateTime property value. The dataLastUpdatedDateTime property
+// returns a *Time when successful
 func (m *ExactMatchDataStoreBase) GetDataLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dataLastUpdatedDateTime")
     if err != nil {
@@ -61,6 +63,7 @@ func (m *ExactMatchDataStoreBase) GetDataLastUpdatedDateTime()(*i336074805fc8539
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *ExactMatchDataStoreBase) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -72,6 +75,7 @@ func (m *ExactMatchDataStoreBase) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *ExactMatchDataStoreBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -83,6 +87,7 @@ func (m *ExactMatchDataStoreBase) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExactMatchDataStoreBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["columns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -199,7 +204,6 @@ func (m *ExactMatchDataStoreBase) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// ExactMatchDataStoreBaseable 
 type ExactMatchDataStoreBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

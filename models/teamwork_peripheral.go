@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkPeripheral 
 type TeamworkPeripheral struct {
     Entity
 }
-// NewTeamworkPeripheral instantiates a new teamworkPeripheral and sets the default values.
+// NewTeamworkPeripheral instantiates a new TeamworkPeripheral and sets the default values.
 func NewTeamworkPeripheral()(*TeamworkPeripheral) {
     m := &TeamworkPeripheral{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTeamworkPeripheral()(*TeamworkPeripheral) {
     return m
 }
 // CreateTeamworkPeripheralFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkPeripheralFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkPeripheral(), nil
 }
 // GetDisplayName gets the displayName property value. Display name for the peripheral.
+// returns a *string when successful
 func (m *TeamworkPeripheral) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *TeamworkPeripheral) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkPeripheral) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,6 +68,7 @@ func (m *TeamworkPeripheral) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetProductId gets the productId property value. The product ID of the device. Each product from a vendor has its own ID.
+// returns a *string when successful
 func (m *TeamworkPeripheral) GetProductId()(*string) {
     val, err := m.GetBackingStore().Get("productId")
     if err != nil {
@@ -77,6 +80,7 @@ func (m *TeamworkPeripheral) GetProductId()(*string) {
     return nil
 }
 // GetVendorId gets the vendorId property value. The unique identifier for the vendor of the device. Each vendor has a unique ID.
+// returns a *string when successful
 func (m *TeamworkPeripheral) GetVendorId()(*string) {
     val, err := m.GetBackingStore().Get("vendorId")
     if err != nil {
@@ -134,7 +138,6 @@ func (m *TeamworkPeripheral) SetVendorId(value *string)() {
         panic(err)
     }
 }
-// TeamworkPeripheralable 
 type TeamworkPeripheralable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

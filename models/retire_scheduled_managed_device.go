@@ -11,7 +11,7 @@ type RetireScheduledManagedDevice struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewRetireScheduledManagedDevice instantiates a new retireScheduledManagedDevice and sets the default values.
+// NewRetireScheduledManagedDevice instantiates a new RetireScheduledManagedDevice and sets the default values.
 func NewRetireScheduledManagedDevice()(*RetireScheduledManagedDevice) {
     m := &RetireScheduledManagedDevice{
     }
@@ -20,10 +20,12 @@ func NewRetireScheduledManagedDevice()(*RetireScheduledManagedDevice) {
     return m
 }
 // CreateRetireScheduledManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRetireScheduledManagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRetireScheduledManagedDevice(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RetireScheduledManagedDevice) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +38,12 @@ func (m *RetireScheduledManagedDevice) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *RetireScheduledManagedDevice) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetComplianceState gets the complianceState property value. The complianceState property
+// returns a *ComplianceStatus when successful
 func (m *RetireScheduledManagedDevice) GetComplianceState()(*ComplianceStatus) {
     val, err := m.GetBackingStore().Get("complianceState")
     if err != nil {
@@ -51,6 +55,7 @@ func (m *RetireScheduledManagedDevice) GetComplianceState()(*ComplianceStatus) {
     return nil
 }
 // GetDeviceCompliancePolicyId gets the deviceCompliancePolicyId property value. Device Compliance PolicyId
+// returns a *string when successful
 func (m *RetireScheduledManagedDevice) GetDeviceCompliancePolicyId()(*string) {
     val, err := m.GetBackingStore().Get("deviceCompliancePolicyId")
     if err != nil {
@@ -62,6 +67,7 @@ func (m *RetireScheduledManagedDevice) GetDeviceCompliancePolicyId()(*string) {
     return nil
 }
 // GetDeviceCompliancePolicyName gets the deviceCompliancePolicyName property value. Device Compliance Policy Name
+// returns a *string when successful
 func (m *RetireScheduledManagedDevice) GetDeviceCompliancePolicyName()(*string) {
     val, err := m.GetBackingStore().Get("deviceCompliancePolicyName")
     if err != nil {
@@ -73,6 +79,7 @@ func (m *RetireScheduledManagedDevice) GetDeviceCompliancePolicyName()(*string) 
     return nil
 }
 // GetDeviceType gets the deviceType property value. Device type.
+// returns a *DeviceType when successful
 func (m *RetireScheduledManagedDevice) GetDeviceType()(*DeviceType) {
     val, err := m.GetBackingStore().Get("deviceType")
     if err != nil {
@@ -84,6 +91,7 @@ func (m *RetireScheduledManagedDevice) GetDeviceType()(*DeviceType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["complianceState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -215,6 +223,7 @@ func (m *RetireScheduledManagedDevice) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetId gets the id property value. Key of the entity.
+// returns a *string when successful
 func (m *RetireScheduledManagedDevice) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -226,6 +235,7 @@ func (m *RetireScheduledManagedDevice) GetId()(*string) {
     return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Managed DeviceId
+// returns a *string when successful
 func (m *RetireScheduledManagedDevice) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -237,6 +247,7 @@ func (m *RetireScheduledManagedDevice) GetManagedDeviceId()(*string) {
     return nil
 }
 // GetManagedDeviceName gets the managedDeviceName property value. Managed Device Name
+// returns a *string when successful
 func (m *RetireScheduledManagedDevice) GetManagedDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceName")
     if err != nil {
@@ -248,6 +259,7 @@ func (m *RetireScheduledManagedDevice) GetManagedDeviceName()(*string) {
     return nil
 }
 // GetManagementAgent gets the managementAgent property value. Management agent type.
+// returns a *ManagementAgentType when successful
 func (m *RetireScheduledManagedDevice) GetManagementAgent()(*ManagementAgentType) {
     val, err := m.GetBackingStore().Get("managementAgent")
     if err != nil {
@@ -259,6 +271,7 @@ func (m *RetireScheduledManagedDevice) GetManagementAgent()(*ManagementAgentType
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *RetireScheduledManagedDevice) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -270,6 +283,7 @@ func (m *RetireScheduledManagedDevice) GetOdataType()(*string) {
     return nil
 }
 // GetOwnerType gets the ownerType property value. Owner type of device.
+// returns a *ManagedDeviceOwnerType when successful
 func (m *RetireScheduledManagedDevice) GetOwnerType()(*ManagedDeviceOwnerType) {
     val, err := m.GetBackingStore().Get("ownerType")
     if err != nil {
@@ -281,6 +295,7 @@ func (m *RetireScheduledManagedDevice) GetOwnerType()(*ManagedDeviceOwnerType) {
     return nil
 }
 // GetRetireAfterDateTime gets the retireAfterDateTime property value. Managed Device Retire After DateTime
+// returns a *Time when successful
 func (m *RetireScheduledManagedDevice) GetRetireAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("retireAfterDateTime")
     if err != nil {
@@ -292,6 +307,7 @@ func (m *RetireScheduledManagedDevice) GetRetireAfterDateTime()(*i336074805fc853
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+// returns a []string when successful
 func (m *RetireScheduledManagedDevice) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -483,7 +499,6 @@ func (m *RetireScheduledManagedDevice) SetRoleScopeTagIds(value []string)() {
         panic(err)
     }
 }
-// RetireScheduledManagedDeviceable 
 type RetireScheduledManagedDeviceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

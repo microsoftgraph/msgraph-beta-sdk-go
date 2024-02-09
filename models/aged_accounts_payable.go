@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AgedAccountsPayable 
 type AgedAccountsPayable struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAgedAccountsPayable instantiates a new agedAccountsPayable and sets the default values.
+// NewAgedAccountsPayable instantiates a new AgedAccountsPayable and sets the default values.
 func NewAgedAccountsPayable()(*AgedAccountsPayable) {
     m := &AgedAccountsPayable{
     }
@@ -20,10 +19,12 @@ func NewAgedAccountsPayable()(*AgedAccountsPayable) {
     return m
 }
 // CreateAgedAccountsPayableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAgedAccountsPayableFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAgedAccountsPayable(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AgedAccountsPayable) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *AgedAccountsPayable) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAgedAsOfDate gets the agedAsOfDate property value. The agedAsOfDate property
+// returns a *DateOnly when successful
 func (m *AgedAccountsPayable) GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("agedAsOfDate")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *AgedAccountsPayable) GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f487e
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AgedAccountsPayable) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBalanceDue gets the balanceDue property value. The balanceDue property
+// returns a *float64 when successful
 func (m *AgedAccountsPayable) GetBalanceDue()(*float64) {
     val, err := m.GetBackingStore().Get("balanceDue")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *AgedAccountsPayable) GetBalanceDue()(*float64) {
     return nil
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
+// returns a *string when successful
 func (m *AgedAccountsPayable) GetCurrencyCode()(*string) {
     val, err := m.GetBackingStore().Get("currencyCode")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *AgedAccountsPayable) GetCurrencyCode()(*string) {
     return nil
 }
 // GetCurrentAmount gets the currentAmount property value. The currentAmount property
+// returns a *float64 when successful
 func (m *AgedAccountsPayable) GetCurrentAmount()(*float64) {
     val, err := m.GetBackingStore().Get("currentAmount")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *AgedAccountsPayable) GetCurrentAmount()(*float64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AgedAccountsPayable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["agedAsOfDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -219,6 +226,7 @@ func (m *AgedAccountsPayable) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *AgedAccountsPayable) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -230,6 +238,7 @@ func (m *AgedAccountsPayable) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0c
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *AgedAccountsPayable) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -241,6 +250,7 @@ func (m *AgedAccountsPayable) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AgedAccountsPayable) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -252,6 +262,7 @@ func (m *AgedAccountsPayable) GetOdataType()(*string) {
     return nil
 }
 // GetPeriod1Amount gets the period1Amount property value. The period1Amount property
+// returns a *float64 when successful
 func (m *AgedAccountsPayable) GetPeriod1Amount()(*float64) {
     val, err := m.GetBackingStore().Get("period1Amount")
     if err != nil {
@@ -263,6 +274,7 @@ func (m *AgedAccountsPayable) GetPeriod1Amount()(*float64) {
     return nil
 }
 // GetPeriod2Amount gets the period2Amount property value. The period2Amount property
+// returns a *float64 when successful
 func (m *AgedAccountsPayable) GetPeriod2Amount()(*float64) {
     val, err := m.GetBackingStore().Get("period2Amount")
     if err != nil {
@@ -274,6 +286,7 @@ func (m *AgedAccountsPayable) GetPeriod2Amount()(*float64) {
     return nil
 }
 // GetPeriod3Amount gets the period3Amount property value. The period3Amount property
+// returns a *float64 when successful
 func (m *AgedAccountsPayable) GetPeriod3Amount()(*float64) {
     val, err := m.GetBackingStore().Get("period3Amount")
     if err != nil {
@@ -285,6 +298,7 @@ func (m *AgedAccountsPayable) GetPeriod3Amount()(*float64) {
     return nil
 }
 // GetPeriodLengthFilter gets the periodLengthFilter property value. The periodLengthFilter property
+// returns a *string when successful
 func (m *AgedAccountsPayable) GetPeriodLengthFilter()(*string) {
     val, err := m.GetBackingStore().Get("periodLengthFilter")
     if err != nil {
@@ -296,6 +310,7 @@ func (m *AgedAccountsPayable) GetPeriodLengthFilter()(*string) {
     return nil
 }
 // GetVendorId gets the vendorId property value. The vendorId property
+// returns a *string when successful
 func (m *AgedAccountsPayable) GetVendorId()(*string) {
     val, err := m.GetBackingStore().Get("vendorId")
     if err != nil {
@@ -307,6 +322,7 @@ func (m *AgedAccountsPayable) GetVendorId()(*string) {
     return nil
 }
 // GetVendorNumber gets the vendorNumber property value. The vendorNumber property
+// returns a *string when successful
 func (m *AgedAccountsPayable) GetVendorNumber()(*string) {
     val, err := m.GetBackingStore().Get("vendorNumber")
     if err != nil {
@@ -507,7 +523,6 @@ func (m *AgedAccountsPayable) SetVendorNumber(value *string)() {
         panic(err)
     }
 }
-// AgedAccountsPayableable 
 type AgedAccountsPayableable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

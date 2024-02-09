@@ -8,7 +8,7 @@ import (
 type AndroidWorkProfilePkcsCertificateProfile struct {
     AndroidWorkProfileCertificateProfileBase
 }
-// NewAndroidWorkProfilePkcsCertificateProfile instantiates a new androidWorkProfilePkcsCertificateProfile and sets the default values.
+// NewAndroidWorkProfilePkcsCertificateProfile instantiates a new AndroidWorkProfilePkcsCertificateProfile and sets the default values.
 func NewAndroidWorkProfilePkcsCertificateProfile()(*AndroidWorkProfilePkcsCertificateProfile) {
     m := &AndroidWorkProfilePkcsCertificateProfile{
         AndroidWorkProfileCertificateProfileBase: *NewAndroidWorkProfileCertificateProfileBase(),
@@ -18,10 +18,12 @@ func NewAndroidWorkProfilePkcsCertificateProfile()(*AndroidWorkProfilePkcsCertif
     return m
 }
 // CreateAndroidWorkProfilePkcsCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidWorkProfilePkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidWorkProfilePkcsCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
+// returns a *CertificateStore when successful
 func (m *AndroidWorkProfilePkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidWorkProfilePkcsCertificateProfile) GetCertificateStore()(*Certif
     return nil
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS Certificate Template Name
+// returns a *string when successful
 func (m *AndroidWorkProfilePkcsCertificateProfile) GetCertificateTemplateName()(*string) {
     val, err := m.GetBackingStore().Get("certificateTemplateName")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidWorkProfilePkcsCertificateProfile) GetCertificateTemplateName()(
     return nil
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS Certification Authority
+// returns a *string when successful
 func (m *AndroidWorkProfilePkcsCertificateProfile) GetCertificationAuthority()(*string) {
     val, err := m.GetBackingStore().Get("certificationAuthority")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidWorkProfilePkcsCertificateProfile) GetCertificationAuthority()(*
     return nil
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS Certification Authority Name
+// returns a *string when successful
 func (m *AndroidWorkProfilePkcsCertificateProfile) GetCertificationAuthorityName()(*string) {
     val, err := m.GetBackingStore().Get("certificationAuthorityName")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AndroidWorkProfilePkcsCertificateProfile) GetCertificationAuthorityName
     return nil
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
+// returns a []CustomSubjectAlternativeNameable when successful
 func (m *AndroidWorkProfilePkcsCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
     val, err := m.GetBackingStore().Get("customSubjectAlternativeNames")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AndroidWorkProfilePkcsCertificateProfile) GetCustomSubjectAlternativeNa
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidWorkProfilePkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidWorkProfileCertificateProfileBase.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -174,6 +181,7 @@ func (m *AndroidWorkProfilePkcsCertificateProfile) GetFieldDeserializers()(map[s
     return res
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+// returns a []ManagedDeviceCertificateStateable when successful
 func (m *AndroidWorkProfilePkcsCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
     if err != nil {
@@ -185,6 +193,7 @@ func (m *AndroidWorkProfilePkcsCertificateProfile) GetManagedDeviceCertificateSt
     return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
+// returns a *string when successful
 func (m *AndroidWorkProfilePkcsCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
     if err != nil {
@@ -196,6 +205,7 @@ func (m *AndroidWorkProfilePkcsCertificateProfile) GetSubjectAlternativeNameForm
     return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
+// returns a *string when successful
 func (m *AndroidWorkProfilePkcsCertificateProfile) GetSubjectNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectNameFormatString")
     if err != nil {
@@ -331,7 +341,6 @@ func (m *AndroidWorkProfilePkcsCertificateProfile) SetSubjectNameFormatString(va
         panic(err)
     }
 }
-// AndroidWorkProfilePkcsCertificateProfileable 
 type AndroidWorkProfilePkcsCertificateProfileable interface {
     AndroidWorkProfileCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

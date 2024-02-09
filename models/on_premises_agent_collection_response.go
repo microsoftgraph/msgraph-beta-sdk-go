@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesAgentCollectionResponse 
 type OnPremisesAgentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOnPremisesAgentCollectionResponse instantiates a new onPremisesAgentCollectionResponse and sets the default values.
+// NewOnPremisesAgentCollectionResponse instantiates a new OnPremisesAgentCollectionResponse and sets the default values.
 func NewOnPremisesAgentCollectionResponse()(*OnPremisesAgentCollectionResponse) {
     m := &OnPremisesAgentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewOnPremisesAgentCollectionResponse()(*OnPremisesAgentCollectionResponse) 
     return m
 }
 // CreateOnPremisesAgentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesAgentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesAgentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesAgentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *OnPremisesAgentCollectionResponse) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []OnPremisesAgentable when successful
 func (m *OnPremisesAgentCollectionResponse) GetValue()([]OnPremisesAgentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *OnPremisesAgentCollectionResponse) SetValue(value []OnPremisesAgentable
         panic(err)
     }
 }
-// OnPremisesAgentCollectionResponseable 
 type OnPremisesAgentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

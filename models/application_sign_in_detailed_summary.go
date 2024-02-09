@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApplicationSignInDetailedSummary 
 type ApplicationSignInDetailedSummary struct {
     Entity
 }
-// NewApplicationSignInDetailedSummary instantiates a new applicationSignInDetailedSummary and sets the default values.
+// NewApplicationSignInDetailedSummary instantiates a new ApplicationSignInDetailedSummary and sets the default values.
 func NewApplicationSignInDetailedSummary()(*ApplicationSignInDetailedSummary) {
     m := &ApplicationSignInDetailedSummary{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewApplicationSignInDetailedSummary()(*ApplicationSignInDetailedSummary) {
     return m
 }
 // CreateApplicationSignInDetailedSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApplicationSignInDetailedSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplicationSignInDetailedSummary(), nil
 }
 // GetAggregatedEventDateTime gets the aggregatedEventDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *ApplicationSignInDetailedSummary) GetAggregatedEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("aggregatedEventDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ApplicationSignInDetailedSummary) GetAggregatedEventDateTime()(*i336074
     return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. Name of the application that the user signed in to.
+// returns a *string when successful
 func (m *ApplicationSignInDetailedSummary) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ApplicationSignInDetailedSummary) GetAppDisplayName()(*string) {
     return nil
 }
 // GetAppId gets the appId property value. ID of the application that the user signed in to.
+// returns a *string when successful
 func (m *ApplicationSignInDetailedSummary) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ApplicationSignInDetailedSummary) GetAppId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["aggregatedEventDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +113,7 @@ func (m *ApplicationSignInDetailedSummary) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetSignInCount gets the signInCount property value. Count of sign-ins made by the application.
+// returns a *int64 when successful
 func (m *ApplicationSignInDetailedSummary) GetSignInCount()(*int64) {
     val, err := m.GetBackingStore().Get("signInCount")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *ApplicationSignInDetailedSummary) GetSignInCount()(*int64) {
     return nil
 }
 // GetStatus gets the status property value. Details of the sign-in status.
+// returns a SignInStatusable when successful
 func (m *ApplicationSignInDetailedSummary) GetStatus()(SignInStatusable) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -203,7 +209,6 @@ func (m *ApplicationSignInDetailedSummary) SetStatus(value SignInStatusable)() {
         panic(err)
     }
 }
-// ApplicationSignInDetailedSummaryable 
 type ApplicationSignInDetailedSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

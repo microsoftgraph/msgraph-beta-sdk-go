@@ -8,7 +8,7 @@ import (
 type SecurityConfigurationTask struct {
     DeviceAppManagementTask
 }
-// NewSecurityConfigurationTask instantiates a new securityConfigurationTask and sets the default values.
+// NewSecurityConfigurationTask instantiates a new SecurityConfigurationTask and sets the default values.
 func NewSecurityConfigurationTask()(*SecurityConfigurationTask) {
     m := &SecurityConfigurationTask{
         DeviceAppManagementTask: *NewDeviceAppManagementTask(),
@@ -18,10 +18,12 @@ func NewSecurityConfigurationTask()(*SecurityConfigurationTask) {
     return m
 }
 // CreateSecurityConfigurationTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecurityConfigurationTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityConfigurationTask(), nil
 }
 // GetApplicablePlatform gets the applicablePlatform property value. The endpoint security configuration applicable platform.
+// returns a *EndpointSecurityConfigurationApplicablePlatform when successful
 func (m *SecurityConfigurationTask) GetApplicablePlatform()(*EndpointSecurityConfigurationApplicablePlatform) {
     val, err := m.GetBackingStore().Get("applicablePlatform")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *SecurityConfigurationTask) GetApplicablePlatform()(*EndpointSecurityCon
     return nil
 }
 // GetEndpointSecurityPolicy gets the endpointSecurityPolicy property value. The endpoint security policy type.
+// returns a *EndpointSecurityConfigurationType when successful
 func (m *SecurityConfigurationTask) GetEndpointSecurityPolicy()(*EndpointSecurityConfigurationType) {
     val, err := m.GetBackingStore().Get("endpointSecurityPolicy")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *SecurityConfigurationTask) GetEndpointSecurityPolicy()(*EndpointSecurit
     return nil
 }
 // GetEndpointSecurityPolicyProfile gets the endpointSecurityPolicyProfile property value. The endpoint security policy profile type.
+// returns a *EndpointSecurityConfigurationProfileType when successful
 func (m *SecurityConfigurationTask) GetEndpointSecurityPolicyProfile()(*EndpointSecurityConfigurationProfileType) {
     val, err := m.GetBackingStore().Get("endpointSecurityPolicyProfile")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *SecurityConfigurationTask) GetEndpointSecurityPolicyProfile()(*Endpoint
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecurityConfigurationTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceAppManagementTask.GetFieldDeserializers()
     res["applicablePlatform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -142,6 +147,7 @@ func (m *SecurityConfigurationTask) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetInsights gets the insights property value. Information about the mitigation.
+// returns a *string when successful
 func (m *SecurityConfigurationTask) GetInsights()(*string) {
     val, err := m.GetBackingStore().Get("insights")
     if err != nil {
@@ -153,6 +159,7 @@ func (m *SecurityConfigurationTask) GetInsights()(*string) {
     return nil
 }
 // GetIntendedSettings gets the intendedSettings property value. The intended settings and their values.
+// returns a []KeyValuePairable when successful
 func (m *SecurityConfigurationTask) GetIntendedSettings()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("intendedSettings")
     if err != nil {
@@ -164,6 +171,7 @@ func (m *SecurityConfigurationTask) GetIntendedSettings()([]KeyValuePairable) {
     return nil
 }
 // GetManagedDeviceCount gets the managedDeviceCount property value. The number of vulnerable devices. Valid values 0 to 65536
+// returns a *int32 when successful
 func (m *SecurityConfigurationTask) GetManagedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("managedDeviceCount")
     if err != nil {
@@ -175,6 +183,7 @@ func (m *SecurityConfigurationTask) GetManagedDeviceCount()(*int32) {
     return nil
 }
 // GetManagedDevices gets the managedDevices property value. The vulnerable managed devices.
+// returns a []VulnerableManagedDeviceable when successful
 func (m *SecurityConfigurationTask) GetManagedDevices()([]VulnerableManagedDeviceable) {
     val, err := m.GetBackingStore().Get("managedDevices")
     if err != nil {
@@ -299,7 +308,6 @@ func (m *SecurityConfigurationTask) SetManagedDevices(value []VulnerableManagedD
         panic(err)
     }
 }
-// SecurityConfigurationTaskable 
 type SecurityConfigurationTaskable interface {
     DeviceAppManagementTaskable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -26,28 +26,29 @@ type AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCount
     // Request query parameters
     QueryParameters *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilderGetQueryParameters
 }
-// NewAuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewAuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilderInternal instantiates a new AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder and sets the default values.
 func NewAuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder) {
     m := &AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/conditions/applications/includeApplications/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/conditions/applications/includeApplications/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewAuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewAuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder instantiates a new AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder and sets the default values.
 func NewAuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsC
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsC
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder when successful
 func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder) WithUrl(rawUrl string)(*AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder) {
     return NewAuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

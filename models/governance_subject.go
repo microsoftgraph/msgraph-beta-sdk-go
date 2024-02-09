@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceSubject 
 type GovernanceSubject struct {
     Entity
 }
-// NewGovernanceSubject instantiates a new governanceSubject and sets the default values.
+// NewGovernanceSubject instantiates a new GovernanceSubject and sets the default values.
 func NewGovernanceSubject()(*GovernanceSubject) {
     m := &GovernanceSubject{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewGovernanceSubject()(*GovernanceSubject) {
     return m
 }
 // CreateGovernanceSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGovernanceSubjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceSubject(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of the subject.
+// returns a *string when successful
 func (m *GovernanceSubject) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *GovernanceSubject) GetDisplayName()(*string) {
     return nil
 }
 // GetEmail gets the email property value. The email address of the user subject. If the subject is in other types, it's empty.
+// returns a *string when successful
 func (m *GovernanceSubject) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *GovernanceSubject) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +90,7 @@ func (m *GovernanceSubject) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetPrincipalName gets the principalName property value. The principal name of the user subject. If the subject is in other types, it's empty.
+// returns a *string when successful
 func (m *GovernanceSubject) GetPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("principalName")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *GovernanceSubject) GetPrincipalName()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type of the subject. The value can be User, Group, and ServicePrincipal.
+// returns a *string when successful
 func (m *GovernanceSubject) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *GovernanceSubject) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// GovernanceSubjectable 
 type GovernanceSubjectable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

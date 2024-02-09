@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchJobBase 
 type ExactMatchJobBase struct {
     Entity
 }
-// NewExactMatchJobBase instantiates a new exactMatchJobBase and sets the default values.
+// NewExactMatchJobBase instantiates a new ExactMatchJobBase and sets the default values.
 func NewExactMatchJobBase()(*ExactMatchJobBase) {
     m := &ExactMatchJobBase{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewExactMatchJobBase()(*ExactMatchJobBase) {
     return m
 }
 // CreateExactMatchJobBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExactMatchJobBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +43,7 @@ func CreateExactMatchJobBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewExactMatchJobBase(), nil
 }
 // GetCompletionDateTime gets the completionDateTime property value. The completionDateTime property
+// returns a *Time when successful
 func (m *ExactMatchJobBase) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completionDateTime")
     if err != nil {
@@ -54,6 +55,7 @@ func (m *ExactMatchJobBase) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetCreationDateTime gets the creationDateTime property value. The creationDateTime property
+// returns a *Time when successful
 func (m *ExactMatchJobBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
     if err != nil {
@@ -65,6 +67,7 @@ func (m *ExactMatchJobBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetError gets the error property value. The error property
+// returns a ClassificationErrorable when successful
 func (m *ExactMatchJobBase) GetError()(ClassificationErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -76,6 +79,7 @@ func (m *ExactMatchJobBase) GetError()(ClassificationErrorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExactMatchJobBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["completionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -131,6 +135,7 @@ func (m *ExactMatchJobBase) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// returns a *Time when successful
 func (m *ExactMatchJobBase) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -142,6 +147,7 @@ func (m *ExactMatchJobBase) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
+// returns a *Time when successful
 func (m *ExactMatchJobBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -225,7 +231,6 @@ func (m *ExactMatchJobBase) SetStartDateTime(value *i336074805fc853987abe6f7fe3a
         panic(err)
     }
 }
-// ExactMatchJobBaseable 
 type ExactMatchJobBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SingleResourceGcpPermissionsDefinition 
 type SingleResourceGcpPermissionsDefinition struct {
     PermissionsDefinition
 }
-// NewSingleResourceGcpPermissionsDefinition instantiates a new singleResourceGcpPermissionsDefinition and sets the default values.
+// NewSingleResourceGcpPermissionsDefinition instantiates a new SingleResourceGcpPermissionsDefinition and sets the default values.
 func NewSingleResourceGcpPermissionsDefinition()(*SingleResourceGcpPermissionsDefinition) {
     m := &SingleResourceGcpPermissionsDefinition{
         PermissionsDefinition: *NewPermissionsDefinition(),
@@ -18,10 +17,12 @@ func NewSingleResourceGcpPermissionsDefinition()(*SingleResourceGcpPermissionsDe
     return m
 }
 // CreateSingleResourceGcpPermissionsDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSingleResourceGcpPermissionsDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSingleResourceGcpPermissionsDefinition(), nil
 }
 // GetActionInfo gets the actionInfo property value. The actionInfo property
+// returns a GcpPermissionsDefinitionActionable when successful
 func (m *SingleResourceGcpPermissionsDefinition) GetActionInfo()(GcpPermissionsDefinitionActionable) {
     val, err := m.GetBackingStore().Get("actionInfo")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *SingleResourceGcpPermissionsDefinition) GetActionInfo()(GcpPermissionsD
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SingleResourceGcpPermissionsDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PermissionsDefinition.GetFieldDeserializers()
     res["actionInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *SingleResourceGcpPermissionsDefinition) GetFieldDeserializers()(map[str
     return res
 }
 // GetResourceId gets the resourceId property value. Identifier for the resource.
+// returns a *string when successful
 func (m *SingleResourceGcpPermissionsDefinition) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *SingleResourceGcpPermissionsDefinition) SetResourceId(value *string)() 
         panic(err)
     }
 }
-// SingleResourceGcpPermissionsDefinitionable 
 type SingleResourceGcpPermissionsDefinitionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PermissionsDefinitionable

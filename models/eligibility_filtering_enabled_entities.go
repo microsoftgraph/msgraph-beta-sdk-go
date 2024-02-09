@@ -1,24 +1,26 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type EligibilityFilteringEnabledEntities int
 
 const (
-    NONE_ELIGIBILITYFILTERINGENABLEDENTITIES EligibilityFilteringEnabledEntities = iota
-    SWAPREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES
-    OFFERSHIFTREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES
-    UNKNOWNFUTUREVALUE_ELIGIBILITYFILTERINGENABLEDENTITIES
-    TIMEOFFREASON_ELIGIBILITYFILTERINGENABLEDENTITIES
+    NONE_ELIGIBILITYFILTERINGENABLEDENTITIES = 1
+    SWAPREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES = 2
+    OFFERSHIFTREQUEST_ELIGIBILITYFILTERINGENABLEDENTITIES = 4
+    UNKNOWNFUTUREVALUE_ELIGIBILITYFILTERINGENABLEDENTITIES = 8
+    TIMEOFFREASON_ELIGIBILITYFILTERINGENABLEDENTITIES = 16
 )
 
 func (i EligibilityFilteringEnabledEntities) String() string {
     var values []string
-    for p := EligibilityFilteringEnabledEntities(1); p <= TIMEOFFREASON_ELIGIBILITYFILTERINGENABLEDENTITIES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "swapRequest", "offerShiftRequest", "unknownFutureValue", "timeOffReason"}[p])
+    options := []string{"none", "swapRequest", "offerShiftRequest", "unknownFutureValue", "timeOffReason"}
+    for p := 0; p < 5; p++ {
+        mantis := EligibilityFilteringEnabledEntities(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

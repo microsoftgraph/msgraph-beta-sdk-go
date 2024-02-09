@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RoleScopeTagCollectionResponse 
 type RoleScopeTagCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRoleScopeTagCollectionResponse instantiates a new roleScopeTagCollectionResponse and sets the default values.
+// NewRoleScopeTagCollectionResponse instantiates a new RoleScopeTagCollectionResponse and sets the default values.
 func NewRoleScopeTagCollectionResponse()(*RoleScopeTagCollectionResponse) {
     m := &RoleScopeTagCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewRoleScopeTagCollectionResponse()(*RoleScopeTagCollectionResponse) {
     return m
 }
 // CreateRoleScopeTagCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleScopeTagCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleScopeTagCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleScopeTagCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *RoleScopeTagCollectionResponse) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []RoleScopeTagable when successful
 func (m *RoleScopeTagCollectionResponse) GetValue()([]RoleScopeTagable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *RoleScopeTagCollectionResponse) SetValue(value []RoleScopeTagable)() {
         panic(err)
     }
 }
-// RoleScopeTagCollectionResponseable 
 type RoleScopeTagCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

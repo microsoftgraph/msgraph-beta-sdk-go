@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DailyInactiveUsersMetric 
 type DailyInactiveUsersMetric struct {
     InactiveUsersMetricBase
 }
-// NewDailyInactiveUsersMetric instantiates a new dailyInactiveUsersMetric and sets the default values.
+// NewDailyInactiveUsersMetric instantiates a new DailyInactiveUsersMetric and sets the default values.
 func NewDailyInactiveUsersMetric()(*DailyInactiveUsersMetric) {
     m := &DailyInactiveUsersMetric{
         InactiveUsersMetricBase: *NewInactiveUsersMetricBase(),
@@ -16,10 +15,12 @@ func NewDailyInactiveUsersMetric()(*DailyInactiveUsersMetric) {
     return m
 }
 // CreateDailyInactiveUsersMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDailyInactiveUsersMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDailyInactiveUsersMetric(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DailyInactiveUsersMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InactiveUsersMetricBase.GetFieldDeserializers()
     res["inactive1DayCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *DailyInactiveUsersMetric) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetInactive1DayCount gets the inactive1DayCount property value. The inactive1DayCount property
+// returns a *int64 when successful
 func (m *DailyInactiveUsersMetric) GetInactive1DayCount()(*int64) {
     val, err := m.GetBackingStore().Get("inactive1DayCount")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *DailyInactiveUsersMetric) SetInactive1DayCount(value *int64)() {
         panic(err)
     }
 }
-// DailyInactiveUsersMetricable 
 type DailyInactiveUsersMetricable interface {
     InactiveUsersMetricBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

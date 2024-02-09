@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// RuleCondition 
 type RuleCondition struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewRuleCondition instantiates a new ruleCondition and sets the default values.
+// NewRuleCondition instantiates a new RuleCondition and sets the default values.
 func NewRuleCondition()(*RuleCondition) {
     m := &RuleCondition{
     }
@@ -19,10 +18,12 @@ func NewRuleCondition()(*RuleCondition) {
     return m
 }
 // CreateRuleConditionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRuleConditionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRuleCondition(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RuleCondition) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *RuleCondition) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAggregation gets the aggregation property value. The built-in aggregation method for the rule condition. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
+// returns a *AggregationType when successful
 func (m *RuleCondition) GetAggregation()(*AggregationType) {
     val, err := m.GetBackingStore().Get("aggregation")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *RuleCondition) GetAggregation()(*AggregationType) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *RuleCondition) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConditionCategory gets the conditionCategory property value. The property that the rule condition monitors. Possible values are:  provisionFailures, imageUploadFailures, azureNetworkConnectionCheckFailures, cloudPcInGracePeriod, frontlineInsufficientLicenses, cloudPcConnectionErrors, cloudPcHostHealthCheckFailures, cloudPcZoneOutage, unknownFutureValue.
+// returns a *ConditionCategory when successful
 func (m *RuleCondition) GetConditionCategory()(*ConditionCategory) {
     val, err := m.GetBackingStore().Get("conditionCategory")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *RuleCondition) GetConditionCategory()(*ConditionCategory) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RuleCondition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["aggregation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +131,7 @@ func (m *RuleCondition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *RuleCondition) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *RuleCondition) GetOdataType()(*string) {
     return nil
 }
 // GetOperator gets the operator property value. The built-in operator for the rule condition. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.
+// returns a *OperatorType when successful
 func (m *RuleCondition) GetOperator()(*OperatorType) {
     val, err := m.GetBackingStore().Get("operator")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *RuleCondition) GetOperator()(*OperatorType) {
     return nil
 }
 // GetRelationshipType gets the relationshipType property value. The relationship type.  Possible values are: and, or.
+// returns a *RelationshipType when successful
 func (m *RuleCondition) GetRelationshipType()(*RelationshipType) {
     val, err := m.GetBackingStore().Get("relationshipType")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *RuleCondition) GetRelationshipType()(*RelationshipType) {
     return nil
 }
 // GetThresholdValue gets the thresholdValue property value. The threshold value of the alert condition. The threshold value can be a number in string form or string like 'WestUS'.
+// returns a *string when successful
 func (m *RuleCondition) GetThresholdValue()(*string) {
     val, err := m.GetBackingStore().Get("thresholdValue")
     if err != nil {
@@ -272,7 +281,6 @@ func (m *RuleCondition) SetThresholdValue(value *string)() {
         panic(err)
     }
 }
-// RuleConditionable 
 type RuleConditionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

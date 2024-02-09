@@ -40,6 +40,7 @@ type ItemConnectorGroupsItemApplicationsRequestBuilderGetRequestConfiguration st
     QueryParameters *ItemConnectorGroupsItemApplicationsRequestBuilderGetQueryParameters
 }
 // ByApplicationId provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
+// returns a *ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder when successful
 func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) ByApplicationId(applicationId string)(*ItemConnectorGroupsItemApplicationsApplicationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) ByApplicationId(appl
     }
     return NewItemConnectorGroupsItemApplicationsApplicationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemConnectorGroupsItemApplicationsRequestBuilderInternal instantiates a new ApplicationsRequestBuilder and sets the default values.
+// NewItemConnectorGroupsItemApplicationsRequestBuilderInternal instantiates a new ItemConnectorGroupsItemApplicationsRequestBuilder and sets the default values.
 func NewItemConnectorGroupsItemApplicationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsItemApplicationsRequestBuilder) {
     m := &ItemConnectorGroupsItemApplicationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemConnectorGroupsItemApplicationsRequestBuilder instantiates a new ApplicationsRequestBuilder and sets the default values.
+// NewItemConnectorGroupsItemApplicationsRequestBuilder instantiates a new ItemConnectorGroupsItemApplicationsRequestBuilder and sets the default values.
 func NewItemConnectorGroupsItemApplicationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupsItemApplicationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemConnectorGroupsItemApplicationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemConnectorGroupsItemApplicationsCountRequestBuilder when successful
 func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) Count()(*ItemConnectorGroupsItemApplicationsCountRequestBuilder) {
     return NewItemConnectorGroupsItemApplicationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get applications from onPremisesPublishingProfiles
+// returns a ApplicationCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorGroupsItemApplicationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateApplicationCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) Get(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationCollectionResponseable), nil
 }
 // ToGetRequestInformation get applications from onPremisesPublishingProfiles
+// returns a *RequestInformation when successful
 func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupsItemApplicationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemConnectorGroupsItemApplicationsRequestBuilder when successful
 func (m *ItemConnectorGroupsItemApplicationsRequestBuilder) WithUrl(rawUrl string)(*ItemConnectorGroupsItemApplicationsRequestBuilder) {
     return NewItemConnectorGroupsItemApplicationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

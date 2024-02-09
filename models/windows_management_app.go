@@ -8,7 +8,7 @@ import (
 type WindowsManagementApp struct {
     Entity
 }
-// NewWindowsManagementApp instantiates a new windowsManagementApp and sets the default values.
+// NewWindowsManagementApp instantiates a new WindowsManagementApp and sets the default values.
 func NewWindowsManagementApp()(*WindowsManagementApp) {
     m := &WindowsManagementApp{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewWindowsManagementApp()(*WindowsManagementApp) {
     return m
 }
 // CreateWindowsManagementAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsManagementAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsManagementApp(), nil
 }
 // GetAvailableVersion gets the availableVersion property value. Windows management app available version.
+// returns a *string when successful
 func (m *WindowsManagementApp) GetAvailableVersion()(*string) {
     val, err := m.GetBackingStore().Get("availableVersion")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *WindowsManagementApp) GetAvailableVersion()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["availableVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,6 +85,7 @@ func (m *WindowsManagementApp) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetHealthStates gets the healthStates property value. The list of health states for installed Windows management app.
+// returns a []WindowsManagementAppHealthStateable when successful
 func (m *WindowsManagementApp) GetHealthStates()([]WindowsManagementAppHealthStateable) {
     val, err := m.GetBackingStore().Get("healthStates")
     if err != nil {
@@ -93,6 +97,7 @@ func (m *WindowsManagementApp) GetHealthStates()([]WindowsManagementAppHealthSta
     return nil
 }
 // GetManagedInstaller gets the managedInstaller property value. ManagedInstallerStatus
+// returns a *ManagedInstallerStatus when successful
 func (m *WindowsManagementApp) GetManagedInstaller()(*ManagedInstallerStatus) {
     val, err := m.GetBackingStore().Get("managedInstaller")
     if err != nil {
@@ -104,6 +109,7 @@ func (m *WindowsManagementApp) GetManagedInstaller()(*ManagedInstallerStatus) {
     return nil
 }
 // GetManagedInstallerConfiguredDateTime gets the managedInstallerConfiguredDateTime property value. Managed Installer Configured Date Time
+// returns a *string when successful
 func (m *WindowsManagementApp) GetManagedInstallerConfiguredDateTime()(*string) {
     val, err := m.GetBackingStore().Get("managedInstallerConfiguredDateTime")
     if err != nil {
@@ -181,7 +187,6 @@ func (m *WindowsManagementApp) SetManagedInstallerConfiguredDateTime(value *stri
         panic(err)
     }
 }
-// WindowsManagementAppable 
 type WindowsManagementAppable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

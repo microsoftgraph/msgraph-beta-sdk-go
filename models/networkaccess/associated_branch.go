@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AssociatedBranch 
 type AssociatedBranch struct {
     Association
 }
-// NewAssociatedBranch instantiates a new associatedBranch and sets the default values.
+// NewAssociatedBranch instantiates a new AssociatedBranch and sets the default values.
 func NewAssociatedBranch()(*AssociatedBranch) {
     m := &AssociatedBranch{
         Association: *NewAssociation(),
@@ -18,10 +17,12 @@ func NewAssociatedBranch()(*AssociatedBranch) {
     return m
 }
 // CreateAssociatedBranchFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAssociatedBranchFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssociatedBranch(), nil
 }
 // GetBranchId gets the branchId property value. Identifier for the branch.
+// returns a *string when successful
 func (m *AssociatedBranch) GetBranchId()(*string) {
     val, err := m.GetBackingStore().Get("branchId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AssociatedBranch) GetBranchId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AssociatedBranch) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Association.GetFieldDeserializers()
     res["branchId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *AssociatedBranch) SetBranchId(value *string)() {
         panic(err)
     }
 }
-// AssociatedBranchable 
 type AssociatedBranchable interface {
     Associationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

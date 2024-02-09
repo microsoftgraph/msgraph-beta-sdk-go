@@ -8,7 +8,7 @@ import (
 type WindowsCertificateProfileBase struct {
     DeviceConfiguration
 }
-// NewWindowsCertificateProfileBase instantiates a new windowsCertificateProfileBase and sets the default values.
+// NewWindowsCertificateProfileBase instantiates a new WindowsCertificateProfileBase and sets the default values.
 func NewWindowsCertificateProfileBase()(*WindowsCertificateProfileBase) {
     m := &WindowsCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewWindowsCertificateProfileBase()(*WindowsCertificateProfileBase) {
     return m
 }
 // CreateWindowsCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -50,6 +51,7 @@ func CreateWindowsCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80
     return NewWindowsCertificateProfileBase(), nil
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
+// returns a *CertificateValidityPeriodScale when successful
 func (m *WindowsCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     val, err := m.GetBackingStore().Get("certificateValidityPeriodScale")
     if err != nil {
@@ -61,6 +63,7 @@ func (m *WindowsCertificateProfileBase) GetCertificateValidityPeriodScale()(*Cer
     return nil
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period
+// returns a *int32 when successful
 func (m *WindowsCertificateProfileBase) GetCertificateValidityPeriodValue()(*int32) {
     val, err := m.GetBackingStore().Get("certificateValidityPeriodValue")
     if err != nil {
@@ -72,6 +75,7 @@ func (m *WindowsCertificateProfileBase) GetCertificateValidityPeriodValue()(*int
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsCertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["certificateValidityPeriodScale"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +141,7 @@ func (m *WindowsCertificateProfileBase) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
+// returns a *KeyStorageProviderOption when successful
 func (m *WindowsCertificateProfileBase) GetKeyStorageProvider()(*KeyStorageProviderOption) {
     val, err := m.GetBackingStore().Get("keyStorageProvider")
     if err != nil {
@@ -148,6 +153,7 @@ func (m *WindowsCertificateProfileBase) GetKeyStorageProvider()(*KeyStorageProvi
     return nil
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
+// returns a *int32 when successful
 func (m *WindowsCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("renewalThresholdPercentage")
     if err != nil {
@@ -159,6 +165,7 @@ func (m *WindowsCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) 
     return nil
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// returns a *SubjectAlternativeNameType when successful
 func (m *WindowsCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
     if err != nil {
@@ -170,6 +177,7 @@ func (m *WindowsCertificateProfileBase) GetSubjectAlternativeNameType()(*Subject
     return nil
 }
 // GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options.
+// returns a *SubjectNameFormat when successful
 func (m *WindowsCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
     val, err := m.GetBackingStore().Get("subjectNameFormat")
     if err != nil {
@@ -270,7 +278,6 @@ func (m *WindowsCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameF
         panic(err)
     }
 }
-// WindowsCertificateProfileBaseable 
 type WindowsCertificateProfileBaseable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CompanyCollectionResponse 
 type CompanyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCompanyCollectionResponse instantiates a new companyCollectionResponse and sets the default values.
+// NewCompanyCollectionResponse instantiates a new CompanyCollectionResponse and sets the default values.
 func NewCompanyCollectionResponse()(*CompanyCollectionResponse) {
     m := &CompanyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCompanyCollectionResponse()(*CompanyCollectionResponse) {
     return m
 }
 // CreateCompanyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCompanyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCompanyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CompanyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CompanyCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Companyable when successful
 func (m *CompanyCollectionResponse) GetValue()([]Companyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CompanyCollectionResponse) SetValue(value []Companyable)() {
         panic(err)
     }
 }
-// CompanyCollectionResponseable 
 type CompanyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

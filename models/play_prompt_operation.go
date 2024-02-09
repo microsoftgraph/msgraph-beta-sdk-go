@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlayPromptOperation 
 type PlayPromptOperation struct {
     CommsOperation
 }
-// NewPlayPromptOperation instantiates a new playPromptOperation and sets the default values.
+// NewPlayPromptOperation instantiates a new PlayPromptOperation and sets the default values.
 func NewPlayPromptOperation()(*PlayPromptOperation) {
     m := &PlayPromptOperation{
         CommsOperation: *NewCommsOperation(),
@@ -16,10 +15,12 @@ func NewPlayPromptOperation()(*PlayPromptOperation) {
     return m
 }
 // CreatePlayPromptOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlayPromptOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlayPromptOperation(), nil
 }
 // GetCompletionReason gets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
+// returns a *PlayPromptCompletionReason when successful
 func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptCompletionReason) {
     val, err := m.GetBackingStore().Get("completionReason")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptCompletionReason)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlayPromptOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
     res["completionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,7 +69,6 @@ func (m *PlayPromptOperation) SetCompletionReason(value *PlayPromptCompletionRea
         panic(err)
     }
 }
-// PlayPromptOperationable 
 type PlayPromptOperationable interface {
     CommsOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

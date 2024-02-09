@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// EmployeeExperience 
 type EmployeeExperience struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEmployeeExperience instantiates a new employeeExperience and sets the default values.
+// NewEmployeeExperience instantiates a new EmployeeExperience and sets the default values.
 func NewEmployeeExperience()(*EmployeeExperience) {
     m := &EmployeeExperience{
     }
@@ -19,10 +18,12 @@ func NewEmployeeExperience()(*EmployeeExperience) {
     return m
 }
 // CreateEmployeeExperienceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEmployeeExperienceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmployeeExperience(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *EmployeeExperience) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *EmployeeExperience) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *EmployeeExperience) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCommunities gets the communities property value. A collection of communities in Viva Engage.
+// returns a []Communityable when successful
 func (m *EmployeeExperience) GetCommunities()([]Communityable) {
     val, err := m.GetBackingStore().Get("communities")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *EmployeeExperience) GetCommunities()([]Communityable) {
     return nil
 }
 // GetEngagementAsyncOperations gets the engagementAsyncOperations property value. A collection of long-running, asynchronous operations related to Viva Engage.
+// returns a []EngagementAsyncOperationable when successful
 func (m *EmployeeExperience) GetEngagementAsyncOperations()([]EngagementAsyncOperationable) {
     val, err := m.GetBackingStore().Get("engagementAsyncOperations")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *EmployeeExperience) GetEngagementAsyncOperations()([]EngagementAsyncOpe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmployeeExperience) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["communities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -150,6 +155,7 @@ func (m *EmployeeExperience) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetGoals gets the goals property value. Represents a collection of goals in a Viva Goals organization.
+// returns a Goalsable when successful
 func (m *EmployeeExperience) GetGoals()(Goalsable) {
     val, err := m.GetBackingStore().Get("goals")
     if err != nil {
@@ -161,6 +167,7 @@ func (m *EmployeeExperience) GetGoals()(Goalsable) {
     return nil
 }
 // GetLearningCourseActivities gets the learningCourseActivities property value. The learningCourseActivities property
+// returns a []LearningCourseActivityable when successful
 func (m *EmployeeExperience) GetLearningCourseActivities()([]LearningCourseActivityable) {
     val, err := m.GetBackingStore().Get("learningCourseActivities")
     if err != nil {
@@ -172,6 +179,7 @@ func (m *EmployeeExperience) GetLearningCourseActivities()([]LearningCourseActiv
     return nil
 }
 // GetLearningProviders gets the learningProviders property value. A collection of learning providers.
+// returns a []LearningProviderable when successful
 func (m *EmployeeExperience) GetLearningProviders()([]LearningProviderable) {
     val, err := m.GetBackingStore().Get("learningProviders")
     if err != nil {
@@ -183,6 +191,7 @@ func (m *EmployeeExperience) GetLearningProviders()([]LearningProviderable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *EmployeeExperience) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -316,7 +325,6 @@ func (m *EmployeeExperience) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// EmployeeExperienceable 
 type EmployeeExperienceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomAccessPackageWorkflowExtension 
 type CustomAccessPackageWorkflowExtension struct {
     CustomCalloutExtension
 }
-// NewCustomAccessPackageWorkflowExtension instantiates a new customAccessPackageWorkflowExtension and sets the default values.
+// NewCustomAccessPackageWorkflowExtension instantiates a new CustomAccessPackageWorkflowExtension and sets the default values.
 func NewCustomAccessPackageWorkflowExtension()(*CustomAccessPackageWorkflowExtension) {
     m := &CustomAccessPackageWorkflowExtension{
         CustomCalloutExtension: *NewCustomCalloutExtension(),
@@ -19,10 +18,12 @@ func NewCustomAccessPackageWorkflowExtension()(*CustomAccessPackageWorkflowExten
     return m
 }
 // CreateCustomAccessPackageWorkflowExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomAccessPackageWorkflowExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomAccessPackageWorkflowExtension(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *CustomAccessPackageWorkflowExtension) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *CustomAccessPackageWorkflowExtension) GetCreatedDateTime()(*i336074805f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomAccessPackageWorkflowExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomCalloutExtension.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,6 +61,7 @@ func (m *CustomAccessPackageWorkflowExtension) GetFieldDeserializers()(map[strin
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *CustomAccessPackageWorkflowExtension) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *CustomAccessPackageWorkflowExtension) SetLastModifiedDateTime(value *i3
         panic(err)
     }
 }
-// CustomAccessPackageWorkflowExtensionable 
 type CustomAccessPackageWorkflowExtensionable interface {
     CustomCalloutExtensionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

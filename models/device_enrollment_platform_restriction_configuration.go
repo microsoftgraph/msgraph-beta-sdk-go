@@ -8,7 +8,7 @@ import (
 type DeviceEnrollmentPlatformRestrictionConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceEnrollmentPlatformRestrictionConfiguration instantiates a new deviceEnrollmentPlatformRestrictionConfiguration and sets the default values.
+// NewDeviceEnrollmentPlatformRestrictionConfiguration instantiates a new DeviceEnrollmentPlatformRestrictionConfiguration and sets the default values.
 func NewDeviceEnrollmentPlatformRestrictionConfiguration()(*DeviceEnrollmentPlatformRestrictionConfiguration) {
     m := &DeviceEnrollmentPlatformRestrictionConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
@@ -18,10 +18,12 @@ func NewDeviceEnrollmentPlatformRestrictionConfiguration()(*DeviceEnrollmentPlat
     return m
 }
 // CreateDeviceEnrollmentPlatformRestrictionConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceEnrollmentPlatformRestrictionConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEnrollmentPlatformRestrictionConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
     res["platformRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetFieldDeserializers
     return res
 }
 // GetPlatformRestriction gets the platformRestriction property value. Restrictions based on platform, platform operating system version, and device ownership
+// returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetPlatformRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("platformRestriction")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetPlatformRestrictio
     return nil
 }
 // GetPlatformType gets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
+// returns a *EnrollmentRestrictionPlatformType when successful
 func (m *DeviceEnrollmentPlatformRestrictionConfiguration) GetPlatformType()(*EnrollmentRestrictionPlatformType) {
     val, err := m.GetBackingStore().Get("platformType")
     if err != nil {
@@ -103,7 +107,6 @@ func (m *DeviceEnrollmentPlatformRestrictionConfiguration) SetPlatformType(value
         panic(err)
     }
 }
-// DeviceEnrollmentPlatformRestrictionConfigurationable 
 type DeviceEnrollmentPlatformRestrictionConfigurationable interface {
     DeviceEnrollmentConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

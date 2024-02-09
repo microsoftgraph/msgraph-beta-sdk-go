@@ -42,31 +42,32 @@ type ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderPatch
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Approve provides operations to call the approve method.
+// returns a *ElevationRequestsItemApproveRequestBuilder when successful
 func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) Approve()(*ElevationRequestsItemApproveRequestBuilder) {
     return NewElevationRequestsItemApproveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderInternal instantiates a new PrivilegeManagementElevationRequestItemRequestBuilder and sets the default values.
+// NewElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderInternal instantiates a new ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder and sets the default values.
 func NewElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) {
     m := &ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder instantiates a new PrivilegeManagementElevationRequestItemRequestBuilder and sets the default values.
+// NewElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder instantiates a new ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder and sets the default values.
 func NewElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property elevationRequests for deviceManagement
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -75,18 +76,20 @@ func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder)
     return nil
 }
 // Deny provides operations to call the deny method.
+// returns a *ElevationRequestsItemDenyRequestBuilder when successful
 func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) Deny()(*ElevationRequestsItemDenyRequestBuilder) {
     return NewElevationRequestsItemDenyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list of elevation requests
+// returns a PrivilegeManagementElevationRequestable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegeManagementElevationRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrivilegeManagementElevationRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -98,18 +101,20 @@ func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegeManagementElevationRequestable), nil
 }
 // GetAllElevationRequests provides operations to call the getAllElevationRequests method.
+// returns a *ElevationRequestsItemGetAllElevationRequestsRequestBuilder when successful
 func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) GetAllElevationRequests()(*ElevationRequestsItemGetAllElevationRequestsRequestBuilder) {
     return NewElevationRequestsItemGetAllElevationRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property elevationRequests in deviceManagement
+// returns a PrivilegeManagementElevationRequestable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegeManagementElevationRequestable, requestConfiguration *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegeManagementElevationRequestable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrivilegeManagementElevationRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -121,8 +126,9 @@ func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegeManagementElevationRequestable), nil
 }
 // ToDeleteRequestInformation delete navigation property elevationRequests for deviceManagement
+// returns a *RequestInformation when successful
 func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -131,6 +137,7 @@ func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder)
     return requestInfo, nil
 }
 // ToGetRequestInformation list of elevation requests
+// returns a *RequestInformation when successful
 func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -144,8 +151,9 @@ func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder)
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property elevationRequests in deviceManagement
+// returns a *RequestInformation when successful
 func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegeManagementElevationRequestable, requestConfiguration *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -158,6 +166,7 @@ func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder when successful
 func (m *ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) WithUrl(rawUrl string)(*ElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder) {
     return NewElevationRequestsPrivilegeManagementElevationRequestItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -9,7 +9,7 @@ import (
 type DeviceManagementIntentUserState struct {
     Entity
 }
-// NewDeviceManagementIntentUserState instantiates a new deviceManagementIntentUserState and sets the default values.
+// NewDeviceManagementIntentUserState instantiates a new DeviceManagementIntentUserState and sets the default values.
 func NewDeviceManagementIntentUserState()(*DeviceManagementIntentUserState) {
     m := &DeviceManagementIntentUserState{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceManagementIntentUserState()(*DeviceManagementIntentUserState) {
     return m
 }
 // CreateDeviceManagementIntentUserStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementIntentUserStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementIntentUserState(), nil
 }
 // GetDeviceCount gets the deviceCount property value. Count of Devices that belongs to a user for an intent
+// returns a *int32 when successful
 func (m *DeviceManagementIntentUserState) GetDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceManagementIntentUserState) GetDeviceCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementIntentUserState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +90,7 @@ func (m *DeviceManagementIntentUserState) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Last modified date time of an intent report
+// returns a *Time when successful
 func (m *DeviceManagementIntentUserState) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastReportedDateTime")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *DeviceManagementIntentUserState) GetLastReportedDateTime()(*i336074805f
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *ComplianceStatus when successful
 func (m *DeviceManagementIntentUserState) GetState()(*ComplianceStatus) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -109,6 +114,7 @@ func (m *DeviceManagementIntentUserState) GetState()(*ComplianceStatus) {
     return nil
 }
 // GetUserName gets the userName property value. The user name that is being reported on a device
+// returns a *string when successful
 func (m *DeviceManagementIntentUserState) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -120,6 +126,7 @@ func (m *DeviceManagementIntentUserState) GetUserName()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name that is being reported on a device
+// returns a *string when successful
 func (m *DeviceManagementIntentUserState) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -204,7 +211,6 @@ func (m *DeviceManagementIntentUserState) SetUserPrincipalName(value *string)() 
         panic(err)
     }
 }
-// DeviceManagementIntentUserStateable 
 type DeviceManagementIntentUserStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

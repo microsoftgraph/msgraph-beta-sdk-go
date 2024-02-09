@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PrivateAccessDetails 
 type PrivateAccessDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPrivateAccessDetails instantiates a new privateAccessDetails and sets the default values.
+// NewPrivateAccessDetails instantiates a new PrivateAccessDetails and sets the default values.
 func NewPrivateAccessDetails()(*PrivateAccessDetails) {
     m := &PrivateAccessDetails{
     }
@@ -19,10 +18,12 @@ func NewPrivateAccessDetails()(*PrivateAccessDetails) {
     return m
 }
 // CreatePrivateAccessDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivateAccessDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivateAccessDetails(), nil
 }
 // GetAccessType gets the accessType property value. The accessType property
+// returns a *AccessType when successful
 func (m *PrivateAccessDetails) GetAccessType()(*AccessType) {
     val, err := m.GetBackingStore().Get("accessType")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *PrivateAccessDetails) GetAccessType()(*AccessType) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PrivateAccessDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *PrivateAccessDetails) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PrivateAccessDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConnectionStatus gets the connectionStatus property value. The connectionStatus property
+// returns a *ConnectionStatus when successful
 func (m *PrivateAccessDetails) GetConnectionStatus()(*ConnectionStatus) {
     val, err := m.GetBackingStore().Get("connectionStatus")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PrivateAccessDetails) GetConnectionStatus()(*ConnectionStatus) {
     return nil
 }
 // GetConnectorId gets the connectorId property value. The connectorId property
+// returns a *string when successful
 func (m *PrivateAccessDetails) GetConnectorId()(*string) {
     val, err := m.GetBackingStore().Get("connectorId")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *PrivateAccessDetails) GetConnectorId()(*string) {
     return nil
 }
 // GetConnectorIp gets the connectorIp property value. The connectorIp property
+// returns a *string when successful
 func (m *PrivateAccessDetails) GetConnectorIp()(*string) {
     val, err := m.GetBackingStore().Get("connectorIp")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *PrivateAccessDetails) GetConnectorIp()(*string) {
     return nil
 }
 // GetConnectorName gets the connectorName property value. The connectorName property
+// returns a *string when successful
 func (m *PrivateAccessDetails) GetConnectorName()(*string) {
     val, err := m.GetBackingStore().Get("connectorName")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *PrivateAccessDetails) GetConnectorName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivateAccessDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -169,6 +177,7 @@ func (m *PrivateAccessDetails) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PrivateAccessDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -180,6 +189,7 @@ func (m *PrivateAccessDetails) GetOdataType()(*string) {
     return nil
 }
 // GetProcessingRegion gets the processingRegion property value. The processingRegion property
+// returns a *string when successful
 func (m *PrivateAccessDetails) GetProcessingRegion()(*string) {
     val, err := m.GetBackingStore().Get("processingRegion")
     if err != nil {
@@ -304,7 +314,6 @@ func (m *PrivateAccessDetails) SetProcessingRegion(value *string)() {
         panic(err)
     }
 }
-// PrivateAccessDetailsable 
 type PrivateAccessDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

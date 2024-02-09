@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PlannerRuleOverride 
 type PlannerRuleOverride struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPlannerRuleOverride instantiates a new plannerRuleOverride and sets the default values.
+// NewPlannerRuleOverride instantiates a new PlannerRuleOverride and sets the default values.
 func NewPlannerRuleOverride()(*PlannerRuleOverride) {
     m := &PlannerRuleOverride{
     }
@@ -19,10 +18,12 @@ func NewPlannerRuleOverride()(*PlannerRuleOverride) {
     return m
 }
 // CreatePlannerRuleOverrideFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerRuleOverrideFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerRuleOverride(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PlannerRuleOverride) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PlannerRuleOverride) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PlannerRuleOverride) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerRuleOverride) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,6 +83,7 @@ func (m *PlannerRuleOverride) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetName gets the name property value. Name of the override. Allowed override values will be dependent on the property affected by the rule.
+// returns a *string when successful
 func (m *PlannerRuleOverride) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -91,6 +95,7 @@ func (m *PlannerRuleOverride) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PlannerRuleOverride) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *PlannerRuleOverride) GetOdataType()(*string) {
     return nil
 }
 // GetRules gets the rules property value. Overridden rules. These are used as rules for the override instead of the default rules.
+// returns a []string when successful
 func (m *PlannerRuleOverride) GetRules()([]string) {
     val, err := m.GetBackingStore().Get("rules")
     if err != nil {
@@ -172,7 +178,6 @@ func (m *PlannerRuleOverride) SetRules(value []string)() {
         panic(err)
     }
 }
-// PlannerRuleOverrideable 
 type PlannerRuleOverrideable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AuthenticationBehaviors 
 type AuthenticationBehaviors struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuthenticationBehaviors instantiates a new authenticationBehaviors and sets the default values.
+// NewAuthenticationBehaviors instantiates a new AuthenticationBehaviors and sets the default values.
 func NewAuthenticationBehaviors()(*AuthenticationBehaviors) {
     m := &AuthenticationBehaviors{
     }
@@ -19,10 +18,12 @@ func NewAuthenticationBehaviors()(*AuthenticationBehaviors) {
     return m
 }
 // CreateAuthenticationBehaviorsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationBehaviorsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationBehaviors(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuthenticationBehaviors) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AuthenticationBehaviors) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuthenticationBehaviors) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBlockAzureADGraphAccess gets the blockAzureADGraphAccess property value. The blockAzureADGraphAccess property
+// returns a *bool when successful
 func (m *AuthenticationBehaviors) GetBlockAzureADGraphAccess()(*bool) {
     val, err := m.GetBackingStore().Get("blockAzureADGraphAccess")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AuthenticationBehaviors) GetBlockAzureADGraphAccess()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationBehaviors) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["blockAzureADGraphAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *AuthenticationBehaviors) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuthenticationBehaviors) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *AuthenticationBehaviors) GetOdataType()(*string) {
     return nil
 }
 // GetRemoveUnverifiedEmailClaim gets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
+// returns a *bool when successful
 func (m *AuthenticationBehaviors) GetRemoveUnverifiedEmailClaim()(*bool) {
     val, err := m.GetBackingStore().Get("removeUnverifiedEmailClaim")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *AuthenticationBehaviors) GetRemoveUnverifiedEmailClaim()(*bool) {
     return nil
 }
 // GetRequireClientServicePrincipal gets the requireClientServicePrincipal property value. Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
+// returns a *bool when successful
 func (m *AuthenticationBehaviors) GetRequireClientServicePrincipal()(*bool) {
     val, err := m.GetBackingStore().Get("requireClientServicePrincipal")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *AuthenticationBehaviors) SetRequireClientServicePrincipal(value *bool)(
         panic(err)
     }
 }
-// AuthenticationBehaviorsable 
 type AuthenticationBehaviorsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

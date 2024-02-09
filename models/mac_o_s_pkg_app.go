@@ -8,7 +8,7 @@ import (
 type MacOSPkgApp struct {
     MobileLobApp
 }
-// NewMacOSPkgApp instantiates a new macOSPkgApp and sets the default values.
+// NewMacOSPkgApp instantiates a new MacOSPkgApp and sets the default values.
 func NewMacOSPkgApp()(*MacOSPkgApp) {
     m := &MacOSPkgApp{
         MobileLobApp: *NewMobileLobApp(),
@@ -18,10 +18,12 @@ func NewMacOSPkgApp()(*MacOSPkgApp) {
     return m
 }
 // CreateMacOSPkgAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSPkgAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSPkgApp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSPkgApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
     res["ignoreVersionDetection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -103,6 +105,7 @@ func (m *MacOSPkgApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetIgnoreVersionDetection gets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
+// returns a *bool when successful
 func (m *MacOSPkgApp) GetIgnoreVersionDetection()(*bool) {
     val, err := m.GetBackingStore().Get("ignoreVersionDetection")
     if err != nil {
@@ -114,6 +117,7 @@ func (m *MacOSPkgApp) GetIgnoreVersionDetection()(*bool) {
     return nil
 }
 // GetIncludedApps gets the includedApps property value. The list of apps expected to be installed by the PKG.
+// returns a []MacOSIncludedAppable when successful
 func (m *MacOSPkgApp) GetIncludedApps()([]MacOSIncludedAppable) {
     val, err := m.GetBackingStore().Get("includedApps")
     if err != nil {
@@ -125,6 +129,7 @@ func (m *MacOSPkgApp) GetIncludedApps()([]MacOSIncludedAppable) {
     return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
+// returns a MacOSMinimumOperatingSystemable when successful
 func (m *MacOSPkgApp) GetMinimumSupportedOperatingSystem()(MacOSMinimumOperatingSystemable) {
     val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
     if err != nil {
@@ -136,6 +141,7 @@ func (m *MacOSPkgApp) GetMinimumSupportedOperatingSystem()(MacOSMinimumOperating
     return nil
 }
 // GetPostInstallScript gets the postInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+// returns a MacOSAppScriptable when successful
 func (m *MacOSPkgApp) GetPostInstallScript()(MacOSAppScriptable) {
     val, err := m.GetBackingStore().Get("postInstallScript")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *MacOSPkgApp) GetPostInstallScript()(MacOSAppScriptable) {
     return nil
 }
 // GetPreInstallScript gets the preInstallScript property value. ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.
+// returns a MacOSAppScriptable when successful
 func (m *MacOSPkgApp) GetPreInstallScript()(MacOSAppScriptable) {
     val, err := m.GetBackingStore().Get("preInstallScript")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *MacOSPkgApp) GetPreInstallScript()(MacOSAppScriptable) {
     return nil
 }
 // GetPrimaryBundleId gets the primaryBundleId property value. The bundleId of the primary app in the PKG. This maps to the CFBundleIdentifier in the app's bundle configuration.
+// returns a *string when successful
 func (m *MacOSPkgApp) GetPrimaryBundleId()(*string) {
     val, err := m.GetBackingStore().Get("primaryBundleId")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *MacOSPkgApp) GetPrimaryBundleId()(*string) {
     return nil
 }
 // GetPrimaryBundleVersion gets the primaryBundleVersion property value. The version of the primary app in the PKG. This maps to the CFBundleShortVersion in the app's bundle configuration.
+// returns a *string when successful
 func (m *MacOSPkgApp) GetPrimaryBundleVersion()(*string) {
     val, err := m.GetBackingStore().Get("primaryBundleVersion")
     if err != nil {
@@ -284,7 +293,6 @@ func (m *MacOSPkgApp) SetPrimaryBundleVersion(value *string)() {
         panic(err)
     }
 }
-// MacOSPkgAppable 
 type MacOSPkgAppable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

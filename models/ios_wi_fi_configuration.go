@@ -8,7 +8,7 @@ import (
 type IosWiFiConfiguration struct {
     DeviceConfiguration
 }
-// NewIosWiFiConfiguration instantiates a new iosWiFiConfiguration and sets the default values.
+// NewIosWiFiConfiguration instantiates a new IosWiFiConfiguration and sets the default values.
 func NewIosWiFiConfiguration()(*IosWiFiConfiguration) {
     m := &IosWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewIosWiFiConfiguration()(*IosWiFiConfiguration) {
     return m
 }
 // CreateIosWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateIosWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewIosWiFiConfiguration(), nil
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
+// returns a *bool when successful
 func (m *IosWiFiConfiguration) GetConnectAutomatically()(*bool) {
     val, err := m.GetBackingStore().Get("connectAutomatically")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *IosWiFiConfiguration) GetConnectAutomatically()(*bool) {
     return nil
 }
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. Connect when the network is not broadcasting its name (SSID). When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
+// returns a *bool when successful
 func (m *IosWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
     val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *IosWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
     return nil
 }
 // GetDisableMacAddressRandomization gets the disableMacAddressRandomization property value. If set to true, forces devices connecting using this Wi-Fi profile to present their actual Wi-Fi MAC address instead of a random MAC address. Applies to iOS 14 and later.
+// returns a *bool when successful
 func (m *IosWiFiConfiguration) GetDisableMacAddressRandomization()(*bool) {
     val, err := m.GetBackingStore().Get("disableMacAddressRandomization")
     if err != nil {
@@ -73,6 +77,7 @@ func (m *IosWiFiConfiguration) GetDisableMacAddressRandomization()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["connectAutomatically"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -188,6 +193,7 @@ func (m *IosWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetNetworkName gets the networkName property value. Network Name
+// returns a *string when successful
 func (m *IosWiFiConfiguration) GetNetworkName()(*string) {
     val, err := m.GetBackingStore().Get("networkName")
     if err != nil {
@@ -199,6 +205,7 @@ func (m *IosWiFiConfiguration) GetNetworkName()(*string) {
     return nil
 }
 // GetPreSharedKey gets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
+// returns a *string when successful
 func (m *IosWiFiConfiguration) GetPreSharedKey()(*string) {
     val, err := m.GetBackingStore().Get("preSharedKey")
     if err != nil {
@@ -210,6 +217,7 @@ func (m *IosWiFiConfiguration) GetPreSharedKey()(*string) {
     return nil
 }
 // GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
+// returns a *string when successful
 func (m *IosWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
     val, err := m.GetBackingStore().Get("proxyAutomaticConfigurationUrl")
     if err != nil {
@@ -221,6 +229,7 @@ func (m *IosWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
     return nil
 }
 // GetProxyManualAddress gets the proxyManualAddress property value. IP Address or DNS hostname of the proxy server when manual configuration is selected.
+// returns a *string when successful
 func (m *IosWiFiConfiguration) GetProxyManualAddress()(*string) {
     val, err := m.GetBackingStore().Get("proxyManualAddress")
     if err != nil {
@@ -232,6 +241,7 @@ func (m *IosWiFiConfiguration) GetProxyManualAddress()(*string) {
     return nil
 }
 // GetProxyManualPort gets the proxyManualPort property value. Port of the proxy server when manual configuration is selected.
+// returns a *int32 when successful
 func (m *IosWiFiConfiguration) GetProxyManualPort()(*int32) {
     val, err := m.GetBackingStore().Get("proxyManualPort")
     if err != nil {
@@ -243,6 +253,7 @@ func (m *IosWiFiConfiguration) GetProxyManualPort()(*int32) {
     return nil
 }
 // GetProxySettings gets the proxySettings property value. Wi-Fi Proxy Settings.
+// returns a *WiFiProxySetting when successful
 func (m *IosWiFiConfiguration) GetProxySettings()(*WiFiProxySetting) {
     val, err := m.GetBackingStore().Get("proxySettings")
     if err != nil {
@@ -254,6 +265,7 @@ func (m *IosWiFiConfiguration) GetProxySettings()(*WiFiProxySetting) {
     return nil
 }
 // GetSsid gets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
+// returns a *string when successful
 func (m *IosWiFiConfiguration) GetSsid()(*string) {
     val, err := m.GetBackingStore().Get("ssid")
     if err != nil {
@@ -265,6 +277,7 @@ func (m *IosWiFiConfiguration) GetSsid()(*string) {
     return nil
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types.
+// returns a *WiFiSecurityType when successful
 func (m *IosWiFiConfiguration) GetWiFiSecurityType()(*WiFiSecurityType) {
     val, err := m.GetBackingStore().Get("wiFiSecurityType")
     if err != nil {
@@ -428,7 +441,6 @@ func (m *IosWiFiConfiguration) SetWiFiSecurityType(value *WiFiSecurityType)() {
         panic(err)
     }
 }
-// IosWiFiConfigurationable 
 type IosWiFiConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

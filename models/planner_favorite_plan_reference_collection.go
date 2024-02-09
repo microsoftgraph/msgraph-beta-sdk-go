@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PlannerFavoritePlanReferenceCollection 
 type PlannerFavoritePlanReferenceCollection struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPlannerFavoritePlanReferenceCollection instantiates a new plannerFavoritePlanReferenceCollection and sets the default values.
+// NewPlannerFavoritePlanReferenceCollection instantiates a new PlannerFavoritePlanReferenceCollection and sets the default values.
 func NewPlannerFavoritePlanReferenceCollection()(*PlannerFavoritePlanReferenceCollection) {
     m := &PlannerFavoritePlanReferenceCollection{
     }
@@ -19,10 +18,12 @@ func NewPlannerFavoritePlanReferenceCollection()(*PlannerFavoritePlanReferenceCo
     return m
 }
 // CreatePlannerFavoritePlanReferenceCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerFavoritePlanReferenceCollectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerFavoritePlanReferenceCollection(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PlannerFavoritePlanReferenceCollection) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PlannerFavoritePlanReferenceCollection) GetAdditionalData()(map[string]
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PlannerFavoritePlanReferenceCollection) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerFavoritePlanReferenceCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,6 +57,7 @@ func (m *PlannerFavoritePlanReferenceCollection) GetFieldDeserializers()(map[str
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PlannerFavoritePlanReferenceCollection) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -98,7 +102,6 @@ func (m *PlannerFavoritePlanReferenceCollection) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// PlannerFavoritePlanReferenceCollectionable 
 type PlannerFavoritePlanReferenceCollectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamworkSystemConfiguration 
 type TeamworkSystemConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamworkSystemConfiguration instantiates a new teamworkSystemConfiguration and sets the default values.
+// NewTeamworkSystemConfiguration instantiates a new TeamworkSystemConfiguration and sets the default values.
 func NewTeamworkSystemConfiguration()(*TeamworkSystemConfiguration) {
     m := &TeamworkSystemConfiguration{
     }
@@ -19,10 +18,12 @@ func NewTeamworkSystemConfiguration()(*TeamworkSystemConfiguration) {
     return m
 }
 // CreateTeamworkSystemConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkSystemConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkSystemConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamworkSystemConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TeamworkSystemConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamworkSystemConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDateTimeConfiguration gets the dateTimeConfiguration property value. The date and time configurations for a device.
+// returns a TeamworkDateTimeConfigurationable when successful
 func (m *TeamworkSystemConfiguration) GetDateTimeConfiguration()(TeamworkDateTimeConfigurationable) {
     val, err := m.GetBackingStore().Get("dateTimeConfiguration")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TeamworkSystemConfiguration) GetDateTimeConfiguration()(TeamworkDateTim
     return nil
 }
 // GetDefaultPassword gets the defaultPassword property value. The default password for the device. Write-Only.
+// returns a *string when successful
 func (m *TeamworkSystemConfiguration) GetDefaultPassword()(*string) {
     val, err := m.GetBackingStore().Get("defaultPassword")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *TeamworkSystemConfiguration) GetDefaultPassword()(*string) {
     return nil
 }
 // GetDeviceLockTimeout gets the deviceLockTimeout property value. The device lock timeout in seconds.
+// returns a *ISODuration when successful
 func (m *TeamworkSystemConfiguration) GetDeviceLockTimeout()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("deviceLockTimeout")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *TeamworkSystemConfiguration) GetDeviceLockTimeout()(*i878a80d2330e89d26
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dateTimeConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -207,6 +213,7 @@ func (m *TeamworkSystemConfiguration) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetIsDeviceLockEnabled gets the isDeviceLockEnabled property value. True if the device lock is enabled.
+// returns a *bool when successful
 func (m *TeamworkSystemConfiguration) GetIsDeviceLockEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDeviceLockEnabled")
     if err != nil {
@@ -218,6 +225,7 @@ func (m *TeamworkSystemConfiguration) GetIsDeviceLockEnabled()(*bool) {
     return nil
 }
 // GetIsLoggingEnabled gets the isLoggingEnabled property value. True if logging is enabled.
+// returns a *bool when successful
 func (m *TeamworkSystemConfiguration) GetIsLoggingEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isLoggingEnabled")
     if err != nil {
@@ -229,6 +237,7 @@ func (m *TeamworkSystemConfiguration) GetIsLoggingEnabled()(*bool) {
     return nil
 }
 // GetIsPowerSavingEnabled gets the isPowerSavingEnabled property value. True if power saving is enabled.
+// returns a *bool when successful
 func (m *TeamworkSystemConfiguration) GetIsPowerSavingEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isPowerSavingEnabled")
     if err != nil {
@@ -240,6 +249,7 @@ func (m *TeamworkSystemConfiguration) GetIsPowerSavingEnabled()(*bool) {
     return nil
 }
 // GetIsScreenCaptureEnabled gets the isScreenCaptureEnabled property value. True if screen capture is enabled.
+// returns a *bool when successful
 func (m *TeamworkSystemConfiguration) GetIsScreenCaptureEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isScreenCaptureEnabled")
     if err != nil {
@@ -251,6 +261,7 @@ func (m *TeamworkSystemConfiguration) GetIsScreenCaptureEnabled()(*bool) {
     return nil
 }
 // GetIsSilentModeEnabled gets the isSilentModeEnabled property value. True if silent mode is enabled.
+// returns a *bool when successful
 func (m *TeamworkSystemConfiguration) GetIsSilentModeEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSilentModeEnabled")
     if err != nil {
@@ -262,6 +273,7 @@ func (m *TeamworkSystemConfiguration) GetIsSilentModeEnabled()(*bool) {
     return nil
 }
 // GetLanguage gets the language property value. The language option for the device.
+// returns a *string when successful
 func (m *TeamworkSystemConfiguration) GetLanguage()(*string) {
     val, err := m.GetBackingStore().Get("language")
     if err != nil {
@@ -273,6 +285,7 @@ func (m *TeamworkSystemConfiguration) GetLanguage()(*string) {
     return nil
 }
 // GetLockPin gets the lockPin property value. The pin that unlocks the device. Write-Only.
+// returns a *string when successful
 func (m *TeamworkSystemConfiguration) GetLockPin()(*string) {
     val, err := m.GetBackingStore().Get("lockPin")
     if err != nil {
@@ -284,6 +297,7 @@ func (m *TeamworkSystemConfiguration) GetLockPin()(*string) {
     return nil
 }
 // GetLoggingLevel gets the loggingLevel property value. The logging level for the device.
+// returns a *string when successful
 func (m *TeamworkSystemConfiguration) GetLoggingLevel()(*string) {
     val, err := m.GetBackingStore().Get("loggingLevel")
     if err != nil {
@@ -295,6 +309,7 @@ func (m *TeamworkSystemConfiguration) GetLoggingLevel()(*string) {
     return nil
 }
 // GetNetworkConfiguration gets the networkConfiguration property value. The network configuration for the device.
+// returns a TeamworkNetworkConfigurationable when successful
 func (m *TeamworkSystemConfiguration) GetNetworkConfiguration()(TeamworkNetworkConfigurationable) {
     val, err := m.GetBackingStore().Get("networkConfiguration")
     if err != nil {
@@ -306,6 +321,7 @@ func (m *TeamworkSystemConfiguration) GetNetworkConfiguration()(TeamworkNetworkC
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamworkSystemConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -506,7 +522,6 @@ func (m *TeamworkSystemConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// TeamworkSystemConfigurationable 
 type TeamworkSystemConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

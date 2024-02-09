@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDeviceConfiguration 
 type TeamworkDeviceConfiguration struct {
     Entity
 }
-// NewTeamworkDeviceConfiguration instantiates a new teamworkDeviceConfiguration and sets the default values.
+// NewTeamworkDeviceConfiguration instantiates a new TeamworkDeviceConfiguration and sets the default values.
 func NewTeamworkDeviceConfiguration()(*TeamworkDeviceConfiguration) {
     m := &TeamworkDeviceConfiguration{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTeamworkDeviceConfiguration()(*TeamworkDeviceConfiguration) {
     return m
 }
 // CreateTeamworkDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkDeviceConfiguration(), nil
 }
 // GetCameraConfiguration gets the cameraConfiguration property value. The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.
+// returns a TeamworkCameraConfigurationable when successful
 func (m *TeamworkDeviceConfiguration) GetCameraConfiguration()(TeamworkCameraConfigurationable) {
     val, err := m.GetBackingStore().Get("cameraConfiguration")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TeamworkDeviceConfiguration) GetCameraConfiguration()(TeamworkCameraCon
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the device configuration document.
+// returns a IdentitySetable when successful
 func (m *TeamworkDeviceConfiguration) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TeamworkDeviceConfiguration) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device configuration document was created.
+// returns a *Time when successful
 func (m *TeamworkDeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TeamworkDeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetDisplayConfiguration gets the displayConfiguration property value. The display configuration.
+// returns a TeamworkDisplayConfigurationable when successful
 func (m *TeamworkDeviceConfiguration) GetDisplayConfiguration()(TeamworkDisplayConfigurationable) {
     val, err := m.GetBackingStore().Get("displayConfiguration")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *TeamworkDeviceConfiguration) GetDisplayConfiguration()(TeamworkDisplayC
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["cameraConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,6 +195,7 @@ func (m *TeamworkDeviceConfiguration) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetHardwareConfiguration gets the hardwareConfiguration property value. The hardware configuration. Applicable only for Teams Rooms-enabled devices.
+// returns a TeamworkHardwareConfigurationable when successful
 func (m *TeamworkDeviceConfiguration) GetHardwareConfiguration()(TeamworkHardwareConfigurationable) {
     val, err := m.GetBackingStore().Get("hardwareConfiguration")
     if err != nil {
@@ -201,6 +207,7 @@ func (m *TeamworkDeviceConfiguration) GetHardwareConfiguration()(TeamworkHardwar
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the device configuration.
+// returns a IdentitySetable when successful
 func (m *TeamworkDeviceConfiguration) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -212,6 +219,7 @@ func (m *TeamworkDeviceConfiguration) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time when the device configuration was last modified.
+// returns a *Time when successful
 func (m *TeamworkDeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -223,6 +231,7 @@ func (m *TeamworkDeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853
     return nil
 }
 // GetMicrophoneConfiguration gets the microphoneConfiguration property value. The microphone configuration. Applicable only for Teams Rooms-enabled devices.
+// returns a TeamworkMicrophoneConfigurationable when successful
 func (m *TeamworkDeviceConfiguration) GetMicrophoneConfiguration()(TeamworkMicrophoneConfigurationable) {
     val, err := m.GetBackingStore().Get("microphoneConfiguration")
     if err != nil {
@@ -234,6 +243,7 @@ func (m *TeamworkDeviceConfiguration) GetMicrophoneConfiguration()(TeamworkMicro
     return nil
 }
 // GetSoftwareVersions gets the softwareVersions property value. Information related to software versions for the device, such as firmware, operating system, Teams client, and admin agent.
+// returns a TeamworkDeviceSoftwareVersionsable when successful
 func (m *TeamworkDeviceConfiguration) GetSoftwareVersions()(TeamworkDeviceSoftwareVersionsable) {
     val, err := m.GetBackingStore().Get("softwareVersions")
     if err != nil {
@@ -245,6 +255,7 @@ func (m *TeamworkDeviceConfiguration) GetSoftwareVersions()(TeamworkDeviceSoftwa
     return nil
 }
 // GetSpeakerConfiguration gets the speakerConfiguration property value. The speaker configuration. Applicable only for Teams Rooms-enabled devices.
+// returns a TeamworkSpeakerConfigurationable when successful
 func (m *TeamworkDeviceConfiguration) GetSpeakerConfiguration()(TeamworkSpeakerConfigurationable) {
     val, err := m.GetBackingStore().Get("speakerConfiguration")
     if err != nil {
@@ -256,6 +267,7 @@ func (m *TeamworkDeviceConfiguration) GetSpeakerConfiguration()(TeamworkSpeakerC
     return nil
 }
 // GetSystemConfiguration gets the systemConfiguration property value. The system configuration. Not applicable for Teams Rooms-enabled devices.
+// returns a TeamworkSystemConfigurationable when successful
 func (m *TeamworkDeviceConfiguration) GetSystemConfiguration()(TeamworkSystemConfigurationable) {
     val, err := m.GetBackingStore().Get("systemConfiguration")
     if err != nil {
@@ -267,6 +279,7 @@ func (m *TeamworkDeviceConfiguration) GetSystemConfiguration()(TeamworkSystemCon
     return nil
 }
 // GetTeamsClientConfiguration gets the teamsClientConfiguration property value. The Teams client configuration. Applicable only for Teams Rooms-enabled devices.
+// returns a TeamworkTeamsClientConfigurationable when successful
 func (m *TeamworkDeviceConfiguration) GetTeamsClientConfiguration()(TeamworkTeamsClientConfigurationable) {
     val, err := m.GetBackingStore().Get("teamsClientConfiguration")
     if err != nil {
@@ -441,7 +454,6 @@ func (m *TeamworkDeviceConfiguration) SetTeamsClientConfiguration(value Teamwork
         panic(err)
     }
 }
-// TeamworkDeviceConfigurationable 
 type TeamworkDeviceConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

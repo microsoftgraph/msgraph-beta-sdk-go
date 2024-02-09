@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProtectGroup 
 type ProtectGroup struct {
     LabelActionBase
 }
-// NewProtectGroup instantiates a new protectGroup and sets the default values.
+// NewProtectGroup instantiates a new ProtectGroup and sets the default values.
 func NewProtectGroup()(*ProtectGroup) {
     m := &ProtectGroup{
         LabelActionBase: *NewLabelActionBase(),
@@ -18,10 +17,12 @@ func NewProtectGroup()(*ProtectGroup) {
     return m
 }
 // CreateProtectGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProtectGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProtectGroup(), nil
 }
 // GetAllowEmailFromGuestUsers gets the allowEmailFromGuestUsers property value. The allowEmailFromGuestUsers property
+// returns a *bool when successful
 func (m *ProtectGroup) GetAllowEmailFromGuestUsers()(*bool) {
     val, err := m.GetBackingStore().Get("allowEmailFromGuestUsers")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ProtectGroup) GetAllowEmailFromGuestUsers()(*bool) {
     return nil
 }
 // GetAllowGuestUsers gets the allowGuestUsers property value. The allowGuestUsers property
+// returns a *bool when successful
 func (m *ProtectGroup) GetAllowGuestUsers()(*bool) {
     val, err := m.GetBackingStore().Get("allowGuestUsers")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ProtectGroup) GetAllowGuestUsers()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProtectGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LabelActionBase.GetFieldDeserializers()
     res["allowEmailFromGuestUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +82,7 @@ func (m *ProtectGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetPrivacy gets the privacy property value. The privacy property
+// returns a *GroupPrivacy when successful
 func (m *ProtectGroup) GetPrivacy()(*GroupPrivacy) {
     val, err := m.GetBackingStore().Get("privacy")
     if err != nil {
@@ -137,7 +141,6 @@ func (m *ProtectGroup) SetPrivacy(value *GroupPrivacy)() {
         panic(err)
     }
 }
-// ProtectGroupable 
 type ProtectGroupable interface {
     LabelActionBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

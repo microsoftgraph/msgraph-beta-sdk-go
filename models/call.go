@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Call 
 type Call struct {
     Entity
 }
-// NewCall instantiates a new call and sets the default values.
+// NewCall instantiates a new Call and sets the default values.
 func NewCall()(*Call) {
     m := &Call{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCall()(*Call) {
     return m
 }
 // CreateCallFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCallFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCall(), nil
 }
 // GetActiveModalities gets the activeModalities property value. The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
+// returns a []Modality when successful
 func (m *Call) GetActiveModalities()([]Modality) {
     val, err := m.GetBackingStore().Get("activeModalities")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Call) GetActiveModalities()([]Modality) {
     return nil
 }
 // GetAnsweredBy gets the answeredBy property value. The participant that answered the call. Read-only.
+// returns a ParticipantInfoable when successful
 func (m *Call) GetAnsweredBy()(ParticipantInfoable) {
     val, err := m.GetBackingStore().Get("answeredBy")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Call) GetAnsweredBy()(ParticipantInfoable) {
     return nil
 }
 // GetAudioRoutingGroups gets the audioRoutingGroups property value. The audioRoutingGroups property
+// returns a []AudioRoutingGroupable when successful
 func (m *Call) GetAudioRoutingGroups()([]AudioRoutingGroupable) {
     val, err := m.GetBackingStore().Get("audioRoutingGroups")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *Call) GetAudioRoutingGroups()([]AudioRoutingGroupable) {
     return nil
 }
 // GetCallbackUri gets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
+// returns a *string when successful
 func (m *Call) GetCallbackUri()(*string) {
     val, err := m.GetBackingStore().Get("callbackUri")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *Call) GetCallbackUri()(*string) {
     return nil
 }
 // GetCallChainId gets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
+// returns a *string when successful
 func (m *Call) GetCallChainId()(*string) {
     val, err := m.GetBackingStore().Get("callChainId")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *Call) GetCallChainId()(*string) {
     return nil
 }
 // GetCallOptions gets the callOptions property value. Contains the optional features for the call.
+// returns a CallOptionsable when successful
 func (m *Call) GetCallOptions()(CallOptionsable) {
     val, err := m.GetBackingStore().Get("callOptions")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *Call) GetCallOptions()(CallOptionsable) {
     return nil
 }
 // GetCallRoutes gets the callRoutes property value. The routing information on how the call was retargeted. Read-only.
+// returns a []CallRouteable when successful
 func (m *Call) GetCallRoutes()([]CallRouteable) {
     val, err := m.GetBackingStore().Get("callRoutes")
     if err != nil {
@@ -97,6 +104,7 @@ func (m *Call) GetCallRoutes()([]CallRouteable) {
     return nil
 }
 // GetChatInfo gets the chatInfo property value. The chat information. Required information for meeting scenarios.
+// returns a ChatInfoable when successful
 func (m *Call) GetChatInfo()(ChatInfoable) {
     val, err := m.GetBackingStore().Get("chatInfo")
     if err != nil {
@@ -108,6 +116,7 @@ func (m *Call) GetChatInfo()(ChatInfoable) {
     return nil
 }
 // GetContentSharingSessions gets the contentSharingSessions property value. The contentSharingSessions property
+// returns a []ContentSharingSessionable when successful
 func (m *Call) GetContentSharingSessions()([]ContentSharingSessionable) {
     val, err := m.GetBackingStore().Get("contentSharingSessions")
     if err != nil {
@@ -119,6 +128,7 @@ func (m *Call) GetContentSharingSessions()([]ContentSharingSessionable) {
     return nil
 }
 // GetDirection gets the direction property value. The direction of the call. The possible values are incoming or outgoing. Read-only.
+// returns a *CallDirection when successful
 func (m *Call) GetDirection()(*CallDirection) {
     val, err := m.GetBackingStore().Get("direction")
     if err != nil {
@@ -130,6 +140,7 @@ func (m *Call) GetDirection()(*CallDirection) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -489,6 +500,7 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetIncomingContext gets the incomingContext property value. The context associated with an incoming call. Read-only. Server generated.
+// returns a IncomingContextable when successful
 func (m *Call) GetIncomingContext()(IncomingContextable) {
     val, err := m.GetBackingStore().Get("incomingContext")
     if err != nil {
@@ -500,6 +512,7 @@ func (m *Call) GetIncomingContext()(IncomingContextable) {
     return nil
 }
 // GetMediaConfig gets the mediaConfig property value. The media configuration. Required information for creating peer to peer calls or joining meetings.
+// returns a MediaConfigable when successful
 func (m *Call) GetMediaConfig()(MediaConfigable) {
     val, err := m.GetBackingStore().Get("mediaConfig")
     if err != nil {
@@ -511,6 +524,7 @@ func (m *Call) GetMediaConfig()(MediaConfigable) {
     return nil
 }
 // GetMediaState gets the mediaState property value. Read-only. The call media state.
+// returns a CallMediaStateable when successful
 func (m *Call) GetMediaState()(CallMediaStateable) {
     val, err := m.GetBackingStore().Get("mediaState")
     if err != nil {
@@ -522,6 +536,7 @@ func (m *Call) GetMediaState()(CallMediaStateable) {
     return nil
 }
 // GetMeetingCapability gets the meetingCapability property value. Contains the capabilities of a meeting. Read-only.
+// returns a MeetingCapabilityable when successful
 func (m *Call) GetMeetingCapability()(MeetingCapabilityable) {
     val, err := m.GetBackingStore().Get("meetingCapability")
     if err != nil {
@@ -533,6 +548,7 @@ func (m *Call) GetMeetingCapability()(MeetingCapabilityable) {
     return nil
 }
 // GetMeetingInfo gets the meetingInfo property value. The meeting information. Required information for meeting scenarios.
+// returns a MeetingInfoable when successful
 func (m *Call) GetMeetingInfo()(MeetingInfoable) {
     val, err := m.GetBackingStore().Get("meetingInfo")
     if err != nil {
@@ -544,6 +560,7 @@ func (m *Call) GetMeetingInfo()(MeetingInfoable) {
     return nil
 }
 // GetMyParticipantId gets the myParticipantId property value. The myParticipantId property
+// returns a *string when successful
 func (m *Call) GetMyParticipantId()(*string) {
     val, err := m.GetBackingStore().Get("myParticipantId")
     if err != nil {
@@ -555,6 +572,7 @@ func (m *Call) GetMyParticipantId()(*string) {
     return nil
 }
 // GetOperations gets the operations property value. The operations property
+// returns a []CommsOperationable when successful
 func (m *Call) GetOperations()([]CommsOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -566,6 +584,7 @@ func (m *Call) GetOperations()([]CommsOperationable) {
     return nil
 }
 // GetParticipants gets the participants property value. The participants property
+// returns a []Participantable when successful
 func (m *Call) GetParticipants()([]Participantable) {
     val, err := m.GetBackingStore().Get("participants")
     if err != nil {
@@ -577,6 +596,7 @@ func (m *Call) GetParticipants()([]Participantable) {
     return nil
 }
 // GetRequestedModalities gets the requestedModalities property value. The requestedModalities property
+// returns a []Modality when successful
 func (m *Call) GetRequestedModalities()([]Modality) {
     val, err := m.GetBackingStore().Get("requestedModalities")
     if err != nil {
@@ -588,6 +608,7 @@ func (m *Call) GetRequestedModalities()([]Modality) {
     return nil
 }
 // GetResultInfo gets the resultInfo property value. The resultInfo property
+// returns a ResultInfoable when successful
 func (m *Call) GetResultInfo()(ResultInfoable) {
     val, err := m.GetBackingStore().Get("resultInfo")
     if err != nil {
@@ -599,6 +620,7 @@ func (m *Call) GetResultInfo()(ResultInfoable) {
     return nil
 }
 // GetRingingTimeoutInSeconds gets the ringingTimeoutInSeconds property value. The ringingTimeoutInSeconds property
+// returns a *int32 when successful
 func (m *Call) GetRingingTimeoutInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("ringingTimeoutInSeconds")
     if err != nil {
@@ -610,6 +632,7 @@ func (m *Call) GetRingingTimeoutInSeconds()(*int32) {
     return nil
 }
 // GetRoutingPolicies gets the routingPolicies property value. The routingPolicies property
+// returns a []RoutingPolicy when successful
 func (m *Call) GetRoutingPolicies()([]RoutingPolicy) {
     val, err := m.GetBackingStore().Get("routingPolicies")
     if err != nil {
@@ -621,6 +644,7 @@ func (m *Call) GetRoutingPolicies()([]RoutingPolicy) {
     return nil
 }
 // GetSource gets the source property value. The source property
+// returns a ParticipantInfoable when successful
 func (m *Call) GetSource()(ParticipantInfoable) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -632,6 +656,7 @@ func (m *Call) GetSource()(ParticipantInfoable) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *CallState when successful
 func (m *Call) GetState()(*CallState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -643,6 +668,7 @@ func (m *Call) GetState()(*CallState) {
     return nil
 }
 // GetSubject gets the subject property value. The subject property
+// returns a *string when successful
 func (m *Call) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -654,6 +680,7 @@ func (m *Call) GetSubject()(*string) {
     return nil
 }
 // GetTargets gets the targets property value. The targets property
+// returns a []InvitationParticipantInfoable when successful
 func (m *Call) GetTargets()([]InvitationParticipantInfoable) {
     val, err := m.GetBackingStore().Get("targets")
     if err != nil {
@@ -665,6 +692,7 @@ func (m *Call) GetTargets()([]InvitationParticipantInfoable) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
+// returns a *string when successful
 func (m *Call) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -676,6 +704,7 @@ func (m *Call) GetTenantId()(*string) {
     return nil
 }
 // GetTerminationReason gets the terminationReason property value. The terminationReason property
+// returns a *string when successful
 func (m *Call) GetTerminationReason()(*string) {
     val, err := m.GetBackingStore().Get("terminationReason")
     if err != nil {
@@ -687,6 +716,7 @@ func (m *Call) GetTerminationReason()(*string) {
     return nil
 }
 // GetToneInfo gets the toneInfo property value. The toneInfo property
+// returns a ToneInfoable when successful
 func (m *Call) GetToneInfo()(ToneInfoable) {
     val, err := m.GetBackingStore().Get("toneInfo")
     if err != nil {
@@ -698,6 +728,7 @@ func (m *Call) GetToneInfo()(ToneInfoable) {
     return nil
 }
 // GetTranscription gets the transcription property value. The transcription information for the call. Read-only.
+// returns a CallTranscriptionInfoable when successful
 func (m *Call) GetTranscription()(CallTranscriptionInfoable) {
     val, err := m.GetBackingStore().Get("transcription")
     if err != nil {
@@ -1144,7 +1175,6 @@ func (m *Call) SetTranscription(value CallTranscriptionInfoable)() {
         panic(err)
     }
 }
-// Callable 
 type Callable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

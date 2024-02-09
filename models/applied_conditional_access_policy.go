@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AppliedConditionalAccessPolicy 
 type AppliedConditionalAccessPolicy struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAppliedConditionalAccessPolicy instantiates a new appliedConditionalAccessPolicy and sets the default values.
+// NewAppliedConditionalAccessPolicy instantiates a new AppliedConditionalAccessPolicy and sets the default values.
 func NewAppliedConditionalAccessPolicy()(*AppliedConditionalAccessPolicy) {
     m := &AppliedConditionalAccessPolicy{
     }
@@ -19,10 +18,12 @@ func NewAppliedConditionalAccessPolicy()(*AppliedConditionalAccessPolicy) {
     return m
 }
 // CreateAppliedConditionalAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppliedConditionalAccessPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppliedConditionalAccessPolicy(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AppliedConditionalAccessPolicy) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAuthenticationStrength gets the authenticationStrength property value. The custom authentication strength enforced in a Conditional Access policy.
+// returns a AuthenticationStrengthable when successful
 func (m *AppliedConditionalAccessPolicy) GetAuthenticationStrength()(AuthenticationStrengthable) {
     val, err := m.GetBackingStore().Get("authenticationStrength")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *AppliedConditionalAccessPolicy) GetAuthenticationStrength()(Authenticat
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AppliedConditionalAccessPolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConditionsNotSatisfied gets the conditionsNotSatisfied property value. Refers to the conditional access policy conditions that aren't satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk . You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list.
+// returns a *ConditionalAccessConditions when successful
 func (m *AppliedConditionalAccessPolicy) GetConditionsNotSatisfied()(*ConditionalAccessConditions) {
     val, err := m.GetBackingStore().Get("conditionsNotSatisfied")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *AppliedConditionalAccessPolicy) GetConditionsNotSatisfied()(*Conditiona
     return nil
 }
 // GetConditionsSatisfied gets the conditionsSatisfied property value. Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list.
+// returns a *ConditionalAccessConditions when successful
 func (m *AppliedConditionalAccessPolicy) GetConditionsSatisfied()(*ConditionalAccessConditions) {
     val, err := m.GetBackingStore().Get("conditionsSatisfied")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *AppliedConditionalAccessPolicy) GetConditionsSatisfied()(*ConditionalAc
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the conditional access policy.
+// returns a *string when successful
 func (m *AppliedConditionalAccessPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *AppliedConditionalAccessPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetEnforcedGrantControls gets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
+// returns a []string when successful
 func (m *AppliedConditionalAccessPolicy) GetEnforcedGrantControls()([]string) {
     val, err := m.GetBackingStore().Get("enforcedGrantControls")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *AppliedConditionalAccessPolicy) GetEnforcedGrantControls()([]string) {
     return nil
 }
 // GetEnforcedSessionControls gets the enforcedSessionControls property value. Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
+// returns a []string when successful
 func (m *AppliedConditionalAccessPolicy) GetEnforcedSessionControls()([]string) {
     val, err := m.GetBackingStore().Get("enforcedSessionControls")
     if err != nil {
@@ -105,6 +113,7 @@ func (m *AppliedConditionalAccessPolicy) GetEnforcedSessionControls()([]string) 
     return nil
 }
 // GetExcludeRulesSatisfied gets the excludeRulesSatisfied property value. List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{'devicePlatform' : 'DevicePlatform'}] means the policy didn't apply, because the DevicePlatform condition was a match.
+// returns a []ConditionalAccessRuleSatisfiedable when successful
 func (m *AppliedConditionalAccessPolicy) GetExcludeRulesSatisfied()([]ConditionalAccessRuleSatisfiedable) {
     val, err := m.GetBackingStore().Get("excludeRulesSatisfied")
     if err != nil {
@@ -116,6 +125,7 @@ func (m *AppliedConditionalAccessPolicy) GetExcludeRulesSatisfied()([]Conditiona
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["authenticationStrength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -271,6 +281,7 @@ func (m *AppliedConditionalAccessPolicy) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetId gets the id property value. Identifier of the conditional access policy.
+// returns a *string when successful
 func (m *AppliedConditionalAccessPolicy) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -282,6 +293,7 @@ func (m *AppliedConditionalAccessPolicy) GetId()(*string) {
     return nil
 }
 // GetIncludeRulesSatisfied gets the includeRulesSatisfied property value. List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ 'application' : 'AllApps'}, {'users': 'Group'}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.
+// returns a []ConditionalAccessRuleSatisfiedable when successful
 func (m *AppliedConditionalAccessPolicy) GetIncludeRulesSatisfied()([]ConditionalAccessRuleSatisfiedable) {
     val, err := m.GetBackingStore().Get("includeRulesSatisfied")
     if err != nil {
@@ -293,6 +305,7 @@ func (m *AppliedConditionalAccessPolicy) GetIncludeRulesSatisfied()([]Conditiona
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AppliedConditionalAccessPolicy) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -304,6 +317,7 @@ func (m *AppliedConditionalAccessPolicy) GetOdataType()(*string) {
     return nil
 }
 // GetResult gets the result property value. Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (policy isn't applied because policy conditions weren't met), notEnabled (this is due to the policy in a disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted.
+// returns a *AppliedConditionalAccessPolicyResult when successful
 func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPolicyResult) {
     val, err := m.GetBackingStore().Get("result")
     if err != nil {
@@ -315,6 +329,7 @@ func (m *AppliedConditionalAccessPolicy) GetResult()(*AppliedConditionalAccessPo
     return nil
 }
 // GetSessionControlsNotSatisfied gets the sessionControlsNotSatisfied property value. Refers to the session controls that a sign-in activity didn't satisfy. (Example: Application enforced Restrictions).
+// returns a []string when successful
 func (m *AppliedConditionalAccessPolicy) GetSessionControlsNotSatisfied()([]string) {
     val, err := m.GetBackingStore().Get("sessionControlsNotSatisfied")
     if err != nil {
@@ -517,7 +532,6 @@ func (m *AppliedConditionalAccessPolicy) SetSessionControlsNotSatisfied(value []
         panic(err)
     }
 }
-// AppliedConditionalAccessPolicyable 
 type AppliedConditionalAccessPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

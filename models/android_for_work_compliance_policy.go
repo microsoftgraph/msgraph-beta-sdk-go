@@ -8,7 +8,7 @@ import (
 type AndroidForWorkCompliancePolicy struct {
     DeviceCompliancePolicy
 }
-// NewAndroidForWorkCompliancePolicy instantiates a new androidForWorkCompliancePolicy and sets the default values.
+// NewAndroidForWorkCompliancePolicy instantiates a new AndroidForWorkCompliancePolicy and sets the default values.
 func NewAndroidForWorkCompliancePolicy()(*AndroidForWorkCompliancePolicy) {
     m := &AndroidForWorkCompliancePolicy{
         DeviceCompliancePolicy: *NewDeviceCompliancePolicy(),
@@ -18,10 +18,12 @@ func NewAndroidForWorkCompliancePolicy()(*AndroidForWorkCompliancePolicy) {
     return m
 }
 // CreateAndroidForWorkCompliancePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidForWorkCompliancePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidForWorkCompliancePolicy(), nil
 }
 // GetDeviceThreatProtectionEnabled gets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetDeviceThreatProtectionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("deviceThreatProtectionEnabled")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidForWorkCompliancePolicy) GetDeviceThreatProtectionEnabled()(*boo
     return nil
 }
 // GetDeviceThreatProtectionRequiredSecurityLevel gets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
+// returns a *DeviceThreatProtectionLevel when successful
 func (m *AndroidForWorkCompliancePolicy) GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel) {
     val, err := m.GetBackingStore().Get("deviceThreatProtectionRequiredSecurityLevel")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidForWorkCompliancePolicy) GetDeviceThreatProtectionRequiredSecuri
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidForWorkCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceCompliancePolicy.GetFieldDeserializers()
     res["deviceThreatProtectionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -286,9 +290,80 @@ func (m *AndroidForWorkCompliancePolicy) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["workProfileInactiveBeforeScreenLockInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkProfileInactiveBeforeScreenLockInMinutes(val)
+        }
+        return nil
+    }
+    res["workProfilePasswordExpirationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkProfilePasswordExpirationInDays(val)
+        }
+        return nil
+    }
+    res["workProfilePasswordMinimumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkProfilePasswordMinimumLength(val)
+        }
+        return nil
+    }
+    res["workProfilePasswordRequiredType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAndroidForWorkRequiredPasswordType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkProfilePasswordRequiredType(val.(*AndroidForWorkRequiredPasswordType))
+        }
+        return nil
+    }
+    res["workProfilePreviousPasswordBlockCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkProfilePreviousPasswordBlockCount(val)
+        }
+        return nil
+    }
+    res["workProfileRequiredPasswordComplexity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAndroidRequiredPasswordComplexity)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkProfileRequiredPasswordComplexity(val.(*AndroidRequiredPasswordComplexity))
+        }
+        return nil
+    }
+    res["workProfileRequirePassword"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkProfileRequirePassword(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMinAndroidSecurityPatchLevel gets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
+// returns a *string when successful
 func (m *AndroidForWorkCompliancePolicy) GetMinAndroidSecurityPatchLevel()(*string) {
     val, err := m.GetBackingStore().Get("minAndroidSecurityPatchLevel")
     if err != nil {
@@ -300,6 +375,7 @@ func (m *AndroidForWorkCompliancePolicy) GetMinAndroidSecurityPatchLevel()(*stri
     return nil
 }
 // GetOsMaximumVersion gets the osMaximumVersion property value. Maximum Android version.
+// returns a *string when successful
 func (m *AndroidForWorkCompliancePolicy) GetOsMaximumVersion()(*string) {
     val, err := m.GetBackingStore().Get("osMaximumVersion")
     if err != nil {
@@ -311,6 +387,7 @@ func (m *AndroidForWorkCompliancePolicy) GetOsMaximumVersion()(*string) {
     return nil
 }
 // GetOsMinimumVersion gets the osMinimumVersion property value. Minimum Android version.
+// returns a *string when successful
 func (m *AndroidForWorkCompliancePolicy) GetOsMinimumVersion()(*string) {
     val, err := m.GetBackingStore().Get("osMinimumVersion")
     if err != nil {
@@ -322,6 +399,7 @@ func (m *AndroidForWorkCompliancePolicy) GetOsMinimumVersion()(*string) {
     return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
+// returns a *int32 when successful
 func (m *AndroidForWorkCompliancePolicy) GetPasswordExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordExpirationDays")
     if err != nil {
@@ -333,6 +411,7 @@ func (m *AndroidForWorkCompliancePolicy) GetPasswordExpirationDays()(*int32) {
     return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
+// returns a *int32 when successful
 func (m *AndroidForWorkCompliancePolicy) GetPasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLength")
     if err != nil {
@@ -344,6 +423,7 @@ func (m *AndroidForWorkCompliancePolicy) GetPasswordMinimumLength()(*int32) {
     return nil
 }
 // GetPasswordMinutesOfInactivityBeforeLock gets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
+// returns a *int32 when successful
 func (m *AndroidForWorkCompliancePolicy) GetPasswordMinutesOfInactivityBeforeLock()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeLock")
     if err != nil {
@@ -355,6 +435,7 @@ func (m *AndroidForWorkCompliancePolicy) GetPasswordMinutesOfInactivityBeforeLoc
     return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 1 to 24
+// returns a *int32 when successful
 func (m *AndroidForWorkCompliancePolicy) GetPasswordPreviousPasswordBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
     if err != nil {
@@ -366,6 +447,7 @@ func (m *AndroidForWorkCompliancePolicy) GetPasswordPreviousPasswordBlockCount()
     return nil
 }
 // GetPasswordRequired gets the passwordRequired property value. Require a password to unlock device.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetPasswordRequired()(*bool) {
     val, err := m.GetBackingStore().Get("passwordRequired")
     if err != nil {
@@ -377,6 +459,7 @@ func (m *AndroidForWorkCompliancePolicy) GetPasswordRequired()(*bool) {
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Android required password type.
+// returns a *AndroidRequiredPasswordType when successful
 func (m *AndroidForWorkCompliancePolicy) GetPasswordRequiredType()(*AndroidRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
@@ -388,6 +471,7 @@ func (m *AndroidForWorkCompliancePolicy) GetPasswordRequiredType()(*AndroidRequi
     return nil
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign-in failures allowed before factory reset. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidForWorkCompliancePolicy) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     val, err := m.GetBackingStore().Get("passwordSignInFailureCountBeforeFactoryReset")
     if err != nil {
@@ -399,6 +483,7 @@ func (m *AndroidForWorkCompliancePolicy) GetPasswordSignInFailureCountBeforeFact
     return nil
 }
 // GetRequiredPasswordComplexity gets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+// returns a *AndroidRequiredPasswordComplexity when successful
 func (m *AndroidForWorkCompliancePolicy) GetRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
     val, err := m.GetBackingStore().Get("requiredPasswordComplexity")
     if err != nil {
@@ -410,6 +495,7 @@ func (m *AndroidForWorkCompliancePolicy) GetRequiredPasswordComplexity()(*Androi
     return nil
 }
 // GetSecurityBlockJailbrokenDevices gets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityBlockJailbrokenDevices()(*bool) {
     val, err := m.GetBackingStore().Get("securityBlockJailbrokenDevices")
     if err != nil {
@@ -421,6 +507,7 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityBlockJailbrokenDevices()(*bo
     return nil
 }
 // GetSecurityDisableUsbDebugging gets the securityDisableUsbDebugging property value. Disable USB debugging on Android devices.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityDisableUsbDebugging()(*bool) {
     val, err := m.GetBackingStore().Get("securityDisableUsbDebugging")
     if err != nil {
@@ -432,6 +519,7 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityDisableUsbDebugging()(*bool)
     return nil
 }
 // GetSecurityPreventInstallAppsFromUnknownSources gets the securityPreventInstallAppsFromUnknownSources property value. Require that devices disallow installation of apps from unknown sources.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityPreventInstallAppsFromUnknownSources()(*bool) {
     val, err := m.GetBackingStore().Get("securityPreventInstallAppsFromUnknownSources")
     if err != nil {
@@ -443,6 +531,7 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityPreventInstallAppsFromUnknow
     return nil
 }
 // GetSecurityRequireCompanyPortalAppIntegrity gets the securityRequireCompanyPortalAppIntegrity property value. Require the device to pass the Company Portal client app runtime integrity check.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireCompanyPortalAppIntegrity()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireCompanyPortalAppIntegrity")
     if err != nil {
@@ -454,6 +543,7 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireCompanyPortalAppInteg
     return nil
 }
 // GetSecurityRequiredAndroidSafetyNetEvaluationType gets the securityRequiredAndroidSafetyNetEvaluationType property value. An enum representing the Android Play Integrity API evaluation types.
+// returns a *AndroidSafetyNetEvaluationType when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequiredAndroidSafetyNetEvaluationType()(*AndroidSafetyNetEvaluationType) {
     val, err := m.GetBackingStore().Get("securityRequiredAndroidSafetyNetEvaluationType")
     if err != nil {
@@ -465,6 +555,7 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityRequiredAndroidSafetyNetEval
     return nil
 }
 // GetSecurityRequireGooglePlayServices gets the securityRequireGooglePlayServices property value. Require Google Play Services to be installed and enabled on the device.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireGooglePlayServices()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireGooglePlayServices")
     if err != nil {
@@ -476,6 +567,7 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireGooglePlayServices()(
     return nil
 }
 // GetSecurityRequireSafetyNetAttestationBasicIntegrity gets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the Play Integrity basic integrity check.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireSafetyNetAttestationBasicIntegrity()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireSafetyNetAttestationBasicIntegrity")
     if err != nil {
@@ -487,6 +579,7 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireSafetyNetAttestationB
     return nil
 }
 // GetSecurityRequireSafetyNetAttestationCertifiedDevice gets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the Play Integrity device integrity check.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireSafetyNetAttestationCertifiedDevice()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireSafetyNetAttestationCertifiedDevice")
     if err != nil {
@@ -498,6 +591,7 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireSafetyNetAttestationC
     return nil
 }
 // GetSecurityRequireUpToDateSecurityProviders gets the securityRequireUpToDateSecurityProviders property value. Require the device to have up to date security providers. The device will require Google Play Services to be enabled and up to date.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireUpToDateSecurityProviders()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireUpToDateSecurityProviders")
     if err != nil {
@@ -509,6 +603,7 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireUpToDateSecurityProvi
     return nil
 }
 // GetSecurityRequireVerifyApps gets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireVerifyApps()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireVerifyApps")
     if err != nil {
@@ -520,8 +615,93 @@ func (m *AndroidForWorkCompliancePolicy) GetSecurityRequireVerifyApps()(*bool) {
     return nil
 }
 // GetStorageRequireEncryption gets the storageRequireEncryption property value. Require encryption on Android devices.
+// returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetStorageRequireEncryption()(*bool) {
     val, err := m.GetBackingStore().Get("storageRequireEncryption")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetWorkProfileInactiveBeforeScreenLockInMinutes gets the workProfileInactiveBeforeScreenLockInMinutes property value. Minutes of inactivity before the screen times out.
+// returns a *int32 when successful
+func (m *AndroidForWorkCompliancePolicy) GetWorkProfileInactiveBeforeScreenLockInMinutes()(*int32) {
+    val, err := m.GetBackingStore().Get("workProfileInactiveBeforeScreenLockInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetWorkProfilePasswordExpirationInDays gets the workProfilePasswordExpirationInDays property value. Number of days before the work profile password expires. Valid values 1 to 365
+// returns a *int32 when successful
+func (m *AndroidForWorkCompliancePolicy) GetWorkProfilePasswordExpirationInDays()(*int32) {
+    val, err := m.GetBackingStore().Get("workProfilePasswordExpirationInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetWorkProfilePasswordMinimumLength gets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
+// returns a *int32 when successful
+func (m *AndroidForWorkCompliancePolicy) GetWorkProfilePasswordMinimumLength()(*int32) {
+    val, err := m.GetBackingStore().Get("workProfilePasswordMinimumLength")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Android For Work required password type.
+// returns a *AndroidForWorkRequiredPasswordType when successful
+func (m *AndroidForWorkCompliancePolicy) GetWorkProfilePasswordRequiredType()(*AndroidForWorkRequiredPasswordType) {
+    val, err := m.GetBackingStore().Get("workProfilePasswordRequiredType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidForWorkRequiredPasswordType)
+    }
+    return nil
+}
+// GetWorkProfilePreviousPasswordBlockCount gets the workProfilePreviousPasswordBlockCount property value. Number of previous work profile passwords to block. Valid values 0 to 24
+// returns a *int32 when successful
+func (m *AndroidForWorkCompliancePolicy) GetWorkProfilePreviousPasswordBlockCount()(*int32) {
+    val, err := m.GetBackingStore().Get("workProfilePreviousPasswordBlockCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetWorkProfileRequiredPasswordComplexity gets the workProfileRequiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+// returns a *AndroidRequiredPasswordComplexity when successful
+func (m *AndroidForWorkCompliancePolicy) GetWorkProfileRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
+    val, err := m.GetBackingStore().Get("workProfileRequiredPasswordComplexity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidRequiredPasswordComplexity)
+    }
+    return nil
+}
+// GetWorkProfileRequirePassword gets the workProfileRequirePassword property value. Password is required or not for work profile
+// returns a *bool when successful
+func (m *AndroidForWorkCompliancePolicy) GetWorkProfileRequirePassword()(*bool) {
+    val, err := m.GetBackingStore().Get("workProfileRequirePassword")
     if err != nil {
         panic(err)
     }
@@ -680,6 +860,50 @@ func (m *AndroidForWorkCompliancePolicy) Serialize(writer i878a80d2330e89d268963
     }
     {
         err = writer.WriteBoolValue("storageRequireEncryption", m.GetStorageRequireEncryption())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("workProfileInactiveBeforeScreenLockInMinutes", m.GetWorkProfileInactiveBeforeScreenLockInMinutes())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("workProfilePasswordExpirationInDays", m.GetWorkProfilePasswordExpirationInDays())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("workProfilePasswordMinimumLength", m.GetWorkProfilePasswordMinimumLength())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetWorkProfilePasswordRequiredType() != nil {
+        cast := (*m.GetWorkProfilePasswordRequiredType()).String()
+        err = writer.WriteStringValue("workProfilePasswordRequiredType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("workProfilePreviousPasswordBlockCount", m.GetWorkProfilePreviousPasswordBlockCount())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetWorkProfileRequiredPasswordComplexity() != nil {
+        cast := (*m.GetWorkProfileRequiredPasswordComplexity()).String()
+        err = writer.WriteStringValue("workProfileRequiredPasswordComplexity", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("workProfileRequirePassword", m.GetWorkProfileRequirePassword())
         if err != nil {
             return err
         }
@@ -854,7 +1078,55 @@ func (m *AndroidForWorkCompliancePolicy) SetStorageRequireEncryption(value *bool
         panic(err)
     }
 }
-// AndroidForWorkCompliancePolicyable 
+// SetWorkProfileInactiveBeforeScreenLockInMinutes sets the workProfileInactiveBeforeScreenLockInMinutes property value. Minutes of inactivity before the screen times out.
+func (m *AndroidForWorkCompliancePolicy) SetWorkProfileInactiveBeforeScreenLockInMinutes(value *int32)() {
+    err := m.GetBackingStore().Set("workProfileInactiveBeforeScreenLockInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWorkProfilePasswordExpirationInDays sets the workProfilePasswordExpirationInDays property value. Number of days before the work profile password expires. Valid values 1 to 365
+func (m *AndroidForWorkCompliancePolicy) SetWorkProfilePasswordExpirationInDays(value *int32)() {
+    err := m.GetBackingStore().Set("workProfilePasswordExpirationInDays", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWorkProfilePasswordMinimumLength sets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
+func (m *AndroidForWorkCompliancePolicy) SetWorkProfilePasswordMinimumLength(value *int32)() {
+    err := m.GetBackingStore().Set("workProfilePasswordMinimumLength", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWorkProfilePasswordRequiredType sets the workProfilePasswordRequiredType property value. Android For Work required password type.
+func (m *AndroidForWorkCompliancePolicy) SetWorkProfilePasswordRequiredType(value *AndroidForWorkRequiredPasswordType)() {
+    err := m.GetBackingStore().Set("workProfilePasswordRequiredType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWorkProfilePreviousPasswordBlockCount sets the workProfilePreviousPasswordBlockCount property value. Number of previous work profile passwords to block. Valid values 0 to 24
+func (m *AndroidForWorkCompliancePolicy) SetWorkProfilePreviousPasswordBlockCount(value *int32)() {
+    err := m.GetBackingStore().Set("workProfilePreviousPasswordBlockCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWorkProfileRequiredPasswordComplexity sets the workProfileRequiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+func (m *AndroidForWorkCompliancePolicy) SetWorkProfileRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)() {
+    err := m.GetBackingStore().Set("workProfileRequiredPasswordComplexity", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWorkProfileRequirePassword sets the workProfileRequirePassword property value. Password is required or not for work profile
+func (m *AndroidForWorkCompliancePolicy) SetWorkProfileRequirePassword(value *bool)() {
+    err := m.GetBackingStore().Set("workProfileRequirePassword", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AndroidForWorkCompliancePolicyable interface {
     DeviceCompliancePolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -882,6 +1154,13 @@ type AndroidForWorkCompliancePolicyable interface {
     GetSecurityRequireUpToDateSecurityProviders()(*bool)
     GetSecurityRequireVerifyApps()(*bool)
     GetStorageRequireEncryption()(*bool)
+    GetWorkProfileInactiveBeforeScreenLockInMinutes()(*int32)
+    GetWorkProfilePasswordExpirationInDays()(*int32)
+    GetWorkProfilePasswordMinimumLength()(*int32)
+    GetWorkProfilePasswordRequiredType()(*AndroidForWorkRequiredPasswordType)
+    GetWorkProfilePreviousPasswordBlockCount()(*int32)
+    GetWorkProfileRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity)
+    GetWorkProfileRequirePassword()(*bool)
     SetDeviceThreatProtectionEnabled(value *bool)()
     SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)()
     SetMinAndroidSecurityPatchLevel(value *string)()
@@ -906,4 +1185,11 @@ type AndroidForWorkCompliancePolicyable interface {
     SetSecurityRequireUpToDateSecurityProviders(value *bool)()
     SetSecurityRequireVerifyApps(value *bool)()
     SetStorageRequireEncryption(value *bool)()
+    SetWorkProfileInactiveBeforeScreenLockInMinutes(value *int32)()
+    SetWorkProfilePasswordExpirationInDays(value *int32)()
+    SetWorkProfilePasswordMinimumLength(value *int32)()
+    SetWorkProfilePasswordRequiredType(value *AndroidForWorkRequiredPasswordType)()
+    SetWorkProfilePreviousPasswordBlockCount(value *int32)()
+    SetWorkProfileRequiredPasswordComplexity(value *AndroidRequiredPasswordComplexity)()
+    SetWorkProfileRequirePassword(value *bool)()
 }

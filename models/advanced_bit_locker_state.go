@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Advanced BitLocker State
@@ -8,46 +9,48 @@ type AdvancedBitLockerState int
 
 const (
     // Advanced BitLocker State Success
-    SUCCESS_ADVANCEDBITLOCKERSTATE AdvancedBitLockerState = iota
+    SUCCESS_ADVANCEDBITLOCKERSTATE = 1
     // User never gave consent for Encryption
-    NOUSERCONSENT_ADVANCEDBITLOCKERSTATE
+    NOUSERCONSENT_ADVANCEDBITLOCKERSTATE = 2
     // Un-protected OS Volume was detected
-    OSVOLUMEUNPROTECTED_ADVANCEDBITLOCKERSTATE
+    OSVOLUMEUNPROTECTED_ADVANCEDBITLOCKERSTATE = 4
     // TPM not used for protection of OS volume, but is required by policy
-    OSVOLUMETPMREQUIRED_ADVANCEDBITLOCKERSTATE
+    OSVOLUMETPMREQUIRED_ADVANCEDBITLOCKERSTATE = 8
     // TPM only protection not used for OS volume, but is required by policy
-    OSVOLUMETPMONLYREQUIRED_ADVANCEDBITLOCKERSTATE
+    OSVOLUMETPMONLYREQUIRED_ADVANCEDBITLOCKERSTATE = 16
     // TPM+PIN protection not used for OS volume, but is required by policy
-    OSVOLUMETPMPINREQUIRED_ADVANCEDBITLOCKERSTATE
+    OSVOLUMETPMPINREQUIRED_ADVANCEDBITLOCKERSTATE = 32
     // TPM+Startup Key protection not used for OS volume, but is required by policy
-    OSVOLUMETPMSTARTUPKEYREQUIRED_ADVANCEDBITLOCKERSTATE
+    OSVOLUMETPMSTARTUPKEYREQUIRED_ADVANCEDBITLOCKERSTATE = 64
     // TPM+PIN+Startup Key not used for OS volume, but is required by policy
-    OSVOLUMETPMPINSTARTUPKEYREQUIRED_ADVANCEDBITLOCKERSTATE
+    OSVOLUMETPMPINSTARTUPKEYREQUIRED_ADVANCEDBITLOCKERSTATE = 128
     // Encryption method of OS Volume is different than that set by policy
-    OSVOLUMEENCRYPTIONMETHODMISMATCH_ADVANCEDBITLOCKERSTATE
+    OSVOLUMEENCRYPTIONMETHODMISMATCH_ADVANCEDBITLOCKERSTATE = 256
     // Recovery key backup failed
-    RECOVERYKEYBACKUPFAILED_ADVANCEDBITLOCKERSTATE
+    RECOVERYKEYBACKUPFAILED_ADVANCEDBITLOCKERSTATE = 512
     // Fixed Drive not encrypted
-    FIXEDDRIVENOTENCRYPTED_ADVANCEDBITLOCKERSTATE
+    FIXEDDRIVENOTENCRYPTED_ADVANCEDBITLOCKERSTATE = 1024
     // Encryption method of Fixed Drive is different than that set by policy
-    FIXEDDRIVEENCRYPTIONMETHODMISMATCH_ADVANCEDBITLOCKERSTATE
+    FIXEDDRIVEENCRYPTIONMETHODMISMATCH_ADVANCEDBITLOCKERSTATE = 2048
     // Logged on user is non-admin. This requires “AllowStandardUserEncryption” policy set to 1
-    LOGGEDONUSERNONADMIN_ADVANCEDBITLOCKERSTATE
+    LOGGEDONUSERNONADMIN_ADVANCEDBITLOCKERSTATE = 4096
     // WinRE is not configured
-    WINDOWSRECOVERYENVIRONMENTNOTCONFIGURED_ADVANCEDBITLOCKERSTATE
+    WINDOWSRECOVERYENVIRONMENTNOTCONFIGURED_ADVANCEDBITLOCKERSTATE = 8192
     // TPM is not available for BitLocker. This means TPM is not present, or TPM unavailable registry override is set or host OS is on portable/rome-able drive
-    TPMNOTAVAILABLE_ADVANCEDBITLOCKERSTATE
+    TPMNOTAVAILABLE_ADVANCEDBITLOCKERSTATE = 16384
     // TPM is not ready for BitLocker
-    TPMNOTREADY_ADVANCEDBITLOCKERSTATE
+    TPMNOTREADY_ADVANCEDBITLOCKERSTATE = 32768
     // Network not available. This is required for recovery key backup. This is reported for Drive Encryption capable devices
-    NETWORKERROR_ADVANCEDBITLOCKERSTATE
+    NETWORKERROR_ADVANCEDBITLOCKERSTATE = 65536
 )
 
 func (i AdvancedBitLockerState) String() string {
     var values []string
-    for p := AdvancedBitLockerState(1); p <= NETWORKERROR_ADVANCEDBITLOCKERSTATE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"success", "noUserConsent", "osVolumeUnprotected", "osVolumeTpmRequired", "osVolumeTpmOnlyRequired", "osVolumeTpmPinRequired", "osVolumeTpmStartupKeyRequired", "osVolumeTpmPinStartupKeyRequired", "osVolumeEncryptionMethodMismatch", "recoveryKeyBackupFailed", "fixedDriveNotEncrypted", "fixedDriveEncryptionMethodMismatch", "loggedOnUserNonAdmin", "windowsRecoveryEnvironmentNotConfigured", "tpmNotAvailable", "tpmNotReady", "networkError"}[p])
+    options := []string{"success", "noUserConsent", "osVolumeUnprotected", "osVolumeTpmRequired", "osVolumeTpmOnlyRequired", "osVolumeTpmPinRequired", "osVolumeTpmStartupKeyRequired", "osVolumeTpmPinStartupKeyRequired", "osVolumeEncryptionMethodMismatch", "recoveryKeyBackupFailed", "fixedDriveNotEncrypted", "fixedDriveEncryptionMethodMismatch", "loggedOnUserNonAdmin", "windowsRecoveryEnvironmentNotConfigured", "tpmNotAvailable", "tpmNotReady", "networkError"}
+    for p := 0; p < 17; p++ {
+        mantis := AdvancedBitLockerState(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

@@ -1,22 +1,24 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type ExportLocation int
 
 const (
-    RESPONSIVELOCATIONS_EXPORTLOCATION ExportLocation = iota
-    NONRESPONSIVELOCATIONS_EXPORTLOCATION
-    UNKNOWNFUTUREVALUE_EXPORTLOCATION
+    RESPONSIVELOCATIONS_EXPORTLOCATION = 1
+    NONRESPONSIVELOCATIONS_EXPORTLOCATION = 2
+    UNKNOWNFUTUREVALUE_EXPORTLOCATION = 4
 )
 
 func (i ExportLocation) String() string {
     var values []string
-    for p := ExportLocation(1); p <= UNKNOWNFUTUREVALUE_EXPORTLOCATION; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"responsiveLocations", "nonresponsiveLocations", "unknownFutureValue"}[p])
+    options := []string{"responsiveLocations", "nonresponsiveLocations", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := ExportLocation(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

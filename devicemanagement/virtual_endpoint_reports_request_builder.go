@@ -41,28 +41,28 @@ type VirtualEndpointReportsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewVirtualEndpointReportsRequestBuilderInternal instantiates a new ReportsRequestBuilder and sets the default values.
+// NewVirtualEndpointReportsRequestBuilderInternal instantiates a new VirtualEndpointReportsRequestBuilder and sets the default values.
 func NewVirtualEndpointReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointReportsRequestBuilder) {
     m := &VirtualEndpointReportsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointReportsRequestBuilder instantiates a new ReportsRequestBuilder and sets the default values.
+// NewVirtualEndpointReportsRequestBuilder instantiates a new VirtualEndpointReportsRequestBuilder and sets the default values.
 func NewVirtualEndpointReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointReportsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property reports for deviceManagement
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointReportsRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointReportsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,18 +71,20 @@ func (m *VirtualEndpointReportsRequestBuilder) Delete(ctx context.Context, reque
     return nil
 }
 // ExportJobs provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.
+// returns a *VirtualEndpointReportsExportJobsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) ExportJobs()(*VirtualEndpointReportsExportJobsRequestBuilder) {
     return NewVirtualEndpointReportsExportJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get cloud PC related reports.
+// returns a CloudPcReportsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPcReportsFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,66 +96,80 @@ func (m *VirtualEndpointReportsRequestBuilder) Get(ctx context.Context, requestC
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable), nil
 }
 // GetActionStatusReports provides operations to call the getActionStatusReports method.
+// returns a *VirtualEndpointReportsGetActionStatusReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetActionStatusReports()(*VirtualEndpointReportsGetActionStatusReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetActionStatusReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetCloudPcPerformanceReport provides operations to call the getCloudPcPerformanceReport method.
+// returns a *VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetCloudPcPerformanceReport()(*VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilder) {
     return NewVirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetCloudPcRecommendationReports provides operations to call the getCloudPcRecommendationReports method.
+// returns a *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetCloudPcRecommendationReports()(*VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetConnectionQualityReports provides operations to call the getConnectionQualityReports method.
+// returns a *VirtualEndpointReportsGetConnectionQualityReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetConnectionQualityReports()(*VirtualEndpointReportsGetConnectionQualityReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetConnectionQualityReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetDailyAggregatedRemoteConnectionReports provides operations to call the getDailyAggregatedRemoteConnectionReports method.
+// returns a *VirtualEndpointReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetDailyAggregatedRemoteConnectionReports()(*VirtualEndpointReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetFrontlineReport provides operations to call the getFrontlineReport method.
+// returns a *VirtualEndpointReportsGetFrontlineReportRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetFrontlineReport()(*VirtualEndpointReportsGetFrontlineReportRequestBuilder) {
     return NewVirtualEndpointReportsGetFrontlineReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetInaccessibleCloudPcReports provides operations to call the getInaccessibleCloudPcReports method.
+// returns a *VirtualEndpointReportsGetInaccessibleCloudPcReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetInaccessibleCloudPcReports()(*VirtualEndpointReportsGetInaccessibleCloudPcReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetInaccessibleCloudPcReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetRawRemoteConnectionReports provides operations to call the getRawRemoteConnectionReports method.
+// returns a *VirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetRawRemoteConnectionReports()(*VirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetRealTimeRemoteConnectionLatencyWithCloudPcId provides operations to call the getRealTimeRemoteConnectionLatency method.
+// returns a *VirtualEndpointReportsGetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetRealTimeRemoteConnectionLatencyWithCloudPcId(cloudPcId *string)(*VirtualEndpointReportsGetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder) {
     return NewVirtualEndpointReportsGetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, cloudPcId)
 }
 // GetRealTimeRemoteConnectionStatusWithCloudPcId provides operations to call the getRealTimeRemoteConnectionStatus method.
+// returns a *VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetRealTimeRemoteConnectionStatusWithCloudPcId(cloudPcId *string)(*VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder) {
     return NewVirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, cloudPcId)
 }
 // GetRemoteConnectionHistoricalReports provides operations to call the getRemoteConnectionHistoricalReports method.
+// returns a *VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetRemoteConnectionHistoricalReports()(*VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetSharedUseLicenseUsageReport provides operations to call the getSharedUseLicenseUsageReport method.
+// returns a *VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetSharedUseLicenseUsageReport()(*VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder) {
     return NewVirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetTotalAggregatedRemoteConnectionReports provides operations to call the getTotalAggregatedRemoteConnectionReports method.
+// returns a *VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetTotalAggregatedRemoteConnectionReports()(*VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property reports in deviceManagement
+// returns a CloudPcReportsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable, requestConfiguration *VirtualEndpointReportsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPcReportsFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -165,12 +181,14 @@ func (m *VirtualEndpointReportsRequestBuilder) Patch(ctx context.Context, body i
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable), nil
 }
 // RetrieveCrossRegionDisasterRecoveryReport provides operations to call the retrieveCrossRegionDisasterRecoveryReport method.
+// returns a *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) RetrieveCrossRegionDisasterRecoveryReport()(*VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilder) {
     return NewVirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property reports for deviceManagement
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointReportsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceManagement/virtualEndpoint/reports", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -179,6 +197,7 @@ func (m *VirtualEndpointReportsRequestBuilder) ToDeleteRequestInformation(ctx co
     return requestInfo, nil
 }
 // ToGetRequestInformation cloud PC related reports.
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -192,8 +211,9 @@ func (m *VirtualEndpointReportsRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property reports in deviceManagement
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable, requestConfiguration *VirtualEndpointReportsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement/virtualEndpoint/reports", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -206,6 +226,7 @@ func (m *VirtualEndpointReportsRequestBuilder) ToPatchRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEndpointReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointReportsRequestBuilder) {
     return NewVirtualEndpointReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

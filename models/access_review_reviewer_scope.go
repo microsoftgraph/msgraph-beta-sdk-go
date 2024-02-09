@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessReviewReviewerScope 
 type AccessReviewReviewerScope struct {
     AccessReviewScope
 }
-// NewAccessReviewReviewerScope instantiates a new accessReviewReviewerScope and sets the default values.
+// NewAccessReviewReviewerScope instantiates a new AccessReviewReviewerScope and sets the default values.
 func NewAccessReviewReviewerScope()(*AccessReviewReviewerScope) {
     m := &AccessReviewReviewerScope{
         AccessReviewScope: *NewAccessReviewScope(),
@@ -18,10 +17,12 @@ func NewAccessReviewReviewerScope()(*AccessReviewReviewerScope) {
     return m
 }
 // CreateAccessReviewReviewerScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewReviewerScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewReviewerScope(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewReviewerScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewScope.GetFieldDeserializers()
     res["query"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +58,7 @@ func (m *AccessReviewReviewerScope) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetQuery gets the query property value. The query specifying who will be the reviewer.
+// returns a *string when successful
 func (m *AccessReviewReviewerScope) GetQuery()(*string) {
     val, err := m.GetBackingStore().Get("query")
     if err != nil {
@@ -68,6 +70,7 @@ func (m *AccessReviewReviewerScope) GetQuery()(*string) {
     return nil
 }
 // GetQueryRoot gets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
+// returns a *string when successful
 func (m *AccessReviewReviewerScope) GetQueryRoot()(*string) {
     val, err := m.GetBackingStore().Get("queryRoot")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *AccessReviewReviewerScope) GetQueryRoot()(*string) {
     return nil
 }
 // GetQueryType gets the queryType property value. The type of query. Examples include MicrosoftGraph and ARM.
+// returns a *string when successful
 func (m *AccessReviewReviewerScope) GetQueryType()(*string) {
     val, err := m.GetBackingStore().Get("queryType")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *AccessReviewReviewerScope) SetQueryType(value *string)() {
         panic(err)
     }
 }
-// AccessReviewReviewerScopeable 
 type AccessReviewReviewerScopeable interface {
     AccessReviewScopeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

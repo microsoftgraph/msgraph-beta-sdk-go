@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AzureServerlessFunction 
 type AzureServerlessFunction struct {
     AzureIdentity
 }
-// NewAzureServerlessFunction instantiates a new azureServerlessFunction and sets the default values.
+// NewAzureServerlessFunction instantiates a new AzureServerlessFunction and sets the default values.
 func NewAzureServerlessFunction()(*AzureServerlessFunction) {
     m := &AzureServerlessFunction{
         AzureIdentity: *NewAzureIdentity(),
@@ -18,10 +17,12 @@ func NewAzureServerlessFunction()(*AzureServerlessFunction) {
     return m
 }
 // CreateAzureServerlessFunctionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAzureServerlessFunctionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureServerlessFunction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureServerlessFunction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AzureIdentity.GetFieldDeserializers()
     res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *AzureServerlessFunction) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetResource gets the resource property value. Represents the resources in an authorization system.
+// returns a AzureAuthorizationSystemResourceable when successful
 func (m *AzureServerlessFunction) GetResource()(AzureAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *AzureServerlessFunction) SetResource(value AzureAuthorizationSystemReso
         panic(err)
     }
 }
-// AzureServerlessFunctionable 
 type AzureServerlessFunctionable interface {
     AzureIdentityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

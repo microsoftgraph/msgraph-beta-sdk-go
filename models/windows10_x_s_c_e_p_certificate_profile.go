@@ -9,7 +9,7 @@ import (
 type Windows10XSCEPCertificateProfile struct {
     Windows10XCertificateProfile
 }
-// NewWindows10XSCEPCertificateProfile instantiates a new windows10XSCEPCertificateProfile and sets the default values.
+// NewWindows10XSCEPCertificateProfile instantiates a new Windows10XSCEPCertificateProfile and sets the default values.
 func NewWindows10XSCEPCertificateProfile()(*Windows10XSCEPCertificateProfile) {
     m := &Windows10XSCEPCertificateProfile{
         Windows10XCertificateProfile: *NewWindows10XCertificateProfile(),
@@ -19,10 +19,12 @@ func NewWindows10XSCEPCertificateProfile()(*Windows10XSCEPCertificateProfile) {
     return m
 }
 // CreateWindows10XSCEPCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10XSCEPCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10XSCEPCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. CertificateStore types
+// returns a *CertificateStore when successful
 func (m *Windows10XSCEPCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *Windows10XSCEPCertificateProfile) GetCertificateStore()(*CertificateSto
     return nil
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
+// returns a *CertificateValidityPeriodScale when successful
 func (m *Windows10XSCEPCertificateProfile) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     val, err := m.GetBackingStore().Get("certificateValidityPeriodScale")
     if err != nil {
@@ -45,6 +48,7 @@ func (m *Windows10XSCEPCertificateProfile) GetCertificateValidityPeriodScale()(*
     return nil
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period
+// returns a *int32 when successful
 func (m *Windows10XSCEPCertificateProfile) GetCertificateValidityPeriodValue()(*int32) {
     val, err := m.GetBackingStore().Get("certificateValidityPeriodValue")
     if err != nil {
@@ -56,6 +60,7 @@ func (m *Windows10XSCEPCertificateProfile) GetCertificateValidityPeriodValue()(*
     return nil
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings.
+// returns a []ExtendedKeyUsageable when successful
 func (m *Windows10XSCEPCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
     val, err := m.GetBackingStore().Get("extendedKeyUsages")
     if err != nil {
@@ -67,6 +72,7 @@ func (m *Windows10XSCEPCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyU
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Windows10XCertificateProfile.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -226,6 +232,7 @@ func (m *Windows10XSCEPCertificateProfile) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. SCEP Hash Algorithm.
+// returns a []HashAlgorithms when successful
 func (m *Windows10XSCEPCertificateProfile) GetHashAlgorithm()([]HashAlgorithms) {
     val, err := m.GetBackingStore().Get("hashAlgorithm")
     if err != nil {
@@ -237,6 +244,7 @@ func (m *Windows10XSCEPCertificateProfile) GetHashAlgorithm()([]HashAlgorithms) 
     return nil
 }
 // GetKeySize gets the keySize property value. Key Size Options.
+// returns a *KeySize when successful
 func (m *Windows10XSCEPCertificateProfile) GetKeySize()(*KeySize) {
     val, err := m.GetBackingStore().Get("keySize")
     if err != nil {
@@ -248,6 +256,7 @@ func (m *Windows10XSCEPCertificateProfile) GetKeySize()(*KeySize) {
     return nil
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
+// returns a *KeyStorageProviderOption when successful
 func (m *Windows10XSCEPCertificateProfile) GetKeyStorageProvider()(*KeyStorageProviderOption) {
     val, err := m.GetBackingStore().Get("keyStorageProvider")
     if err != nil {
@@ -259,6 +268,7 @@ func (m *Windows10XSCEPCertificateProfile) GetKeyStorageProvider()(*KeyStoragePr
     return nil
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
+// returns a *KeyUsages when successful
 func (m *Windows10XSCEPCertificateProfile) GetKeyUsage()(*KeyUsages) {
     val, err := m.GetBackingStore().Get("keyUsage")
     if err != nil {
@@ -270,6 +280,7 @@ func (m *Windows10XSCEPCertificateProfile) GetKeyUsage()(*KeyUsages) {
     return nil
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage
+// returns a *int32 when successful
 func (m *Windows10XSCEPCertificateProfile) GetRenewalThresholdPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("renewalThresholdPercentage")
     if err != nil {
@@ -281,6 +292,7 @@ func (m *Windows10XSCEPCertificateProfile) GetRenewalThresholdPercentage()(*int3
     return nil
 }
 // GetRootCertificateId gets the rootCertificateId property value. Trusted Root Certificate ID
+// returns a *UUID when successful
 func (m *Windows10XSCEPCertificateProfile) GetRootCertificateId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("rootCertificateId")
     if err != nil {
@@ -292,6 +304,7 @@ func (m *Windows10XSCEPCertificateProfile) GetRootCertificateId()(*i561e97a8befe
     return nil
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s).
+// returns a []string when successful
 func (m *Windows10XSCEPCertificateProfile) GetScepServerUrls()([]string) {
     val, err := m.GetBackingStore().Get("scepServerUrls")
     if err != nil {
@@ -303,6 +316,7 @@ func (m *Windows10XSCEPCertificateProfile) GetScepServerUrls()([]string) {
     return nil
 }
 // GetSubjectAlternativeNameFormats gets the subjectAlternativeNameFormats property value. Custom AAD Attributes.
+// returns a []Windows10XCustomSubjectAlternativeNameable when successful
 func (m *Windows10XSCEPCertificateProfile) GetSubjectAlternativeNameFormats()([]Windows10XCustomSubjectAlternativeNameable) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameFormats")
     if err != nil {
@@ -314,6 +328,7 @@ func (m *Windows10XSCEPCertificateProfile) GetSubjectAlternativeNameFormats()([]
     return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
+// returns a *string when successful
 func (m *Windows10XSCEPCertificateProfile) GetSubjectNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectNameFormatString")
     if err != nil {
@@ -518,7 +533,6 @@ func (m *Windows10XSCEPCertificateProfile) SetSubjectNameFormatString(value *str
         panic(err)
     }
 }
-// Windows10XSCEPCertificateProfileable 
 type Windows10XSCEPCertificateProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Windows10XCertificateProfileable

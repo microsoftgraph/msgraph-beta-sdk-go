@@ -40,6 +40,7 @@ type CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderGetReque
     QueryParameters *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderGetQueryParameters
 }
 // BySalesCreditMemoLineId provides operations to manage the salesCreditMemoLines property of the microsoft.graph.salesCreditMemo entity.
+// returns a *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder when successful
 func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) BySalesCreditMemoLineId(salesCreditMemoLineId string)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) By
     }
     return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderInternal instantiates a new SalesCreditMemoLinesRequestBuilder and sets the default values.
+// NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderInternal instantiates a new CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder and sets the default values.
 func NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) {
     m := &CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemos/{salesCreditMemo%2Did}/salesCreditMemoLines{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemos/{salesCreditMemo%2Did}/salesCreditMemoLines{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder instantiates a new SalesCreditMemoLinesRequestBuilder and sets the default values.
+// NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder instantiates a new CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder and sets the default values.
 func NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesCountRequestBuilder when successful
 func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) Count()(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesCountRequestBuilder) {
     return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get salesCreditMemoLines from financials
+// returns a SalesCreditMemoLineCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesCreditMemoLineCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesCreditMemoLineCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) Ge
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesCreditMemoLineCollectionResponseable), nil
 }
 // ToGetRequestInformation get salesCreditMemoLines from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder when successful
 func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder) {
     return NewCompaniesItemSalesCreditMemosItemSalesCreditMemoLinesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

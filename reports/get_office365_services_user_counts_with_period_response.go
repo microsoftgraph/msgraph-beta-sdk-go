@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GetOffice365ServicesUserCountsWithPeriodResponse 
-// Deprecated: This class is obsolete. Use getOffice365ServicesUserCountsWithPeriodGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type GetOffice365ServicesUserCountsWithPeriodResponse struct {
     GetOffice365ServicesUserCountsWithPeriodGetResponse
 }
@@ -17,11 +16,11 @@ func NewGetOffice365ServicesUserCountsWithPeriodResponse()(*GetOffice365Services
     return m
 }
 // CreateGetOffice365ServicesUserCountsWithPeriodResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGetOffice365ServicesUserCountsWithPeriodResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetOffice365ServicesUserCountsWithPeriodResponse(), nil
 }
-// GetOffice365ServicesUserCountsWithPeriodResponseable 
-// Deprecated: This class is obsolete. Use getOffice365ServicesUserCountsWithPeriodGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type GetOffice365ServicesUserCountsWithPeriodResponseable interface {
     GetOffice365ServicesUserCountsWithPeriodGetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

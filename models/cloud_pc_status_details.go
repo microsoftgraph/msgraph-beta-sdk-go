@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcStatusDetails 
 type CloudPcStatusDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcStatusDetails instantiates a new cloudPcStatusDetails and sets the default values.
+// NewCloudPcStatusDetails instantiates a new CloudPcStatusDetails and sets the default values.
 func NewCloudPcStatusDetails()(*CloudPcStatusDetails) {
     m := &CloudPcStatusDetails{
     }
@@ -19,10 +18,12 @@ func NewCloudPcStatusDetails()(*CloudPcStatusDetails) {
     return m
 }
 // CreateCloudPcStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcStatusDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcStatusDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcStatusDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *CloudPcStatusDetails) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAdditionalInformation gets the additionalInformation property value. Any additional information about the Cloud PC status.
+// returns a []KeyValuePairable when successful
 func (m *CloudPcStatusDetails) GetAdditionalInformation()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("additionalInformation")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *CloudPcStatusDetails) GetAdditionalInformation()([]KeyValuePairable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcStatusDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCode gets the code property value. The code associated with the Cloud PC status.
+// returns a *string when successful
 func (m *CloudPcStatusDetails) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *CloudPcStatusDetails) GetCode()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcStatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["additionalInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +117,7 @@ func (m *CloudPcStatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetMessage gets the message property value. The status message.
+// returns a *string when successful
 func (m *CloudPcStatusDetails) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *CloudPcStatusDetails) GetMessage()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcStatusDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *CloudPcStatusDetails) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// CloudPcStatusDetailsable 
 type CloudPcStatusDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -11,7 +11,7 @@ type AssignmentFilterEvaluationSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAssignmentFilterEvaluationSummary instantiates a new assignmentFilterEvaluationSummary and sets the default values.
+// NewAssignmentFilterEvaluationSummary instantiates a new AssignmentFilterEvaluationSummary and sets the default values.
 func NewAssignmentFilterEvaluationSummary()(*AssignmentFilterEvaluationSummary) {
     m := &AssignmentFilterEvaluationSummary{
     }
@@ -20,10 +20,12 @@ func NewAssignmentFilterEvaluationSummary()(*AssignmentFilterEvaluationSummary) 
     return m
 }
 // CreateAssignmentFilterEvaluationSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAssignmentFilterEvaluationSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignmentFilterEvaluationSummary(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AssignmentFilterEvaluationSummary) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +38,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAdditionalData()(map[string]any) 
     return val.(map[string]any)
 }
 // GetAssignmentFilterDisplayName gets the assignmentFilterDisplayName property value. The admin defined name for assignment filter.
+// returns a *string when successful
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("assignmentFilterDisplayName")
     if err != nil {
@@ -47,6 +50,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterDisplayName()(*st
     return nil
 }
 // GetAssignmentFilterId gets the assignmentFilterId property value. Unique identifier for the assignment filter object
+// returns a *string when successful
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterId()(*string) {
     val, err := m.GetBackingStore().Get("assignmentFilterId")
     if err != nil {
@@ -58,6 +62,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterId()(*string) {
     return nil
 }
 // GetAssignmentFilterLastModifiedDateTime gets the assignmentFilterLastModifiedDateTime property value. The time the assignment filter was last modified.
+// returns a *Time when successful
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("assignmentFilterLastModifiedDateTime")
     if err != nil {
@@ -69,6 +74,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterLastModifiedDateT
     return nil
 }
 // GetAssignmentFilterPlatform gets the assignmentFilterPlatform property value. Supported platform types.
+// returns a *DevicePlatformType when successful
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterPlatform()(*DevicePlatformType) {
     val, err := m.GetBackingStore().Get("assignmentFilterPlatform")
     if err != nil {
@@ -80,6 +86,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterPlatform()(*Devic
     return nil
 }
 // GetAssignmentFilterType gets the assignmentFilterType property value. Represents type of the assignment filter.
+// returns a *DeviceAndAppManagementAssignmentFilterType when successful
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterType()(*DeviceAndAppManagementAssignmentFilterType) {
     val, err := m.GetBackingStore().Get("assignmentFilterType")
     if err != nil {
@@ -91,6 +98,7 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterType()(*DeviceAnd
     return nil
 }
 // GetAssignmentFilterTypeAndEvaluationResults gets the assignmentFilterTypeAndEvaluationResults property value. A collection of filter types and their corresponding evaluation results.
+// returns a []AssignmentFilterTypeAndEvaluationResultable when successful
 func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterTypeAndEvaluationResults()([]AssignmentFilterTypeAndEvaluationResultable) {
     val, err := m.GetBackingStore().Get("assignmentFilterTypeAndEvaluationResults")
     if err != nil {
@@ -102,10 +110,12 @@ func (m *AssignmentFilterEvaluationSummary) GetAssignmentFilterTypeAndEvaluation
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AssignmentFilterEvaluationSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEvaluationDateTime gets the evaluationDateTime property value. The time assignment filter was evaluated.
+// returns a *Time when successful
 func (m *AssignmentFilterEvaluationSummary) GetEvaluationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("evaluationDateTime")
     if err != nil {
@@ -117,6 +127,7 @@ func (m *AssignmentFilterEvaluationSummary) GetEvaluationDateTime()(*i336074805f
     return nil
 }
 // GetEvaluationResult gets the evaluationResult property value. Supported evaluation results for filter.
+// returns a *AssignmentFilterEvaluationResult when successful
 func (m *AssignmentFilterEvaluationSummary) GetEvaluationResult()(*AssignmentFilterEvaluationResult) {
     val, err := m.GetBackingStore().Get("evaluationResult")
     if err != nil {
@@ -128,6 +139,7 @@ func (m *AssignmentFilterEvaluationSummary) GetEvaluationResult()(*AssignmentFil
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignmentFilterDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -229,6 +241,7 @@ func (m *AssignmentFilterEvaluationSummary) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AssignmentFilterEvaluationSummary) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -386,7 +399,6 @@ func (m *AssignmentFilterEvaluationSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// AssignmentFilterEvaluationSummaryable 
 type AssignmentFilterEvaluationSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -17,28 +17,28 @@ type ItemItemsItemValidatePermissionRequestBuilderPostRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemValidatePermissionRequestBuilderInternal instantiates a new ValidatePermissionRequestBuilder and sets the default values.
+// NewItemItemsItemValidatePermissionRequestBuilderInternal instantiates a new ItemItemsItemValidatePermissionRequestBuilder and sets the default values.
 func NewItemItemsItemValidatePermissionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemValidatePermissionRequestBuilder) {
     m := &ItemItemsItemValidatePermissionRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/validatePermission", pathParameters),
     }
     return m
 }
-// NewItemItemsItemValidatePermissionRequestBuilder instantiates a new ValidatePermissionRequestBuilder and sets the default values.
+// NewItemItemsItemValidatePermissionRequestBuilder instantiates a new ItemItemsItemValidatePermissionRequestBuilder and sets the default values.
 func NewItemItemsItemValidatePermissionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemValidatePermissionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemValidatePermissionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action validatePermission
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemValidatePermissionRequestBuilder) Post(ctx context.Context, body ItemItemsItemValidatePermissionPostRequestBodyable, requestConfiguration *ItemItemsItemValidatePermissionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemItemsItemValidatePermissionRequestBuilder) Post(ctx context.Context
     return nil
 }
 // ToPostRequestInformation invoke action validatePermission
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemValidatePermissionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemValidatePermissionPostRequestBodyable, requestConfiguration *ItemItemsItemValidatePermissionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *ItemItemsItemValidatePermissionRequestBuilder) ToPostRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemValidatePermissionRequestBuilder when successful
 func (m *ItemItemsItemValidatePermissionRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemValidatePermissionRequestBuilder) {
     return NewItemItemsItemValidatePermissionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

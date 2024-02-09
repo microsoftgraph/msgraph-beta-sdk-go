@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemTeamDefinitionSendActivityNotificationPostRequestBody 
 type ItemTeamDefinitionSendActivityNotificationPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemTeamDefinitionSendActivityNotificationPostRequestBody()(*ItemTeamDef
     return m
 }
 // CreateItemTeamDefinitionSendActivityNotificationPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemTeamDefinitionSendActivityNotificationPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemTeamDefinitionSendActivityNotificationPostRequestBody(), nil
 }
 // GetActivityType gets the activityType property value. The activityType property
+// returns a *string when successful
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetActivityType()(*string) {
     val, err := m.GetBackingStore().Get("activityType")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetActivityT
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetAdditiona
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetChainId gets the chainId property value. The chainId property
+// returns a *int64 when successful
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetChainId()(*int64) {
     val, err := m.GetBackingStore().Get("chainId")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetChainId()
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["activityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -143,6 +148,7 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetFieldDese
     return res
 }
 // GetPreviewText gets the previewText property value. The previewText property
+// returns a ItemBodyable when successful
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetPreviewText()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable) {
     val, err := m.GetBackingStore().Get("previewText")
     if err != nil {
@@ -154,6 +160,7 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetPreviewTe
     return nil
 }
 // GetRecipient gets the recipient property value. The recipient property
+// returns a TeamworkNotificationRecipientable when successful
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetRecipient()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkNotificationRecipientable) {
     val, err := m.GetBackingStore().Get("recipient")
     if err != nil {
@@ -165,6 +172,7 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetRecipient
     return nil
 }
 // GetTeamsAppId gets the teamsAppId property value. The teamsAppId property
+// returns a *string when successful
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetTeamsAppId()(*string) {
     val, err := m.GetBackingStore().Get("teamsAppId")
     if err != nil {
@@ -176,6 +184,7 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetTeamsAppI
     return nil
 }
 // GetTemplateParameters gets the templateParameters property value. The templateParameters property
+// returns a []KeyValuePairable when successful
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetTemplateParameters()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.KeyValuePairable) {
     val, err := m.GetBackingStore().Get("templateParameters")
     if err != nil {
@@ -187,6 +196,7 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetTemplateP
     return nil
 }
 // GetTopic gets the topic property value. The topic property
+// returns a TeamworkActivityTopicable when successful
 func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) GetTopic()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkActivityTopicable) {
     val, err := m.GetBackingStore().Get("topic")
     if err != nil {
@@ -315,7 +325,6 @@ func (m *ItemTeamDefinitionSendActivityNotificationPostRequestBody) SetTopic(val
         panic(err)
     }
 }
-// ItemTeamDefinitionSendActivityNotificationPostRequestBodyable 
 type ItemTeamDefinitionSendActivityNotificationPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

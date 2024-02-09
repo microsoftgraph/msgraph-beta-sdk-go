@@ -17,29 +17,30 @@ type RoleScopeTagsItemAssignRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewRoleScopeTagsItemAssignRequestBuilderInternal instantiates a new AssignRequestBuilder and sets the default values.
+// NewRoleScopeTagsItemAssignRequestBuilderInternal instantiates a new RoleScopeTagsItemAssignRequestBuilder and sets the default values.
 func NewRoleScopeTagsItemAssignRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleScopeTagsItemAssignRequestBuilder) {
     m := &RoleScopeTagsItemAssignRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/roleScopeTags/{roleScopeTag%2Did}/assign", pathParameters),
     }
     return m
 }
-// NewRoleScopeTagsItemAssignRequestBuilder instantiates a new AssignRequestBuilder and sets the default values.
+// NewRoleScopeTagsItemAssignRequestBuilder instantiates a new RoleScopeTagsItemAssignRequestBuilder and sets the default values.
 func NewRoleScopeTagsItemAssignRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleScopeTagsItemAssignRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRoleScopeTagsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
-// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a RoleScopeTagsItemAssignResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleScopeTagsItemAssignRequestBuilder) Post(ctx context.Context, body RoleScopeTagsItemAssignPostRequestBodyable, requestConfiguration *RoleScopeTagsItemAssignRequestBuilderPostRequestConfiguration)(RoleScopeTagsItemAssignResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateRoleScopeTagsItemAssignResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *RoleScopeTagsItemAssignRequestBuilder) Post(ctx context.Context, body R
     return res.(RoleScopeTagsItemAssignResponseable), nil
 }
 // PostAsAssignPostResponse invoke action assign
+// returns a RoleScopeTagsItemAssignPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleScopeTagsItemAssignRequestBuilder) PostAsAssignPostResponse(ctx context.Context, body RoleScopeTagsItemAssignPostRequestBodyable, requestConfiguration *RoleScopeTagsItemAssignRequestBuilderPostRequestConfiguration)(RoleScopeTagsItemAssignPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateRoleScopeTagsItemAssignPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *RoleScopeTagsItemAssignRequestBuilder) PostAsAssignPostResponse(ctx con
     return res.(RoleScopeTagsItemAssignPostResponseable), nil
 }
 // ToPostRequestInformation invoke action assign
+// returns a *RequestInformation when successful
 func (m *RoleScopeTagsItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body RoleScopeTagsItemAssignPostRequestBodyable, requestConfiguration *RoleScopeTagsItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -84,6 +87,7 @@ func (m *RoleScopeTagsItemAssignRequestBuilder) ToPostRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *RoleScopeTagsItemAssignRequestBuilder when successful
 func (m *RoleScopeTagsItemAssignRequestBuilder) WithUrl(rawUrl string)(*RoleScopeTagsItemAssignRequestBuilder) {
     return NewRoleScopeTagsItemAssignRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -27,28 +27,29 @@ type ThreatIntelligenceHostCookiesItemHostRequestBuilderGetRequestConfiguration 
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostCookiesItemHostRequestBuilderGetQueryParameters
 }
-// NewThreatIntelligenceHostCookiesItemHostRequestBuilderInternal instantiates a new HostRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostCookiesItemHostRequestBuilderInternal instantiates a new ThreatIntelligenceHostCookiesItemHostRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostCookiesItemHostRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostCookiesItemHostRequestBuilder) {
     m := &ThreatIntelligenceHostCookiesItemHostRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostCookies/{hostCookie%2Did}/host{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostCookies/{hostCookie%2Did}/host{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceHostCookiesItemHostRequestBuilder instantiates a new HostRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostCookiesItemHostRequestBuilder instantiates a new ThreatIntelligenceHostCookiesItemHostRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostCookiesItemHostRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostCookiesItemHostRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostCookiesItemHostRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get indicates that a cookie of this name and domain was found related to this host.
+// returns a Hostable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostCookiesItemHostRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostCookiesItemHostRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateHostFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ThreatIntelligenceHostCookiesItemHostRequestBuilder) Get(ctx context.Co
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Hostable), nil
 }
 // ToGetRequestInformation indicates that a cookie of this name and domain was found related to this host.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostCookiesItemHostRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostCookiesItemHostRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ThreatIntelligenceHostCookiesItemHostRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceHostCookiesItemHostRequestBuilder when successful
 func (m *ThreatIntelligenceHostCookiesItemHostRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostCookiesItemHostRequestBuilder) {
     return NewThreatIntelligenceHostCookiesItemHostRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

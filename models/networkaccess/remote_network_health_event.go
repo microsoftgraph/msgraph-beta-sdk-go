@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// RemoteNetworkHealthEvent 
 type RemoteNetworkHealthEvent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewRemoteNetworkHealthEvent instantiates a new remoteNetworkHealthEvent and sets the default values.
+// NewRemoteNetworkHealthEvent instantiates a new RemoteNetworkHealthEvent and sets the default values.
 func NewRemoteNetworkHealthEvent()(*RemoteNetworkHealthEvent) {
     m := &RemoteNetworkHealthEvent{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewRemoteNetworkHealthEvent()(*RemoteNetworkHealthEvent) {
     return m
 }
 // CreateRemoteNetworkHealthEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRemoteNetworkHealthEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteNetworkHealthEvent(), nil
 }
 // GetBgpRoutesAdvertisedCount gets the bgpRoutesAdvertisedCount property value. The number of BGP routes advertised through tunnel.
+// returns a *int32 when successful
 func (m *RemoteNetworkHealthEvent) GetBgpRoutesAdvertisedCount()(*int32) {
     val, err := m.GetBackingStore().Get("bgpRoutesAdvertisedCount")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *RemoteNetworkHealthEvent) GetBgpRoutesAdvertisedCount()(*int32) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The time of the original event generation in UTC. Supports $filter (ge, le) and $orderby.
+// returns a *Time when successful
 func (m *RemoteNetworkHealthEvent) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *RemoteNetworkHealthEvent) GetCreatedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetDescription gets the description property value. The description of the event.
+// returns a *string when successful
 func (m *RemoteNetworkHealthEvent) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *RemoteNetworkHealthEvent) GetDescription()(*string) {
     return nil
 }
 // GetDestinationIp gets the destinationIp property value. The IP address of the destination.
+// returns a *string when successful
 func (m *RemoteNetworkHealthEvent) GetDestinationIp()(*string) {
     val, err := m.GetBackingStore().Get("destinationIp")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *RemoteNetworkHealthEvent) GetDestinationIp()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RemoteNetworkHealthEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bgpRoutesAdvertisedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -161,6 +166,7 @@ func (m *RemoteNetworkHealthEvent) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetReceivedBytes gets the receivedBytes property value. The number of bytes sent from the destination to the source.
+// returns a *int64 when successful
 func (m *RemoteNetworkHealthEvent) GetReceivedBytes()(*int64) {
     val, err := m.GetBackingStore().Get("receivedBytes")
     if err != nil {
@@ -172,6 +178,7 @@ func (m *RemoteNetworkHealthEvent) GetReceivedBytes()(*int64) {
     return nil
 }
 // GetRemoteNetworkId gets the remoteNetworkId property value. A unique identifier for each remoteNetwork site. Supports $filter (eq).
+// returns a *string when successful
 func (m *RemoteNetworkHealthEvent) GetRemoteNetworkId()(*string) {
     val, err := m.GetBackingStore().Get("remoteNetworkId")
     if err != nil {
@@ -183,6 +190,7 @@ func (m *RemoteNetworkHealthEvent) GetRemoteNetworkId()(*string) {
     return nil
 }
 // GetSentBytes gets the sentBytes property value. The number of bytes sent from the source to the destination for the connection or session.
+// returns a *int64 when successful
 func (m *RemoteNetworkHealthEvent) GetSentBytes()(*int64) {
     val, err := m.GetBackingStore().Get("sentBytes")
     if err != nil {
@@ -194,6 +202,7 @@ func (m *RemoteNetworkHealthEvent) GetSentBytes()(*int64) {
     return nil
 }
 // GetSourceIp gets the sourceIp property value. The public IP address.
+// returns a *string when successful
 func (m *RemoteNetworkHealthEvent) GetSourceIp()(*string) {
     val, err := m.GetBackingStore().Get("sourceIp")
     if err != nil {
@@ -205,6 +214,7 @@ func (m *RemoteNetworkHealthEvent) GetSourceIp()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *RemoteNetworkStatus when successful
 func (m *RemoteNetworkHealthEvent) GetStatus()(*RemoteNetworkStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -341,7 +351,6 @@ func (m *RemoteNetworkHealthEvent) SetStatus(value *RemoteNetworkStatus)() {
         panic(err)
     }
 }
-// RemoteNetworkHealthEventable 
 type RemoteNetworkHealthEventable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CompanySubscription 
 type CompanySubscription struct {
     Entity
 }
-// NewCompanySubscription instantiates a new companySubscription and sets the default values.
+// NewCompanySubscription instantiates a new CompanySubscription and sets the default values.
 func NewCompanySubscription()(*CompanySubscription) {
     m := &CompanySubscription{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCompanySubscription()(*CompanySubscription) {
     return m
 }
 // CreateCompanySubscriptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCompanySubscriptionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCompanySubscription(), nil
 }
 // GetCommerceSubscriptionId gets the commerceSubscriptionId property value. The ID of this subscription in the commerce system. Alternate key.
+// returns a *string when successful
 func (m *CompanySubscription) GetCommerceSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("commerceSubscriptionId")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CompanySubscription) GetCommerceSubscriptionId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CompanySubscription) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *CompanySubscription) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CompanySubscription) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["commerceSubscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -184,6 +187,7 @@ func (m *CompanySubscription) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIsTrial gets the isTrial property value. Whether the subscription is a free trial or purchased.
+// returns a *bool when successful
 func (m *CompanySubscription) GetIsTrial()(*bool) {
     val, err := m.GetBackingStore().Get("isTrial")
     if err != nil {
@@ -195,6 +199,7 @@ func (m *CompanySubscription) GetIsTrial()(*bool) {
     return nil
 }
 // GetNextLifecycleDateTime gets the nextLifecycleDateTime property value. The date and time when the subscription will move to the next state (as defined by the status property) if not renewed by the tenant. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CompanySubscription) GetNextLifecycleDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("nextLifecycleDateTime")
     if err != nil {
@@ -206,6 +211,7 @@ func (m *CompanySubscription) GetNextLifecycleDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetOcpSubscriptionId gets the ocpSubscriptionId property value. The ocpSubscriptionId property
+// returns a *string when successful
 func (m *CompanySubscription) GetOcpSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("ocpSubscriptionId")
     if err != nil {
@@ -217,6 +223,7 @@ func (m *CompanySubscription) GetOcpSubscriptionId()(*string) {
     return nil
 }
 // GetOwnerId gets the ownerId property value. The object ID of the account admin.
+// returns a *string when successful
 func (m *CompanySubscription) GetOwnerId()(*string) {
     val, err := m.GetBackingStore().Get("ownerId")
     if err != nil {
@@ -228,6 +235,7 @@ func (m *CompanySubscription) GetOwnerId()(*string) {
     return nil
 }
 // GetOwnerTenantId gets the ownerTenantId property value. The unique identifier for the Microsoft partner tenant that created the subscription on a customer tenant.
+// returns a *string when successful
 func (m *CompanySubscription) GetOwnerTenantId()(*string) {
     val, err := m.GetBackingStore().Get("ownerTenantId")
     if err != nil {
@@ -239,6 +247,7 @@ func (m *CompanySubscription) GetOwnerTenantId()(*string) {
     return nil
 }
 // GetOwnerType gets the ownerType property value. Indicates the entity that ownerId belongs to, for example, 'User'.
+// returns a *string when successful
 func (m *CompanySubscription) GetOwnerType()(*string) {
     val, err := m.GetBackingStore().Get("ownerType")
     if err != nil {
@@ -250,6 +259,7 @@ func (m *CompanySubscription) GetOwnerType()(*string) {
     return nil
 }
 // GetServiceStatus gets the serviceStatus property value. The provisioning status of each service that's included in this subscription.
+// returns a []ServicePlanInfoable when successful
 func (m *CompanySubscription) GetServiceStatus()([]ServicePlanInfoable) {
     val, err := m.GetBackingStore().Get("serviceStatus")
     if err != nil {
@@ -261,6 +271,7 @@ func (m *CompanySubscription) GetServiceStatus()([]ServicePlanInfoable) {
     return nil
 }
 // GetSkuId gets the skuId property value. The object ID of the SKU associated with this subscription.
+// returns a *string when successful
 func (m *CompanySubscription) GetSkuId()(*string) {
     val, err := m.GetBackingStore().Get("skuId")
     if err != nil {
@@ -272,6 +283,7 @@ func (m *CompanySubscription) GetSkuId()(*string) {
     return nil
 }
 // GetSkuPartNumber gets the skuPartNumber property value. The SKU associated with this subscription.
+// returns a *string when successful
 func (m *CompanySubscription) GetSkuPartNumber()(*string) {
     val, err := m.GetBackingStore().Get("skuPartNumber")
     if err != nil {
@@ -283,6 +295,7 @@ func (m *CompanySubscription) GetSkuPartNumber()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status of this subscription. Possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.
+// returns a *string when successful
 func (m *CompanySubscription) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -294,6 +307,7 @@ func (m *CompanySubscription) GetStatus()(*string) {
     return nil
 }
 // GetTotalLicenses gets the totalLicenses property value. The number of seats included in this subscription.
+// returns a *int32 when successful
 func (m *CompanySubscription) GetTotalLicenses()(*int32) {
     val, err := m.GetBackingStore().Get("totalLicenses")
     if err != nil {
@@ -487,7 +501,6 @@ func (m *CompanySubscription) SetTotalLicenses(value *int32)() {
         panic(err)
     }
 }
-// CompanySubscriptionable 
 type CompanySubscriptionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

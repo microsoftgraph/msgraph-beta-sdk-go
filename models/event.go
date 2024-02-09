@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Event 
 type Event struct {
     OutlookItem
 }
-// NewEvent instantiates a new event and sets the default values.
+// NewEvent instantiates a new Event and sets the default values.
 func NewEvent()(*Event) {
     m := &Event{
         OutlookItem: *NewOutlookItem(),
@@ -19,10 +18,12 @@ func NewEvent()(*Event) {
     return m
 }
 // CreateEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEvent(), nil
 }
 // GetAllowNewTimeProposals gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
+// returns a *bool when successful
 func (m *Event) GetAllowNewTimeProposals()(*bool) {
     val, err := m.GetBackingStore().Get("allowNewTimeProposals")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *Event) GetAllowNewTimeProposals()(*bool) {
     return nil
 }
 // GetAttachments gets the attachments property value. The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
+// returns a []Attachmentable when successful
 func (m *Event) GetAttachments()([]Attachmentable) {
     val, err := m.GetBackingStore().Get("attachments")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *Event) GetAttachments()([]Attachmentable) {
     return nil
 }
 // GetAttendees gets the attendees property value. The collection of attendees for the event.
+// returns a []Attendeeable when successful
 func (m *Event) GetAttendees()([]Attendeeable) {
     val, err := m.GetBackingStore().Get("attendees")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *Event) GetAttendees()([]Attendeeable) {
     return nil
 }
 // GetBody gets the body property value. The body of the message associated with the event. It can be in HTML or text format.
+// returns a ItemBodyable when successful
 func (m *Event) GetBody()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *Event) GetBody()(ItemBodyable) {
     return nil
 }
 // GetBodyPreview gets the bodyPreview property value. The preview of the message associated with the event. It is in text format.
+// returns a *string when successful
 func (m *Event) GetBodyPreview()(*string) {
     val, err := m.GetBackingStore().Get("bodyPreview")
     if err != nil {
@@ -78,6 +83,7 @@ func (m *Event) GetBodyPreview()(*string) {
     return nil
 }
 // GetCalendar gets the calendar property value. The calendar that contains the event. Navigation property. Read-only.
+// returns a Calendarable when successful
 func (m *Event) GetCalendar()(Calendarable) {
     val, err := m.GetBackingStore().Get("calendar")
     if err != nil {
@@ -89,6 +95,7 @@ func (m *Event) GetCalendar()(Calendarable) {
     return nil
 }
 // GetCancelledOccurrences gets the cancelledOccurrences property value. Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).
+// returns a []string when successful
 func (m *Event) GetCancelledOccurrences()([]string) {
     val, err := m.GetBackingStore().Get("cancelledOccurrences")
     if err != nil {
@@ -100,6 +107,7 @@ func (m *Event) GetCancelledOccurrences()([]string) {
     return nil
 }
 // GetEnd gets the end property value. The date, time, and time zone that the event ends. By default, the end time is in UTC.
+// returns a DateTimeTimeZoneable when successful
 func (m *Event) GetEnd()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("end")
     if err != nil {
@@ -111,6 +119,7 @@ func (m *Event) GetEnd()(DateTimeTimeZoneable) {
     return nil
 }
 // GetExceptionOccurrences gets the exceptionOccurrences property value. The exceptionOccurrences property
+// returns a []Eventable when successful
 func (m *Event) GetExceptionOccurrences()([]Eventable) {
     val, err := m.GetBackingStore().Get("exceptionOccurrences")
     if err != nil {
@@ -122,6 +131,7 @@ func (m *Event) GetExceptionOccurrences()([]Eventable) {
     return nil
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the event. Nullable.
+// returns a []Extensionable when successful
 func (m *Event) GetExtensions()([]Extensionable) {
     val, err := m.GetBackingStore().Get("extensions")
     if err != nil {
@@ -133,6 +143,7 @@ func (m *Event) GetExtensions()([]Extensionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
     res["allowNewTimeProposals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -642,6 +653,7 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetHasAttachments gets the hasAttachments property value. Set to true if the event has attachments.
+// returns a *bool when successful
 func (m *Event) GetHasAttachments()(*bool) {
     val, err := m.GetBackingStore().Get("hasAttachments")
     if err != nil {
@@ -653,6 +665,7 @@ func (m *Event) GetHasAttachments()(*bool) {
     return nil
 }
 // GetHideAttendees gets the hideAttendees property value. When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
+// returns a *bool when successful
 func (m *Event) GetHideAttendees()(*bool) {
     val, err := m.GetBackingStore().Get("hideAttendees")
     if err != nil {
@@ -664,6 +677,7 @@ func (m *Event) GetHideAttendees()(*bool) {
     return nil
 }
 // GetImportance gets the importance property value. The importance property
+// returns a *Importance when successful
 func (m *Event) GetImportance()(*Importance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
@@ -675,6 +689,7 @@ func (m *Event) GetImportance()(*Importance) {
     return nil
 }
 // GetInstances gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+// returns a []Eventable when successful
 func (m *Event) GetInstances()([]Eventable) {
     val, err := m.GetBackingStore().Get("instances")
     if err != nil {
@@ -686,6 +701,7 @@ func (m *Event) GetInstances()([]Eventable) {
     return nil
 }
 // GetIsAllDay gets the isAllDay property value. The isAllDay property
+// returns a *bool when successful
 func (m *Event) GetIsAllDay()(*bool) {
     val, err := m.GetBackingStore().Get("isAllDay")
     if err != nil {
@@ -697,6 +713,7 @@ func (m *Event) GetIsAllDay()(*bool) {
     return nil
 }
 // GetIsCancelled gets the isCancelled property value. The isCancelled property
+// returns a *bool when successful
 func (m *Event) GetIsCancelled()(*bool) {
     val, err := m.GetBackingStore().Get("isCancelled")
     if err != nil {
@@ -708,6 +725,7 @@ func (m *Event) GetIsCancelled()(*bool) {
     return nil
 }
 // GetIsDraft gets the isDraft property value. The isDraft property
+// returns a *bool when successful
 func (m *Event) GetIsDraft()(*bool) {
     val, err := m.GetBackingStore().Get("isDraft")
     if err != nil {
@@ -719,6 +737,7 @@ func (m *Event) GetIsDraft()(*bool) {
     return nil
 }
 // GetIsOnlineMeeting gets the isOnlineMeeting property value. The isOnlineMeeting property
+// returns a *bool when successful
 func (m *Event) GetIsOnlineMeeting()(*bool) {
     val, err := m.GetBackingStore().Get("isOnlineMeeting")
     if err != nil {
@@ -730,6 +749,7 @@ func (m *Event) GetIsOnlineMeeting()(*bool) {
     return nil
 }
 // GetIsOrganizer gets the isOrganizer property value. The isOrganizer property
+// returns a *bool when successful
 func (m *Event) GetIsOrganizer()(*bool) {
     val, err := m.GetBackingStore().Get("isOrganizer")
     if err != nil {
@@ -741,6 +761,7 @@ func (m *Event) GetIsOrganizer()(*bool) {
     return nil
 }
 // GetIsReminderOn gets the isReminderOn property value. The isReminderOn property
+// returns a *bool when successful
 func (m *Event) GetIsReminderOn()(*bool) {
     val, err := m.GetBackingStore().Get("isReminderOn")
     if err != nil {
@@ -752,6 +773,7 @@ func (m *Event) GetIsReminderOn()(*bool) {
     return nil
 }
 // GetLocation gets the location property value. The location property
+// returns a Locationable when successful
 func (m *Event) GetLocation()(Locationable) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -763,6 +785,7 @@ func (m *Event) GetLocation()(Locationable) {
     return nil
 }
 // GetLocations gets the locations property value. The locations property
+// returns a []Locationable when successful
 func (m *Event) GetLocations()([]Locationable) {
     val, err := m.GetBackingStore().Get("locations")
     if err != nil {
@@ -774,6 +797,7 @@ func (m *Event) GetLocations()([]Locationable) {
     return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the event. Read-only. Nullable.
+// returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *Event) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
     if err != nil {
@@ -785,6 +809,7 @@ func (m *Event) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedProp
     return nil
 }
 // GetOccurrenceId gets the occurrenceId property value. The occurrenceId property
+// returns a *string when successful
 func (m *Event) GetOccurrenceId()(*string) {
     val, err := m.GetBackingStore().Get("occurrenceId")
     if err != nil {
@@ -796,6 +821,7 @@ func (m *Event) GetOccurrenceId()(*string) {
     return nil
 }
 // GetOnlineMeeting gets the onlineMeeting property value. The onlineMeeting property
+// returns a OnlineMeetingInfoable when successful
 func (m *Event) GetOnlineMeeting()(OnlineMeetingInfoable) {
     val, err := m.GetBackingStore().Get("onlineMeeting")
     if err != nil {
@@ -807,6 +833,7 @@ func (m *Event) GetOnlineMeeting()(OnlineMeetingInfoable) {
     return nil
 }
 // GetOnlineMeetingProvider gets the onlineMeetingProvider property value. The onlineMeetingProvider property
+// returns a *OnlineMeetingProviderType when successful
 func (m *Event) GetOnlineMeetingProvider()(*OnlineMeetingProviderType) {
     val, err := m.GetBackingStore().Get("onlineMeetingProvider")
     if err != nil {
@@ -818,6 +845,7 @@ func (m *Event) GetOnlineMeetingProvider()(*OnlineMeetingProviderType) {
     return nil
 }
 // GetOnlineMeetingUrl gets the onlineMeetingUrl property value. The onlineMeetingUrl property
+// returns a *string when successful
 func (m *Event) GetOnlineMeetingUrl()(*string) {
     val, err := m.GetBackingStore().Get("onlineMeetingUrl")
     if err != nil {
@@ -829,6 +857,7 @@ func (m *Event) GetOnlineMeetingUrl()(*string) {
     return nil
 }
 // GetOrganizer gets the organizer property value. The organizer property
+// returns a Recipientable when successful
 func (m *Event) GetOrganizer()(Recipientable) {
     val, err := m.GetBackingStore().Get("organizer")
     if err != nil {
@@ -840,6 +869,7 @@ func (m *Event) GetOrganizer()(Recipientable) {
     return nil
 }
 // GetOriginalEndTimeZone gets the originalEndTimeZone property value. The originalEndTimeZone property
+// returns a *string when successful
 func (m *Event) GetOriginalEndTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("originalEndTimeZone")
     if err != nil {
@@ -851,6 +881,7 @@ func (m *Event) GetOriginalEndTimeZone()(*string) {
     return nil
 }
 // GetOriginalStart gets the originalStart property value. The originalStart property
+// returns a *Time when successful
 func (m *Event) GetOriginalStart()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("originalStart")
     if err != nil {
@@ -862,6 +893,7 @@ func (m *Event) GetOriginalStart()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
     return nil
 }
 // GetOriginalStartTimeZone gets the originalStartTimeZone property value. The originalStartTimeZone property
+// returns a *string when successful
 func (m *Event) GetOriginalStartTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("originalStartTimeZone")
     if err != nil {
@@ -873,6 +905,7 @@ func (m *Event) GetOriginalStartTimeZone()(*string) {
     return nil
 }
 // GetRecurrence gets the recurrence property value. The recurrence property
+// returns a PatternedRecurrenceable when successful
 func (m *Event) GetRecurrence()(PatternedRecurrenceable) {
     val, err := m.GetBackingStore().Get("recurrence")
     if err != nil {
@@ -884,6 +917,7 @@ func (m *Event) GetRecurrence()(PatternedRecurrenceable) {
     return nil
 }
 // GetReminderMinutesBeforeStart gets the reminderMinutesBeforeStart property value. The reminderMinutesBeforeStart property
+// returns a *int32 when successful
 func (m *Event) GetReminderMinutesBeforeStart()(*int32) {
     val, err := m.GetBackingStore().Get("reminderMinutesBeforeStart")
     if err != nil {
@@ -895,6 +929,7 @@ func (m *Event) GetReminderMinutesBeforeStart()(*int32) {
     return nil
 }
 // GetResponseRequested gets the responseRequested property value. The responseRequested property
+// returns a *bool when successful
 func (m *Event) GetResponseRequested()(*bool) {
     val, err := m.GetBackingStore().Get("responseRequested")
     if err != nil {
@@ -906,6 +941,7 @@ func (m *Event) GetResponseRequested()(*bool) {
     return nil
 }
 // GetResponseStatus gets the responseStatus property value. The responseStatus property
+// returns a ResponseStatusable when successful
 func (m *Event) GetResponseStatus()(ResponseStatusable) {
     val, err := m.GetBackingStore().Get("responseStatus")
     if err != nil {
@@ -917,6 +953,7 @@ func (m *Event) GetResponseStatus()(ResponseStatusable) {
     return nil
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity property
+// returns a *Sensitivity when successful
 func (m *Event) GetSensitivity()(*Sensitivity) {
     val, err := m.GetBackingStore().Get("sensitivity")
     if err != nil {
@@ -928,6 +965,7 @@ func (m *Event) GetSensitivity()(*Sensitivity) {
     return nil
 }
 // GetSeriesMasterId gets the seriesMasterId property value. The seriesMasterId property
+// returns a *string when successful
 func (m *Event) GetSeriesMasterId()(*string) {
     val, err := m.GetBackingStore().Get("seriesMasterId")
     if err != nil {
@@ -939,6 +977,7 @@ func (m *Event) GetSeriesMasterId()(*string) {
     return nil
 }
 // GetShowAs gets the showAs property value. The showAs property
+// returns a *FreeBusyStatus when successful
 func (m *Event) GetShowAs()(*FreeBusyStatus) {
     val, err := m.GetBackingStore().Get("showAs")
     if err != nil {
@@ -950,6 +989,7 @@ func (m *Event) GetShowAs()(*FreeBusyStatus) {
     return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the event. Read-only. Nullable.
+// returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *Event) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
     if err != nil {
@@ -961,6 +1001,7 @@ func (m *Event) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPr
     return nil
 }
 // GetStart gets the start property value. The start property
+// returns a DateTimeTimeZoneable when successful
 func (m *Event) GetStart()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("start")
     if err != nil {
@@ -972,6 +1013,7 @@ func (m *Event) GetStart()(DateTimeTimeZoneable) {
     return nil
 }
 // GetSubject gets the subject property value. The subject property
+// returns a *string when successful
 func (m *Event) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -983,6 +1025,7 @@ func (m *Event) GetSubject()(*string) {
     return nil
 }
 // GetTransactionId gets the transactionId property value. The transactionId property
+// returns a *string when successful
 func (m *Event) GetTransactionId()(*string) {
     val, err := m.GetBackingStore().Get("transactionId")
     if err != nil {
@@ -994,6 +1037,7 @@ func (m *Event) GetTransactionId()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *EventType when successful
 func (m *Event) GetTypeEscaped()(*EventType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -1005,6 +1049,7 @@ func (m *Event) GetTypeEscaped()(*EventType) {
     return nil
 }
 // GetUid gets the uid property value. The uid property
+// returns a *string when successful
 func (m *Event) GetUid()(*string) {
     val, err := m.GetBackingStore().Get("uid")
     if err != nil {
@@ -1016,6 +1061,7 @@ func (m *Event) GetUid()(*string) {
     return nil
 }
 // GetWebLink gets the webLink property value. The webLink property
+// returns a *string when successful
 func (m *Event) GetWebLink()(*string) {
     val, err := m.GetBackingStore().Get("webLink")
     if err != nil {
@@ -1672,7 +1718,6 @@ func (m *Event) SetWebLink(value *string)() {
         panic(err)
     }
 }
-// Eventable 
 type Eventable interface {
     OutlookItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

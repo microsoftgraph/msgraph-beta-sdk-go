@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementAlert 
 type UnifiedRoleManagementAlert struct {
     Entity
 }
-// NewUnifiedRoleManagementAlert instantiates a new unifiedRoleManagementAlert and sets the default values.
+// NewUnifiedRoleManagementAlert instantiates a new UnifiedRoleManagementAlert and sets the default values.
 func NewUnifiedRoleManagementAlert()(*UnifiedRoleManagementAlert) {
     m := &UnifiedRoleManagementAlert{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewUnifiedRoleManagementAlert()(*UnifiedRoleManagementAlert) {
     return m
 }
 // CreateUnifiedRoleManagementAlertFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleManagementAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementAlert(), nil
 }
 // GetAlertConfiguration gets the alertConfiguration property value. The configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
+// returns a UnifiedRoleManagementAlertConfigurationable when successful
 func (m *UnifiedRoleManagementAlert) GetAlertConfiguration()(UnifiedRoleManagementAlertConfigurationable) {
     val, err := m.GetBackingStore().Get("alertConfiguration")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *UnifiedRoleManagementAlert) GetAlertConfiguration()(UnifiedRoleManageme
     return nil
 }
 // GetAlertDefinition gets the alertDefinition property value. Contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.
+// returns a UnifiedRoleManagementAlertDefinitionable when successful
 func (m *UnifiedRoleManagementAlert) GetAlertDefinition()(UnifiedRoleManagementAlertDefinitionable) {
     val, err := m.GetBackingStore().Get("alertDefinition")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *UnifiedRoleManagementAlert) GetAlertDefinition()(UnifiedRoleManagementA
     return nil
 }
 // GetAlertDefinitionId gets the alertDefinitionId property value. The identifier of an alert definition. Supports $filter (eq, ne).
+// returns a *string when successful
 func (m *UnifiedRoleManagementAlert) GetAlertDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("alertDefinitionId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *UnifiedRoleManagementAlert) GetAlertDefinitionId()(*string) {
     return nil
 }
 // GetAlertIncidents gets the alertIncidents property value. Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.
+// returns a []UnifiedRoleManagementAlertIncidentable when successful
 func (m *UnifiedRoleManagementAlert) GetAlertIncidents()([]UnifiedRoleManagementAlertIncidentable) {
     val, err := m.GetBackingStore().Get("alertIncidents")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *UnifiedRoleManagementAlert) GetAlertIncidents()([]UnifiedRoleManagement
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleManagementAlert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alertConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -176,6 +181,7 @@ func (m *UnifiedRoleManagementAlert) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetIncidentCount gets the incidentCount property value. The number of incidents triggered in the tenant and relating to the alert. Can only be a positive integer.
+// returns a *int32 when successful
 func (m *UnifiedRoleManagementAlert) GetIncidentCount()(*int32) {
     val, err := m.GetBackingStore().Get("incidentCount")
     if err != nil {
@@ -187,6 +193,7 @@ func (m *UnifiedRoleManagementAlert) GetIncidentCount()(*int32) {
     return nil
 }
 // GetIsActive gets the isActive property value. false by default. true if the alert is active.
+// returns a *bool when successful
 func (m *UnifiedRoleManagementAlert) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -198,6 +205,7 @@ func (m *UnifiedRoleManagementAlert) GetIsActive()(*bool) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time when the alert configuration was updated or new incidents generated.
+// returns a *Time when successful
 func (m *UnifiedRoleManagementAlert) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -209,6 +217,7 @@ func (m *UnifiedRoleManagementAlert) GetLastModifiedDateTime()(*i336074805fc8539
     return nil
 }
 // GetLastScannedDateTime gets the lastScannedDateTime property value. The date time when the tenant was last scanned for incidents that trigger this alert.
+// returns a *Time when successful
 func (m *UnifiedRoleManagementAlert) GetLastScannedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastScannedDateTime")
     if err != nil {
@@ -220,6 +229,7 @@ func (m *UnifiedRoleManagementAlert) GetLastScannedDateTime()(*i336074805fc85398
     return nil
 }
 // GetScopeId gets the scopeId property value. The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
+// returns a *string when successful
 func (m *UnifiedRoleManagementAlert) GetScopeId()(*string) {
     val, err := m.GetBackingStore().Get("scopeId")
     if err != nil {
@@ -231,6 +241,7 @@ func (m *UnifiedRoleManagementAlert) GetScopeId()(*string) {
     return nil
 }
 // GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
+// returns a *string when successful
 func (m *UnifiedRoleManagementAlert) GetScopeType()(*string) {
     val, err := m.GetBackingStore().Get("scopeType")
     if err != nil {
@@ -385,7 +396,6 @@ func (m *UnifiedRoleManagementAlert) SetScopeType(value *string)() {
         panic(err)
     }
 }
-// UnifiedRoleManagementAlertable 
 type UnifiedRoleManagementAlertable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,28 +17,28 @@ type ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilderPostRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilderInternal instantiates a new UpdateWindowsDeviceAccountRequestBuilder and sets the default values.
+// NewManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilderInternal instantiates a new ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder and sets the default values.
 func NewManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder) {
     m := &ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/updateWindowsDeviceAccount", pathParameters),
     }
     return m
 }
-// NewManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder instantiates a new UpdateWindowsDeviceAccountRequestBuilder and sets the default values.
+// NewManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder instantiates a new ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder and sets the default values.
 func NewManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action updateWindowsDeviceAccount
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder) Post(ctx context.Context, body ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBodyable, requestConfiguration *ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder) Post(ctx co
     return nil
 }
 // ToPostRequestInformation invoke action updateWindowsDeviceAccount
+// returns a *RequestInformation when successful
 func (m *ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedDevicesItemUpdateWindowsDeviceAccountPostRequestBodyable, requestConfiguration *ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder when successful
 func (m *ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder) {
     return NewManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

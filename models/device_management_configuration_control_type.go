@@ -7,7 +7,7 @@ type DeviceManagementConfigurationControlType int
 
 const (
     // Default. UX uses default UX element base on setting type for the setting.
-    DEFAULTESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE DeviceManagementConfigurationControlType = iota
+    DEFAULT_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE DeviceManagementConfigurationControlType = iota
     // Display the setting in dropdown box.
     DROPDOWN_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
     // Display text input in small text input.
@@ -28,10 +28,10 @@ func (i DeviceManagementConfigurationControlType) String() string {
     return []string{"default", "dropdown", "smallTextBox", "largeTextBox", "toggle", "multiheaderGrid", "contextPane", "unknownFutureValue"}[i]
 }
 func ParseDeviceManagementConfigurationControlType(v string) (any, error) {
-    result := DEFAULTESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
+    result := DEFAULT_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
     switch v {
         case "default":
-            result = DEFAULTESCAPED_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
+            result = DEFAULT_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "dropdown":
             result = DROPDOWN_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         case "smallTextBox":

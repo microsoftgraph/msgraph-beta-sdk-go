@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PaymentTerm 
 type PaymentTerm struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPaymentTerm instantiates a new paymentTerm and sets the default values.
+// NewPaymentTerm instantiates a new PaymentTerm and sets the default values.
 func NewPaymentTerm()(*PaymentTerm) {
     m := &PaymentTerm{
     }
@@ -21,10 +20,12 @@ func NewPaymentTerm()(*PaymentTerm) {
     return m
 }
 // CreatePaymentTermFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePaymentTermFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPaymentTerm(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PaymentTerm) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -37,10 +38,12 @@ func (m *PaymentTerm) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PaymentTerm) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCalculateDiscountOnCreditMemos gets the calculateDiscountOnCreditMemos property value. The calculateDiscountOnCreditMemos property
+// returns a *bool when successful
 func (m *PaymentTerm) GetCalculateDiscountOnCreditMemos()(*bool) {
     val, err := m.GetBackingStore().Get("calculateDiscountOnCreditMemos")
     if err != nil {
@@ -52,6 +55,7 @@ func (m *PaymentTerm) GetCalculateDiscountOnCreditMemos()(*bool) {
     return nil
 }
 // GetCode gets the code property value. The code property
+// returns a *string when successful
 func (m *PaymentTerm) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
@@ -63,6 +67,7 @@ func (m *PaymentTerm) GetCode()(*string) {
     return nil
 }
 // GetDiscountDateCalculation gets the discountDateCalculation property value. The discountDateCalculation property
+// returns a *string when successful
 func (m *PaymentTerm) GetDiscountDateCalculation()(*string) {
     val, err := m.GetBackingStore().Get("discountDateCalculation")
     if err != nil {
@@ -74,6 +79,7 @@ func (m *PaymentTerm) GetDiscountDateCalculation()(*string) {
     return nil
 }
 // GetDiscountPercent gets the discountPercent property value. The discountPercent property
+// returns a *float64 when successful
 func (m *PaymentTerm) GetDiscountPercent()(*float64) {
     val, err := m.GetBackingStore().Get("discountPercent")
     if err != nil {
@@ -85,6 +91,7 @@ func (m *PaymentTerm) GetDiscountPercent()(*float64) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *PaymentTerm) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -96,6 +103,7 @@ func (m *PaymentTerm) GetDisplayName()(*string) {
     return nil
 }
 // GetDueDateCalculation gets the dueDateCalculation property value. The dueDateCalculation property
+// returns a *string when successful
 func (m *PaymentTerm) GetDueDateCalculation()(*string) {
     val, err := m.GetBackingStore().Get("dueDateCalculation")
     if err != nil {
@@ -107,6 +115,7 @@ func (m *PaymentTerm) GetDueDateCalculation()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["calculateDiscountOnCreditMemos"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -202,6 +211,7 @@ func (m *PaymentTerm) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *PaymentTerm) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -213,6 +223,7 @@ func (m *PaymentTerm) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e55
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *PaymentTerm) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -224,6 +235,7 @@ func (m *PaymentTerm) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PaymentTerm) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -372,7 +384,6 @@ func (m *PaymentTerm) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// PaymentTermable 
 type PaymentTermable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

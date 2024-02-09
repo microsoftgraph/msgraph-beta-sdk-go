@@ -10,7 +10,7 @@ type AndroidManagedStoreAppConfigurationSchemaItem struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAndroidManagedStoreAppConfigurationSchemaItem instantiates a new androidManagedStoreAppConfigurationSchemaItem and sets the default values.
+// NewAndroidManagedStoreAppConfigurationSchemaItem instantiates a new AndroidManagedStoreAppConfigurationSchemaItem and sets the default values.
 func NewAndroidManagedStoreAppConfigurationSchemaItem()(*AndroidManagedStoreAppConfigurationSchemaItem) {
     m := &AndroidManagedStoreAppConfigurationSchemaItem{
     }
@@ -19,10 +19,12 @@ func NewAndroidManagedStoreAppConfigurationSchemaItem()(*AndroidManagedStoreAppC
     return m
 }
 // CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidManagedStoreAppConfigurationSchemaItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidManagedStoreAppConfigurationSchemaItem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetAdditionalData()(map[
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDataType gets the dataType property value. Data type for a configuration item inside an Android application's custom configuration schema
+// returns a *AndroidManagedStoreAppConfigurationSchemaItemDataType when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDataType()(*AndroidManagedStoreAppConfigurationSchemaItemDataType) {
     val, err := m.GetBackingStore().Get("dataType")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDataType()(*AndroidMa
     return nil
 }
 // GetDefaultBoolValue gets the defaultBoolValue property value. Default value for boolean type items, if specified by the app developer
+// returns a *bool when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultBoolValue()(*bool) {
     val, err := m.GetBackingStore().Get("defaultBoolValue")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultBoolValue()(*b
     return nil
 }
 // GetDefaultIntValue gets the defaultIntValue property value. Default value for integer type items, if specified by the app developer
+// returns a *int32 when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultIntValue()(*int32) {
     val, err := m.GetBackingStore().Get("defaultIntValue")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultIntValue()(*in
     return nil
 }
 // GetDefaultStringArrayValue gets the defaultStringArrayValue property value. Default value for string array type items, if specified by the app developer
+// returns a []string when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultStringArrayValue()([]string) {
     val, err := m.GetBackingStore().Get("defaultStringArrayValue")
     if err != nil {
@@ -83,6 +90,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultStringArrayVal
     return nil
 }
 // GetDefaultStringValue gets the defaultStringValue property value. Default value for string type items, if specified by the app developer
+// returns a *string when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultStringValue()(*string) {
     val, err := m.GetBackingStore().Get("defaultStringValue")
     if err != nil {
@@ -94,6 +102,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDefaultStringValue()(
     return nil
 }
 // GetDescription gets the description property value. Description of what the item controls within the application
+// returns a *string when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -105,6 +114,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDescription()(*string
     return nil
 }
 // GetDisplayName gets the displayName property value. Human readable name
+// returns a *string when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -116,6 +126,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetDisplayName()(*string
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dataType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -253,6 +264,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetFieldDeserializers()(
     return res
 }
 // GetIndex gets the index property value. Unique index the application uses to maintain nested schema items
+// returns a *int32 when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetIndex()(*int32) {
     val, err := m.GetBackingStore().Get("index")
     if err != nil {
@@ -264,6 +276,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetIndex()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -275,6 +288,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetOdataType()(*string) 
     return nil
 }
 // GetParentIndex gets the parentIndex property value. Index of parent schema item to track nested schema items
+// returns a *int32 when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetParentIndex()(*int32) {
     val, err := m.GetBackingStore().Get("parentIndex")
     if err != nil {
@@ -286,6 +300,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetParentIndex()(*int32)
     return nil
 }
 // GetSchemaItemKey gets the schemaItemKey property value. Unique key the application uses to identify the item
+// returns a *string when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetSchemaItemKey()(*string) {
     val, err := m.GetBackingStore().Get("schemaItemKey")
     if err != nil {
@@ -297,6 +312,7 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetSchemaItemKey()(*stri
     return nil
 }
 // GetSelections gets the selections property value. List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)
+// returns a []KeyValuePairable when successful
 func (m *AndroidManagedStoreAppConfigurationSchemaItem) GetSelections()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("selections")
     if err != nil {
@@ -491,7 +507,6 @@ func (m *AndroidManagedStoreAppConfigurationSchemaItem) SetSelections(value []Ke
         panic(err)
     }
 }
-// AndroidManagedStoreAppConfigurationSchemaItemable 
 type AndroidManagedStoreAppConfigurationSchemaItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

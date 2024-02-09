@@ -9,7 +9,7 @@ import (
 type DeviceManagementAutopilotPolicyStatusDetail struct {
     Entity
 }
-// NewDeviceManagementAutopilotPolicyStatusDetail instantiates a new deviceManagementAutopilotPolicyStatusDetail and sets the default values.
+// NewDeviceManagementAutopilotPolicyStatusDetail instantiates a new DeviceManagementAutopilotPolicyStatusDetail and sets the default values.
 func NewDeviceManagementAutopilotPolicyStatusDetail()(*DeviceManagementAutopilotPolicyStatusDetail) {
     m := &DeviceManagementAutopilotPolicyStatusDetail{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceManagementAutopilotPolicyStatusDetail()(*DeviceManagementAutopilot
     return m
 }
 // CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementAutopilotPolicyStatusDetail(), nil
 }
 // GetComplianceStatus gets the complianceStatus property value. The complianceStatus property
+// returns a *DeviceManagementAutopilotPolicyComplianceStatus when successful
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetComplianceStatus()(*DeviceManagementAutopilotPolicyComplianceStatus) {
     val, err := m.GetBackingStore().Get("complianceStatus")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetComplianceStatus()(*Dev
     return nil
 }
 // GetDisplayName gets the displayName property value. The friendly name of the policy.
+// returns a *string when successful
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetDisplayName()(*string) 
     return nil
 }
 // GetErrorCode gets the errorCode property value. The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.
+// returns a *int32 when successful
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetErrorCode()(*int32) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetErrorCode()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["complianceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +124,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetFieldDeserializers()(ma
     return res
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. Timestamp of the reported policy status
+// returns a *Time when successful
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastReportedDateTime")
     if err != nil {
@@ -130,6 +136,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetLastReportedDateTime()(
     return nil
 }
 // GetPolicyType gets the policyType property value. The policyType property
+// returns a *DeviceManagementAutopilotPolicyType when successful
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetPolicyType()(*DeviceManagementAutopilotPolicyType) {
     val, err := m.GetBackingStore().Get("policyType")
     if err != nil {
@@ -141,6 +148,7 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) GetPolicyType()(*DeviceMan
     return nil
 }
 // GetTrackedOnEnrollmentStatus gets the trackedOnEnrollmentStatus property value. Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session
+// returns a *bool when successful
 func (m *DeviceManagementAutopilotPolicyStatusDetail) GetTrackedOnEnrollmentStatus()(*bool) {
     val, err := m.GetBackingStore().Get("trackedOnEnrollmentStatus")
     if err != nil {
@@ -239,7 +247,6 @@ func (m *DeviceManagementAutopilotPolicyStatusDetail) SetTrackedOnEnrollmentStat
         panic(err)
     }
 }
-// DeviceManagementAutopilotPolicyStatusDetailable 
 type DeviceManagementAutopilotPolicyStatusDetailable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

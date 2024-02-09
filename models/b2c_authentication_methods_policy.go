@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// B2cAuthenticationMethodsPolicy 
 type B2cAuthenticationMethodsPolicy struct {
     Entity
 }
-// NewB2cAuthenticationMethodsPolicy instantiates a new b2cAuthenticationMethodsPolicy and sets the default values.
+// NewB2cAuthenticationMethodsPolicy instantiates a new B2cAuthenticationMethodsPolicy and sets the default values.
 func NewB2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicy) {
     m := &B2cAuthenticationMethodsPolicy{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewB2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicy) {
     return m
 }
 // CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewB2cAuthenticationMethodsPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isEmailPasswordAuthenticationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,6 +56,7 @@ func (m *B2cAuthenticationMethodsPolicy) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetIsEmailPasswordAuthenticationEnabled gets the isEmailPasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using email if the email and password authentication method is enabled.
+// returns a *bool when successful
 func (m *B2cAuthenticationMethodsPolicy) GetIsEmailPasswordAuthenticationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEmailPasswordAuthenticationEnabled")
     if err != nil {
@@ -66,6 +68,7 @@ func (m *B2cAuthenticationMethodsPolicy) GetIsEmailPasswordAuthenticationEnabled
     return nil
 }
 // GetIsPhoneOneTimePasswordAuthenticationEnabled gets the isPhoneOneTimePasswordAuthenticationEnabled property value. The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.
+// returns a *bool when successful
 func (m *B2cAuthenticationMethodsPolicy) GetIsPhoneOneTimePasswordAuthenticationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isPhoneOneTimePasswordAuthenticationEnabled")
     if err != nil {
@@ -77,6 +80,7 @@ func (m *B2cAuthenticationMethodsPolicy) GetIsPhoneOneTimePasswordAuthentication
     return nil
 }
 // GetIsUserNameAuthenticationEnabled gets the isUserNameAuthenticationEnabled property value. The tenant admin can configure local accounts using username if the username and password authentication method is enabled.
+// returns a *bool when successful
 func (m *B2cAuthenticationMethodsPolicy) GetIsUserNameAuthenticationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isUserNameAuthenticationEnabled")
     if err != nil {
@@ -134,7 +138,6 @@ func (m *B2cAuthenticationMethodsPolicy) SetIsUserNameAuthenticationEnabled(valu
         panic(err)
     }
 }
-// B2cAuthenticationMethodsPolicyable 
 type B2cAuthenticationMethodsPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

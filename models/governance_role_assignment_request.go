@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceRoleAssignmentRequest 
 type GovernanceRoleAssignmentRequest struct {
     Entity
 }
-// NewGovernanceRoleAssignmentRequest instantiates a new governanceRoleAssignmentRequest and sets the default values.
+// NewGovernanceRoleAssignmentRequest instantiates a new GovernanceRoleAssignmentRequest and sets the default values.
 func NewGovernanceRoleAssignmentRequest()(*GovernanceRoleAssignmentRequest) {
     m := &GovernanceRoleAssignmentRequest{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewGovernanceRoleAssignmentRequest()(*GovernanceRoleAssignmentRequest) {
     return m
 }
 // CreateGovernanceRoleAssignmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGovernanceRoleAssignmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceRoleAssignmentRequest(), nil
 }
 // GetAssignmentState gets the assignmentState property value. Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).
+// returns a *string when successful
 func (m *GovernanceRoleAssignmentRequest) GetAssignmentState()(*string) {
     val, err := m.GetBackingStore().Get("assignmentState")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *GovernanceRoleAssignmentRequest) GetAssignmentState()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GovernanceRoleAssignmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignmentState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -167,6 +169,7 @@ func (m *GovernanceRoleAssignmentRequest) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetLinkedEligibleRoleAssignmentId gets the linkedEligibleRoleAssignmentId property value. If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.
+// returns a *string when successful
 func (m *GovernanceRoleAssignmentRequest) GetLinkedEligibleRoleAssignmentId()(*string) {
     val, err := m.GetBackingStore().Get("linkedEligibleRoleAssignmentId")
     if err != nil {
@@ -178,6 +181,7 @@ func (m *GovernanceRoleAssignmentRequest) GetLinkedEligibleRoleAssignmentId()(*s
     return nil
 }
 // GetReason gets the reason property value. A message provided by users and administrators when create the request about why it is needed.
+// returns a *string when successful
 func (m *GovernanceRoleAssignmentRequest) GetReason()(*string) {
     val, err := m.GetBackingStore().Get("reason")
     if err != nil {
@@ -189,6 +193,7 @@ func (m *GovernanceRoleAssignmentRequest) GetReason()(*string) {
     return nil
 }
 // GetRequestedDateTime gets the requestedDateTime property value. Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *GovernanceRoleAssignmentRequest) GetRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestedDateTime")
     if err != nil {
@@ -200,6 +205,7 @@ func (m *GovernanceRoleAssignmentRequest) GetRequestedDateTime()(*i336074805fc85
     return nil
 }
 // GetResource gets the resource property value. Read-only. The resource that the request aims to.
+// returns a GovernanceResourceable when successful
 func (m *GovernanceRoleAssignmentRequest) GetResource()(GovernanceResourceable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -211,6 +217,7 @@ func (m *GovernanceRoleAssignmentRequest) GetResource()(GovernanceResourceable) 
     return nil
 }
 // GetResourceId gets the resourceId property value. Required. The unique identifier of the Azure resource that is associated with the role assignment request. Azure resources can include subscriptions, resource groups, virtual machines, and SQL databases.
+// returns a *string when successful
 func (m *GovernanceRoleAssignmentRequest) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -222,6 +229,7 @@ func (m *GovernanceRoleAssignmentRequest) GetResourceId()(*string) {
     return nil
 }
 // GetRoleDefinition gets the roleDefinition property value. Read-only. The role definition that the request aims to.
+// returns a GovernanceRoleDefinitionable when successful
 func (m *GovernanceRoleAssignmentRequest) GetRoleDefinition()(GovernanceRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinition")
     if err != nil {
@@ -233,6 +241,7 @@ func (m *GovernanceRoleAssignmentRequest) GetRoleDefinition()(GovernanceRoleDefi
     return nil
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. Required. The identifier of the Azure role definition that the role assignment request is associated with.
+// returns a *string when successful
 func (m *GovernanceRoleAssignmentRequest) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -244,6 +253,7 @@ func (m *GovernanceRoleAssignmentRequest) GetRoleDefinitionId()(*string) {
     return nil
 }
 // GetSchedule gets the schedule property value. The schedule object of the role assignment request.
+// returns a GovernanceScheduleable when successful
 func (m *GovernanceRoleAssignmentRequest) GetSchedule()(GovernanceScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
     if err != nil {
@@ -255,6 +265,7 @@ func (m *GovernanceRoleAssignmentRequest) GetSchedule()(GovernanceScheduleable) 
     return nil
 }
 // GetStatus gets the status property value. The status of the role assignment request.
+// returns a GovernanceRoleAssignmentRequestStatusable when successful
 func (m *GovernanceRoleAssignmentRequest) GetStatus()(GovernanceRoleAssignmentRequestStatusable) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -266,6 +277,7 @@ func (m *GovernanceRoleAssignmentRequest) GetStatus()(GovernanceRoleAssignmentRe
     return nil
 }
 // GetSubject gets the subject property value. Read-only. The user/group principal.
+// returns a GovernanceSubjectable when successful
 func (m *GovernanceRoleAssignmentRequest) GetSubject()(GovernanceSubjectable) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -277,6 +289,7 @@ func (m *GovernanceRoleAssignmentRequest) GetSubject()(GovernanceSubjectable) {
     return nil
 }
 // GetSubjectId gets the subjectId property value. Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.
+// returns a *string when successful
 func (m *GovernanceRoleAssignmentRequest) GetSubjectId()(*string) {
     val, err := m.GetBackingStore().Get("subjectId")
     if err != nil {
@@ -288,6 +301,7 @@ func (m *GovernanceRoleAssignmentRequest) GetSubjectId()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
+// returns a *string when successful
 func (m *GovernanceRoleAssignmentRequest) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -475,7 +489,6 @@ func (m *GovernanceRoleAssignmentRequest) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// GovernanceRoleAssignmentRequestable 
 type GovernanceRoleAssignmentRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UpdatableAssetGroup 
 type UpdatableAssetGroup struct {
     UpdatableAsset
 }
-// NewUpdatableAssetGroup instantiates a new updatableAssetGroup and sets the default values.
+// NewUpdatableAssetGroup instantiates a new UpdatableAssetGroup and sets the default values.
 func NewUpdatableAssetGroup()(*UpdatableAssetGroup) {
     m := &UpdatableAssetGroup{
         UpdatableAsset: *NewUpdatableAsset(),
@@ -18,10 +17,12 @@ func NewUpdatableAssetGroup()(*UpdatableAssetGroup) {
     return m
 }
 // CreateUpdatableAssetGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUpdatableAssetGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUpdatableAssetGroup(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UpdatableAssetGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UpdatableAsset.GetFieldDeserializers()
     res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *UpdatableAssetGroup) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetMembers gets the members property value. Members of the group. Read-only.
+// returns a []UpdatableAssetable when successful
 func (m *UpdatableAssetGroup) GetMembers()([]UpdatableAssetable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -80,7 +82,6 @@ func (m *UpdatableAssetGroup) SetMembers(value []UpdatableAssetable)() {
         panic(err)
     }
 }
-// UpdatableAssetGroupable 
 type UpdatableAssetGroupable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UpdatableAssetable

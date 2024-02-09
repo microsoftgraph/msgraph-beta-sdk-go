@@ -18,14 +18,14 @@ type ItemInformationProtectionVerifySignatureRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemInformationProtectionVerifySignatureRequestBuilderInternal instantiates a new VerifySignatureRequestBuilder and sets the default values.
+// NewItemInformationProtectionVerifySignatureRequestBuilderInternal instantiates a new ItemInformationProtectionVerifySignatureRequestBuilder and sets the default values.
 func NewItemInformationProtectionVerifySignatureRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionVerifySignatureRequestBuilder) {
     m := &ItemInformationProtectionVerifySignatureRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/informationProtection/verifySignature", pathParameters),
     }
     return m
 }
-// NewItemInformationProtectionVerifySignatureRequestBuilder instantiates a new VerifySignatureRequestBuilder and sets the default values.
+// NewItemInformationProtectionVerifySignatureRequestBuilder instantiates a new ItemInformationProtectionVerifySignatureRequestBuilder and sets the default values.
 func NewItemInformationProtectionVerifySignatureRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionVerifySignatureRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -33,14 +33,15 @@ func NewItemInformationProtectionVerifySignatureRequestBuilder(rawUrl string, re
 }
 // Post invoke action verifySignature
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a VerificationResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionVerifySignatureRequestBuilder) Post(ctx context.Context, body ItemInformationProtectionVerifySignaturePostRequestBodyable, requestConfiguration *ItemInformationProtectionVerifySignatureRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VerificationResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVerificationResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -53,6 +54,7 @@ func (m *ItemInformationProtectionVerifySignatureRequestBuilder) Post(ctx contex
 }
 // ToPostRequestInformation invoke action verifySignature
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *RequestInformation when successful
 func (m *ItemInformationProtectionVerifySignatureRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemInformationProtectionVerifySignaturePostRequestBodyable, requestConfiguration *ItemInformationProtectionVerifySignatureRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *ItemInformationProtectionVerifySignatureRequestBuilder) ToPostRequestIn
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *ItemInformationProtectionVerifySignatureRequestBuilder when successful
 func (m *ItemInformationProtectionVerifySignatureRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionVerifySignatureRequestBuilder) {
     return NewItemInformationProtectionVerifySignatureRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

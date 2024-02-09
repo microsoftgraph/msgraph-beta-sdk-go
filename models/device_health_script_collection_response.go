@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceHealthScriptCollectionResponse 
 type DeviceHealthScriptCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceHealthScriptCollectionResponse instantiates a new deviceHealthScriptCollectionResponse and sets the default values.
+// NewDeviceHealthScriptCollectionResponse instantiates a new DeviceHealthScriptCollectionResponse and sets the default values.
 func NewDeviceHealthScriptCollectionResponse()(*DeviceHealthScriptCollectionResponse) {
     m := &DeviceHealthScriptCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeviceHealthScriptCollectionResponse()(*DeviceHealthScriptCollectionResp
     return m
 }
 // CreateDeviceHealthScriptCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceHealthScriptCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceHealthScriptCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceHealthScriptCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeviceHealthScriptCollectionResponse) GetFieldDeserializers()(map[strin
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeviceHealthScriptable when successful
 func (m *DeviceHealthScriptCollectionResponse) GetValue()([]DeviceHealthScriptable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeviceHealthScriptCollectionResponse) SetValue(value []DeviceHealthScri
         panic(err)
     }
 }
-// DeviceHealthScriptCollectionResponseable 
 type DeviceHealthScriptCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

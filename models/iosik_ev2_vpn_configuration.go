@@ -8,7 +8,7 @@ import (
 type IosikEv2VpnConfiguration struct {
     IosVpnConfiguration
 }
-// NewIosikEv2VpnConfiguration instantiates a new iosikEv2VpnConfiguration and sets the default values.
+// NewIosikEv2VpnConfiguration instantiates a new IosikEv2VpnConfiguration and sets the default values.
 func NewIosikEv2VpnConfiguration()(*IosikEv2VpnConfiguration) {
     m := &IosikEv2VpnConfiguration{
         IosVpnConfiguration: *NewIosVpnConfiguration(),
@@ -18,10 +18,12 @@ func NewIosikEv2VpnConfiguration()(*IosikEv2VpnConfiguration) {
     return m
 }
 // CreateIosikEv2VpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosikEv2VpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosikEv2VpnConfiguration(), nil
 }
 // GetAllowDefaultChildSecurityAssociationParameters gets the allowDefaultChildSecurityAssociationParameters property value. Allows the use of child security association parameters by setting all parameters to the device's default unless explicitly specified.
+// returns a *bool when successful
 func (m *IosikEv2VpnConfiguration) GetAllowDefaultChildSecurityAssociationParameters()(*bool) {
     val, err := m.GetBackingStore().Get("allowDefaultChildSecurityAssociationParameters")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosikEv2VpnConfiguration) GetAllowDefaultChildSecurityAssociationParame
     return nil
 }
 // GetAllowDefaultSecurityAssociationParameters gets the allowDefaultSecurityAssociationParameters property value. Allows the use of security association parameters by setting all parameters to the device's default unless explicitly specified.
+// returns a *bool when successful
 func (m *IosikEv2VpnConfiguration) GetAllowDefaultSecurityAssociationParameters()(*bool) {
     val, err := m.GetBackingStore().Get("allowDefaultSecurityAssociationParameters")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *IosikEv2VpnConfiguration) GetAllowDefaultSecurityAssociationParameters(
     return nil
 }
 // GetAlwaysOnConfiguration gets the alwaysOnConfiguration property value. AlwaysOn Configuration
+// returns a AppleVpnAlwaysOnConfigurationable when successful
 func (m *IosikEv2VpnConfiguration) GetAlwaysOnConfiguration()(AppleVpnAlwaysOnConfigurationable) {
     val, err := m.GetBackingStore().Get("alwaysOnConfiguration")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *IosikEv2VpnConfiguration) GetAlwaysOnConfiguration()(AppleVpnAlwaysOnCo
     return nil
 }
 // GetChildSecurityAssociationParameters gets the childSecurityAssociationParameters property value. Child Security Association Parameters
+// returns a IosVpnSecurityAssociationParametersable when successful
 func (m *IosikEv2VpnConfiguration) GetChildSecurityAssociationParameters()(IosVpnSecurityAssociationParametersable) {
     val, err := m.GetBackingStore().Get("childSecurityAssociationParameters")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *IosikEv2VpnConfiguration) GetChildSecurityAssociationParameters()(IosVp
     return nil
 }
 // GetClientAuthenticationType gets the clientAuthenticationType property value. The type of VPN client authentication type
+// returns a *VpnClientAuthenticationType when successful
 func (m *IosikEv2VpnConfiguration) GetClientAuthenticationType()(*VpnClientAuthenticationType) {
     val, err := m.GetBackingStore().Get("clientAuthenticationType")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *IosikEv2VpnConfiguration) GetClientAuthenticationType()(*VpnClientAuthe
     return nil
 }
 // GetDeadPeerDetectionRate gets the deadPeerDetectionRate property value. Determine how often to check if a peer connection is still active. . Possible values are: medium, none, low, high.
+// returns a *VpnDeadPeerDetectionRate when successful
 func (m *IosikEv2VpnConfiguration) GetDeadPeerDetectionRate()(*VpnDeadPeerDetectionRate) {
     val, err := m.GetBackingStore().Get("deadPeerDetectionRate")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *IosikEv2VpnConfiguration) GetDeadPeerDetectionRate()(*VpnDeadPeerDetect
     return nil
 }
 // GetDisableMobilityAndMultihoming gets the disableMobilityAndMultihoming property value. Disable MOBIKE
+// returns a *bool when successful
 func (m *IosikEv2VpnConfiguration) GetDisableMobilityAndMultihoming()(*bool) {
     val, err := m.GetBackingStore().Get("disableMobilityAndMultihoming")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *IosikEv2VpnConfiguration) GetDisableMobilityAndMultihoming()(*bool) {
     return nil
 }
 // GetDisableRedirect gets the disableRedirect property value. Disable Redirect
+// returns a *bool when successful
 func (m *IosikEv2VpnConfiguration) GetDisableRedirect()(*bool) {
     val, err := m.GetBackingStore().Get("disableRedirect")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *IosikEv2VpnConfiguration) GetDisableRedirect()(*bool) {
     return nil
 }
 // GetEnableAlwaysOnConfiguration gets the enableAlwaysOnConfiguration property value. Determines if Always on VPN is enabled
+// returns a *bool when successful
 func (m *IosikEv2VpnConfiguration) GetEnableAlwaysOnConfiguration()(*bool) {
     val, err := m.GetBackingStore().Get("enableAlwaysOnConfiguration")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *IosikEv2VpnConfiguration) GetEnableAlwaysOnConfiguration()(*bool) {
     return nil
 }
 // GetEnableCertificateRevocationCheck gets the enableCertificateRevocationCheck property value. Enables a best-effort revocation check; server response timeouts will not cause it to fail
+// returns a *bool when successful
 func (m *IosikEv2VpnConfiguration) GetEnableCertificateRevocationCheck()(*bool) {
     val, err := m.GetBackingStore().Get("enableCertificateRevocationCheck")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *IosikEv2VpnConfiguration) GetEnableCertificateRevocationCheck()(*bool) 
     return nil
 }
 // GetEnableEAP gets the enableEAP property value. Enables EAP only authentication
+// returns a *bool when successful
 func (m *IosikEv2VpnConfiguration) GetEnableEAP()(*bool) {
     val, err := m.GetBackingStore().Get("enableEAP")
     if err != nil {
@@ -143,6 +155,7 @@ func (m *IosikEv2VpnConfiguration) GetEnableEAP()(*bool) {
     return nil
 }
 // GetEnablePerfectForwardSecrecy gets the enablePerfectForwardSecrecy property value. Enable Perfect Forward Secrecy (PFS).
+// returns a *bool when successful
 func (m *IosikEv2VpnConfiguration) GetEnablePerfectForwardSecrecy()(*bool) {
     val, err := m.GetBackingStore().Get("enablePerfectForwardSecrecy")
     if err != nil {
@@ -154,6 +167,7 @@ func (m *IosikEv2VpnConfiguration) GetEnablePerfectForwardSecrecy()(*bool) {
     return nil
 }
 // GetEnableUseInternalSubnetAttributes gets the enableUseInternalSubnetAttributes property value. Enable Use Internal Subnet Attributes.
+// returns a *bool when successful
 func (m *IosikEv2VpnConfiguration) GetEnableUseInternalSubnetAttributes()(*bool) {
     val, err := m.GetBackingStore().Get("enableUseInternalSubnetAttributes")
     if err != nil {
@@ -165,6 +179,7 @@ func (m *IosikEv2VpnConfiguration) GetEnableUseInternalSubnetAttributes()(*bool)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosikEv2VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosVpnConfiguration.GetFieldDeserializers()
     res["allowDefaultChildSecurityAssociationParameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -400,6 +415,7 @@ func (m *IosikEv2VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetLocalIdentifier gets the localIdentifier property value. The type of VPN local identifier
+// returns a *VpnLocalIdentifier when successful
 func (m *IosikEv2VpnConfiguration) GetLocalIdentifier()(*VpnLocalIdentifier) {
     val, err := m.GetBackingStore().Get("localIdentifier")
     if err != nil {
@@ -411,6 +427,7 @@ func (m *IosikEv2VpnConfiguration) GetLocalIdentifier()(*VpnLocalIdentifier) {
     return nil
 }
 // GetMtuSizeInBytes gets the mtuSizeInBytes property value. Maximum transmission unit. Valid values 1280 to 1400
+// returns a *int32 when successful
 func (m *IosikEv2VpnConfiguration) GetMtuSizeInBytes()(*int32) {
     val, err := m.GetBackingStore().Get("mtuSizeInBytes")
     if err != nil {
@@ -422,6 +439,7 @@ func (m *IosikEv2VpnConfiguration) GetMtuSizeInBytes()(*int32) {
     return nil
 }
 // GetRemoteIdentifier gets the remoteIdentifier property value. Address of the IKEv2 server. Must be a FQDN, UserFQDN, network address, or ASN1DN
+// returns a *string when successful
 func (m *IosikEv2VpnConfiguration) GetRemoteIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("remoteIdentifier")
     if err != nil {
@@ -433,6 +451,7 @@ func (m *IosikEv2VpnConfiguration) GetRemoteIdentifier()(*string) {
     return nil
 }
 // GetSecurityAssociationParameters gets the securityAssociationParameters property value. Security Association Parameters
+// returns a IosVpnSecurityAssociationParametersable when successful
 func (m *IosikEv2VpnConfiguration) GetSecurityAssociationParameters()(IosVpnSecurityAssociationParametersable) {
     val, err := m.GetBackingStore().Get("securityAssociationParameters")
     if err != nil {
@@ -444,6 +463,7 @@ func (m *IosikEv2VpnConfiguration) GetSecurityAssociationParameters()(IosVpnSecu
     return nil
 }
 // GetServerCertificateCommonName gets the serverCertificateCommonName property value. Common name of the IKEv2 Server Certificate used in Server Authentication
+// returns a *string when successful
 func (m *IosikEv2VpnConfiguration) GetServerCertificateCommonName()(*string) {
     val, err := m.GetBackingStore().Get("serverCertificateCommonName")
     if err != nil {
@@ -455,6 +475,7 @@ func (m *IosikEv2VpnConfiguration) GetServerCertificateCommonName()(*string) {
     return nil
 }
 // GetServerCertificateIssuerCommonName gets the serverCertificateIssuerCommonName property value. Issuer Common name of the IKEv2 Server Certificate issuer used in Authentication
+// returns a *string when successful
 func (m *IosikEv2VpnConfiguration) GetServerCertificateIssuerCommonName()(*string) {
     val, err := m.GetBackingStore().Get("serverCertificateIssuerCommonName")
     if err != nil {
@@ -466,6 +487,7 @@ func (m *IosikEv2VpnConfiguration) GetServerCertificateIssuerCommonName()(*strin
     return nil
 }
 // GetServerCertificateType gets the serverCertificateType property value. The type of certificate the VPN server will present to the VPN client for authentication. Possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.
+// returns a *VpnServerCertificateType when successful
 func (m *IosikEv2VpnConfiguration) GetServerCertificateType()(*VpnServerCertificateType) {
     val, err := m.GetBackingStore().Get("serverCertificateType")
     if err != nil {
@@ -477,6 +499,7 @@ func (m *IosikEv2VpnConfiguration) GetServerCertificateType()(*VpnServerCertific
     return nil
 }
 // GetSharedSecret gets the sharedSecret property value. Used when Shared Secret Authentication is selected
+// returns a *string when successful
 func (m *IosikEv2VpnConfiguration) GetSharedSecret()(*string) {
     val, err := m.GetBackingStore().Get("sharedSecret")
     if err != nil {
@@ -488,6 +511,7 @@ func (m *IosikEv2VpnConfiguration) GetSharedSecret()(*string) {
     return nil
 }
 // GetTlsMaximumVersion gets the tlsMaximumVersion property value. The maximum TLS version to be used with EAP-TLS authentication
+// returns a *string when successful
 func (m *IosikEv2VpnConfiguration) GetTlsMaximumVersion()(*string) {
     val, err := m.GetBackingStore().Get("tlsMaximumVersion")
     if err != nil {
@@ -499,6 +523,7 @@ func (m *IosikEv2VpnConfiguration) GetTlsMaximumVersion()(*string) {
     return nil
 }
 // GetTlsMinimumVersion gets the tlsMinimumVersion property value. The minimum TLS version to be used with EAP-TLS authentication
+// returns a *string when successful
 func (m *IosikEv2VpnConfiguration) GetTlsMinimumVersion()(*string) {
     val, err := m.GetBackingStore().Get("tlsMinimumVersion")
     if err != nil {
@@ -820,7 +845,6 @@ func (m *IosikEv2VpnConfiguration) SetTlsMinimumVersion(value *string)() {
         panic(err)
     }
 }
-// IosikEv2VpnConfigurationable 
 type IosikEv2VpnConfigurationable interface {
     IosVpnConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -18,28 +18,29 @@ type ComanagedDevicesExecuteActionRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewComanagedDevicesExecuteActionRequestBuilderInternal instantiates a new ExecuteActionRequestBuilder and sets the default values.
+// NewComanagedDevicesExecuteActionRequestBuilderInternal instantiates a new ComanagedDevicesExecuteActionRequestBuilder and sets the default values.
 func NewComanagedDevicesExecuteActionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesExecuteActionRequestBuilder) {
     m := &ComanagedDevicesExecuteActionRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/executeAction", pathParameters),
     }
     return m
 }
-// NewComanagedDevicesExecuteActionRequestBuilder instantiates a new ExecuteActionRequestBuilder and sets the default values.
+// NewComanagedDevicesExecuteActionRequestBuilder instantiates a new ComanagedDevicesExecuteActionRequestBuilder and sets the default values.
 func NewComanagedDevicesExecuteActionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesExecuteActionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComanagedDevicesExecuteActionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action executeAction
+// returns a BulkManagedDeviceActionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ComanagedDevicesExecuteActionRequestBuilder) Post(ctx context.Context, body ComanagedDevicesExecuteActionPostRequestBodyable, requestConfiguration *ComanagedDevicesExecuteActionRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkManagedDeviceActionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBulkManagedDeviceActionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ComanagedDevicesExecuteActionRequestBuilder) Post(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkManagedDeviceActionResultable), nil
 }
 // ToPostRequestInformation invoke action executeAction
+// returns a *RequestInformation when successful
 func (m *ComanagedDevicesExecuteActionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ComanagedDevicesExecuteActionPostRequestBodyable, requestConfiguration *ComanagedDevicesExecuteActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ComanagedDevicesExecuteActionRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ComanagedDevicesExecuteActionRequestBuilder when successful
 func (m *ComanagedDevicesExecuteActionRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesExecuteActionRequestBuilder) {
     return NewComanagedDevicesExecuteActionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

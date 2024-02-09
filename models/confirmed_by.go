@@ -1,23 +1,25 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type ConfirmedBy int
 
 const (
-    NONE_CONFIRMEDBY ConfirmedBy = iota
-    USER_CONFIRMEDBY
-    MANAGER_CONFIRMEDBY
-    UNKNOWNFUTUREVALUE_CONFIRMEDBY
+    NONE_CONFIRMEDBY = 1
+    USER_CONFIRMEDBY = 2
+    MANAGER_CONFIRMEDBY = 4
+    UNKNOWNFUTUREVALUE_CONFIRMEDBY = 8
 )
 
 func (i ConfirmedBy) String() string {
     var values []string
-    for p := ConfirmedBy(1); p <= UNKNOWNFUTUREVALUE_CONFIRMEDBY; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "user", "manager", "unknownFutureValue"}[p])
+    options := []string{"none", "user", "manager", "unknownFutureValue"}
+    for p := 0; p < 4; p++ {
+        mantis := ConfirmedBy(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

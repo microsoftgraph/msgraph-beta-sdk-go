@@ -10,7 +10,7 @@ type WindowsPackageInformation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWindowsPackageInformation instantiates a new windowsPackageInformation and sets the default values.
+// NewWindowsPackageInformation instantiates a new WindowsPackageInformation and sets the default values.
 func NewWindowsPackageInformation()(*WindowsPackageInformation) {
     m := &WindowsPackageInformation{
     }
@@ -19,10 +19,12 @@ func NewWindowsPackageInformation()(*WindowsPackageInformation) {
     return m
 }
 // CreateWindowsPackageInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsPackageInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPackageInformation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsPackageInformation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +37,7 @@ func (m *WindowsPackageInformation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApplicableArchitecture gets the applicableArchitecture property value. Contains properties for Windows architecture.
+// returns a *WindowsArchitecture when successful
 func (m *WindowsPackageInformation) GetApplicableArchitecture()(*WindowsArchitecture) {
     val, err := m.GetBackingStore().Get("applicableArchitecture")
     if err != nil {
@@ -46,10 +49,12 @@ func (m *WindowsPackageInformation) GetApplicableArchitecture()(*WindowsArchitec
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsPackageInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. The Display Name.
+// returns a *string when successful
 func (m *WindowsPackageInformation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *WindowsPackageInformation) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsPackageInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["applicableArchitecture"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -146,6 +152,7 @@ func (m *WindowsPackageInformation) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIdentityName gets the identityName property value. The Identity Name.
+// returns a *string when successful
 func (m *WindowsPackageInformation) GetIdentityName()(*string) {
     val, err := m.GetBackingStore().Get("identityName")
     if err != nil {
@@ -157,6 +164,7 @@ func (m *WindowsPackageInformation) GetIdentityName()(*string) {
     return nil
 }
 // GetIdentityPublisher gets the identityPublisher property value. The Identity Publisher.
+// returns a *string when successful
 func (m *WindowsPackageInformation) GetIdentityPublisher()(*string) {
     val, err := m.GetBackingStore().Get("identityPublisher")
     if err != nil {
@@ -168,6 +176,7 @@ func (m *WindowsPackageInformation) GetIdentityPublisher()(*string) {
     return nil
 }
 // GetIdentityResourceIdentifier gets the identityResourceIdentifier property value. The Identity Resource Identifier.
+// returns a *string when successful
 func (m *WindowsPackageInformation) GetIdentityResourceIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("identityResourceIdentifier")
     if err != nil {
@@ -179,6 +188,7 @@ func (m *WindowsPackageInformation) GetIdentityResourceIdentifier()(*string) {
     return nil
 }
 // GetIdentityVersion gets the identityVersion property value. The Identity Version.
+// returns a *string when successful
 func (m *WindowsPackageInformation) GetIdentityVersion()(*string) {
     val, err := m.GetBackingStore().Get("identityVersion")
     if err != nil {
@@ -190,6 +200,7 @@ func (m *WindowsPackageInformation) GetIdentityVersion()(*string) {
     return nil
 }
 // GetMinimumSupportedOperatingSystem gets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
+// returns a WindowsMinimumOperatingSystemable when successful
 func (m *WindowsPackageInformation) GetMinimumSupportedOperatingSystem()(WindowsMinimumOperatingSystemable) {
     val, err := m.GetBackingStore().Get("minimumSupportedOperatingSystem")
     if err != nil {
@@ -201,6 +212,7 @@ func (m *WindowsPackageInformation) GetMinimumSupportedOperatingSystem()(Windows
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WindowsPackageInformation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -337,7 +349,6 @@ func (m *WindowsPackageInformation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// WindowsPackageInformationable 
 type WindowsPackageInformationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

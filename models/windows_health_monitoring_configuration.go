@@ -8,7 +8,7 @@ import (
 type WindowsHealthMonitoringConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsHealthMonitoringConfiguration instantiates a new windowsHealthMonitoringConfiguration and sets the default values.
+// NewWindowsHealthMonitoringConfiguration instantiates a new WindowsHealthMonitoringConfiguration and sets the default values.
 func NewWindowsHealthMonitoringConfiguration()(*WindowsHealthMonitoringConfiguration) {
     m := &WindowsHealthMonitoringConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsHealthMonitoringConfiguration()(*WindowsHealthMonitoringConfigura
     return m
 }
 // CreateWindowsHealthMonitoringConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsHealthMonitoringConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsHealthMonitoringConfiguration(), nil
 }
 // GetAllowDeviceHealthMonitoring gets the allowDeviceHealthMonitoring property value. Possible values of a property
+// returns a *Enablement when successful
 func (m *WindowsHealthMonitoringConfiguration) GetAllowDeviceHealthMonitoring()(*Enablement) {
     val, err := m.GetBackingStore().Get("allowDeviceHealthMonitoring")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsHealthMonitoringConfiguration) GetAllowDeviceHealthMonitoring()(
     return nil
 }
 // GetConfigDeviceHealthMonitoringCustomScope gets the configDeviceHealthMonitoringCustomScope property value. Specifies custom set of events collected from the device where health monitoring is enabled
+// returns a *string when successful
 func (m *WindowsHealthMonitoringConfiguration) GetConfigDeviceHealthMonitoringCustomScope()(*string) {
     val, err := m.GetBackingStore().Get("configDeviceHealthMonitoringCustomScope")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsHealthMonitoringConfiguration) GetConfigDeviceHealthMonitoringCu
     return nil
 }
 // GetConfigDeviceHealthMonitoringScope gets the configDeviceHealthMonitoringScope property value. Device health monitoring scope
+// returns a *WindowsHealthMonitoringScope when successful
 func (m *WindowsHealthMonitoringConfiguration) GetConfigDeviceHealthMonitoringScope()(*WindowsHealthMonitoringScope) {
     val, err := m.GetBackingStore().Get("configDeviceHealthMonitoringScope")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *WindowsHealthMonitoringConfiguration) GetConfigDeviceHealthMonitoringSc
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsHealthMonitoringConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["allowDeviceHealthMonitoring"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,7 +143,6 @@ func (m *WindowsHealthMonitoringConfiguration) SetConfigDeviceHealthMonitoringSc
         panic(err)
     }
 }
-// WindowsHealthMonitoringConfigurationable 
 type WindowsHealthMonitoringConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

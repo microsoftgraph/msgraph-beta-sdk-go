@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApplyLabelAction 
 type ApplyLabelAction struct {
     InformationProtectionAction
 }
-// NewApplyLabelAction instantiates a new applyLabelAction and sets the default values.
+// NewApplyLabelAction instantiates a new ApplyLabelAction and sets the default values.
 func NewApplyLabelAction()(*ApplyLabelAction) {
     m := &ApplyLabelAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
@@ -18,10 +17,12 @@ func NewApplyLabelAction()(*ApplyLabelAction) {
     return m
 }
 // CreateApplyLabelActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApplyLabelActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplyLabelAction(), nil
 }
 // GetActions gets the actions property value. The collection of actions that should be implemented by the caller.
+// returns a []InformationProtectionActionable when successful
 func (m *ApplyLabelAction) GetActions()([]InformationProtectionActionable) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ApplyLabelAction) GetActions()([]InformationProtectionActionable) {
     return nil
 }
 // GetActionSource gets the actionSource property value. The actionSource property
+// returns a *ActionSource when successful
 func (m *ApplyLabelAction) GetActionSource()(*ActionSource) {
     val, err := m.GetBackingStore().Get("actionSource")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ApplyLabelAction) GetActionSource()(*ActionSource) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApplyLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InformationProtectionAction.GetFieldDeserializers()
     res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +104,7 @@ func (m *ApplyLabelAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetResponsibleSensitiveTypeIds gets the responsibleSensitiveTypeIds property value. If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.
+// returns a []string when successful
 func (m *ApplyLabelAction) GetResponsibleSensitiveTypeIds()([]string) {
     val, err := m.GetBackingStore().Get("responsibleSensitiveTypeIds")
     if err != nil {
@@ -112,6 +116,7 @@ func (m *ApplyLabelAction) GetResponsibleSensitiveTypeIds()([]string) {
     return nil
 }
 // GetSensitivityLabelId gets the sensitivityLabelId property value. The sensitivityLabelId property
+// returns a *string when successful
 func (m *ApplyLabelAction) GetSensitivityLabelId()(*string) {
     val, err := m.GetBackingStore().Get("sensitivityLabelId")
     if err != nil {
@@ -189,7 +194,6 @@ func (m *ApplyLabelAction) SetSensitivityLabelId(value *string)() {
         panic(err)
     }
 }
-// ApplyLabelActionable 
 type ApplyLabelActionable interface {
     InformationProtectionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

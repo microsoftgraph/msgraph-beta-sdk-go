@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Employee 
 type Employee struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEmployee instantiates a new employee and sets the default values.
+// NewEmployee instantiates a new Employee and sets the default values.
 func NewEmployee()(*Employee) {
     m := &Employee{
     }
@@ -21,10 +20,12 @@ func NewEmployee()(*Employee) {
     return m
 }
 // CreateEmployeeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEmployeeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmployee(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Employee) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -37,6 +38,7 @@ func (m *Employee) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAddress gets the address property value. The address property
+// returns a PostalAddressTypeable when successful
 func (m *Employee) GetAddress()(PostalAddressTypeable) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -48,10 +50,12 @@ func (m *Employee) GetAddress()(PostalAddressTypeable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Employee) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBirthDate gets the birthDate property value. The birthDate property
+// returns a *DateOnly when successful
 func (m *Employee) GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("birthDate")
     if err != nil {
@@ -63,6 +67,7 @@ func (m *Employee) GetBirthDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *Employee) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -74,6 +79,7 @@ func (m *Employee) GetDisplayName()(*string) {
     return nil
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *Employee) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -85,6 +91,7 @@ func (m *Employee) GetEmail()(*string) {
     return nil
 }
 // GetEmploymentDate gets the employmentDate property value. The employmentDate property
+// returns a *DateOnly when successful
 func (m *Employee) GetEmploymentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("employmentDate")
     if err != nil {
@@ -96,6 +103,7 @@ func (m *Employee) GetEmploymentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Employee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -307,6 +315,7 @@ func (m *Employee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetGivenName gets the givenName property value. The givenName property
+// returns a *string when successful
 func (m *Employee) GetGivenName()(*string) {
     val, err := m.GetBackingStore().Get("givenName")
     if err != nil {
@@ -318,6 +327,7 @@ func (m *Employee) GetGivenName()(*string) {
     return nil
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *Employee) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -329,6 +339,7 @@ func (m *Employee) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e55599
     return nil
 }
 // GetJobTitle gets the jobTitle property value. The jobTitle property
+// returns a *string when successful
 func (m *Employee) GetJobTitle()(*string) {
     val, err := m.GetBackingStore().Get("jobTitle")
     if err != nil {
@@ -340,6 +351,7 @@ func (m *Employee) GetJobTitle()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *Employee) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -351,6 +363,7 @@ func (m *Employee) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetMiddleName gets the middleName property value. The middleName property
+// returns a *string when successful
 func (m *Employee) GetMiddleName()(*string) {
     val, err := m.GetBackingStore().Get("middleName")
     if err != nil {
@@ -362,6 +375,7 @@ func (m *Employee) GetMiddleName()(*string) {
     return nil
 }
 // GetMobilePhone gets the mobilePhone property value. The mobilePhone property
+// returns a *string when successful
 func (m *Employee) GetMobilePhone()(*string) {
     val, err := m.GetBackingStore().Get("mobilePhone")
     if err != nil {
@@ -373,6 +387,7 @@ func (m *Employee) GetMobilePhone()(*string) {
     return nil
 }
 // GetNumber gets the number property value. The number property
+// returns a *string when successful
 func (m *Employee) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
     if err != nil {
@@ -384,6 +399,7 @@ func (m *Employee) GetNumber()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Employee) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -395,6 +411,7 @@ func (m *Employee) GetOdataType()(*string) {
     return nil
 }
 // GetPersonalEmail gets the personalEmail property value. The personalEmail property
+// returns a *string when successful
 func (m *Employee) GetPersonalEmail()(*string) {
     val, err := m.GetBackingStore().Get("personalEmail")
     if err != nil {
@@ -406,6 +423,7 @@ func (m *Employee) GetPersonalEmail()(*string) {
     return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
+// returns a *string when successful
 func (m *Employee) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
     if err != nil {
@@ -417,6 +435,7 @@ func (m *Employee) GetPhoneNumber()(*string) {
     return nil
 }
 // GetPicture gets the picture property value. The picture property
+// returns a []Pictureable when successful
 func (m *Employee) GetPicture()([]Pictureable) {
     val, err := m.GetBackingStore().Get("picture")
     if err != nil {
@@ -428,6 +447,7 @@ func (m *Employee) GetPicture()([]Pictureable) {
     return nil
 }
 // GetStatisticsGroupCode gets the statisticsGroupCode property value. The statisticsGroupCode property
+// returns a *string when successful
 func (m *Employee) GetStatisticsGroupCode()(*string) {
     val, err := m.GetBackingStore().Get("statisticsGroupCode")
     if err != nil {
@@ -439,6 +459,7 @@ func (m *Employee) GetStatisticsGroupCode()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *string when successful
 func (m *Employee) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -450,6 +471,7 @@ func (m *Employee) GetStatus()(*string) {
     return nil
 }
 // GetSurname gets the surname property value. The surname property
+// returns a *string when successful
 func (m *Employee) GetSurname()(*string) {
     val, err := m.GetBackingStore().Get("surname")
     if err != nil {
@@ -461,6 +483,7 @@ func (m *Employee) GetSurname()(*string) {
     return nil
 }
 // GetTerminationDate gets the terminationDate property value. The terminationDate property
+// returns a *DateOnly when successful
 func (m *Employee) GetTerminationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("terminationDate")
     if err != nil {
@@ -758,7 +781,6 @@ func (m *Employee) SetTerminationDate(value *i878a80d2330e89d26896388a3f487eef27
         panic(err)
     }
 }
-// Employeeable 
 type Employeeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

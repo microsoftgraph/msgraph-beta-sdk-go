@@ -8,7 +8,7 @@ import (
 type MobileAppInstallSummary struct {
     Entity
 }
-// NewMobileAppInstallSummary instantiates a new mobileAppInstallSummary and sets the default values.
+// NewMobileAppInstallSummary instantiates a new MobileAppInstallSummary and sets the default values.
 func NewMobileAppInstallSummary()(*MobileAppInstallSummary) {
     m := &MobileAppInstallSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewMobileAppInstallSummary()(*MobileAppInstallSummary) {
     return m
 }
 // CreateMobileAppInstallSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppInstallSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppInstallSummary(), nil
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Number of Devices that have failed to install this app.
+// returns a *int32 when successful
 func (m *MobileAppInstallSummary) GetFailedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedDeviceCount")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *MobileAppInstallSummary) GetFailedDeviceCount()(*int32) {
     return nil
 }
 // GetFailedUserCount gets the failedUserCount property value. Number of Users that have 1 or more device that failed to install this app.
+// returns a *int32 when successful
 func (m *MobileAppInstallSummary) GetFailedUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedUserCount")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *MobileAppInstallSummary) GetFailedUserCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["failedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +151,7 @@ func (m *MobileAppInstallSummary) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetInstalledDeviceCount gets the installedDeviceCount property value. Number of Devices that have successfully installed this app.
+// returns a *int32 when successful
 func (m *MobileAppInstallSummary) GetInstalledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("installedDeviceCount")
     if err != nil {
@@ -158,6 +163,7 @@ func (m *MobileAppInstallSummary) GetInstalledDeviceCount()(*int32) {
     return nil
 }
 // GetInstalledUserCount gets the installedUserCount property value. Number of Users whose devices have all succeeded to install this app.
+// returns a *int32 when successful
 func (m *MobileAppInstallSummary) GetInstalledUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("installedUserCount")
     if err != nil {
@@ -169,6 +175,7 @@ func (m *MobileAppInstallSummary) GetInstalledUserCount()(*int32) {
     return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of Devices that are not applicable for this app.
+// returns a *int32 when successful
 func (m *MobileAppInstallSummary) GetNotApplicableDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
     if err != nil {
@@ -180,6 +187,7 @@ func (m *MobileAppInstallSummary) GetNotApplicableDeviceCount()(*int32) {
     return nil
 }
 // GetNotApplicableUserCount gets the notApplicableUserCount property value. Number of Users whose devices were all not applicable for this app.
+// returns a *int32 when successful
 func (m *MobileAppInstallSummary) GetNotApplicableUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableUserCount")
     if err != nil {
@@ -191,6 +199,7 @@ func (m *MobileAppInstallSummary) GetNotApplicableUserCount()(*int32) {
     return nil
 }
 // GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Number of Devices that does not have this app installed.
+// returns a *int32 when successful
 func (m *MobileAppInstallSummary) GetNotInstalledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notInstalledDeviceCount")
     if err != nil {
@@ -202,6 +211,7 @@ func (m *MobileAppInstallSummary) GetNotInstalledDeviceCount()(*int32) {
     return nil
 }
 // GetNotInstalledUserCount gets the notInstalledUserCount property value. Number of Users that have 1 or more devices that did not install this app.
+// returns a *int32 when successful
 func (m *MobileAppInstallSummary) GetNotInstalledUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("notInstalledUserCount")
     if err != nil {
@@ -213,6 +223,7 @@ func (m *MobileAppInstallSummary) GetNotInstalledUserCount()(*int32) {
     return nil
 }
 // GetPendingInstallDeviceCount gets the pendingInstallDeviceCount property value. Number of Devices that have been notified to install this app.
+// returns a *int32 when successful
 func (m *MobileAppInstallSummary) GetPendingInstallDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingInstallDeviceCount")
     if err != nil {
@@ -224,6 +235,7 @@ func (m *MobileAppInstallSummary) GetPendingInstallDeviceCount()(*int32) {
     return nil
 }
 // GetPendingInstallUserCount gets the pendingInstallUserCount property value. Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.
+// returns a *int32 when successful
 func (m *MobileAppInstallSummary) GetPendingInstallUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingInstallUserCount")
     if err != nil {
@@ -372,7 +384,6 @@ func (m *MobileAppInstallSummary) SetPendingInstallUserCount(value *int32)() {
         panic(err)
     }
 }
-// MobileAppInstallSummaryable 
 type MobileAppInstallSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

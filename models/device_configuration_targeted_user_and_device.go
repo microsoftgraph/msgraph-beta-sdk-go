@@ -11,7 +11,7 @@ type DeviceConfigurationTargetedUserAndDevice struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceConfigurationTargetedUserAndDevice instantiates a new deviceConfigurationTargetedUserAndDevice and sets the default values.
+// NewDeviceConfigurationTargetedUserAndDevice instantiates a new DeviceConfigurationTargetedUserAndDevice and sets the default values.
 func NewDeviceConfigurationTargetedUserAndDevice()(*DeviceConfigurationTargetedUserAndDevice) {
     m := &DeviceConfigurationTargetedUserAndDevice{
     }
@@ -20,10 +20,12 @@ func NewDeviceConfigurationTargetedUserAndDevice()(*DeviceConfigurationTargetedU
     return m
 }
 // CreateDeviceConfigurationTargetedUserAndDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationTargetedUserAndDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationTargetedUserAndDevice(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceConfigurationTargetedUserAndDevice) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +38,12 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetAdditionalData()(map[strin
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceConfigurationTargetedUserAndDevice) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDeviceId gets the deviceId property value. The id of the device in the checkin.
+// returns a *string when successful
 func (m *DeviceConfigurationTargetedUserAndDevice) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -51,6 +55,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. The name of the device in the checkin.
+// returns a *string when successful
 func (m *DeviceConfigurationTargetedUserAndDevice) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -62,6 +67,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetDeviceName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfigurationTargetedUserAndDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +143,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetFieldDeserializers()(map[s
     return res
 }
 // GetLastCheckinDateTime gets the lastCheckinDateTime property value. Last checkin time for this user/device pair.
+// returns a *Time when successful
 func (m *DeviceConfigurationTargetedUserAndDevice) GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastCheckinDateTime")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetLastCheckinDateTime()(*i33
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceConfigurationTargetedUserAndDevice) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetOdataType()(*string) {
     return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. The display name of the user in the checkin
+// returns a *string when successful
 func (m *DeviceConfigurationTargetedUserAndDevice) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -170,6 +179,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetUserDisplayName()(*string)
     return nil
 }
 // GetUserId gets the userId property value. The id of the user in the checkin.
+// returns a *string when successful
 func (m *DeviceConfigurationTargetedUserAndDevice) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -181,6 +191,7 @@ func (m *DeviceConfigurationTargetedUserAndDevice) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The UPN of the user in the checkin.
+// returns a *string when successful
 func (m *DeviceConfigurationTargetedUserAndDevice) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -303,7 +314,6 @@ func (m *DeviceConfigurationTargetedUserAndDevice) SetUserPrincipalName(value *s
         panic(err)
     }
 }
-// DeviceConfigurationTargetedUserAndDeviceable 
 type DeviceConfigurationTargetedUserAndDeviceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

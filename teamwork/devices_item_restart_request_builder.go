@@ -17,20 +17,21 @@ type DevicesItemRestartRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewDevicesItemRestartRequestBuilderInternal instantiates a new RestartRequestBuilder and sets the default values.
+// NewDevicesItemRestartRequestBuilderInternal instantiates a new DevicesItemRestartRequestBuilder and sets the default values.
 func NewDevicesItemRestartRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesItemRestartRequestBuilder) {
     m := &DevicesItemRestartRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/restart", pathParameters),
     }
     return m
 }
-// NewDevicesItemRestartRequestBuilder instantiates a new RestartRequestBuilder and sets the default values.
+// NewDevicesItemRestartRequestBuilder instantiates a new DevicesItemRestartRequestBuilder and sets the default values.
 func NewDevicesItemRestartRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesItemRestartRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDevicesItemRestartRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post restart the specified Microsoft Teams-enabled device asynchronously.  A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamworkdevice-restart?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *DevicesItemRestartRequestBuilder) Post(ctx context.Context, requestConf
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *DevicesItemRestartRequestBuilder) Post(ctx context.Context, requestConf
     return nil
 }
 // ToPostRequestInformation restart the specified Microsoft Teams-enabled device asynchronously.  A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
+// returns a *RequestInformation when successful
 func (m *DevicesItemRestartRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DevicesItemRestartRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *DevicesItemRestartRequestBuilder) ToPostRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DevicesItemRestartRequestBuilder when successful
 func (m *DevicesItemRestartRequestBuilder) WithUrl(rawUrl string)(*DevicesItemRestartRequestBuilder) {
     return NewDevicesItemRestartRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Finding 
 type Finding struct {
     Entity
 }
-// NewFinding instantiates a new finding and sets the default values.
+// NewFinding instantiates a new Finding and sets the default values.
 func NewFinding()(*Finding) {
     m := &Finding{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewFinding()(*Finding) {
     return m
 }
 // CreateFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -135,6 +135,7 @@ func CreateFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
     return NewFinding(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Defines when the finding was created.
+// returns a *Time when successful
 func (m *Finding) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -146,6 +147,7 @@ func (m *Finding) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Finding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -181,7 +183,6 @@ func (m *Finding) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f
         panic(err)
     }
 }
-// Findingable 
 type Findingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

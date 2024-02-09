@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternallyAccessibleAzureBlobContainerFinding 
 type ExternallyAccessibleAzureBlobContainerFinding struct {
     Finding
 }
-// NewExternallyAccessibleAzureBlobContainerFinding instantiates a new externallyAccessibleAzureBlobContainerFinding and sets the default values.
+// NewExternallyAccessibleAzureBlobContainerFinding instantiates a new ExternallyAccessibleAzureBlobContainerFinding and sets the default values.
 func NewExternallyAccessibleAzureBlobContainerFinding()(*ExternallyAccessibleAzureBlobContainerFinding) {
     m := &ExternallyAccessibleAzureBlobContainerFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewExternallyAccessibleAzureBlobContainerFinding()(*ExternallyAccessibleAzu
     return m
 }
 // CreateExternallyAccessibleAzureBlobContainerFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternallyAccessibleAzureBlobContainerFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternallyAccessibleAzureBlobContainerFinding(), nil
 }
 // GetAccessibility gets the accessibility property value. The accessibility property
+// returns a *AzureAccessType when successful
 func (m *ExternallyAccessibleAzureBlobContainerFinding) GetAccessibility()(*AzureAccessType) {
     val, err := m.GetBackingStore().Get("accessibility")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ExternallyAccessibleAzureBlobContainerFinding) GetAccessibility()(*Azur
     return nil
 }
 // GetEncryptionManagedBy gets the encryptionManagedBy property value. The encryptionManagedBy property
+// returns a *AzureEncryption when successful
 func (m *ExternallyAccessibleAzureBlobContainerFinding) GetEncryptionManagedBy()(*AzureEncryption) {
     val, err := m.GetBackingStore().Get("encryptionManagedBy")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ExternallyAccessibleAzureBlobContainerFinding) GetEncryptionManagedBy()
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternallyAccessibleAzureBlobContainerFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["accessibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +80,7 @@ func (m *ExternallyAccessibleAzureBlobContainerFinding) GetFieldDeserializers()(
     return res
 }
 // GetStorageAccount gets the storageAccount property value. The storageAccount property
+// returns a AuthorizationSystemResourceable when successful
 func (m *ExternallyAccessibleAzureBlobContainerFinding) GetStorageAccount()(AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("storageAccount")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *ExternallyAccessibleAzureBlobContainerFinding) SetStorageAccount(value 
         panic(err)
     }
 }
-// ExternallyAccessibleAzureBlobContainerFindingable 
 type ExternallyAccessibleAzureBlobContainerFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

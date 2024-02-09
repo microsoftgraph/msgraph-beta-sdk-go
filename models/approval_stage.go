@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ApprovalStage 
 type ApprovalStage struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewApprovalStage instantiates a new approvalStage and sets the default values.
+// NewApprovalStage instantiates a new ApprovalStage and sets the default values.
 func NewApprovalStage()(*ApprovalStage) {
     m := &ApprovalStage{
     }
@@ -19,10 +18,12 @@ func NewApprovalStage()(*ApprovalStage) {
     return m
 }
 // CreateApprovalStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApprovalStageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApprovalStage(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ApprovalStage) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *ApprovalStage) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApprovalStageTimeOutInDays gets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it's automatically denied.
+// returns a *int32 when successful
 func (m *ApprovalStage) GetApprovalStageTimeOutInDays()(*int32) {
     val, err := m.GetBackingStore().Get("approvalStageTimeOutInDays")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *ApprovalStage) GetApprovalStageTimeOutInDays()(*int32) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ApprovalStage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEscalationApprovers gets the escalationApprovers property value. If escalation is enabled and the primary approvers don't respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers aren't required for the stage, the value of this property should be an empty collection.
+// returns a []UserSetable when successful
 func (m *ApprovalStage) GetEscalationApprovers()([]UserSetable) {
     val, err := m.GetBackingStore().Get("escalationApprovers")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ApprovalStage) GetEscalationApprovers()([]UserSetable) {
     return nil
 }
 // GetEscalationTimeInMinutes gets the escalationTimeInMinutes property value. If escalation is required, the time a request can be pending a response from a primary approver.
+// returns a *int32 when successful
 func (m *ApprovalStage) GetEscalationTimeInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("escalationTimeInMinutes")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *ApprovalStage) GetEscalationTimeInMinutes()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["approvalStageTimeOutInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -159,6 +165,7 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIsApproverJustificationRequired gets the isApproverJustificationRequired property value. Indicates whether the approver is required to provide a justification for approving a request.
+// returns a *bool when successful
 func (m *ApprovalStage) GetIsApproverJustificationRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isApproverJustificationRequired")
     if err != nil {
@@ -170,6 +177,7 @@ func (m *ApprovalStage) GetIsApproverJustificationRequired()(*bool) {
     return nil
 }
 // GetIsEscalationEnabled gets the isEscalationEnabled property value. If true, then one or more escalation approvers are configured in this approval stage.
+// returns a *bool when successful
 func (m *ApprovalStage) GetIsEscalationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEscalationEnabled")
     if err != nil {
@@ -181,6 +189,7 @@ func (m *ApprovalStage) GetIsEscalationEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ApprovalStage) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -192,6 +201,7 @@ func (m *ApprovalStage) GetOdataType()(*string) {
     return nil
 }
 // GetPrimaryApprovers gets the primaryApprovers property value. The users who are asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors and targetUserSponsors. When creating or updating a policy, include at least one userSet in this collection.
+// returns a []UserSetable when successful
 func (m *ApprovalStage) GetPrimaryApprovers()([]UserSetable) {
     val, err := m.GetBackingStore().Get("primaryApprovers")
     if err != nil {
@@ -326,7 +336,6 @@ func (m *ApprovalStage) SetPrimaryApprovers(value []UserSetable)() {
         panic(err)
     }
 }
-// ApprovalStageable 
 type ApprovalStageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

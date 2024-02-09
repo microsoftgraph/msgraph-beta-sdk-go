@@ -40,6 +40,7 @@ type B2cUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration stru
     QueryParameters *B2cUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters
 }
 // ByIdentityProviderId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.identity.b2cUserFlows.item.identityProviders.item collection
+// returns a *B2cUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder when successful
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ByIdentityProviderId(identityProviderId string)(*B2cUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,25 +51,28 @@ func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ByIdentityProviderId(i
     }
     return NewB2cUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewB2cUserFlowsItemIdentityProvidersRequestBuilderInternal instantiates a new IdentityProvidersRequestBuilder and sets the default values.
+// NewB2cUserFlowsItemIdentityProvidersRequestBuilderInternal instantiates a new B2cUserFlowsItemIdentityProvidersRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemIdentityProvidersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemIdentityProvidersRequestBuilder) {
     m := &B2cUserFlowsItemIdentityProvidersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewB2cUserFlowsItemIdentityProvidersRequestBuilder instantiates a new IdentityProvidersRequestBuilder and sets the default values.
+// NewB2cUserFlowsItemIdentityProvidersRequestBuilder instantiates a new B2cUserFlowsItemIdentityProvidersRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemIdentityProvidersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemIdentityProvidersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemIdentityProvidersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *B2cUserFlowsItemIdentityProvidersCountRequestBuilder when successful
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Count()(*B2cUserFlowsItemIdentityProvidersCountRequestBuilder) {
     return NewB2cUserFlowsItemIdentityProvidersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the identity providers in a b2cIdentityUserFlow object.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
+// returns a IdentityProviderCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-1.0
@@ -78,8 +82,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Get(ctx context.Contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateIdentityProviderCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -91,11 +94,13 @@ func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Get(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderCollectionResponseable), nil
 }
 // Ref provides operations to manage the collection of identityContainer entities.
+// returns a *B2cUserFlowsItemIdentityProvidersRefRequestBuilder when successful
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) Ref()(*B2cUserFlowsItemIdentityProvidersRefRequestBuilder) {
     return NewB2cUserFlowsItemIdentityProvidersRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the identity providers in a b2cIdentityUserFlow object.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
+// returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -110,6 +115,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) ToGetRequestInformatio
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
+// returns a *B2cUserFlowsItemIdentityProvidersRequestBuilder when successful
 func (m *B2cUserFlowsItemIdentityProvidersRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemIdentityProvidersRequestBuilder) {
     return NewB2cUserFlowsItemIdentityProvidersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

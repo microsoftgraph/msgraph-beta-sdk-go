@@ -14,6 +14,8 @@ type ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder struct {
 type ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // The payment model for the API
@@ -38,29 +40,30 @@ type ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetRequestConfigurati
     // Request query parameters
     QueryParameters *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetQueryParameters
 }
-// NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilderInternal instantiates a new GetAllMessagesRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilderInternal instantiates a new ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) {
     m := &ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/getAllMessages(){?model*,%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/getAllMessages(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top,model*}", pathParameters),
     }
     return m
 }
-// NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilder instantiates a new GetAllMessagesRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilder instantiates a new ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllMessages
-// Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemTeamDefinitionChannelsGetAllMessagesResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemTeamDefinitionChannelsGetAllMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemTeamDefinitionChannelsGetAllMessagesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -72,14 +75,15 @@ func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) Get(ctx context
     return res.(ItemTeamDefinitionChannelsGetAllMessagesResponseable), nil
 }
 // GetAsGetAllMessagesGetResponse invoke function getAllMessages
+// returns a ItemTeamDefinitionChannelsGetAllMessagesGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemTeamDefinitionChannelsGetAllMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemTeamDefinitionChannelsGetAllMessagesGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -91,6 +95,7 @@ func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) GetAsGetAllMess
     return res.(ItemTeamDefinitionChannelsGetAllMessagesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAllMessages
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -104,6 +109,7 @@ func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder when successful
 func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) {
     return NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

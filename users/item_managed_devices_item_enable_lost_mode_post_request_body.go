@@ -5,7 +5,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemManagedDevicesItemEnableLostModePostRequestBody 
 type ItemManagedDevicesItemEnableLostModePostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -19,10 +18,12 @@ func NewItemManagedDevicesItemEnableLostModePostRequestBody()(*ItemManagedDevice
     return m
 }
 // CreateItemManagedDevicesItemEnableLostModePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemManagedDevicesItemEnableLostModePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemManagedDevicesItemEnableLostModePostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) GetAdditionalData(
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["footer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) GetFieldDeserializ
     return res
 }
 // GetFooter gets the footer property value. The footer property
+// returns a *string when successful
 func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) GetFooter()(*string) {
     val, err := m.GetBackingStore().Get("footer")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) GetFooter()(*strin
     return nil
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) GetMessage()(*stri
     return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
+// returns a *string when successful
 func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *ItemManagedDevicesItemEnableLostModePostRequestBody) SetPhoneNumber(val
         panic(err)
     }
 }
-// ItemManagedDevicesItemEnableLostModePostRequestBodyable 
 type ItemManagedDevicesItemEnableLostModePostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

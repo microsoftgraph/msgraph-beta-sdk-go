@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationStringSettingValueDefinition struct {
     DeviceManagementConfigurationSettingValueDefinition
 }
-// NewDeviceManagementConfigurationStringSettingValueDefinition instantiates a new deviceManagementConfigurationStringSettingValueDefinition and sets the default values.
+// NewDeviceManagementConfigurationStringSettingValueDefinition instantiates a new DeviceManagementConfigurationStringSettingValueDefinition and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValueDefinition()(*DeviceManagementConfigurationStringSettingValueDefinition) {
     m := &DeviceManagementConfigurationStringSettingValueDefinition{
         DeviceManagementConfigurationSettingValueDefinition: *NewDeviceManagementConfigurationSettingValueDefinition(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationStringSettingValueDefinition()(*DeviceManag
     return m
 }
 // CreateDeviceManagementConfigurationStringSettingValueDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationStringSettingValueDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationStringSettingValueDefinition(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingValueDefinition.GetFieldDeserializers()
     res["fileTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -93,6 +95,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFieldDese
     return res
 }
 // GetFileTypes gets the fileTypes property value. Supported file types for this setting.
+// returns a []string when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFileTypes()([]string) {
     val, err := m.GetBackingStore().Get("fileTypes")
     if err != nil {
@@ -103,7 +106,8 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFileTypes
     }
     return nil
 }
-// GetFormat gets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.
+// GetFormat gets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.
+// returns a *DeviceManagementConfigurationStringFormat when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFormat()(*DeviceManagementConfigurationStringFormat) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -115,6 +119,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFormat()(
     return nil
 }
 // GetInputValidationSchema gets the inputValidationSchema property value. Regular expression or any xml or json schema that the input string should match
+// returns a *string when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetInputValidationSchema()(*string) {
     val, err := m.GetBackingStore().Get("inputValidationSchema")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetInputVali
     return nil
 }
 // GetIsSecret gets the isSecret property value. Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.
+// returns a *bool when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetIsSecret()(*bool) {
     val, err := m.GetBackingStore().Get("isSecret")
     if err != nil {
@@ -136,7 +142,8 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetIsSecret(
     }
     return nil
 }
-// GetMaximumLength gets the maximumLength property value. Maximum length of string
+// GetMaximumLength gets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
+// returns a *int64 when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLength()(*int64) {
     val, err := m.GetBackingStore().Get("maximumLength")
     if err != nil {
@@ -147,7 +154,8 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLe
     }
     return nil
 }
-// GetMinimumLength gets the minimumLength property value. Minimum length of string
+// GetMinimumLength gets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
+// returns a *int64 when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMinimumLength()(*int64) {
     val, err := m.GetBackingStore().Get("minimumLength")
     if err != nil {
@@ -210,7 +218,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFileTypes
         panic(err)
     }
 }
-// SetFormat sets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.
+// SetFormat sets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFormat(value *DeviceManagementConfigurationStringFormat)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {
@@ -231,21 +239,20 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetIsSecret(
         panic(err)
     }
 }
-// SetMaximumLength sets the maximumLength property value. Maximum length of string
+// SetMaximumLength sets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMaximumLength(value *int64)() {
     err := m.GetBackingStore().Set("maximumLength", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumLength sets the minimumLength property value. Minimum length of string
+// SetMinimumLength sets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMinimumLength(value *int64)() {
     err := m.GetBackingStore().Set("minimumLength", value)
     if err != nil {
         panic(err)
     }
 }
-// DeviceManagementConfigurationStringSettingValueDefinitionable 
 type DeviceManagementConfigurationStringSettingValueDefinitionable interface {
     DeviceManagementConfigurationSettingValueDefinitionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -10,7 +10,7 @@ type VpnOnDemandRule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewVpnOnDemandRule instantiates a new vpnOnDemandRule and sets the default values.
+// NewVpnOnDemandRule instantiates a new VpnOnDemandRule and sets the default values.
 func NewVpnOnDemandRule()(*VpnOnDemandRule) {
     m := &VpnOnDemandRule{
     }
@@ -19,10 +19,12 @@ func NewVpnOnDemandRule()(*VpnOnDemandRule) {
     return m
 }
 // CreateVpnOnDemandRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVpnOnDemandRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVpnOnDemandRule(), nil
 }
 // GetAction gets the action property value. VPN On-Demand Rule Connection Action.
+// returns a *VpnOnDemandRuleConnectionAction when successful
 func (m *VpnOnDemandRule) GetAction()(*VpnOnDemandRuleConnectionAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *VpnOnDemandRule) GetAction()(*VpnOnDemandRuleConnectionAction) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *VpnOnDemandRule) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +49,12 @@ func (m *VpnOnDemandRule) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *VpnOnDemandRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDnsSearchDomains gets the dnsSearchDomains property value. DNS Search Domains.
+// returns a []string when successful
 func (m *VpnOnDemandRule) GetDnsSearchDomains()([]string) {
     val, err := m.GetBackingStore().Get("dnsSearchDomains")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *VpnOnDemandRule) GetDnsSearchDomains()([]string) {
     return nil
 }
 // GetDnsServerAddressMatch gets the dnsServerAddressMatch property value. DNS Search Server Address.
+// returns a []string when successful
 func (m *VpnOnDemandRule) GetDnsServerAddressMatch()([]string) {
     val, err := m.GetBackingStore().Get("dnsServerAddressMatch")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *VpnOnDemandRule) GetDnsServerAddressMatch()([]string) {
     return nil
 }
 // GetDomainAction gets the domainAction property value. VPN On-Demand Rule Connection Domain Action.
+// returns a *VpnOnDemandRuleConnectionDomainAction when successful
 func (m *VpnOnDemandRule) GetDomainAction()(*VpnOnDemandRuleConnectionDomainAction) {
     val, err := m.GetBackingStore().Get("domainAction")
     if err != nil {
@@ -83,6 +90,7 @@ func (m *VpnOnDemandRule) GetDomainAction()(*VpnOnDemandRuleConnectionDomainActi
     return nil
 }
 // GetDomains gets the domains property value. Domains (Only applicable when Action is evaluate connection).
+// returns a []string when successful
 func (m *VpnOnDemandRule) GetDomains()([]string) {
     val, err := m.GetBackingStore().Get("domains")
     if err != nil {
@@ -94,6 +102,7 @@ func (m *VpnOnDemandRule) GetDomains()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -223,6 +232,7 @@ func (m *VpnOnDemandRule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetInterfaceTypeMatch gets the interfaceTypeMatch property value. VPN On-Demand Rule Connection network interface type.
+// returns a *VpnOnDemandRuleInterfaceTypeMatch when successful
 func (m *VpnOnDemandRule) GetInterfaceTypeMatch()(*VpnOnDemandRuleInterfaceTypeMatch) {
     val, err := m.GetBackingStore().Get("interfaceTypeMatch")
     if err != nil {
@@ -234,6 +244,7 @@ func (m *VpnOnDemandRule) GetInterfaceTypeMatch()(*VpnOnDemandRuleInterfaceTypeM
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *VpnOnDemandRule) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -245,6 +256,7 @@ func (m *VpnOnDemandRule) GetOdataType()(*string) {
     return nil
 }
 // GetProbeRequiredUrl gets the probeRequiredUrl property value. Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).
+// returns a *string when successful
 func (m *VpnOnDemandRule) GetProbeRequiredUrl()(*string) {
     val, err := m.GetBackingStore().Get("probeRequiredUrl")
     if err != nil {
@@ -256,6 +268,7 @@ func (m *VpnOnDemandRule) GetProbeRequiredUrl()(*string) {
     return nil
 }
 // GetProbeUrl gets the probeUrl property value. A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.
+// returns a *string when successful
 func (m *VpnOnDemandRule) GetProbeUrl()(*string) {
     val, err := m.GetBackingStore().Get("probeUrl")
     if err != nil {
@@ -267,6 +280,7 @@ func (m *VpnOnDemandRule) GetProbeUrl()(*string) {
     return nil
 }
 // GetSsids gets the ssids property value. Network Service Set Identifiers (SSIDs).
+// returns a []string when successful
 func (m *VpnOnDemandRule) GetSsids()([]string) {
     val, err := m.GetBackingStore().Get("ssids")
     if err != nil {
@@ -431,7 +445,6 @@ func (m *VpnOnDemandRule) SetSsids(value []string)() {
         panic(err)
     }
 }
-// VpnOnDemandRuleable 
 type VpnOnDemandRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

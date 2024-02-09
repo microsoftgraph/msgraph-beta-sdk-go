@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternallyAccessibleGcpStorageBucketFinding 
 type ExternallyAccessibleGcpStorageBucketFinding struct {
     Finding
 }
-// NewExternallyAccessibleGcpStorageBucketFinding instantiates a new externallyAccessibleGcpStorageBucketFinding and sets the default values.
+// NewExternallyAccessibleGcpStorageBucketFinding instantiates a new ExternallyAccessibleGcpStorageBucketFinding and sets the default values.
 func NewExternallyAccessibleGcpStorageBucketFinding()(*ExternallyAccessibleGcpStorageBucketFinding) {
     m := &ExternallyAccessibleGcpStorageBucketFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewExternallyAccessibleGcpStorageBucketFinding()(*ExternallyAccessibleGcpSt
     return m
 }
 // CreateExternallyAccessibleGcpStorageBucketFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternallyAccessibleGcpStorageBucketFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternallyAccessibleGcpStorageBucketFinding(), nil
 }
 // GetAccessibility gets the accessibility property value. The accessibility property
+// returns a *GcpAccessType when successful
 func (m *ExternallyAccessibleGcpStorageBucketFinding) GetAccessibility()(*GcpAccessType) {
     val, err := m.GetBackingStore().Get("accessibility")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ExternallyAccessibleGcpStorageBucketFinding) GetAccessibility()(*GcpAcc
     return nil
 }
 // GetEncryptionManagedBy gets the encryptionManagedBy property value. The encryptionManagedBy property
+// returns a *GcpEncryption when successful
 func (m *ExternallyAccessibleGcpStorageBucketFinding) GetEncryptionManagedBy()(*GcpEncryption) {
     val, err := m.GetBackingStore().Get("encryptionManagedBy")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ExternallyAccessibleGcpStorageBucketFinding) GetEncryptionManagedBy()(*
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternallyAccessibleGcpStorageBucketFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["accessibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +80,7 @@ func (m *ExternallyAccessibleGcpStorageBucketFinding) GetFieldDeserializers()(ma
     return res
 }
 // GetStorageBucket gets the storageBucket property value. The storageBucket property
+// returns a AuthorizationSystemResourceable when successful
 func (m *ExternallyAccessibleGcpStorageBucketFinding) GetStorageBucket()(AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("storageBucket")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *ExternallyAccessibleGcpStorageBucketFinding) SetStorageBucket(value Aut
         panic(err)
     }
 }
-// ExternallyAccessibleGcpStorageBucketFindingable 
 type ExternallyAccessibleGcpStorageBucketFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernancePolicyTemplate 
 type GovernancePolicyTemplate struct {
     Entity
 }
-// NewGovernancePolicyTemplate instantiates a new governancePolicyTemplate and sets the default values.
+// NewGovernancePolicyTemplate instantiates a new GovernancePolicyTemplate and sets the default values.
 func NewGovernancePolicyTemplate()(*GovernancePolicyTemplate) {
     m := &GovernancePolicyTemplate{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewGovernancePolicyTemplate()(*GovernancePolicyTemplate) {
     return m
 }
 // CreateGovernancePolicyTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGovernancePolicyTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernancePolicyTemplate(), nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *GovernancePolicyTemplate) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *GovernancePolicyTemplate) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,6 +68,7 @@ func (m *GovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetPolicy gets the policy property value. The policy property
+// returns a GovernancePolicyable when successful
 func (m *GovernancePolicyTemplate) GetPolicy()(GovernancePolicyable) {
     val, err := m.GetBackingStore().Get("policy")
     if err != nil {
@@ -77,6 +80,7 @@ func (m *GovernancePolicyTemplate) GetPolicy()(GovernancePolicyable) {
     return nil
 }
 // GetSettings gets the settings property value. The settings property
+// returns a BusinessFlowSettingsable when successful
 func (m *GovernancePolicyTemplate) GetSettings()(BusinessFlowSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -134,7 +138,6 @@ func (m *GovernancePolicyTemplate) SetSettings(value BusinessFlowSettingsable)()
         panic(err)
     }
 }
-// GovernancePolicyTemplateable 
 type GovernancePolicyTemplateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

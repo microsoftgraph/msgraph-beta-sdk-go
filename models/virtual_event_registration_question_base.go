@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEventRegistrationQuestionBase 
 type VirtualEventRegistrationQuestionBase struct {
     Entity
 }
-// NewVirtualEventRegistrationQuestionBase instantiates a new virtualEventRegistrationQuestionBase and sets the default values.
+// NewVirtualEventRegistrationQuestionBase instantiates a new VirtualEventRegistrationQuestionBase and sets the default values.
 func NewVirtualEventRegistrationQuestionBase()(*VirtualEventRegistrationQuestionBase) {
     m := &VirtualEventRegistrationQuestionBase{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewVirtualEventRegistrationQuestionBase()(*VirtualEventRegistrationQuestion
     return m
 }
 // CreateVirtualEventRegistrationQuestionBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualEventRegistrationQuestionBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateVirtualEventRegistrationQuestionBaseFromDiscriminatorValue(parseNode 
     return NewVirtualEventRegistrationQuestionBase(), nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *VirtualEventRegistrationQuestionBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *VirtualEventRegistrationQuestionBase) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEventRegistrationQuestionBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +78,7 @@ func (m *VirtualEventRegistrationQuestionBase) GetFieldDeserializers()(map[strin
     return res
 }
 // GetIsRequired gets the isRequired property value. The isRequired property
+// returns a *bool when successful
 func (m *VirtualEventRegistrationQuestionBase) GetIsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isRequired")
     if err != nil {
@@ -120,7 +123,6 @@ func (m *VirtualEventRegistrationQuestionBase) SetIsRequired(value *bool)() {
         panic(err)
     }
 }
-// VirtualEventRegistrationQuestionBaseable 
 type VirtualEventRegistrationQuestionBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

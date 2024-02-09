@@ -26,28 +26,29 @@ type B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderGetQueryParameters
 }
-// NewB2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewB2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderInternal instantiates a new B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder) {
     m := &B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/userFlowIdentityProviders/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/userFlowIdentityProviders/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewB2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewB2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder instantiates a new B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder) Get(ctx c
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder when successful
 func (m *B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder) {
     return NewB2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

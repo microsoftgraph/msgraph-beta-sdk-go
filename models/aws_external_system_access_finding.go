@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsExternalSystemAccessFinding 
 type AwsExternalSystemAccessFinding struct {
     Finding
 }
-// NewAwsExternalSystemAccessFinding instantiates a new awsExternalSystemAccessFinding and sets the default values.
+// NewAwsExternalSystemAccessFinding instantiates a new AwsExternalSystemAccessFinding and sets the default values.
 func NewAwsExternalSystemAccessFinding()(*AwsExternalSystemAccessFinding) {
     m := &AwsExternalSystemAccessFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewAwsExternalSystemAccessFinding()(*AwsExternalSystemAccessFinding) {
     return m
 }
 // CreateAwsExternalSystemAccessFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsExternalSystemAccessFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsExternalSystemAccessFinding(), nil
 }
 // GetAccessMethods gets the accessMethods property value. The accessMethods property
+// returns a *ExternalSystemAccessMethods when successful
 func (m *AwsExternalSystemAccessFinding) GetAccessMethods()(*ExternalSystemAccessMethods) {
     val, err := m.GetBackingStore().Get("accessMethods")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AwsExternalSystemAccessFinding) GetAccessMethods()(*ExternalSystemAcces
     return nil
 }
 // GetAffectedSystem gets the affectedSystem property value. The affectedSystem property
+// returns a AuthorizationSystemable when successful
 func (m *AwsExternalSystemAccessFinding) GetAffectedSystem()(AuthorizationSystemable) {
     val, err := m.GetBackingStore().Get("affectedSystem")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AwsExternalSystemAccessFinding) GetAffectedSystem()(AuthorizationSystem
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsExternalSystemAccessFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["accessMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -97,6 +100,7 @@ func (m *AwsExternalSystemAccessFinding) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetSystemWithAccess gets the systemWithAccess property value. The systemWithAccess property
+// returns a AuthorizationSystemInfoable when successful
 func (m *AwsExternalSystemAccessFinding) GetSystemWithAccess()(AuthorizationSystemInfoable) {
     val, err := m.GetBackingStore().Get("systemWithAccess")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *AwsExternalSystemAccessFinding) GetSystemWithAccess()(AuthorizationSyst
     return nil
 }
 // GetTrustedIdentityCount gets the trustedIdentityCount property value. The number of identities in the external system that are trusted, if not all. Supports $orderby.
+// returns a *int32 when successful
 func (m *AwsExternalSystemAccessFinding) GetTrustedIdentityCount()(*int32) {
     val, err := m.GetBackingStore().Get("trustedIdentityCount")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *AwsExternalSystemAccessFinding) GetTrustedIdentityCount()(*int32) {
     return nil
 }
 // GetTrustsAllIdentities gets the trustsAllIdentities property value. Flag that determines if all identities in the external system are trusted, or only a subset.
+// returns a *bool when successful
 func (m *AwsExternalSystemAccessFinding) GetTrustsAllIdentities()(*bool) {
     val, err := m.GetBackingStore().Get("trustsAllIdentities")
     if err != nil {
@@ -203,7 +209,6 @@ func (m *AwsExternalSystemAccessFinding) SetTrustsAllIdentities(value *bool)() {
         panic(err)
     }
 }
-// AwsExternalSystemAccessFindingable 
 type AwsExternalSystemAccessFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

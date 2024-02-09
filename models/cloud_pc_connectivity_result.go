@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcConnectivityResult 
 type CloudPcConnectivityResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcConnectivityResult instantiates a new cloudPcConnectivityResult and sets the default values.
+// NewCloudPcConnectivityResult instantiates a new CloudPcConnectivityResult and sets the default values.
 func NewCloudPcConnectivityResult()(*CloudPcConnectivityResult) {
     m := &CloudPcConnectivityResult{
     }
@@ -20,10 +19,12 @@ func NewCloudPcConnectivityResult()(*CloudPcConnectivityResult) {
     return m
 }
 // CreateCloudPcConnectivityResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcConnectivityResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcConnectivityResult(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcConnectivityResult) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *CloudPcConnectivityResult) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcConnectivityResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFailedHealthCheckItems gets the failedHealthCheckItems property value. A list of failed health check items. If the status property is available, this property will be empty.
+// returns a []CloudPcHealthCheckItemable when successful
 func (m *CloudPcConnectivityResult) GetFailedHealthCheckItems()([]CloudPcHealthCheckItemable) {
     val, err := m.GetBackingStore().Get("failedHealthCheckItems")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *CloudPcConnectivityResult) GetFailedHealthCheckItems()([]CloudPcHealthC
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcConnectivityResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["failedHealthCheckItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,6 +106,7 @@ func (m *CloudPcConnectivityResult) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcConnectivityResult) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -113,6 +118,7 @@ func (m *CloudPcConnectivityResult) GetOdataType()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *CloudPcConnectivityStatus when successful
 func (m *CloudPcConnectivityResult) GetStatus()(*CloudPcConnectivityStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -124,6 +130,7 @@ func (m *CloudPcConnectivityResult) GetStatus()(*CloudPcConnectivityStatus) {
     return nil
 }
 // GetUpdatedDateTime gets the updatedDateTime property value. Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPcConnectivityResult) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("updatedDateTime")
     if err != nil {
@@ -214,7 +221,6 @@ func (m *CloudPcConnectivityResult) SetUpdatedDateTime(value *i336074805fc853987
         panic(err)
     }
 }
-// CloudPcConnectivityResultable 
 type CloudPcConnectivityResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

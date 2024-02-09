@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MetadataAction 
 type MetadataAction struct {
     InformationProtectionAction
 }
-// NewMetadataAction instantiates a new metadataAction and sets the default values.
+// NewMetadataAction instantiates a new MetadataAction and sets the default values.
 func NewMetadataAction()(*MetadataAction) {
     m := &MetadataAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
@@ -18,10 +17,12 @@ func NewMetadataAction()(*MetadataAction) {
     return m
 }
 // CreateMetadataActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMetadataActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMetadataAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MetadataAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InformationProtectionAction.GetFieldDeserializers()
     res["metadataToAdd"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,6 +60,7 @@ func (m *MetadataAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetMetadataToAdd gets the metadataToAdd property value. A collection of key value pairs that should be added to the file.
+// returns a []KeyValuePairable when successful
 func (m *MetadataAction) GetMetadataToAdd()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("metadataToAdd")
     if err != nil {
@@ -70,6 +72,7 @@ func (m *MetadataAction) GetMetadataToAdd()([]KeyValuePairable) {
     return nil
 }
 // GetMetadataToRemove gets the metadataToRemove property value. A collection of strings that indicate which keys to remove from the file metadata.
+// returns a []string when successful
 func (m *MetadataAction) GetMetadataToRemove()([]string) {
     val, err := m.GetBackingStore().Get("metadataToRemove")
     if err != nil {
@@ -120,7 +123,6 @@ func (m *MetadataAction) SetMetadataToRemove(value []string)() {
         panic(err)
     }
 }
-// MetadataActionable 
 type MetadataActionable interface {
     InformationProtectionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

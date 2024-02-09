@@ -24,14 +24,14 @@ type PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilderPutRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewPrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
+// NewPrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilderInternal instantiates a new PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder and sets the default values.
 func NewPrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) {
     m := &PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printerShares/{printerShare%2Did}/jobs/{printJob%2Did}/documents/{printDocument%2Did}/$value", pathParameters),
     }
     return m
 }
-// NewPrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.
+// NewPrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder instantiates a new PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder and sets the default values.
 func NewPrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -39,14 +39,15 @@ func NewPrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder(rawUrl 
 }
 // Get get media content for the navigation property documents from print
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -59,14 +60,15 @@ func (m *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) Get(c
 }
 // Put update media content for the navigation property documents in print
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -79,6 +81,7 @@ func (m *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) Put(c
 }
 // ToGetRequestInformation get media content for the navigation property documents from print
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a *RequestInformation when successful
 func (m *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) ToGet
 }
 // ToPutRequestInformation update media content for the navigation property documents in print
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a *RequestInformation when successful
 func (m *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +106,7 @@ func (m *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) ToPut
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder when successful
 func (m *PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) WithUrl(rawUrl string)(*PrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder) {
     return NewPrinterSharesItemJobsItemDocumentsItemValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

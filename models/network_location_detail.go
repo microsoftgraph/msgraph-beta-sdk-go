@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// NetworkLocationDetail 
 type NetworkLocationDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewNetworkLocationDetail instantiates a new networkLocationDetail and sets the default values.
+// NewNetworkLocationDetail instantiates a new NetworkLocationDetail and sets the default values.
 func NewNetworkLocationDetail()(*NetworkLocationDetail) {
     m := &NetworkLocationDetail{
     }
@@ -19,10 +18,12 @@ func NewNetworkLocationDetail()(*NetworkLocationDetail) {
     return m
 }
 // CreateNetworkLocationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNetworkLocationDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkLocationDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *NetworkLocationDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *NetworkLocationDetail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *NetworkLocationDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NetworkLocationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["networkNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,6 +83,7 @@ func (m *NetworkLocationDetail) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetNetworkNames gets the networkNames property value. Provides the name of the network used when signing in.
+// returns a []string when successful
 func (m *NetworkLocationDetail) GetNetworkNames()([]string) {
     val, err := m.GetBackingStore().Get("networkNames")
     if err != nil {
@@ -91,6 +95,7 @@ func (m *NetworkLocationDetail) GetNetworkNames()([]string) {
     return nil
 }
 // GetNetworkType gets the networkType property value. Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
+// returns a *NetworkType when successful
 func (m *NetworkLocationDetail) GetNetworkType()(*NetworkType) {
     val, err := m.GetBackingStore().Get("networkType")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *NetworkLocationDetail) GetNetworkType()(*NetworkType) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *NetworkLocationDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -173,7 +179,6 @@ func (m *NetworkLocationDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// NetworkLocationDetailable 
 type NetworkLocationDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

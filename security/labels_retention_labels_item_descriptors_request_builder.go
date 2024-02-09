@@ -42,39 +42,42 @@ type LabelsRetentionLabelsItemDescriptorsRequestBuilderPatchRequestConfiguration
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AuthorityTemplate provides operations to manage the authorityTemplate property of the microsoft.graph.security.filePlanDescriptor entity.
+// returns a *LabelsRetentionLabelsItemDescriptorsAuthorityTemplateRequestBuilder when successful
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) AuthorityTemplate()(*LabelsRetentionLabelsItemDescriptorsAuthorityTemplateRequestBuilder) {
     return NewLabelsRetentionLabelsItemDescriptorsAuthorityTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CategoryTemplate provides operations to manage the categoryTemplate property of the microsoft.graph.security.filePlanDescriptor entity.
+// returns a *LabelsRetentionLabelsItemDescriptorsCategoryTemplateRequestBuilder when successful
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) CategoryTemplate()(*LabelsRetentionLabelsItemDescriptorsCategoryTemplateRequestBuilder) {
     return NewLabelsRetentionLabelsItemDescriptorsCategoryTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CitationTemplate provides operations to manage the citationTemplate property of the microsoft.graph.security.filePlanDescriptor entity.
+// returns a *LabelsRetentionLabelsItemDescriptorsCitationTemplateRequestBuilder when successful
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) CitationTemplate()(*LabelsRetentionLabelsItemDescriptorsCitationTemplateRequestBuilder) {
     return NewLabelsRetentionLabelsItemDescriptorsCitationTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewLabelsRetentionLabelsItemDescriptorsRequestBuilderInternal instantiates a new DescriptorsRequestBuilder and sets the default values.
+// NewLabelsRetentionLabelsItemDescriptorsRequestBuilderInternal instantiates a new LabelsRetentionLabelsItemDescriptorsRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemDescriptorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemDescriptorsRequestBuilder) {
     m := &LabelsRetentionLabelsItemDescriptorsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewLabelsRetentionLabelsItemDescriptorsRequestBuilder instantiates a new DescriptorsRequestBuilder and sets the default values.
+// NewLabelsRetentionLabelsItemDescriptorsRequestBuilder instantiates a new LabelsRetentionLabelsItemDescriptorsRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemDescriptorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemDescriptorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsRetentionLabelsItemDescriptorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property descriptors for security
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) Delete(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDescriptorsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -83,22 +86,25 @@ func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) Delete(ctx context.
     return nil
 }
 // DepartmentTemplate provides operations to manage the departmentTemplate property of the microsoft.graph.security.filePlanDescriptor entity.
+// returns a *LabelsRetentionLabelsItemDescriptorsDepartmentTemplateRequestBuilder when successful
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) DepartmentTemplate()(*LabelsRetentionLabelsItemDescriptorsDepartmentTemplateRequestBuilder) {
     return NewLabelsRetentionLabelsItemDescriptorsDepartmentTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilePlanReferenceTemplate provides operations to manage the filePlanReferenceTemplate property of the microsoft.graph.security.filePlanDescriptor entity.
+// returns a *LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilder when successful
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) FilePlanReferenceTemplate()(*LabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilder) {
     return NewLabelsRetentionLabelsItemDescriptorsFilePlanReferenceTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
+// returns a FilePlanDescriptorable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDescriptorsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanDescriptorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateFilePlanDescriptorFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -110,14 +116,15 @@ func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) Get(ctx context.Con
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanDescriptorable), nil
 }
 // Patch update the navigation property descriptors in security
+// returns a FilePlanDescriptorable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanDescriptorable, requestConfiguration *LabelsRetentionLabelsItemDescriptorsRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanDescriptorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateFilePlanDescriptorFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -129,8 +136,9 @@ func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) Patch(ctx context.C
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanDescriptorable), nil
 }
 // ToDeleteRequestInformation delete navigation property descriptors for security
+// returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDescriptorsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -139,6 +147,7 @@ func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) ToDeleteRequestInfo
     return requestInfo, nil
 }
 // ToGetRequestInformation represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
+// returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDescriptorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -152,8 +161,9 @@ func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property descriptors in security
+// returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanDescriptorable, requestConfiguration *LabelsRetentionLabelsItemDescriptorsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/descriptors", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -166,6 +176,7 @@ func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) ToPatchRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LabelsRetentionLabelsItemDescriptorsRequestBuilder when successful
 func (m *LabelsRetentionLabelsItemDescriptorsRequestBuilder) WithUrl(rawUrl string)(*LabelsRetentionLabelsItemDescriptorsRequestBuilder) {
     return NewLabelsRetentionLabelsItemDescriptorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

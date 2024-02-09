@@ -8,7 +8,7 @@ import (
 type WindowsKioskDesktopApp struct {
     WindowsKioskAppBase
 }
-// NewWindowsKioskDesktopApp instantiates a new windowsKioskDesktopApp and sets the default values.
+// NewWindowsKioskDesktopApp instantiates a new WindowsKioskDesktopApp and sets the default values.
 func NewWindowsKioskDesktopApp()(*WindowsKioskDesktopApp) {
     m := &WindowsKioskDesktopApp{
         WindowsKioskAppBase: *NewWindowsKioskAppBase(),
@@ -18,10 +18,12 @@ func NewWindowsKioskDesktopApp()(*WindowsKioskDesktopApp) {
     return m
 }
 // CreateWindowsKioskDesktopAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskDesktopAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsKioskDesktopApp(), nil
 }
 // GetDesktopApplicationId gets the desktopApplicationId property value. Define the DesktopApplicationID of the app
+// returns a *string when successful
 func (m *WindowsKioskDesktopApp) GetDesktopApplicationId()(*string) {
     val, err := m.GetBackingStore().Get("desktopApplicationId")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsKioskDesktopApp) GetDesktopApplicationId()(*string) {
     return nil
 }
 // GetDesktopApplicationLinkPath gets the desktopApplicationLinkPath property value. Define the DesktopApplicationLinkPath of the app
+// returns a *string when successful
 func (m *WindowsKioskDesktopApp) GetDesktopApplicationLinkPath()(*string) {
     val, err := m.GetBackingStore().Get("desktopApplicationLinkPath")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsKioskDesktopApp) GetDesktopApplicationLinkPath()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskDesktopApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsKioskAppBase.GetFieldDeserializers()
     res["desktopApplicationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +83,7 @@ func (m *WindowsKioskDesktopApp) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetPath gets the path property value. Define the path of a desktop app
+// returns a *string when successful
 func (m *WindowsKioskDesktopApp) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *WindowsKioskDesktopApp) SetPath(value *string)() {
         panic(err)
     }
 }
-// WindowsKioskDesktopAppable 
 type WindowsKioskDesktopAppable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsKioskAppBaseable

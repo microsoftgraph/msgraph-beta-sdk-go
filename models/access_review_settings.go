@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AccessReviewSettings 
 type AccessReviewSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAccessReviewSettings instantiates a new accessReviewSettings and sets the default values.
+// NewAccessReviewSettings instantiates a new AccessReviewSettings and sets the default values.
 func NewAccessReviewSettings()(*AccessReviewSettings) {
     m := &AccessReviewSettings{
     }
@@ -19,6 +18,7 @@ func NewAccessReviewSettings()(*AccessReviewSettings) {
     return m
 }
 // CreateAccessReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateAccessReviewSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewAccessReviewSettings(), nil
 }
 // GetAccessRecommendationsEnabled gets the accessRecommendationsEnabled property value. Indicates whether showing recommendations to reviewers is enabled.
+// returns a *bool when successful
 func (m *AccessReviewSettings) GetAccessRecommendationsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("accessRecommendationsEnabled")
     if err != nil {
@@ -52,6 +53,7 @@ func (m *AccessReviewSettings) GetAccessRecommendationsEnabled()(*bool) {
     return nil
 }
 // GetActivityDurationInDays gets the activityDurationInDays property value. The number of days of user activities to show to reviewers.
+// returns a *int32 when successful
 func (m *AccessReviewSettings) GetActivityDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("activityDurationInDays")
     if err != nil {
@@ -63,6 +65,7 @@ func (m *AccessReviewSettings) GetActivityDurationInDays()(*int32) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AccessReviewSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -75,6 +78,7 @@ func (m *AccessReviewSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAutoApplyReviewResultsEnabled gets the autoApplyReviewResultsEnabled property value. Indicates whether the auto-apply capability, to automatically change the target object access resource, is enabled.  If not enabled, a user must, after the review completes, apply the access review.
+// returns a *bool when successful
 func (m *AccessReviewSettings) GetAutoApplyReviewResultsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("autoApplyReviewResultsEnabled")
     if err != nil {
@@ -86,6 +90,7 @@ func (m *AccessReviewSettings) GetAutoApplyReviewResultsEnabled()(*bool) {
     return nil
 }
 // GetAutoReviewEnabled gets the autoReviewEnabled property value. Indicates whether a decision should be set if the reviewer didn't supply one. For use when, auto-apply is enabled. If you don't want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.
+// returns a *bool when successful
 func (m *AccessReviewSettings) GetAutoReviewEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("autoReviewEnabled")
     if err != nil {
@@ -97,6 +102,7 @@ func (m *AccessReviewSettings) GetAutoReviewEnabled()(*bool) {
     return nil
 }
 // GetAutoReviewSettings gets the autoReviewSettings property value. Detailed settings for how the feature should set the review decision. For use when, auto-apply is enabled.
+// returns a AutoReviewSettingsable when successful
 func (m *AccessReviewSettings) GetAutoReviewSettings()(AutoReviewSettingsable) {
     val, err := m.GetBackingStore().Get("autoReviewSettings")
     if err != nil {
@@ -108,10 +114,12 @@ func (m *AccessReviewSettings) GetAutoReviewSettings()(AutoReviewSettingsable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AccessReviewSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accessRecommendationsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -217,6 +225,7 @@ func (m *AccessReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetJustificationRequiredOnApproval gets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide a justification when reviewing access.
+// returns a *bool when successful
 func (m *AccessReviewSettings) GetJustificationRequiredOnApproval()(*bool) {
     val, err := m.GetBackingStore().Get("justificationRequiredOnApproval")
     if err != nil {
@@ -228,6 +237,7 @@ func (m *AccessReviewSettings) GetJustificationRequiredOnApproval()(*bool) {
     return nil
 }
 // GetMailNotificationsEnabled gets the mailNotificationsEnabled property value. Indicates whether sending mails to reviewers and the review creator is enabled.
+// returns a *bool when successful
 func (m *AccessReviewSettings) GetMailNotificationsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("mailNotificationsEnabled")
     if err != nil {
@@ -239,6 +249,7 @@ func (m *AccessReviewSettings) GetMailNotificationsEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AccessReviewSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -250,6 +261,7 @@ func (m *AccessReviewSettings) GetOdataType()(*string) {
     return nil
 }
 // GetRecurrenceSettings gets the recurrenceSettings property value. Detailed settings for recurrence.
+// returns a AccessReviewRecurrenceSettingsable when successful
 func (m *AccessReviewSettings) GetRecurrenceSettings()(AccessReviewRecurrenceSettingsable) {
     val, err := m.GetBackingStore().Get("recurrenceSettings")
     if err != nil {
@@ -261,6 +273,7 @@ func (m *AccessReviewSettings) GetRecurrenceSettings()(AccessReviewRecurrenceSet
     return nil
 }
 // GetRemindersEnabled gets the remindersEnabled property value. Indicates whether sending reminder emails to reviewers is enabled.
+// returns a *bool when successful
 func (m *AccessReviewSettings) GetRemindersEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("remindersEnabled")
     if err != nil {
@@ -422,7 +435,6 @@ func (m *AccessReviewSettings) SetRemindersEnabled(value *bool)() {
         panic(err)
     }
 }
-// AccessReviewSettingsable 
 type AccessReviewSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

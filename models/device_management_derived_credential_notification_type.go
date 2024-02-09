@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Supported values for the notification type to use.
@@ -8,18 +9,20 @@ type DeviceManagementDerivedCredentialNotificationType int
 
 const (
     // None
-    NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE DeviceManagementDerivedCredentialNotificationType = iota
+    NONE_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE = 1
     // Company Portal
-    COMPANYPORTAL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
+    COMPANYPORTAL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE = 2
     // Email
-    EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
+    EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE = 4
 )
 
 func (i DeviceManagementDerivedCredentialNotificationType) String() string {
     var values []string
-    for p := DeviceManagementDerivedCredentialNotificationType(1); p <= EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "companyPortal", "email"}[p])
+    options := []string{"none", "companyPortal", "email"}
+    for p := 0; p < 3; p++ {
+        mantis := DeviceManagementDerivedCredentialNotificationType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")
