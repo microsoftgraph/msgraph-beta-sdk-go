@@ -14,6 +14,8 @@ type ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder struct
 type ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,29 +38,30 @@ type ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderGetRequ
     // Request query parameters
     QueryParameters *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderGetQueryParameters
 }
-// NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderInternal instantiates a new DeltaRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderInternal instantiates a new ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies/delta(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies/delta(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder instantiates a new DeltaRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder instantiates a new ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderGetRequestConfiguration)(ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) G
     return res.(ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse invoke function delta
+// returns a ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderGetRequestConfiguration)(ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) G
     return res.(ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) T
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder when successful
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AzureRoleDefinition 
 type AzureRoleDefinition struct {
     Entity
 }
-// NewAzureRoleDefinition instantiates a new azureRoleDefinition and sets the default values.
+// NewAzureRoleDefinition instantiates a new AzureRoleDefinition and sets the default values.
 func NewAzureRoleDefinition()(*AzureRoleDefinition) {
     m := &AzureRoleDefinition{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAzureRoleDefinition()(*AzureRoleDefinition) {
     return m
 }
 // CreateAzureRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAzureRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureRoleDefinition(), nil
 }
 // GetAssignableScopes gets the assignableScopes property value. Scopes at which the Azure role can be assigned. For more information about common patterns, see Understand Azure role definitions: AssignableScopes. Supports $filter (eq).
+// returns a []string when successful
 func (m *AzureRoleDefinition) GetAssignableScopes()([]string) {
     val, err := m.GetBackingStore().Get("assignableScopes")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AzureRoleDefinition) GetAssignableScopes()([]string) {
     return nil
 }
 // GetAzureRoleDefinitionType gets the azureRoleDefinitionType property value. The azureRoleDefinitionType property
+// returns a *AzureRoleDefinitionType when successful
 func (m *AzureRoleDefinition) GetAzureRoleDefinitionType()(*AzureRoleDefinitionType) {
     val, err := m.GetBackingStore().Get("azureRoleDefinitionType")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AzureRoleDefinition) GetAzureRoleDefinitionType()(*AzureRoleDefinitionT
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the Azure role. Supports $filter (eq, contains).
+// returns a *string when successful
 func (m *AzureRoleDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *AzureRoleDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalId gets the externalId property value. Identifier of an Azure role defined by Microsoft Azure. Alternate key. Supports $filter (eq).
+// returns a *string when successful
 func (m *AzureRoleDefinition) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *AzureRoleDefinition) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignableScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -175,7 +180,6 @@ func (m *AzureRoleDefinition) SetExternalId(value *string)() {
         panic(err)
     }
 }
-// AzureRoleDefinitionable 
 type AzureRoleDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

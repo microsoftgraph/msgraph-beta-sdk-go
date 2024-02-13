@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// M365ForwardingRule 
 type M365ForwardingRule struct {
     ForwardingRule
 }
-// NewM365ForwardingRule instantiates a new m365ForwardingRule and sets the default values.
+// NewM365ForwardingRule instantiates a new M365ForwardingRule and sets the default values.
 func NewM365ForwardingRule()(*M365ForwardingRule) {
     m := &M365ForwardingRule{
         ForwardingRule: *NewForwardingRule(),
@@ -18,10 +17,12 @@ func NewM365ForwardingRule()(*M365ForwardingRule) {
     return m
 }
 // CreateM365ForwardingRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateM365ForwardingRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewM365ForwardingRule(), nil
 }
 // GetCategory gets the category property value. The category property
+// returns a *ForwardingCategory when successful
 func (m *M365ForwardingRule) GetCategory()(*ForwardingCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *M365ForwardingRule) GetCategory()(*ForwardingCategory) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *M365ForwardingRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ForwardingRule.GetFieldDeserializers()
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +76,7 @@ func (m *M365ForwardingRule) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetPorts gets the ports property value. The port(s) used by a forwarding rule for Microsoft 365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.
+// returns a []string when successful
 func (m *M365ForwardingRule) GetPorts()([]string) {
     val, err := m.GetBackingStore().Get("ports")
     if err != nil {
@@ -85,6 +88,7 @@ func (m *M365ForwardingRule) GetPorts()([]string) {
     return nil
 }
 // GetProtocol gets the protocol property value. The protocol property
+// returns a *NetworkingProtocol when successful
 func (m *M365ForwardingRule) GetProtocol()(*NetworkingProtocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
@@ -144,7 +148,6 @@ func (m *M365ForwardingRule) SetProtocol(value *NetworkingProtocol)() {
         panic(err)
     }
 }
-// M365ForwardingRuleable 
 type M365ForwardingRuleable interface {
     ForwardingRuleable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

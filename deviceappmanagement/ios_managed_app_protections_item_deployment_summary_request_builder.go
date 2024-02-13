@@ -41,28 +41,28 @@ type IosManagedAppProtectionsItemDeploymentSummaryRequestBuilderPatchRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilderInternal instantiates a new DeploymentSummaryRequestBuilder and sets the default values.
+// NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilderInternal instantiates a new IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) {
     m := &IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection%2Did}/deploymentSummary{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection%2Did}/deploymentSummary{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilder instantiates a new DeploymentSummaryRequestBuilder and sets the default values.
+// NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilder instantiates a new IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property deploymentSummary for deviceAppManagement
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) Delete(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) Delete(ctx
     return nil
 }
 // Get navigation property to deployment summary of the configuration.
+// returns a ManagedAppPolicyDeploymentSummaryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyDeploymentSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyDeploymentSummaryable), nil
 }
 // Patch update the navigation property deploymentSummary in deviceAppManagement
+// returns a ManagedAppPolicyDeploymentSummaryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyDeploymentSummaryable, requestConfiguration *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyDeploymentSummaryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) Patch(ctx 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyDeploymentSummaryable), nil
 }
 // ToDeleteRequestInformation delete navigation property deploymentSummary for deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection%2Did}/deploymentSummary", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) ToDeleteRe
     return requestInfo, nil
 }
 // ToGetRequestInformation navigation property to deployment summary of the configuration.
+// returns a *RequestInformation when successful
 func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property deploymentSummary in deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppPolicyDeploymentSummaryable, requestConfiguration *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection%2Did}/deploymentSummary", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) ToPatchReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder when successful
 func (m *IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) WithUrl(rawUrl string)(*IosManagedAppProtectionsItemDeploymentSummaryRequestBuilder) {
     return NewIosManagedAppProtectionsItemDeploymentSummaryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

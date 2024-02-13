@@ -41,28 +41,28 @@ type ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPrevent
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal instantiates a new DataLossPreventionPolicyItemRequestBuilder and sets the default values.
+// NewItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal instantiates a new ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder and sets the default values.
 func NewItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
     m := &ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder instantiates a new DataLossPreventionPolicyItemRequestBuilder and sets the default values.
+// NewItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder instantiates a new ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder and sets the default values.
 func NewItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property dataLossPreventionPolicies for groups
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPre
     return nil
 }
 // Get get dataLossPreventionPolicies from groups
+// returns a DataLossPreventionPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDataLossPreventionPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPre
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable), nil
 }
 // Patch update the navigation property dataLossPreventionPolicies in groups
+// returns a DataLossPreventionPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, requestConfiguration *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDataLossPreventionPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPre
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable), nil
 }
 // ToDeleteRequestInformation delete navigation property dataLossPreventionPolicies for groups
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPre
     return requestInfo, nil
 }
 // ToGetRequestInformation get dataLossPreventionPolicies from groups
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPre
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property dataLossPreventionPolicies in groups
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, requestConfiguration *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPre
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder when successful
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
     return NewItemSitesItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

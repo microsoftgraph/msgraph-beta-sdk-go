@@ -8,7 +8,7 @@ import (
 type GroupPolicyPresentationDropdownList struct {
     GroupPolicyUploadedPresentation
 }
-// NewGroupPolicyPresentationDropdownList instantiates a new groupPolicyPresentationDropdownList and sets the default values.
+// NewGroupPolicyPresentationDropdownList instantiates a new GroupPolicyPresentationDropdownList and sets the default values.
 func NewGroupPolicyPresentationDropdownList()(*GroupPolicyPresentationDropdownList) {
     m := &GroupPolicyPresentationDropdownList{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
@@ -18,10 +18,12 @@ func NewGroupPolicyPresentationDropdownList()(*GroupPolicyPresentationDropdownLi
     return m
 }
 // CreateGroupPolicyPresentationDropdownListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationDropdownListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyPresentationDropdownList(), nil
 }
 // GetDefaultItem gets the defaultItem property value. Localized string value identifying the default choice of the list of items.
+// returns a GroupPolicyPresentationDropdownListItemable when successful
 func (m *GroupPolicyPresentationDropdownList) GetDefaultItem()(GroupPolicyPresentationDropdownListItemable) {
     val, err := m.GetBackingStore().Get("defaultItem")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *GroupPolicyPresentationDropdownList) GetDefaultItem()(GroupPolicyPresen
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentationDropdownList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["defaultItem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *GroupPolicyPresentationDropdownList) GetFieldDeserializers()(map[string
     return res
 }
 // GetItems gets the items property value. Represents a set of localized display names and their associated values.
+// returns a []GroupPolicyPresentationDropdownListItemable when successful
 func (m *GroupPolicyPresentationDropdownList) GetItems()([]GroupPolicyPresentationDropdownListItemable) {
     val, err := m.GetBackingStore().Get("items")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *GroupPolicyPresentationDropdownList) GetItems()([]GroupPolicyPresentati
     return nil
 }
 // GetRequired gets the required property value. Requirement to enter a value in the parameter box. The default value is false.
+// returns a *bool when successful
 func (m *GroupPolicyPresentationDropdownList) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
     if err != nil {
@@ -148,7 +153,6 @@ func (m *GroupPolicyPresentationDropdownList) SetRequired(value *bool)() {
         panic(err)
     }
 }
-// GroupPolicyPresentationDropdownListable 
 type GroupPolicyPresentationDropdownListable interface {
     GroupPolicyUploadedPresentationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

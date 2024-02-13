@@ -2,7 +2,6 @@ package billing
 import (
     "errors"
 )
-// 
 type BillingPeriod int
 
 const (

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcRestorePointSetting 
 type CloudPcRestorePointSetting struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcRestorePointSetting instantiates a new cloudPcRestorePointSetting and sets the default values.
+// NewCloudPcRestorePointSetting instantiates a new CloudPcRestorePointSetting and sets the default values.
 func NewCloudPcRestorePointSetting()(*CloudPcRestorePointSetting) {
     m := &CloudPcRestorePointSetting{
     }
@@ -19,10 +18,12 @@ func NewCloudPcRestorePointSetting()(*CloudPcRestorePointSetting) {
     return m
 }
 // CreateCloudPcRestorePointSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcRestorePointSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcRestorePointSetting(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcRestorePointSetting) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *CloudPcRestorePointSetting) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcRestorePointSetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["frequencyInHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -83,7 +86,8 @@ func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetFrequencyInHours gets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
+// GetFrequencyInHours gets the frequencyInHours property value. The frequencyInHours property
+// returns a *int32 when successful
 func (m *CloudPcRestorePointSetting) GetFrequencyInHours()(*int32) {
     val, err := m.GetBackingStore().Get("frequencyInHours")
     if err != nil {
@@ -94,7 +98,8 @@ func (m *CloudPcRestorePointSetting) GetFrequencyInHours()(*int32) {
     }
     return nil
 }
-// GetFrequencyType gets the frequencyType property value. The frequencyType property
+// GetFrequencyType gets the frequencyType property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
+// returns a *CloudPcRestorePointFrequencyType when successful
 func (m *CloudPcRestorePointSetting) GetFrequencyType()(*CloudPcRestorePointFrequencyType) {
     val, err := m.GetBackingStore().Get("frequencyType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *CloudPcRestorePointSetting) GetFrequencyType()(*CloudPcRestorePointFreq
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcRestorePointSetting) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *CloudPcRestorePointSetting) GetOdataType()(*string) {
     return nil
 }
 // GetUserRestoreEnabled gets the userRestoreEnabled property value. If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can't use snapshots to restore the Cloud PC.
+// returns a *bool when successful
 func (m *CloudPcRestorePointSetting) GetUserRestoreEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("userRestoreEnabled")
     if err != nil {
@@ -173,14 +180,14 @@ func (m *CloudPcRestorePointSetting) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcRestorePointSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFrequencyInHours sets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
+// SetFrequencyInHours sets the frequencyInHours property value. The frequencyInHours property
 func (m *CloudPcRestorePointSetting) SetFrequencyInHours(value *int32)() {
     err := m.GetBackingStore().Set("frequencyInHours", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFrequencyType sets the frequencyType property value. The frequencyType property
+// SetFrequencyType sets the frequencyType property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
 func (m *CloudPcRestorePointSetting) SetFrequencyType(value *CloudPcRestorePointFrequencyType)() {
     err := m.GetBackingStore().Set("frequencyType", value)
     if err != nil {
@@ -201,7 +208,6 @@ func (m *CloudPcRestorePointSetting) SetUserRestoreEnabled(value *bool)() {
         panic(err)
     }
 }
-// CloudPcRestorePointSettingable 
 type CloudPcRestorePointSettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -47,6 +47,7 @@ type DirectorySettingTemplatesRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDirectorySettingTemplateId provides operations to manage the collection of directorySettingTemplate entities.
+// returns a *DirectorySettingTemplateItemRequestBuilder when successful
 func (m *DirectorySettingTemplatesRequestBuilder) ByDirectorySettingTemplateId(directorySettingTemplateId string)(*DirectorySettingTemplateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,7 +61,7 @@ func (m *DirectorySettingTemplatesRequestBuilder) ByDirectorySettingTemplateId(d
 // NewDirectorySettingTemplatesRequestBuilderInternal instantiates a new DirectorySettingTemplatesRequestBuilder and sets the default values.
 func NewDirectorySettingTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectorySettingTemplatesRequestBuilder) {
     m := &DirectorySettingTemplatesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directorySettingTemplates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directorySettingTemplates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -71,14 +72,18 @@ func NewDirectorySettingTemplatesRequestBuilder(rawUrl string, requestAdapter i2
     return NewDirectorySettingTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CountRequestBuilder when successful
 func (m *DirectorySettingTemplatesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
+// returns a *DeltaRequestBuilder when successful
 func (m *DirectorySettingTemplatesRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects.
+// returns a DirectorySettingTemplateCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-1.0
@@ -88,8 +93,7 @@ func (m *DirectorySettingTemplatesRequestBuilder) Get(ctx context.Context, reque
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDirectorySettingTemplateCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,22 +105,25 @@ func (m *DirectorySettingTemplatesRequestBuilder) Get(ctx context.Context, reque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateCollectionResponseable), nil
 }
 // GetByIds provides operations to call the getByIds method.
+// returns a *GetByIdsRequestBuilder when successful
 func (m *DirectorySettingTemplatesRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
     return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
+// returns a *GetUserOwnedObjectsRequestBuilder when successful
 func (m *DirectorySettingTemplatesRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequestBuilder) {
     return NewGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post add new entity to directorySettingTemplates
+// returns a DirectorySettingTemplateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectorySettingTemplatesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, requestConfiguration *DirectorySettingTemplatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDirectorySettingTemplateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -128,6 +135,7 @@ func (m *DirectorySettingTemplatesRequestBuilder) Post(ctx context.Context, body
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable), nil
 }
 // ToGetRequestInformation directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects.
+// returns a *RequestInformation when successful
 func (m *DirectorySettingTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectorySettingTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -141,8 +149,9 @@ func (m *DirectorySettingTemplatesRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // ToPostRequestInformation add new entity to directorySettingTemplates
+// returns a *RequestInformation when successful
 func (m *DirectorySettingTemplatesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable, requestConfiguration *DirectorySettingTemplatesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/directorySettingTemplates", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -155,10 +164,12 @@ func (m *DirectorySettingTemplatesRequestBuilder) ToPostRequestInformation(ctx c
     return requestInfo, nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
+// returns a *ValidatePropertiesRequestBuilder when successful
 func (m *DirectorySettingTemplatesRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DirectorySettingTemplatesRequestBuilder when successful
 func (m *DirectorySettingTemplatesRequestBuilder) WithUrl(rawUrl string)(*DirectorySettingTemplatesRequestBuilder) {
     return NewDirectorySettingTemplatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

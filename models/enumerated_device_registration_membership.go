@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EnumeratedDeviceRegistrationMembership 
 type EnumeratedDeviceRegistrationMembership struct {
     DeviceRegistrationMembership
 }
-// NewEnumeratedDeviceRegistrationMembership instantiates a new enumeratedDeviceRegistrationMembership and sets the default values.
+// NewEnumeratedDeviceRegistrationMembership instantiates a new EnumeratedDeviceRegistrationMembership and sets the default values.
 func NewEnumeratedDeviceRegistrationMembership()(*EnumeratedDeviceRegistrationMembership) {
     m := &EnumeratedDeviceRegistrationMembership{
         DeviceRegistrationMembership: *NewDeviceRegistrationMembership(),
@@ -18,10 +17,12 @@ func NewEnumeratedDeviceRegistrationMembership()(*EnumeratedDeviceRegistrationMe
     return m
 }
 // CreateEnumeratedDeviceRegistrationMembershipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnumeratedDeviceRegistrationMembershipFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnumeratedDeviceRegistrationMembership(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EnumeratedDeviceRegistrationMembership) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceRegistrationMembership.GetFieldDeserializers()
     res["groups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,6 +60,7 @@ func (m *EnumeratedDeviceRegistrationMembership) GetFieldDeserializers()(map[str
     return res
 }
 // GetGroups gets the groups property value. List of groups that this policy applies to.
+// returns a []string when successful
 func (m *EnumeratedDeviceRegistrationMembership) GetGroups()([]string) {
     val, err := m.GetBackingStore().Get("groups")
     if err != nil {
@@ -70,6 +72,7 @@ func (m *EnumeratedDeviceRegistrationMembership) GetGroups()([]string) {
     return nil
 }
 // GetUsers gets the users property value. List of users that this policy applies to.
+// returns a []string when successful
 func (m *EnumeratedDeviceRegistrationMembership) GetUsers()([]string) {
     val, err := m.GetBackingStore().Get("users")
     if err != nil {
@@ -114,7 +117,6 @@ func (m *EnumeratedDeviceRegistrationMembership) SetUsers(value []string)() {
         panic(err)
     }
 }
-// EnumeratedDeviceRegistrationMembershipable 
 type EnumeratedDeviceRegistrationMembershipable interface {
     DeviceRegistrationMembershipable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

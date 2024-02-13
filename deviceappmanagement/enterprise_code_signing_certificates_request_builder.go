@@ -47,6 +47,7 @@ type EnterpriseCodeSigningCertificatesRequestBuilderPostRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByEnterpriseCodeSigningCertificateId provides operations to manage the enterpriseCodeSigningCertificates property of the microsoft.graph.deviceAppManagement entity.
+// returns a *EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder when successful
 func (m *EnterpriseCodeSigningCertificatesRequestBuilder) ByEnterpriseCodeSigningCertificateId(enterpriseCodeSigningCertificateId string)(*EnterpriseCodeSigningCertificatesEnterpriseCodeSigningCertificateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,7 +61,7 @@ func (m *EnterpriseCodeSigningCertificatesRequestBuilder) ByEnterpriseCodeSignin
 // NewEnterpriseCodeSigningCertificatesRequestBuilderInternal instantiates a new EnterpriseCodeSigningCertificatesRequestBuilder and sets the default values.
 func NewEnterpriseCodeSigningCertificatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EnterpriseCodeSigningCertificatesRequestBuilder) {
     m := &EnterpriseCodeSigningCertificatesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/enterpriseCodeSigningCertificates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/enterpriseCodeSigningCertificates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -71,18 +72,20 @@ func NewEnterpriseCodeSigningCertificatesRequestBuilder(rawUrl string, requestAd
     return NewEnterpriseCodeSigningCertificatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *EnterpriseCodeSigningCertificatesCountRequestBuilder when successful
 func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Count()(*EnterpriseCodeSigningCertificatesCountRequestBuilder) {
     return NewEnterpriseCodeSigningCertificatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the Windows Enterprise Code Signing Certificate.
+// returns a EnterpriseCodeSigningCertificateCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Get(ctx context.Context, requestConfiguration *EnterpriseCodeSigningCertificatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnterpriseCodeSigningCertificateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEnterpriseCodeSigningCertificateCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Get(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnterpriseCodeSigningCertificateCollectionResponseable), nil
 }
 // Post create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
+// returns a EnterpriseCodeSigningCertificateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnterpriseCodeSigningCertificateable, requestConfiguration *EnterpriseCodeSigningCertificatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnterpriseCodeSigningCertificateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEnterpriseCodeSigningCertificateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *EnterpriseCodeSigningCertificatesRequestBuilder) Post(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnterpriseCodeSigningCertificateable), nil
 }
 // ToGetRequestInformation the Windows Enterprise Code Signing Certificate.
+// returns a *RequestInformation when successful
 func (m *EnterpriseCodeSigningCertificatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EnterpriseCodeSigningCertificatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *EnterpriseCodeSigningCertificatesRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *EnterpriseCodeSigningCertificatesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnterpriseCodeSigningCertificateable, requestConfiguration *EnterpriseCodeSigningCertificatesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceAppManagement/enterpriseCodeSigningCertificates", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *EnterpriseCodeSigningCertificatesRequestBuilder) ToPostRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EnterpriseCodeSigningCertificatesRequestBuilder when successful
 func (m *EnterpriseCodeSigningCertificatesRequestBuilder) WithUrl(rawUrl string)(*EnterpriseCodeSigningCertificatesRequestBuilder) {
     return NewEnterpriseCodeSigningCertificatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

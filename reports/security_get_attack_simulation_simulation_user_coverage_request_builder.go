@@ -32,29 +32,30 @@ type SecurityGetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestCo
     // Request query parameters
     QueryParameters *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters
 }
-// NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilderInternal instantiates a new GetAttackSimulationSimulationUserCoverageRequestBuilder and sets the default values.
+// NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilderInternal instantiates a new SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder and sets the default values.
 func NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) {
     m := &SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/security/getAttackSimulationSimulationUserCoverage(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/security/getAttackSimulationSimulationUserCoverage(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilder instantiates a new GetAttackSimulationSimulationUserCoverageRequestBuilder and sets the default values.
+// NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilder instantiates a new SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder and sets the default values.
 func NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAttackSimulationSimulationUserCoverage
-// Deprecated: This method is obsolete. Use GetAsGetAttackSimulationSimulationUserCoverageGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a SecurityGetAttackSimulationSimulationUserCoverageResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) Get(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationSimulationUserCoverageResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateSecurityGetAttackSimulationSimulationUserCoverageResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) Get(ct
     return res.(SecurityGetAttackSimulationSimulationUserCoverageResponseable), nil
 }
 // GetAsGetAttackSimulationSimulationUserCoverageGetResponse invoke function getAttackSimulationSimulationUserCoverage
+// returns a SecurityGetAttackSimulationSimulationUserCoverageGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) GetAsGetAttackSimulationSimulationUserCoverageGetResponse(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(SecurityGetAttackSimulationSimulationUserCoverageGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateSecurityGetAttackSimulationSimulationUserCoverageGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) GetAsG
     return res.(SecurityGetAttackSimulationSimulationUserCoverageGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAttackSimulationSimulationUserCoverage
+// returns a *RequestInformation when successful
 func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder when successful
 func (m *SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) WithUrl(rawUrl string)(*SecurityGetAttackSimulationSimulationUserCoverageRequestBuilder) {
     return NewSecurityGetAttackSimulationSimulationUserCoverageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

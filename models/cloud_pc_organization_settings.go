@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcOrganizationSettings 
 type CloudPcOrganizationSettings struct {
     Entity
 }
-// NewCloudPcOrganizationSettings instantiates a new cloudPcOrganizationSettings and sets the default values.
+// NewCloudPcOrganizationSettings instantiates a new CloudPcOrganizationSettings and sets the default values.
 func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
     m := &CloudPcOrganizationSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCloudPcOrganizationSettings()(*CloudPcOrganizationSettings) {
     return m
 }
 // CreateCloudPcOrganizationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcOrganizationSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcOrganizationSettings(), nil
 }
 // GetEnableMEMAutoEnroll gets the enableMEMAutoEnroll property value. Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager (MEM). The default value is false.
+// returns a *bool when successful
 func (m *CloudPcOrganizationSettings) GetEnableMEMAutoEnroll()(*bool) {
     val, err := m.GetBackingStore().Get("enableMEMAutoEnroll")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CloudPcOrganizationSettings) GetEnableMEMAutoEnroll()(*bool) {
     return nil
 }
 // GetEnableSingleSignOn gets the enableSingleSignOn property value. True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
+// returns a *bool when successful
 func (m *CloudPcOrganizationSettings) GetEnableSingleSignOn()(*bool) {
     val, err := m.GetBackingStore().Get("enableSingleSignOn")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *CloudPcOrganizationSettings) GetEnableSingleSignOn()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["enableMEMAutoEnroll"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -97,6 +100,7 @@ func (m *CloudPcOrganizationSettings) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
+// returns a *CloudPcOperatingSystem when successful
 func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOperatingSystem) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *CloudPcOrganizationSettings) GetOsVersion()(*CloudPcOperatingSystem) {
     return nil
 }
 // GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
+// returns a *CloudPcUserAccountType when successful
 func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcUserAccountType) {
     val, err := m.GetBackingStore().Get("userAccountType")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *CloudPcOrganizationSettings) GetUserAccountType()(*CloudPcUserAccountTy
     return nil
 }
 // GetWindowsSettings gets the windowsSettings property value. Represents the Cloud PC organization settings for a tenant. A tenant has only one cloudPcOrganizationSettings object. The default language value en-US.
+// returns a CloudPcWindowsSettingsable when successful
 func (m *CloudPcOrganizationSettings) GetWindowsSettings()(CloudPcWindowsSettingsable) {
     val, err := m.GetBackingStore().Get("windowsSettings")
     if err != nil {
@@ -204,7 +210,6 @@ func (m *CloudPcOrganizationSettings) SetWindowsSettings(value CloudPcWindowsSet
         panic(err)
     }
 }
-// CloudPcOrganizationSettingsable 
 type CloudPcOrganizationSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

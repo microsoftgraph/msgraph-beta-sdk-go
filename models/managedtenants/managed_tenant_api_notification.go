@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedTenantApiNotification 
 type ManagedTenantApiNotification struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedTenantApiNotification instantiates a new managedTenantApiNotification and sets the default values.
+// NewManagedTenantApiNotification instantiates a new ManagedTenantApiNotification and sets the default values.
 func NewManagedTenantApiNotification()(*ManagedTenantApiNotification) {
     m := &ManagedTenantApiNotification{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManagedTenantApiNotification()(*ManagedTenantApiNotification) {
     return m
 }
 // CreateManagedTenantApiNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedTenantApiNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedTenantApiNotification(), nil
 }
 // GetAlert gets the alert property value. The alert property
+// returns a ManagedTenantAlertable when successful
 func (m *ManagedTenantApiNotification) GetAlert()(ManagedTenantAlertable) {
     val, err := m.GetBackingStore().Get("alert")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ManagedTenantApiNotification) GetAlert()(ManagedTenantAlertable) {
     return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
+// returns a *string when successful
 func (m *ManagedTenantApiNotification) GetCreatedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("createdByUserId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ManagedTenantApiNotification) GetCreatedByUserId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantApiNotification) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ManagedTenantApiNotification) GetCreatedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedTenantApiNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alert"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -150,6 +154,7 @@ func (m *ManagedTenantApiNotification) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetIsAcknowledged gets the isAcknowledged property value. The isAcknowledged property
+// returns a *bool when successful
 func (m *ManagedTenantApiNotification) GetIsAcknowledged()(*bool) {
     val, err := m.GetBackingStore().Get("isAcknowledged")
     if err != nil {
@@ -161,6 +166,7 @@ func (m *ManagedTenantApiNotification) GetIsAcknowledged()(*bool) {
     return nil
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
+// returns a *string when successful
 func (m *ManagedTenantApiNotification) GetLastActionByUserId()(*string) {
     val, err := m.GetBackingStore().Get("lastActionByUserId")
     if err != nil {
@@ -172,6 +178,7 @@ func (m *ManagedTenantApiNotification) GetLastActionByUserId()(*string) {
     return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantApiNotification) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -183,6 +190,7 @@ func (m *ManagedTenantApiNotification) GetLastActionDateTime()(*i336074805fc8539
     return nil
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *ManagedTenantApiNotification) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -194,6 +202,7 @@ func (m *ManagedTenantApiNotification) GetMessage()(*string) {
     return nil
 }
 // GetTitle gets the title property value. The title property
+// returns a *string when successful
 func (m *ManagedTenantApiNotification) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -205,6 +214,7 @@ func (m *ManagedTenantApiNotification) GetTitle()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The userId property
+// returns a *string when successful
 func (m *ManagedTenantApiNotification) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -340,7 +350,6 @@ func (m *ManagedTenantApiNotification) SetUserId(value *string)() {
         panic(err)
     }
 }
-// ManagedTenantApiNotificationable 
 type ManagedTenantApiNotificationable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

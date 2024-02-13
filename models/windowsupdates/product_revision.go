@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ProductRevision 
 type ProductRevision struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewProductRevision instantiates a new productRevision and sets the default values.
+// NewProductRevision instantiates a new ProductRevision and sets the default values.
 func NewProductRevision()(*ProductRevision) {
     m := &ProductRevision{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewProductRevision()(*ProductRevision) {
     return m
 }
 // CreateProductRevisionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProductRevisionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProductRevision(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of the content. Read-only.
+// returns a *string when successful
 func (m *ProductRevision) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ProductRevision) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProductRevision) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +100,7 @@ func (m *ProductRevision) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetKnowledgeBaseArticle gets the knowledgeBaseArticle property value. The knowledge base article associated with the product revision.
+// returns a KnowledgeBaseArticleable when successful
 func (m *ProductRevision) GetKnowledgeBaseArticle()(KnowledgeBaseArticleable) {
     val, err := m.GetBackingStore().Get("knowledgeBaseArticle")
     if err != nil {
@@ -109,6 +112,7 @@ func (m *ProductRevision) GetKnowledgeBaseArticle()(KnowledgeBaseArticleable) {
     return nil
 }
 // GetOsBuild gets the osBuild property value. The osBuild property
+// returns a BuildVersionDetailsable when successful
 func (m *ProductRevision) GetOsBuild()(BuildVersionDetailsable) {
     val, err := m.GetBackingStore().Get("osBuild")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *ProductRevision) GetOsBuild()(BuildVersionDetailsable) {
     return nil
 }
 // GetProduct gets the product property value. The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.
+// returns a *string when successful
 func (m *ProductRevision) GetProduct()(*string) {
     val, err := m.GetBackingStore().Get("product")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *ProductRevision) GetProduct()(*string) {
     return nil
 }
 // GetReleaseDateTime gets the releaseDateTime property value. The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *ProductRevision) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("releaseDateTime")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *ProductRevision) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetVersion gets the version property value. The version of the feature update. Read-only.
+// returns a *string when successful
 func (m *ProductRevision) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *ProductRevision) SetVersion(value *string)() {
         panic(err)
     }
 }
-// ProductRevisionable 
 type ProductRevisionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

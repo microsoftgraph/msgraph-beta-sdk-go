@@ -8,7 +8,7 @@ import (
 type WindowsPhone81TrustedRootCertificate struct {
     DeviceConfiguration
 }
-// NewWindowsPhone81TrustedRootCertificate instantiates a new windowsPhone81TrustedRootCertificate and sets the default values.
+// NewWindowsPhone81TrustedRootCertificate instantiates a new WindowsPhone81TrustedRootCertificate and sets the default values.
 func NewWindowsPhone81TrustedRootCertificate()(*WindowsPhone81TrustedRootCertificate) {
     m := &WindowsPhone81TrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsPhone81TrustedRootCertificate()(*WindowsPhone81TrustedRootCertifi
     return m
 }
 // CreateWindowsPhone81TrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsPhone81TrustedRootCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPhone81TrustedRootCertificate(), nil
 }
 // GetCertFileName gets the certFileName property value. File name to display in UI.
+// returns a *string when successful
 func (m *WindowsPhone81TrustedRootCertificate) GetCertFileName()(*string) {
     val, err := m.GetBackingStore().Get("certFileName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsPhone81TrustedRootCertificate) GetCertFileName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsPhone81TrustedRootCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["certFileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *WindowsPhone81TrustedRootCertificate) GetFieldDeserializers()(map[strin
     return res
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate
+// returns a []byte when successful
 func (m *WindowsPhone81TrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
     val, err := m.GetBackingStore().Get("trustedRootCertificate")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *WindowsPhone81TrustedRootCertificate) SetTrustedRootCertificate(value [
         panic(err)
     }
 }
-// WindowsPhone81TrustedRootCertificateable 
 type WindowsPhone81TrustedRootCertificateable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

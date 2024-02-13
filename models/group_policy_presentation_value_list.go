@@ -8,7 +8,7 @@ import (
 type GroupPolicyPresentationValueList struct {
     GroupPolicyPresentationValue
 }
-// NewGroupPolicyPresentationValueList instantiates a new groupPolicyPresentationValueList and sets the default values.
+// NewGroupPolicyPresentationValueList instantiates a new GroupPolicyPresentationValueList and sets the default values.
 func NewGroupPolicyPresentationValueList()(*GroupPolicyPresentationValueList) {
     m := &GroupPolicyPresentationValueList{
         GroupPolicyPresentationValue: *NewGroupPolicyPresentationValue(),
@@ -16,10 +16,12 @@ func NewGroupPolicyPresentationValueList()(*GroupPolicyPresentationValueList) {
     return m
 }
 // CreateGroupPolicyPresentationValueListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationValueListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyPresentationValueList(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentationValueList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyPresentationValue.GetFieldDeserializers()
     res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +43,7 @@ func (m *GroupPolicyPresentationValueList) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetValues gets the values property value. A list of pairs for the associated presentation.
+// returns a []KeyValuePairable when successful
 func (m *GroupPolicyPresentationValueList) GetValues()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -78,7 +81,6 @@ func (m *GroupPolicyPresentationValueList) SetValues(value []KeyValuePairable)()
         panic(err)
     }
 }
-// GroupPolicyPresentationValueListable 
 type GroupPolicyPresentationValueListable interface {
     GroupPolicyPresentationValueable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

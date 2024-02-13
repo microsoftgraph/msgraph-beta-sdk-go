@@ -48,6 +48,7 @@ type ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilderPostReq
 }
 // ByPolicyLinkId provides operations to manage the policies property of the microsoft.graph.networkaccess.profile entity.
 // Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// returns a *ConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilder when successful
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) ByPolicyLinkId(policyLinkId string)(*ConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -58,33 +59,35 @@ func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) B
     }
     return NewConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilderInternal instantiates a new PoliciesRequestBuilder and sets the default values.
+// NewConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilderInternal instantiates a new ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder and sets the default values.
 func NewConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) {
     m := &ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/forwardingProfiles/{forwardingProfile%2Did}/policies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/forwardingProfiles/{forwardingProfile%2Did}/policies{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder instantiates a new PoliciesRequestBuilder and sets the default values.
+// NewConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder instantiates a new ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder and sets the default values.
 func NewConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ConnectivityBranchesItemForwardingProfilesItemPoliciesCountRequestBuilder when successful
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) Count()(*ConnectivityBranchesItemForwardingProfilesItemPoliciesCountRequestBuilder) {
     return NewConnectivityBranchesItemForwardingProfilesItemPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get traffic forwarding policies associated with this profile.
 // Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// returns a PolicyLinkCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreatePolicyLinkCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) G
 }
 // Post create new navigation property to policies for networkAccess
 // Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// returns a PolicyLinkable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) Post(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, requestConfiguration *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilderPostRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreatePolicyLinkFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -117,6 +121,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) P
 }
 // ToGetRequestInformation traffic forwarding policies associated with this profile.
 // Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -131,8 +136,9 @@ func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) T
 }
 // ToPostRequestInformation create new navigation property to policies for networkAccess
 // Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, requestConfiguration *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/forwardingProfiles/{forwardingProfile%2Did}/policies", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) T
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// returns a *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder when successful
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) WithUrl(rawUrl string)(*ConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder) {
     return NewConnectivityBranchesItemForwardingProfilesItemPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

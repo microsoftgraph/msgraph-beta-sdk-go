@@ -2,11 +2,10 @@ package networkaccess
 import (
     "errors"
 )
-// 
 type ForwardingCategory int
 
 const (
-    DEFAULTESCAPED_FORWARDINGCATEGORY ForwardingCategory = iota
+    DEFAULT_FORWARDINGCATEGORY ForwardingCategory = iota
     OPTIMIZED_FORWARDINGCATEGORY
     ALLOW_FORWARDINGCATEGORY
     UNKNOWNFUTUREVALUE_FORWARDINGCATEGORY
@@ -16,10 +15,10 @@ func (i ForwardingCategory) String() string {
     return []string{"default", "optimized", "allow", "unknownFutureValue"}[i]
 }
 func ParseForwardingCategory(v string) (any, error) {
-    result := DEFAULTESCAPED_FORWARDINGCATEGORY
+    result := DEFAULT_FORWARDINGCATEGORY
     switch v {
         case "default":
-            result = DEFAULTESCAPED_FORWARDINGCATEGORY
+            result = DEFAULT_FORWARDINGCATEGORY
         case "optimized":
             result = OPTIMIZED_FORWARDINGCATEGORY
         case "allow":

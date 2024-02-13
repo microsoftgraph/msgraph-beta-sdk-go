@@ -46,31 +46,32 @@ type ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderPostRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderInternal instantiates a new RowsRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderInternal instantiates a new ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) {
     m := &ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/itemAt(index={index})/rows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/itemAt(index={index})/rows{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder instantiates a new RowsRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder instantiates a new ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieve a list of tablerow objects.
+// returns a WorkbookTableRowCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/table-list-rows?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablerow-list?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableRowCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookTableRowCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -82,6 +83,8 @@ func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) Get(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableRowCollectionResponseable), nil
 }
 // Post add rows to the end of a table.  The API can accept multiple rows data using this API. Adding one row at a time can lead to performance degradation. The recommended approach is to batch the rows together in a single call rather than doing single row insertion. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a 504 HTTP error. The appropriate response to this error is to repeat the request.
+// returns a WorkbookTableRowable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/table-post-rows?view=graph-rest-1.0
@@ -91,8 +94,7 @@ func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) Post(ctx 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookTableRowFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -104,6 +106,7 @@ func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) Post(ctx 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableRowable), nil
 }
 // ToGetRequestInformation retrieve a list of tablerow objects.
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -117,8 +120,9 @@ func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // ToPostRequestInformation add rows to the end of a table.  The API can accept multiple rows data using this API. Adding one row at a time can lead to performance degradation. The recommended approach is to batch the rows together in a single call rather than doing single row insertion. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a 504 HTTP error. The appropriate response to this error is to repeat the request.
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableRowable, requestConfiguration *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/itemAt(index={index})/rows", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -131,6 +135,7 @@ func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) ToPostReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder when successful
 func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

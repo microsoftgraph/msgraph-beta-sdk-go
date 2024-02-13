@@ -56,20 +56,21 @@ type ItemTokenLifetimePoliciesRefRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemTokenLifetimePoliciesRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
+// NewItemTokenLifetimePoliciesRefRequestBuilderInternal instantiates a new ItemTokenLifetimePoliciesRefRequestBuilder and sets the default values.
 func NewItemTokenLifetimePoliciesRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTokenLifetimePoliciesRefRequestBuilder) {
     m := &ItemTokenLifetimePoliciesRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%40id*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemTokenLifetimePoliciesRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
+// NewItemTokenLifetimePoliciesRefRequestBuilder instantiates a new ItemTokenLifetimePoliciesRefRequestBuilder and sets the default values.
 func NewItemTokenLifetimePoliciesRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTokenLifetimePoliciesRefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTokenLifetimePoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete remove a tokenLifetimePolicy from an application or servicePrincipal.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
@@ -79,8 +80,7 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) Delete(ctx context.Context,
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -89,6 +89,8 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) Delete(ctx context.Context,
     return nil
 }
 // Get list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
+// returns a StringCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
@@ -98,8 +100,7 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) Get(ctx context.Context, re
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateStringCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -111,6 +112,7 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
 // Post assign a tokenLifetimePolicy to an application or servicePrincipal. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
@@ -120,8 +122,7 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) Post(ctx context.Context, b
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -130,8 +131,9 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) Post(ctx context.Context, b
     return nil
 }
 // ToDeleteRequestInformation remove a tokenLifetimePolicy from an application or servicePrincipal.
+// returns a *RequestInformation when successful
 func (m *ItemTokenLifetimePoliciesRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTokenLifetimePoliciesRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -143,6 +145,7 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) ToDeleteRequestInformation(
     return requestInfo, nil
 }
 // ToGetRequestInformation list the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
+// returns a *RequestInformation when successful
 func (m *ItemTokenLifetimePoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTokenLifetimePoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -156,8 +159,9 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // ToPostRequestInformation assign a tokenLifetimePolicy to an application or servicePrincipal. You can have multiple tokenLifetimePolicy policies in a tenant but can assign only one tokenLifetimePolicy per application.
+// returns a *RequestInformation when successful
 func (m *ItemTokenLifetimePoliciesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemTokenLifetimePoliciesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/$ref", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -170,6 +174,7 @@ func (m *ItemTokenLifetimePoliciesRefRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTokenLifetimePoliciesRefRequestBuilder when successful
 func (m *ItemTokenLifetimePoliciesRefRequestBuilder) WithUrl(rawUrl string)(*ItemTokenLifetimePoliciesRefRequestBuilder) {
     return NewItemTokenLifetimePoliciesRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

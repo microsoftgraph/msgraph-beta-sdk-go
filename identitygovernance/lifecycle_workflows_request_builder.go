@@ -44,7 +44,7 @@ type LifecycleWorkflowsRequestBuilderPatchRequestConfiguration struct {
 // NewLifecycleWorkflowsRequestBuilderInternal instantiates a new LifecycleWorkflowsRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsRequestBuilder) {
     m := &LifecycleWorkflowsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -55,18 +55,19 @@ func NewLifecycleWorkflowsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewLifecycleWorkflowsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CustomTaskExtensions provides operations to manage the customTaskExtensions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+// returns a *LifecycleWorkflowsCustomTaskExtensionsRequestBuilder when successful
 func (m *LifecycleWorkflowsRequestBuilder) CustomTaskExtensions()(*LifecycleWorkflowsCustomTaskExtensionsRequestBuilder) {
     return NewLifecycleWorkflowsCustomTaskExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property lifecycleWorkflows for identityGovernance
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsRequestBuilder) Delete(ctx context.Context, requestConfiguration *LifecycleWorkflowsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -75,18 +76,20 @@ func (m *LifecycleWorkflowsRequestBuilder) Delete(ctx context.Context, requestCo
     return nil
 }
 // DeletedItems provides operations to manage the deletedItems property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+// returns a *LifecycleWorkflowsDeletedItemsRequestBuilder when successful
 func (m *LifecycleWorkflowsRequestBuilder) DeletedItems()(*LifecycleWorkflowsDeletedItemsRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get lifecycleWorkflows from identityGovernance
+// returns a LifecycleWorkflowsContainerable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleWorkflowsContainerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CreateLifecycleWorkflowsContainerFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -98,14 +101,15 @@ func (m *LifecycleWorkflowsRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleWorkflowsContainerable), nil
 }
 // Patch update the navigation property lifecycleWorkflows in identityGovernance
+// returns a LifecycleWorkflowsContainerable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsRequestBuilder) Patch(ctx context.Context, body i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleWorkflowsContainerable, requestConfiguration *LifecycleWorkflowsRequestBuilderPatchRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleWorkflowsContainerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CreateLifecycleWorkflowsContainerFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -117,16 +121,19 @@ func (m *LifecycleWorkflowsRequestBuilder) Patch(ctx context.Context, body i45fd
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleWorkflowsContainerable), nil
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+// returns a *LifecycleWorkflowsSettingsRequestBuilder when successful
 func (m *LifecycleWorkflowsRequestBuilder) Settings()(*LifecycleWorkflowsSettingsRequestBuilder) {
     return NewLifecycleWorkflowsSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskDefinitions provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+// returns a *LifecycleWorkflowsTaskDefinitionsRequestBuilder when successful
 func (m *LifecycleWorkflowsRequestBuilder) TaskDefinitions()(*LifecycleWorkflowsTaskDefinitionsRequestBuilder) {
     return NewLifecycleWorkflowsTaskDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property lifecycleWorkflows for identityGovernance
+// returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/identityGovernance/lifecycleWorkflows", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -135,6 +142,7 @@ func (m *LifecycleWorkflowsRequestBuilder) ToDeleteRequestInformation(ctx contex
     return requestInfo, nil
 }
 // ToGetRequestInformation get lifecycleWorkflows from identityGovernance
+// returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -148,8 +156,9 @@ func (m *LifecycleWorkflowsRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property lifecycleWorkflows in identityGovernance
+// returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecycleWorkflowsContainerable, requestConfiguration *LifecycleWorkflowsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/identityGovernance/lifecycleWorkflows", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -162,14 +171,17 @@ func (m *LifecycleWorkflowsRequestBuilder) ToPatchRequestInformation(ctx context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LifecycleWorkflowsRequestBuilder when successful
 func (m *LifecycleWorkflowsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsRequestBuilder) {
     return NewLifecycleWorkflowsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }
 // Workflows provides operations to manage the workflows property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+// returns a *LifecycleWorkflowsWorkflowsRequestBuilder when successful
 func (m *LifecycleWorkflowsRequestBuilder) Workflows()(*LifecycleWorkflowsWorkflowsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WorkflowTemplates provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.
+// returns a *LifecycleWorkflowsWorkflowTemplatesRequestBuilder when successful
 func (m *LifecycleWorkflowsRequestBuilder) WorkflowTemplates()(*LifecycleWorkflowsWorkflowTemplatesRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

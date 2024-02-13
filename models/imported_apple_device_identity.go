@@ -9,7 +9,7 @@ import (
 type ImportedAppleDeviceIdentity struct {
     Entity
 }
-// NewImportedAppleDeviceIdentity instantiates a new importedAppleDeviceIdentity and sets the default values.
+// NewImportedAppleDeviceIdentity instantiates a new ImportedAppleDeviceIdentity and sets the default values.
 func NewImportedAppleDeviceIdentity()(*ImportedAppleDeviceIdentity) {
     m := &ImportedAppleDeviceIdentity{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewImportedAppleDeviceIdentity()(*ImportedAppleDeviceIdentity) {
     return m
 }
 // CreateImportedAppleDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateImportedAppleDeviceIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +40,7 @@ func CreateImportedAppleDeviceIdentityFromDiscriminatorValue(parseNode i878a80d2
     return NewImportedAppleDeviceIdentity(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Created Date Time of the device
+// returns a *Time when successful
 func (m *ImportedAppleDeviceIdentity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -50,6 +52,7 @@ func (m *ImportedAppleDeviceIdentity) GetCreatedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetDescription gets the description property value. The description of the device
+// returns a *string when successful
 func (m *ImportedAppleDeviceIdentity) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -61,6 +64,7 @@ func (m *ImportedAppleDeviceIdentity) GetDescription()(*string) {
     return nil
 }
 // GetDiscoverySource gets the discoverySource property value. The discoverySource property
+// returns a *DiscoverySource when successful
 func (m *ImportedAppleDeviceIdentity) GetDiscoverySource()(*DiscoverySource) {
     val, err := m.GetBackingStore().Get("discoverySource")
     if err != nil {
@@ -72,6 +76,7 @@ func (m *ImportedAppleDeviceIdentity) GetDiscoverySource()(*DiscoverySource) {
     return nil
 }
 // GetEnrollmentState gets the enrollmentState property value. The enrollmentState property
+// returns a *EnrollmentState when successful
 func (m *ImportedAppleDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
     val, err := m.GetBackingStore().Get("enrollmentState")
     if err != nil {
@@ -83,6 +88,7 @@ func (m *ImportedAppleDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -198,6 +204,7 @@ func (m *ImportedAppleDeviceIdentity) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetIsDeleted gets the isDeleted property value. Indicates if the device is deleted from Apple Business Manager
+// returns a *bool when successful
 func (m *ImportedAppleDeviceIdentity) GetIsDeleted()(*bool) {
     val, err := m.GetBackingStore().Get("isDeleted")
     if err != nil {
@@ -209,6 +216,7 @@ func (m *ImportedAppleDeviceIdentity) GetIsDeleted()(*bool) {
     return nil
 }
 // GetIsSupervised gets the isSupervised property value. Indicates if the Apple device is supervised.
+// returns a *bool when successful
 func (m *ImportedAppleDeviceIdentity) GetIsSupervised()(*bool) {
     val, err := m.GetBackingStore().Get("isSupervised")
     if err != nil {
@@ -220,6 +228,7 @@ func (m *ImportedAppleDeviceIdentity) GetIsSupervised()(*bool) {
     return nil
 }
 // GetLastContactedDateTime gets the lastContactedDateTime property value. Last Contacted Date Time of the device
+// returns a *Time when successful
 func (m *ImportedAppleDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastContactedDateTime")
     if err != nil {
@@ -231,6 +240,7 @@ func (m *ImportedAppleDeviceIdentity) GetLastContactedDateTime()(*i336074805fc85
     return nil
 }
 // GetPlatform gets the platform property value. The platform property
+// returns a *Platform when successful
 func (m *ImportedAppleDeviceIdentity) GetPlatform()(*Platform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -242,6 +252,7 @@ func (m *ImportedAppleDeviceIdentity) GetPlatform()(*Platform) {
     return nil
 }
 // GetRequestedEnrollmentProfileAssignmentDateTime gets the requestedEnrollmentProfileAssignmentDateTime property value. The time enrollment profile was assigned to the device
+// returns a *Time when successful
 func (m *ImportedAppleDeviceIdentity) GetRequestedEnrollmentProfileAssignmentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestedEnrollmentProfileAssignmentDateTime")
     if err != nil {
@@ -253,6 +264,7 @@ func (m *ImportedAppleDeviceIdentity) GetRequestedEnrollmentProfileAssignmentDat
     return nil
 }
 // GetRequestedEnrollmentProfileId gets the requestedEnrollmentProfileId property value. Enrollment profile Id admin intends to apply to the device during next enrollment
+// returns a *string when successful
 func (m *ImportedAppleDeviceIdentity) GetRequestedEnrollmentProfileId()(*string) {
     val, err := m.GetBackingStore().Get("requestedEnrollmentProfileId")
     if err != nil {
@@ -264,6 +276,7 @@ func (m *ImportedAppleDeviceIdentity) GetRequestedEnrollmentProfileId()(*string)
     return nil
 }
 // GetSerialNumber gets the serialNumber property value. Device serial number
+// returns a *string when successful
 func (m *ImportedAppleDeviceIdentity) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -428,7 +441,6 @@ func (m *ImportedAppleDeviceIdentity) SetSerialNumber(value *string)() {
         panic(err)
     }
 }
-// ImportedAppleDeviceIdentityable 
 type ImportedAppleDeviceIdentityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

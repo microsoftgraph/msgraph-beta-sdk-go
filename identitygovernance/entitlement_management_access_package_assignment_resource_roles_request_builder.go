@@ -47,6 +47,7 @@ type EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderPost
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAccessPackageAssignmentResourceRoleId provides operations to manage the accessPackageAssignmentResourceRoles property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementAccessPackageAssignmentResourceRolesAccessPackageAssignmentResourceRoleItemRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) ByAccessPackageAssignmentResourceRoleId(accessPackageAssignmentResourceRoleId string)(*EntitlementManagementAccessPackageAssignmentResourceRolesAccessPackageAssignmentResourceRoleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder
     }
     return NewEntitlementManagementAccessPackageAssignmentResourceRolesAccessPackageAssignmentResourceRoleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewEntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderInternal instantiates a new AccessPackageAssignmentResourceRolesRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderInternal instantiates a new EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder instantiates a new AccessPackageAssignmentResourceRolesRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder instantiates a new EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *EntitlementManagementAccessPackageAssignmentResourceRolesCountRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) Count()(*EntitlementManagementAccessPackageAssignmentResourceRolesCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentResourceRolesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of accessPackageAssignmentResourceRole objects.  The resulting list includes all the resource roles of all assignments that the caller has access to read, across all catalogs and access packages.
+// returns a AccessPackageAssignmentResourceRoleCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-list-accesspackageassignmentresourceroles?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessPackageAssignmentResourceRoleCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,18 +100,20 @@ func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleCollectionResponseable), nil
 }
 // My provides operations to call the My method.
+// returns a *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) My()(*EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
+// returns a AccessPackageAssignmentResourceRoleable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, requestConfiguration *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessPackageAssignmentResourceRoleFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,6 +125,7 @@ func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable), nil
 }
 // ToGetRequestInformation retrieve a list of accessPackageAssignmentResourceRole objects.  The resulting list includes all the resource roles of all assignments that the caller has access to read, across all catalogs and access packages.
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -133,8 +139,9 @@ func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to accessPackageAssignmentResourceRoles for identityGovernance
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentResourceRoleable, requestConfiguration *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -147,6 +154,7 @@ func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentResourceRolesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

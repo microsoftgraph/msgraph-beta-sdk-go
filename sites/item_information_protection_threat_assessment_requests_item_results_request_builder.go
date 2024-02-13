@@ -47,6 +47,7 @@ type ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderP
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByThreatAssessmentResultId provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
+// returns a *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder when successful
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) ByThreatAssessmentResultId(threatAssessmentResultId string)(*ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuil
     }
     return NewItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderInternal instantiates a new ResultsRequestBuilder and sets the default values.
+// NewItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderInternal instantiates a new ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder and sets the default values.
 func NewItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) {
     m := &ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/informationProtection/threatAssessmentRequests/{threatAssessmentRequest%2Did}/results{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/informationProtection/threatAssessmentRequests/{threatAssessmentRequest%2Did}/results{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder instantiates a new ResultsRequestBuilder and sets the default values.
+// NewItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder instantiates a new ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder and sets the default values.
 func NewItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemInformationProtectionThreatAssessmentRequestsItemResultsCountRequestBuilder when successful
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) Count()(*ItemInformationProtectionThreatAssessmentRequestsItemResultsCountRequestBuilder) {
     return NewItemInformationProtectionThreatAssessmentRequestsItemResultsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
+// returns a ThreatAssessmentResultCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateThreatAssessmentResultCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuil
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultCollectionResponseable), nil
 }
 // Post create new navigation property to results for sites
+// returns a ThreatAssessmentResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultable, requestConfiguration *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateThreatAssessmentResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuil
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultable), nil
 }
 // ToGetRequestInformation a collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
+// returns a *RequestInformation when successful
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuil
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to results for sites
+// returns a *RequestInformation when successful
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultable, requestConfiguration *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/sites/{site%2Did}/informationProtection/threatAssessmentRequests/{threatAssessmentRequest%2Did}/results", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuil
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder when successful
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder) {
     return NewItemInformationProtectionThreatAssessmentRequestsItemResultsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

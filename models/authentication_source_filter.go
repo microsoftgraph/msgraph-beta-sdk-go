@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AuthenticationSourceFilter 
 type AuthenticationSourceFilter struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuthenticationSourceFilter instantiates a new authenticationSourceFilter and sets the default values.
+// NewAuthenticationSourceFilter instantiates a new AuthenticationSourceFilter and sets the default values.
 func NewAuthenticationSourceFilter()(*AuthenticationSourceFilter) {
     m := &AuthenticationSourceFilter{
     }
@@ -19,10 +18,12 @@ func NewAuthenticationSourceFilter()(*AuthenticationSourceFilter) {
     return m
 }
 // CreateAuthenticationSourceFilterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationSourceFilterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationSourceFilter(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuthenticationSourceFilter) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AuthenticationSourceFilter) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuthenticationSourceFilter) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationSourceFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["includeApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,6 +73,7 @@ func (m *AuthenticationSourceFilter) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetIncludeApplications gets the includeApplications property value. Applications to include for evaluation of the authenticationListener. These applications trigger the associated action when used as the client application in the authentication flow. The application identifer is the application's client id.
+// returns a []string when successful
 func (m *AuthenticationSourceFilter) GetIncludeApplications()([]string) {
     val, err := m.GetBackingStore().Get("includeApplications")
     if err != nil {
@@ -81,6 +85,7 @@ func (m *AuthenticationSourceFilter) GetIncludeApplications()([]string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuthenticationSourceFilter) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,7 +143,6 @@ func (m *AuthenticationSourceFilter) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// AuthenticationSourceFilterable 
 type AuthenticationSourceFilterable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

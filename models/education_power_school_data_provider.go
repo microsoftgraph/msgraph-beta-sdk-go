@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationPowerSchoolDataProvider 
 type EducationPowerSchoolDataProvider struct {
     EducationSynchronizationDataProvider
 }
-// NewEducationPowerSchoolDataProvider instantiates a new educationPowerSchoolDataProvider and sets the default values.
+// NewEducationPowerSchoolDataProvider instantiates a new EducationPowerSchoolDataProvider and sets the default values.
 func NewEducationPowerSchoolDataProvider()(*EducationPowerSchoolDataProvider) {
     m := &EducationPowerSchoolDataProvider{
         EducationSynchronizationDataProvider: *NewEducationSynchronizationDataProvider(),
@@ -18,10 +17,12 @@ func NewEducationPowerSchoolDataProvider()(*EducationPowerSchoolDataProvider) {
     return m
 }
 // CreateEducationPowerSchoolDataProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationPowerSchoolDataProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationPowerSchoolDataProvider(), nil
 }
 // GetAllowTeachersInMultipleSchools gets the allowTeachersInMultipleSchools property value. Indicates whether the source has multiple identifiers for a single student or teacher.
+// returns a *bool when successful
 func (m *EducationPowerSchoolDataProvider) GetAllowTeachersInMultipleSchools()(*bool) {
     val, err := m.GetBackingStore().Get("allowTeachersInMultipleSchools")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EducationPowerSchoolDataProvider) GetAllowTeachersInMultipleSchools()(*
     return nil
 }
 // GetClientId gets the clientId property value. The client ID used to connect to PowerSchool.
+// returns a *string when successful
 func (m *EducationPowerSchoolDataProvider) GetClientId()(*string) {
     val, err := m.GetBackingStore().Get("clientId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *EducationPowerSchoolDataProvider) GetClientId()(*string) {
     return nil
 }
 // GetClientSecret gets the clientSecret property value. The client secret to authenticate the connection to the PowerSchool instance.
+// returns a *string when successful
 func (m *EducationPowerSchoolDataProvider) GetClientSecret()(*string) {
     val, err := m.GetBackingStore().Get("clientSecret")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *EducationPowerSchoolDataProvider) GetClientSecret()(*string) {
     return nil
 }
 // GetConnectionUrl gets the connectionUrl property value. The connection URL to the PowerSchool instance.
+// returns a *string when successful
 func (m *EducationPowerSchoolDataProvider) GetConnectionUrl()(*string) {
     val, err := m.GetBackingStore().Get("connectionUrl")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *EducationPowerSchoolDataProvider) GetConnectionUrl()(*string) {
     return nil
 }
 // GetCustomizations gets the customizations property value. Optional customization to be applied to the synchronization profile.
+// returns a EducationSynchronizationCustomizationsable when successful
 func (m *EducationPowerSchoolDataProvider) GetCustomizations()(EducationSynchronizationCustomizationsable) {
     val, err := m.GetBackingStore().Get("customizations")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *EducationPowerSchoolDataProvider) GetCustomizations()(EducationSynchron
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationPowerSchoolDataProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationSynchronizationDataProvider.GetFieldDeserializers()
     res["allowTeachersInMultipleSchools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -158,6 +164,7 @@ func (m *EducationPowerSchoolDataProvider) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetSchoolsIds gets the schoolsIds property value. The list of schools to sync.
+// returns a []string when successful
 func (m *EducationPowerSchoolDataProvider) GetSchoolsIds()([]string) {
     val, err := m.GetBackingStore().Get("schoolsIds")
     if err != nil {
@@ -169,6 +176,7 @@ func (m *EducationPowerSchoolDataProvider) GetSchoolsIds()([]string) {
     return nil
 }
 // GetSchoolYear gets the schoolYear property value. The school year to sync.
+// returns a *string when successful
 func (m *EducationPowerSchoolDataProvider) GetSchoolYear()(*string) {
     val, err := m.GetBackingStore().Get("schoolYear")
     if err != nil {
@@ -278,7 +286,6 @@ func (m *EducationPowerSchoolDataProvider) SetSchoolYear(value *string)() {
         panic(err)
     }
 }
-// EducationPowerSchoolDataProviderable 
 type EducationPowerSchoolDataProviderable interface {
     EducationSynchronizationDataProviderable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

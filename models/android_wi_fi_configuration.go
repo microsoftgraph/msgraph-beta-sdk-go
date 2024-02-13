@@ -8,7 +8,7 @@ import (
 type AndroidWiFiConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidWiFiConfiguration instantiates a new androidWiFiConfiguration and sets the default values.
+// NewAndroidWiFiConfiguration instantiates a new AndroidWiFiConfiguration and sets the default values.
 func NewAndroidWiFiConfiguration()(*AndroidWiFiConfiguration) {
     m := &AndroidWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewAndroidWiFiConfiguration()(*AndroidWiFiConfiguration) {
     return m
 }
 // CreateAndroidWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateAndroidWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330
     return NewAndroidWiFiConfiguration(), nil
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
+// returns a *bool when successful
 func (m *AndroidWiFiConfiguration) GetConnectAutomatically()(*bool) {
     val, err := m.GetBackingStore().Get("connectAutomatically")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *AndroidWiFiConfiguration) GetConnectAutomatically()(*bool) {
     return nil
 }
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
+// returns a *bool when successful
 func (m *AndroidWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
     val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *AndroidWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["connectAutomatically"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +121,7 @@ func (m *AndroidWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetNetworkName gets the networkName property value. Network Name
+// returns a *string when successful
 func (m *AndroidWiFiConfiguration) GetNetworkName()(*string) {
     val, err := m.GetBackingStore().Get("networkName")
     if err != nil {
@@ -128,6 +133,7 @@ func (m *AndroidWiFiConfiguration) GetNetworkName()(*string) {
     return nil
 }
 // GetSsid gets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
+// returns a *string when successful
 func (m *AndroidWiFiConfiguration) GetSsid()(*string) {
     val, err := m.GetBackingStore().Get("ssid")
     if err != nil {
@@ -139,6 +145,7 @@ func (m *AndroidWiFiConfiguration) GetSsid()(*string) {
     return nil
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
+// returns a *AndroidWiFiSecurityType when successful
 func (m *AndroidWiFiConfiguration) GetWiFiSecurityType()(*AndroidWiFiSecurityType) {
     val, err := m.GetBackingStore().Get("wiFiSecurityType")
     if err != nil {
@@ -223,7 +230,6 @@ func (m *AndroidWiFiConfiguration) SetWiFiSecurityType(value *AndroidWiFiSecurit
         panic(err)
     }
 }
-// AndroidWiFiConfigurationable 
 type AndroidWiFiConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

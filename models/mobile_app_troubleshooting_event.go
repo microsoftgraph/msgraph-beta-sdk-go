@@ -8,7 +8,7 @@ import (
 type MobileAppTroubleshootingEvent struct {
     DeviceManagementTroubleshootingEvent
 }
-// NewMobileAppTroubleshootingEvent instantiates a new mobileAppTroubleshootingEvent and sets the default values.
+// NewMobileAppTroubleshootingEvent instantiates a new MobileAppTroubleshootingEvent and sets the default values.
 func NewMobileAppTroubleshootingEvent()(*MobileAppTroubleshootingEvent) {
     m := &MobileAppTroubleshootingEvent{
         DeviceManagementTroubleshootingEvent: *NewDeviceManagementTroubleshootingEvent(),
@@ -16,10 +16,12 @@ func NewMobileAppTroubleshootingEvent()(*MobileAppTroubleshootingEvent) {
     return m
 }
 // CreateMobileAppTroubleshootingEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppTroubleshootingEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppTroubleshootingEvent(), nil
 }
 // GetApplicationId gets the applicationId property value. Intune application identifier.
+// returns a *string when successful
 func (m *MobileAppTroubleshootingEvent) GetApplicationId()(*string) {
     val, err := m.GetBackingStore().Get("applicationId")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *MobileAppTroubleshootingEvent) GetApplicationId()(*string) {
     return nil
 }
 // GetAppLogCollectionRequests gets the appLogCollectionRequests property value. The collection property of AppLogUploadRequest.
+// returns a []AppLogCollectionRequestable when successful
 func (m *MobileAppTroubleshootingEvent) GetAppLogCollectionRequests()([]AppLogCollectionRequestable) {
     val, err := m.GetBackingStore().Get("appLogCollectionRequests")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *MobileAppTroubleshootingEvent) GetAppLogCollectionRequests()([]AppLogCo
     return nil
 }
 // GetDeviceId gets the deviceId property value. Device identifier created or collected by Intune.
+// returns a *string when successful
 func (m *MobileAppTroubleshootingEvent) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *MobileAppTroubleshootingEvent) GetDeviceId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementTroubleshootingEvent.GetFieldDeserializers()
     res["applicationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,6 +135,7 @@ func (m *MobileAppTroubleshootingEvent) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetHistory gets the history property value. Intune Mobile Application Troubleshooting History Item
+// returns a []MobileAppTroubleshootingHistoryItemable when successful
 func (m *MobileAppTroubleshootingEvent) GetHistory()([]MobileAppTroubleshootingHistoryItemable) {
     val, err := m.GetBackingStore().Get("history")
     if err != nil {
@@ -141,6 +147,7 @@ func (m *MobileAppTroubleshootingEvent) GetHistory()([]MobileAppTroubleshootingH
     return nil
 }
 // GetManagedDeviceIdentifier gets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
+// returns a *string when successful
 func (m *MobileAppTroubleshootingEvent) GetManagedDeviceIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceIdentifier")
     if err != nil {
@@ -152,6 +159,7 @@ func (m *MobileAppTroubleshootingEvent) GetManagedDeviceIdentifier()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. Identifier for the user that tried to enroll the device.
+// returns a *string when successful
 func (m *MobileAppTroubleshootingEvent) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -260,7 +268,6 @@ func (m *MobileAppTroubleshootingEvent) SetUserId(value *string)() {
         panic(err)
     }
 }
-// MobileAppTroubleshootingEventable 
 type MobileAppTroubleshootingEventable interface {
     DeviceManagementTroubleshootingEventable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

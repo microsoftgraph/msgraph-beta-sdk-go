@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementTemplateCollection 
 type ManagementTemplateCollection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagementTemplateCollection instantiates a new managementTemplateCollection and sets the default values.
+// NewManagementTemplateCollection instantiates a new ManagementTemplateCollection and sets the default values.
 func NewManagementTemplateCollection()(*ManagementTemplateCollection) {
     m := &ManagementTemplateCollection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManagementTemplateCollection()(*ManagementTemplateCollection) {
     return m
 }
 // CreateManagementTemplateCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagementTemplateCollectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementTemplateCollection(), nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
+// returns a *string when successful
 func (m *ManagementTemplateCollection) GetCreatedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("createdByUserId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ManagementTemplateCollection) GetCreatedByUserId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *ManagementTemplateCollection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ManagementTemplateCollection) GetCreatedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *ManagementTemplateCollection) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ManagementTemplateCollection) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *ManagementTemplateCollection) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *ManagementTemplateCollection) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagementTemplateCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +152,7 @@ func (m *ManagementTemplateCollection) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
+// returns a *string when successful
 func (m *ManagementTemplateCollection) GetLastActionByUserId()(*string) {
     val, err := m.GetBackingStore().Get("lastActionByUserId")
     if err != nil {
@@ -158,6 +164,7 @@ func (m *ManagementTemplateCollection) GetLastActionByUserId()(*string) {
     return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
+// returns a *Time when successful
 func (m *ManagementTemplateCollection) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -169,6 +176,7 @@ func (m *ManagementTemplateCollection) GetLastActionDateTime()(*i336074805fc8539
     return nil
 }
 // GetManagementTemplates gets the managementTemplates property value. The managementTemplates property
+// returns a []ManagementTemplateable when successful
 func (m *ManagementTemplateCollection) GetManagementTemplates()([]ManagementTemplateable) {
     val, err := m.GetBackingStore().Get("managementTemplates")
     if err != nil {
@@ -284,7 +292,6 @@ func (m *ManagementTemplateCollection) SetManagementTemplates(value []Management
         panic(err)
     }
 }
-// ManagementTemplateCollectionable 
 type ManagementTemplateCollectionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

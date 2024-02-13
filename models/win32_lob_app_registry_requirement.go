@@ -8,7 +8,7 @@ import (
 type Win32LobAppRegistryRequirement struct {
     Win32LobAppRequirement
 }
-// NewWin32LobAppRegistryRequirement instantiates a new win32LobAppRegistryRequirement and sets the default values.
+// NewWin32LobAppRegistryRequirement instantiates a new Win32LobAppRegistryRequirement and sets the default values.
 func NewWin32LobAppRegistryRequirement()(*Win32LobAppRegistryRequirement) {
     m := &Win32LobAppRegistryRequirement{
         Win32LobAppRequirement: *NewWin32LobAppRequirement(),
@@ -18,10 +18,12 @@ func NewWin32LobAppRegistryRequirement()(*Win32LobAppRegistryRequirement) {
     return m
 }
 // CreateWin32LobAppRegistryRequirementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWin32LobAppRegistryRequirementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobAppRegistryRequirement(), nil
 }
 // GetCheck32BitOn64System gets the check32BitOn64System property value. A value indicating whether this registry path is for checking 32-bit app on 64-bit system
+// returns a *bool when successful
 func (m *Win32LobAppRegistryRequirement) GetCheck32BitOn64System()(*bool) {
     val, err := m.GetBackingStore().Get("check32BitOn64System")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Win32LobAppRegistryRequirement) GetCheck32BitOn64System()(*bool) {
     return nil
 }
 // GetDetectionType gets the detectionType property value. Contains all supported registry data detection type.
+// returns a *Win32LobAppRegistryDetectionType when successful
 func (m *Win32LobAppRegistryRequirement) GetDetectionType()(*Win32LobAppRegistryDetectionType) {
     val, err := m.GetBackingStore().Get("detectionType")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Win32LobAppRegistryRequirement) GetDetectionType()(*Win32LobAppRegistry
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobAppRegistryRequirement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Win32LobAppRequirement.GetFieldDeserializers()
     res["check32BitOn64System"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -89,6 +93,7 @@ func (m *Win32LobAppRegistryRequirement) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetKeyPath gets the keyPath property value. The registry key path to detect Win32 Line of Business (LoB) app
+// returns a *string when successful
 func (m *Win32LobAppRegistryRequirement) GetKeyPath()(*string) {
     val, err := m.GetBackingStore().Get("keyPath")
     if err != nil {
@@ -100,6 +105,7 @@ func (m *Win32LobAppRegistryRequirement) GetKeyPath()(*string) {
     return nil
 }
 // GetValueName gets the valueName property value. The registry value name
+// returns a *string when successful
 func (m *Win32LobAppRegistryRequirement) GetValueName()(*string) {
     val, err := m.GetBackingStore().Get("valueName")
     if err != nil {
@@ -171,7 +177,6 @@ func (m *Win32LobAppRegistryRequirement) SetValueName(value *string)() {
         panic(err)
     }
 }
-// Win32LobAppRegistryRequirementable 
 type Win32LobAppRegistryRequirementable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Win32LobAppRequirementable

@@ -47,6 +47,7 @@ type MobileAppsItemGraphWinGetAppAssignmentsRequestBuilderPostRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByMobileAppAssignmentId provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphWinGetAppAssignmentsMobileAppAssignmentItemRequestBuilder when successful
 func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) ByMobileAppAssignmentId(mobileAppAssignmentId string)(*MobileAppsItemGraphWinGetAppAssignmentsMobileAppAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) ByMobileAppAssig
     }
     return NewMobileAppsItemGraphWinGetAppAssignmentsMobileAppAssignmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMobileAppsItemGraphWinGetAppAssignmentsRequestBuilderInternal instantiates a new AssignmentsRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWinGetAppAssignmentsRequestBuilderInternal instantiates a new MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWinGetAppAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) {
     m := &MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp/assignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp/assignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphWinGetAppAssignmentsRequestBuilder instantiates a new AssignmentsRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWinGetAppAssignmentsRequestBuilder instantiates a new MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWinGetAppAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphWinGetAppAssignmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *MobileAppsItemGraphWinGetAppAssignmentsCountRequestBuilder when successful
 func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) Count()(*MobileAppsItemGraphWinGetAppAssignmentsCountRequestBuilder) {
     return NewMobileAppsItemGraphWinGetAppAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of group assignments for this mobile app.
+// returns a MobileAppAssignmentCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppAssignmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileAppAssignmentCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) Get(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppAssignmentCollectionResponseable), nil
 }
 // Post create new navigation property to assignments for deviceAppManagement
+// returns a MobileAppAssignmentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppAssignmentable, requestConfiguration *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppAssignmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileAppAssignmentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) Post(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppAssignmentable), nil
 }
 // ToGetRequestInformation the list of group assignments for this mobile app.
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to assignments for deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppAssignmentable, requestConfiguration *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp/assignments", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder when successful
 func (m *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) {
     return NewMobileAppsItemGraphWinGetAppAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

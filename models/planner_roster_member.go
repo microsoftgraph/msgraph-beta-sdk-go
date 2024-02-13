@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerRosterMember 
 type PlannerRosterMember struct {
     Entity
 }
-// NewPlannerRosterMember instantiates a new plannerRosterMember and sets the default values.
+// NewPlannerRosterMember instantiates a new PlannerRosterMember and sets the default values.
 func NewPlannerRosterMember()(*PlannerRosterMember) {
     m := &PlannerRosterMember{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPlannerRosterMember()(*PlannerRosterMember) {
     return m
 }
 // CreatePlannerRosterMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerRosterMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerRosterMember(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerRosterMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -61,6 +62,7 @@ func (m *PlannerRosterMember) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetRoles gets the roles property value. Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.
+// returns a []string when successful
 func (m *PlannerRosterMember) GetRoles()([]string) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -72,6 +74,7 @@ func (m *PlannerRosterMember) GetRoles()([]string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. Identifier of the tenant the user belongs to. Currently only the users from the same tenant can be added to a plannerRoster.
+// returns a *string when successful
 func (m *PlannerRosterMember) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *PlannerRosterMember) GetTenantId()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. Identifier of the user.
+// returns a *string when successful
 func (m *PlannerRosterMember) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -140,7 +144,6 @@ func (m *PlannerRosterMember) SetUserId(value *string)() {
         panic(err)
     }
 }
-// PlannerRosterMemberable 
 type PlannerRosterMemberable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

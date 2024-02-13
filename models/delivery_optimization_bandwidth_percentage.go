@@ -8,7 +8,7 @@ import (
 type DeliveryOptimizationBandwidthPercentage struct {
     DeliveryOptimizationBandwidth
 }
-// NewDeliveryOptimizationBandwidthPercentage instantiates a new deliveryOptimizationBandwidthPercentage and sets the default values.
+// NewDeliveryOptimizationBandwidthPercentage instantiates a new DeliveryOptimizationBandwidthPercentage and sets the default values.
 func NewDeliveryOptimizationBandwidthPercentage()(*DeliveryOptimizationBandwidthPercentage) {
     m := &DeliveryOptimizationBandwidthPercentage{
         DeliveryOptimizationBandwidth: *NewDeliveryOptimizationBandwidth(),
@@ -18,10 +18,12 @@ func NewDeliveryOptimizationBandwidthPercentage()(*DeliveryOptimizationBandwidth
     return m
 }
 // CreateDeliveryOptimizationBandwidthPercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeliveryOptimizationBandwidthPercentageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeliveryOptimizationBandwidthPercentage(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeliveryOptimizationBandwidthPercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeliveryOptimizationBandwidth.GetFieldDeserializers()
     res["maximumBackgroundBandwidthPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *DeliveryOptimizationBandwidthPercentage) GetFieldDeserializers()(map[st
     return res
 }
 // GetMaximumBackgroundBandwidthPercentage gets the maximumBackgroundBandwidthPercentage property value. Specifies the maximum background download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100
+// returns a *int32 when successful
 func (m *DeliveryOptimizationBandwidthPercentage) GetMaximumBackgroundBandwidthPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("maximumBackgroundBandwidthPercentage")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *DeliveryOptimizationBandwidthPercentage) GetMaximumBackgroundBandwidthP
     return nil
 }
 // GetMaximumForegroundBandwidthPercentage gets the maximumForegroundBandwidthPercentage property value. Specifies the maximum foreground download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100
+// returns a *int32 when successful
 func (m *DeliveryOptimizationBandwidthPercentage) GetMaximumForegroundBandwidthPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("maximumForegroundBandwidthPercentage")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *DeliveryOptimizationBandwidthPercentage) SetMaximumForegroundBandwidthP
         panic(err)
     }
 }
-// DeliveryOptimizationBandwidthPercentageable 
 type DeliveryOptimizationBandwidthPercentageable interface {
     DeliveryOptimizationBandwidthable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

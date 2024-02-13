@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PstnOnlineMeetingDialoutReport 
 type PstnOnlineMeetingDialoutReport struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPstnOnlineMeetingDialoutReport instantiates a new pstnOnlineMeetingDialoutReport and sets the default values.
+// NewPstnOnlineMeetingDialoutReport instantiates a new PstnOnlineMeetingDialoutReport and sets the default values.
 func NewPstnOnlineMeetingDialoutReport()(*PstnOnlineMeetingDialoutReport) {
     m := &PstnOnlineMeetingDialoutReport{
     }
@@ -19,10 +18,12 @@ func NewPstnOnlineMeetingDialoutReport()(*PstnOnlineMeetingDialoutReport) {
     return m
 }
 // CreatePstnOnlineMeetingDialoutReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePstnOnlineMeetingDialoutReportFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPstnOnlineMeetingDialoutReport(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PstnOnlineMeetingDialoutReport) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PstnOnlineMeetingDialoutReport) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PstnOnlineMeetingDialoutReport) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCurrency gets the currency property value. Currency used to calculate the cost of the call. For details, see ISO 4217.
+// returns a *string when successful
 func (m *PstnOnlineMeetingDialoutReport) GetCurrency()(*string) {
     val, err := m.GetBackingStore().Get("currency")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetCurrency()(*string) {
     return nil
 }
 // GetDestinationContext gets the destinationContext property value. Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
+// returns a *string when successful
 func (m *PstnOnlineMeetingDialoutReport) GetDestinationContext()(*string) {
     val, err := m.GetBackingStore().Get("destinationContext")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetDestinationContext()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PstnOnlineMeetingDialoutReport) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["currency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -166,6 +171,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PstnOnlineMeetingDialoutReport) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -177,6 +183,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetOdataType()(*string) {
     return nil
 }
 // GetTotalCallCharge gets the totalCallCharge property value. Total costs of all the calls within the selected time range, including call charges and connection fees.
+// returns a *float64 when successful
 func (m *PstnOnlineMeetingDialoutReport) GetTotalCallCharge()(*float64) {
     val, err := m.GetBackingStore().Get("totalCallCharge")
     if err != nil {
@@ -188,6 +195,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetTotalCallCharge()(*float64) {
     return nil
 }
 // GetTotalCalls gets the totalCalls property value. Total number of dial-out calls within the selected time range.
+// returns a *int32 when successful
 func (m *PstnOnlineMeetingDialoutReport) GetTotalCalls()(*int32) {
     val, err := m.GetBackingStore().Get("totalCalls")
     if err != nil {
@@ -199,6 +207,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetTotalCalls()(*int32) {
     return nil
 }
 // GetTotalCallSeconds gets the totalCallSeconds property value. Total duration of all the calls within the selected time range, in seconds.
+// returns a *int32 when successful
 func (m *PstnOnlineMeetingDialoutReport) GetTotalCallSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("totalCallSeconds")
     if err != nil {
@@ -210,6 +219,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetTotalCallSeconds()(*int32) {
     return nil
 }
 // GetUsageLocation gets the usageLocation property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
+// returns a *string when successful
 func (m *PstnOnlineMeetingDialoutReport) GetUsageLocation()(*string) {
     val, err := m.GetBackingStore().Get("usageLocation")
     if err != nil {
@@ -221,6 +231,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetUsageLocation()(*string) {
     return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. Display name of the user.
+// returns a *string when successful
 func (m *PstnOnlineMeetingDialoutReport) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -232,6 +243,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetUserDisplayName()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID.
+// returns a *string when successful
 func (m *PstnOnlineMeetingDialoutReport) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -243,6 +255,7 @@ func (m *PstnOnlineMeetingDialoutReport) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// returns a *string when successful
 func (m *PstnOnlineMeetingDialoutReport) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -404,7 +417,6 @@ func (m *PstnOnlineMeetingDialoutReport) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// PstnOnlineMeetingDialoutReportable 
 type PstnOnlineMeetingDialoutReportable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

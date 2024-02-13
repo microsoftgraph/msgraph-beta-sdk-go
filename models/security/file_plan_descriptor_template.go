@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// FilePlanDescriptorTemplate 
 type FilePlanDescriptorTemplate struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewFilePlanDescriptorTemplate instantiates a new filePlanDescriptorTemplate and sets the default values.
+// NewFilePlanDescriptorTemplate instantiates a new FilePlanDescriptorTemplate and sets the default values.
 func NewFilePlanDescriptorTemplate()(*FilePlanDescriptorTemplate) {
     m := &FilePlanDescriptorTemplate{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,6 +17,7 @@ func NewFilePlanDescriptorTemplate()(*FilePlanDescriptorTemplate) {
     return m
 }
 // CreateFilePlanDescriptorTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFilePlanDescriptorTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -50,6 +50,7 @@ func CreateFilePlanDescriptorTemplateFromDiscriminatorValue(parseNode i878a80d23
     return NewFilePlanDescriptorTemplate(), nil
 }
 // GetCreatedBy gets the createdBy property value. Represents the user who created the filePlanDescriptorTemplate column.
+// returns a IdentitySetable when successful
 func (m *FilePlanDescriptorTemplate) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -61,6 +62,7 @@ func (m *FilePlanDescriptorTemplate) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2ef
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Represents the date and time in which the filePlanDescriptorTemplate is created.
+// returns a *Time when successful
 func (m *FilePlanDescriptorTemplate) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -72,6 +74,7 @@ func (m *FilePlanDescriptorTemplate) GetCreatedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetDisplayName gets the displayName property value. Unique string that defines a filePlanDescriptorTemplate name.
+// returns a *string when successful
 func (m *FilePlanDescriptorTemplate) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *FilePlanDescriptorTemplate) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FilePlanDescriptorTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -164,7 +168,6 @@ func (m *FilePlanDescriptorTemplate) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// FilePlanDescriptorTemplateable 
 type FilePlanDescriptorTemplateable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

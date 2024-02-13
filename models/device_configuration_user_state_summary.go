@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceConfigurationUserStateSummary 
 type DeviceConfigurationUserStateSummary struct {
     Entity
 }
-// NewDeviceConfigurationUserStateSummary instantiates a new deviceConfigurationUserStateSummary and sets the default values.
+// NewDeviceConfigurationUserStateSummary instantiates a new DeviceConfigurationUserStateSummary and sets the default values.
 func NewDeviceConfigurationUserStateSummary()(*DeviceConfigurationUserStateSummary) {
     m := &DeviceConfigurationUserStateSummary{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDeviceConfigurationUserStateSummary()(*DeviceConfigurationUserStateSumma
     return m
 }
 // CreateDeviceConfigurationUserStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationUserStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationUserStateSummary(), nil
 }
 // GetCompliantUserCount gets the compliantUserCount property value. Number of compliant users
+// returns a *int32 when successful
 func (m *DeviceConfigurationUserStateSummary) GetCompliantUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("compliantUserCount")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *DeviceConfigurationUserStateSummary) GetCompliantUserCount()(*int32) {
     return nil
 }
 // GetConflictUserCount gets the conflictUserCount property value. Number of conflict users
+// returns a *int32 when successful
 func (m *DeviceConfigurationUserStateSummary) GetConflictUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("conflictUserCount")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *DeviceConfigurationUserStateSummary) GetConflictUserCount()(*int32) {
     return nil
 }
 // GetErrorUserCount gets the errorUserCount property value. Number of error users
+// returns a *int32 when successful
 func (m *DeviceConfigurationUserStateSummary) GetErrorUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorUserCount")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *DeviceConfigurationUserStateSummary) GetErrorUserCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["compliantUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -128,6 +132,7 @@ func (m *DeviceConfigurationUserStateSummary) GetFieldDeserializers()(map[string
     return res
 }
 // GetNonCompliantUserCount gets the nonCompliantUserCount property value. Number of NonCompliant users
+// returns a *int32 when successful
 func (m *DeviceConfigurationUserStateSummary) GetNonCompliantUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("nonCompliantUserCount")
     if err != nil {
@@ -139,6 +144,7 @@ func (m *DeviceConfigurationUserStateSummary) GetNonCompliantUserCount()(*int32)
     return nil
 }
 // GetNotApplicableUserCount gets the notApplicableUserCount property value. Number of not applicable users
+// returns a *int32 when successful
 func (m *DeviceConfigurationUserStateSummary) GetNotApplicableUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableUserCount")
     if err != nil {
@@ -150,6 +156,7 @@ func (m *DeviceConfigurationUserStateSummary) GetNotApplicableUserCount()(*int32
     return nil
 }
 // GetRemediatedUserCount gets the remediatedUserCount property value. Number of remediated users
+// returns a *int32 when successful
 func (m *DeviceConfigurationUserStateSummary) GetRemediatedUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("remediatedUserCount")
     if err != nil {
@@ -161,6 +168,7 @@ func (m *DeviceConfigurationUserStateSummary) GetRemediatedUserCount()(*int32) {
     return nil
 }
 // GetUnknownUserCount gets the unknownUserCount property value. Number of unknown users
+// returns a *int32 when successful
 func (m *DeviceConfigurationUserStateSummary) GetUnknownUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownUserCount")
     if err != nil {
@@ -270,7 +278,6 @@ func (m *DeviceConfigurationUserStateSummary) SetUnknownUserCount(value *int32)(
         panic(err)
     }
 }
-// DeviceConfigurationUserStateSummaryable 
 type DeviceConfigurationUserStateSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

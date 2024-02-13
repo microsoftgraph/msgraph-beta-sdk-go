@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationSettingGroupCollectionInstance struct {
     DeviceManagementConfigurationSettingInstance
 }
-// NewDeviceManagementConfigurationSettingGroupCollectionInstance instantiates a new deviceManagementConfigurationSettingGroupCollectionInstance and sets the default values.
+// NewDeviceManagementConfigurationSettingGroupCollectionInstance instantiates a new DeviceManagementConfigurationSettingGroupCollectionInstance and sets the default values.
 func NewDeviceManagementConfigurationSettingGroupCollectionInstance()(*DeviceManagementConfigurationSettingGroupCollectionInstance) {
     m := &DeviceManagementConfigurationSettingGroupCollectionInstance{
         DeviceManagementConfigurationSettingInstance: *NewDeviceManagementConfigurationSettingInstance(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationSettingGroupCollectionInstance()(*DeviceMan
     return m
 }
 // CreateDeviceManagementConfigurationSettingGroupCollectionInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationSettingGroupCollectionInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationSettingGroupCollectionInstance(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationSettingGroupCollectionInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingInstance.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *DeviceManagementConfigurationSettingGroupCollectionInstance) Serialize(
     }
     return nil
 }
-// DeviceManagementConfigurationSettingGroupCollectionInstanceable 
 type DeviceManagementConfigurationSettingGroupCollectionInstanceable interface {
     DeviceManagementConfigurationSettingInstanceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

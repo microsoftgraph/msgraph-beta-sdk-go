@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemEmail 
 type ItemEmail struct {
     ItemFacet
 }
-// NewItemEmail instantiates a new itemEmail and sets the default values.
+// NewItemEmail instantiates a new ItemEmail and sets the default values.
 func NewItemEmail()(*ItemEmail) {
     m := &ItemEmail{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewItemEmail()(*ItemEmail) {
     return m
 }
 // CreateItemEmailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemEmailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemEmail(), nil
 }
 // GetAddress gets the address property value. The email address itself.
+// returns a *string when successful
 func (m *ItemEmail) GetAddress()(*string) {
     val, err := m.GetBackingStore().Get("address")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ItemEmail) GetAddress()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name or label a user has associated with a particular email address.
+// returns a *string when successful
 func (m *ItemEmail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ItemEmail) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["address"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +82,7 @@ func (m *ItemEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *EmailType when successful
 func (m *ItemEmail) GetTypeEscaped()(*EmailType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -137,7 +141,6 @@ func (m *ItemEmail) SetTypeEscaped(value *EmailType)() {
         panic(err)
     }
 }
-// ItemEmailable 
 type ItemEmailable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

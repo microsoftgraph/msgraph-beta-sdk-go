@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDeviceActivity 
 type TeamworkDeviceActivity struct {
     Entity
 }
-// NewTeamworkDeviceActivity instantiates a new teamworkDeviceActivity and sets the default values.
+// NewTeamworkDeviceActivity instantiates a new TeamworkDeviceActivity and sets the default values.
 func NewTeamworkDeviceActivity()(*TeamworkDeviceActivity) {
     m := &TeamworkDeviceActivity{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTeamworkDeviceActivity()(*TeamworkDeviceActivity) {
     return m
 }
 // CreateTeamworkDeviceActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkDeviceActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkDeviceActivity(), nil
 }
 // GetActivePeripherals gets the activePeripherals property value. The active peripheral devices attached to the device.
+// returns a TeamworkActivePeripheralsable when successful
 func (m *TeamworkDeviceActivity) GetActivePeripherals()(TeamworkActivePeripheralsable) {
     val, err := m.GetBackingStore().Get("activePeripherals")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TeamworkDeviceActivity) GetActivePeripherals()(TeamworkActivePeripheral
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the device activity document.
+// returns a IdentitySetable when successful
 func (m *TeamworkDeviceActivity) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TeamworkDeviceActivity) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device activity document was created.
+// returns a *Time when successful
 func (m *TeamworkDeviceActivity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TeamworkDeviceActivity) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkDeviceActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activePeripherals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +113,7 @@ func (m *TeamworkDeviceActivity) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the device activity details.
+// returns a IdentitySetable when successful
 func (m *TeamworkDeviceActivity) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *TeamworkDeviceActivity) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time when the device activity detail was last modified.
+// returns a *Time when successful
 func (m *TeamworkDeviceActivity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -203,7 +209,6 @@ func (m *TeamworkDeviceActivity) SetLastModifiedDateTime(value *i336074805fc8539
         panic(err)
     }
 }
-// TeamworkDeviceActivityable 
 type TeamworkDeviceActivityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

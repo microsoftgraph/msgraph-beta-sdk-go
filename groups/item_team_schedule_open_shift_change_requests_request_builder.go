@@ -47,6 +47,7 @@ type ItemTeamScheduleOpenShiftChangeRequestsRequestBuilderPostRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByOpenShiftChangeRequestId provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
+// returns a *ItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilder when successful
 func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) ByOpenShiftChangeRequestId(openShiftChangeRequestId string)(*ItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) ByOpenShiftChang
     }
     return NewItemTeamScheduleOpenShiftChangeRequestsOpenShiftChangeRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemTeamScheduleOpenShiftChangeRequestsRequestBuilderInternal instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.
+// NewItemTeamScheduleOpenShiftChangeRequestsRequestBuilderInternal instantiates a new ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder and sets the default values.
 func NewItemTeamScheduleOpenShiftChangeRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) {
     m := &ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/openShiftChangeRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/openShiftChangeRequests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemTeamScheduleOpenShiftChangeRequestsRequestBuilder instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.
+// NewItemTeamScheduleOpenShiftChangeRequestsRequestBuilder instantiates a new ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder and sets the default values.
 func NewItemTeamScheduleOpenShiftChangeRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamScheduleOpenShiftChangeRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemTeamScheduleOpenShiftChangeRequestsCountRequestBuilder when successful
 func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) Count()(*ItemTeamScheduleOpenShiftChangeRequestsCountRequestBuilder) {
     return NewItemTeamScheduleOpenShiftChangeRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of openShiftChangeRequest objects in a team.
+// returns a OpenShiftChangeRequestCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/openshiftchangerequest-list?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) Get(ctx context.
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOpenShiftChangeRequestCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +100,8 @@ func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) Get(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestCollectionResponseable), nil
 }
 // Post create instance of an openShiftChangeRequest object.
+// returns a OpenShiftChangeRequestable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/openshiftchangerequest-post?view=graph-rest-1.0
@@ -106,8 +111,7 @@ func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) Post(ctx context
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOpenShiftChangeRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,6 +123,7 @@ func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) Post(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable), nil
 }
 // ToGetRequestInformation retrieve a list of openShiftChangeRequest objects in a team.
+// returns a *RequestInformation when successful
 func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +137,9 @@ func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // ToPostRequestInformation create instance of an openShiftChangeRequest object.
+// returns a *RequestInformation when successful
 func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OpenShiftChangeRequestable, requestConfiguration *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/groups/{group%2Did}/team/schedule/openShiftChangeRequests", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder when successful
 func (m *ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamScheduleOpenShiftChangeRequestsRequestBuilder) {
     return NewItemTeamScheduleOpenShiftChangeRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

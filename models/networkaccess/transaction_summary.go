@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TransactionSummary 
 type TransactionSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTransactionSummary instantiates a new transactionSummary and sets the default values.
+// NewTransactionSummary instantiates a new TransactionSummary and sets the default values.
 func NewTransactionSummary()(*TransactionSummary) {
     m := &TransactionSummary{
     }
@@ -19,10 +18,12 @@ func NewTransactionSummary()(*TransactionSummary) {
     return m
 }
 // CreateTransactionSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTransactionSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTransactionSummary(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TransactionSummary) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TransactionSummary) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TransactionSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBlockedCount gets the blockedCount property value. The number of transactions that were blocked.
+// returns a *int32 when successful
 func (m *TransactionSummary) GetBlockedCount()(*int32) {
     val, err := m.GetBackingStore().Get("blockedCount")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TransactionSummary) GetBlockedCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TransactionSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["blockedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *TransactionSummary) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TransactionSummary) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *TransactionSummary) GetOdataType()(*string) {
     return nil
 }
 // GetTotalCount gets the totalCount property value. The total number of transactions.
+// returns a *int32 when successful
 func (m *TransactionSummary) GetTotalCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalCount")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *TransactionSummary) GetTotalCount()(*int32) {
     return nil
 }
 // GetTrafficType gets the trafficType property value. The trafficType property
+// returns a *TrafficType when successful
 func (m *TransactionSummary) GetTrafficType()(*TrafficType) {
     val, err := m.GetBackingStore().Get("trafficType")
     if err != nil {
@@ -201,7 +208,6 @@ func (m *TransactionSummary) SetTrafficType(value *TrafficType)() {
         panic(err)
     }
 }
-// TransactionSummaryable 
 type TransactionSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

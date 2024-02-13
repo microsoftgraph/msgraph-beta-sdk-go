@@ -8,7 +8,7 @@ import (
 type AndroidWorkProfileCertificateProfileBase struct {
     DeviceConfiguration
 }
-// NewAndroidWorkProfileCertificateProfileBase instantiates a new androidWorkProfileCertificateProfileBase and sets the default values.
+// NewAndroidWorkProfileCertificateProfileBase instantiates a new AndroidWorkProfileCertificateProfileBase and sets the default values.
 func NewAndroidWorkProfileCertificateProfileBase()(*AndroidWorkProfileCertificateProfileBase) {
     m := &AndroidWorkProfileCertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewAndroidWorkProfileCertificateProfileBase()(*AndroidWorkProfileCertificat
     return m
 }
 // CreateAndroidWorkProfileCertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidWorkProfileCertificateProfileBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +43,7 @@ func CreateAndroidWorkProfileCertificateProfileBaseFromDiscriminatorValue(parseN
     return NewAndroidWorkProfileCertificateProfileBase(), nil
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
+// returns a *CertificateValidityPeriodScale when successful
 func (m *AndroidWorkProfileCertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     val, err := m.GetBackingStore().Get("certificateValidityPeriodScale")
     if err != nil {
@@ -53,6 +55,7 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetCertificateValidityPeriodS
     return nil
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validity Period.
+// returns a *int32 when successful
 func (m *AndroidWorkProfileCertificateProfileBase) GetCertificateValidityPeriodValue()(*int32) {
     val, err := m.GetBackingStore().Get("certificateValidityPeriodValue")
     if err != nil {
@@ -64,6 +67,7 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetCertificateValidityPeriodV
     return nil
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
+// returns a []ExtendedKeyUsageable when successful
 func (m *AndroidWorkProfileCertificateProfileBase) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
     val, err := m.GetBackingStore().Get("extendedKeyUsages")
     if err != nil {
@@ -75,6 +79,7 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetExtendedKeyUsages()([]Exte
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidWorkProfileCertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["certificateValidityPeriodScale"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +161,7 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetFieldDeserializers()(map[s
     return res
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage. Valid values 1 to 99
+// returns a *int32 when successful
 func (m *AndroidWorkProfileCertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("renewalThresholdPercentage")
     if err != nil {
@@ -167,6 +173,7 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetRenewalThresholdPercentage
     return nil
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate.
+// returns a AndroidWorkProfileTrustedRootCertificateable when successful
 func (m *AndroidWorkProfileCertificateProfileBase) GetRootCertificate()(AndroidWorkProfileTrustedRootCertificateable) {
     val, err := m.GetBackingStore().Get("rootCertificate")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetRootCertificate()(AndroidW
     return nil
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// returns a *SubjectAlternativeNameType when successful
 func (m *AndroidWorkProfileCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *AndroidWorkProfileCertificateProfileBase) GetSubjectAlternativeNameType
     return nil
 }
 // GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options.
+// returns a *SubjectNameFormat when successful
 func (m *AndroidWorkProfileCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
     val, err := m.GetBackingStore().Get("subjectNameFormat")
     if err != nil {
@@ -307,7 +316,6 @@ func (m *AndroidWorkProfileCertificateProfileBase) SetSubjectNameFormat(value *S
         panic(err)
     }
 }
-// AndroidWorkProfileCertificateProfileBaseable 
 type AndroidWorkProfileCertificateProfileBaseable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

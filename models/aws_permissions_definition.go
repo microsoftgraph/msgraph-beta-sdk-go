@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsPermissionsDefinition 
 type AwsPermissionsDefinition struct {
     PermissionsDefinition
 }
-// NewAwsPermissionsDefinition instantiates a new awsPermissionsDefinition and sets the default values.
+// NewAwsPermissionsDefinition instantiates a new AwsPermissionsDefinition and sets the default values.
 func NewAwsPermissionsDefinition()(*AwsPermissionsDefinition) {
     m := &AwsPermissionsDefinition{
         PermissionsDefinition: *NewPermissionsDefinition(),
@@ -18,10 +17,12 @@ func NewAwsPermissionsDefinition()(*AwsPermissionsDefinition) {
     return m
 }
 // CreateAwsPermissionsDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsPermissionsDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsPermissionsDefinition(), nil
 }
 // GetActionInfo gets the actionInfo property value. The actionInfo property
+// returns a AwsPermissionsDefinitionActionable when successful
 func (m *AwsPermissionsDefinition) GetActionInfo()(AwsPermissionsDefinitionActionable) {
     val, err := m.GetBackingStore().Get("actionInfo")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AwsPermissionsDefinition) GetActionInfo()(AwsPermissionsDefinitionActio
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsPermissionsDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PermissionsDefinition.GetFieldDeserializers()
     res["actionInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *AwsPermissionsDefinition) SetActionInfo(value AwsPermissionsDefinitionA
         panic(err)
     }
 }
-// AwsPermissionsDefinitionable 
 type AwsPermissionsDefinitionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PermissionsDefinitionable

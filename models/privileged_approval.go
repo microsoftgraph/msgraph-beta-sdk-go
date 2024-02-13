@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedApproval 
 type PrivilegedApproval struct {
     Entity
 }
-// NewPrivilegedApproval instantiates a new privilegedApproval and sets the default values.
+// NewPrivilegedApproval instantiates a new PrivilegedApproval and sets the default values.
 func NewPrivilegedApproval()(*PrivilegedApproval) {
     m := &PrivilegedApproval{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPrivilegedApproval()(*PrivilegedApproval) {
     return m
 }
 // CreatePrivilegedApprovalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegedApprovalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedApproval(), nil
 }
 // GetApprovalDuration gets the approvalDuration property value. The approvalDuration property
+// returns a *ISODuration when successful
 func (m *PrivilegedApproval) GetApprovalDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("approvalDuration")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *PrivilegedApproval) GetApprovalDuration()(*i878a80d2330e89d26896388a3f4
     return nil
 }
 // GetApprovalState gets the approvalState property value. The approvalState property
+// returns a *ApprovalState when successful
 func (m *PrivilegedApproval) GetApprovalState()(*ApprovalState) {
     val, err := m.GetBackingStore().Get("approvalState")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *PrivilegedApproval) GetApprovalState()(*ApprovalState) {
     return nil
 }
 // GetApprovalType gets the approvalType property value. The approvalType property
+// returns a *string when successful
 func (m *PrivilegedApproval) GetApprovalType()(*string) {
     val, err := m.GetBackingStore().Get("approvalType")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *PrivilegedApproval) GetApprovalType()(*string) {
     return nil
 }
 // GetApproverReason gets the approverReason property value. The approverReason property
+// returns a *string when successful
 func (m *PrivilegedApproval) GetApproverReason()(*string) {
     val, err := m.GetBackingStore().Get("approverReason")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *PrivilegedApproval) GetApproverReason()(*string) {
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The endDateTime property
+// returns a *Time when successful
 func (m *PrivilegedApproval) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *PrivilegedApproval) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["approvalDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -191,6 +197,7 @@ func (m *PrivilegedApproval) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetRequest gets the request property value. The request property
+// returns a PrivilegedRoleAssignmentRequestable when successful
 func (m *PrivilegedApproval) GetRequest()(PrivilegedRoleAssignmentRequestable) {
     val, err := m.GetBackingStore().Get("request")
     if err != nil {
@@ -202,6 +209,7 @@ func (m *PrivilegedApproval) GetRequest()(PrivilegedRoleAssignmentRequestable) {
     return nil
 }
 // GetRequestorReason gets the requestorReason property value. The requestorReason property
+// returns a *string when successful
 func (m *PrivilegedApproval) GetRequestorReason()(*string) {
     val, err := m.GetBackingStore().Get("requestorReason")
     if err != nil {
@@ -213,6 +221,7 @@ func (m *PrivilegedApproval) GetRequestorReason()(*string) {
     return nil
 }
 // GetRoleId gets the roleId property value. The roleId property
+// returns a *string when successful
 func (m *PrivilegedApproval) GetRoleId()(*string) {
     val, err := m.GetBackingStore().Get("roleId")
     if err != nil {
@@ -224,6 +233,7 @@ func (m *PrivilegedApproval) GetRoleId()(*string) {
     return nil
 }
 // GetRoleInfo gets the roleInfo property value. The roleInfo property
+// returns a PrivilegedRoleable when successful
 func (m *PrivilegedApproval) GetRoleInfo()(PrivilegedRoleable) {
     val, err := m.GetBackingStore().Get("roleInfo")
     if err != nil {
@@ -235,6 +245,7 @@ func (m *PrivilegedApproval) GetRoleInfo()(PrivilegedRoleable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
+// returns a *Time when successful
 func (m *PrivilegedApproval) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -246,6 +257,7 @@ func (m *PrivilegedApproval) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetUserId gets the userId property value. The userId property
+// returns a *string when successful
 func (m *PrivilegedApproval) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -408,7 +420,6 @@ func (m *PrivilegedApproval) SetUserId(value *string)() {
         panic(err)
     }
 }
-// PrivilegedApprovalable 
 type PrivilegedApprovalable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

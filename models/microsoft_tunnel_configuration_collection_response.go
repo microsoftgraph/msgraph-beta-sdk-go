@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftTunnelConfigurationCollectionResponse 
 type MicrosoftTunnelConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMicrosoftTunnelConfigurationCollectionResponse instantiates a new microsoftTunnelConfigurationCollectionResponse and sets the default values.
+// NewMicrosoftTunnelConfigurationCollectionResponse instantiates a new MicrosoftTunnelConfigurationCollectionResponse and sets the default values.
 func NewMicrosoftTunnelConfigurationCollectionResponse()(*MicrosoftTunnelConfigurationCollectionResponse) {
     m := &MicrosoftTunnelConfigurationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewMicrosoftTunnelConfigurationCollectionResponse()(*MicrosoftTunnelConfigu
     return m
 }
 // CreateMicrosoftTunnelConfigurationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftTunnelConfigurationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTunnelConfigurationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftTunnelConfigurationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *MicrosoftTunnelConfigurationCollectionResponse) GetFieldDeserializers()
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []MicrosoftTunnelConfigurationable when successful
 func (m *MicrosoftTunnelConfigurationCollectionResponse) GetValue()([]MicrosoftTunnelConfigurationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *MicrosoftTunnelConfigurationCollectionResponse) SetValue(value []Micros
         panic(err)
     }
 }
-// MicrosoftTunnelConfigurationCollectionResponseable 
 type MicrosoftTunnelConfigurationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

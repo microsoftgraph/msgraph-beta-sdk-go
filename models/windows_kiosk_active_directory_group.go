@@ -8,7 +8,7 @@ import (
 type WindowsKioskActiveDirectoryGroup struct {
     WindowsKioskUser
 }
-// NewWindowsKioskActiveDirectoryGroup instantiates a new windowsKioskActiveDirectoryGroup and sets the default values.
+// NewWindowsKioskActiveDirectoryGroup instantiates a new WindowsKioskActiveDirectoryGroup and sets the default values.
 func NewWindowsKioskActiveDirectoryGroup()(*WindowsKioskActiveDirectoryGroup) {
     m := &WindowsKioskActiveDirectoryGroup{
         WindowsKioskUser: *NewWindowsKioskUser(),
@@ -18,10 +18,12 @@ func NewWindowsKioskActiveDirectoryGroup()(*WindowsKioskActiveDirectoryGroup) {
     return m
 }
 // CreateWindowsKioskActiveDirectoryGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskActiveDirectoryGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsKioskActiveDirectoryGroup(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskActiveDirectoryGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsKioskUser.GetFieldDeserializers()
     res["groupName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *WindowsKioskActiveDirectoryGroup) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetGroupName gets the groupName property value. The name of the AD group that will be locked to this kiosk configuration
+// returns a *string when successful
 func (m *WindowsKioskActiveDirectoryGroup) GetGroupName()(*string) {
     val, err := m.GetBackingStore().Get("groupName")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *WindowsKioskActiveDirectoryGroup) SetGroupName(value *string)() {
         panic(err)
     }
 }
-// WindowsKioskActiveDirectoryGroupable 
 type WindowsKioskActiveDirectoryGroupable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsKioskUserable

@@ -42,35 +42,37 @@ type ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestB
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Assign provides operations to call the assign method.
+// returns a *ResourceAccessProfilesItemAssignRequestBuilder when successful
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) Assign()(*ResourceAccessProfilesItemAssignRequestBuilder) {
     return NewResourceAccessProfilesItemAssignRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceManagementResourceAccessProfileBase entity.
+// returns a *ResourceAccessProfilesItemAssignmentsRequestBuilder when successful
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) Assignments()(*ResourceAccessProfilesItemAssignmentsRequestBuilder) {
     return NewResourceAccessProfilesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal instantiates a new DeviceManagementResourceAccessProfileBaseItemRequestBuilder and sets the default values.
+// NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal instantiates a new ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder and sets the default values.
 func NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
     m := &ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/resourceAccessProfiles/{deviceManagementResourceAccessProfileBase%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/resourceAccessProfiles/{deviceManagementResourceAccessProfileBase%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder instantiates a new DeviceManagementResourceAccessProfileBaseItemRequestBuilder and sets the default values.
+// NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder instantiates a new ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder and sets the default values.
 func NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property resourceAccessProfiles for deviceManagement
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -79,14 +81,15 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
     return nil
 }
 // Get collection of resource access settings associated with account.
+// returns a DeviceManagementResourceAccessProfileBaseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -98,14 +101,15 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable), nil
 }
 // Patch update the navigation property resourceAccessProfiles in deviceManagement
+// returns a DeviceManagementResourceAccessProfileBaseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, requestConfiguration *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -117,8 +121,9 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable), nil
 }
 // ToDeleteRequestInformation delete navigation property resourceAccessProfiles for deviceManagement
+// returns a *RequestInformation when successful
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceManagement/resourceAccessProfiles/{deviceManagementResourceAccessProfileBase%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -127,6 +132,7 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
     return requestInfo, nil
 }
 // ToGetRequestInformation collection of resource access settings associated with account.
+// returns a *RequestInformation when successful
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,8 +146,9 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property resourceAccessProfiles in deviceManagement
+// returns a *RequestInformation when successful
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementResourceAccessProfileBaseable, requestConfiguration *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement/resourceAccessProfiles/{deviceManagementResourceAccessProfileBase%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -154,6 +161,7 @@ func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder when successful
 func (m *ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) WithUrl(rawUrl string)(*ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder) {
     return NewResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

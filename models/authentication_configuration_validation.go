@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AuthenticationConfigurationValidation 
 type AuthenticationConfigurationValidation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuthenticationConfigurationValidation instantiates a new authenticationConfigurationValidation and sets the default values.
+// NewAuthenticationConfigurationValidation instantiates a new AuthenticationConfigurationValidation and sets the default values.
 func NewAuthenticationConfigurationValidation()(*AuthenticationConfigurationValidation) {
     m := &AuthenticationConfigurationValidation{
     }
@@ -19,10 +18,12 @@ func NewAuthenticationConfigurationValidation()(*AuthenticationConfigurationVali
     return m
 }
 // CreateAuthenticationConfigurationValidationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationConfigurationValidationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationConfigurationValidation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuthenticationConfigurationValidation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AuthenticationConfigurationValidation) GetAdditionalData()(map[string]a
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuthenticationConfigurationValidation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetErrors gets the errors property value. Errors in the validation result of a customAuthenticationExtension.
+// returns a []GenericErrorable when successful
 func (m *AuthenticationConfigurationValidation) GetErrors()([]GenericErrorable) {
     val, err := m.GetBackingStore().Get("errors")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AuthenticationConfigurationValidation) GetErrors()([]GenericErrorable) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationConfigurationValidation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["errors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -97,6 +101,7 @@ func (m *AuthenticationConfigurationValidation) GetFieldDeserializers()(map[stri
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuthenticationConfigurationValidation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -108,6 +113,7 @@ func (m *AuthenticationConfigurationValidation) GetOdataType()(*string) {
     return nil
 }
 // GetWarnings gets the warnings property value. Warnings in the validation result of a customAuthenticationExtension.
+// returns a []GenericErrorable when successful
 func (m *AuthenticationConfigurationValidation) GetWarnings()([]GenericErrorable) {
     val, err := m.GetBackingStore().Get("warnings")
     if err != nil {
@@ -190,7 +196,6 @@ func (m *AuthenticationConfigurationValidation) SetWarnings(value []GenericError
         panic(err)
     }
 }
-// AuthenticationConfigurationValidationable 
 type AuthenticationConfigurationValidationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

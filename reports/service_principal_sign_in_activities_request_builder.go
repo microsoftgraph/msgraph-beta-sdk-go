@@ -47,6 +47,7 @@ type ServicePrincipalSignInActivitiesRequestBuilderPostRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByServicePrincipalSignInActivityId provides operations to manage the servicePrincipalSignInActivities property of the microsoft.graph.reportRoot entity.
+// returns a *ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilder when successful
 func (m *ServicePrincipalSignInActivitiesRequestBuilder) ByServicePrincipalSignInActivityId(servicePrincipalSignInActivityId string)(*ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,7 +61,7 @@ func (m *ServicePrincipalSignInActivitiesRequestBuilder) ByServicePrincipalSignI
 // NewServicePrincipalSignInActivitiesRequestBuilderInternal instantiates a new ServicePrincipalSignInActivitiesRequestBuilder and sets the default values.
 func NewServicePrincipalSignInActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicePrincipalSignInActivitiesRequestBuilder) {
     m := &ServicePrincipalSignInActivitiesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/servicePrincipalSignInActivities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/servicePrincipalSignInActivities{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -71,10 +72,13 @@ func NewServicePrincipalSignInActivitiesRequestBuilder(rawUrl string, requestAda
     return NewServicePrincipalSignInActivitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ServicePrincipalSignInActivitiesCountRequestBuilder when successful
 func (m *ServicePrincipalSignInActivitiesRequestBuilder) Count()(*ServicePrincipalSignInActivitiesCountRequestBuilder) {
     return NewServicePrincipalSignInActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of servicePrincipalSignInActivity objects that contains sign-in activity information for service principals in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
+// returns a ServicePrincipalSignInActivityCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-list-serviceprincipalsigninactivities?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *ServicePrincipalSignInActivitiesRequestBuilder) Get(ctx context.Context
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateServicePrincipalSignInActivityCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *ServicePrincipalSignInActivitiesRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalSignInActivityCollectionResponseable), nil
 }
 // Post create new navigation property to servicePrincipalSignInActivities for reports
+// returns a ServicePrincipalSignInActivityable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ServicePrincipalSignInActivitiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalSignInActivityable, requestConfiguration *ServicePrincipalSignInActivitiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalSignInActivityable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateServicePrincipalSignInActivityFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *ServicePrincipalSignInActivitiesRequestBuilder) Post(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalSignInActivityable), nil
 }
 // ToGetRequestInformation get a list of servicePrincipalSignInActivity objects that contains sign-in activity information for service principals in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
+// returns a *RequestInformation when successful
 func (m *ServicePrincipalSignInActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalSignInActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *ServicePrincipalSignInActivitiesRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to servicePrincipalSignInActivities for reports
+// returns a *RequestInformation when successful
 func (m *ServicePrincipalSignInActivitiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalSignInActivityable, requestConfiguration *ServicePrincipalSignInActivitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/reports/servicePrincipalSignInActivities", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *ServicePrincipalSignInActivitiesRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ServicePrincipalSignInActivitiesRequestBuilder when successful
 func (m *ServicePrincipalSignInActivitiesRequestBuilder) WithUrl(rawUrl string)(*ServicePrincipalSignInActivitiesRequestBuilder) {
     return NewServicePrincipalSignInActivitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

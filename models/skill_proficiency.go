@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SkillProficiency 
 type SkillProficiency struct {
     ItemFacet
 }
-// NewSkillProficiency instantiates a new skillProficiency and sets the default values.
+// NewSkillProficiency instantiates a new SkillProficiency and sets the default values.
 func NewSkillProficiency()(*SkillProficiency) {
     m := &SkillProficiency{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewSkillProficiency()(*SkillProficiency) {
     return m
 }
 // CreateSkillProficiencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSkillProficiencyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSkillProficiency(), nil
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the skill (for example, personal, professional, hobby).
+// returns a []string when successful
 func (m *SkillProficiency) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *SkillProficiency) GetCategories()([]string) {
     return nil
 }
 // GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
+// returns a []string when successful
 func (m *SkillProficiency) GetCollaborationTags()([]string) {
     val, err := m.GetBackingStore().Get("collaborationTags")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *SkillProficiency) GetCollaborationTags()([]string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the skill.
+// returns a *string when successful
 func (m *SkillProficiency) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *SkillProficiency) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -132,6 +136,7 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetProficiency gets the proficiency property value. Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
+// returns a *SkillProficiencyLevel when successful
 func (m *SkillProficiency) GetProficiency()(*SkillProficiencyLevel) {
     val, err := m.GetBackingStore().Get("proficiency")
     if err != nil {
@@ -143,6 +148,7 @@ func (m *SkillProficiency) GetProficiency()(*SkillProficiencyLevel) {
     return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
+// returns a *string when successful
 func (m *SkillProficiency) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -154,6 +160,7 @@ func (m *SkillProficiency) GetThumbnailUrl()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. Contains a link to an information source about the skill.
+// returns a *string when successful
 func (m *SkillProficiency) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -251,7 +258,6 @@ func (m *SkillProficiency) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// SkillProficiencyable 
 type SkillProficiencyable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

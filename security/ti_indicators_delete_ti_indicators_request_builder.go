@@ -17,21 +17,23 @@ type TiIndicatorsDeleteTiIndicatorsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewTiIndicatorsDeleteTiIndicatorsRequestBuilderInternal instantiates a new DeleteTiIndicatorsRequestBuilder and sets the default values.
+// NewTiIndicatorsDeleteTiIndicatorsRequestBuilderInternal instantiates a new TiIndicatorsDeleteTiIndicatorsRequestBuilder and sets the default values.
 func NewTiIndicatorsDeleteTiIndicatorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TiIndicatorsDeleteTiIndicatorsRequestBuilder) {
     m := &TiIndicatorsDeleteTiIndicatorsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/tiIndicators/deleteTiIndicators", pathParameters),
     }
     return m
 }
-// NewTiIndicatorsDeleteTiIndicatorsRequestBuilder instantiates a new DeleteTiIndicatorsRequestBuilder and sets the default values.
+// NewTiIndicatorsDeleteTiIndicatorsRequestBuilder instantiates a new TiIndicatorsDeleteTiIndicatorsRequestBuilder and sets the default values.
 func NewTiIndicatorsDeleteTiIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TiIndicatorsDeleteTiIndicatorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsDeleteTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-// Deprecated: This method is obsolete. Use PostAsDeleteTiIndicatorsPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a TiIndicatorsDeleteTiIndicatorsResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) Post(ctx context.Context,
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTiIndicatorsDeleteTiIndicatorsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) Post(ctx context.Context,
     return res.(TiIndicatorsDeleteTiIndicatorsResponseable), nil
 }
 // PostAsDeleteTiIndicatorsPostResponse delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+// returns a TiIndicatorsDeleteTiIndicatorsPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) PostAsDeleteTiIndicatorsP
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTiIndicatorsDeleteTiIndicatorsPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) PostAsDeleteTiIndicatorsP
     return res.(TiIndicatorsDeleteTiIndicatorsPostResponseable), nil
 }
 // ToPostRequestInformation delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+// returns a *RequestInformation when successful
 func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TiIndicatorsDeleteTiIndicatorsRequestBuilder when successful
 func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) WithUrl(rawUrl string)(*TiIndicatorsDeleteTiIndicatorsRequestBuilder) {
     return NewTiIndicatorsDeleteTiIndicatorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

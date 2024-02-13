@@ -17,14 +17,14 @@ type VirtualEndpointProvisioningPoliciesItemAssignRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilderInternal instantiates a new AssignRequestBuilder and sets the default values.
+// NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilderInternal instantiates a new VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) {
     m := &VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assign", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilder instantiates a new AssignRequestBuilder and sets the default values.
+// NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilder instantiates a new VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -32,6 +32,7 @@ func NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilder(rawUrl strin
 }
 // Post assign cloudPcProvisioningPolicy to user groups.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
@@ -41,8 +42,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) Post(ctx c
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -52,6 +52,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) Post(ctx c
 }
 // ToPostRequestInformation assign cloudPcProvisioningPolicy to user groups.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemAssignPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -67,6 +68,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) ToPostRequ
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointProvisioningPoliciesItemAssignRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemAssignRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

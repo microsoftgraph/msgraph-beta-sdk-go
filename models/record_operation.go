@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RecordOperation 
 type RecordOperation struct {
     CommsOperation
 }
-// NewRecordOperation instantiates a new recordOperation and sets the default values.
+// NewRecordOperation instantiates a new RecordOperation and sets the default values.
 func NewRecordOperation()(*RecordOperation) {
     m := &RecordOperation{
         CommsOperation: *NewCommsOperation(),
@@ -16,10 +15,12 @@ func NewRecordOperation()(*RecordOperation) {
     return m
 }
 // CreateRecordOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRecordOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRecordOperation(), nil
 }
 // GetCompletionReason gets the completionReason property value. Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
+// returns a *RecordCompletionReason when successful
 func (m *RecordOperation) GetCompletionReason()(*RecordCompletionReason) {
     val, err := m.GetBackingStore().Get("completionReason")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *RecordOperation) GetCompletionReason()(*RecordCompletionReason) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RecordOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CommsOperation.GetFieldDeserializers()
     res["completionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,6 +68,7 @@ func (m *RecordOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetRecordingAccessToken gets the recordingAccessToken property value. The access token required to retrieve the recording.
+// returns a *string when successful
 func (m *RecordOperation) GetRecordingAccessToken()(*string) {
     val, err := m.GetBackingStore().Get("recordingAccessToken")
     if err != nil {
@@ -77,6 +80,7 @@ func (m *RecordOperation) GetRecordingAccessToken()(*string) {
     return nil
 }
 // GetRecordingLocation gets the recordingLocation property value. The location where the recording is located.
+// returns a *string when successful
 func (m *RecordOperation) GetRecordingLocation()(*string) {
     val, err := m.GetBackingStore().Get("recordingLocation")
     if err != nil {
@@ -135,7 +139,6 @@ func (m *RecordOperation) SetRecordingLocation(value *string)() {
         panic(err)
     }
 }
-// RecordOperationable 
 type RecordOperationable interface {
     CommsOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

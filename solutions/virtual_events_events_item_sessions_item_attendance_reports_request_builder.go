@@ -47,6 +47,7 @@ type VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderPostReque
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByMeetingAttendanceReportId provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.
+// returns a *VirtualEventsEventsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder when successful
 func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) ByMeetingAttendanceReportId(meetingAttendanceReportId string)(*VirtualEventsEventsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) ByM
     }
     return NewVirtualEventsEventsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewVirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderInternal instantiates a new AttendanceReportsRequestBuilder and sets the default values.
+// NewVirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderInternal instantiates a new VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder and sets the default values.
 func NewVirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) {
     m := &VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}/attendanceReports{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}/attendanceReports{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewVirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder instantiates a new AttendanceReportsRequestBuilder and sets the default values.
+// NewVirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder instantiates a new VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder and sets the default values.
 func NewVirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *VirtualEventsEventsItemSessionsItemAttendanceReportsCountRequestBuilder when successful
 func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) Count()(*VirtualEventsEventsItemSessionsItemAttendanceReportsCountRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemAttendanceReportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the attendance reports of an online meeting. Read-only.
+// returns a MeetingAttendanceReportCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMeetingAttendanceReportCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) Get
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportCollectionResponseable), nil
 }
 // Post create new navigation property to attendanceReports for solutions
+// returns a MeetingAttendanceReportable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMeetingAttendanceReportFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) Pos
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable), nil
 }
 // ToGetRequestInformation the attendance reports of an online meeting. Read-only.
+// returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) ToG
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to attendanceReports for solutions
+// returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, requestConfiguration *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}/attendanceReports", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) ToP
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder when successful
 func (m *VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemAttendanceReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

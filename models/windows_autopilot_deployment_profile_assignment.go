@@ -8,7 +8,7 @@ import (
 type WindowsAutopilotDeploymentProfileAssignment struct {
     Entity
 }
-// NewWindowsAutopilotDeploymentProfileAssignment instantiates a new windowsAutopilotDeploymentProfileAssignment and sets the default values.
+// NewWindowsAutopilotDeploymentProfileAssignment instantiates a new WindowsAutopilotDeploymentProfileAssignment and sets the default values.
 func NewWindowsAutopilotDeploymentProfileAssignment()(*WindowsAutopilotDeploymentProfileAssignment) {
     m := &WindowsAutopilotDeploymentProfileAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewWindowsAutopilotDeploymentProfileAssignment()(*WindowsAutopilotDeploymen
     return m
 }
 // CreateWindowsAutopilotDeploymentProfileAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsAutopilotDeploymentProfileAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsAutopilotDeploymentProfileAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,6 +57,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) GetFieldDeserializers()(ma
     return res
 }
 // GetSource gets the source property value. Represents source of assignment.
+// returns a *DeviceAndAppManagementAssignmentSource when successful
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -66,6 +69,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) GetSource()(*DeviceAndAppM
     return nil
 }
 // GetSourceId gets the sourceId property value. Identifier for resource used for deployment to a group
+// returns a *string when successful
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetSourceId()(*string) {
     val, err := m.GetBackingStore().Get("sourceId")
     if err != nil {
@@ -77,6 +81,7 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) GetSourceId()(*string) {
     return nil
 }
 // GetTarget gets the target property value. The assignment target for the Windows Autopilot deployment profile.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *WindowsAutopilotDeploymentProfileAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -135,7 +140,6 @@ func (m *WindowsAutopilotDeploymentProfileAssignment) SetTarget(value DeviceAndA
         panic(err)
     }
 }
-// WindowsAutopilotDeploymentProfileAssignmentable 
 type WindowsAutopilotDeploymentProfileAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,14 +17,14 @@ type FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
+// NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderInternal instantiates a new FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder and sets the default values.
 func NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) {
     m := &FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/{directoryObject%2Did}/$ref", pathParameters),
     }
     return m
 }
-// NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
+// NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder instantiates a new FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder and sets the default values.
 func NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -32,6 +32,7 @@ func NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder(rawUrl string, 
 }
 // Delete remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 // Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0
@@ -41,8 +42,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) Delete(ctx co
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -52,6 +52,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) Delete(ctx co
 }
 // ToDeleteRequestInformation remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 // Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies
+// returns a *RequestInformation when successful
 func (m *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -63,6 +64,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) ToDeleteReque
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies
+// returns a *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder when successful
 func (m *FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) WithUrl(rawUrl string)(*FeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder) {
     return NewFeatureRolloutPoliciesItemAppliesToItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

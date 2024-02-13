@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UrlThreatSubmission 
 type UrlThreatSubmission struct {
     ThreatSubmission
 }
-// NewUrlThreatSubmission instantiates a new urlThreatSubmission and sets the default values.
+// NewUrlThreatSubmission instantiates a new UrlThreatSubmission and sets the default values.
 func NewUrlThreatSubmission()(*UrlThreatSubmission) {
     m := &UrlThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),
@@ -18,10 +17,12 @@ func NewUrlThreatSubmission()(*UrlThreatSubmission) {
     return m
 }
 // CreateUrlThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUrlThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUrlThreatSubmission(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ThreatSubmission.GetFieldDeserializers()
     res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *UrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetWebUrl gets the webUrl property value. Denotes the webUrl that needs to be submitted.
+// returns a *string when successful
 func (m *UrlThreatSubmission) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *UrlThreatSubmission) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// UrlThreatSubmissionable 
 type UrlThreatSubmissionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ThreatSubmissionable

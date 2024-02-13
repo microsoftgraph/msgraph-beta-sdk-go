@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsAuthorizationSystem 
 type AwsAuthorizationSystem struct {
     AuthorizationSystem
 }
-// NewAwsAuthorizationSystem instantiates a new awsAuthorizationSystem and sets the default values.
+// NewAwsAuthorizationSystem instantiates a new AwsAuthorizationSystem and sets the default values.
 func NewAwsAuthorizationSystem()(*AwsAuthorizationSystem) {
     m := &AwsAuthorizationSystem{
         AuthorizationSystem: *NewAuthorizationSystem(),
@@ -18,10 +17,12 @@ func NewAwsAuthorizationSystem()(*AwsAuthorizationSystem) {
     return m
 }
 // CreateAwsAuthorizationSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsAuthorizationSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsAuthorizationSystem(), nil
 }
 // GetActions gets the actions property value. List of actions for service in authorization system.
+// returns a []AwsAuthorizationSystemTypeActionable when successful
 func (m *AwsAuthorizationSystem) GetActions()([]AwsAuthorizationSystemTypeActionable) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AwsAuthorizationSystem) GetActions()([]AwsAuthorizationSystemTypeAction
     return nil
 }
 // GetAssociatedIdentities gets the associatedIdentities property value. Identities in the authorization system.
+// returns a AwsAssociatedIdentitiesable when successful
 func (m *AwsAuthorizationSystem) GetAssociatedIdentities()(AwsAssociatedIdentitiesable) {
     val, err := m.GetBackingStore().Get("associatedIdentities")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AwsAuthorizationSystem) GetAssociatedIdentities()(AwsAssociatedIdentiti
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsAuthorizationSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthorizationSystem.GetFieldDeserializers()
     res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -123,6 +126,7 @@ func (m *AwsAuthorizationSystem) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetPolicies gets the policies property value. Policies associated with the AWS authorization system type.
+// returns a []AwsPolicyable when successful
 func (m *AwsAuthorizationSystem) GetPolicies()([]AwsPolicyable) {
     val, err := m.GetBackingStore().Get("policies")
     if err != nil {
@@ -134,6 +138,7 @@ func (m *AwsAuthorizationSystem) GetPolicies()([]AwsPolicyable) {
     return nil
 }
 // GetResources gets the resources property value. Resources associated with the authorization system type.
+// returns a []AwsAuthorizationSystemResourceable when successful
 func (m *AwsAuthorizationSystem) GetResources()([]AwsAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -145,6 +150,7 @@ func (m *AwsAuthorizationSystem) GetResources()([]AwsAuthorizationSystemResource
     return nil
 }
 // GetServices gets the services property value. Services associated with the authorization system type.
+// returns a []AuthorizationSystemTypeServiceable when successful
 func (m *AwsAuthorizationSystem) GetServices()([]AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("services")
     if err != nil {
@@ -252,7 +258,6 @@ func (m *AwsAuthorizationSystem) SetServices(value []AuthorizationSystemTypeServ
         panic(err)
     }
 }
-// AwsAuthorizationSystemable 
 type AwsAuthorizationSystemable interface {
     AuthorizationSystemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

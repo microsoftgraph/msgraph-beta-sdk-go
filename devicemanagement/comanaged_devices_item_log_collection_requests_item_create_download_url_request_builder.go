@@ -17,29 +17,30 @@ type ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal instantiates a new CreateDownloadUrlRequestBuilder and sets the default values.
+// NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal instantiates a new ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder and sets the default values.
 func NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) {
     m := &ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/logCollectionRequests/{deviceLogCollectionResponse%2Did}/createDownloadUrl", pathParameters),
     }
     return m
 }
-// NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder instantiates a new CreateDownloadUrlRequestBuilder and sets the default values.
+// NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder instantiates a new ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder and sets the default values.
 func NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action createDownloadUrl
-// Deprecated: This method is obsolete. Use PostAsCreateDownloadUrlPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) Post(ctx context.Context, requestConfiguration *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBu
     return res.(ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseable), nil
 }
 // PostAsCreateDownloadUrlPostResponse invoke action createDownloadUrl
+// returns a ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) PostAsCreateDownloadUrlPostResponse(ctx context.Context, requestConfiguration *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBu
     return res.(ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlPostResponseable), nil
 }
 // ToPostRequestInformation invoke action createDownloadUrl
+// returns a *RequestInformation when successful
 func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -80,6 +83,7 @@ func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder when successful
 func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) {
     return NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -41,28 +41,28 @@ type LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderPatchRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewLogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderInternal instantiates a new NetworkAccessTrafficTransactionItemRequestBuilder and sets the default values.
+// NewLogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderInternal instantiates a new LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder and sets the default values.
 func NewLogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) {
     m := &LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/logs/traffic/{networkAccessTraffic%2DtransactionId}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/logs/traffic/{networkAccessTraffic%2DtransactionId}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewLogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder instantiates a new NetworkAccessTrafficTransactionItemRequestBuilder and sets the default values.
+// NewLogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder instantiates a new LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder and sets the default values.
 func NewLogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property traffic for networkAccess
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) Delete(ct
     return nil
 }
 // Get a network access traffic log entry that contains comprehensive information about network traffic events.
+// returns a NetworkAccessTrafficable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateNetworkAccessTrafficFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) Get(ctx c
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable), nil
 }
 // Patch update the navigation property traffic in networkAccess
+// returns a NetworkAccessTrafficable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable, requestConfiguration *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateNetworkAccessTrafficFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) Patch(ctx
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable), nil
 }
 // ToDeleteRequestInformation delete navigation property traffic for networkAccess
+// returns a *RequestInformation when successful
 func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/networkAccess/logs/traffic/{networkAccessTraffic%2DtransactionId}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) ToDeleteR
     return requestInfo, nil
 }
 // ToGetRequestInformation a network access traffic log entry that contains comprehensive information about network traffic events.
+// returns a *RequestInformation when successful
 func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property traffic in networkAccess
+// returns a *RequestInformation when successful
 func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable, requestConfiguration *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/networkAccess/logs/traffic/{networkAccessTraffic%2DtransactionId}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) ToPatchRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder when successful
 func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) WithUrl(rawUrl string)(*LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) {
     return NewLogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

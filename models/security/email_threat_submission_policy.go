@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// EmailThreatSubmissionPolicy 
 type EmailThreatSubmissionPolicy struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewEmailThreatSubmissionPolicy instantiates a new emailThreatSubmissionPolicy and sets the default values.
+// NewEmailThreatSubmissionPolicy instantiates a new EmailThreatSubmissionPolicy and sets the default values.
 func NewEmailThreatSubmissionPolicy()(*EmailThreatSubmissionPolicy) {
     m := &EmailThreatSubmissionPolicy{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewEmailThreatSubmissionPolicy()(*EmailThreatSubmissionPolicy) {
     return m
 }
 // CreateEmailThreatSubmissionPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEmailThreatSubmissionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmailThreatSubmissionPolicy(), nil
 }
 // GetCustomizedNotificationSenderEmailAddress gets the customizedNotificationSenderEmailAddress property value. Specifies the email address of the sender from which email notifications will be sent to end users to inform them whether an email is spam, phish or clean. The default value is null. Optional for creation.
+// returns a *string when successful
 func (m *EmailThreatSubmissionPolicy) GetCustomizedNotificationSenderEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("customizedNotificationSenderEmailAddress")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *EmailThreatSubmissionPolicy) GetCustomizedNotificationSenderEmailAddres
     return nil
 }
 // GetCustomizedReportRecipientEmailAddress gets the customizedReportRecipientEmailAddress property value. Specifies the destination where the reported messages from end users land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.
+// returns a *string when successful
 func (m *EmailThreatSubmissionPolicy) GetCustomizedReportRecipientEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("customizedReportRecipientEmailAddress")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *EmailThreatSubmissionPolicy) GetCustomizedReportRecipientEmailAddress()
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmailThreatSubmissionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["customizedNotificationSenderEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -178,6 +181,7 @@ func (m *EmailThreatSubmissionPolicy) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetIsAlwaysReportEnabledForUsers gets the isAlwaysReportEnabledForUsers property value. Indicates whether end users can report a message as spam, phish or junk directly without a confirmation(popup). The default value is true.  Optional for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsAlwaysReportEnabledForUsers()(*bool) {
     val, err := m.GetBackingStore().Get("isAlwaysReportEnabledForUsers")
     if err != nil {
@@ -189,6 +193,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsAlwaysReportEnabledForUsers()(*bool) 
     return nil
 }
 // GetIsAskMeEnabledForUsers gets the isAskMeEnabledForUsers property value. Indicates whether end users can confirm using a popup before reporting messages as spam, phish or not junk. The default value is true.  Optional for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsAskMeEnabledForUsers()(*bool) {
     val, err := m.GetBackingStore().Get("isAskMeEnabledForUsers")
     if err != nil {
@@ -200,6 +205,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsAskMeEnabledForUsers()(*bool) {
     return nil
 }
 // GetIsCustomizedMessageEnabled gets the isCustomizedMessageEnabled property value. Indicates whether the email notifications sent to end users to inform them if an email is a phish mail, spam or junk is customized or not. The default value is false. Optional for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsCustomizedMessageEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isCustomizedMessageEnabled")
     if err != nil {
@@ -211,6 +217,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsCustomizedMessageEnabled()(*bool) {
     return nil
 }
 // GetIsCustomizedMessageEnabledForPhishing gets the isCustomizedMessageEnabledForPhishing property value. If enabled, customized message only shows when email is reported as phishing. The default value is false. Optional for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsCustomizedMessageEnabledForPhishing()(*bool) {
     val, err := m.GetBackingStore().Get("isCustomizedMessageEnabledForPhishing")
     if err != nil {
@@ -222,6 +229,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsCustomizedMessageEnabledForPhishing()
     return nil
 }
 // GetIsCustomizedNotificationSenderEnabled gets the isCustomizedNotificationSenderEnabled property value. Indicates whether to use the sender email address set using customizedNotificationSenderEmailAddress for sending email notifications to end users. The default value is false. Optional for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsCustomizedNotificationSenderEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isCustomizedNotificationSenderEnabled")
     if err != nil {
@@ -233,6 +241,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsCustomizedNotificationSenderEnabled()
     return nil
 }
 // GetIsNeverReportEnabledForUsers gets the isNeverReportEnabledForUsers property value. Indicates whether end users can move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsNeverReportEnabledForUsers()(*bool) {
     val, err := m.GetBackingStore().Get("isNeverReportEnabledForUsers")
     if err != nil {
@@ -244,6 +253,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsNeverReportEnabledForUsers()(*bool) {
     return nil
 }
 // GetIsOrganizationBrandingEnabled gets the isOrganizationBrandingEnabled property value. Indicates whether the branding logo should be used in the email notifications sent to end users. The default value is false. Optional for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsOrganizationBrandingEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isOrganizationBrandingEnabled")
     if err != nil {
@@ -255,6 +265,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsOrganizationBrandingEnabled()(*bool) 
     return nil
 }
 // GetIsReportFromQuarantineEnabled gets the isReportFromQuarantineEnabled property value. Indicates whether end users can submit from the quarantine page. The default value is true. Optional for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsReportFromQuarantineEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isReportFromQuarantineEnabled")
     if err != nil {
@@ -266,6 +277,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsReportFromQuarantineEnabled()(*bool) 
     return nil
 }
 // GetIsReportToCustomizedEmailAddressEnabled gets the isReportToCustomizedEmailAddressEnabled property value. Indicates whether emails reported by end users should be sent to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsReportToCustomizedEmailAddressEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isReportToCustomizedEmailAddressEnabled")
     if err != nil {
@@ -277,6 +289,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsReportToCustomizedEmailAddressEnabled
     return nil
 }
 // GetIsReportToMicrosoftEnabled gets the isReportToMicrosoftEnabled property value. If enabled, the email is sent to Microsoft for analysis. The default value is false. Required for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsReportToMicrosoftEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isReportToMicrosoftEnabled")
     if err != nil {
@@ -288,6 +301,7 @@ func (m *EmailThreatSubmissionPolicy) GetIsReportToMicrosoftEnabled()(*bool) {
     return nil
 }
 // GetIsReviewEmailNotificationEnabled gets the isReviewEmailNotificationEnabled property value. Indicates whether an email notification is sent to the end user who reported the email when it has been reviewed by the admin. The default value is false. Optional for creation.
+// returns a *bool when successful
 func (m *EmailThreatSubmissionPolicy) GetIsReviewEmailNotificationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isReviewEmailNotificationEnabled")
     if err != nil {
@@ -475,7 +489,6 @@ func (m *EmailThreatSubmissionPolicy) SetIsReviewEmailNotificationEnabled(value 
         panic(err)
     }
 }
-// EmailThreatSubmissionPolicyable 
 type EmailThreatSubmissionPolicyable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

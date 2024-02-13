@@ -8,7 +8,7 @@ import (
 type GroupPolicyPresentationValueMultiText struct {
     GroupPolicyPresentationValue
 }
-// NewGroupPolicyPresentationValueMultiText instantiates a new groupPolicyPresentationValueMultiText and sets the default values.
+// NewGroupPolicyPresentationValueMultiText instantiates a new GroupPolicyPresentationValueMultiText and sets the default values.
 func NewGroupPolicyPresentationValueMultiText()(*GroupPolicyPresentationValueMultiText) {
     m := &GroupPolicyPresentationValueMultiText{
         GroupPolicyPresentationValue: *NewGroupPolicyPresentationValue(),
@@ -16,10 +16,12 @@ func NewGroupPolicyPresentationValueMultiText()(*GroupPolicyPresentationValueMul
     return m
 }
 // CreateGroupPolicyPresentationValueMultiTextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationValueMultiTextFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyPresentationValueMultiText(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentationValueMultiText) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyPresentationValue.GetFieldDeserializers()
     res["values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +43,7 @@ func (m *GroupPolicyPresentationValueMultiText) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValues gets the values property value. A collection of non-empty strings for the associated presentation.
+// returns a []string when successful
 func (m *GroupPolicyPresentationValueMultiText) GetValues()([]string) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -72,7 +75,6 @@ func (m *GroupPolicyPresentationValueMultiText) SetValues(value []string)() {
         panic(err)
     }
 }
-// GroupPolicyPresentationValueMultiTextable 
 type GroupPolicyPresentationValueMultiTextable interface {
     GroupPolicyPresentationValueable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

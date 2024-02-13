@@ -27,28 +27,29 @@ type LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsIt
     // Request query parameters
     QueryParameters *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilderGetQueryParameters
 }
-// NewLifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilderInternal instantiates a new TaskRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilderInternal instantiates a new LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder) {
     m := &LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow%2Did}/tasks/{task%2Did}/taskProcessingResults/{taskProcessingResult%2Did}/task{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/deletedItems/workflows/{workflow%2Did}/tasks/{task%2Did}/taskProcessingResults/{taskProcessingResult%2Did}/task{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewLifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder instantiates a new TaskRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder instantiates a new LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the related workflow task
+// returns a Taskable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Taskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CreateTaskFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResul
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Taskable), nil
 }
 // ToGetRequestInformation the related workflow task
+// returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResul
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemTasksItemTaskProcessingResultsItemTaskRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

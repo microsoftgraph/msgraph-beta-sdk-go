@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PlannerTaskRoleBasedRule 
 type PlannerTaskRoleBasedRule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPlannerTaskRoleBasedRule instantiates a new plannerTaskRoleBasedRule and sets the default values.
+// NewPlannerTaskRoleBasedRule instantiates a new PlannerTaskRoleBasedRule and sets the default values.
 func NewPlannerTaskRoleBasedRule()(*PlannerTaskRoleBasedRule) {
     m := &PlannerTaskRoleBasedRule{
     }
@@ -19,10 +18,12 @@ func NewPlannerTaskRoleBasedRule()(*PlannerTaskRoleBasedRule) {
     return m
 }
 // CreatePlannerTaskRoleBasedRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerTaskRoleBasedRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskRoleBasedRule(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PlannerTaskRoleBasedRule) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PlannerTaskRoleBasedRule) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PlannerTaskRoleBasedRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDefaultRule gets the defaultRule property value. Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
+// returns a *string when successful
 func (m *PlannerTaskRoleBasedRule) GetDefaultRule()(*string) {
     val, err := m.GetBackingStore().Get("defaultRule")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *PlannerTaskRoleBasedRule) GetDefaultRule()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerTaskRoleBasedRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["defaultRule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *PlannerTaskRoleBasedRule) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PlannerTaskRoleBasedRule) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *PlannerTaskRoleBasedRule) GetOdataType()(*string) {
     return nil
 }
 // GetPropertyRule gets the propertyRule property value. Rules for specific properties and actions.
+// returns a PlannerTaskPropertyRuleable when successful
 func (m *PlannerTaskRoleBasedRule) GetPropertyRule()(PlannerTaskPropertyRuleable) {
     val, err := m.GetBackingStore().Get("propertyRule")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *PlannerTaskRoleBasedRule) GetPropertyRule()(PlannerTaskPropertyRuleable
     return nil
 }
 // GetRole gets the role property value. The role these rules apply to.
+// returns a PlannerTaskConfigurationRoleBaseable when successful
 func (m *PlannerTaskRoleBasedRule) GetRole()(PlannerTaskConfigurationRoleBaseable) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *PlannerTaskRoleBasedRule) SetRole(value PlannerTaskConfigurationRoleBas
         panic(err)
     }
 }
-// PlannerTaskRoleBasedRuleable 
 type PlannerTaskRoleBasedRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

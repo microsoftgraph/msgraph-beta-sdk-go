@@ -8,7 +8,7 @@ import (
 type WindowsPrivacyDataAccessControlItem struct {
     Entity
 }
-// NewWindowsPrivacyDataAccessControlItem instantiates a new windowsPrivacyDataAccessControlItem and sets the default values.
+// NewWindowsPrivacyDataAccessControlItem instantiates a new WindowsPrivacyDataAccessControlItem and sets the default values.
 func NewWindowsPrivacyDataAccessControlItem()(*WindowsPrivacyDataAccessControlItem) {
     m := &WindowsPrivacyDataAccessControlItem{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewWindowsPrivacyDataAccessControlItem()(*WindowsPrivacyDataAccessControlIt
     return m
 }
 // CreateWindowsPrivacyDataAccessControlItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsPrivacyDataAccessControlItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPrivacyDataAccessControlItem(), nil
 }
 // GetAccessLevel gets the accessLevel property value. Determine the access level to specific Windows privacy data category.
+// returns a *WindowsPrivacyDataAccessLevel when successful
 func (m *WindowsPrivacyDataAccessControlItem) GetAccessLevel()(*WindowsPrivacyDataAccessLevel) {
     val, err := m.GetBackingStore().Get("accessLevel")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *WindowsPrivacyDataAccessControlItem) GetAccessLevel()(*WindowsPrivacyDa
     return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
+// returns a *string when successful
 func (m *WindowsPrivacyDataAccessControlItem) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *WindowsPrivacyDataAccessControlItem) GetAppDisplayName()(*string) {
     return nil
 }
 // GetAppPackageFamilyName gets the appPackageFamilyName property value. The Package Family Name of a Windows app. When set, the access level applies to the specified application.
+// returns a *string when successful
 func (m *WindowsPrivacyDataAccessControlItem) GetAppPackageFamilyName()(*string) {
     val, err := m.GetBackingStore().Get("appPackageFamilyName")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *WindowsPrivacyDataAccessControlItem) GetAppPackageFamilyName()(*string)
     return nil
 }
 // GetDataCategory gets the dataCategory property value. Windows privacy data category specifier for privacy data access.
+// returns a *WindowsPrivacyDataCategory when successful
 func (m *WindowsPrivacyDataAccessControlItem) GetDataCategory()(*WindowsPrivacyDataCategory) {
     val, err := m.GetBackingStore().Get("dataCategory")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *WindowsPrivacyDataAccessControlItem) GetDataCategory()(*WindowsPrivacyD
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsPrivacyDataAccessControlItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -170,7 +176,6 @@ func (m *WindowsPrivacyDataAccessControlItem) SetDataCategory(value *WindowsPriv
         panic(err)
     }
 }
-// WindowsPrivacyDataAccessControlItemable 
 type WindowsPrivacyDataAccessControlItemable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

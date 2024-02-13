@@ -27,28 +27,29 @@ type VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRe
     // Request query parameters
     QueryParameters *VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilderGetQueryParameters
 }
-// NewVirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilderInternal instantiates a new VirtualEventPresenterItemRequestBuilder and sets the default values.
+// NewVirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilderInternal instantiates a new VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder) {
     m := &VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/sessions/{virtualEventSession%2Did}/presenters/{virtualEventPresenter%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/sessions/{virtualEventSession%2Did}/presenters/{virtualEventPresenter%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewVirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder instantiates a new VirtualEventPresenterItemRequestBuilder and sets the default values.
+// NewVirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder instantiates a new VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get presenters from solutions
+// returns a VirtualEventPresenterable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventPresenterable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVirtualEventPresenterFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,10 +61,12 @@ func (m *VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterIt
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventPresenterable), nil
 }
 // ProfilePhoto provides operations to manage the media for the solutionsRoot entity.
+// returns a *VirtualEventsTownhallsItemSessionsItemPresentersItemProfilePhotoRequestBuilder when successful
 func (m *VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder) ProfilePhoto()(*VirtualEventsTownhallsItemSessionsItemPresentersItemProfilePhotoRequestBuilder) {
     return NewVirtualEventsTownhallsItemSessionsItemPresentersItemProfilePhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get presenters from solutions
+// returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -77,6 +80,7 @@ func (m *VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterIt
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder when successful
 func (m *VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder) {
     return NewVirtualEventsTownhallsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

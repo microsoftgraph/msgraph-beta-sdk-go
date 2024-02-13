@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistration 
 type MeetingRegistration struct {
     MeetingRegistrationBase
 }
-// NewMeetingRegistration instantiates a new meetingRegistration and sets the default values.
+// NewMeetingRegistration instantiates a new MeetingRegistration and sets the default values.
 func NewMeetingRegistration()(*MeetingRegistration) {
     m := &MeetingRegistration{
         MeetingRegistrationBase: *NewMeetingRegistrationBase(),
@@ -19,10 +18,12 @@ func NewMeetingRegistration()(*MeetingRegistration) {
     return m
 }
 // CreateMeetingRegistrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMeetingRegistrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMeetingRegistration(), nil
 }
 // GetCustomQuestions gets the customQuestions property value. Custom registration questions.
+// returns a []MeetingRegistrationQuestionable when successful
 func (m *MeetingRegistration) GetCustomQuestions()([]MeetingRegistrationQuestionable) {
     val, err := m.GetBackingStore().Get("customQuestions")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *MeetingRegistration) GetCustomQuestions()([]MeetingRegistrationQuestion
     return nil
 }
 // GetDescription gets the description property value. The description of the meeting.
+// returns a *string when successful
 func (m *MeetingRegistration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *MeetingRegistration) GetDescription()(*string) {
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The meeting end time in UTC.
+// returns a *Time when successful
 func (m *MeetingRegistration) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *MeetingRegistration) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MeetingRegistrationBase.GetFieldDeserializers()
     res["customQuestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -153,6 +157,7 @@ func (m *MeetingRegistration) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetRegistrationPageViewCount gets the registrationPageViewCount property value. The number of times the registration page has been visited. Read-only.
+// returns a *int32 when successful
 func (m *MeetingRegistration) GetRegistrationPageViewCount()(*int32) {
     val, err := m.GetBackingStore().Get("registrationPageViewCount")
     if err != nil {
@@ -164,6 +169,7 @@ func (m *MeetingRegistration) GetRegistrationPageViewCount()(*int32) {
     return nil
 }
 // GetRegistrationPageWebUrl gets the registrationPageWebUrl property value. The URL of the registration page. Read-only.
+// returns a *string when successful
 func (m *MeetingRegistration) GetRegistrationPageWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("registrationPageWebUrl")
     if err != nil {
@@ -175,6 +181,7 @@ func (m *MeetingRegistration) GetRegistrationPageWebUrl()(*string) {
     return nil
 }
 // GetSpeakers gets the speakers property value. The meeting speaker's information.
+// returns a []MeetingSpeakerable when successful
 func (m *MeetingRegistration) GetSpeakers()([]MeetingSpeakerable) {
     val, err := m.GetBackingStore().Get("speakers")
     if err != nil {
@@ -186,6 +193,7 @@ func (m *MeetingRegistration) GetSpeakers()([]MeetingSpeakerable) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The meeting start time in UTC.
+// returns a *Time when successful
 func (m *MeetingRegistration) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -197,6 +205,7 @@ func (m *MeetingRegistration) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetSubject gets the subject property value. The subject of the meeting.
+// returns a *string when successful
 func (m *MeetingRegistration) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -331,7 +340,6 @@ func (m *MeetingRegistration) SetSubject(value *string)() {
         panic(err)
     }
 }
-// MeetingRegistrationable 
 type MeetingRegistrationable interface {
     MeetingRegistrationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

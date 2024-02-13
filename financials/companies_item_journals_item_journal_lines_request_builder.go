@@ -49,6 +49,7 @@ type CompaniesItemJournalsItemJournalLinesRequestBuilderPostRequestConfiguration
 }
 // ByJournalLineId provides operations to manage the journalLines property of the microsoft.graph.journal entity.
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
+// returns a *CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder when successful
 func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ByJournalLineId(journalLineId string)(*CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,6 +61,7 @@ func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ByJournalLineId(jo
     return NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByJournalLineIdGuid provides operations to manage the journalLines property of the microsoft.graph.journal entity.
+// returns a *CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder when successful
 func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ByJournalLineIdGuid(journalLineId i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)(*CompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -68,32 +70,34 @@ func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ByJournalLineIdGui
     urlTplParams["journalLine%2Did"] = journalLineId.String()
     return NewCompaniesItemJournalsItemJournalLinesJournalLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCompaniesItemJournalsItemJournalLinesRequestBuilderInternal instantiates a new JournalLinesRequestBuilder and sets the default values.
+// NewCompaniesItemJournalsItemJournalLinesRequestBuilderInternal instantiates a new CompaniesItemJournalsItemJournalLinesRequestBuilder and sets the default values.
 func NewCompaniesItemJournalsItemJournalLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemJournalsItemJournalLinesRequestBuilder) {
     m := &CompaniesItemJournalsItemJournalLinesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}/journalLines{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}/journalLines{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemJournalsItemJournalLinesRequestBuilder instantiates a new JournalLinesRequestBuilder and sets the default values.
+// NewCompaniesItemJournalsItemJournalLinesRequestBuilder instantiates a new CompaniesItemJournalsItemJournalLinesRequestBuilder and sets the default values.
 func NewCompaniesItemJournalsItemJournalLinesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemJournalsItemJournalLinesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemJournalsItemJournalLinesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CompaniesItemJournalsItemJournalLinesCountRequestBuilder when successful
 func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) Count()(*CompaniesItemJournalsItemJournalLinesCountRequestBuilder) {
     return NewCompaniesItemJournalsItemJournalLinesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get journalLines from financials
+// returns a JournalLineCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemJournalsItemJournalLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JournalLineCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateJournalLineCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -105,14 +109,15 @@ func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) Get(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JournalLineCollectionResponseable), nil
 }
 // Post create new navigation property to journalLines for financials
+// returns a JournalLineable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JournalLineable, requestConfiguration *CompaniesItemJournalsItemJournalLinesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JournalLineable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateJournalLineFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -124,6 +129,7 @@ func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) Post(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JournalLineable), nil
 }
 // ToGetRequestInformation get journalLines from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemJournalsItemJournalLinesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +143,9 @@ func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to journalLines for financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.JournalLineable, requestConfiguration *CompaniesItemJournalsItemJournalLinesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/financials/companies/{company%2Did}/journals/{journal%2Did}/journalLines", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -151,6 +158,7 @@ func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) ToPostRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemJournalsItemJournalLinesRequestBuilder when successful
 func (m *CompaniesItemJournalsItemJournalLinesRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemJournalsItemJournalLinesRequestBuilder) {
     return NewCompaniesItemJournalsItemJournalLinesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

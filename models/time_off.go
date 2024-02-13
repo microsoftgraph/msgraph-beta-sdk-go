@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimeOff 
 type TimeOff struct {
     ChangeTrackedEntity
 }
-// NewTimeOff instantiates a new timeOff and sets the default values.
+// NewTimeOff instantiates a new TimeOff and sets the default values.
 func NewTimeOff()(*TimeOff) {
     m := &TimeOff{
         ChangeTrackedEntity: *NewChangeTrackedEntity(),
@@ -18,10 +17,12 @@ func NewTimeOff()(*TimeOff) {
     return m
 }
 // CreateTimeOffFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimeOffFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeOff(), nil
 }
 // GetDraftTimeOff gets the draftTimeOff property value. The draft version of this timeOff item that is viewable by managers. It must be shared before it is visible to team members. Required.
+// returns a TimeOffItemable when successful
 func (m *TimeOff) GetDraftTimeOff()(TimeOffItemable) {
     val, err := m.GetBackingStore().Get("draftTimeOff")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *TimeOff) GetDraftTimeOff()(TimeOffItemable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimeOff) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ChangeTrackedEntity.GetFieldDeserializers()
     res["draftTimeOff"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -65,6 +67,16 @@ func (m *TimeOff) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["teamInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateShiftsTeamInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamInfo(val.(ShiftsTeamInfoable))
+        }
+        return nil
+    }
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -75,9 +87,20 @@ func (m *TimeOff) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["userInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateShiftsUserInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserInfo(val.(ShiftsUserInfoable))
+        }
+        return nil
+    }
     return res
 }
 // GetIsStagedForDeletion gets the isStagedForDeletion property value. The timeOff is marked for deletion, a process that is finalized when the schedule is shared.
+// returns a *bool when successful
 func (m *TimeOff) GetIsStagedForDeletion()(*bool) {
     val, err := m.GetBackingStore().Get("isStagedForDeletion")
     if err != nil {
@@ -89,6 +112,7 @@ func (m *TimeOff) GetIsStagedForDeletion()(*bool) {
     return nil
 }
 // GetSharedTimeOff gets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.
+// returns a TimeOffItemable when successful
 func (m *TimeOff) GetSharedTimeOff()(TimeOffItemable) {
     val, err := m.GetBackingStore().Get("sharedTimeOff")
     if err != nil {
@@ -99,7 +123,20 @@ func (m *TimeOff) GetSharedTimeOff()(TimeOffItemable) {
     }
     return nil
 }
+// GetTeamInfo gets the teamInfo property value. Information of the team that the timeOff is in.
+// returns a ShiftsTeamInfoable when successful
+func (m *TimeOff) GetTeamInfo()(ShiftsTeamInfoable) {
+    val, err := m.GetBackingStore().Get("teamInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ShiftsTeamInfoable)
+    }
+    return nil
+}
 // GetUserId gets the userId property value. ID of the user assigned to the timeOff. Required.
+// returns a *string when successful
 func (m *TimeOff) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -107,6 +144,18 @@ func (m *TimeOff) GetUserId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetUserInfo gets the userInfo property value. Information of the user assigned to the timeOff.
+// returns a ShiftsUserInfoable when successful
+func (m *TimeOff) GetUserInfo()(ShiftsUserInfoable) {
+    val, err := m.GetBackingStore().Get("userInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ShiftsUserInfoable)
     }
     return nil
 }
@@ -163,6 +212,13 @@ func (m *TimeOff) SetSharedTimeOff(value TimeOffItemable)() {
         panic(err)
     }
 }
+// SetTeamInfo sets the teamInfo property value. Information of the team that the timeOff is in.
+func (m *TimeOff) SetTeamInfo(value ShiftsTeamInfoable)() {
+    err := m.GetBackingStore().Set("teamInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserId sets the userId property value. ID of the user assigned to the timeOff. Required.
 func (m *TimeOff) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
@@ -170,16 +226,26 @@ func (m *TimeOff) SetUserId(value *string)() {
         panic(err)
     }
 }
-// TimeOffable 
+// SetUserInfo sets the userInfo property value. Information of the user assigned to the timeOff.
+func (m *TimeOff) SetUserInfo(value ShiftsUserInfoable)() {
+    err := m.GetBackingStore().Set("userInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type TimeOffable interface {
     ChangeTrackedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDraftTimeOff()(TimeOffItemable)
     GetIsStagedForDeletion()(*bool)
     GetSharedTimeOff()(TimeOffItemable)
+    GetTeamInfo()(ShiftsTeamInfoable)
     GetUserId()(*string)
+    GetUserInfo()(ShiftsUserInfoable)
     SetDraftTimeOff(value TimeOffItemable)()
     SetIsStagedForDeletion(value *bool)()
     SetSharedTimeOff(value TimeOffItemable)()
+    SetTeamInfo(value ShiftsTeamInfoable)()
     SetUserId(value *string)()
+    SetUserInfo(value ShiftsUserInfoable)()
 }

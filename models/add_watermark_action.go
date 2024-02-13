@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AddWatermarkAction 
 type AddWatermarkAction struct {
     InformationProtectionAction
 }
-// NewAddWatermarkAction instantiates a new addWatermarkAction and sets the default values.
+// NewAddWatermarkAction instantiates a new AddWatermarkAction and sets the default values.
 func NewAddWatermarkAction()(*AddWatermarkAction) {
     m := &AddWatermarkAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
@@ -18,10 +17,12 @@ func NewAddWatermarkAction()(*AddWatermarkAction) {
     return m
 }
 // CreateAddWatermarkActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAddWatermarkActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAddWatermarkAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AddWatermarkAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InformationProtectionAction.GetFieldDeserializers()
     res["fontColor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +88,7 @@ func (m *AddWatermarkAction) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetFontColor gets the fontColor property value. Color of the font to use for the watermark.
+// returns a *string when successful
 func (m *AddWatermarkAction) GetFontColor()(*string) {
     val, err := m.GetBackingStore().Get("fontColor")
     if err != nil {
@@ -98,6 +100,7 @@ func (m *AddWatermarkAction) GetFontColor()(*string) {
     return nil
 }
 // GetFontName gets the fontName property value. Name of the font to use for the watermark.
+// returns a *string when successful
 func (m *AddWatermarkAction) GetFontName()(*string) {
     val, err := m.GetBackingStore().Get("fontName")
     if err != nil {
@@ -109,6 +112,7 @@ func (m *AddWatermarkAction) GetFontName()(*string) {
     return nil
 }
 // GetFontSize gets the fontSize property value. Font size to use for the watermark.
+// returns a *int32 when successful
 func (m *AddWatermarkAction) GetFontSize()(*int32) {
     val, err := m.GetBackingStore().Get("fontSize")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *AddWatermarkAction) GetFontSize()(*int32) {
     return nil
 }
 // GetLayout gets the layout property value. The layout property
+// returns a *WatermarkLayout when successful
 func (m *AddWatermarkAction) GetLayout()(*WatermarkLayout) {
     val, err := m.GetBackingStore().Get("layout")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *AddWatermarkAction) GetLayout()(*WatermarkLayout) {
     return nil
 }
 // GetText gets the text property value. The contents of the watermark itself.
+// returns a *string when successful
 func (m *AddWatermarkAction) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *AddWatermarkAction) GetText()(*string) {
     return nil
 }
 // GetUiElementName gets the uiElementName property value. The name of the UI element where the watermark should be placed.
+// returns a *string when successful
 func (m *AddWatermarkAction) GetUiElementName()(*string) {
     val, err := m.GetBackingStore().Get("uiElementName")
     if err != nil {
@@ -239,7 +246,6 @@ func (m *AddWatermarkAction) SetUiElementName(value *string)() {
         panic(err)
     }
 }
-// AddWatermarkActionable 
 type AddWatermarkActionable interface {
     InformationProtectionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

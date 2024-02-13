@@ -9,7 +9,7 @@ import (
 type WindowsAutopilotSettings struct {
     Entity
 }
-// NewWindowsAutopilotSettings instantiates a new windowsAutopilotSettings and sets the default values.
+// NewWindowsAutopilotSettings instantiates a new WindowsAutopilotSettings and sets the default values.
 func NewWindowsAutopilotSettings()(*WindowsAutopilotSettings) {
     m := &WindowsAutopilotSettings{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewWindowsAutopilotSettings()(*WindowsAutopilotSettings) {
     return m
 }
 // CreateWindowsAutopilotSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsAutopilotSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsAutopilotSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastManualSyncTriggerDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *WindowsAutopilotSettings) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetLastManualSyncTriggerDateTime gets the lastManualSyncTriggerDateTime property value. Last data sync date time with DDS service.
+// returns a *Time when successful
 func (m *WindowsAutopilotSettings) GetLastManualSyncTriggerDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastManualSyncTriggerDateTime")
     if err != nil {
@@ -67,6 +70,7 @@ func (m *WindowsAutopilotSettings) GetLastManualSyncTriggerDateTime()(*i33607480
     return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last data sync date time with DDS service.
+// returns a *Time when successful
 func (m *WindowsAutopilotSettings) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -78,6 +82,7 @@ func (m *WindowsAutopilotSettings) GetLastSyncDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetSyncStatus gets the syncStatus property value. The syncStatus property
+// returns a *WindowsAutopilotSyncStatus when successful
 func (m *WindowsAutopilotSettings) GetSyncStatus()(*WindowsAutopilotSyncStatus) {
     val, err := m.GetBackingStore().Get("syncStatus")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *WindowsAutopilotSettings) SetSyncStatus(value *WindowsAutopilotSyncStat
         panic(err)
     }
 }
-// WindowsAutopilotSettingsable 
 type WindowsAutopilotSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

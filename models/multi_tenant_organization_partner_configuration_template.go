@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MultiTenantOrganizationPartnerConfigurationTemplate 
 type MultiTenantOrganizationPartnerConfigurationTemplate struct {
     Entity
 }
-// NewMultiTenantOrganizationPartnerConfigurationTemplate instantiates a new multiTenantOrganizationPartnerConfigurationTemplate and sets the default values.
+// NewMultiTenantOrganizationPartnerConfigurationTemplate instantiates a new MultiTenantOrganizationPartnerConfigurationTemplate and sets the default values.
 func NewMultiTenantOrganizationPartnerConfigurationTemplate()(*MultiTenantOrganizationPartnerConfigurationTemplate) {
     m := &MultiTenantOrganizationPartnerConfigurationTemplate{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewMultiTenantOrganizationPartnerConfigurationTemplate()(*MultiTenantOrgani
     return m
 }
 // CreateMultiTenantOrganizationPartnerConfigurationTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMultiTenantOrganizationPartnerConfigurationTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMultiTenantOrganizationPartnerConfigurationTemplate(), nil
 }
 // GetAutomaticUserConsentSettings gets the automaticUserConsentSettings property value. Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
+// returns a InboundOutboundPolicyConfigurationable when successful
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetAutomaticUserConsentSettings()(InboundOutboundPolicyConfigurationable) {
     val, err := m.GetBackingStore().Get("automaticUserConsentSettings")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetAutomaticUserCo
     return nil
 }
 // GetB2bCollaborationInbound gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Microsoft Entra B2B collaboration.
+// returns a CrossTenantAccessPolicyB2BSettingable when successful
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bCollaborationInbound()(CrossTenantAccessPolicyB2BSettingable) {
     val, err := m.GetBackingStore().Get("b2bCollaborationInbound")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bCollaboratio
     return nil
 }
 // GetB2bCollaborationOutbound gets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B collaboration.
+// returns a CrossTenantAccessPolicyB2BSettingable when successful
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bCollaborationOutbound()(CrossTenantAccessPolicyB2BSettingable) {
     val, err := m.GetBackingStore().Get("b2bCollaborationOutbound")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bCollaboratio
     return nil
 }
 // GetB2bDirectConnectInbound gets the b2bDirectConnectInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
+// returns a CrossTenantAccessPolicyB2BSettingable when successful
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bDirectConnectInbound()(CrossTenantAccessPolicyB2BSettingable) {
     val, err := m.GetBackingStore().Get("b2bDirectConnectInbound")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bDirectConnec
     return nil
 }
 // GetB2bDirectConnectOutbound gets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Microsoft Entra B2B direct connect.
+// returns a CrossTenantAccessPolicyB2BSettingable when successful
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bDirectConnectOutbound()(CrossTenantAccessPolicyB2BSettingable) {
     val, err := m.GetBackingStore().Get("b2bDirectConnectOutbound")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetB2bDirectConnec
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["automaticUserConsentSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -150,6 +156,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetFieldDeserializ
     return res
 }
 // GetInboundTrust gets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Microsoft Entra organizations.
+// returns a CrossTenantAccessPolicyInboundTrustable when successful
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable) {
     val, err := m.GetBackingStore().Get("inboundTrust")
     if err != nil {
@@ -161,6 +168,7 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetInboundTrust()(
     return nil
 }
 // GetTemplateApplicationLevel gets the templateApplicationLevel property value. The templateApplicationLevel property
+// returns a *TemplateApplicationLevel when successful
 func (m *MultiTenantOrganizationPartnerConfigurationTemplate) GetTemplateApplicationLevel()(*TemplateApplicationLevel) {
     val, err := m.GetBackingStore().Get("templateApplicationLevel")
     if err != nil {
@@ -271,7 +279,6 @@ func (m *MultiTenantOrganizationPartnerConfigurationTemplate) SetTemplateApplica
         panic(err)
     }
 }
-// MultiTenantOrganizationPartnerConfigurationTemplateable 
 type MultiTenantOrganizationPartnerConfigurationTemplateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

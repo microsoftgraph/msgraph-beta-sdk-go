@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsStoreAppCollectionResponse 
 type WindowsStoreAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsStoreAppCollectionResponse instantiates a new windowsStoreAppCollectionResponse and sets the default values.
+// NewWindowsStoreAppCollectionResponse instantiates a new WindowsStoreAppCollectionResponse and sets the default values.
 func NewWindowsStoreAppCollectionResponse()(*WindowsStoreAppCollectionResponse) {
     m := &WindowsStoreAppCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewWindowsStoreAppCollectionResponse()(*WindowsStoreAppCollectionResponse) 
     return m
 }
 // CreateWindowsStoreAppCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsStoreAppCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsStoreAppCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsStoreAppCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *WindowsStoreAppCollectionResponse) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []WindowsStoreAppable when successful
 func (m *WindowsStoreAppCollectionResponse) GetValue()([]WindowsStoreAppable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *WindowsStoreAppCollectionResponse) SetValue(value []WindowsStoreAppable
         panic(err)
     }
 }
-// WindowsStoreAppCollectionResponseable 
 type WindowsStoreAppCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

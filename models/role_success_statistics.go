@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// RoleSuccessStatistics 
 type RoleSuccessStatistics struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewRoleSuccessStatistics instantiates a new roleSuccessStatistics and sets the default values.
+// NewRoleSuccessStatistics instantiates a new RoleSuccessStatistics and sets the default values.
 func NewRoleSuccessStatistics()(*RoleSuccessStatistics) {
     m := &RoleSuccessStatistics{
     }
@@ -19,10 +18,12 @@ func NewRoleSuccessStatistics()(*RoleSuccessStatistics) {
     return m
 }
 // CreateRoleSuccessStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleSuccessStatisticsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleSuccessStatistics(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RoleSuccessStatistics) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *RoleSuccessStatistics) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *RoleSuccessStatistics) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -144,6 +147,7 @@ func (m *RoleSuccessStatistics) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *RoleSuccessStatistics) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -155,6 +159,7 @@ func (m *RoleSuccessStatistics) GetOdataType()(*string) {
     return nil
 }
 // GetPermanentFail gets the permanentFail property value. The permanentFail property
+// returns a *int64 when successful
 func (m *RoleSuccessStatistics) GetPermanentFail()(*int64) {
     val, err := m.GetBackingStore().Get("permanentFail")
     if err != nil {
@@ -166,6 +171,7 @@ func (m *RoleSuccessStatistics) GetPermanentFail()(*int64) {
     return nil
 }
 // GetPermanentSuccess gets the permanentSuccess property value. The permanentSuccess property
+// returns a *int64 when successful
 func (m *RoleSuccessStatistics) GetPermanentSuccess()(*int64) {
     val, err := m.GetBackingStore().Get("permanentSuccess")
     if err != nil {
@@ -177,6 +183,7 @@ func (m *RoleSuccessStatistics) GetPermanentSuccess()(*int64) {
     return nil
 }
 // GetRemoveFail gets the removeFail property value. The removeFail property
+// returns a *int64 when successful
 func (m *RoleSuccessStatistics) GetRemoveFail()(*int64) {
     val, err := m.GetBackingStore().Get("removeFail")
     if err != nil {
@@ -188,6 +195,7 @@ func (m *RoleSuccessStatistics) GetRemoveFail()(*int64) {
     return nil
 }
 // GetRemoveSuccess gets the removeSuccess property value. The removeSuccess property
+// returns a *int64 when successful
 func (m *RoleSuccessStatistics) GetRemoveSuccess()(*int64) {
     val, err := m.GetBackingStore().Get("removeSuccess")
     if err != nil {
@@ -199,6 +207,7 @@ func (m *RoleSuccessStatistics) GetRemoveSuccess()(*int64) {
     return nil
 }
 // GetRoleId gets the roleId property value. The roleId property
+// returns a *string when successful
 func (m *RoleSuccessStatistics) GetRoleId()(*string) {
     val, err := m.GetBackingStore().Get("roleId")
     if err != nil {
@@ -210,6 +219,7 @@ func (m *RoleSuccessStatistics) GetRoleId()(*string) {
     return nil
 }
 // GetRoleName gets the roleName property value. The roleName property
+// returns a *string when successful
 func (m *RoleSuccessStatistics) GetRoleName()(*string) {
     val, err := m.GetBackingStore().Get("roleName")
     if err != nil {
@@ -221,6 +231,7 @@ func (m *RoleSuccessStatistics) GetRoleName()(*string) {
     return nil
 }
 // GetTemporaryFail gets the temporaryFail property value. The temporaryFail property
+// returns a *int64 when successful
 func (m *RoleSuccessStatistics) GetTemporaryFail()(*int64) {
     val, err := m.GetBackingStore().Get("temporaryFail")
     if err != nil {
@@ -232,6 +243,7 @@ func (m *RoleSuccessStatistics) GetTemporaryFail()(*int64) {
     return nil
 }
 // GetTemporarySuccess gets the temporarySuccess property value. The temporarySuccess property
+// returns a *int64 when successful
 func (m *RoleSuccessStatistics) GetTemporarySuccess()(*int64) {
     val, err := m.GetBackingStore().Get("temporarySuccess")
     if err != nil {
@@ -243,6 +255,7 @@ func (m *RoleSuccessStatistics) GetTemporarySuccess()(*int64) {
     return nil
 }
 // GetUnknownFail gets the unknownFail property value. The unknownFail property
+// returns a *int64 when successful
 func (m *RoleSuccessStatistics) GetUnknownFail()(*int64) {
     val, err := m.GetBackingStore().Get("unknownFail")
     if err != nil {
@@ -404,7 +417,6 @@ func (m *RoleSuccessStatistics) SetUnknownFail(value *int64)() {
         panic(err)
     }
 }
-// RoleSuccessStatisticsable 
 type RoleSuccessStatisticsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

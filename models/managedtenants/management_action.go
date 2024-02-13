@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementAction 
 type ManagementAction struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagementAction instantiates a new managementAction and sets the default values.
+// NewManagementAction instantiates a new ManagementAction and sets the default values.
 func NewManagementAction()(*ManagementAction) {
     m := &ManagementAction{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewManagementAction()(*ManagementAction) {
     return m
 }
 // CreateManagementActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagementActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementAction(), nil
 }
 // GetCategory gets the category property value. The category property
+// returns a *ManagementCategory when successful
 func (m *ManagementAction) GetCategory()(*ManagementCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ManagementAction) GetCategory()(*ManagementCategory) {
     return nil
 }
 // GetDescription gets the description property value. The description for the management action. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagementAction) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ManagementAction) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the management action. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagementAction) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ManagementAction) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagementAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +129,7 @@ func (m *ManagementAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetReferenceTemplateId gets the referenceTemplateId property value. The reference for the management template used to generate the management action. Required. Read-only.
+// returns a *string when successful
 func (m *ManagementAction) GetReferenceTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("referenceTemplateId")
     if err != nil {
@@ -136,6 +141,7 @@ func (m *ManagementAction) GetReferenceTemplateId()(*string) {
     return nil
 }
 // GetReferenceTemplateVersion gets the referenceTemplateVersion property value. The referenceTemplateVersion property
+// returns a *int32 when successful
 func (m *ManagementAction) GetReferenceTemplateVersion()(*int32) {
     val, err := m.GetBackingStore().Get("referenceTemplateVersion")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *ManagementAction) GetReferenceTemplateVersion()(*int32) {
     return nil
 }
 // GetWorkloadActions gets the workloadActions property value. The collection of workload actions associated with the management action. Required. Read-only.
+// returns a []WorkloadActionable when successful
 func (m *ManagementAction) GetWorkloadActions()([]WorkloadActionable) {
     val, err := m.GetBackingStore().Get("workloadActions")
     if err != nil {
@@ -250,7 +257,6 @@ func (m *ManagementAction) SetWorkloadActions(value []WorkloadActionable)() {
         panic(err)
     }
 }
-// ManagementActionable 
 type ManagementActionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

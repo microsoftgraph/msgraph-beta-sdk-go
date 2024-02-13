@@ -27,28 +27,29 @@ type SharesItemJobsItemTasksItemTriggerRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *SharesItemJobsItemTasksItemTriggerRequestBuilderGetQueryParameters
 }
-// NewSharesItemJobsItemTasksItemTriggerRequestBuilderInternal instantiates a new TriggerRequestBuilder and sets the default values.
+// NewSharesItemJobsItemTasksItemTriggerRequestBuilderInternal instantiates a new SharesItemJobsItemTasksItemTriggerRequestBuilder and sets the default values.
 func NewSharesItemJobsItemTasksItemTriggerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemJobsItemTasksItemTriggerRequestBuilder) {
     m := &SharesItemJobsItemTasksItemTriggerRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}/trigger{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}/trigger{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewSharesItemJobsItemTasksItemTriggerRequestBuilder instantiates a new TriggerRequestBuilder and sets the default values.
+// NewSharesItemJobsItemTasksItemTriggerRequestBuilder instantiates a new SharesItemJobsItemTasksItemTriggerRequestBuilder and sets the default values.
 func NewSharesItemJobsItemTasksItemTriggerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemJobsItemTasksItemTriggerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemJobsItemTasksItemTriggerRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the printTaskTrigger that triggered this task's execution. Read-only.
+// returns a PrintTaskTriggerable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharesItemJobsItemTasksItemTriggerRequestBuilder) Get(ctx context.Context, requestConfiguration *SharesItemJobsItemTasksItemTriggerRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskTriggerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrintTaskTriggerFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *SharesItemJobsItemTasksItemTriggerRequestBuilder) Get(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskTriggerable), nil
 }
 // ToGetRequestInformation the printTaskTrigger that triggered this task's execution. Read-only.
+// returns a *RequestInformation when successful
 func (m *SharesItemJobsItemTasksItemTriggerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesItemJobsItemTasksItemTriggerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *SharesItemJobsItemTasksItemTriggerRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SharesItemJobsItemTasksItemTriggerRequestBuilder when successful
 func (m *SharesItemJobsItemTasksItemTriggerRequestBuilder) WithUrl(rawUrl string)(*SharesItemJobsItemTasksItemTriggerRequestBuilder) {
     return NewSharesItemJobsItemTasksItemTriggerRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

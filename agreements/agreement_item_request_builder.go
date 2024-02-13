@@ -40,6 +40,7 @@ type AgreementItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Acceptances provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
+// returns a *ItemAcceptancesRequestBuilder when successful
 func (m *AgreementItemRequestBuilder) Acceptances()(*ItemAcceptancesRequestBuilder) {
     return NewItemAcceptancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
@@ -57,14 +58,14 @@ func NewAgreementItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewAgreementItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete entity from agreements
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AgreementItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AgreementItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -73,22 +74,25 @@ func (m *AgreementItemRequestBuilder) Delete(ctx context.Context, requestConfigu
     return nil
 }
 // File provides operations to manage the file property of the microsoft.graph.agreement entity.
+// returns a *ItemFileRequestBuilder when successful
 func (m *AgreementItemRequestBuilder) File()(*ItemFileRequestBuilder) {
     return NewItemFileRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Files provides operations to manage the files property of the microsoft.graph.agreement entity.
+// returns a *ItemFilesRequestBuilder when successful
 func (m *AgreementItemRequestBuilder) Files()(*ItemFilesRequestBuilder) {
     return NewItemFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get entity from agreements by key
+// returns a Agreementable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AgreementItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AgreementItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAgreementFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -100,14 +104,15 @@ func (m *AgreementItemRequestBuilder) Get(ctx context.Context, requestConfigurat
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable), nil
 }
 // Patch update entity in agreements
+// returns a Agreementable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AgreementItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable, requestConfiguration *AgreementItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAgreementFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,8 +124,9 @@ func (m *AgreementItemRequestBuilder) Patch(ctx context.Context, body ie233ee762
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable), nil
 }
 // ToDeleteRequestInformation delete entity from agreements
+// returns a *RequestInformation when successful
 func (m *AgreementItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AgreementItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/agreements/{agreement%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -129,6 +135,7 @@ func (m *AgreementItemRequestBuilder) ToDeleteRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // ToGetRequestInformation get entity from agreements by key
+// returns a *RequestInformation when successful
 func (m *AgreementItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AgreementItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -142,8 +149,9 @@ func (m *AgreementItemRequestBuilder) ToGetRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // ToPatchRequestInformation update entity in agreements
+// returns a *RequestInformation when successful
 func (m *AgreementItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable, requestConfiguration *AgreementItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/agreements/{agreement%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -156,6 +164,7 @@ func (m *AgreementItemRequestBuilder) ToPatchRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AgreementItemRequestBuilder when successful
 func (m *AgreementItemRequestBuilder) WithUrl(rawUrl string)(*AgreementItemRequestBuilder) {
     return NewAgreementItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -41,31 +41,31 @@ type ItemDevicesWithDeviceIdRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemDevicesWithDeviceIdRequestBuilderInternal instantiates a new DevicesWithDeviceIdRequestBuilder and sets the default values.
+// NewItemDevicesWithDeviceIdRequestBuilderInternal instantiates a new ItemDevicesWithDeviceIdRequestBuilder and sets the default values.
 func NewItemDevicesWithDeviceIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceId *string)(*ItemDevicesWithDeviceIdRequestBuilder) {
     m := &ItemDevicesWithDeviceIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices(deviceId='{deviceId}'){?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices(deviceId='{deviceId}'){?%24expand,%24select}", pathParameters),
     }
     if deviceId != nil {
         m.BaseRequestBuilder.PathParameters["deviceId"] = *deviceId
     }
     return m
 }
-// NewItemDevicesWithDeviceIdRequestBuilder instantiates a new DevicesWithDeviceIdRequestBuilder and sets the default values.
+// NewItemDevicesWithDeviceIdRequestBuilder instantiates a new ItemDevicesWithDeviceIdRequestBuilder and sets the default values.
 func NewItemDevicesWithDeviceIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesWithDeviceIdRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemDevicesWithDeviceIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property devices for users
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesWithDeviceIdRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,14 +74,15 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) Delete(ctx context.Context, requ
     return nil
 }
 // Get get devices from users
+// returns a Deviceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesWithDeviceIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,14 +94,15 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) Get(ctx context.Context, request
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
 // Patch update the navigation property devices in users
+// returns a Deviceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesWithDeviceIdRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -112,8 +114,9 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) Patch(ctx context.Context, body 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
 // ToDeleteRequestInformation delete navigation property devices for users
+// returns a *RequestInformation when successful
 func (m *ItemDevicesWithDeviceIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/devices(deviceId='{deviceId}')", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -122,6 +125,7 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) ToDeleteRequestInformation(ctx c
     return requestInfo, nil
 }
 // ToGetRequestInformation get devices from users
+// returns a *RequestInformation when successful
 func (m *ItemDevicesWithDeviceIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -135,8 +139,9 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property devices in users
+// returns a *RequestInformation when successful
 func (m *ItemDevicesWithDeviceIdRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/users/{user%2Did}/devices(deviceId='{deviceId}')", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -149,6 +154,7 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) ToPatchRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemDevicesWithDeviceIdRequestBuilder when successful
 func (m *ItemDevicesWithDeviceIdRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesWithDeviceIdRequestBuilder) {
     return NewItemDevicesWithDeviceIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

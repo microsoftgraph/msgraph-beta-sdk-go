@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PasswordlessMicrosoftAuthenticatorAuthenticationMethod 
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod instantiates a new passwordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+// NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod instantiates a new PasswordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
 func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod()(*PasswordlessMicrosoftAuthenticatorAuthenticationMethod) {
     m := &PasswordlessMicrosoftAuthenticatorAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
@@ -19,10 +18,12 @@ func NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod()(*PasswordlessMi
     return m
 }
 // CreatePasswordlessMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePasswordlessMicrosoftAuthenticatorAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPasswordlessMicrosoftAuthenticatorAuthenticationMethod(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetCreatedDateT
     return nil
 }
 // GetCreationDateTime gets the creationDateTime property value. The timestamp when this method was registered to the user.
+// returns a *Time when successful
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetCreationDate
     return nil
 }
 // GetDevice gets the device property value. The device property
+// returns a Deviceable when successful
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetDevice()(Deviceable) {
     val, err := m.GetBackingStore().Get("device")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetDevice()(Dev
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the mobile device as given by the user.
+// returns a *string when successful
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetDisplayName(
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -171,7 +176,6 @@ func (m *PasswordlessMicrosoftAuthenticatorAuthenticationMethod) SetDisplayName(
         panic(err)
     }
 }
-// PasswordlessMicrosoftAuthenticatorAuthenticationMethodable 
 type PasswordlessMicrosoftAuthenticatorAuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

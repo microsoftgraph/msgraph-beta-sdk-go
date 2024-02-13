@@ -41,28 +41,28 @@ type LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal instantiates a new DispositionReviewStageItemRequestBuilder and sets the default values.
+// NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal instantiates a new LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
     m := &LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder instantiates a new DispositionReviewStageItemRequestBuilder and sets the default values.
+// NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder instantiates a new LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property dispositionReviewStages for security
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageI
     return nil
 }
 // Get when action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
+// returns a DispositionReviewStageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DispositionReviewStageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateDispositionReviewStageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageI
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DispositionReviewStageable), nil
 }
 // Patch update the navigation property dispositionReviewStages in security
+// returns a DispositionReviewStageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DispositionReviewStageable, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DispositionReviewStageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateDispositionReviewStageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageI
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DispositionReviewStageable), nil
 }
 // ToDeleteRequestInformation delete navigation property dispositionReviewStages for security
+// returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageI
     return requestInfo, nil
 }
 // ToGetRequestInformation when action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
+// returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageI
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property dispositionReviewStages in security
+// returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DispositionReviewStageable, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder when successful
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) WithUrl(rawUrl string)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
     return NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

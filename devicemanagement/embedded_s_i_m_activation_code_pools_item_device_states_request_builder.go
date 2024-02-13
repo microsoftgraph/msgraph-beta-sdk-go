@@ -47,6 +47,7 @@ type EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderPostRequestConf
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByEmbeddedSIMDeviceStateId provides operations to manage the deviceStates property of the microsoft.graph.embeddedSIMActivationCodePool entity.
+// returns a *EmbeddedSIMActivationCodePoolsItemDeviceStatesEmbeddedSIMDeviceStateItemRequestBuilder when successful
 func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ByEmbeddedSIMDeviceStateId(embeddedSIMDeviceStateId string)(*EmbeddedSIMActivationCodePoolsItemDeviceStatesEmbeddedSIMDeviceStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ByEmbedde
     }
     return NewEmbeddedSIMActivationCodePoolsItemDeviceStatesEmbeddedSIMDeviceStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderInternal instantiates a new DeviceStatesRequestBuilder and sets the default values.
+// NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderInternal instantiates a new EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) {
     m := &EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/deviceStates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/deviceStates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder instantiates a new DeviceStatesRequestBuilder and sets the default values.
+// NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder instantiates a new EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *EmbeddedSIMActivationCodePoolsItemDeviceStatesCountRequestBuilder when successful
 func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) Count()(*EmbeddedSIMActivationCodePoolsItemDeviceStatesCountRequestBuilder) {
     return NewEmbeddedSIMActivationCodePoolsItemDeviceStatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get navigational property to a list of device states for this pool.
+// returns a EmbeddedSIMDeviceStateCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) Get(ctx context.Context, requestConfiguration *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMDeviceStateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEmbeddedSIMDeviceStateCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) Get(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMDeviceStateCollectionResponseable), nil
 }
 // Post create new navigation property to deviceStates for deviceManagement
+// returns a EmbeddedSIMDeviceStateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMDeviceStateable, requestConfiguration *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMDeviceStateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEmbeddedSIMDeviceStateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) Post(ctx 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMDeviceStateable), nil
 }
 // ToGetRequestInformation navigational property to a list of device states for this pool.
+// returns a *RequestInformation when successful
 func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to deviceStates for deviceManagement
+// returns a *RequestInformation when successful
 func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmbeddedSIMDeviceStateable, requestConfiguration *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/deviceStates", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) ToPostReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder when successful
 func (m *EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) WithUrl(rawUrl string)(*EmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder) {
     return NewEmbeddedSIMActivationCodePoolsItemDeviceStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

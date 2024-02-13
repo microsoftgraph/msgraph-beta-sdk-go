@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionsCreepIndexDistribution 
 type PermissionsCreepIndexDistribution struct {
     Entity
 }
-// NewPermissionsCreepIndexDistribution instantiates a new permissionsCreepIndexDistribution and sets the default values.
+// NewPermissionsCreepIndexDistribution instantiates a new PermissionsCreepIndexDistribution and sets the default values.
 func NewPermissionsCreepIndexDistribution()(*PermissionsCreepIndexDistribution) {
     m := &PermissionsCreepIndexDistribution{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPermissionsCreepIndexDistribution()(*PermissionsCreepIndexDistribution) 
     return m
 }
 // CreatePermissionsCreepIndexDistributionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePermissionsCreepIndexDistributionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionsCreepIndexDistribution(), nil
 }
 // GetAuthorizationSystem gets the authorizationSystem property value. The authorizationSystem property
+// returns a AuthorizationSystemable when successful
 func (m *PermissionsCreepIndexDistribution) GetAuthorizationSystem()(AuthorizationSystemable) {
     val, err := m.GetBackingStore().Get("authorizationSystem")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *PermissionsCreepIndexDistribution) GetAuthorizationSystem()(Authorizati
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Defines when the PCI distribution was created.
+// returns a *Time when successful
 func (m *PermissionsCreepIndexDistribution) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *PermissionsCreepIndexDistribution) GetCreatedDateTime()(*i336074805fc85
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PermissionsCreepIndexDistribution) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authorizationSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +101,7 @@ func (m *PermissionsCreepIndexDistribution) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetHighRiskProfile gets the highRiskProfile property value. The highRiskProfile property
+// returns a RiskProfileable when successful
 func (m *PermissionsCreepIndexDistribution) GetHighRiskProfile()(RiskProfileable) {
     val, err := m.GetBackingStore().Get("highRiskProfile")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *PermissionsCreepIndexDistribution) GetHighRiskProfile()(RiskProfileable
     return nil
 }
 // GetLowRiskProfile gets the lowRiskProfile property value. The lowRiskProfile property
+// returns a RiskProfileable when successful
 func (m *PermissionsCreepIndexDistribution) GetLowRiskProfile()(RiskProfileable) {
     val, err := m.GetBackingStore().Get("lowRiskProfile")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *PermissionsCreepIndexDistribution) GetLowRiskProfile()(RiskProfileable)
     return nil
 }
 // GetMediumRiskProfile gets the mediumRiskProfile property value. The mediumRiskProfile property
+// returns a RiskProfileable when successful
 func (m *PermissionsCreepIndexDistribution) GetMediumRiskProfile()(RiskProfileable) {
     val, err := m.GetBackingStore().Get("mediumRiskProfile")
     if err != nil {
@@ -203,7 +209,6 @@ func (m *PermissionsCreepIndexDistribution) SetMediumRiskProfile(value RiskProfi
         panic(err)
     }
 }
-// PermissionsCreepIndexDistributionable 
 type PermissionsCreepIndexDistributionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

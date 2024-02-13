@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationIdentityMatchingConfiguration 
 type EducationIdentityMatchingConfiguration struct {
     EducationIdentitySynchronizationConfiguration
 }
-// NewEducationIdentityMatchingConfiguration instantiates a new educationIdentityMatchingConfiguration and sets the default values.
+// NewEducationIdentityMatchingConfiguration instantiates a new EducationIdentityMatchingConfiguration and sets the default values.
 func NewEducationIdentityMatchingConfiguration()(*EducationIdentityMatchingConfiguration) {
     m := &EducationIdentityMatchingConfiguration{
         EducationIdentitySynchronizationConfiguration: *NewEducationIdentitySynchronizationConfiguration(),
@@ -18,10 +17,12 @@ func NewEducationIdentityMatchingConfiguration()(*EducationIdentityMatchingConfi
     return m
 }
 // CreateEducationIdentityMatchingConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationIdentityMatchingConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationIdentityMatchingConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationIdentityMatchingConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationIdentitySynchronizationConfiguration.GetFieldDeserializers()
     res["matchingOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *EducationIdentityMatchingConfiguration) GetFieldDeserializers()(map[str
     return res
 }
 // GetMatchingOptions gets the matchingOptions property value. Mapping between the user account and the options to use to uniquely identify the user to update.
+// returns a []EducationIdentityMatchingOptionsable when successful
 func (m *EducationIdentityMatchingConfiguration) GetMatchingOptions()([]EducationIdentityMatchingOptionsable) {
     val, err := m.GetBackingStore().Get("matchingOptions")
     if err != nil {
@@ -80,7 +82,6 @@ func (m *EducationIdentityMatchingConfiguration) SetMatchingOptions(value []Educ
         panic(err)
     }
 }
-// EducationIdentityMatchingConfigurationable 
 type EducationIdentityMatchingConfigurationable interface {
     EducationIdentitySynchronizationConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

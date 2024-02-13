@@ -17,20 +17,21 @@ type CallsItemChangeScreenSharingRoleRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCallsItemChangeScreenSharingRoleRequestBuilderInternal instantiates a new ChangeScreenSharingRoleRequestBuilder and sets the default values.
+// NewCallsItemChangeScreenSharingRoleRequestBuilderInternal instantiates a new CallsItemChangeScreenSharingRoleRequestBuilder and sets the default values.
 func NewCallsItemChangeScreenSharingRoleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemChangeScreenSharingRoleRequestBuilder) {
     m := &CallsItemChangeScreenSharingRoleRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/changeScreenSharingRole", pathParameters),
     }
     return m
 }
-// NewCallsItemChangeScreenSharingRoleRequestBuilder instantiates a new ChangeScreenSharingRoleRequestBuilder and sets the default values.
+// NewCallsItemChangeScreenSharingRoleRequestBuilder instantiates a new CallsItemChangeScreenSharingRoleRequestBuilder and sets the default values.
 func NewCallsItemChangeScreenSharingRoleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemChangeScreenSharingRoleRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemChangeScreenSharingRoleRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post allow applications to share screen content with the participants of a group call.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *CallsItemChangeScreenSharingRoleRequestBuilder) Post(ctx context.Contex
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *CallsItemChangeScreenSharingRoleRequestBuilder) Post(ctx context.Contex
     return nil
 }
 // ToPostRequestInformation allow applications to share screen content with the participants of a group call.
+// returns a *RequestInformation when successful
 func (m *CallsItemChangeScreenSharingRoleRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemChangeScreenSharingRolePostRequestBodyable, requestConfiguration *CallsItemChangeScreenSharingRoleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *CallsItemChangeScreenSharingRoleRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CallsItemChangeScreenSharingRoleRequestBuilder when successful
 func (m *CallsItemChangeScreenSharingRoleRequestBuilder) WithUrl(rawUrl string)(*CallsItemChangeScreenSharingRoleRequestBuilder) {
     return NewCallsItemChangeScreenSharingRoleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

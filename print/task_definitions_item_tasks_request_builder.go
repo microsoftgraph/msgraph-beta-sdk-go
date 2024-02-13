@@ -47,6 +47,7 @@ type TaskDefinitionsItemTasksRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByPrintTaskId provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
+// returns a *TaskDefinitionsItemTasksPrintTaskItemRequestBuilder when successful
 func (m *TaskDefinitionsItemTasksRequestBuilder) ByPrintTaskId(printTaskId string)(*TaskDefinitionsItemTasksPrintTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) ByPrintTaskId(printTaskId strin
     }
     return NewTaskDefinitionsItemTasksPrintTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewTaskDefinitionsItemTasksRequestBuilderInternal instantiates a new TasksRequestBuilder and sets the default values.
+// NewTaskDefinitionsItemTasksRequestBuilderInternal instantiates a new TaskDefinitionsItemTasksRequestBuilder and sets the default values.
 func NewTaskDefinitionsItemTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskDefinitionsItemTasksRequestBuilder) {
     m := &TaskDefinitionsItemTasksRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}/tasks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}/tasks{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewTaskDefinitionsItemTasksRequestBuilder instantiates a new TasksRequestBuilder and sets the default values.
+// NewTaskDefinitionsItemTasksRequestBuilder instantiates a new TaskDefinitionsItemTasksRequestBuilder and sets the default values.
 func NewTaskDefinitionsItemTasksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TaskDefinitionsItemTasksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTaskDefinitionsItemTasksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *TaskDefinitionsItemTasksCountRequestBuilder when successful
 func (m *TaskDefinitionsItemTasksRequestBuilder) Count()(*TaskDefinitionsItemTasksCountRequestBuilder) {
     return NewTaskDefinitionsItemTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+// returns a PrintTaskCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printtaskdefinition-list-tasks?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) Get(ctx context.Context, reques
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrintTaskCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) Get(ctx context.Context, reques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskCollectionResponseable), nil
 }
 // Post create new navigation property to tasks for print
+// returns a PrintTaskable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TaskDefinitionsItemTasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, requestConfiguration *TaskDefinitionsItemTasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrintTaskFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) Post(ctx context.Context, body 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable), nil
 }
 // ToGetRequestInformation retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+// returns a *RequestInformation when successful
 func (m *TaskDefinitionsItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TaskDefinitionsItemTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to tasks for print
+// returns a *RequestInformation when successful
 func (m *TaskDefinitionsItemTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, requestConfiguration *TaskDefinitionsItemTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}/tasks", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *TaskDefinitionsItemTasksRequestBuilder) ToPostRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TaskDefinitionsItemTasksRequestBuilder when successful
 func (m *TaskDefinitionsItemTasksRequestBuilder) WithUrl(rawUrl string)(*TaskDefinitionsItemTasksRequestBuilder) {
     return NewTaskDefinitionsItemTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

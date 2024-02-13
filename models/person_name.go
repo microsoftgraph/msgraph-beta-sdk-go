@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonName 
 type PersonName struct {
     ItemFacet
 }
-// NewPersonName instantiates a new personName and sets the default values.
+// NewPersonName instantiates a new PersonName and sets the default values.
 func NewPersonName()(*PersonName) {
     m := &PersonName{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewPersonName()(*PersonName) {
     return m
 }
 // CreatePersonNameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePersonNameFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonName(), nil
 }
 // GetDisplayName gets the displayName property value. Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
+// returns a *string when successful
 func (m *PersonName) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PersonName) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PersonName) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -148,6 +150,7 @@ func (m *PersonName) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetFirst gets the first property value. First name of the user.
+// returns a *string when successful
 func (m *PersonName) GetFirst()(*string) {
     val, err := m.GetBackingStore().Get("first")
     if err != nil {
@@ -159,6 +162,7 @@ func (m *PersonName) GetFirst()(*string) {
     return nil
 }
 // GetInitials gets the initials property value. Initials of the user.
+// returns a *string when successful
 func (m *PersonName) GetInitials()(*string) {
     val, err := m.GetBackingStore().Get("initials")
     if err != nil {
@@ -170,6 +174,7 @@ func (m *PersonName) GetInitials()(*string) {
     return nil
 }
 // GetLanguageTag gets the languageTag property value. Contains the name for the language (en-US, no-NB, en-AU) following IETF BCP47 format.
+// returns a *string when successful
 func (m *PersonName) GetLanguageTag()(*string) {
     val, err := m.GetBackingStore().Get("languageTag")
     if err != nil {
@@ -181,6 +186,7 @@ func (m *PersonName) GetLanguageTag()(*string) {
     return nil
 }
 // GetLast gets the last property value. Last name of the user.
+// returns a *string when successful
 func (m *PersonName) GetLast()(*string) {
     val, err := m.GetBackingStore().Get("last")
     if err != nil {
@@ -192,6 +198,7 @@ func (m *PersonName) GetLast()(*string) {
     return nil
 }
 // GetMaiden gets the maiden property value. Maiden name of the user.
+// returns a *string when successful
 func (m *PersonName) GetMaiden()(*string) {
     val, err := m.GetBackingStore().Get("maiden")
     if err != nil {
@@ -203,6 +210,7 @@ func (m *PersonName) GetMaiden()(*string) {
     return nil
 }
 // GetMiddle gets the middle property value. Middle name of the user.
+// returns a *string when successful
 func (m *PersonName) GetMiddle()(*string) {
     val, err := m.GetBackingStore().Get("middle")
     if err != nil {
@@ -214,6 +222,7 @@ func (m *PersonName) GetMiddle()(*string) {
     return nil
 }
 // GetNickname gets the nickname property value. Nickname of the user.
+// returns a *string when successful
 func (m *PersonName) GetNickname()(*string) {
     val, err := m.GetBackingStore().Get("nickname")
     if err != nil {
@@ -225,6 +234,7 @@ func (m *PersonName) GetNickname()(*string) {
     return nil
 }
 // GetPronunciation gets the pronunciation property value. Guidance on how to pronounce the users name.
+// returns a PersonNamePronounciationable when successful
 func (m *PersonName) GetPronunciation()(PersonNamePronounciationable) {
     val, err := m.GetBackingStore().Get("pronunciation")
     if err != nil {
@@ -236,6 +246,7 @@ func (m *PersonName) GetPronunciation()(PersonNamePronounciationable) {
     return nil
 }
 // GetSuffix gets the suffix property value. Designators used after the users name (eg: PhD.)
+// returns a *string when successful
 func (m *PersonName) GetSuffix()(*string) {
     val, err := m.GetBackingStore().Get("suffix")
     if err != nil {
@@ -247,6 +258,7 @@ func (m *PersonName) GetSuffix()(*string) {
     return nil
 }
 // GetTitle gets the title property value. Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)
+// returns a *string when successful
 func (m *PersonName) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -408,7 +420,6 @@ func (m *PersonName) SetTitle(value *string)() {
         panic(err)
     }
 }
-// PersonNameable 
 type PersonNameable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

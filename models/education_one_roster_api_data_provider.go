@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationOneRosterApiDataProvider 
 type EducationOneRosterApiDataProvider struct {
     EducationSynchronizationDataProvider
 }
-// NewEducationOneRosterApiDataProvider instantiates a new educationOneRosterApiDataProvider and sets the default values.
+// NewEducationOneRosterApiDataProvider instantiates a new EducationOneRosterApiDataProvider and sets the default values.
 func NewEducationOneRosterApiDataProvider()(*EducationOneRosterApiDataProvider) {
     m := &EducationOneRosterApiDataProvider{
         EducationSynchronizationDataProvider: *NewEducationSynchronizationDataProvider(),
@@ -18,10 +17,12 @@ func NewEducationOneRosterApiDataProvider()(*EducationOneRosterApiDataProvider) 
     return m
 }
 // CreateEducationOneRosterApiDataProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationOneRosterApiDataProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationOneRosterApiDataProvider(), nil
 }
 // GetConnectionSettings gets the connectionSettings property value. The connectionSettings property
+// returns a EducationSynchronizationConnectionSettingsable when successful
 func (m *EducationOneRosterApiDataProvider) GetConnectionSettings()(EducationSynchronizationConnectionSettingsable) {
     val, err := m.GetBackingStore().Get("connectionSettings")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EducationOneRosterApiDataProvider) GetConnectionSettings()(EducationSyn
     return nil
 }
 // GetConnectionUrl gets the connectionUrl property value. The connection URL to the OneRoster instance.
+// returns a *string when successful
 func (m *EducationOneRosterApiDataProvider) GetConnectionUrl()(*string) {
     val, err := m.GetBackingStore().Get("connectionUrl")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *EducationOneRosterApiDataProvider) GetConnectionUrl()(*string) {
     return nil
 }
 // GetCustomizations gets the customizations property value. Optional customization to be applied to the synchronization profile.
+// returns a EducationSynchronizationCustomizationsable when successful
 func (m *EducationOneRosterApiDataProvider) GetCustomizations()(EducationSynchronizationCustomizationsable) {
     val, err := m.GetBackingStore().Get("customizations")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *EducationOneRosterApiDataProvider) GetCustomizations()(EducationSynchro
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationOneRosterApiDataProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationSynchronizationDataProvider.GetFieldDeserializers()
     res["connectionSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -132,6 +136,7 @@ func (m *EducationOneRosterApiDataProvider) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetProviderName gets the providerName property value. The OneRoster Service Provider name as defined by the [OneRoster specification][oneroster].
+// returns a *string when successful
 func (m *EducationOneRosterApiDataProvider) GetProviderName()(*string) {
     val, err := m.GetBackingStore().Get("providerName")
     if err != nil {
@@ -143,6 +148,7 @@ func (m *EducationOneRosterApiDataProvider) GetProviderName()(*string) {
     return nil
 }
 // GetSchoolsIds gets the schoolsIds property value. The list of [School/Org][orgs] sourcedId to sync.
+// returns a []string when successful
 func (m *EducationOneRosterApiDataProvider) GetSchoolsIds()([]string) {
     val, err := m.GetBackingStore().Get("schoolsIds")
     if err != nil {
@@ -154,6 +160,7 @@ func (m *EducationOneRosterApiDataProvider) GetSchoolsIds()([]string) {
     return nil
 }
 // GetTermIds gets the termIds property value. The list of [academic sessions][terms] to sync.
+// returns a []string when successful
 func (m *EducationOneRosterApiDataProvider) GetTermIds()([]string) {
     val, err := m.GetBackingStore().Get("termIds")
     if err != nil {
@@ -250,7 +257,6 @@ func (m *EducationOneRosterApiDataProvider) SetTermIds(value []string)() {
         panic(err)
     }
 }
-// EducationOneRosterApiDataProviderable 
 type EducationOneRosterApiDataProviderable interface {
     EducationSynchronizationDataProviderable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

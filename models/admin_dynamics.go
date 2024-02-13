@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AdminDynamics 
 type AdminDynamics struct {
     Entity
 }
-// NewAdminDynamics instantiates a new adminDynamics and sets the default values.
+// NewAdminDynamics instantiates a new AdminDynamics and sets the default values.
 func NewAdminDynamics()(*AdminDynamics) {
     m := &AdminDynamics{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAdminDynamics()(*AdminDynamics) {
     return m
 }
 // CreateAdminDynamicsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAdminDynamicsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdminDynamics(), nil
 }
 // GetCustomerVoice gets the customerVoice property value. The customerVoice property
+// returns a CustomerVoiceSettingsable when successful
 func (m *AdminDynamics) GetCustomerVoice()(CustomerVoiceSettingsable) {
     val, err := m.GetBackingStore().Get("customerVoice")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AdminDynamics) GetCustomerVoice()(CustomerVoiceSettingsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AdminDynamics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["customerVoice"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,7 +68,6 @@ func (m *AdminDynamics) SetCustomerVoice(value CustomerVoiceSettingsable)() {
         panic(err)
     }
 }
-// AdminDynamicsable 
 type AdminDynamicsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

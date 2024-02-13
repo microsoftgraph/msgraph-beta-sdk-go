@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationOAuth2ClientCredentialsConnectionSettings 
 type EducationSynchronizationOAuth2ClientCredentialsConnectionSettings struct {
     EducationSynchronizationConnectionSettings
 }
-// NewEducationSynchronizationOAuth2ClientCredentialsConnectionSettings instantiates a new educationSynchronizationOAuth2ClientCredentialsConnectionSettings and sets the default values.
+// NewEducationSynchronizationOAuth2ClientCredentialsConnectionSettings instantiates a new EducationSynchronizationOAuth2ClientCredentialsConnectionSettings and sets the default values.
 func NewEducationSynchronizationOAuth2ClientCredentialsConnectionSettings()(*EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) {
     m := &EducationSynchronizationOAuth2ClientCredentialsConnectionSettings{
         EducationSynchronizationConnectionSettings: *NewEducationSynchronizationConnectionSettings(),
@@ -18,10 +17,12 @@ func NewEducationSynchronizationOAuth2ClientCredentialsConnectionSettings()(*Edu
     return m
 }
 // CreateEducationSynchronizationOAuth2ClientCredentialsConnectionSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationSynchronizationOAuth2ClientCredentialsConnectionSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSynchronizationOAuth2ClientCredentialsConnectionSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationSynchronizationConnectionSettings.GetFieldDeserializers()
     res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetF
     return res
 }
 // GetScope gets the scope property value. The scope of the access request (see RFC6749).
+// returns a *string when successful
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetScope()(*string) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetS
     return nil
 }
 // GetTokenUrl gets the tokenUrl property value. The URL to get access tokens for the data provider.
+// returns a *string when successful
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetTokenUrl()(*string) {
     val, err := m.GetBackingStore().Get("tokenUrl")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) SetT
         panic(err)
     }
 }
-// EducationSynchronizationOAuth2ClientCredentialsConnectionSettingsable 
 type EducationSynchronizationOAuth2ClientCredentialsConnectionSettingsable interface {
     EducationSynchronizationConnectionSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

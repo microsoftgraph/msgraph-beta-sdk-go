@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OpenAwsSecurityGroupFinding 
 type OpenAwsSecurityGroupFinding struct {
     Finding
 }
-// NewOpenAwsSecurityGroupFinding instantiates a new openAwsSecurityGroupFinding and sets the default values.
+// NewOpenAwsSecurityGroupFinding instantiates a new OpenAwsSecurityGroupFinding and sets the default values.
 func NewOpenAwsSecurityGroupFinding()(*OpenAwsSecurityGroupFinding) {
     m := &OpenAwsSecurityGroupFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewOpenAwsSecurityGroupFinding()(*OpenAwsSecurityGroupFinding) {
     return m
 }
 // CreateOpenAwsSecurityGroupFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOpenAwsSecurityGroupFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenAwsSecurityGroupFinding(), nil
 }
 // GetAssignedComputeInstancesDetails gets the assignedComputeInstancesDetails property value. A set of AWS EC2 compute instances related to this open security group.
+// returns a []AssignedComputeInstanceDetailsable when successful
 func (m *OpenAwsSecurityGroupFinding) GetAssignedComputeInstancesDetails()([]AssignedComputeInstanceDetailsable) {
     val, err := m.GetBackingStore().Get("assignedComputeInstancesDetails")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *OpenAwsSecurityGroupFinding) GetAssignedComputeInstancesDetails()([]Ass
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OpenAwsSecurityGroupFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["assignedComputeInstancesDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,6 +84,7 @@ func (m *OpenAwsSecurityGroupFinding) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetInboundPorts gets the inboundPorts property value. The inboundPorts property
+// returns a InboundPortsable when successful
 func (m *OpenAwsSecurityGroupFinding) GetInboundPorts()(InboundPortsable) {
     val, err := m.GetBackingStore().Get("inboundPorts")
     if err != nil {
@@ -93,6 +96,7 @@ func (m *OpenAwsSecurityGroupFinding) GetInboundPorts()(InboundPortsable) {
     return nil
 }
 // GetSecurityGroup gets the securityGroup property value. The securityGroup property
+// returns a AwsAuthorizationSystemResourceable when successful
 func (m *OpenAwsSecurityGroupFinding) GetSecurityGroup()(AwsAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("securityGroup")
     if err != nil {
@@ -104,6 +108,7 @@ func (m *OpenAwsSecurityGroupFinding) GetSecurityGroup()(AwsAuthorizationSystemR
     return nil
 }
 // GetTotalStorageBucketCount gets the totalStorageBucketCount property value. The number of storage buckets accessed by the assigned compute instances.
+// returns a *int32 when successful
 func (m *OpenAwsSecurityGroupFinding) GetTotalStorageBucketCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalStorageBucketCount")
     if err != nil {
@@ -180,7 +185,6 @@ func (m *OpenAwsSecurityGroupFinding) SetTotalStorageBucketCount(value *int32)()
         panic(err)
     }
 }
-// OpenAwsSecurityGroupFindingable 
 type OpenAwsSecurityGroupFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

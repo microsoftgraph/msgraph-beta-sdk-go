@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementExchangeOnPremisesPolicyCollectionResponse 
 type DeviceManagementExchangeOnPremisesPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementExchangeOnPremisesPolicyCollectionResponse instantiates a new deviceManagementExchangeOnPremisesPolicyCollectionResponse and sets the default values.
+// NewDeviceManagementExchangeOnPremisesPolicyCollectionResponse instantiates a new DeviceManagementExchangeOnPremisesPolicyCollectionResponse and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicyCollectionResponse()(*DeviceManagementExchangeOnPremisesPolicyCollectionResponse) {
     m := &DeviceManagementExchangeOnPremisesPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeviceManagementExchangeOnPremisesPolicyCollectionResponse()(*DeviceMana
     return m
 }
 // CreateDeviceManagementExchangeOnPremisesPolicyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementExchangeOnPremisesPolicyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementExchangeOnPremisesPolicyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementExchangeOnPremisesPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicyCollectionResponse) GetFieldDes
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeviceManagementExchangeOnPremisesPolicyable when successful
 func (m *DeviceManagementExchangeOnPremisesPolicyCollectionResponse) GetValue()([]DeviceManagementExchangeOnPremisesPolicyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeviceManagementExchangeOnPremisesPolicyCollectionResponse) SetValue(va
         panic(err)
     }
 }
-// DeviceManagementExchangeOnPremisesPolicyCollectionResponseable 
 type DeviceManagementExchangeOnPremisesPolicyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

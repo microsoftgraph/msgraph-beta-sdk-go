@@ -10,7 +10,7 @@ type MobileAppIntentAndStateDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMobileAppIntentAndStateDetail instantiates a new mobileAppIntentAndStateDetail and sets the default values.
+// NewMobileAppIntentAndStateDetail instantiates a new MobileAppIntentAndStateDetail and sets the default values.
 func NewMobileAppIntentAndStateDetail()(*MobileAppIntentAndStateDetail) {
     m := &MobileAppIntentAndStateDetail{
     }
@@ -19,10 +19,12 @@ func NewMobileAppIntentAndStateDetail()(*MobileAppIntentAndStateDetail) {
     return m
 }
 // CreateMobileAppIntentAndStateDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppIntentAndStateDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppIntentAndStateDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MobileAppIntentAndStateDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +37,7 @@ func (m *MobileAppIntentAndStateDetail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApplicationId gets the applicationId property value. MobieApp identifier.
+// returns a *string when successful
 func (m *MobileAppIntentAndStateDetail) GetApplicationId()(*string) {
     val, err := m.GetBackingStore().Get("applicationId")
     if err != nil {
@@ -46,10 +49,12 @@ func (m *MobileAppIntentAndStateDetail) GetApplicationId()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MobileAppIntentAndStateDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. The admin provided or imported title of the app.
+// returns a *string when successful
 func (m *MobileAppIntentAndStateDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *MobileAppIntentAndStateDetail) GetDisplayName()(*string) {
     return nil
 }
 // GetDisplayVersion gets the displayVersion property value. Human readable version of the application
+// returns a *string when successful
 func (m *MobileAppIntentAndStateDetail) GetDisplayVersion()(*string) {
     val, err := m.GetBackingStore().Get("displayVersion")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *MobileAppIntentAndStateDetail) GetDisplayVersion()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["applicationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -153,6 +160,7 @@ func (m *MobileAppIntentAndStateDetail) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetInstallState gets the installState property value. A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.
+// returns a *ResultantAppState when successful
 func (m *MobileAppIntentAndStateDetail) GetInstallState()(*ResultantAppState) {
     val, err := m.GetBackingStore().Get("installState")
     if err != nil {
@@ -164,6 +172,7 @@ func (m *MobileAppIntentAndStateDetail) GetInstallState()(*ResultantAppState) {
     return nil
 }
 // GetMobileAppIntent gets the mobileAppIntent property value. Indicates the status of the mobile app on the device.
+// returns a *MobileAppIntent when successful
 func (m *MobileAppIntentAndStateDetail) GetMobileAppIntent()(*MobileAppIntent) {
     val, err := m.GetBackingStore().Get("mobileAppIntent")
     if err != nil {
@@ -175,6 +184,7 @@ func (m *MobileAppIntentAndStateDetail) GetMobileAppIntent()(*MobileAppIntent) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MobileAppIntentAndStateDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -186,6 +196,7 @@ func (m *MobileAppIntentAndStateDetail) GetOdataType()(*string) {
     return nil
 }
 // GetSupportedDeviceTypes gets the supportedDeviceTypes property value. The supported platforms for the app.
+// returns a []MobileAppSupportedDeviceTypeable when successful
 func (m *MobileAppIntentAndStateDetail) GetSupportedDeviceTypes()([]MobileAppSupportedDeviceTypeable) {
     val, err := m.GetBackingStore().Get("supportedDeviceTypes")
     if err != nil {
@@ -316,7 +327,6 @@ func (m *MobileAppIntentAndStateDetail) SetSupportedDeviceTypes(value []MobileAp
         panic(err)
     }
 }
-// MobileAppIntentAndStateDetailable 
 type MobileAppIntentAndStateDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

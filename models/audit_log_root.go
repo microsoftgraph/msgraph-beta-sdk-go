@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AuditLogRoot 
 type AuditLogRoot struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuditLogRoot instantiates a new auditLogRoot and sets the default values.
+// NewAuditLogRoot instantiates a new AuditLogRoot and sets the default values.
 func NewAuditLogRoot()(*AuditLogRoot) {
     m := &AuditLogRoot{
     }
@@ -19,10 +18,12 @@ func NewAuditLogRoot()(*AuditLogRoot) {
     return m
 }
 // CreateAuditLogRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuditLogRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditLogRoot(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuditLogRoot) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AuditLogRoot) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuditLogRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCustomSecurityAttributeAudits gets the customSecurityAttributeAudits property value. Represents a custom security attribute audit log.
+// returns a []CustomSecurityAttributeAuditable when successful
 func (m *AuditLogRoot) GetCustomSecurityAttributeAudits()([]CustomSecurityAttributeAuditable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributeAudits")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AuditLogRoot) GetCustomSecurityAttributeAudits()([]CustomSecurityAttrib
     return nil
 }
 // GetDirectoryAudits gets the directoryAudits property value. The directoryAudits property
+// returns a []DirectoryAuditable when successful
 func (m *AuditLogRoot) GetDirectoryAudits()([]DirectoryAuditable) {
     val, err := m.GetBackingStore().Get("directoryAudits")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *AuditLogRoot) GetDirectoryAudits()([]DirectoryAuditable) {
     return nil
 }
 // GetDirectoryProvisioning gets the directoryProvisioning property value. The directoryProvisioning property
+// returns a []ProvisioningObjectSummaryable when successful
 func (m *AuditLogRoot) GetDirectoryProvisioning()([]ProvisioningObjectSummaryable) {
     val, err := m.GetBackingStore().Get("directoryProvisioning")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *AuditLogRoot) GetDirectoryProvisioning()([]ProvisioningObjectSummaryabl
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["customSecurityAttributeAudits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -167,6 +173,7 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuditLogRoot) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *AuditLogRoot) GetOdataType()(*string) {
     return nil
 }
 // GetProvisioning gets the provisioning property value. Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
+// returns a []ProvisioningObjectSummaryable when successful
 func (m *AuditLogRoot) GetProvisioning()([]ProvisioningObjectSummaryable) {
     val, err := m.GetBackingStore().Get("provisioning")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *AuditLogRoot) GetProvisioning()([]ProvisioningObjectSummaryable) {
     return nil
 }
 // GetSignIns gets the signIns property value. The signIns property
+// returns a []SignInable when successful
 func (m *AuditLogRoot) GetSignIns()([]SignInable) {
     val, err := m.GetBackingStore().Get("signIns")
     if err != nil {
@@ -328,7 +337,6 @@ func (m *AuditLogRoot) SetSignIns(value []SignInable)() {
         panic(err)
     }
 }
-// AuditLogRootable 
 type AuditLogRootable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

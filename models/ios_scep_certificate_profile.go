@@ -8,7 +8,7 @@ import (
 type IosScepCertificateProfile struct {
     IosCertificateProfileBase
 }
-// NewIosScepCertificateProfile instantiates a new iosScepCertificateProfile and sets the default values.
+// NewIosScepCertificateProfile instantiates a new IosScepCertificateProfile and sets the default values.
 func NewIosScepCertificateProfile()(*IosScepCertificateProfile) {
     m := &IosScepCertificateProfile{
         IosCertificateProfileBase: *NewIosCertificateProfileBase(),
@@ -18,10 +18,12 @@ func NewIosScepCertificateProfile()(*IosScepCertificateProfile) {
     return m
 }
 // CreateIosScepCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosScepCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosScepCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
+// returns a *CertificateStore when successful
 func (m *IosScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
     return nil
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. The OnPremisesUserPrincipalName variable is support as well as others documented here: https://go.microsoft.com/fwlink/?LinkId=2027630. This collection can contain a maximum of 500 elements.
+// returns a []CustomSubjectAlternativeNameable when successful
 func (m *IosScepCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
     val, err := m.GetBackingStore().Get("customSubjectAlternativeNames")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *IosScepCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomS
     return nil
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
+// returns a []ExtendedKeyUsageable when successful
 func (m *IosScepCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
     val, err := m.GetBackingStore().Get("extendedKeyUsages")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *IosScepCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageabl
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosCertificateProfileBase.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -184,6 +189,7 @@ func (m *IosScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetKeySize gets the keySize property value. Key Size Options.
+// returns a *KeySize when successful
 func (m *IosScepCertificateProfile) GetKeySize()(*KeySize) {
     val, err := m.GetBackingStore().Get("keySize")
     if err != nil {
@@ -195,6 +201,7 @@ func (m *IosScepCertificateProfile) GetKeySize()(*KeySize) {
     return nil
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
+// returns a *KeyUsages when successful
 func (m *IosScepCertificateProfile) GetKeyUsage()(*KeyUsages) {
     val, err := m.GetBackingStore().Get("keyUsage")
     if err != nil {
@@ -206,6 +213,7 @@ func (m *IosScepCertificateProfile) GetKeyUsage()(*KeyUsages) {
     return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+// returns a []ManagedDeviceCertificateStateable when successful
 func (m *IosScepCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
     if err != nil {
@@ -217,6 +225,7 @@ func (m *IosScepCertificateProfile) GetManagedDeviceCertificateStates()([]Manage
     return nil
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate.
+// returns a IosTrustedRootCertificateable when successful
 func (m *IosScepCertificateProfile) GetRootCertificate()(IosTrustedRootCertificateable) {
     val, err := m.GetBackingStore().Get("rootCertificate")
     if err != nil {
@@ -228,6 +237,7 @@ func (m *IosScepCertificateProfile) GetRootCertificate()(IosTrustedRootCertifica
     return nil
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s).
+// returns a []string when successful
 func (m *IosScepCertificateProfile) GetScepServerUrls()([]string) {
     val, err := m.GetBackingStore().Get("scepServerUrls")
     if err != nil {
@@ -239,6 +249,7 @@ func (m *IosScepCertificateProfile) GetScepServerUrls()([]string) {
     return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
+// returns a *string when successful
 func (m *IosScepCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
     if err != nil {
@@ -250,6 +261,7 @@ func (m *IosScepCertificateProfile) GetSubjectAlternativeNameFormatString()(*str
     return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
+// returns a *string when successful
 func (m *IosScepCertificateProfile) GetSubjectNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectNameFormatString")
     if err != nil {
@@ -419,7 +431,6 @@ func (m *IosScepCertificateProfile) SetSubjectNameFormatString(value *string)() 
         panic(err)
     }
 }
-// IosScepCertificateProfileable 
 type IosScepCertificateProfileable interface {
     IosCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

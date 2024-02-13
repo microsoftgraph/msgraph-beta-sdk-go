@@ -8,7 +8,7 @@ import (
 type AndroidManagedStoreAppConfiguration struct {
     ManagedDeviceMobileAppConfiguration
 }
-// NewAndroidManagedStoreAppConfiguration instantiates a new androidManagedStoreAppConfiguration and sets the default values.
+// NewAndroidManagedStoreAppConfiguration instantiates a new AndroidManagedStoreAppConfiguration and sets the default values.
 func NewAndroidManagedStoreAppConfiguration()(*AndroidManagedStoreAppConfiguration) {
     m := &AndroidManagedStoreAppConfiguration{
         ManagedDeviceMobileAppConfiguration: *NewManagedDeviceMobileAppConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidManagedStoreAppConfiguration()(*AndroidManagedStoreAppConfigurati
     return m
 }
 // CreateAndroidManagedStoreAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidManagedStoreAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidManagedStoreAppConfiguration(), nil
 }
 // GetAppSupportsOemConfig gets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy.
+// returns a *bool when successful
 func (m *AndroidManagedStoreAppConfiguration) GetAppSupportsOemConfig()(*bool) {
     val, err := m.GetBackingStore().Get("appSupportsOemConfig")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidManagedStoreAppConfiguration) GetAppSupportsOemConfig()(*bool) {
     return nil
 }
 // GetConnectedAppsEnabled gets the connectedAppsEnabled property value. Setting to specify whether to allow ConnectedApps experience for this app.
+// returns a *bool when successful
 func (m *AndroidManagedStoreAppConfiguration) GetConnectedAppsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("connectedAppsEnabled")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidManagedStoreAppConfiguration) GetConnectedAppsEnabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidManagedStoreAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedDeviceMobileAppConfiguration.GetFieldDeserializers()
     res["appSupportsOemConfig"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +119,7 @@ func (m *AndroidManagedStoreAppConfiguration) GetFieldDeserializers()(map[string
     return res
 }
 // GetPackageId gets the packageId property value. Android Enterprise app configuration package id.
+// returns a *string when successful
 func (m *AndroidManagedStoreAppConfiguration) GetPackageId()(*string) {
     val, err := m.GetBackingStore().Get("packageId")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *AndroidManagedStoreAppConfiguration) GetPackageId()(*string) {
     return nil
 }
 // GetPayloadJson gets the payloadJson property value. Android Enterprise app configuration JSON payload.
+// returns a *string when successful
 func (m *AndroidManagedStoreAppConfiguration) GetPayloadJson()(*string) {
     val, err := m.GetBackingStore().Get("payloadJson")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *AndroidManagedStoreAppConfiguration) GetPayloadJson()(*string) {
     return nil
 }
 // GetPermissionActions gets the permissionActions property value. List of Android app permissions and corresponding permission actions.
+// returns a []AndroidPermissionActionable when successful
 func (m *AndroidManagedStoreAppConfiguration) GetPermissionActions()([]AndroidPermissionActionable) {
     val, err := m.GetBackingStore().Get("permissionActions")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *AndroidManagedStoreAppConfiguration) GetPermissionActions()([]AndroidPe
     return nil
 }
 // GetProfileApplicability gets the profileApplicability property value. Android profile applicability
+// returns a *AndroidProfileApplicability when successful
 func (m *AndroidManagedStoreAppConfiguration) GetProfileApplicability()(*AndroidProfileApplicability) {
     val, err := m.GetBackingStore().Get("profileApplicability")
     if err != nil {
@@ -251,7 +259,6 @@ func (m *AndroidManagedStoreAppConfiguration) SetProfileApplicability(value *And
         panic(err)
     }
 }
-// AndroidManagedStoreAppConfigurationable 
 type AndroidManagedStoreAppConfigurationable interface {
     ManagedDeviceMobileAppConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

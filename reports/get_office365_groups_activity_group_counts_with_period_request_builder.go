@@ -14,6 +14,8 @@ type GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder struct {
 type GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -39,7 +41,7 @@ type GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGetRequestConf
 // NewGetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderInternal instantiates a new GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder and sets the default values.
 func NewGetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, period *string)(*GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) {
     m := &GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityGroupCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityGroupCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     if period != nil {
         m.BaseRequestBuilder.PathParameters["period"] = *period
@@ -53,15 +55,16 @@ func NewGetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder(rawUrl str
     return NewGetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getOffice365GroupsActivityGroupCounts
-// Deprecated: This method is obsolete. Use GetAsGetOffice365GroupsActivityGroupCountsWithPeriodGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a GetOffice365GroupsActivityGroupCountsWithPeriodResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityGroupCountsWithPeriodResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetOffice365GroupsActivityGroupCountsWithPeriodResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -73,14 +76,15 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) Get(ctx 
     return res.(GetOffice365GroupsActivityGroupCountsWithPeriodResponseable), nil
 }
 // GetAsGetOffice365GroupsActivityGroupCountsWithPeriodGetResponse invoke function getOffice365GroupsActivityGroupCounts
+// returns a GetOffice365GroupsActivityGroupCountsWithPeriodGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) GetAsGetOffice365GroupsActivityGroupCountsWithPeriodGetResponse(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityGroupCountsWithPeriodGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetOffice365GroupsActivityGroupCountsWithPeriodGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -92,6 +96,7 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) GetAsGet
     return res.(GetOffice365GroupsActivityGroupCountsWithPeriodGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getOffice365GroupsActivityGroupCounts
+// returns a *RequestInformation when successful
 func (m *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -105,6 +110,7 @@ func (m *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) ToGetReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder when successful
 func (m *GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) WithUrl(rawUrl string)(*GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder) {
     return NewGetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

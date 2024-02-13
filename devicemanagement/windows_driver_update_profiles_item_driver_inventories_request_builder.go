@@ -47,6 +47,7 @@ type WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderPostRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByWindowsDriverUpdateInventoryId provides operations to manage the driverInventories property of the microsoft.graph.windowsDriverUpdateProfile entity.
+// returns a *WindowsDriverUpdateProfilesItemDriverInventoriesWindowsDriverUpdateInventoryItemRequestBuilder when successful
 func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ByWindowsDriverUpdateInventoryId(windowsDriverUpdateInventoryId string)(*WindowsDriverUpdateProfilesItemDriverInventoriesWindowsDriverUpdateInventoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ByWindo
     }
     return NewWindowsDriverUpdateProfilesItemDriverInventoriesWindowsDriverUpdateInventoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewWindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderInternal instantiates a new DriverInventoriesRequestBuilder and sets the default values.
+// NewWindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderInternal instantiates a new WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder and sets the default values.
 func NewWindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) {
     m := &WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/driverInventories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/driverInventories{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewWindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder instantiates a new DriverInventoriesRequestBuilder and sets the default values.
+// NewWindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder instantiates a new WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder and sets the default values.
 func NewWindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *WindowsDriverUpdateProfilesItemDriverInventoriesCountRequestBuilder when successful
 func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) Count()(*WindowsDriverUpdateProfilesItemDriverInventoriesCountRequestBuilder) {
     return NewWindowsDriverUpdateProfilesItemDriverInventoriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get driver inventories for this profile.
+// returns a WindowsDriverUpdateInventoryCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateInventoryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWindowsDriverUpdateInventoryCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) Get(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateInventoryCollectionResponseable), nil
 }
 // Post create new navigation property to driverInventories for deviceManagement
+// returns a WindowsDriverUpdateInventoryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateInventoryable, requestConfiguration *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateInventoryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWindowsDriverUpdateInventoryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) Post(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateInventoryable), nil
 }
 // ToGetRequestInformation driver inventories for this profile.
+// returns a *RequestInformation when successful
 func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to driverInventories for deviceManagement
+// returns a *RequestInformation when successful
 func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateInventoryable, requestConfiguration *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile%2Did}/driverInventories", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) ToPostR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder when successful
 func (m *WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) WithUrl(rawUrl string)(*WindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder) {
     return NewWindowsDriverUpdateProfilesItemDriverInventoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

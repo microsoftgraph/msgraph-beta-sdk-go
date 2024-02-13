@@ -27,28 +27,29 @@ type UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderGetReques
     // Request query parameters
     QueryParameters *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderGetQueryParameters
 }
-// NewUserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderInternal instantiates a new AppHealthMetricsRequestBuilder and sets the default values.
+// NewUserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderInternal instantiates a new UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) {
     m := &UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/appHealthMetrics{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/appHealthMetrics{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewUserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder instantiates a new AppHealthMetricsRequestBuilder and sets the default values.
+// NewUserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder instantiates a new UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the scores and insights for the application health metrics.
+// returns a UserExperienceAnalyticsCategoryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) Get
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable), nil
 }
 // ToGetRequestInformation the scores and insights for the application health metrics.
+// returns a *RequestInformation when successful
 func (m *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) ToG
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder when successful
 func (m *UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder) {
     return NewUserExperienceAnalyticsBaselinesItemAppHealthMetricsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

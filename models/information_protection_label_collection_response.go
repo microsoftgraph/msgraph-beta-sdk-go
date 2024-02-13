@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InformationProtectionLabelCollectionResponse 
 type InformationProtectionLabelCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewInformationProtectionLabelCollectionResponse instantiates a new informationProtectionLabelCollectionResponse and sets the default values.
+// NewInformationProtectionLabelCollectionResponse instantiates a new InformationProtectionLabelCollectionResponse and sets the default values.
 func NewInformationProtectionLabelCollectionResponse()(*InformationProtectionLabelCollectionResponse) {
     m := &InformationProtectionLabelCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewInformationProtectionLabelCollectionResponse()(*InformationProtectionLab
     return m
 }
 // CreateInformationProtectionLabelCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInformationProtectionLabelCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInformationProtectionLabelCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InformationProtectionLabelCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *InformationProtectionLabelCollectionResponse) GetFieldDeserializers()(m
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []InformationProtectionLabelable when successful
 func (m *InformationProtectionLabelCollectionResponse) GetValue()([]InformationProtectionLabelable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *InformationProtectionLabelCollectionResponse) SetValue(value []Informat
         panic(err)
     }
 }
-// InformationProtectionLabelCollectionResponseable 
 type InformationProtectionLabelCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

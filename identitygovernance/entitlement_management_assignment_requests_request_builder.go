@@ -48,6 +48,7 @@ type EntitlementManagementAssignmentRequestsRequestBuilderPostRequestConfigurati
 }
 // ByAccessPackageAssignmentRequestId provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *EntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilder when successful
 func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ByAccessPackageAssignmentRequestId(accessPackageAssignmentRequestId string)(*EntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -58,30 +59,34 @@ func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ByAccessPackageA
     }
     return NewEntitlementManagementAssignmentRequestsAccessPackageAssignmentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewEntitlementManagementAssignmentRequestsRequestBuilderInternal instantiates a new AssignmentRequestsRequestBuilder and sets the default values.
+// NewEntitlementManagementAssignmentRequestsRequestBuilderInternal instantiates a new EntitlementManagementAssignmentRequestsRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentRequestsRequestBuilder) {
     m := &EntitlementManagementAssignmentRequestsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAssignmentRequestsRequestBuilder instantiates a new AssignmentRequestsRequestBuilder and sets the default values.
+// NewEntitlementManagementAssignmentRequestsRequestBuilder instantiates a new EntitlementManagementAssignmentRequestsRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAssignmentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *EntitlementManagementAssignmentRequestsCountRequestBuilder when successful
 func (m *EntitlementManagementAssignmentRequestsRequestBuilder) Count()(*EntitlementManagementAssignmentRequestsCountRequestBuilder) {
     return NewEntitlementManagementAssignmentRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *EntitlementManagementAssignmentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get in Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a AccessPackageAssignmentRequestCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignmentrequests?view=graph-rest-1.0
@@ -91,8 +96,7 @@ func (m *EntitlementManagementAssignmentRequestsRequestBuilder) Get(ctx context.
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessPackageAssignmentRequestCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -105,6 +109,8 @@ func (m *EntitlementManagementAssignmentRequestsRequestBuilder) Get(ctx context.
 }
 // Post in Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a AccessPackageAssignmentRequestable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-1.0
@@ -114,8 +120,7 @@ func (m *EntitlementManagementAssignmentRequestsRequestBuilder) Post(ctx context
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessPackageAssignmentRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -128,6 +133,7 @@ func (m *EntitlementManagementAssignmentRequestsRequestBuilder) Post(ctx context
 }
 // ToGetRequestInformation in Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -142,8 +148,9 @@ func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ToGetRequestInfo
 }
 // ToPostRequestInformation in Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestable, requestConfiguration *EntitlementManagementAssignmentRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -157,6 +164,7 @@ func (m *EntitlementManagementAssignmentRequestsRequestBuilder) ToPostRequestInf
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *EntitlementManagementAssignmentRequestsRequestBuilder when successful
 func (m *EntitlementManagementAssignmentRequestsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAssignmentRequestsRequestBuilder) {
     return NewEntitlementManagementAssignmentRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

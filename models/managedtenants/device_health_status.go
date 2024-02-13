@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DeviceHealthStatus 
 type DeviceHealthStatus struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewDeviceHealthStatus instantiates a new deviceHealthStatus and sets the default values.
+// NewDeviceHealthStatus instantiates a new DeviceHealthStatus and sets the default values.
 func NewDeviceHealthStatus()(*DeviceHealthStatus) {
     m := &DeviceHealthStatus{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewDeviceHealthStatus()(*DeviceHealthStatus) {
     return m
 }
 // CreateDeviceHealthStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceHealthStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceHealthStatus(), nil
 }
 // GetBlueScreenCount gets the blueScreenCount property value. The blueScreenCount property
+// returns a *int32 when successful
 func (m *DeviceHealthStatus) GetBlueScreenCount()(*int32) {
     val, err := m.GetBackingStore().Get("blueScreenCount")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DeviceHealthStatus) GetBlueScreenCount()(*int32) {
     return nil
 }
 // GetBootTotalDurationInSeconds gets the bootTotalDurationInSeconds property value. The bootTotalDurationInSeconds property
+// returns a *float64 when successful
 func (m *DeviceHealthStatus) GetBootTotalDurationInSeconds()(*float64) {
     val, err := m.GetBackingStore().Get("bootTotalDurationInSeconds")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *DeviceHealthStatus) GetBootTotalDurationInSeconds()(*float64) {
     return nil
 }
 // GetDeviceId gets the deviceId property value. The deviceId property
+// returns a *string when successful
 func (m *DeviceHealthStatus) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *DeviceHealthStatus) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceMake gets the deviceMake property value. The deviceMake property
+// returns a *string when successful
 func (m *DeviceHealthStatus) GetDeviceMake()(*string) {
     val, err := m.GetBackingStore().Get("deviceMake")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *DeviceHealthStatus) GetDeviceMake()(*string) {
     return nil
 }
 // GetDeviceModel gets the deviceModel property value. The deviceModel property
+// returns a *string when successful
 func (m *DeviceHealthStatus) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *DeviceHealthStatus) GetDeviceModel()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. The deviceName property
+// returns a *string when successful
 func (m *DeviceHealthStatus) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *DeviceHealthStatus) GetDeviceName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceHealthStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["blueScreenCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -243,6 +250,7 @@ func (m *DeviceHealthStatus) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
+// returns a *string when successful
 func (m *DeviceHealthStatus) GetHealthStatus()(*string) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
@@ -254,6 +262,7 @@ func (m *DeviceHealthStatus) GetHealthStatus()(*string) {
     return nil
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// returns a *Time when successful
 func (m *DeviceHealthStatus) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -265,6 +274,7 @@ func (m *DeviceHealthStatus) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetOsVersion gets the osVersion property value. The osVersion property
+// returns a *string when successful
 func (m *DeviceHealthStatus) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -276,6 +286,7 @@ func (m *DeviceHealthStatus) GetOsVersion()(*string) {
     return nil
 }
 // GetPrimaryDiskType gets the primaryDiskType property value. The primaryDiskType property
+// returns a *string when successful
 func (m *DeviceHealthStatus) GetPrimaryDiskType()(*string) {
     val, err := m.GetBackingStore().Get("primaryDiskType")
     if err != nil {
@@ -287,6 +298,7 @@ func (m *DeviceHealthStatus) GetPrimaryDiskType()(*string) {
     return nil
 }
 // GetRestartCount gets the restartCount property value. The restartCount property
+// returns a *int32 when successful
 func (m *DeviceHealthStatus) GetRestartCount()(*int32) {
     val, err := m.GetBackingStore().Get("restartCount")
     if err != nil {
@@ -298,6 +310,7 @@ func (m *DeviceHealthStatus) GetRestartCount()(*int32) {
     return nil
 }
 // GetStartupPerformanceScore gets the startupPerformanceScore property value. The startupPerformanceScore property
+// returns a *float64 when successful
 func (m *DeviceHealthStatus) GetStartupPerformanceScore()(*float64) {
     val, err := m.GetBackingStore().Get("startupPerformanceScore")
     if err != nil {
@@ -309,6 +322,7 @@ func (m *DeviceHealthStatus) GetStartupPerformanceScore()(*float64) {
     return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The tenantDisplayName property
+// returns a *string when successful
 func (m *DeviceHealthStatus) GetTenantDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("tenantDisplayName")
     if err != nil {
@@ -320,6 +334,7 @@ func (m *DeviceHealthStatus) GetTenantDisplayName()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
+// returns a *string when successful
 func (m *DeviceHealthStatus) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -331,6 +346,7 @@ func (m *DeviceHealthStatus) GetTenantId()(*string) {
     return nil
 }
 // GetTopProcesses gets the topProcesses property value. The topProcesses property
+// returns a *string when successful
 func (m *DeviceHealthStatus) GetTopProcesses()(*string) {
     val, err := m.GetBackingStore().Get("topProcesses")
     if err != nil {
@@ -544,7 +560,6 @@ func (m *DeviceHealthStatus) SetTopProcesses(value *string)() {
         panic(err)
     }
 }
-// DeviceHealthStatusable 
 type DeviceHealthStatusable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

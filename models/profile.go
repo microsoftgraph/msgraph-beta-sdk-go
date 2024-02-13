@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Profile 
 type Profile struct {
     Entity
 }
-// NewProfile instantiates a new profile and sets the default values.
+// NewProfile instantiates a new Profile and sets the default values.
 func NewProfile()(*Profile) {
     m := &Profile{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewProfile()(*Profile) {
     return m
 }
 // CreateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProfile(), nil
 }
 // GetAccount gets the account property value. The account property
+// returns a []UserAccountInformationable when successful
 func (m *Profile) GetAccount()([]UserAccountInformationable) {
     val, err := m.GetBackingStore().Get("account")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Profile) GetAccount()([]UserAccountInformationable) {
     return nil
 }
 // GetAddresses gets the addresses property value. Represents details of addresses associated with the user.
+// returns a []ItemAddressable when successful
 func (m *Profile) GetAddresses()([]ItemAddressable) {
     val, err := m.GetBackingStore().Get("addresses")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Profile) GetAddresses()([]ItemAddressable) {
     return nil
 }
 // GetAnniversaries gets the anniversaries property value. Represents the details of meaningful dates associated with a person.
+// returns a []PersonAnnualEventable when successful
 func (m *Profile) GetAnniversaries()([]PersonAnnualEventable) {
     val, err := m.GetBackingStore().Get("anniversaries")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *Profile) GetAnniversaries()([]PersonAnnualEventable) {
     return nil
 }
 // GetAwards gets the awards property value. Represents the details of awards or honors associated with a person.
+// returns a []PersonAwardable when successful
 func (m *Profile) GetAwards()([]PersonAwardable) {
     val, err := m.GetBackingStore().Get("awards")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *Profile) GetAwards()([]PersonAwardable) {
     return nil
 }
 // GetCertifications gets the certifications property value. Represents the details of certifications associated with a person.
+// returns a []PersonCertificationable when successful
 func (m *Profile) GetCertifications()([]PersonCertificationable) {
     val, err := m.GetBackingStore().Get("certifications")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *Profile) GetCertifications()([]PersonCertificationable) {
     return nil
 }
 // GetEducationalActivities gets the educationalActivities property value. Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+// returns a []EducationalActivityable when successful
 func (m *Profile) GetEducationalActivities()([]EducationalActivityable) {
     val, err := m.GetBackingStore().Get("educationalActivities")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *Profile) GetEducationalActivities()([]EducationalActivityable) {
     return nil
 }
 // GetEmails gets the emails property value. Represents detailed information about email addresses associated with the user.
+// returns a []ItemEmailable when successful
 func (m *Profile) GetEmails()([]ItemEmailable) {
     val, err := m.GetBackingStore().Get("emails")
     if err != nil {
@@ -97,6 +104,7 @@ func (m *Profile) GetEmails()([]ItemEmailable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["account"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -406,6 +414,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetInterests gets the interests property value. Provides detailed information about interests the user has associated with themselves in various services.
+// returns a []PersonInterestable when successful
 func (m *Profile) GetInterests()([]PersonInterestable) {
     val, err := m.GetBackingStore().Get("interests")
     if err != nil {
@@ -417,6 +426,7 @@ func (m *Profile) GetInterests()([]PersonInterestable) {
     return nil
 }
 // GetLanguages gets the languages property value. Represents detailed information about languages that a user has added to their profile.
+// returns a []LanguageProficiencyable when successful
 func (m *Profile) GetLanguages()([]LanguageProficiencyable) {
     val, err := m.GetBackingStore().Get("languages")
     if err != nil {
@@ -428,6 +438,7 @@ func (m *Profile) GetLanguages()([]LanguageProficiencyable) {
     return nil
 }
 // GetNames gets the names property value. Represents the names a user has added to their profile.
+// returns a []PersonNameable when successful
 func (m *Profile) GetNames()([]PersonNameable) {
     val, err := m.GetBackingStore().Get("names")
     if err != nil {
@@ -439,6 +450,7 @@ func (m *Profile) GetNames()([]PersonNameable) {
     return nil
 }
 // GetNotes gets the notes property value. Represents notes that a user has added to their profile.
+// returns a []PersonAnnotationable when successful
 func (m *Profile) GetNotes()([]PersonAnnotationable) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -450,6 +462,7 @@ func (m *Profile) GetNotes()([]PersonAnnotationable) {
     return nil
 }
 // GetPatents gets the patents property value. Represents patents that a user has added to their profile.
+// returns a []ItemPatentable when successful
 func (m *Profile) GetPatents()([]ItemPatentable) {
     val, err := m.GetBackingStore().Get("patents")
     if err != nil {
@@ -461,6 +474,7 @@ func (m *Profile) GetPatents()([]ItemPatentable) {
     return nil
 }
 // GetPhones gets the phones property value. Represents detailed information about phone numbers associated with a user in various services.
+// returns a []ItemPhoneable when successful
 func (m *Profile) GetPhones()([]ItemPhoneable) {
     val, err := m.GetBackingStore().Get("phones")
     if err != nil {
@@ -472,6 +486,7 @@ func (m *Profile) GetPhones()([]ItemPhoneable) {
     return nil
 }
 // GetPositions gets the positions property value. Represents detailed information about work positions associated with a user's profile.
+// returns a []WorkPositionable when successful
 func (m *Profile) GetPositions()([]WorkPositionable) {
     val, err := m.GetBackingStore().Get("positions")
     if err != nil {
@@ -483,6 +498,7 @@ func (m *Profile) GetPositions()([]WorkPositionable) {
     return nil
 }
 // GetProjects gets the projects property value. Represents detailed information about projects associated with a user.
+// returns a []ProjectParticipationable when successful
 func (m *Profile) GetProjects()([]ProjectParticipationable) {
     val, err := m.GetBackingStore().Get("projects")
     if err != nil {
@@ -494,6 +510,7 @@ func (m *Profile) GetProjects()([]ProjectParticipationable) {
     return nil
 }
 // GetPublications gets the publications property value. Represents details of any publications a user has added to their profile.
+// returns a []ItemPublicationable when successful
 func (m *Profile) GetPublications()([]ItemPublicationable) {
     val, err := m.GetBackingStore().Get("publications")
     if err != nil {
@@ -505,6 +522,7 @@ func (m *Profile) GetPublications()([]ItemPublicationable) {
     return nil
 }
 // GetSkills gets the skills property value. Represents detailed information about skills associated with a user in various services.
+// returns a []SkillProficiencyable when successful
 func (m *Profile) GetSkills()([]SkillProficiencyable) {
     val, err := m.GetBackingStore().Get("skills")
     if err != nil {
@@ -516,6 +534,7 @@ func (m *Profile) GetSkills()([]SkillProficiencyable) {
     return nil
 }
 // GetWebAccounts gets the webAccounts property value. Represents web accounts the user has indicated they use or has added to their user profile.
+// returns a []WebAccountable when successful
 func (m *Profile) GetWebAccounts()([]WebAccountable) {
     val, err := m.GetBackingStore().Get("webAccounts")
     if err != nil {
@@ -527,6 +546,7 @@ func (m *Profile) GetWebAccounts()([]WebAccountable) {
     return nil
 }
 // GetWebsites gets the websites property value. Represents detailed information about websites associated with a user in various services.
+// returns a []PersonWebsiteable when successful
 func (m *Profile) GetWebsites()([]PersonWebsiteable) {
     val, err := m.GetBackingStore().Get("websites")
     if err != nil {
@@ -906,7 +926,6 @@ func (m *Profile) SetWebsites(value []PersonWebsiteable)() {
         panic(err)
     }
 }
-// Profileable 
 type Profileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

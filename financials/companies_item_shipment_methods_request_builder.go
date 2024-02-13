@@ -49,6 +49,7 @@ type CompaniesItemShipmentMethodsRequestBuilderPostRequestConfiguration struct {
 }
 // ByShipmentMethodId provides operations to manage the shipmentMethods property of the microsoft.graph.company entity.
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
+// returns a *CompaniesItemShipmentMethodsShipmentMethodItemRequestBuilder when successful
 func (m *CompaniesItemShipmentMethodsRequestBuilder) ByShipmentMethodId(shipmentMethodId string)(*CompaniesItemShipmentMethodsShipmentMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,6 +61,7 @@ func (m *CompaniesItemShipmentMethodsRequestBuilder) ByShipmentMethodId(shipment
     return NewCompaniesItemShipmentMethodsShipmentMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByShipmentMethodIdGuid provides operations to manage the shipmentMethods property of the microsoft.graph.company entity.
+// returns a *CompaniesItemShipmentMethodsShipmentMethodItemRequestBuilder when successful
 func (m *CompaniesItemShipmentMethodsRequestBuilder) ByShipmentMethodIdGuid(shipmentMethodId i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)(*CompaniesItemShipmentMethodsShipmentMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -68,32 +70,34 @@ func (m *CompaniesItemShipmentMethodsRequestBuilder) ByShipmentMethodIdGuid(ship
     urlTplParams["shipmentMethod%2Did"] = shipmentMethodId.String()
     return NewCompaniesItemShipmentMethodsShipmentMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCompaniesItemShipmentMethodsRequestBuilderInternal instantiates a new ShipmentMethodsRequestBuilder and sets the default values.
+// NewCompaniesItemShipmentMethodsRequestBuilderInternal instantiates a new CompaniesItemShipmentMethodsRequestBuilder and sets the default values.
 func NewCompaniesItemShipmentMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemShipmentMethodsRequestBuilder) {
     m := &CompaniesItemShipmentMethodsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/shipmentMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/shipmentMethods{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemShipmentMethodsRequestBuilder instantiates a new ShipmentMethodsRequestBuilder and sets the default values.
+// NewCompaniesItemShipmentMethodsRequestBuilder instantiates a new CompaniesItemShipmentMethodsRequestBuilder and sets the default values.
 func NewCompaniesItemShipmentMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemShipmentMethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemShipmentMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CompaniesItemShipmentMethodsCountRequestBuilder when successful
 func (m *CompaniesItemShipmentMethodsRequestBuilder) Count()(*CompaniesItemShipmentMethodsCountRequestBuilder) {
     return NewCompaniesItemShipmentMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get shipmentMethods from financials
+// returns a ShipmentMethodCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemShipmentMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemShipmentMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShipmentMethodCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateShipmentMethodCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -105,14 +109,15 @@ func (m *CompaniesItemShipmentMethodsRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShipmentMethodCollectionResponseable), nil
 }
 // Post create new navigation property to shipmentMethods for financials
+// returns a ShipmentMethodable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemShipmentMethodsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShipmentMethodable, requestConfiguration *CompaniesItemShipmentMethodsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShipmentMethodable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateShipmentMethodFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -124,6 +129,7 @@ func (m *CompaniesItemShipmentMethodsRequestBuilder) Post(ctx context.Context, b
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShipmentMethodable), nil
 }
 // ToGetRequestInformation get shipmentMethods from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemShipmentMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemShipmentMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +143,9 @@ func (m *CompaniesItemShipmentMethodsRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to shipmentMethods for financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemShipmentMethodsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShipmentMethodable, requestConfiguration *CompaniesItemShipmentMethodsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/financials/companies/{company%2Did}/shipmentMethods", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -151,6 +158,7 @@ func (m *CompaniesItemShipmentMethodsRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemShipmentMethodsRequestBuilder when successful
 func (m *CompaniesItemShipmentMethodsRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemShipmentMethodsRequestBuilder) {
     return NewCompaniesItemShipmentMethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

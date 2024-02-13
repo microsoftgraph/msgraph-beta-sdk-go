@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ExactDataMatchStoreColumn 
 type ExactDataMatchStoreColumn struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewExactDataMatchStoreColumn instantiates a new exactDataMatchStoreColumn and sets the default values.
+// NewExactDataMatchStoreColumn instantiates a new ExactDataMatchStoreColumn and sets the default values.
 func NewExactDataMatchStoreColumn()(*ExactDataMatchStoreColumn) {
     m := &ExactDataMatchStoreColumn{
     }
@@ -19,10 +18,12 @@ func NewExactDataMatchStoreColumn()(*ExactDataMatchStoreColumn) {
     return m
 }
 // CreateExactDataMatchStoreColumnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExactDataMatchStoreColumnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExactDataMatchStoreColumn(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ExactDataMatchStoreColumn) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ExactDataMatchStoreColumn) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ExactDataMatchStoreColumn) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["ignoredDelimiters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,6 +103,7 @@ func (m *ExactDataMatchStoreColumn) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIgnoredDelimiters gets the ignoredDelimiters property value. The ignoredDelimiters property
+// returns a []string when successful
 func (m *ExactDataMatchStoreColumn) GetIgnoredDelimiters()([]string) {
     val, err := m.GetBackingStore().Get("ignoredDelimiters")
     if err != nil {
@@ -111,6 +115,7 @@ func (m *ExactDataMatchStoreColumn) GetIgnoredDelimiters()([]string) {
     return nil
 }
 // GetIsCaseInsensitive gets the isCaseInsensitive property value. The isCaseInsensitive property
+// returns a *bool when successful
 func (m *ExactDataMatchStoreColumn) GetIsCaseInsensitive()(*bool) {
     val, err := m.GetBackingStore().Get("isCaseInsensitive")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *ExactDataMatchStoreColumn) GetIsCaseInsensitive()(*bool) {
     return nil
 }
 // GetIsSearchable gets the isSearchable property value. The isSearchable property
+// returns a *bool when successful
 func (m *ExactDataMatchStoreColumn) GetIsSearchable()(*bool) {
     val, err := m.GetBackingStore().Get("isSearchable")
     if err != nil {
@@ -133,6 +139,7 @@ func (m *ExactDataMatchStoreColumn) GetIsSearchable()(*bool) {
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *ExactDataMatchStoreColumn) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -144,6 +151,7 @@ func (m *ExactDataMatchStoreColumn) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ExactDataMatchStoreColumn) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -240,7 +248,6 @@ func (m *ExactDataMatchStoreColumn) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// ExactDataMatchStoreColumnable 
 type ExactDataMatchStoreColumnable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

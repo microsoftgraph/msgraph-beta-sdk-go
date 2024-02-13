@@ -11,7 +11,7 @@ type MacOsVppAppRevokeLicensesActionResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMacOsVppAppRevokeLicensesActionResult instantiates a new macOsVppAppRevokeLicensesActionResult and sets the default values.
+// NewMacOsVppAppRevokeLicensesActionResult instantiates a new MacOsVppAppRevokeLicensesActionResult and sets the default values.
 func NewMacOsVppAppRevokeLicensesActionResult()(*MacOsVppAppRevokeLicensesActionResult) {
     m := &MacOsVppAppRevokeLicensesActionResult{
     }
@@ -20,10 +20,12 @@ func NewMacOsVppAppRevokeLicensesActionResult()(*MacOsVppAppRevokeLicensesAction
     return m
 }
 // CreateMacOsVppAppRevokeLicensesActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOsVppAppRevokeLicensesActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOsVppAppRevokeLicensesActionResult(), nil
 }
 // GetActionFailureReason gets the actionFailureReason property value. Possible types of reasons for an Apple Volume Purchase Program token action failure.
+// returns a *VppTokenActionFailureReason when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetActionFailureReason()(*VppTokenActionFailureReason) {
     val, err := m.GetBackingStore().Get("actionFailureReason")
     if err != nil {
@@ -35,6 +37,7 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetActionFailureReason()(*VppTok
     return nil
 }
 // GetActionName gets the actionName property value. Action name
+// returns a *string when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetActionName()(*string) {
     val, err := m.GetBackingStore().Get("actionName")
     if err != nil {
@@ -46,6 +49,7 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetActionName()(*string) {
     return nil
 }
 // GetActionState gets the actionState property value. The actionState property
+// returns a *ActionState when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetActionState()(*ActionState) {
     val, err := m.GetBackingStore().Get("actionState")
     if err != nil {
@@ -57,6 +61,7 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetActionState()(*ActionState) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -69,10 +74,12 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetAdditionalData()(map[string]a
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFailedLicensesCount gets the failedLicensesCount property value. A count of the number of licenses for which revoke failed.
+// returns a *int32 when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetFailedLicensesCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedLicensesCount")
     if err != nil {
@@ -84,6 +91,7 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetFailedLicensesCount()(*int32)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actionFailureReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -189,6 +197,7 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetFieldDeserializers()(map[stri
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Time the action state was last updated
+// returns a *Time when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -200,6 +209,7 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetLastUpdatedDateTime()(*i33607
     return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. DeviceId associated with the action.
+// returns a *string when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -211,6 +221,7 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetManagedDeviceId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -222,6 +233,7 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetOdataType()(*string) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. Time the action was initiated
+// returns a *Time when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -233,6 +245,7 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetStartDateTime()(*i336074805fc
     return nil
 }
 // GetTotalLicensesCount gets the totalLicensesCount property value. A count of the number of licenses for which revoke was attempted.
+// returns a *int32 when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetTotalLicensesCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalLicensesCount")
     if err != nil {
@@ -244,6 +257,7 @@ func (m *MacOsVppAppRevokeLicensesActionResult) GetTotalLicensesCount()(*int32) 
     return nil
 }
 // GetUserId gets the userId property value. UserId associated with the action.
+// returns a *string when successful
 func (m *MacOsVppAppRevokeLicensesActionResult) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -407,7 +421,6 @@ func (m *MacOsVppAppRevokeLicensesActionResult) SetUserId(value *string)() {
         panic(err)
     }
 }
-// MacOsVppAppRevokeLicensesActionResultable 
 type MacOsVppAppRevokeLicensesActionResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

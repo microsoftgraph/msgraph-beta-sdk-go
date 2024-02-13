@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InformationProtectionLabel 
 type InformationProtectionLabel struct {
     Entity
 }
-// NewInformationProtectionLabel instantiates a new informationProtectionLabel and sets the default values.
+// NewInformationProtectionLabel instantiates a new InformationProtectionLabel and sets the default values.
 func NewInformationProtectionLabel()(*InformationProtectionLabel) {
     m := &InformationProtectionLabel{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewInformationProtectionLabel()(*InformationProtectionLabel) {
     return m
 }
 // CreateInformationProtectionLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInformationProtectionLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInformationProtectionLabel(), nil
 }
 // GetColor gets the color property value. The color that the UI should display for the label, if configured.
+// returns a *string when successful
 func (m *InformationProtectionLabel) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *InformationProtectionLabel) GetColor()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The admin-defined description for the label.
+// returns a *string when successful
 func (m *InformationProtectionLabel) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *InformationProtectionLabel) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +120,7 @@ func (m *InformationProtectionLabel) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetIsActive gets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.
+// returns a *bool when successful
 func (m *InformationProtectionLabel) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -128,6 +132,7 @@ func (m *InformationProtectionLabel) GetIsActive()(*bool) {
     return nil
 }
 // GetName gets the name property value. The plaintext name of the label.
+// returns a *string when successful
 func (m *InformationProtectionLabel) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -139,6 +144,7 @@ func (m *InformationProtectionLabel) GetName()(*string) {
     return nil
 }
 // GetParent gets the parent property value. The parent label associated with a child label. Null if label has no parent.
+// returns a ParentLabelDetailsable when successful
 func (m *InformationProtectionLabel) GetParent()(ParentLabelDetailsable) {
     val, err := m.GetBackingStore().Get("parent")
     if err != nil {
@@ -150,6 +156,7 @@ func (m *InformationProtectionLabel) GetParent()(ParentLabelDetailsable) {
     return nil
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
+// returns a *int32 when successful
 func (m *InformationProtectionLabel) GetSensitivity()(*int32) {
     val, err := m.GetBackingStore().Get("sensitivity")
     if err != nil {
@@ -161,6 +168,7 @@ func (m *InformationProtectionLabel) GetSensitivity()(*int32) {
     return nil
 }
 // GetTooltip gets the tooltip property value. The tooltip that should be displayed for the label in a UI.
+// returns a *string when successful
 func (m *InformationProtectionLabel) GetTooltip()(*string) {
     val, err := m.GetBackingStore().Get("tooltip")
     if err != nil {
@@ -270,7 +278,6 @@ func (m *InformationProtectionLabel) SetTooltip(value *string)() {
         panic(err)
     }
 }
-// InformationProtectionLabelable 
 type InformationProtectionLabelable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

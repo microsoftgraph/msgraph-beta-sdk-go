@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileDataConnector 
 type FileDataConnector struct {
     IndustryDataConnector
 }
-// NewFileDataConnector instantiates a new fileDataConnector and sets the default values.
+// NewFileDataConnector instantiates a new FileDataConnector and sets the default values.
 func NewFileDataConnector()(*FileDataConnector) {
     m := &FileDataConnector{
         IndustryDataConnector: *NewIndustryDataConnector(),
@@ -18,6 +17,7 @@ func NewFileDataConnector()(*FileDataConnector) {
     return m
 }
 // CreateFileDataConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileDataConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateFileDataConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d268
     return NewFileDataConnector(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileDataConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IndustryDataConnector.GetFieldDeserializers()
     return res
@@ -52,7 +53,6 @@ func (m *FileDataConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// FileDataConnectorable 
 type FileDataConnectorable interface {
     IndustryDataConnectorable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

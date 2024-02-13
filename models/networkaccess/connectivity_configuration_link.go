@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ConnectivityConfigurationLink 
 type ConnectivityConfigurationLink struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewConnectivityConfigurationLink instantiates a new connectivityConfigurationLink and sets the default values.
+// NewConnectivityConfigurationLink instantiates a new ConnectivityConfigurationLink and sets the default values.
 func NewConnectivityConfigurationLink()(*ConnectivityConfigurationLink) {
     m := &ConnectivityConfigurationLink{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewConnectivityConfigurationLink()(*ConnectivityConfigurationLink) {
     return m
 }
 // CreateConnectivityConfigurationLinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConnectivityConfigurationLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectivityConfigurationLink(), nil
 }
 // GetDisplayName gets the displayName property value. Specifies the name of the link.
+// returns a *string when successful
 func (m *ConnectivityConfigurationLink) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ConnectivityConfigurationLink) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConnectivityConfigurationLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,6 +75,7 @@ func (m *ConnectivityConfigurationLink) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetLocalConfigurations gets the localConfigurations property value. Specifies Microsoft's end of the tunnel configuration for a device link.
+// returns a []LocalConnectivityConfigurationable when successful
 func (m *ConnectivityConfigurationLink) GetLocalConfigurations()([]LocalConnectivityConfigurationable) {
     val, err := m.GetBackingStore().Get("localConfigurations")
     if err != nil {
@@ -84,6 +87,7 @@ func (m *ConnectivityConfigurationLink) GetLocalConfigurations()([]LocalConnecti
     return nil
 }
 // GetPeerConfiguration gets the peerConfiguration property value. The peerConfiguration property
+// returns a PeerConnectivityConfigurationable when successful
 func (m *ConnectivityConfigurationLink) GetPeerConfiguration()(PeerConnectivityConfigurationable) {
     val, err := m.GetBackingStore().Get("peerConfiguration")
     if err != nil {
@@ -147,7 +151,6 @@ func (m *ConnectivityConfigurationLink) SetPeerConfiguration(value PeerConnectiv
         panic(err)
     }
 }
-// ConnectivityConfigurationLinkable 
 type ConnectivityConfigurationLinkable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

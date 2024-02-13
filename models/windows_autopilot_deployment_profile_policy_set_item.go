@@ -8,7 +8,7 @@ import (
 type WindowsAutopilotDeploymentProfilePolicySetItem struct {
     PolicySetItem
 }
-// NewWindowsAutopilotDeploymentProfilePolicySetItem instantiates a new windowsAutopilotDeploymentProfilePolicySetItem and sets the default values.
+// NewWindowsAutopilotDeploymentProfilePolicySetItem instantiates a new WindowsAutopilotDeploymentProfilePolicySetItem and sets the default values.
 func NewWindowsAutopilotDeploymentProfilePolicySetItem()(*WindowsAutopilotDeploymentProfilePolicySetItem) {
     m := &WindowsAutopilotDeploymentProfilePolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
@@ -18,10 +18,12 @@ func NewWindowsAutopilotDeploymentProfilePolicySetItem()(*WindowsAutopilotDeploy
     return m
 }
 // CreateWindowsAutopilotDeploymentProfilePolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsAutopilotDeploymentProfilePolicySetItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsAutopilotDeploymentProfilePolicySetItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsAutopilotDeploymentProfilePolicySetItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicySetItem.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *WindowsAutopilotDeploymentProfilePolicySetItem) Serialize(writer i878a8
     }
     return nil
 }
-// WindowsAutopilotDeploymentProfilePolicySetItemable 
 type WindowsAutopilotDeploymentProfilePolicySetItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicySetItemable

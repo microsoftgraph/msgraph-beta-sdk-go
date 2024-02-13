@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DispositionReviewStage 
 type DispositionReviewStage struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewDispositionReviewStage instantiates a new dispositionReviewStage and sets the default values.
+// NewDispositionReviewStage instantiates a new DispositionReviewStage and sets the default values.
 func NewDispositionReviewStage()(*DispositionReviewStage) {
     m := &DispositionReviewStage{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewDispositionReviewStage()(*DispositionReviewStage) {
     return m
 }
 // CreateDispositionReviewStageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDispositionReviewStageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDispositionReviewStage(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DispositionReviewStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -62,6 +63,7 @@ func (m *DispositionReviewStage) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetName gets the name property value. Name representing each stage within a collection.
+// returns a *string when successful
 func (m *DispositionReviewStage) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -73,6 +75,7 @@ func (m *DispositionReviewStage) GetName()(*string) {
     return nil
 }
 // GetReviewersEmailAddresses gets the reviewersEmailAddresses property value. A collection of reviewers at each stage.
+// returns a []string when successful
 func (m *DispositionReviewStage) GetReviewersEmailAddresses()([]string) {
     val, err := m.GetBackingStore().Get("reviewersEmailAddresses")
     if err != nil {
@@ -84,6 +87,7 @@ func (m *DispositionReviewStage) GetReviewersEmailAddresses()([]string) {
     return nil
 }
 // GetStageNumber gets the stageNumber property value. The sequence number for each stage of the disposition review.
+// returns a *int32 when successful
 func (m *DispositionReviewStage) GetStageNumber()(*int32) {
     val, err := m.GetBackingStore().Get("stageNumber")
     if err != nil {
@@ -141,7 +145,6 @@ func (m *DispositionReviewStage) SetStageNumber(value *int32)() {
         panic(err)
     }
 }
-// DispositionReviewStageable 
 type DispositionReviewStageable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

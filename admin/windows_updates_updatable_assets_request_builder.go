@@ -47,6 +47,7 @@ type WindowsUpdatesUpdatableAssetsRequestBuilderPostRequestConfiguration struct 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByUpdatableAssetId provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
+// returns a *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder when successful
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ByUpdatableAssetId(updatableAssetId string)(*WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ByUpdatableAssetId(updatab
     }
     return NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal instantiates a new UpdatableAssetsRequestBuilder and sets the default values.
+// NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal instantiates a new WindowsUpdatesUpdatableAssetsRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatableAssetsRequestBuilder) {
     m := &WindowsUpdatesUpdatableAssetsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatableAssets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatableAssets{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewWindowsUpdatesUpdatableAssetsRequestBuilder instantiates a new UpdatableAssetsRequestBuilder and sets the default values.
+// NewWindowsUpdatesUpdatableAssetsRequestBuilder instantiates a new WindowsUpdatesUpdatableAssetsRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatableAssetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatableAssetsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *WindowsUpdatesUpdatableAssetsCountRequestBuilder when successful
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) Count()(*WindowsUpdatesUpdatableAssetsCountRequestBuilder) {
     return NewWindowsUpdatesUpdatableAssetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of updatableAsset objects and their properties. Listing updatable assets returns updatableAsset resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.
+// returns a UpdatableAssetCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-updatableassets?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) Get(ctx context.Context, r
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatableAssetCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,22 +100,28 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) Get(ctx context.Context, r
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetCollectionResponseable), nil
 }
 // MicrosoftGraphWindowsUpdatesEnrollAssets provides operations to call the enrollAssets method.
+// returns a *WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder when successful
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssets()(*WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder) {
     return NewWindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphWindowsUpdatesEnrollAssetsById provides operations to call the enrollAssetsById method.
+// returns a *WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder when successful
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssetsById()(*WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder) {
     return NewWindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphWindowsUpdatesUnenrollAssets provides operations to call the unenrollAssets method.
+// returns a *WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder when successful
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssets()(*WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) {
     return NewWindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphWindowsUpdatesUnenrollAssetsById provides operations to call the unenrollAssetsById method.
+// returns a *WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder when successful
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssetsById()(*WindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder) {
     return NewWindowsUpdatesUpdatableAssetsMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new updatableAssetGroup object. The updatableAssetGroup resource inherits from updatableAsset.
+// returns a UpdatableAssetable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-updatableassets-updatableassetgroup?view=graph-rest-1.0
@@ -122,8 +131,7 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) Post(ctx context.Context, 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatableAssetFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -135,6 +143,7 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) Post(ctx context.Context, 
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
 // ToGetRequestInformation get a list of updatableAsset objects and their properties. Listing updatable assets returns updatableAsset resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.
+// returns a *RequestInformation when successful
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -148,8 +157,9 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new updatableAssetGroup object. The updatableAssetGroup resource inherits from updatableAsset.
+// returns a *RequestInformation when successful
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, requestConfiguration *WindowsUpdatesUpdatableAssetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/admin/windows/updates/updatableAssets", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -162,6 +172,7 @@ func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsUpdatesUpdatableAssetsRequestBuilder when successful
 func (m *WindowsUpdatesUpdatableAssetsRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesUpdatableAssetsRequestBuilder) {
     return NewWindowsUpdatesUpdatableAssetsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

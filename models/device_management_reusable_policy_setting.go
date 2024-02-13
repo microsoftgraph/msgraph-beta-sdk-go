@@ -9,7 +9,7 @@ import (
 type DeviceManagementReusablePolicySetting struct {
     Entity
 }
-// NewDeviceManagementReusablePolicySetting instantiates a new deviceManagementReusablePolicySetting and sets the default values.
+// NewDeviceManagementReusablePolicySetting instantiates a new DeviceManagementReusablePolicySetting and sets the default values.
 func NewDeviceManagementReusablePolicySetting()(*DeviceManagementReusablePolicySetting) {
     m := &DeviceManagementReusablePolicySetting{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceManagementReusablePolicySetting()(*DeviceManagementReusablePolicyS
     return m
 }
 // CreateDeviceManagementReusablePolicySettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementReusablePolicySettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementReusablePolicySetting(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. reusable setting creation date and time. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceManagementReusablePolicySetting) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceManagementReusablePolicySetting) GetCreatedDateTime()(*i336074805
     return nil
 }
 // GetDescription gets the description property value. reusable setting description supplied by user.
+// returns a *string when successful
 func (m *DeviceManagementReusablePolicySetting) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceManagementReusablePolicySetting) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. reusable setting display name supplied by user.
+// returns a *string when successful
 func (m *DeviceManagementReusablePolicySetting) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *DeviceManagementReusablePolicySetting) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -155,6 +160,7 @@ func (m *DeviceManagementReusablePolicySetting) GetFieldDeserializers()(map[stri
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. date and time when reusable setting was last modified. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceManagementReusablePolicySetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -166,6 +172,7 @@ func (m *DeviceManagementReusablePolicySetting) GetLastModifiedDateTime()(*i3360
     return nil
 }
 // GetReferencingConfigurationPolicies gets the referencingConfigurationPolicies property value. configuration policies referencing the current reusable setting. This property is read-only.
+// returns a []DeviceManagementConfigurationPolicyable when successful
 func (m *DeviceManagementReusablePolicySetting) GetReferencingConfigurationPolicies()([]DeviceManagementConfigurationPolicyable) {
     val, err := m.GetBackingStore().Get("referencingConfigurationPolicies")
     if err != nil {
@@ -177,6 +184,7 @@ func (m *DeviceManagementReusablePolicySetting) GetReferencingConfigurationPolic
     return nil
 }
 // GetReferencingConfigurationPolicyCount gets the referencingConfigurationPolicyCount property value. count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.
+// returns a *int32 when successful
 func (m *DeviceManagementReusablePolicySetting) GetReferencingConfigurationPolicyCount()(*int32) {
     val, err := m.GetBackingStore().Get("referencingConfigurationPolicyCount")
     if err != nil {
@@ -188,6 +196,7 @@ func (m *DeviceManagementReusablePolicySetting) GetReferencingConfigurationPolic
     return nil
 }
 // GetSettingDefinitionId gets the settingDefinitionId property value. setting definition id associated with this reusable setting.
+// returns a *string when successful
 func (m *DeviceManagementReusablePolicySetting) GetSettingDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("settingDefinitionId")
     if err != nil {
@@ -199,6 +208,7 @@ func (m *DeviceManagementReusablePolicySetting) GetSettingDefinitionId()(*string
     return nil
 }
 // GetSettingInstance gets the settingInstance property value. reusable setting configuration instance
+// returns a DeviceManagementConfigurationSettingInstanceable when successful
 func (m *DeviceManagementReusablePolicySetting) GetSettingInstance()(DeviceManagementConfigurationSettingInstanceable) {
     val, err := m.GetBackingStore().Get("settingInstance")
     if err != nil {
@@ -210,6 +220,7 @@ func (m *DeviceManagementReusablePolicySetting) GetSettingInstance()(DeviceManag
     return nil
 }
 // GetVersion gets the version property value. version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
+// returns a *int32 when successful
 func (m *DeviceManagementReusablePolicySetting) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -327,7 +338,6 @@ func (m *DeviceManagementReusablePolicySetting) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// DeviceManagementReusablePolicySettingable 
 type DeviceManagementReusablePolicySettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

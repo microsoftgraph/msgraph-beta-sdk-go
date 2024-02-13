@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Property 
 type Property struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewProperty instantiates a new property and sets the default values.
+// NewProperty instantiates a new Property and sets the default values.
 func NewProperty()(*Property) {
     m := &Property{
     }
@@ -19,10 +18,12 @@ func NewProperty()(*Property) {
     return m
 }
 // CreatePropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePropertyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProperty(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Property) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *Property) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAliases gets the aliases property value. A set of aliases or friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^. Optional.
+// returns a []string when successful
 func (m *Property) GetAliases()([]string) {
     val, err := m.GetBackingStore().Get("aliases")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *Property) GetAliases()([]string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Property) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["aliases"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -177,6 +181,7 @@ func (m *Property) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetIsExactMatchRequired gets the isExactMatchRequired property value. Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for non-searchable properties of type string or stringCollection. Optional.
+// returns a *bool when successful
 func (m *Property) GetIsExactMatchRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isExactMatchRequired")
     if err != nil {
@@ -188,6 +193,7 @@ func (m *Property) GetIsExactMatchRequired()(*bool) {
     return nil
 }
 // GetIsQueryable gets the isQueryable property value. Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
+// returns a *bool when successful
 func (m *Property) GetIsQueryable()(*bool) {
     val, err := m.GetBackingStore().Get("isQueryable")
     if err != nil {
@@ -199,6 +205,7 @@ func (m *Property) GetIsQueryable()(*bool) {
     return nil
 }
 // GetIsRefinable gets the isRefinable property value. Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
+// returns a *bool when successful
 func (m *Property) GetIsRefinable()(*bool) {
     val, err := m.GetBackingStore().Get("isRefinable")
     if err != nil {
@@ -210,6 +217,7 @@ func (m *Property) GetIsRefinable()(*bool) {
     return nil
 }
 // GetIsRetrievable gets the isRetrievable property value. Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
+// returns a *bool when successful
 func (m *Property) GetIsRetrievable()(*bool) {
     val, err := m.GetBackingStore().Get("isRetrievable")
     if err != nil {
@@ -221,6 +229,7 @@ func (m *Property) GetIsRetrievable()(*bool) {
     return nil
 }
 // GetIsSearchable gets the isSearchable property value. Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties aren't added to the search index. Optional.
+// returns a *bool when successful
 func (m *Property) GetIsSearchable()(*bool) {
     val, err := m.GetBackingStore().Get("isSearchable")
     if err != nil {
@@ -232,6 +241,7 @@ func (m *Property) GetIsSearchable()(*bool) {
     return nil
 }
 // GetLabels gets the labels property value. Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.
+// returns a []Label when successful
 func (m *Property) GetLabels()([]Label) {
     val, err := m.GetBackingStore().Get("labels")
     if err != nil {
@@ -243,6 +253,7 @@ func (m *Property) GetLabels()([]Label) {
     return nil
 }
 // GetName gets the name property value. The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
+// returns a *string when successful
 func (m *Property) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -254,6 +265,7 @@ func (m *Property) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Property) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -265,6 +277,7 @@ func (m *Property) GetOdataType()(*string) {
     return nil
 }
 // GetRankingHint gets the rankingHint property value. Specifies the property ranking hint. Developers can specify which properties are most important, allowing Microsoft Search to determine the search relevance of the content.
+// returns a RankingHintable when successful
 func (m *Property) GetRankingHint()(RankingHintable) {
     val, err := m.GetBackingStore().Get("rankingHint")
     if err != nil {
@@ -276,6 +289,7 @@ func (m *Property) GetRankingHint()(RankingHintable) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *PropertyType when successful
 func (m *Property) GetTypeEscaped()(*PropertyType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -451,7 +465,6 @@ func (m *Property) SetTypeEscaped(value *PropertyType)() {
         panic(err)
     }
 }
-// Propertyable 
 type Propertyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -47,6 +47,7 @@ type ClassesItemAssignmentsItemCategoriesRequestBuilderPostRequestConfiguration 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByEducationCategoryId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.education.classes.item.assignments.item.categories.item collection
+// returns a *ClassesItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilder when successful
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ByEducationCategoryId(educationCategoryId string)(*ClassesItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,28 +58,32 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ByEducationCategory
     }
     return NewClassesItemAssignmentsItemCategoriesEducationCategoryItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewClassesItemAssignmentsItemCategoriesRequestBuilderInternal instantiates a new CategoriesRequestBuilder and sets the default values.
+// NewClassesItemAssignmentsItemCategoriesRequestBuilderInternal instantiates a new ClassesItemAssignmentsItemCategoriesRequestBuilder and sets the default values.
 func NewClassesItemAssignmentsItemCategoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentsItemCategoriesRequestBuilder) {
     m := &ClassesItemAssignmentsItemCategoriesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/categories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/categories{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewClassesItemAssignmentsItemCategoriesRequestBuilder instantiates a new CategoriesRequestBuilder and sets the default values.
+// NewClassesItemAssignmentsItemCategoriesRequestBuilder instantiates a new ClassesItemAssignmentsItemCategoriesRequestBuilder and sets the default values.
 func NewClassesItemAssignmentsItemCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentsItemCategoriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentsItemCategoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ClassesItemAssignmentsItemCategoriesCountRequestBuilder when successful
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Count()(*ClassesItemAssignmentsItemCategoriesCountRequestBuilder) {
     return NewClassesItemAssignmentsItemCategoriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
+// returns a *ClassesItemAssignmentsItemCategoriesDeltaRequestBuilder when successful
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Delta()(*ClassesItemAssignmentsItemCategoriesDeltaRequestBuilder) {
     return NewClassesItemAssignmentsItemCategoriesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// returns a EducationCategoryCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
@@ -88,8 +93,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Get(ctx context.Con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEducationCategoryCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,14 +105,15 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Get(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryCollectionResponseable), nil
 }
 // Post create new navigation property to categories for education
+// returns a EducationCategoryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, requestConfiguration *ClassesItemAssignmentsItemCategoriesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEducationCategoryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,10 +125,12 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Post(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable), nil
 }
 // Ref provides operations to manage the collection of educationRoot entities.
+// returns a *ClassesItemAssignmentsItemCategoriesRefRequestBuilder when successful
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Ref()(*ClassesItemAssignmentsItemCategoriesRefRequestBuilder) {
     return NewClassesItemAssignmentsItemCategoriesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation list all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +144,9 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to categories for education
+// returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryable, requestConfiguration *ClassesItemAssignmentsItemCategoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/categories", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -151,6 +159,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ToPostRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ClassesItemAssignmentsItemCategoriesRequestBuilder when successful
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) WithUrl(rawUrl string)(*ClassesItemAssignmentsItemCategoriesRequestBuilder) {
     return NewClassesItemAssignmentsItemCategoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

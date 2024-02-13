@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ExternalConnection 
 type ExternalConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewExternalConnection instantiates a new externalConnection and sets the default values.
+// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewExternalConnection()(*ExternalConnection) {
     return m
 }
 // CreateExternalConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternalConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalConnection(), nil
 }
 // GetActivitySettings gets the activitySettings property value. Collects configurable settings related to activities involving connector content.
+// returns a ActivitySettingsable when successful
 func (m *ExternalConnection) GetActivitySettings()(ActivitySettingsable) {
     val, err := m.GetBackingStore().Get("activitySettings")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ExternalConnection) GetActivitySettings()(ActivitySettingsable) {
     return nil
 }
 // GetComplianceSettings gets the complianceSettings property value. The complianceSettings property
+// returns a ComplianceSettingsable when successful
 func (m *ExternalConnection) GetComplianceSettings()(ComplianceSettingsable) {
     val, err := m.GetBackingStore().Get("complianceSettings")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ExternalConnection) GetComplianceSettings()(ComplianceSettingsable) {
     return nil
 }
 // GetConfiguration gets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
+// returns a Configurationable when successful
 func (m *ExternalConnection) GetConfiguration()(Configurationable) {
     val, err := m.GetBackingStore().Get("configuration")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ExternalConnection) GetConfiguration()(Configurationable) {
     return nil
 }
 // GetConnectorId gets the connectorId property value. The Teams App ID. Optional.
+// returns a *string when successful
 func (m *ExternalConnection) GetConnectorId()(*string) {
     val, err := m.GetBackingStore().Get("connectorId")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *ExternalConnection) GetConnectorId()(*string) {
     return nil
 }
 // GetDescription gets the description property value. Description of the connection displayed in the Microsoft 365 admin center. Optional.
+// returns a *string when successful
 func (m *ExternalConnection) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *ExternalConnection) GetDescription()(*string) {
     return nil
 }
 // GetEnabledContentExperiences gets the enabledContentExperiences property value. The list of content experiences the connection will participate in. Possible values are search.
+// returns a *ContentExperienceType when successful
 func (m *ExternalConnection) GetEnabledContentExperiences()(*ContentExperienceType) {
     val, err := m.GetBackingStore().Get("enabledContentExperiences")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *ExternalConnection) GetEnabledContentExperiences()(*ContentExperienceTy
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activitySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -260,6 +267,7 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetGroups gets the groups property value. The groups property
+// returns a []ExternalGroupable when successful
 func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
     val, err := m.GetBackingStore().Get("groups")
     if err != nil {
@@ -271,6 +279,7 @@ func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
     return nil
 }
 // GetIngestedItemsCount gets the ingestedItemsCount property value. The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.
+// returns a *int64 when successful
 func (m *ExternalConnection) GetIngestedItemsCount()(*int64) {
     val, err := m.GetBackingStore().Get("ingestedItemsCount")
     if err != nil {
@@ -282,6 +291,7 @@ func (m *ExternalConnection) GetIngestedItemsCount()(*int64) {
     return nil
 }
 // GetItems gets the items property value. The items property
+// returns a []ExternalItemable when successful
 func (m *ExternalConnection) GetItems()([]ExternalItemable) {
     val, err := m.GetBackingStore().Get("items")
     if err != nil {
@@ -293,6 +303,7 @@ func (m *ExternalConnection) GetItems()([]ExternalItemable) {
     return nil
 }
 // GetName gets the name property value. The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
+// returns a *string when successful
 func (m *ExternalConnection) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -304,6 +315,7 @@ func (m *ExternalConnection) GetName()(*string) {
     return nil
 }
 // GetOperations gets the operations property value. The operations property
+// returns a []ConnectionOperationable when successful
 func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -315,6 +327,7 @@ func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
     return nil
 }
 // GetQuota gets the quota property value. The quota property
+// returns a ConnectionQuotaable when successful
 func (m *ExternalConnection) GetQuota()(ConnectionQuotaable) {
     val, err := m.GetBackingStore().Get("quota")
     if err != nil {
@@ -326,6 +339,7 @@ func (m *ExternalConnection) GetQuota()(ConnectionQuotaable) {
     return nil
 }
 // GetSchema gets the schema property value. The schema property
+// returns a Schemaable when successful
 func (m *ExternalConnection) GetSchema()(Schemaable) {
     val, err := m.GetBackingStore().Get("schema")
     if err != nil {
@@ -337,6 +351,7 @@ func (m *ExternalConnection) GetSchema()(Schemaable) {
     return nil
 }
 // GetSearchSettings gets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
+// returns a SearchSettingsable when successful
 func (m *ExternalConnection) GetSearchSettings()(SearchSettingsable) {
     val, err := m.GetBackingStore().Get("searchSettings")
     if err != nil {
@@ -348,6 +363,7 @@ func (m *ExternalConnection) GetSearchSettings()(SearchSettingsable) {
     return nil
 }
 // GetState gets the state property value. Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
+// returns a *ConnectionState when successful
 func (m *ExternalConnection) GetState()(*ConnectionState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -574,7 +590,6 @@ func (m *ExternalConnection) SetState(value *ConnectionState)() {
         panic(err)
     }
 }
-// ExternalConnectionable 
 type ExternalConnectionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

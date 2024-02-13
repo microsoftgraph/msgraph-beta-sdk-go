@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Admin 
 type Admin struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAdmin instantiates a new admin and sets the default values.
+// NewAdmin instantiates a new Admin and sets the default values.
 func NewAdmin()(*Admin) {
     m := &Admin{
     }
@@ -19,10 +18,12 @@ func NewAdmin()(*Admin) {
     return m
 }
 // CreateAdminFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAdminFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdmin(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Admin) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *Admin) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAppsAndServices gets the appsAndServices property value. The appsAndServices property
+// returns a AdminAppsAndServicesable when successful
 func (m *Admin) GetAppsAndServices()(AdminAppsAndServicesable) {
     val, err := m.GetBackingStore().Get("appsAndServices")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *Admin) GetAppsAndServices()(AdminAppsAndServicesable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Admin) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDynamics gets the dynamics property value. The dynamics property
+// returns a AdminDynamicsable when successful
 func (m *Admin) GetDynamics()(AdminDynamicsable) {
     val, err := m.GetBackingStore().Get("dynamics")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *Admin) GetDynamics()(AdminDynamicsable) {
     return nil
 }
 // GetEdge gets the edge property value. A container for Microsoft Edge resources. Read-only.
+// returns a Edgeable when successful
 func (m *Admin) GetEdge()(Edgeable) {
     val, err := m.GetBackingStore().Get("edge")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *Admin) GetEdge()(Edgeable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appsAndServices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -197,6 +203,7 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetForms gets the forms property value. The forms property
+// returns a AdminFormsable when successful
 func (m *Admin) GetForms()(AdminFormsable) {
     val, err := m.GetBackingStore().Get("forms")
     if err != nil {
@@ -208,6 +215,7 @@ func (m *Admin) GetForms()(AdminFormsable) {
     return nil
 }
 // GetMicrosoft365Apps gets the microsoft365Apps property value. A container for the Microsoft 365 apps admin functionality.
+// returns a AdminMicrosoft365Appsable when successful
 func (m *Admin) GetMicrosoft365Apps()(AdminMicrosoft365Appsable) {
     val, err := m.GetBackingStore().Get("microsoft365Apps")
     if err != nil {
@@ -219,6 +227,7 @@ func (m *Admin) GetMicrosoft365Apps()(AdminMicrosoft365Appsable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Admin) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -230,6 +239,7 @@ func (m *Admin) GetOdataType()(*string) {
     return nil
 }
 // GetPeople gets the people property value. Represents a setting to control people-related admin settings in the tenant.
+// returns a PeopleAdminSettingsable when successful
 func (m *Admin) GetPeople()(PeopleAdminSettingsable) {
     val, err := m.GetBackingStore().Get("people")
     if err != nil {
@@ -241,6 +251,7 @@ func (m *Admin) GetPeople()(PeopleAdminSettingsable) {
     return nil
 }
 // GetReportSettings gets the reportSettings property value. A container for administrative resources to manage reports.
+// returns a AdminReportSettingsable when successful
 func (m *Admin) GetReportSettings()(AdminReportSettingsable) {
     val, err := m.GetBackingStore().Get("reportSettings")
     if err != nil {
@@ -252,6 +263,7 @@ func (m *Admin) GetReportSettings()(AdminReportSettingsable) {
     return nil
 }
 // GetServiceAnnouncement gets the serviceAnnouncement property value. A container for service communications resources. Read-only.
+// returns a ServiceAnnouncementable when successful
 func (m *Admin) GetServiceAnnouncement()(ServiceAnnouncementable) {
     val, err := m.GetBackingStore().Get("serviceAnnouncement")
     if err != nil {
@@ -263,6 +275,7 @@ func (m *Admin) GetServiceAnnouncement()(ServiceAnnouncementable) {
     return nil
 }
 // GetSharepoint gets the sharepoint property value. The sharepoint property
+// returns a Sharepointable when successful
 func (m *Admin) GetSharepoint()(Sharepointable) {
     val, err := m.GetBackingStore().Get("sharepoint")
     if err != nil {
@@ -274,6 +287,7 @@ func (m *Admin) GetSharepoint()(Sharepointable) {
     return nil
 }
 // GetTodo gets the todo property value. The todo property
+// returns a AdminTodoable when successful
 func (m *Admin) GetTodo()(AdminTodoable) {
     val, err := m.GetBackingStore().Get("todo")
     if err != nil {
@@ -285,6 +299,7 @@ func (m *Admin) GetTodo()(AdminTodoable) {
     return nil
 }
 // GetWindows gets the windows property value. A container for all Windows administrator functionalities. Read-only.
+// returns a AdminWindowsable when successful
 func (m *Admin) GetWindows()(AdminWindowsable) {
     val, err := m.GetBackingStore().Get("windows")
     if err != nil {
@@ -472,7 +487,6 @@ func (m *Admin) SetWindows(value AdminWindowsable)() {
         panic(err)
     }
 }
-// Adminable 
 type Adminable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -503,74 +517,4 @@ type Adminable interface {
     SetSharepoint(value Sharepointable)()
     SetTodo(value AdminTodoable)()
     SetWindows(value AdminWindowsable)()
-}
-
-// AdminWindows 
-type AdminWindows struct {
-    Entity
-}
-// NewAdminWindows instantiates a new adminWindows and sets the default values.
-func NewAdminWindows()(*AdminWindows) {
-    m := &AdminWindows{
-        Entity: *NewEntity(),
-    }
-    return m
-}
-// CreateAdminWindowsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateAdminWindowsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAdminWindows(), nil
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *AdminWindows) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["updates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAdminWindowsUpdatesFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUpdates(val.(AdminWindowsUpdatesable))
-        }
-        return nil
-    }
-    return res
-}
-// GetUpdates gets the updates property value. Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
-func (m *AdminWindows) GetUpdates()(AdminWindowsUpdatesable) {
-    val, err := m.GetBackingStore().Get("updates")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AdminWindowsUpdatesable)
-    }
-    return nil
-}
-// Serialize serializes information the current object
-func (m *AdminWindows) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteObjectValue("updates", m.GetUpdates())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetUpdates sets the updates property value. Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
-func (m *AdminWindows) SetUpdates(value AdminWindowsUpdatesable)() {
-    err := m.GetBackingStore().Set("updates", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// AdminWindowsable 
-type AdminWindowsable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetUpdates()(AdminWindowsUpdatesable)
-    SetUpdates(value AdminWindowsUpdatesable)()
 }

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// EvaluateLabelJobResult 
 type EvaluateLabelJobResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEvaluateLabelJobResult instantiates a new evaluateLabelJobResult and sets the default values.
+// NewEvaluateLabelJobResult instantiates a new EvaluateLabelJobResult and sets the default values.
 func NewEvaluateLabelJobResult()(*EvaluateLabelJobResult) {
     m := &EvaluateLabelJobResult{
     }
@@ -19,10 +18,12 @@ func NewEvaluateLabelJobResult()(*EvaluateLabelJobResult) {
     return m
 }
 // CreateEvaluateLabelJobResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEvaluateLabelJobResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEvaluateLabelJobResult(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *EvaluateLabelJobResult) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *EvaluateLabelJobResult) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *EvaluateLabelJobResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,6 +93,7 @@ func (m *EvaluateLabelJobResult) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *EvaluateLabelJobResult) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -101,6 +105,7 @@ func (m *EvaluateLabelJobResult) GetOdataType()(*string) {
     return nil
 }
 // GetResponsiblePolicy gets the responsiblePolicy property value. The responsiblePolicy property
+// returns a ResponsiblePolicyable when successful
 func (m *EvaluateLabelJobResult) GetResponsiblePolicy()(ResponsiblePolicyable) {
     val, err := m.GetBackingStore().Get("responsiblePolicy")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *EvaluateLabelJobResult) GetResponsiblePolicy()(ResponsiblePolicyable) {
     return nil
 }
 // GetResponsibleSensitiveTypes gets the responsibleSensitiveTypes property value. The responsibleSensitiveTypes property
+// returns a []ResponsibleSensitiveTypeable when successful
 func (m *EvaluateLabelJobResult) GetResponsibleSensitiveTypes()([]ResponsibleSensitiveTypeable) {
     val, err := m.GetBackingStore().Get("responsibleSensitiveTypes")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *EvaluateLabelJobResult) GetResponsibleSensitiveTypes()([]ResponsibleSen
     return nil
 }
 // GetSensitivityLabel gets the sensitivityLabel property value. The sensitivityLabel property
+// returns a MatchingLabelable when successful
 func (m *EvaluateLabelJobResult) GetSensitivityLabel()(MatchingLabelable) {
     val, err := m.GetBackingStore().Get("sensitivityLabel")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *EvaluateLabelJobResult) SetSensitivityLabel(value MatchingLabelable)() 
         panic(err)
     }
 }
-// EvaluateLabelJobResultable 
 type EvaluateLabelJobResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

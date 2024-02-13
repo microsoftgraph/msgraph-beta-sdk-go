@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserGovernanceCriteria 
 type UserGovernanceCriteria struct {
     GovernanceCriteria
 }
-// NewUserGovernanceCriteria instantiates a new userGovernanceCriteria and sets the default values.
+// NewUserGovernanceCriteria instantiates a new UserGovernanceCriteria and sets the default values.
 func NewUserGovernanceCriteria()(*UserGovernanceCriteria) {
     m := &UserGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),
@@ -18,10 +17,12 @@ func NewUserGovernanceCriteria()(*UserGovernanceCriteria) {
     return m
 }
 // CreateUserGovernanceCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserGovernanceCriteriaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserGovernanceCriteria(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserGovernanceCriteria) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GovernanceCriteria.GetFieldDeserializers()
     res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *UserGovernanceCriteria) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetUserId gets the userId property value. The userId property
+// returns a *string when successful
 func (m *UserGovernanceCriteria) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *UserGovernanceCriteria) SetUserId(value *string)() {
         panic(err)
     }
 }
-// UserGovernanceCriteriaable 
 type UserGovernanceCriteriaable interface {
     GovernanceCriteriaable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

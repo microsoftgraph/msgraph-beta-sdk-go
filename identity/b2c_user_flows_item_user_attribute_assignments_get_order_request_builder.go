@@ -18,28 +18,29 @@ type B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderGetRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderInternal instantiates a new GetOrderRequestBuilder and sets the default values.
+// NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderInternal instantiates a new B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) {
     m := &B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/userAttributeAssignments/getOrder()", pathParameters),
     }
     return m
 }
-// NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder instantiates a new GetOrderRequestBuilder and sets the default values.
+// NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder instantiates a new B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getOrder
+// returns a AssignmentOrderable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentOrderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAssignmentOrderFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) Get(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentOrderable), nil
 }
 // ToGetRequestInformation invoke function getOrder
+// returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +63,7 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder when successful
 func (m *B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) {
     return NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

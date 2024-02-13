@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DataLossPreventionPolicy 
 type DataLossPreventionPolicy struct {
     Entity
 }
-// NewDataLossPreventionPolicy instantiates a new dataLossPreventionPolicy and sets the default values.
+// NewDataLossPreventionPolicy instantiates a new DataLossPreventionPolicy and sets the default values.
 func NewDataLossPreventionPolicy()(*DataLossPreventionPolicy) {
     m := &DataLossPreventionPolicy{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDataLossPreventionPolicy()(*DataLossPreventionPolicy) {
     return m
 }
 // CreateDataLossPreventionPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDataLossPreventionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDataLossPreventionPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DataLossPreventionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *DataLossPreventionPolicy) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *DataLossPreventionPolicy) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *DataLossPreventionPolicy) SetName(value *string)() {
         panic(err)
     }
 }
-// DataLossPreventionPolicyable 
 type DataLossPreventionPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

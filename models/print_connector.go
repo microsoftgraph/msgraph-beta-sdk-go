@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrintConnector 
 type PrintConnector struct {
     Entity
 }
-// NewPrintConnector instantiates a new printConnector and sets the default values.
+// NewPrintConnector instantiates a new PrintConnector and sets the default values.
 func NewPrintConnector()(*PrintConnector) {
     m := &PrintConnector{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPrintConnector()(*PrintConnector) {
     return m
 }
 // CreatePrintConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrintConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrintConnector(), nil
 }
 // GetAppVersion gets the appVersion property value. The connector's version.
+// returns a *string when successful
 func (m *PrintConnector) GetAppVersion()(*string) {
     val, err := m.GetBackingStore().Get("appVersion")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *PrintConnector) GetAppVersion()(*string) {
     return nil
 }
 // GetDeviceHealth gets the deviceHealth property value. The connector's device health.
+// returns a DeviceHealthable when successful
 func (m *PrintConnector) GetDeviceHealth()(DeviceHealthable) {
     val, err := m.GetBackingStore().Get("deviceHealth")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *PrintConnector) GetDeviceHealth()(DeviceHealthable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the connector.
+// returns a *string when successful
 func (m *PrintConnector) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *PrintConnector) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrintConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -139,6 +143,7 @@ func (m *PrintConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetFullyQualifiedDomainName gets the fullyQualifiedDomainName property value. The connector machine's hostname.
+// returns a *string when successful
 func (m *PrintConnector) GetFullyQualifiedDomainName()(*string) {
     val, err := m.GetBackingStore().Get("fullyQualifiedDomainName")
     if err != nil {
@@ -150,6 +155,7 @@ func (m *PrintConnector) GetFullyQualifiedDomainName()(*string) {
     return nil
 }
 // GetLocation gets the location property value. The physical and/or organizational location of the connector.
+// returns a PrinterLocationable when successful
 func (m *PrintConnector) GetLocation()(PrinterLocationable) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -161,6 +167,7 @@ func (m *PrintConnector) GetLocation()(PrinterLocationable) {
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *PrintConnector) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -172,6 +179,7 @@ func (m *PrintConnector) GetName()(*string) {
     return nil
 }
 // GetOperatingSystem gets the operatingSystem property value. The connector machine's operating system version.
+// returns a *string when successful
 func (m *PrintConnector) GetOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystem")
     if err != nil {
@@ -183,6 +191,7 @@ func (m *PrintConnector) GetOperatingSystem()(*string) {
     return nil
 }
 // GetRegisteredDateTime gets the registeredDateTime property value. The DateTimeOffset when the connector was registered.
+// returns a *Time when successful
 func (m *PrintConnector) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("registeredDateTime")
     if err != nil {
@@ -305,7 +314,6 @@ func (m *PrintConnector) SetRegisteredDateTime(value *i336074805fc853987abe6f7fe
         panic(err)
     }
 }
-// PrintConnectorable 
 type PrintConnectorable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

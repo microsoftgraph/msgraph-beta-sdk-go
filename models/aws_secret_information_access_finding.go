@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsSecretInformationAccessFinding 
 type AwsSecretInformationAccessFinding struct {
     Finding
 }
-// NewAwsSecretInformationAccessFinding instantiates a new awsSecretInformationAccessFinding and sets the default values.
+// NewAwsSecretInformationAccessFinding instantiates a new AwsSecretInformationAccessFinding and sets the default values.
 func NewAwsSecretInformationAccessFinding()(*AwsSecretInformationAccessFinding) {
     m := &AwsSecretInformationAccessFinding{
         Finding: *NewFinding(),
@@ -16,6 +15,7 @@ func NewAwsSecretInformationAccessFinding()(*AwsSecretInformationAccessFinding) 
     return m
 }
 // CreateAwsSecretInformationAccessFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsSecretInformationAccessFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -44,6 +44,7 @@ func CreateAwsSecretInformationAccessFindingFromDiscriminatorValue(parseNode i87
     return NewAwsSecretInformationAccessFinding(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsSecretInformationAccessFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["identity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -89,6 +90,7 @@ func (m *AwsSecretInformationAccessFinding) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetIdentity gets the identity property value. The identity property
+// returns a AuthorizationSystemIdentityable when successful
 func (m *AwsSecretInformationAccessFinding) GetIdentity()(AuthorizationSystemIdentityable) {
     val, err := m.GetBackingStore().Get("identity")
     if err != nil {
@@ -100,6 +102,7 @@ func (m *AwsSecretInformationAccessFinding) GetIdentity()(AuthorizationSystemIde
     return nil
 }
 // GetIdentityDetails gets the identityDetails property value. The identityDetails property
+// returns a IdentityDetailsable when successful
 func (m *AwsSecretInformationAccessFinding) GetIdentityDetails()(IdentityDetailsable) {
     val, err := m.GetBackingStore().Get("identityDetails")
     if err != nil {
@@ -111,6 +114,7 @@ func (m *AwsSecretInformationAccessFinding) GetIdentityDetails()(IdentityDetails
     return nil
 }
 // GetPermissionsCreepIndex gets the permissionsCreepIndex property value. The permissionsCreepIndex property
+// returns a PermissionsCreepIndexable when successful
 func (m *AwsSecretInformationAccessFinding) GetPermissionsCreepIndex()(PermissionsCreepIndexable) {
     val, err := m.GetBackingStore().Get("permissionsCreepIndex")
     if err != nil {
@@ -122,6 +126,7 @@ func (m *AwsSecretInformationAccessFinding) GetPermissionsCreepIndex()(Permissio
     return nil
 }
 // GetSecretInformationWebServices gets the secretInformationWebServices property value. The secretInformationWebServices property
+// returns a *AwsSecretInformationWebServices when successful
 func (m *AwsSecretInformationAccessFinding) GetSecretInformationWebServices()(*AwsSecretInformationWebServices) {
     val, err := m.GetBackingStore().Get("secretInformationWebServices")
     if err != nil {
@@ -193,7 +198,6 @@ func (m *AwsSecretInformationAccessFinding) SetSecretInformationWebServices(valu
         panic(err)
     }
 }
-// AwsSecretInformationAccessFindingable 
 type AwsSecretInformationAccessFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

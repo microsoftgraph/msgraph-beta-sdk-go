@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WebSegmentConfiguration 
 type WebSegmentConfiguration struct {
     SegmentConfiguration
 }
-// NewWebSegmentConfiguration instantiates a new webSegmentConfiguration and sets the default values.
+// NewWebSegmentConfiguration instantiates a new WebSegmentConfiguration and sets the default values.
 func NewWebSegmentConfiguration()(*WebSegmentConfiguration) {
     m := &WebSegmentConfiguration{
         SegmentConfiguration: *NewSegmentConfiguration(),
@@ -18,10 +17,12 @@ func NewWebSegmentConfiguration()(*WebSegmentConfiguration) {
     return m
 }
 // CreateWebSegmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebSegmentConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebSegmentConfiguration(), nil
 }
 // GetApplicationSegments gets the applicationSegments property value. The applicationSegments property
+// returns a []WebApplicationSegmentable when successful
 func (m *WebSegmentConfiguration) GetApplicationSegments()([]WebApplicationSegmentable) {
     val, err := m.GetBackingStore().Get("applicationSegments")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *WebSegmentConfiguration) GetApplicationSegments()([]WebApplicationSegme
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WebSegmentConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SegmentConfiguration.GetFieldDeserializers()
     res["applicationSegments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,7 +82,6 @@ func (m *WebSegmentConfiguration) SetApplicationSegments(value []WebApplicationS
         panic(err)
     }
 }
-// WebSegmentConfigurationable 
 type WebSegmentConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SegmentConfigurationable

@@ -17,28 +17,29 @@ type ReportsGetZebraFotaDeploymentReportRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewReportsGetZebraFotaDeploymentReportRequestBuilderInternal instantiates a new GetZebraFotaDeploymentReportRequestBuilder and sets the default values.
+// NewReportsGetZebraFotaDeploymentReportRequestBuilderInternal instantiates a new ReportsGetZebraFotaDeploymentReportRequestBuilder and sets the default values.
 func NewReportsGetZebraFotaDeploymentReportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetZebraFotaDeploymentReportRequestBuilder) {
     m := &ReportsGetZebraFotaDeploymentReportRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/reports/getZebraFotaDeploymentReport", pathParameters),
     }
     return m
 }
-// NewReportsGetZebraFotaDeploymentReportRequestBuilder instantiates a new GetZebraFotaDeploymentReportRequestBuilder and sets the default values.
+// NewReportsGetZebraFotaDeploymentReportRequestBuilder instantiates a new ReportsGetZebraFotaDeploymentReportRequestBuilder and sets the default values.
 func NewReportsGetZebraFotaDeploymentReportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsGetZebraFotaDeploymentReportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReportsGetZebraFotaDeploymentReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getZebraFotaDeploymentReport
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReportsGetZebraFotaDeploymentReportRequestBuilder) Post(ctx context.Context, body ReportsGetZebraFotaDeploymentReportPostRequestBodyable, requestConfiguration *ReportsGetZebraFotaDeploymentReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -50,6 +51,7 @@ func (m *ReportsGetZebraFotaDeploymentReportRequestBuilder) Post(ctx context.Con
     return res.([]byte), nil
 }
 // ToPostRequestInformation invoke action getZebraFotaDeploymentReport
+// returns a *RequestInformation when successful
 func (m *ReportsGetZebraFotaDeploymentReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body ReportsGetZebraFotaDeploymentReportPostRequestBodyable, requestConfiguration *ReportsGetZebraFotaDeploymentReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +66,7 @@ func (m *ReportsGetZebraFotaDeploymentReportRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ReportsGetZebraFotaDeploymentReportRequestBuilder when successful
 func (m *ReportsGetZebraFotaDeploymentReportRequestBuilder) WithUrl(rawUrl string)(*ReportsGetZebraFotaDeploymentReportRequestBuilder) {
     return NewReportsGetZebraFotaDeploymentReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

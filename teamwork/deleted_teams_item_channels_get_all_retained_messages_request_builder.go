@@ -14,6 +14,8 @@ type DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder struct {
 type DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,29 +38,30 @@ type DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetRequestConfi
     // Request query parameters
     QueryParameters *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetQueryParameters
 }
-// NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderInternal instantiates a new GetAllRetainedMessagesRequestBuilder and sets the default values.
+// NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderInternal instantiates a new DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) {
     m := &DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/getAllRetainedMessages(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/getAllRetainedMessages(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder instantiates a new GetAllRetainedMessagesRequestBuilder and sets the default values.
+// NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder instantiates a new DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllRetainedMessages
-// Deprecated: This method is obsolete. Use GetAsGetAllRetainedMessagesGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a DeletedTeamsItemChannelsGetAllRetainedMessagesResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsGetAllRetainedMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedTeamsItemChannelsGetAllRetainedMessagesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) Get(ctx c
     return res.(DeletedTeamsItemChannelsGetAllRetainedMessagesResponseable), nil
 }
 // GetAsGetAllRetainedMessagesGetResponse invoke function getAllRetainedMessages
+// returns a DeletedTeamsItemChannelsGetAllRetainedMessagesGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) GetAsGetAllRetainedMessagesGetResponse(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsGetAllRetainedMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedTeamsItemChannelsGetAllRetainedMessagesGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) GetAsGetA
     return res.(DeletedTeamsItemChannelsGetAllRetainedMessagesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAllRetainedMessages
+// returns a *RequestInformation when successful
 func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder when successful
 func (m *DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) WithUrl(rawUrl string)(*DeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder) {
     return NewDeletedTeamsItemChannelsGetAllRetainedMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

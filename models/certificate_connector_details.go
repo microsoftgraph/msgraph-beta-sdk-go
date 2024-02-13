@@ -9,7 +9,7 @@ import (
 type CertificateConnectorDetails struct {
     Entity
 }
-// NewCertificateConnectorDetails instantiates a new certificateConnectorDetails and sets the default values.
+// NewCertificateConnectorDetails instantiates a new CertificateConnectorDetails and sets the default values.
 func NewCertificateConnectorDetails()(*CertificateConnectorDetails) {
     m := &CertificateConnectorDetails{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewCertificateConnectorDetails()(*CertificateConnectorDetails) {
     return m
 }
 // CreateCertificateConnectorDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCertificateConnectorDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertificateConnectorDetails(), nil
 }
 // GetConnectorName gets the connectorName property value. Connector name (set during enrollment).
+// returns a *string when successful
 func (m *CertificateConnectorDetails) GetConnectorName()(*string) {
     val, err := m.GetBackingStore().Get("connectorName")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *CertificateConnectorDetails) GetConnectorName()(*string) {
     return nil
 }
 // GetConnectorVersion gets the connectorVersion property value. Version of the connector installed.
+// returns a *string when successful
 func (m *CertificateConnectorDetails) GetConnectorVersion()(*string) {
     val, err := m.GetBackingStore().Get("connectorVersion")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *CertificateConnectorDetails) GetConnectorVersion()(*string) {
     return nil
 }
 // GetEnrollmentDateTime gets the enrollmentDateTime property value. Date/time when this connector was enrolled.
+// returns a *Time when successful
 func (m *CertificateConnectorDetails) GetEnrollmentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("enrollmentDateTime")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *CertificateConnectorDetails) GetEnrollmentDateTime()(*i336074805fc85398
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CertificateConnectorDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["connectorName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +114,7 @@ func (m *CertificateConnectorDetails) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetLastCheckinDateTime gets the lastCheckinDateTime property value. Date/time when this connector last connected to the service.
+// returns a *Time when successful
 func (m *CertificateConnectorDetails) GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastCheckinDateTime")
     if err != nil {
@@ -120,6 +126,7 @@ func (m *CertificateConnectorDetails) GetLastCheckinDateTime()(*i336074805fc8539
     return nil
 }
 // GetMachineName gets the machineName property value. Name of the machine hosting this connector service.
+// returns a *string when successful
 func (m *CertificateConnectorDetails) GetMachineName()(*string) {
     val, err := m.GetBackingStore().Get("machineName")
     if err != nil {
@@ -203,7 +210,6 @@ func (m *CertificateConnectorDetails) SetMachineName(value *string)() {
         panic(err)
     }
 }
-// CertificateConnectorDetailsable 
 type CertificateConnectorDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

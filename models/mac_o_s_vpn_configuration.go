@@ -8,7 +8,7 @@ import (
 type MacOSVpnConfiguration struct {
     AppleVpnConfiguration
 }
-// NewMacOSVpnConfiguration instantiates a new macOSVpnConfiguration and sets the default values.
+// NewMacOSVpnConfiguration instantiates a new MacOSVpnConfiguration and sets the default values.
 func NewMacOSVpnConfiguration()(*MacOSVpnConfiguration) {
     m := &MacOSVpnConfiguration{
         AppleVpnConfiguration: *NewAppleVpnConfiguration(),
@@ -18,10 +18,12 @@ func NewMacOSVpnConfiguration()(*MacOSVpnConfiguration) {
     return m
 }
 // CreateMacOSVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSVpnConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppleVpnConfiguration.GetFieldDeserializers()
     res["identityCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *MacOSVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
+// returns a MacOSCertificateProfileBaseable when successful
 func (m *MacOSVpnConfiguration) GetIdentityCertificate()(MacOSCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificate")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *MacOSVpnConfiguration) SetIdentityCertificate(value MacOSCertificatePro
         panic(err)
     }
 }
-// MacOSVpnConfigurationable 
 type MacOSVpnConfigurationable interface {
     AppleVpnConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

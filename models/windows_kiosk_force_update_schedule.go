@@ -11,7 +11,7 @@ type WindowsKioskForceUpdateSchedule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWindowsKioskForceUpdateSchedule instantiates a new windowsKioskForceUpdateSchedule and sets the default values.
+// NewWindowsKioskForceUpdateSchedule instantiates a new WindowsKioskForceUpdateSchedule and sets the default values.
 func NewWindowsKioskForceUpdateSchedule()(*WindowsKioskForceUpdateSchedule) {
     m := &WindowsKioskForceUpdateSchedule{
     }
@@ -20,10 +20,12 @@ func NewWindowsKioskForceUpdateSchedule()(*WindowsKioskForceUpdateSchedule) {
     return m
 }
 // CreateWindowsKioskForceUpdateScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskForceUpdateScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsKioskForceUpdateSchedule(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsKioskForceUpdateSchedule) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +38,12 @@ func (m *WindowsKioskForceUpdateSchedule) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsKioskForceUpdateSchedule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDayofMonth gets the dayofMonth property value. Day of month. Valid values 1 to 31
+// returns a *int32 when successful
 func (m *WindowsKioskForceUpdateSchedule) GetDayofMonth()(*int32) {
     val, err := m.GetBackingStore().Get("dayofMonth")
     if err != nil {
@@ -51,6 +55,7 @@ func (m *WindowsKioskForceUpdateSchedule) GetDayofMonth()(*int32) {
     return nil
 }
 // GetDayofWeek gets the dayofWeek property value. The dayofWeek property
+// returns a *DayOfWeek when successful
 func (m *WindowsKioskForceUpdateSchedule) GetDayofWeek()(*DayOfWeek) {
     val, err := m.GetBackingStore().Get("dayofWeek")
     if err != nil {
@@ -62,6 +67,7 @@ func (m *WindowsKioskForceUpdateSchedule) GetDayofWeek()(*DayOfWeek) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskForceUpdateSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dayofMonth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +133,7 @@ func (m *WindowsKioskForceUpdateSchedule) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WindowsKioskForceUpdateSchedule) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *WindowsKioskForceUpdateSchedule) GetOdataType()(*string) {
     return nil
 }
 // GetRecurrence gets the recurrence property value. Possible values for App update on Windows10 recurrence.
+// returns a *Windows10AppsUpdateRecurrence when successful
 func (m *WindowsKioskForceUpdateSchedule) GetRecurrence()(*Windows10AppsUpdateRecurrence) {
     val, err := m.GetBackingStore().Get("recurrence")
     if err != nil {
@@ -149,6 +157,7 @@ func (m *WindowsKioskForceUpdateSchedule) GetRecurrence()(*Windows10AppsUpdateRe
     return nil
 }
 // GetRunImmediatelyIfAfterStartDateTime gets the runImmediatelyIfAfterStartDateTime property value. If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.
+// returns a *bool when successful
 func (m *WindowsKioskForceUpdateSchedule) GetRunImmediatelyIfAfterStartDateTime()(*bool) {
     val, err := m.GetBackingStore().Get("runImmediatelyIfAfterStartDateTime")
     if err != nil {
@@ -160,6 +169,7 @@ func (m *WindowsKioskForceUpdateSchedule) GetRunImmediatelyIfAfterStartDateTime(
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The start time for the force restart.
+// returns a *Time when successful
 func (m *WindowsKioskForceUpdateSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -271,7 +281,6 @@ func (m *WindowsKioskForceUpdateSchedule) SetStartDateTime(value *i336074805fc85
         panic(err)
     }
 }
-// WindowsKioskForceUpdateScheduleable 
 type WindowsKioskForceUpdateScheduleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

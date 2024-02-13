@@ -42,31 +42,32 @@ type ThreatIntelligenceHostPairsHostPairItemRequestBuilderPatchRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ChildHost provides operations to manage the childHost property of the microsoft.graph.security.hostPair entity.
+// returns a *ThreatIntelligenceHostPairsItemChildHostRequestBuilder when successful
 func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) ChildHost()(*ThreatIntelligenceHostPairsItemChildHostRequestBuilder) {
     return NewThreatIntelligenceHostPairsItemChildHostRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewThreatIntelligenceHostPairsHostPairItemRequestBuilderInternal instantiates a new HostPairItemRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostPairsHostPairItemRequestBuilderInternal instantiates a new ThreatIntelligenceHostPairsHostPairItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostPairsHostPairItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostPairsHostPairItemRequestBuilder) {
     m := &ThreatIntelligenceHostPairsHostPairItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPairs/{hostPair%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostPairs/{hostPair%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceHostPairsHostPairItemRequestBuilder instantiates a new HostPairItemRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostPairsHostPairItemRequestBuilder instantiates a new ThreatIntelligenceHostPairsHostPairItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostPairsHostPairItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostPairsHostPairItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostPairsHostPairItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property hostPairs for security
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPairsHostPairItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -75,6 +76,8 @@ func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) Delete(ctx conte
     return nil
 }
 // Get read the properties and relationships of a hostPair object.
+// returns a HostPairable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-hostpair-get?view=graph-rest-1.0
@@ -84,8 +87,7 @@ func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) Get(ctx context.
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateHostPairFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,18 +99,20 @@ func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) Get(ctx context.
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairable), nil
 }
 // ParentHost provides operations to manage the parentHost property of the microsoft.graph.security.hostPair entity.
+// returns a *ThreatIntelligenceHostPairsItemParentHostRequestBuilder when successful
 func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) ParentHost()(*ThreatIntelligenceHostPairsItemParentHostRequestBuilder) {
     return NewThreatIntelligenceHostPairsItemParentHostRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property hostPairs in security
+// returns a HostPairable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairable, requestConfiguration *ThreatIntelligenceHostPairsHostPairItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateHostPairFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,8 +124,9 @@ func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) Patch(ctx contex
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairable), nil
 }
 // ToDeleteRequestInformation delete navigation property hostPairs for security
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPairsHostPairItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/threatIntelligence/hostPairs/{hostPair%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -130,6 +135,7 @@ func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) ToDeleteRequestI
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a hostPair object.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostPairsHostPairItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -143,8 +149,9 @@ func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property hostPairs in security
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairable, requestConfiguration *ThreatIntelligenceHostPairsHostPairItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/threatIntelligence/hostPairs/{hostPair%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -157,6 +164,7 @@ func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) ToPatchRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceHostPairsHostPairItemRequestBuilder when successful
 func (m *ThreatIntelligenceHostPairsHostPairItemRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostPairsHostPairItemRequestBuilder) {
     return NewThreatIntelligenceHostPairsHostPairItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

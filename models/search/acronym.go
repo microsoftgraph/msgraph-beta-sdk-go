@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Acronym 
 type Acronym struct {
     SearchAnswer
 }
-// NewAcronym instantiates a new acronym and sets the default values.
+// NewAcronym instantiates a new Acronym and sets the default values.
 func NewAcronym()(*Acronym) {
     m := &Acronym{
         SearchAnswer: *NewSearchAnswer(),
@@ -16,10 +15,12 @@ func NewAcronym()(*Acronym) {
     return m
 }
 // CreateAcronymFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAcronymFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAcronym(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Acronym) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SearchAnswer.GetFieldDeserializers()
     res["standsFor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *Acronym) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetStandsFor gets the standsFor property value. What the acronym stands for.
+// returns a *string when successful
 func (m *Acronym) GetStandsFor()(*string) {
     val, err := m.GetBackingStore().Get("standsFor")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *Acronym) GetStandsFor()(*string) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *AnswerState when successful
 func (m *Acronym) GetState()(*AnswerState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *Acronym) SetState(value *AnswerState)() {
         panic(err)
     }
 }
-// Acronymable 
 type Acronymable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SearchAnswerable

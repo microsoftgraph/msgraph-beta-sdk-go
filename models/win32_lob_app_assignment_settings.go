@@ -8,7 +8,7 @@ import (
 type Win32LobAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewWin32LobAppAssignmentSettings instantiates a new win32LobAppAssignmentSettings and sets the default values.
+// NewWin32LobAppAssignmentSettings instantiates a new Win32LobAppAssignmentSettings and sets the default values.
 func NewWin32LobAppAssignmentSettings()(*Win32LobAppAssignmentSettings) {
     m := &Win32LobAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -18,6 +18,7 @@ func NewWin32LobAppAssignmentSettings()(*Win32LobAppAssignmentSettings) {
     return m
 }
 // CreateWin32LobAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWin32LobAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateWin32LobAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80
     return NewWin32LobAppAssignmentSettings(), nil
 }
 // GetDeliveryOptimizationPriority gets the deliveryOptimizationPriority property value. Contains value for delivery optimization priority.
+// returns a *Win32LobAppDeliveryOptimizationPriority when successful
 func (m *Win32LobAppAssignmentSettings) GetDeliveryOptimizationPriority()(*Win32LobAppDeliveryOptimizationPriority) {
     val, err := m.GetBackingStore().Get("deliveryOptimizationPriority")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *Win32LobAppAssignmentSettings) GetDeliveryOptimizationPriority()(*Win32
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
     res["deliveryOptimizationPriority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,6 +99,7 @@ func (m *Win32LobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetInstallTimeSettings gets the installTimeSettings property value. The install time settings to apply for this app assignment.
+// returns a MobileAppInstallTimeSettingsable when successful
 func (m *Win32LobAppAssignmentSettings) GetInstallTimeSettings()(MobileAppInstallTimeSettingsable) {
     val, err := m.GetBackingStore().Get("installTimeSettings")
     if err != nil {
@@ -107,6 +111,7 @@ func (m *Win32LobAppAssignmentSettings) GetInstallTimeSettings()(MobileAppInstal
     return nil
 }
 // GetNotifications gets the notifications property value. Contains value for notification status.
+// returns a *Win32LobAppNotification when successful
 func (m *Win32LobAppAssignmentSettings) GetNotifications()(*Win32LobAppNotification) {
     val, err := m.GetBackingStore().Get("notifications")
     if err != nil {
@@ -118,6 +123,7 @@ func (m *Win32LobAppAssignmentSettings) GetNotifications()(*Win32LobAppNotificat
     return nil
 }
 // GetRestartSettings gets the restartSettings property value. The reboot settings to apply for this app assignment.
+// returns a Win32LobAppRestartSettingsable when successful
 func (m *Win32LobAppAssignmentSettings) GetRestartSettings()(Win32LobAppRestartSettingsable) {
     val, err := m.GetBackingStore().Get("restartSettings")
     if err != nil {
@@ -190,7 +196,6 @@ func (m *Win32LobAppAssignmentSettings) SetRestartSettings(value Win32LobAppRest
         panic(err)
     }
 }
-// Win32LobAppAssignmentSettingsable 
 type Win32LobAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,14 +17,14 @@ type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRef
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilderInternal instantiates a new RefreshRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilderInternal instantiates a new EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder) {
     m := &EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageResources/{accessPackageResource%2Did}/refresh", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder instantiates a new RefreshRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder instantiates a new EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -32,6 +32,7 @@ func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItem
 }
 // Post in Azure AD entitlement management, refresh the accessPackageResource object to fetch the latest details for displayName, description, and resourceType from the origin system. For the AadApplication originSystem, this operation also updates the displayName and description for the accessPackageResourceRole. 
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageresource-refresh?view=graph-rest-1.0
@@ -41,8 +42,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -52,6 +52,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
 }
 // ToPostRequestInformation in Azure AD entitlement management, refresh the accessPackageResource object to fetch the latest details for displayName, description, and resourceType from the origin system. For the AadApplication originSystem, this operation also updates the displayName and description for the accessPackageResourceRole. 
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -63,6 +64,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemRefreshRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

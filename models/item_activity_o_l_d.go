@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemActivityOLD 
 type ItemActivityOLD struct {
     Entity
 }
-// NewItemActivityOLD instantiates a new itemActivityOLD and sets the default values.
+// NewItemActivityOLD instantiates a new ItemActivityOLD and sets the default values.
 func NewItemActivityOLD()(*ItemActivityOLD) {
     m := &ItemActivityOLD{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewItemActivityOLD()(*ItemActivityOLD) {
     return m
 }
 // CreateItemActivityOLDFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemActivityOLDFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemActivityOLD(), nil
 }
 // GetAction gets the action property value. The action property
+// returns a ItemActionSetable when successful
 func (m *ItemActivityOLD) GetAction()(ItemActionSetable) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ItemActivityOLD) GetAction()(ItemActionSetable) {
     return nil
 }
 // GetActor gets the actor property value. The actor property
+// returns a IdentitySetable when successful
 func (m *ItemActivityOLD) GetActor()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("actor")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ItemActivityOLD) GetActor()(IdentitySetable) {
     return nil
 }
 // GetDriveItem gets the driveItem property value. The driveItem property
+// returns a DriveItemable when successful
 func (m *ItemActivityOLD) GetDriveItem()(DriveItemable) {
     val, err := m.GetBackingStore().Get("driveItem")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *ItemActivityOLD) GetDriveItem()(DriveItemable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +112,7 @@ func (m *ItemActivityOLD) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetListItem gets the listItem property value. The listItem property
+// returns a ListItemable when successful
 func (m *ItemActivityOLD) GetListItem()(ListItemable) {
     val, err := m.GetBackingStore().Get("listItem")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *ItemActivityOLD) GetListItem()(ListItemable) {
     return nil
 }
 // GetTimes gets the times property value. The times property
+// returns a ItemActivityTimeSetable when successful
 func (m *ItemActivityOLD) GetTimes()(ItemActivityTimeSetable) {
     val, err := m.GetBackingStore().Get("times")
     if err != nil {
@@ -202,7 +208,6 @@ func (m *ItemActivityOLD) SetTimes(value ItemActivityTimeSetable)() {
         panic(err)
     }
 }
-// ItemActivityOLDable 
 type ItemActivityOLDable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

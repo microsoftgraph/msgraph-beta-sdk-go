@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EncryptedAzureStorageAccountFinding 
 type EncryptedAzureStorageAccountFinding struct {
     Finding
 }
-// NewEncryptedAzureStorageAccountFinding instantiates a new encryptedAzureStorageAccountFinding and sets the default values.
+// NewEncryptedAzureStorageAccountFinding instantiates a new EncryptedAzureStorageAccountFinding and sets the default values.
 func NewEncryptedAzureStorageAccountFinding()(*EncryptedAzureStorageAccountFinding) {
     m := &EncryptedAzureStorageAccountFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewEncryptedAzureStorageAccountFinding()(*EncryptedAzureStorageAccountFindi
     return m
 }
 // CreateEncryptedAzureStorageAccountFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEncryptedAzureStorageAccountFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEncryptedAzureStorageAccountFinding(), nil
 }
 // GetEncryptionManagedBy gets the encryptionManagedBy property value. The encryptionManagedBy property
+// returns a *AzureEncryption when successful
 func (m *EncryptedAzureStorageAccountFinding) GetEncryptionManagedBy()(*AzureEncryption) {
     val, err := m.GetBackingStore().Get("encryptionManagedBy")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *EncryptedAzureStorageAccountFinding) GetEncryptionManagedBy()(*AzureEnc
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EncryptedAzureStorageAccountFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["encryptionManagedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *EncryptedAzureStorageAccountFinding) GetFieldDeserializers()(map[string
     return res
 }
 // GetStorageAccount gets the storageAccount property value. The storageAccount property
+// returns a AuthorizationSystemResourceable when successful
 func (m *EncryptedAzureStorageAccountFinding) GetStorageAccount()(AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("storageAccount")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *EncryptedAzureStorageAccountFinding) SetStorageAccount(value Authorizat
         panic(err)
     }
 }
-// EncryptedAzureStorageAccountFindingable 
 type EncryptedAzureStorageAccountFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

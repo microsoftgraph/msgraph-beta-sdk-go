@@ -9,7 +9,7 @@ import (
 type ServiceNowConnection struct {
     Entity
 }
-// NewServiceNowConnection instantiates a new serviceNowConnection and sets the default values.
+// NewServiceNowConnection instantiates a new ServiceNowConnection and sets the default values.
 func NewServiceNowConnection()(*ServiceNowConnection) {
     m := &ServiceNowConnection{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewServiceNowConnection()(*ServiceNowConnection) {
     return m
 }
 // CreateServiceNowConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceNowConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceNowConnection(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Indicates the method used by Intune to authenticate with ServiceNow. Currently supports only web authentication with ServiceNow using the specified app id.
+// returns a ServiceNowAuthenticationMethodable when successful
 func (m *ServiceNowConnection) GetAuthenticationMethod()(ServiceNowAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *ServiceNowConnection) GetAuthenticationMethod()(ServiceNowAuthenticatio
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date Time when connection properties were created. The value cannot be modified and is automatically populated when the connection properties were entered.
+// returns a *Time when successful
 func (m *ServiceNowConnection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *ServiceNowConnection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceNowConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +122,7 @@ func (m *ServiceNowConnection) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetIncidentApiUrl gets the incidentApiUrl property value. Indicates the ServiceNow incident API URL that Intune will use the fetch incidents. Saved in the format of /api/now/table/incident
+// returns a *string when successful
 func (m *ServiceNowConnection) GetIncidentApiUrl()(*string) {
     val, err := m.GetBackingStore().Get("incidentApiUrl")
     if err != nil {
@@ -129,6 +134,7 @@ func (m *ServiceNowConnection) GetIncidentApiUrl()(*string) {
     return nil
 }
 // GetInstanceUrl gets the instanceUrl property value. Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://.service-now.com
+// returns a *string when successful
 func (m *ServiceNowConnection) GetInstanceUrl()(*string) {
     val, err := m.GetBackingStore().Get("instanceUrl")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *ServiceNowConnection) GetInstanceUrl()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date Time when connection properties were last updated. The value cannot be modified and is automatically populated when the connection properties were updated.
+// returns a *Time when successful
 func (m *ServiceNowConnection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -151,6 +158,7 @@ func (m *ServiceNowConnection) GetLastModifiedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetLastQueriedDateTime gets the lastQueriedDateTime property value. Date Time when incidents from ServiceNow were last queried
+// returns a *Time when successful
 func (m *ServiceNowConnection) GetLastQueriedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastQueriedDateTime")
     if err != nil {
@@ -162,6 +170,7 @@ func (m *ServiceNowConnection) GetLastQueriedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetServiceNowConnectionStatus gets the serviceNowConnectionStatus property value. Status of ServiceNow Connection
+// returns a *ServiceNowConnectionStatus when successful
 func (m *ServiceNowConnection) GetServiceNowConnectionStatus()(*ServiceNowConnectionStatus) {
     val, err := m.GetBackingStore().Get("serviceNowConnectionStatus")
     if err != nil {
@@ -272,7 +281,6 @@ func (m *ServiceNowConnection) SetServiceNowConnectionStatus(value *ServiceNowCo
         panic(err)
     }
 }
-// ServiceNowConnectionable 
 type ServiceNowConnectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

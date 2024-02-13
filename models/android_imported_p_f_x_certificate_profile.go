@@ -8,7 +8,7 @@ import (
 type AndroidImportedPFXCertificateProfile struct {
     AndroidCertificateProfileBase
 }
-// NewAndroidImportedPFXCertificateProfile instantiates a new androidImportedPFXCertificateProfile and sets the default values.
+// NewAndroidImportedPFXCertificateProfile instantiates a new AndroidImportedPFXCertificateProfile and sets the default values.
 func NewAndroidImportedPFXCertificateProfile()(*AndroidImportedPFXCertificateProfile) {
     m := &AndroidImportedPFXCertificateProfile{
         AndroidCertificateProfileBase: *NewAndroidCertificateProfileBase(),
@@ -18,10 +18,12 @@ func NewAndroidImportedPFXCertificateProfile()(*AndroidImportedPFXCertificatePro
     return m
 }
 // CreateAndroidImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidImportedPFXCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidImportedPFXCertificateProfile(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidCertificateProfileBase.GetFieldDeserializers()
     res["intendedPurpose"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -53,6 +55,7 @@ func (m *AndroidImportedPFXCertificateProfile) GetFieldDeserializers()(map[strin
     return res
 }
 // GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
+// returns a *IntendedPurpose when successful
 func (m *AndroidImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose) {
     val, err := m.GetBackingStore().Get("intendedPurpose")
     if err != nil {
@@ -64,6 +67,7 @@ func (m *AndroidImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPur
     return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+// returns a []ManagedDeviceCertificateStateable when successful
 func (m *AndroidImportedPFXCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
     if err != nil {
@@ -115,7 +119,6 @@ func (m *AndroidImportedPFXCertificateProfile) SetManagedDeviceCertificateStates
         panic(err)
     }
 }
-// AndroidImportedPFXCertificateProfileable 
 type AndroidImportedPFXCertificateProfileable interface {
     AndroidCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

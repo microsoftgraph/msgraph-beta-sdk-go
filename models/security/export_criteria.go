@@ -1,22 +1,24 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type ExportCriteria int
 
 const (
-    SEARCHHITS_EXPORTCRITERIA ExportCriteria = iota
-    PARTIALLYINDEXED_EXPORTCRITERIA
-    UNKNOWNFUTUREVALUE_EXPORTCRITERIA
+    SEARCHHITS_EXPORTCRITERIA = 1
+    PARTIALLYINDEXED_EXPORTCRITERIA = 2
+    UNKNOWNFUTUREVALUE_EXPORTCRITERIA = 4
 )
 
 func (i ExportCriteria) String() string {
     var values []string
-    for p := ExportCriteria(1); p <= UNKNOWNFUTUREVALUE_EXPORTCRITERIA; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"searchHits", "partiallyIndexed", "unknownFutureValue"}[p])
+    options := []string{"searchHits", "partiallyIndexed", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := ExportCriteria(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

@@ -47,6 +47,7 @@ type DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDeviceManagementScriptDeviceStateId provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScriptUserState entity.
+// returns a *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder when successful
 func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) ByDeviceManagementScriptDeviceStateId(deviceManagementScriptDeviceStateId string)(*DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRe
     }
     return NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesDeviceManagementScriptDeviceStateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderInternal instantiates a new DeviceRunStatesRequestBuilder and sets the default values.
+// NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderInternal instantiates a new DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder and sets the default values.
 func NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) {
     m := &DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript%2Did}/userRunStates/{deviceManagementScriptUserState%2Did}/deviceRunStates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript%2Did}/userRunStates/{deviceManagementScriptUserState%2Did}/deviceRunStates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder instantiates a new DeviceRunStatesRequestBuilder and sets the default values.
+// NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder instantiates a new DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder and sets the default values.
 func NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesCountRequestBuilder when successful
 func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) Count()(*DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesCountRequestBuilder) {
     return NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list of run states for this script across all devices of specific user.
+// returns a DeviceManagementScriptDeviceStateCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptDeviceStateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementScriptDeviceStateCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRe
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptDeviceStateCollectionResponseable), nil
 }
 // Post create new navigation property to deviceRunStates for deviceManagement
+// returns a DeviceManagementScriptDeviceStateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptDeviceStateable, requestConfiguration *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptDeviceStateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementScriptDeviceStateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRe
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptDeviceStateable), nil
 }
 // ToGetRequestInformation list of run states for this script across all devices of specific user.
+// returns a *RequestInformation when successful
 func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRe
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to deviceRunStates for deviceManagement
+// returns a *RequestInformation when successful
 func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptDeviceStateable, requestConfiguration *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript%2Did}/userRunStates/{deviceManagementScriptUserState%2Did}/deviceRunStates", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder when successful
 func (m *DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) WithUrl(rawUrl string)(*DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder) {
     return NewDeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

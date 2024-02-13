@@ -56,20 +56,21 @@ type MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
+// NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal instantiates a new MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) {
     m := &MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%40id*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
+// NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder instantiates a new MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a group from the list of groups included in a mobile app management policy.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0
@@ -79,8 +80,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Delete(
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -89,6 +89,8 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Delete(
     return nil
 }
 // Get get the list of groups that are included in a mobile app management policy.
+// returns a StringCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0
@@ -98,8 +100,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Get(ctx
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateStringCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -111,6 +112,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Get(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
 // Post add groups to be included in a mobile app management policy.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-post-includedgroups?view=graph-rest-1.0
@@ -120,8 +122,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Post(ct
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -130,8 +131,9 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Post(ct
     return nil
 }
 // ToDeleteRequestInformation delete a group from the list of groups included in a mobile app management policy.
+// returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -143,6 +145,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToDelet
     return requestInfo, nil
 }
 // ToGetRequestInformation get the list of groups that are included in a mobile app management policy.
+// returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -156,8 +159,9 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // ToPostRequestInformation add groups to be included in a mobile app management policy.
+// returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -170,6 +174,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToPostR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder when successful
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) WithUrl(rawUrl string)(*MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) {
     return NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

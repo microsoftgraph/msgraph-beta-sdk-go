@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// LabelsRoot 
 type LabelsRoot struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewLabelsRoot instantiates a new labelsRoot and sets the default values.
+// NewLabelsRoot instantiates a new LabelsRoot and sets the default values.
 func NewLabelsRoot()(*LabelsRoot) {
     m := &LabelsRoot{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewLabelsRoot()(*LabelsRoot) {
     return m
 }
 // CreateLabelsRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLabelsRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLabelsRoot(), nil
 }
 // GetAuthorities gets the authorities property value. Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
+// returns a []AuthorityTemplateable when successful
 func (m *LabelsRoot) GetAuthorities()([]AuthorityTemplateable) {
     val, err := m.GetBackingStore().Get("authorities")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *LabelsRoot) GetAuthorities()([]AuthorityTemplateable) {
     return nil
 }
 // GetCategories gets the categories property value. Specifies a group of similar types of content in a particular department.
+// returns a []CategoryTemplateable when successful
 func (m *LabelsRoot) GetCategories()([]CategoryTemplateable) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *LabelsRoot) GetCategories()([]CategoryTemplateable) {
     return nil
 }
 // GetCitations gets the citations property value. The specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
+// returns a []CitationTemplateable when successful
 func (m *LabelsRoot) GetCitations()([]CitationTemplateable) {
     val, err := m.GetBackingStore().Get("citations")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *LabelsRoot) GetCitations()([]CitationTemplateable) {
     return nil
 }
 // GetDepartments gets the departments property value. Specifies the department or business unit of an organization to which a label belongs.
+// returns a []DepartmentTemplateable when successful
 func (m *LabelsRoot) GetDepartments()([]DepartmentTemplateable) {
     val, err := m.GetBackingStore().Get("departments")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *LabelsRoot) GetDepartments()([]DepartmentTemplateable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LabelsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authorities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -166,6 +171,7 @@ func (m *LabelsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetFilePlanReferences gets the filePlanReferences property value. Specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+// returns a []FilePlanReferenceTemplateable when successful
 func (m *LabelsRoot) GetFilePlanReferences()([]FilePlanReferenceTemplateable) {
     val, err := m.GetBackingStore().Get("filePlanReferences")
     if err != nil {
@@ -177,6 +183,7 @@ func (m *LabelsRoot) GetFilePlanReferences()([]FilePlanReferenceTemplateable) {
     return nil
 }
 // GetRetentionLabels gets the retentionLabels property value. Represents how customers can manage their data, whether and for how long to retain or delete it.
+// returns a []RetentionLabelable when successful
 func (m *LabelsRoot) GetRetentionLabels()([]RetentionLabelable) {
     val, err := m.GetBackingStore().Get("retentionLabels")
     if err != nil {
@@ -309,7 +316,6 @@ func (m *LabelsRoot) SetRetentionLabels(value []RetentionLabelable)() {
         panic(err)
     }
 }
-// LabelsRootable 
 type LabelsRootable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

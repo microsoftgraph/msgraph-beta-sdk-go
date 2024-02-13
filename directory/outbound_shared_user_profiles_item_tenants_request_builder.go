@@ -47,6 +47,7 @@ type OutboundSharedUserProfilesItemTenantsRequestBuilderPostRequestConfiguration
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByTenantReferenceTenantId provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.
+// returns a *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder when successful
 func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) ByTenantReferenceTenantId(tenantReferenceTenantId string)(*OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) ByTenantReferenceT
     }
     return NewOutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewOutboundSharedUserProfilesItemTenantsRequestBuilderInternal instantiates a new TenantsRequestBuilder and sets the default values.
+// NewOutboundSharedUserProfilesItemTenantsRequestBuilderInternal instantiates a new OutboundSharedUserProfilesItemTenantsRequestBuilder and sets the default values.
 func NewOutboundSharedUserProfilesItemTenantsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OutboundSharedUserProfilesItemTenantsRequestBuilder) {
     m := &OutboundSharedUserProfilesItemTenantsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewOutboundSharedUserProfilesItemTenantsRequestBuilder instantiates a new TenantsRequestBuilder and sets the default values.
+// NewOutboundSharedUserProfilesItemTenantsRequestBuilder instantiates a new OutboundSharedUserProfilesItemTenantsRequestBuilder and sets the default values.
 func NewOutboundSharedUserProfilesItemTenantsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OutboundSharedUserProfilesItemTenantsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOutboundSharedUserProfilesItemTenantsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *OutboundSharedUserProfilesItemTenantsCountRequestBuilder when successful
 func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) Count()(*OutboundSharedUserProfilesItemTenantsCountRequestBuilder) {
     return NewOutboundSharedUserProfilesItemTenantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list the tenant references of an outboundSharedUserProfile.
+// returns a TenantReferenceCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/outboundshareduserprofile-list-tenants?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) Get(ctx context.Co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTenantReferenceCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) Get(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceCollectionResponseable), nil
 }
 // Post create new navigation property to tenants for directory
+// returns a TenantReferenceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceable, requestConfiguration *OutboundSharedUserProfilesItemTenantsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTenantReferenceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) Post(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceable), nil
 }
 // ToGetRequestInformation list the tenant references of an outboundSharedUserProfile.
+// returns a *RequestInformation when successful
 func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesItemTenantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to tenants for directory
+// returns a *RequestInformation when successful
 func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceable, requestConfiguration *OutboundSharedUserProfilesItemTenantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) ToPostRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *OutboundSharedUserProfilesItemTenantsRequestBuilder when successful
 func (m *OutboundSharedUserProfilesItemTenantsRequestBuilder) WithUrl(rawUrl string)(*OutboundSharedUserProfilesItemTenantsRequestBuilder) {
     return NewOutboundSharedUserProfilesItemTenantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

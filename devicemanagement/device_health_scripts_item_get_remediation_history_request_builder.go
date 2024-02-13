@@ -18,28 +18,29 @@ type DeviceHealthScriptsItemGetRemediationHistoryRequestBuilderGetRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilderInternal instantiates a new GetRemediationHistoryRequestBuilder and sets the default values.
+// NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilderInternal instantiates a new DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder and sets the default values.
 func NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) {
     m := &DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/getRemediationHistory()", pathParameters),
     }
     return m
 }
-// NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilder instantiates a new GetRemediationHistoryRequestBuilder and sets the default values.
+// NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilder instantiates a new DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder and sets the default values.
 func NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get function to get the number of remediations by a device health scripts
+// returns a DeviceHealthScriptRemediationHistoryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptRemediationHistoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceHealthScriptRemediationHistoryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) Get(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceHealthScriptRemediationHistoryable), nil
 }
 // ToGetRequestInformation function to get the number of remediations by a device health scripts
+// returns a *RequestInformation when successful
 func (m *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +63,7 @@ func (m *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder when successful
 func (m *DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) WithUrl(rawUrl string)(*DeviceHealthScriptsItemGetRemediationHistoryRequestBuilder) {
     return NewDeviceHealthScriptsItemGetRemediationHistoryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

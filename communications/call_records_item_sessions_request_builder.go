@@ -47,6 +47,7 @@ type CallRecordsItemSessionsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySessionId provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
+// returns a *CallRecordsItemSessionsSessionItemRequestBuilder when successful
 func (m *CallRecordsItemSessionsRequestBuilder) BySessionId(sessionId string)(*CallRecordsItemSessionsSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *CallRecordsItemSessionsRequestBuilder) BySessionId(sessionId string)(*C
     }
     return NewCallRecordsItemSessionsSessionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCallRecordsItemSessionsRequestBuilderInternal instantiates a new SessionsRequestBuilder and sets the default values.
+// NewCallRecordsItemSessionsRequestBuilderInternal instantiates a new CallRecordsItemSessionsRequestBuilder and sets the default values.
 func NewCallRecordsItemSessionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemSessionsRequestBuilder) {
     m := &CallRecordsItemSessionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCallRecordsItemSessionsRequestBuilder instantiates a new SessionsRequestBuilder and sets the default values.
+// NewCallRecordsItemSessionsRequestBuilder instantiates a new CallRecordsItemSessionsRequestBuilder and sets the default values.
 func NewCallRecordsItemSessionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemSessionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallRecordsItemSessionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CallRecordsItemSessionsCountRequestBuilder when successful
 func (m *CallRecordsItemSessionsRequestBuilder) Count()(*CallRecordsItemSessionsCountRequestBuilder) {
     return NewCallRecordsItemSessionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the list of sessions associated with a callRecord object.
+// returns a SessionCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/callrecords-callrecord-list-sessions?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *CallRecordsItemSessionsRequestBuilder) Get(ctx context.Context, request
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CreateSessionCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *CallRecordsItemSessionsRequestBuilder) Get(ctx context.Context, request
     return res.(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.SessionCollectionResponseable), nil
 }
 // Post create new navigation property to sessions for communications
+// returns a Sessionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CallRecordsItemSessionsRequestBuilder) Post(ctx context.Context, body iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.Sessionable, requestConfiguration *CallRecordsItemSessionsRequestBuilderPostRequestConfiguration)(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.Sessionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CreateSessionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *CallRecordsItemSessionsRequestBuilder) Post(ctx context.Context, body i
     return res.(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.Sessionable), nil
 }
 // ToGetRequestInformation retrieve the list of sessions associated with a callRecord object.
+// returns a *RequestInformation when successful
 func (m *CallRecordsItemSessionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallRecordsItemSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *CallRecordsItemSessionsRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to sessions for communications
+// returns a *RequestInformation when successful
 func (m *CallRecordsItemSessionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.Sessionable, requestConfiguration *CallRecordsItemSessionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *CallRecordsItemSessionsRequestBuilder) ToPostRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CallRecordsItemSessionsRequestBuilder when successful
 func (m *CallRecordsItemSessionsRequestBuilder) WithUrl(rawUrl string)(*CallRecordsItemSessionsRequestBuilder) {
     return NewCallRecordsItemSessionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// MeetingCapability 
 type MeetingCapability struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMeetingCapability instantiates a new meetingCapability and sets the default values.
+// NewMeetingCapability instantiates a new MeetingCapability and sets the default values.
 func NewMeetingCapability()(*MeetingCapability) {
     m := &MeetingCapability{
     }
@@ -19,10 +18,12 @@ func NewMeetingCapability()(*MeetingCapability) {
     return m
 }
 // CreateMeetingCapabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMeetingCapabilityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMeetingCapability(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MeetingCapability) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *MeetingCapability) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowAnonymousUsersToDialOut gets the allowAnonymousUsersToDialOut property value. Indicates whether anonymous users dialout is allowed in a meeting.
+// returns a *bool when successful
 func (m *MeetingCapability) GetAllowAnonymousUsersToDialOut()(*bool) {
     val, err := m.GetBackingStore().Get("allowAnonymousUsersToDialOut")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *MeetingCapability) GetAllowAnonymousUsersToDialOut()(*bool) {
     return nil
 }
 // GetAllowAnonymousUsersToStartMeeting gets the allowAnonymousUsersToStartMeeting property value. Indicates whether anonymous users are allowed to start a meeting.
+// returns a *bool when successful
 func (m *MeetingCapability) GetAllowAnonymousUsersToStartMeeting()(*bool) {
     val, err := m.GetBackingStore().Get("allowAnonymousUsersToStartMeeting")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *MeetingCapability) GetAllowAnonymousUsersToStartMeeting()(*bool) {
     return nil
 }
 // GetAutoAdmittedUsers gets the autoAdmittedUsers property value. The autoAdmittedUsers property
+// returns a *AutoAdmittedUsersType when successful
 func (m *MeetingCapability) GetAutoAdmittedUsers()(*AutoAdmittedUsersType) {
     val, err := m.GetBackingStore().Get("autoAdmittedUsers")
     if err != nil {
@@ -68,10 +72,12 @@ func (m *MeetingCapability) GetAutoAdmittedUsers()(*AutoAdmittedUsersType) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MeetingCapability) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MeetingCapability) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowAnonymousUsersToDialOut"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +123,7 @@ func (m *MeetingCapability) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MeetingCapability) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -201,7 +208,6 @@ func (m *MeetingCapability) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// MeetingCapabilityable 
 type MeetingCapabilityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

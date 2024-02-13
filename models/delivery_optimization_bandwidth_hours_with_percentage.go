@@ -8,7 +8,7 @@ import (
 type DeliveryOptimizationBandwidthHoursWithPercentage struct {
     DeliveryOptimizationBandwidth
 }
-// NewDeliveryOptimizationBandwidthHoursWithPercentage instantiates a new deliveryOptimizationBandwidthHoursWithPercentage and sets the default values.
+// NewDeliveryOptimizationBandwidthHoursWithPercentage instantiates a new DeliveryOptimizationBandwidthHoursWithPercentage and sets the default values.
 func NewDeliveryOptimizationBandwidthHoursWithPercentage()(*DeliveryOptimizationBandwidthHoursWithPercentage) {
     m := &DeliveryOptimizationBandwidthHoursWithPercentage{
         DeliveryOptimizationBandwidth: *NewDeliveryOptimizationBandwidth(),
@@ -18,10 +18,12 @@ func NewDeliveryOptimizationBandwidthHoursWithPercentage()(*DeliveryOptimization
     return m
 }
 // CreateDeliveryOptimizationBandwidthHoursWithPercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeliveryOptimizationBandwidthHoursWithPercentageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeliveryOptimizationBandwidthHoursWithPercentage(), nil
 }
 // GetBandwidthBackgroundPercentageHours gets the bandwidthBackgroundPercentageHours property value. Background download percentage hours.
+// returns a DeliveryOptimizationBandwidthBusinessHoursLimitable when successful
 func (m *DeliveryOptimizationBandwidthHoursWithPercentage) GetBandwidthBackgroundPercentageHours()(DeliveryOptimizationBandwidthBusinessHoursLimitable) {
     val, err := m.GetBackingStore().Get("bandwidthBackgroundPercentageHours")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeliveryOptimizationBandwidthHoursWithPercentage) GetBandwidthBackgroun
     return nil
 }
 // GetBandwidthForegroundPercentageHours gets the bandwidthForegroundPercentageHours property value. Foreground download percentage hours.
+// returns a DeliveryOptimizationBandwidthBusinessHoursLimitable when successful
 func (m *DeliveryOptimizationBandwidthHoursWithPercentage) GetBandwidthForegroundPercentageHours()(DeliveryOptimizationBandwidthBusinessHoursLimitable) {
     val, err := m.GetBackingStore().Get("bandwidthForegroundPercentageHours")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *DeliveryOptimizationBandwidthHoursWithPercentage) GetBandwidthForegroun
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeliveryOptimizationBandwidthHoursWithPercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeliveryOptimizationBandwidth.GetFieldDeserializers()
     res["bandwidthBackgroundPercentageHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,7 +106,6 @@ func (m *DeliveryOptimizationBandwidthHoursWithPercentage) SetBandwidthForegroun
         panic(err)
     }
 }
-// DeliveryOptimizationBandwidthHoursWithPercentageable 
 type DeliveryOptimizationBandwidthHoursWithPercentageable interface {
     DeliveryOptimizationBandwidthable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

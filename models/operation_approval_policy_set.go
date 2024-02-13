@@ -10,7 +10,7 @@ type OperationApprovalPolicySet struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOperationApprovalPolicySet instantiates a new operationApprovalPolicySet and sets the default values.
+// NewOperationApprovalPolicySet instantiates a new OperationApprovalPolicySet and sets the default values.
 func NewOperationApprovalPolicySet()(*OperationApprovalPolicySet) {
     m := &OperationApprovalPolicySet{
     }
@@ -19,10 +19,12 @@ func NewOperationApprovalPolicySet()(*OperationApprovalPolicySet) {
     return m
 }
 // CreateOperationApprovalPolicySetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOperationApprovalPolicySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOperationApprovalPolicySet(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OperationApprovalPolicySet) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *OperationApprovalPolicySet) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OperationApprovalPolicySet) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OperationApprovalPolicySet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +78,7 @@ func (m *OperationApprovalPolicySet) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OperationApprovalPolicySet) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -85,6 +90,7 @@ func (m *OperationApprovalPolicySet) GetOdataType()(*string) {
     return nil
 }
 // GetPolicyPlatform gets the policyPlatform property value. The set of available platforms for the OperationApprovalPolicy. Allows configuration of a policy to specific platform(s) for approval. If no specific platform is required or applicable, the platform is `notApplicable`.
+// returns a *OperationApprovalPolicyPlatform when successful
 func (m *OperationApprovalPolicySet) GetPolicyPlatform()(*OperationApprovalPolicyPlatform) {
     val, err := m.GetBackingStore().Get("policyPlatform")
     if err != nil {
@@ -96,6 +102,7 @@ func (m *OperationApprovalPolicySet) GetPolicyPlatform()(*OperationApprovalPolic
     return nil
 }
 // GetPolicyType gets the policyType property value. The set of available policy types that can be configured for approval. There is no default value for this enum, indicating that the policy type must always be chosen.
+// returns a *OperationApprovalPolicyType when successful
 func (m *OperationApprovalPolicySet) GetPolicyType()(*OperationApprovalPolicyType) {
     val, err := m.GetBackingStore().Get("policyType")
     if err != nil {
@@ -168,7 +175,6 @@ func (m *OperationApprovalPolicySet) SetPolicyType(value *OperationApprovalPolic
         panic(err)
     }
 }
-// OperationApprovalPolicySetable 
 type OperationApprovalPolicySetable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AccessReviewRecurrenceSettings 
 type AccessReviewRecurrenceSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAccessReviewRecurrenceSettings instantiates a new accessReviewRecurrenceSettings and sets the default values.
+// NewAccessReviewRecurrenceSettings instantiates a new AccessReviewRecurrenceSettings and sets the default values.
 func NewAccessReviewRecurrenceSettings()(*AccessReviewRecurrenceSettings) {
     m := &AccessReviewRecurrenceSettings{
     }
@@ -19,10 +18,12 @@ func NewAccessReviewRecurrenceSettings()(*AccessReviewRecurrenceSettings) {
     return m
 }
 // CreateAccessReviewRecurrenceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessReviewRecurrenceSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewRecurrenceSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AccessReviewRecurrenceSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AccessReviewRecurrenceSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AccessReviewRecurrenceSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDurationInDays gets the durationInDays property value. The duration in days for recurrence.
+// returns a *int32 when successful
 func (m *AccessReviewRecurrenceSettings) GetDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("durationInDays")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AccessReviewRecurrenceSettings) GetDurationInDays()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["durationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +109,7 @@ func (m *AccessReviewRecurrenceSettings) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AccessReviewRecurrenceSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -116,6 +121,7 @@ func (m *AccessReviewRecurrenceSettings) GetOdataType()(*string) {
     return nil
 }
 // GetRecurrenceCount gets the recurrenceCount property value. The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.
+// returns a *int32 when successful
 func (m *AccessReviewRecurrenceSettings) GetRecurrenceCount()(*int32) {
     val, err := m.GetBackingStore().Get("recurrenceCount")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *AccessReviewRecurrenceSettings) GetRecurrenceCount()(*int32) {
     return nil
 }
 // GetRecurrenceEndType gets the recurrenceEndType property value. How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it's never, then there's no explicit end of the recurrence series. If it's endBy, then the recurrence ends at a certain date. If it's occurrences, then the series ends after recurrenceCount instances of the review have completed.
+// returns a *string when successful
 func (m *AccessReviewRecurrenceSettings) GetRecurrenceEndType()(*string) {
     val, err := m.GetBackingStore().Get("recurrenceEndType")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *AccessReviewRecurrenceSettings) GetRecurrenceEndType()(*string) {
     return nil
 }
 // GetRecurrenceType gets the recurrenceType property value. The recurrence interval. Possible values: onetime, weekly, monthly, quarterly, halfyearly or annual.
+// returns a *string when successful
 func (m *AccessReviewRecurrenceSettings) GetRecurrenceType()(*string) {
     val, err := m.GetBackingStore().Get("recurrenceType")
     if err != nil {
@@ -234,7 +242,6 @@ func (m *AccessReviewRecurrenceSettings) SetRecurrenceType(value *string)() {
         panic(err)
     }
 }
-// AccessReviewRecurrenceSettingsable 
 type AccessReviewRecurrenceSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

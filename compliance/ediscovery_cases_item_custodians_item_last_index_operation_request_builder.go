@@ -27,14 +27,14 @@ type EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetQueryParameters
 }
-// NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal instantiates a new LastIndexOperationRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal instantiates a new EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) {
     m := &EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/lastIndexOperation{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/lastIndexOperation{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder instantiates a new LastIndexOperationRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder instantiates a new EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -42,14 +42,15 @@ func NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder(rawUrl
 }
 // Get get lastIndexOperation from compliance
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a CaseIndexOperationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseIndexOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateCaseIndexOperationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -62,6 +63,7 @@ func (m *EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) Get(
 }
 // ToGetRequestInformation get lastIndexOperation from compliance
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -76,6 +78,7 @@ func (m *EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) ToGe
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder when successful
 func (m *EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

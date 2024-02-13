@@ -26,14 +26,14 @@ type EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilderGetRequestCo
     // Request query parameters
     QueryParameters *EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilderGetQueryParameters
 }
-// NewEdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilderInternal instantiates a new EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder) {
     m := &EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/userSources/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/userSources/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewEdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder instantiates a new EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -41,14 +41,15 @@ func NewEdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder(rawUrl s
 }
 // Get get the number of the resource
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -61,6 +62,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder) Get(ct
 }
 // ToGetRequestInformation get the number of the resource
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -75,6 +77,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder) ToGetR
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder when successful
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

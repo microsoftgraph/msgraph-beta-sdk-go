@@ -47,6 +47,7 @@ type MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilderPostRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByMobileAppRelationshipId provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphMacOSPkgAppRelationshipsMobileAppRelationshipItemRequestBuilder when successful
 func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) ByMobileAppRelationshipId(mobileAppRelationshipId string)(*MobileAppsItemGraphMacOSPkgAppRelationshipsMobileAppRelationshipItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) ByMobileAppR
     }
     return NewMobileAppsItemGraphMacOSPkgAppRelationshipsMobileAppRelationshipItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilderInternal instantiates a new RelationshipsRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilderInternal instantiates a new MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) {
     m := &MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSPkgApp/relationships{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSPkgApp/relationships{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder instantiates a new RelationshipsRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder instantiates a new MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *MobileAppsItemGraphMacOSPkgAppRelationshipsCountRequestBuilder when successful
 func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) Count()(*MobileAppsItemGraphMacOSPkgAppRelationshipsCountRequestBuilder) {
     return NewMobileAppsItemGraphMacOSPkgAppRelationshipsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list of relationships for this mobile app.
+// returns a MobileAppRelationshipCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileAppRelationshipCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipCollectionResponseable), nil
 }
 // Post create new navigation property to relationships for deviceAppManagement
+// returns a MobileAppRelationshipable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, requestConfiguration *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileAppRelationshipFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) Post(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable), nil
 }
 // ToGetRequestInformation list of relationships for this mobile app.
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to relationships for deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, requestConfiguration *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSPkgApp/relationships", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) ToPostReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder when successful
 func (m *MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder) {
     return NewMobileAppsItemGraphMacOSPkgAppRelationshipsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

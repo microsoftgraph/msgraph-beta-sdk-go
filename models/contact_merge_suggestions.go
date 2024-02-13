@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContactMergeSuggestions 
 type ContactMergeSuggestions struct {
     Entity
 }
-// NewContactMergeSuggestions instantiates a new contactMergeSuggestions and sets the default values.
+// NewContactMergeSuggestions instantiates a new ContactMergeSuggestions and sets the default values.
 func NewContactMergeSuggestions()(*ContactMergeSuggestions) {
     m := &ContactMergeSuggestions{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewContactMergeSuggestions()(*ContactMergeSuggestions) {
     return m
 }
 // CreateContactMergeSuggestionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContactMergeSuggestionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContactMergeSuggestions(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContactMergeSuggestions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *ContactMergeSuggestions) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetIsEnabled gets the isEnabled property value. true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
+// returns a *bool when successful
 func (m *ContactMergeSuggestions) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *ContactMergeSuggestions) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// ContactMergeSuggestionsable 
 type ContactMergeSuggestionsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WebCategory 
 type WebCategory struct {
     RuleDestination
 }
-// NewWebCategory instantiates a new webCategory and sets the default values.
+// NewWebCategory instantiates a new WebCategory and sets the default values.
 func NewWebCategory()(*WebCategory) {
     m := &WebCategory{
         RuleDestination: *NewRuleDestination(),
@@ -18,10 +17,12 @@ func NewWebCategory()(*WebCategory) {
     return m
 }
 // CreateWebCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebCategory(), nil
 }
 // GetDisplayName gets the displayName property value. The display name for the web category.
+// returns a *string when successful
 func (m *WebCategory) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *WebCategory) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WebCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RuleDestination.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +70,7 @@ func (m *WebCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetGroup gets the group property value. The group or category to which the web category belongs.
+// returns a *string when successful
 func (m *WebCategory) GetGroup()(*string) {
     val, err := m.GetBackingStore().Get("group")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *WebCategory) GetGroup()(*string) {
     return nil
 }
 // GetName gets the name property value. The unique name that is associated with the web category.
+// returns a *string when successful
 func (m *WebCategory) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *WebCategory) SetName(value *string)() {
         panic(err)
     }
 }
-// WebCategoryable 
 type WebCategoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RuleDestinationable

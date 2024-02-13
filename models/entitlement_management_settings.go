@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EntitlementManagementSettings 
 type EntitlementManagementSettings struct {
     Entity
 }
-// NewEntitlementManagementSettings instantiates a new entitlementManagementSettings and sets the default values.
+// NewEntitlementManagementSettings instantiates a new EntitlementManagementSettings and sets the default values.
 func NewEntitlementManagementSettings()(*EntitlementManagementSettings) {
     m := &EntitlementManagementSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewEntitlementManagementSettings()(*EntitlementManagementSettings) {
     return m
 }
 // CreateEntitlementManagementSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEntitlementManagementSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEntitlementManagementSettings(), nil
 }
 // GetDaysUntilExternalUserDeletedAfterBlocked gets the daysUntilExternalUserDeletedAfterBlocked property value. If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
+// returns a *int32 when successful
 func (m *EntitlementManagementSettings) GetDaysUntilExternalUserDeletedAfterBlocked()(*int32) {
     val, err := m.GetBackingStore().Get("daysUntilExternalUserDeletedAfterBlocked")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *EntitlementManagementSettings) GetDaysUntilExternalUserDeletedAfterBloc
     return nil
 }
 // GetExternalUserLifecycleAction gets the externalUserLifecycleAction property value. One of None, BlockSignIn, or BlockSignInAndDelete.
+// returns a *string when successful
 func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*string) {
     val, err := m.GetBackingStore().Get("externalUserLifecycleAction")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *EntitlementManagementSettings) GetExternalUserLifecycleAction()(*string
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EntitlementManagementSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["daysUntilExternalUserDeletedAfterBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,7 +103,6 @@ func (m *EntitlementManagementSettings) SetExternalUserLifecycleAction(value *st
         panic(err)
     }
 }
-// EntitlementManagementSettingsable 
 type EntitlementManagementSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

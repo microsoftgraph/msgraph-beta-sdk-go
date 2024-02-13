@@ -17,20 +17,21 @@ type ItemDevicesItemRegisteredOwnersItemRefRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemDevicesItemRegisteredOwnersItemRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
+// NewItemDevicesItemRegisteredOwnersItemRefRequestBuilderInternal instantiates a new ItemDevicesItemRegisteredOwnersItemRefRequestBuilder and sets the default values.
 func NewItemDevicesItemRegisteredOwnersItemRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) {
     m := &ItemDevicesItemRegisteredOwnersItemRefRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredOwners/{directoryObject%2Did}/$ref", pathParameters),
     }
     return m
 }
-// NewItemDevicesItemRegisteredOwnersItemRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
+// NewItemDevicesItemRegisteredOwnersItemRefRequestBuilder instantiates a new ItemDevicesItemRegisteredOwnersItemRefRequestBuilder and sets the default values.
 func NewItemDevicesItemRegisteredOwnersItemRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemDevicesItemRegisteredOwnersItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete remove a user as a registered owner of the device.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) Delete(ctx contex
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) Delete(ctx contex
     return nil
 }
 // ToDeleteRequestInformation remove a user as a registered owner of the device.
+// returns a *RequestInformation when successful
 func (m *ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredOwnersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) ToDeleteRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemDevicesItemRegisteredOwnersItemRefRequestBuilder when successful
 func (m *ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesItemRegisteredOwnersItemRefRequestBuilder) {
     return NewItemDevicesItemRegisteredOwnersItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

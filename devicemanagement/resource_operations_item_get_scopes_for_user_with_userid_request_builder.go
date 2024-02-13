@@ -32,32 +32,33 @@ type ResourceOperationsItemGetScopesForUserWithUseridRequestBuilderGetRequestCon
     // Request query parameters
     QueryParameters *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilderGetQueryParameters
 }
-// NewResourceOperationsItemGetScopesForUserWithUseridRequestBuilderInternal instantiates a new GetScopesForUserWithUseridRequestBuilder and sets the default values.
+// NewResourceOperationsItemGetScopesForUserWithUseridRequestBuilderInternal instantiates a new ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder and sets the default values.
 func NewResourceOperationsItemGetScopesForUserWithUseridRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, userid *string)(*ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder) {
     m := &ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/getScopesForUser(userid='{userid}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/getScopesForUser(userid='{userid}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     if userid != nil {
         m.BaseRequestBuilder.PathParameters["userid"] = *userid
     }
     return m
 }
-// NewResourceOperationsItemGetScopesForUserWithUseridRequestBuilder instantiates a new GetScopesForUserWithUseridRequestBuilder and sets the default values.
+// NewResourceOperationsItemGetScopesForUserWithUseridRequestBuilder instantiates a new ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder and sets the default values.
 func NewResourceOperationsItemGetScopesForUserWithUseridRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewResourceOperationsItemGetScopesForUserWithUseridRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getScopesForUser
-// Deprecated: This method is obsolete. Use GetAsGetScopesForUserWithUseridGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ResourceOperationsItemGetScopesForUserWithUseridResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder) Get(ctx context.Context, requestConfiguration *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilderGetRequestConfiguration)(ResourceOperationsItemGetScopesForUserWithUseridResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateResourceOperationsItemGetScopesForUserWithUseridResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -69,14 +70,15 @@ func (m *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder) Get(ctx
     return res.(ResourceOperationsItemGetScopesForUserWithUseridResponseable), nil
 }
 // GetAsGetScopesForUserWithUseridGetResponse invoke function getScopesForUser
+// returns a ResourceOperationsItemGetScopesForUserWithUseridGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder) GetAsGetScopesForUserWithUseridGetResponse(ctx context.Context, requestConfiguration *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilderGetRequestConfiguration)(ResourceOperationsItemGetScopesForUserWithUseridGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateResourceOperationsItemGetScopesForUserWithUseridGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -88,6 +90,7 @@ func (m *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder) GetAsGe
     return res.(ResourceOperationsItemGetScopesForUserWithUseridGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getScopesForUser
+// returns a *RequestInformation when successful
 func (m *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -101,6 +104,7 @@ func (m *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder when successful
 func (m *ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder) WithUrl(rawUrl string)(*ResourceOperationsItemGetScopesForUserWithUseridRequestBuilder) {
     return NewResourceOperationsItemGetScopesForUserWithUseridRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

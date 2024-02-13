@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceLevelAgreementRoot 
 type ServiceLevelAgreementRoot struct {
     Entity
 }
-// NewServiceLevelAgreementRoot instantiates a new serviceLevelAgreementRoot and sets the default values.
+// NewServiceLevelAgreementRoot instantiates a new ServiceLevelAgreementRoot and sets the default values.
 func NewServiceLevelAgreementRoot()(*ServiceLevelAgreementRoot) {
     m := &ServiceLevelAgreementRoot{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewServiceLevelAgreementRoot()(*ServiceLevelAgreementRoot) {
     return m
 }
 // CreateServiceLevelAgreementRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceLevelAgreementRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceLevelAgreementRoot(), nil
 }
 // GetAzureADAuthentication gets the azureADAuthentication property value. Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
+// returns a AzureADAuthenticationable when successful
 func (m *ServiceLevelAgreementRoot) GetAzureADAuthentication()(AzureADAuthenticationable) {
     val, err := m.GetBackingStore().Get("azureADAuthentication")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ServiceLevelAgreementRoot) GetAzureADAuthentication()(AzureADAuthentica
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceLevelAgreementRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["azureADAuthentication"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,7 +68,6 @@ func (m *ServiceLevelAgreementRoot) SetAzureADAuthentication(value AzureADAuthen
         panic(err)
     }
 }
-// ServiceLevelAgreementRootable 
 type ServiceLevelAgreementRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,14 +17,14 @@ type ManagedDevicesItemRestoreCloudPcRequestBuilderPostRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewManagedDevicesItemRestoreCloudPcRequestBuilderInternal instantiates a new RestoreCloudPcRequestBuilder and sets the default values.
+// NewManagedDevicesItemRestoreCloudPcRequestBuilderInternal instantiates a new ManagedDevicesItemRestoreCloudPcRequestBuilder and sets the default values.
 func NewManagedDevicesItemRestoreCloudPcRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemRestoreCloudPcRequestBuilder) {
     m := &ManagedDevicesItemRestoreCloudPcRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/restoreCloudPc", pathParameters),
     }
     return m
 }
-// NewManagedDevicesItemRestoreCloudPcRequestBuilder instantiates a new RestoreCloudPcRequestBuilder and sets the default values.
+// NewManagedDevicesItemRestoreCloudPcRequestBuilder instantiates a new ManagedDevicesItemRestoreCloudPcRequestBuilder and sets the default values.
 func NewManagedDevicesItemRestoreCloudPcRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemRestoreCloudPcRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -32,6 +32,7 @@ func NewManagedDevicesItemRestoreCloudPcRequestBuilder(rawUrl string, requestAda
 }
 // Post restore a Cloud PC device to a previous state with an Intune managed device ID.
 // Deprecated: The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
@@ -41,8 +42,7 @@ func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) Post(ctx context.Contex
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -52,6 +52,7 @@ func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) Post(ctx context.Contex
 }
 // ToPostRequestInformation restore a Cloud PC device to a previous state with an Intune managed device ID.
 // Deprecated: The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc
+// returns a *RequestInformation when successful
 func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedDevicesItemRestoreCloudPcPostRequestBodyable, requestConfiguration *ManagedDevicesItemRestoreCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -67,6 +68,7 @@ func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) ToPostRequestInformatio
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc
+// returns a *ManagedDevicesItemRestoreCloudPcRequestBuilder when successful
 func (m *ManagedDevicesItemRestoreCloudPcRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemRestoreCloudPcRequestBuilder) {
     return NewManagedDevicesItemRestoreCloudPcRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

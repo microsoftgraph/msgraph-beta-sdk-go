@@ -47,6 +47,7 @@ type PrintersItemJobsItemDocumentsRequestBuilderPostRequestConfiguration struct 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByPrintDocumentId provides operations to manage the documents property of the microsoft.graph.printJob entity.
+// returns a *PrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilder when successful
 func (m *PrintersItemJobsItemDocumentsRequestBuilder) ByPrintDocumentId(printDocumentId string)(*PrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *PrintersItemJobsItemDocumentsRequestBuilder) ByPrintDocumentId(printDoc
     }
     return NewPrintersItemJobsItemDocumentsPrintDocumentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewPrintersItemJobsItemDocumentsRequestBuilderInternal instantiates a new DocumentsRequestBuilder and sets the default values.
+// NewPrintersItemJobsItemDocumentsRequestBuilderInternal instantiates a new PrintersItemJobsItemDocumentsRequestBuilder and sets the default values.
 func NewPrintersItemJobsItemDocumentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemJobsItemDocumentsRequestBuilder) {
     m := &PrintersItemJobsItemDocumentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/jobs/{printJob%2Did}/documents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/jobs/{printJob%2Did}/documents{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewPrintersItemJobsItemDocumentsRequestBuilder instantiates a new DocumentsRequestBuilder and sets the default values.
+// NewPrintersItemJobsItemDocumentsRequestBuilder instantiates a new PrintersItemJobsItemDocumentsRequestBuilder and sets the default values.
 func NewPrintersItemJobsItemDocumentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemJobsItemDocumentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersItemJobsItemDocumentsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *PrintersItemJobsItemDocumentsCountRequestBuilder when successful
 func (m *PrintersItemJobsItemDocumentsRequestBuilder) Count()(*PrintersItemJobsItemDocumentsCountRequestBuilder) {
     return NewPrintersItemJobsItemDocumentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get documents from print
+// returns a PrintDocumentCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrintersItemJobsItemDocumentsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemJobsItemDocumentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrintDocumentCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *PrintersItemJobsItemDocumentsRequestBuilder) Get(ctx context.Context, r
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentCollectionResponseable), nil
 }
 // Post create new navigation property to documents for print
+// returns a PrintDocumentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrintersItemJobsItemDocumentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentable, requestConfiguration *PrintersItemJobsItemDocumentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrintDocumentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *PrintersItemJobsItemDocumentsRequestBuilder) Post(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentable), nil
 }
 // ToGetRequestInformation get documents from print
+// returns a *RequestInformation when successful
 func (m *PrintersItemJobsItemDocumentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersItemJobsItemDocumentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *PrintersItemJobsItemDocumentsRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to documents for print
+// returns a *RequestInformation when successful
 func (m *PrintersItemJobsItemDocumentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentable, requestConfiguration *PrintersItemJobsItemDocumentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/print/printers/{printer%2Did}/jobs/{printJob%2Did}/documents", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *PrintersItemJobsItemDocumentsRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *PrintersItemJobsItemDocumentsRequestBuilder when successful
 func (m *PrintersItemJobsItemDocumentsRequestBuilder) WithUrl(rawUrl string)(*PrintersItemJobsItemDocumentsRequestBuilder) {
     return NewPrintersItemJobsItemDocumentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

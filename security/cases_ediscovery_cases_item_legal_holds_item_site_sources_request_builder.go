@@ -47,6 +47,7 @@ type CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderPostRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySiteSourceId provides operations to manage the siteSources property of the microsoft.graph.security.ediscoveryHoldPolicy entity.
+// returns a *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesSiteSourceItemRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) BySiteSourceId(siteSourceId string)(*CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesSiteSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) BySite
     }
     return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesSiteSourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal instantiates a new SiteSourcesRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal instantiates a new CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) {
     m := &CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/legalHolds/{ediscoveryHoldPolicy%2Did}/siteSources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/legalHolds/{ediscoveryHoldPolicy%2Did}/siteSources{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder instantiates a new SiteSourcesRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder instantiates a new CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesCountRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Count()(*CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get data sources that represent SharePoint sites.
+// returns a SiteSourceCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SiteSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateSiteSourceCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,6 +97,8 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Get(ct
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SiteSourceCollectionResponseable), nil
 }
 // Post create a new siteSource object.
+// returns a SiteSourceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-post-sitesources?view=graph-rest-1.0
@@ -103,8 +108,7 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Post(c
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateSiteSourceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Post(c
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SiteSourceable), nil
 }
 // ToGetRequestInformation data sources that represent SharePoint sites.
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new siteSource object.
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SiteSourceable, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/legalHolds/{ediscoveryHoldPolicy%2Did}/siteSources", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) {
     return NewCasesEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

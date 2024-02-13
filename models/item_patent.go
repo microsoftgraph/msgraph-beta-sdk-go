@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemPatent 
 type ItemPatent struct {
     ItemFacet
 }
-// NewItemPatent instantiates a new itemPatent and sets the default values.
+// NewItemPatent instantiates a new ItemPatent and sets the default values.
 func NewItemPatent()(*ItemPatent) {
     m := &ItemPatent{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewItemPatent()(*ItemPatent) {
     return m
 }
 // CreateItemPatentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemPatentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemPatent(), nil
 }
 // GetDescription gets the description property value. Descpription of the patent or filing.
+// returns a *string when successful
 func (m *ItemPatent) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ItemPatent) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Title of the patent or filing.
+// returns a *string when successful
 func (m *ItemPatent) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ItemPatent) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemPatent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +122,7 @@ func (m *ItemPatent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetIsPending gets the isPending property value. Indicates the patent is pending.
+// returns a *bool when successful
 func (m *ItemPatent) GetIsPending()(*bool) {
     val, err := m.GetBackingStore().Get("isPending")
     if err != nil {
@@ -130,6 +134,7 @@ func (m *ItemPatent) GetIsPending()(*bool) {
     return nil
 }
 // GetIssuedDate gets the issuedDate property value. The date that the patent was granted.
+// returns a *DateOnly when successful
 func (m *ItemPatent) GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("issuedDate")
     if err != nil {
@@ -141,6 +146,7 @@ func (m *ItemPatent) GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c
     return nil
 }
 // GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the patent.
+// returns a *string when successful
 func (m *ItemPatent) GetIssuingAuthority()(*string) {
     val, err := m.GetBackingStore().Get("issuingAuthority")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *ItemPatent) GetIssuingAuthority()(*string) {
     return nil
 }
 // GetNumber gets the number property value. The patent number.
+// returns a *string when successful
 func (m *ItemPatent) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
     if err != nil {
@@ -163,6 +170,7 @@ func (m *ItemPatent) GetNumber()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. URL referencing the patent or filing.
+// returns a *string when successful
 func (m *ItemPatent) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -272,7 +280,6 @@ func (m *ItemPatent) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// ItemPatentable 
 type ItemPatentable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

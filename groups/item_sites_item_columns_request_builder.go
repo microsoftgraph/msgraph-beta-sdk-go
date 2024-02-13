@@ -47,6 +47,7 @@ type ItemSitesItemColumnsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByColumnDefinitionId provides operations to manage the columns property of the microsoft.graph.site entity.
+// returns a *ItemSitesItemColumnsColumnDefinitionItemRequestBuilder when successful
 func (m *ItemSitesItemColumnsRequestBuilder) ByColumnDefinitionId(columnDefinitionId string)(*ItemSitesItemColumnsColumnDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *ItemSitesItemColumnsRequestBuilder) ByColumnDefinitionId(columnDefiniti
     }
     return NewItemSitesItemColumnsColumnDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemSitesItemColumnsRequestBuilderInternal instantiates a new ColumnsRequestBuilder and sets the default values.
+// NewItemSitesItemColumnsRequestBuilderInternal instantiates a new ItemSitesItemColumnsRequestBuilder and sets the default values.
 func NewItemSitesItemColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemColumnsRequestBuilder) {
     m := &ItemSitesItemColumnsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/columns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/columns{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemColumnsRequestBuilder instantiates a new ColumnsRequestBuilder and sets the default values.
+// NewItemSitesItemColumnsRequestBuilder instantiates a new ItemSitesItemColumnsRequestBuilder and sets the default values.
 func NewItemSitesItemColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemColumnsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemColumnsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemSitesItemColumnsCountRequestBuilder when successful
 func (m *ItemSitesItemColumnsRequestBuilder) Count()(*ItemSitesItemColumnsCountRequestBuilder) {
     return NewItemSitesItemColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [site][site].
+// returns a ColumnDefinitionCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-list-columns?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *ItemSitesItemColumnsRequestBuilder) Get(ctx context.Context, requestCon
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateColumnDefinitionCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +100,8 @@ func (m *ItemSitesItemColumnsRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable), nil
 }
 // Post create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
+// returns a ColumnDefinitionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-post-columns?view=graph-rest-1.0
@@ -106,8 +111,7 @@ func (m *ItemSitesItemColumnsRequestBuilder) Post(ctx context.Context, body ie23
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateColumnDefinitionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,6 +123,7 @@ func (m *ItemSitesItemColumnsRequestBuilder) Post(ctx context.Context, body ie23
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable), nil
 }
 // ToGetRequestInformation get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [site][site].
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +137,9 @@ func (m *ItemSitesItemColumnsRequestBuilder) ToGetRequestInformation(ctx context
     return requestInfo, nil
 }
 // ToPostRequestInformation create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemSitesItemColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/columns", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *ItemSitesItemColumnsRequestBuilder) ToPostRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemColumnsRequestBuilder when successful
 func (m *ItemSitesItemColumnsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemColumnsRequestBuilder) {
     return NewItemSitesItemColumnsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

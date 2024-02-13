@@ -26,28 +26,29 @@ type DeviceConfigurationRestrictedAppsViolationsCountRequestBuilderGetRequestCon
     // Request query parameters
     QueryParameters *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilderGetQueryParameters
 }
-// NewDeviceConfigurationRestrictedAppsViolationsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewDeviceConfigurationRestrictedAppsViolationsCountRequestBuilderInternal instantiates a new DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder and sets the default values.
 func NewDeviceConfigurationRestrictedAppsViolationsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) {
     m := &DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurationRestrictedAppsViolations/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceConfigurationRestrictedAppsViolations/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewDeviceConfigurationRestrictedAppsViolationsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewDeviceConfigurationRestrictedAppsViolationsCountRequestBuilder instantiates a new DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder and sets the default values.
 func NewDeviceConfigurationRestrictedAppsViolationsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceConfigurationRestrictedAppsViolationsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) Get(ctx
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder when successful
 func (m *DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) WithUrl(rawUrl string)(*DeviceConfigurationRestrictedAppsViolationsCountRequestBuilder) {
     return NewDeviceConfigurationRestrictedAppsViolationsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

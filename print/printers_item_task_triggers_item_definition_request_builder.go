@@ -27,28 +27,29 @@ type PrintersItemTaskTriggersItemDefinitionRequestBuilderGetRequestConfiguration
     // Request query parameters
     QueryParameters *PrintersItemTaskTriggersItemDefinitionRequestBuilderGetQueryParameters
 }
-// NewPrintersItemTaskTriggersItemDefinitionRequestBuilderInternal instantiates a new DefinitionRequestBuilder and sets the default values.
+// NewPrintersItemTaskTriggersItemDefinitionRequestBuilderInternal instantiates a new PrintersItemTaskTriggersItemDefinitionRequestBuilder and sets the default values.
 func NewPrintersItemTaskTriggersItemDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemTaskTriggersItemDefinitionRequestBuilder) {
     m := &PrintersItemTaskTriggersItemDefinitionRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/taskTriggers/{printTaskTrigger%2Did}/definition{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/taskTriggers/{printTaskTrigger%2Did}/definition{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewPrintersItemTaskTriggersItemDefinitionRequestBuilder instantiates a new DefinitionRequestBuilder and sets the default values.
+// NewPrintersItemTaskTriggersItemDefinitionRequestBuilder instantiates a new PrintersItemTaskTriggersItemDefinitionRequestBuilder and sets the default values.
 func NewPrintersItemTaskTriggersItemDefinitionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemTaskTriggersItemDefinitionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersItemTaskTriggersItemDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get an abstract definition that is used to create a printTask when triggered by a print event. Read-only.
+// returns a PrintTaskDefinitionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrintersItemTaskTriggersItemDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersItemDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrintTaskDefinitionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *PrintersItemTaskTriggersItemDefinitionRequestBuilder) Get(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskDefinitionable), nil
 }
 // ToGetRequestInformation an abstract definition that is used to create a printTask when triggered by a print event. Read-only.
+// returns a *RequestInformation when successful
 func (m *PrintersItemTaskTriggersItemDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersItemTaskTriggersItemDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *PrintersItemTaskTriggersItemDefinitionRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *PrintersItemTaskTriggersItemDefinitionRequestBuilder when successful
 func (m *PrintersItemTaskTriggersItemDefinitionRequestBuilder) WithUrl(rawUrl string)(*PrintersItemTaskTriggersItemDefinitionRequestBuilder) {
     return NewPrintersItemTaskTriggersItemDefinitionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

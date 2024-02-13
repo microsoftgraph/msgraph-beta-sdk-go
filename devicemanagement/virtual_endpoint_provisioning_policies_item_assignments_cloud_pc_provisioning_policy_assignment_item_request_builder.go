@@ -42,17 +42,18 @@ type VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicy
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AssignedUsers provides operations to manage the assignedUsers property of the microsoft.graph.cloudPcProvisioningPolicyAssignment entity.
+// returns a *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) AssignedUsers()(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewVirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilderInternal instantiates a new CloudPcProvisioningPolicyAssignmentItemRequestBuilder and sets the default values.
+// NewVirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilderInternal instantiates a new VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) {
     m := &VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments/{cloudPcProvisioningPolicyAssignment%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments/{cloudPcProvisioningPolicyAssignment%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder instantiates a new CloudPcProvisioningPolicyAssignmentItemRequestBuilder and sets the default values.
+// NewVirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder instantiates a new VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -60,14 +61,14 @@ func NewVirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPol
 }
 // Delete delete navigation property assignments for deviceManagement
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -77,14 +78,15 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPo
 }
 // Get a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a CloudPcProvisioningPolicyAssignmentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcProvisioningPolicyAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +99,15 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPo
 }
 // Patch update the navigation property assignments in deviceManagement
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a CloudPcProvisioningPolicyAssignmentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcProvisioningPolicyAssignmentable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcProvisioningPolicyAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -117,8 +120,9 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPo
 }
 // ToDeleteRequestInformation delete navigation property assignments for deviceManagement
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments/{cloudPcProvisioningPolicyAssignment%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -128,6 +132,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPo
 }
 // ToGetRequestInformation a defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -142,8 +147,9 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPo
 }
 // ToPatchRequestInformation update the navigation property assignments in deviceManagement
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcProvisioningPolicyAssignmentable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments/{cloudPcProvisioningPolicyAssignment%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -157,6 +163,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPo
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

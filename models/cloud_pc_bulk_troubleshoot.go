@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcBulkTroubleshoot 
 type CloudPcBulkTroubleshoot struct {
     CloudPcBulkAction
 }
-// NewCloudPcBulkTroubleshoot instantiates a new cloudPcBulkTroubleshoot and sets the default values.
+// NewCloudPcBulkTroubleshoot instantiates a new CloudPcBulkTroubleshoot and sets the default values.
 func NewCloudPcBulkTroubleshoot()(*CloudPcBulkTroubleshoot) {
     m := &CloudPcBulkTroubleshoot{
         CloudPcBulkAction: *NewCloudPcBulkAction(),
@@ -18,10 +17,12 @@ func NewCloudPcBulkTroubleshoot()(*CloudPcBulkTroubleshoot) {
     return m
 }
 // CreateCloudPcBulkTroubleshootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcBulkTroubleshootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcBulkTroubleshoot(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcBulkTroubleshoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CloudPcBulkAction.GetFieldDeserializers()
     return res
@@ -34,7 +35,6 @@ func (m *CloudPcBulkTroubleshoot) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// CloudPcBulkTroubleshootable 
 type CloudPcBulkTroubleshootable interface {
     CloudPcBulkActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

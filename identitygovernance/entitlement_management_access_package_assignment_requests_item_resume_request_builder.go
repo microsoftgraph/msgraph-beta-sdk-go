@@ -17,14 +17,14 @@ type EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewEntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilderInternal instantiates a new ResumeRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilderInternal instantiates a new EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/{accessPackageAssignmentRequest%2Did}/resume", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder instantiates a new ResumeRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder instantiates a new EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -32,6 +32,7 @@ func NewEntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBui
 }
 // Post in Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-resume?view=graph-rest-1.0
@@ -41,8 +42,7 @@ func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBu
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -52,6 +52,7 @@ func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBu
 }
 // ToPostRequestInformation in Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It is performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder) ToPostRequestInformation(ctx context.Context, body EntitlementManagementAccessPackageAssignmentRequestsItemResumePostRequestBodyable, requestConfiguration *EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -67,6 +68,7 @@ func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBu
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentRequestsItemResumeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

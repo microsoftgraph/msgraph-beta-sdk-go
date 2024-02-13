@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// RemoteNetwork 
 type RemoteNetwork struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewRemoteNetwork instantiates a new remoteNetwork and sets the default values.
+// NewRemoteNetwork instantiates a new RemoteNetwork and sets the default values.
 func NewRemoteNetwork()(*RemoteNetwork) {
     m := &RemoteNetwork{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewRemoteNetwork()(*RemoteNetwork) {
     return m
 }
 // CreateRemoteNetworkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRemoteNetworkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteNetwork(), nil
 }
 // GetBandwidthCapacity gets the bandwidthCapacity property value. The bandwidthCapacity property
+// returns a *int64 when successful
 func (m *RemoteNetwork) GetBandwidthCapacity()(*int64) {
     val, err := m.GetBackingStore().Get("bandwidthCapacity")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *RemoteNetwork) GetBandwidthCapacity()(*int64) {
     return nil
 }
 // GetConnectivityConfiguration gets the connectivityConfiguration property value. The connectivityConfiguration property
+// returns a RemoteNetworkConnectivityConfigurationable when successful
 func (m *RemoteNetwork) GetConnectivityConfiguration()(RemoteNetworkConnectivityConfigurationable) {
     val, err := m.GetBackingStore().Get("connectivityConfiguration")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *RemoteNetwork) GetConnectivityConfiguration()(RemoteNetworkConnectivity
     return nil
 }
 // GetConnectivityState gets the connectivityState property value. The connectivityState property
+// returns a *ConnectivityState when successful
 func (m *RemoteNetwork) GetConnectivityState()(*ConnectivityState) {
     val, err := m.GetBackingStore().Get("connectivityState")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *RemoteNetwork) GetConnectivityState()(*ConnectivityState) {
     return nil
 }
 // GetCountry gets the country property value. The country property
+// returns a *string when successful
 func (m *RemoteNetwork) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *RemoteNetwork) GetCountry()(*string) {
     return nil
 }
 // GetDeviceLinks gets the deviceLinks property value. The deviceLinks property
+// returns a []DeviceLinkable when successful
 func (m *RemoteNetwork) GetDeviceLinks()([]DeviceLinkable) {
     val, err := m.GetBackingStore().Get("deviceLinks")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *RemoteNetwork) GetDeviceLinks()([]DeviceLinkable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RemoteNetwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bandwidthCapacity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -194,6 +200,7 @@ func (m *RemoteNetwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetForwardingProfiles gets the forwardingProfiles property value. The forwardingProfiles property
+// returns a []ForwardingProfileable when successful
 func (m *RemoteNetwork) GetForwardingProfiles()([]ForwardingProfileable) {
     val, err := m.GetBackingStore().Get("forwardingProfiles")
     if err != nil {
@@ -205,6 +212,7 @@ func (m *RemoteNetwork) GetForwardingProfiles()([]ForwardingProfileable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *RemoteNetwork) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -216,6 +224,7 @@ func (m *RemoteNetwork) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *RemoteNetwork) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -227,6 +236,7 @@ func (m *RemoteNetwork) GetName()(*string) {
     return nil
 }
 // GetRegion gets the region property value. The region property
+// returns a *Region when successful
 func (m *RemoteNetwork) GetRegion()(*Region) {
     val, err := m.GetBackingStore().Get("region")
     if err != nil {
@@ -238,6 +248,7 @@ func (m *RemoteNetwork) GetRegion()(*Region) {
     return nil
 }
 // GetVersion gets the version property value. The version property
+// returns a *string when successful
 func (m *RemoteNetwork) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -400,7 +411,6 @@ func (m *RemoteNetwork) SetVersion(value *string)() {
         panic(err)
     }
 }
-// RemoteNetworkable 
 type RemoteNetworkable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

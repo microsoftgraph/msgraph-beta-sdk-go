@@ -8,7 +8,7 @@ import (
 type IosManagedAppProtection struct {
     TargetedManagedAppProtection
 }
-// NewIosManagedAppProtection instantiates a new iosManagedAppProtection and sets the default values.
+// NewIosManagedAppProtection instantiates a new IosManagedAppProtection and sets the default values.
 func NewIosManagedAppProtection()(*IosManagedAppProtection) {
     m := &IosManagedAppProtection{
         TargetedManagedAppProtection: *NewTargetedManagedAppProtection(),
@@ -18,10 +18,12 @@ func NewIosManagedAppProtection()(*IosManagedAppProtection) {
     return m
 }
 // CreateIosManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosManagedAppProtection(), nil
 }
 // GetAllowedIosDeviceModels gets the allowedIosDeviceModels property value. Semicolon seperated list of device models allowed, as a string, for the managed app to work.
+// returns a *string when successful
 func (m *IosManagedAppProtection) GetAllowedIosDeviceModels()(*string) {
     val, err := m.GetBackingStore().Get("allowedIosDeviceModels")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosManagedAppProtection) GetAllowedIosDeviceModels()(*string) {
     return nil
 }
 // GetAppActionIfIosDeviceModelNotAllowed gets the appActionIfIosDeviceModelNotAllowed property value. An admin initiated action to be applied on a managed app.
+// returns a *ManagedAppRemediationAction when successful
 func (m *IosManagedAppProtection) GetAppActionIfIosDeviceModelNotAllowed()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfIosDeviceModelNotAllowed")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *IosManagedAppProtection) GetAppActionIfIosDeviceModelNotAllowed()(*Mana
     return nil
 }
 // GetAppDataEncryptionType gets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
+// returns a *ManagedAppDataEncryptionType when successful
 func (m *IosManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppDataEncryptionType) {
     val, err := m.GetBackingStore().Get("appDataEncryptionType")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *IosManagedAppProtection) GetAppDataEncryptionType()(*ManagedAppDataEncr
     return nil
 }
 // GetApps gets the apps property value. List of apps to which the policy is deployed.
+// returns a []ManagedMobileAppable when successful
 func (m *IosManagedAppProtection) GetApps()([]ManagedMobileAppable) {
     val, err := m.GetBackingStore().Get("apps")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *IosManagedAppProtection) GetApps()([]ManagedMobileAppable) {
     return nil
 }
 // GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
+// returns a *string when successful
 func (m *IosManagedAppProtection) GetCustomBrowserProtocol()(*string) {
     val, err := m.GetBackingStore().Get("customBrowserProtocol")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *IosManagedAppProtection) GetCustomBrowserProtocol()(*string) {
     return nil
 }
 // GetCustomDialerAppProtocol gets the customDialerAppProtocol property value. Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.
+// returns a *string when successful
 func (m *IosManagedAppProtection) GetCustomDialerAppProtocol()(*string) {
     val, err := m.GetBackingStore().Get("customDialerAppProtocol")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *IosManagedAppProtection) GetCustomDialerAppProtocol()(*string) {
     return nil
 }
 // GetDeployedAppCount gets the deployedAppCount property value. Count of apps to which the current policy is deployed.
+// returns a *int32 when successful
 func (m *IosManagedAppProtection) GetDeployedAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("deployedAppCount")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *IosManagedAppProtection) GetDeployedAppCount()(*int32) {
     return nil
 }
 // GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
+// returns a ManagedAppPolicyDeploymentSummaryable when successful
 func (m *IosManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
     val, err := m.GetBackingStore().Get("deploymentSummary")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *IosManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploym
     return nil
 }
 // GetDisableProtectionOfManagedOutboundOpenInData gets the disableProtectionOfManagedOutboundOpenInData property value. Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps.
+// returns a *bool when successful
 func (m *IosManagedAppProtection) GetDisableProtectionOfManagedOutboundOpenInData()(*bool) {
     val, err := m.GetBackingStore().Get("disableProtectionOfManagedOutboundOpenInData")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *IosManagedAppProtection) GetDisableProtectionOfManagedOutboundOpenInDat
     return nil
 }
 // GetExemptedAppProtocols gets the exemptedAppProtocols property value. Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
+// returns a []KeyValuePairable when successful
 func (m *IosManagedAppProtection) GetExemptedAppProtocols()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("exemptedAppProtocols")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *IosManagedAppProtection) GetExemptedAppProtocols()([]KeyValuePairable) 
     return nil
 }
 // GetExemptedUniversalLinks gets the exemptedUniversalLinks property value. A list of custom urls that are allowed to invocate an unmanaged app
+// returns a []string when successful
 func (m *IosManagedAppProtection) GetExemptedUniversalLinks()([]string) {
     val, err := m.GetBackingStore().Get("exemptedUniversalLinks")
     if err != nil {
@@ -143,6 +155,7 @@ func (m *IosManagedAppProtection) GetExemptedUniversalLinks()([]string) {
     return nil
 }
 // GetFaceIdBlocked gets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
+// returns a *bool when successful
 func (m *IosManagedAppProtection) GetFaceIdBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("faceIdBlocked")
     if err != nil {
@@ -154,6 +167,7 @@ func (m *IosManagedAppProtection) GetFaceIdBlocked()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TargetedManagedAppProtection.GetFieldDeserializers()
     res["allowedIosDeviceModels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -383,6 +397,7 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetFilterOpenInToOnlyManagedApps gets the filterOpenInToOnlyManagedApps property value. Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
+// returns a *bool when successful
 func (m *IosManagedAppProtection) GetFilterOpenInToOnlyManagedApps()(*bool) {
     val, err := m.GetBackingStore().Get("filterOpenInToOnlyManagedApps")
     if err != nil {
@@ -394,6 +409,7 @@ func (m *IosManagedAppProtection) GetFilterOpenInToOnlyManagedApps()(*bool) {
     return nil
 }
 // GetManagedUniversalLinks gets the managedUniversalLinks property value. A list of custom urls that are allowed to invocate a managed app
+// returns a []string when successful
 func (m *IosManagedAppProtection) GetManagedUniversalLinks()([]string) {
     val, err := m.GetBackingStore().Get("managedUniversalLinks")
     if err != nil {
@@ -405,6 +421,7 @@ func (m *IosManagedAppProtection) GetManagedUniversalLinks()([]string) {
     return nil
 }
 // GetMessagingRedirectAppUrlScheme gets the messagingRedirectAppUrlScheme property value. When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.
+// returns a *string when successful
 func (m *IosManagedAppProtection) GetMessagingRedirectAppUrlScheme()(*string) {
     val, err := m.GetBackingStore().Get("messagingRedirectAppUrlScheme")
     if err != nil {
@@ -416,6 +433,7 @@ func (m *IosManagedAppProtection) GetMessagingRedirectAppUrlScheme()(*string) {
     return nil
 }
 // GetMinimumRequiredSdkVersion gets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
+// returns a *string when successful
 func (m *IosManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumRequiredSdkVersion")
     if err != nil {
@@ -427,6 +445,7 @@ func (m *IosManagedAppProtection) GetMinimumRequiredSdkVersion()(*string) {
     return nil
 }
 // GetMinimumWarningSdkVersion gets the minimumWarningSdkVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
+// returns a *string when successful
 func (m *IosManagedAppProtection) GetMinimumWarningSdkVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumWarningSdkVersion")
     if err != nil {
@@ -438,6 +457,7 @@ func (m *IosManagedAppProtection) GetMinimumWarningSdkVersion()(*string) {
     return nil
 }
 // GetMinimumWipeSdkVersion gets the minimumWipeSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
+// returns a *string when successful
 func (m *IosManagedAppProtection) GetMinimumWipeSdkVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumWipeSdkVersion")
     if err != nil {
@@ -449,6 +469,7 @@ func (m *IosManagedAppProtection) GetMinimumWipeSdkVersion()(*string) {
     return nil
 }
 // GetProtectInboundDataFromUnknownSources gets the protectInboundDataFromUnknownSources property value. Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps.
+// returns a *bool when successful
 func (m *IosManagedAppProtection) GetProtectInboundDataFromUnknownSources()(*bool) {
     val, err := m.GetBackingStore().Get("protectInboundDataFromUnknownSources")
     if err != nil {
@@ -460,6 +481,7 @@ func (m *IosManagedAppProtection) GetProtectInboundDataFromUnknownSources()(*boo
     return nil
 }
 // GetThirdPartyKeyboardsBlocked gets the thirdPartyKeyboardsBlocked property value. Defines if third party keyboards are allowed while accessing a managed app
+// returns a *bool when successful
 func (m *IosManagedAppProtection) GetThirdPartyKeyboardsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("thirdPartyKeyboardsBlocked")
     if err != nil {
@@ -752,7 +774,6 @@ func (m *IosManagedAppProtection) SetThirdPartyKeyboardsBlocked(value *bool)() {
         panic(err)
     }
 }
-// IosManagedAppProtectionable 
 type IosManagedAppProtectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TargetedManagedAppProtectionable

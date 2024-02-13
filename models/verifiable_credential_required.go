@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VerifiableCredentialRequired 
 type VerifiableCredentialRequired struct {
     VerifiableCredentialRequirementStatus
 }
-// NewVerifiableCredentialRequired instantiates a new verifiableCredentialRequired and sets the default values.
+// NewVerifiableCredentialRequired instantiates a new VerifiableCredentialRequired and sets the default values.
 func NewVerifiableCredentialRequired()(*VerifiableCredentialRequired) {
     m := &VerifiableCredentialRequired{
         VerifiableCredentialRequirementStatus: *NewVerifiableCredentialRequirementStatus(),
@@ -19,10 +18,12 @@ func NewVerifiableCredentialRequired()(*VerifiableCredentialRequired) {
     return m
 }
 // CreateVerifiableCredentialRequiredFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVerifiableCredentialRequiredFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVerifiableCredentialRequired(), nil
 }
 // GetExpiryDateTime gets the expiryDateTime property value. When the presentation request will expire and a new one will need to be generated.
+// returns a *Time when successful
 func (m *VerifiableCredentialRequired) GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expiryDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *VerifiableCredentialRequired) GetExpiryDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VerifiableCredentialRequired) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VerifiableCredentialRequirementStatus.GetFieldDeserializers()
     res["expiryDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,6 +61,7 @@ func (m *VerifiableCredentialRequired) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetUrl gets the url property value. A URL that launches the digital wallet and starts the presentation process. You can present this URL to the user if they can't scan the QR code.
+// returns a *string when successful
 func (m *VerifiableCredentialRequired) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *VerifiableCredentialRequired) SetUrl(value *string)() {
         panic(err)
     }
 }
-// VerifiableCredentialRequiredable 
 type VerifiableCredentialRequiredable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VerifiableCredentialRequirementStatusable

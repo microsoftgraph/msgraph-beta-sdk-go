@@ -9,7 +9,7 @@ import (
 type RemoteActionAudit struct {
     Entity
 }
-// NewRemoteActionAudit instantiates a new remoteActionAudit and sets the default values.
+// NewRemoteActionAudit instantiates a new RemoteActionAudit and sets the default values.
 func NewRemoteActionAudit()(*RemoteActionAudit) {
     m := &RemoteActionAudit{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewRemoteActionAudit()(*RemoteActionAudit) {
     return m
 }
 // CreateRemoteActionAuditFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRemoteActionAuditFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteActionAudit(), nil
 }
 // GetAction gets the action property value. Remote actions Intune supports.
+// returns a *RemoteAction when successful
 func (m *RemoteActionAudit) GetAction()(*RemoteAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *RemoteActionAudit) GetAction()(*RemoteAction) {
     return nil
 }
 // GetActionState gets the actionState property value. The actionState property
+// returns a *ActionState when successful
 func (m *RemoteActionAudit) GetActionState()(*ActionState) {
     val, err := m.GetBackingStore().Get("actionState")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *RemoteActionAudit) GetActionState()(*ActionState) {
     return nil
 }
 // GetDeviceDisplayName gets the deviceDisplayName property value. Intune device name.
+// returns a *string when successful
 func (m *RemoteActionAudit) GetDeviceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deviceDisplayName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *RemoteActionAudit) GetDeviceDisplayName()(*string) {
     return nil
 }
 // GetDeviceIMEI gets the deviceIMEI property value. IMEI of the device.
+// returns a *string when successful
 func (m *RemoteActionAudit) GetDeviceIMEI()(*string) {
     val, err := m.GetBackingStore().Get("deviceIMEI")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *RemoteActionAudit) GetDeviceIMEI()(*string) {
     return nil
 }
 // GetDeviceOwnerUserPrincipalName gets the deviceOwnerUserPrincipalName property value. Upn of the device owner.
+// returns a *string when successful
 func (m *RemoteActionAudit) GetDeviceOwnerUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("deviceOwnerUserPrincipalName")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *RemoteActionAudit) GetDeviceOwnerUserPrincipalName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -171,6 +178,7 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetInitiatedByUserPrincipalName gets the initiatedByUserPrincipalName property value. User who initiated the device action, format is UPN.
+// returns a *string when successful
 func (m *RemoteActionAudit) GetInitiatedByUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("initiatedByUserPrincipalName")
     if err != nil {
@@ -182,6 +190,7 @@ func (m *RemoteActionAudit) GetInitiatedByUserPrincipalName()(*string) {
     return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Action target.
+// returns a *string when successful
 func (m *RemoteActionAudit) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -193,6 +202,7 @@ func (m *RemoteActionAudit) GetManagedDeviceId()(*string) {
     return nil
 }
 // GetRequestDateTime gets the requestDateTime property value. Time when the action was issued, given in UTC.
+// returns a *Time when successful
 func (m *RemoteActionAudit) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestDateTime")
     if err != nil {
@@ -204,6 +214,7 @@ func (m *RemoteActionAudit) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetUserName gets the userName property value. [deprecated] Please use InitiatedByUserPrincipalName instead.
+// returns a *string when successful
 func (m *RemoteActionAudit) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -341,7 +352,6 @@ func (m *RemoteActionAudit) SetUserName(value *string)() {
         panic(err)
     }
 }
-// RemoteActionAuditable 
 type RemoteActionAuditable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Supported setting types
@@ -8,20 +9,22 @@ type DeviceManagementConfigurationSettingVisibility int
 
 const (
     // Default. Not visible.
-    NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY DeviceManagementConfigurationSettingVisibility = iota
+    NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY = 1
     // Visible to setting catalog policy type.
-    SETTINGSCATALOG_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+    SETTINGSCATALOG_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY = 2
     // Visible to template policy type.
-    TEMPLATE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+    TEMPLATE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY = 4
     // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY = 8
 )
 
 func (i DeviceManagementConfigurationSettingVisibility) String() string {
     var values []string
-    for p := DeviceManagementConfigurationSettingVisibility(1); p <= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "settingsCatalog", "template", "unknownFutureValue"}[p])
+    options := []string{"none", "settingsCatalog", "template", "unknownFutureValue"}
+    for p := 0; p < 4; p++ {
+        mantis := DeviceManagementConfigurationSettingVisibility(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

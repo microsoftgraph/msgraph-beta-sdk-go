@@ -17,29 +17,30 @@ type ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilderInternal instantiates a new ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tasks/{workbookDocumentTask%2Did}/comment/task/changes/count()", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder instantiates a new ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function count
-// Deprecated: This method is obsolete. Use GetAsCountGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequ
     return res.(ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountResponseable), nil
 }
 // GetAsCountGetResponse invoke function count
+// returns a ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder) GetAsCountGetResponse(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequ
     return res.(ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountGetResponseable), nil
 }
 // ToGetRequestInformation invoke function count
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -80,6 +83,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskChangesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

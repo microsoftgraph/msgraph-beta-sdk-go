@@ -47,6 +47,7 @@ type ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilderPostRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByItemActivityId provides operations to manage the activities property of the microsoft.graph.itemActivityStat entity.
+// returns a *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemActivityItemRequestBuilder when successful
 func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) ByItemActivityId(itemActivityId string)(*ItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) By
     }
     return NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesItemActivityItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilderInternal instantiates a new ActivitiesRequestBuilder and sets the default values.
+// NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilderInternal instantiates a new ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder and sets the default values.
 func NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) {
     m := &ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/analytics/itemActivityStats/{itemActivityStat%2Did}/activities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/analytics/itemActivityStats/{itemActivityStat%2Did}/activities{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder instantiates a new ActivitiesRequestBuilder and sets the default values.
+// NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder instantiates a new ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder and sets the default values.
 func NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesCountRequestBuilder when successful
 func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) Count()(*ItemSitesItemAnalyticsItemActivityStatsItemActivitiesCountRequestBuilder) {
     return NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get exposes the itemActivities represented in this itemActivityStat resource.
+// returns a ItemActivityCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemActivityCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) Ge
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityCollectionResponseable), nil
 }
 // Post create new navigation property to activities for groups
+// returns a ItemActivityable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityable, requestConfiguration *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemActivityFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) Po
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityable), nil
 }
 // ToGetRequestInformation exposes the itemActivities represented in this itemActivityStat resource.
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) To
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to activities for groups
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityable, requestConfiguration *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/analytics/itemActivityStats/{itemActivityStat%2Did}/activities", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder when successful
 func (m *ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder) {
     return NewItemSitesItemAnalyticsItemActivityStatsItemActivitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

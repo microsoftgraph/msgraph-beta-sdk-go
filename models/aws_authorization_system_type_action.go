@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsAuthorizationSystemTypeAction 
 type AwsAuthorizationSystemTypeAction struct {
     AuthorizationSystemTypeAction
 }
-// NewAwsAuthorizationSystemTypeAction instantiates a new awsAuthorizationSystemTypeAction and sets the default values.
+// NewAwsAuthorizationSystemTypeAction instantiates a new AwsAuthorizationSystemTypeAction and sets the default values.
 func NewAwsAuthorizationSystemTypeAction()(*AwsAuthorizationSystemTypeAction) {
     m := &AwsAuthorizationSystemTypeAction{
         AuthorizationSystemTypeAction: *NewAuthorizationSystemTypeAction(),
@@ -16,10 +15,12 @@ func NewAwsAuthorizationSystemTypeAction()(*AwsAuthorizationSystemTypeAction) {
     return m
 }
 // CreateAwsAuthorizationSystemTypeActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsAuthorizationSystemTypeActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsAuthorizationSystemTypeAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsAuthorizationSystemTypeAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthorizationSystemTypeAction.GetFieldDeserializers()
     res["service"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *AwsAuthorizationSystemTypeAction) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetService gets the service property value. The service property
+// returns a AuthorizationSystemTypeServiceable when successful
 func (m *AwsAuthorizationSystemTypeAction) GetService()(AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *AwsAuthorizationSystemTypeAction) SetService(value AuthorizationSystemT
         panic(err)
     }
 }
-// AwsAuthorizationSystemTypeActionable 
 type AwsAuthorizationSystemTypeActionable interface {
     AuthorizationSystemTypeActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

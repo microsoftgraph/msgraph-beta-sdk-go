@@ -8,7 +8,7 @@ import (
 type DeviceManagementSettingRequiredConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementSettingRequiredConstraint instantiates a new deviceManagementSettingRequiredConstraint and sets the default values.
+// NewDeviceManagementSettingRequiredConstraint instantiates a new DeviceManagementSettingRequiredConstraint and sets the default values.
 func NewDeviceManagementSettingRequiredConstraint()(*DeviceManagementSettingRequiredConstraint) {
     m := &DeviceManagementSettingRequiredConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -18,10 +18,12 @@ func NewDeviceManagementSettingRequiredConstraint()(*DeviceManagementSettingRequ
     return m
 }
 // CreateDeviceManagementSettingRequiredConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingRequiredConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementSettingRequiredConstraint(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingRequiredConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
     res["notConfiguredValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *DeviceManagementSettingRequiredConstraint) GetFieldDeserializers()(map[
     return res
 }
 // GetNotConfiguredValue gets the notConfiguredValue property value. List of value which means not configured for the setting
+// returns a *string when successful
 func (m *DeviceManagementSettingRequiredConstraint) GetNotConfiguredValue()(*string) {
     val, err := m.GetBackingStore().Get("notConfiguredValue")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *DeviceManagementSettingRequiredConstraint) SetNotConfiguredValue(value 
         panic(err)
     }
 }
-// DeviceManagementSettingRequiredConstraintable 
 type DeviceManagementSettingRequiredConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

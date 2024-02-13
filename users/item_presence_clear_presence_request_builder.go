@@ -17,20 +17,21 @@ type ItemPresenceClearPresenceRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemPresenceClearPresenceRequestBuilderInternal instantiates a new ClearPresenceRequestBuilder and sets the default values.
+// NewItemPresenceClearPresenceRequestBuilderInternal instantiates a new ItemPresenceClearPresenceRequestBuilder and sets the default values.
 func NewItemPresenceClearPresenceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPresenceClearPresenceRequestBuilder) {
     m := &ItemPresenceClearPresenceRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/presence/clearPresence", pathParameters),
     }
     return m
 }
-// NewItemPresenceClearPresenceRequestBuilder instantiates a new ClearPresenceRequestBuilder and sets the default values.
+// NewItemPresenceClearPresenceRequestBuilder instantiates a new ItemPresenceClearPresenceRequestBuilder and sets the default values.
 func NewItemPresenceClearPresenceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPresenceClearPresenceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPresenceClearPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post clear a presence session of an application for a user. If it is the user's only presence session, a successful clearPresence changes the user's presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. 
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemPresenceClearPresenceRequestBuilder) Post(ctx context.Context, body
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemPresenceClearPresenceRequestBuilder) Post(ctx context.Context, body
     return nil
 }
 // ToPostRequestInformation clear a presence session of an application for a user. If it is the user's only presence session, a successful clearPresence changes the user's presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. 
+// returns a *RequestInformation when successful
 func (m *ItemPresenceClearPresenceRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPresenceClearPresencePostRequestBodyable, requestConfiguration *ItemPresenceClearPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemPresenceClearPresenceRequestBuilder) ToPostRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPresenceClearPresenceRequestBuilder when successful
 func (m *ItemPresenceClearPresenceRequestBuilder) WithUrl(rawUrl string)(*ItemPresenceClearPresenceRequestBuilder) {
     return NewItemPresenceClearPresenceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

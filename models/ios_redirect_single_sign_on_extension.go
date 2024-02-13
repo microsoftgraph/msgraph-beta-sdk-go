@@ -8,7 +8,7 @@ import (
 type IosRedirectSingleSignOnExtension struct {
     IosSingleSignOnExtension
 }
-// NewIosRedirectSingleSignOnExtension instantiates a new iosRedirectSingleSignOnExtension and sets the default values.
+// NewIosRedirectSingleSignOnExtension instantiates a new IosRedirectSingleSignOnExtension and sets the default values.
 func NewIosRedirectSingleSignOnExtension()(*IosRedirectSingleSignOnExtension) {
     m := &IosRedirectSingleSignOnExtension{
         IosSingleSignOnExtension: *NewIosSingleSignOnExtension(),
@@ -18,10 +18,12 @@ func NewIosRedirectSingleSignOnExtension()(*IosRedirectSingleSignOnExtension) {
     return m
 }
 // CreateIosRedirectSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosRedirectSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosRedirectSingleSignOnExtension(), nil
 }
 // GetConfigurations gets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
+// returns a []KeyTypedValuePairable when successful
 func (m *IosRedirectSingleSignOnExtension) GetConfigurations()([]KeyTypedValuePairable) {
     val, err := m.GetBackingStore().Get("configurations")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosRedirectSingleSignOnExtension) GetConfigurations()([]KeyTypedValuePa
     return nil
 }
 // GetExtensionIdentifier gets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
+// returns a *string when successful
 func (m *IosRedirectSingleSignOnExtension) GetExtensionIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("extensionIdentifier")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *IosRedirectSingleSignOnExtension) GetExtensionIdentifier()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosRedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosSingleSignOnExtension.GetFieldDeserializers()
     res["configurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +105,7 @@ func (m *IosRedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
+// returns a *string when successful
 func (m *IosRedirectSingleSignOnExtension) GetTeamIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("teamIdentifier")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *IosRedirectSingleSignOnExtension) GetTeamIdentifier()(*string) {
     return nil
 }
 // GetUrlPrefixes gets the urlPrefixes property value. One or more URL prefixes of identity providers on whose behalf the app extension performs single sign-on. URLs must begin with http:// or https://. All URL prefixes must be unique for all profiles.
+// returns a []string when successful
 func (m *IosRedirectSingleSignOnExtension) GetUrlPrefixes()([]string) {
     val, err := m.GetBackingStore().Get("urlPrefixes")
     if err != nil {
@@ -188,7 +194,6 @@ func (m *IosRedirectSingleSignOnExtension) SetUrlPrefixes(value []string)() {
         panic(err)
     }
 }
-// IosRedirectSingleSignOnExtensionable 
 type IosRedirectSingleSignOnExtensionable interface {
     IosSingleSignOnExtensionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

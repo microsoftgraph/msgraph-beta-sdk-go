@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsPolicyPermissionsDefinitionAction 
 type AwsPolicyPermissionsDefinitionAction struct {
     AwsPermissionsDefinitionAction
 }
-// NewAwsPolicyPermissionsDefinitionAction instantiates a new awsPolicyPermissionsDefinitionAction and sets the default values.
+// NewAwsPolicyPermissionsDefinitionAction instantiates a new AwsPolicyPermissionsDefinitionAction and sets the default values.
 func NewAwsPolicyPermissionsDefinitionAction()(*AwsPolicyPermissionsDefinitionAction) {
     m := &AwsPolicyPermissionsDefinitionAction{
         AwsPermissionsDefinitionAction: *NewAwsPermissionsDefinitionAction(),
@@ -18,10 +17,12 @@ func NewAwsPolicyPermissionsDefinitionAction()(*AwsPolicyPermissionsDefinitionAc
     return m
 }
 // CreateAwsPolicyPermissionsDefinitionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsPolicyPermissionsDefinitionActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsPolicyPermissionsDefinitionAction(), nil
 }
 // GetAssignToRoleId gets the assignToRoleId property value. ID for the role.
+// returns a *string when successful
 func (m *AwsPolicyPermissionsDefinitionAction) GetAssignToRoleId()(*string) {
     val, err := m.GetBackingStore().Get("assignToRoleId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AwsPolicyPermissionsDefinitionAction) GetAssignToRoleId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsPolicyPermissionsDefinitionAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AwsPermissionsDefinitionAction.GetFieldDeserializers()
     res["assignToRoleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +66,7 @@ func (m *AwsPolicyPermissionsDefinitionAction) GetFieldDeserializers()(map[strin
     return res
 }
 // GetPolicies gets the policies property value. The policies property
+// returns a []PermissionsDefinitionAwsPolicyable when successful
 func (m *AwsPolicyPermissionsDefinitionAction) GetPolicies()([]PermissionsDefinitionAwsPolicyable) {
     val, err := m.GetBackingStore().Get("policies")
     if err != nil {
@@ -114,7 +117,6 @@ func (m *AwsPolicyPermissionsDefinitionAction) SetPolicies(value []PermissionsDe
         panic(err)
     }
 }
-// AwsPolicyPermissionsDefinitionActionable 
 type AwsPolicyPermissionsDefinitionActionable interface {
     AwsPermissionsDefinitionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

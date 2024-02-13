@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonInterest 
 type PersonInterest struct {
     ItemFacet
 }
-// NewPersonInterest instantiates a new personInterest and sets the default values.
+// NewPersonInterest instantiates a new PersonInterest and sets the default values.
 func NewPersonInterest()(*PersonInterest) {
     m := &PersonInterest{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewPersonInterest()(*PersonInterest) {
     return m
 }
 // CreatePersonInterestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePersonInterestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonInterest(), nil
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
+// returns a []string when successful
 func (m *PersonInterest) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PersonInterest) GetCategories()([]string) {
     return nil
 }
 // GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
+// returns a []string when successful
 func (m *PersonInterest) GetCollaborationTags()([]string) {
     val, err := m.GetBackingStore().Get("collaborationTags")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *PersonInterest) GetCollaborationTags()([]string) {
     return nil
 }
 // GetDescription gets the description property value. Contains a description of the interest.
+// returns a *string when successful
 func (m *PersonInterest) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *PersonInterest) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the interest.
+// returns a *string when successful
 func (m *PersonInterest) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *PersonInterest) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PersonInterest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -143,6 +148,7 @@ func (m *PersonInterest) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
+// returns a *string when successful
 func (m *PersonInterest) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -154,6 +160,7 @@ func (m *PersonInterest) GetThumbnailUrl()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. Contains a link to a web page or resource about the interest.
+// returns a *string when successful
 func (m *PersonInterest) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -250,7 +257,6 @@ func (m *PersonInterest) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// PersonInterestable 
 type PersonInterestable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

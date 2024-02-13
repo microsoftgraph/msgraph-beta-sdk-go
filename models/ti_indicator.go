@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TiIndicator 
 type TiIndicator struct {
     Entity
 }
-// NewTiIndicator instantiates a new tiIndicator and sets the default values.
+// NewTiIndicator instantiates a new TiIndicator and sets the default values.
 func NewTiIndicator()(*TiIndicator) {
     m := &TiIndicator{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTiIndicator()(*TiIndicator) {
     return m
 }
 // CreateTiIndicatorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTiIndicatorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTiIndicator(), nil
 }
 // GetAction gets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
+// returns a *TiAction when successful
 func (m *TiIndicator) GetAction()(*TiAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TiIndicator) GetAction()(*TiAction) {
     return nil
 }
 // GetActivityGroupNames gets the activityGroupNames property value. The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.
+// returns a []string when successful
 func (m *TiIndicator) GetActivityGroupNames()([]string) {
     val, err := m.GetBackingStore().Get("activityGroupNames")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TiIndicator) GetActivityGroupNames()([]string) {
     return nil
 }
 // GetAdditionalInformation gets the additionalInformation property value. A catchall area for extra data from the indicator that is not specifically covered by other tiIndicator properties. The security tool specified by targetProduct typically does not utilize this data.
+// returns a *string when successful
 func (m *TiIndicator) GetAdditionalInformation()(*string) {
     val, err := m.GetBackingStore().Get("additionalInformation")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TiIndicator) GetAdditionalInformation()(*string) {
     return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. Stamped by the system when the indicator is ingested. The Microsoft Entra tenant id of submitting client. Required.
+// returns a *string when successful
 func (m *TiIndicator) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *TiIndicator) GetAzureTenantId()(*string) {
     return nil
 }
 // GetConfidence gets the confidence property value. An integer representing the confidence the data within the indicator accurately identifies malicious behavior. Acceptable values are 0 – 100 with 100 being the highest.
+// returns a *int32 when successful
 func (m *TiIndicator) GetConfidence()(*int32) {
     val, err := m.GetBackingStore().Get("confidence")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *TiIndicator) GetConfidence()(*int32) {
     return nil
 }
 // GetDescription gets the description property value. Brief description (100 characters or less) of the threat represented by the indicator. Required.
+// returns a *string when successful
 func (m *TiIndicator) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *TiIndicator) GetDescription()(*string) {
     return nil
 }
 // GetDiamondModel gets the diamondModel property value. The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
+// returns a *DiamondModel when successful
 func (m *TiIndicator) GetDiamondModel()(*DiamondModel) {
     val, err := m.GetBackingStore().Get("diamondModel")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *TiIndicator) GetDiamondModel()(*DiamondModel) {
     return nil
 }
 // GetDomainName gets the domainName property value. The domainName property
+// returns a *string when successful
 func (m *TiIndicator) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *TiIndicator) GetDomainName()(*string) {
     return nil
 }
 // GetEmailEncoding gets the emailEncoding property value. The emailEncoding property
+// returns a *string when successful
 func (m *TiIndicator) GetEmailEncoding()(*string) {
     val, err := m.GetBackingStore().Get("emailEncoding")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *TiIndicator) GetEmailEncoding()(*string) {
     return nil
 }
 // GetEmailLanguage gets the emailLanguage property value. The emailLanguage property
+// returns a *string when successful
 func (m *TiIndicator) GetEmailLanguage()(*string) {
     val, err := m.GetBackingStore().Get("emailLanguage")
     if err != nil {
@@ -131,6 +141,7 @@ func (m *TiIndicator) GetEmailLanguage()(*string) {
     return nil
 }
 // GetEmailRecipient gets the emailRecipient property value. The emailRecipient property
+// returns a *string when successful
 func (m *TiIndicator) GetEmailRecipient()(*string) {
     val, err := m.GetBackingStore().Get("emailRecipient")
     if err != nil {
@@ -142,6 +153,7 @@ func (m *TiIndicator) GetEmailRecipient()(*string) {
     return nil
 }
 // GetEmailSenderAddress gets the emailSenderAddress property value. The emailSenderAddress property
+// returns a *string when successful
 func (m *TiIndicator) GetEmailSenderAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailSenderAddress")
     if err != nil {
@@ -153,6 +165,7 @@ func (m *TiIndicator) GetEmailSenderAddress()(*string) {
     return nil
 }
 // GetEmailSenderName gets the emailSenderName property value. The emailSenderName property
+// returns a *string when successful
 func (m *TiIndicator) GetEmailSenderName()(*string) {
     val, err := m.GetBackingStore().Get("emailSenderName")
     if err != nil {
@@ -164,6 +177,7 @@ func (m *TiIndicator) GetEmailSenderName()(*string) {
     return nil
 }
 // GetEmailSourceDomain gets the emailSourceDomain property value. The emailSourceDomain property
+// returns a *string when successful
 func (m *TiIndicator) GetEmailSourceDomain()(*string) {
     val, err := m.GetBackingStore().Get("emailSourceDomain")
     if err != nil {
@@ -175,6 +189,7 @@ func (m *TiIndicator) GetEmailSourceDomain()(*string) {
     return nil
 }
 // GetEmailSourceIpAddress gets the emailSourceIpAddress property value. The emailSourceIpAddress property
+// returns a *string when successful
 func (m *TiIndicator) GetEmailSourceIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailSourceIpAddress")
     if err != nil {
@@ -186,6 +201,7 @@ func (m *TiIndicator) GetEmailSourceIpAddress()(*string) {
     return nil
 }
 // GetEmailSubject gets the emailSubject property value. The emailSubject property
+// returns a *string when successful
 func (m *TiIndicator) GetEmailSubject()(*string) {
     val, err := m.GetBackingStore().Get("emailSubject")
     if err != nil {
@@ -197,6 +213,7 @@ func (m *TiIndicator) GetEmailSubject()(*string) {
     return nil
 }
 // GetEmailXMailer gets the emailXMailer property value. The emailXMailer property
+// returns a *string when successful
 func (m *TiIndicator) GetEmailXMailer()(*string) {
     val, err := m.GetBackingStore().Get("emailXMailer")
     if err != nil {
@@ -208,6 +225,7 @@ func (m *TiIndicator) GetEmailXMailer()(*string) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. DateTime string indicating when the Indicator expires. All indicators must have an expiration date to avoid stale indicators persisting in the system. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.
+// returns a *Time when successful
 func (m *TiIndicator) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -219,6 +237,7 @@ func (m *TiIndicator) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetExternalId gets the externalId property value. An identification number that ties the indicator back to the indicator provider’s system (for example, a foreign key).
+// returns a *string when successful
 func (m *TiIndicator) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -230,6 +249,7 @@ func (m *TiIndicator) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TiIndicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -839,6 +859,7 @@ func (m *TiIndicator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetFileCompileDateTime gets the fileCompileDateTime property value. The fileCompileDateTime property
+// returns a *Time when successful
 func (m *TiIndicator) GetFileCompileDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("fileCompileDateTime")
     if err != nil {
@@ -850,6 +871,7 @@ func (m *TiIndicator) GetFileCompileDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetFileCreatedDateTime gets the fileCreatedDateTime property value. The fileCreatedDateTime property
+// returns a *Time when successful
 func (m *TiIndicator) GetFileCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("fileCreatedDateTime")
     if err != nil {
@@ -861,6 +883,7 @@ func (m *TiIndicator) GetFileCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetFileHashType gets the fileHashType property value. The fileHashType property
+// returns a *FileHashType when successful
 func (m *TiIndicator) GetFileHashType()(*FileHashType) {
     val, err := m.GetBackingStore().Get("fileHashType")
     if err != nil {
@@ -872,6 +895,7 @@ func (m *TiIndicator) GetFileHashType()(*FileHashType) {
     return nil
 }
 // GetFileHashValue gets the fileHashValue property value. The fileHashValue property
+// returns a *string when successful
 func (m *TiIndicator) GetFileHashValue()(*string) {
     val, err := m.GetBackingStore().Get("fileHashValue")
     if err != nil {
@@ -883,6 +907,7 @@ func (m *TiIndicator) GetFileHashValue()(*string) {
     return nil
 }
 // GetFileMutexName gets the fileMutexName property value. The fileMutexName property
+// returns a *string when successful
 func (m *TiIndicator) GetFileMutexName()(*string) {
     val, err := m.GetBackingStore().Get("fileMutexName")
     if err != nil {
@@ -894,6 +919,7 @@ func (m *TiIndicator) GetFileMutexName()(*string) {
     return nil
 }
 // GetFileName gets the fileName property value. The fileName property
+// returns a *string when successful
 func (m *TiIndicator) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -905,6 +931,7 @@ func (m *TiIndicator) GetFileName()(*string) {
     return nil
 }
 // GetFilePacker gets the filePacker property value. The filePacker property
+// returns a *string when successful
 func (m *TiIndicator) GetFilePacker()(*string) {
     val, err := m.GetBackingStore().Get("filePacker")
     if err != nil {
@@ -916,6 +943,7 @@ func (m *TiIndicator) GetFilePacker()(*string) {
     return nil
 }
 // GetFilePath gets the filePath property value. The filePath property
+// returns a *string when successful
 func (m *TiIndicator) GetFilePath()(*string) {
     val, err := m.GetBackingStore().Get("filePath")
     if err != nil {
@@ -927,6 +955,7 @@ func (m *TiIndicator) GetFilePath()(*string) {
     return nil
 }
 // GetFileSize gets the fileSize property value. The fileSize property
+// returns a *int64 when successful
 func (m *TiIndicator) GetFileSize()(*int64) {
     val, err := m.GetBackingStore().Get("fileSize")
     if err != nil {
@@ -938,6 +967,7 @@ func (m *TiIndicator) GetFileSize()(*int64) {
     return nil
 }
 // GetFileType gets the fileType property value. The fileType property
+// returns a *string when successful
 func (m *TiIndicator) GetFileType()(*string) {
     val, err := m.GetBackingStore().Get("fileType")
     if err != nil {
@@ -949,6 +979,7 @@ func (m *TiIndicator) GetFileType()(*string) {
     return nil
 }
 // GetIngestedDateTime gets the ingestedDateTime property value. Stamped by the system when the indicator is ingested. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *TiIndicator) GetIngestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("ingestedDateTime")
     if err != nil {
@@ -960,6 +991,7 @@ func (m *TiIndicator) GetIngestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetIsActive gets the isActive property value. Used to deactivate indicators within system. By default, any indicator submitted is set as active. However, providers may submit existing indicators with this set to ‘False’ to deactivate indicators in the system.
+// returns a *bool when successful
 func (m *TiIndicator) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -971,6 +1003,7 @@ func (m *TiIndicator) GetIsActive()(*bool) {
     return nil
 }
 // GetKillChain gets the killChain property value. A JSON array of strings that describes which point or points on the Kill Chain this indicator targets. See ‘killChain values’ below for exact values.
+// returns a []string when successful
 func (m *TiIndicator) GetKillChain()([]string) {
     val, err := m.GetBackingStore().Get("killChain")
     if err != nil {
@@ -982,6 +1015,7 @@ func (m *TiIndicator) GetKillChain()([]string) {
     return nil
 }
 // GetKnownFalsePositives gets the knownFalsePositives property value. Scenarios in which the indicator may cause false positives. This should be human-readable text.
+// returns a *string when successful
 func (m *TiIndicator) GetKnownFalsePositives()(*string) {
     val, err := m.GetBackingStore().Get("knownFalsePositives")
     if err != nil {
@@ -993,6 +1027,7 @@ func (m *TiIndicator) GetKnownFalsePositives()(*string) {
     return nil
 }
 // GetLastReportedDateTime gets the lastReportedDateTime property value. The last time the indicator was seen. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *TiIndicator) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastReportedDateTime")
     if err != nil {
@@ -1004,6 +1039,7 @@ func (m *TiIndicator) GetLastReportedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetMalwareFamilyNames gets the malwareFamilyNames property value. The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible that can be found via the Windows Defender Security Intelligence threat encyclopedia.
+// returns a []string when successful
 func (m *TiIndicator) GetMalwareFamilyNames()([]string) {
     val, err := m.GetBackingStore().Get("malwareFamilyNames")
     if err != nil {
@@ -1015,6 +1051,7 @@ func (m *TiIndicator) GetMalwareFamilyNames()([]string) {
     return nil
 }
 // GetNetworkCidrBlock gets the networkCidrBlock property value. The networkCidrBlock property
+// returns a *string when successful
 func (m *TiIndicator) GetNetworkCidrBlock()(*string) {
     val, err := m.GetBackingStore().Get("networkCidrBlock")
     if err != nil {
@@ -1026,6 +1063,7 @@ func (m *TiIndicator) GetNetworkCidrBlock()(*string) {
     return nil
 }
 // GetNetworkDestinationAsn gets the networkDestinationAsn property value. The networkDestinationAsn property
+// returns a *int64 when successful
 func (m *TiIndicator) GetNetworkDestinationAsn()(*int64) {
     val, err := m.GetBackingStore().Get("networkDestinationAsn")
     if err != nil {
@@ -1037,6 +1075,7 @@ func (m *TiIndicator) GetNetworkDestinationAsn()(*int64) {
     return nil
 }
 // GetNetworkDestinationCidrBlock gets the networkDestinationCidrBlock property value. The networkDestinationCidrBlock property
+// returns a *string when successful
 func (m *TiIndicator) GetNetworkDestinationCidrBlock()(*string) {
     val, err := m.GetBackingStore().Get("networkDestinationCidrBlock")
     if err != nil {
@@ -1048,6 +1087,7 @@ func (m *TiIndicator) GetNetworkDestinationCidrBlock()(*string) {
     return nil
 }
 // GetNetworkDestinationIPv4 gets the networkDestinationIPv4 property value. The networkDestinationIPv4 property
+// returns a *string when successful
 func (m *TiIndicator) GetNetworkDestinationIPv4()(*string) {
     val, err := m.GetBackingStore().Get("networkDestinationIPv4")
     if err != nil {
@@ -1059,6 +1099,7 @@ func (m *TiIndicator) GetNetworkDestinationIPv4()(*string) {
     return nil
 }
 // GetNetworkDestinationIPv6 gets the networkDestinationIPv6 property value. The networkDestinationIPv6 property
+// returns a *string when successful
 func (m *TiIndicator) GetNetworkDestinationIPv6()(*string) {
     val, err := m.GetBackingStore().Get("networkDestinationIPv6")
     if err != nil {
@@ -1070,6 +1111,7 @@ func (m *TiIndicator) GetNetworkDestinationIPv6()(*string) {
     return nil
 }
 // GetNetworkDestinationPort gets the networkDestinationPort property value. The networkDestinationPort property
+// returns a *int32 when successful
 func (m *TiIndicator) GetNetworkDestinationPort()(*int32) {
     val, err := m.GetBackingStore().Get("networkDestinationPort")
     if err != nil {
@@ -1081,6 +1123,7 @@ func (m *TiIndicator) GetNetworkDestinationPort()(*int32) {
     return nil
 }
 // GetNetworkIPv4 gets the networkIPv4 property value. The networkIPv4 property
+// returns a *string when successful
 func (m *TiIndicator) GetNetworkIPv4()(*string) {
     val, err := m.GetBackingStore().Get("networkIPv4")
     if err != nil {
@@ -1092,6 +1135,7 @@ func (m *TiIndicator) GetNetworkIPv4()(*string) {
     return nil
 }
 // GetNetworkIPv6 gets the networkIPv6 property value. The networkIPv6 property
+// returns a *string when successful
 func (m *TiIndicator) GetNetworkIPv6()(*string) {
     val, err := m.GetBackingStore().Get("networkIPv6")
     if err != nil {
@@ -1103,6 +1147,7 @@ func (m *TiIndicator) GetNetworkIPv6()(*string) {
     return nil
 }
 // GetNetworkPort gets the networkPort property value. The networkPort property
+// returns a *int32 when successful
 func (m *TiIndicator) GetNetworkPort()(*int32) {
     val, err := m.GetBackingStore().Get("networkPort")
     if err != nil {
@@ -1114,6 +1159,7 @@ func (m *TiIndicator) GetNetworkPort()(*int32) {
     return nil
 }
 // GetNetworkProtocol gets the networkProtocol property value. The networkProtocol property
+// returns a *int32 when successful
 func (m *TiIndicator) GetNetworkProtocol()(*int32) {
     val, err := m.GetBackingStore().Get("networkProtocol")
     if err != nil {
@@ -1125,6 +1171,7 @@ func (m *TiIndicator) GetNetworkProtocol()(*int32) {
     return nil
 }
 // GetNetworkSourceAsn gets the networkSourceAsn property value. The networkSourceAsn property
+// returns a *int64 when successful
 func (m *TiIndicator) GetNetworkSourceAsn()(*int64) {
     val, err := m.GetBackingStore().Get("networkSourceAsn")
     if err != nil {
@@ -1136,6 +1183,7 @@ func (m *TiIndicator) GetNetworkSourceAsn()(*int64) {
     return nil
 }
 // GetNetworkSourceCidrBlock gets the networkSourceCidrBlock property value. The networkSourceCidrBlock property
+// returns a *string when successful
 func (m *TiIndicator) GetNetworkSourceCidrBlock()(*string) {
     val, err := m.GetBackingStore().Get("networkSourceCidrBlock")
     if err != nil {
@@ -1147,6 +1195,7 @@ func (m *TiIndicator) GetNetworkSourceCidrBlock()(*string) {
     return nil
 }
 // GetNetworkSourceIPv4 gets the networkSourceIPv4 property value. The networkSourceIPv4 property
+// returns a *string when successful
 func (m *TiIndicator) GetNetworkSourceIPv4()(*string) {
     val, err := m.GetBackingStore().Get("networkSourceIPv4")
     if err != nil {
@@ -1158,6 +1207,7 @@ func (m *TiIndicator) GetNetworkSourceIPv4()(*string) {
     return nil
 }
 // GetNetworkSourceIPv6 gets the networkSourceIPv6 property value. The networkSourceIPv6 property
+// returns a *string when successful
 func (m *TiIndicator) GetNetworkSourceIPv6()(*string) {
     val, err := m.GetBackingStore().Get("networkSourceIPv6")
     if err != nil {
@@ -1169,6 +1219,7 @@ func (m *TiIndicator) GetNetworkSourceIPv6()(*string) {
     return nil
 }
 // GetNetworkSourcePort gets the networkSourcePort property value. The networkSourcePort property
+// returns a *int32 when successful
 func (m *TiIndicator) GetNetworkSourcePort()(*int32) {
     val, err := m.GetBackingStore().Get("networkSourcePort")
     if err != nil {
@@ -1180,6 +1231,7 @@ func (m *TiIndicator) GetNetworkSourcePort()(*int32) {
     return nil
 }
 // GetPassiveOnly gets the passiveOnly property value. Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools won't notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they'll simply log that a match occurred but won't perform the action. Default value is false.
+// returns a *bool when successful
 func (m *TiIndicator) GetPassiveOnly()(*bool) {
     val, err := m.GetBackingStore().Get("passiveOnly")
     if err != nil {
@@ -1191,6 +1243,7 @@ func (m *TiIndicator) GetPassiveOnly()(*bool) {
     return nil
 }
 // GetSeverity gets the severity property value. An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero isn't severe at all. Default value is 3.
+// returns a *int32 when successful
 func (m *TiIndicator) GetSeverity()(*int32) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
@@ -1202,6 +1255,7 @@ func (m *TiIndicator) GetSeverity()(*int32) {
     return nil
 }
 // GetTags gets the tags property value. A JSON array of strings that stores arbitrary tags/keywords.
+// returns a []string when successful
 func (m *TiIndicator) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -1213,6 +1267,7 @@ func (m *TiIndicator) GetTags()([]string) {
     return nil
 }
 // GetTargetProduct gets the targetProduct property value. A string value representing a single security product to which the indicator should be applied. Acceptable values are: Azure Sentinel, Microsoft Defender ATP. Required
+// returns a *string when successful
 func (m *TiIndicator) GetTargetProduct()(*string) {
     val, err := m.GetBackingStore().Get("targetProduct")
     if err != nil {
@@ -1224,6 +1279,7 @@ func (m *TiIndicator) GetTargetProduct()(*string) {
     return nil
 }
 // GetThreatType gets the threatType property value. Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
+// returns a *string when successful
 func (m *TiIndicator) GetThreatType()(*string) {
     val, err := m.GetBackingStore().Get("threatType")
     if err != nil {
@@ -1235,6 +1291,7 @@ func (m *TiIndicator) GetThreatType()(*string) {
     return nil
 }
 // GetTlpLevel gets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
+// returns a *TlpLevel when successful
 func (m *TiIndicator) GetTlpLevel()(*TlpLevel) {
     val, err := m.GetBackingStore().Get("tlpLevel")
     if err != nil {
@@ -1246,6 +1303,7 @@ func (m *TiIndicator) GetTlpLevel()(*TlpLevel) {
     return nil
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *TiIndicator) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -1257,6 +1315,7 @@ func (m *TiIndicator) GetUrl()(*string) {
     return nil
 }
 // GetUserAgent gets the userAgent property value. The userAgent property
+// returns a *string when successful
 func (m *TiIndicator) GetUserAgent()(*string) {
     val, err := m.GetBackingStore().Get("userAgent")
     if err != nil {
@@ -2033,7 +2092,6 @@ func (m *TiIndicator) SetUserAgent(value *string)() {
         panic(err)
     }
 }
-// TiIndicatorable 
 type TiIndicatorable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

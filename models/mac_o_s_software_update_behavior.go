@@ -9,7 +9,7 @@ const (
     // Not configured.
     NOTCONFIGURED_MACOSSOFTWAREUPDATEBEHAVIOR MacOSSoftwareUpdateBehavior = iota
     // Download and/or install the software update, depending on the current device state.
-    DEFAULTESCAPED_MACOSSOFTWAREUPDATEBEHAVIOR
+    DEFAULT_MACOSSOFTWAREUPDATEBEHAVIOR
     // Download the software update without installing it.
     DOWNLOADONLY_MACOSSOFTWAREUPDATEBEHAVIOR
     // Install an already downloaded software update.
@@ -29,7 +29,7 @@ func ParseMacOSSoftwareUpdateBehavior(v string) (any, error) {
         case "notConfigured":
             result = NOTCONFIGURED_MACOSSOFTWAREUPDATEBEHAVIOR
         case "default":
-            result = DEFAULTESCAPED_MACOSSOFTWAREUPDATEBEHAVIOR
+            result = DEFAULT_MACOSSOFTWAREUPDATEBEHAVIOR
         case "downloadOnly":
             result = DOWNLOADONLY_MACOSSOFTWAREUPDATEBEHAVIOR
         case "installASAP":

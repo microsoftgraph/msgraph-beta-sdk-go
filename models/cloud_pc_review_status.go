@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcReviewStatus 
 type CloudPcReviewStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcReviewStatus instantiates a new cloudPcReviewStatus and sets the default values.
+// NewCloudPcReviewStatus instantiates a new CloudPcReviewStatus and sets the default values.
 func NewCloudPcReviewStatus()(*CloudPcReviewStatus) {
     m := &CloudPcReviewStatus{
     }
@@ -20,10 +19,12 @@ func NewCloudPcReviewStatus()(*CloudPcReviewStatus) {
     return m
 }
 // CreateCloudPcReviewStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcReviewStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcReviewStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcReviewStatus) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *CloudPcReviewStatus) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAzureStorageAccountId gets the azureStorageAccountId property value. The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.
+// returns a *string when successful
 func (m *CloudPcReviewStatus) GetAzureStorageAccountId()(*string) {
     val, err := m.GetBackingStore().Get("azureStorageAccountId")
     if err != nil {
@@ -47,6 +49,7 @@ func (m *CloudPcReviewStatus) GetAzureStorageAccountId()(*string) {
     return nil
 }
 // GetAzureStorageAccountName gets the azureStorageAccountName property value. The name of the Azure Storage account in which the Cloud PC snapshot is being saved.
+// returns a *string when successful
 func (m *CloudPcReviewStatus) GetAzureStorageAccountName()(*string) {
     val, err := m.GetBackingStore().Get("azureStorageAccountName")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *CloudPcReviewStatus) GetAzureStorageAccountName()(*string) {
     return nil
 }
 // GetAzureStorageContainerName gets the azureStorageContainerName property value. The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.
+// returns a *string when successful
 func (m *CloudPcReviewStatus) GetAzureStorageContainerName()(*string) {
     val, err := m.GetBackingStore().Get("azureStorageContainerName")
     if err != nil {
@@ -69,10 +73,12 @@ func (m *CloudPcReviewStatus) GetAzureStorageContainerName()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcReviewStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcReviewStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["azureStorageAccountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -178,6 +184,7 @@ func (m *CloudPcReviewStatus) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetInReview gets the inReview property value. True if the Cloud PC is set to in review by the administrator.
+// returns a *bool when successful
 func (m *CloudPcReviewStatus) GetInReview()(*bool) {
     val, err := m.GetBackingStore().Get("inReview")
     if err != nil {
@@ -189,6 +196,7 @@ func (m *CloudPcReviewStatus) GetInReview()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcReviewStatus) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,6 +208,7 @@ func (m *CloudPcReviewStatus) GetOdataType()(*string) {
     return nil
 }
 // GetRestorePointDateTime gets the restorePointDateTime property value. The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPcReviewStatus) GetRestorePointDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restorePointDateTime")
     if err != nil {
@@ -211,6 +220,7 @@ func (m *CloudPcReviewStatus) GetRestorePointDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetReviewStartDateTime gets the reviewStartDateTime property value. The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPcReviewStatus) GetReviewStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewStartDateTime")
     if err != nil {
@@ -222,6 +232,7 @@ func (m *CloudPcReviewStatus) GetReviewStartDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetSubscriptionId gets the subscriptionId property value. The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.
+// returns a *string when successful
 func (m *CloudPcReviewStatus) GetSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionId")
     if err != nil {
@@ -233,6 +244,7 @@ func (m *CloudPcReviewStatus) GetSubscriptionId()(*string) {
     return nil
 }
 // GetSubscriptionName gets the subscriptionName property value. The name of the Azure subscription in which the Cloud PC snapshot is being saved.
+// returns a *string when successful
 func (m *CloudPcReviewStatus) GetSubscriptionName()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionName")
     if err != nil {
@@ -244,6 +256,7 @@ func (m *CloudPcReviewStatus) GetSubscriptionName()(*string) {
     return nil
 }
 // GetUserAccessLevel gets the userAccessLevel property value. The userAccessLevel property
+// returns a *CloudPcUserAccessLevel when successful
 func (m *CloudPcReviewStatus) GetUserAccessLevel()(*CloudPcUserAccessLevel) {
     val, err := m.GetBackingStore().Get("userAccessLevel")
     if err != nil {
@@ -406,7 +419,6 @@ func (m *CloudPcReviewStatus) SetUserAccessLevel(value *CloudPcUserAccessLevel)(
         panic(err)
     }
 }
-// CloudPcReviewStatusable 
 type CloudPcReviewStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

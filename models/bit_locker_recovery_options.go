@@ -10,7 +10,7 @@ type BitLockerRecoveryOptions struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBitLockerRecoveryOptions instantiates a new bitLockerRecoveryOptions and sets the default values.
+// NewBitLockerRecoveryOptions instantiates a new BitLockerRecoveryOptions and sets the default values.
 func NewBitLockerRecoveryOptions()(*BitLockerRecoveryOptions) {
     m := &BitLockerRecoveryOptions{
     }
@@ -19,10 +19,12 @@ func NewBitLockerRecoveryOptions()(*BitLockerRecoveryOptions) {
     return m
 }
 // CreateBitLockerRecoveryOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBitLockerRecoveryOptionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBitLockerRecoveryOptions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BitLockerRecoveryOptions) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *BitLockerRecoveryOptions) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *BitLockerRecoveryOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBlockDataRecoveryAgent gets the blockDataRecoveryAgent property value. Indicates whether to block certificate-based data recovery agent.
+// returns a *bool when successful
 func (m *BitLockerRecoveryOptions) GetBlockDataRecoveryAgent()(*bool) {
     val, err := m.GetBackingStore().Get("blockDataRecoveryAgent")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *BitLockerRecoveryOptions) GetBlockDataRecoveryAgent()(*bool) {
     return nil
 }
 // GetEnableBitLockerAfterRecoveryInformationToStore gets the enableBitLockerAfterRecoveryInformationToStore property value. Indicates whether or not to enable BitLocker until recovery information is stored in AD DS.
+// returns a *bool when successful
 func (m *BitLockerRecoveryOptions) GetEnableBitLockerAfterRecoveryInformationToStore()(*bool) {
     val, err := m.GetBackingStore().Get("enableBitLockerAfterRecoveryInformationToStore")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *BitLockerRecoveryOptions) GetEnableBitLockerAfterRecoveryInformationToS
     return nil
 }
 // GetEnableRecoveryInformationSaveToStore gets the enableRecoveryInformationSaveToStore property value. Indicates whether or not to allow BitLocker recovery information to store in AD DS.
+// returns a *bool when successful
 func (m *BitLockerRecoveryOptions) GetEnableRecoveryInformationSaveToStore()(*bool) {
     val, err := m.GetBackingStore().Get("enableRecoveryInformationSaveToStore")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *BitLockerRecoveryOptions) GetEnableRecoveryInformationSaveToStore()(*bo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BitLockerRecoveryOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["blockDataRecoveryAgent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -157,6 +164,7 @@ func (m *BitLockerRecoveryOptions) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetHideRecoveryOptions gets the hideRecoveryOptions property value. Indicates whether or not to allow showing recovery options in BitLocker Setup Wizard for fixed or system disk.
+// returns a *bool when successful
 func (m *BitLockerRecoveryOptions) GetHideRecoveryOptions()(*bool) {
     val, err := m.GetBackingStore().Get("hideRecoveryOptions")
     if err != nil {
@@ -168,6 +176,7 @@ func (m *BitLockerRecoveryOptions) GetHideRecoveryOptions()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *BitLockerRecoveryOptions) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -179,6 +188,7 @@ func (m *BitLockerRecoveryOptions) GetOdataType()(*string) {
     return nil
 }
 // GetRecoveryInformationToStore gets the recoveryInformationToStore property value. BitLockerRecoveryInformationType types
+// returns a *BitLockerRecoveryInformationType when successful
 func (m *BitLockerRecoveryOptions) GetRecoveryInformationToStore()(*BitLockerRecoveryInformationType) {
     val, err := m.GetBackingStore().Get("recoveryInformationToStore")
     if err != nil {
@@ -190,6 +200,7 @@ func (m *BitLockerRecoveryOptions) GetRecoveryInformationToStore()(*BitLockerRec
     return nil
 }
 // GetRecoveryKeyUsage gets the recoveryKeyUsage property value. Possible values of the ConfigurationUsage list.
+// returns a *ConfigurationUsage when successful
 func (m *BitLockerRecoveryOptions) GetRecoveryKeyUsage()(*ConfigurationUsage) {
     val, err := m.GetBackingStore().Get("recoveryKeyUsage")
     if err != nil {
@@ -201,6 +212,7 @@ func (m *BitLockerRecoveryOptions) GetRecoveryKeyUsage()(*ConfigurationUsage) {
     return nil
 }
 // GetRecoveryPasswordUsage gets the recoveryPasswordUsage property value. Possible values of the ConfigurationUsage list.
+// returns a *ConfigurationUsage when successful
 func (m *BitLockerRecoveryOptions) GetRecoveryPasswordUsage()(*ConfigurationUsage) {
     val, err := m.GetBackingStore().Get("recoveryPasswordUsage")
     if err != nil {
@@ -339,7 +351,6 @@ func (m *BitLockerRecoveryOptions) SetRecoveryPasswordUsage(value *Configuration
         panic(err)
     }
 }
-// BitLockerRecoveryOptionsable 
 type BitLockerRecoveryOptionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

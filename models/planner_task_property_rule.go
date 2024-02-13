@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerTaskPropertyRule 
 type PlannerTaskPropertyRule struct {
     PlannerPropertyRule
 }
-// NewPlannerTaskPropertyRule instantiates a new plannerTaskPropertyRule and sets the default values.
+// NewPlannerTaskPropertyRule instantiates a new PlannerTaskPropertyRule and sets the default values.
 func NewPlannerTaskPropertyRule()(*PlannerTaskPropertyRule) {
     m := &PlannerTaskPropertyRule{
         PlannerPropertyRule: *NewPlannerPropertyRule(),
@@ -18,10 +17,12 @@ func NewPlannerTaskPropertyRule()(*PlannerTaskPropertyRule) {
     return m
 }
 // CreatePlannerTaskPropertyRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerTaskPropertyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskPropertyRule(), nil
 }
 // GetAppliedCategories gets the appliedCategories property value. Rules and restrictions for applied categories. This value does not currently support overrides. Accepted values for the default rule and individual overrides are allow, block.
+// returns a PlannerFieldRulesable when successful
 func (m *PlannerTaskPropertyRule) GetAppliedCategories()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("appliedCategories")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PlannerTaskPropertyRule) GetAppliedCategories()(PlannerFieldRulesable) 
     return nil
 }
 // GetApprovalAttachment gets the approvalAttachment property value. The approvalAttachment property
+// returns a PlannerFieldRulesable when successful
 func (m *PlannerTaskPropertyRule) GetApprovalAttachment()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("approvalAttachment")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *PlannerTaskPropertyRule) GetApprovalAttachment()(PlannerFieldRulesable)
     return nil
 }
 // GetAssignments gets the assignments property value. Rules and restrictions for assignments. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, addSelf, addOther, remove, removeSelf, removeOther, block.
+// returns a PlannerFieldRulesable when successful
 func (m *PlannerTaskPropertyRule) GetAssignments()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *PlannerTaskPropertyRule) GetAssignments()(PlannerFieldRulesable) {
     return nil
 }
 // GetCheckLists gets the checkLists property value. Rules and restrictions for checklist. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, update, check, reorder, block.
+// returns a PlannerFieldRulesable when successful
 func (m *PlannerTaskPropertyRule) GetCheckLists()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("checkLists")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *PlannerTaskPropertyRule) GetCheckLists()(PlannerFieldRulesable) {
     return nil
 }
 // GetCompletionRequirements gets the completionRequirements property value. Rules and restrictions for completion requirements of the task. Accepted values are allow, add, remove, edit, and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetCompletionRequirements()([]string) {
     val, err := m.GetBackingStore().Get("completionRequirements")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *PlannerTaskPropertyRule) GetCompletionRequirements()([]string) {
     return nil
 }
 // GetDelete gets the delete property value. Rules and restrictions for deleting the task. Accepted values are allow and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetDelete()([]string) {
     val, err := m.GetBackingStore().Get("delete")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *PlannerTaskPropertyRule) GetDelete()([]string) {
     return nil
 }
 // GetDueDate gets the dueDate property value. Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetDueDate()([]string) {
     val, err := m.GetBackingStore().Get("dueDate")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *PlannerTaskPropertyRule) GetDueDate()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerPropertyRule.GetFieldDeserializers()
     res["appliedCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -340,6 +348,7 @@ func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetForms gets the forms property value. The forms property
+// returns a PlannerFieldRulesable when successful
 func (m *PlannerTaskPropertyRule) GetForms()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("forms")
     if err != nil {
@@ -351,6 +360,7 @@ func (m *PlannerTaskPropertyRule) GetForms()(PlannerFieldRulesable) {
     return nil
 }
 // GetMove gets the move property value. Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetMove()([]string) {
     val, err := m.GetBackingStore().Get("move")
     if err != nil {
@@ -362,6 +372,7 @@ func (m *PlannerTaskPropertyRule) GetMove()([]string) {
     return nil
 }
 // GetNotes gets the notes property value. Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetNotes()([]string) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -373,6 +384,7 @@ func (m *PlannerTaskPropertyRule) GetNotes()([]string) {
     return nil
 }
 // GetOrder gets the order property value. Rules and restrictions for changing the order of the task. Accepted values are allow and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetOrder()([]string) {
     val, err := m.GetBackingStore().Get("order")
     if err != nil {
@@ -384,6 +396,7 @@ func (m *PlannerTaskPropertyRule) GetOrder()([]string) {
     return nil
 }
 // GetPercentComplete gets the percentComplete property value. Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, overrideRequirements, setToNotStarted, setToInProgress, and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetPercentComplete()([]string) {
     val, err := m.GetBackingStore().Get("percentComplete")
     if err != nil {
@@ -395,6 +408,7 @@ func (m *PlannerTaskPropertyRule) GetPercentComplete()([]string) {
     return nil
 }
 // GetPreviewType gets the previewType property value. Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetPreviewType()([]string) {
     val, err := m.GetBackingStore().Get("previewType")
     if err != nil {
@@ -406,6 +420,7 @@ func (m *PlannerTaskPropertyRule) GetPreviewType()([]string) {
     return nil
 }
 // GetPriority gets the priority property value. Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetPriority()([]string) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -417,6 +432,7 @@ func (m *PlannerTaskPropertyRule) GetPriority()([]string) {
     return nil
 }
 // GetReferences gets the references property value. Rules and restrictions for references. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, block.
+// returns a PlannerFieldRulesable when successful
 func (m *PlannerTaskPropertyRule) GetReferences()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("references")
     if err != nil {
@@ -428,6 +444,7 @@ func (m *PlannerTaskPropertyRule) GetReferences()(PlannerFieldRulesable) {
     return nil
 }
 // GetStartDate gets the startDate property value. Rules and restrictions for changing the start date of the task. Accepted values are allow and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetStartDate()([]string) {
     val, err := m.GetBackingStore().Get("startDate")
     if err != nil {
@@ -439,6 +456,7 @@ func (m *PlannerTaskPropertyRule) GetStartDate()([]string) {
     return nil
 }
 // GetTitle gets the title property value. Rules and restrictions for changing the title of the task. Accepted values are allow and block.
+// returns a []string when successful
 func (m *PlannerTaskPropertyRule) GetTitle()([]string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -678,7 +696,6 @@ func (m *PlannerTaskPropertyRule) SetTitle(value []string)() {
         panic(err)
     }
 }
-// PlannerTaskPropertyRuleable 
 type PlannerTaskPropertyRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerPropertyRuleable

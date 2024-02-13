@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonAwardCollectionResponse 
 type PersonAwardCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPersonAwardCollectionResponse instantiates a new personAwardCollectionResponse and sets the default values.
+// NewPersonAwardCollectionResponse instantiates a new PersonAwardCollectionResponse and sets the default values.
 func NewPersonAwardCollectionResponse()(*PersonAwardCollectionResponse) {
     m := &PersonAwardCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewPersonAwardCollectionResponse()(*PersonAwardCollectionResponse) {
     return m
 }
 // CreatePersonAwardCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePersonAwardCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonAwardCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PersonAwardCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *PersonAwardCollectionResponse) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []PersonAwardable when successful
 func (m *PersonAwardCollectionResponse) GetValue()([]PersonAwardable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *PersonAwardCollectionResponse) SetValue(value []PersonAwardable)() {
         panic(err)
     }
 }
-// PersonAwardCollectionResponseable 
 type PersonAwardCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

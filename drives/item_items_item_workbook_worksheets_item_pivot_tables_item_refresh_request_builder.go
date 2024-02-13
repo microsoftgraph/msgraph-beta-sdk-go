@@ -17,28 +17,28 @@ type ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderInternal instantiates a new RefreshRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderInternal instantiates a new ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/pivotTables/{workbookPivotTable%2Did}/refresh", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder instantiates a new RefreshRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder instantiates a new ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action refresh
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder
     return nil
 }
 // ToPostRequestInformation invoke action refresh
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -57,6 +58,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemPivotTablesItemRefreshRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

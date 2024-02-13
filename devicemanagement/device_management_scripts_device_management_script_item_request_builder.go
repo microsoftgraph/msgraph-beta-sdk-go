@@ -42,35 +42,37 @@ type DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderPatchRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Assign provides operations to call the assign method.
+// returns a *DeviceManagementScriptsItemAssignRequestBuilder when successful
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Assign()(*DeviceManagementScriptsItemAssignRequestBuilder) {
     return NewDeviceManagementScriptsItemAssignRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceManagementScript entity.
+// returns a *DeviceManagementScriptsItemAssignmentsRequestBuilder when successful
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Assignments()(*DeviceManagementScriptsItemAssignmentsRequestBuilder) {
     return NewDeviceManagementScriptsItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilderInternal instantiates a new DeviceManagementScriptItemRequestBuilder and sets the default values.
+// NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilderInternal instantiates a new DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder and sets the default values.
 func NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) {
     m := &DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilder instantiates a new DeviceManagementScriptItemRequestBuilder and sets the default values.
+// NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilder instantiates a new DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder and sets the default values.
 func NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property deviceManagementScripts for deviceManagement
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -79,18 +81,20 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Delete
     return nil
 }
 // DeviceRunStates provides operations to manage the deviceRunStates property of the microsoft.graph.deviceManagementScript entity.
+// returns a *DeviceManagementScriptsItemDeviceRunStatesRequestBuilder when successful
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) DeviceRunStates()(*DeviceManagementScriptsItemDeviceRunStatesRequestBuilder) {
     return NewDeviceManagementScriptsItemDeviceRunStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of device management scripts associated with the tenant.
+// returns a DeviceManagementScriptable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementScriptFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -102,18 +106,20 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Get(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable), nil
 }
 // GroupAssignments provides operations to manage the groupAssignments property of the microsoft.graph.deviceManagementScript entity.
+// returns a *DeviceManagementScriptsItemGroupAssignmentsRequestBuilder when successful
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) GroupAssignments()(*DeviceManagementScriptsItemGroupAssignmentsRequestBuilder) {
     return NewDeviceManagementScriptsItemGroupAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property deviceManagementScripts in deviceManagement
+// returns a DeviceManagementScriptable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable, requestConfiguration *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementScriptFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -125,12 +131,14 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) Patch(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable), nil
 }
 // RunSummary provides operations to manage the runSummary property of the microsoft.graph.deviceManagementScript entity.
+// returns a *DeviceManagementScriptsItemRunSummaryRequestBuilder when successful
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) RunSummary()(*DeviceManagementScriptsItemRunSummaryRequestBuilder) {
     return NewDeviceManagementScriptsItemRunSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property deviceManagementScripts for deviceManagement
+// returns a *RequestInformation when successful
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -139,6 +147,7 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) ToDele
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of device management scripts associated with the tenant.
+// returns a *RequestInformation when successful
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -152,8 +161,9 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property deviceManagementScripts in deviceManagement
+// returns a *RequestInformation when successful
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptable, requestConfiguration *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement/deviceManagementScripts/{deviceManagementScript%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -166,10 +176,12 @@ func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) ToPatc
     return requestInfo, nil
 }
 // UserRunStates provides operations to manage the userRunStates property of the microsoft.graph.deviceManagementScript entity.
+// returns a *DeviceManagementScriptsItemUserRunStatesRequestBuilder when successful
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) UserRunStates()(*DeviceManagementScriptsItemUserRunStatesRequestBuilder) {
     return NewDeviceManagementScriptsItemUserRunStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder when successful
 func (m *DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) WithUrl(rawUrl string)(*DeviceManagementScriptsDeviceManagementScriptItemRequestBuilder) {
     return NewDeviceManagementScriptsDeviceManagementScriptItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

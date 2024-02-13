@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SalesCreditMemo 
 type SalesCreditMemo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSalesCreditMemo instantiates a new salesCreditMemo and sets the default values.
+// NewSalesCreditMemo instantiates a new SalesCreditMemo and sets the default values.
 func NewSalesCreditMemo()(*SalesCreditMemo) {
     m := &SalesCreditMemo{
     }
@@ -21,10 +20,12 @@ func NewSalesCreditMemo()(*SalesCreditMemo) {
     return m
 }
 // CreateSalesCreditMemoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSalesCreditMemoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSalesCreditMemo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SalesCreditMemo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -37,10 +38,12 @@ func (m *SalesCreditMemo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SalesCreditMemo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBillingPostalAddress gets the billingPostalAddress property value. The billingPostalAddress property
+// returns a PostalAddressTypeable when successful
 func (m *SalesCreditMemo) GetBillingPostalAddress()(PostalAddressTypeable) {
     val, err := m.GetBackingStore().Get("billingPostalAddress")
     if err != nil {
@@ -52,6 +55,7 @@ func (m *SalesCreditMemo) GetBillingPostalAddress()(PostalAddressTypeable) {
     return nil
 }
 // GetBillToCustomerId gets the billToCustomerId property value. The billToCustomerId property
+// returns a *UUID when successful
 func (m *SalesCreditMemo) GetBillToCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("billToCustomerId")
     if err != nil {
@@ -63,6 +67,7 @@ func (m *SalesCreditMemo) GetBillToCustomerId()(*i561e97a8befe7661a44c8f54600992
     return nil
 }
 // GetBillToCustomerNumber gets the billToCustomerNumber property value. The billToCustomerNumber property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetBillToCustomerNumber()(*string) {
     val, err := m.GetBackingStore().Get("billToCustomerNumber")
     if err != nil {
@@ -74,6 +79,7 @@ func (m *SalesCreditMemo) GetBillToCustomerNumber()(*string) {
     return nil
 }
 // GetBillToName gets the billToName property value. The billToName property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetBillToName()(*string) {
     val, err := m.GetBackingStore().Get("billToName")
     if err != nil {
@@ -85,6 +91,7 @@ func (m *SalesCreditMemo) GetBillToName()(*string) {
     return nil
 }
 // GetCreditMemoDate gets the creditMemoDate property value. The creditMemoDate property
+// returns a *DateOnly when successful
 func (m *SalesCreditMemo) GetCreditMemoDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("creditMemoDate")
     if err != nil {
@@ -96,6 +103,7 @@ func (m *SalesCreditMemo) GetCreditMemoDate()(*i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // GetCurrency gets the currency property value. The currency property
+// returns a Currencyable when successful
 func (m *SalesCreditMemo) GetCurrency()(Currencyable) {
     val, err := m.GetBackingStore().Get("currency")
     if err != nil {
@@ -107,6 +115,7 @@ func (m *SalesCreditMemo) GetCurrency()(Currencyable) {
     return nil
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetCurrencyCode()(*string) {
     val, err := m.GetBackingStore().Get("currencyCode")
     if err != nil {
@@ -118,6 +127,7 @@ func (m *SalesCreditMemo) GetCurrencyCode()(*string) {
     return nil
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
+// returns a *UUID when successful
 func (m *SalesCreditMemo) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("currencyId")
     if err != nil {
@@ -129,6 +139,7 @@ func (m *SalesCreditMemo) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a
     return nil
 }
 // GetCustomer gets the customer property value. The customer property
+// returns a Customerable when successful
 func (m *SalesCreditMemo) GetCustomer()(Customerable) {
     val, err := m.GetBackingStore().Get("customer")
     if err != nil {
@@ -140,6 +151,7 @@ func (m *SalesCreditMemo) GetCustomer()(Customerable) {
     return nil
 }
 // GetCustomerId gets the customerId property value. The customerId property
+// returns a *UUID when successful
 func (m *SalesCreditMemo) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("customerId")
     if err != nil {
@@ -151,6 +163,7 @@ func (m *SalesCreditMemo) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a
     return nil
 }
 // GetCustomerName gets the customerName property value. The customerName property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetCustomerName()(*string) {
     val, err := m.GetBackingStore().Get("customerName")
     if err != nil {
@@ -162,6 +175,7 @@ func (m *SalesCreditMemo) GetCustomerName()(*string) {
     return nil
 }
 // GetCustomerNumber gets the customerNumber property value. The customerNumber property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetCustomerNumber()(*string) {
     val, err := m.GetBackingStore().Get("customerNumber")
     if err != nil {
@@ -173,6 +187,7 @@ func (m *SalesCreditMemo) GetCustomerNumber()(*string) {
     return nil
 }
 // GetDiscountAmount gets the discountAmount property value. The discountAmount property
+// returns a *float64 when successful
 func (m *SalesCreditMemo) GetDiscountAmount()(*float64) {
     val, err := m.GetBackingStore().Get("discountAmount")
     if err != nil {
@@ -184,6 +199,7 @@ func (m *SalesCreditMemo) GetDiscountAmount()(*float64) {
     return nil
 }
 // GetDiscountAppliedBeforeTax gets the discountAppliedBeforeTax property value. The discountAppliedBeforeTax property
+// returns a *bool when successful
 func (m *SalesCreditMemo) GetDiscountAppliedBeforeTax()(*bool) {
     val, err := m.GetBackingStore().Get("discountAppliedBeforeTax")
     if err != nil {
@@ -195,6 +211,7 @@ func (m *SalesCreditMemo) GetDiscountAppliedBeforeTax()(*bool) {
     return nil
 }
 // GetDueDate gets the dueDate property value. The dueDate property
+// returns a *DateOnly when successful
 func (m *SalesCreditMemo) GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("dueDate")
     if err != nil {
@@ -206,6 +223,7 @@ func (m *SalesCreditMemo) GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -217,6 +235,7 @@ func (m *SalesCreditMemo) GetEmail()(*string) {
     return nil
 }
 // GetExternalDocumentNumber gets the externalDocumentNumber property value. The externalDocumentNumber property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetExternalDocumentNumber()(*string) {
     val, err := m.GetBackingStore().Get("externalDocumentNumber")
     if err != nil {
@@ -228,6 +247,7 @@ func (m *SalesCreditMemo) GetExternalDocumentNumber()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SalesCreditMemo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["billingPostalAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -579,6 +599,7 @@ func (m *SalesCreditMemo) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *SalesCreditMemo) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -590,6 +611,7 @@ func (m *SalesCreditMemo) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf677
     return nil
 }
 // GetInvoiceId gets the invoiceId property value. The invoiceId property
+// returns a *UUID when successful
 func (m *SalesCreditMemo) GetInvoiceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("invoiceId")
     if err != nil {
@@ -601,6 +623,7 @@ func (m *SalesCreditMemo) GetInvoiceId()(*i561e97a8befe7661a44c8f54600992b4207a3
     return nil
 }
 // GetInvoiceNumber gets the invoiceNumber property value. The invoiceNumber property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetInvoiceNumber()(*string) {
     val, err := m.GetBackingStore().Get("invoiceNumber")
     if err != nil {
@@ -612,6 +635,7 @@ func (m *SalesCreditMemo) GetInvoiceNumber()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *SalesCreditMemo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -623,6 +647,7 @@ func (m *SalesCreditMemo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetNumber gets the number property value. The number property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
     if err != nil {
@@ -634,6 +659,7 @@ func (m *SalesCreditMemo) GetNumber()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -645,6 +671,7 @@ func (m *SalesCreditMemo) GetOdataType()(*string) {
     return nil
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
+// returns a PaymentTermable when successful
 func (m *SalesCreditMemo) GetPaymentTerm()(PaymentTermable) {
     val, err := m.GetBackingStore().Get("paymentTerm")
     if err != nil {
@@ -656,6 +683,7 @@ func (m *SalesCreditMemo) GetPaymentTerm()(PaymentTermable) {
     return nil
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
+// returns a *UUID when successful
 func (m *SalesCreditMemo) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("paymentTermsId")
     if err != nil {
@@ -667,6 +695,7 @@ func (m *SalesCreditMemo) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4
     return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
     if err != nil {
@@ -678,6 +707,7 @@ func (m *SalesCreditMemo) GetPhoneNumber()(*string) {
     return nil
 }
 // GetPricesIncludeTax gets the pricesIncludeTax property value. The pricesIncludeTax property
+// returns a *bool when successful
 func (m *SalesCreditMemo) GetPricesIncludeTax()(*bool) {
     val, err := m.GetBackingStore().Get("pricesIncludeTax")
     if err != nil {
@@ -689,6 +719,7 @@ func (m *SalesCreditMemo) GetPricesIncludeTax()(*bool) {
     return nil
 }
 // GetSalesCreditMemoLines gets the salesCreditMemoLines property value. The salesCreditMemoLines property
+// returns a []SalesCreditMemoLineable when successful
 func (m *SalesCreditMemo) GetSalesCreditMemoLines()([]SalesCreditMemoLineable) {
     val, err := m.GetBackingStore().Get("salesCreditMemoLines")
     if err != nil {
@@ -700,6 +731,7 @@ func (m *SalesCreditMemo) GetSalesCreditMemoLines()([]SalesCreditMemoLineable) {
     return nil
 }
 // GetSalesperson gets the salesperson property value. The salesperson property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetSalesperson()(*string) {
     val, err := m.GetBackingStore().Get("salesperson")
     if err != nil {
@@ -711,6 +743,7 @@ func (m *SalesCreditMemo) GetSalesperson()(*string) {
     return nil
 }
 // GetSellingPostalAddress gets the sellingPostalAddress property value. The sellingPostalAddress property
+// returns a PostalAddressTypeable when successful
 func (m *SalesCreditMemo) GetSellingPostalAddress()(PostalAddressTypeable) {
     val, err := m.GetBackingStore().Get("sellingPostalAddress")
     if err != nil {
@@ -722,6 +755,7 @@ func (m *SalesCreditMemo) GetSellingPostalAddress()(PostalAddressTypeable) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *string when successful
 func (m *SalesCreditMemo) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -733,6 +767,7 @@ func (m *SalesCreditMemo) GetStatus()(*string) {
     return nil
 }
 // GetTotalAmountExcludingTax gets the totalAmountExcludingTax property value. The totalAmountExcludingTax property
+// returns a *float64 when successful
 func (m *SalesCreditMemo) GetTotalAmountExcludingTax()(*float64) {
     val, err := m.GetBackingStore().Get("totalAmountExcludingTax")
     if err != nil {
@@ -744,6 +779,7 @@ func (m *SalesCreditMemo) GetTotalAmountExcludingTax()(*float64) {
     return nil
 }
 // GetTotalAmountIncludingTax gets the totalAmountIncludingTax property value. The totalAmountIncludingTax property
+// returns a *float64 when successful
 func (m *SalesCreditMemo) GetTotalAmountIncludingTax()(*float64) {
     val, err := m.GetBackingStore().Get("totalAmountIncludingTax")
     if err != nil {
@@ -755,6 +791,7 @@ func (m *SalesCreditMemo) GetTotalAmountIncludingTax()(*float64) {
     return nil
 }
 // GetTotalTaxAmount gets the totalTaxAmount property value. The totalTaxAmount property
+// returns a *float64 when successful
 func (m *SalesCreditMemo) GetTotalTaxAmount()(*float64) {
     val, err := m.GetBackingStore().Get("totalTaxAmount")
     if err != nil {
@@ -1234,7 +1271,6 @@ func (m *SalesCreditMemo) SetTotalTaxAmount(value *float64)() {
         panic(err)
     }
 }
-// SalesCreditMemoable 
 type SalesCreditMemoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

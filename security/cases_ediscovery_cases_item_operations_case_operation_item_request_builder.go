@@ -41,28 +41,28 @@ type CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderPatchReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal instantiates a new CaseOperationItemRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal instantiates a new CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) {
     m := &CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/operations/{caseOperation%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/operations/{caseOperation%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewCasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder instantiates a new CaseOperationItemRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder instantiates a new CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property operations for security
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,6 +71,8 @@ func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) Dele
     return nil
 }
 // Get read the properties and relationships of a caseOperation object.
+// returns a CaseOperationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-caseoperation-get?view=graph-rest-1.0
@@ -80,8 +82,7 @@ func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) Get(
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateCaseOperationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,14 +94,15 @@ func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) Get(
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationable), nil
 }
 // Patch update the navigation property operations in security
+// returns a CaseOperationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationable, requestConfiguration *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateCaseOperationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -112,8 +114,9 @@ func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) Patc
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationable), nil
 }
 // ToDeleteRequestInformation delete navigation property operations for security
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/operations/{caseOperation%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -122,6 +125,7 @@ func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) ToDe
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a caseOperation object.
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -135,8 +139,9 @@ func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) ToGe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property operations in security
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationable, requestConfiguration *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/operations/{caseOperation%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -149,6 +154,7 @@ func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) ToPa
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) {
     return NewCasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

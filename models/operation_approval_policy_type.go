@@ -6,8 +6,10 @@ import (
 type OperationApprovalPolicyType int
 
 const (
+    // Default. Indicates that the configured policy type is unknown. This property is not allowed on an OperationApprovalRequest unless the PolicySet contains a different OperationApprovalPolicyType.
+    UNKNOWN_OPERATIONAPPROVALPOLICYTYPE OperationApprovalPolicyType = iota
     // Indicates that the configured policy type is for a Device Action.
-    DEVICEACTION_OPERATIONAPPROVALPOLICYTYPE OperationApprovalPolicyType = iota
+    DEVICEACTION_OPERATIONAPPROVALPOLICYTYPE
     // Indicates that the configured policy type is for a Device Wipe Action.
     DEVICEWIPE_OPERATIONAPPROVALPOLICYTYPE
     // Indicates that the configured policy type is for a Device Retire Action.
@@ -39,7 +41,7 @@ const (
     // Indicates that the configured policy type is an application type, such as mobile apps or built-in apps.
     APP_OPERATIONAPPROVALPOLICYTYPE
     // Indicates that the configured policy type is a script type, such as Powershell scripts or remediation scripts.
-    SCRIPTS_OPERATIONAPPROVALPOLICYTYPE
+    SCRIPT_OPERATIONAPPROVALPOLICYTYPE
     // Indicates that the configured policy type is for a Role.
     ROLE_OPERATIONAPPROVALPOLICYTYPE
     // Indicates that the configured policy type is for a Device Reset Passcode Action.
@@ -51,11 +53,13 @@ const (
 )
 
 func (i OperationApprovalPolicyType) String() string {
-    return []string{"deviceAction", "deviceWipe", "deviceRetire", "deviceRetireNonCompliant", "deviceDelete", "deviceLock", "deviceErase", "deviceDisableActivationLock", "windowsEnrollment", "compliancePolicy", "configurationPolicy", "appProtectionPolicy", "policySet", "filter", "endpointSecurityPolicy", "app", "scripts", "role", "deviceResetPasscode", "customOrganizationalMessage", "unknownFutureValue"}[i]
+    return []string{"unknown", "deviceAction", "deviceWipe", "deviceRetire", "deviceRetireNonCompliant", "deviceDelete", "deviceLock", "deviceErase", "deviceDisableActivationLock", "windowsEnrollment", "compliancePolicy", "configurationPolicy", "appProtectionPolicy", "policySet", "filter", "endpointSecurityPolicy", "app", "script", "role", "deviceResetPasscode", "customOrganizationalMessage", "unknownFutureValue"}[i]
 }
 func ParseOperationApprovalPolicyType(v string) (any, error) {
-    result := DEVICEACTION_OPERATIONAPPROVALPOLICYTYPE
+    result := UNKNOWN_OPERATIONAPPROVALPOLICYTYPE
     switch v {
+        case "unknown":
+            result = UNKNOWN_OPERATIONAPPROVALPOLICYTYPE
         case "deviceAction":
             result = DEVICEACTION_OPERATIONAPPROVALPOLICYTYPE
         case "deviceWipe":
@@ -88,8 +92,8 @@ func ParseOperationApprovalPolicyType(v string) (any, error) {
             result = ENDPOINTSECURITYPOLICY_OPERATIONAPPROVALPOLICYTYPE
         case "app":
             result = APP_OPERATIONAPPROVALPOLICYTYPE
-        case "scripts":
-            result = SCRIPTS_OPERATIONAPPROVALPOLICYTYPE
+        case "script":
+            result = SCRIPT_OPERATIONAPPROVALPOLICYTYPE
         case "role":
             result = ROLE_OPERATIONAPPROVALPOLICYTYPE
         case "deviceResetPasscode":

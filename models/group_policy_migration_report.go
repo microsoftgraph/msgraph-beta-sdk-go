@@ -10,7 +10,7 @@ import (
 type GroupPolicyMigrationReport struct {
     Entity
 }
-// NewGroupPolicyMigrationReport instantiates a new groupPolicyMigrationReport and sets the default values.
+// NewGroupPolicyMigrationReport instantiates a new GroupPolicyMigrationReport and sets the default values.
 func NewGroupPolicyMigrationReport()(*GroupPolicyMigrationReport) {
     m := &GroupPolicyMigrationReport{
         Entity: *NewEntity(),
@@ -18,10 +18,12 @@ func NewGroupPolicyMigrationReport()(*GroupPolicyMigrationReport) {
     return m
 }
 // CreateGroupPolicyMigrationReportFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyMigrationReportFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyMigrationReport(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time at which the GroupPolicyMigrationReport was created.
+// returns a *Time when successful
 func (m *GroupPolicyMigrationReport) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *GroupPolicyMigrationReport) GetCreatedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of Group Policy Object from the GPO Xml Content
+// returns a *string when successful
 func (m *GroupPolicyMigrationReport) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *GroupPolicyMigrationReport) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -217,6 +221,7 @@ func (m *GroupPolicyMigrationReport) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetGroupPolicyCreatedDateTime gets the groupPolicyCreatedDateTime property value. The date and time at which the GroupPolicyMigrationReport was created.
+// returns a *Time when successful
 func (m *GroupPolicyMigrationReport) GetGroupPolicyCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("groupPolicyCreatedDateTime")
     if err != nil {
@@ -228,6 +233,7 @@ func (m *GroupPolicyMigrationReport) GetGroupPolicyCreatedDateTime()(*i336074805
     return nil
 }
 // GetGroupPolicyLastModifiedDateTime gets the groupPolicyLastModifiedDateTime property value. The date and time at which the GroupPolicyMigrationReport was last modified.
+// returns a *Time when successful
 func (m *GroupPolicyMigrationReport) GetGroupPolicyLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("groupPolicyLastModifiedDateTime")
     if err != nil {
@@ -239,6 +245,7 @@ func (m *GroupPolicyMigrationReport) GetGroupPolicyLastModifiedDateTime()(*i3360
     return nil
 }
 // GetGroupPolicyObjectId gets the groupPolicyObjectId property value. The Group Policy Object GUID from GPO Xml content
+// returns a *UUID when successful
 func (m *GroupPolicyMigrationReport) GetGroupPolicyObjectId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("groupPolicyObjectId")
     if err != nil {
@@ -250,6 +257,7 @@ func (m *GroupPolicyMigrationReport) GetGroupPolicyObjectId()(*i561e97a8befe7661
     return nil
 }
 // GetGroupPolicySettingMappings gets the groupPolicySettingMappings property value. A list of group policy settings to MDM/Intune mappings.
+// returns a []GroupPolicySettingMappingable when successful
 func (m *GroupPolicyMigrationReport) GetGroupPolicySettingMappings()([]GroupPolicySettingMappingable) {
     val, err := m.GetBackingStore().Get("groupPolicySettingMappings")
     if err != nil {
@@ -261,6 +269,7 @@ func (m *GroupPolicyMigrationReport) GetGroupPolicySettingMappings()([]GroupPoli
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time at which the GroupPolicyMigrationReport was last modified.
+// returns a *Time when successful
 func (m *GroupPolicyMigrationReport) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -272,6 +281,7 @@ func (m *GroupPolicyMigrationReport) GetLastModifiedDateTime()(*i336074805fc8539
     return nil
 }
 // GetMigrationReadiness gets the migrationReadiness property value. Indicates if the Group Policy Object file is covered and ready for Intune migration.
+// returns a *GroupPolicyMigrationReadiness when successful
 func (m *GroupPolicyMigrationReport) GetMigrationReadiness()(*GroupPolicyMigrationReadiness) {
     val, err := m.GetBackingStore().Get("migrationReadiness")
     if err != nil {
@@ -283,6 +293,7 @@ func (m *GroupPolicyMigrationReport) GetMigrationReadiness()(*GroupPolicyMigrati
     return nil
 }
 // GetOuDistinguishedName gets the ouDistinguishedName property value. The distinguished name of the OU.
+// returns a *string when successful
 func (m *GroupPolicyMigrationReport) GetOuDistinguishedName()(*string) {
     val, err := m.GetBackingStore().Get("ouDistinguishedName")
     if err != nil {
@@ -294,6 +305,7 @@ func (m *GroupPolicyMigrationReport) GetOuDistinguishedName()(*string) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. The list of scope tags for the configuration.
+// returns a []string when successful
 func (m *GroupPolicyMigrationReport) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -305,6 +317,7 @@ func (m *GroupPolicyMigrationReport) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetSupportedSettingsCount gets the supportedSettingsCount property value. The number of Group Policy Settings supported by Intune.
+// returns a *int32 when successful
 func (m *GroupPolicyMigrationReport) GetSupportedSettingsCount()(*int32) {
     val, err := m.GetBackingStore().Get("supportedSettingsCount")
     if err != nil {
@@ -316,6 +329,7 @@ func (m *GroupPolicyMigrationReport) GetSupportedSettingsCount()(*int32) {
     return nil
 }
 // GetSupportedSettingsPercent gets the supportedSettingsPercent property value. The Percentage of Group Policy Settings supported by Intune.
+// returns a *int32 when successful
 func (m *GroupPolicyMigrationReport) GetSupportedSettingsPercent()(*int32) {
     val, err := m.GetBackingStore().Get("supportedSettingsPercent")
     if err != nil {
@@ -327,6 +341,7 @@ func (m *GroupPolicyMigrationReport) GetSupportedSettingsPercent()(*int32) {
     return nil
 }
 // GetTargetedInActiveDirectory gets the targetedInActiveDirectory property value. The Targeted in AD property from GPO Xml Content
+// returns a *bool when successful
 func (m *GroupPolicyMigrationReport) GetTargetedInActiveDirectory()(*bool) {
     val, err := m.GetBackingStore().Get("targetedInActiveDirectory")
     if err != nil {
@@ -338,6 +353,7 @@ func (m *GroupPolicyMigrationReport) GetTargetedInActiveDirectory()(*bool) {
     return nil
 }
 // GetTotalSettingsCount gets the totalSettingsCount property value. The total number of Group Policy Settings from GPO file.
+// returns a *int32 when successful
 func (m *GroupPolicyMigrationReport) GetTotalSettingsCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalSettingsCount")
     if err != nil {
@@ -349,6 +365,7 @@ func (m *GroupPolicyMigrationReport) GetTotalSettingsCount()(*int32) {
     return nil
 }
 // GetUnsupportedGroupPolicyExtensions gets the unsupportedGroupPolicyExtensions property value. A list of unsupported group policy extensions inside the Group Policy Object.
+// returns a []UnsupportedGroupPolicyExtensionable when successful
 func (m *GroupPolicyMigrationReport) GetUnsupportedGroupPolicyExtensions()([]UnsupportedGroupPolicyExtensionable) {
     val, err := m.GetBackingStore().Get("unsupportedGroupPolicyExtensions")
     if err != nil {
@@ -575,7 +592,6 @@ func (m *GroupPolicyMigrationReport) SetUnsupportedGroupPolicyExtensions(value [
         panic(err)
     }
 }
-// GroupPolicyMigrationReportable 
 type GroupPolicyMigrationReportable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

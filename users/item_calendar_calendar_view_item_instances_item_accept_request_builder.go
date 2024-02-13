@@ -17,20 +17,21 @@ type ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilderInternal instantiates a new AcceptRequestBuilder and sets the default values.
+// NewItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilderInternal instantiates a new ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder and sets the default values.
 func NewItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder) {
     m := &ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendar/calendarView/{event%2Did}/instances/{event%2Did1}/accept", pathParameters),
     }
     return m
 }
-// NewItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder instantiates a new AcceptRequestBuilder and sets the default values.
+// NewItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder instantiates a new ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder and sets the default values.
 func NewItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post accept the specified event in a user calendar.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder) Post(ctx
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder) Post(ctx
     return nil
 }
 // ToPostRequestInformation accept the specified event in a user calendar.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarCalendarViewItemInstancesItemAcceptPostRequestBodyable, requestConfiguration *ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder) ToPostRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder when successful
 func (m *ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder) {
     return NewItemCalendarCalendarViewItemInstancesItemAcceptRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

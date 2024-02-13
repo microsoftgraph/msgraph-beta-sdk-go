@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// X509CertificateCombinationConfiguration 
 type X509CertificateCombinationConfiguration struct {
     AuthenticationCombinationConfiguration
 }
-// NewX509CertificateCombinationConfiguration instantiates a new x509CertificateCombinationConfiguration and sets the default values.
+// NewX509CertificateCombinationConfiguration instantiates a new X509CertificateCombinationConfiguration and sets the default values.
 func NewX509CertificateCombinationConfiguration()(*X509CertificateCombinationConfiguration) {
     m := &X509CertificateCombinationConfiguration{
         AuthenticationCombinationConfiguration: *NewAuthenticationCombinationConfiguration(),
@@ -18,10 +17,12 @@ func NewX509CertificateCombinationConfiguration()(*X509CertificateCombinationCon
     return m
 }
 // CreateX509CertificateCombinationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateX509CertificateCombinationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewX509CertificateCombinationConfiguration(), nil
 }
 // GetAllowedIssuerSkis gets the allowedIssuerSkis property value. A list of allowed subject key identifier values.
+// returns a []string when successful
 func (m *X509CertificateCombinationConfiguration) GetAllowedIssuerSkis()([]string) {
     val, err := m.GetBackingStore().Get("allowedIssuerSkis")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *X509CertificateCombinationConfiguration) GetAllowedIssuerSkis()([]strin
     return nil
 }
 // GetAllowedPolicyOIDs gets the allowedPolicyOIDs property value. A list of allowed policy OIDs.
+// returns a []string when successful
 func (m *X509CertificateCombinationConfiguration) GetAllowedPolicyOIDs()([]string) {
     val, err := m.GetBackingStore().Get("allowedPolicyOIDs")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *X509CertificateCombinationConfiguration) GetAllowedPolicyOIDs()([]strin
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *X509CertificateCombinationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationCombinationConfiguration.GetFieldDeserializers()
     res["allowedIssuerSkis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -114,7 +117,6 @@ func (m *X509CertificateCombinationConfiguration) SetAllowedPolicyOIDs(value []s
         panic(err)
     }
 }
-// X509CertificateCombinationConfigurationable 
 type X509CertificateCombinationConfigurationable interface {
     AuthenticationCombinationConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

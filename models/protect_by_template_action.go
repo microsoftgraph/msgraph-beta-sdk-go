@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProtectByTemplateAction 
 type ProtectByTemplateAction struct {
     InformationProtectionAction
 }
-// NewProtectByTemplateAction instantiates a new protectByTemplateAction and sets the default values.
+// NewProtectByTemplateAction instantiates a new ProtectByTemplateAction and sets the default values.
 func NewProtectByTemplateAction()(*ProtectByTemplateAction) {
     m := &ProtectByTemplateAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
@@ -18,10 +17,12 @@ func NewProtectByTemplateAction()(*ProtectByTemplateAction) {
     return m
 }
 // CreateProtectByTemplateActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProtectByTemplateActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProtectByTemplateAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProtectByTemplateAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InformationProtectionAction.GetFieldDeserializers()
     res["templateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *ProtectByTemplateAction) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetTemplateId gets the templateId property value. The GUID of the Azure Information Protection template to apply to the information.
+// returns a *string when successful
 func (m *ProtectByTemplateAction) GetTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("templateId")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *ProtectByTemplateAction) SetTemplateId(value *string)() {
         panic(err)
     }
 }
-// ProtectByTemplateActionable 
 type ProtectByTemplateActionable interface {
     InformationProtectionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

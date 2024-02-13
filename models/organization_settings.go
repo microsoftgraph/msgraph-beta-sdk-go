@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OrganizationSettings 
 type OrganizationSettings struct {
     Entity
 }
-// NewOrganizationSettings instantiates a new organizationSettings and sets the default values.
+// NewOrganizationSettings instantiates a new OrganizationSettings and sets the default values.
 func NewOrganizationSettings()(*OrganizationSettings) {
     m := &OrganizationSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOrganizationSettings()(*OrganizationSettings) {
     return m
 }
 // CreateOrganizationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizationSettings(), nil
 }
 // GetContactInsights gets the contactInsights property value. Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user's contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.
+// returns a InsightsSettingsable when successful
 func (m *OrganizationSettings) GetContactInsights()(InsightsSettingsable) {
     val, err := m.GetBackingStore().Get("contactInsights")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *OrganizationSettings) GetContactInsights()(InsightsSettingsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contactInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +78,7 @@ func (m *OrganizationSettings) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetItemInsights gets the itemInsights property value. Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
+// returns a InsightsSettingsable when successful
 func (m *OrganizationSettings) GetItemInsights()(InsightsSettingsable) {
     val, err := m.GetBackingStore().Get("itemInsights")
     if err != nil {
@@ -87,6 +90,7 @@ func (m *OrganizationSettings) GetItemInsights()(InsightsSettingsable) {
     return nil
 }
 // GetMicrosoftApplicationDataAccess gets the microsoftApplicationDataAccess property value. The microsoftApplicationDataAccess property
+// returns a MicrosoftApplicationDataAccessSettingsable when successful
 func (m *OrganizationSettings) GetMicrosoftApplicationDataAccess()(MicrosoftApplicationDataAccessSettingsable) {
     val, err := m.GetBackingStore().Get("microsoftApplicationDataAccess")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *OrganizationSettings) GetMicrosoftApplicationDataAccess()(MicrosoftAppl
     return nil
 }
 // GetPeopleInsights gets the peopleInsights property value. Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
+// returns a InsightsSettingsable when successful
 func (m *OrganizationSettings) GetPeopleInsights()(InsightsSettingsable) {
     val, err := m.GetBackingStore().Get("peopleInsights")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *OrganizationSettings) SetPeopleInsights(value InsightsSettingsable)() {
         panic(err)
     }
 }
-// OrganizationSettingsable 
 type OrganizationSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

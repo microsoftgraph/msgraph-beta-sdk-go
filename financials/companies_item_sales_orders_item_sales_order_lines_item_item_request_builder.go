@@ -41,28 +41,28 @@ type CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderPatchReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderInternal instantiates a new ItemRequestBuilder and sets the default values.
+// NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderInternal instantiates a new CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) {
     m := &CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/salesOrderLines/{salesOrderLine%2Did}/item{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/salesOrderLines/{salesOrderLine%2Did}/item{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder instantiates a new ItemRequestBuilder and sets the default values.
+// NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder instantiates a new CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property item for financials
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) Dele
     return nil
 }
 // Get get item from financials
+// returns a Itemable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,18 +91,20 @@ func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) Get(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable), nil
 }
 // ItemCategory provides operations to manage the itemCategory property of the microsoft.graph.item entity.
+// returns a *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemItemCategoryRequestBuilder when successful
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) ItemCategory()(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemItemCategoryRequestBuilder) {
     return NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemItemCategoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property item in financials
+// returns a Itemable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, requestConfiguration *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,12 +116,14 @@ func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) Patc
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable), nil
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.item entity.
+// returns a *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureRequestBuilder when successful
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) Picture()(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureRequestBuilder) {
     return NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemPictureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property item for financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/salesOrderLines/{salesOrderLine%2Did}/item", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -127,6 +132,7 @@ func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) ToDe
     return requestInfo, nil
 }
 // ToGetRequestInformation get item from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,8 +146,9 @@ func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) ToGe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property item in financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable, requestConfiguration *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/salesOrderLines/{salesOrderLine%2Did}/item", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -154,6 +161,7 @@ func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) ToPa
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder when successful
 func (m *CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder) {
     return NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

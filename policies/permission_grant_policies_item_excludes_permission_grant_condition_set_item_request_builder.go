@@ -41,20 +41,21 @@ type PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal instantiates a new PermissionGrantConditionSetItemRequestBuilder and sets the default values.
+// NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal instantiates a new PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder and sets the default values.
 func NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) {
     m := &PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/excludes/{permissionGrantConditionSet%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/excludes/{permissionGrantConditionSet%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder instantiates a new PermissionGrantConditionSetItemRequestBuilder and sets the default values.
+// NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder instantiates a new PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder and sets the default values.
 func NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete-excludes?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReque
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,14 +74,15 @@ func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReque
     return nil
 }
 // Get condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
+// returns a PermissionGrantConditionSetable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePermissionGrantConditionSetFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,14 +94,15 @@ func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable), nil
 }
 // Patch update the navigation property excludes in policies
+// returns a PermissionGrantConditionSetable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable, requestConfiguration *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePermissionGrantConditionSetFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -112,8 +114,9 @@ func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable), nil
 }
 // ToDeleteRequestInformation deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy.
+// returns a *RequestInformation when successful
 func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/excludes/{permissionGrantConditionSet%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -122,6 +125,7 @@ func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReque
     return requestInfo, nil
 }
 // ToGetRequestInformation condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
+// returns a *RequestInformation when successful
 func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -135,8 +139,9 @@ func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReque
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property excludes in policies
+// returns a *RequestInformation when successful
 func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable, requestConfiguration *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/excludes/{permissionGrantConditionSet%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -149,6 +154,7 @@ func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder when successful
 func (m *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) WithUrl(rawUrl string)(*PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) {
     return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

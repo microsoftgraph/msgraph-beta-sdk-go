@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NotifyUserAction 
 type NotifyUserAction struct {
     DlpActionInfo
 }
-// NewNotifyUserAction instantiates a new notifyUserAction and sets the default values.
+// NewNotifyUserAction instantiates a new NotifyUserAction and sets the default values.
 func NewNotifyUserAction()(*NotifyUserAction) {
     m := &NotifyUserAction{
         DlpActionInfo: *NewDlpActionInfo(),
@@ -17,10 +16,12 @@ func NewNotifyUserAction()(*NotifyUserAction) {
     return m
 }
 // CreateNotifyUserActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNotifyUserActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNotifyUserAction(), nil
 }
 // GetActionLastModifiedDateTime gets the actionLastModifiedDateTime property value. The actionLastModifiedDateTime property
+// returns a *Time when successful
 func (m *NotifyUserAction) GetActionLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("actionLastModifiedDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *NotifyUserAction) GetActionLastModifiedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetEmailText gets the emailText property value. The emailText property
+// returns a *string when successful
 func (m *NotifyUserAction) GetEmailText()(*string) {
     val, err := m.GetBackingStore().Get("emailText")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *NotifyUserAction) GetEmailText()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DlpActionInfo.GetFieldDeserializers()
     res["actionLastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,6 +97,7 @@ func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetPolicyTip gets the policyTip property value. The policyTip property
+// returns a *string when successful
 func (m *NotifyUserAction) GetPolicyTip()(*string) {
     val, err := m.GetBackingStore().Get("policyTip")
     if err != nil {
@@ -105,6 +109,7 @@ func (m *NotifyUserAction) GetPolicyTip()(*string) {
     return nil
 }
 // GetRecipients gets the recipients property value. The recipients property
+// returns a []string when successful
 func (m *NotifyUserAction) GetRecipients()([]string) {
     val, err := m.GetBackingStore().Get("recipients")
     if err != nil {
@@ -175,7 +180,6 @@ func (m *NotifyUserAction) SetRecipients(value []string)() {
         panic(err)
     }
 }
-// NotifyUserActionable 
 type NotifyUserActionable interface {
     DlpActionInfoable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type DeviceComplianceScriptRunSummary struct {
     Entity
 }
-// NewDeviceComplianceScriptRunSummary instantiates a new deviceComplianceScriptRunSummary and sets the default values.
+// NewDeviceComplianceScriptRunSummary instantiates a new DeviceComplianceScriptRunSummary and sets the default values.
 func NewDeviceComplianceScriptRunSummary()(*DeviceComplianceScriptRunSummary) {
     m := &DeviceComplianceScriptRunSummary{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceComplianceScriptRunSummary()(*DeviceComplianceScriptRunSummary) {
     return m
 }
 // CreateDeviceComplianceScriptRunSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceComplianceScriptRunSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceComplianceScriptRunSummary(), nil
 }
 // GetDetectionScriptErrorDeviceCount gets the detectionScriptErrorDeviceCount property value. Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *DeviceComplianceScriptRunSummary) GetDetectionScriptErrorDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("detectionScriptErrorDeviceCount")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceComplianceScriptRunSummary) GetDetectionScriptErrorDeviceCount()(
     return nil
 }
 // GetDetectionScriptPendingDeviceCount gets the detectionScriptPendingDeviceCount property value. Number of devices which have not yet run the latest version of the device compliance script. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *DeviceComplianceScriptRunSummary) GetDetectionScriptPendingDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("detectionScriptPendingDeviceCount")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceComplianceScriptRunSummary) GetDetectionScriptPendingDeviceCount(
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["detectionScriptErrorDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +102,7 @@ func (m *DeviceComplianceScriptRunSummary) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetIssueDetectedDeviceCount gets the issueDetectedDeviceCount property value. Number of devices for which the detection script found an issue. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *DeviceComplianceScriptRunSummary) GetIssueDetectedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("issueDetectedDeviceCount")
     if err != nil {
@@ -109,6 +114,7 @@ func (m *DeviceComplianceScriptRunSummary) GetIssueDetectedDeviceCount()(*int32)
     return nil
 }
 // GetLastScriptRunDateTime gets the lastScriptRunDateTime property value. Last run time for the script across all devices
+// returns a *Time when successful
 func (m *DeviceComplianceScriptRunSummary) GetLastScriptRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastScriptRunDateTime")
     if err != nil {
@@ -120,6 +126,7 @@ func (m *DeviceComplianceScriptRunSummary) GetLastScriptRunDateTime()(*i33607480
     return nil
 }
 // GetNoIssueDetectedDeviceCount gets the noIssueDetectedDeviceCount property value. Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *DeviceComplianceScriptRunSummary) GetNoIssueDetectedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("noIssueDetectedDeviceCount")
     if err != nil {
@@ -203,7 +210,6 @@ func (m *DeviceComplianceScriptRunSummary) SetNoIssueDetectedDeviceCount(value *
         panic(err)
     }
 }
-// DeviceComplianceScriptRunSummaryable 
 type DeviceComplianceScriptRunSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

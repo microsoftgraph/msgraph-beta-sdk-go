@@ -6,7 +6,6 @@ import (
     i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c "github.com/microsoftgraph/msgraph-beta-sdk-go/models/windowsupdates"
 )
 
-// WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBody 
 type WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewWindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpd
     return m
 }
 // CreateWindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUp
     return val.(map[string]any)
 }
 // GetAssets gets the assets property value. The assets property
+// returns a []UpdatableAssetable when successful
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBody) GetAssets()([]i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable) {
     val, err := m.GetBackingStore().Get("assets")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUp
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,7 +115,6 @@ func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUp
 func (m *WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBodyable 
 type WindowsUpdatesDeploymentsItemAudienceMembersItemMicrosoftGraphWindowsUpdatesAddMembersAddMembersPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

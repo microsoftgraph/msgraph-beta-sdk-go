@@ -47,6 +47,7 @@ type ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilderPostRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAccessReviewInstanceDecisionItemId provides operations to manage the decisions property of the microsoft.graph.accessReviewStage entity.
+// returns a *ItemPendingAccessReviewInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) ByAccessReviewInstanceDecisionItemId(accessReviewInstanceDecisionItemId string)(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,28 +58,32 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) 
     }
     return NewItemPendingAccessReviewInstancesItemStagesItemDecisionsAccessReviewInstanceDecisionItemItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilderInternal instantiates a new DecisionsRequestBuilder and sets the default values.
+// NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilderInternal instantiates a new ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder and sets the default values.
 func NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) {
     m := &ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}/decisions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}/decisions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder instantiates a new DecisionsRequestBuilder and sets the default values.
+// NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder instantiates a new ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder and sets the default values.
 func NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemPendingAccessReviewInstancesItemStagesItemDecisionsCountRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) Count()(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsCountRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemStagesItemDecisionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+// returns a *ItemPendingAccessReviewInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
+// returns a AccessReviewInstanceDecisionItemCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewstage-list-decisions?view=graph-rest-1.0
@@ -88,8 +93,7 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessReviewInstanceDecisionItemCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,14 +105,15 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemCollectionResponseable), nil
 }
 // Post create new navigation property to decisions for users
+// returns a AccessReviewInstanceDecisionItemable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, requestConfiguration *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessReviewInstanceDecisionItemFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,10 +125,12 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable), nil
 }
 // RecordAllDecisions provides operations to call the recordAllDecisions method.
+// returns a *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) RecordAllDecisions()(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRecordAllDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
+// returns a *RequestInformation when successful
 func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +144,9 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) 
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to decisions for users
+// returns a *RequestInformation when successful
 func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceDecisionItemable, requestConfiguration *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}/decisions", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -151,6 +159,7 @@ func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) WithUrl(rawUrl string)(*ItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemStagesItemDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -47,6 +47,7 @@ type ItemTeamDefinitionPrimaryChannelMessagesRequestBuilderPostRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByChatMessageId provides operations to manage the messages property of the microsoft.graph.channel entity.
+// returns a *ItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilder when successful
 func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ByChatMessageId(chatMessageId string)(*ItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,28 +58,32 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ByChatMessageId
     }
     return NewItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemTeamDefinitionPrimaryChannelMessagesRequestBuilderInternal instantiates a new MessagesRequestBuilder and sets the default values.
+// NewItemTeamDefinitionPrimaryChannelMessagesRequestBuilderInternal instantiates a new ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder and sets the default values.
 func NewItemTeamDefinitionPrimaryChannelMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) {
     m := &ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/messages{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemTeamDefinitionPrimaryChannelMessagesRequestBuilder instantiates a new MessagesRequestBuilder and sets the default values.
+// NewItemTeamDefinitionPrimaryChannelMessagesRequestBuilder instantiates a new ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder and sets the default values.
 func NewItemTeamDefinitionPrimaryChannelMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionPrimaryChannelMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemTeamDefinitionPrimaryChannelMessagesCountRequestBuilder when successful
 func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) Count()(*ItemTeamDefinitionPrimaryChannelMessagesCountRequestBuilder) {
     return NewItemTeamDefinitionPrimaryChannelMessagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
+// returns a *ItemTeamDefinitionPrimaryChannelMessagesDeltaRequestBuilder when successful
 func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) Delta()(*ItemTeamDefinitionPrimaryChannelMessagesDeltaRequestBuilder) {
     return NewItemTeamDefinitionPrimaryChannelMessagesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel).
+// returns a ChatMessageCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
@@ -88,8 +93,7 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) Get(ctx context
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateChatMessageCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,6 +105,8 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) Get(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageCollectionResponseable), nil
 }
 // Post send a new chatMessage in the specified channel.
+// returns a ChatMessageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
@@ -110,8 +116,7 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) Post(ctx contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateChatMessageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -123,6 +128,7 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) Post(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
 }
 // ToGetRequestInformation retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel).
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -136,8 +142,9 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // ToPostRequestInformation send a new chatMessage in the specified channel.
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/messages", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -150,6 +157,7 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ToPostRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder when successful
 func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) {
     return NewItemTeamDefinitionPrimaryChannelMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

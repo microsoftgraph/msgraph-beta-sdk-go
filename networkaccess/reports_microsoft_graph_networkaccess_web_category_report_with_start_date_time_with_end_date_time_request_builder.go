@@ -33,10 +33,10 @@ type ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEnd
     // Request query parameters
     QueryParameters *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters
 }
-// NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderInternal instantiates a new MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
+// NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderInternal instantiates a new ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
 func NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder) {
     m := &ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.webCategoryReport(startDateTime={startDateTime},endDateTime={endDateTime}){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.webCategoryReport(startDateTime={startDateTime},endDateTime={endDateTime}){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     if endDateTime != nil {
         m.BaseRequestBuilder.PathParameters["endDateTime"] = (*endDateTime).Format(i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.RFC3339)
@@ -46,22 +46,23 @@ func NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWith
     }
     return m
 }
-// NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder instantiates a new MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
+// NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder instantiates a new ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
 func NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get invoke function webCategoryReport
-// Deprecated: This method is obsolete. Use GetAsWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeWebCategoryReportWithStartDateTimeWithEndDateTimeResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeWebCategoryReportWithStartDateTimeWithEndDateTimeResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeWebCategoryReportWithStartDateTimeWithEndDateTimeResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -73,14 +74,15 @@ func (m *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWit
     return res.(ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeWebCategoryReportWithStartDateTimeWithEndDateTimeResponseable), nil
 }
 // GetAsWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse invoke function webCategoryReport
+// returns a ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -92,6 +94,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWit
     return res.(ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
 // ToGetRequestInformation invoke function webCategoryReport
+// returns a *RequestInformation when successful
 func (m *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -105,6 +108,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWit
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder when successful
 func (m *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder) WithUrl(rawUrl string)(*ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder) {
     return NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

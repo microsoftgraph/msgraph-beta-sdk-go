@@ -47,6 +47,7 @@ type PermissionGrantPoliciesItemExcludesRequestBuilderPostRequestConfiguration s
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByPermissionGrantConditionSetId provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
+// returns a *PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder when successful
 func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) ByPermissionGrantConditionSetId(permissionGrantConditionSetId string)(*PermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) ByPermissionGrantCon
     }
     return NewPermissionGrantPoliciesItemExcludesPermissionGrantConditionSetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal instantiates a new ExcludesRequestBuilder and sets the default values.
+// NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal instantiates a new PermissionGrantPoliciesItemExcludesRequestBuilder and sets the default values.
 func NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionGrantPoliciesItemExcludesRequestBuilder) {
     m := &PermissionGrantPoliciesItemExcludesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/excludes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/excludes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewPermissionGrantPoliciesItemExcludesRequestBuilder instantiates a new ExcludesRequestBuilder and sets the default values.
+// NewPermissionGrantPoliciesItemExcludesRequestBuilder instantiates a new PermissionGrantPoliciesItemExcludesRequestBuilder and sets the default values.
 func NewPermissionGrantPoliciesItemExcludesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionGrantPoliciesItemExcludesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantPoliciesItemExcludesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *PermissionGrantPoliciesItemExcludesCountRequestBuilder when successful
 func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) Count()(*PermissionGrantPoliciesItemExcludesCountRequestBuilder) {
     return NewPermissionGrantPoliciesItemExcludesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the condition sets that are *excluded* in a permissionGrantPolicy.
+// returns a PermissionGrantConditionSetCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-list-excludes?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) Get(ctx context.Cont
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePermissionGrantConditionSetCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +100,8 @@ func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) Get(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetCollectionResponseable), nil
 }
 // Post add conditions under which a permission grant event is *excluded* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy.
+// returns a PermissionGrantConditionSetable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-post-excludes?view=graph-rest-1.0
@@ -106,8 +111,7 @@ func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) Post(ctx context.Con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePermissionGrantConditionSetFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,6 +123,7 @@ func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) Post(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable), nil
 }
 // ToGetRequestInformation retrieve the condition sets that are *excluded* in a permissionGrantPolicy.
+// returns a *RequestInformation when successful
 func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionGrantPoliciesItemExcludesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +137,9 @@ func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // ToPostRequestInformation add conditions under which a permission grant event is *excluded* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the excludes collection of a  permissionGrantPolicy.
+// returns a *RequestInformation when successful
 func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable, requestConfiguration *PermissionGrantPoliciesItemExcludesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/excludes", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *PermissionGrantPoliciesItemExcludesRequestBuilder when successful
 func (m *PermissionGrantPoliciesItemExcludesRequestBuilder) WithUrl(rawUrl string)(*PermissionGrantPoliciesItemExcludesRequestBuilder) {
     return NewPermissionGrantPoliciesItemExcludesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

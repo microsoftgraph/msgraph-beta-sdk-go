@@ -45,6 +45,7 @@ type ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilde
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAttachmentId provides operations to manage the attachments property of the microsoft.graph.event entity.
+// returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsAttachmentItemRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder) ByAttachmentId(attachmentId string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsAttachmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -55,28 +56,32 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBu
     }
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsAttachmentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilderInternal instantiates a new AttachmentsRequestBuilder and sets the default values.
+// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilderInternal instantiates a new ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder) {
     m := &ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/attachments{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder instantiates a new AttachmentsRequestBuilder and sets the default values.
+// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder instantiates a new ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsCountRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsCountRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateUploadSession provides operations to call the createUploadSession method.
+// returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsCreateUploadSessionRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsCreateUploadSessionRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of attachment objects attached to an event.
+// returns a AttachmentCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
@@ -86,8 +91,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBu
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttachmentCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -98,18 +102,19 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentCollectionResponseable), nil
 }
-// Post use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
+// Post use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+// returns a Attachmentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttachmentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -121,6 +126,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBu
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable), nil
 }
 // ToGetRequestInformation retrieve a list of attachment objects attached to an event.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -133,9 +139,10 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBu
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
+// ToPostRequestInformation use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Attachmentable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/attachments", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -148,6 +155,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemAttachmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

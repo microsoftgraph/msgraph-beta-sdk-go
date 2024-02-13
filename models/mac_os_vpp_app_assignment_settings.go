@@ -8,7 +8,7 @@ import (
 type MacOsVppAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewMacOsVppAppAssignmentSettings instantiates a new macOsVppAppAssignmentSettings and sets the default values.
+// NewMacOsVppAppAssignmentSettings instantiates a new MacOsVppAppAssignmentSettings and sets the default values.
 func NewMacOsVppAppAssignmentSettings()(*MacOsVppAppAssignmentSettings) {
     m := &MacOsVppAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -18,10 +18,12 @@ func NewMacOsVppAppAssignmentSettings()(*MacOsVppAppAssignmentSettings) {
     return m
 }
 // CreateMacOsVppAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOsVppAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOsVppAppAssignmentSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOsVppAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
     res["preventAutoAppUpdate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +69,7 @@ func (m *MacOsVppAppAssignmentSettings) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetPreventAutoAppUpdate gets the preventAutoAppUpdate property value. When TRUE, indicates that the app should not be automatically updated with the latest version from Apple app store. When FALSE, indicates that the app may be auto updated. By default, this property is set to null which internally is treated as FALSE.
+// returns a *bool when successful
 func (m *MacOsVppAppAssignmentSettings) GetPreventAutoAppUpdate()(*bool) {
     val, err := m.GetBackingStore().Get("preventAutoAppUpdate")
     if err != nil {
@@ -78,6 +81,7 @@ func (m *MacOsVppAppAssignmentSettings) GetPreventAutoAppUpdate()(*bool) {
     return nil
 }
 // GetPreventManagedAppBackup gets the preventManagedAppBackup property value. When TRUE, indicates that the app should not be backed up to iCloud. When FALSE, indicates that the app may be backed up to iCloud. By default, this property is set to null which internally is treated as FALSE.
+// returns a *bool when successful
 func (m *MacOsVppAppAssignmentSettings) GetPreventManagedAppBackup()(*bool) {
     val, err := m.GetBackingStore().Get("preventManagedAppBackup")
     if err != nil {
@@ -89,6 +93,7 @@ func (m *MacOsVppAppAssignmentSettings) GetPreventManagedAppBackup()(*bool) {
     return nil
 }
 // GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
+// returns a *bool when successful
 func (m *MacOsVppAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     val, err := m.GetBackingStore().Get("uninstallOnDeviceRemoval")
     if err != nil {
@@ -100,6 +105,7 @@ func (m *MacOsVppAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     return nil
 }
 // GetUseDeviceLicensing gets the useDeviceLicensing property value. Whether or not to use device licensing.
+// returns a *bool when successful
 func (m *MacOsVppAppAssignmentSettings) GetUseDeviceLicensing()(*bool) {
     val, err := m.GetBackingStore().Get("useDeviceLicensing")
     if err != nil {
@@ -170,7 +176,6 @@ func (m *MacOsVppAppAssignmentSettings) SetUseDeviceLicensing(value *bool)() {
         panic(err)
     }
 }
-// MacOsVppAppAssignmentSettingsable 
 type MacOsVppAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

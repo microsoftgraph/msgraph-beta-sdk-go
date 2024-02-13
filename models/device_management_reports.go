@@ -8,7 +8,7 @@ import (
 type DeviceManagementReports struct {
     Entity
 }
-// NewDeviceManagementReports instantiates a new deviceManagementReports and sets the default values.
+// NewDeviceManagementReports instantiates a new DeviceManagementReports and sets the default values.
 func NewDeviceManagementReports()(*DeviceManagementReports) {
     m := &DeviceManagementReports{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementReports()(*DeviceManagementReports) {
     return m
 }
 // CreateDeviceManagementReportsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementReportsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementReports(), nil
 }
 // GetCachedReportConfigurations gets the cachedReportConfigurations property value. Entity representing the configuration of a cached report.
+// returns a []DeviceManagementCachedReportConfigurationable when successful
 func (m *DeviceManagementReports) GetCachedReportConfigurations()([]DeviceManagementCachedReportConfigurationable) {
     val, err := m.GetBackingStore().Get("cachedReportConfigurations")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceManagementReports) GetCachedReportConfigurations()([]DeviceManage
     return nil
 }
 // GetExportJobs gets the exportJobs property value. Entity representing a job to export a report.
+// returns a []DeviceManagementExportJobable when successful
 func (m *DeviceManagementReports) GetExportJobs()([]DeviceManagementExportJobable) {
     val, err := m.GetBackingStore().Get("exportJobs")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *DeviceManagementReports) GetExportJobs()([]DeviceManagementExportJobabl
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementReports) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["cachedReportConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -124,7 +128,6 @@ func (m *DeviceManagementReports) SetExportJobs(value []DeviceManagementExportJo
         panic(err)
     }
 }
-// DeviceManagementReportsable 
 type DeviceManagementReportsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

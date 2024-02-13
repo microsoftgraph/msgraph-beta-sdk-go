@@ -11,7 +11,7 @@ type UnmanagedDevice struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUnmanagedDevice instantiates a new unmanagedDevice and sets the default values.
+// NewUnmanagedDevice instantiates a new UnmanagedDevice and sets the default values.
 func NewUnmanagedDevice()(*UnmanagedDevice) {
     m := &UnmanagedDevice{
     }
@@ -20,10 +20,12 @@ func NewUnmanagedDevice()(*UnmanagedDevice) {
     return m
 }
 // CreateUnmanagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnmanagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnmanagedDevice(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UnmanagedDevice) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +38,12 @@ func (m *UnmanagedDevice) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UnmanagedDevice) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDeviceName gets the deviceName property value. Device name.
+// returns a *string when successful
 func (m *UnmanagedDevice) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -51,6 +55,7 @@ func (m *UnmanagedDevice) GetDeviceName()(*string) {
     return nil
 }
 // GetDomain gets the domain property value. Domain.
+// returns a *string when successful
 func (m *UnmanagedDevice) GetDomain()(*string) {
     val, err := m.GetBackingStore().Get("domain")
     if err != nil {
@@ -62,6 +67,7 @@ func (m *UnmanagedDevice) GetDomain()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnmanagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -187,6 +193,7 @@ func (m *UnmanagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetIpAddress gets the ipAddress property value. IP address.
+// returns a *string when successful
 func (m *UnmanagedDevice) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -198,6 +205,7 @@ func (m *UnmanagedDevice) GetIpAddress()(*string) {
     return nil
 }
 // GetLastLoggedOnUser gets the lastLoggedOnUser property value. Last logged on user.
+// returns a *string when successful
 func (m *UnmanagedDevice) GetLastLoggedOnUser()(*string) {
     val, err := m.GetBackingStore().Get("lastLoggedOnUser")
     if err != nil {
@@ -209,6 +217,7 @@ func (m *UnmanagedDevice) GetLastLoggedOnUser()(*string) {
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. Last seen date and time.
+// returns a *Time when successful
 func (m *UnmanagedDevice) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -220,6 +229,7 @@ func (m *UnmanagedDevice) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetLocation gets the location property value. Location.
+// returns a *string when successful
 func (m *UnmanagedDevice) GetLocation()(*string) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -231,6 +241,7 @@ func (m *UnmanagedDevice) GetLocation()(*string) {
     return nil
 }
 // GetMacAddress gets the macAddress property value. MAC address.
+// returns a *string when successful
 func (m *UnmanagedDevice) GetMacAddress()(*string) {
     val, err := m.GetBackingStore().Get("macAddress")
     if err != nil {
@@ -242,6 +253,7 @@ func (m *UnmanagedDevice) GetMacAddress()(*string) {
     return nil
 }
 // GetManufacturer gets the manufacturer property value. Manufacturer.
+// returns a *string when successful
 func (m *UnmanagedDevice) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -253,6 +265,7 @@ func (m *UnmanagedDevice) GetManufacturer()(*string) {
     return nil
 }
 // GetModel gets the model property value. Model.
+// returns a *string when successful
 func (m *UnmanagedDevice) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -264,6 +277,7 @@ func (m *UnmanagedDevice) GetModel()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UnmanagedDevice) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -275,6 +289,7 @@ func (m *UnmanagedDevice) GetOdataType()(*string) {
     return nil
 }
 // GetOs gets the os property value. Operating system.
+// returns a *string when successful
 func (m *UnmanagedDevice) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -286,6 +301,7 @@ func (m *UnmanagedDevice) GetOs()(*string) {
     return nil
 }
 // GetOsVersion gets the osVersion property value. Operating system version.
+// returns a *string when successful
 func (m *UnmanagedDevice) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -473,7 +489,6 @@ func (m *UnmanagedDevice) SetOsVersion(value *string)() {
         panic(err)
     }
 }
-// UnmanagedDeviceable 
 type UnmanagedDeviceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

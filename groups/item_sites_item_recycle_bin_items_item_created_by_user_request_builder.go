@@ -27,28 +27,29 @@ type ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilderGetQueryParameters
 }
-// NewItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilderInternal instantiates a new CreatedByUserRequestBuilder and sets the default values.
+// NewItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilderInternal instantiates a new ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder and sets the default values.
 func NewItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder) {
     m := &ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/recycleBin/items/{recycleBinItem%2Did}/createdByUser{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/recycleBin/items/{recycleBinItem%2Did}/createdByUser{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder instantiates a new CreatedByUserRequestBuilder and sets the default values.
+// NewItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder instantiates a new ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder and sets the default values.
 func NewItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get createdByUser from groups
+// returns a Userable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,14 +61,17 @@ func (m *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable), nil
 }
 // MailboxSettings the mailboxSettings property
+// returns a *ItemSitesItemRecycleBinItemsItemCreatedByUserMailboxSettingsRequestBuilder when successful
 func (m *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder) MailboxSettings()(*ItemSitesItemRecycleBinItemsItemCreatedByUserMailboxSettingsRequestBuilder) {
     return NewItemSitesItemRecycleBinItemsItemCreatedByUserMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
+// returns a *ItemSitesItemRecycleBinItemsItemCreatedByUserServiceProvisioningErrorsRequestBuilder when successful
 func (m *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder) ServiceProvisioningErrors()(*ItemSitesItemRecycleBinItemsItemCreatedByUserServiceProvisioningErrorsRequestBuilder) {
     return NewItemSitesItemRecycleBinItemsItemCreatedByUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get createdByUser from groups
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -81,6 +85,7 @@ func (m *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder when successful
 func (m *ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder) {
     return NewItemSitesItemRecycleBinItemsItemCreatedByUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

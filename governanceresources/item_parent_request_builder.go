@@ -27,28 +27,29 @@ type ItemParentRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemParentRequestBuilderGetQueryParameters
 }
-// NewItemParentRequestBuilderInternal instantiates a new ParentRequestBuilder and sets the default values.
+// NewItemParentRequestBuilderInternal instantiates a new ItemParentRequestBuilder and sets the default values.
 func NewItemParentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemParentRequestBuilder) {
     m := &ItemParentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/parent{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/parent{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemParentRequestBuilder instantiates a new ParentRequestBuilder and sets the default values.
+// NewItemParentRequestBuilder instantiates a new ItemParentRequestBuilder and sets the default values.
 func NewItemParentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemParentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemParentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
+// returns a GovernanceResourceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemParentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemParentRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceResourceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemParentRequestBuilder) Get(ctx context.Context, requestConfiguration
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable), nil
 }
 // ToGetRequestInformation read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
+// returns a *RequestInformation when successful
 func (m *ItemParentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemParentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemParentRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemParentRequestBuilder when successful
 func (m *ItemParentRequestBuilder) WithUrl(rawUrl string)(*ItemParentRequestBuilder) {
     return NewItemParentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

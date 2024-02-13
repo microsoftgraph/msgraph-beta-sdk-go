@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookTask 
 type OutlookTask struct {
     OutlookItem
 }
-// NewOutlookTask instantiates a new outlookTask and sets the default values.
+// NewOutlookTask instantiates a new OutlookTask and sets the default values.
 func NewOutlookTask()(*OutlookTask) {
     m := &OutlookTask{
         OutlookItem: *NewOutlookItem(),
@@ -18,10 +17,12 @@ func NewOutlookTask()(*OutlookTask) {
     return m
 }
 // CreateOutlookTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOutlookTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOutlookTask(), nil
 }
 // GetAssignedTo gets the assignedTo property value. The name of the person who has been assigned the task in Outlook. Read-only.
+// returns a *string when successful
 func (m *OutlookTask) GetAssignedTo()(*string) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *OutlookTask) GetAssignedTo()(*string) {
     return nil
 }
 // GetAttachments gets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// returns a []Attachmentable when successful
 func (m *OutlookTask) GetAttachments()([]Attachmentable) {
     val, err := m.GetBackingStore().Get("attachments")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *OutlookTask) GetAttachments()([]Attachmentable) {
     return nil
 }
 // GetBody gets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
+// returns a ItemBodyable when successful
 func (m *OutlookTask) GetBody()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *OutlookTask) GetBody()(ItemBodyable) {
     return nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. The date in the specified time zone that the task was finished.
+// returns a DateTimeTimeZoneable when successful
 func (m *OutlookTask) GetCompletedDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("completedDateTime")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *OutlookTask) GetCompletedDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetDueDateTime gets the dueDateTime property value. The date in the specified time zone that the task is to be finished.
+// returns a DateTimeTimeZoneable when successful
 func (m *OutlookTask) GetDueDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("dueDateTime")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *OutlookTask) GetDueDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OutlookTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
     res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -280,6 +286,7 @@ func (m *OutlookTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetHasAttachments gets the hasAttachments property value. Set to true if the task has attachments.
+// returns a *bool when successful
 func (m *OutlookTask) GetHasAttachments()(*bool) {
     val, err := m.GetBackingStore().Get("hasAttachments")
     if err != nil {
@@ -291,6 +298,7 @@ func (m *OutlookTask) GetHasAttachments()(*bool) {
     return nil
 }
 // GetImportance gets the importance property value. The importance property
+// returns a *Importance when successful
 func (m *OutlookTask) GetImportance()(*Importance) {
     val, err := m.GetBackingStore().Get("importance")
     if err != nil {
@@ -302,6 +310,7 @@ func (m *OutlookTask) GetImportance()(*Importance) {
     return nil
 }
 // GetIsReminderOn gets the isReminderOn property value. The isReminderOn property
+// returns a *bool when successful
 func (m *OutlookTask) GetIsReminderOn()(*bool) {
     val, err := m.GetBackingStore().Get("isReminderOn")
     if err != nil {
@@ -313,6 +322,7 @@ func (m *OutlookTask) GetIsReminderOn()(*bool) {
     return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task. Read-only. Nullable.
+// returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *OutlookTask) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
     if err != nil {
@@ -324,6 +334,7 @@ func (m *OutlookTask) GetMultiValueExtendedProperties()([]MultiValueLegacyExtend
     return nil
 }
 // GetOwner gets the owner property value. The owner property
+// returns a *string when successful
 func (m *OutlookTask) GetOwner()(*string) {
     val, err := m.GetBackingStore().Get("owner")
     if err != nil {
@@ -335,6 +346,7 @@ func (m *OutlookTask) GetOwner()(*string) {
     return nil
 }
 // GetParentFolderId gets the parentFolderId property value. The parentFolderId property
+// returns a *string when successful
 func (m *OutlookTask) GetParentFolderId()(*string) {
     val, err := m.GetBackingStore().Get("parentFolderId")
     if err != nil {
@@ -346,6 +358,7 @@ func (m *OutlookTask) GetParentFolderId()(*string) {
     return nil
 }
 // GetRecurrence gets the recurrence property value. The recurrence property
+// returns a PatternedRecurrenceable when successful
 func (m *OutlookTask) GetRecurrence()(PatternedRecurrenceable) {
     val, err := m.GetBackingStore().Get("recurrence")
     if err != nil {
@@ -357,6 +370,7 @@ func (m *OutlookTask) GetRecurrence()(PatternedRecurrenceable) {
     return nil
 }
 // GetReminderDateTime gets the reminderDateTime property value. The reminderDateTime property
+// returns a DateTimeTimeZoneable when successful
 func (m *OutlookTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("reminderDateTime")
     if err != nil {
@@ -368,6 +382,7 @@ func (m *OutlookTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity property
+// returns a *Sensitivity when successful
 func (m *OutlookTask) GetSensitivity()(*Sensitivity) {
     val, err := m.GetBackingStore().Get("sensitivity")
     if err != nil {
@@ -379,6 +394,7 @@ func (m *OutlookTask) GetSensitivity()(*Sensitivity) {
     return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task. Read-only. Nullable.
+// returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *OutlookTask) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
     if err != nil {
@@ -390,6 +406,7 @@ func (m *OutlookTask) GetSingleValueExtendedProperties()([]SingleValueLegacyExte
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
+// returns a DateTimeTimeZoneable when successful
 func (m *OutlookTask) GetStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -401,6 +418,7 @@ func (m *OutlookTask) GetStartDateTime()(DateTimeTimeZoneable) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *TaskStatus when successful
 func (m *OutlookTask) GetStatus()(*TaskStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -412,6 +430,7 @@ func (m *OutlookTask) GetStatus()(*TaskStatus) {
     return nil
 }
 // GetSubject gets the subject property value. The subject property
+// returns a *string when successful
 func (m *OutlookTask) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -685,7 +704,6 @@ func (m *OutlookTask) SetSubject(value *string)() {
         panic(err)
     }
 }
-// OutlookTaskable 
 type OutlookTaskable interface {
     OutlookItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

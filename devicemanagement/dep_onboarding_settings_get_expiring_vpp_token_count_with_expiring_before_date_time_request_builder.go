@@ -17,7 +17,7 @@ type DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal instantiates a new GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder and sets the default values.
+// NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal instantiates a new DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, expiringBeforeDateTime *string)(*DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) {
     m := &DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings/getExpiringVppTokenCount(expiringBeforeDateTime='{expiringBeforeDateTime}')", pathParameters),
@@ -27,22 +27,23 @@ func NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeR
     }
     return m
 }
-// NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder instantiates a new GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder and sets the default values.
+// NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder instantiates a new DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getExpiringVppTokenCount
-// Deprecated: This method is obsolete. Use GetAsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetRequestConfiguration)(DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,14 +55,15 @@ func (m *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTime
     return res.(DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable), nil
 }
 // GetAsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse invoke function getExpiringVppTokenCount
+// returns a DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) GetAsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse(ctx context.Context, requestConfiguration *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetRequestConfiguration)(DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -73,6 +75,7 @@ func (m *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTime
     return res.(DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getExpiringVppTokenCount
+// returns a *RequestInformation when successful
 func (m *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -83,6 +86,7 @@ func (m *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTime
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder when successful
 func (m *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) WithUrl(rawUrl string)(*DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) {
     return NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

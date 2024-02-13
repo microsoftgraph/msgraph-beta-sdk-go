@@ -41,28 +41,28 @@ type ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderPatchRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderInternal instantiates a new FieldsRequestBuilder and sets the default values.
+// NewItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderInternal instantiates a new ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder and sets the default values.
 func NewItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) {
     m := &ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/documentSetVersions/{documentSetVersion%2Did}/fields{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/documentSetVersions/{documentSetVersion%2Did}/fields{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder instantiates a new FieldsRequestBuilder and sets the default values.
+// NewItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder instantiates a new ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder and sets the default values.
 func NewItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property fields for shares
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) Delete(ct
     return nil
 }
 // Get a collection of the fields and values for this version of the list item.
+// returns a FieldValueSetable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FieldValueSetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateFieldValueSetFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) Get(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FieldValueSetable), nil
 }
 // Patch update the navigation property fields in shares
+// returns a FieldValueSetable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FieldValueSetable, requestConfiguration *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FieldValueSetable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateFieldValueSetFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) Patch(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FieldValueSetable), nil
 }
 // ToDeleteRequestInformation delete navigation property fields for shares
+// returns a *RequestInformation when successful
 func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/documentSetVersions/{documentSetVersion%2Did}/fields", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) ToDeleteR
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of the fields and values for this version of the list item.
+// returns a *RequestInformation when successful
 func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property fields in shares
+// returns a *RequestInformation when successful
 func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FieldValueSetable, requestConfiguration *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/documentSetVersions/{documentSetVersion%2Did}/fields", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) ToPatchRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder when successful
 func (m *ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) WithUrl(rawUrl string)(*ItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder) {
     return NewItemListItemsItemDocumentSetVersionsItemFieldsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

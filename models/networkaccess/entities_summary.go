@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// EntitiesSummary 
 type EntitiesSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEntitiesSummary instantiates a new entitiesSummary and sets the default values.
+// NewEntitiesSummary instantiates a new EntitiesSummary and sets the default values.
 func NewEntitiesSummary()(*EntitiesSummary) {
     m := &EntitiesSummary{
     }
@@ -19,10 +18,12 @@ func NewEntitiesSummary()(*EntitiesSummary) {
     return m
 }
 // CreateEntitiesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEntitiesSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEntitiesSummary(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *EntitiesSummary) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *EntitiesSummary) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *EntitiesSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDeviceCount gets the deviceCount property value. The number of unique devices that were seen.
+// returns a *int64 when successful
 func (m *EntitiesSummary) GetDeviceCount()(*int64) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *EntitiesSummary) GetDeviceCount()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EntitiesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +109,7 @@ func (m *EntitiesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *EntitiesSummary) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -116,6 +121,7 @@ func (m *EntitiesSummary) GetOdataType()(*string) {
     return nil
 }
 // GetTrafficType gets the trafficType property value. The trafficType property
+// returns a *TrafficType when successful
 func (m *EntitiesSummary) GetTrafficType()(*TrafficType) {
     val, err := m.GetBackingStore().Get("trafficType")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *EntitiesSummary) GetTrafficType()(*TrafficType) {
     return nil
 }
 // GetUserCount gets the userCount property value. The number of unique Microsoft Entra ID users that were seen.
+// returns a *int64 when successful
 func (m *EntitiesSummary) GetUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("userCount")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *EntitiesSummary) GetUserCount()(*int64) {
     return nil
 }
 // GetWorkloadCount gets the workloadCount property value. The number of unique target workloads/hosts that were seen.
+// returns a *int64 when successful
 func (m *EntitiesSummary) GetWorkloadCount()(*int64) {
     val, err := m.GetBackingStore().Get("workloadCount")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *EntitiesSummary) SetWorkloadCount(value *int64)() {
         panic(err)
     }
 }
-// EntitiesSummaryable 
 type EntitiesSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamworkOnPremisesCalendarSyncConfiguration 
 type TeamworkOnPremisesCalendarSyncConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamworkOnPremisesCalendarSyncConfiguration instantiates a new teamworkOnPremisesCalendarSyncConfiguration and sets the default values.
+// NewTeamworkOnPremisesCalendarSyncConfiguration instantiates a new TeamworkOnPremisesCalendarSyncConfiguration and sets the default values.
 func NewTeamworkOnPremisesCalendarSyncConfiguration()(*TeamworkOnPremisesCalendarSyncConfiguration) {
     m := &TeamworkOnPremisesCalendarSyncConfiguration{
     }
@@ -19,10 +18,12 @@ func NewTeamworkOnPremisesCalendarSyncConfiguration()(*TeamworkOnPremisesCalenda
     return m
 }
 // CreateTeamworkOnPremisesCalendarSyncConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkOnPremisesCalendarSyncConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkOnPremisesCalendarSyncConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetAdditionalData()(map[st
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDomain gets the domain property value. The fully qualified domain name (FQDN) of the Skype for Business Server. Use the Exchange domain if the Skype for Business SIP domain is different from the Exchange domain of the user.
+// returns a *string when successful
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetDomain()(*string) {
     val, err := m.GetBackingStore().Get("domain")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetDomain()(*string) {
     return nil
 }
 // GetDomainUserName gets the domainUserName property value. The domain and username of the console device, for example, Seattle/RanierConf.
+// returns a *string when successful
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetDomainUserName()(*string) {
     val, err := m.GetBackingStore().Get("domainUserName")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetDomainUserName()(*strin
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["domain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +111,7 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetFieldDeserializers()(ma
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetSmtpAddress gets the smtpAddress property value. The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.
+// returns a *string when successful
 func (m *TeamworkOnPremisesCalendarSyncConfiguration) GetSmtpAddress()(*string) {
     val, err := m.GetBackingStore().Get("smtpAddress")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *TeamworkOnPremisesCalendarSyncConfiguration) SetSmtpAddress(value *stri
         panic(err)
     }
 }
-// TeamworkOnPremisesCalendarSyncConfigurationable 
 type TeamworkOnPremisesCalendarSyncConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

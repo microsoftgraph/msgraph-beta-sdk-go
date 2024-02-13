@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// HostCookieCollectionResponse 
 type HostCookieCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewHostCookieCollectionResponse instantiates a new hostCookieCollectionResponse and sets the default values.
+// NewHostCookieCollectionResponse instantiates a new HostCookieCollectionResponse and sets the default values.
 func NewHostCookieCollectionResponse()(*HostCookieCollectionResponse) {
     m := &HostCookieCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),
@@ -17,10 +16,12 @@ func NewHostCookieCollectionResponse()(*HostCookieCollectionResponse) {
     return m
 }
 // CreateHostCookieCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostCookieCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostCookieCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HostCookieCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *HostCookieCollectionResponse) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []HostCookieable when successful
 func (m *HostCookieCollectionResponse) GetValue()([]HostCookieable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *HostCookieCollectionResponse) SetValue(value []HostCookieable)() {
         panic(err)
     }
 }
-// HostCookieCollectionResponseable 
 type HostCookieCollectionResponseable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

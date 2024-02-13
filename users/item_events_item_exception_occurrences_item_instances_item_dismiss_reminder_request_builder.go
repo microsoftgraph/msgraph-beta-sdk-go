@@ -17,20 +17,21 @@ type ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilderInternal instantiates a new DismissReminderRequestBuilder and sets the default values.
+// NewItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilderInternal instantiates a new ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder and sets the default values.
 func NewItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder) {
     m := &ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/instances/{event%2Did2}/dismissReminder", pathParameters),
     }
     return m
 }
-// NewItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder instantiates a new DismissReminderRequestBuilder and sets the default values.
+// NewItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder instantiates a new ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder and sets the default values.
 func NewItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post dismiss a reminder that has been triggered for an event in a user calendar.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderReque
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderReque
     return nil
 }
 // ToPostRequestInformation dismiss a reminder that has been triggered for an event in a user calendar.
+// returns a *RequestInformation when successful
 func (m *ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder when successful
 func (m *ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder) WithUrl(rawUrl string)(*ItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder) {
     return NewItemEventsItemExceptionOccurrencesItemInstancesItemDismissReminderRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

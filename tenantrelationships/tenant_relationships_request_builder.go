@@ -37,7 +37,7 @@ type TenantRelationshipsRequestBuilderPatchRequestConfiguration struct {
 // NewTenantRelationshipsRequestBuilderInternal instantiates a new TenantRelationshipsRequestBuilder and sets the default values.
 func NewTenantRelationshipsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantRelationshipsRequestBuilder) {
     m := &TenantRelationshipsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -48,30 +48,35 @@ func NewTenantRelationshipsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewTenantRelationshipsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DelegatedAdminCustomers provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
+// returns a *DelegatedAdminCustomersRequestBuilder when successful
 func (m *TenantRelationshipsRequestBuilder) DelegatedAdminCustomers()(*DelegatedAdminCustomersRequestBuilder) {
     return NewDelegatedAdminCustomersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DelegatedAdminRelationships provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
+// returns a *DelegatedAdminRelationshipsRequestBuilder when successful
 func (m *TenantRelationshipsRequestBuilder) DelegatedAdminRelationships()(*DelegatedAdminRelationshipsRequestBuilder) {
     return NewDelegatedAdminRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FindTenantInformationByDomainNameWithDomainName provides operations to call the findTenantInformationByDomainName method.
+// returns a *FindTenantInformationByDomainNameWithDomainNameRequestBuilder when successful
 func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByDomainNameWithDomainName(domainName *string)(*FindTenantInformationByDomainNameWithDomainNameRequestBuilder) {
     return NewFindTenantInformationByDomainNameWithDomainNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, domainName)
 }
 // FindTenantInformationByTenantIdWithTenantId provides operations to call the findTenantInformationByTenantId method.
+// returns a *FindTenantInformationByTenantIdWithTenantIdRequestBuilder when successful
 func (m *TenantRelationshipsRequestBuilder) FindTenantInformationByTenantIdWithTenantId(tenantId *string)(*FindTenantInformationByTenantIdWithTenantIdRequestBuilder) {
     return NewFindTenantInformationByTenantIdWithTenantIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, tenantId)
 }
 // Get get tenantRelationships
+// returns a TenantRelationshipable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TenantRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantRelationshipsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTenantRelationshipFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -83,22 +88,25 @@ func (m *TenantRelationshipsRequestBuilder) Get(ctx context.Context, requestConf
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable), nil
 }
 // ManagedTenants provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.
+// returns a *ManagedTenantsRequestBuilder when successful
 func (m *TenantRelationshipsRequestBuilder) ManagedTenants()(*ManagedTenantsRequestBuilder) {
     return NewManagedTenantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MultiTenantOrganization provides operations to manage the multiTenantOrganization property of the microsoft.graph.tenantRelationship entity.
+// returns a *MultiTenantOrganizationRequestBuilder when successful
 func (m *TenantRelationshipsRequestBuilder) MultiTenantOrganization()(*MultiTenantOrganizationRequestBuilder) {
     return NewMultiTenantOrganizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update tenantRelationships
+// returns a TenantRelationshipable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TenantRelationshipsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable, requestConfiguration *TenantRelationshipsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTenantRelationshipFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -110,6 +118,7 @@ func (m *TenantRelationshipsRequestBuilder) Patch(ctx context.Context, body ie23
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable), nil
 }
 // ToGetRequestInformation get tenantRelationships
+// returns a *RequestInformation when successful
 func (m *TenantRelationshipsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantRelationshipsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -123,8 +132,9 @@ func (m *TenantRelationshipsRequestBuilder) ToGetRequestInformation(ctx context.
     return requestInfo, nil
 }
 // ToPatchRequestInformation update tenantRelationships
+// returns a *RequestInformation when successful
 func (m *TenantRelationshipsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantRelationshipable, requestConfiguration *TenantRelationshipsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/tenantRelationships", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -137,6 +147,7 @@ func (m *TenantRelationshipsRequestBuilder) ToPatchRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TenantRelationshipsRequestBuilder when successful
 func (m *TenantRelationshipsRequestBuilder) WithUrl(rawUrl string)(*TenantRelationshipsRequestBuilder) {
     return NewTenantRelationshipsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

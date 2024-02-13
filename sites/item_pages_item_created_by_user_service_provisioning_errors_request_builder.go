@@ -39,32 +39,34 @@ type ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilderGetQueryParameters
 }
-// NewItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilderInternal instantiates a new ServiceProvisioningErrorsRequestBuilder and sets the default values.
+// NewItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilderInternal instantiates a new ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder and sets the default values.
 func NewItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder) {
     m := &ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/createdByUser/serviceProvisioningErrors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/createdByUser/serviceProvisioningErrors{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder instantiates a new ServiceProvisioningErrorsRequestBuilder and sets the default values.
+// NewItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder instantiates a new ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder and sets the default values.
 func NewItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemPagesItemCreatedByUserServiceProvisioningErrorsCountRequestBuilder when successful
 func (m *ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder) Count()(*ItemPagesItemCreatedByUserServiceProvisioningErrorsCountRequestBuilder) {
     return NewItemPagesItemCreatedByUserServiceProvisioningErrorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+// returns a ServiceProvisioningErrorCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceProvisioningErrorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateServiceProvisioningErrorCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder) Get(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceProvisioningErrorCollectionResponseable), nil
 }
 // ToGetRequestInformation errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+// returns a *RequestInformation when successful
 func (m *ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder) ToGe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder when successful
 func (m *ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder) WithUrl(rawUrl string)(*ItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder) {
     return NewItemPagesItemCreatedByUserServiceProvisioningErrorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

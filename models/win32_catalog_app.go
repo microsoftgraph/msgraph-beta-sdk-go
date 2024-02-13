@@ -8,7 +8,7 @@ import (
 type Win32CatalogApp struct {
     Win32LobApp
 }
-// NewWin32CatalogApp instantiates a new win32CatalogApp and sets the default values.
+// NewWin32CatalogApp instantiates a new Win32CatalogApp and sets the default values.
 func NewWin32CatalogApp()(*Win32CatalogApp) {
     m := &Win32CatalogApp{
         Win32LobApp: *NewWin32LobApp(),
@@ -18,10 +18,12 @@ func NewWin32CatalogApp()(*Win32CatalogApp) {
     return m
 }
 // CreateWin32CatalogAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWin32CatalogAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32CatalogApp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32CatalogApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Win32LobApp.GetFieldDeserializers()
     res["mobileAppCatalogPackageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *Win32CatalogApp) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetMobileAppCatalogPackageId gets the mobileAppCatalogPackageId property value. The mobileAppCatalogPackageId property references the mobileAppCatalogPackage entity which contains information about an application catalog package that can be deployed to Intune-managed devices
+// returns a *string when successful
 func (m *Win32CatalogApp) GetMobileAppCatalogPackageId()(*string) {
     val, err := m.GetBackingStore().Get("mobileAppCatalogPackageId")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *Win32CatalogApp) SetMobileAppCatalogPackageId(value *string)() {
         panic(err)
     }
 }
-// Win32CatalogAppable 
 type Win32CatalogAppable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Win32LobAppable

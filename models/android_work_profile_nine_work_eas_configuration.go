@@ -8,7 +8,7 @@ import (
 type AndroidWorkProfileNineWorkEasConfiguration struct {
     AndroidWorkProfileEasEmailProfileBase
 }
-// NewAndroidWorkProfileNineWorkEasConfiguration instantiates a new androidWorkProfileNineWorkEasConfiguration and sets the default values.
+// NewAndroidWorkProfileNineWorkEasConfiguration instantiates a new AndroidWorkProfileNineWorkEasConfiguration and sets the default values.
 func NewAndroidWorkProfileNineWorkEasConfiguration()(*AndroidWorkProfileNineWorkEasConfiguration) {
     m := &AndroidWorkProfileNineWorkEasConfiguration{
         AndroidWorkProfileEasEmailProfileBase: *NewAndroidWorkProfileEasEmailProfileBase(),
@@ -18,10 +18,12 @@ func NewAndroidWorkProfileNineWorkEasConfiguration()(*AndroidWorkProfileNineWork
     return m
 }
 // CreateAndroidWorkProfileNineWorkEasConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidWorkProfileNineWorkEasConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidWorkProfileNineWorkEasConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidWorkProfileNineWorkEasConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidWorkProfileEasEmailProfileBase.GetFieldDeserializers()
     res["syncCalendar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *AndroidWorkProfileNineWorkEasConfiguration) GetFieldDeserializers()(map
     return res
 }
 // GetSyncCalendar gets the syncCalendar property value. Toggles syncing the calendar. If set to false the calendar is turned off on the device.
+// returns a *bool when successful
 func (m *AndroidWorkProfileNineWorkEasConfiguration) GetSyncCalendar()(*bool) {
     val, err := m.GetBackingStore().Get("syncCalendar")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *AndroidWorkProfileNineWorkEasConfiguration) GetSyncCalendar()(*bool) {
     return nil
 }
 // GetSyncContacts gets the syncContacts property value. Toggles syncing contacts. If set to false contacts are turned off on the device.
+// returns a *bool when successful
 func (m *AndroidWorkProfileNineWorkEasConfiguration) GetSyncContacts()(*bool) {
     val, err := m.GetBackingStore().Get("syncContacts")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *AndroidWorkProfileNineWorkEasConfiguration) GetSyncContacts()(*bool) {
     return nil
 }
 // GetSyncTasks gets the syncTasks property value. Toggles syncing tasks. If set to false tasks are turned off on the device.
+// returns a *bool when successful
 func (m *AndroidWorkProfileNineWorkEasConfiguration) GetSyncTasks()(*bool) {
     val, err := m.GetBackingStore().Get("syncTasks")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *AndroidWorkProfileNineWorkEasConfiguration) SetSyncTasks(value *bool)()
         panic(err)
     }
 }
-// AndroidWorkProfileNineWorkEasConfigurationable 
 type AndroidWorkProfileNineWorkEasConfigurationable interface {
     AndroidWorkProfileEasEmailProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

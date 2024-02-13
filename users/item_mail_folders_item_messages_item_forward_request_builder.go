@@ -17,20 +17,21 @@ type ItemMailFoldersItemMessagesItemForwardRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemMailFoldersItemMessagesItemForwardRequestBuilderInternal instantiates a new ForwardRequestBuilder and sets the default values.
+// NewItemMailFoldersItemMessagesItemForwardRequestBuilderInternal instantiates a new ItemMailFoldersItemMessagesItemForwardRequestBuilder and sets the default values.
 func NewItemMailFoldersItemMessagesItemForwardRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemMessagesItemForwardRequestBuilder) {
     m := &ItemMailFoldersItemMessagesItemForwardRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/forward", pathParameters),
     }
     return m
 }
-// NewItemMailFoldersItemMessagesItemForwardRequestBuilder instantiates a new ForwardRequestBuilder and sets the default values.
+// NewItemMailFoldersItemMessagesItemForwardRequestBuilder instantiates a new ItemMailFoldersItemMessagesItemForwardRequestBuilder and sets the default values.
 func NewItemMailFoldersItemMessagesItemForwardRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemMessagesItemForwardRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemMessagesItemForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post forward a message using either JSON or MIME format. When using JSON format, you can:- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to forward a message, and send it later.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/message-forward?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemMailFoldersItemMessagesItemForwardRequestBuilder) Post(ctx context.
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemMailFoldersItemMessagesItemForwardRequestBuilder) Post(ctx context.
     return nil
 }
 // ToPostRequestInformation forward a message using either JSON or MIME format. When using JSON format, you can:- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the Sent Items folder. Alternatively, create a draft to forward a message, and send it later.
+// returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemMessagesItemForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemMessagesItemForwardPostRequestBodyable, requestConfiguration *ItemMailFoldersItemMessagesItemForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemMailFoldersItemMessagesItemForwardRequestBuilder) ToPostRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemMailFoldersItemMessagesItemForwardRequestBuilder when successful
 func (m *ItemMailFoldersItemMessagesItemForwardRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemMessagesItemForwardRequestBuilder) {
     return NewItemMailFoldersItemMessagesItemForwardRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

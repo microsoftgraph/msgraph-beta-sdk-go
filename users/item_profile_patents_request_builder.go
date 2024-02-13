@@ -47,6 +47,7 @@ type ItemProfilePatentsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByItemPatentId provides operations to manage the patents property of the microsoft.graph.profile entity.
+// returns a *ItemProfilePatentsItemPatentItemRequestBuilder when successful
 func (m *ItemProfilePatentsRequestBuilder) ByItemPatentId(itemPatentId string)(*ItemProfilePatentsItemPatentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *ItemProfilePatentsRequestBuilder) ByItemPatentId(itemPatentId string)(*
     }
     return NewItemProfilePatentsItemPatentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemProfilePatentsRequestBuilderInternal instantiates a new PatentsRequestBuilder and sets the default values.
+// NewItemProfilePatentsRequestBuilderInternal instantiates a new ItemProfilePatentsRequestBuilder and sets the default values.
 func NewItemProfilePatentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePatentsRequestBuilder) {
     m := &ItemProfilePatentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/patents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/patents{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemProfilePatentsRequestBuilder instantiates a new PatentsRequestBuilder and sets the default values.
+// NewItemProfilePatentsRequestBuilder instantiates a new ItemProfilePatentsRequestBuilder and sets the default values.
 func NewItemProfilePatentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePatentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfilePatentsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemProfilePatentsCountRequestBuilder when successful
 func (m *ItemProfilePatentsRequestBuilder) Count()(*ItemProfilePatentsCountRequestBuilder) {
     return NewItemProfilePatentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of itemPatent objects from a user's profile.
+// returns a ItemPatentCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *ItemProfilePatentsRequestBuilder) Get(ctx context.Context, requestConfi
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemPatentCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +100,8 @@ func (m *ItemProfilePatentsRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentCollectionResponseable), nil
 }
 // Post create a new itemPatent object within a user's profile.
+// returns a ItemPatentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
@@ -106,8 +111,7 @@ func (m *ItemProfilePatentsRequestBuilder) Post(ctx context.Context, body ie233e
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemPatentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,6 +123,7 @@ func (m *ItemProfilePatentsRequestBuilder) Post(ctx context.Context, body ie233e
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable), nil
 }
 // ToGetRequestInformation retrieve a list of itemPatent objects from a user's profile.
+// returns a *RequestInformation when successful
 func (m *ItemProfilePatentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePatentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +137,9 @@ func (m *ItemProfilePatentsRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new itemPatent object within a user's profile.
+// returns a *RequestInformation when successful
 func (m *ItemProfilePatentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, requestConfiguration *ItemProfilePatentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/profile/patents", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *ItemProfilePatentsRequestBuilder) ToPostRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemProfilePatentsRequestBuilder when successful
 func (m *ItemProfilePatentsRequestBuilder) WithUrl(rawUrl string)(*ItemProfilePatentsRequestBuilder) {
     return NewItemProfilePatentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

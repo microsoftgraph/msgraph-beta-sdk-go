@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrationBase 
 type MeetingRegistrationBase struct {
     Entity
 }
-// NewMeetingRegistrationBase instantiates a new meetingRegistrationBase and sets the default values.
+// NewMeetingRegistrationBase instantiates a new MeetingRegistrationBase and sets the default values.
 func NewMeetingRegistrationBase()(*MeetingRegistrationBase) {
     m := &MeetingRegistrationBase{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewMeetingRegistrationBase()(*MeetingRegistrationBase) {
     return m
 }
 // CreateMeetingRegistrationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMeetingRegistrationBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateMeetingRegistrationBaseFromDiscriminatorValue(parseNode i878a80d2330e
     return NewMeetingRegistrationBase(), nil
 }
 // GetAllowedRegistrant gets the allowedRegistrant property value. Specifies who can register for the meeting.
+// returns a *MeetingAudience when successful
 func (m *MeetingRegistrationBase) GetAllowedRegistrant()(*MeetingAudience) {
     val, err := m.GetBackingStore().Get("allowedRegistrant")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *MeetingRegistrationBase) GetAllowedRegistrant()(*MeetingAudience) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedRegistrant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,6 +84,7 @@ func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetRegistrants gets the registrants property value. Registrants of the online meeting.
+// returns a []MeetingRegistrantBaseable when successful
 func (m *MeetingRegistrationBase) GetRegistrants()([]MeetingRegistrantBaseable) {
     val, err := m.GetBackingStore().Get("registrants")
     if err != nil {
@@ -133,7 +136,6 @@ func (m *MeetingRegistrationBase) SetRegistrants(value []MeetingRegistrantBaseab
         panic(err)
     }
 }
-// MeetingRegistrationBaseable 
 type MeetingRegistrationBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

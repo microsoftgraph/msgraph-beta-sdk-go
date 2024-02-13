@@ -10,7 +10,7 @@ type AndroidFotaDeploymentAssignment struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAndroidFotaDeploymentAssignment instantiates a new androidFotaDeploymentAssignment and sets the default values.
+// NewAndroidFotaDeploymentAssignment instantiates a new AndroidFotaDeploymentAssignment and sets the default values.
 func NewAndroidFotaDeploymentAssignment()(*AndroidFotaDeploymentAssignment) {
     m := &AndroidFotaDeploymentAssignment{
     }
@@ -19,10 +19,12 @@ func NewAndroidFotaDeploymentAssignment()(*AndroidFotaDeploymentAssignment) {
     return m
 }
 // CreateAndroidFotaDeploymentAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidFotaDeploymentAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidFotaDeploymentAssignment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AndroidFotaDeploymentAssignment) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +37,7 @@ func (m *AndroidFotaDeploymentAssignment) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAssignmentTarget gets the assignmentTarget property value. The Azure Active Directory (Azure AD) we are deploying firmware updates to (e.g.: d93c8f48-bd42-4514-ba40-bc6b84780930). NOTE: Use this property moving forward because the existing property, target, is deprecated.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *AndroidFotaDeploymentAssignment) GetAssignmentTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("assignmentTarget")
     if err != nil {
@@ -46,10 +49,12 @@ func (m *AndroidFotaDeploymentAssignment) GetAssignmentTarget()(DeviceAndAppMana
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AndroidFotaDeploymentAssignment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. The display name of the Azure AD security group used for the assignment.
+// returns a *string when successful
 func (m *AndroidFotaDeploymentAssignment) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *AndroidFotaDeploymentAssignment) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidFotaDeploymentAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignmentTarget"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +122,7 @@ func (m *AndroidFotaDeploymentAssignment) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetId gets the id property value. A unique identifier assigned to each Android FOTA Assignment entity
+// returns a *string when successful
 func (m *AndroidFotaDeploymentAssignment) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -127,6 +134,7 @@ func (m *AndroidFotaDeploymentAssignment) GetId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AndroidFotaDeploymentAssignment) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,6 +146,7 @@ func (m *AndroidFotaDeploymentAssignment) GetOdataType()(*string) {
     return nil
 }
 // GetTarget gets the target property value. The AAD Group we are deploying firmware updates to
+// returns a AndroidFotaDeploymentAssignmentTargetable when successful
 func (m *AndroidFotaDeploymentAssignment) GetTarget()(AndroidFotaDeploymentAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -234,7 +243,6 @@ func (m *AndroidFotaDeploymentAssignment) SetTarget(value AndroidFotaDeploymentA
         panic(err)
     }
 }
-// AndroidFotaDeploymentAssignmentable 
 type AndroidFotaDeploymentAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

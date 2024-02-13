@@ -27,28 +27,29 @@ type CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderGetR
     // Request query parameters
     QueryParameters *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderGetQueryParameters
 }
-// NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderInternal instantiates a new SiteRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderInternal instantiates a new CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) {
     m := &CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/siteSources/{siteSource%2Did}/site{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/siteSources/{siteSource%2Did}/site{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder instantiates a new SiteRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder instantiates a new CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the SharePoint site associated with the siteSource.
+// returns a Siteable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSiteFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable), nil
 }
 // ToGetRequestInformation the SharePoint site associated with the siteSource.
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansItemSiteSourcesItemSiteRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

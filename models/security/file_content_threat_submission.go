@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileContentThreatSubmission 
 type FileContentThreatSubmission struct {
     FileThreatSubmission
 }
-// NewFileContentThreatSubmission instantiates a new fileContentThreatSubmission and sets the default values.
+// NewFileContentThreatSubmission instantiates a new FileContentThreatSubmission and sets the default values.
 func NewFileContentThreatSubmission()(*FileContentThreatSubmission) {
     m := &FileContentThreatSubmission{
         FileThreatSubmission: *NewFileThreatSubmission(),
@@ -18,10 +17,12 @@ func NewFileContentThreatSubmission()(*FileContentThreatSubmission) {
     return m
 }
 // CreateFileContentThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileContentThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileContentThreatSubmission(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileContentThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.FileThreatSubmission.GetFieldDeserializers()
     res["fileContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *FileContentThreatSubmission) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetFileContent gets the fileContent property value. It specifies the file content in base 64 format.
+// returns a *string when successful
 func (m *FileContentThreatSubmission) GetFileContent()(*string) {
     val, err := m.GetBackingStore().Get("fileContent")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *FileContentThreatSubmission) SetFileContent(value *string)() {
         panic(err)
     }
 }
-// FileContentThreatSubmissionable 
 type FileContentThreatSubmissionable interface {
     FileThreatSubmissionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

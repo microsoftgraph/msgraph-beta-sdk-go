@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchDataStoreCollectionResponse 
 type ExactMatchDataStoreCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewExactMatchDataStoreCollectionResponse instantiates a new exactMatchDataStoreCollectionResponse and sets the default values.
+// NewExactMatchDataStoreCollectionResponse instantiates a new ExactMatchDataStoreCollectionResponse and sets the default values.
 func NewExactMatchDataStoreCollectionResponse()(*ExactMatchDataStoreCollectionResponse) {
     m := &ExactMatchDataStoreCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewExactMatchDataStoreCollectionResponse()(*ExactMatchDataStoreCollectionRe
     return m
 }
 // CreateExactMatchDataStoreCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExactMatchDataStoreCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExactMatchDataStoreCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExactMatchDataStoreCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ExactMatchDataStoreCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ExactMatchDataStoreable when successful
 func (m *ExactMatchDataStoreCollectionResponse) GetValue()([]ExactMatchDataStoreable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ExactMatchDataStoreCollectionResponse) SetValue(value []ExactMatchDataS
         panic(err)
     }
 }
-// ExactMatchDataStoreCollectionResponseable 
 type ExactMatchDataStoreCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

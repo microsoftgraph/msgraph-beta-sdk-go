@@ -27,14 +27,14 @@ type EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder
     // Request query parameters
     QueryParameters *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilderGetQueryParameters
 }
-// NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilderInternal instantiates a new GroupRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilderInternal instantiates a new EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder) {
     m := &EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/unifiedGroupSources/{unifiedGroupSource%2Did}/group{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/unifiedGroupSources/{unifiedGroupSource%2Did}/group{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder instantiates a new GroupRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder instantiates a new EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -42,14 +42,15 @@ func NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuil
 }
 // Get the group associated with the unifiedGroupSource.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a Groupable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -61,11 +62,13 @@ func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBui
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
+// returns a *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupServiceProvisioningErrorsRequestBuilder when successful
 func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder) ServiceProvisioningErrors()(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupServiceProvisioningErrorsRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the group associated with the unifiedGroupSource.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -80,6 +83,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBui
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder when successful
 func (m *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesItemGroupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

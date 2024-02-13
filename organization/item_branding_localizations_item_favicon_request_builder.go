@@ -24,20 +24,22 @@ type ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemBrandingLocalizationsItemFaviconRequestBuilderInternal instantiates a new FaviconRequestBuilder and sets the default values.
+// NewItemBrandingLocalizationsItemFaviconRequestBuilderInternal instantiates a new ItemBrandingLocalizationsItemFaviconRequestBuilder and sets the default values.
 func NewItemBrandingLocalizationsItemFaviconRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingLocalizationsItemFaviconRequestBuilder) {
     m := &ItemBrandingLocalizationsItemFaviconRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/localizations/{organizationalBrandingLocalization%2Did}/favicon", pathParameters),
     }
     return m
 }
-// NewItemBrandingLocalizationsItemFaviconRequestBuilder instantiates a new FaviconRequestBuilder and sets the default values.
+// NewItemBrandingLocalizationsItemFaviconRequestBuilder instantiates a new ItemBrandingLocalizationsItemFaviconRequestBuilder and sets the default values.
 func NewItemBrandingLocalizationsItemFaviconRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingLocalizationsItemFaviconRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemBrandingLocalizationsItemFaviconRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
@@ -47,8 +49,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Get(ctx context.Con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -60,14 +61,15 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Get(ctx context.Con
     return res.([]byte), nil
 }
 // Put a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Put(ctx context.Context, body []byte, contentType *string, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, contentType, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -79,6 +81,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) Put(ctx context.Con
     return res.([]byte), nil
 }
 // ToGetRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+// returns a *RequestInformation when successful
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // ToPutRequestInformation a custom icon (favicon) to replace a default Microsoft product favicon on a Microsoft Entra tenant.
+// returns a *RequestInformation when successful
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, contentType *string, requestConfiguration *ItemBrandingLocalizationsItemFaviconRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) ToPutRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemBrandingLocalizationsItemFaviconRequestBuilder when successful
 func (m *ItemBrandingLocalizationsItemFaviconRequestBuilder) WithUrl(rawUrl string)(*ItemBrandingLocalizationsItemFaviconRequestBuilder) {
     return NewItemBrandingLocalizationsItemFaviconRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

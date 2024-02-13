@@ -9,7 +9,7 @@ import (
 type VulnerableManagedDevice struct {
     Entity
 }
-// NewVulnerableManagedDevice instantiates a new vulnerableManagedDevice and sets the default values.
+// NewVulnerableManagedDevice instantiates a new VulnerableManagedDevice and sets the default values.
 func NewVulnerableManagedDevice()(*VulnerableManagedDevice) {
     m := &VulnerableManagedDevice{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewVulnerableManagedDevice()(*VulnerableManagedDevice) {
     return m
 }
 // CreateVulnerableManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVulnerableManagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVulnerableManagedDevice(), nil
 }
 // GetDisplayName gets the displayName property value. The device name.
+// returns a *string when successful
 func (m *VulnerableManagedDevice) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *VulnerableManagedDevice) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VulnerableManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +70,7 @@ func (m *VulnerableManagedDevice) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The last sync date.
+// returns a *Time when successful
 func (m *VulnerableManagedDevice) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -78,6 +82,7 @@ func (m *VulnerableManagedDevice) GetLastSyncDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The Intune managed device ID.
+// returns a *string when successful
 func (m *VulnerableManagedDevice) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -135,7 +140,6 @@ func (m *VulnerableManagedDevice) SetManagedDeviceId(value *string)() {
         panic(err)
     }
 }
-// VulnerableManagedDeviceable 
 type VulnerableManagedDeviceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

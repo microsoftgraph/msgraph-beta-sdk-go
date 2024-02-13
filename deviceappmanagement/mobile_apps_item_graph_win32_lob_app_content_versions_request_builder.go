@@ -47,6 +47,7 @@ type MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilderPostRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByMobileAppContentId provides operations to manage the contentVersions property of the microsoft.graph.mobileLobApp entity.
+// returns a *MobileAppsItemGraphWin32LobAppContentVersionsMobileAppContentItemRequestBuilder when successful
 func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) ByMobileAppContentId(mobileAppContentId string)(*MobileAppsItemGraphWin32LobAppContentVersionsMobileAppContentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) ByMobileAp
     }
     return NewMobileAppsItemGraphWin32LobAppContentVersionsMobileAppContentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMobileAppsItemGraphWin32LobAppContentVersionsRequestBuilderInternal instantiates a new ContentVersionsRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWin32LobAppContentVersionsRequestBuilderInternal instantiates a new MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWin32LobAppContentVersionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) {
     m := &MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/contentVersions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/contentVersions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder instantiates a new ContentVersionsRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder instantiates a new MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphWin32LobAppContentVersionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *MobileAppsItemGraphWin32LobAppContentVersionsCountRequestBuilder when successful
 func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) Count()(*MobileAppsItemGraphWin32LobAppContentVersionsCountRequestBuilder) {
     return NewMobileAppsItemGraphWin32LobAppContentVersionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of content versions for this app.
+// returns a MobileAppContentCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileAppContentCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentCollectionResponseable), nil
 }
 // Post create new navigation property to contentVersions for deviceAppManagement
+// returns a MobileAppContentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentable, requestConfiguration *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileAppContentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) Post(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentable), nil
 }
 // ToGetRequestInformation the list of content versions for this app.
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to contentVersions for deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentable, requestConfiguration *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.win32LobApp/contentVersions", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder when successful
 func (m *MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder) {
     return NewMobileAppsItemGraphWin32LobAppContentVersionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

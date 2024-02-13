@@ -8,7 +8,7 @@ import (
 type IosEnterpriseWiFiConfiguration struct {
     IosWiFiConfiguration
 }
-// NewIosEnterpriseWiFiConfiguration instantiates a new iosEnterpriseWiFiConfiguration and sets the default values.
+// NewIosEnterpriseWiFiConfiguration instantiates a new IosEnterpriseWiFiConfiguration and sets the default values.
 func NewIosEnterpriseWiFiConfiguration()(*IosEnterpriseWiFiConfiguration) {
     m := &IosEnterpriseWiFiConfiguration{
         IosWiFiConfiguration: *NewIosWiFiConfiguration(),
@@ -18,10 +18,12 @@ func NewIosEnterpriseWiFiConfiguration()(*IosEnterpriseWiFiConfiguration) {
     return m
 }
 // CreateIosEnterpriseWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosEnterpriseWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosEnterpriseWiFiConfiguration(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
+// returns a *WiFiAuthenticationMethod when successful
 func (m *IosEnterpriseWiFiConfiguration) GetAuthenticationMethod()(*WiFiAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetAuthenticationMethod()(*WiFiAuthenti
     return nil
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
+// returns a DeviceManagementDerivedCredentialSettingsable when successful
 func (m *IosEnterpriseWiFiConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
     val, err := m.GetBackingStore().Get("derivedCredentialSettings")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetDerivedCredentialSettings()(DeviceMa
     return nil
 }
 // GetEapFastConfiguration gets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
+// returns a *EapFastConfiguration when successful
 func (m *IosEnterpriseWiFiConfiguration) GetEapFastConfiguration()(*EapFastConfiguration) {
     val, err := m.GetBackingStore().Get("eapFastConfiguration")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetEapFastConfiguration()(*EapFastConfi
     return nil
 }
 // GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) configuration types.
+// returns a *EapType when successful
 func (m *IosEnterpriseWiFiConfiguration) GetEapType()(*EapType) {
     val, err := m.GetBackingStore().Get("eapType")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetEapType()(*EapType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosWiFiConfiguration.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -193,6 +199,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetIdentityCertificateForClientAuthentication gets the identityCertificateForClientAuthentication property value. Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).
+// returns a IosCertificateProfileBaseable when successful
 func (m *IosEnterpriseWiFiConfiguration) GetIdentityCertificateForClientAuthentication()(IosCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificateForClientAuthentication")
     if err != nil {
@@ -204,6 +211,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetIdentityCertificateForClientAuthenti
     return nil
 }
 // GetInnerAuthenticationProtocolForEapTtls gets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
+// returns a *NonEapAuthenticationMethodForEapTtlsType when successful
 func (m *IosEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType) {
     val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForEapTtls")
     if err != nil {
@@ -215,6 +223,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForEapTtl
     return nil
 }
 // GetOuterIdentityPrivacyTemporaryValue gets the outerIdentityPrivacyTemporaryValue property value. Enable identity privacy (Outer Identity) when EAP Type is configured to EAP - TTLS, EAP - FAST or PEAP. This property masks usernames with the text you enter. For example, if you use 'anonymous', each user that authenticates with this Wi-Fi connection using their real username is displayed as 'anonymous'.
+// returns a *string when successful
 func (m *IosEnterpriseWiFiConfiguration) GetOuterIdentityPrivacyTemporaryValue()(*string) {
     val, err := m.GetBackingStore().Get("outerIdentityPrivacyTemporaryValue")
     if err != nil {
@@ -226,6 +235,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetOuterIdentityPrivacyTemporaryValue()
     return nil
 }
 // GetPasswordFormatString gets the passwordFormatString property value. Password format string used to build the password to connect to wifi
+// returns a *string when successful
 func (m *IosEnterpriseWiFiConfiguration) GetPasswordFormatString()(*string) {
     val, err := m.GetBackingStore().Get("passwordFormatString")
     if err != nil {
@@ -237,6 +247,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetPasswordFormatString()(*string) {
     return nil
 }
 // GetRootCertificatesForServerValidation gets the rootCertificatesForServerValidation property value. Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. If you provide this value you do not need to provide trustedServerCertificateNames, and vice versa. This collection can contain a maximum of 500 elements.
+// returns a []IosTrustedRootCertificateable when successful
 func (m *IosEnterpriseWiFiConfiguration) GetRootCertificatesForServerValidation()([]IosTrustedRootCertificateable) {
     val, err := m.GetBackingStore().Get("rootCertificatesForServerValidation")
     if err != nil {
@@ -248,6 +259,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetRootCertificatesForServerValidation(
     return nil
 }
 // GetTrustedServerCertificateNames gets the trustedServerCertificateNames property value. Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
+// returns a []string when successful
 func (m *IosEnterpriseWiFiConfiguration) GetTrustedServerCertificateNames()([]string) {
     val, err := m.GetBackingStore().Get("trustedServerCertificateNames")
     if err != nil {
@@ -259,6 +271,7 @@ func (m *IosEnterpriseWiFiConfiguration) GetTrustedServerCertificateNames()([]st
     return nil
 }
 // GetUsernameFormatString gets the usernameFormatString property value. Username format string used to build the username to connect to wifi
+// returns a *string when successful
 func (m *IosEnterpriseWiFiConfiguration) GetUsernameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("usernameFormatString")
     if err != nil {
@@ -430,7 +443,6 @@ func (m *IosEnterpriseWiFiConfiguration) SetUsernameFormatString(value *string)(
         panic(err)
     }
 }
-// IosEnterpriseWiFiConfigurationable 
 type IosEnterpriseWiFiConfigurationable interface {
     IosWiFiConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type IntuneBrandingProfile struct {
     Entity
 }
-// NewIntuneBrandingProfile instantiates a new intuneBrandingProfile and sets the default values.
+// NewIntuneBrandingProfile instantiates a new IntuneBrandingProfile and sets the default values.
 func NewIntuneBrandingProfile()(*IntuneBrandingProfile) {
     m := &IntuneBrandingProfile{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewIntuneBrandingProfile()(*IntuneBrandingProfile) {
     return m
 }
 // CreateIntuneBrandingProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIntuneBrandingProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIntuneBrandingProfile(), nil
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the branding profile
+// returns a []IntuneBrandingProfileAssignmentable when successful
 func (m *IntuneBrandingProfile) GetAssignments()([]IntuneBrandingProfileAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *IntuneBrandingProfile) GetAssignments()([]IntuneBrandingProfileAssignme
     return nil
 }
 // GetCompanyPortalBlockedActions gets the companyPortalBlockedActions property value. Collection of blocked actions on the company portal as per platform and device ownership types.
+// returns a []CompanyPortalBlockedActionable when successful
 func (m *IntuneBrandingProfile) GetCompanyPortalBlockedActions()([]CompanyPortalBlockedActionable) {
     val, err := m.GetBackingStore().Get("companyPortalBlockedActions")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *IntuneBrandingProfile) GetCompanyPortalBlockedActions()([]CompanyPortal
     return nil
 }
 // GetContactITEmailAddress gets the contactITEmailAddress property value. E-mail address of the person/organization responsible for IT support
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetContactITEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("contactITEmailAddress")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *IntuneBrandingProfile) GetContactITEmailAddress()(*string) {
     return nil
 }
 // GetContactITName gets the contactITName property value. Name of the person/organization responsible for IT support
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetContactITName()(*string) {
     val, err := m.GetBackingStore().Get("contactITName")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *IntuneBrandingProfile) GetContactITName()(*string) {
     return nil
 }
 // GetContactITNotes gets the contactITNotes property value. Text comments regarding the person/organization responsible for IT support
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetContactITNotes()(*string) {
     val, err := m.GetBackingStore().Get("contactITNotes")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *IntuneBrandingProfile) GetContactITNotes()(*string) {
     return nil
 }
 // GetContactITPhoneNumber gets the contactITPhoneNumber property value. Phone number of the person/organization responsible for IT support
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetContactITPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("contactITPhoneNumber")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *IntuneBrandingProfile) GetContactITPhoneNumber()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Time when the BrandingProfile was created
+// returns a *Time when successful
 func (m *IntuneBrandingProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *IntuneBrandingProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetCustomCanSeePrivacyMessage gets the customCanSeePrivacyMessage property value. Text comments regarding what the admin has access to on the device
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetCustomCanSeePrivacyMessage()(*string) {
     val, err := m.GetBackingStore().Get("customCanSeePrivacyMessage")
     if err != nil {
@@ -109,6 +118,7 @@ func (m *IntuneBrandingProfile) GetCustomCanSeePrivacyMessage()(*string) {
     return nil
 }
 // GetCustomCantSeePrivacyMessage gets the customCantSeePrivacyMessage property value. Text comments regarding what the admin doesn't have access to on the device
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetCustomCantSeePrivacyMessage()(*string) {
     val, err := m.GetBackingStore().Get("customCantSeePrivacyMessage")
     if err != nil {
@@ -120,6 +130,7 @@ func (m *IntuneBrandingProfile) GetCustomCantSeePrivacyMessage()(*string) {
     return nil
 }
 // GetCustomPrivacyMessage gets the customPrivacyMessage property value. Text comments regarding what the admin doesn't have access to on the device
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetCustomPrivacyMessage()(*string) {
     val, err := m.GetBackingStore().Get("customPrivacyMessage")
     if err != nil {
@@ -131,6 +142,7 @@ func (m *IntuneBrandingProfile) GetCustomPrivacyMessage()(*string) {
     return nil
 }
 // GetDisableClientTelemetry gets the disableClientTelemetry property value. Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetDisableClientTelemetry()(*bool) {
     val, err := m.GetBackingStore().Get("disableClientTelemetry")
     if err != nil {
@@ -142,6 +154,7 @@ func (m *IntuneBrandingProfile) GetDisableClientTelemetry()(*bool) {
     return nil
 }
 // GetDisableDeviceCategorySelection gets the disableDeviceCategorySelection property value. Boolean that indicates if Device Category Selection will be shown in Company Portal
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetDisableDeviceCategorySelection()(*bool) {
     val, err := m.GetBackingStore().Get("disableDeviceCategorySelection")
     if err != nil {
@@ -153,6 +166,7 @@ func (m *IntuneBrandingProfile) GetDisableDeviceCategorySelection()(*bool) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Company/organization name that is displayed to end users
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -164,6 +178,7 @@ func (m *IntuneBrandingProfile) GetDisplayName()(*string) {
     return nil
 }
 // GetEnrollmentAvailability gets the enrollmentAvailability property value. Options available for enrollment flow customization
+// returns a *EnrollmentAvailabilityOptions when successful
 func (m *IntuneBrandingProfile) GetEnrollmentAvailability()(*EnrollmentAvailabilityOptions) {
     val, err := m.GetBackingStore().Get("enrollmentAvailability")
     if err != nil {
@@ -175,6 +190,7 @@ func (m *IntuneBrandingProfile) GetEnrollmentAvailability()(*EnrollmentAvailabil
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -538,6 +554,7 @@ func (m *IntuneBrandingProfile) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetIsDefaultProfile gets the isDefaultProfile property value. Boolean that represents whether the profile is used as default or not
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetIsDefaultProfile()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultProfile")
     if err != nil {
@@ -549,6 +566,7 @@ func (m *IntuneBrandingProfile) GetIsDefaultProfile()(*bool) {
     return nil
 }
 // GetIsFactoryResetDisabled gets the isFactoryResetDisabled property value. Boolean that represents whether the adminsistrator has disabled the 'Factory Reset' action on corporate owned devices.
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetIsFactoryResetDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("isFactoryResetDisabled")
     if err != nil {
@@ -560,6 +578,7 @@ func (m *IntuneBrandingProfile) GetIsFactoryResetDisabled()(*bool) {
     return nil
 }
 // GetIsRemoveDeviceDisabled gets the isRemoveDeviceDisabled property value. Boolean that represents whether the adminsistrator has disabled the 'Remove Device' action on corporate owned devices.
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetIsRemoveDeviceDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRemoveDeviceDisabled")
     if err != nil {
@@ -571,6 +590,7 @@ func (m *IntuneBrandingProfile) GetIsRemoveDeviceDisabled()(*bool) {
     return nil
 }
 // GetLandingPageCustomizedImage gets the landingPageCustomizedImage property value. Customized image displayed in Company Portal apps landing page
+// returns a MimeContentable when successful
 func (m *IntuneBrandingProfile) GetLandingPageCustomizedImage()(MimeContentable) {
     val, err := m.GetBackingStore().Get("landingPageCustomizedImage")
     if err != nil {
@@ -582,6 +602,7 @@ func (m *IntuneBrandingProfile) GetLandingPageCustomizedImage()(MimeContentable)
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Time when the BrandingProfile was last modified
+// returns a *Time when successful
 func (m *IntuneBrandingProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -593,6 +614,7 @@ func (m *IntuneBrandingProfile) GetLastModifiedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetLightBackgroundLogo gets the lightBackgroundLogo property value. Logo image displayed in Company Portal apps which have a light background behind the logo
+// returns a MimeContentable when successful
 func (m *IntuneBrandingProfile) GetLightBackgroundLogo()(MimeContentable) {
     val, err := m.GetBackingStore().Get("lightBackgroundLogo")
     if err != nil {
@@ -604,6 +626,7 @@ func (m *IntuneBrandingProfile) GetLightBackgroundLogo()(MimeContentable) {
     return nil
 }
 // GetOnlineSupportSiteName gets the onlineSupportSiteName property value. Display name of the company/organization’s IT helpdesk site
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetOnlineSupportSiteName()(*string) {
     val, err := m.GetBackingStore().Get("onlineSupportSiteName")
     if err != nil {
@@ -615,6 +638,7 @@ func (m *IntuneBrandingProfile) GetOnlineSupportSiteName()(*string) {
     return nil
 }
 // GetOnlineSupportSiteUrl gets the onlineSupportSiteUrl property value. URL to the company/organization’s IT helpdesk site
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetOnlineSupportSiteUrl()(*string) {
     val, err := m.GetBackingStore().Get("onlineSupportSiteUrl")
     if err != nil {
@@ -626,6 +650,7 @@ func (m *IntuneBrandingProfile) GetOnlineSupportSiteUrl()(*string) {
     return nil
 }
 // GetPrivacyUrl gets the privacyUrl property value. URL to the company/organization’s privacy policy
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetPrivacyUrl()(*string) {
     val, err := m.GetBackingStore().Get("privacyUrl")
     if err != nil {
@@ -637,6 +662,7 @@ func (m *IntuneBrandingProfile) GetPrivacyUrl()(*string) {
     return nil
 }
 // GetProfileDescription gets the profileDescription property value. Description of the profile
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetProfileDescription()(*string) {
     val, err := m.GetBackingStore().Get("profileDescription")
     if err != nil {
@@ -648,6 +674,7 @@ func (m *IntuneBrandingProfile) GetProfileDescription()(*string) {
     return nil
 }
 // GetProfileName gets the profileName property value. Name of the profile
+// returns a *string when successful
 func (m *IntuneBrandingProfile) GetProfileName()(*string) {
     val, err := m.GetBackingStore().Get("profileName")
     if err != nil {
@@ -659,6 +686,7 @@ func (m *IntuneBrandingProfile) GetProfileName()(*string) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of scope tags assigned to the branding profile
+// returns a []string when successful
 func (m *IntuneBrandingProfile) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -670,6 +698,7 @@ func (m *IntuneBrandingProfile) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetSendDeviceOwnershipChangePushNotification gets the sendDeviceOwnershipChangePushNotification property value. Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetSendDeviceOwnershipChangePushNotification()(*bool) {
     val, err := m.GetBackingStore().Get("sendDeviceOwnershipChangePushNotification")
     if err != nil {
@@ -681,6 +710,7 @@ func (m *IntuneBrandingProfile) GetSendDeviceOwnershipChangePushNotification()(*
     return nil
 }
 // GetShowAzureADEnterpriseApps gets the showAzureADEnterpriseApps property value. Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetShowAzureADEnterpriseApps()(*bool) {
     val, err := m.GetBackingStore().Get("showAzureADEnterpriseApps")
     if err != nil {
@@ -692,6 +722,7 @@ func (m *IntuneBrandingProfile) GetShowAzureADEnterpriseApps()(*bool) {
     return nil
 }
 // GetShowConfigurationManagerApps gets the showConfigurationManagerApps property value. Boolean that indicates if Configuration Manager Apps will be shown in Company Portal
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetShowConfigurationManagerApps()(*bool) {
     val, err := m.GetBackingStore().Get("showConfigurationManagerApps")
     if err != nil {
@@ -703,6 +734,7 @@ func (m *IntuneBrandingProfile) GetShowConfigurationManagerApps()(*bool) {
     return nil
 }
 // GetShowDisplayNameNextToLogo gets the showDisplayNameNextToLogo property value. Boolean that represents whether the administrator-supplied display name will be shown next to the logo image or not
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetShowDisplayNameNextToLogo()(*bool) {
     val, err := m.GetBackingStore().Get("showDisplayNameNextToLogo")
     if err != nil {
@@ -714,6 +746,7 @@ func (m *IntuneBrandingProfile) GetShowDisplayNameNextToLogo()(*bool) {
     return nil
 }
 // GetShowLogo gets the showLogo property value. Boolean that represents whether the administrator-supplied logo images are shown or not
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetShowLogo()(*bool) {
     val, err := m.GetBackingStore().Get("showLogo")
     if err != nil {
@@ -725,6 +758,7 @@ func (m *IntuneBrandingProfile) GetShowLogo()(*bool) {
     return nil
 }
 // GetShowOfficeWebApps gets the showOfficeWebApps property value. Boolean that indicates if Office WebApps will be shown in Company Portal
+// returns a *bool when successful
 func (m *IntuneBrandingProfile) GetShowOfficeWebApps()(*bool) {
     val, err := m.GetBackingStore().Get("showOfficeWebApps")
     if err != nil {
@@ -736,6 +770,7 @@ func (m *IntuneBrandingProfile) GetShowOfficeWebApps()(*bool) {
     return nil
 }
 // GetThemeColor gets the themeColor property value. Primary theme color used in the Company Portal applications and web portal
+// returns a RgbColorable when successful
 func (m *IntuneBrandingProfile) GetThemeColor()(RgbColorable) {
     val, err := m.GetBackingStore().Get("themeColor")
     if err != nil {
@@ -747,6 +782,7 @@ func (m *IntuneBrandingProfile) GetThemeColor()(RgbColorable) {
     return nil
 }
 // GetThemeColorLogo gets the themeColorLogo property value. Logo image displayed in Company Portal apps which have a theme color background behind the logo
+// returns a MimeContentable when successful
 func (m *IntuneBrandingProfile) GetThemeColorLogo()(MimeContentable) {
     val, err := m.GetBackingStore().Get("themeColorLogo")
     if err != nil {
@@ -1220,7 +1256,6 @@ func (m *IntuneBrandingProfile) SetThemeColorLogo(value MimeContentable)() {
         panic(err)
     }
 }
-// IntuneBrandingProfileable 
 type IntuneBrandingProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

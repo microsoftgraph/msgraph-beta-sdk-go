@@ -47,6 +47,7 @@ type LogsTrafficRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByNetworkAccessTrafficTransactionId provides operations to manage the traffic property of the microsoft.graph.networkaccess.logs entity.
+// returns a *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder when successful
 func (m *LogsTrafficRequestBuilder) ByNetworkAccessTrafficTransactionId(networkAccessTrafficTransactionId string)(*LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *LogsTrafficRequestBuilder) ByNetworkAccessTrafficTransactionId(networkA
     }
     return NewLogsTrafficNetworkAccessTrafficTransactionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewLogsTrafficRequestBuilderInternal instantiates a new TrafficRequestBuilder and sets the default values.
+// NewLogsTrafficRequestBuilderInternal instantiates a new LogsTrafficRequestBuilder and sets the default values.
 func NewLogsTrafficRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LogsTrafficRequestBuilder) {
     m := &LogsTrafficRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/logs/traffic{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/logs/traffic{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewLogsTrafficRequestBuilder instantiates a new TrafficRequestBuilder and sets the default values.
+// NewLogsTrafficRequestBuilder instantiates a new LogsTrafficRequestBuilder and sets the default values.
 func NewLogsTrafficRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LogsTrafficRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLogsTrafficRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *LogsTrafficCountRequestBuilder when successful
 func (m *LogsTrafficRequestBuilder) Count()(*LogsTrafficCountRequestBuilder) {
     return NewLogsTrafficCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of log events for traffic routed through the Global Secure Access services.
+// returns a NetworkAccessTrafficCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-logs-list-traffic?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *LogsTrafficRequestBuilder) Get(ctx context.Context, requestConfiguratio
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateNetworkAccessTrafficCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *LogsTrafficRequestBuilder) Get(ctx context.Context, requestConfiguratio
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficCollectionResponseable), nil
 }
 // Post create new navigation property to traffic for networkAccess
+// returns a NetworkAccessTrafficable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LogsTrafficRequestBuilder) Post(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable, requestConfiguration *LogsTrafficRequestBuilderPostRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateNetworkAccessTrafficFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *LogsTrafficRequestBuilder) Post(ctx context.Context, body i43e723cc778f
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable), nil
 }
 // ToGetRequestInformation get a list of log events for traffic routed through the Global Secure Access services.
+// returns a *RequestInformation when successful
 func (m *LogsTrafficRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LogsTrafficRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *LogsTrafficRequestBuilder) ToGetRequestInformation(ctx context.Context,
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to traffic for networkAccess
+// returns a *RequestInformation when successful
 func (m *LogsTrafficRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.NetworkAccessTrafficable, requestConfiguration *LogsTrafficRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/networkAccess/logs/traffic", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *LogsTrafficRequestBuilder) ToPostRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LogsTrafficRequestBuilder when successful
 func (m *LogsTrafficRequestBuilder) WithUrl(rawUrl string)(*LogsTrafficRequestBuilder) {
     return NewLogsTrafficRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

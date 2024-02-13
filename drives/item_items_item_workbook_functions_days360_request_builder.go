@@ -18,28 +18,29 @@ type ItemItemsItemWorkbookFunctionsDays360RequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookFunctionsDays360RequestBuilderInternal instantiates a new Days360RequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsDays360RequestBuilderInternal instantiates a new ItemItemsItemWorkbookFunctionsDays360RequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsDays360RequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsDays360RequestBuilder) {
     m := &ItemItemsItemWorkbookFunctionsDays360RequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/days360", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookFunctionsDays360RequestBuilder instantiates a new Days360RequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsDays360RequestBuilder instantiates a new ItemItemsItemWorkbookFunctionsDays360RequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsDays360RequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsDays360RequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookFunctionsDays360RequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action days360
+// returns a WorkbookFunctionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookFunctionsDays360RequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookFunctionsDays360PostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsDays360RequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookFunctionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ItemItemsItemWorkbookFunctionsDays360RequestBuilder) Post(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionResultable), nil
 }
 // ToPostRequestInformation invoke action days360
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookFunctionsDays360RequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookFunctionsDays360PostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsDays360RequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsDays360RequestBuilder) ToPostRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookFunctionsDays360RequestBuilder when successful
 func (m *ItemItemsItemWorkbookFunctionsDays360RequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsDays360RequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsDays360RequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

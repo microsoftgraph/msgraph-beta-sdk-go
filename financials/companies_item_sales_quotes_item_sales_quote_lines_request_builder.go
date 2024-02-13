@@ -40,6 +40,7 @@ type CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderGetRequestConfigur
     QueryParameters *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderGetQueryParameters
 }
 // BySalesQuoteLineId provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
+// returns a *CompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder when successful
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) BySalesQuoteLineId(salesQuoteLineId string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) BySalesQuote
     }
     return NewCompaniesItemSalesQuotesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderInternal instantiates a new SalesQuoteLinesRequestBuilder and sets the default values.
+// NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderInternal instantiates a new CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder and sets the default values.
 func NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) {
     m := &CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/salesQuoteLines{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/salesQuoteLines{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder instantiates a new SalesQuoteLinesRequestBuilder and sets the default values.
+// NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder instantiates a new CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder and sets the default values.
 func NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CompaniesItemSalesQuotesItemSalesQuoteLinesCountRequestBuilder when successful
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) Count()(*CompaniesItemSalesQuotesItemSalesQuoteLinesCountRequestBuilder) {
     return NewCompaniesItemSalesQuotesItemSalesQuoteLinesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get salesQuoteLines from financials
+// returns a SalesQuoteLineCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesQuoteLineCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesQuoteLineCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesQuoteLineCollectionResponseable), nil
 }
 // ToGetRequestInformation get salesQuoteLines from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder when successful
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder) {
     return NewCompaniesItemSalesQuotesItemSalesQuoteLinesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

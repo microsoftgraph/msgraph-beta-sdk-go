@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedDeviceComplianceTrend 
 type ManagedDeviceComplianceTrend struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedDeviceComplianceTrend instantiates a new managedDeviceComplianceTrend and sets the default values.
+// NewManagedDeviceComplianceTrend instantiates a new ManagedDeviceComplianceTrend and sets the default values.
 func NewManagedDeviceComplianceTrend()(*ManagedDeviceComplianceTrend) {
     m := &ManagedDeviceComplianceTrend{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewManagedDeviceComplianceTrend()(*ManagedDeviceComplianceTrend) {
     return m
 }
 // CreateManagedDeviceComplianceTrendFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedDeviceComplianceTrendFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDeviceComplianceTrend(), nil
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. The number of devices with a compliant status. Required. Read-only.
+// returns a *int32 when successful
 func (m *ManagedDeviceComplianceTrend) GetCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("compliantDeviceCount")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ManagedDeviceComplianceTrend) GetCompliantDeviceCount()(*int32) {
     return nil
 }
 // GetConfigManagerDeviceCount gets the configManagerDeviceCount property value. The number of devices manged by Configuration Manager. Required. Read-only.
+// returns a *int32 when successful
 func (m *ManagedDeviceComplianceTrend) GetConfigManagerDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("configManagerDeviceCount")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ManagedDeviceComplianceTrend) GetConfigManagerDeviceCount()(*int32) {
     return nil
 }
 // GetCountDateTime gets the countDateTime property value. The date and time compliance snapshot was performed. Required. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceComplianceTrend) GetCountDateTime()(*string) {
     val, err := m.GetBackingStore().Get("countDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ManagedDeviceComplianceTrend) GetCountDateTime()(*string) {
     return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. The number of devices with an error status. Required. Read-only.
+// returns a *int32 when successful
 func (m *ManagedDeviceComplianceTrend) GetErrorDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorDeviceCount")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *ManagedDeviceComplianceTrend) GetErrorDeviceCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["compliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -160,6 +165,7 @@ func (m *ManagedDeviceComplianceTrend) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetInGracePeriodDeviceCount gets the inGracePeriodDeviceCount property value. The number of devices that are in a grace period status. Required. Read-only.
+// returns a *int32 when successful
 func (m *ManagedDeviceComplianceTrend) GetInGracePeriodDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("inGracePeriodDeviceCount")
     if err != nil {
@@ -171,6 +177,7 @@ func (m *ManagedDeviceComplianceTrend) GetInGracePeriodDeviceCount()(*int32) {
     return nil
 }
 // GetNoncompliantDeviceCount gets the noncompliantDeviceCount property value. The number of devices that are in a non-compliant status. Required. Read-only.
+// returns a *int32 when successful
 func (m *ManagedDeviceComplianceTrend) GetNoncompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("noncompliantDeviceCount")
     if err != nil {
@@ -182,6 +189,7 @@ func (m *ManagedDeviceComplianceTrend) GetNoncompliantDeviceCount()(*int32) {
     return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceComplianceTrend) GetTenantDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("tenantDisplayName")
     if err != nil {
@@ -193,6 +201,7 @@ func (m *ManagedDeviceComplianceTrend) GetTenantDisplayName()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagedDeviceComplianceTrend) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -204,6 +213,7 @@ func (m *ManagedDeviceComplianceTrend) GetTenantId()(*string) {
     return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. The number of devices in an unknown status. Required. Read-only.
+// returns a *int32 when successful
 func (m *ManagedDeviceComplianceTrend) GetUnknownDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownDeviceCount")
     if err != nil {
@@ -339,7 +349,6 @@ func (m *ManagedDeviceComplianceTrend) SetUnknownDeviceCount(value *int32)() {
         panic(err)
     }
 }
-// ManagedDeviceComplianceTrendable 
 type ManagedDeviceComplianceTrendable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

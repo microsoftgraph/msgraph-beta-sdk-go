@@ -41,20 +41,21 @@ type ItemSitesItemTermStoreGroupsGroupItemRequestBuilderPatchRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSitesItemTermStoreGroupsGroupItemRequestBuilderInternal instantiates a new GroupItemRequestBuilder and sets the default values.
+// NewItemSitesItemTermStoreGroupsGroupItemRequestBuilderInternal instantiates a new ItemSitesItemTermStoreGroupsGroupItemRequestBuilder and sets the default values.
 func NewItemSitesItemTermStoreGroupsGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) {
     m := &ItemSitesItemTermStoreGroupsGroupItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/groups/{group%2Did1}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/groups/{group%2Did1}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemTermStoreGroupsGroupItemRequestBuilder instantiates a new GroupItemRequestBuilder and sets the default values.
+// NewItemSitesItemTermStoreGroupsGroupItemRequestBuilder instantiates a new ItemSitesItemTermStoreGroupsGroupItemRequestBuilder and sets the default values.
 func NewItemSitesItemTermStoreGroupsGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemTermStoreGroupsGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a group object in a term [store].
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-delete?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) Delete(ctx context
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,6 +74,8 @@ func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) Delete(ctx context
     return nil
 }
 // Get read the properties and relationships of a term store group object.
+// returns a Groupable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/termstore-group-get?view=graph-rest-1.0
@@ -83,8 +85,7 @@ func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) Get(ctx context.Co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.CreateGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -96,14 +97,15 @@ func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) Get(ctx context.Co
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable), nil
 }
 // Patch update the navigation property groups in groups
+// returns a Groupable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) Patch(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable, requestConfiguration *ItemSitesItemTermStoreGroupsGroupItemRequestBuilderPatchRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.CreateGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -115,12 +117,14 @@ func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) Patch(ctx context.
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable), nil
 }
 // Sets provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
+// returns a *ItemSitesItemTermStoreGroupsItemSetsRequestBuilder when successful
 func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) Sets()(*ItemSitesItemTermStoreGroupsItemSetsRequestBuilder) {
     return NewItemSitesItemTermStoreGroupsItemSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a group object in a term [store].
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/groups/{group%2Did1}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -129,6 +133,7 @@ func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) ToDeleteRequestInf
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a term store group object.
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemTermStoreGroupsGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -142,8 +147,9 @@ func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property groups in groups
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable, requestConfiguration *ItemSitesItemTermStoreGroupsGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/groups/{group%2Did1}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -156,6 +162,7 @@ func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) ToPatchRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder when successful
 func (m *ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemTermStoreGroupsGroupItemRequestBuilder) {
     return NewItemSitesItemTermStoreGroupsGroupItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

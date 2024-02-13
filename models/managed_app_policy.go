@@ -9,7 +9,7 @@ import (
 type ManagedAppPolicy struct {
     Entity
 }
-// NewManagedAppPolicy instantiates a new managedAppPolicy and sets the default values.
+// NewManagedAppPolicy instantiates a new ManagedAppPolicy and sets the default values.
 func NewManagedAppPolicy()(*ManagedAppPolicy) {
     m := &ManagedAppPolicy{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewManagedAppPolicy()(*ManagedAppPolicy) {
     return m
 }
 // CreateManagedAppPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedAppPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -59,6 +60,7 @@ func CreateManagedAppPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewManagedAppPolicy(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the policy was created.
+// returns a *Time when successful
 func (m *ManagedAppPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -70,6 +72,7 @@ func (m *ManagedAppPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetDescription gets the description property value. The policy's description.
+// returns a *string when successful
 func (m *ManagedAppPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -81,6 +84,7 @@ func (m *ManagedAppPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Policy display name.
+// returns a *string when successful
 func (m *ManagedAppPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -92,6 +96,7 @@ func (m *ManagedAppPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedAppPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -163,6 +168,7 @@ func (m *ManagedAppPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last time the policy was modified.
+// returns a *Time when successful
 func (m *ManagedAppPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -174,6 +180,7 @@ func (m *ManagedAppPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+// returns a []string when successful
 func (m *ManagedAppPolicy) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -185,6 +192,7 @@ func (m *ManagedAppPolicy) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetVersion gets the version property value. Version of the entity.
+// returns a *string when successful
 func (m *ManagedAppPolicy) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -281,7 +289,6 @@ func (m *ManagedAppPolicy) SetVersion(value *string)() {
         panic(err)
     }
 }
-// ManagedAppPolicyable 
 type ManagedAppPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

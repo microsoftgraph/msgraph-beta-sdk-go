@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ContentClassification 
 type ContentClassification struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewContentClassification instantiates a new contentClassification and sets the default values.
+// NewContentClassification instantiates a new ContentClassification and sets the default values.
 func NewContentClassification()(*ContentClassification) {
     m := &ContentClassification{
     }
@@ -19,10 +18,12 @@ func NewContentClassification()(*ContentClassification) {
     return m
 }
 // CreateContentClassificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContentClassificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContentClassification(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ContentClassification) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ContentClassification) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ContentClassification) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConfidence gets the confidence property value. The confidence property
+// returns a *int32 when successful
 func (m *ContentClassification) GetConfidence()(*int32) {
     val, err := m.GetBackingStore().Get("confidence")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ContentClassification) GetConfidence()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContentClassification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["confidence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,6 +115,7 @@ func (m *ContentClassification) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetMatches gets the matches property value. The matches property
+// returns a []MatchLocationable when successful
 func (m *ContentClassification) GetMatches()([]MatchLocationable) {
     val, err := m.GetBackingStore().Get("matches")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *ContentClassification) GetMatches()([]MatchLocationable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ContentClassification) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -133,6 +139,7 @@ func (m *ContentClassification) GetOdataType()(*string) {
     return nil
 }
 // GetSensitiveTypeId gets the sensitiveTypeId property value. The sensitiveTypeId property
+// returns a *string when successful
 func (m *ContentClassification) GetSensitiveTypeId()(*string) {
     val, err := m.GetBackingStore().Get("sensitiveTypeId")
     if err != nil {
@@ -144,6 +151,7 @@ func (m *ContentClassification) GetSensitiveTypeId()(*string) {
     return nil
 }
 // GetUniqueCount gets the uniqueCount property value. The uniqueCount property
+// returns a *int32 when successful
 func (m *ContentClassification) GetUniqueCount()(*int32) {
     val, err := m.GetBackingStore().Get("uniqueCount")
     if err != nil {
@@ -246,7 +254,6 @@ func (m *ContentClassification) SetUniqueCount(value *int32)() {
         panic(err)
     }
 }
-// ContentClassificationable 
 type ContentClassificationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

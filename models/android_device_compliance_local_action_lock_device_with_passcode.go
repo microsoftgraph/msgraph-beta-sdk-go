@@ -8,7 +8,7 @@ import (
 type AndroidDeviceComplianceLocalActionLockDeviceWithPasscode struct {
     AndroidDeviceComplianceLocalActionBase
 }
-// NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode instantiates a new androidDeviceComplianceLocalActionLockDeviceWithPasscode and sets the default values.
+// NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode instantiates a new AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and sets the default values.
 func NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode()(*AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) {
     m := &AndroidDeviceComplianceLocalActionLockDeviceWithPasscode{
         AndroidDeviceComplianceLocalActionBase: *NewAndroidDeviceComplianceLocalActionBase(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode()(*AndroidDevic
     return m
 }
 // CreateAndroidDeviceComplianceLocalActionLockDeviceWithPasscodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceComplianceLocalActionLockDeviceWithPasscodeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceComplianceLocalActionLockDeviceWithPasscode(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidDeviceComplianceLocalActionBase.GetFieldDeserializers()
     res["passcode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetFieldDeser
     return res
 }
 // GetPasscode gets the passcode property value. Passcode to reset to Android device. This property is read-only.
+// returns a *string when successful
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetPasscode()(*string) {
     val, err := m.GetBackingStore().Get("passcode")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetPasscode()
     return nil
 }
 // GetPasscodeSignInFailureCountBeforeWipe gets the passcodeSignInFailureCountBeforeWipe property value. Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11
+// returns a *int32 when successful
 func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) GetPasscodeSignInFailureCountBeforeWipe()(*int32) {
     val, err := m.GetBackingStore().Get("passcodeSignInFailureCountBeforeWipe")
     if err != nil {
@@ -96,7 +100,6 @@ func (m *AndroidDeviceComplianceLocalActionLockDeviceWithPasscode) SetPasscodeSi
         panic(err)
     }
 }
-// AndroidDeviceComplianceLocalActionLockDeviceWithPasscodeable 
 type AndroidDeviceComplianceLocalActionLockDeviceWithPasscodeable interface {
     AndroidDeviceComplianceLocalActionBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

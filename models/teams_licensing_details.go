@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsLicensingDetails 
 type TeamsLicensingDetails struct {
     Entity
 }
-// NewTeamsLicensingDetails instantiates a new teamsLicensingDetails and sets the default values.
+// NewTeamsLicensingDetails instantiates a new TeamsLicensingDetails and sets the default values.
 func NewTeamsLicensingDetails()(*TeamsLicensingDetails) {
     m := &TeamsLicensingDetails{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTeamsLicensingDetails()(*TeamsLicensingDetails) {
     return m
 }
 // CreateTeamsLicensingDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamsLicensingDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsLicensingDetails(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamsLicensingDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["hasTeamsLicense"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *TeamsLicensingDetails) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetHasTeamsLicense gets the hasTeamsLicense property value. Indicates whether the user has a valid license to use Microsoft Teams.
+// returns a *bool when successful
 func (m *TeamsLicensingDetails) GetHasTeamsLicense()(*bool) {
     val, err := m.GetBackingStore().Get("hasTeamsLicense")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *TeamsLicensingDetails) SetHasTeamsLicense(value *bool)() {
         panic(err)
     }
 }
-// TeamsLicensingDetailsable 
 type TeamsLicensingDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

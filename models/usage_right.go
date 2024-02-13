@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UsageRight 
 type UsageRight struct {
     Entity
 }
-// NewUsageRight instantiates a new usageRight and sets the default values.
+// NewUsageRight instantiates a new UsageRight and sets the default values.
 func NewUsageRight()(*UsageRight) {
     m := &UsageRight{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUsageRight()(*UsageRight) {
     return m
 }
 // CreateUsageRightFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUsageRightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUsageRight(), nil
 }
 // GetCatalogId gets the catalogId property value. Product id corresponding to the usage right.
+// returns a *string when successful
 func (m *UsageRight) GetCatalogId()(*string) {
     val, err := m.GetBackingStore().Get("catalogId")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UsageRight) GetCatalogId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UsageRight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["catalogId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,6 +68,7 @@ func (m *UsageRight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetServiceIdentifier gets the serviceIdentifier property value. Identifier of the service corresponding to the usage right.
+// returns a *string when successful
 func (m *UsageRight) GetServiceIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("serviceIdentifier")
     if err != nil {
@@ -77,6 +80,7 @@ func (m *UsageRight) GetServiceIdentifier()(*string) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *UsageRightState when successful
 func (m *UsageRight) GetState()(*UsageRightState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -135,7 +139,6 @@ func (m *UsageRight) SetState(value *UsageRightState)() {
         panic(err)
     }
 }
-// UsageRightable 
 type UsageRightable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

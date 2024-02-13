@@ -32,32 +32,33 @@ type TemplatesItemCompareWithTemplateIdRequestBuilderGetRequestConfiguration str
     // Request query parameters
     QueryParameters *TemplatesItemCompareWithTemplateIdRequestBuilderGetQueryParameters
 }
-// NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.
+// NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal instantiates a new TemplatesItemCompareWithTemplateIdRequestBuilder and sets the default values.
 func NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, templateId *string)(*TemplatesItemCompareWithTemplateIdRequestBuilder) {
     m := &TemplatesItemCompareWithTemplateIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     if templateId != nil {
         m.BaseRequestBuilder.PathParameters["templateId"] = *templateId
     }
     return m
 }
-// NewTemplatesItemCompareWithTemplateIdRequestBuilder instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.
+// NewTemplatesItemCompareWithTemplateIdRequestBuilder instantiates a new TemplatesItemCompareWithTemplateIdRequestBuilder and sets the default values.
 func NewTemplatesItemCompareWithTemplateIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TemplatesItemCompareWithTemplateIdRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function compare
-// Deprecated: This method is obsolete. Use GetAsCompareWithTemplateIdGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a TemplatesItemCompareWithTemplateIdResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TemplatesItemCompareWithTemplateIdRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesItemCompareWithTemplateIdRequestBuilderGetRequestConfiguration)(TemplatesItemCompareWithTemplateIdResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTemplatesItemCompareWithTemplateIdResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -69,14 +70,15 @@ func (m *TemplatesItemCompareWithTemplateIdRequestBuilder) Get(ctx context.Conte
     return res.(TemplatesItemCompareWithTemplateIdResponseable), nil
 }
 // GetAsCompareWithTemplateIdGetResponse invoke function compare
+// returns a TemplatesItemCompareWithTemplateIdGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TemplatesItemCompareWithTemplateIdRequestBuilder) GetAsCompareWithTemplateIdGetResponse(ctx context.Context, requestConfiguration *TemplatesItemCompareWithTemplateIdRequestBuilderGetRequestConfiguration)(TemplatesItemCompareWithTemplateIdGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTemplatesItemCompareWithTemplateIdGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -88,6 +90,7 @@ func (m *TemplatesItemCompareWithTemplateIdRequestBuilder) GetAsCompareWithTempl
     return res.(TemplatesItemCompareWithTemplateIdGetResponseable), nil
 }
 // ToGetRequestInformation invoke function compare
+// returns a *RequestInformation when successful
 func (m *TemplatesItemCompareWithTemplateIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TemplatesItemCompareWithTemplateIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -101,6 +104,7 @@ func (m *TemplatesItemCompareWithTemplateIdRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TemplatesItemCompareWithTemplateIdRequestBuilder when successful
 func (m *TemplatesItemCompareWithTemplateIdRequestBuilder) WithUrl(rawUrl string)(*TemplatesItemCompareWithTemplateIdRequestBuilder) {
     return NewTemplatesItemCompareWithTemplateIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -11,7 +11,7 @@ import (
 type CallRecordsItemParticipants_v2RequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallRecordsItemParticipants_v2RequestBuilderGetQueryParameters get the list of participants associated with a callRecord.
+// CallRecordsItemParticipants_v2RequestBuilderGetQueryParameters get the list of participant objects associated with a callRecord.
 type CallRecordsItemParticipants_v2RequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -47,6 +47,7 @@ type CallRecordsItemParticipants_v2RequestBuilderPostRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByParticipantId provides operations to manage the participants_v2 property of the microsoft.graph.callRecords.callRecord entity.
+// returns a *CallRecordsItemParticipants_v2ParticipantItemRequestBuilder when successful
 func (m *CallRecordsItemParticipants_v2RequestBuilder) ByParticipantId(participantId string)(*CallRecordsItemParticipants_v2ParticipantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,35 +58,37 @@ func (m *CallRecordsItemParticipants_v2RequestBuilder) ByParticipantId(participa
     }
     return NewCallRecordsItemParticipants_v2ParticipantItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCallRecordsItemParticipants_v2RequestBuilderInternal instantiates a new Participants_v2RequestBuilder and sets the default values.
+// NewCallRecordsItemParticipants_v2RequestBuilderInternal instantiates a new CallRecordsItemParticipants_v2RequestBuilder and sets the default values.
 func NewCallRecordsItemParticipants_v2RequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemParticipants_v2RequestBuilder) {
     m := &CallRecordsItemParticipants_v2RequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCallRecordsItemParticipants_v2RequestBuilder instantiates a new Participants_v2RequestBuilder and sets the default values.
+// NewCallRecordsItemParticipants_v2RequestBuilder instantiates a new CallRecordsItemParticipants_v2RequestBuilder and sets the default values.
 func NewCallRecordsItemParticipants_v2RequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallRecordsItemParticipants_v2RequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallRecordsItemParticipants_v2RequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CallRecordsItemParticipants_v2CountRequestBuilder when successful
 func (m *CallRecordsItemParticipants_v2RequestBuilder) Count()(*CallRecordsItemParticipants_v2CountRequestBuilder) {
     return NewCallRecordsItemParticipants_v2CountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of participants associated with a callRecord.
+// Get get the list of participant objects associated with a callRecord.
+// returns a ParticipantCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/callrecords-callrecord-list-participants?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/callrecords-callrecord-list-participants_v2?view=graph-rest-1.0
 func (m *CallRecordsItemParticipants_v2RequestBuilder) Get(ctx context.Context, requestConfiguration *CallRecordsItemParticipants_v2RequestBuilderGetRequestConfiguration)(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.ParticipantCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CreateParticipantCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *CallRecordsItemParticipants_v2RequestBuilder) Get(ctx context.Context, 
     return res.(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.ParticipantCollectionResponseable), nil
 }
 // Post create new navigation property to participants_v2 for communications
+// returns a Participantable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CallRecordsItemParticipants_v2RequestBuilder) Post(ctx context.Context, body iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.Participantable, requestConfiguration *CallRecordsItemParticipants_v2RequestBuilderPostRequestConfiguration)(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.Participantable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.CreateParticipantFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -115,7 +119,8 @@ func (m *CallRecordsItemParticipants_v2RequestBuilder) Post(ctx context.Context,
     }
     return res.(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.Participantable), nil
 }
-// ToGetRequestInformation get the list of participants associated with a callRecord.
+// ToGetRequestInformation get the list of participant objects associated with a callRecord.
+// returns a *RequestInformation when successful
 func (m *CallRecordsItemParticipants_v2RequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallRecordsItemParticipants_v2RequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *CallRecordsItemParticipants_v2RequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to participants_v2 for communications
+// returns a *RequestInformation when successful
 func (m *CallRecordsItemParticipants_v2RequestBuilder) ToPostRequestInformation(ctx context.Context, body iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.Participantable, requestConfiguration *CallRecordsItemParticipants_v2RequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/communications/callRecords/{callRecord%2Did}/participants_v2", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *CallRecordsItemParticipants_v2RequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CallRecordsItemParticipants_v2RequestBuilder when successful
 func (m *CallRecordsItemParticipants_v2RequestBuilder) WithUrl(rawUrl string)(*CallRecordsItemParticipants_v2RequestBuilder) {
     return NewCallRecordsItemParticipants_v2RequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

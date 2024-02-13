@@ -9,7 +9,7 @@ import (
 type UserExperienceAnalyticsDeviceTimelineEvent struct {
     Entity
 }
-// NewUserExperienceAnalyticsDeviceTimelineEvent instantiates a new userExperienceAnalyticsDeviceTimelineEvent and sets the default values.
+// NewUserExperienceAnalyticsDeviceTimelineEvent instantiates a new UserExperienceAnalyticsDeviceTimelineEvent and sets the default values.
 func NewUserExperienceAnalyticsDeviceTimelineEvent()(*UserExperienceAnalyticsDeviceTimelineEvent) {
     m := &UserExperienceAnalyticsDeviceTimelineEvent{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewUserExperienceAnalyticsDeviceTimelineEvent()(*UserExperienceAnalyticsDev
     return m
 }
 // CreateUserExperienceAnalyticsDeviceTimelineEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsDeviceTimelineEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsDeviceTimelineEvent(), nil
 }
 // GetDeviceId gets the deviceId property value. The id of the device where the event occurred.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetDeviceId()(*string) {
     return nil
 }
 // GetEventDateTime gets the eventDateTime property value. The time the event occured.
+// returns a *Time when successful
 func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetEventDateTime()(*i336074
     return nil
 }
 // GetEventDetails gets the eventDetails property value. The details provided by the event, format depends on event type.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetEventDetails()(*string) {
     val, err := m.GetBackingStore().Get("eventDetails")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetEventDetails()(*string) 
     return nil
 }
 // GetEventLevel gets the eventLevel property value. Indicates device event level. Possible values are: None, Verbose, Information, Warning, Error, Critical
+// returns a *DeviceEventLevel when successful
 func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetEventLevel()(*DeviceEventLevel) {
     val, err := m.GetBackingStore().Get("eventLevel")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetEventLevel()(*DeviceEven
     return nil
 }
 // GetEventName gets the eventName property value. The name of the event. Examples include: BootEvent, LogonEvent, AppCrashEvent, AppHangEvent.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetEventName()(*string) {
     val, err := m.GetBackingStore().Get("eventName")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetEventName()(*string) {
     return nil
 }
 // GetEventSource gets the eventSource property value. The source of the event. Examples include: Intune, Sccm.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetEventSource()(*string) {
     val, err := m.GetBackingStore().Get("eventSource")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetEventSource()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsDeviceTimelineEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -238,7 +246,6 @@ func (m *UserExperienceAnalyticsDeviceTimelineEvent) SetEventSource(value *strin
         panic(err)
     }
 }
-// UserExperienceAnalyticsDeviceTimelineEventable 
 type UserExperienceAnalyticsDeviceTimelineEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

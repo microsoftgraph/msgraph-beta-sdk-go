@@ -32,10 +32,12 @@ const (
     IOSMOBILEAPPLICATIONMANAGEMENT_DEVICEPLATFORMTYPE
     // Evolvable enumeration sentinel value. Do not use
     UNKNOWNFUTUREVALUE_DEVICEPLATFORMTYPE
+    // Indicates Mobile Application Management (MAM) for Windows devices.
+    WINDOWSMOBILEAPPLICATIONMANAGEMENT_DEVICEPLATFORMTYPE
 )
 
 func (i DevicePlatformType) String() string {
-    return []string{"android", "androidForWork", "iOS", "macOS", "windowsPhone81", "windows81AndLater", "windows10AndLater", "androidWorkProfile", "unknown", "androidAOSP", "androidMobileApplicationManagement", "iOSMobileApplicationManagement", "unknownFutureValue"}[i]
+    return []string{"android", "androidForWork", "iOS", "macOS", "windowsPhone81", "windows81AndLater", "windows10AndLater", "androidWorkProfile", "unknown", "androidAOSP", "androidMobileApplicationManagement", "iOSMobileApplicationManagement", "unknownFutureValue", "windowsMobileApplicationManagement"}[i]
 }
 func ParseDevicePlatformType(v string) (any, error) {
     result := ANDROID_DEVICEPLATFORMTYPE
@@ -66,6 +68,8 @@ func ParseDevicePlatformType(v string) (any, error) {
             result = IOSMOBILEAPPLICATIONMANAGEMENT_DEVICEPLATFORMTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEPLATFORMTYPE
+        case "windowsMobileApplicationManagement":
+            result = WINDOWSMOBILEAPPLICATIONMANAGEMENT_DEVICEPLATFORMTYPE
         default:
             return 0, errors.New("Unknown DevicePlatformType value: " + v)
     }

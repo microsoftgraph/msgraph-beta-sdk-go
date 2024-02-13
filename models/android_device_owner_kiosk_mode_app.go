@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerKioskModeApp struct {
     AndroidDeviceOwnerKioskModeFolderItem
 }
-// NewAndroidDeviceOwnerKioskModeApp instantiates a new androidDeviceOwnerKioskModeApp and sets the default values.
+// NewAndroidDeviceOwnerKioskModeApp instantiates a new AndroidDeviceOwnerKioskModeApp and sets the default values.
 func NewAndroidDeviceOwnerKioskModeApp()(*AndroidDeviceOwnerKioskModeApp) {
     m := &AndroidDeviceOwnerKioskModeApp{
         AndroidDeviceOwnerKioskModeFolderItem: *NewAndroidDeviceOwnerKioskModeFolderItem(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceOwnerKioskModeApp()(*AndroidDeviceOwnerKioskModeApp) {
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerKioskModeApp(), nil
 }
 // GetClassName gets the className property value. Class name of application
+// returns a *string when successful
 func (m *AndroidDeviceOwnerKioskModeApp) GetClassName()(*string) {
     val, err := m.GetBackingStore().Get("className")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidDeviceOwnerKioskModeApp) GetClassName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidDeviceOwnerKioskModeFolderItem.GetFieldDeserializers()
     res["className"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetPackageEscaped gets the package property value. Package name of application
+// returns a *string when successful
 func (m *AndroidDeviceOwnerKioskModeApp) GetPackageEscaped()(*string) {
     val, err := m.GetBackingStore().Get("packageEscaped")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *AndroidDeviceOwnerKioskModeApp) SetPackageEscaped(value *string)() {
         panic(err)
     }
 }
-// AndroidDeviceOwnerKioskModeAppable 
 type AndroidDeviceOwnerKioskModeAppable interface {
     AndroidDeviceOwnerKioskModeFolderItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

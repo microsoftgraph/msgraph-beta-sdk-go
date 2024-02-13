@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedTenantEmailNotification 
 type ManagedTenantEmailNotification struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedTenantEmailNotification instantiates a new managedTenantEmailNotification and sets the default values.
+// NewManagedTenantEmailNotification instantiates a new ManagedTenantEmailNotification and sets the default values.
 func NewManagedTenantEmailNotification()(*ManagedTenantEmailNotification) {
     m := &ManagedTenantEmailNotification{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManagedTenantEmailNotification()(*ManagedTenantEmailNotification) {
     return m
 }
 // CreateManagedTenantEmailNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedTenantEmailNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedTenantEmailNotification(), nil
 }
 // GetAlert gets the alert property value. The alert property
+// returns a ManagedTenantAlertable when successful
 func (m *ManagedTenantEmailNotification) GetAlert()(ManagedTenantAlertable) {
     val, err := m.GetBackingStore().Get("alert")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ManagedTenantEmailNotification) GetAlert()(ManagedTenantAlertable) {
     return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
+// returns a *string when successful
 func (m *ManagedTenantEmailNotification) GetCreatedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("createdByUserId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ManagedTenantEmailNotification) GetCreatedByUserId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantEmailNotification) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ManagedTenantEmailNotification) GetCreatedDateTime()(*i336074805fc85398
     return nil
 }
 // GetEmailAddresses gets the emailAddresses property value. The emailAddresses property
+// returns a []Emailable when successful
 func (m *ManagedTenantEmailNotification) GetEmailAddresses()([]Emailable) {
     val, err := m.GetBackingStore().Get("emailAddresses")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *ManagedTenantEmailNotification) GetEmailAddresses()([]Emailable) {
     return nil
 }
 // GetEmailBody gets the emailBody property value. The emailBody property
+// returns a *string when successful
 func (m *ManagedTenantEmailNotification) GetEmailBody()(*string) {
     val, err := m.GetBackingStore().Get("emailBody")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *ManagedTenantEmailNotification) GetEmailBody()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedTenantEmailNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alert"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -168,6 +174,7 @@ func (m *ManagedTenantEmailNotification) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
+// returns a *string when successful
 func (m *ManagedTenantEmailNotification) GetLastActionByUserId()(*string) {
     val, err := m.GetBackingStore().Get("lastActionByUserId")
     if err != nil {
@@ -179,6 +186,7 @@ func (m *ManagedTenantEmailNotification) GetLastActionByUserId()(*string) {
     return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantEmailNotification) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -190,6 +198,7 @@ func (m *ManagedTenantEmailNotification) GetLastActionDateTime()(*i336074805fc85
     return nil
 }
 // GetSubject gets the subject property value. The subject property
+// returns a *string when successful
 func (m *ManagedTenantEmailNotification) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -318,7 +327,6 @@ func (m *ManagedTenantEmailNotification) SetSubject(value *string)() {
         panic(err)
     }
 }
-// ManagedTenantEmailNotificationable 
 type ManagedTenantEmailNotificationable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

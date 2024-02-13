@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TenantDetailedInformation 
 type TenantDetailedInformation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewTenantDetailedInformation instantiates a new tenantDetailedInformation and sets the default values.
+// NewTenantDetailedInformation instantiates a new TenantDetailedInformation and sets the default values.
 func NewTenantDetailedInformation()(*TenantDetailedInformation) {
     m := &TenantDetailedInformation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewTenantDetailedInformation()(*TenantDetailedInformation) {
     return m
 }
 // CreateTenantDetailedInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTenantDetailedInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTenantDetailedInformation(), nil
 }
 // GetCity gets the city property value. The city where the managed tenant is located. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantDetailedInformation) GetCity()(*string) {
     val, err := m.GetBackingStore().Get("city")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TenantDetailedInformation) GetCity()(*string) {
     return nil
 }
 // GetCountryCode gets the countryCode property value. The code for the country where the managed tenant is located. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantDetailedInformation) GetCountryCode()(*string) {
     val, err := m.GetBackingStore().Get("countryCode")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TenantDetailedInformation) GetCountryCode()(*string) {
     return nil
 }
 // GetCountryName gets the countryName property value. The name for the country where the managed tenant is located. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantDetailedInformation) GetCountryName()(*string) {
     val, err := m.GetBackingStore().Get("countryName")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TenantDetailedInformation) GetCountryName()(*string) {
     return nil
 }
 // GetDefaultDomainName gets the defaultDomainName property value. The default domain name for the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantDetailedInformation) GetDefaultDomainName()(*string) {
     val, err := m.GetBackingStore().Get("defaultDomainName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *TenantDetailedInformation) GetDefaultDomainName()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the managed tenant.
+// returns a *string when successful
 func (m *TenantDetailedInformation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *TenantDetailedInformation) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["city"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -181,6 +187,7 @@ func (m *TenantDetailedInformation) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIndustryName gets the industryName property value. The business industry associated with the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantDetailedInformation) GetIndustryName()(*string) {
     val, err := m.GetBackingStore().Get("industryName")
     if err != nil {
@@ -192,6 +199,7 @@ func (m *TenantDetailedInformation) GetIndustryName()(*string) {
     return nil
 }
 // GetRegion gets the region property value. The region where the managed tenant is located. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantDetailedInformation) GetRegion()(*string) {
     val, err := m.GetBackingStore().Get("region")
     if err != nil {
@@ -203,6 +211,7 @@ func (m *TenantDetailedInformation) GetRegion()(*string) {
     return nil
 }
 // GetSegmentName gets the segmentName property value. The business segment associated with the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantDetailedInformation) GetSegmentName()(*string) {
     val, err := m.GetBackingStore().Get("segmentName")
     if err != nil {
@@ -214,6 +223,7 @@ func (m *TenantDetailedInformation) GetSegmentName()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant.
+// returns a *string when successful
 func (m *TenantDetailedInformation) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -225,6 +235,7 @@ func (m *TenantDetailedInformation) GetTenantId()(*string) {
     return nil
 }
 // GetVerticalName gets the verticalName property value. The vertical associated with the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantDetailedInformation) GetVerticalName()(*string) {
     val, err := m.GetBackingStore().Get("verticalName")
     if err != nil {
@@ -373,7 +384,6 @@ func (m *TenantDetailedInformation) SetVerticalName(value *string)() {
         panic(err)
     }
 }
-// TenantDetailedInformationable 
 type TenantDetailedInformationable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -41,20 +41,21 @@ type LabelsRetentionLabelsRetentionLabelItemRequestBuilderPatchRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal instantiates a new RetentionLabelItemRequestBuilder and sets the default values.
+// NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal instantiates a new LabelsRetentionLabelsRetentionLabelItemRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsRetentionLabelItemRequestBuilder) {
     m := &LabelsRetentionLabelsRetentionLabelItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewLabelsRetentionLabelsRetentionLabelItemRequestBuilder instantiates a new RetentionLabelItemRequestBuilder and sets the default values.
+// NewLabelsRetentionLabelsRetentionLabelItemRequestBuilder instantiates a new LabelsRetentionLabelsRetentionLabelItemRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsRetentionLabelItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsRetentionLabelItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsRetentionLabelsRetentionLabelItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a retentionLabel object.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionlabel-delete?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Delete(ctx conte
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,22 +74,25 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Delete(ctx conte
     return nil
 }
 // Descriptors provides operations to manage the descriptors property of the microsoft.graph.security.retentionLabel entity.
+// returns a *LabelsRetentionLabelsItemDescriptorsRequestBuilder when successful
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Descriptors()(*LabelsRetentionLabelsItemDescriptorsRequestBuilder) {
     return NewLabelsRetentionLabelsItemDescriptorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DispositionReviewStages provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
+// returns a *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder when successful
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) DispositionReviewStages()(*LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) {
     return NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents how customers can manage their data, whether and for how long to retain or delete it.
+// returns a RetentionLabelable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionLabelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateRetentionLabelFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,6 +104,8 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Get(ctx context.
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionLabelable), nil
 }
 // Patch update the properties of a retentionLabel object. To update a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
+// returns a RetentionLabelable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-retentionlabel-update?view=graph-rest-1.0
@@ -110,8 +115,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Patch(ctx contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateRetentionLabelFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -123,12 +127,14 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) Patch(ctx contex
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionLabelable), nil
 }
 // RetentionEventType provides operations to manage the retentionEventType property of the microsoft.graph.security.retentionLabel entity.
+// returns a *LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder when successful
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) RetentionEventType()(*LabelsRetentionLabelsItemRetentionEventTypeRequestBuilder) {
     return NewLabelsRetentionLabelsItemRetentionEventTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a retentionLabel object.
+// returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -137,6 +143,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToDeleteRequestI
     return requestInfo, nil
 }
 // ToGetRequestInformation represents how customers can manage their data, whether and for how long to retain or delete it.
+// returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -150,8 +157,9 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a retentionLabel object. To update a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
+// returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionLabelable, requestConfiguration *LabelsRetentionLabelsRetentionLabelItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -164,6 +172,7 @@ func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) ToPatchRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LabelsRetentionLabelsRetentionLabelItemRequestBuilder when successful
 func (m *LabelsRetentionLabelsRetentionLabelItemRequestBuilder) WithUrl(rawUrl string)(*LabelsRetentionLabelsRetentionLabelItemRequestBuilder) {
     return NewLabelsRetentionLabelsRetentionLabelItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

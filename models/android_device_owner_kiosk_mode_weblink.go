@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerKioskModeWeblink struct {
     AndroidDeviceOwnerKioskModeFolderItem
 }
-// NewAndroidDeviceOwnerKioskModeWeblink instantiates a new androidDeviceOwnerKioskModeWeblink and sets the default values.
+// NewAndroidDeviceOwnerKioskModeWeblink instantiates a new AndroidDeviceOwnerKioskModeWeblink and sets the default values.
 func NewAndroidDeviceOwnerKioskModeWeblink()(*AndroidDeviceOwnerKioskModeWeblink) {
     m := &AndroidDeviceOwnerKioskModeWeblink{
         AndroidDeviceOwnerKioskModeFolderItem: *NewAndroidDeviceOwnerKioskModeFolderItem(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceOwnerKioskModeWeblink()(*AndroidDeviceOwnerKioskModeWeblink
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeWeblinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerKioskModeWeblinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerKioskModeWeblink(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerKioskModeWeblink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidDeviceOwnerKioskModeFolderItem.GetFieldDeserializers()
     res["label"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *AndroidDeviceOwnerKioskModeWeblink) GetFieldDeserializers()(map[string]
     return res
 }
 // GetLabel gets the label property value. Display name for weblink
+// returns a *string when successful
 func (m *AndroidDeviceOwnerKioskModeWeblink) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *AndroidDeviceOwnerKioskModeWeblink) GetLabel()(*string) {
     return nil
 }
 // GetLink gets the link property value. Link for weblink
+// returns a *string when successful
 func (m *AndroidDeviceOwnerKioskModeWeblink) GetLink()(*string) {
     val, err := m.GetBackingStore().Get("link")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *AndroidDeviceOwnerKioskModeWeblink) SetLink(value *string)() {
         panic(err)
     }
 }
-// AndroidDeviceOwnerKioskModeWeblinkable 
 type AndroidDeviceOwnerKioskModeWeblinkable interface {
     AndroidDeviceOwnerKioskModeFolderItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

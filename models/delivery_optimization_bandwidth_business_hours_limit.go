@@ -10,7 +10,7 @@ type DeliveryOptimizationBandwidthBusinessHoursLimit struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeliveryOptimizationBandwidthBusinessHoursLimit instantiates a new deliveryOptimizationBandwidthBusinessHoursLimit and sets the default values.
+// NewDeliveryOptimizationBandwidthBusinessHoursLimit instantiates a new DeliveryOptimizationBandwidthBusinessHoursLimit and sets the default values.
 func NewDeliveryOptimizationBandwidthBusinessHoursLimit()(*DeliveryOptimizationBandwidthBusinessHoursLimit) {
     m := &DeliveryOptimizationBandwidthBusinessHoursLimit{
     }
@@ -19,10 +19,12 @@ func NewDeliveryOptimizationBandwidthBusinessHoursLimit()(*DeliveryOptimizationB
     return m
 }
 // CreateDeliveryOptimizationBandwidthBusinessHoursLimitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeliveryOptimizationBandwidthBusinessHoursLimitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeliveryOptimizationBandwidthBusinessHoursLimit(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetAdditionalData()(ma
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBandwidthBeginBusinessHours gets the bandwidthBeginBusinessHours property value. Specifies the beginning of business hours using a 24-hour clock (0-23). Valid values 0 to 23
+// returns a *int32 when successful
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthBeginBusinessHours()(*int32) {
     val, err := m.GetBackingStore().Get("bandwidthBeginBusinessHours")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthBeginBusin
     return nil
 }
 // GetBandwidthEndBusinessHours gets the bandwidthEndBusinessHours property value. Specifies the end of business hours using a 24-hour clock (0-23). Valid values 0 to 23
+// returns a *int32 when successful
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthEndBusinessHours()(*int32) {
     val, err := m.GetBackingStore().Get("bandwidthEndBusinessHours")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthEndBusines
     return nil
 }
 // GetBandwidthPercentageDuringBusinessHours gets the bandwidthPercentageDuringBusinessHours property value. Specifies the percentage of bandwidth to limit during business hours (0-100). Valid values 0 to 100
+// returns a *int32 when successful
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthPercentageDuringBusinessHours()(*int32) {
     val, err := m.GetBackingStore().Get("bandwidthPercentageDuringBusinessHours")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthPercentage
     return nil
 }
 // GetBandwidthPercentageOutsideBusinessHours gets the bandwidthPercentageOutsideBusinessHours property value. Specifies the percentage of bandwidth to limit outsidse business hours (0-100). Valid values 0 to 100
+// returns a *int32 when successful
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthPercentageOutsideBusinessHours()(*int32) {
     val, err := m.GetBackingStore().Get("bandwidthPercentageOutsideBusinessHours")
     if err != nil {
@@ -83,6 +90,7 @@ func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetBandwidthPercentage
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bandwidthBeginBusinessHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,6 +146,7 @@ func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetFieldDeserializers(
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -234,7 +243,6 @@ func (m *DeliveryOptimizationBandwidthBusinessHoursLimit) SetOdataType(value *st
         panic(err)
     }
 }
-// DeliveryOptimizationBandwidthBusinessHoursLimitable 
 type DeliveryOptimizationBandwidthBusinessHoursLimitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

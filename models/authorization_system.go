@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthorizationSystem 
 type AuthorizationSystem struct {
     Entity
 }
-// NewAuthorizationSystem instantiates a new authorizationSystem and sets the default values.
+// NewAuthorizationSystem instantiates a new AuthorizationSystem and sets the default values.
 func NewAuthorizationSystem()(*AuthorizationSystem) {
     m := &AuthorizationSystem{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewAuthorizationSystem()(*AuthorizationSystem) {
     return m
 }
 // CreateAuthorizationSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthorizationSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +42,7 @@ func CreateAuthorizationSystemFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewAuthorizationSystem(), nil
 }
 // GetAuthorizationSystemId gets the authorizationSystemId property value. ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.
+// returns a *string when successful
 func (m *AuthorizationSystem) GetAuthorizationSystemId()(*string) {
     val, err := m.GetBackingStore().Get("authorizationSystemId")
     if err != nil {
@@ -53,6 +54,7 @@ func (m *AuthorizationSystem) GetAuthorizationSystemId()(*string) {
     return nil
 }
 // GetAuthorizationSystemName gets the authorizationSystemName property value. Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.
+// returns a *string when successful
 func (m *AuthorizationSystem) GetAuthorizationSystemName()(*string) {
     val, err := m.GetBackingStore().Get("authorizationSystemName")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *AuthorizationSystem) GetAuthorizationSystemName()(*string) {
     return nil
 }
 // GetAuthorizationSystemType gets the authorizationSystemType property value. The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).
+// returns a *string when successful
 func (m *AuthorizationSystem) GetAuthorizationSystemType()(*string) {
     val, err := m.GetBackingStore().Get("authorizationSystemType")
     if err != nil {
@@ -75,6 +78,7 @@ func (m *AuthorizationSystem) GetAuthorizationSystemType()(*string) {
     return nil
 }
 // GetDataCollectionInfo gets the dataCollectionInfo property value. Defines how and whether Permissions Management collects data from the onboarded authorization system. Supports $filter (eq) as follows:  $filter=dataCollectionInfo/entitlements/permissionsModificationCapability and $filter=dataCollectionInfo/entitlements/status.
+// returns a DataCollectionInfoable when successful
 func (m *AuthorizationSystem) GetDataCollectionInfo()(DataCollectionInfoable) {
     val, err := m.GetBackingStore().Get("dataCollectionInfo")
     if err != nil {
@@ -86,6 +90,7 @@ func (m *AuthorizationSystem) GetDataCollectionInfo()(DataCollectionInfoable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthorizationSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authorizationSystemId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,7 +195,6 @@ func (m *AuthorizationSystem) SetDataCollectionInfo(value DataCollectionInfoable
         panic(err)
     }
 }
-// AuthorizationSystemable 
 type AuthorizationSystemable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

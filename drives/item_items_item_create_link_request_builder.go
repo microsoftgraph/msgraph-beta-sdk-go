@@ -18,20 +18,22 @@ type ItemItemsItemCreateLinkRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemCreateLinkRequestBuilderInternal instantiates a new CreateLinkRequestBuilder and sets the default values.
+// NewItemItemsItemCreateLinkRequestBuilderInternal instantiates a new ItemItemsItemCreateLinkRequestBuilder and sets the default values.
 func NewItemItemsItemCreateLinkRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemCreateLinkRequestBuilder) {
     m := &ItemItemsItemCreateLinkRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/createLink", pathParameters),
     }
     return m
 }
-// NewItemItemsItemCreateLinkRequestBuilder instantiates a new CreateLinkRequestBuilder and sets the default values.
+// NewItemItemsItemCreateLinkRequestBuilder instantiates a new ItemItemsItemCreateLinkRequestBuilder and sets the default values.
 func NewItemItemsItemCreateLinkRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemCreateLinkRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemCreateLinkRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post you can use createLink action to share a driveItem via a sharing link. The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.If a sharing link of the specified type already exists for the app, the existing sharing link will be returned. DriveItem resources inherit sharing permissions from their ancestors.
+// returns a Permissionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemItemsItemCreateLinkRequestBuilder) Post(ctx context.Context, body I
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePermissionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *ItemItemsItemCreateLinkRequestBuilder) Post(ctx context.Context, body I
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
 // ToPostRequestInformation you can use createLink action to share a driveItem via a sharing link. The createLink action will create a new sharing link if the specified link type doesn't already exist for the calling application.If a sharing link of the specified type already exists for the app, the existing sharing link will be returned. DriveItem resources inherit sharing permissions from their ancestors.
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemCreateLinkRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemCreateLinkPostRequestBodyable, requestConfiguration *ItemItemsItemCreateLinkRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *ItemItemsItemCreateLinkRequestBuilder) ToPostRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemCreateLinkRequestBuilder when successful
 func (m *ItemItemsItemCreateLinkRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemCreateLinkRequestBuilder) {
     return NewItemItemsItemCreateLinkRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

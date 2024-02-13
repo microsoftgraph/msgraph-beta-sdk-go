@@ -8,7 +8,7 @@ import (
 type AndroidForWorkPkcsCertificateProfile struct {
     AndroidForWorkCertificateProfileBase
 }
-// NewAndroidForWorkPkcsCertificateProfile instantiates a new androidForWorkPkcsCertificateProfile and sets the default values.
+// NewAndroidForWorkPkcsCertificateProfile instantiates a new AndroidForWorkPkcsCertificateProfile and sets the default values.
 func NewAndroidForWorkPkcsCertificateProfile()(*AndroidForWorkPkcsCertificateProfile) {
     m := &AndroidForWorkPkcsCertificateProfile{
         AndroidForWorkCertificateProfileBase: *NewAndroidForWorkCertificateProfileBase(),
@@ -18,10 +18,12 @@ func NewAndroidForWorkPkcsCertificateProfile()(*AndroidForWorkPkcsCertificatePro
     return m
 }
 // CreateAndroidForWorkPkcsCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidForWorkPkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidForWorkPkcsCertificateProfile(), nil
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS Certificate Template Name
+// returns a *string when successful
 func (m *AndroidForWorkPkcsCertificateProfile) GetCertificateTemplateName()(*string) {
     val, err := m.GetBackingStore().Get("certificateTemplateName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidForWorkPkcsCertificateProfile) GetCertificateTemplateName()(*str
     return nil
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS Certification Authority
+// returns a *string when successful
 func (m *AndroidForWorkPkcsCertificateProfile) GetCertificationAuthority()(*string) {
     val, err := m.GetBackingStore().Get("certificationAuthority")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidForWorkPkcsCertificateProfile) GetCertificationAuthority()(*stri
     return nil
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS Certification Authority Name
+// returns a *string when successful
 func (m *AndroidForWorkPkcsCertificateProfile) GetCertificationAuthorityName()(*string) {
     val, err := m.GetBackingStore().Get("certificationAuthorityName")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidForWorkPkcsCertificateProfile) GetCertificationAuthorityName()(*
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidForWorkPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidForWorkCertificateProfileBase.GetFieldDeserializers()
     res["certificateTemplateName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *AndroidForWorkPkcsCertificateProfile) GetFieldDeserializers()(map[strin
     return res
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+// returns a []ManagedDeviceCertificateStateable when successful
 func (m *AndroidForWorkPkcsCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *AndroidForWorkPkcsCertificateProfile) GetManagedDeviceCertificateStates
     return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
+// returns a *string when successful
 func (m *AndroidForWorkPkcsCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
     if err != nil {
@@ -216,7 +223,6 @@ func (m *AndroidForWorkPkcsCertificateProfile) SetSubjectAlternativeNameFormatSt
         panic(err)
     }
 }
-// AndroidForWorkPkcsCertificateProfileable 
 type AndroidForWorkPkcsCertificateProfileable interface {
     AndroidForWorkCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

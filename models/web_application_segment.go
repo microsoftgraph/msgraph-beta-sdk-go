@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WebApplicationSegment 
 type WebApplicationSegment struct {
     ApplicationSegment
 }
-// NewWebApplicationSegment instantiates a new webApplicationSegment and sets the default values.
+// NewWebApplicationSegment instantiates a new WebApplicationSegment and sets the default values.
 func NewWebApplicationSegment()(*WebApplicationSegment) {
     m := &WebApplicationSegment{
         ApplicationSegment: *NewApplicationSegment(),
@@ -18,10 +17,12 @@ func NewWebApplicationSegment()(*WebApplicationSegment) {
     return m
 }
 // CreateWebApplicationSegmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebApplicationSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebApplicationSegment(), nil
 }
 // GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.
+// returns a *string when successful
 func (m *WebApplicationSegment) GetAlternateUrl()(*string) {
     val, err := m.GetBackingStore().Get("alternateUrl")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *WebApplicationSegment) GetAlternateUrl()(*string) {
     return nil
 }
 // GetCorsConfigurations gets the corsConfigurations property value. A collection of CORS Rule definitions for a particular application segment.
+// returns a []CorsConfiguration_v2able when successful
 func (m *WebApplicationSegment) GetCorsConfigurations()([]CorsConfiguration_v2able) {
     val, err := m.GetBackingStore().Get("corsConfigurations")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *WebApplicationSegment) GetCorsConfigurations()([]CorsConfiguration_v2ab
     return nil
 }
 // GetExternalUrl gets the externalUrl property value. The published external URL for the application segment; for example, https://intranet.contoso.com/.
+// returns a *string when successful
 func (m *WebApplicationSegment) GetExternalUrl()(*string) {
     val, err := m.GetBackingStore().Get("externalUrl")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *WebApplicationSegment) GetExternalUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WebApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ApplicationSegment.GetFieldDeserializers()
     res["alternateUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +110,7 @@ func (m *WebApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetInternalUrl gets the internalUrl property value. The internal URL of the application segment; for example, https://intranet/.
+// returns a *string when successful
 func (m *WebApplicationSegment) GetInternalUrl()(*string) {
     val, err := m.GetBackingStore().Get("internalUrl")
     if err != nil {
@@ -182,7 +187,6 @@ func (m *WebApplicationSegment) SetInternalUrl(value *string)() {
         panic(err)
     }
 }
-// WebApplicationSegmentable 
 type WebApplicationSegmentable interface {
     ApplicationSegmentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

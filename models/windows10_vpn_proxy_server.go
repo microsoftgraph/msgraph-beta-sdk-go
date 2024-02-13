@@ -8,7 +8,7 @@ import (
 type Windows10VpnProxyServer struct {
     VpnProxyServer
 }
-// NewWindows10VpnProxyServer instantiates a new windows10VpnProxyServer and sets the default values.
+// NewWindows10VpnProxyServer instantiates a new Windows10VpnProxyServer and sets the default values.
 func NewWindows10VpnProxyServer()(*Windows10VpnProxyServer) {
     m := &Windows10VpnProxyServer{
         VpnProxyServer: *NewVpnProxyServer(),
@@ -18,10 +18,12 @@ func NewWindows10VpnProxyServer()(*Windows10VpnProxyServer) {
     return m
 }
 // CreateWindows10VpnProxyServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10VpnProxyServerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10VpnProxyServer(), nil
 }
 // GetBypassProxyServerForLocalAddress gets the bypassProxyServerForLocalAddress property value. Bypass proxy server for local address.
+// returns a *bool when successful
 func (m *Windows10VpnProxyServer) GetBypassProxyServerForLocalAddress()(*bool) {
     val, err := m.GetBackingStore().Get("bypassProxyServerForLocalAddress")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows10VpnProxyServer) GetBypassProxyServerForLocalAddress()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10VpnProxyServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VpnProxyServer.GetFieldDeserializers()
     res["bypassProxyServerForLocalAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *Windows10VpnProxyServer) SetBypassProxyServerForLocalAddress(value *boo
         panic(err)
     }
 }
-// Windows10VpnProxyServerable 
 type Windows10VpnProxyServerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VpnProxyServerable

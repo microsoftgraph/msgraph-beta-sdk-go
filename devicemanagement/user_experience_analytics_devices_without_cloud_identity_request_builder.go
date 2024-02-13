@@ -47,6 +47,7 @@ type UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderPostRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByUserExperienceAnalyticsDeviceWithoutCloudIdentityId provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.
+// returns a *UserExperienceAnalyticsDevicesWithoutCloudIdentityUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder when successful
 func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) ByUserExperienceAnalyticsDeviceWithoutCloudIdentityId(userExperienceAnalyticsDeviceWithoutCloudIdentityId string)(*UserExperienceAnalyticsDevicesWithoutCloudIdentityUserExperienceAnalyticsDeviceWithoutCloudIdentityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,7 +61,7 @@ func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) ByUse
 // NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderInternal instantiates a new UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) {
     m := &UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsDevicesWithoutCloudIdentity{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsDevicesWithoutCloudIdentity{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -71,18 +72,20 @@ func NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder(rawUrl 
     return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *UserExperienceAnalyticsDevicesWithoutCloudIdentityCountRequestBuilder when successful
 func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Count()(*UserExperienceAnalyticsDevicesWithoutCloudIdentityCountRequestBuilder) {
     return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get user experience analytics devices without cloud identity.
+// returns a UserExperienceAnalyticsDeviceWithoutCloudIdentityCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceWithoutCloudIdentityCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserExperienceAnalyticsDeviceWithoutCloudIdentityCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Get(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceWithoutCloudIdentityCollectionResponseable), nil
 }
 // Post create new navigation property to userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
+// returns a UserExperienceAnalyticsDeviceWithoutCloudIdentityable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceWithoutCloudIdentityable, requestConfiguration *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceWithoutCloudIdentityable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserExperienceAnalyticsDeviceWithoutCloudIdentityFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) Post(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceWithoutCloudIdentityable), nil
 }
 // ToGetRequestInformation user experience analytics devices without cloud identity.
+// returns a *RequestInformation when successful
 func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) ToGet
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to userExperienceAnalyticsDevicesWithoutCloudIdentity for deviceManagement
+// returns a *RequestInformation when successful
 func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsDeviceWithoutCloudIdentityable, requestConfiguration *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceManagement/userExperienceAnalyticsDevicesWithoutCloudIdentity", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) ToPos
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder when successful
 func (m *UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder) {
     return NewUserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

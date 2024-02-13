@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// LabelingOptions 
 type LabelingOptions struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewLabelingOptions instantiates a new labelingOptions and sets the default values.
+// NewLabelingOptions instantiates a new LabelingOptions and sets the default values.
 func NewLabelingOptions()(*LabelingOptions) {
     m := &LabelingOptions{
     }
@@ -19,10 +18,12 @@ func NewLabelingOptions()(*LabelingOptions) {
     return m
 }
 // CreateLabelingOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLabelingOptionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLabelingOptions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *LabelingOptions) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *LabelingOptions) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
+// returns a *AssignmentMethod when successful
 func (m *LabelingOptions) GetAssignmentMethod()(*AssignmentMethod) {
     val, err := m.GetBackingStore().Get("assignmentMethod")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *LabelingOptions) GetAssignmentMethod()(*AssignmentMethod) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *LabelingOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDowngradeJustification gets the downgradeJustification property value. The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
+// returns a DowngradeJustificationable when successful
 func (m *LabelingOptions) GetDowngradeJustification()(DowngradeJustificationable) {
     val, err := m.GetBackingStore().Get("downgradeJustification")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *LabelingOptions) GetDowngradeJustification()(DowngradeJustificationable
     return nil
 }
 // GetExtendedProperties gets the extendedProperties property value. Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.
+// returns a []KeyValuePairable when successful
 func (m *LabelingOptions) GetExtendedProperties()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("extendedProperties")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *LabelingOptions) GetExtendedProperties()([]KeyValuePairable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignmentMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -133,6 +139,7 @@ func (m *LabelingOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetLabelId gets the labelId property value. The GUID of the label that should be applied to the information.
+// returns a *string when successful
 func (m *LabelingOptions) GetLabelId()(*string) {
     val, err := m.GetBackingStore().Get("labelId")
     if err != nil {
@@ -144,6 +151,7 @@ func (m *LabelingOptions) GetLabelId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *LabelingOptions) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -247,7 +255,6 @@ func (m *LabelingOptions) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// LabelingOptionsable 
 type LabelingOptionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

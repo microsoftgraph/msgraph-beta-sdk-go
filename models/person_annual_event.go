@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonAnnualEvent 
 type PersonAnnualEvent struct {
     ItemFacet
 }
-// NewPersonAnnualEvent instantiates a new personAnnualEvent and sets the default values.
+// NewPersonAnnualEvent instantiates a new PersonAnnualEvent and sets the default values.
 func NewPersonAnnualEvent()(*PersonAnnualEvent) {
     m := &PersonAnnualEvent{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewPersonAnnualEvent()(*PersonAnnualEvent) {
     return m
 }
 // CreatePersonAnnualEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePersonAnnualEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonAnnualEvent(), nil
 }
 // GetDate gets the date property value. The date property
+// returns a *DateOnly when successful
 func (m *PersonAnnualEvent) GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("date")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PersonAnnualEvent) GetDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *PersonAnnualEvent) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *PersonAnnualEvent) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +82,7 @@ func (m *PersonAnnualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *PersonAnnualEventType when successful
 func (m *PersonAnnualEvent) GetTypeEscaped()(*PersonAnnualEventType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -137,7 +141,6 @@ func (m *PersonAnnualEvent) SetTypeEscaped(value *PersonAnnualEventType)() {
         panic(err)
     }
 }
-// PersonAnnualEventable 
 type PersonAnnualEventable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

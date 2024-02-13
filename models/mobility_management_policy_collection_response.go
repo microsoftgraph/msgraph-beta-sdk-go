@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobilityManagementPolicyCollectionResponse 
 type MobilityManagementPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMobilityManagementPolicyCollectionResponse instantiates a new mobilityManagementPolicyCollectionResponse and sets the default values.
+// NewMobilityManagementPolicyCollectionResponse instantiates a new MobilityManagementPolicyCollectionResponse and sets the default values.
 func NewMobilityManagementPolicyCollectionResponse()(*MobilityManagementPolicyCollectionResponse) {
     m := &MobilityManagementPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewMobilityManagementPolicyCollectionResponse()(*MobilityManagementPolicyCo
     return m
 }
 // CreateMobilityManagementPolicyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobilityManagementPolicyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobilityManagementPolicyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobilityManagementPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *MobilityManagementPolicyCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []MobilityManagementPolicyable when successful
 func (m *MobilityManagementPolicyCollectionResponse) GetValue()([]MobilityManagementPolicyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *MobilityManagementPolicyCollectionResponse) SetValue(value []MobilityMa
         panic(err)
     }
 }
-// MobilityManagementPolicyCollectionResponseable 
 type MobilityManagementPolicyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

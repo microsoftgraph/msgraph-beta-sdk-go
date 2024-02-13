@@ -41,20 +41,21 @@ type LabelsDepartmentsDepartmentTemplateItemRequestBuilderPatchRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewLabelsDepartmentsDepartmentTemplateItemRequestBuilderInternal instantiates a new DepartmentTemplateItemRequestBuilder and sets the default values.
+// NewLabelsDepartmentsDepartmentTemplateItemRequestBuilderInternal instantiates a new LabelsDepartmentsDepartmentTemplateItemRequestBuilder and sets the default values.
 func NewLabelsDepartmentsDepartmentTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsDepartmentsDepartmentTemplateItemRequestBuilder) {
     m := &LabelsDepartmentsDepartmentTemplateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/departments/{departmentTemplate%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/departments/{departmentTemplate%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewLabelsDepartmentsDepartmentTemplateItemRequestBuilder instantiates a new DepartmentTemplateItemRequestBuilder and sets the default values.
+// NewLabelsDepartmentsDepartmentTemplateItemRequestBuilder instantiates a new LabelsDepartmentsDepartmentTemplateItemRequestBuilder and sets the default values.
 func NewLabelsDepartmentsDepartmentTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsDepartmentsDepartmentTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsDepartmentsDepartmentTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a departmentTemplate object.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-departments?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Delete(ctx conte
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,6 +74,8 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Delete(ctx conte
     return nil
 }
 // Get read the properties and relationships of a departmentTemplate object.
+// returns a DepartmentTemplateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-departmenttemplate-get?view=graph-rest-1.0
@@ -83,8 +85,7 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Get(ctx context.
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateDepartmentTemplateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -96,14 +97,15 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Get(ctx context.
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateable), nil
 }
 // Patch update the navigation property departments in security
+// returns a DepartmentTemplateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateable, requestConfiguration *LabelsDepartmentsDepartmentTemplateItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateDepartmentTemplateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -115,8 +117,9 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) Patch(ctx contex
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateable), nil
 }
 // ToDeleteRequestInformation delete a departmentTemplate object.
+// returns a *RequestInformation when successful
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsDepartmentsDepartmentTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/labels/departments/{departmentTemplate%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -125,6 +128,7 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToDeleteRequestI
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a departmentTemplate object.
+// returns a *RequestInformation when successful
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsDepartmentsDepartmentTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -138,8 +142,9 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property departments in security
+// returns a *RequestInformation when successful
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DepartmentTemplateable, requestConfiguration *LabelsDepartmentsDepartmentTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/labels/departments/{departmentTemplate%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -152,6 +157,7 @@ func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) ToPatchRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LabelsDepartmentsDepartmentTemplateItemRequestBuilder when successful
 func (m *LabelsDepartmentsDepartmentTemplateItemRequestBuilder) WithUrl(rawUrl string)(*LabelsDepartmentsDepartmentTemplateItemRequestBuilder) {
     return NewLabelsDepartmentsDepartmentTemplateItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

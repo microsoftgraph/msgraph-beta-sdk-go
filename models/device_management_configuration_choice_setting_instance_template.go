@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationChoiceSettingInstanceTemplate struct {
     DeviceManagementConfigurationSettingInstanceTemplate
 }
-// NewDeviceManagementConfigurationChoiceSettingInstanceTemplate instantiates a new deviceManagementConfigurationChoiceSettingInstanceTemplate and sets the default values.
+// NewDeviceManagementConfigurationChoiceSettingInstanceTemplate instantiates a new DeviceManagementConfigurationChoiceSettingInstanceTemplate and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingInstanceTemplate()(*DeviceManagementConfigurationChoiceSettingInstanceTemplate) {
     m := &DeviceManagementConfigurationChoiceSettingInstanceTemplate{
         DeviceManagementConfigurationSettingInstanceTemplate: *NewDeviceManagementConfigurationSettingInstanceTemplate(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationChoiceSettingInstanceTemplate()(*DeviceMana
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingInstanceTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationChoiceSettingInstanceTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationChoiceSettingInstanceTemplate(), nil
 }
 // GetChoiceSettingValueTemplate gets the choiceSettingValueTemplate property value. Choice Setting Value Template
+// returns a DeviceManagementConfigurationChoiceSettingValueTemplateable when successful
 func (m *DeviceManagementConfigurationChoiceSettingInstanceTemplate) GetChoiceSettingValueTemplate()(DeviceManagementConfigurationChoiceSettingValueTemplateable) {
     val, err := m.GetBackingStore().Get("choiceSettingValueTemplate")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceManagementConfigurationChoiceSettingInstanceTemplate) GetChoiceSe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationChoiceSettingInstanceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingInstanceTemplate.GetFieldDeserializers()
     res["choiceSettingValueTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *DeviceManagementConfigurationChoiceSettingInstanceTemplate) SetChoiceSe
         panic(err)
     }
 }
-// DeviceManagementConfigurationChoiceSettingInstanceTemplateable 
 type DeviceManagementConfigurationChoiceSettingInstanceTemplateable interface {
     DeviceManagementConfigurationSettingInstanceTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

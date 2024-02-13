@@ -42,23 +42,25 @@ type TeamsAppsTeamsAppItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AppDefinitions provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
+// returns a *TeamsAppsItemAppDefinitionsRequestBuilder when successful
 func (m *TeamsAppsTeamsAppItemRequestBuilder) AppDefinitions()(*TeamsAppsItemAppDefinitionsRequestBuilder) {
     return NewTeamsAppsItemAppDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewTeamsAppsTeamsAppItemRequestBuilderInternal instantiates a new TeamsAppItemRequestBuilder and sets the default values.
+// NewTeamsAppsTeamsAppItemRequestBuilderInternal instantiates a new TeamsAppsTeamsAppItemRequestBuilder and sets the default values.
 func NewTeamsAppsTeamsAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsTeamsAppItemRequestBuilder) {
     m := &TeamsAppsTeamsAppItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewTeamsAppsTeamsAppItemRequestBuilder instantiates a new TeamsAppItemRequestBuilder and sets the default values.
+// NewTeamsAppsTeamsAppItemRequestBuilder instantiates a new TeamsAppsTeamsAppItemRequestBuilder and sets the default values.
 func NewTeamsAppsTeamsAppItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsTeamsAppItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamsAppsTeamsAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete an app from an organization's app catalog (the tenant app catalog). To delete an app, the distributionMethod property for the app must be set to organization. You can also use this API to remove a submitted app from the review process.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamsapp-delete?view=graph-rest-1.0
@@ -68,8 +70,7 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) Delete(ctx context.Context, reques
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -78,14 +79,15 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) Delete(ctx context.Context, reques
     return nil
 }
 // Get get teamsApps from appCatalogs
+// returns a TeamsAppable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamsAppsTeamsAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsAppsTeamsAppItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTeamsAppFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +99,15 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) Get(ctx context.Context, requestCo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppable), nil
 }
 // Patch update the navigation property teamsApps in appCatalogs
+// returns a TeamsAppable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamsAppsTeamsAppItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppable, requestConfiguration *TeamsAppsTeamsAppItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTeamsAppFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,8 +119,9 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) Patch(ctx context.Context, body ie
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppable), nil
 }
 // ToDeleteRequestInformation delete an app from an organization's app catalog (the tenant app catalog). To delete an app, the distributionMethod property for the app must be set to organization. You can also use this API to remove a submitted app from the review process.
+// returns a *RequestInformation when successful
 func (m *TeamsAppsTeamsAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsTeamsAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -126,6 +130,7 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) ToDeleteRequestInformation(ctx con
     return requestInfo, nil
 }
 // ToGetRequestInformation get teamsApps from appCatalogs
+// returns a *RequestInformation when successful
 func (m *TeamsAppsTeamsAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsTeamsAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -139,8 +144,9 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property teamsApps in appCatalogs
+// returns a *RequestInformation when successful
 func (m *TeamsAppsTeamsAppItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppable, requestConfiguration *TeamsAppsTeamsAppItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -153,6 +159,7 @@ func (m *TeamsAppsTeamsAppItemRequestBuilder) ToPatchRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TeamsAppsTeamsAppItemRequestBuilder when successful
 func (m *TeamsAppsTeamsAppItemRequestBuilder) WithUrl(rawUrl string)(*TeamsAppsTeamsAppItemRequestBuilder) {
     return NewTeamsAppsTeamsAppItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -8,7 +8,7 @@ import (
 type BookingNamedEntity struct {
     Entity
 }
-// NewBookingNamedEntity instantiates a new bookingNamedEntity and sets the default values.
+// NewBookingNamedEntity instantiates a new BookingNamedEntity and sets the default values.
 func NewBookingNamedEntity()(*BookingNamedEntity) {
     m := &BookingNamedEntity{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewBookingNamedEntity()(*BookingNamedEntity) {
     return m
 }
 // CreateBookingNamedEntityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingNamedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -46,6 +47,7 @@ func CreateBookingNamedEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewBookingNamedEntity(), nil
 }
 // GetDisplayName gets the displayName property value. A name for the derived entity, which interfaces with customers.
+// returns a *string when successful
 func (m *BookingNamedEntity) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -57,6 +59,7 @@ func (m *BookingNamedEntity) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingNamedEntity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -92,7 +95,6 @@ func (m *BookingNamedEntity) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// BookingNamedEntityable 
 type BookingNamedEntityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

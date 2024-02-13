@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// IndustryDataConnector 
 type IndustryDataConnector struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewIndustryDataConnector instantiates a new industryDataConnector and sets the default values.
+// NewIndustryDataConnector instantiates a new IndustryDataConnector and sets the default values.
 func NewIndustryDataConnector()(*IndustryDataConnector) {
     m := &IndustryDataConnector{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,6 +16,7 @@ func NewIndustryDataConnector()(*IndustryDataConnector) {
     return m
 }
 // CreateIndustryDataConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIndustryDataConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateIndustryDataConnectorFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewIndustryDataConnector(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the data connector. Maximum supported length is 100 characters.
+// returns a *string when successful
 func (m *IndustryDataConnector) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -52,6 +53,7 @@ func (m *IndustryDataConnector) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IndustryDataConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +79,7 @@ func (m *IndustryDataConnector) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetSourceSystem gets the sourceSystem property value. The sourceSystem property
+// returns a SourceSystemDefinitionable when successful
 func (m *IndustryDataConnector) GetSourceSystem()(SourceSystemDefinitionable) {
     val, err := m.GetBackingStore().Get("sourceSystem")
     if err != nil {
@@ -121,7 +124,6 @@ func (m *IndustryDataConnector) SetSourceSystem(value SourceSystemDefinitionable
         panic(err)
     }
 }
-// IndustryDataConnectorable 
 type IndustryDataConnectorable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

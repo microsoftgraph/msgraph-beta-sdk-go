@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DlpPoliciesJobResult 
 type DlpPoliciesJobResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDlpPoliciesJobResult instantiates a new dlpPoliciesJobResult and sets the default values.
+// NewDlpPoliciesJobResult instantiates a new DlpPoliciesJobResult and sets the default values.
 func NewDlpPoliciesJobResult()(*DlpPoliciesJobResult) {
     m := &DlpPoliciesJobResult{
     }
@@ -20,10 +19,12 @@ func NewDlpPoliciesJobResult()(*DlpPoliciesJobResult) {
     return m
 }
 // CreateDlpPoliciesJobResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDlpPoliciesJobResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDlpPoliciesJobResult(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DlpPoliciesJobResult) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *DlpPoliciesJobResult) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAuditCorrelationId gets the auditCorrelationId property value. The auditCorrelationId property
+// returns a *string when successful
 func (m *DlpPoliciesJobResult) GetAuditCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("auditCorrelationId")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *DlpPoliciesJobResult) GetAuditCorrelationId()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DlpPoliciesJobResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEvaluationDateTime gets the evaluationDateTime property value. The evaluationDateTime property
+// returns a *Time when successful
 func (m *DlpPoliciesJobResult) GetEvaluationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("evaluationDateTime")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *DlpPoliciesJobResult) GetEvaluationDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DlpPoliciesJobResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["auditCorrelationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -113,6 +118,7 @@ func (m *DlpPoliciesJobResult) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetMatchingRules gets the matchingRules property value. The matchingRules property
+// returns a []MatchingDlpRuleable when successful
 func (m *DlpPoliciesJobResult) GetMatchingRules()([]MatchingDlpRuleable) {
     val, err := m.GetBackingStore().Get("matchingRules")
     if err != nil {
@@ -124,6 +130,7 @@ func (m *DlpPoliciesJobResult) GetMatchingRules()([]MatchingDlpRuleable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DlpPoliciesJobResult) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -213,7 +220,6 @@ func (m *DlpPoliciesJobResult) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// DlpPoliciesJobResultable 
 type DlpPoliciesJobResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

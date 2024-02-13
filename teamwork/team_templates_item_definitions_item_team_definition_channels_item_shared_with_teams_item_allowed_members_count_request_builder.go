@@ -26,28 +26,29 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsIt
     // Request query parameters
     QueryParameters *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderGetQueryParameters
 }
-// NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderInternal instantiates a new TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}/allowedMembers/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}/allowedMembers/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder instantiates a new TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTea
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTea
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder) WithUrl(rawUrl string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsItemAllowedMembersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

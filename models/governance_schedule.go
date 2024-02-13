@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// GovernanceSchedule 
 type GovernanceSchedule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewGovernanceSchedule instantiates a new governanceSchedule and sets the default values.
+// NewGovernanceSchedule instantiates a new GovernanceSchedule and sets the default values.
 func NewGovernanceSchedule()(*GovernanceSchedule) {
     m := &GovernanceSchedule{
     }
@@ -20,10 +19,12 @@ func NewGovernanceSchedule()(*GovernanceSchedule) {
     return m
 }
 // CreateGovernanceScheduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGovernanceScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceSchedule(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GovernanceSchedule) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *GovernanceSchedule) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *GovernanceSchedule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDuration gets the duration property value. The duration of a role assignment. It is in format of a TimeSpan.
+// returns a *ISODuration when successful
 func (m *GovernanceSchedule) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *GovernanceSchedule) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The end time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Note: if the value is null, it indicates a permanent assignment.
+// returns a *Time when successful
 func (m *GovernanceSchedule) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *GovernanceSchedule) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GovernanceSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["duration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +122,7 @@ func (m *GovernanceSchedule) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *GovernanceSchedule) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -128,6 +134,7 @@ func (m *GovernanceSchedule) GetOdataType()(*string) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The start time of the role assignment. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *GovernanceSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -139,6 +146,7 @@ func (m *GovernanceSchedule) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetTypeEscaped gets the type property value. The role assignment schedule type. Only Once is supported for now.
+// returns a *string when successful
 func (m *GovernanceSchedule) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *GovernanceSchedule) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// GovernanceScheduleable 
 type GovernanceScheduleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -32,29 +32,30 @@ type OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderGetReque
     // Request query parameters
     QueryParameters *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderGetQueryParameters
 }
-// NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderInternal instantiates a new RetrieveApprovableOperationsRequestBuilder and sets the default values.
+// NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderInternal instantiates a new OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder and sets the default values.
 func NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) {
     m := &OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies/retrieveApprovableOperations(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies/retrieveApprovableOperations(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder instantiates a new RetrieveApprovableOperationsRequestBuilder and sets the default values.
+// NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder instantiates a new OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder and sets the default values.
 func NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function retrieveApprovableOperations
-// Deprecated: This method is obsolete. Use GetAsRetrieveApprovableOperationsGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a OperationApprovalPoliciesRetrieveApprovableOperationsResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderGetRequestConfiguration)(OperationApprovalPoliciesRetrieveApprovableOperationsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateOperationApprovalPoliciesRetrieveApprovableOperationsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) Ge
     return res.(OperationApprovalPoliciesRetrieveApprovableOperationsResponseable), nil
 }
 // GetAsRetrieveApprovableOperationsGetResponse invoke function retrieveApprovableOperations
+// returns a OperationApprovalPoliciesRetrieveApprovableOperationsGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) GetAsRetrieveApprovableOperationsGetResponse(ctx context.Context, requestConfiguration *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderGetRequestConfiguration)(OperationApprovalPoliciesRetrieveApprovableOperationsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateOperationApprovalPoliciesRetrieveApprovableOperationsGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) Ge
     return res.(OperationApprovalPoliciesRetrieveApprovableOperationsGetResponseable), nil
 }
 // ToGetRequestInformation invoke function retrieveApprovableOperations
+// returns a *RequestInformation when successful
 func (m *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder when successful
 func (m *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) WithUrl(rawUrl string)(*OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) {
     return NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

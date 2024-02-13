@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OpenNetworkAzureSecurityGroupFinding 
 type OpenNetworkAzureSecurityGroupFinding struct {
     Finding
 }
-// NewOpenNetworkAzureSecurityGroupFinding instantiates a new openNetworkAzureSecurityGroupFinding and sets the default values.
+// NewOpenNetworkAzureSecurityGroupFinding instantiates a new OpenNetworkAzureSecurityGroupFinding and sets the default values.
 func NewOpenNetworkAzureSecurityGroupFinding()(*OpenNetworkAzureSecurityGroupFinding) {
     m := &OpenNetworkAzureSecurityGroupFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewOpenNetworkAzureSecurityGroupFinding()(*OpenNetworkAzureSecurityGroupFin
     return m
 }
 // CreateOpenNetworkAzureSecurityGroupFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOpenNetworkAzureSecurityGroupFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenNetworkAzureSecurityGroupFinding(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OpenNetworkAzureSecurityGroupFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["inboundPorts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -61,6 +62,7 @@ func (m *OpenNetworkAzureSecurityGroupFinding) GetFieldDeserializers()(map[strin
     return res
 }
 // GetInboundPorts gets the inboundPorts property value. The inboundPorts property
+// returns a InboundPortsable when successful
 func (m *OpenNetworkAzureSecurityGroupFinding) GetInboundPorts()(InboundPortsable) {
     val, err := m.GetBackingStore().Get("inboundPorts")
     if err != nil {
@@ -72,6 +74,7 @@ func (m *OpenNetworkAzureSecurityGroupFinding) GetInboundPorts()(InboundPortsabl
     return nil
 }
 // GetSecurityGroup gets the securityGroup property value. The securityGroup property
+// returns a AuthorizationSystemResourceable when successful
 func (m *OpenNetworkAzureSecurityGroupFinding) GetSecurityGroup()(AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("securityGroup")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *OpenNetworkAzureSecurityGroupFinding) GetSecurityGroup()(AuthorizationS
     return nil
 }
 // GetVirtualMachines gets the virtualMachines property value. Represents a virtual machine in an authorization system.
+// returns a []VirtualMachineDetailsable when successful
 func (m *OpenNetworkAzureSecurityGroupFinding) GetVirtualMachines()([]VirtualMachineDetailsable) {
     val, err := m.GetBackingStore().Get("virtualMachines")
     if err != nil {
@@ -146,7 +150,6 @@ func (m *OpenNetworkAzureSecurityGroupFinding) SetVirtualMachines(value []Virtua
         panic(err)
     }
 }
-// OpenNetworkAzureSecurityGroupFindingable 
 type OpenNetworkAzureSecurityGroupFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

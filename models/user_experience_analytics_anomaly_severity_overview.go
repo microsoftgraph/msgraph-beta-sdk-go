@@ -10,7 +10,7 @@ type UserExperienceAnalyticsAnomalySeverityOverview struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserExperienceAnalyticsAnomalySeverityOverview instantiates a new userExperienceAnalyticsAnomalySeverityOverview and sets the default values.
+// NewUserExperienceAnalyticsAnomalySeverityOverview instantiates a new UserExperienceAnalyticsAnomalySeverityOverview and sets the default values.
 func NewUserExperienceAnalyticsAnomalySeverityOverview()(*UserExperienceAnalyticsAnomalySeverityOverview) {
     m := &UserExperienceAnalyticsAnomalySeverityOverview{
     }
@@ -19,10 +19,12 @@ func NewUserExperienceAnalyticsAnomalySeverityOverview()(*UserExperienceAnalytic
     return m
 }
 // CreateUserExperienceAnalyticsAnomalySeverityOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsAnomalySeverityOverviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAnomalySeverityOverview(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetAdditionalData()(map
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["highSeverityAnomalyCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,6 +98,7 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetFieldDeserializers()
     return res
 }
 // GetHighSeverityAnomalyCount gets the highSeverityAnomalyCount property value. Indicates count of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetHighSeverityAnomalyCount()(*int32) {
     val, err := m.GetBackingStore().Get("highSeverityAnomalyCount")
     if err != nil {
@@ -105,6 +110,7 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetHighSeverityAnomalyC
     return nil
 }
 // GetInformationalSeverityAnomalyCount gets the informationalSeverityAnomalyCount property value. Indicates count of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetInformationalSeverityAnomalyCount()(*int32) {
     val, err := m.GetBackingStore().Get("informationalSeverityAnomalyCount")
     if err != nil {
@@ -116,6 +122,7 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetInformationalSeverit
     return nil
 }
 // GetLowSeverityAnomalyCount gets the lowSeverityAnomalyCount property value. Indicates count of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetLowSeverityAnomalyCount()(*int32) {
     val, err := m.GetBackingStore().Get("lowSeverityAnomalyCount")
     if err != nil {
@@ -127,6 +134,7 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetLowSeverityAnomalyCo
     return nil
 }
 // GetMediumSeverityAnomalyCount gets the mediumSeverityAnomalyCount property value. Indicates count of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetMediumSeverityAnomalyCount()(*int32) {
     val, err := m.GetBackingStore().Get("mediumSeverityAnomalyCount")
     if err != nil {
@@ -138,6 +146,7 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetMediumSeverityAnomal
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAnomalySeverityOverview) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -234,7 +243,6 @@ func (m *UserExperienceAnalyticsAnomalySeverityOverview) SetOdataType(value *str
         panic(err)
     }
 }
-// UserExperienceAnalyticsAnomalySeverityOverviewable 
 type UserExperienceAnalyticsAnomalySeverityOverviewable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

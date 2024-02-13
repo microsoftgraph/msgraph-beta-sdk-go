@@ -8,7 +8,7 @@ import (
 type MicrosoftStoreForBusinessApp struct {
     MobileApp
 }
-// NewMicrosoftStoreForBusinessApp instantiates a new microsoftStoreForBusinessApp and sets the default values.
+// NewMicrosoftStoreForBusinessApp instantiates a new MicrosoftStoreForBusinessApp and sets the default values.
 func NewMicrosoftStoreForBusinessApp()(*MicrosoftStoreForBusinessApp) {
     m := &MicrosoftStoreForBusinessApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewMicrosoftStoreForBusinessApp()(*MicrosoftStoreForBusinessApp) {
     return m
 }
 // CreateMicrosoftStoreForBusinessAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftStoreForBusinessAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftStoreForBusinessApp(), nil
 }
 // GetContainedApps gets the containedApps property value. The collection of contained apps in a mobileApp acting as a package.
+// returns a []MobileContainedAppable when successful
 func (m *MicrosoftStoreForBusinessApp) GetContainedApps()([]MobileContainedAppable) {
     val, err := m.GetBackingStore().Get("containedApps")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MicrosoftStoreForBusinessApp) GetContainedApps()([]MobileContainedAppab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftStoreForBusinessApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["containedApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -114,6 +117,7 @@ func (m *MicrosoftStoreForBusinessApp) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetLicenseType gets the licenseType property value. The licenseType property
+// returns a *MicrosoftStoreForBusinessLicenseType when successful
 func (m *MicrosoftStoreForBusinessApp) GetLicenseType()(*MicrosoftStoreForBusinessLicenseType) {
     val, err := m.GetBackingStore().Get("licenseType")
     if err != nil {
@@ -125,6 +129,7 @@ func (m *MicrosoftStoreForBusinessApp) GetLicenseType()(*MicrosoftStoreForBusine
     return nil
 }
 // GetLicensingType gets the licensingType property value. The supported License Type.
+// returns a VppLicensingTypeable when successful
 func (m *MicrosoftStoreForBusinessApp) GetLicensingType()(VppLicensingTypeable) {
     val, err := m.GetBackingStore().Get("licensingType")
     if err != nil {
@@ -136,6 +141,7 @@ func (m *MicrosoftStoreForBusinessApp) GetLicensingType()(VppLicensingTypeable) 
     return nil
 }
 // GetPackageIdentityName gets the packageIdentityName property value. The app package identifier
+// returns a *string when successful
 func (m *MicrosoftStoreForBusinessApp) GetPackageIdentityName()(*string) {
     val, err := m.GetBackingStore().Get("packageIdentityName")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *MicrosoftStoreForBusinessApp) GetPackageIdentityName()(*string) {
     return nil
 }
 // GetProductKey gets the productKey property value. The app product key
+// returns a *string when successful
 func (m *MicrosoftStoreForBusinessApp) GetProductKey()(*string) {
     val, err := m.GetBackingStore().Get("productKey")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *MicrosoftStoreForBusinessApp) GetProductKey()(*string) {
     return nil
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The total number of Microsoft Store for Business licenses.
+// returns a *int32 when successful
 func (m *MicrosoftStoreForBusinessApp) GetTotalLicenseCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalLicenseCount")
     if err != nil {
@@ -169,6 +177,7 @@ func (m *MicrosoftStoreForBusinessApp) GetTotalLicenseCount()(*int32) {
     return nil
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of Microsoft Store for Business licenses in use.
+// returns a *int32 when successful
 func (m *MicrosoftStoreForBusinessApp) GetUsedLicenseCount()(*int32) {
     val, err := m.GetBackingStore().Get("usedLicenseCount")
     if err != nil {
@@ -285,7 +294,6 @@ func (m *MicrosoftStoreForBusinessApp) SetUsedLicenseCount(value *int32)() {
         panic(err)
     }
 }
-// MicrosoftStoreForBusinessAppable 
 type MicrosoftStoreForBusinessAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

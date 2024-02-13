@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Connector 
 type Connector struct {
     Entity
 }
-// NewConnector instantiates a new connector and sets the default values.
+// NewConnector instantiates a new Connector and sets the default values.
 func NewConnector()(*Connector) {
     m := &Connector{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewConnector()(*Connector) {
     return m
 }
 // CreateConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnector(), nil
 }
 // GetExternalIp gets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
+// returns a *string when successful
 func (m *Connector) GetExternalIp()(*string) {
     val, err := m.GetBackingStore().Get("externalIp")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Connector) GetExternalIp()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Connector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["externalIp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -92,6 +94,7 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetMachineName gets the machineName property value. The machine name the connector is installed and running on.
+// returns a *string when successful
 func (m *Connector) GetMachineName()(*string) {
     val, err := m.GetBackingStore().Get("machineName")
     if err != nil {
@@ -103,6 +106,7 @@ func (m *Connector) GetMachineName()(*string) {
     return nil
 }
 // GetMemberOf gets the memberOf property value. The connectorGroup that the connector is a member of. Read-only.
+// returns a []ConnectorGroupable when successful
 func (m *Connector) GetMemberOf()([]ConnectorGroupable) {
     val, err := m.GetBackingStore().Get("memberOf")
     if err != nil {
@@ -114,6 +118,7 @@ func (m *Connector) GetMemberOf()([]ConnectorGroupable) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *ConnectorStatus when successful
 func (m *Connector) GetStatus()(*ConnectorStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -125,6 +130,7 @@ func (m *Connector) GetStatus()(*ConnectorStatus) {
     return nil
 }
 // GetVersion gets the version property value. The version property
+// returns a *string when successful
 func (m *Connector) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -215,7 +221,6 @@ func (m *Connector) SetVersion(value *string)() {
         panic(err)
     }
 }
-// Connectorable 
 type Connectorable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

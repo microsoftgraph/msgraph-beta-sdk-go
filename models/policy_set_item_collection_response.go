@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PolicySetItemCollectionResponse 
 type PolicySetItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPolicySetItemCollectionResponse instantiates a new policySetItemCollectionResponse and sets the default values.
+// NewPolicySetItemCollectionResponse instantiates a new PolicySetItemCollectionResponse and sets the default values.
 func NewPolicySetItemCollectionResponse()(*PolicySetItemCollectionResponse) {
     m := &PolicySetItemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewPolicySetItemCollectionResponse()(*PolicySetItemCollectionResponse) {
     return m
 }
 // CreatePolicySetItemCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePolicySetItemCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPolicySetItemCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PolicySetItemCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *PolicySetItemCollectionResponse) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []PolicySetItemable when successful
 func (m *PolicySetItemCollectionResponse) GetValue()([]PolicySetItemable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *PolicySetItemCollectionResponse) SetValue(value []PolicySetItemable)() 
         panic(err)
     }
 }
-// PolicySetItemCollectionResponseable 
 type PolicySetItemCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

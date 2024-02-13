@@ -41,28 +41,28 @@ type ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderInternal instantiates a new FormatRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderInternal instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/axes/valueAxis/format{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/axes/valueAxis/format{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder instantiates a new FormatRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder instantiates a new ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property format for drives
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,18 +71,20 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequest
     return nil
 }
 // Font provides operations to manage the font property of the microsoft.graph.workbookChartAxisFormat entity.
+// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatFontRequestBuilder when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) Font()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatFontRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatFontRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents the formatting of a chart object, which includes line and font formatting. Read-only.
+// returns a WorkbookChartAxisFormatable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartAxisFormatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookChartAxisFormatFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,18 +96,20 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequest
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartAxisFormatable), nil
 }
 // Line provides operations to manage the line property of the microsoft.graph.workbookChartAxisFormat entity.
+// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilder when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) Line()(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatLineRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property format in drives
+// returns a WorkbookChartAxisFormatable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartAxisFormatable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartAxisFormatable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookChartAxisFormatFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -117,8 +121,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequest
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartAxisFormatable), nil
 }
 // ToDeleteRequestInformation delete navigation property format for drives
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/axes/valueAxis/format", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -127,6 +132,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequest
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the formatting of a chart object, which includes line and font formatting. Read-only.
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,8 +146,9 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequest
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property format in drives
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookChartAxisFormatable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/axes/valueAxis/format", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -154,6 +161,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemChartsItemAxesValueAxisFormatRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

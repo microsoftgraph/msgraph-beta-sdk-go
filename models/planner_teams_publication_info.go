@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerTeamsPublicationInfo 
 type PlannerTeamsPublicationInfo struct {
     PlannerTaskCreation
 }
-// NewPlannerTeamsPublicationInfo instantiates a new plannerTeamsPublicationInfo and sets the default values.
+// NewPlannerTeamsPublicationInfo instantiates a new PlannerTeamsPublicationInfo and sets the default values.
 func NewPlannerTeamsPublicationInfo()(*PlannerTeamsPublicationInfo) {
     m := &PlannerTeamsPublicationInfo{
         PlannerTaskCreation: *NewPlannerTaskCreation(),
@@ -19,10 +18,12 @@ func NewPlannerTeamsPublicationInfo()(*PlannerTeamsPublicationInfo) {
     return m
 }
 // CreatePlannerTeamsPublicationInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerTeamsPublicationInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTeamsPublicationInfo(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerTeamsPublicationInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerTaskCreation.GetFieldDeserializers()
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,6 +89,7 @@ func (m *PlannerTeamsPublicationInfo) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when this task was last modified by the publication process. Read-only.
+// returns a *Time when successful
 func (m *PlannerTeamsPublicationInfo) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -99,6 +101,7 @@ func (m *PlannerTeamsPublicationInfo) GetLastModifiedDateTime()(*i336074805fc853
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PlannerTeamsPublicationInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -110,6 +113,7 @@ func (m *PlannerTeamsPublicationInfo) GetOdataType()(*string) {
     return nil
 }
 // GetPublicationId gets the publicationId property value. The identifier of the publication. Read-only.
+// returns a *string when successful
 func (m *PlannerTeamsPublicationInfo) GetPublicationId()(*string) {
     val, err := m.GetBackingStore().Get("publicationId")
     if err != nil {
@@ -121,6 +125,7 @@ func (m *PlannerTeamsPublicationInfo) GetPublicationId()(*string) {
     return nil
 }
 // GetPublishedToPlanId gets the publishedToPlanId property value. The identifier of the plannerPlan this task was originally placed in. Read-only.
+// returns a *string when successful
 func (m *PlannerTeamsPublicationInfo) GetPublishedToPlanId()(*string) {
     val, err := m.GetBackingStore().Get("publishedToPlanId")
     if err != nil {
@@ -132,6 +137,7 @@ func (m *PlannerTeamsPublicationInfo) GetPublishedToPlanId()(*string) {
     return nil
 }
 // GetPublishingTeamId gets the publishingTeamId property value. The identifier of the team that initiated the publication process. Read-only.
+// returns a *string when successful
 func (m *PlannerTeamsPublicationInfo) GetPublishingTeamId()(*string) {
     val, err := m.GetBackingStore().Get("publishingTeamId")
     if err != nil {
@@ -143,6 +149,7 @@ func (m *PlannerTeamsPublicationInfo) GetPublishingTeamId()(*string) {
     return nil
 }
 // GetPublishingTeamName gets the publishingTeamName property value. The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.
+// returns a *string when successful
 func (m *PlannerTeamsPublicationInfo) GetPublishingTeamName()(*string) {
     val, err := m.GetBackingStore().Get("publishingTeamName")
     if err != nil {
@@ -239,7 +246,6 @@ func (m *PlannerTeamsPublicationInfo) SetPublishingTeamName(value *string)() {
         panic(err)
     }
 }
-// PlannerTeamsPublicationInfoable 
 type PlannerTeamsPublicationInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerTaskCreationable

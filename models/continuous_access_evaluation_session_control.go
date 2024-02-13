@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ContinuousAccessEvaluationSessionControl 
 type ContinuousAccessEvaluationSessionControl struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewContinuousAccessEvaluationSessionControl instantiates a new continuousAccessEvaluationSessionControl and sets the default values.
+// NewContinuousAccessEvaluationSessionControl instantiates a new ContinuousAccessEvaluationSessionControl and sets the default values.
 func NewContinuousAccessEvaluationSessionControl()(*ContinuousAccessEvaluationSessionControl) {
     m := &ContinuousAccessEvaluationSessionControl{
     }
@@ -19,10 +18,12 @@ func NewContinuousAccessEvaluationSessionControl()(*ContinuousAccessEvaluationSe
     return m
 }
 // CreateContinuousAccessEvaluationSessionControlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContinuousAccessEvaluationSessionControlFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContinuousAccessEvaluationSessionControl(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ContinuousAccessEvaluationSessionControl) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ContinuousAccessEvaluationSessionControl) GetAdditionalData()(map[strin
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ContinuousAccessEvaluationSessionControl) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContinuousAccessEvaluationSessionControl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["mode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +67,7 @@ func (m *ContinuousAccessEvaluationSessionControl) GetFieldDeserializers()(map[s
     return res
 }
 // GetMode gets the mode property value. Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue, strictLocation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: strictLocation.
+// returns a *ContinuousAccessEvaluationMode when successful
 func (m *ContinuousAccessEvaluationSessionControl) GetMode()(*ContinuousAccessEvaluationMode) {
     val, err := m.GetBackingStore().Get("mode")
     if err != nil {
@@ -75,6 +79,7 @@ func (m *ContinuousAccessEvaluationSessionControl) GetMode()(*ContinuousAccessEv
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ContinuousAccessEvaluationSessionControl) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -133,7 +138,6 @@ func (m *ContinuousAccessEvaluationSessionControl) SetOdataType(value *string)()
         panic(err)
     }
 }
-// ContinuousAccessEvaluationSessionControlable 
 type ContinuousAccessEvaluationSessionControlable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

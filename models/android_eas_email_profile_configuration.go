@@ -8,7 +8,7 @@ import (
 type AndroidEasEmailProfileConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidEasEmailProfileConfiguration instantiates a new androidEasEmailProfileConfiguration and sets the default values.
+// NewAndroidEasEmailProfileConfiguration instantiates a new AndroidEasEmailProfileConfiguration and sets the default values.
 func NewAndroidEasEmailProfileConfiguration()(*AndroidEasEmailProfileConfiguration) {
     m := &AndroidEasEmailProfileConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidEasEmailProfileConfiguration()(*AndroidEasEmailProfileConfigurati
     return m
 }
 // CreateAndroidEasEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidEasEmailProfileConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidEasEmailProfileConfiguration(), nil
 }
 // GetAccountName gets the accountName property value. Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.
+// returns a *string when successful
 func (m *AndroidEasEmailProfileConfiguration) GetAccountName()(*string) {
     val, err := m.GetBackingStore().Get("accountName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetAccountName()(*string) {
     return nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Exchange Active Sync authentication method.
+// returns a *EasAuthenticationMethod when successful
 func (m *AndroidEasEmailProfileConfiguration) GetAuthenticationMethod()(*EasAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetAuthenticationMethod()(*EasAuth
     return nil
 }
 // GetCustomDomainName gets the customDomainName property value. Custom domain name value used while generating an email profile before installing on the device.
+// returns a *string when successful
 func (m *AndroidEasEmailProfileConfiguration) GetCustomDomainName()(*string) {
     val, err := m.GetBackingStore().Get("customDomainName")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetCustomDomainName()(*string) {
     return nil
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
+// returns a *EmailSyncDuration when successful
 func (m *AndroidEasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncDuration) {
     val, err := m.GetBackingStore().Get("durationOfEmailToSync")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailS
     return nil
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
+// returns a *UserEmailSource when successful
 func (m *AndroidEasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
     val, err := m.GetBackingStore().Get("emailAddressSource")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmail
     return nil
 }
 // GetEmailSyncSchedule gets the emailSyncSchedule property value. Possible values for email sync schedule.
+// returns a *EmailSyncSchedule when successful
 func (m *AndroidEasEmailProfileConfiguration) GetEmailSyncSchedule()(*EmailSyncSchedule) {
     val, err := m.GetBackingStore().Get("emailSyncSchedule")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetEmailSyncSchedule()(*EmailSyncS
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidEasEmailProfileConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["accountName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -263,6 +271,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetFieldDeserializers()(map[string
     return res
 }
 // GetHostName gets the hostName property value. Exchange location (URL) that the native mail app connects to.
+// returns a *string when successful
 func (m *AndroidEasEmailProfileConfiguration) GetHostName()(*string) {
     val, err := m.GetBackingStore().Get("hostName")
     if err != nil {
@@ -274,6 +283,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetHostName()(*string) {
     return nil
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate.
+// returns a AndroidCertificateProfileBaseable when successful
 func (m *AndroidEasEmailProfileConfiguration) GetIdentityCertificate()(AndroidCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificate")
     if err != nil {
@@ -285,6 +295,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetIdentityCertificate()(AndroidCe
     return nil
 }
 // GetRequireSmime gets the requireSmime property value. Indicates whether or not to use S/MIME certificate.
+// returns a *bool when successful
 func (m *AndroidEasEmailProfileConfiguration) GetRequireSmime()(*bool) {
     val, err := m.GetBackingStore().Get("requireSmime")
     if err != nil {
@@ -296,6 +307,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetRequireSmime()(*bool) {
     return nil
 }
 // GetRequireSsl gets the requireSsl property value. Indicates whether or not to use SSL.
+// returns a *bool when successful
 func (m *AndroidEasEmailProfileConfiguration) GetRequireSsl()(*bool) {
     val, err := m.GetBackingStore().Get("requireSsl")
     if err != nil {
@@ -307,6 +319,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetRequireSsl()(*bool) {
     return nil
 }
 // GetSmimeSigningCertificate gets the smimeSigningCertificate property value. S/MIME signing certificate.
+// returns a AndroidCertificateProfileBaseable when successful
 func (m *AndroidEasEmailProfileConfiguration) GetSmimeSigningCertificate()(AndroidCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("smimeSigningCertificate")
     if err != nil {
@@ -318,6 +331,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetSmimeSigningCertificate()(Andro
     return nil
 }
 // GetSyncCalendar gets the syncCalendar property value. Toggles syncing the calendar. If set to false calendar is turned off on the device.
+// returns a *bool when successful
 func (m *AndroidEasEmailProfileConfiguration) GetSyncCalendar()(*bool) {
     val, err := m.GetBackingStore().Get("syncCalendar")
     if err != nil {
@@ -329,6 +343,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetSyncCalendar()(*bool) {
     return nil
 }
 // GetSyncContacts gets the syncContacts property value. Toggles syncing contacts. If set to false contacts are turned off on the device.
+// returns a *bool when successful
 func (m *AndroidEasEmailProfileConfiguration) GetSyncContacts()(*bool) {
     val, err := m.GetBackingStore().Get("syncContacts")
     if err != nil {
@@ -340,6 +355,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetSyncContacts()(*bool) {
     return nil
 }
 // GetSyncNotes gets the syncNotes property value. Toggles syncing notes. If set to false notes are turned off on the device.
+// returns a *bool when successful
 func (m *AndroidEasEmailProfileConfiguration) GetSyncNotes()(*bool) {
     val, err := m.GetBackingStore().Get("syncNotes")
     if err != nil {
@@ -351,6 +367,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetSyncNotes()(*bool) {
     return nil
 }
 // GetSyncTasks gets the syncTasks property value. Toggles syncing tasks. If set to false tasks are turned off on the device.
+// returns a *bool when successful
 func (m *AndroidEasEmailProfileConfiguration) GetSyncTasks()(*bool) {
     val, err := m.GetBackingStore().Get("syncTasks")
     if err != nil {
@@ -362,6 +379,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetSyncTasks()(*bool) {
     return nil
 }
 // GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
+// returns a *DomainNameSource when successful
 func (m *AndroidEasEmailProfileConfiguration) GetUserDomainNameSource()(*DomainNameSource) {
     val, err := m.GetBackingStore().Get("userDomainNameSource")
     if err != nil {
@@ -373,6 +391,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetUserDomainNameSource()(*DomainN
     return nil
 }
 // GetUsernameSource gets the usernameSource property value. Android username source.
+// returns a *AndroidUsernameSource when successful
 func (m *AndroidEasEmailProfileConfiguration) GetUsernameSource()(*AndroidUsernameSource) {
     val, err := m.GetBackingStore().Get("usernameSource")
     if err != nil {
@@ -618,7 +637,6 @@ func (m *AndroidEasEmailProfileConfiguration) SetUsernameSource(value *AndroidUs
         panic(err)
     }
 }
-// AndroidEasEmailProfileConfigurationable 
 type AndroidEasEmailProfileConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

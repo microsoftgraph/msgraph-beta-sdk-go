@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HostSecurityProfile 
 type HostSecurityProfile struct {
     Entity
 }
-// NewHostSecurityProfile instantiates a new hostSecurityProfile and sets the default values.
+// NewHostSecurityProfile instantiates a new HostSecurityProfile and sets the default values.
 func NewHostSecurityProfile()(*HostSecurityProfile) {
     m := &HostSecurityProfile{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewHostSecurityProfile()(*HostSecurityProfile) {
     return m
 }
 // CreateHostSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHostSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHostSecurityProfile(), nil
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
+// returns a *string when successful
 func (m *HostSecurityProfile) GetAzureSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("azureSubscriptionId")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *HostSecurityProfile) GetAzureSubscriptionId()(*string) {
     return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
+// returns a *string when successful
 func (m *HostSecurityProfile) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *HostSecurityProfile) GetAzureTenantId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["azureSubscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -252,6 +255,7 @@ func (m *HostSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
+// returns a *Time when successful
 func (m *HostSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -263,6 +267,7 @@ func (m *HostSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetFqdn gets the fqdn property value. The fqdn property
+// returns a *string when successful
 func (m *HostSecurityProfile) GetFqdn()(*string) {
     val, err := m.GetBackingStore().Get("fqdn")
     if err != nil {
@@ -274,6 +279,7 @@ func (m *HostSecurityProfile) GetFqdn()(*string) {
     return nil
 }
 // GetIsAzureAdJoined gets the isAzureAdJoined property value. The isAzureAdJoined property
+// returns a *bool when successful
 func (m *HostSecurityProfile) GetIsAzureAdJoined()(*bool) {
     val, err := m.GetBackingStore().Get("isAzureAdJoined")
     if err != nil {
@@ -285,6 +291,7 @@ func (m *HostSecurityProfile) GetIsAzureAdJoined()(*bool) {
     return nil
 }
 // GetIsAzureAdRegistered gets the isAzureAdRegistered property value. The isAzureAdRegistered property
+// returns a *bool when successful
 func (m *HostSecurityProfile) GetIsAzureAdRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("isAzureAdRegistered")
     if err != nil {
@@ -296,6 +303,7 @@ func (m *HostSecurityProfile) GetIsAzureAdRegistered()(*bool) {
     return nil
 }
 // GetIsHybridAzureDomainJoined gets the isHybridAzureDomainJoined property value. The isHybridAzureDomainJoined property
+// returns a *bool when successful
 func (m *HostSecurityProfile) GetIsHybridAzureDomainJoined()(*bool) {
     val, err := m.GetBackingStore().Get("isHybridAzureDomainJoined")
     if err != nil {
@@ -307,6 +315,7 @@ func (m *HostSecurityProfile) GetIsHybridAzureDomainJoined()(*bool) {
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
+// returns a *Time when successful
 func (m *HostSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -318,6 +327,7 @@ func (m *HostSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetLogonUsers gets the logonUsers property value. The logonUsers property
+// returns a []LogonUserable when successful
 func (m *HostSecurityProfile) GetLogonUsers()([]LogonUserable) {
     val, err := m.GetBackingStore().Get("logonUsers")
     if err != nil {
@@ -329,6 +339,7 @@ func (m *HostSecurityProfile) GetLogonUsers()([]LogonUserable) {
     return nil
 }
 // GetNetBiosName gets the netBiosName property value. The netBiosName property
+// returns a *string when successful
 func (m *HostSecurityProfile) GetNetBiosName()(*string) {
     val, err := m.GetBackingStore().Get("netBiosName")
     if err != nil {
@@ -340,6 +351,7 @@ func (m *HostSecurityProfile) GetNetBiosName()(*string) {
     return nil
 }
 // GetNetworkInterfaces gets the networkInterfaces property value. The networkInterfaces property
+// returns a []NetworkInterfaceable when successful
 func (m *HostSecurityProfile) GetNetworkInterfaces()([]NetworkInterfaceable) {
     val, err := m.GetBackingStore().Get("networkInterfaces")
     if err != nil {
@@ -351,6 +363,7 @@ func (m *HostSecurityProfile) GetNetworkInterfaces()([]NetworkInterfaceable) {
     return nil
 }
 // GetOs gets the os property value. The os property
+// returns a *string when successful
 func (m *HostSecurityProfile) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -362,6 +375,7 @@ func (m *HostSecurityProfile) GetOs()(*string) {
     return nil
 }
 // GetOsVersion gets the osVersion property value. The osVersion property
+// returns a *string when successful
 func (m *HostSecurityProfile) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -373,6 +387,7 @@ func (m *HostSecurityProfile) GetOsVersion()(*string) {
     return nil
 }
 // GetParentHost gets the parentHost property value. The parentHost property
+// returns a *string when successful
 func (m *HostSecurityProfile) GetParentHost()(*string) {
     val, err := m.GetBackingStore().Get("parentHost")
     if err != nil {
@@ -384,6 +399,7 @@ func (m *HostSecurityProfile) GetParentHost()(*string) {
     return nil
 }
 // GetRelatedHostIds gets the relatedHostIds property value. The relatedHostIds property
+// returns a []string when successful
 func (m *HostSecurityProfile) GetRelatedHostIds()([]string) {
     val, err := m.GetBackingStore().Get("relatedHostIds")
     if err != nil {
@@ -395,6 +411,7 @@ func (m *HostSecurityProfile) GetRelatedHostIds()([]string) {
     return nil
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
+// returns a *string when successful
 func (m *HostSecurityProfile) GetRiskScore()(*string) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
@@ -406,6 +423,7 @@ func (m *HostSecurityProfile) GetRiskScore()(*string) {
     return nil
 }
 // GetTags gets the tags property value. The tags property
+// returns a []string when successful
 func (m *HostSecurityProfile) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -417,6 +435,7 @@ func (m *HostSecurityProfile) GetTags()([]string) {
     return nil
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
+// returns a SecurityVendorInformationable when successful
 func (m *HostSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
     val, err := m.GetBackingStore().Get("vendorInformation")
     if err != nil {
@@ -681,7 +700,6 @@ func (m *HostSecurityProfile) SetVendorInformation(value SecurityVendorInformati
         panic(err)
     }
 }
-// HostSecurityProfileable 
 type HostSecurityProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

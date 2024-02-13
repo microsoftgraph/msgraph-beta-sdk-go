@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Deployment 
 type Deployment struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewDeployment instantiates a new deployment and sets the default values.
+// NewDeployment instantiates a new Deployment and sets the default values.
 func NewDeployment()(*Deployment) {
     m := &Deployment{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewDeployment()(*Deployment) {
     return m
 }
 // CreateDeploymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeploymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeployment(), nil
 }
 // GetAudience gets the audience property value. Specifies the audience to which content is deployed.
+// returns a DeploymentAudienceable when successful
 func (m *Deployment) GetAudience()(DeploymentAudienceable) {
     val, err := m.GetBackingStore().Get("audience")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Deployment) GetAudience()(DeploymentAudienceable) {
     return nil
 }
 // GetContent gets the content property value. Specifies what content to deploy. Cannot be changed. Returned by default.
+// returns a DeployableContentable when successful
 func (m *Deployment) GetContent()(DeployableContentable) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Deployment) GetContent()(DeployableContentable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the deployment was created. Returned by default. Read-only.
+// returns a *Time when successful
 func (m *Deployment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Deployment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Deployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["audience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -120,6 +124,7 @@ func (m *Deployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the deployment was last modified. Returned by default. Read-only.
+// returns a *Time when successful
 func (m *Deployment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *Deployment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetSettings gets the settings property value. Settings specified on the specific deployment governing how to deploy content. Returned by default.
+// returns a DeploymentSettingsable when successful
 func (m *Deployment) GetSettings()(DeploymentSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *Deployment) GetSettings()(DeploymentSettingsable) {
     return nil
 }
 // GetState gets the state property value. Execution status of the deployment. Returned by default.
+// returns a DeploymentStateable when successful
 func (m *Deployment) GetState()(DeploymentStateable) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *Deployment) SetState(value DeploymentStateable)() {
         panic(err)
     }
 }
-// Deploymentable 
 type Deploymentable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

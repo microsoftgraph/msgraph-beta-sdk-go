@@ -17,20 +17,21 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilderPo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilderInternal instantiates a new ShareRequestBuilder and sets the default values.
+// NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilderInternal instantiates a new TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/share", pathParameters),
     }
     return m
 }
-// NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder instantiates a new ShareRequestBuilder and sets the default values.
+// NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder instantiates a new TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post share a schedule time range with schedule members. This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers. Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable only by managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The notifyTeam parameter further specifies which employees can view the item.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuild
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuild
     return nil
 }
 // ToPostRequestInformation share a schedule time range with schedule members. This action makes the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers. Each shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable only by managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The notifyTeam parameter further specifies which employees can view the item.
+// returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder) ToPostRequestInformation(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSharePostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder) WithUrl(rawUrl string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

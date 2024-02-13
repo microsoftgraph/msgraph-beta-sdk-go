@@ -47,6 +47,7 @@ type SignInsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySignInId provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
+// returns a *SignInsSignInItemRequestBuilder when successful
 func (m *SignInsRequestBuilder) BySignInId(signInId string)(*SignInsSignInItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -58,17 +59,19 @@ func (m *SignInsRequestBuilder) BySignInId(signInId string)(*SignInsSignInItemRe
     return NewSignInsSignInItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConfirmCompromised provides operations to call the confirmCompromised method.
+// returns a *SignInsConfirmCompromisedRequestBuilder when successful
 func (m *SignInsRequestBuilder) ConfirmCompromised()(*SignInsConfirmCompromisedRequestBuilder) {
     return NewSignInsConfirmCompromisedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConfirmSafe provides operations to call the confirmSafe method.
+// returns a *SignInsConfirmSafeRequestBuilder when successful
 func (m *SignInsRequestBuilder) ConfirmSafe()(*SignInsConfirmSafeRequestBuilder) {
     return NewSignInsConfirmSafeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSignInsRequestBuilderInternal instantiates a new SignInsRequestBuilder and sets the default values.
 func NewSignInsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SignInsRequestBuilder) {
     m := &SignInsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/auditLogs/signIns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/auditLogs/signIns{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -79,10 +82,13 @@ func NewSignInsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewSignInsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *SignInsCountRequestBuilder when successful
 func (m *SignInsRequestBuilder) Count()(*SignInsCountRequestBuilder) {
     return NewSignInsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of signIn objects. The list contains the user sign-ins for your Microsoft Entra tenant. Sign-ins where a username and password are passed as part of authorization token, and successful federated sign-ins are currently included in the sign-in logs. The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Microsoft Entra ID default retention period are available.
+// returns a SignInCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/signin-list?view=graph-rest-1.0
@@ -92,8 +98,7 @@ func (m *SignInsRequestBuilder) Get(ctx context.Context, requestConfiguration *S
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSignInCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -105,14 +110,15 @@ func (m *SignInsRequestBuilder) Get(ctx context.Context, requestConfiguration *S
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInCollectionResponseable), nil
 }
 // Post create new navigation property to signIns for auditLogs
+// returns a SignInable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SignInsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInable, requestConfiguration *SignInsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSignInFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -124,6 +130,7 @@ func (m *SignInsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInable), nil
 }
 // ToGetRequestInformation get a list of signIn objects. The list contains the user sign-ins for your Microsoft Entra tenant. Sign-ins where a username and password are passed as part of authorization token, and successful federated sign-ins are currently included in the sign-in logs. The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Microsoft Entra ID default retention period are available.
+// returns a *RequestInformation when successful
 func (m *SignInsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SignInsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +144,9 @@ func (m *SignInsRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to signIns for auditLogs
+// returns a *RequestInformation when successful
 func (m *SignInsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInable, requestConfiguration *SignInsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/auditLogs/signIns", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -151,6 +159,7 @@ func (m *SignInsRequestBuilder) ToPostRequestInformation(ctx context.Context, bo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SignInsRequestBuilder when successful
 func (m *SignInsRequestBuilder) WithUrl(rawUrl string)(*SignInsRequestBuilder) {
     return NewSignInsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

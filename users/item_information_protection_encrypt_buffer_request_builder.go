@@ -18,14 +18,14 @@ type ItemInformationProtectionEncryptBufferRequestBuilderPostRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemInformationProtectionEncryptBufferRequestBuilderInternal instantiates a new EncryptBufferRequestBuilder and sets the default values.
+// NewItemInformationProtectionEncryptBufferRequestBuilderInternal instantiates a new ItemInformationProtectionEncryptBufferRequestBuilder and sets the default values.
 func NewItemInformationProtectionEncryptBufferRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionEncryptBufferRequestBuilder) {
     m := &ItemInformationProtectionEncryptBufferRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/informationProtection/encryptBuffer", pathParameters),
     }
     return m
 }
-// NewItemInformationProtectionEncryptBufferRequestBuilder instantiates a new EncryptBufferRequestBuilder and sets the default values.
+// NewItemInformationProtectionEncryptBufferRequestBuilder instantiates a new ItemInformationProtectionEncryptBufferRequestBuilder and sets the default values.
 func NewItemInformationProtectionEncryptBufferRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionEncryptBufferRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -33,14 +33,15 @@ func NewItemInformationProtectionEncryptBufferRequestBuilder(rawUrl string, requ
 }
 // Post invoke action encryptBuffer
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a BufferEncryptionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionEncryptBufferRequestBuilder) Post(ctx context.Context, body ItemInformationProtectionEncryptBufferPostRequestBodyable, requestConfiguration *ItemInformationProtectionEncryptBufferRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BufferEncryptionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBufferEncryptionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -53,6 +54,7 @@ func (m *ItemInformationProtectionEncryptBufferRequestBuilder) Post(ctx context.
 }
 // ToPostRequestInformation invoke action encryptBuffer
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *RequestInformation when successful
 func (m *ItemInformationProtectionEncryptBufferRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemInformationProtectionEncryptBufferPostRequestBodyable, requestConfiguration *ItemInformationProtectionEncryptBufferRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *ItemInformationProtectionEncryptBufferRequestBuilder) ToPostRequestInfo
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *ItemInformationProtectionEncryptBufferRequestBuilder when successful
 func (m *ItemInformationProtectionEncryptBufferRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionEncryptBufferRequestBuilder) {
     return NewItemInformationProtectionEncryptBufferRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonCertification 
 type PersonCertification struct {
     ItemFacet
 }
-// NewPersonCertification instantiates a new personCertification and sets the default values.
+// NewPersonCertification instantiates a new PersonCertification and sets the default values.
 func NewPersonCertification()(*PersonCertification) {
     m := &PersonCertification{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewPersonCertification()(*PersonCertification) {
     return m
 }
 // CreatePersonCertificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePersonCertificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonCertification(), nil
 }
 // GetCertificationId gets the certificationId property value. The referenceable identifier for the certification.
+// returns a *string when successful
 func (m *PersonCertification) GetCertificationId()(*string) {
     val, err := m.GetBackingStore().Get("certificationId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PersonCertification) GetCertificationId()(*string) {
     return nil
 }
 // GetDescription gets the description property value. Description of the certification.
+// returns a *string when successful
 func (m *PersonCertification) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *PersonCertification) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Title of the certification.
+// returns a *string when successful
 func (m *PersonCertification) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *PersonCertification) GetDisplayName()(*string) {
     return nil
 }
 // GetEndDate gets the endDate property value. The date that the certification expires.
+// returns a *DateOnly when successful
 func (m *PersonCertification) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("endDate")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *PersonCertification) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PersonCertification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["certificationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -171,6 +176,7 @@ func (m *PersonCertification) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIssuedDate gets the issuedDate property value. The date that the certification was issued.
+// returns a *DateOnly when successful
 func (m *PersonCertification) GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("issuedDate")
     if err != nil {
@@ -182,6 +188,7 @@ func (m *PersonCertification) GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the certification.
+// returns a *string when successful
 func (m *PersonCertification) GetIssuingAuthority()(*string) {
     val, err := m.GetBackingStore().Get("issuingAuthority")
     if err != nil {
@@ -193,6 +200,7 @@ func (m *PersonCertification) GetIssuingAuthority()(*string) {
     return nil
 }
 // GetIssuingCompany gets the issuingCompany property value. Company which granted the certification.
+// returns a *string when successful
 func (m *PersonCertification) GetIssuingCompany()(*string) {
     val, err := m.GetBackingStore().Get("issuingCompany")
     if err != nil {
@@ -204,6 +212,7 @@ func (m *PersonCertification) GetIssuingCompany()(*string) {
     return nil
 }
 // GetStartDate gets the startDate property value. The date that the certification became valid.
+// returns a *DateOnly when successful
 func (m *PersonCertification) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("startDate")
     if err != nil {
@@ -215,6 +224,7 @@ func (m *PersonCertification) GetStartDate()(*i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the certification.
+// returns a *string when successful
 func (m *PersonCertification) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -226,6 +236,7 @@ func (m *PersonCertification) GetThumbnailUrl()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. URL referencing the certification.
+// returns a *string when successful
 func (m *PersonCertification) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -374,7 +385,6 @@ func (m *PersonCertification) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// PersonCertificationable 
 type PersonCertificationable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

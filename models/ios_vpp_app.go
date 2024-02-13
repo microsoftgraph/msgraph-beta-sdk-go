@@ -9,7 +9,7 @@ import (
 type IosVppApp struct {
     MobileApp
 }
-// NewIosVppApp instantiates a new iosVppApp and sets the default values.
+// NewIosVppApp instantiates a new IosVppApp and sets the default values.
 func NewIosVppApp()(*IosVppApp) {
     m := &IosVppApp{
         MobileApp: *NewMobileApp(),
@@ -19,10 +19,12 @@ func NewIosVppApp()(*IosVppApp) {
     return m
 }
 // CreateIosVppAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosVppAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosVppApp(), nil
 }
 // GetApplicableDeviceType gets the applicableDeviceType property value. The applicable iOS Device Type.
+// returns a IosDeviceTypeable when successful
 func (m *IosVppApp) GetApplicableDeviceType()(IosDeviceTypeable) {
     val, err := m.GetBackingStore().Get("applicableDeviceType")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *IosVppApp) GetApplicableDeviceType()(IosDeviceTypeable) {
     return nil
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The store URL.
+// returns a *string when successful
 func (m *IosVppApp) GetAppStoreUrl()(*string) {
     val, err := m.GetBackingStore().Get("appStoreUrl")
     if err != nil {
@@ -45,6 +48,7 @@ func (m *IosVppApp) GetAppStoreUrl()(*string) {
     return nil
 }
 // GetAssignedLicenses gets the assignedLicenses property value. The licenses assigned to this app.
+// returns a []IosVppAppAssignedLicenseable when successful
 func (m *IosVppApp) GetAssignedLicenses()([]IosVppAppAssignedLicenseable) {
     val, err := m.GetBackingStore().Get("assignedLicenses")
     if err != nil {
@@ -56,6 +60,7 @@ func (m *IosVppApp) GetAssignedLicenses()([]IosVppAppAssignedLicenseable) {
     return nil
 }
 // GetBundleId gets the bundleId property value. The Identity Name.
+// returns a *string when successful
 func (m *IosVppApp) GetBundleId()(*string) {
     val, err := m.GetBackingStore().Get("bundleId")
     if err != nil {
@@ -67,6 +72,7 @@ func (m *IosVppApp) GetBundleId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["applicableDeviceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -214,6 +220,7 @@ func (m *IosVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetLicensingType gets the licensingType property value. The supported License Type.
+// returns a VppLicensingTypeable when successful
 func (m *IosVppApp) GetLicensingType()(VppLicensingTypeable) {
     val, err := m.GetBackingStore().Get("licensingType")
     if err != nil {
@@ -225,6 +232,7 @@ func (m *IosVppApp) GetLicensingType()(VppLicensingTypeable) {
     return nil
 }
 // GetReleaseDateTime gets the releaseDateTime property value. The VPP application release date and time.
+// returns a *Time when successful
 func (m *IosVppApp) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("releaseDateTime")
     if err != nil {
@@ -236,6 +244,7 @@ func (m *IosVppApp) GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetRevokeLicenseActionResults gets the revokeLicenseActionResults property value. Results of revoke license actions on this app.
+// returns a []IosVppAppRevokeLicensesActionResultable when successful
 func (m *IosVppApp) GetRevokeLicenseActionResults()([]IosVppAppRevokeLicensesActionResultable) {
     val, err := m.GetBackingStore().Get("revokeLicenseActionResults")
     if err != nil {
@@ -247,6 +256,7 @@ func (m *IosVppApp) GetRevokeLicenseActionResults()([]IosVppAppRevokeLicensesAct
     return nil
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The total number of VPP licenses.
+// returns a *int32 when successful
 func (m *IosVppApp) GetTotalLicenseCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalLicenseCount")
     if err != nil {
@@ -258,6 +268,7 @@ func (m *IosVppApp) GetTotalLicenseCount()(*int32) {
     return nil
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of VPP licenses in use.
+// returns a *int32 when successful
 func (m *IosVppApp) GetUsedLicenseCount()(*int32) {
     val, err := m.GetBackingStore().Get("usedLicenseCount")
     if err != nil {
@@ -269,6 +280,7 @@ func (m *IosVppApp) GetUsedLicenseCount()(*int32) {
     return nil
 }
 // GetVppTokenAccountType gets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
+// returns a *VppTokenAccountType when successful
 func (m *IosVppApp) GetVppTokenAccountType()(*VppTokenAccountType) {
     val, err := m.GetBackingStore().Get("vppTokenAccountType")
     if err != nil {
@@ -280,6 +292,7 @@ func (m *IosVppApp) GetVppTokenAccountType()(*VppTokenAccountType) {
     return nil
 }
 // GetVppTokenAppleId gets the vppTokenAppleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
+// returns a *string when successful
 func (m *IosVppApp) GetVppTokenAppleId()(*string) {
     val, err := m.GetBackingStore().Get("vppTokenAppleId")
     if err != nil {
@@ -291,6 +304,7 @@ func (m *IosVppApp) GetVppTokenAppleId()(*string) {
     return nil
 }
 // GetVppTokenId gets the vppTokenId property value. Identifier of the VPP token associated with this app.
+// returns a *string when successful
 func (m *IosVppApp) GetVppTokenId()(*string) {
     val, err := m.GetBackingStore().Get("vppTokenId")
     if err != nil {
@@ -302,6 +316,7 @@ func (m *IosVppApp) GetVppTokenId()(*string) {
     return nil
 }
 // GetVppTokenOrganizationName gets the vppTokenOrganizationName property value. The organization associated with the Apple Volume Purchase Program Token
+// returns a *string when successful
 func (m *IosVppApp) GetVppTokenOrganizationName()(*string) {
     val, err := m.GetBackingStore().Get("vppTokenOrganizationName")
     if err != nil {
@@ -502,7 +517,6 @@ func (m *IosVppApp) SetVppTokenOrganizationName(value *string)() {
         panic(err)
     }
 }
-// IosVppAppable 
 type IosVppAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

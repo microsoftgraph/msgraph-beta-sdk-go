@@ -8,7 +8,7 @@ import (
 type WinGetAppAssignmentSettings struct {
     MobileAppAssignmentSettings
 }
-// NewWinGetAppAssignmentSettings instantiates a new winGetAppAssignmentSettings and sets the default values.
+// NewWinGetAppAssignmentSettings instantiates a new WinGetAppAssignmentSettings and sets the default values.
 func NewWinGetAppAssignmentSettings()(*WinGetAppAssignmentSettings) {
     m := &WinGetAppAssignmentSettings{
         MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
@@ -18,10 +18,12 @@ func NewWinGetAppAssignmentSettings()(*WinGetAppAssignmentSettings) {
     return m
 }
 // CreateWinGetAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWinGetAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWinGetAppAssignmentSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WinGetAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
     res["installTimeSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *WinGetAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetInstallTimeSettings gets the installTimeSettings property value. The install time settings to apply for this app assignment.
+// returns a WinGetAppInstallTimeSettingsable when successful
 func (m *WinGetAppAssignmentSettings) GetInstallTimeSettings()(WinGetAppInstallTimeSettingsable) {
     val, err := m.GetBackingStore().Get("installTimeSettings")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *WinGetAppAssignmentSettings) GetInstallTimeSettings()(WinGetAppInstallT
     return nil
 }
 // GetNotifications gets the notifications property value. Contains value for notification status.
+// returns a *WinGetAppNotification when successful
 func (m *WinGetAppAssignmentSettings) GetNotifications()(*WinGetAppNotification) {
     val, err := m.GetBackingStore().Get("notifications")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *WinGetAppAssignmentSettings) GetNotifications()(*WinGetAppNotification)
     return nil
 }
 // GetRestartSettings gets the restartSettings property value. The reboot settings to apply for this app assignment.
+// returns a WinGetAppRestartSettingsable when successful
 func (m *WinGetAppAssignmentSettings) GetRestartSettings()(WinGetAppRestartSettingsable) {
     val, err := m.GetBackingStore().Get("restartSettings")
     if err != nil {
@@ -137,7 +142,6 @@ func (m *WinGetAppAssignmentSettings) SetRestartSettings(value WinGetAppRestartS
         panic(err)
     }
 }
-// WinGetAppAssignmentSettingsable 
 type WinGetAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

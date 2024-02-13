@@ -10,7 +10,7 @@ type DeviceManagementSettingComparison struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceManagementSettingComparison instantiates a new deviceManagementSettingComparison and sets the default values.
+// NewDeviceManagementSettingComparison instantiates a new DeviceManagementSettingComparison and sets the default values.
 func NewDeviceManagementSettingComparison()(*DeviceManagementSettingComparison) {
     m := &DeviceManagementSettingComparison{
     }
@@ -19,10 +19,12 @@ func NewDeviceManagementSettingComparison()(*DeviceManagementSettingComparison) 
     return m
 }
 // CreateDeviceManagementSettingComparisonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingComparisonFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementSettingComparison(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceManagementSettingComparison) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *DeviceManagementSettingComparison) GetAdditionalData()(map[string]any) 
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceManagementSettingComparison) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetComparisonResult gets the comparisonResult property value. Setting comparison result type
+// returns a *DeviceManagementComparisonResult when successful
 func (m *DeviceManagementSettingComparison) GetComparisonResult()(*DeviceManagementComparisonResult) {
     val, err := m.GetBackingStore().Get("comparisonResult")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *DeviceManagementSettingComparison) GetComparisonResult()(*DeviceManagem
     return nil
 }
 // GetCurrentValueJson gets the currentValueJson property value. JSON representation of current intent (or) template setting's value
+// returns a *string when successful
 func (m *DeviceManagementSettingComparison) GetCurrentValueJson()(*string) {
     val, err := m.GetBackingStore().Get("currentValueJson")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *DeviceManagementSettingComparison) GetCurrentValueJson()(*string) {
     return nil
 }
 // GetDefinitionId gets the definitionId property value. The ID of the setting definition for this instance
+// returns a *string when successful
 func (m *DeviceManagementSettingComparison) GetDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("definitionId")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *DeviceManagementSettingComparison) GetDefinitionId()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The setting's display name
+// returns a *string when successful
 func (m *DeviceManagementSettingComparison) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -83,6 +90,7 @@ func (m *DeviceManagementSettingComparison) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["comparisonResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -158,6 +166,7 @@ func (m *DeviceManagementSettingComparison) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetId gets the id property value. The setting ID
+// returns a *string when successful
 func (m *DeviceManagementSettingComparison) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -169,6 +178,7 @@ func (m *DeviceManagementSettingComparison) GetId()(*string) {
     return nil
 }
 // GetNewValueJson gets the newValueJson property value. JSON representation of new template setting's value
+// returns a *string when successful
 func (m *DeviceManagementSettingComparison) GetNewValueJson()(*string) {
     val, err := m.GetBackingStore().Get("newValueJson")
     if err != nil {
@@ -180,6 +190,7 @@ func (m *DeviceManagementSettingComparison) GetNewValueJson()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceManagementSettingComparison) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -303,7 +314,6 @@ func (m *DeviceManagementSettingComparison) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// DeviceManagementSettingComparisonable 
 type DeviceManagementSettingComparisonable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

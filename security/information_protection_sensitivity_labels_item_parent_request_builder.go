@@ -41,28 +41,28 @@ type InformationProtectionSensitivityLabelsItemParentRequestBuilderPatchRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewInformationProtectionSensitivityLabelsItemParentRequestBuilderInternal instantiates a new ParentRequestBuilder and sets the default values.
+// NewInformationProtectionSensitivityLabelsItemParentRequestBuilderInternal instantiates a new InformationProtectionSensitivityLabelsItemParentRequestBuilder and sets the default values.
 func NewInformationProtectionSensitivityLabelsItemParentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionSensitivityLabelsItemParentRequestBuilder) {
     m := &InformationProtectionSensitivityLabelsItemParentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewInformationProtectionSensitivityLabelsItemParentRequestBuilder instantiates a new ParentRequestBuilder and sets the default values.
+// NewInformationProtectionSensitivityLabelsItemParentRequestBuilder instantiates a new InformationProtectionSensitivityLabelsItemParentRequestBuilder and sets the default values.
 func NewInformationProtectionSensitivityLabelsItemParentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionSensitivityLabelsItemParentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInformationProtectionSensitivityLabelsItemParentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property parent for security
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) Delete(ctx context.Context, requestConfiguration *InformationProtectionSensitivityLabelsItemParentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) Delete(
     return nil
 }
 // Get the parent label associated with a child label. Null if the label has no parent.
+// returns a SensitivityLabelable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) Get(ctx context.Context, requestConfiguration *InformationProtectionSensitivityLabelsItemParentRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateSensitivityLabelFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) Get(ctx
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable), nil
 }
 // Patch update the navigation property parent in security
+// returns a SensitivityLabelable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, requestConfiguration *InformationProtectionSensitivityLabelsItemParentRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateSensitivityLabelFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) Patch(c
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable), nil
 }
 // ToDeleteRequestInformation delete navigation property parent for security
+// returns a *RequestInformation when successful
 func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *InformationProtectionSensitivityLabelsItemParentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) ToDelet
     return requestInfo, nil
 }
 // ToGetRequestInformation the parent label associated with a child label. Null if the label has no parent.
+// returns a *RequestInformation when successful
 func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InformationProtectionSensitivityLabelsItemParentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property parent in security
+// returns a *RequestInformation when successful
 func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, requestConfiguration *InformationProtectionSensitivityLabelsItemParentRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) ToPatch
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *InformationProtectionSensitivityLabelsItemParentRequestBuilder when successful
 func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) WithUrl(rawUrl string)(*InformationProtectionSensitivityLabelsItemParentRequestBuilder) {
     return NewInformationProtectionSensitivityLabelsItemParentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

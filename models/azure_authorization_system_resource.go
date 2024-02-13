@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AzureAuthorizationSystemResource 
 type AzureAuthorizationSystemResource struct {
     AuthorizationSystemResource
 }
-// NewAzureAuthorizationSystemResource instantiates a new azureAuthorizationSystemResource and sets the default values.
+// NewAzureAuthorizationSystemResource instantiates a new AzureAuthorizationSystemResource and sets the default values.
 func NewAzureAuthorizationSystemResource()(*AzureAuthorizationSystemResource) {
     m := &AzureAuthorizationSystemResource{
         AuthorizationSystemResource: *NewAuthorizationSystemResource(),
@@ -18,10 +17,12 @@ func NewAzureAuthorizationSystemResource()(*AzureAuthorizationSystemResource) {
     return m
 }
 // CreateAzureAuthorizationSystemResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAzureAuthorizationSystemResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureAuthorizationSystemResource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureAuthorizationSystemResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthorizationSystemResource.GetFieldDeserializers()
     res["service"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *AzureAuthorizationSystemResource) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetService gets the service property value. The service associated with the resource in an Azure authorization system. This object is auto-expanded.
+// returns a AuthorizationSystemTypeServiceable when successful
 func (m *AzureAuthorizationSystemResource) GetService()(AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *AzureAuthorizationSystemResource) SetService(value AuthorizationSystemT
         panic(err)
     }
 }
-// AzureAuthorizationSystemResourceable 
 type AzureAuthorizationSystemResourceable interface {
     AuthorizationSystemResourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

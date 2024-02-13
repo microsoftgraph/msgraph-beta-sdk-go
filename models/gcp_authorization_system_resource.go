@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GcpAuthorizationSystemResource 
 type GcpAuthorizationSystemResource struct {
     AuthorizationSystemResource
 }
-// NewGcpAuthorizationSystemResource instantiates a new gcpAuthorizationSystemResource and sets the default values.
+// NewGcpAuthorizationSystemResource instantiates a new GcpAuthorizationSystemResource and sets the default values.
 func NewGcpAuthorizationSystemResource()(*GcpAuthorizationSystemResource) {
     m := &GcpAuthorizationSystemResource{
         AuthorizationSystemResource: *NewAuthorizationSystemResource(),
@@ -18,10 +17,12 @@ func NewGcpAuthorizationSystemResource()(*GcpAuthorizationSystemResource) {
     return m
 }
 // CreateGcpAuthorizationSystemResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGcpAuthorizationSystemResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGcpAuthorizationSystemResource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GcpAuthorizationSystemResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthorizationSystemResource.GetFieldDeserializers()
     res["service"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *GcpAuthorizationSystemResource) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetService gets the service property value. The service associated with the resource in an GCP authorization system. This object is auto-expanded.
+// returns a AuthorizationSystemTypeServiceable when successful
 func (m *GcpAuthorizationSystemResource) GetService()(AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *GcpAuthorizationSystemResource) SetService(value AuthorizationSystemTyp
         panic(err)
     }
 }
-// GcpAuthorizationSystemResourceable 
 type GcpAuthorizationSystemResourceable interface {
     AuthorizationSystemResourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

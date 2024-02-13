@@ -32,29 +32,30 @@ type ItemRoleAssignmentsExportRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemRoleAssignmentsExportRequestBuilderGetQueryParameters
 }
-// NewItemRoleAssignmentsExportRequestBuilderInternal instantiates a new ExportRequestBuilder and sets the default values.
+// NewItemRoleAssignmentsExportRequestBuilderInternal instantiates a new ItemRoleAssignmentsExportRequestBuilder and sets the default values.
 func NewItemRoleAssignmentsExportRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRoleAssignmentsExportRequestBuilder) {
     m := &ItemRoleAssignmentsExportRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/roleAssignments/export(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/roleAssignments/export(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemRoleAssignmentsExportRequestBuilder instantiates a new ExportRequestBuilder and sets the default values.
+// NewItemRoleAssignmentsExportRequestBuilder instantiates a new ItemRoleAssignmentsExportRequestBuilder and sets the default values.
 func NewItemRoleAssignmentsExportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRoleAssignmentsExportRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemRoleAssignmentsExportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function export
-// Deprecated: This method is obsolete. Use GetAsExportGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemRoleAssignmentsExportResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemRoleAssignmentsExportRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleAssignmentsExportRequestBuilderGetRequestConfiguration)(ItemRoleAssignmentsExportResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRoleAssignmentsExportResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *ItemRoleAssignmentsExportRequestBuilder) Get(ctx context.Context, reque
     return res.(ItemRoleAssignmentsExportResponseable), nil
 }
 // GetAsExportGetResponse invoke function export
+// returns a ItemRoleAssignmentsExportGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemRoleAssignmentsExportRequestBuilder) GetAsExportGetResponse(ctx context.Context, requestConfiguration *ItemRoleAssignmentsExportRequestBuilderGetRequestConfiguration)(ItemRoleAssignmentsExportGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemRoleAssignmentsExportGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *ItemRoleAssignmentsExportRequestBuilder) GetAsExportGetResponse(ctx con
     return res.(ItemRoleAssignmentsExportGetResponseable), nil
 }
 // ToGetRequestInformation invoke function export
+// returns a *RequestInformation when successful
 func (m *ItemRoleAssignmentsExportRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleAssignmentsExportRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *ItemRoleAssignmentsExportRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemRoleAssignmentsExportRequestBuilder when successful
 func (m *ItemRoleAssignmentsExportRequestBuilder) WithUrl(rawUrl string)(*ItemRoleAssignmentsExportRequestBuilder) {
     return NewItemRoleAssignmentsExportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

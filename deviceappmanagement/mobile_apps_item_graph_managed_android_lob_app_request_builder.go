@@ -28,39 +28,43 @@ type MobileAppsItemGraphManagedAndroidLobAppRequestBuilderGetRequestConfiguratio
     QueryParameters *MobileAppsItemGraphManagedAndroidLobAppRequestBuilderGetQueryParameters
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphManagedAndroidLobAppAssignmentsRequestBuilder when successful
 func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) Assignments()(*MobileAppsItemGraphManagedAndroidLobAppAssignmentsRequestBuilder) {
     return NewMobileAppsItemGraphManagedAndroidLobAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphManagedAndroidLobAppCategoriesRequestBuilder when successful
 func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) Categories()(*MobileAppsItemGraphManagedAndroidLobAppCategoriesRequestBuilder) {
     return NewMobileAppsItemGraphManagedAndroidLobAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilderInternal instantiates a new GraphManagedAndroidLobAppRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilderInternal instantiates a new MobileAppsItemGraphManagedAndroidLobAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) {
     m := &MobileAppsItemGraphManagedAndroidLobAppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedAndroidLobApp{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedAndroidLobApp{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilder instantiates a new GraphManagedAndroidLobAppRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilder instantiates a new MobileAppsItemGraphManagedAndroidLobAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContentVersions provides operations to manage the contentVersions property of the microsoft.graph.managedMobileLobApp entity.
+// returns a *MobileAppsItemGraphManagedAndroidLobAppContentVersionsRequestBuilder when successful
 func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) ContentVersions()(*MobileAppsItemGraphManagedAndroidLobAppContentVersionsRequestBuilder) {
     return NewMobileAppsItemGraphManagedAndroidLobAppContentVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.managedAndroidLobApp
+// returns a ManagedAndroidLobAppable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedAndroidLobAppRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAndroidLobAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagedAndroidLobAppFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -72,10 +76,12 @@ func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) Get(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAndroidLobAppable), nil
 }
 // Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphManagedAndroidLobAppRelationshipsRequestBuilder when successful
 func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) Relationships()(*MobileAppsItemGraphManagedAndroidLobAppRelationshipsRequestBuilder) {
     return NewMobileAppsItemGraphManagedAndroidLobAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.managedAndroidLobApp
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedAndroidLobAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +95,7 @@ func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder when successful
 func (m *MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphManagedAndroidLobAppRequestBuilder) {
     return NewMobileAppsItemGraphManagedAndroidLobAppRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

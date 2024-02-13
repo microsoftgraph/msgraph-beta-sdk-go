@@ -17,20 +17,21 @@ type ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilderInternal instantiates a new CompleteMigrationRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilderInternal instantiates a new ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/completeMigration", pathParameters),
     }
     return m
 }
-// NewItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder instantiates a new CompleteMigrationRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder instantiates a new ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can't import more messages into the team. You can add members to the team after the request returns a successful response.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder) Post(ctx
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder) Post(ctx
     return nil
 }
 // ToPostRequestInformation complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can't import more messages into the team. You can add members to the team after the request returns a successful response.
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder) ToPostRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder when successful
 func (m *ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

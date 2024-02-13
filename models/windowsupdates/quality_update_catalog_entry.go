@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// QualityUpdateCatalogEntry 
 type QualityUpdateCatalogEntry struct {
     SoftwareUpdateCatalogEntry
 }
-// NewQualityUpdateCatalogEntry instantiates a new qualityUpdateCatalogEntry and sets the default values.
+// NewQualityUpdateCatalogEntry instantiates a new QualityUpdateCatalogEntry and sets the default values.
 func NewQualityUpdateCatalogEntry()(*QualityUpdateCatalogEntry) {
     m := &QualityUpdateCatalogEntry{
         SoftwareUpdateCatalogEntry: *NewSoftwareUpdateCatalogEntry(),
@@ -18,10 +17,12 @@ func NewQualityUpdateCatalogEntry()(*QualityUpdateCatalogEntry) {
     return m
 }
 // CreateQualityUpdateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateQualityUpdateCatalogEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewQualityUpdateCatalogEntry(), nil
 }
 // GetCatalogName gets the catalogName property value. The catalog name of the content. Read-only.
+// returns a *string when successful
 func (m *QualityUpdateCatalogEntry) GetCatalogName()(*string) {
     val, err := m.GetBackingStore().Get("catalogName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *QualityUpdateCatalogEntry) GetCatalogName()(*string) {
     return nil
 }
 // GetCveSeverityInformation gets the cveSeverityInformation property value. Severity information of the Common Vulnerabilities and Exposures associated with the content.
+// returns a QualityUpdateCveSeverityInformationable when successful
 func (m *QualityUpdateCatalogEntry) GetCveSeverityInformation()(QualityUpdateCveSeverityInformationable) {
     val, err := m.GetBackingStore().Get("cveSeverityInformation")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *QualityUpdateCatalogEntry) GetCveSeverityInformation()(QualityUpdateCve
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *QualityUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SoftwareUpdateCatalogEntry.GetFieldDeserializers()
     res["catalogName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +128,7 @@ func (m *QualityUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIsExpeditable gets the isExpeditable property value. Indicates whether the content can be deployed as an expedited quality update. Read-only.
+// returns a *bool when successful
 func (m *QualityUpdateCatalogEntry) GetIsExpeditable()(*bool) {
     val, err := m.GetBackingStore().Get("isExpeditable")
     if err != nil {
@@ -136,6 +140,7 @@ func (m *QualityUpdateCatalogEntry) GetIsExpeditable()(*bool) {
     return nil
 }
 // GetProductRevisions gets the productRevisions property value. The operating system product revisions that are released as part of this quality update.
+// returns a []ProductRevisionable when successful
 func (m *QualityUpdateCatalogEntry) GetProductRevisions()([]ProductRevisionable) {
     val, err := m.GetBackingStore().Get("productRevisions")
     if err != nil {
@@ -147,6 +152,7 @@ func (m *QualityUpdateCatalogEntry) GetProductRevisions()([]ProductRevisionable)
     return nil
 }
 // GetQualityUpdateCadence gets the qualityUpdateCadence property value. The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
+// returns a *QualityUpdateCadence when successful
 func (m *QualityUpdateCatalogEntry) GetQualityUpdateCadence()(*QualityUpdateCadence) {
     val, err := m.GetBackingStore().Get("qualityUpdateCadence")
     if err != nil {
@@ -158,6 +164,7 @@ func (m *QualityUpdateCatalogEntry) GetQualityUpdateCadence()(*QualityUpdateCade
     return nil
 }
 // GetQualityUpdateClassification gets the qualityUpdateClassification property value. The qualityUpdateClassification property
+// returns a *QualityUpdateClassification when successful
 func (m *QualityUpdateCatalogEntry) GetQualityUpdateClassification()(*QualityUpdateClassification) {
     val, err := m.GetBackingStore().Get("qualityUpdateClassification")
     if err != nil {
@@ -169,6 +176,7 @@ func (m *QualityUpdateCatalogEntry) GetQualityUpdateClassification()(*QualityUpd
     return nil
 }
 // GetShortName gets the shortName property value. The short name of the content. Read-only.
+// returns a *string when successful
 func (m *QualityUpdateCatalogEntry) GetShortName()(*string) {
     val, err := m.GetBackingStore().Get("shortName")
     if err != nil {
@@ -286,7 +294,6 @@ func (m *QualityUpdateCatalogEntry) SetShortName(value *string)() {
         panic(err)
     }
 }
-// QualityUpdateCatalogEntryable 
 type QualityUpdateCatalogEntryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SoftwareUpdateCatalogEntryable

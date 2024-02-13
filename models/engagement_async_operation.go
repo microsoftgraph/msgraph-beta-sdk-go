@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EngagementAsyncOperation 
 type EngagementAsyncOperation struct {
     LongRunningOperation
 }
-// NewEngagementAsyncOperation instantiates a new engagementAsyncOperation and sets the default values.
+// NewEngagementAsyncOperation instantiates a new EngagementAsyncOperation and sets the default values.
 func NewEngagementAsyncOperation()(*EngagementAsyncOperation) {
     m := &EngagementAsyncOperation{
         LongRunningOperation: *NewLongRunningOperation(),
@@ -16,10 +15,12 @@ func NewEngagementAsyncOperation()(*EngagementAsyncOperation) {
     return m
 }
 // CreateEngagementAsyncOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEngagementAsyncOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEngagementAsyncOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EngagementAsyncOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LongRunningOperation.GetFieldDeserializers()
     res["operationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *EngagementAsyncOperation) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetOperationType gets the operationType property value. The type of the long-running operation. The possible values are: createCommunity, unknownFutureValue.
+// returns a *EngagementAsyncOperationType when successful
 func (m *EngagementAsyncOperation) GetOperationType()(*EngagementAsyncOperationType) {
     val, err := m.GetBackingStore().Get("operationType")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *EngagementAsyncOperation) GetOperationType()(*EngagementAsyncOperationT
     return nil
 }
 // GetResourceId gets the resourceId property value. The ID of the object created or modified as a result of this async operation.
+// returns a *string when successful
 func (m *EngagementAsyncOperation) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *EngagementAsyncOperation) SetResourceId(value *string)() {
         panic(err)
     }
 }
-// EngagementAsyncOperationable 
 type EngagementAsyncOperationable interface {
     LongRunningOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

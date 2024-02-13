@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CaseExportOperation 
 type CaseExportOperation struct {
     CaseOperation
 }
-// NewCaseExportOperation instantiates a new caseExportOperation and sets the default values.
+// NewCaseExportOperation instantiates a new CaseExportOperation and sets the default values.
 func NewCaseExportOperation()(*CaseExportOperation) {
     m := &CaseExportOperation{
         CaseOperation: *NewCaseOperation(),
@@ -16,10 +15,12 @@ func NewCaseExportOperation()(*CaseExportOperation) {
     return m
 }
 // CreateCaseExportOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCaseExportOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCaseExportOperation(), nil
 }
 // GetAzureBlobContainer gets the azureBlobContainer property value. The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
+// returns a *string when successful
 func (m *CaseExportOperation) GetAzureBlobContainer()(*string) {
     val, err := m.GetBackingStore().Get("azureBlobContainer")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CaseExportOperation) GetAzureBlobContainer()(*string) {
     return nil
 }
 // GetAzureBlobToken gets the azureBlobToken property value. The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
+// returns a *string when successful
 func (m *CaseExportOperation) GetAzureBlobToken()(*string) {
     val, err := m.GetBackingStore().Get("azureBlobToken")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *CaseExportOperation) GetAzureBlobToken()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The description provided for the export.
+// returns a *string when successful
 func (m *CaseExportOperation) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *CaseExportOperation) GetDescription()(*string) {
     return nil
 }
 // GetExportOptions gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+// returns a *ExportOptions when successful
 func (m *CaseExportOperation) GetExportOptions()(*ExportOptions) {
     val, err := m.GetBackingStore().Get("exportOptions")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *CaseExportOperation) GetExportOptions()(*ExportOptions) {
     return nil
 }
 // GetExportStructure gets the exportStructure property value. The options provided specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
+// returns a *ExportFileStructure when successful
 func (m *CaseExportOperation) GetExportStructure()(*ExportFileStructure) {
     val, err := m.GetBackingStore().Get("exportStructure")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *CaseExportOperation) GetExportStructure()(*ExportFileStructure) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CaseExportOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CaseOperation.GetFieldDeserializers()
     res["azureBlobContainer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -160,6 +166,7 @@ func (m *CaseExportOperation) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetOutputFolderId gets the outputFolderId property value. The outputFolderId property
+// returns a *string when successful
 func (m *CaseExportOperation) GetOutputFolderId()(*string) {
     val, err := m.GetBackingStore().Get("outputFolderId")
     if err != nil {
@@ -171,6 +178,7 @@ func (m *CaseExportOperation) GetOutputFolderId()(*string) {
     return nil
 }
 // GetOutputName gets the outputName property value. The name provided for the export.
+// returns a *string when successful
 func (m *CaseExportOperation) GetOutputName()(*string) {
     val, err := m.GetBackingStore().Get("outputName")
     if err != nil {
@@ -182,6 +190,7 @@ func (m *CaseExportOperation) GetOutputName()(*string) {
     return nil
 }
 // GetReviewSet gets the reviewSet property value. The review set the content is being exported from.
+// returns a ReviewSetable when successful
 func (m *CaseExportOperation) GetReviewSet()(ReviewSetable) {
     val, err := m.GetBackingStore().Get("reviewSet")
     if err != nil {
@@ -306,7 +315,6 @@ func (m *CaseExportOperation) SetReviewSet(value ReviewSetable)() {
         panic(err)
     }
 }
-// CaseExportOperationable 
 type CaseExportOperationable interface {
     CaseOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

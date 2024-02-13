@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// X509CertificateUserBinding 
 type X509CertificateUserBinding struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewX509CertificateUserBinding instantiates a new x509CertificateUserBinding and sets the default values.
+// NewX509CertificateUserBinding instantiates a new X509CertificateUserBinding and sets the default values.
 func NewX509CertificateUserBinding()(*X509CertificateUserBinding) {
     m := &X509CertificateUserBinding{
     }
@@ -19,10 +18,12 @@ func NewX509CertificateUserBinding()(*X509CertificateUserBinding) {
     return m
 }
 // CreateX509CertificateUserBindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateX509CertificateUserBindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewX509CertificateUserBinding(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *X509CertificateUserBinding) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *X509CertificateUserBinding) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *X509CertificateUserBinding) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *X509CertificateUserBinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,6 +97,7 @@ func (m *X509CertificateUserBinding) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *X509CertificateUserBinding) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -105,6 +109,7 @@ func (m *X509CertificateUserBinding) GetOdataType()(*string) {
     return nil
 }
 // GetPriority gets the priority property value. The priority of the binding. Microsoft Entra ID uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
+// returns a *int32 when successful
 func (m *X509CertificateUserBinding) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -116,6 +121,7 @@ func (m *X509CertificateUserBinding) GetPriority()(*int32) {
     return nil
 }
 // GetTrustAffinityLevel gets the trustAffinityLevel property value. The affinity level of the username binding rule. The possible values are: low, high, unknownFutureValue.
+// returns a *X509CertificateAffinityLevel when successful
 func (m *X509CertificateUserBinding) GetTrustAffinityLevel()(*X509CertificateAffinityLevel) {
     val, err := m.GetBackingStore().Get("trustAffinityLevel")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *X509CertificateUserBinding) GetTrustAffinityLevel()(*X509CertificateAff
     return nil
 }
 // GetUserProperty gets the userProperty property value. Defines the Microsoft Entra user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, email. Required.
+// returns a *string when successful
 func (m *X509CertificateUserBinding) GetUserProperty()(*string) {
     val, err := m.GetBackingStore().Get("userProperty")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *X509CertificateUserBinding) GetUserProperty()(*string) {
     return nil
 }
 // GetX509CertificateField gets the x509CertificateField property value. The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name.
+// returns a *string when successful
 func (m *X509CertificateUserBinding) GetX509CertificateField()(*string) {
     val, err := m.GetBackingStore().Get("x509CertificateField")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *X509CertificateUserBinding) SetX509CertificateField(value *string)() {
         panic(err)
     }
 }
-// X509CertificateUserBindingable 
 type X509CertificateUserBindingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

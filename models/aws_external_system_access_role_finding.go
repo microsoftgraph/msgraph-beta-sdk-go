@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsExternalSystemAccessRoleFinding 
 type AwsExternalSystemAccessRoleFinding struct {
     Finding
 }
-// NewAwsExternalSystemAccessRoleFinding instantiates a new awsExternalSystemAccessRoleFinding and sets the default values.
+// NewAwsExternalSystemAccessRoleFinding instantiates a new AwsExternalSystemAccessRoleFinding and sets the default values.
 func NewAwsExternalSystemAccessRoleFinding()(*AwsExternalSystemAccessRoleFinding) {
     m := &AwsExternalSystemAccessRoleFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewAwsExternalSystemAccessRoleFinding()(*AwsExternalSystemAccessRoleFinding
     return m
 }
 // CreateAwsExternalSystemAccessRoleFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsExternalSystemAccessRoleFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsExternalSystemAccessRoleFinding(), nil
 }
 // GetAccessibleSystemIds gets the accessibleSystemIds property value. The IDs of the accounts that this role is able to access.
+// returns a []string when successful
 func (m *AwsExternalSystemAccessRoleFinding) GetAccessibleSystemIds()([]string) {
     val, err := m.GetBackingStore().Get("accessibleSystemIds")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AwsExternalSystemAccessRoleFinding) GetAccessibleSystemIds()([]string) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsExternalSystemAccessRoleFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["accessibleSystemIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -72,6 +74,7 @@ func (m *AwsExternalSystemAccessRoleFinding) GetFieldDeserializers()(map[string]
     return res
 }
 // GetPermissionsCreepIndex gets the permissionsCreepIndex property value. The permissionsCreepIndex property
+// returns a PermissionsCreepIndexable when successful
 func (m *AwsExternalSystemAccessRoleFinding) GetPermissionsCreepIndex()(PermissionsCreepIndexable) {
     val, err := m.GetBackingStore().Get("permissionsCreepIndex")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *AwsExternalSystemAccessRoleFinding) GetPermissionsCreepIndex()(Permissi
     return nil
 }
 // GetRole gets the role property value. The role property
+// returns a AwsRoleable when successful
 func (m *AwsExternalSystemAccessRoleFinding) GetRole()(AwsRoleable) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -140,7 +144,6 @@ func (m *AwsExternalSystemAccessRoleFinding) SetRole(value AwsRoleable)() {
         panic(err)
     }
 }
-// AwsExternalSystemAccessRoleFindingable 
 type AwsExternalSystemAccessRoleFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

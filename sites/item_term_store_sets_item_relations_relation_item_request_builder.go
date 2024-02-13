@@ -41,28 +41,28 @@ type ItemTermStoreSetsItemRelationsRelationItemRequestBuilderPatchRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemTermStoreSetsItemRelationsRelationItemRequestBuilderInternal instantiates a new RelationItemRequestBuilder and sets the default values.
+// NewItemTermStoreSetsItemRelationsRelationItemRequestBuilderInternal instantiates a new ItemTermStoreSetsItemRelationsRelationItemRequestBuilder and sets the default values.
 func NewItemTermStoreSetsItemRelationsRelationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) {
     m := &ItemTermStoreSetsItemRelationsRelationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/termStore/sets/{set%2Did}/relations/{relation%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/termStore/sets/{set%2Did}/relations/{relation%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemTermStoreSetsItemRelationsRelationItemRequestBuilder instantiates a new RelationItemRequestBuilder and sets the default values.
+// NewItemTermStoreSetsItemRelationsRelationItemRequestBuilder instantiates a new ItemTermStoreSetsItemRelationsRelationItemRequestBuilder and sets the default values.
 func NewItemTermStoreSetsItemRelationsRelationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTermStoreSetsItemRelationsRelationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property relations for sites
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTermStoreSetsItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,18 +71,20 @@ func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) Delete(ctx co
     return nil
 }
 // FromTerm provides operations to manage the fromTerm property of the microsoft.graph.termStore.relation entity.
+// returns a *ItemTermStoreSetsItemRelationsItemFromTermRequestBuilder when successful
 func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) FromTerm()(*ItemTermStoreSetsItemRelationsItemFromTermRequestBuilder) {
     return NewItemTermStoreSetsItemRelationsItemFromTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get indicates which terms have been pinned or reused directly under the set.
+// returns a Relationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreSetsItemRelationsRelationItemRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Relationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.CreateRelationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +96,15 @@ func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) Get(ctx conte
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Relationable), nil
 }
 // Patch update the navigation property relations in sites
+// returns a Relationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) Patch(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Relationable, requestConfiguration *ItemTermStoreSetsItemRelationsRelationItemRequestBuilderPatchRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Relationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.CreateRelationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,12 +116,14 @@ func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) Patch(ctx con
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Relationable), nil
 }
 // Set provides operations to manage the set property of the microsoft.graph.termStore.relation entity.
+// returns a *ItemTermStoreSetsItemRelationsItemSetRequestBuilder when successful
 func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) Set()(*ItemTermStoreSetsItemRelationsItemSetRequestBuilder) {
     return NewItemTermStoreSetsItemRelationsItemSetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property relations for sites
+// returns a *RequestInformation when successful
 func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreSetsItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/sites/{site%2Did}/termStore/sets/{set%2Did}/relations/{relation%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -127,6 +132,7 @@ func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) ToDeleteReque
     return requestInfo, nil
 }
 // ToGetRequestInformation indicates which terms have been pinned or reused directly under the set.
+// returns a *RequestInformation when successful
 func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreSetsItemRelationsRelationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,8 +146,9 @@ func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property relations in sites
+// returns a *RequestInformation when successful
 func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Relationable, requestConfiguration *ItemTermStoreSetsItemRelationsRelationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/sites/{site%2Did}/termStore/sets/{set%2Did}/relations/{relation%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -154,10 +161,12 @@ func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) ToPatchReques
     return requestInfo, nil
 }
 // ToTerm provides operations to manage the toTerm property of the microsoft.graph.termStore.relation entity.
+// returns a *ItemTermStoreSetsItemRelationsItemToTermRequestBuilder when successful
 func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) ToTerm()(*ItemTermStoreSetsItemRelationsItemToTermRequestBuilder) {
     return NewItemTermStoreSetsItemRelationsItemToTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder when successful
 func (m *ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) WithUrl(rawUrl string)(*ItemTermStoreSetsItemRelationsRelationItemRequestBuilder) {
     return NewItemTermStoreSetsItemRelationsRelationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

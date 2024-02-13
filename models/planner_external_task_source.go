@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerExternalTaskSource 
 type PlannerExternalTaskSource struct {
     PlannerTaskCreation
 }
-// NewPlannerExternalTaskSource instantiates a new plannerExternalTaskSource and sets the default values.
+// NewPlannerExternalTaskSource instantiates a new PlannerExternalTaskSource and sets the default values.
 func NewPlannerExternalTaskSource()(*PlannerExternalTaskSource) {
     m := &PlannerExternalTaskSource{
         PlannerTaskCreation: *NewPlannerTaskCreation(),
@@ -18,10 +17,12 @@ func NewPlannerExternalTaskSource()(*PlannerExternalTaskSource) {
     return m
 }
 // CreatePlannerExternalTaskSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerExternalTaskSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerExternalTaskSource(), nil
 }
 // GetContextScenarioId gets the contextScenarioId property value. Nullable. An identifier for the scenario associated with this external source. This should be in reverse DNS format. For example, Contoso company owned application for customer support would have a value like 'com.constoso.customerSupport'.
+// returns a *string when successful
 func (m *PlannerExternalTaskSource) GetContextScenarioId()(*string) {
     val, err := m.GetBackingStore().Get("contextScenarioId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PlannerExternalTaskSource) GetContextScenarioId()(*string) {
     return nil
 }
 // GetDisplayLinkType gets the displayLinkType property value. Specifies how an application should display the link to the associated plannerExternalTaskSource. The possible values are: none, default.
+// returns a *PlannerExternalTaskSourceDisplayType when successful
 func (m *PlannerExternalTaskSource) GetDisplayLinkType()(*PlannerExternalTaskSourceDisplayType) {
     val, err := m.GetBackingStore().Get("displayLinkType")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *PlannerExternalTaskSource) GetDisplayLinkType()(*PlannerExternalTaskSou
     return nil
 }
 // GetDisplayNameSegments gets the displayNameSegments property value. The segments of the name of the external experience. Segments represent a hierarchical structure that allows other apps to display the relationship.
+// returns a []string when successful
 func (m *PlannerExternalTaskSource) GetDisplayNameSegments()([]string) {
     val, err := m.GetBackingStore().Get("displayNameSegments")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *PlannerExternalTaskSource) GetDisplayNameSegments()([]string) {
     return nil
 }
 // GetExternalContextId gets the externalContextId property value. Nullable. The id of the external entity's containing entity or context.
+// returns a *string when successful
 func (m *PlannerExternalTaskSource) GetExternalContextId()(*string) {
     val, err := m.GetBackingStore().Get("externalContextId")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *PlannerExternalTaskSource) GetExternalContextId()(*string) {
     return nil
 }
 // GetExternalObjectId gets the externalObjectId property value. Nullable. The id of the entity that an external service associates with a task.
+// returns a *string when successful
 func (m *PlannerExternalTaskSource) GetExternalObjectId()(*string) {
     val, err := m.GetBackingStore().Get("externalObjectId")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *PlannerExternalTaskSource) GetExternalObjectId()(*string) {
     return nil
 }
 // GetExternalObjectVersion gets the externalObjectVersion property value. Nullable. The external Item Version for the object specified by the externalObjectId.
+// returns a *string when successful
 func (m *PlannerExternalTaskSource) GetExternalObjectVersion()(*string) {
     val, err := m.GetBackingStore().Get("externalObjectVersion")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *PlannerExternalTaskSource) GetExternalObjectVersion()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerExternalTaskSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerTaskCreation.GetFieldDeserializers()
     res["contextScenarioId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -169,6 +176,7 @@ func (m *PlannerExternalTaskSource) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetWebUrl gets the webUrl property value. Nullable. URL of the user experience represented by the associated plannerExternalTaskSource.
+// returns a *string when successful
 func (m *PlannerExternalTaskSource) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -279,7 +287,6 @@ func (m *PlannerExternalTaskSource) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// PlannerExternalTaskSourceable 
 type PlannerExternalTaskSourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerTaskCreationable

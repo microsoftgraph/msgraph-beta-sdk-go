@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConnectionOperation 
 type ConnectionOperation struct {
     Entity
 }
-// NewConnectionOperation instantiates a new connectionOperation and sets the default values.
+// NewConnectionOperation instantiates a new ConnectionOperation and sets the default values.
 func NewConnectionOperation()(*ConnectionOperation) {
     m := &ConnectionOperation{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewConnectionOperation()(*ConnectionOperation) {
     return m
 }
 // CreateConnectionOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConnectionOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectionOperation(), nil
 }
 // GetError gets the error property value. The error property
+// returns a PublicErrorable when successful
 func (m *ConnectionOperation) GetError()(PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ConnectionOperation) GetError()(PublicErrorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetStatus gets the status property value. The status property
+// returns a *ConnectionOperationStatus when successful
 func (m *ConnectionOperation) GetStatus()(*ConnectionOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *ConnectionOperation) SetStatus(value *ConnectionOperationStatus)() {
         panic(err)
     }
 }
-// ConnectionOperationable 
 type ConnectionOperationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

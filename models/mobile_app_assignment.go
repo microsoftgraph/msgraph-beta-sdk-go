@@ -8,7 +8,7 @@ import (
 type MobileAppAssignment struct {
     Entity
 }
-// NewMobileAppAssignment instantiates a new mobileAppAssignment and sets the default values.
+// NewMobileAppAssignment instantiates a new MobileAppAssignment and sets the default values.
 func NewMobileAppAssignment()(*MobileAppAssignment) {
     m := &MobileAppAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewMobileAppAssignment()(*MobileAppAssignment) {
     return m
 }
 // CreateMobileAppAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["intent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +77,7 @@ func (m *MobileAppAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIntent gets the intent property value. Possible values for the install intent chosen by the admin.
+// returns a *InstallIntent when successful
 func (m *MobileAppAssignment) GetIntent()(*InstallIntent) {
     val, err := m.GetBackingStore().Get("intent")
     if err != nil {
@@ -86,6 +89,7 @@ func (m *MobileAppAssignment) GetIntent()(*InstallIntent) {
     return nil
 }
 // GetSettings gets the settings property value. The settings for target assignment defined by the admin.
+// returns a MobileAppAssignmentSettingsable when successful
 func (m *MobileAppAssignment) GetSettings()(MobileAppAssignmentSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -97,6 +101,7 @@ func (m *MobileAppAssignment) GetSettings()(MobileAppAssignmentSettingsable) {
     return nil
 }
 // GetSource gets the source property value. Represents source of assignment.
+// returns a *DeviceAndAppManagementAssignmentSource when successful
 func (m *MobileAppAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -108,6 +113,7 @@ func (m *MobileAppAssignment) GetSource()(*DeviceAndAppManagementAssignmentSourc
     return nil
 }
 // GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
+// returns a *string when successful
 func (m *MobileAppAssignment) GetSourceId()(*string) {
     val, err := m.GetBackingStore().Get("sourceId")
     if err != nil {
@@ -119,6 +125,7 @@ func (m *MobileAppAssignment) GetSourceId()(*string) {
     return nil
 }
 // GetTarget gets the target property value. The target group assignment defined by the admin.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *MobileAppAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -204,7 +211,6 @@ func (m *MobileAppAssignment) SetTarget(value DeviceAndAppManagementAssignmentTa
         panic(err)
     }
 }
-// MobileAppAssignmentable 
 type MobileAppAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegeManagementElevationRequestCollectionResponse 
 type PrivilegeManagementElevationRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPrivilegeManagementElevationRequestCollectionResponse instantiates a new privilegeManagementElevationRequestCollectionResponse and sets the default values.
+// NewPrivilegeManagementElevationRequestCollectionResponse instantiates a new PrivilegeManagementElevationRequestCollectionResponse and sets the default values.
 func NewPrivilegeManagementElevationRequestCollectionResponse()(*PrivilegeManagementElevationRequestCollectionResponse) {
     m := &PrivilegeManagementElevationRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewPrivilegeManagementElevationRequestCollectionResponse()(*PrivilegeManage
     return m
 }
 // CreatePrivilegeManagementElevationRequestCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegeManagementElevationRequestCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegeManagementElevationRequestCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegeManagementElevationRequestCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *PrivilegeManagementElevationRequestCollectionResponse) GetFieldDeserial
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []PrivilegeManagementElevationRequestable when successful
 func (m *PrivilegeManagementElevationRequestCollectionResponse) GetValue()([]PrivilegeManagementElevationRequestable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *PrivilegeManagementElevationRequestCollectionResponse) SetValue(value [
         panic(err)
     }
 }
-// PrivilegeManagementElevationRequestCollectionResponseable 
 type PrivilegeManagementElevationRequestCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

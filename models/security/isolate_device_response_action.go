@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IsolateDeviceResponseAction 
 type IsolateDeviceResponseAction struct {
     ResponseAction
 }
-// NewIsolateDeviceResponseAction instantiates a new isolateDeviceResponseAction and sets the default values.
+// NewIsolateDeviceResponseAction instantiates a new IsolateDeviceResponseAction and sets the default values.
 func NewIsolateDeviceResponseAction()(*IsolateDeviceResponseAction) {
     m := &IsolateDeviceResponseAction{
         ResponseAction: *NewResponseAction(),
@@ -18,10 +17,12 @@ func NewIsolateDeviceResponseAction()(*IsolateDeviceResponseAction) {
     return m
 }
 // CreateIsolateDeviceResponseActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIsolateDeviceResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIsolateDeviceResponseAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IsolateDeviceResponseAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ResponseAction.GetFieldDeserializers()
     res["identifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *IsolateDeviceResponseAction) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetIdentifier gets the identifier property value. The identifier property
+// returns a *DeviceIdEntityIdentifier when successful
 func (m *IsolateDeviceResponseAction) GetIdentifier()(*DeviceIdEntityIdentifier) {
     val, err := m.GetBackingStore().Get("identifier")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *IsolateDeviceResponseAction) GetIdentifier()(*DeviceIdEntityIdentifier)
     return nil
 }
 // GetIsolationType gets the isolationType property value. The isolationType property
+// returns a *IsolationType when successful
 func (m *IsolateDeviceResponseAction) GetIsolationType()(*IsolationType) {
     val, err := m.GetBackingStore().Get("isolationType")
     if err != nil {
@@ -104,7 +107,6 @@ func (m *IsolateDeviceResponseAction) SetIsolationType(value *IsolationType)() {
         panic(err)
     }
 }
-// IsolateDeviceResponseActionable 
 type IsolateDeviceResponseActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ResponseActionable

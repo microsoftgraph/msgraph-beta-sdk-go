@@ -27,28 +27,29 @@ type SharesItemPrinterRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *SharesItemPrinterRequestBuilderGetQueryParameters
 }
-// NewSharesItemPrinterRequestBuilderInternal instantiates a new PrinterRequestBuilder and sets the default values.
+// NewSharesItemPrinterRequestBuilderInternal instantiates a new SharesItemPrinterRequestBuilder and sets the default values.
 func NewSharesItemPrinterRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemPrinterRequestBuilder) {
     m := &SharesItemPrinterRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/printer{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/printer{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewSharesItemPrinterRequestBuilder instantiates a new PrinterRequestBuilder and sets the default values.
+// NewSharesItemPrinterRequestBuilder instantiates a new SharesItemPrinterRequestBuilder and sets the default values.
 func NewSharesItemPrinterRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemPrinterRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemPrinterRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the printer that this printer share is related to.
+// returns a Printerable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharesItemPrinterRequestBuilder) Get(ctx context.Context, requestConfiguration *SharesItemPrinterRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrinterFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *SharesItemPrinterRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable), nil
 }
 // ToGetRequestInformation the printer that this printer share is related to.
+// returns a *RequestInformation when successful
 func (m *SharesItemPrinterRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesItemPrinterRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *SharesItemPrinterRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SharesItemPrinterRequestBuilder when successful
 func (m *SharesItemPrinterRequestBuilder) WithUrl(rawUrl string)(*SharesItemPrinterRequestBuilder) {
     return NewSharesItemPrinterRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

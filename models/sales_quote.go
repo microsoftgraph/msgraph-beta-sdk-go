@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SalesQuote 
 type SalesQuote struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSalesQuote instantiates a new salesQuote and sets the default values.
+// NewSalesQuote instantiates a new SalesQuote and sets the default values.
 func NewSalesQuote()(*SalesQuote) {
     m := &SalesQuote{
     }
@@ -21,10 +20,12 @@ func NewSalesQuote()(*SalesQuote) {
     return m
 }
 // CreateSalesQuoteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSalesQuoteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSalesQuote(), nil
 }
 // GetAcceptedDate gets the acceptedDate property value. The acceptedDate property
+// returns a *DateOnly when successful
 func (m *SalesQuote) GetAcceptedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("acceptedDate")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *SalesQuote) GetAcceptedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SalesQuote) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -48,10 +50,12 @@ func (m *SalesQuote) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SalesQuote) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBillingPostalAddress gets the billingPostalAddress property value. The billingPostalAddress property
+// returns a PostalAddressTypeable when successful
 func (m *SalesQuote) GetBillingPostalAddress()(PostalAddressTypeable) {
     val, err := m.GetBackingStore().Get("billingPostalAddress")
     if err != nil {
@@ -63,6 +67,7 @@ func (m *SalesQuote) GetBillingPostalAddress()(PostalAddressTypeable) {
     return nil
 }
 // GetBillToCustomerId gets the billToCustomerId property value. The billToCustomerId property
+// returns a *UUID when successful
 func (m *SalesQuote) GetBillToCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("billToCustomerId")
     if err != nil {
@@ -74,6 +79,7 @@ func (m *SalesQuote) GetBillToCustomerId()(*i561e97a8befe7661a44c8f54600992b4207
     return nil
 }
 // GetBillToCustomerNumber gets the billToCustomerNumber property value. The billToCustomerNumber property
+// returns a *string when successful
 func (m *SalesQuote) GetBillToCustomerNumber()(*string) {
     val, err := m.GetBackingStore().Get("billToCustomerNumber")
     if err != nil {
@@ -85,6 +91,7 @@ func (m *SalesQuote) GetBillToCustomerNumber()(*string) {
     return nil
 }
 // GetBillToName gets the billToName property value. The billToName property
+// returns a *string when successful
 func (m *SalesQuote) GetBillToName()(*string) {
     val, err := m.GetBackingStore().Get("billToName")
     if err != nil {
@@ -96,6 +103,7 @@ func (m *SalesQuote) GetBillToName()(*string) {
     return nil
 }
 // GetCurrency gets the currency property value. The currency property
+// returns a Currencyable when successful
 func (m *SalesQuote) GetCurrency()(Currencyable) {
     val, err := m.GetBackingStore().Get("currency")
     if err != nil {
@@ -107,6 +115,7 @@ func (m *SalesQuote) GetCurrency()(Currencyable) {
     return nil
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
+// returns a *string when successful
 func (m *SalesQuote) GetCurrencyCode()(*string) {
     val, err := m.GetBackingStore().Get("currencyCode")
     if err != nil {
@@ -118,6 +127,7 @@ func (m *SalesQuote) GetCurrencyCode()(*string) {
     return nil
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
+// returns a *UUID when successful
 func (m *SalesQuote) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("currencyId")
     if err != nil {
@@ -129,6 +139,7 @@ func (m *SalesQuote) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf
     return nil
 }
 // GetCustomer gets the customer property value. The customer property
+// returns a Customerable when successful
 func (m *SalesQuote) GetCustomer()(Customerable) {
     val, err := m.GetBackingStore().Get("customer")
     if err != nil {
@@ -140,6 +151,7 @@ func (m *SalesQuote) GetCustomer()(Customerable) {
     return nil
 }
 // GetCustomerId gets the customerId property value. The customerId property
+// returns a *UUID when successful
 func (m *SalesQuote) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("customerId")
     if err != nil {
@@ -151,6 +163,7 @@ func (m *SalesQuote) GetCustomerId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf
     return nil
 }
 // GetCustomerName gets the customerName property value. The customerName property
+// returns a *string when successful
 func (m *SalesQuote) GetCustomerName()(*string) {
     val, err := m.GetBackingStore().Get("customerName")
     if err != nil {
@@ -162,6 +175,7 @@ func (m *SalesQuote) GetCustomerName()(*string) {
     return nil
 }
 // GetCustomerNumber gets the customerNumber property value. The customerNumber property
+// returns a *string when successful
 func (m *SalesQuote) GetCustomerNumber()(*string) {
     val, err := m.GetBackingStore().Get("customerNumber")
     if err != nil {
@@ -173,6 +187,7 @@ func (m *SalesQuote) GetCustomerNumber()(*string) {
     return nil
 }
 // GetDiscountAmount gets the discountAmount property value. The discountAmount property
+// returns a *float64 when successful
 func (m *SalesQuote) GetDiscountAmount()(*float64) {
     val, err := m.GetBackingStore().Get("discountAmount")
     if err != nil {
@@ -184,6 +199,7 @@ func (m *SalesQuote) GetDiscountAmount()(*float64) {
     return nil
 }
 // GetDocumentDate gets the documentDate property value. The documentDate property
+// returns a *DateOnly when successful
 func (m *SalesQuote) GetDocumentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("documentDate")
     if err != nil {
@@ -195,6 +211,7 @@ func (m *SalesQuote) GetDocumentDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // GetDueDate gets the dueDate property value. The dueDate property
+// returns a *DateOnly when successful
 func (m *SalesQuote) GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("dueDate")
     if err != nil {
@@ -206,6 +223,7 @@ func (m *SalesQuote) GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     return nil
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *SalesQuote) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -217,6 +235,7 @@ func (m *SalesQuote) GetEmail()(*string) {
     return nil
 }
 // GetExternalDocumentNumber gets the externalDocumentNumber property value. The externalDocumentNumber property
+// returns a *string when successful
 func (m *SalesQuote) GetExternalDocumentNumber()(*string) {
     val, err := m.GetBackingStore().Get("externalDocumentNumber")
     if err != nil {
@@ -228,6 +247,7 @@ func (m *SalesQuote) GetExternalDocumentNumber()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SalesQuote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["acceptedDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -619,6 +639,7 @@ func (m *SalesQuote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *SalesQuote) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -630,6 +651,7 @@ func (m *SalesQuote) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e555
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *SalesQuote) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -641,6 +663,7 @@ func (m *SalesQuote) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetNumber gets the number property value. The number property
+// returns a *string when successful
 func (m *SalesQuote) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
     if err != nil {
@@ -652,6 +675,7 @@ func (m *SalesQuote) GetNumber()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SalesQuote) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -663,6 +687,7 @@ func (m *SalesQuote) GetOdataType()(*string) {
     return nil
 }
 // GetPaymentTerm gets the paymentTerm property value. The paymentTerm property
+// returns a PaymentTermable when successful
 func (m *SalesQuote) GetPaymentTerm()(PaymentTermable) {
     val, err := m.GetBackingStore().Get("paymentTerm")
     if err != nil {
@@ -674,6 +699,7 @@ func (m *SalesQuote) GetPaymentTerm()(PaymentTermable) {
     return nil
 }
 // GetPaymentTermsId gets the paymentTermsId property value. The paymentTermsId property
+// returns a *UUID when successful
 func (m *SalesQuote) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("paymentTermsId")
     if err != nil {
@@ -685,6 +711,7 @@ func (m *SalesQuote) GetPaymentTermsId()(*i561e97a8befe7661a44c8f54600992b4207a3
     return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
+// returns a *string when successful
 func (m *SalesQuote) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
     if err != nil {
@@ -696,6 +723,7 @@ func (m *SalesQuote) GetPhoneNumber()(*string) {
     return nil
 }
 // GetSalesperson gets the salesperson property value. The salesperson property
+// returns a *string when successful
 func (m *SalesQuote) GetSalesperson()(*string) {
     val, err := m.GetBackingStore().Get("salesperson")
     if err != nil {
@@ -707,6 +735,7 @@ func (m *SalesQuote) GetSalesperson()(*string) {
     return nil
 }
 // GetSalesQuoteLines gets the salesQuoteLines property value. The salesQuoteLines property
+// returns a []SalesQuoteLineable when successful
 func (m *SalesQuote) GetSalesQuoteLines()([]SalesQuoteLineable) {
     val, err := m.GetBackingStore().Get("salesQuoteLines")
     if err != nil {
@@ -718,6 +747,7 @@ func (m *SalesQuote) GetSalesQuoteLines()([]SalesQuoteLineable) {
     return nil
 }
 // GetSellingPostalAddress gets the sellingPostalAddress property value. The sellingPostalAddress property
+// returns a PostalAddressTypeable when successful
 func (m *SalesQuote) GetSellingPostalAddress()(PostalAddressTypeable) {
     val, err := m.GetBackingStore().Get("sellingPostalAddress")
     if err != nil {
@@ -729,6 +759,7 @@ func (m *SalesQuote) GetSellingPostalAddress()(PostalAddressTypeable) {
     return nil
 }
 // GetSentDate gets the sentDate property value. The sentDate property
+// returns a *Time when successful
 func (m *SalesQuote) GetSentDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("sentDate")
     if err != nil {
@@ -740,6 +771,7 @@ func (m *SalesQuote) GetSentDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
     return nil
 }
 // GetShipmentMethod gets the shipmentMethod property value. The shipmentMethod property
+// returns a ShipmentMethodable when successful
 func (m *SalesQuote) GetShipmentMethod()(ShipmentMethodable) {
     val, err := m.GetBackingStore().Get("shipmentMethod")
     if err != nil {
@@ -751,6 +783,7 @@ func (m *SalesQuote) GetShipmentMethod()(ShipmentMethodable) {
     return nil
 }
 // GetShipmentMethodId gets the shipmentMethodId property value. The shipmentMethodId property
+// returns a *UUID when successful
 func (m *SalesQuote) GetShipmentMethodId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("shipmentMethodId")
     if err != nil {
@@ -762,6 +795,7 @@ func (m *SalesQuote) GetShipmentMethodId()(*i561e97a8befe7661a44c8f54600992b4207
     return nil
 }
 // GetShippingPostalAddress gets the shippingPostalAddress property value. The shippingPostalAddress property
+// returns a PostalAddressTypeable when successful
 func (m *SalesQuote) GetShippingPostalAddress()(PostalAddressTypeable) {
     val, err := m.GetBackingStore().Get("shippingPostalAddress")
     if err != nil {
@@ -773,6 +807,7 @@ func (m *SalesQuote) GetShippingPostalAddress()(PostalAddressTypeable) {
     return nil
 }
 // GetShipToContact gets the shipToContact property value. The shipToContact property
+// returns a *string when successful
 func (m *SalesQuote) GetShipToContact()(*string) {
     val, err := m.GetBackingStore().Get("shipToContact")
     if err != nil {
@@ -784,6 +819,7 @@ func (m *SalesQuote) GetShipToContact()(*string) {
     return nil
 }
 // GetShipToName gets the shipToName property value. The shipToName property
+// returns a *string when successful
 func (m *SalesQuote) GetShipToName()(*string) {
     val, err := m.GetBackingStore().Get("shipToName")
     if err != nil {
@@ -795,6 +831,7 @@ func (m *SalesQuote) GetShipToName()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *string when successful
 func (m *SalesQuote) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -806,6 +843,7 @@ func (m *SalesQuote) GetStatus()(*string) {
     return nil
 }
 // GetTotalAmountExcludingTax gets the totalAmountExcludingTax property value. The totalAmountExcludingTax property
+// returns a *float64 when successful
 func (m *SalesQuote) GetTotalAmountExcludingTax()(*float64) {
     val, err := m.GetBackingStore().Get("totalAmountExcludingTax")
     if err != nil {
@@ -817,6 +855,7 @@ func (m *SalesQuote) GetTotalAmountExcludingTax()(*float64) {
     return nil
 }
 // GetTotalAmountIncludingTax gets the totalAmountIncludingTax property value. The totalAmountIncludingTax property
+// returns a *float64 when successful
 func (m *SalesQuote) GetTotalAmountIncludingTax()(*float64) {
     val, err := m.GetBackingStore().Get("totalAmountIncludingTax")
     if err != nil {
@@ -828,6 +867,7 @@ func (m *SalesQuote) GetTotalAmountIncludingTax()(*float64) {
     return nil
 }
 // GetTotalTaxAmount gets the totalTaxAmount property value. The totalTaxAmount property
+// returns a *float64 when successful
 func (m *SalesQuote) GetTotalTaxAmount()(*float64) {
     val, err := m.GetBackingStore().Get("totalTaxAmount")
     if err != nil {
@@ -839,6 +879,7 @@ func (m *SalesQuote) GetTotalTaxAmount()(*float64) {
     return nil
 }
 // GetValidUntilDate gets the validUntilDate property value. The validUntilDate property
+// returns a *DateOnly when successful
 func (m *SalesQuote) GetValidUntilDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("validUntilDate")
     if err != nil {
@@ -1370,7 +1411,6 @@ func (m *SalesQuote) SetValidUntilDate(value *i878a80d2330e89d26896388a3f487eef2
         panic(err)
     }
 }
-// SalesQuoteable 
 type SalesQuoteable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

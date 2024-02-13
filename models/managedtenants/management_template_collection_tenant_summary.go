@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementTemplateCollectionTenantSummary 
 type ManagementTemplateCollectionTenantSummary struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagementTemplateCollectionTenantSummary instantiates a new managementTemplateCollectionTenantSummary and sets the default values.
+// NewManagementTemplateCollectionTenantSummary instantiates a new ManagementTemplateCollectionTenantSummary and sets the default values.
 func NewManagementTemplateCollectionTenantSummary()(*ManagementTemplateCollectionTenantSummary) {
     m := &ManagementTemplateCollectionTenantSummary{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManagementTemplateCollectionTenantSummary()(*ManagementTemplateCollectio
     return m
 }
 // CreateManagementTemplateCollectionTenantSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagementTemplateCollectionTenantSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementTemplateCollectionTenantSummary(), nil
 }
 // GetCompleteStepsCount gets the completeStepsCount property value. The completeStepsCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetCompleteStepsCount()(*int32) {
     val, err := m.GetBackingStore().Get("completeStepsCount")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetCompleteStepsCount()(*int
     return nil
 }
 // GetCompleteUsersCount gets the completeUsersCount property value. The completeUsersCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetCompleteUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("completeUsersCount")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetCompleteUsersCount()(*int
     return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
+// returns a *string when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetCreatedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("createdByUserId")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetCreatedByUserId()(*string
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetCreatedDateTime()(*i33607
     return nil
 }
 // GetDismissedStepsCount gets the dismissedStepsCount property value. The dismissedStepsCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetDismissedStepsCount()(*int32) {
     val, err := m.GetBackingStore().Get("dismissedStepsCount")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetDismissedStepsCount()(*in
     return nil
 }
 // GetExcludedUsersCount gets the excludedUsersCount property value. The excludedUsersCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetExcludedUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("excludedUsersCount")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetExcludedUsersCount()(*int
     return nil
 }
 // GetExcludedUsersDistinctCount gets the excludedUsersDistinctCount property value. The excludedUsersDistinctCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetExcludedUsersDistinctCount()(*int32) {
     val, err := m.GetBackingStore().Get("excludedUsersDistinctCount")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetExcludedUsersDistinctCoun
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["completeStepsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -294,6 +302,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetFieldDeserializers()(map[
     return res
 }
 // GetIncompleteStepsCount gets the incompleteStepsCount property value. The incompleteStepsCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetIncompleteStepsCount()(*int32) {
     val, err := m.GetBackingStore().Get("incompleteStepsCount")
     if err != nil {
@@ -305,6 +314,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetIncompleteStepsCount()(*i
     return nil
 }
 // GetIncompleteUsersCount gets the incompleteUsersCount property value. The incompleteUsersCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetIncompleteUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("incompleteUsersCount")
     if err != nil {
@@ -316,6 +326,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetIncompleteUsersCount()(*i
     return nil
 }
 // GetIneligibleStepsCount gets the ineligibleStepsCount property value. The ineligibleStepsCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetIneligibleStepsCount()(*int32) {
     val, err := m.GetBackingStore().Get("ineligibleStepsCount")
     if err != nil {
@@ -327,6 +338,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetIneligibleStepsCount()(*i
     return nil
 }
 // GetIsComplete gets the isComplete property value. The isComplete property
+// returns a *bool when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetIsComplete()(*bool) {
     val, err := m.GetBackingStore().Get("isComplete")
     if err != nil {
@@ -338,6 +350,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetIsComplete()(*bool) {
     return nil
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
+// returns a *string when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetLastActionByUserId()(*string) {
     val, err := m.GetBackingStore().Get("lastActionByUserId")
     if err != nil {
@@ -349,6 +362,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetLastActionByUserId()(*str
     return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
+// returns a *Time when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -360,6 +374,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetLastActionDateTime()(*i33
     return nil
 }
 // GetManagementTemplateCollectionDisplayName gets the managementTemplateCollectionDisplayName property value. The managementTemplateCollectionDisplayName property
+// returns a *string when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetManagementTemplateCollectionDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("managementTemplateCollectionDisplayName")
     if err != nil {
@@ -371,6 +386,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetManagementTemplateCollect
     return nil
 }
 // GetManagementTemplateCollectionId gets the managementTemplateCollectionId property value. The managementTemplateCollectionId property
+// returns a *string when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetManagementTemplateCollectionId()(*string) {
     val, err := m.GetBackingStore().Get("managementTemplateCollectionId")
     if err != nil {
@@ -382,6 +398,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetManagementTemplateCollect
     return nil
 }
 // GetRegressedStepsCount gets the regressedStepsCount property value. The regressedStepsCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetRegressedStepsCount()(*int32) {
     val, err := m.GetBackingStore().Get("regressedStepsCount")
     if err != nil {
@@ -393,6 +410,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetRegressedStepsCount()(*in
     return nil
 }
 // GetRegressedUsersCount gets the regressedUsersCount property value. The regressedUsersCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetRegressedUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("regressedUsersCount")
     if err != nil {
@@ -404,6 +422,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetRegressedUsersCount()(*in
     return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
+// returns a *string when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -415,6 +434,7 @@ func (m *ManagementTemplateCollectionTenantSummary) GetTenantId()(*string) {
     return nil
 }
 // GetUnlicensedUsersCount gets the unlicensedUsersCount property value. The unlicensedUsersCount property
+// returns a *int32 when successful
 func (m *ManagementTemplateCollectionTenantSummary) GetUnlicensedUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("unlicensedUsersCount")
     if err != nil {
@@ -680,7 +700,6 @@ func (m *ManagementTemplateCollectionTenantSummary) SetUnlicensedUsersCount(valu
         panic(err)
     }
 }
-// ManagementTemplateCollectionTenantSummaryable 
 type ManagementTemplateCollectionTenantSummaryable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

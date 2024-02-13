@@ -17,20 +17,21 @@ type B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderInternal instantiates a new SetOrderRequestBuilder and sets the default values.
+// NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderInternal instantiates a new B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) {
     m := &B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/userAttributeAssignments/setOrder", pathParameters),
     }
     return m
 }
-// NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder instantiates a new SetOrderRequestBuilder and sets the default values.
+// NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder instantiates a new B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post set the order of identityUserFlowAttributeAssignments being collected within a user flow.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) Post(ct
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) Post(ct
     return nil
 }
 // ToPostRequestInformation set the order of identityUserFlowAttributeAssignments being collected within a user flow.
+// returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) ToPostRequestInformation(ctx context.Context, body B2cUserFlowsItemUserAttributeAssignmentsSetOrderPostRequestBodyable, requestConfiguration *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) ToPostR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder when successful
 func (m *B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder) {
     return NewB2cUserFlowsItemUserAttributeAssignmentsSetOrderRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

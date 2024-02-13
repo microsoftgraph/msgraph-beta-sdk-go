@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DurationDrivenRolloutSettings 
 type DurationDrivenRolloutSettings struct {
     GradualRolloutSettings
 }
-// NewDurationDrivenRolloutSettings instantiates a new durationDrivenRolloutSettings and sets the default values.
+// NewDurationDrivenRolloutSettings instantiates a new DurationDrivenRolloutSettings and sets the default values.
 func NewDurationDrivenRolloutSettings()(*DurationDrivenRolloutSettings) {
     m := &DurationDrivenRolloutSettings{
         GradualRolloutSettings: *NewGradualRolloutSettings(),
@@ -18,10 +17,12 @@ func NewDurationDrivenRolloutSettings()(*DurationDrivenRolloutSettings) {
     return m
 }
 // CreateDurationDrivenRolloutSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDurationDrivenRolloutSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDurationDrivenRolloutSettings(), nil
 }
 // GetDurationUntilDeploymentEnd gets the durationUntilDeploymentEnd property value. The target duration of the rollout. Given durationBetweenOffers and durationUntilDeploymentEnd, the system will automatically calculate how many devices are in each offering.
+// returns a *ISODuration when successful
 func (m *DurationDrivenRolloutSettings) GetDurationUntilDeploymentEnd()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("durationUntilDeploymentEnd")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DurationDrivenRolloutSettings) GetDurationUntilDeploymentEnd()(*i878a80
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DurationDrivenRolloutSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GradualRolloutSettings.GetFieldDeserializers()
     res["durationUntilDeploymentEnd"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *DurationDrivenRolloutSettings) SetDurationUntilDeploymentEnd(value *i87
         panic(err)
     }
 }
-// DurationDrivenRolloutSettingsable 
 type DurationDrivenRolloutSettingsable interface {
     GradualRolloutSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

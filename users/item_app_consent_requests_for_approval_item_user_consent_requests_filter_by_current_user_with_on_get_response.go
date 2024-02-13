@@ -5,7 +5,6 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnGetResponse 
 type ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnGetResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
@@ -17,10 +16,12 @@ func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentU
     return m
 }
 // CreateItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnGetResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrent
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UserConsentRequestable when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnGetResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrent
         panic(err)
     }
 }
-// ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnGetResponseable 
 type ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnGetResponseable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

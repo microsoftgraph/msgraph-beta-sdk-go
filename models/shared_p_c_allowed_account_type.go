@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Type of accounts that are allowed to share the PC.
@@ -8,18 +9,20 @@ type SharedPCAllowedAccountType int
 
 const (
     // Not configured. Default value.
-    NOTCONFIGURED_SHAREDPCALLOWEDACCOUNTTYPE SharedPCAllowedAccountType = iota
+    NOTCONFIGURED_SHAREDPCALLOWEDACCOUNTTYPE = 1
     // Only guest accounts.
-    GUEST_SHAREDPCALLOWEDACCOUNTTYPE
+    GUEST_SHAREDPCALLOWEDACCOUNTTYPE = 2
     // Only domain-joined accounts.
-    DOMAIN_SHAREDPCALLOWEDACCOUNTTYPE
+    DOMAIN_SHAREDPCALLOWEDACCOUNTTYPE = 4
 )
 
 func (i SharedPCAllowedAccountType) String() string {
     var values []string
-    for p := SharedPCAllowedAccountType(1); p <= DOMAIN_SHAREDPCALLOWEDACCOUNTTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"notConfigured", "guest", "domain"}[p])
+    options := []string{"notConfigured", "guest", "domain"}
+    for p := 0; p < 3; p++ {
+        mantis := SharedPCAllowedAccountType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

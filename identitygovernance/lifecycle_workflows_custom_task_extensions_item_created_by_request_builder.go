@@ -27,28 +27,29 @@ type LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderGetQueryParameters
 }
-// NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderInternal instantiates a new CreatedByRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderInternal instantiates a new LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) {
     m := &LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/customTaskExtensions/{customTaskExtension%2Did}/createdBy{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/customTaskExtensions/{customTaskExtension%2Did}/createdBy{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder instantiates a new CreatedByRequestBuilder and sets the default values.
+// NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder instantiates a new LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.
+// returns a Userable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,14 +61,17 @@ func (m *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) Get(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable), nil
 }
 // MailboxSettings the mailboxSettings property
+// returns a *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByMailboxSettingsRequestBuilder when successful
 func (m *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) MailboxSettings()(*LifecycleWorkflowsCustomTaskExtensionsItemCreatedByMailboxSettingsRequestBuilder) {
     return NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
+// returns a *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByServiceProvisioningErrorsRequestBuilder when successful
 func (m *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) ServiceProvisioningErrors()(*LifecycleWorkflowsCustomTaskExtensionsItemCreatedByServiceProvisioningErrorsRequestBuilder) {
     return NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.
+// returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -81,6 +85,7 @@ func (m *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) ToGe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder when successful
 func (m *LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder) {
     return NewLifecycleWorkflowsCustomTaskExtensionsItemCreatedByRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

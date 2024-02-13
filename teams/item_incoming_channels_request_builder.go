@@ -40,6 +40,7 @@ type ItemIncomingChannelsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemIncomingChannelsRequestBuilderGetQueryParameters
 }
 // ByChannelId provides operations to manage the incomingChannels property of the microsoft.graph.team entity.
+// returns a *ItemIncomingChannelsChannelItemRequestBuilder when successful
 func (m *ItemIncomingChannelsRequestBuilder) ByChannelId(channelId string)(*ItemIncomingChannelsChannelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ItemIncomingChannelsRequestBuilder) ByChannelId(channelId string)(*Item
     }
     return NewItemIncomingChannelsChannelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemIncomingChannelsRequestBuilderInternal instantiates a new IncomingChannelsRequestBuilder and sets the default values.
+// NewItemIncomingChannelsRequestBuilderInternal instantiates a new ItemIncomingChannelsRequestBuilder and sets the default values.
 func NewItemIncomingChannelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemIncomingChannelsRequestBuilder) {
     m := &ItemIncomingChannelsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/incomingChannels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/incomingChannels{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemIncomingChannelsRequestBuilder instantiates a new IncomingChannelsRequestBuilder and sets the default values.
+// NewItemIncomingChannelsRequestBuilder instantiates a new ItemIncomingChannelsRequestBuilder and sets the default values.
 func NewItemIncomingChannelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemIncomingChannelsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemIncomingChannelsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemIncomingChannelsCountRequestBuilder when successful
 func (m *ItemIncomingChannelsRequestBuilder) Count()(*ItemIncomingChannelsCountRequestBuilder) {
     return NewItemIncomingChannelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of incoming channels (channels shared with a team).
+// returns a ChannelCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ItemIncomingChannelsRequestBuilder) Get(ctx context.Context, requestCon
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateChannelCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *ItemIncomingChannelsRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable), nil
 }
 // ToGetRequestInformation get the list of incoming channels (channels shared with a team).
+// returns a *RequestInformation when successful
 func (m *ItemIncomingChannelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemIncomingChannelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *ItemIncomingChannelsRequestBuilder) ToGetRequestInformation(ctx context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemIncomingChannelsRequestBuilder when successful
 func (m *ItemIncomingChannelsRequestBuilder) WithUrl(rawUrl string)(*ItemIncomingChannelsRequestBuilder) {
     return NewItemIncomingChannelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

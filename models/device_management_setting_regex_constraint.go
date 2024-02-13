@@ -8,7 +8,7 @@ import (
 type DeviceManagementSettingRegexConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementSettingRegexConstraint instantiates a new deviceManagementSettingRegexConstraint and sets the default values.
+// NewDeviceManagementSettingRegexConstraint instantiates a new DeviceManagementSettingRegexConstraint and sets the default values.
 func NewDeviceManagementSettingRegexConstraint()(*DeviceManagementSettingRegexConstraint) {
     m := &DeviceManagementSettingRegexConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -18,10 +18,12 @@ func NewDeviceManagementSettingRegexConstraint()(*DeviceManagementSettingRegexCo
     return m
 }
 // CreateDeviceManagementSettingRegexConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingRegexConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementSettingRegexConstraint(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingRegexConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
     res["regex"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *DeviceManagementSettingRegexConstraint) GetFieldDeserializers()(map[str
     return res
 }
 // GetRegex gets the regex property value. The RegEx pattern to match against
+// returns a *string when successful
 func (m *DeviceManagementSettingRegexConstraint) GetRegex()(*string) {
     val, err := m.GetBackingStore().Get("regex")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *DeviceManagementSettingRegexConstraint) SetRegex(value *string)() {
         panic(err)
     }
 }
-// DeviceManagementSettingRegexConstraintable 
 type DeviceManagementSettingRegexConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

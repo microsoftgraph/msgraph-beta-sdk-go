@@ -2,7 +2,6 @@ package billing
 import (
     "errors"
 )
-// 
 type AttributeSet int
 
 const (

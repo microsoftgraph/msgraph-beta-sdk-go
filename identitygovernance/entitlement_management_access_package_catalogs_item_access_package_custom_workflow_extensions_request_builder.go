@@ -48,6 +48,7 @@ type EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowEx
 }
 // ByCustomCalloutExtensionId provides operations to manage the accessPackageCustomWorkflowExtensions property of the microsoft.graph.accessPackageCatalog entity.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) ByCustomCalloutExtensionId(customCalloutExtensionId string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -58,25 +59,28 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkfl
     }
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCustomCalloutExtensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilderInternal instantiates a new AccessPackageCustomWorkflowExtensionsRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilderInternal instantiates a new EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) {
     m := &EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageCustomWorkflowExtensions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageCustomWorkflowExtensions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder instantiates a new AccessPackageCustomWorkflowExtensionsRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder instantiates a new EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCountRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) Count()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a CustomCalloutExtensionCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackagecatalog-list-accesspackagecustomworkflowextensions?view=graph-rest-1.0
@@ -86,8 +90,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkfl
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCustomCalloutExtensionCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -100,14 +103,15 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkfl
 }
 // Post create new navigation property to accessPackageCustomWorkflowExtensions for identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a CustomCalloutExtensionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomCalloutExtensionable, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomCalloutExtensionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCustomCalloutExtensionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,6 +124,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkfl
 }
 // ToGetRequestInformation get a list of the accessPackageAssignmentRequestWorkflowExtension and accessPackageAssignmentWorkflowExtension objects and their properties. The resulting list includes all the customAccessPackageWorkflowExtension objects for the catalog that the caller has access to read. Each object includes an @odata.type property that indicates whether the object is an  accessPackageAssignmentRequestWorkflowExtension or an accessPackageAssignmentWorkflowExtension.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -134,8 +139,9 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkfl
 }
 // ToPostRequestInformation create new navigation property to accessPackageCustomWorkflowExtensions for identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomCalloutExtensionable, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog%2Did}/accessPackageCustomWorkflowExtensions", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -149,6 +155,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkfl
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageCustomWorkflowExtensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

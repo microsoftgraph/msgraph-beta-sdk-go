@@ -17,28 +17,28 @@ type ExactMatchDataStoresItemSessionsItemCancelRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewExactMatchDataStoresItemSessionsItemCancelRequestBuilderInternal instantiates a new CancelRequestBuilder and sets the default values.
+// NewExactMatchDataStoresItemSessionsItemCancelRequestBuilderInternal instantiates a new ExactMatchDataStoresItemSessionsItemCancelRequestBuilder and sets the default values.
 func NewExactMatchDataStoresItemSessionsItemCancelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresItemSessionsItemCancelRequestBuilder) {
     m := &ExactMatchDataStoresItemSessionsItemCancelRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/{exactMatchSession%2Did}/cancel", pathParameters),
     }
     return m
 }
-// NewExactMatchDataStoresItemSessionsItemCancelRequestBuilder instantiates a new CancelRequestBuilder and sets the default values.
+// NewExactMatchDataStoresItemSessionsItemCancelRequestBuilder instantiates a new ExactMatchDataStoresItemSessionsItemCancelRequestBuilder and sets the default values.
 func NewExactMatchDataStoresItemSessionsItemCancelRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresItemSessionsItemCancelRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExactMatchDataStoresItemSessionsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action cancel
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExactMatchDataStoresItemSessionsItemCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *ExactMatchDataStoresItemSessionsItemCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ExactMatchDataStoresItemSessionsItemCancelRequestBuilder) Post(ctx cont
     return nil
 }
 // ToPostRequestInformation invoke action cancel
+// returns a *RequestInformation when successful
 func (m *ExactMatchDataStoresItemSessionsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ExactMatchDataStoresItemSessionsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -57,6 +58,7 @@ func (m *ExactMatchDataStoresItemSessionsItemCancelRequestBuilder) ToPostRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ExactMatchDataStoresItemSessionsItemCancelRequestBuilder when successful
 func (m *ExactMatchDataStoresItemSessionsItemCancelRequestBuilder) WithUrl(rawUrl string)(*ExactMatchDataStoresItemSessionsItemCancelRequestBuilder) {
     return NewExactMatchDataStoresItemSessionsItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -47,6 +47,7 @@ type AppCredentialSignInActivitiesRequestBuilderPostRequestConfiguration struct 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAppCredentialSignInActivityId provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.
+// returns a *AppCredentialSignInActivitiesAppCredentialSignInActivityItemRequestBuilder when successful
 func (m *AppCredentialSignInActivitiesRequestBuilder) ByAppCredentialSignInActivityId(appCredentialSignInActivityId string)(*AppCredentialSignInActivitiesAppCredentialSignInActivityItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,7 +61,7 @@ func (m *AppCredentialSignInActivitiesRequestBuilder) ByAppCredentialSignInActiv
 // NewAppCredentialSignInActivitiesRequestBuilderInternal instantiates a new AppCredentialSignInActivitiesRequestBuilder and sets the default values.
 func NewAppCredentialSignInActivitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppCredentialSignInActivitiesRequestBuilder) {
     m := &AppCredentialSignInActivitiesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/appCredentialSignInActivities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/appCredentialSignInActivities{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -71,10 +72,13 @@ func NewAppCredentialSignInActivitiesRequestBuilder(rawUrl string, requestAdapte
     return NewAppCredentialSignInActivitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *AppCredentialSignInActivitiesCountRequestBuilder when successful
 func (m *AppCredentialSignInActivitiesRequestBuilder) Count()(*AppCredentialSignInActivitiesCountRequestBuilder) {
     return NewAppCredentialSignInActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of appCredentialSignInActivity objects that contains recent activity of application credentials.
+// returns a AppCredentialSignInActivityCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-list-appcredentialsigninactivities?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *AppCredentialSignInActivitiesRequestBuilder) Get(ctx context.Context, r
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAppCredentialSignInActivityCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *AppCredentialSignInActivitiesRequestBuilder) Get(ctx context.Context, r
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppCredentialSignInActivityCollectionResponseable), nil
 }
 // Post create new navigation property to appCredentialSignInActivities for reports
+// returns a AppCredentialSignInActivityable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AppCredentialSignInActivitiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppCredentialSignInActivityable, requestConfiguration *AppCredentialSignInActivitiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppCredentialSignInActivityable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAppCredentialSignInActivityFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *AppCredentialSignInActivitiesRequestBuilder) Post(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppCredentialSignInActivityable), nil
 }
 // ToGetRequestInformation get a list of appCredentialSignInActivity objects that contains recent activity of application credentials.
+// returns a *RequestInformation when successful
 func (m *AppCredentialSignInActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppCredentialSignInActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *AppCredentialSignInActivitiesRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to appCredentialSignInActivities for reports
+// returns a *RequestInformation when successful
 func (m *AppCredentialSignInActivitiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppCredentialSignInActivityable, requestConfiguration *AppCredentialSignInActivitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/reports/appCredentialSignInActivities", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *AppCredentialSignInActivitiesRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AppCredentialSignInActivitiesRequestBuilder when successful
 func (m *AppCredentialSignInActivitiesRequestBuilder) WithUrl(rawUrl string)(*AppCredentialSignInActivitiesRequestBuilder) {
     return NewAppCredentialSignInActivitiesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

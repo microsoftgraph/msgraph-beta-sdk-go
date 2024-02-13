@@ -42,6 +42,7 @@ type CompaniesItemDimensionsRequestBuilderGetRequestConfiguration struct {
 }
 // ByDimensionId provides operations to manage the dimensions property of the microsoft.graph.company entity.
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
+// returns a *CompaniesItemDimensionsDimensionItemRequestBuilder when successful
 func (m *CompaniesItemDimensionsRequestBuilder) ByDimensionId(dimensionId string)(*CompaniesItemDimensionsDimensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -53,6 +54,7 @@ func (m *CompaniesItemDimensionsRequestBuilder) ByDimensionId(dimensionId string
     return NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByDimensionIdGuid provides operations to manage the dimensions property of the microsoft.graph.company entity.
+// returns a *CompaniesItemDimensionsDimensionItemRequestBuilder when successful
 func (m *CompaniesItemDimensionsRequestBuilder) ByDimensionIdGuid(dimensionId i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)(*CompaniesItemDimensionsDimensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -61,32 +63,34 @@ func (m *CompaniesItemDimensionsRequestBuilder) ByDimensionIdGuid(dimensionId i5
     urlTplParams["dimension%2Did"] = dimensionId.String()
     return NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCompaniesItemDimensionsRequestBuilderInternal instantiates a new DimensionsRequestBuilder and sets the default values.
+// NewCompaniesItemDimensionsRequestBuilderInternal instantiates a new CompaniesItemDimensionsRequestBuilder and sets the default values.
 func NewCompaniesItemDimensionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemDimensionsRequestBuilder) {
     m := &CompaniesItemDimensionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/dimensions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/dimensions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemDimensionsRequestBuilder instantiates a new DimensionsRequestBuilder and sets the default values.
+// NewCompaniesItemDimensionsRequestBuilder instantiates a new CompaniesItemDimensionsRequestBuilder and sets the default values.
 func NewCompaniesItemDimensionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemDimensionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemDimensionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CompaniesItemDimensionsCountRequestBuilder when successful
 func (m *CompaniesItemDimensionsRequestBuilder) Count()(*CompaniesItemDimensionsCountRequestBuilder) {
     return NewCompaniesItemDimensionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get dimensions from financials
+// returns a DimensionCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemDimensionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemDimensionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DimensionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDimensionCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -98,6 +102,7 @@ func (m *CompaniesItemDimensionsRequestBuilder) Get(ctx context.Context, request
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DimensionCollectionResponseable), nil
 }
 // ToGetRequestInformation get dimensions from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemDimensionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemDimensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -111,6 +116,7 @@ func (m *CompaniesItemDimensionsRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemDimensionsRequestBuilder when successful
 func (m *CompaniesItemDimensionsRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemDimensionsRequestBuilder) {
     return NewCompaniesItemDimensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

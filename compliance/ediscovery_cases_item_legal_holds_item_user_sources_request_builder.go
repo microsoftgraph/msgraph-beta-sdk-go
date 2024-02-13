@@ -48,6 +48,7 @@ type EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderPostRequestConfig
 }
 // ByUserSourceId provides operations to manage the userSources property of the microsoft.graph.ediscovery.legalHold entity.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemLegalHoldsItemUserSourcesUserSourceItemRequestBuilder when successful
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ByUserSourceId(userSourceId string)(*EdiscoveryCasesItemLegalHoldsItemUserSourcesUserSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -58,25 +59,28 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ByUserSourc
     }
     return NewEdiscoveryCasesItemLegalHoldsItemUserSourcesUserSourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderInternal instantiates a new UserSourcesRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderInternal instantiates a new EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) {
     m := &EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/legalHolds/{legalHold%2Did}/userSources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/legalHolds/{legalHold%2Did}/userSources{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder instantiates a new UserSourcesRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder instantiates a new EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *EdiscoveryCasesItemLegalHoldsItemUserSourcesCountRequestBuilder when successful
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Count()(*EdiscoveryCasesItemLegalHoldsItemUserSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsItemUserSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of userSource objects associated with a legal hold.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a UserSourceCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-legalhold-list-usersources?view=graph-rest-1.0
@@ -86,8 +90,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Get(ctx con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateUserSourceCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -100,6 +103,8 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Get(ctx con
 }
 // Post adds a userSource to a legalHold object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a UserSourceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-legalhold-post-usersources?view=graph-rest-1.0
@@ -109,8 +114,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Post(ctx co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateUserSourceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -123,6 +127,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) Post(ctx co
 }
 // ToGetRequestInformation get the list of userSource objects associated with a legal hold.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +142,9 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToGetReques
 }
 // ToPostRequestInformation adds a userSource to a legalHold object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/legalHolds/{legalHold%2Did}/userSources", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -152,6 +158,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) ToPostReque
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder when successful
 func (m *EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsItemUserSourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

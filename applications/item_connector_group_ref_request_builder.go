@@ -32,28 +32,28 @@ type ItemConnectorGroupRefRequestBuilderPutRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemConnectorGroupRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
+// NewItemConnectorGroupRefRequestBuilderInternal instantiates a new ItemConnectorGroupRefRequestBuilder and sets the default values.
 func NewItemConnectorGroupRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupRefRequestBuilder) {
     m := &ItemConnectorGroupRefRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/applications/{application%2Did}/connectorGroup/$ref", pathParameters),
     }
     return m
 }
-// NewItemConnectorGroupRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
+// NewItemConnectorGroupRefRequestBuilder instantiates a new ItemConnectorGroupRefRequestBuilder and sets the default values.
 func NewItemConnectorGroupRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorGroupRefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemConnectorGroupRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete ref of navigation property connectorGroup for applications
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemConnectorGroupRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemConnectorGroupRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -62,14 +62,15 @@ func (m *ItemConnectorGroupRefRequestBuilder) Delete(ctx context.Context, reques
     return nil
 }
 // Get the connectorGroup the application is using with Microsoft Entra application proxy. Nullable.
+// returns a *string when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemConnectorGroupRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorGroupRefRequestBuilderGetRequestConfiguration)(*string, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "string", errorMapping)
     if err != nil {
@@ -81,6 +82,7 @@ func (m *ItemConnectorGroupRefRequestBuilder) Get(ctx context.Context, requestCo
     return res.(*string), nil
 }
 // Put assign a connectorGroup to an application.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/connectorgroup-post-applications?view=graph-rest-1.0
@@ -90,8 +92,7 @@ func (m *ItemConnectorGroupRefRequestBuilder) Put(ctx context.Context, body ie23
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -100,6 +101,7 @@ func (m *ItemConnectorGroupRefRequestBuilder) Put(ctx context.Context, body ie23
     return nil
 }
 // ToDeleteRequestInformation delete ref of navigation property connectorGroup for applications
+// returns a *RequestInformation when successful
 func (m *ItemConnectorGroupRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -110,6 +112,7 @@ func (m *ItemConnectorGroupRefRequestBuilder) ToDeleteRequestInformation(ctx con
     return requestInfo, nil
 }
 // ToGetRequestInformation the connectorGroup the application is using with Microsoft Entra application proxy. Nullable.
+// returns a *RequestInformation when successful
 func (m *ItemConnectorGroupRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -120,6 +123,7 @@ func (m *ItemConnectorGroupRefRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // ToPutRequestInformation assign a connectorGroup to an application.
+// returns a *RequestInformation when successful
 func (m *ItemConnectorGroupRefRequestBuilder) ToPutRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceUpdateable, requestConfiguration *ItemConnectorGroupRefRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -134,6 +138,7 @@ func (m *ItemConnectorGroupRefRequestBuilder) ToPutRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemConnectorGroupRefRequestBuilder when successful
 func (m *ItemConnectorGroupRefRequestBuilder) WithUrl(rawUrl string)(*ItemConnectorGroupRefRequestBuilder) {
     return NewItemConnectorGroupRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

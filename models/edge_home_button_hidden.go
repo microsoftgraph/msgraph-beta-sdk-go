@@ -8,7 +8,7 @@ import (
 type EdgeHomeButtonHidden struct {
     EdgeHomeButtonConfiguration
 }
-// NewEdgeHomeButtonHidden instantiates a new edgeHomeButtonHidden and sets the default values.
+// NewEdgeHomeButtonHidden instantiates a new EdgeHomeButtonHidden and sets the default values.
 func NewEdgeHomeButtonHidden()(*EdgeHomeButtonHidden) {
     m := &EdgeHomeButtonHidden{
         EdgeHomeButtonConfiguration: *NewEdgeHomeButtonConfiguration(),
@@ -18,10 +18,12 @@ func NewEdgeHomeButtonHidden()(*EdgeHomeButtonHidden) {
     return m
 }
 // CreateEdgeHomeButtonHiddenFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdgeHomeButtonHiddenFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdgeHomeButtonHidden(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdgeHomeButtonHidden) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EdgeHomeButtonConfiguration.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *EdgeHomeButtonHidden) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// EdgeHomeButtonHiddenable 
 type EdgeHomeButtonHiddenable interface {
     EdgeHomeButtonConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

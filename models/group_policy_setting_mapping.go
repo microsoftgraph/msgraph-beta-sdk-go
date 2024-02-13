@@ -8,7 +8,7 @@ import (
 type GroupPolicySettingMapping struct {
     Entity
 }
-// NewGroupPolicySettingMapping instantiates a new groupPolicySettingMapping and sets the default values.
+// NewGroupPolicySettingMapping instantiates a new GroupPolicySettingMapping and sets the default values.
 func NewGroupPolicySettingMapping()(*GroupPolicySettingMapping) {
     m := &GroupPolicySettingMapping{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewGroupPolicySettingMapping()(*GroupPolicySettingMapping) {
     return m
 }
 // CreateGroupPolicySettingMappingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicySettingMappingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicySettingMapping(), nil
 }
 // GetAdmxSettingDefinitionId gets the admxSettingDefinitionId property value. Admx Group Policy Id
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetAdmxSettingDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("admxSettingDefinitionId")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *GroupPolicySettingMapping) GetAdmxSettingDefinitionId()(*string) {
     return nil
 }
 // GetChildIdList gets the childIdList property value. List of Child Ids of the group policy setting.
+// returns a []string when successful
 func (m *GroupPolicySettingMapping) GetChildIdList()([]string) {
     val, err := m.GetBackingStore().Get("childIdList")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *GroupPolicySettingMapping) GetChildIdList()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["admxSettingDefinitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -259,6 +263,7 @@ func (m *GroupPolicySettingMapping) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIntuneSettingDefinitionId gets the intuneSettingDefinitionId property value. The Intune Setting Definition Id
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetIntuneSettingDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("intuneSettingDefinitionId")
     if err != nil {
@@ -270,6 +275,7 @@ func (m *GroupPolicySettingMapping) GetIntuneSettingDefinitionId()(*string) {
     return nil
 }
 // GetIntuneSettingUriList gets the intuneSettingUriList property value. The list of Intune Setting URIs this group policy setting maps to
+// returns a []string when successful
 func (m *GroupPolicySettingMapping) GetIntuneSettingUriList()([]string) {
     val, err := m.GetBackingStore().Get("intuneSettingUriList")
     if err != nil {
@@ -281,6 +287,7 @@ func (m *GroupPolicySettingMapping) GetIntuneSettingUriList()([]string) {
     return nil
 }
 // GetIsMdmSupported gets the isMdmSupported property value. Indicates if the setting is supported by Intune or not
+// returns a *bool when successful
 func (m *GroupPolicySettingMapping) GetIsMdmSupported()(*bool) {
     val, err := m.GetBackingStore().Get("isMdmSupported")
     if err != nil {
@@ -292,6 +299,7 @@ func (m *GroupPolicySettingMapping) GetIsMdmSupported()(*bool) {
     return nil
 }
 // GetMdmCspName gets the mdmCspName property value. The CSP name this group policy setting maps to.
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetMdmCspName()(*string) {
     val, err := m.GetBackingStore().Get("mdmCspName")
     if err != nil {
@@ -303,6 +311,7 @@ func (m *GroupPolicySettingMapping) GetMdmCspName()(*string) {
     return nil
 }
 // GetMdmMinimumOSVersion gets the mdmMinimumOSVersion property value. The minimum OS version this mdm setting supports.
+// returns a *int32 when successful
 func (m *GroupPolicySettingMapping) GetMdmMinimumOSVersion()(*int32) {
     val, err := m.GetBackingStore().Get("mdmMinimumOSVersion")
     if err != nil {
@@ -314,6 +323,7 @@ func (m *GroupPolicySettingMapping) GetMdmMinimumOSVersion()(*int32) {
     return nil
 }
 // GetMdmSettingUri gets the mdmSettingUri property value. The MDM CSP URI this group policy setting maps to.
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetMdmSettingUri()(*string) {
     val, err := m.GetBackingStore().Get("mdmSettingUri")
     if err != nil {
@@ -325,6 +335,7 @@ func (m *GroupPolicySettingMapping) GetMdmSettingUri()(*string) {
     return nil
 }
 // GetMdmSupportedState gets the mdmSupportedState property value. Mdm Support Status of the setting.
+// returns a *MdmSupportedState when successful
 func (m *GroupPolicySettingMapping) GetMdmSupportedState()(*MdmSupportedState) {
     val, err := m.GetBackingStore().Get("mdmSupportedState")
     if err != nil {
@@ -336,6 +347,7 @@ func (m *GroupPolicySettingMapping) GetMdmSupportedState()(*MdmSupportedState) {
     return nil
 }
 // GetParentId gets the parentId property value. Parent Id of the group policy setting.
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetParentId()(*string) {
     val, err := m.GetBackingStore().Get("parentId")
     if err != nil {
@@ -347,6 +359,7 @@ func (m *GroupPolicySettingMapping) GetParentId()(*string) {
     return nil
 }
 // GetSettingCategory gets the settingCategory property value. The category the group policy setting is in.
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetSettingCategory()(*string) {
     val, err := m.GetBackingStore().Get("settingCategory")
     if err != nil {
@@ -358,6 +371,7 @@ func (m *GroupPolicySettingMapping) GetSettingCategory()(*string) {
     return nil
 }
 // GetSettingDisplayName gets the settingDisplayName property value. The display name of this group policy setting.
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetSettingDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("settingDisplayName")
     if err != nil {
@@ -369,6 +383,7 @@ func (m *GroupPolicySettingMapping) GetSettingDisplayName()(*string) {
     return nil
 }
 // GetSettingDisplayValue gets the settingDisplayValue property value. The display value of this group policy setting.
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetSettingDisplayValue()(*string) {
     val, err := m.GetBackingStore().Get("settingDisplayValue")
     if err != nil {
@@ -380,6 +395,7 @@ func (m *GroupPolicySettingMapping) GetSettingDisplayValue()(*string) {
     return nil
 }
 // GetSettingDisplayValueType gets the settingDisplayValueType property value. The display value type of this group policy setting.
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetSettingDisplayValueType()(*string) {
     val, err := m.GetBackingStore().Get("settingDisplayValueType")
     if err != nil {
@@ -391,6 +407,7 @@ func (m *GroupPolicySettingMapping) GetSettingDisplayValueType()(*string) {
     return nil
 }
 // GetSettingName gets the settingName property value. The name of this group policy setting.
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetSettingName()(*string) {
     val, err := m.GetBackingStore().Get("settingName")
     if err != nil {
@@ -402,6 +419,7 @@ func (m *GroupPolicySettingMapping) GetSettingName()(*string) {
     return nil
 }
 // GetSettingScope gets the settingScope property value. Scope of the group policy setting.
+// returns a *GroupPolicySettingScope when successful
 func (m *GroupPolicySettingMapping) GetSettingScope()(*GroupPolicySettingScope) {
     val, err := m.GetBackingStore().Get("settingScope")
     if err != nil {
@@ -413,6 +431,7 @@ func (m *GroupPolicySettingMapping) GetSettingScope()(*GroupPolicySettingScope) 
     return nil
 }
 // GetSettingType gets the settingType property value. Setting type of the group policy.
+// returns a *GroupPolicySettingType when successful
 func (m *GroupPolicySettingMapping) GetSettingType()(*GroupPolicySettingType) {
     val, err := m.GetBackingStore().Get("settingType")
     if err != nil {
@@ -424,6 +443,7 @@ func (m *GroupPolicySettingMapping) GetSettingType()(*GroupPolicySettingType) {
     return nil
 }
 // GetSettingValue gets the settingValue property value. The value of this group policy setting.
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetSettingValue()(*string) {
     val, err := m.GetBackingStore().Get("settingValue")
     if err != nil {
@@ -435,6 +455,7 @@ func (m *GroupPolicySettingMapping) GetSettingValue()(*string) {
     return nil
 }
 // GetSettingValueDisplayUnits gets the settingValueDisplayUnits property value. The display units of this group policy setting value
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetSettingValueDisplayUnits()(*string) {
     val, err := m.GetBackingStore().Get("settingValueDisplayUnits")
     if err != nil {
@@ -446,6 +467,7 @@ func (m *GroupPolicySettingMapping) GetSettingValueDisplayUnits()(*string) {
     return nil
 }
 // GetSettingValueType gets the settingValueType property value. The value type of this group policy setting.
+// returns a *string when successful
 func (m *GroupPolicySettingMapping) GetSettingValueType()(*string) {
     val, err := m.GetBackingStore().Get("settingValueType")
     if err != nil {
@@ -727,7 +749,6 @@ func (m *GroupPolicySettingMapping) SetSettingValueType(value *string)() {
         panic(err)
     }
 }
-// GroupPolicySettingMappingable 
 type GroupPolicySettingMappingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BusinessScenarioPlanner 
 type BusinessScenarioPlanner struct {
     Entity
 }
-// NewBusinessScenarioPlanner instantiates a new businessScenarioPlanner and sets the default values.
+// NewBusinessScenarioPlanner instantiates a new BusinessScenarioPlanner and sets the default values.
 func NewBusinessScenarioPlanner()(*BusinessScenarioPlanner) {
     m := &BusinessScenarioPlanner{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewBusinessScenarioPlanner()(*BusinessScenarioPlanner) {
     return m
 }
 // CreateBusinessScenarioPlannerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBusinessScenarioPlannerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBusinessScenarioPlanner(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BusinessScenarioPlanner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["planConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -61,6 +62,7 @@ func (m *BusinessScenarioPlanner) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetPlanConfiguration gets the planConfiguration property value. The configuration of Planner plans that will be created for the scenario.
+// returns a PlannerPlanConfigurationable when successful
 func (m *BusinessScenarioPlanner) GetPlanConfiguration()(PlannerPlanConfigurationable) {
     val, err := m.GetBackingStore().Get("planConfiguration")
     if err != nil {
@@ -72,6 +74,7 @@ func (m *BusinessScenarioPlanner) GetPlanConfiguration()(PlannerPlanConfiguratio
     return nil
 }
 // GetTaskConfiguration gets the taskConfiguration property value. The configuration of Planner tasks that will be created for the scenario.
+// returns a PlannerTaskConfigurationable when successful
 func (m *BusinessScenarioPlanner) GetTaskConfiguration()(PlannerTaskConfigurationable) {
     val, err := m.GetBackingStore().Get("taskConfiguration")
     if err != nil {
@@ -83,6 +86,7 @@ func (m *BusinessScenarioPlanner) GetTaskConfiguration()(PlannerTaskConfiguratio
     return nil
 }
 // GetTasks gets the tasks property value. The Planner tasks for the scenario.
+// returns a []BusinessScenarioTaskable when successful
 func (m *BusinessScenarioPlanner) GetTasks()([]BusinessScenarioTaskable) {
     val, err := m.GetBackingStore().Get("tasks")
     if err != nil {
@@ -146,7 +150,6 @@ func (m *BusinessScenarioPlanner) SetTasks(value []BusinessScenarioTaskable)() {
         panic(err)
     }
 }
-// BusinessScenarioPlannerable 
 type BusinessScenarioPlannerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

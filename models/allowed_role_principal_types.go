@@ -1,23 +1,25 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type AllowedRolePrincipalTypes int
 
 const (
-    USER_ALLOWEDROLEPRINCIPALTYPES AllowedRolePrincipalTypes = iota
-    SERVICEPRINCIPAL_ALLOWEDROLEPRINCIPALTYPES
-    GROUP_ALLOWEDROLEPRINCIPALTYPES
-    UNKNOWNFUTUREVALUE_ALLOWEDROLEPRINCIPALTYPES
+    USER_ALLOWEDROLEPRINCIPALTYPES = 1
+    SERVICEPRINCIPAL_ALLOWEDROLEPRINCIPALTYPES = 2
+    GROUP_ALLOWEDROLEPRINCIPALTYPES = 4
+    UNKNOWNFUTUREVALUE_ALLOWEDROLEPRINCIPALTYPES = 8
 )
 
 func (i AllowedRolePrincipalTypes) String() string {
     var values []string
-    for p := AllowedRolePrincipalTypes(1); p <= UNKNOWNFUTUREVALUE_ALLOWEDROLEPRINCIPALTYPES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"user", "servicePrincipal", "group", "unknownFutureValue"}[p])
+    options := []string{"user", "servicePrincipal", "group", "unknownFutureValue"}
+    for p := 0; p < 4; p++ {
+        mantis := AllowedRolePrincipalTypes(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

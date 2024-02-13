@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RbacApplication 
 type RbacApplication struct {
     Entity
 }
-// NewRbacApplication instantiates a new rbacApplication and sets the default values.
+// NewRbacApplication instantiates a new RbacApplication and sets the default values.
 func NewRbacApplication()(*RbacApplication) {
     m := &RbacApplication{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewRbacApplication()(*RbacApplication) {
     return m
 }
 // CreateRbacApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRbacApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRbacApplication(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RbacApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["resourceNamespaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -201,6 +202,7 @@ func (m *RbacApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetResourceNamespaces gets the resourceNamespaces property value. The resourceNamespaces property
+// returns a []UnifiedRbacResourceNamespaceable when successful
 func (m *RbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable) {
     val, err := m.GetBackingStore().Get("resourceNamespaces")
     if err != nil {
@@ -212,6 +214,7 @@ func (m *RbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespace
     return nil
 }
 // GetRoleAssignmentApprovals gets the roleAssignmentApprovals property value. The roleAssignmentApprovals property
+// returns a []Approvalable when successful
 func (m *RbacApplication) GetRoleAssignmentApprovals()([]Approvalable) {
     val, err := m.GetBackingStore().Get("roleAssignmentApprovals")
     if err != nil {
@@ -223,6 +226,7 @@ func (m *RbacApplication) GetRoleAssignmentApprovals()([]Approvalable) {
     return nil
 }
 // GetRoleAssignments gets the roleAssignments property value. The roleAssignments property
+// returns a []UnifiedRoleAssignmentable when successful
 func (m *RbacApplication) GetRoleAssignments()([]UnifiedRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("roleAssignments")
     if err != nil {
@@ -234,6 +238,7 @@ func (m *RbacApplication) GetRoleAssignments()([]UnifiedRoleAssignmentable) {
     return nil
 }
 // GetRoleAssignmentScheduleInstances gets the roleAssignmentScheduleInstances property value. The roleAssignmentScheduleInstances property
+// returns a []UnifiedRoleAssignmentScheduleInstanceable when successful
 func (m *RbacApplication) GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssignmentScheduleInstanceable) {
     val, err := m.GetBackingStore().Get("roleAssignmentScheduleInstances")
     if err != nil {
@@ -245,6 +250,7 @@ func (m *RbacApplication) GetRoleAssignmentScheduleInstances()([]UnifiedRoleAssi
     return nil
 }
 // GetRoleAssignmentScheduleRequests gets the roleAssignmentScheduleRequests property value. The roleAssignmentScheduleRequests property
+// returns a []UnifiedRoleAssignmentScheduleRequestable when successful
 func (m *RbacApplication) GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssignmentScheduleRequestable) {
     val, err := m.GetBackingStore().Get("roleAssignmentScheduleRequests")
     if err != nil {
@@ -256,6 +262,7 @@ func (m *RbacApplication) GetRoleAssignmentScheduleRequests()([]UnifiedRoleAssig
     return nil
 }
 // GetRoleAssignmentSchedules gets the roleAssignmentSchedules property value. The roleAssignmentSchedules property
+// returns a []UnifiedRoleAssignmentScheduleable when successful
 func (m *RbacApplication) GetRoleAssignmentSchedules()([]UnifiedRoleAssignmentScheduleable) {
     val, err := m.GetBackingStore().Get("roleAssignmentSchedules")
     if err != nil {
@@ -267,6 +274,7 @@ func (m *RbacApplication) GetRoleAssignmentSchedules()([]UnifiedRoleAssignmentSc
     return nil
 }
 // GetRoleDefinitions gets the roleDefinitions property value. The roleDefinitions property
+// returns a []UnifiedRoleDefinitionable when successful
 func (m *RbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinitions")
     if err != nil {
@@ -278,6 +286,7 @@ func (m *RbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
     return nil
 }
 // GetRoleEligibilityScheduleInstances gets the roleEligibilityScheduleInstances property value. The roleEligibilityScheduleInstances property
+// returns a []UnifiedRoleEligibilityScheduleInstanceable when successful
 func (m *RbacApplication) GetRoleEligibilityScheduleInstances()([]UnifiedRoleEligibilityScheduleInstanceable) {
     val, err := m.GetBackingStore().Get("roleEligibilityScheduleInstances")
     if err != nil {
@@ -289,6 +298,7 @@ func (m *RbacApplication) GetRoleEligibilityScheduleInstances()([]UnifiedRoleEli
     return nil
 }
 // GetRoleEligibilityScheduleRequests gets the roleEligibilityScheduleRequests property value. The roleEligibilityScheduleRequests property
+// returns a []UnifiedRoleEligibilityScheduleRequestable when successful
 func (m *RbacApplication) GetRoleEligibilityScheduleRequests()([]UnifiedRoleEligibilityScheduleRequestable) {
     val, err := m.GetBackingStore().Get("roleEligibilityScheduleRequests")
     if err != nil {
@@ -300,6 +310,7 @@ func (m *RbacApplication) GetRoleEligibilityScheduleRequests()([]UnifiedRoleElig
     return nil
 }
 // GetRoleEligibilitySchedules gets the roleEligibilitySchedules property value. The roleEligibilitySchedules property
+// returns a []UnifiedRoleEligibilityScheduleable when successful
 func (m *RbacApplication) GetRoleEligibilitySchedules()([]UnifiedRoleEligibilityScheduleable) {
     val, err := m.GetBackingStore().Get("roleEligibilitySchedules")
     if err != nil {
@@ -311,6 +322,7 @@ func (m *RbacApplication) GetRoleEligibilitySchedules()([]UnifiedRoleEligibility
     return nil
 }
 // GetTransitiveRoleAssignments gets the transitiveRoleAssignments property value. The transitiveRoleAssignments property
+// returns a []UnifiedRoleAssignmentable when successful
 func (m *RbacApplication) GetTransitiveRoleAssignments()([]UnifiedRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("transitiveRoleAssignments")
     if err != nil {
@@ -538,7 +550,6 @@ func (m *RbacApplication) SetTransitiveRoleAssignments(value []UnifiedRoleAssign
         panic(err)
     }
 }
-// RbacApplicationable 
 type RbacApplicationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

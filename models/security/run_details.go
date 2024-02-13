@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// RunDetails 
 type RunDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewRunDetails instantiates a new runDetails and sets the default values.
+// NewRunDetails instantiates a new RunDetails and sets the default values.
 func NewRunDetails()(*RunDetails) {
     m := &RunDetails{
     }
@@ -20,10 +19,12 @@ func NewRunDetails()(*RunDetails) {
     return m
 }
 // CreateRunDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRunDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRunDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RunDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *RunDetails) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *RunDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetErrorCode gets the errorCode property value. The errorCode property
+// GetErrorCode gets the errorCode property value. Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.
+// returns a *HuntingRuleErrorCode when successful
 func (m *RunDetails) GetErrorCode()(*HuntingRuleErrorCode) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -50,7 +53,8 @@ func (m *RunDetails) GetErrorCode()(*HuntingRuleErrorCode) {
     }
     return nil
 }
-// GetFailureReason gets the failureReason property value. The failureReason property
+// GetFailureReason gets the failureReason property value. Reason for failure when the custom detection last ran and failed. See the table below.
+// returns a *string when successful
 func (m *RunDetails) GetFailureReason()(*string) {
     val, err := m.GetBackingStore().Get("failureReason")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *RunDetails) GetFailureReason()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RunDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,7 +121,8 @@ func (m *RunDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetLastRunDateTime gets the lastRunDateTime property value. The lastRunDateTime property
+// GetLastRunDateTime gets the lastRunDateTime property value. Timestamp when the custom detection was last run.
+// returns a *Time when successful
 func (m *RunDetails) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRunDateTime")
     if err != nil {
@@ -128,6 +134,7 @@ func (m *RunDetails) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *RunDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,7 +145,8 @@ func (m *RunDetails) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.
+// returns a *HuntingRuleRunStatus when successful
 func (m *RunDetails) GetStatus()(*HuntingRuleRunStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -202,21 +210,21 @@ func (m *RunDetails) SetAdditionalData(value map[string]any)() {
 func (m *RunDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetErrorCode sets the errorCode property value. The errorCode property
+// SetErrorCode sets the errorCode property value. Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.
 func (m *RunDetails) SetErrorCode(value *HuntingRuleErrorCode)() {
     err := m.GetBackingStore().Set("errorCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFailureReason sets the failureReason property value. The failureReason property
+// SetFailureReason sets the failureReason property value. Reason for failure when the custom detection last ran and failed. See the table below.
 func (m *RunDetails) SetFailureReason(value *string)() {
     err := m.GetBackingStore().Set("failureReason", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastRunDateTime sets the lastRunDateTime property value. The lastRunDateTime property
+// SetLastRunDateTime sets the lastRunDateTime property value. Timestamp when the custom detection was last run.
 func (m *RunDetails) SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastRunDateTime", value)
     if err != nil {
@@ -230,14 +238,13 @@ func (m *RunDetails) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.
 func (m *RunDetails) SetStatus(value *HuntingRuleRunStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// RunDetailsable 
 type RunDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

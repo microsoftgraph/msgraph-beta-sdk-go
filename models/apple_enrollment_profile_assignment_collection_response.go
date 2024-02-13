@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppleEnrollmentProfileAssignmentCollectionResponse 
 type AppleEnrollmentProfileAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAppleEnrollmentProfileAssignmentCollectionResponse instantiates a new appleEnrollmentProfileAssignmentCollectionResponse and sets the default values.
+// NewAppleEnrollmentProfileAssignmentCollectionResponse instantiates a new AppleEnrollmentProfileAssignmentCollectionResponse and sets the default values.
 func NewAppleEnrollmentProfileAssignmentCollectionResponse()(*AppleEnrollmentProfileAssignmentCollectionResponse) {
     m := &AppleEnrollmentProfileAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAppleEnrollmentProfileAssignmentCollectionResponse()(*AppleEnrollmentPro
     return m
 }
 // CreateAppleEnrollmentProfileAssignmentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppleEnrollmentProfileAssignmentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppleEnrollmentProfileAssignmentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppleEnrollmentProfileAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AppleEnrollmentProfileAssignmentCollectionResponse) GetFieldDeserialize
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AppleEnrollmentProfileAssignmentable when successful
 func (m *AppleEnrollmentProfileAssignmentCollectionResponse) GetValue()([]AppleEnrollmentProfileAssignmentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AppleEnrollmentProfileAssignmentCollectionResponse) SetValue(value []Ap
         panic(err)
     }
 }
-// AppleEnrollmentProfileAssignmentCollectionResponseable 
 type AppleEnrollmentProfileAssignmentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

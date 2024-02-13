@@ -41,20 +41,21 @@ type IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderPatchReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal instantiates a new SourceSystemDefinitionItemRequestBuilder and sets the default values.
+// NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal instantiates a new IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder and sets the default values.
 func NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) {
     m := &IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/sourceSystems/{sourceSystemDefinition%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/sourceSystems/{sourceSystemDefinition%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder instantiates a new SourceSystemDefinitionItemRequestBuilder and sets the default values.
+// NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder instantiates a new IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder and sets the default values.
 func NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a sourceSystemDefinition object.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-delete?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Dele
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,6 +74,8 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Dele
     return nil
 }
 // Get read the properties and relationships of a sourceSystemDefinition object.
+// returns a SourceSystemDefinitionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-get?view=graph-rest-1.0
@@ -83,8 +85,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Get(
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateSourceSystemDefinitionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -96,6 +97,8 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Get(
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable), nil
 }
 // Patch update the properties of a sourceSystemDefinition object.
+// returns a SourceSystemDefinitionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-update?view=graph-rest-1.0
@@ -105,8 +108,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Patc
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateSourceSystemDefinitionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -118,8 +120,9 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) Patc
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable), nil
 }
 // ToDeleteRequestInformation delete a sourceSystemDefinition object.
+// returns a *RequestInformation when successful
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/external/industryData/sourceSystems/{sourceSystemDefinition%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -128,6 +131,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToDe
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a sourceSystemDefinition object.
+// returns a *RequestInformation when successful
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -141,8 +145,9 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToGe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a sourceSystemDefinition object.
+// returns a *RequestInformation when successful
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/external/industryData/sourceSystems/{sourceSystemDefinition%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -155,6 +160,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToPa
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder when successful
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) WithUrl(rawUrl string)(*IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) {
     return NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

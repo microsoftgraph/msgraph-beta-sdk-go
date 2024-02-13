@@ -17,20 +17,21 @@ type ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilderInternal instantiates a new DeclineRequestBuilder and sets the default values.
+// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilderInternal instantiates a new ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder) {
     m := &ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}/decline", pathParameters),
     }
     return m
 }
-// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder instantiates a new DeclineRequestBuilder and sets the default values.
+// NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder instantiates a new ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder and sets the default values.
 func NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDecline
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDecline
     return nil
 }
 // ToPostRequestInformation decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the proposedNewTime parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclinePostRequestBodyable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDecline
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

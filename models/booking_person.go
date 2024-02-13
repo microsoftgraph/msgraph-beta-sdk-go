@@ -8,7 +8,7 @@ import (
 type BookingPerson struct {
     BookingNamedEntity
 }
-// NewBookingPerson instantiates a new bookingPerson and sets the default values.
+// NewBookingPerson instantiates a new BookingPerson and sets the default values.
 func NewBookingPerson()(*BookingPerson) {
     m := &BookingPerson{
         BookingNamedEntity: *NewBookingNamedEntity(),
@@ -18,6 +18,7 @@ func NewBookingPerson()(*BookingPerson) {
     return m
 }
 // CreateBookingPersonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingPersonFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +43,7 @@ func CreateBookingPersonFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     return NewBookingPerson(), nil
 }
 // GetEmailAddress gets the emailAddress property value. The email address of the person.
+// returns a *string when successful
 func (m *BookingPerson) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
     if err != nil {
@@ -53,6 +55,7 @@ func (m *BookingPerson) GetEmailAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingPerson) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BookingNamedEntity.GetFieldDeserializers()
     res["emailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,7 +91,6 @@ func (m *BookingPerson) SetEmailAddress(value *string)() {
         panic(err)
     }
 }
-// BookingPersonable 
 type BookingPersonable interface {
     BookingNamedEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

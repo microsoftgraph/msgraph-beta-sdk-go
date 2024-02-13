@@ -42,6 +42,7 @@ type CompaniesItemSalesOrdersRequestBuilderGetRequestConfiguration struct {
 }
 // BySalesOrderId provides operations to manage the salesOrders property of the microsoft.graph.company entity.
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
+// returns a *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder when successful
 func (m *CompaniesItemSalesOrdersRequestBuilder) BySalesOrderId(salesOrderId string)(*CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -53,6 +54,7 @@ func (m *CompaniesItemSalesOrdersRequestBuilder) BySalesOrderId(salesOrderId str
     return NewCompaniesItemSalesOrdersSalesOrderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // BySalesOrderIdGuid provides operations to manage the salesOrders property of the microsoft.graph.company entity.
+// returns a *CompaniesItemSalesOrdersSalesOrderItemRequestBuilder when successful
 func (m *CompaniesItemSalesOrdersRequestBuilder) BySalesOrderIdGuid(salesOrderId i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)(*CompaniesItemSalesOrdersSalesOrderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -61,32 +63,34 @@ func (m *CompaniesItemSalesOrdersRequestBuilder) BySalesOrderIdGuid(salesOrderId
     urlTplParams["salesOrder%2Did"] = salesOrderId.String()
     return NewCompaniesItemSalesOrdersSalesOrderItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCompaniesItemSalesOrdersRequestBuilderInternal instantiates a new SalesOrdersRequestBuilder and sets the default values.
+// NewCompaniesItemSalesOrdersRequestBuilderInternal instantiates a new CompaniesItemSalesOrdersRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrdersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrdersRequestBuilder) {
     m := &CompaniesItemSalesOrdersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesOrders{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesOrders{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemSalesOrdersRequestBuilder instantiates a new SalesOrdersRequestBuilder and sets the default values.
+// NewCompaniesItemSalesOrdersRequestBuilder instantiates a new CompaniesItemSalesOrdersRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrdersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrdersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemSalesOrdersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CompaniesItemSalesOrdersCountRequestBuilder when successful
 func (m *CompaniesItemSalesOrdersRequestBuilder) Count()(*CompaniesItemSalesOrdersCountRequestBuilder) {
     return NewCompaniesItemSalesOrdersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get salesOrders from financials
+// returns a SalesOrderCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemSalesOrdersRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemSalesOrdersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSalesOrderCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -98,6 +102,7 @@ func (m *CompaniesItemSalesOrdersRequestBuilder) Get(ctx context.Context, reques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderCollectionResponseable), nil
 }
 // ToGetRequestInformation get salesOrders from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemSalesOrdersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesOrdersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -111,6 +116,7 @@ func (m *CompaniesItemSalesOrdersRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemSalesOrdersRequestBuilder when successful
 func (m *CompaniesItemSalesOrdersRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesOrdersRequestBuilder) {
     return NewCompaniesItemSalesOrdersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -26,28 +26,29 @@ type ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCou
     // Request query parameters
     QueryParameters *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilderGetQueryParameters
 }
-// NewClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilderInternal instantiates a new ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder and sets the default values.
 func NewClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder) {
     m := &ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources/{educationSubmissionResource%2Did}/dependentResources/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources/{educationSubmissionResource%2Did}/dependentResources/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder instantiates a new ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder and sets the default values.
 func NewClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResource
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResource
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder when successful
 func (m *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder) WithUrl(rawUrl string)(*ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder) {
     return NewClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

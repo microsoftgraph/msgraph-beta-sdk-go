@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationChoiceSettingDefinition 
 type DeviceManagementConfigurationChoiceSettingDefinition struct {
     DeviceManagementConfigurationSettingDefinition
 }
-// NewDeviceManagementConfigurationChoiceSettingDefinition instantiates a new deviceManagementConfigurationChoiceSettingDefinition and sets the default values.
+// NewDeviceManagementConfigurationChoiceSettingDefinition instantiates a new DeviceManagementConfigurationChoiceSettingDefinition and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingDefinition()(*DeviceManagementConfigurationChoiceSettingDefinition) {
     m := &DeviceManagementConfigurationChoiceSettingDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
@@ -16,6 +15,7 @@ func NewDeviceManagementConfigurationChoiceSettingDefinition()(*DeviceManagement
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationChoiceSettingDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +38,7 @@ func CreateDeviceManagementConfigurationChoiceSettingDefinitionFromDiscriminator
     return NewDeviceManagementConfigurationChoiceSettingDefinition(), nil
 }
 // GetDefaultOptionId gets the defaultOptionId property value. Default option for choice setting
+// returns a *string when successful
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetDefaultOptionId()(*string) {
     val, err := m.GetBackingStore().Get("defaultOptionId")
     if err != nil {
@@ -49,6 +50,7 @@ func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetDefaultOptionI
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingDefinition.GetFieldDeserializers()
     res["defaultOptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,6 +82,7 @@ func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetFieldDeseriali
     return res
 }
 // GetOptions gets the options property value. Options for the setting that can be selected
+// returns a []DeviceManagementConfigurationOptionDefinitionable when successful
 func (m *DeviceManagementConfigurationChoiceSettingDefinition) GetOptions()([]DeviceManagementConfigurationOptionDefinitionable) {
     val, err := m.GetBackingStore().Get("options")
     if err != nil {
@@ -130,7 +133,6 @@ func (m *DeviceManagementConfigurationChoiceSettingDefinition) SetOptions(value 
         panic(err)
     }
 }
-// DeviceManagementConfigurationChoiceSettingDefinitionable 
 type DeviceManagementConfigurationChoiceSettingDefinitionable interface {
     DeviceManagementConfigurationSettingDefinitionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ReportRoot 
 type ReportRoot struct {
     Entity
 }
-// NewReportRoot instantiates a new reportRoot and sets the default values.
+// NewReportRoot instantiates a new ReportRoot and sets the default values.
 func NewReportRoot()(*ReportRoot) {
     m := &ReportRoot{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewReportRoot()(*ReportRoot) {
     return m
 }
 // CreateReportRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReportRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReportRoot(), nil
 }
 // GetAppCredentialSignInActivities gets the appCredentialSignInActivities property value. Represents a collection of sign-in activities of application credentials.
+// returns a []AppCredentialSignInActivityable when successful
 func (m *ReportRoot) GetAppCredentialSignInActivities()([]AppCredentialSignInActivityable) {
     val, err := m.GetBackingStore().Get("appCredentialSignInActivities")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ReportRoot) GetAppCredentialSignInActivities()([]AppCredentialSignInAct
     return nil
 }
 // GetApplicationSignInDetailedSummary gets the applicationSignInDetailedSummary property value. Represents a detailed summary of an application sign-in.
+// returns a []ApplicationSignInDetailedSummaryable when successful
 func (m *ReportRoot) GetApplicationSignInDetailedSummary()([]ApplicationSignInDetailedSummaryable) {
     val, err := m.GetBackingStore().Get("applicationSignInDetailedSummary")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ReportRoot) GetApplicationSignInDetailedSummary()([]ApplicationSignInDe
     return nil
 }
 // GetAuthenticationMethods gets the authenticationMethods property value. Container for navigation properties for Microsoft Entra authentication methods resources.
+// returns a AuthenticationMethodsRootable when successful
 func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
     val, err := m.GetBackingStore().Get("authenticationMethods")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
     return nil
 }
 // GetCredentialUserRegistrationDetails gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
+// returns a []CredentialUserRegistrationDetailsable when successful
 func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable) {
     val, err := m.GetBackingStore().Get("credentialUserRegistrationDetails")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegi
     return nil
 }
 // GetDailyPrintUsage gets the dailyPrintUsage property value. The dailyPrintUsage property
+// returns a []PrintUsageable when successful
 func (m *ReportRoot) GetDailyPrintUsage()([]PrintUsageable) {
     val, err := m.GetBackingStore().Get("dailyPrintUsage")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *ReportRoot) GetDailyPrintUsage()([]PrintUsageable) {
     return nil
 }
 // GetDailyPrintUsageByPrinter gets the dailyPrintUsageByPrinter property value. Retrieve a list of daily print usage summaries, grouped by printer.
+// returns a []PrintUsageByPrinterable when successful
 func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     val, err := m.GetBackingStore().Get("dailyPrintUsageByPrinter")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *ReportRoot) GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     return nil
 }
 // GetDailyPrintUsageByUser gets the dailyPrintUsageByUser property value. Retrieve a list of daily print usage summaries, grouped by user.
+// returns a []PrintUsageByUserable when successful
 func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
     val, err := m.GetBackingStore().Get("dailyPrintUsageByUser")
     if err != nil {
@@ -97,6 +104,7 @@ func (m *ReportRoot) GetDailyPrintUsageByUser()([]PrintUsageByUserable) {
     return nil
 }
 // GetDailyPrintUsageSummariesByPrinter gets the dailyPrintUsageSummariesByPrinter property value. The dailyPrintUsageSummariesByPrinter property
+// returns a []PrintUsageByPrinterable when successful
 func (m *ReportRoot) GetDailyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable) {
     val, err := m.GetBackingStore().Get("dailyPrintUsageSummariesByPrinter")
     if err != nil {
@@ -108,6 +116,7 @@ func (m *ReportRoot) GetDailyPrintUsageSummariesByPrinter()([]PrintUsageByPrinte
     return nil
 }
 // GetDailyPrintUsageSummariesByUser gets the dailyPrintUsageSummariesByUser property value. The dailyPrintUsageSummariesByUser property
+// returns a []PrintUsageByUserable when successful
 func (m *ReportRoot) GetDailyPrintUsageSummariesByUser()([]PrintUsageByUserable) {
     val, err := m.GetBackingStore().Get("dailyPrintUsageSummariesByUser")
     if err != nil {
@@ -119,6 +128,7 @@ func (m *ReportRoot) GetDailyPrintUsageSummariesByUser()([]PrintUsageByUserable)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appCredentialSignInActivities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -408,6 +418,7 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. Retrieve a list of monthly print usage summaries, grouped by printer.
+// returns a []PrintUsageByPrinterable when successful
 func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) {
     val, err := m.GetBackingStore().Get("monthlyPrintUsageByPrinter")
     if err != nil {
@@ -419,6 +430,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable) 
     return nil
 }
 // GetMonthlyPrintUsageByUser gets the monthlyPrintUsageByUser property value. Retrieve a list of monthly print usage summaries, grouped by user.
+// returns a []PrintUsageByUserable when successful
 func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
     val, err := m.GetBackingStore().Get("monthlyPrintUsageByUser")
     if err != nil {
@@ -430,6 +442,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageByUser()([]PrintUsageByUserable) {
     return nil
 }
 // GetMonthlyPrintUsageSummariesByPrinter gets the monthlyPrintUsageSummariesByPrinter property value. The monthlyPrintUsageSummariesByPrinter property
+// returns a []PrintUsageByPrinterable when successful
 func (m *ReportRoot) GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable) {
     val, err := m.GetBackingStore().Get("monthlyPrintUsageSummariesByPrinter")
     if err != nil {
@@ -441,6 +454,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrin
     return nil
 }
 // GetMonthlyPrintUsageSummariesByUser gets the monthlyPrintUsageSummariesByUser property value. The monthlyPrintUsageSummariesByUser property
+// returns a []PrintUsageByUserable when successful
 func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserable) {
     val, err := m.GetBackingStore().Get("monthlyPrintUsageSummariesByUser")
     if err != nil {
@@ -452,6 +466,7 @@ func (m *ReportRoot) GetMonthlyPrintUsageSummariesByUser()([]PrintUsageByUserabl
     return nil
 }
 // GetPartners gets the partners property value. Represents billing details for a Microsoft direct partner.
+// returns a Partnersable when successful
 func (m *ReportRoot) GetPartners()(Partnersable) {
     val, err := m.GetBackingStore().Get("partners")
     if err != nil {
@@ -463,6 +478,7 @@ func (m *ReportRoot) GetPartners()(Partnersable) {
     return nil
 }
 // GetSecurity gets the security property value. Provides the ability to launch a simulated phishing attack that organizations can learn from.
+// returns a SecurityReportsRootable when successful
 func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
     val, err := m.GetBackingStore().Get("security")
     if err != nil {
@@ -474,6 +490,7 @@ func (m *ReportRoot) GetSecurity()(SecurityReportsRootable) {
     return nil
 }
 // GetServiceActivity gets the serviceActivity property value. Reports that relate to tenant-level authentication activities in Microsoft Entra.
+// returns a ServiceActivityable when successful
 func (m *ReportRoot) GetServiceActivity()(ServiceActivityable) {
     val, err := m.GetBackingStore().Get("serviceActivity")
     if err != nil {
@@ -485,6 +502,7 @@ func (m *ReportRoot) GetServiceActivity()(ServiceActivityable) {
     return nil
 }
 // GetServicePrincipalSignInActivities gets the servicePrincipalSignInActivities property value. Represents a collection of sign-in activities of service principals.
+// returns a []ServicePrincipalSignInActivityable when successful
 func (m *ReportRoot) GetServicePrincipalSignInActivities()([]ServicePrincipalSignInActivityable) {
     val, err := m.GetBackingStore().Get("servicePrincipalSignInActivities")
     if err != nil {
@@ -496,6 +514,7 @@ func (m *ReportRoot) GetServicePrincipalSignInActivities()([]ServicePrincipalSig
     return nil
 }
 // GetSla gets the sla property value. Reports that relate to tenant-level Microsoft Entra SLA attainment.
+// returns a ServiceLevelAgreementRootable when successful
 func (m *ReportRoot) GetSla()(ServiceLevelAgreementRootable) {
     val, err := m.GetBackingStore().Get("sla")
     if err != nil {
@@ -507,6 +526,7 @@ func (m *ReportRoot) GetSla()(ServiceLevelAgreementRootable) {
     return nil
 }
 // GetUserCredentialUsageDetails gets the userCredentialUsageDetails property value. Represents the self-service password reset (SSPR) usage for a given tenant.
+// returns a []UserCredentialUsageDetailsable when successful
 func (m *ReportRoot) GetUserCredentialUsageDetails()([]UserCredentialUsageDetailsable) {
     val, err := m.GetBackingStore().Get("userCredentialUsageDetails")
     if err != nil {
@@ -518,6 +538,7 @@ func (m *ReportRoot) GetUserCredentialUsageDetails()([]UserCredentialUsageDetail
     return nil
 }
 // GetUserInsights gets the userInsights property value. Represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.
+// returns a UserInsightsRootable when successful
 func (m *ReportRoot) GetUserInsights()(UserInsightsRootable) {
     val, err := m.GetBackingStore().Get("userInsights")
     if err != nil {
@@ -880,7 +901,6 @@ func (m *ReportRoot) SetUserInsights(value UserInsightsRootable)() {
         panic(err)
     }
 }
-// ReportRootable 
 type ReportRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

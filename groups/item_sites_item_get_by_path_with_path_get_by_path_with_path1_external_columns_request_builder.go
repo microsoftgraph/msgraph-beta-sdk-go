@@ -39,28 +39,29 @@ type ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuild
     // Request query parameters
     QueryParameters *ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilderGetQueryParameters
 }
-// NewItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilderInternal instantiates a new ExternalColumnsRequestBuilder and sets the default values.
+// NewItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilderInternal instantiates a new ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder and sets the default values.
 func NewItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder) {
     m := &ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/externalColumns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/externalColumns{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder instantiates a new ExternalColumnsRequestBuilder and sets the default values.
+// NewItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder instantiates a new ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder and sets the default values.
 func NewItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// returns a ColumnDefinitionCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateColumnDefinitionCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -72,6 +73,7 @@ func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestB
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable), nil
 }
 // ToGetRequestInformation the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -85,6 +87,7 @@ func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestB
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder when successful
 func (m *ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder) {
     return NewItemSitesItemGetByPathWithPathGetByPathWithPath1ExternalColumnsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

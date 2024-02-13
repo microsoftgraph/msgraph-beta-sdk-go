@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OverprovisionedAzureServicePrincipalFinding 
 type OverprovisionedAzureServicePrincipalFinding struct {
     IdentityFinding
 }
-// NewOverprovisionedAzureServicePrincipalFinding instantiates a new overprovisionedAzureServicePrincipalFinding and sets the default values.
+// NewOverprovisionedAzureServicePrincipalFinding instantiates a new OverprovisionedAzureServicePrincipalFinding and sets the default values.
 func NewOverprovisionedAzureServicePrincipalFinding()(*OverprovisionedAzureServicePrincipalFinding) {
     m := &OverprovisionedAzureServicePrincipalFinding{
         IdentityFinding: *NewIdentityFinding(),
@@ -16,10 +15,12 @@ func NewOverprovisionedAzureServicePrincipalFinding()(*OverprovisionedAzureServi
     return m
 }
 // CreateOverprovisionedAzureServicePrincipalFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOverprovisionedAzureServicePrincipalFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOverprovisionedAzureServicePrincipalFinding(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OverprovisionedAzureServicePrincipalFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentityFinding.GetFieldDeserializers()
     return res
@@ -32,7 +33,6 @@ func (m *OverprovisionedAzureServicePrincipalFinding) Serialize(writer i878a80d2
     }
     return nil
 }
-// OverprovisionedAzureServicePrincipalFindingable 
 type OverprovisionedAzureServicePrincipalFindingable interface {
     IdentityFindingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

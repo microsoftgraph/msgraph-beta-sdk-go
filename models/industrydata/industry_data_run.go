@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// IndustryDataRun 
 type IndustryDataRun struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewIndustryDataRun instantiates a new industryDataRun and sets the default values.
+// NewIndustryDataRun instantiates a new IndustryDataRun and sets the default values.
 func NewIndustryDataRun()(*IndustryDataRun) {
     m := &IndustryDataRun{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewIndustryDataRun()(*IndustryDataRun) {
     return m
 }
 // CreateIndustryDataRunFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIndustryDataRunFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIndustryDataRun(), nil
 }
 // GetActivities gets the activities property value. The set of activities performed during the run.
+// returns a []IndustryDataRunActivityable when successful
 func (m *IndustryDataRun) GetActivities()([]IndustryDataRunActivityable) {
     val, err := m.GetBackingStore().Get("activities")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *IndustryDataRun) GetActivities()([]IndustryDataRunActivityable) {
     return nil
 }
 // GetBlockingError gets the blockingError property value. An error object to diagnose critical failures in the run.
+// returns a PublicErrorable when successful
 func (m *IndustryDataRun) GetBlockingError()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable) {
     val, err := m.GetBackingStore().Get("blockingError")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *IndustryDataRun) GetBlockingError()(ie233ee762e29b4ba6970aa2a2efce4b7fd
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the run for rendering in a user interface.
+// returns a *string when successful
 func (m *IndustryDataRun) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *IndustryDataRun) GetDisplayName()(*string) {
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The date and time when the run finished or null if the run is still in-progress. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *IndustryDataRun) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *IndustryDataRun) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IndustryDataRun) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +142,7 @@ func (m *IndustryDataRun) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetStartDateTime gets the startDateTime property value. The date and time when the run started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *IndustryDataRun) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -148,6 +154,7 @@ func (m *IndustryDataRun) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *IndustryDataRunStatus when successful
 func (m *IndustryDataRun) GetStatus()(*IndustryDataRunStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -227,7 +234,6 @@ func (m *IndustryDataRun) SetStatus(value *IndustryDataRunStatus)() {
         panic(err)
     }
 }
-// IndustryDataRunable 
 type IndustryDataRunable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

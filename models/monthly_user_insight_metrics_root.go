@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MonthlyUserInsightMetricsRoot 
 type MonthlyUserInsightMetricsRoot struct {
     Entity
 }
-// NewMonthlyUserInsightMetricsRoot instantiates a new monthlyUserInsightMetricsRoot and sets the default values.
+// NewMonthlyUserInsightMetricsRoot instantiates a new MonthlyUserInsightMetricsRoot and sets the default values.
 func NewMonthlyUserInsightMetricsRoot()(*MonthlyUserInsightMetricsRoot) {
     m := &MonthlyUserInsightMetricsRoot{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewMonthlyUserInsightMetricsRoot()(*MonthlyUserInsightMetricsRoot) {
     return m
 }
 // CreateMonthlyUserInsightMetricsRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMonthlyUserInsightMetricsRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMonthlyUserInsightMetricsRoot(), nil
 }
 // GetActiveUsers gets the activeUsers property value. Insights for active users on apps registered in the tenant for a specified period.
+// returns a []ActiveUsersMetricable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetActiveUsers()([]ActiveUsersMetricable) {
     val, err := m.GetBackingStore().Get("activeUsers")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *MonthlyUserInsightMetricsRoot) GetActiveUsers()([]ActiveUsersMetricable
     return nil
 }
 // GetActiveUsersBreakdown gets the activeUsersBreakdown property value. Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+// returns a []ActiveUsersBreakdownMetricable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetActiveUsersBreakdown()([]ActiveUsersBreakdownMetricable) {
     val, err := m.GetBackingStore().Get("activeUsersBreakdown")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *MonthlyUserInsightMetricsRoot) GetActiveUsersBreakdown()([]ActiveUsersB
     return nil
 }
 // GetAuthentications gets the authentications property value. Insights for authentications on apps registered in the tenant for a specified period.
+// returns a []AuthenticationsMetricable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetAuthentications()([]AuthenticationsMetricable) {
     val, err := m.GetBackingStore().Get("authentications")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *MonthlyUserInsightMetricsRoot) GetAuthentications()([]AuthenticationsMe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MonthlyUserInsightMetricsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -202,6 +206,7 @@ func (m *MonthlyUserInsightMetricsRoot) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetInactiveUsers gets the inactiveUsers property value. The inactiveUsers property
+// returns a []MonthlyInactiveUsersMetricable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetInactiveUsers()([]MonthlyInactiveUsersMetricable) {
     val, err := m.GetBackingStore().Get("inactiveUsers")
     if err != nil {
@@ -213,6 +218,7 @@ func (m *MonthlyUserInsightMetricsRoot) GetInactiveUsers()([]MonthlyInactiveUser
     return nil
 }
 // GetInactiveUsersByApplication gets the inactiveUsersByApplication property value. The inactiveUsersByApplication property
+// returns a []MonthlyInactiveUsersByApplicationMetricable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetInactiveUsersByApplication()([]MonthlyInactiveUsersByApplicationMetricable) {
     val, err := m.GetBackingStore().Get("inactiveUsersByApplication")
     if err != nil {
@@ -224,6 +230,7 @@ func (m *MonthlyUserInsightMetricsRoot) GetInactiveUsersByApplication()([]Monthl
     return nil
 }
 // GetMfaCompletions gets the mfaCompletions property value. Insights for MFA usage on apps registered in the tenant for a specified period.
+// returns a []MfaCompletionMetricable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetMfaCompletions()([]MfaCompletionMetricable) {
     val, err := m.GetBackingStore().Get("mfaCompletions")
     if err != nil {
@@ -235,6 +242,7 @@ func (m *MonthlyUserInsightMetricsRoot) GetMfaCompletions()([]MfaCompletionMetri
     return nil
 }
 // GetRequests gets the requests property value. Insights for all user requests on apps registered in the tenant for a specified period.
+// returns a []UserRequestsMetricable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetRequests()([]UserRequestsMetricable) {
     val, err := m.GetBackingStore().Get("requests")
     if err != nil {
@@ -246,6 +254,7 @@ func (m *MonthlyUserInsightMetricsRoot) GetRequests()([]UserRequestsMetricable) 
     return nil
 }
 // GetSignUps gets the signUps property value. Total sign-ups on apps registered in the tenant for a specified period.
+// returns a []UserSignUpMetricable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetSignUps()([]UserSignUpMetricable) {
     val, err := m.GetBackingStore().Get("signUps")
     if err != nil {
@@ -257,6 +266,7 @@ func (m *MonthlyUserInsightMetricsRoot) GetSignUps()([]UserSignUpMetricable) {
     return nil
 }
 // GetSummary gets the summary property value. Summary of all usage insights on apps registered in the tenant for a specified period.
+// returns a []InsightSummaryable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetSummary()([]InsightSummaryable) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -446,7 +456,6 @@ func (m *MonthlyUserInsightMetricsRoot) SetSummary(value []InsightSummaryable)()
         panic(err)
     }
 }
-// MonthlyUserInsightMetricsRootable 
 type MonthlyUserInsightMetricsRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

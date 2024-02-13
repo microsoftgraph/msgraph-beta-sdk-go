@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RetentionDurationInDays 
 type RetentionDurationInDays struct {
     RetentionDuration
 }
-// NewRetentionDurationInDays instantiates a new retentionDurationInDays and sets the default values.
+// NewRetentionDurationInDays instantiates a new RetentionDurationInDays and sets the default values.
 func NewRetentionDurationInDays()(*RetentionDurationInDays) {
     m := &RetentionDurationInDays{
         RetentionDuration: *NewRetentionDuration(),
@@ -18,10 +17,12 @@ func NewRetentionDurationInDays()(*RetentionDurationInDays) {
     return m
 }
 // CreateRetentionDurationInDaysFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRetentionDurationInDaysFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRetentionDurationInDays(), nil
 }
 // GetDays gets the days property value. Specifies the time period in days for which an item with the applied retention label will be retained for.
+// returns a *int32 when successful
 func (m *RetentionDurationInDays) GetDays()(*int32) {
     val, err := m.GetBackingStore().Get("days")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *RetentionDurationInDays) GetDays()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RetentionDurationInDays) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RetentionDuration.GetFieldDeserializers()
     res["days"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *RetentionDurationInDays) SetDays(value *int32)() {
         panic(err)
     }
 }
-// RetentionDurationInDaysable 
 type RetentionDurationInDaysable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RetentionDurationable

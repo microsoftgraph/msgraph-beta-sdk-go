@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesAgentGroup 
 type OnPremisesAgentGroup struct {
     Entity
 }
-// NewOnPremisesAgentGroup instantiates a new onPremisesAgentGroup and sets the default values.
+// NewOnPremisesAgentGroup instantiates a new OnPremisesAgentGroup and sets the default values.
 func NewOnPremisesAgentGroup()(*OnPremisesAgentGroup) {
     m := &OnPremisesAgentGroup{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOnPremisesAgentGroup()(*OnPremisesAgentGroup) {
     return m
 }
 // CreateOnPremisesAgentGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesAgentGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesAgentGroup(), nil
 }
 // GetAgents gets the agents property value. List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
+// returns a []OnPremisesAgentable when successful
 func (m *OnPremisesAgentGroup) GetAgents()([]OnPremisesAgentable) {
     val, err := m.GetBackingStore().Get("agents")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *OnPremisesAgentGroup) GetAgents()([]OnPremisesAgentable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the onPremisesAgentGroup.
+// returns a *string when successful
 func (m *OnPremisesAgentGroup) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *OnPremisesAgentGroup) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +112,7 @@ func (m *OnPremisesAgentGroup) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetIsDefault gets the isDefault property value. Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system.
+// returns a *bool when successful
 func (m *OnPremisesAgentGroup) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *OnPremisesAgentGroup) GetIsDefault()(*bool) {
     return nil
 }
 // GetPublishedResources gets the publishedResources property value. List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
+// returns a []PublishedResourceable when successful
 func (m *OnPremisesAgentGroup) GetPublishedResources()([]PublishedResourceable) {
     val, err := m.GetBackingStore().Get("publishedResources")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *OnPremisesAgentGroup) GetPublishedResources()([]PublishedResourceable) 
     return nil
 }
 // GetPublishingType gets the publishingType property value. The publishingType property
+// returns a *OnPremisesPublishingType when successful
 func (m *OnPremisesAgentGroup) GetPublishingType()(*OnPremisesPublishingType) {
     val, err := m.GetBackingStore().Get("publishingType")
     if err != nil {
@@ -227,7 +233,6 @@ func (m *OnPremisesAgentGroup) SetPublishingType(value *OnPremisesPublishingType
         panic(err)
     }
 }
-// OnPremisesAgentGroupable 
 type OnPremisesAgentGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

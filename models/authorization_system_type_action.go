@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthorizationSystemTypeAction 
 type AuthorizationSystemTypeAction struct {
     Entity
 }
-// NewAuthorizationSystemTypeAction instantiates a new authorizationSystemTypeAction and sets the default values.
+// NewAuthorizationSystemTypeAction instantiates a new AuthorizationSystemTypeAction and sets the default values.
 func NewAuthorizationSystemTypeAction()(*AuthorizationSystemTypeAction) {
     m := &AuthorizationSystemTypeAction{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewAuthorizationSystemTypeAction()(*AuthorizationSystemTypeAction) {
     return m
 }
 // CreateAuthorizationSystemTypeActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthorizationSystemTypeActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +42,7 @@ func CreateAuthorizationSystemTypeActionFromDiscriminatorValue(parseNode i878a80
     return NewAuthorizationSystemTypeAction(), nil
 }
 // GetActionType gets the actionType property value. The type of action allowed in the authorization system's service. The possible values are: delete, read, unknownFutureValue. Supports $filter and (eq).
+// returns a *AuthorizationSystemActionType when successful
 func (m *AuthorizationSystemTypeAction) GetActionType()(*AuthorizationSystemActionType) {
     val, err := m.GetBackingStore().Get("actionType")
     if err != nil {
@@ -53,6 +54,7 @@ func (m *AuthorizationSystemTypeAction) GetActionType()(*AuthorizationSystemActi
     return nil
 }
 // GetExternalId gets the externalId property value. The display name of an action. Read-only. Supports $filter and (eq).
+// returns a *string when successful
 func (m *AuthorizationSystemTypeAction) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *AuthorizationSystemTypeAction) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthorizationSystemTypeAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,6 +118,7 @@ func (m *AuthorizationSystemTypeAction) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetResourceTypes gets the resourceTypes property value. The resource types in the authorization system's service where the action can be performed. Supports $filter and (eq).
+// returns a []string when successful
 func (m *AuthorizationSystemTypeAction) GetResourceTypes()([]string) {
     val, err := m.GetBackingStore().Get("resourceTypes")
     if err != nil {
@@ -126,6 +130,7 @@ func (m *AuthorizationSystemTypeAction) GetResourceTypes()([]string) {
     return nil
 }
 // GetSeverity gets the severity property value. The severity property
+// returns a *AuthorizationSystemActionSeverity when successful
 func (m *AuthorizationSystemTypeAction) GetSeverity()(*AuthorizationSystemActionSeverity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
@@ -198,7 +203,6 @@ func (m *AuthorizationSystemTypeAction) SetSeverity(value *AuthorizationSystemAc
         panic(err)
     }
 }
-// AuthorizationSystemTypeActionable 
 type AuthorizationSystemTypeActionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

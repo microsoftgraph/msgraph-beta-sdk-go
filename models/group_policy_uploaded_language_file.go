@@ -11,7 +11,7 @@ type GroupPolicyUploadedLanguageFile struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewGroupPolicyUploadedLanguageFile instantiates a new groupPolicyUploadedLanguageFile and sets the default values.
+// NewGroupPolicyUploadedLanguageFile instantiates a new GroupPolicyUploadedLanguageFile and sets the default values.
 func NewGroupPolicyUploadedLanguageFile()(*GroupPolicyUploadedLanguageFile) {
     m := &GroupPolicyUploadedLanguageFile{
     }
@@ -20,10 +20,12 @@ func NewGroupPolicyUploadedLanguageFile()(*GroupPolicyUploadedLanguageFile) {
     return m
 }
 // CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyUploadedLanguageFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyUploadedLanguageFile(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GroupPolicyUploadedLanguageFile) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +38,12 @@ func (m *GroupPolicyUploadedLanguageFile) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *GroupPolicyUploadedLanguageFile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetContent gets the content property value. The contents of the uploaded ADML file.
+// returns a []byte when successful
 func (m *GroupPolicyUploadedLanguageFile) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -51,6 +55,7 @@ func (m *GroupPolicyUploadedLanguageFile) GetContent()([]byte) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyUploadedLanguageFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *GroupPolicyUploadedLanguageFile) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetFileName gets the fileName property value. The file name of the uploaded ADML file.
+// returns a *string when successful
 func (m *GroupPolicyUploadedLanguageFile) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *GroupPolicyUploadedLanguageFile) GetFileName()(*string) {
     return nil
 }
 // GetId gets the id property value. Key of the entity.
+// returns a *string when successful
 func (m *GroupPolicyUploadedLanguageFile) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *GroupPolicyUploadedLanguageFile) GetId()(*string) {
     return nil
 }
 // GetLanguageCode gets the languageCode property value. The language code of the uploaded ADML file.
+// returns a *string when successful
 func (m *GroupPolicyUploadedLanguageFile) GetLanguageCode()(*string) {
     val, err := m.GetBackingStore().Get("languageCode")
     if err != nil {
@@ -149,6 +157,7 @@ func (m *GroupPolicyUploadedLanguageFile) GetLanguageCode()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+// returns a *Time when successful
 func (m *GroupPolicyUploadedLanguageFile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -160,6 +169,7 @@ func (m *GroupPolicyUploadedLanguageFile) GetLastModifiedDateTime()(*i336074805f
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *GroupPolicyUploadedLanguageFile) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -269,7 +279,6 @@ func (m *GroupPolicyUploadedLanguageFile) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// GroupPolicyUploadedLanguageFileable 
 type GroupPolicyUploadedLanguageFileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

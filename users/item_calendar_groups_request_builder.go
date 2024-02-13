@@ -43,6 +43,7 @@ type ItemCalendarGroupsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByCalendarGroupId provides operations to manage the calendarGroups property of the microsoft.graph.user entity.
+// returns a *ItemCalendarGroupsCalendarGroupItemRequestBuilder when successful
 func (m *ItemCalendarGroupsRequestBuilder) ByCalendarGroupId(calendarGroupId string)(*ItemCalendarGroupsCalendarGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -53,24 +54,27 @@ func (m *ItemCalendarGroupsRequestBuilder) ByCalendarGroupId(calendarGroupId str
     }
     return NewItemCalendarGroupsCalendarGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemCalendarGroupsRequestBuilderInternal instantiates a new CalendarGroupsRequestBuilder and sets the default values.
+// NewItemCalendarGroupsRequestBuilderInternal instantiates a new ItemCalendarGroupsRequestBuilder and sets the default values.
 func NewItemCalendarGroupsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsRequestBuilder) {
     m := &ItemCalendarGroupsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendarGroups{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemCalendarGroupsRequestBuilder instantiates a new CalendarGroupsRequestBuilder and sets the default values.
+// NewItemCalendarGroupsRequestBuilder instantiates a new ItemCalendarGroupsRequestBuilder and sets the default values.
 func NewItemCalendarGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarGroupsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarGroupsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemCalendarGroupsCountRequestBuilder when successful
 func (m *ItemCalendarGroupsRequestBuilder) Count()(*ItemCalendarGroupsCountRequestBuilder) {
     return NewItemCalendarGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the user's calendar groups.
+// returns a CalendarGroupCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-1.0
@@ -80,8 +84,7 @@ func (m *ItemCalendarGroupsRequestBuilder) Get(ctx context.Context, requestConfi
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCalendarGroupCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,6 +96,8 @@ func (m *ItemCalendarGroupsRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarGroupCollectionResponseable), nil
 }
 // Post use this API to create a new CalendarGroup.
+// returns a CalendarGroupable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-1.0
@@ -102,8 +107,7 @@ func (m *ItemCalendarGroupsRequestBuilder) Post(ctx context.Context, body ie233e
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCalendarGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -115,6 +119,7 @@ func (m *ItemCalendarGroupsRequestBuilder) Post(ctx context.Context, body ie233e
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarGroupable), nil
 }
 // ToGetRequestInformation get the user's calendar groups.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -128,8 +133,9 @@ func (m *ItemCalendarGroupsRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToPostRequestInformation use this API to create a new CalendarGroup.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarGroupable, requestConfiguration *ItemCalendarGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/calendarGroups", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -142,6 +148,7 @@ func (m *ItemCalendarGroupsRequestBuilder) ToPostRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarGroupsRequestBuilder when successful
 func (m *ItemCalendarGroupsRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsRequestBuilder) {
     return NewItemCalendarGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

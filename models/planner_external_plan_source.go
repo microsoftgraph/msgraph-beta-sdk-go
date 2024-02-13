@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerExternalPlanSource 
 type PlannerExternalPlanSource struct {
     PlannerPlanCreation
 }
-// NewPlannerExternalPlanSource instantiates a new plannerExternalPlanSource and sets the default values.
+// NewPlannerExternalPlanSource instantiates a new PlannerExternalPlanSource and sets the default values.
 func NewPlannerExternalPlanSource()(*PlannerExternalPlanSource) {
     m := &PlannerExternalPlanSource{
         PlannerPlanCreation: *NewPlannerPlanCreation(),
@@ -18,10 +17,12 @@ func NewPlannerExternalPlanSource()(*PlannerExternalPlanSource) {
     return m
 }
 // CreatePlannerExternalPlanSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerExternalPlanSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerExternalPlanSource(), nil
 }
 // GetContextScenarioId gets the contextScenarioId property value. Nullable. An identifier for the scenario associated with this external source. This should be in reverse DNS format. For example, Contoso company owned application for customer support would have a value like 'com.constoso.customerSupport'.
+// returns a *string when successful
 func (m *PlannerExternalPlanSource) GetContextScenarioId()(*string) {
     val, err := m.GetBackingStore().Get("contextScenarioId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PlannerExternalPlanSource) GetContextScenarioId()(*string) {
     return nil
 }
 // GetExternalContextId gets the externalContextId property value. Nullable. The ID of the external entity's containing entity or context.
+// returns a *string when successful
 func (m *PlannerExternalPlanSource) GetExternalContextId()(*string) {
     val, err := m.GetBackingStore().Get("externalContextId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *PlannerExternalPlanSource) GetExternalContextId()(*string) {
     return nil
 }
 // GetExternalObjectId gets the externalObjectId property value. Nullable. The ID of the entity that an external service associates with a plan.
+// returns a *string when successful
 func (m *PlannerExternalPlanSource) GetExternalObjectId()(*string) {
     val, err := m.GetBackingStore().Get("externalObjectId")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *PlannerExternalPlanSource) GetExternalObjectId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerExternalPlanSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerPlanCreation.GetFieldDeserializers()
     res["contextScenarioId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -136,7 +140,6 @@ func (m *PlannerExternalPlanSource) SetExternalObjectId(value *string)() {
         panic(err)
     }
 }
-// PlannerExternalPlanSourceable 
 type PlannerExternalPlanSourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerPlanCreationable

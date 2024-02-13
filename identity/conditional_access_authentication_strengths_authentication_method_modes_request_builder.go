@@ -48,6 +48,7 @@ type ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBui
 }
 // ByAuthenticationMethodModeDetailId provides operations to manage the authenticationMethodModes property of the microsoft.graph.authenticationStrengthRoot entity.
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
+// returns a *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilder when successful
 func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) ByAuthenticationMethodModeDetailId(authenticationMethodModeDetailId string)(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -58,25 +59,28 @@ func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesReques
     }
     return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesAuthenticationMethodModeDetailItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderInternal instantiates a new AuthenticationMethodModesRequestBuilder and sets the default values.
+// NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderInternal instantiates a new ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder and sets the default values.
 func NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) {
     m := &ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationStrengths/authenticationMethodModes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationStrengths/authenticationMethodModes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder instantiates a new AuthenticationMethodModesRequestBuilder and sets the default values.
+// NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder instantiates a new ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder and sets the default values.
 func NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesCountRequestBuilder when successful
 func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) Count()(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesCountRequestBuilder) {
     return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
+// returns a AuthenticationMethodModeDetailCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0
@@ -86,8 +90,7 @@ func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesReques
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationMethodModeDetailCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -100,14 +103,15 @@ func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesReques
 }
 // Post create new navigation property to authenticationMethodModes for identity
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
+// returns a AuthenticationMethodModeDetailable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModeDetailable, requestConfiguration *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModeDetailable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAuthenticationMethodModeDetailFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,6 +124,7 @@ func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesReques
 }
 // ToGetRequestInformation get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
+// returns a *RequestInformation when successful
 func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -134,8 +139,9 @@ func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesReques
 }
 // ToPostRequestInformation create new navigation property to authenticationMethodModes for identity
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
+// returns a *RequestInformation when successful
 func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModeDetailable, requestConfiguration *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/identity/conditionalAccess/authenticationStrengths/authenticationMethodModes", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -149,6 +155,7 @@ func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesReques
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
+// returns a *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder when successful
 func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) {
     return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

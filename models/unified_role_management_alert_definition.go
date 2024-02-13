@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleManagementAlertDefinition 
 type UnifiedRoleManagementAlertDefinition struct {
     Entity
 }
-// NewUnifiedRoleManagementAlertDefinition instantiates a new unifiedRoleManagementAlertDefinition and sets the default values.
+// NewUnifiedRoleManagementAlertDefinition instantiates a new UnifiedRoleManagementAlertDefinition and sets the default values.
 func NewUnifiedRoleManagementAlertDefinition()(*UnifiedRoleManagementAlertDefinition) {
     m := &UnifiedRoleManagementAlertDefinition{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUnifiedRoleManagementAlertDefinition()(*UnifiedRoleManagementAlertDefini
     return m
 }
 // CreateUnifiedRoleManagementAlertDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleManagementAlertDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleManagementAlertDefinition(), nil
 }
 // GetDescription gets the description property value. The description of the alert.
+// returns a *string when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.
+// returns a *string when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +150,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetFieldDeserializers()(map[strin
     return res
 }
 // GetHowToPrevent gets the howToPrevent property value. Long-form text that indicates the ways to prevent the alert from being triggered in your tenant.
+// returns a *string when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetHowToPrevent()(*string) {
     val, err := m.GetBackingStore().Get("howToPrevent")
     if err != nil {
@@ -158,6 +162,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetHowToPrevent()(*string) {
     return nil
 }
 // GetIsConfigurable gets the isConfigurable property value. true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization doesn't have Microsoft Entra ID P2' can't be configured, because the criteria are restricted.
+// returns a *bool when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetIsConfigurable()(*bool) {
     val, err := m.GetBackingStore().Get("isConfigurable")
     if err != nil {
@@ -169,6 +174,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetIsConfigurable()(*bool) {
     return nil
 }
 // GetIsRemediatable gets the isRemediatable property value. true if the alert can be remediated, and false otherwise.
+// returns a *bool when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetIsRemediatable()(*bool) {
     val, err := m.GetBackingStore().Get("isRemediatable")
     if err != nil {
@@ -180,6 +186,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetIsRemediatable()(*bool) {
     return nil
 }
 // GetMitigationSteps gets the mitigationSteps property value. The methods to mitigate the alert when it's triggered in the tenant. For example, to mitigate the 'There are too many global administrators', you could remove redundant privileged role assignments.
+// returns a *string when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetMitigationSteps()(*string) {
     val, err := m.GetBackingStore().Get("mitigationSteps")
     if err != nil {
@@ -191,6 +198,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetMitigationSteps()(*string) {
     return nil
 }
 // GetScopeId gets the scopeId property value. The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
+// returns a *string when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetScopeId()(*string) {
     val, err := m.GetBackingStore().Get("scopeId")
     if err != nil {
@@ -202,6 +210,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetScopeId()(*string) {
     return nil
 }
 // GetScopeType gets the scopeType property value. The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.
+// returns a *string when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetScopeType()(*string) {
     val, err := m.GetBackingStore().Get("scopeType")
     if err != nil {
@@ -213,6 +222,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetScopeType()(*string) {
     return nil
 }
 // GetSecurityImpact gets the securityImpact property value. Security impact of the alert. For example, it could be information leaks or unauthorized access.
+// returns a *string when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetSecurityImpact()(*string) {
     val, err := m.GetBackingStore().Get("securityImpact")
     if err != nil {
@@ -224,6 +234,7 @@ func (m *UnifiedRoleManagementAlertDefinition) GetSecurityImpact()(*string) {
     return nil
 }
 // GetSeverityLevel gets the severityLevel property value. Severity level of the alert. The possible values are: unknown, informational, low, medium, high, unknownFutureValue.
+// returns a *AlertSeverity when successful
 func (m *UnifiedRoleManagementAlertDefinition) GetSeverityLevel()(*AlertSeverity) {
     val, err := m.GetBackingStore().Get("severityLevel")
     if err != nil {
@@ -373,7 +384,6 @@ func (m *UnifiedRoleManagementAlertDefinition) SetSeverityLevel(value *AlertSeve
         panic(err)
     }
 }
-// UnifiedRoleManagementAlertDefinitionable 
 type UnifiedRoleManagementAlertDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

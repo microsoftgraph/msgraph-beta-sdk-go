@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthorizationSystemCollectionResponse 
 type AuthorizationSystemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthorizationSystemCollectionResponse instantiates a new authorizationSystemCollectionResponse and sets the default values.
+// NewAuthorizationSystemCollectionResponse instantiates a new AuthorizationSystemCollectionResponse and sets the default values.
 func NewAuthorizationSystemCollectionResponse()(*AuthorizationSystemCollectionResponse) {
     m := &AuthorizationSystemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAuthorizationSystemCollectionResponse()(*AuthorizationSystemCollectionRe
     return m
 }
 // CreateAuthorizationSystemCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthorizationSystemCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthorizationSystemCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthorizationSystemCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AuthorizationSystemCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AuthorizationSystemable when successful
 func (m *AuthorizationSystemCollectionResponse) GetValue()([]AuthorizationSystemable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AuthorizationSystemCollectionResponse) SetValue(value []AuthorizationSy
         panic(err)
     }
 }
-// AuthorizationSystemCollectionResponseable 
 type AuthorizationSystemCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -27,28 +27,29 @@ type WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBui
     // Request query parameters
     QueryParameters *WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilderGetQueryParameters
 }
-// NewWindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilderInternal instantiates a new UpdatePolicyRequestBuilder and sets the default values.
+// NewWindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilderInternal instantiates a new WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder) {
     m := &WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}/updatePolicy{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}/updatePolicy{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewWindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder instantiates a new UpdatePolicyRequestBuilder and sets the default values.
+// NewWindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder instantiates a new WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the policy this compliance change is a member of.
+// returns a UpdatePolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatePolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyReques
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatePolicyable), nil
 }
 // ToGetRequestInformation the policy this compliance change is a member of.
+// returns a *RequestInformation when successful
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder when successful
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder) {
     return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesItemUpdatePolicyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

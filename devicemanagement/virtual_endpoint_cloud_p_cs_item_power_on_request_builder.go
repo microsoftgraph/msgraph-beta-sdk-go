@@ -17,20 +17,21 @@ type VirtualEndpointCloudPCsItemPowerOnRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewVirtualEndpointCloudPCsItemPowerOnRequestBuilderInternal instantiates a new PowerOnRequestBuilder and sets the default values.
+// NewVirtualEndpointCloudPCsItemPowerOnRequestBuilderInternal instantiates a new VirtualEndpointCloudPCsItemPowerOnRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPCsItemPowerOnRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPCsItemPowerOnRequestBuilder) {
     m := &VirtualEndpointCloudPCsItemPowerOnRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/powerOn", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointCloudPCsItemPowerOnRequestBuilder instantiates a new PowerOnRequestBuilder and sets the default values.
+// NewVirtualEndpointCloudPCsItemPowerOnRequestBuilder instantiates a new VirtualEndpointCloudPCsItemPowerOnRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPCsItemPowerOnRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPCsItemPowerOnRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemPowerOnRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post power on a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered on, it is allocated to a user, and licenses are assigned immediately. Only IT admin users can perform this action. 
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-poweron?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *VirtualEndpointCloudPCsItemPowerOnRequestBuilder) Post(ctx context.Cont
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *VirtualEndpointCloudPCsItemPowerOnRequestBuilder) Post(ctx context.Cont
     return nil
 }
 // ToPostRequestInformation power on a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered on, it is allocated to a user, and licenses are assigned immediately. Only IT admin users can perform this action. 
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPCsItemPowerOnRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemPowerOnRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *VirtualEndpointCloudPCsItemPowerOnRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEndpointCloudPCsItemPowerOnRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsItemPowerOnRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointCloudPCsItemPowerOnRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemPowerOnRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

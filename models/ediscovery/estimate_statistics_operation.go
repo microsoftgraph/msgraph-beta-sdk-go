@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EstimateStatisticsOperation 
 type EstimateStatisticsOperation struct {
     CaseOperation
 }
-// NewEstimateStatisticsOperation instantiates a new estimateStatisticsOperation and sets the default values.
+// NewEstimateStatisticsOperation instantiates a new EstimateStatisticsOperation and sets the default values.
 func NewEstimateStatisticsOperation()(*EstimateStatisticsOperation) {
     m := &EstimateStatisticsOperation{
         CaseOperation: *NewCaseOperation(),
@@ -16,10 +15,12 @@ func NewEstimateStatisticsOperation()(*EstimateStatisticsOperation) {
     return m
 }
 // CreateEstimateStatisticsOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEstimateStatisticsOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEstimateStatisticsOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CaseOperation.GetFieldDeserializers()
     res["indexedItemCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +96,7 @@ func (m *EstimateStatisticsOperation) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetIndexedItemCount gets the indexedItemCount property value. The estimated count of items for the sourceCollection that matched the content query.
+// returns a *int64 when successful
 func (m *EstimateStatisticsOperation) GetIndexedItemCount()(*int64) {
     val, err := m.GetBackingStore().Get("indexedItemCount")
     if err != nil {
@@ -106,6 +108,7 @@ func (m *EstimateStatisticsOperation) GetIndexedItemCount()(*int64) {
     return nil
 }
 // GetIndexedItemsSize gets the indexedItemsSize property value. The estimated size of items for the sourceCollection that matched the content query.
+// returns a *int64 when successful
 func (m *EstimateStatisticsOperation) GetIndexedItemsSize()(*int64) {
     val, err := m.GetBackingStore().Get("indexedItemsSize")
     if err != nil {
@@ -117,6 +120,7 @@ func (m *EstimateStatisticsOperation) GetIndexedItemsSize()(*int64) {
     return nil
 }
 // GetMailboxCount gets the mailboxCount property value. The number of mailboxes that had search hits.
+// returns a *int32 when successful
 func (m *EstimateStatisticsOperation) GetMailboxCount()(*int32) {
     val, err := m.GetBackingStore().Get("mailboxCount")
     if err != nil {
@@ -128,6 +132,7 @@ func (m *EstimateStatisticsOperation) GetMailboxCount()(*int32) {
     return nil
 }
 // GetSiteCount gets the siteCount property value. The number of mailboxes that had search hits.
+// returns a *int32 when successful
 func (m *EstimateStatisticsOperation) GetSiteCount()(*int32) {
     val, err := m.GetBackingStore().Get("siteCount")
     if err != nil {
@@ -139,6 +144,7 @@ func (m *EstimateStatisticsOperation) GetSiteCount()(*int32) {
     return nil
 }
 // GetSourceCollection gets the sourceCollection property value. eDiscovery collection, commonly known as a search.
+// returns a SourceCollectionable when successful
 func (m *EstimateStatisticsOperation) GetSourceCollection()(SourceCollectionable) {
     val, err := m.GetBackingStore().Get("sourceCollection")
     if err != nil {
@@ -150,6 +156,7 @@ func (m *EstimateStatisticsOperation) GetSourceCollection()(SourceCollectionable
     return nil
 }
 // GetUnindexedItemCount gets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
+// returns a *int64 when successful
 func (m *EstimateStatisticsOperation) GetUnindexedItemCount()(*int64) {
     val, err := m.GetBackingStore().Get("unindexedItemCount")
     if err != nil {
@@ -161,6 +168,7 @@ func (m *EstimateStatisticsOperation) GetUnindexedItemCount()(*int64) {
     return nil
 }
 // GetUnindexedItemsSize gets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
+// returns a *int64 when successful
 func (m *EstimateStatisticsOperation) GetUnindexedItemsSize()(*int64) {
     val, err := m.GetBackingStore().Get("unindexedItemsSize")
     if err != nil {
@@ -270,7 +278,6 @@ func (m *EstimateStatisticsOperation) SetUnindexedItemsSize(value *int64)() {
         panic(err)
     }
 }
-// EstimateStatisticsOperationable 
 type EstimateStatisticsOperationable interface {
     CaseOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

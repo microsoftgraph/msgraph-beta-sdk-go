@@ -37,7 +37,7 @@ type TeamworkRequestBuilderPatchRequestConfiguration struct {
 // NewTeamworkRequestBuilderInternal instantiates a new TeamworkRequestBuilder and sets the default values.
 func NewTeamworkRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamworkRequestBuilder) {
     m := &TeamworkRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -48,18 +48,23 @@ func NewTeamworkRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewTeamworkRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DeletedChats provides operations to manage the deletedChats property of the microsoft.graph.teamwork entity.
+// returns a *DeletedChatsRequestBuilder when successful
 func (m *TeamworkRequestBuilder) DeletedChats()(*DeletedChatsRequestBuilder) {
     return NewDeletedChatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeletedTeams provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
+// returns a *DeletedTeamsRequestBuilder when successful
 func (m *TeamworkRequestBuilder) DeletedTeams()(*DeletedTeamsRequestBuilder) {
     return NewDeletedTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Devices provides operations to manage the devices property of the microsoft.graph.teamwork entity.
+// returns a *DevicesRequestBuilder when successful
 func (m *TeamworkRequestBuilder) Devices()(*DevicesRequestBuilder) {
     return NewDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
+// returns a Teamworkable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/teamwork-get?view=graph-rest-1.0
@@ -69,8 +74,7 @@ func (m *TeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTeamworkFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -82,14 +86,15 @@ func (m *TeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable), nil
 }
 // Patch update teamwork
+// returns a Teamworkable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable, requestConfiguration *TeamworkRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTeamworkFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,18 +106,22 @@ func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable), nil
 }
 // SendActivityNotificationToRecipients provides operations to call the sendActivityNotificationToRecipients method.
+// returns a *SendActivityNotificationToRecipientsRequestBuilder when successful
 func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*SendActivityNotificationToRecipientsRequestBuilder) {
     return NewSendActivityNotificationToRecipientsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TeamsAppSettings provides operations to manage the teamsAppSettings property of the microsoft.graph.teamwork entity.
+// returns a *TeamsAppSettingsRequestBuilder when successful
 func (m *TeamworkRequestBuilder) TeamsAppSettings()(*TeamsAppSettingsRequestBuilder) {
     return NewTeamsAppSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TeamTemplates provides operations to manage the teamTemplates property of the microsoft.graph.teamwork entity.
+// returns a *TeamTemplatesRequestBuilder when successful
 func (m *TeamworkRequestBuilder) TeamTemplates()(*TeamTemplatesRequestBuilder) {
     return NewTeamTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
+// returns a *RequestInformation when successful
 func (m *TeamworkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamworkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +135,9 @@ func (m *TeamworkRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     return requestInfo, nil
 }
 // ToPatchRequestInformation update teamwork
+// returns a *RequestInformation when successful
 func (m *TeamworkRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable, requestConfiguration *TeamworkRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/teamwork", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,10 +150,12 @@ func (m *TeamworkRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TeamworkRequestBuilder when successful
 func (m *TeamworkRequestBuilder) WithUrl(rawUrl string)(*TeamworkRequestBuilder) {
     return NewTeamworkRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }
 // WorkforceIntegrations provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
+// returns a *WorkforceIntegrationsRequestBuilder when successful
 func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*WorkforceIntegrationsRequestBuilder) {
     return NewWorkforceIntegrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

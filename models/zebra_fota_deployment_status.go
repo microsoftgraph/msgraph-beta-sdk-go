@@ -11,7 +11,7 @@ type ZebraFotaDeploymentStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewZebraFotaDeploymentStatus instantiates a new zebraFotaDeploymentStatus and sets the default values.
+// NewZebraFotaDeploymentStatus instantiates a new ZebraFotaDeploymentStatus and sets the default values.
 func NewZebraFotaDeploymentStatus()(*ZebraFotaDeploymentStatus) {
     m := &ZebraFotaDeploymentStatus{
     }
@@ -20,10 +20,12 @@ func NewZebraFotaDeploymentStatus()(*ZebraFotaDeploymentStatus) {
     return m
 }
 // CreateZebraFotaDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateZebraFotaDeploymentStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewZebraFotaDeploymentStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ZebraFotaDeploymentStatus) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +38,12 @@ func (m *ZebraFotaDeploymentStatus) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ZebraFotaDeploymentStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCancelRequested gets the cancelRequested property value. A boolean that indicates if a cancellation was requested on the deployment. NOTE: A cancellation request does not guarantee that the deployment was canceled.
+// returns a *bool when successful
 func (m *ZebraFotaDeploymentStatus) GetCancelRequested()(*bool) {
     val, err := m.GetBackingStore().Get("cancelRequested")
     if err != nil {
@@ -51,6 +55,7 @@ func (m *ZebraFotaDeploymentStatus) GetCancelRequested()(*bool) {
     return nil
 }
 // GetCompleteOrCanceledDateTime gets the completeOrCanceledDateTime property value. The date and time when this deployment was completed or canceled. The actual date time is determined by the value of state. If the state is canceled, this property holds the cancellation date/time. If the the state is completed, this property holds the completion date/time. If the deployment is not completed before the deployment end date, then completed date/time and end date/time are the same. This is always in the deployment timezone. Note: An installation that is in progress can continue past the deployment end date.
+// returns a *Time when successful
 func (m *ZebraFotaDeploymentStatus) GetCompleteOrCanceledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completeOrCanceledDateTime")
     if err != nil {
@@ -62,6 +67,7 @@ func (m *ZebraFotaDeploymentStatus) GetCompleteOrCanceledDateTime()(*i336074805f
     return nil
 }
 // GetErrorCode gets the errorCode property value. An error code indicating the failure reason, when the deployment state is createFailed. Possible values: See zebraFotaErrorCode enum.
+// returns a *ZebraFotaErrorCode when successful
 func (m *ZebraFotaDeploymentStatus) GetErrorCode()(*ZebraFotaErrorCode) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -73,6 +79,7 @@ func (m *ZebraFotaDeploymentStatus) GetErrorCode()(*ZebraFotaErrorCode) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ZebraFotaDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["cancelRequested"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -238,6 +245,7 @@ func (m *ZebraFotaDeploymentStatus) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time when the deployment status was updated from Zebra
+// returns a *Time when successful
 func (m *ZebraFotaDeploymentStatus) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -249,6 +257,7 @@ func (m *ZebraFotaDeploymentStatus) GetLastUpdatedDateTime()(*i336074805fc853987
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ZebraFotaDeploymentStatus) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -260,6 +269,7 @@ func (m *ZebraFotaDeploymentStatus) GetOdataType()(*string) {
     return nil
 }
 // GetState gets the state property value. Represents the state of Zebra FOTA deployment.
+// returns a *ZebraFotaDeploymentState when successful
 func (m *ZebraFotaDeploymentStatus) GetState()(*ZebraFotaDeploymentState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -271,6 +281,7 @@ func (m *ZebraFotaDeploymentStatus) GetState()(*ZebraFotaDeploymentState) {
     return nil
 }
 // GetTotalAwaitingInstall gets the totalAwaitingInstall property value. An integer that indicates the total number of devices where installation was successful.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalAwaitingInstall()(*int32) {
     val, err := m.GetBackingStore().Get("totalAwaitingInstall")
     if err != nil {
@@ -282,6 +293,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalAwaitingInstall()(*int32) {
     return nil
 }
 // GetTotalCanceled gets the totalCanceled property value. An integer that indicates the total number of devices where installation was canceled.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalCanceled()(*int32) {
     val, err := m.GetBackingStore().Get("totalCanceled")
     if err != nil {
@@ -293,6 +305,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalCanceled()(*int32) {
     return nil
 }
 // GetTotalCreated gets the totalCreated property value. An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalCreated()(*int32) {
     val, err := m.GetBackingStore().Get("totalCreated")
     if err != nil {
@@ -304,6 +317,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalCreated()(*int32) {
     return nil
 }
 // GetTotalDevices gets the totalDevices property value. An integer that indicates the total number of devices in the deployment.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalDevices()(*int32) {
     val, err := m.GetBackingStore().Get("totalDevices")
     if err != nil {
@@ -315,6 +329,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalDevices()(*int32) {
     return nil
 }
 // GetTotalDownloading gets the totalDownloading property value. An integer that indicates the total number of devices where installation was successful.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalDownloading()(*int32) {
     val, err := m.GetBackingStore().Get("totalDownloading")
     if err != nil {
@@ -326,6 +341,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalDownloading()(*int32) {
     return nil
 }
 // GetTotalFailedDownload gets the totalFailedDownload property value. An integer that indicates the total number of devices that have failed to download the new OS file.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalFailedDownload()(*int32) {
     val, err := m.GetBackingStore().Get("totalFailedDownload")
     if err != nil {
@@ -337,6 +353,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalFailedDownload()(*int32) {
     return nil
 }
 // GetTotalFailedInstall gets the totalFailedInstall property value. An integer that indicates the total number of devices that have failed to install the new OS file.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalFailedInstall()(*int32) {
     val, err := m.GetBackingStore().Get("totalFailedInstall")
     if err != nil {
@@ -348,6 +365,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalFailedInstall()(*int32) {
     return nil
 }
 // GetTotalScheduled gets the totalScheduled property value. An integer that indicates the total number of devices that received the json and are scheduled.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalScheduled()(*int32) {
     val, err := m.GetBackingStore().Get("totalScheduled")
     if err != nil {
@@ -359,6 +377,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalScheduled()(*int32) {
     return nil
 }
 // GetTotalSucceededInstall gets the totalSucceededInstall property value. An integer that indicates the total number of devices where installation was successful.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalSucceededInstall()(*int32) {
     val, err := m.GetBackingStore().Get("totalSucceededInstall")
     if err != nil {
@@ -370,6 +389,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalSucceededInstall()(*int32) {
     return nil
 }
 // GetTotalUnknown gets the totalUnknown property value. An integer that indicates the total number of devices where no deployment status or end state has not received, even after the scheduled end date was reached.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalUnknown()(*int32) {
     val, err := m.GetBackingStore().Get("totalUnknown")
     if err != nil {
@@ -611,7 +631,6 @@ func (m *ZebraFotaDeploymentStatus) SetTotalUnknown(value *int32)() {
         panic(err)
     }
 }
-// ZebraFotaDeploymentStatusable 
 type ZebraFotaDeploymentStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

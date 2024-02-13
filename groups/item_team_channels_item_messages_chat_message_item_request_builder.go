@@ -41,28 +41,28 @@ type ItemTeamChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemTeamChannelsItemMessagesChatMessageItemRequestBuilderInternal instantiates a new ChatMessageItemRequestBuilder and sets the default values.
+// NewItemTeamChannelsItemMessagesChatMessageItemRequestBuilderInternal instantiates a new ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder and sets the default values.
 func NewItemTeamChannelsItemMessagesChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) {
     m := &ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/messages/{chatMessage%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/messages/{chatMessage%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemTeamChannelsItemMessagesChatMessageItemRequestBuilder instantiates a new ChatMessageItemRequestBuilder and sets the default values.
+// NewItemTeamChannelsItemMessagesChatMessageItemRequestBuilder instantiates a new ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder and sets the default values.
 func NewItemTeamChannelsItemMessagesChatMessageItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamChannelsItemMessagesChatMessageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property messages for groups
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,6 +71,8 @@ func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) Delete(ctx c
     return nil
 }
 // Get retrieve a single message or a message reply in a channel or a chat.
+// returns a ChatMessageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
@@ -80,8 +82,7 @@ func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) Get(ctx cont
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateChatMessageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,10 +94,13 @@ func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
 }
 // HostedContents provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
+// returns a *ItemTeamChannelsItemMessagesItemHostedContentsRequestBuilder when successful
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) HostedContents()(*ItemTeamChannelsItemMessagesItemHostedContentsRequestBuilder) {
     return NewItemTeamChannelsItemMessagesItemHostedContentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
+// returns a ChatMessageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
@@ -106,8 +110,7 @@ func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateChatMessageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,20 +122,24 @@ func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) Patch(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
 }
 // Replies provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
+// returns a *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder when successful
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) Replies()(*ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) {
     return NewItemTeamChannelsItemMessagesItemRepliesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetReaction provides operations to call the setReaction method.
+// returns a *ItemTeamChannelsItemMessagesItemSetReactionRequestBuilder when successful
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) SetReaction()(*ItemTeamChannelsItemMessagesItemSetReactionRequestBuilder) {
     return NewItemTeamChannelsItemMessagesItemSetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SoftDelete provides operations to call the softDelete method.
+// returns a *ItemTeamChannelsItemMessagesItemSoftDeleteRequestBuilder when successful
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) SoftDelete()(*ItemTeamChannelsItemMessagesItemSoftDeleteRequestBuilder) {
     return NewItemTeamChannelsItemMessagesItemSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property messages for groups
+// returns a *RequestInformation when successful
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/messages/{chatMessage%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -141,6 +148,7 @@ func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) ToDeleteRequ
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a single message or a message reply in a channel or a chat.
+// returns a *RequestInformation when successful
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -154,8 +162,9 @@ func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // ToPatchRequestInformation update a chatMessage object. You can update all the properties of chatMessage in delegated permissions scenarios, except for the policyViolation property and read-only properties. The policyViolation property is the only property that can be updated in application permissions scenarios. Updating works only for chats where conversation members are Microsoft Teams users. If one of the members is using Skype, the operation fails. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
+// returns a *RequestInformation when successful
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/messages/{chatMessage%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -168,14 +177,17 @@ func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) ToPatchReque
     return requestInfo, nil
 }
 // UndoSoftDelete provides operations to call the undoSoftDelete method.
+// returns a *ItemTeamChannelsItemMessagesItemUndoSoftDeleteRequestBuilder when successful
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) UndoSoftDelete()(*ItemTeamChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
     return NewItemTeamChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UnsetReaction provides operations to call the unsetReaction method.
+// returns a *ItemTeamChannelsItemMessagesItemUnsetReactionRequestBuilder when successful
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) UnsetReaction()(*ItemTeamChannelsItemMessagesItemUnsetReactionRequestBuilder) {
     return NewItemTeamChannelsItemMessagesItemUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder when successful
 func (m *ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) WithUrl(rawUrl string)(*ItemTeamChannelsItemMessagesChatMessageItemRequestBuilder) {
     return NewItemTeamChannelsItemMessagesChatMessageItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

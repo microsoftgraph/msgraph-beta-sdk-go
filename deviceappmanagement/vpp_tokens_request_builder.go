@@ -47,6 +47,7 @@ type VppTokensRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByVppTokenId provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
+// returns a *VppTokensVppTokenItemRequestBuilder when successful
 func (m *VppTokensRequestBuilder) ByVppTokenId(vppTokenId string)(*VppTokensVppTokenItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,7 +61,7 @@ func (m *VppTokensRequestBuilder) ByVppTokenId(vppTokenId string)(*VppTokensVppT
 // NewVppTokensRequestBuilderInternal instantiates a new VppTokensRequestBuilder and sets the default values.
 func NewVppTokensRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VppTokensRequestBuilder) {
     m := &VppTokensRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -71,18 +72,20 @@ func NewVppTokensRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewVppTokensRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *VppTokensCountRequestBuilder when successful
 func (m *VppTokensRequestBuilder) Count()(*VppTokensCountRequestBuilder) {
     return NewVppTokensCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list of Vpp tokens for this organization.
+// returns a VppTokenCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VppTokensRequestBuilder) Get(ctx context.Context, requestConfiguration *VppTokensRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVppTokenCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,18 +97,20 @@ func (m *VppTokensRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenCollectionResponseable), nil
 }
 // GetLicensesForAppWithBundleId provides operations to call the getLicensesForApp method.
+// returns a *VppTokensGetLicensesForAppWithBundleIdRequestBuilder when successful
 func (m *VppTokensRequestBuilder) GetLicensesForAppWithBundleId(bundleId *string)(*VppTokensGetLicensesForAppWithBundleIdRequestBuilder) {
     return NewVppTokensGetLicensesForAppWithBundleIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, bundleId)
 }
 // Post create new navigation property to vppTokens for deviceAppManagement
+// returns a VppTokenable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VppTokensRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, requestConfiguration *VppTokensRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVppTokenFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -117,10 +122,12 @@ func (m *VppTokensRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable), nil
 }
 // SyncLicenseCounts provides operations to call the syncLicenseCounts method.
+// returns a *VppTokensSyncLicenseCountsRequestBuilder when successful
 func (m *VppTokensRequestBuilder) SyncLicenseCounts()(*VppTokensSyncLicenseCountsRequestBuilder) {
     return NewVppTokensSyncLicenseCountsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation list of Vpp tokens for this organization.
+// returns a *RequestInformation when successful
 func (m *VppTokensRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VppTokensRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -134,8 +141,9 @@ func (m *VppTokensRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to vppTokens for deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *VppTokensRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VppTokenable, requestConfiguration *VppTokensRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceAppManagement/vppTokens", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -148,6 +156,7 @@ func (m *VppTokensRequestBuilder) ToPostRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VppTokensRequestBuilder when successful
 func (m *VppTokensRequestBuilder) WithUrl(rawUrl string)(*VppTokensRequestBuilder) {
     return NewVppTokensRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -9,7 +9,7 @@ import (
 type ManagedDeviceOverview struct {
     Entity
 }
-// NewManagedDeviceOverview instantiates a new managedDeviceOverview and sets the default values.
+// NewManagedDeviceOverview instantiates a new ManagedDeviceOverview and sets the default values.
 func NewManagedDeviceOverview()(*ManagedDeviceOverview) {
     m := &ManagedDeviceOverview{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewManagedDeviceOverview()(*ManagedDeviceOverview) {
     return m
 }
 // CreateManagedDeviceOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedDeviceOverviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDeviceOverview(), nil
 }
 // GetDeviceExchangeAccessStateSummary gets the deviceExchangeAccessStateSummary property value. Distribution of Exchange Access State in Intune
+// returns a DeviceExchangeAccessStateSummaryable when successful
 func (m *ManagedDeviceOverview) GetDeviceExchangeAccessStateSummary()(DeviceExchangeAccessStateSummaryable) {
     val, err := m.GetBackingStore().Get("deviceExchangeAccessStateSummary")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *ManagedDeviceOverview) GetDeviceExchangeAccessStateSummary()(DeviceExch
     return nil
 }
 // GetDeviceOperatingSystemSummary gets the deviceOperatingSystemSummary property value. Device operating system summary.
+// returns a DeviceOperatingSystemSummaryable when successful
 func (m *ManagedDeviceOverview) GetDeviceOperatingSystemSummary()(DeviceOperatingSystemSummaryable) {
     val, err := m.GetBackingStore().Get("deviceOperatingSystemSummary")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *ManagedDeviceOverview) GetDeviceOperatingSystemSummary()(DeviceOperatin
     return nil
 }
 // GetDualEnrolledDeviceCount gets the dualEnrolledDeviceCount property value. The number of devices enrolled in both MDM and EAS
+// returns a *int32 when successful
 func (m *ManagedDeviceOverview) GetDualEnrolledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("dualEnrolledDeviceCount")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *ManagedDeviceOverview) GetDualEnrolledDeviceCount()(*int32) {
     return nil
 }
 // GetEnrolledDeviceCount gets the enrolledDeviceCount property value. Total enrolled device count. Does not include PC devices managed via Intune PC Agent
+// returns a *int32 when successful
 func (m *ManagedDeviceOverview) GetEnrolledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("enrolledDeviceCount")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *ManagedDeviceOverview) GetEnrolledDeviceCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceExchangeAccessStateSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,6 +146,7 @@ func (m *ManagedDeviceOverview) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modified date time of device overview
+// returns a *Time when successful
 func (m *ManagedDeviceOverview) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -151,6 +158,7 @@ func (m *ManagedDeviceOverview) GetLastModifiedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetManagedDeviceModelsAndManufacturers gets the managedDeviceModelsAndManufacturers property value. Models and Manufactures meatadata for managed devices in the account
+// returns a ManagedDeviceModelsAndManufacturersable when successful
 func (m *ManagedDeviceOverview) GetManagedDeviceModelsAndManufacturers()(ManagedDeviceModelsAndManufacturersable) {
     val, err := m.GetBackingStore().Get("managedDeviceModelsAndManufacturers")
     if err != nil {
@@ -162,6 +170,7 @@ func (m *ManagedDeviceOverview) GetManagedDeviceModelsAndManufacturers()(Managed
     return nil
 }
 // GetMdmEnrolledCount gets the mdmEnrolledCount property value. The number of devices enrolled in MDM
+// returns a *int32 when successful
 func (m *ManagedDeviceOverview) GetMdmEnrolledCount()(*int32) {
     val, err := m.GetBackingStore().Get("mdmEnrolledCount")
     if err != nil {
@@ -271,7 +280,6 @@ func (m *ManagedDeviceOverview) SetMdmEnrolledCount(value *int32)() {
         panic(err)
     }
 }
-// ManagedDeviceOverviewable 
 type ManagedDeviceOverviewable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

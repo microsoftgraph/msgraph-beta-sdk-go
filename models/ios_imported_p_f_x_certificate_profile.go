@@ -8,7 +8,7 @@ import (
 type IosImportedPFXCertificateProfile struct {
     IosCertificateProfile
 }
-// NewIosImportedPFXCertificateProfile instantiates a new iosImportedPFXCertificateProfile and sets the default values.
+// NewIosImportedPFXCertificateProfile instantiates a new IosImportedPFXCertificateProfile and sets the default values.
 func NewIosImportedPFXCertificateProfile()(*IosImportedPFXCertificateProfile) {
     m := &IosImportedPFXCertificateProfile{
         IosCertificateProfile: *NewIosCertificateProfile(),
@@ -18,10 +18,12 @@ func NewIosImportedPFXCertificateProfile()(*IosImportedPFXCertificateProfile) {
     return m
 }
 // CreateIosImportedPFXCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosImportedPFXCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosImportedPFXCertificateProfile(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosCertificateProfile.GetFieldDeserializers()
     res["intendedPurpose"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -53,6 +55,7 @@ func (m *IosImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetIntendedPurpose gets the intendedPurpose property value. PFX Import Options.
+// returns a *IntendedPurpose when successful
 func (m *IosImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose) {
     val, err := m.GetBackingStore().Get("intendedPurpose")
     if err != nil {
@@ -64,6 +67,7 @@ func (m *IosImportedPFXCertificateProfile) GetIntendedPurpose()(*IntendedPurpose
     return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+// returns a []ManagedDeviceCertificateStateable when successful
 func (m *IosImportedPFXCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
     if err != nil {
@@ -115,7 +119,6 @@ func (m *IosImportedPFXCertificateProfile) SetManagedDeviceCertificateStates(val
         panic(err)
     }
 }
-// IosImportedPFXCertificateProfileable 
 type IosImportedPFXCertificateProfileable interface {
     IosCertificateProfileable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

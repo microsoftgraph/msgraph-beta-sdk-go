@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnAttributeCollectionStartCustomExtensionHandler 
 type OnAttributeCollectionStartCustomExtensionHandler struct {
     OnAttributeCollectionStartHandler
 }
-// NewOnAttributeCollectionStartCustomExtensionHandler instantiates a new onAttributeCollectionStartCustomExtensionHandler and sets the default values.
+// NewOnAttributeCollectionStartCustomExtensionHandler instantiates a new OnAttributeCollectionStartCustomExtensionHandler and sets the default values.
 func NewOnAttributeCollectionStartCustomExtensionHandler()(*OnAttributeCollectionStartCustomExtensionHandler) {
     m := &OnAttributeCollectionStartCustomExtensionHandler{
         OnAttributeCollectionStartHandler: *NewOnAttributeCollectionStartHandler(),
@@ -18,10 +17,12 @@ func NewOnAttributeCollectionStartCustomExtensionHandler()(*OnAttributeCollectio
     return m
 }
 // CreateOnAttributeCollectionStartCustomExtensionHandlerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnAttributeCollectionStartCustomExtensionHandlerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnAttributeCollectionStartCustomExtensionHandler(), nil
 }
 // GetConfiguration gets the configuration property value. Configuration regarding properties of the custom extension that are can be overwritten per event listener.
+// returns a CustomExtensionOverwriteConfigurationable when successful
 func (m *OnAttributeCollectionStartCustomExtensionHandler) GetConfiguration()(CustomExtensionOverwriteConfigurationable) {
     val, err := m.GetBackingStore().Get("configuration")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *OnAttributeCollectionStartCustomExtensionHandler) GetConfiguration()(Cu
     return nil
 }
 // GetCustomExtension gets the customExtension property value. The customExtension property
+// returns a OnAttributeCollectionStartCustomExtensionable when successful
 func (m *OnAttributeCollectionStartCustomExtensionHandler) GetCustomExtension()(OnAttributeCollectionStartCustomExtensionable) {
     val, err := m.GetBackingStore().Get("customExtension")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *OnAttributeCollectionStartCustomExtensionHandler) GetCustomExtension()(
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnAttributeCollectionStartCustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnAttributeCollectionStartHandler.GetFieldDeserializers()
     res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,7 +105,6 @@ func (m *OnAttributeCollectionStartCustomExtensionHandler) SetCustomExtension(va
         panic(err)
     }
 }
-// OnAttributeCollectionStartCustomExtensionHandlerable 
 type OnAttributeCollectionStartCustomExtensionHandlerable interface {
     OnAttributeCollectionStartHandlerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

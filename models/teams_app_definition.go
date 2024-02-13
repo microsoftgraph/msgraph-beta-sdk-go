@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsAppDefinition 
 type TeamsAppDefinition struct {
     Entity
 }
-// NewTeamsAppDefinition instantiates a new teamsAppDefinition and sets the default values.
+// NewTeamsAppDefinition instantiates a new TeamsAppDefinition and sets the default values.
 func NewTeamsAppDefinition()(*TeamsAppDefinition) {
     m := &TeamsAppDefinition{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTeamsAppDefinition()(*TeamsAppDefinition) {
     return m
 }
 // CreateTeamsAppDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamsAppDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsAppDefinition(), nil
 }
 // GetAllowedInstallationScopes gets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data.  personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
+// returns a *TeamsAppInstallationScopes when successful
 func (m *TeamsAppDefinition) GetAllowedInstallationScopes()(*TeamsAppInstallationScopes) {
     val, err := m.GetBackingStore().Get("allowedInstallationScopes")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TeamsAppDefinition) GetAllowedInstallationScopes()(*TeamsAppInstallatio
     return nil
 }
 // GetAuthorization gets the authorization property value. Authorization requirements specified in the Teams app manifest.
+// returns a TeamsAppAuthorizationable when successful
 func (m *TeamsAppDefinition) GetAuthorization()(TeamsAppAuthorizationable) {
     val, err := m.GetBackingStore().Get("authorization")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TeamsAppDefinition) GetAuthorization()(TeamsAppAuthorizationable) {
     return nil
 }
 // GetAzureADAppId gets the azureADAppId property value. The WebApplicationInfo.Id from the Teams app manifest.
+// returns a *string when successful
 func (m *TeamsAppDefinition) GetAzureADAppId()(*string) {
     val, err := m.GetBackingStore().Get("azureADAppId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TeamsAppDefinition) GetAzureADAppId()(*string) {
     return nil
 }
 // GetBot gets the bot property value. The details of the bot specified in the Teams app manifest.
+// returns a TeamworkBotable when successful
 func (m *TeamsAppDefinition) GetBot()(TeamworkBotable) {
     val, err := m.GetBackingStore().Get("bot")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *TeamsAppDefinition) GetBot()(TeamworkBotable) {
     return nil
 }
 // GetColorIcon gets the colorIcon property value. The color version of the Teams app's icon.
+// returns a TeamsAppIconable when successful
 func (m *TeamsAppDefinition) GetColorIcon()(TeamsAppIconable) {
     val, err := m.GetBackingStore().Get("colorIcon")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *TeamsAppDefinition) GetColorIcon()(TeamsAppIconable) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The createdBy property
+// returns a IdentitySetable when successful
 func (m *TeamsAppDefinition) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *TeamsAppDefinition) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetDashboardCards gets the dashboardCards property value. The dashboardCards property
+// returns a []TeamsAppDashboardCardDefinitionable when successful
 func (m *TeamsAppDefinition) GetDashboardCards()([]TeamsAppDashboardCardDefinitionable) {
     val, err := m.GetBackingStore().Get("dashboardCards")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *TeamsAppDefinition) GetDashboardCards()([]TeamsAppDashboardCardDefiniti
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *TeamsAppDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *TeamsAppDefinition) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the app provided by the app developer.
+// returns a *string when successful
 func (m *TeamsAppDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *TeamsAppDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowedInstallationScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -281,6 +291,7 @@ func (m *TeamsAppDefinition) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *TeamsAppDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -292,6 +303,7 @@ func (m *TeamsAppDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetOutlineIcon gets the outlineIcon property value. The outline version of the Teams app's icon.
+// returns a TeamsAppIconable when successful
 func (m *TeamsAppDefinition) GetOutlineIcon()(TeamsAppIconable) {
     val, err := m.GetBackingStore().Get("outlineIcon")
     if err != nil {
@@ -303,6 +315,7 @@ func (m *TeamsAppDefinition) GetOutlineIcon()(TeamsAppIconable) {
     return nil
 }
 // GetPublishingState gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
+// returns a *TeamsAppPublishingState when successful
 func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppPublishingState) {
     val, err := m.GetBackingStore().Get("publishingState")
     if err != nil {
@@ -314,6 +327,7 @@ func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppPublishingState) {
     return nil
 }
 // GetShortdescription gets the shortdescription property value. The shortdescription property
+// returns a *string when successful
 func (m *TeamsAppDefinition) GetShortdescription()(*string) {
     val, err := m.GetBackingStore().Get("shortdescription")
     if err != nil {
@@ -325,6 +339,7 @@ func (m *TeamsAppDefinition) GetShortdescription()(*string) {
     return nil
 }
 // GetTeamsAppId gets the teamsAppId property value. The ID from the Teams app manifest.
+// returns a *string when successful
 func (m *TeamsAppDefinition) GetTeamsAppId()(*string) {
     val, err := m.GetBackingStore().Get("teamsAppId")
     if err != nil {
@@ -336,6 +351,7 @@ func (m *TeamsAppDefinition) GetTeamsAppId()(*string) {
     return nil
 }
 // GetVersion gets the version property value. The version number of the application.
+// returns a *string when successful
 func (m *TeamsAppDefinition) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -557,7 +573,6 @@ func (m *TeamsAppDefinition) SetVersion(value *string)() {
         panic(err)
     }
 }
-// TeamsAppDefinitionable 
 type TeamsAppDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

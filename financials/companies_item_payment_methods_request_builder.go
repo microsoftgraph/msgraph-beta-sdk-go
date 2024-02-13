@@ -49,6 +49,7 @@ type CompaniesItemPaymentMethodsRequestBuilderPostRequestConfiguration struct {
 }
 // ByPaymentMethodId provides operations to manage the paymentMethods property of the microsoft.graph.company entity.
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
+// returns a *CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder when successful
 func (m *CompaniesItemPaymentMethodsRequestBuilder) ByPaymentMethodId(paymentMethodId string)(*CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,6 +61,7 @@ func (m *CompaniesItemPaymentMethodsRequestBuilder) ByPaymentMethodId(paymentMet
     return NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByPaymentMethodIdGuid provides operations to manage the paymentMethods property of the microsoft.graph.company entity.
+// returns a *CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder when successful
 func (m *CompaniesItemPaymentMethodsRequestBuilder) ByPaymentMethodIdGuid(paymentMethodId i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)(*CompaniesItemPaymentMethodsPaymentMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -68,32 +70,34 @@ func (m *CompaniesItemPaymentMethodsRequestBuilder) ByPaymentMethodIdGuid(paymen
     urlTplParams["paymentMethod%2Did"] = paymentMethodId.String()
     return NewCompaniesItemPaymentMethodsPaymentMethodItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCompaniesItemPaymentMethodsRequestBuilderInternal instantiates a new PaymentMethodsRequestBuilder and sets the default values.
+// NewCompaniesItemPaymentMethodsRequestBuilderInternal instantiates a new CompaniesItemPaymentMethodsRequestBuilder and sets the default values.
 func NewCompaniesItemPaymentMethodsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPaymentMethodsRequestBuilder) {
     m := &CompaniesItemPaymentMethodsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/paymentMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/paymentMethods{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemPaymentMethodsRequestBuilder instantiates a new PaymentMethodsRequestBuilder and sets the default values.
+// NewCompaniesItemPaymentMethodsRequestBuilder instantiates a new CompaniesItemPaymentMethodsRequestBuilder and sets the default values.
 func NewCompaniesItemPaymentMethodsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPaymentMethodsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemPaymentMethodsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CompaniesItemPaymentMethodsCountRequestBuilder when successful
 func (m *CompaniesItemPaymentMethodsRequestBuilder) Count()(*CompaniesItemPaymentMethodsCountRequestBuilder) {
     return NewCompaniesItemPaymentMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get paymentMethods from financials
+// returns a PaymentMethodCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemPaymentMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemPaymentMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePaymentMethodCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -105,14 +109,15 @@ func (m *CompaniesItemPaymentMethodsRequestBuilder) Get(ctx context.Context, req
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodCollectionResponseable), nil
 }
 // Post create new navigation property to paymentMethods for financials
+// returns a PaymentMethodable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemPaymentMethodsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, requestConfiguration *CompaniesItemPaymentMethodsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePaymentMethodFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -124,6 +129,7 @@ func (m *CompaniesItemPaymentMethodsRequestBuilder) Post(ctx context.Context, bo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable), nil
 }
 // ToGetRequestInformation get paymentMethods from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemPaymentMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemPaymentMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +143,9 @@ func (m *CompaniesItemPaymentMethodsRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to paymentMethods for financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemPaymentMethodsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PaymentMethodable, requestConfiguration *CompaniesItemPaymentMethodsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/financials/companies/{company%2Did}/paymentMethods", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -151,6 +158,7 @@ func (m *CompaniesItemPaymentMethodsRequestBuilder) ToPostRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemPaymentMethodsRequestBuilder when successful
 func (m *CompaniesItemPaymentMethodsRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemPaymentMethodsRequestBuilder) {
     return NewCompaniesItemPaymentMethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

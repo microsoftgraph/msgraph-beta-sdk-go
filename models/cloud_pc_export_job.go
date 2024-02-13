@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcExportJob 
 type CloudPcExportJob struct {
     Entity
 }
-// NewCloudPcExportJob instantiates a new cloudPcExportJob and sets the default values.
+// NewCloudPcExportJob instantiates a new CloudPcExportJob and sets the default values.
 func NewCloudPcExportJob()(*CloudPcExportJob) {
     m := &CloudPcExportJob{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCloudPcExportJob()(*CloudPcExportJob) {
     return m
 }
 // CreateCloudPcExportJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcExportJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcExportJob(), nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The date and time when the export job expires.
+// returns a *Time when successful
 func (m *CloudPcExportJob) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CloudPcExportJob) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetExportJobStatus gets the exportJobStatus property value. The status of the export job. The possible values are: notStarted, inProgress, completed, unknownFutureValue. Read-only.
+// returns a *CloudPcExportJobStatus when successful
 func (m *CloudPcExportJob) GetExportJobStatus()(*CloudPcExportJobStatus) {
     val, err := m.GetBackingStore().Get("exportJobStatus")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *CloudPcExportJob) GetExportJobStatus()(*CloudPcExportJobStatus) {
     return nil
 }
 // GetExportUrl gets the exportUrl property value. The storage account URL of the exported report. It can be used to download the file.
+// returns a *string when successful
 func (m *CloudPcExportJob) GetExportUrl()(*string) {
     val, err := m.GetBackingStore().Get("exportUrl")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *CloudPcExportJob) GetExportUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -145,6 +149,7 @@ func (m *CloudPcExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFilter gets the filter property value. The filter applied on the report.
+// returns a *string when successful
 func (m *CloudPcExportJob) GetFilter()(*string) {
     val, err := m.GetBackingStore().Get("filter")
     if err != nil {
@@ -156,6 +161,7 @@ func (m *CloudPcExportJob) GetFilter()(*string) {
     return nil
 }
 // GetFormat gets the format property value. The format of the exported report.
+// returns a *string when successful
 func (m *CloudPcExportJob) GetFormat()(*string) {
     val, err := m.GetBackingStore().Get("format")
     if err != nil {
@@ -166,7 +172,8 @@ func (m *CloudPcExportJob) GetFormat()(*string) {
     }
     return nil
 }
-// GetReportName gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport,  remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport, remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports.
+// GetReportName gets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport,  remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports, cloudPcUsageCategoryReports. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport, remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports, cloudPcUsageCategoryReports.
+// returns a *CloudPcReportName when successful
 func (m *CloudPcExportJob) GetReportName()(*CloudPcReportName) {
     val, err := m.GetBackingStore().Get("reportName")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *CloudPcExportJob) GetReportName()(*CloudPcReportName) {
     return nil
 }
 // GetRequestDateTime gets the requestDateTime property value. The date and time when the export job was requested.
+// returns a *Time when successful
 func (m *CloudPcExportJob) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestDateTime")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *CloudPcExportJob) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetSelectEscaped gets the select property value. The selected columns of the report.
+// returns a []string when successful
 func (m *CloudPcExportJob) GetSelectEscaped()([]string) {
     val, err := m.GetBackingStore().Get("selectEscaped")
     if err != nil {
@@ -292,7 +301,7 @@ func (m *CloudPcExportJob) SetFormat(value *string)() {
         panic(err)
     }
 }
-// SetReportName sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport,  remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport, remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports.
+// SetReportName sets the reportName property value. The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport,  remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports, cloudPcUsageCategoryReports. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport, remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports, cloudPcUsageCategoryReports.
 func (m *CloudPcExportJob) SetReportName(value *CloudPcReportName)() {
     err := m.GetBackingStore().Set("reportName", value)
     if err != nil {
@@ -313,7 +322,6 @@ func (m *CloudPcExportJob) SetSelectEscaped(value []string)() {
         panic(err)
     }
 }
-// CloudPcExportJobable 
 type CloudPcExportJobable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

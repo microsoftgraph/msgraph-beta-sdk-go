@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ImpactedDeviceAsset 
 type ImpactedDeviceAsset struct {
     ImpactedAsset
 }
-// NewImpactedDeviceAsset instantiates a new impactedDeviceAsset and sets the default values.
+// NewImpactedDeviceAsset instantiates a new ImpactedDeviceAsset and sets the default values.
 func NewImpactedDeviceAsset()(*ImpactedDeviceAsset) {
     m := &ImpactedDeviceAsset{
         ImpactedAsset: *NewImpactedAsset(),
@@ -18,10 +17,12 @@ func NewImpactedDeviceAsset()(*ImpactedDeviceAsset) {
     return m
 }
 // CreateImpactedDeviceAssetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateImpactedDeviceAssetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewImpactedDeviceAsset(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ImpactedDeviceAsset) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ImpactedAsset.GetFieldDeserializers()
     res["identifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *ImpactedDeviceAsset) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIdentifier gets the identifier property value. The identifier property
+// returns a *DeviceAssetIdentifier when successful
 func (m *ImpactedDeviceAsset) GetIdentifier()(*DeviceAssetIdentifier) {
     val, err := m.GetBackingStore().Get("identifier")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *ImpactedDeviceAsset) SetIdentifier(value *DeviceAssetIdentifier)() {
         panic(err)
     }
 }
-// ImpactedDeviceAssetable 
 type ImpactedDeviceAssetable interface {
     ImpactedAssetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

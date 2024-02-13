@@ -10,7 +10,7 @@ type Win32LobAppRequirement struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWin32LobAppRequirement instantiates a new win32LobAppRequirement and sets the default values.
+// NewWin32LobAppRequirement instantiates a new Win32LobAppRequirement and sets the default values.
 func NewWin32LobAppRequirement()(*Win32LobAppRequirement) {
     m := &Win32LobAppRequirement{
     }
@@ -19,6 +19,7 @@ func NewWin32LobAppRequirement()(*Win32LobAppRequirement) {
     return m
 }
 // CreateWin32LobAppRequirementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWin32LobAppRequirementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -45,6 +46,7 @@ func CreateWin32LobAppRequirementFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewWin32LobAppRequirement(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Win32LobAppRequirement) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -57,10 +59,12 @@ func (m *Win32LobAppRequirement) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Win32LobAppRequirement) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDetectionValue gets the detectionValue property value. The detection value
+// returns a *string when successful
 func (m *Win32LobAppRequirement) GetDetectionValue()(*string) {
     val, err := m.GetBackingStore().Get("detectionValue")
     if err != nil {
@@ -72,6 +76,7 @@ func (m *Win32LobAppRequirement) GetDetectionValue()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobAppRequirement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["detectionValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +112,7 @@ func (m *Win32LobAppRequirement) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Win32LobAppRequirement) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -118,6 +124,7 @@ func (m *Win32LobAppRequirement) GetOdataType()(*string) {
     return nil
 }
 // GetOperator gets the operator property value. Contains properties for detection operator.
+// returns a *Win32LobAppDetectionOperator when successful
 func (m *Win32LobAppRequirement) GetOperator()(*Win32LobAppDetectionOperator) {
     val, err := m.GetBackingStore().Get("operator")
     if err != nil {
@@ -189,7 +196,6 @@ func (m *Win32LobAppRequirement) SetOperator(value *Win32LobAppDetectionOperator
         panic(err)
     }
 }
-// Win32LobAppRequirementable 
 type Win32LobAppRequirementable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

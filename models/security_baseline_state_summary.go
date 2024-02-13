@@ -8,7 +8,7 @@ import (
 type SecurityBaselineStateSummary struct {
     Entity
 }
-// NewSecurityBaselineStateSummary instantiates a new securityBaselineStateSummary and sets the default values.
+// NewSecurityBaselineStateSummary instantiates a new SecurityBaselineStateSummary and sets the default values.
 func NewSecurityBaselineStateSummary()(*SecurityBaselineStateSummary) {
     m := &SecurityBaselineStateSummary{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewSecurityBaselineStateSummary()(*SecurityBaselineStateSummary) {
     return m
 }
 // CreateSecurityBaselineStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecurityBaselineStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +39,7 @@ func CreateSecurityBaselineStateSummaryFromDiscriminatorValue(parseNode i878a80d
     return NewSecurityBaselineStateSummary(), nil
 }
 // GetConflictCount gets the conflictCount property value. Number of conflict devices
+// returns a *int32 when successful
 func (m *SecurityBaselineStateSummary) GetConflictCount()(*int32) {
     val, err := m.GetBackingStore().Get("conflictCount")
     if err != nil {
@@ -49,6 +51,7 @@ func (m *SecurityBaselineStateSummary) GetConflictCount()(*int32) {
     return nil
 }
 // GetErrorCount gets the errorCount property value. Number of error devices
+// returns a *int32 when successful
 func (m *SecurityBaselineStateSummary) GetErrorCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorCount")
     if err != nil {
@@ -60,6 +63,7 @@ func (m *SecurityBaselineStateSummary) GetErrorCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecurityBaselineStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["conflictCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +129,7 @@ func (m *SecurityBaselineStateSummary) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable devices
+// returns a *int32 when successful
 func (m *SecurityBaselineStateSummary) GetNotApplicableCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableCount")
     if err != nil {
@@ -136,6 +141,7 @@ func (m *SecurityBaselineStateSummary) GetNotApplicableCount()(*int32) {
     return nil
 }
 // GetNotSecureCount gets the notSecureCount property value. Number of not secure devices
+// returns a *int32 when successful
 func (m *SecurityBaselineStateSummary) GetNotSecureCount()(*int32) {
     val, err := m.GetBackingStore().Get("notSecureCount")
     if err != nil {
@@ -147,6 +153,7 @@ func (m *SecurityBaselineStateSummary) GetNotSecureCount()(*int32) {
     return nil
 }
 // GetSecureCount gets the secureCount property value. Number of secure devices
+// returns a *int32 when successful
 func (m *SecurityBaselineStateSummary) GetSecureCount()(*int32) {
     val, err := m.GetBackingStore().Get("secureCount")
     if err != nil {
@@ -158,6 +165,7 @@ func (m *SecurityBaselineStateSummary) GetSecureCount()(*int32) {
     return nil
 }
 // GetUnknownCount gets the unknownCount property value. Number of unknown devices
+// returns a *int32 when successful
 func (m *SecurityBaselineStateSummary) GetUnknownCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownCount")
     if err != nil {
@@ -254,7 +262,6 @@ func (m *SecurityBaselineStateSummary) SetUnknownCount(value *int32)() {
         panic(err)
     }
 }
-// SecurityBaselineStateSummaryable 
 type SecurityBaselineStateSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementResourceAccessProfileBaseCollectionResponse 
 type DeviceManagementResourceAccessProfileBaseCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementResourceAccessProfileBaseCollectionResponse instantiates a new deviceManagementResourceAccessProfileBaseCollectionResponse and sets the default values.
+// NewDeviceManagementResourceAccessProfileBaseCollectionResponse instantiates a new DeviceManagementResourceAccessProfileBaseCollectionResponse and sets the default values.
 func NewDeviceManagementResourceAccessProfileBaseCollectionResponse()(*DeviceManagementResourceAccessProfileBaseCollectionResponse) {
     m := &DeviceManagementResourceAccessProfileBaseCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeviceManagementResourceAccessProfileBaseCollectionResponse()(*DeviceMan
     return m
 }
 // CreateDeviceManagementResourceAccessProfileBaseCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementResourceAccessProfileBaseCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementResourceAccessProfileBaseCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementResourceAccessProfileBaseCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeviceManagementResourceAccessProfileBaseCollectionResponse) GetFieldDe
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeviceManagementResourceAccessProfileBaseable when successful
 func (m *DeviceManagementResourceAccessProfileBaseCollectionResponse) GetValue()([]DeviceManagementResourceAccessProfileBaseable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeviceManagementResourceAccessProfileBaseCollectionResponse) SetValue(v
         panic(err)
     }
 }
-// DeviceManagementResourceAccessProfileBaseCollectionResponseable 
 type DeviceManagementResourceAccessProfileBaseCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type BookingStaffMember struct {
     BookingPerson
 }
-// NewBookingStaffMember instantiates a new bookingStaffMember and sets the default values.
+// NewBookingStaffMember instantiates a new BookingStaffMember and sets the default values.
 func NewBookingStaffMember()(*BookingStaffMember) {
     m := &BookingStaffMember{
         BookingPerson: *NewBookingPerson(),
@@ -17,10 +17,12 @@ func NewBookingStaffMember()(*BookingStaffMember) {
     return m
 }
 // CreateBookingStaffMemberFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingStaffMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingStaffMember(), nil
 }
 // GetAvailabilityIsAffectedByPersonalCalendar gets the availabilityIsAffectedByPersonalCalendar property value. True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member's availability in their personal calendar in Microsoft 365, before making a booking.
+// returns a *bool when successful
 func (m *BookingStaffMember) GetAvailabilityIsAffectedByPersonalCalendar()(*bool) {
     val, err := m.GetBackingStore().Get("availabilityIsAffectedByPersonalCalendar")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *BookingStaffMember) GetAvailabilityIsAffectedByPersonalCalendar()(*bool
     return nil
 }
 // GetColorIndex gets the colorIndex property value. Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.
+// returns a *int32 when successful
 func (m *BookingStaffMember) GetColorIndex()(*int32) {
     val, err := m.GetBackingStore().Get("colorIndex")
     if err != nil {
@@ -42,7 +45,8 @@ func (m *BookingStaffMember) GetColorIndex()(*int32) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date, time and timezone when the staff member was created.
+// returns a *Time when successful
 func (m *BookingStaffMember) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *BookingStaffMember) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BookingPerson.GetFieldDeserializers()
     res["availabilityIsAffectedByPersonalCalendar"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -164,7 +169,8 @@ func (m *BookingStaffMember) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsEmailNotificationEnabled gets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
+// GetIsEmailNotificationEnabled gets the isEmailNotificationEnabled property value. Indicates that a staff members are  notified via email when a booking assigned to them is created or changed. The default value is true
+// returns a *bool when successful
 func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEmailNotificationEnabled")
     if err != nil {
@@ -175,7 +181,8 @@ func (m *BookingStaffMember) GetIsEmailNotificationEnabled()(*bool) {
     }
     return nil
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date, time and timezone when the staff member was last updated.
+// returns a *Time when successful
 func (m *BookingStaffMember) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -187,6 +194,7 @@ func (m *BookingStaffMember) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetMembershipStatus gets the membershipStatus property value. The membershipStatus property
+// returns a *BookingStaffMembershipStatus when successful
 func (m *BookingStaffMember) GetMembershipStatus()(*BookingStaffMembershipStatus) {
     val, err := m.GetBackingStore().Get("membershipStatus")
     if err != nil {
@@ -198,6 +206,7 @@ func (m *BookingStaffMember) GetMembershipStatus()(*BookingStaffMembershipStatus
     return nil
 }
 // GetRole gets the role property value. The role property
+// returns a *BookingStaffRole when successful
 func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -209,6 +218,7 @@ func (m *BookingStaffMember) GetRole()(*BookingStaffRole) {
     return nil
 }
 // GetTimeZone gets the timeZone property value. The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
+// returns a *string when successful
 func (m *BookingStaffMember) GetTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("timeZone")
     if err != nil {
@@ -220,6 +230,7 @@ func (m *BookingStaffMember) GetTimeZone()(*string) {
     return nil
 }
 // GetUseBusinessHours gets the useBusinessHours property value. True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
+// returns a *bool when successful
 func (m *BookingStaffMember) GetUseBusinessHours()(*bool) {
     val, err := m.GetBackingStore().Get("useBusinessHours")
     if err != nil {
@@ -230,7 +241,8 @@ func (m *BookingStaffMember) GetUseBusinessHours()(*bool) {
     }
     return nil
 }
-// GetWorkingHours gets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+// GetWorkingHours gets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they're initialized to be the same as the businessHours property of the business.
+// returns a []BookingWorkHoursable when successful
 func (m *BookingStaffMember) GetWorkingHours()([]BookingWorkHoursable) {
     val, err := m.GetBackingStore().Get("workingHours")
     if err != nil {
@@ -331,21 +343,21 @@ func (m *BookingStaffMember) SetColorIndex(value *int32)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date, time and timezone when the staff member was created.
 func (m *BookingStaffMember) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsEmailNotificationEnabled sets the isEmailNotificationEnabled property value. True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
+// SetIsEmailNotificationEnabled sets the isEmailNotificationEnabled property value. Indicates that a staff members are  notified via email when a booking assigned to them is created or changed. The default value is true
 func (m *BookingStaffMember) SetIsEmailNotificationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEmailNotificationEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date, time and timezone when the staff member was last updated.
 func (m *BookingStaffMember) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
@@ -380,14 +392,13 @@ func (m *BookingStaffMember) SetUseBusinessHours(value *bool)() {
         panic(err)
     }
 }
-// SetWorkingHours sets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.
+// SetWorkingHours sets the workingHours property value. The range of hours each day of the week that the staff member is available for booking. By default, they're initialized to be the same as the businessHours property of the business.
 func (m *BookingStaffMember) SetWorkingHours(value []BookingWorkHoursable)() {
     err := m.GetBackingStore().Set("workingHours", value)
     if err != nil {
         panic(err)
     }
 }
-// BookingStaffMemberable 
 type BookingStaffMemberable interface {
     BookingPersonable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

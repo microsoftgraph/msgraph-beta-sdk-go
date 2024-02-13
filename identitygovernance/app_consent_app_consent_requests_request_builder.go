@@ -47,6 +47,7 @@ type AppConsentAppConsentRequestsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAppConsentRequestId provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.
+// returns a *AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder when successful
 func (m *AppConsentAppConsentRequestsRequestBuilder) ByAppConsentRequestId(appConsentRequestId string)(*AppConsentAppConsentRequestsAppConsentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,28 +58,32 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) ByAppConsentRequestId(appCo
     }
     return NewAppConsentAppConsentRequestsAppConsentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewAppConsentAppConsentRequestsRequestBuilderInternal instantiates a new AppConsentRequestsRequestBuilder and sets the default values.
+// NewAppConsentAppConsentRequestsRequestBuilderInternal instantiates a new AppConsentAppConsentRequestsRequestBuilder and sets the default values.
 func NewAppConsentAppConsentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentAppConsentRequestsRequestBuilder) {
     m := &AppConsentAppConsentRequestsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/appConsent/appConsentRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/appConsent/appConsentRequests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewAppConsentAppConsentRequestsRequestBuilder instantiates a new AppConsentRequestsRequestBuilder and sets the default values.
+// NewAppConsentAppConsentRequestsRequestBuilder instantiates a new AppConsentAppConsentRequestsRequestBuilder and sets the default values.
 func NewAppConsentAppConsentRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppConsentAppConsentRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppConsentAppConsentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *AppConsentAppConsentRequestsCountRequestBuilder when successful
 func (m *AppConsentAppConsentRequestsRequestBuilder) Count()(*AppConsentAppConsentRequestsCountRequestBuilder) {
     return NewAppConsentAppConsentRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+// returns a *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *AppConsentAppConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewAppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get retrieve appConsentRequest objects and their properties.
+// returns a AppConsentRequestCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appconsentapprovalroute-list-appconsentrequests?view=graph-rest-1.0
@@ -88,8 +93,7 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) Get(ctx context.Context, re
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAppConsentRequestCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,14 +105,15 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestCollectionResponseable), nil
 }
 // Post create new navigation property to appConsentRequests for identityGovernance
+// returns a AppConsentRequestable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AppConsentAppConsentRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, requestConfiguration *AppConsentAppConsentRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAppConsentRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,6 +125,7 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) Post(ctx context.Context, b
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable), nil
 }
 // ToGetRequestInformation retrieve appConsentRequest objects and their properties.
+// returns a *RequestInformation when successful
 func (m *AppConsentAppConsentRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -133,8 +139,9 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to appConsentRequests for identityGovernance
+// returns a *RequestInformation when successful
 func (m *AppConsentAppConsentRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentRequestable, requestConfiguration *AppConsentAppConsentRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/identityGovernance/appConsent/appConsentRequests", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -147,6 +154,7 @@ func (m *AppConsentAppConsentRequestsRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AppConsentAppConsentRequestsRequestBuilder when successful
 func (m *AppConsentAppConsentRequestsRequestBuilder) WithUrl(rawUrl string)(*AppConsentAppConsentRequestsRequestBuilder) {
     return NewAppConsentAppConsentRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

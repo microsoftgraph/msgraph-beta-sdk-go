@@ -40,6 +40,7 @@ type CommunitiesItemOwnersRequestBuilderGetRequestConfiguration struct {
     QueryParameters *CommunitiesItemOwnersRequestBuilderGetQueryParameters
 }
 // ByUserId provides operations to manage the owners property of the microsoft.graph.community entity.
+// returns a *CommunitiesItemOwnersUserItemRequestBuilder when successful
 func (m *CommunitiesItemOwnersRequestBuilder) ByUserId(userId string)(*CommunitiesItemOwnersUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *CommunitiesItemOwnersRequestBuilder) ByUserId(userId string)(*Communiti
     }
     return NewCommunitiesItemOwnersUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCommunitiesItemOwnersRequestBuilderInternal instantiates a new OwnersRequestBuilder and sets the default values.
+// NewCommunitiesItemOwnersRequestBuilderInternal instantiates a new CommunitiesItemOwnersRequestBuilder and sets the default values.
 func NewCommunitiesItemOwnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CommunitiesItemOwnersRequestBuilder) {
     m := &CommunitiesItemOwnersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/communities/{community%2Did}/owners{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/communities/{community%2Did}/owners{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCommunitiesItemOwnersRequestBuilder instantiates a new OwnersRequestBuilder and sets the default values.
+// NewCommunitiesItemOwnersRequestBuilder instantiates a new CommunitiesItemOwnersRequestBuilder and sets the default values.
 func NewCommunitiesItemOwnersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CommunitiesItemOwnersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCommunitiesItemOwnersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CommunitiesItemOwnersCountRequestBuilder when successful
 func (m *CommunitiesItemOwnersRequestBuilder) Count()(*CommunitiesItemOwnersCountRequestBuilder) {
     return NewCommunitiesItemOwnersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the admins of the community. Limited to 100 users. If this property isn't specified when you create the community, the calling user is automatically assigned as the community owner.
+// returns a UserCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CommunitiesItemOwnersRequestBuilder) Get(ctx context.Context, requestConfiguration *CommunitiesItemOwnersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *CommunitiesItemOwnersRequestBuilder) Get(ctx context.Context, requestCo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable), nil
 }
 // ToGetRequestInformation the admins of the community. Limited to 100 users. If this property isn't specified when you create the community, the calling user is automatically assigned as the community owner.
+// returns a *RequestInformation when successful
 func (m *CommunitiesItemOwnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CommunitiesItemOwnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *CommunitiesItemOwnersRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CommunitiesItemOwnersRequestBuilder when successful
 func (m *CommunitiesItemOwnersRequestBuilder) WithUrl(rawUrl string)(*CommunitiesItemOwnersRequestBuilder) {
     return NewCommunitiesItemOwnersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

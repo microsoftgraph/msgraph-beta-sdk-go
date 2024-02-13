@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectoryAudit 
 type DirectoryAudit struct {
     Entity
 }
-// NewDirectoryAudit instantiates a new directoryAudit and sets the default values.
+// NewDirectoryAudit instantiates a new DirectoryAudit and sets the default values.
 func NewDirectoryAudit()(*DirectoryAudit) {
     m := &DirectoryAudit{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewDirectoryAudit()(*DirectoryAudit) {
     return m
 }
 // CreateDirectoryAuditFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDirectoryAuditFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectoryAudit(), nil
 }
 // GetActivityDateTime gets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and $orderby.
+// returns a *Time when successful
 func (m *DirectoryAudit) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("activityDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *DirectoryAudit) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetActivityDisplayName gets the activityDisplayName property value. Indicates the activity name or the operation name (for example 'Create User', 'Add member to group'). For a list of activities logged, refer to Microsoft Entra audit log categories and activities. Supports $filter (eq, startswith).
+// returns a *string when successful
 func (m *DirectoryAudit) GetActivityDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("activityDisplayName")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *DirectoryAudit) GetActivityDisplayName()(*string) {
     return nil
 }
 // GetAdditionalDetails gets the additionalDetails property value. Indicates more details on the activity.
+// returns a []KeyValueable when successful
 func (m *DirectoryAudit) GetAdditionalDetails()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("additionalDetails")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *DirectoryAudit) GetAdditionalDetails()([]KeyValueable) {
     return nil
 }
 // GetCategory gets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Microsoft Entra audit log categories and activities.
+// returns a *string when successful
 func (m *DirectoryAudit) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *DirectoryAudit) GetCategory()(*string) {
     return nil
 }
 // GetCorrelationId gets the correlationId property value. Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).
+// returns a *string when successful
 func (m *DirectoryAudit) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *DirectoryAudit) GetCorrelationId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -213,6 +219,7 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetInitiatedBy gets the initiatedBy property value. The initiatedBy property
+// returns a AuditActivityInitiatorable when successful
 func (m *DirectoryAudit) GetInitiatedBy()(AuditActivityInitiatorable) {
     val, err := m.GetBackingStore().Get("initiatedBy")
     if err != nil {
@@ -224,6 +231,7 @@ func (m *DirectoryAudit) GetInitiatedBy()(AuditActivityInitiatorable) {
     return nil
 }
 // GetLoggedByService gets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).
+// returns a *string when successful
 func (m *DirectoryAudit) GetLoggedByService()(*string) {
     val, err := m.GetBackingStore().Get("loggedByService")
     if err != nil {
@@ -235,6 +243,7 @@ func (m *DirectoryAudit) GetLoggedByService()(*string) {
     return nil
 }
 // GetOperationType gets the operationType property value. Indicates the type of operation that was performed. The possible values include but aren't limited to the following: Add, Assign, Update, Unassign, and Delete.
+// returns a *string when successful
 func (m *DirectoryAudit) GetOperationType()(*string) {
     val, err := m.GetBackingStore().Get("operationType")
     if err != nil {
@@ -246,6 +255,7 @@ func (m *DirectoryAudit) GetOperationType()(*string) {
     return nil
 }
 // GetResult gets the result property value. Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
+// returns a *OperationResult when successful
 func (m *DirectoryAudit) GetResult()(*OperationResult) {
     val, err := m.GetBackingStore().Get("result")
     if err != nil {
@@ -257,6 +267,7 @@ func (m *DirectoryAudit) GetResult()(*OperationResult) {
     return nil
 }
 // GetResultReason gets the resultReason property value. Indicates the reason for failure if the result is failure or timeout.
+// returns a *string when successful
 func (m *DirectoryAudit) GetResultReason()(*string) {
     val, err := m.GetBackingStore().Get("resultReason")
     if err != nil {
@@ -268,6 +279,7 @@ func (m *DirectoryAudit) GetResultReason()(*string) {
     return nil
 }
 // GetTargetResources gets the targetResources property value. Information about the resource that changed due to the activity. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.
+// returns a []TargetResourceable when successful
 func (m *DirectoryAudit) GetTargetResources()([]TargetResourceable) {
     val, err := m.GetBackingStore().Get("targetResources")
     if err != nil {
@@ -279,6 +291,7 @@ func (m *DirectoryAudit) GetTargetResources()([]TargetResourceable) {
     return nil
 }
 // GetUserAgent gets the userAgent property value. Type of user agent used by a user in the activity.
+// returns a *string when successful
 func (m *DirectoryAudit) GetUserAgent()(*string) {
     val, err := m.GetBackingStore().Get("userAgent")
     if err != nil {
@@ -466,7 +479,6 @@ func (m *DirectoryAudit) SetUserAgent(value *string)() {
         panic(err)
     }
 }
-// DirectoryAuditable 
 type DirectoryAuditable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

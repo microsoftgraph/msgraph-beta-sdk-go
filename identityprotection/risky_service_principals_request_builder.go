@@ -47,6 +47,7 @@ type RiskyServicePrincipalsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByRiskyServicePrincipalId provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
+// returns a *RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder when successful
 func (m *RiskyServicePrincipalsRequestBuilder) ByRiskyServicePrincipalId(riskyServicePrincipalId string)(*RiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -58,13 +59,14 @@ func (m *RiskyServicePrincipalsRequestBuilder) ByRiskyServicePrincipalId(riskySe
     return NewRiskyServicePrincipalsRiskyServicePrincipalItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConfirmCompromised provides operations to call the confirmCompromised method.
+// returns a *RiskyServicePrincipalsConfirmCompromisedRequestBuilder when successful
 func (m *RiskyServicePrincipalsRequestBuilder) ConfirmCompromised()(*RiskyServicePrincipalsConfirmCompromisedRequestBuilder) {
     return NewRiskyServicePrincipalsConfirmCompromisedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewRiskyServicePrincipalsRequestBuilderInternal instantiates a new RiskyServicePrincipalsRequestBuilder and sets the default values.
 func NewRiskyServicePrincipalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyServicePrincipalsRequestBuilder) {
     m := &RiskyServicePrincipalsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityProtection/riskyServicePrincipals{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityProtection/riskyServicePrincipals{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -75,14 +77,18 @@ func NewRiskyServicePrincipalsRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewRiskyServicePrincipalsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *RiskyServicePrincipalsCountRequestBuilder when successful
 func (m *RiskyServicePrincipalsRequestBuilder) Count()(*RiskyServicePrincipalsCountRequestBuilder) {
     return NewRiskyServicePrincipalsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Dismiss provides operations to call the dismiss method.
+// returns a *RiskyServicePrincipalsDismissRequestBuilder when successful
 func (m *RiskyServicePrincipalsRequestBuilder) Dismiss()(*RiskyServicePrincipalsDismissRequestBuilder) {
     return NewRiskyServicePrincipalsDismissRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the properties and relationships of riskyServicePrincipal objects.
+// returns a RiskyServicePrincipalCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/identityprotectionroot-list-riskyserviceprincipals?view=graph-rest-1.0
@@ -92,8 +98,7 @@ func (m *RiskyServicePrincipalsRequestBuilder) Get(ctx context.Context, requestC
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateRiskyServicePrincipalCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -105,14 +110,15 @@ func (m *RiskyServicePrincipalsRequestBuilder) Get(ctx context.Context, requestC
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalCollectionResponseable), nil
 }
 // Post create new navigation property to riskyServicePrincipals for identityProtection
+// returns a RiskyServicePrincipalable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RiskyServicePrincipalsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, requestConfiguration *RiskyServicePrincipalsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateRiskyServicePrincipalFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -124,6 +130,7 @@ func (m *RiskyServicePrincipalsRequestBuilder) Post(ctx context.Context, body ie
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable), nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of riskyServicePrincipal objects.
+// returns a *RequestInformation when successful
 func (m *RiskyServicePrincipalsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyServicePrincipalsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +144,9 @@ func (m *RiskyServicePrincipalsRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to riskyServicePrincipals for identityProtection
+// returns a *RequestInformation when successful
 func (m *RiskyServicePrincipalsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyServicePrincipalable, requestConfiguration *RiskyServicePrincipalsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/identityProtection/riskyServicePrincipals", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -151,6 +159,7 @@ func (m *RiskyServicePrincipalsRequestBuilder) ToPostRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *RiskyServicePrincipalsRequestBuilder when successful
 func (m *RiskyServicePrincipalsRequestBuilder) WithUrl(rawUrl string)(*RiskyServicePrincipalsRequestBuilder) {
     return NewRiskyServicePrincipalsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

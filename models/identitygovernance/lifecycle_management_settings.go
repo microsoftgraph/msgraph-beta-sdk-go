@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// LifecycleManagementSettings 
 type LifecycleManagementSettings struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewLifecycleManagementSettings instantiates a new lifecycleManagementSettings and sets the default values.
+// NewLifecycleManagementSettings instantiates a new LifecycleManagementSettings and sets the default values.
 func NewLifecycleManagementSettings()(*LifecycleManagementSettings) {
     m := &LifecycleManagementSettings{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewLifecycleManagementSettings()(*LifecycleManagementSettings) {
     return m
 }
 // CreateLifecycleManagementSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLifecycleManagementSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLifecycleManagementSettings(), nil
 }
 // GetEmailSettings gets the emailSettings property value. The emailSettings property
+// returns a EmailSettingsable when successful
 func (m *LifecycleManagementSettings) GetEmailSettings()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailSettingsable) {
     val, err := m.GetBackingStore().Get("emailSettings")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *LifecycleManagementSettings) GetEmailSettings()(ie233ee762e29b4ba6970aa
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LifecycleManagementSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["emailSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *LifecycleManagementSettings) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetWorkflowScheduleIntervalInHours gets the workflowScheduleIntervalInHours property value. The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
+// returns a *int32 when successful
 func (m *LifecycleManagementSettings) GetWorkflowScheduleIntervalInHours()(*int32) {
     val, err := m.GetBackingStore().Get("workflowScheduleIntervalInHours")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *LifecycleManagementSettings) SetWorkflowScheduleIntervalInHours(value *
         panic(err)
     }
 }
-// LifecycleManagementSettingsable 
 type LifecycleManagementSettingsable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Monitoring 
 type Monitoring struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewMonitoring instantiates a new monitoring and sets the default values.
+// NewMonitoring instantiates a new Monitoring and sets the default values.
 func NewMonitoring()(*Monitoring) {
     m := &Monitoring{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewMonitoring()(*Monitoring) {
     return m
 }
 // CreateMonitoringFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMonitoringFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMonitoring(), nil
 }
 // GetAlertRecords gets the alertRecords property value. The collection of records of alert events.
+// returns a []AlertRecordable when successful
 func (m *Monitoring) GetAlertRecords()([]AlertRecordable) {
     val, err := m.GetBackingStore().Get("alertRecords")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Monitoring) GetAlertRecords()([]AlertRecordable) {
     return nil
 }
 // GetAlertRules gets the alertRules property value. The collection of alert rules.
+// returns a []AlertRuleable when successful
 func (m *Monitoring) GetAlertRules()([]AlertRuleable) {
     val, err := m.GetBackingStore().Get("alertRules")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *Monitoring) GetAlertRules()([]AlertRuleable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Monitoring) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alertRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,7 +128,6 @@ func (m *Monitoring) SetAlertRules(value []AlertRuleable)() {
         panic(err)
     }
 }
-// Monitoringable 
 type Monitoringable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

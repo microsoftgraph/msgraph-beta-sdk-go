@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AnalyzedEmail 
 type AnalyzedEmail struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewAnalyzedEmail instantiates a new analyzedEmail and sets the default values.
+// NewAnalyzedEmail instantiates a new AnalyzedEmail and sets the default values.
 func NewAnalyzedEmail()(*AnalyzedEmail) {
     m := &AnalyzedEmail{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewAnalyzedEmail()(*AnalyzedEmail) {
     return m
 }
 // CreateAnalyzedEmailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAnalyzedEmailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAnalyzedEmail(), nil
 }
 // GetAlertIds gets the alertIds property value. The alertIds property
+// returns a []string when successful
 func (m *AnalyzedEmail) GetAlertIds()([]string) {
     val, err := m.GetBackingStore().Get("alertIds")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AnalyzedEmail) GetAlertIds()([]string) {
     return nil
 }
 // GetAttachments gets the attachments property value. The attachments property
+// returns a []AnalyzedEmailAttachmentable when successful
 func (m *AnalyzedEmail) GetAttachments()([]AnalyzedEmailAttachmentable) {
     val, err := m.GetBackingStore().Get("attachments")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AnalyzedEmail) GetAttachments()([]AnalyzedEmailAttachmentable) {
     return nil
 }
 // GetAttachmentsCount gets the attachmentsCount property value. The attachmentsCount property
+// returns a *int32 when successful
 func (m *AnalyzedEmail) GetAttachmentsCount()(*int32) {
     val, err := m.GetBackingStore().Get("attachmentsCount")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *AnalyzedEmail) GetAttachmentsCount()(*int32) {
     return nil
 }
 // GetAuthenticationDetails gets the authenticationDetails property value. The authenticationDetails property
+// returns a AnalyzedEmailAuthenticationDetailable when successful
 func (m *AnalyzedEmail) GetAuthenticationDetails()(AnalyzedEmailAuthenticationDetailable) {
     val, err := m.GetBackingStore().Get("authenticationDetails")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *AnalyzedEmail) GetAuthenticationDetails()(AnalyzedEmailAuthenticationDe
     return nil
 }
 // GetBulkComplaintLevel gets the bulkComplaintLevel property value. The bulkComplaintLevel property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetBulkComplaintLevel()(*string) {
     val, err := m.GetBackingStore().Get("bulkComplaintLevel")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *AnalyzedEmail) GetBulkComplaintLevel()(*string) {
     return nil
 }
 // GetContexts gets the contexts property value. The contexts property
+// returns a []string when successful
 func (m *AnalyzedEmail) GetContexts()([]string) {
     val, err := m.GetBackingStore().Get("contexts")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *AnalyzedEmail) GetContexts()([]string) {
     return nil
 }
 // GetDetectionMethods gets the detectionMethods property value. The detectionMethods property
+// returns a []string when successful
 func (m *AnalyzedEmail) GetDetectionMethods()([]string) {
     val, err := m.GetBackingStore().Get("detectionMethods")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *AnalyzedEmail) GetDetectionMethods()([]string) {
     return nil
 }
 // GetDirectionality gets the directionality property value. The directionality property
+// returns a *AntispamDirectionality when successful
 func (m *AnalyzedEmail) GetDirectionality()(*AntispamDirectionality) {
     val, err := m.GetBackingStore().Get("directionality")
     if err != nil {
@@ -110,6 +118,7 @@ func (m *AnalyzedEmail) GetDirectionality()(*AntispamDirectionality) {
     return nil
 }
 // GetDistributionList gets the distributionList property value. The distributionList property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetDistributionList()(*string) {
     val, err := m.GetBackingStore().Get("distributionList")
     if err != nil {
@@ -121,6 +130,7 @@ func (m *AnalyzedEmail) GetDistributionList()(*string) {
     return nil
 }
 // GetEmailClusterId gets the emailClusterId property value. The emailClusterId property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetEmailClusterId()(*string) {
     val, err := m.GetBackingStore().Get("emailClusterId")
     if err != nil {
@@ -132,6 +142,7 @@ func (m *AnalyzedEmail) GetEmailClusterId()(*string) {
     return nil
 }
 // GetExchangeTransportRules gets the exchangeTransportRules property value. The exchangeTransportRules property
+// returns a []AnalyzedEmailExchangeTransportRuleInfoable when successful
 func (m *AnalyzedEmail) GetExchangeTransportRules()([]AnalyzedEmailExchangeTransportRuleInfoable) {
     val, err := m.GetBackingStore().Get("exchangeTransportRules")
     if err != nil {
@@ -143,6 +154,7 @@ func (m *AnalyzedEmail) GetExchangeTransportRules()([]AnalyzedEmailExchangeTrans
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alertIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -496,6 +508,7 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetInternetMessageId gets the internetMessageId property value. The internetMessageId property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetInternetMessageId()(*string) {
     val, err := m.GetBackingStore().Get("internetMessageId")
     if err != nil {
@@ -507,6 +520,7 @@ func (m *AnalyzedEmail) GetInternetMessageId()(*string) {
     return nil
 }
 // GetLanguage gets the language property value. The language property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetLanguage()(*string) {
     val, err := m.GetBackingStore().Get("language")
     if err != nil {
@@ -518,6 +532,7 @@ func (m *AnalyzedEmail) GetLanguage()(*string) {
     return nil
 }
 // GetLatestDelivery gets the latestDelivery property value. The latestDelivery property
+// returns a AnalyzedEmailDeliveryDetailable when successful
 func (m *AnalyzedEmail) GetLatestDelivery()(AnalyzedEmailDeliveryDetailable) {
     val, err := m.GetBackingStore().Get("latestDelivery")
     if err != nil {
@@ -529,6 +544,7 @@ func (m *AnalyzedEmail) GetLatestDelivery()(AnalyzedEmailDeliveryDetailable) {
     return nil
 }
 // GetLoggedDateTime gets the loggedDateTime property value. The loggedDateTime property
+// returns a *Time when successful
 func (m *AnalyzedEmail) GetLoggedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("loggedDateTime")
     if err != nil {
@@ -540,6 +556,7 @@ func (m *AnalyzedEmail) GetLoggedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetNetworkMessageId gets the networkMessageId property value. The networkMessageId property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetNetworkMessageId()(*string) {
     val, err := m.GetBackingStore().Get("networkMessageId")
     if err != nil {
@@ -551,6 +568,7 @@ func (m *AnalyzedEmail) GetNetworkMessageId()(*string) {
     return nil
 }
 // GetOriginalDelivery gets the originalDelivery property value. The originalDelivery property
+// returns a AnalyzedEmailDeliveryDetailable when successful
 func (m *AnalyzedEmail) GetOriginalDelivery()(AnalyzedEmailDeliveryDetailable) {
     val, err := m.GetBackingStore().Get("originalDelivery")
     if err != nil {
@@ -562,6 +580,7 @@ func (m *AnalyzedEmail) GetOriginalDelivery()(AnalyzedEmailDeliveryDetailable) {
     return nil
 }
 // GetOverrideSources gets the overrideSources property value. The overrideSources property
+// returns a []string when successful
 func (m *AnalyzedEmail) GetOverrideSources()([]string) {
     val, err := m.GetBackingStore().Get("overrideSources")
     if err != nil {
@@ -573,6 +592,7 @@ func (m *AnalyzedEmail) GetOverrideSources()([]string) {
     return nil
 }
 // GetPhishConfidenceLevel gets the phishConfidenceLevel property value. The phishConfidenceLevel property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetPhishConfidenceLevel()(*string) {
     val, err := m.GetBackingStore().Get("phishConfidenceLevel")
     if err != nil {
@@ -584,6 +604,7 @@ func (m *AnalyzedEmail) GetPhishConfidenceLevel()(*string) {
     return nil
 }
 // GetPolicy gets the policy property value. The policy property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetPolicy()(*string) {
     val, err := m.GetBackingStore().Get("policy")
     if err != nil {
@@ -595,6 +616,7 @@ func (m *AnalyzedEmail) GetPolicy()(*string) {
     return nil
 }
 // GetPolicyAction gets the policyAction property value. The policyAction property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetPolicyAction()(*string) {
     val, err := m.GetBackingStore().Get("policyAction")
     if err != nil {
@@ -606,6 +628,7 @@ func (m *AnalyzedEmail) GetPolicyAction()(*string) {
     return nil
 }
 // GetRecipientEmailAddresses gets the recipientEmailAddresses property value. The recipientEmailAddresses property
+// returns a []string when successful
 func (m *AnalyzedEmail) GetRecipientEmailAddresses()([]string) {
     val, err := m.GetBackingStore().Get("recipientEmailAddresses")
     if err != nil {
@@ -617,6 +640,7 @@ func (m *AnalyzedEmail) GetRecipientEmailAddresses()([]string) {
     return nil
 }
 // GetReturnPath gets the returnPath property value. The returnPath property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetReturnPath()(*string) {
     val, err := m.GetBackingStore().Get("returnPath")
     if err != nil {
@@ -628,6 +652,7 @@ func (m *AnalyzedEmail) GetReturnPath()(*string) {
     return nil
 }
 // GetSenderDetail gets the senderDetail property value. The senderDetail property
+// returns a AnalyzedEmailSenderDetailable when successful
 func (m *AnalyzedEmail) GetSenderDetail()(AnalyzedEmailSenderDetailable) {
     val, err := m.GetBackingStore().Get("senderDetail")
     if err != nil {
@@ -639,6 +664,7 @@ func (m *AnalyzedEmail) GetSenderDetail()(AnalyzedEmailSenderDetailable) {
     return nil
 }
 // GetSizeInBytes gets the sizeInBytes property value. The sizeInBytes property
+// returns a *int32 when successful
 func (m *AnalyzedEmail) GetSizeInBytes()(*int32) {
     val, err := m.GetBackingStore().Get("sizeInBytes")
     if err != nil {
@@ -650,6 +676,7 @@ func (m *AnalyzedEmail) GetSizeInBytes()(*int32) {
     return nil
 }
 // GetSpamConfidenceLevel gets the spamConfidenceLevel property value. The spamConfidenceLevel property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetSpamConfidenceLevel()(*string) {
     val, err := m.GetBackingStore().Get("spamConfidenceLevel")
     if err != nil {
@@ -661,6 +688,7 @@ func (m *AnalyzedEmail) GetSpamConfidenceLevel()(*string) {
     return nil
 }
 // GetSubject gets the subject property value. The subject property
+// returns a *string when successful
 func (m *AnalyzedEmail) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -672,6 +700,7 @@ func (m *AnalyzedEmail) GetSubject()(*string) {
     return nil
 }
 // GetThreatType gets the threatType property value. The threatType property
+// returns a *ThreatType when successful
 func (m *AnalyzedEmail) GetThreatType()(*ThreatType) {
     val, err := m.GetBackingStore().Get("threatType")
     if err != nil {
@@ -683,6 +712,7 @@ func (m *AnalyzedEmail) GetThreatType()(*ThreatType) {
     return nil
 }
 // GetUrls gets the urls property value. The urls property
+// returns a []AnalyzedEmailUrlable when successful
 func (m *AnalyzedEmail) GetUrls()([]AnalyzedEmailUrlable) {
     val, err := m.GetBackingStore().Get("urls")
     if err != nil {
@@ -694,6 +724,7 @@ func (m *AnalyzedEmail) GetUrls()([]AnalyzedEmailUrlable) {
     return nil
 }
 // GetUrlsCount gets the urlsCount property value. The urlsCount property
+// returns a *int32 when successful
 func (m *AnalyzedEmail) GetUrlsCount()(*int32) {
     val, err := m.GetBackingStore().Get("urlsCount")
     if err != nil {
@@ -1122,7 +1153,6 @@ func (m *AnalyzedEmail) SetUrlsCount(value *int32)() {
         panic(err)
     }
 }
-// AnalyzedEmailable 
 type AnalyzedEmailable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

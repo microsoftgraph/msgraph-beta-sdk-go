@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// External 
 type External struct {
     Entity
 }
-// NewExternal instantiates a new external and sets the default values.
+// NewExternal instantiates a new External and sets the default values.
 func NewExternal()(*External) {
     m := &External{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewExternal()(*External) {
     return m
 }
 // CreateExternalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternal(), nil
 }
 // GetConnections gets the connections property value. The connections property
+// returns a []ExternalConnectionable when successful
 func (m *External) GetConnections()([]ExternalConnectionable) {
     val, err := m.GetBackingStore().Get("connections")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *External) GetConnections()([]ExternalConnectionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *External) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["connections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,7 +80,6 @@ func (m *External) SetConnections(value []ExternalConnectionable)() {
         panic(err)
     }
 }
-// Externalable 
 type Externalable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

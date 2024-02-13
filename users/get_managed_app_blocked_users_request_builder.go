@@ -35,7 +35,7 @@ type GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration struct {
 // NewGetManagedAppBlockedUsersRequestBuilderInternal instantiates a new GetManagedAppBlockedUsersRequestBuilder and sets the default values.
 func NewGetManagedAppBlockedUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GetManagedAppBlockedUsersRequestBuilder) {
     m := &GetManagedAppBlockedUsersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/getManagedAppBlockedUsers(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/getManagedAppBlockedUsers(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -46,15 +46,16 @@ func NewGetManagedAppBlockedUsersRequestBuilder(rawUrl string, requestAdapter i2
     return NewGetManagedAppBlockedUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getManagedAppBlockedUsers
-// Deprecated: This method is obsolete. Use GetAsGetManagedAppBlockedUsersGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a GetManagedAppBlockedUsersResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetManagedAppBlockedUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration)(GetManagedAppBlockedUsersResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetManagedAppBlockedUsersResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *GetManagedAppBlockedUsersRequestBuilder) Get(ctx context.Context, reque
     return res.(GetManagedAppBlockedUsersResponseable), nil
 }
 // GetAsGetManagedAppBlockedUsersGetResponse invoke function getManagedAppBlockedUsers
+// returns a GetManagedAppBlockedUsersGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetManagedAppBlockedUsersRequestBuilder) GetAsGetManagedAppBlockedUsersGetResponse(ctx context.Context, requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration)(GetManagedAppBlockedUsersGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetManagedAppBlockedUsersGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *GetManagedAppBlockedUsersRequestBuilder) GetAsGetManagedAppBlockedUsers
     return res.(GetManagedAppBlockedUsersGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getManagedAppBlockedUsers
+// returns a *RequestInformation when successful
 func (m *GetManagedAppBlockedUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *GetManagedAppBlockedUsersRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GetManagedAppBlockedUsersRequestBuilder when successful
 func (m *GetManagedAppBlockedUsersRequestBuilder) WithUrl(rawUrl string)(*GetManagedAppBlockedUsersRequestBuilder) {
     return NewGetManagedAppBlockedUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AndroidManagedStoreAppCollectionResponse 
 type AndroidManagedStoreAppCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAndroidManagedStoreAppCollectionResponse instantiates a new androidManagedStoreAppCollectionResponse and sets the default values.
+// NewAndroidManagedStoreAppCollectionResponse instantiates a new AndroidManagedStoreAppCollectionResponse and sets the default values.
 func NewAndroidManagedStoreAppCollectionResponse()(*AndroidManagedStoreAppCollectionResponse) {
     m := &AndroidManagedStoreAppCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAndroidManagedStoreAppCollectionResponse()(*AndroidManagedStoreAppCollec
     return m
 }
 // CreateAndroidManagedStoreAppCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidManagedStoreAppCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidManagedStoreAppCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidManagedStoreAppCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AndroidManagedStoreAppCollectionResponse) GetFieldDeserializers()(map[s
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AndroidManagedStoreAppable when successful
 func (m *AndroidManagedStoreAppCollectionResponse) GetValue()([]AndroidManagedStoreAppable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AndroidManagedStoreAppCollectionResponse) SetValue(value []AndroidManag
         panic(err)
     }
 }
-// AndroidManagedStoreAppCollectionResponseable 
 type AndroidManagedStoreAppCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

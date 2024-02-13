@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnsupportedGroupPolicyExtensionCollectionResponse 
 type UnsupportedGroupPolicyExtensionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnsupportedGroupPolicyExtensionCollectionResponse instantiates a new unsupportedGroupPolicyExtensionCollectionResponse and sets the default values.
+// NewUnsupportedGroupPolicyExtensionCollectionResponse instantiates a new UnsupportedGroupPolicyExtensionCollectionResponse and sets the default values.
 func NewUnsupportedGroupPolicyExtensionCollectionResponse()(*UnsupportedGroupPolicyExtensionCollectionResponse) {
     m := &UnsupportedGroupPolicyExtensionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUnsupportedGroupPolicyExtensionCollectionResponse()(*UnsupportedGroupPol
     return m
 }
 // CreateUnsupportedGroupPolicyExtensionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnsupportedGroupPolicyExtensionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnsupportedGroupPolicyExtensionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnsupportedGroupPolicyExtensionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UnsupportedGroupPolicyExtensionCollectionResponse) GetFieldDeserializer
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UnsupportedGroupPolicyExtensionable when successful
 func (m *UnsupportedGroupPolicyExtensionCollectionResponse) GetValue()([]UnsupportedGroupPolicyExtensionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UnsupportedGroupPolicyExtensionCollectionResponse) SetValue(value []Uns
         panic(err)
     }
 }
-// UnsupportedGroupPolicyExtensionCollectionResponseable 
 type UnsupportedGroupPolicyExtensionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

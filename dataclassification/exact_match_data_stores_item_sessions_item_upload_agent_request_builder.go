@@ -41,28 +41,28 @@ type ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderPatchRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderInternal instantiates a new UploadAgentRequestBuilder and sets the default values.
+// NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderInternal instantiates a new ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder and sets the default values.
 func NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) {
     m := &ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/{exactMatchSession%2Did}/uploadAgent{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/{exactMatchSession%2Did}/uploadAgent{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder instantiates a new UploadAgentRequestBuilder and sets the default values.
+// NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder instantiates a new ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder and sets the default values.
 func NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property uploadAgent for dataClassification
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) Delete(c
     return nil
 }
 // Get get uploadAgent from dataClassification
+// returns a ExactMatchUploadAgentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) Get(ctx context.Context, requestConfiguration *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateExactMatchUploadAgentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) Get(ctx 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable), nil
 }
 // Patch update the navigation property uploadAgent in dataClassification
+// returns a ExactMatchUploadAgentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, requestConfiguration *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateExactMatchUploadAgentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) Patch(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable), nil
 }
 // ToDeleteRequestInformation delete navigation property uploadAgent for dataClassification
+// returns a *RequestInformation when successful
 func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/{exactMatchSession%2Did}/uploadAgent", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) ToDelete
     return requestInfo, nil
 }
 // ToGetRequestInformation get uploadAgent from dataClassification
+// returns a *RequestInformation when successful
 func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) ToGetReq
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property uploadAgent in dataClassification
+// returns a *RequestInformation when successful
 func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchUploadAgentable, requestConfiguration *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}/sessions/{exactMatchSession%2Did}/uploadAgent", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) ToPatchR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder when successful
 func (m *ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) WithUrl(rawUrl string)(*ExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder) {
     return NewExactMatchDataStoresItemSessionsItemUploadAgentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

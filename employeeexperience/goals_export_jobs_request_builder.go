@@ -47,6 +47,7 @@ type GoalsExportJobsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByGoalsExportJobId provides operations to manage the exportJobs property of the microsoft.graph.goals entity.
+// returns a *GoalsExportJobsGoalsExportJobItemRequestBuilder when successful
 func (m *GoalsExportJobsRequestBuilder) ByGoalsExportJobId(goalsExportJobId string)(*GoalsExportJobsGoalsExportJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *GoalsExportJobsRequestBuilder) ByGoalsExportJobId(goalsExportJobId stri
     }
     return NewGoalsExportJobsGoalsExportJobItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewGoalsExportJobsRequestBuilderInternal instantiates a new ExportJobsRequestBuilder and sets the default values.
+// NewGoalsExportJobsRequestBuilderInternal instantiates a new GoalsExportJobsRequestBuilder and sets the default values.
 func NewGoalsExportJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GoalsExportJobsRequestBuilder) {
     m := &GoalsExportJobsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/goals/exportJobs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/employeeExperience/goals/exportJobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewGoalsExportJobsRequestBuilder instantiates a new ExportJobsRequestBuilder and sets the default values.
+// NewGoalsExportJobsRequestBuilder instantiates a new GoalsExportJobsRequestBuilder and sets the default values.
 func NewGoalsExportJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GoalsExportJobsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGoalsExportJobsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *GoalsExportJobsCountRequestBuilder when successful
 func (m *GoalsExportJobsRequestBuilder) Count()(*GoalsExportJobsCountRequestBuilder) {
     return NewGoalsExportJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of goalsExportJob objects and their properties in a Viva Goals organization.
+// returns a GoalsExportJobCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/goals-list-exportjobs?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *GoalsExportJobsRequestBuilder) Get(ctx context.Context, requestConfigur
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGoalsExportJobCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +100,8 @@ func (m *GoalsExportJobsRequestBuilder) Get(ctx context.Context, requestConfigur
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GoalsExportJobCollectionResponseable), nil
 }
 // Post create a new goalsExportJob object in a Viva Goals organization.
+// returns a GoalsExportJobable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/goals-post-exportjobs?view=graph-rest-1.0
@@ -106,8 +111,7 @@ func (m *GoalsExportJobsRequestBuilder) Post(ctx context.Context, body ie233ee76
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGoalsExportJobFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,6 +123,7 @@ func (m *GoalsExportJobsRequestBuilder) Post(ctx context.Context, body ie233ee76
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GoalsExportJobable), nil
 }
 // ToGetRequestInformation get a list of goalsExportJob objects and their properties in a Viva Goals organization.
+// returns a *RequestInformation when successful
 func (m *GoalsExportJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GoalsExportJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +137,9 @@ func (m *GoalsExportJobsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new goalsExportJob object in a Viva Goals organization.
+// returns a *RequestInformation when successful
 func (m *GoalsExportJobsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GoalsExportJobable, requestConfiguration *GoalsExportJobsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/employeeExperience/goals/exportJobs", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *GoalsExportJobsRequestBuilder) ToPostRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GoalsExportJobsRequestBuilder when successful
 func (m *GoalsExportJobsRequestBuilder) WithUrl(rawUrl string)(*GoalsExportJobsRequestBuilder) {
     return NewGoalsExportJobsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

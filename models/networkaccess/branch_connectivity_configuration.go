@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// BranchConnectivityConfiguration 
 type BranchConnectivityConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBranchConnectivityConfiguration instantiates a new branchConnectivityConfiguration and sets the default values.
+// NewBranchConnectivityConfiguration instantiates a new BranchConnectivityConfiguration and sets the default values.
 func NewBranchConnectivityConfiguration()(*BranchConnectivityConfiguration) {
     m := &BranchConnectivityConfiguration{
     }
@@ -19,10 +18,12 @@ func NewBranchConnectivityConfiguration()(*BranchConnectivityConfiguration) {
     return m
 }
 // CreateBranchConnectivityConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBranchConnectivityConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchConnectivityConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BranchConnectivityConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *BranchConnectivityConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *BranchConnectivityConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBranchId gets the branchId property value. Unique identifier or a specific reference assigned to a branchSite. Key.
+// returns a *string when successful
 func (m *BranchConnectivityConfiguration) GetBranchId()(*string) {
     val, err := m.GetBackingStore().Get("branchId")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *BranchConnectivityConfiguration) GetBranchId()(*string) {
     return nil
 }
 // GetBranchName gets the branchName property value. Display name assigned to a branchSite.
+// returns a *string when successful
 func (m *BranchConnectivityConfiguration) GetBranchName()(*string) {
     val, err := m.GetBackingStore().Get("branchName")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *BranchConnectivityConfiguration) GetBranchName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchConnectivityConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["branchId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +117,7 @@ func (m *BranchConnectivityConfiguration) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetLinks gets the links property value. List of connectivity configurations for deviceLink objects.
+// returns a []ConnectivityConfigurationLinkable when successful
 func (m *BranchConnectivityConfiguration) GetLinks()([]ConnectivityConfigurationLinkable) {
     val, err := m.GetBackingStore().Get("links")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *BranchConnectivityConfiguration) GetLinks()([]ConnectivityConfiguration
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *BranchConnectivityConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *BranchConnectivityConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// BranchConnectivityConfigurationable 
 type BranchConnectivityConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

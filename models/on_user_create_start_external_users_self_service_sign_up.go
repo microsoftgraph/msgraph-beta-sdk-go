@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnUserCreateStartExternalUsersSelfServiceSignUp 
 type OnUserCreateStartExternalUsersSelfServiceSignUp struct {
     OnUserCreateStartHandler
 }
-// NewOnUserCreateStartExternalUsersSelfServiceSignUp instantiates a new onUserCreateStartExternalUsersSelfServiceSignUp and sets the default values.
+// NewOnUserCreateStartExternalUsersSelfServiceSignUp instantiates a new OnUserCreateStartExternalUsersSelfServiceSignUp and sets the default values.
 func NewOnUserCreateStartExternalUsersSelfServiceSignUp()(*OnUserCreateStartExternalUsersSelfServiceSignUp) {
     m := &OnUserCreateStartExternalUsersSelfServiceSignUp{
         OnUserCreateStartHandler: *NewOnUserCreateStartHandler(),
@@ -18,10 +17,12 @@ func NewOnUserCreateStartExternalUsersSelfServiceSignUp()(*OnUserCreateStartExte
     return m
 }
 // CreateOnUserCreateStartExternalUsersSelfServiceSignUpFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnUserCreateStartExternalUsersSelfServiceSignUpFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnUserCreateStartExternalUsersSelfServiceSignUp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnUserCreateStartHandler.GetFieldDeserializers()
     res["userTypeToCreate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) GetFieldDeserializers(
     return res
 }
 // GetUserTypeToCreate gets the userTypeToCreate property value. The type of user object to create. The possible values are: member, guest, unknownFutureValue.
+// returns a *UserType when successful
 func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) GetUserTypeToCreate()(*UserType) {
     val, err := m.GetBackingStore().Get("userTypeToCreate")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *OnUserCreateStartExternalUsersSelfServiceSignUp) SetUserTypeToCreate(va
         panic(err)
     }
 }
-// OnUserCreateStartExternalUsersSelfServiceSignUpable 
 type OnUserCreateStartExternalUsersSelfServiceSignUpable interface {
     OnUserCreateStartHandlerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

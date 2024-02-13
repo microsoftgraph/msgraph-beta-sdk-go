@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Portal to which admin syncs available Microsoft Store for Business apps. This is available in the Intune Admin Console.
@@ -8,18 +9,20 @@ type MicrosoftStoreForBusinessPortalSelectionOptions int
 
 const (
     // This option is not available for the account
-    NONE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS MicrosoftStoreForBusinessPortalSelectionOptions = iota
+    NONE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS = 1
     // Intune Company Portal only.
-    COMPANYPORTAL_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
+    COMPANYPORTAL_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS = 2
     // MSFB Private store only.
-    PRIVATESTORE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
+    PRIVATESTORE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS = 4
 )
 
 func (i MicrosoftStoreForBusinessPortalSelectionOptions) String() string {
     var values []string
-    for p := MicrosoftStoreForBusinessPortalSelectionOptions(1); p <= PRIVATESTORE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "companyPortal", "privateStore"}[p])
+    options := []string{"none", "companyPortal", "privateStore"}
+    for p := 0; p < 3; p++ {
+        mantis := MicrosoftStoreForBusinessPortalSelectionOptions(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

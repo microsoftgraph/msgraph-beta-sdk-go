@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchSession 
 type ExactMatchSession struct {
     ExactMatchSessionBase
 }
-// NewExactMatchSession instantiates a new exactMatchSession and sets the default values.
+// NewExactMatchSession instantiates a new ExactMatchSession and sets the default values.
 func NewExactMatchSession()(*ExactMatchSession) {
     m := &ExactMatchSession{
         ExactMatchSessionBase: *NewExactMatchSessionBase(),
@@ -16,10 +15,12 @@ func NewExactMatchSession()(*ExactMatchSession) {
     return m
 }
 // CreateExactMatchSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExactMatchSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExactMatchSession(), nil
 }
 // GetChecksum gets the checksum property value. The checksum property
+// returns a *string when successful
 func (m *ExactMatchSession) GetChecksum()(*string) {
     val, err := m.GetBackingStore().Get("checksum")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ExactMatchSession) GetChecksum()(*string) {
     return nil
 }
 // GetDataUploadURI gets the dataUploadURI property value. The dataUploadURI property
+// returns a *string when successful
 func (m *ExactMatchSession) GetDataUploadURI()(*string) {
     val, err := m.GetBackingStore().Get("dataUploadURI")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ExactMatchSession) GetDataUploadURI()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ExactMatchSessionBase.GetFieldDeserializers()
     res["checksum"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -133,6 +136,7 @@ func (m *ExactMatchSession) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFields gets the fields property value. The fields property
+// returns a []string when successful
 func (m *ExactMatchSession) GetFields()([]string) {
     val, err := m.GetBackingStore().Get("fields")
     if err != nil {
@@ -144,6 +148,7 @@ func (m *ExactMatchSession) GetFields()([]string) {
     return nil
 }
 // GetFileName gets the fileName property value. The fileName property
+// returns a *string when successful
 func (m *ExactMatchSession) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -155,6 +160,7 @@ func (m *ExactMatchSession) GetFileName()(*string) {
     return nil
 }
 // GetRowsPerBlock gets the rowsPerBlock property value. The rowsPerBlock property
+// returns a *int32 when successful
 func (m *ExactMatchSession) GetRowsPerBlock()(*int32) {
     val, err := m.GetBackingStore().Get("rowsPerBlock")
     if err != nil {
@@ -166,6 +172,7 @@ func (m *ExactMatchSession) GetRowsPerBlock()(*int32) {
     return nil
 }
 // GetSalt gets the salt property value. The salt property
+// returns a *string when successful
 func (m *ExactMatchSession) GetSalt()(*string) {
     val, err := m.GetBackingStore().Get("salt")
     if err != nil {
@@ -177,6 +184,7 @@ func (m *ExactMatchSession) GetSalt()(*string) {
     return nil
 }
 // GetUploadAgent gets the uploadAgent property value. The uploadAgent property
+// returns a ExactMatchUploadAgentable when successful
 func (m *ExactMatchSession) GetUploadAgent()(ExactMatchUploadAgentable) {
     val, err := m.GetBackingStore().Get("uploadAgent")
     if err != nil {
@@ -188,6 +196,7 @@ func (m *ExactMatchSession) GetUploadAgent()(ExactMatchUploadAgentable) {
     return nil
 }
 // GetUploadAgentId gets the uploadAgentId property value. The uploadAgentId property
+// returns a *string when successful
 func (m *ExactMatchSession) GetUploadAgentId()(*string) {
     val, err := m.GetBackingStore().Get("uploadAgentId")
     if err != nil {
@@ -310,7 +319,6 @@ func (m *ExactMatchSession) SetUploadAgentId(value *string)() {
         panic(err)
     }
 }
-// ExactMatchSessionable 
 type ExactMatchSessionable interface {
     ExactMatchSessionBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Media 
 type Media struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMedia instantiates a new media and sets the default values.
+// NewMedia instantiates a new Media and sets the default values.
 func NewMedia()(*Media) {
     m := &Media{
     }
@@ -19,10 +18,12 @@ func NewMedia()(*Media) {
     return m
 }
 // CreateMediaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMediaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMedia(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Media) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *Media) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Media) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Media) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["isTranscriptionShown"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *Media) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetIsTranscriptionShown gets the isTranscriptionShown property value. If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.
+// returns a *bool when successful
 func (m *Media) GetIsTranscriptionShown()(*bool) {
     val, err := m.GetBackingStore().Get("isTranscriptionShown")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *Media) GetIsTranscriptionShown()(*bool) {
     return nil
 }
 // GetMediaSource gets the mediaSource property value. Information about the source of media. Read-only.
+// returns a MediaSourceable when successful
 func (m *Media) GetMediaSource()(MediaSourceable) {
     val, err := m.GetBackingStore().Get("mediaSource")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *Media) GetMediaSource()(MediaSourceable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Media) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *Media) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// Mediaable 
 type Mediaable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

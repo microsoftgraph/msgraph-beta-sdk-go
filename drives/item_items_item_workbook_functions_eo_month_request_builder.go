@@ -18,28 +18,29 @@ type ItemItemsItemWorkbookFunctionsEoMonthRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookFunctionsEoMonthRequestBuilderInternal instantiates a new EoMonthRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsEoMonthRequestBuilderInternal instantiates a new ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsEoMonthRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder) {
     m := &ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/eoMonth", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookFunctionsEoMonthRequestBuilder instantiates a new EoMonthRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsEoMonthRequestBuilder instantiates a new ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsEoMonthRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookFunctionsEoMonthRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action eoMonth
+// returns a WorkbookFunctionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookFunctionsEoMonthPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsEoMonthRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookFunctionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder) Post(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionResultable), nil
 }
 // ToPostRequestInformation invoke action eoMonth
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookFunctionsEoMonthPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsEoMonthRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder) ToPostRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder when successful
 func (m *ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsEoMonthRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsEoMonthRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

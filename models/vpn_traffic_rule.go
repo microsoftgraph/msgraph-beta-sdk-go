@@ -10,7 +10,7 @@ type VpnTrafficRule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewVpnTrafficRule instantiates a new vpnTrafficRule and sets the default values.
+// NewVpnTrafficRule instantiates a new VpnTrafficRule and sets the default values.
 func NewVpnTrafficRule()(*VpnTrafficRule) {
     m := &VpnTrafficRule{
     }
@@ -19,10 +19,12 @@ func NewVpnTrafficRule()(*VpnTrafficRule) {
     return m
 }
 // CreateVpnTrafficRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVpnTrafficRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVpnTrafficRule(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *VpnTrafficRule) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +37,7 @@ func (m *VpnTrafficRule) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAppId gets the appId property value. App identifier, if this traffic rule is triggered by an app.
+// returns a *string when successful
 func (m *VpnTrafficRule) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -46,6 +49,7 @@ func (m *VpnTrafficRule) GetAppId()(*string) {
     return nil
 }
 // GetAppType gets the appType property value. Indicates the type of app that a VPN traffic rule is associated with.
+// returns a *VpnTrafficRuleAppType when successful
 func (m *VpnTrafficRule) GetAppType()(*VpnTrafficRuleAppType) {
     val, err := m.GetBackingStore().Get("appType")
     if err != nil {
@@ -57,10 +61,12 @@ func (m *VpnTrafficRule) GetAppType()(*VpnTrafficRuleAppType) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *VpnTrafficRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetClaims gets the claims property value. Claims associated with this traffic rule.
+// returns a *string when successful
 func (m *VpnTrafficRule) GetClaims()(*string) {
     val, err := m.GetBackingStore().Get("claims")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *VpnTrafficRule) GetClaims()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -221,6 +228,7 @@ func (m *VpnTrafficRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetLocalAddressRanges gets the localAddressRanges property value. Local address range. This collection can contain a maximum of 500 elements.
+// returns a []IPv4Rangeable when successful
 func (m *VpnTrafficRule) GetLocalAddressRanges()([]IPv4Rangeable) {
     val, err := m.GetBackingStore().Get("localAddressRanges")
     if err != nil {
@@ -232,6 +240,7 @@ func (m *VpnTrafficRule) GetLocalAddressRanges()([]IPv4Rangeable) {
     return nil
 }
 // GetLocalPortRanges gets the localPortRanges property value. Local port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.
+// returns a []NumberRangeable when successful
 func (m *VpnTrafficRule) GetLocalPortRanges()([]NumberRangeable) {
     val, err := m.GetBackingStore().Get("localPortRanges")
     if err != nil {
@@ -243,6 +252,7 @@ func (m *VpnTrafficRule) GetLocalPortRanges()([]NumberRangeable) {
     return nil
 }
 // GetName gets the name property value. Name.
+// returns a *string when successful
 func (m *VpnTrafficRule) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -254,6 +264,7 @@ func (m *VpnTrafficRule) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *VpnTrafficRule) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -265,6 +276,7 @@ func (m *VpnTrafficRule) GetOdataType()(*string) {
     return nil
 }
 // GetProtocols gets the protocols property value. Protocols (0-255). Valid values 0 to 255
+// returns a *int32 when successful
 func (m *VpnTrafficRule) GetProtocols()(*int32) {
     val, err := m.GetBackingStore().Get("protocols")
     if err != nil {
@@ -276,6 +288,7 @@ func (m *VpnTrafficRule) GetProtocols()(*int32) {
     return nil
 }
 // GetRemoteAddressRanges gets the remoteAddressRanges property value. Remote address range. This collection can contain a maximum of 500 elements.
+// returns a []IPv4Rangeable when successful
 func (m *VpnTrafficRule) GetRemoteAddressRanges()([]IPv4Rangeable) {
     val, err := m.GetBackingStore().Get("remoteAddressRanges")
     if err != nil {
@@ -287,6 +300,7 @@ func (m *VpnTrafficRule) GetRemoteAddressRanges()([]IPv4Rangeable) {
     return nil
 }
 // GetRemotePortRanges gets the remotePortRanges property value. Remote port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.
+// returns a []NumberRangeable when successful
 func (m *VpnTrafficRule) GetRemotePortRanges()([]NumberRangeable) {
     val, err := m.GetBackingStore().Get("remotePortRanges")
     if err != nil {
@@ -298,6 +312,7 @@ func (m *VpnTrafficRule) GetRemotePortRanges()([]NumberRangeable) {
     return nil
 }
 // GetRoutingPolicyType gets the routingPolicyType property value. Specifies the routing policy for a VPN traffic rule.
+// returns a *VpnTrafficRuleRoutingPolicyType when successful
 func (m *VpnTrafficRule) GetRoutingPolicyType()(*VpnTrafficRuleRoutingPolicyType) {
     val, err := m.GetBackingStore().Get("routingPolicyType")
     if err != nil {
@@ -309,6 +324,7 @@ func (m *VpnTrafficRule) GetRoutingPolicyType()(*VpnTrafficRuleRoutingPolicyType
     return nil
 }
 // GetVpnTrafficDirection gets the vpnTrafficDirection property value. Specify whether the rule applies to inbound traffic or outbound traffic.
+// returns a *VpnTrafficDirection when successful
 func (m *VpnTrafficRule) GetVpnTrafficDirection()(*VpnTrafficDirection) {
     val, err := m.GetBackingStore().Get("vpnTrafficDirection")
     if err != nil {
@@ -523,7 +539,6 @@ func (m *VpnTrafficRule) SetVpnTrafficDirection(value *VpnTrafficDirection)() {
         panic(err)
     }
 }
-// VpnTrafficRuleable 
 type VpnTrafficRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

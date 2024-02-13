@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AzureAssociatedIdentities 
 type AzureAssociatedIdentities struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAzureAssociatedIdentities instantiates a new azureAssociatedIdentities and sets the default values.
+// NewAzureAssociatedIdentities instantiates a new AzureAssociatedIdentities and sets the default values.
 func NewAzureAssociatedIdentities()(*AzureAssociatedIdentities) {
     m := &AzureAssociatedIdentities{
     }
@@ -19,10 +18,12 @@ func NewAzureAssociatedIdentities()(*AzureAssociatedIdentities) {
     return m
 }
 // CreateAzureAssociatedIdentitiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAzureAssociatedIdentitiesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureAssociatedIdentities(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AzureAssociatedIdentities) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AzureAssociatedIdentities) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAll gets the all property value. The all property
+// returns a []AzureIdentityable when successful
 func (m *AzureAssociatedIdentities) GetAll()([]AzureIdentityable) {
     val, err := m.GetBackingStore().Get("all")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *AzureAssociatedIdentities) GetAll()([]AzureIdentityable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AzureAssociatedIdentities) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureAssociatedIdentities) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["all"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -129,6 +133,7 @@ func (m *AzureAssociatedIdentities) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetManagedIdentities gets the managedIdentities property value. The managedIdentities property
+// returns a []AzureManagedIdentityable when successful
 func (m *AzureAssociatedIdentities) GetManagedIdentities()([]AzureManagedIdentityable) {
     val, err := m.GetBackingStore().Get("managedIdentities")
     if err != nil {
@@ -140,6 +145,7 @@ func (m *AzureAssociatedIdentities) GetManagedIdentities()([]AzureManagedIdentit
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AzureAssociatedIdentities) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -151,6 +157,7 @@ func (m *AzureAssociatedIdentities) GetOdataType()(*string) {
     return nil
 }
 // GetServicePrincipals gets the servicePrincipals property value. The servicePrincipals property
+// returns a []AzureServicePrincipalable when successful
 func (m *AzureAssociatedIdentities) GetServicePrincipals()([]AzureServicePrincipalable) {
     val, err := m.GetBackingStore().Get("servicePrincipals")
     if err != nil {
@@ -162,6 +169,7 @@ func (m *AzureAssociatedIdentities) GetServicePrincipals()([]AzureServicePrincip
     return nil
 }
 // GetUsers gets the users property value. The users property
+// returns a []AzureUserable when successful
 func (m *AzureAssociatedIdentities) GetUsers()([]AzureUserable) {
     val, err := m.GetBackingStore().Get("users")
     if err != nil {
@@ -282,7 +290,6 @@ func (m *AzureAssociatedIdentities) SetUsers(value []AzureUserable)() {
         panic(err)
     }
 }
-// AzureAssociatedIdentitiesable 
 type AzureAssociatedIdentitiesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

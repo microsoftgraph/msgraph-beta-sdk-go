@@ -47,6 +47,7 @@ type VirtualEventsWebinarsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByVirtualEventWebinarId provides operations to manage the webinars property of the microsoft.graph.virtualEventsRoot entity.
+// returns a *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder when successful
 func (m *VirtualEventsWebinarsRequestBuilder) ByVirtualEventWebinarId(virtualEventWebinarId string)(*VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *VirtualEventsWebinarsRequestBuilder) ByVirtualEventWebinarId(virtualEve
     }
     return NewVirtualEventsWebinarsVirtualEventWebinarItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewVirtualEventsWebinarsRequestBuilderInternal instantiates a new WebinarsRequestBuilder and sets the default values.
+// NewVirtualEventsWebinarsRequestBuilderInternal instantiates a new VirtualEventsWebinarsRequestBuilder and sets the default values.
 func NewVirtualEventsWebinarsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsWebinarsRequestBuilder) {
     m := &VirtualEventsWebinarsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewVirtualEventsWebinarsRequestBuilder instantiates a new WebinarsRequestBuilder and sets the default values.
+// NewVirtualEventsWebinarsRequestBuilder instantiates a new VirtualEventsWebinarsRequestBuilder and sets the default values.
 func NewVirtualEventsWebinarsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsWebinarsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *VirtualEventsWebinarsCountRequestBuilder when successful
 func (m *VirtualEventsWebinarsRequestBuilder) Count()(*VirtualEventsWebinarsCountRequestBuilder) {
     return NewVirtualEventsWebinarsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of all virtualEventWebinar objects created in the tenant.
+// returns a VirtualEventWebinarCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *VirtualEventsWebinarsRequestBuilder) Get(ctx context.Context, requestCo
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVirtualEventWebinarCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,22 +100,25 @@ func (m *VirtualEventsWebinarsRequestBuilder) Get(ctx context.Context, requestCo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventWebinarCollectionResponseable), nil
 }
 // GetByUserIdAndRoleWithUserIdWithRole provides operations to call the getByUserIdAndRole method.
+// returns a *VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder when successful
 func (m *VirtualEventsWebinarsRequestBuilder) GetByUserIdAndRoleWithUserIdWithRole(role *string, userId *string)(*VirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) {
     return NewVirtualEventsWebinarsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, role, userId)
 }
 // GetByUserRoleWithRole provides operations to call the getByUserRole method.
+// returns a *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder when successful
 func (m *VirtualEventsWebinarsRequestBuilder) GetByUserRoleWithRole(role *string)(*VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) {
     return NewVirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, role)
 }
 // Post create new navigation property to webinars for solutions
+// returns a VirtualEventWebinarable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventWebinarable, requestConfiguration *VirtualEventsWebinarsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventWebinarable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVirtualEventWebinarFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -124,6 +130,7 @@ func (m *VirtualEventsWebinarsRequestBuilder) Post(ctx context.Context, body ie2
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventWebinarable), nil
 }
 // ToGetRequestInformation get the list of all virtualEventWebinar objects created in the tenant.
+// returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +144,9 @@ func (m *VirtualEventsWebinarsRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to webinars for solutions
+// returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventWebinarable, requestConfiguration *VirtualEventsWebinarsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/solutions/virtualEvents/webinars", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -151,6 +159,7 @@ func (m *VirtualEventsWebinarsRequestBuilder) ToPostRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEventsWebinarsRequestBuilder when successful
 func (m *VirtualEventsWebinarsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsWebinarsRequestBuilder) {
     return NewVirtualEventsWebinarsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -8,7 +8,7 @@ import (
 type DeviceManagementSettingCategory struct {
     Entity
 }
-// NewDeviceManagementSettingCategory instantiates a new deviceManagementSettingCategory and sets the default values.
+// NewDeviceManagementSettingCategory instantiates a new DeviceManagementSettingCategory and sets the default values.
 func NewDeviceManagementSettingCategory()(*DeviceManagementSettingCategory) {
     m := &DeviceManagementSettingCategory{
         Entity: *NewEntity(),
@@ -16,6 +16,7 @@ func NewDeviceManagementSettingCategory()(*DeviceManagementSettingCategory) {
     return m
 }
 // CreateDeviceManagementSettingCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateDeviceManagementSettingCategoryFromDiscriminatorValue(parseNode i878a
     return NewDeviceManagementSettingCategory(), nil
 }
 // GetDisplayName gets the displayName property value. The category name
+// returns a *string when successful
 func (m *DeviceManagementSettingCategory) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *DeviceManagementSettingCategory) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -92,6 +95,7 @@ func (m *DeviceManagementSettingCategory) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetHasRequiredSetting gets the hasRequiredSetting property value. The category contains top level required setting
+// returns a *bool when successful
 func (m *DeviceManagementSettingCategory) GetHasRequiredSetting()(*bool) {
     val, err := m.GetBackingStore().Get("hasRequiredSetting")
     if err != nil {
@@ -103,6 +107,7 @@ func (m *DeviceManagementSettingCategory) GetHasRequiredSetting()(*bool) {
     return nil
 }
 // GetSettingDefinitions gets the settingDefinitions property value. The setting definitions this category contains
+// returns a []DeviceManagementSettingDefinitionable when successful
 func (m *DeviceManagementSettingCategory) GetSettingDefinitions()([]DeviceManagementSettingDefinitionable) {
     val, err := m.GetBackingStore().Get("settingDefinitions")
     if err != nil {
@@ -166,7 +171,6 @@ func (m *DeviceManagementSettingCategory) SetSettingDefinitions(value []DeviceMa
         panic(err)
     }
 }
-// DeviceManagementSettingCategoryable 
 type DeviceManagementSettingCategoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

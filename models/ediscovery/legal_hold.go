@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// LegalHold 
 type LegalHold struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewLegalHold instantiates a new legalHold and sets the default values.
+// NewLegalHold instantiates a new LegalHold and sets the default values.
 func NewLegalHold()(*LegalHold) {
     m := &LegalHold{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewLegalHold()(*LegalHold) {
     return m
 }
 // CreateLegalHoldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLegalHoldFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLegalHold(), nil
 }
 // GetContentQuery gets the contentQuery property value. KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.
+// returns a *string when successful
 func (m *LegalHold) GetContentQuery()(*string) {
     val, err := m.GetBackingStore().Get("contentQuery")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *LegalHold) GetContentQuery()(*string) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The user who created the legal hold.
+// returns a IdentitySetable when successful
 func (m *LegalHold) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *LegalHold) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9e
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the legal hold was created.
+// returns a *Time when successful
 func (m *LegalHold) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *LegalHold) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     return nil
 }
 // GetDescription gets the description property value. The legal hold description.
+// returns a *string when successful
 func (m *LegalHold) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *LegalHold) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the legal hold.
+// returns a *string when successful
 func (m *LegalHold) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *LegalHold) GetDisplayName()(*string) {
     return nil
 }
 // GetErrors gets the errors property value. Lists any errors that happened while placing the hold.
+// returns a []string when successful
 func (m *LegalHold) GetErrors()([]string) {
     val, err := m.GetBackingStore().Get("errors")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *LegalHold) GetErrors()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LegalHold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contentQuery"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -247,6 +254,7 @@ func (m *LegalHold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether the hold is enabled and actively holding content.
+// returns a *bool when successful
 func (m *LegalHold) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -258,6 +266,7 @@ func (m *LegalHold) GetIsEnabled()(*bool) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. the user who last modified the legal hold.
+// returns a IdentitySetable when successful
 func (m *LegalHold) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -269,6 +278,7 @@ func (m *LegalHold) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde1169
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the legal hold was last modified.
+// returns a *Time when successful
 func (m *LegalHold) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -280,6 +290,7 @@ func (m *LegalHold) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetSiteSources gets the siteSources property value. Data source entity for SharePoint sites associated with the legal hold.
+// returns a []SiteSourceable when successful
 func (m *LegalHold) GetSiteSources()([]SiteSourceable) {
     val, err := m.GetBackingStore().Get("siteSources")
     if err != nil {
@@ -291,6 +302,7 @@ func (m *LegalHold) GetSiteSources()([]SiteSourceable) {
     return nil
 }
 // GetStatus gets the status property value. The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
+// returns a *LegalHoldStatus when successful
 func (m *LegalHold) GetStatus()(*LegalHoldStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -302,6 +314,7 @@ func (m *LegalHold) GetStatus()(*LegalHoldStatus) {
     return nil
 }
 // GetUnifiedGroupSources gets the unifiedGroupSources property value. The unifiedGroupSources property
+// returns a []UnifiedGroupSourceable when successful
 func (m *LegalHold) GetUnifiedGroupSources()([]UnifiedGroupSourceable) {
     val, err := m.GetBackingStore().Get("unifiedGroupSources")
     if err != nil {
@@ -313,6 +326,7 @@ func (m *LegalHold) GetUnifiedGroupSources()([]UnifiedGroupSourceable) {
     return nil
 }
 // GetUserSources gets the userSources property value. Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
+// returns a []UserSourceable when successful
 func (m *LegalHold) GetUserSources()([]UserSourceable) {
     val, err := m.GetBackingStore().Get("userSources")
     if err != nil {
@@ -519,7 +533,6 @@ func (m *LegalHold) SetUserSources(value []UserSourceable)() {
         panic(err)
     }
 }
-// LegalHoldable 
 type LegalHoldable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

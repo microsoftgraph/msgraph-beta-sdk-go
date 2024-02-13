@@ -41,28 +41,28 @@ type ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderInternal instantiates a new ForwardingProfileItemRequestBuilder and sets the default values.
+// NewConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderInternal instantiates a new ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder and sets the default values.
 func NewConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) {
     m := &ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/forwardingProfiles/{forwardingProfile%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/forwardingProfiles/{forwardingProfile%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder instantiates a new ForwardingProfileItemRequestBuilder and sets the default values.
+// NewConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder instantiates a new ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder and sets the default values.
 func NewConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property forwardingProfiles for networkAccess
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRe
     return nil
 }
 // Get get forwardingProfiles from networkAccess
+// returns a ForwardingProfileable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateForwardingProfileFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRe
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable), nil
 }
 // Patch update the navigation property forwardingProfiles in networkAccess
+// returns a ForwardingProfileable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable, requestConfiguration *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateForwardingProfileFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,12 +111,19 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRe
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable), nil
 }
 // Policies provides operations to manage the policies property of the microsoft.graph.networkaccess.profile entity.
+// returns a *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilder when successful
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) Policies()(*ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilder) {
     return NewConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ServicePrincipal provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.
+// returns a *ConnectivityRemoteNetworksItemForwardingProfilesItemServicePrincipalRequestBuilder when successful
+func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) ServicePrincipal()(*ConnectivityRemoteNetworksItemForwardingProfilesItemServicePrincipalRequestBuilder) {
+    return NewConnectivityRemoteNetworksItemForwardingProfilesItemServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property forwardingProfiles for networkAccess
+// returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/forwardingProfiles/{forwardingProfile%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -123,6 +132,7 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRe
     return requestInfo, nil
 }
 // ToGetRequestInformation get forwardingProfiles from networkAccess
+// returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -136,8 +146,9 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property forwardingProfiles in networkAccess
+// returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable, requestConfiguration *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/forwardingProfiles/{forwardingProfile%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -150,6 +161,7 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder when successful
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) WithUrl(rawUrl string)(*ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) {
     return NewConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

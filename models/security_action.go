@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecurityAction 
 type SecurityAction struct {
     Entity
 }
-// NewSecurityAction instantiates a new securityAction and sets the default values.
+// NewSecurityAction instantiates a new SecurityAction and sets the default values.
 func NewSecurityAction()(*SecurityAction) {
     m := &SecurityAction{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewSecurityAction()(*SecurityAction) {
     return m
 }
 // CreateSecurityActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecurityActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityAction(), nil
 }
 // GetActionReason gets the actionReason property value. Reason for invoking this action.
+// returns a *string when successful
 func (m *SecurityAction) GetActionReason()(*string) {
     val, err := m.GetBackingStore().Get("actionReason")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *SecurityAction) GetActionReason()(*string) {
     return nil
 }
 // GetAppId gets the appId property value. The Application ID of the calling application that submitted (POST) the action. The appId should be extracted from the auth token and not entered manually by the calling application.
+// returns a *string when successful
 func (m *SecurityAction) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *SecurityAction) GetAppId()(*string) {
     return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.
+// returns a *string when successful
 func (m *SecurityAction) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *SecurityAction) GetAzureTenantId()(*string) {
     return nil
 }
 // GetClientContext gets the clientContext property value. The clientContext property
+// returns a *string when successful
 func (m *SecurityAction) GetClientContext()(*string) {
     val, err := m.GetBackingStore().Get("clientContext")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *SecurityAction) GetClientContext()(*string) {
     return nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. Timestamp when the action was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SecurityAction) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDateTime")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *SecurityAction) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Timestamp when the action is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SecurityAction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *SecurityAction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetErrorInfo gets the errorInfo property value. Error info when the action fails.
+// returns a ResultInfoable when successful
 func (m *SecurityAction) GetErrorInfo()(ResultInfoable) {
     val, err := m.GetBackingStore().Get("errorInfo")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *SecurityAction) GetErrorInfo()(ResultInfoable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecurityAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -255,6 +263,7 @@ func (m *SecurityAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *SecurityAction) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -266,6 +275,7 @@ func (m *SecurityAction) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetName gets the name property value. Action name.
+// returns a *string when successful
 func (m *SecurityAction) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -277,6 +287,7 @@ func (m *SecurityAction) GetName()(*string) {
     return nil
 }
 // GetParameters gets the parameters property value. Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.
+// returns a []KeyValuePairable when successful
 func (m *SecurityAction) GetParameters()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("parameters")
     if err != nil {
@@ -288,6 +299,7 @@ func (m *SecurityAction) GetParameters()([]KeyValuePairable) {
     return nil
 }
 // GetStates gets the states property value. Collection of securityActionState to keep the history of an action.
+// returns a []SecurityActionStateable when successful
 func (m *SecurityAction) GetStates()([]SecurityActionStateable) {
     val, err := m.GetBackingStore().Get("states")
     if err != nil {
@@ -299,6 +311,7 @@ func (m *SecurityAction) GetStates()([]SecurityActionStateable) {
     return nil
 }
 // GetStatus gets the status property value. Status of the action. Possible values are: NotStarted, Running, Completed, Failed.
+// returns a *OperationStatus when successful
 func (m *SecurityAction) GetStatus()(*OperationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -310,6 +323,7 @@ func (m *SecurityAction) GetStatus()(*OperationStatus) {
     return nil
 }
 // GetUser gets the user property value. The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.
+// returns a *string when successful
 func (m *SecurityAction) GetUser()(*string) {
     val, err := m.GetBackingStore().Get("user")
     if err != nil {
@@ -321,6 +335,7 @@ func (m *SecurityAction) GetUser()(*string) {
     return nil
 }
 // GetVendorInformation gets the vendorInformation property value. Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).
+// returns a SecurityVendorInformationable when successful
 func (m *SecurityAction) GetVendorInformation()(SecurityVendorInformationable) {
     val, err := m.GetBackingStore().Get("vendorInformation")
     if err != nil {
@@ -534,7 +549,6 @@ func (m *SecurityAction) SetVendorInformation(value SecurityVendorInformationabl
         panic(err)
     }
 }
-// SecurityActionable 
 type SecurityActionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

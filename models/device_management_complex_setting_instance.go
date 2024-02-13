@@ -8,7 +8,7 @@ import (
 type DeviceManagementComplexSettingInstance struct {
     DeviceManagementSettingInstance
 }
-// NewDeviceManagementComplexSettingInstance instantiates a new deviceManagementComplexSettingInstance and sets the default values.
+// NewDeviceManagementComplexSettingInstance instantiates a new DeviceManagementComplexSettingInstance and sets the default values.
 func NewDeviceManagementComplexSettingInstance()(*DeviceManagementComplexSettingInstance) {
     m := &DeviceManagementComplexSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
@@ -18,10 +18,12 @@ func NewDeviceManagementComplexSettingInstance()(*DeviceManagementComplexSetting
     return m
 }
 // CreateDeviceManagementComplexSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementComplexSettingInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementComplexSettingInstance(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementComplexSettingInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementSettingInstance.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +45,7 @@ func (m *DeviceManagementComplexSettingInstance) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The values that make up the complex setting
+// returns a []DeviceManagementSettingInstanceable when successful
 func (m *DeviceManagementComplexSettingInstance) GetValue()([]DeviceManagementSettingInstanceable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -80,7 +83,6 @@ func (m *DeviceManagementComplexSettingInstance) SetValue(value []DeviceManageme
         panic(err)
     }
 }
-// DeviceManagementComplexSettingInstanceable 
 type DeviceManagementComplexSettingInstanceable interface {
     DeviceManagementSettingInstanceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

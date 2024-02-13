@@ -8,7 +8,7 @@ import (
 type UnsupportedDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewUnsupportedDeviceConfiguration instantiates a new unsupportedDeviceConfiguration and sets the default values.
+// NewUnsupportedDeviceConfiguration instantiates a new UnsupportedDeviceConfiguration and sets the default values.
 func NewUnsupportedDeviceConfiguration()(*UnsupportedDeviceConfiguration) {
     m := &UnsupportedDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewUnsupportedDeviceConfiguration()(*UnsupportedDeviceConfiguration) {
     return m
 }
 // CreateUnsupportedDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnsupportedDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnsupportedDeviceConfiguration(), nil
 }
 // GetDetails gets the details property value. Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.
+// returns a []UnsupportedDeviceConfigurationDetailable when successful
 func (m *UnsupportedDeviceConfiguration) GetDetails()([]UnsupportedDeviceConfigurationDetailable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *UnsupportedDeviceConfiguration) GetDetails()([]UnsupportedDeviceConfigu
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnsupportedDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["details"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +67,7 @@ func (m *UnsupportedDeviceConfiguration) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetOriginalEntityTypeName gets the originalEntityTypeName property value. The type of entity that would be returned otherwise.
+// returns a *string when successful
 func (m *UnsupportedDeviceConfiguration) GetOriginalEntityTypeName()(*string) {
     val, err := m.GetBackingStore().Get("originalEntityTypeName")
     if err != nil {
@@ -114,7 +118,6 @@ func (m *UnsupportedDeviceConfiguration) SetOriginalEntityTypeName(value *string
         panic(err)
     }
 }
-// UnsupportedDeviceConfigurationable 
 type UnsupportedDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

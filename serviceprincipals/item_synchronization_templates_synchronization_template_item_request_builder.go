@@ -41,28 +41,28 @@ type ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderPatchR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal instantiates a new SynchronizationTemplateItemRequestBuilder and sets the default values.
+// NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal instantiates a new ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder and sets the default values.
 func NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
     m := &ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder instantiates a new SynchronizationTemplateItemRequestBuilder and sets the default values.
+// NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder instantiates a new ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder and sets the default values.
 func NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property templates for servicePrincipals
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
     return nil
 }
 // Get pre-configured synchronization settings for a particular application.
+// returns a SynchronizationTemplateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSynchronizationTemplateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +91,8 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationTemplateable), nil
 }
 // Patch update (override) the synchronization template associated with a given application.
+// returns a SynchronizationTemplateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
@@ -99,8 +102,7 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSynchronizationTemplateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -112,12 +114,14 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationTemplateable), nil
 }
 // Schema provides operations to manage the schema property of the microsoft.graph.synchronizationTemplate entity.
+// returns a *ItemSynchronizationTemplatesItemSchemaRequestBuilder when successful
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) Schema()(*ItemSynchronizationTemplatesItemSchemaRequestBuilder) {
     return NewItemSynchronizationTemplatesItemSchemaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property templates for servicePrincipals
+// returns a *RequestInformation when successful
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -126,6 +130,7 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToGetRequestInformation pre-configured synchronization settings for a particular application.
+// returns a *RequestInformation when successful
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -139,8 +144,9 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToPatchRequestInformation update (override) the synchronization template associated with a given application.
+// returns a *RequestInformation when successful
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationTemplateable, requestConfiguration *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/synchronization/templates/{synchronizationTemplate%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -153,6 +159,7 @@ func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder when successful
 func (m *ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder) {
     return NewItemSynchronizationTemplatesSynchronizationTemplateItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

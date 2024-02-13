@@ -14,6 +14,8 @@ type EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnR
 type EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,32 +38,33 @@ type EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnR
     // Request query parameters
     QueryParameters *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetQueryParameters
 }
-// NewEnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal instantiates a new FilterByCurrentUserWithOnRequestBuilder and sets the default values.
+// NewEnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal instantiates a new EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder and sets the default values.
 func NewEnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, on *string)(*EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) {
     m := &EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/enterpriseApps/{rbacApplication%2Did}/roleEligibilityScheduleRequests/filterByCurrentUser(on='{on}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/enterpriseApps/{rbacApplication%2Did}/roleEligibilityScheduleRequests/filterByCurrentUser(on='{on}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     if on != nil {
         m.BaseRequestBuilder.PathParameters["on"] = *on
     }
     return m
 }
-// NewEnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder instantiates a new FilterByCurrentUserWithOnRequestBuilder and sets the default values.
+// NewEnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder instantiates a new EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder and sets the default values.
 func NewEnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function filterByCurrentUser
-// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -73,14 +76,15 @@ func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWit
     return res.(EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnResponseable), nil
 }
 // GetAsFilterByCurrentUserWithOnGetResponse invoke function filterByCurrentUser
+// returns a EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -92,6 +96,7 @@ func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWit
     return res.(EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnGetResponseable), nil
 }
 // ToGetRequestInformation invoke function filterByCurrentUser
+// returns a *RequestInformation when successful
 func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -105,6 +110,7 @@ func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWit
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) WithUrl(rawUrl string)(*EnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewEnterpriseAppsItemRoleEligibilityScheduleRequestsFilterByCurrentUserWithOnRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -8,7 +8,7 @@ import (
 type DeliveryOptimizationGroupIdSourceOptions struct {
     DeliveryOptimizationGroupIdSource
 }
-// NewDeliveryOptimizationGroupIdSourceOptions instantiates a new deliveryOptimizationGroupIdSourceOptions and sets the default values.
+// NewDeliveryOptimizationGroupIdSourceOptions instantiates a new DeliveryOptimizationGroupIdSourceOptions and sets the default values.
 func NewDeliveryOptimizationGroupIdSourceOptions()(*DeliveryOptimizationGroupIdSourceOptions) {
     m := &DeliveryOptimizationGroupIdSourceOptions{
         DeliveryOptimizationGroupIdSource: *NewDeliveryOptimizationGroupIdSource(),
@@ -18,10 +18,12 @@ func NewDeliveryOptimizationGroupIdSourceOptions()(*DeliveryOptimizationGroupIdS
     return m
 }
 // CreateDeliveryOptimizationGroupIdSourceOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeliveryOptimizationGroupIdSourceOptionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeliveryOptimizationGroupIdSourceOptions(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeliveryOptimizationGroupIdSourceOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeliveryOptimizationGroupIdSource.GetFieldDeserializers()
     res["groupIdSourceOption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *DeliveryOptimizationGroupIdSourceOptions) GetFieldDeserializers()(map[s
     return res
 }
 // GetGroupIdSourceOption gets the groupIdSourceOption property value. Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
+// returns a *DeliveryOptimizationGroupIdOptionsType when successful
 func (m *DeliveryOptimizationGroupIdSourceOptions) GetGroupIdSourceOption()(*DeliveryOptimizationGroupIdOptionsType) {
     val, err := m.GetBackingStore().Get("groupIdSourceOption")
     if err != nil {
@@ -69,7 +72,6 @@ func (m *DeliveryOptimizationGroupIdSourceOptions) SetGroupIdSourceOption(value 
         panic(err)
     }
 }
-// DeliveryOptimizationGroupIdSourceOptionsable 
 type DeliveryOptimizationGroupIdSourceOptionsable interface {
     DeliveryOptimizationGroupIdSourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

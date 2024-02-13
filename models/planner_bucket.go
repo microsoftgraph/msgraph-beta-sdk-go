@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerBucket 
 type PlannerBucket struct {
     PlannerDelta
 }
-// NewPlannerBucket instantiates a new plannerBucket and sets the default values.
+// NewPlannerBucket instantiates a new PlannerBucket and sets the default values.
 func NewPlannerBucket()(*PlannerBucket) {
     m := &PlannerBucket{
         PlannerDelta: *NewPlannerDelta(),
@@ -16,10 +15,12 @@ func NewPlannerBucket()(*PlannerBucket) {
     return m
 }
 // CreatePlannerBucketFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerBucketFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerBucket(), nil
 }
 // GetArchivalInfo gets the archivalInfo property value. The archivalInfo property
+// returns a PlannerArchivalInfoable when successful
 func (m *PlannerBucket) GetArchivalInfo()(PlannerArchivalInfoable) {
     val, err := m.GetBackingStore().Get("archivalInfo")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PlannerBucket) GetArchivalInfo()(PlannerArchivalInfoable) {
     return nil
 }
 // GetCreationSource gets the creationSource property value. Contains information about the origin of the bucket.
+// returns a PlannerBucketCreationable when successful
 func (m *PlannerBucket) GetCreationSource()(PlannerBucketCreationable) {
     val, err := m.GetBackingStore().Get("creationSource")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *PlannerBucket) GetCreationSource()(PlannerBucketCreationable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
     res["archivalInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -123,6 +126,7 @@ func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIsArchived gets the isArchived property value. The isArchived property
+// returns a *bool when successful
 func (m *PlannerBucket) GetIsArchived()(*bool) {
     val, err := m.GetBackingStore().Get("isArchived")
     if err != nil {
@@ -134,6 +138,7 @@ func (m *PlannerBucket) GetIsArchived()(*bool) {
     return nil
 }
 // GetName gets the name property value. Name of the bucket.
+// returns a *string when successful
 func (m *PlannerBucket) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -145,6 +150,7 @@ func (m *PlannerBucket) GetName()(*string) {
     return nil
 }
 // GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
+// returns a *string when successful
 func (m *PlannerBucket) GetOrderHint()(*string) {
     val, err := m.GetBackingStore().Get("orderHint")
     if err != nil {
@@ -156,6 +162,7 @@ func (m *PlannerBucket) GetOrderHint()(*string) {
     return nil
 }
 // GetPlanId gets the planId property value. Plan ID to which the bucket belongs.
+// returns a *string when successful
 func (m *PlannerBucket) GetPlanId()(*string) {
     val, err := m.GetBackingStore().Get("planId")
     if err != nil {
@@ -167,6 +174,7 @@ func (m *PlannerBucket) GetPlanId()(*string) {
     return nil
 }
 // GetTasks gets the tasks property value. Read-only. Nullable. The collection of tasks in the bucket.
+// returns a []PlannerTaskable when successful
 func (m *PlannerBucket) GetTasks()([]PlannerTaskable) {
     val, err := m.GetBackingStore().Get("tasks")
     if err != nil {
@@ -282,7 +290,6 @@ func (m *PlannerBucket) SetTasks(value []PlannerTaskable)() {
         panic(err)
     }
 }
-// PlannerBucketable 
 type PlannerBucketable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerDeltaable

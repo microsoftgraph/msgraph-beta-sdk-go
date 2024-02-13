@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RedundantAssignmentAlertConfiguration 
 type RedundantAssignmentAlertConfiguration struct {
     UnifiedRoleManagementAlertConfiguration
 }
-// NewRedundantAssignmentAlertConfiguration instantiates a new redundantAssignmentAlertConfiguration and sets the default values.
+// NewRedundantAssignmentAlertConfiguration instantiates a new RedundantAssignmentAlertConfiguration and sets the default values.
 func NewRedundantAssignmentAlertConfiguration()(*RedundantAssignmentAlertConfiguration) {
     m := &RedundantAssignmentAlertConfiguration{
         UnifiedRoleManagementAlertConfiguration: *NewUnifiedRoleManagementAlertConfiguration(),
@@ -18,10 +17,12 @@ func NewRedundantAssignmentAlertConfiguration()(*RedundantAssignmentAlertConfigu
     return m
 }
 // CreateRedundantAssignmentAlertConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRedundantAssignmentAlertConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRedundantAssignmentAlertConfiguration(), nil
 }
 // GetDuration gets the duration property value. The number of days without activation to look back on from current timestamp.
+// returns a *ISODuration when successful
 func (m *RedundantAssignmentAlertConfiguration) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *RedundantAssignmentAlertConfiguration) GetDuration()(*i878a80d2330e89d2
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RedundantAssignmentAlertConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementAlertConfiguration.GetFieldDeserializers()
     res["duration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *RedundantAssignmentAlertConfiguration) SetDuration(value *i878a80d2330e
         panic(err)
     }
 }
-// RedundantAssignmentAlertConfigurationable 
 type RedundantAssignmentAlertConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementAlertConfigurationable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ManagementTemplateDetailedInfo 
 type ManagementTemplateDetailedInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewManagementTemplateDetailedInfo instantiates a new managementTemplateDetailedInfo and sets the default values.
+// NewManagementTemplateDetailedInfo instantiates a new ManagementTemplateDetailedInfo and sets the default values.
 func NewManagementTemplateDetailedInfo()(*ManagementTemplateDetailedInfo) {
     m := &ManagementTemplateDetailedInfo{
     }
@@ -19,10 +18,12 @@ func NewManagementTemplateDetailedInfo()(*ManagementTemplateDetailedInfo) {
     return m
 }
 // CreateManagementTemplateDetailedInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagementTemplateDetailedInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementTemplateDetailedInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ManagementTemplateDetailedInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ManagementTemplateDetailedInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ManagementTemplateDetailedInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCategory gets the category property value. The category property
+// returns a *ManagementCategory when successful
 func (m *ManagementTemplateDetailedInfo) GetCategory()(*ManagementCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ManagementTemplateDetailedInfo) GetCategory()(*ManagementCategory) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the management template. Required. Read-only.
+// returns a *string when successful
 func (m *ManagementTemplateDetailedInfo) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ManagementTemplateDetailedInfo) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *ManagementTemplateDetailedInfo) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetManagementTemplateId gets the managementTemplateId property value. The unique identifier for the management template. Required. Read-only.
+// returns a *string when successful
 func (m *ManagementTemplateDetailedInfo) GetManagementTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("managementTemplateId")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *ManagementTemplateDetailedInfo) GetManagementTemplateId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ManagementTemplateDetailedInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *ManagementTemplateDetailedInfo) GetOdataType()(*string) {
     return nil
 }
 // GetVersion gets the version property value. The version property
+// returns a *int32 when successful
 func (m *ManagementTemplateDetailedInfo) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *ManagementTemplateDetailedInfo) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// ManagementTemplateDetailedInfoable 
 type ManagementTemplateDetailedInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

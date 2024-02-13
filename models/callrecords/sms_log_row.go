@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SmsLogRow 
 type SmsLogRow struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSmsLogRow instantiates a new smsLogRow and sets the default values.
+// NewSmsLogRow instantiates a new SmsLogRow and sets the default values.
 func NewSmsLogRow()(*SmsLogRow) {
     m := &SmsLogRow{
     }
@@ -20,10 +19,12 @@ func NewSmsLogRow()(*SmsLogRow) {
     return m
 }
 // CreateSmsLogRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSmsLogRowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSmsLogRow(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SmsLogRow) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *SmsLogRow) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SmsLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCallCharge gets the callCharge property value. Amount of money or cost of the SMS that is charged.
+// returns a *float64 when successful
 func (m *SmsLogRow) GetCallCharge()(*float64) {
     val, err := m.GetBackingStore().Get("callCharge")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *SmsLogRow) GetCallCharge()(*float64) {
     return nil
 }
 // GetCurrency gets the currency property value. Currency used to calculate the cost of the call. For details, see ISO 4217.
+// returns a *string when successful
 func (m *SmsLogRow) GetCurrency()(*string) {
     val, err := m.GetBackingStore().Get("currency")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *SmsLogRow) GetCurrency()(*string) {
     return nil
 }
 // GetDestinationContext gets the destinationContext property value. Indicates whether the SMS was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
+// returns a *string when successful
 func (m *SmsLogRow) GetDestinationContext()(*string) {
     val, err := m.GetBackingStore().Get("destinationContext")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *SmsLogRow) GetDestinationContext()(*string) {
     return nil
 }
 // GetDestinationName gets the destinationName property value. Country or region of a phone number that received the SMS.
+// returns a *string when successful
 func (m *SmsLogRow) GetDestinationName()(*string) {
     val, err := m.GetBackingStore().Get("destinationName")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *SmsLogRow) GetDestinationName()(*string) {
     return nil
 }
 // GetDestinationNumber gets the destinationNumber property value. Partially obfuscated phone number that received the SMS. For details, see E.164.
+// returns a *string when successful
 func (m *SmsLogRow) GetDestinationNumber()(*string) {
     val, err := m.GetBackingStore().Get("destinationNumber")
     if err != nil {
@@ -95,6 +102,7 @@ func (m *SmsLogRow) GetDestinationNumber()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SmsLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["callCharge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -290,6 +298,7 @@ func (m *SmsLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetId gets the id property value. Unique identifier (GUID) for the SMS.
+// returns a *string when successful
 func (m *SmsLogRow) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -301,6 +310,7 @@ func (m *SmsLogRow) GetId()(*string) {
     return nil
 }
 // GetLicenseCapability gets the licenseCapability property value. The license used for the SMS.
+// returns a *string when successful
 func (m *SmsLogRow) GetLicenseCapability()(*string) {
     val, err := m.GetBackingStore().Get("licenseCapability")
     if err != nil {
@@ -312,6 +322,7 @@ func (m *SmsLogRow) GetLicenseCapability()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SmsLogRow) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -323,6 +334,7 @@ func (m *SmsLogRow) GetOdataType()(*string) {
     return nil
 }
 // GetOtherPartyCountryCode gets the otherPartyCountryCode property value. For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.
+// returns a *string when successful
 func (m *SmsLogRow) GetOtherPartyCountryCode()(*string) {
     val, err := m.GetBackingStore().Get("otherPartyCountryCode")
     if err != nil {
@@ -334,6 +346,7 @@ func (m *SmsLogRow) GetOtherPartyCountryCode()(*string) {
     return nil
 }
 // GetSentDateTime gets the sentDateTime property value. The date and time when the SMS was sent.
+// returns a *Time when successful
 func (m *SmsLogRow) GetSentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("sentDateTime")
     if err != nil {
@@ -345,6 +358,7 @@ func (m *SmsLogRow) GetSentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     return nil
 }
 // GetSmsId gets the smsId property value. SMS identifier. Not guaranteed to be unique.
+// returns a *string when successful
 func (m *SmsLogRow) GetSmsId()(*string) {
     val, err := m.GetBackingStore().Get("smsId")
     if err != nil {
@@ -356,6 +370,7 @@ func (m *SmsLogRow) GetSmsId()(*string) {
     return nil
 }
 // GetSmsType gets the smsType property value. Type of SMS such as outbound or inbound.
+// returns a *string when successful
 func (m *SmsLogRow) GetSmsType()(*string) {
     val, err := m.GetBackingStore().Get("smsType")
     if err != nil {
@@ -367,6 +382,7 @@ func (m *SmsLogRow) GetSmsType()(*string) {
     return nil
 }
 // GetSmsUnits gets the smsUnits property value. Number of SMS units sent/received.
+// returns a *int32 when successful
 func (m *SmsLogRow) GetSmsUnits()(*int32) {
     val, err := m.GetBackingStore().Get("smsUnits")
     if err != nil {
@@ -378,6 +394,7 @@ func (m *SmsLogRow) GetSmsUnits()(*int32) {
     return nil
 }
 // GetSourceNumber gets the sourceNumber property value. Partially obfuscated phone number that sent the SMS. For details, see E.164.
+// returns a *string when successful
 func (m *SmsLogRow) GetSourceNumber()(*string) {
     val, err := m.GetBackingStore().Get("sourceNumber")
     if err != nil {
@@ -389,6 +406,7 @@ func (m *SmsLogRow) GetSourceNumber()(*string) {
     return nil
 }
 // GetTenantCountryCode gets the tenantCountryCode property value. Country code of the tenant. For details, see ISO 3166-1 alpha-2.
+// returns a *string when successful
 func (m *SmsLogRow) GetTenantCountryCode()(*string) {
     val, err := m.GetBackingStore().Get("tenantCountryCode")
     if err != nil {
@@ -400,6 +418,7 @@ func (m *SmsLogRow) GetTenantCountryCode()(*string) {
     return nil
 }
 // GetUserCountryCode gets the userCountryCode property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
+// returns a *string when successful
 func (m *SmsLogRow) GetUserCountryCode()(*string) {
     val, err := m.GetBackingStore().Get("userCountryCode")
     if err != nil {
@@ -411,6 +430,7 @@ func (m *SmsLogRow) GetUserCountryCode()(*string) {
     return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. Display name of the user.
+// returns a *string when successful
 func (m *SmsLogRow) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -422,6 +442,7 @@ func (m *SmsLogRow) GetUserDisplayName()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID.
+// returns a *string when successful
 func (m *SmsLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -433,6 +454,7 @@ func (m *SmsLogRow) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// returns a *string when successful
 func (m *SmsLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -711,7 +733,6 @@ func (m *SmsLogRow) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// SmsLogRowable 
 type SmsLogRowable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

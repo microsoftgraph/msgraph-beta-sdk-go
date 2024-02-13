@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedRole 
 type PrivilegedRole struct {
     Entity
 }
-// NewPrivilegedRole instantiates a new privilegedRole and sets the default values.
+// NewPrivilegedRole instantiates a new PrivilegedRole and sets the default values.
 func NewPrivilegedRole()(*PrivilegedRole) {
     m := &PrivilegedRole{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPrivilegedRole()(*PrivilegedRole) {
     return m
 }
 // CreatePrivilegedRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegedRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedRole(), nil
 }
 // GetAssignments gets the assignments property value. The assignments property
+// returns a []PrivilegedRoleAssignmentable when successful
 func (m *PrivilegedRole) GetAssignments()([]PrivilegedRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PrivilegedRole) GetAssignments()([]PrivilegedRoleAssignmentable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,6 +84,7 @@ func (m *PrivilegedRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *PrivilegedRole) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -93,6 +96,7 @@ func (m *PrivilegedRole) GetName()(*string) {
     return nil
 }
 // GetSettings gets the settings property value. The settings property
+// returns a PrivilegedRoleSettingsable when successful
 func (m *PrivilegedRole) GetSettings()(PrivilegedRoleSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -104,6 +108,7 @@ func (m *PrivilegedRole) GetSettings()(PrivilegedRoleSettingsable) {
     return nil
 }
 // GetSummary gets the summary property value. The summary property
+// returns a PrivilegedRoleSummaryable when successful
 func (m *PrivilegedRole) GetSummary()(PrivilegedRoleSummaryable) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -180,7 +185,6 @@ func (m *PrivilegedRole) SetSummary(value PrivilegedRoleSummaryable)() {
         panic(err)
     }
 }
-// PrivilegedRoleable 
 type PrivilegedRoleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcSubscription 
 type CloudPcSubscription struct {
     Entity
 }
-// NewCloudPcSubscription instantiates a new cloudPcSubscription and sets the default values.
+// NewCloudPcSubscription instantiates a new CloudPcSubscription and sets the default values.
 func NewCloudPcSubscription()(*CloudPcSubscription) {
     m := &CloudPcSubscription{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCloudPcSubscription()(*CloudPcSubscription) {
     return m
 }
 // CreateCloudPcSubscriptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcSubscriptionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcSubscription(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcSubscription) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["subscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *CloudPcSubscription) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetSubscriptionId gets the subscriptionId property value. The ID of the subscription.
+// returns a *string when successful
 func (m *CloudPcSubscription) GetSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionId")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *CloudPcSubscription) GetSubscriptionId()(*string) {
     return nil
 }
 // GetSubscriptionName gets the subscriptionName property value. The name of the subscription.
+// returns a *string when successful
 func (m *CloudPcSubscription) GetSubscriptionName()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionName")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *CloudPcSubscription) SetSubscriptionName(value *string)() {
         panic(err)
     }
 }
-// CloudPcSubscriptionable 
 type CloudPcSubscriptionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

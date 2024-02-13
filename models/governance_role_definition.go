@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceRoleDefinition 
 type GovernanceRoleDefinition struct {
     Entity
 }
-// NewGovernanceRoleDefinition instantiates a new governanceRoleDefinition and sets the default values.
+// NewGovernanceRoleDefinition instantiates a new GovernanceRoleDefinition and sets the default values.
 func NewGovernanceRoleDefinition()(*GovernanceRoleDefinition) {
     m := &GovernanceRoleDefinition{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewGovernanceRoleDefinition()(*GovernanceRoleDefinition) {
     return m
 }
 // CreateGovernanceRoleDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGovernanceRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceRoleDefinition(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of the role definition.
+// returns a *string when successful
 func (m *GovernanceRoleDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *GovernanceRoleDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalId gets the externalId property value. The external id of the role definition.
+// returns a *string when successful
 func (m *GovernanceRoleDefinition) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *GovernanceRoleDefinition) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +110,7 @@ func (m *GovernanceRoleDefinition) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetResource gets the resource property value. Read-only. The associated resource for the role definition.
+// returns a GovernanceResourceable when successful
 func (m *GovernanceRoleDefinition) GetResource()(GovernanceResourceable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -118,6 +122,7 @@ func (m *GovernanceRoleDefinition) GetResource()(GovernanceResourceable) {
     return nil
 }
 // GetResourceId gets the resourceId property value. Required. The id of the resource associated with the role definition.
+// returns a *string when successful
 func (m *GovernanceRoleDefinition) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -129,6 +134,7 @@ func (m *GovernanceRoleDefinition) GetResourceId()(*string) {
     return nil
 }
 // GetRoleSetting gets the roleSetting property value. The associated role setting for the role definition.
+// returns a GovernanceRoleSettingable when successful
 func (m *GovernanceRoleDefinition) GetRoleSetting()(GovernanceRoleSettingable) {
     val, err := m.GetBackingStore().Get("roleSetting")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *GovernanceRoleDefinition) GetRoleSetting()(GovernanceRoleSettingable) {
     return nil
 }
 // GetTemplateId gets the templateId property value. The templateId property
+// returns a *string when successful
 func (m *GovernanceRoleDefinition) GetTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("templateId")
     if err != nil {
@@ -236,7 +243,6 @@ func (m *GovernanceRoleDefinition) SetTemplateId(value *string)() {
         panic(err)
     }
 }
-// GovernanceRoleDefinitionable 
 type GovernanceRoleDefinitionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

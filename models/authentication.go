@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Authentication 
 type Authentication struct {
     Entity
 }
-// NewAuthentication instantiates a new authentication and sets the default values.
+// NewAuthentication instantiates a new Authentication and sets the default values.
 func NewAuthentication()(*Authentication) {
     m := &Authentication{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAuthentication()(*Authentication) {
     return m
 }
 // CreateAuthenticationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthentication(), nil
 }
 // GetEmailMethods gets the emailMethods property value. Represents the email addresses registered to a user for authentication.
+// returns a []EmailAuthenticationMethodable when successful
 func (m *Authentication) GetEmailMethods()([]EmailAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("emailMethods")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Authentication) GetEmailMethods()([]EmailAuthenticationMethodable) {
     return nil
 }
 // GetFido2Methods gets the fido2Methods property value. Represents the FIDO2 security keys registered to a user for authentication.
+// returns a []Fido2AuthenticationMethodable when successful
 func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("fido2Methods")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Authentication) GetFido2Methods()([]Fido2AuthenticationMethodable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["emailMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -249,6 +252,7 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetMethods gets the methods property value. Represents all authentication methods registered to a user.
+// returns a []AuthenticationMethodable when successful
 func (m *Authentication) GetMethods()([]AuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("methods")
     if err != nil {
@@ -260,6 +264,7 @@ func (m *Authentication) GetMethods()([]AuthenticationMethodable) {
     return nil
 }
 // GetMicrosoftAuthenticatorMethods gets the microsoftAuthenticatorMethods property value. The details of the Microsoft Authenticator app registered to a user for authentication.
+// returns a []MicrosoftAuthenticatorAuthenticationMethodable when successful
 func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthenticatorAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("microsoftAuthenticatorMethods")
     if err != nil {
@@ -271,6 +276,7 @@ func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthentic
     return nil
 }
 // GetOperations gets the operations property value. The operations property
+// returns a []LongRunningOperationable when successful
 func (m *Authentication) GetOperations()([]LongRunningOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -282,6 +288,7 @@ func (m *Authentication) GetOperations()([]LongRunningOperationable) {
     return nil
 }
 // GetPasswordlessMicrosoftAuthenticatorMethods gets the passwordlessMicrosoftAuthenticatorMethods property value. Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+// returns a []PasswordlessMicrosoftAuthenticatorAuthenticationMethodable when successful
 func (m *Authentication) GetPasswordlessMicrosoftAuthenticatorMethods()([]PasswordlessMicrosoftAuthenticatorAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("passwordlessMicrosoftAuthenticatorMethods")
     if err != nil {
@@ -293,6 +300,7 @@ func (m *Authentication) GetPasswordlessMicrosoftAuthenticatorMethods()([]Passwo
     return nil
 }
 // GetPasswordMethods gets the passwordMethods property value. Represents the details of the password authentication method registered to a user for authentication.
+// returns a []PasswordAuthenticationMethodable when successful
 func (m *Authentication) GetPasswordMethods()([]PasswordAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("passwordMethods")
     if err != nil {
@@ -304,6 +312,7 @@ func (m *Authentication) GetPasswordMethods()([]PasswordAuthenticationMethodable
     return nil
 }
 // GetPhoneMethods gets the phoneMethods property value. Represents the phone registered to a user for authentication.
+// returns a []PhoneAuthenticationMethodable when successful
 func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("phoneMethods")
     if err != nil {
@@ -315,6 +324,7 @@ func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethodable) {
     return nil
 }
 // GetPlatformCredentialMethods gets the platformCredentialMethods property value. The platformCredentialMethods property
+// returns a []PlatformCredentialAuthenticationMethodable when successful
 func (m *Authentication) GetPlatformCredentialMethods()([]PlatformCredentialAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("platformCredentialMethods")
     if err != nil {
@@ -326,6 +336,7 @@ func (m *Authentication) GetPlatformCredentialMethods()([]PlatformCredentialAuth
     return nil
 }
 // GetSignInPreferences gets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
+// returns a SignInPreferencesable when successful
 func (m *Authentication) GetSignInPreferences()(SignInPreferencesable) {
     val, err := m.GetBackingStore().Get("signInPreferences")
     if err != nil {
@@ -337,6 +348,7 @@ func (m *Authentication) GetSignInPreferences()(SignInPreferencesable) {
     return nil
 }
 // GetSoftwareOathMethods gets the softwareOathMethods property value. The softwareOathMethods property
+// returns a []SoftwareOathAuthenticationMethodable when successful
 func (m *Authentication) GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("softwareOathMethods")
     if err != nil {
@@ -348,6 +360,7 @@ func (m *Authentication) GetSoftwareOathMethods()([]SoftwareOathAuthenticationMe
     return nil
 }
 // GetTemporaryAccessPassMethods gets the temporaryAccessPassMethods property value. Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+// returns a []TemporaryAccessPassAuthenticationMethodable when successful
 func (m *Authentication) GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("temporaryAccessPassMethods")
     if err != nil {
@@ -359,6 +372,7 @@ func (m *Authentication) GetTemporaryAccessPassMethods()([]TemporaryAccessPassAu
     return nil
 }
 // GetWindowsHelloForBusinessMethods gets the windowsHelloForBusinessMethods property value. Represents the Windows Hello for Business authentication method registered to a user for authentication.
+// returns a []WindowsHelloForBusinessAuthenticationMethodable when successful
 func (m *Authentication) GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("windowsHelloForBusinessMethods")
     if err != nil {
@@ -618,7 +632,6 @@ func (m *Authentication) SetWindowsHelloForBusinessMethods(value []WindowsHelloF
         panic(err)
     }
 }
-// Authenticationable 
 type Authenticationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Community 
 type Community struct {
     Entity
 }
-// NewCommunity instantiates a new community and sets the default values.
+// NewCommunity instantiates a new Community and sets the default values.
 func NewCommunity()(*Community) {
     m := &Community{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCommunity()(*Community) {
     return m
 }
 // CreateCommunityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommunityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommunity(), nil
 }
 // GetDescription gets the description property value. The description of the community. The maximum length is 1024 characters.
+// returns a *string when successful
 func (m *Community) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Community) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the community. The maximum length is 255 characters.
+// returns a *string when successful
 func (m *Community) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Community) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Community) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -113,6 +116,7 @@ func (m *Community) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetGroup gets the group property value. The Microsoft 365 group that manages the membership of this community.
+// returns a Groupable when successful
 func (m *Community) GetGroup()(Groupable) {
     val, err := m.GetBackingStore().Get("group")
     if err != nil {
@@ -124,6 +128,7 @@ func (m *Community) GetGroup()(Groupable) {
     return nil
 }
 // GetGroupId gets the groupId property value. The ID of the Microsoft 365 group that manages the membership of this community.
+// returns a *string when successful
 func (m *Community) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
     if err != nil {
@@ -135,6 +140,7 @@ func (m *Community) GetGroupId()(*string) {
     return nil
 }
 // GetOwners gets the owners property value. The admins of the community. Limited to 100 users. If this property isn't specified when you create the community, the calling user is automatically assigned as the community owner.
+// returns a []Userable when successful
 func (m *Community) GetOwners()([]Userable) {
     val, err := m.GetBackingStore().Get("owners")
     if err != nil {
@@ -146,6 +152,7 @@ func (m *Community) GetOwners()([]Userable) {
     return nil
 }
 // GetPrivacy gets the privacy property value. The privacy property
+// returns a *CommunityPrivacy when successful
 func (m *Community) GetPrivacy()(*CommunityPrivacy) {
     val, err := m.GetBackingStore().Get("privacy")
     if err != nil {
@@ -249,7 +256,6 @@ func (m *Community) SetPrivacy(value *CommunityPrivacy)() {
         panic(err)
     }
 }
-// Communityable 
 type Communityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

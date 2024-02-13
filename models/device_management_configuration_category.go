@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationCategory struct {
     Entity
 }
-// NewDeviceManagementConfigurationCategory instantiates a new deviceManagementConfigurationCategory and sets the default values.
+// NewDeviceManagementConfigurationCategory instantiates a new DeviceManagementConfigurationCategory and sets the default values.
 func NewDeviceManagementConfigurationCategory()(*DeviceManagementConfigurationCategory) {
     m := &DeviceManagementConfigurationCategory{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementConfigurationCategory()(*DeviceManagementConfigurationCa
     return m
 }
 // CreateDeviceManagementConfigurationCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationCategory(), nil
 }
 // GetCategoryDescription gets the categoryDescription property value. Description of the category header in policy summary.
+// returns a *string when successful
 func (m *DeviceManagementConfigurationCategory) GetCategoryDescription()(*string) {
     val, err := m.GetBackingStore().Get("categoryDescription")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceManagementConfigurationCategory) GetCategoryDescription()(*string
     return nil
 }
 // GetChildCategoryIds gets the childCategoryIds property value. List of child ids of the category.
+// returns a []string when successful
 func (m *DeviceManagementConfigurationCategory) GetChildCategoryIds()([]string) {
     val, err := m.GetBackingStore().Get("childCategoryIds")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *DeviceManagementConfigurationCategory) GetChildCategoryIds()([]string) 
     return nil
 }
 // GetDescription gets the description property value. Description of the category. For example: Display
+// returns a *string when successful
 func (m *DeviceManagementConfigurationCategory) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *DeviceManagementConfigurationCategory) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the category. For example: Device Lock
+// returns a *string when successful
 func (m *DeviceManagementConfigurationCategory) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *DeviceManagementConfigurationCategory) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["categoryDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -185,6 +191,7 @@ func (m *DeviceManagementConfigurationCategory) GetFieldDeserializers()(map[stri
     return res
 }
 // GetHelpText gets the helpText property value. Help text of the category. Give more details of the category.
+// returns a *string when successful
 func (m *DeviceManagementConfigurationCategory) GetHelpText()(*string) {
     val, err := m.GetBackingStore().Get("helpText")
     if err != nil {
@@ -196,6 +203,7 @@ func (m *DeviceManagementConfigurationCategory) GetHelpText()(*string) {
     return nil
 }
 // GetName gets the name property value. Name of the item
+// returns a *string when successful
 func (m *DeviceManagementConfigurationCategory) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -207,6 +215,7 @@ func (m *DeviceManagementConfigurationCategory) GetName()(*string) {
     return nil
 }
 // GetParentCategoryId gets the parentCategoryId property value. Direct parent id of the category. If the category is the root, the parent id is same as its id.
+// returns a *string when successful
 func (m *DeviceManagementConfigurationCategory) GetParentCategoryId()(*string) {
     val, err := m.GetBackingStore().Get("parentCategoryId")
     if err != nil {
@@ -218,6 +227,7 @@ func (m *DeviceManagementConfigurationCategory) GetParentCategoryId()(*string) {
     return nil
 }
 // GetPlatforms gets the platforms property value. Supported platform types.
+// returns a *DeviceManagementConfigurationPlatforms when successful
 func (m *DeviceManagementConfigurationCategory) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
     val, err := m.GetBackingStore().Get("platforms")
     if err != nil {
@@ -229,6 +239,7 @@ func (m *DeviceManagementConfigurationCategory) GetPlatforms()(*DeviceManagement
     return nil
 }
 // GetRootCategoryId gets the rootCategoryId property value. Root id of the category.
+// returns a *string when successful
 func (m *DeviceManagementConfigurationCategory) GetRootCategoryId()(*string) {
     val, err := m.GetBackingStore().Get("rootCategoryId")
     if err != nil {
@@ -240,6 +251,7 @@ func (m *DeviceManagementConfigurationCategory) GetRootCategoryId()(*string) {
     return nil
 }
 // GetSettingUsage gets the settingUsage property value. Supported setting types
+// returns a *DeviceManagementConfigurationSettingUsage when successful
 func (m *DeviceManagementConfigurationCategory) GetSettingUsage()(*DeviceManagementConfigurationSettingUsage) {
     val, err := m.GetBackingStore().Get("settingUsage")
     if err != nil {
@@ -251,6 +263,7 @@ func (m *DeviceManagementConfigurationCategory) GetSettingUsage()(*DeviceManagem
     return nil
 }
 // GetTechnologies gets the technologies property value. Describes which technology this setting can be deployed with
+// returns a *DeviceManagementConfigurationTechnologies when successful
 func (m *DeviceManagementConfigurationCategory) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
     val, err := m.GetBackingStore().Get("technologies")
     if err != nil {
@@ -415,7 +428,6 @@ func (m *DeviceManagementConfigurationCategory) SetTechnologies(value *DeviceMan
         panic(err)
     }
 }
-// DeviceManagementConfigurationCategoryable 
 type DeviceManagementConfigurationCategoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -10,7 +10,7 @@ type ConfigManagerPolicySummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewConfigManagerPolicySummary instantiates a new configManagerPolicySummary and sets the default values.
+// NewConfigManagerPolicySummary instantiates a new ConfigManagerPolicySummary and sets the default values.
 func NewConfigManagerPolicySummary()(*ConfigManagerPolicySummary) {
     m := &ConfigManagerPolicySummary{
     }
@@ -19,10 +19,12 @@ func NewConfigManagerPolicySummary()(*ConfigManagerPolicySummary) {
     return m
 }
 // CreateConfigManagerPolicySummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConfigManagerPolicySummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigManagerPolicySummary(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ConfigManagerPolicySummary) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *ConfigManagerPolicySummary) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ConfigManagerPolicySummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. The number of devices evaluated to be compliant by the policy.
+// returns a *int32 when successful
 func (m *ConfigManagerPolicySummary) GetCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("compliantDeviceCount")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *ConfigManagerPolicySummary) GetCompliantDeviceCount()(*int32) {
     return nil
 }
 // GetEnforcedDeviceCount gets the enforcedDeviceCount property value. The number of devices that have have been remediated by the policy.
+// returns a *int32 when successful
 func (m *ConfigManagerPolicySummary) GetEnforcedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("enforcedDeviceCount")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *ConfigManagerPolicySummary) GetEnforcedDeviceCount()(*int32) {
     return nil
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. The number of devices that failed to be evaluated by the policy.
+// returns a *int32 when successful
 func (m *ConfigManagerPolicySummary) GetFailedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedDeviceCount")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *ConfigManagerPolicySummary) GetFailedDeviceCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["compliantDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +154,7 @@ func (m *ConfigManagerPolicySummary) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. The number of devices evaluated to be noncompliant by the policy.
+// returns a *int32 when successful
 func (m *ConfigManagerPolicySummary) GetNonCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("nonCompliantDeviceCount")
     if err != nil {
@@ -158,6 +166,7 @@ func (m *ConfigManagerPolicySummary) GetNonCompliantDeviceCount()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ConfigManagerPolicySummary) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -169,6 +178,7 @@ func (m *ConfigManagerPolicySummary) GetOdataType()(*string) {
     return nil
 }
 // GetPendingDeviceCount gets the pendingDeviceCount property value. The number of devices that have acknowledged the policy but are pending evaluation.
+// returns a *int32 when successful
 func (m *ConfigManagerPolicySummary) GetPendingDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingDeviceCount")
     if err != nil {
@@ -180,6 +190,7 @@ func (m *ConfigManagerPolicySummary) GetPendingDeviceCount()(*int32) {
     return nil
 }
 // GetTargetedDeviceCount gets the targetedDeviceCount property value. The number of devices targeted by the policy.
+// returns a *int32 when successful
 func (m *ConfigManagerPolicySummary) GetTargetedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("targetedDeviceCount")
     if err != nil {
@@ -302,7 +313,6 @@ func (m *ConfigManagerPolicySummary) SetTargetedDeviceCount(value *int32)() {
         panic(err)
     }
 }
-// ConfigManagerPolicySummaryable 
 type ConfigManagerPolicySummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

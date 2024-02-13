@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackage 
 type AccessPackage struct {
     Entity
 }
-// NewAccessPackage instantiates a new accessPackage and sets the default values.
+// NewAccessPackage instantiates a new AccessPackage and sets the default values.
 func NewAccessPackage()(*AccessPackage) {
     m := &AccessPackage{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessPackage()(*AccessPackage) {
     return m
 }
 // CreateAccessPackageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackage(), nil
 }
 // GetAccessPackageAssignmentPolicies gets the accessPackageAssignmentPolicies property value. Read-only. Nullable. Supports $expand.
+// returns a []AccessPackageAssignmentPolicyable when successful
 func (m *AccessPackage) GetAccessPackageAssignmentPolicies()([]AccessPackageAssignmentPolicyable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignmentPolicies")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessPackage) GetAccessPackageAssignmentPolicies()([]AccessPackageAssi
     return nil
 }
 // GetAccessPackageCatalog gets the accessPackageCatalog property value. The accessPackageCatalog property
+// returns a AccessPackageCatalogable when successful
 func (m *AccessPackage) GetAccessPackageCatalog()(AccessPackageCatalogable) {
     val, err := m.GetBackingStore().Get("accessPackageCatalog")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessPackage) GetAccessPackageCatalog()(AccessPackageCatalogable) {
     return nil
 }
 // GetAccessPackageResourceRoleScopes gets the accessPackageResourceRoleScopes property value. The accessPackageResourceRoleScopes property
+// returns a []AccessPackageResourceRoleScopeable when successful
 func (m *AccessPackage) GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScopeable) {
     val, err := m.GetBackingStore().Get("accessPackageResourceRoleScopes")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessPackage) GetAccessPackageResourceRoleScopes()([]AccessPackageReso
     return nil
 }
 // GetAccessPackagesIncompatibleWith gets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
+// returns a []AccessPackageable when successful
 func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackageable) {
     val, err := m.GetBackingStore().Get("accessPackagesIncompatibleWith")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessPackage) GetAccessPackagesIncompatibleWith()([]AccessPackageable)
     return nil
 }
 // GetCatalogId gets the catalogId property value. Identifier of the access package catalog referencing this access package. Read-only.
+// returns a *string when successful
 func (m *AccessPackage) GetCatalogId()(*string) {
     val, err := m.GetBackingStore().Get("catalogId")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AccessPackage) GetCatalogId()(*string) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
+// returns a *string when successful
 func (m *AccessPackage) GetCreatedBy()(*string) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *AccessPackage) GetCreatedBy()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *AccessPackage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *AccessPackage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetDescription gets the description property value. The description of the access package.
+// returns a *string when successful
 func (m *AccessPackage) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *AccessPackage) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
+// returns a *string when successful
 func (m *AccessPackage) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *AccessPackage) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackageAssignmentPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -305,6 +315,7 @@ func (m *AccessPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIncompatibleAccessPackages gets the incompatibleAccessPackages property value. The  access packages whose assigned users are ineligible to be assigned this access package.
+// returns a []AccessPackageable when successful
 func (m *AccessPackage) GetIncompatibleAccessPackages()([]AccessPackageable) {
     val, err := m.GetBackingStore().Get("incompatibleAccessPackages")
     if err != nil {
@@ -316,6 +327,7 @@ func (m *AccessPackage) GetIncompatibleAccessPackages()([]AccessPackageable) {
     return nil
 }
 // GetIncompatibleGroups gets the incompatibleGroups property value. The groups whose members are ineligible to be assigned this access package.
+// returns a []Groupable when successful
 func (m *AccessPackage) GetIncompatibleGroups()([]Groupable) {
     val, err := m.GetBackingStore().Get("incompatibleGroups")
     if err != nil {
@@ -327,6 +339,7 @@ func (m *AccessPackage) GetIncompatibleGroups()([]Groupable) {
     return nil
 }
 // GetIsHidden gets the isHidden property value. Whether the access package is hidden from the requestor.
+// returns a *bool when successful
 func (m *AccessPackage) GetIsHidden()(*bool) {
     val, err := m.GetBackingStore().Get("isHidden")
     if err != nil {
@@ -338,6 +351,7 @@ func (m *AccessPackage) GetIsHidden()(*bool) {
     return nil
 }
 // GetIsRoleScopesVisible gets the isRoleScopesVisible property value. Indicates whether role scopes are visible.
+// returns a *bool when successful
 func (m *AccessPackage) GetIsRoleScopesVisible()(*bool) {
     val, err := m.GetBackingStore().Get("isRoleScopesVisible")
     if err != nil {
@@ -349,6 +363,7 @@ func (m *AccessPackage) GetIsRoleScopesVisible()(*bool) {
     return nil
 }
 // GetModifiedBy gets the modifiedBy property value. The userPrincipalName of the user who last modified this resource. Read-only.
+// returns a *string when successful
 func (m *AccessPackage) GetModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("modifiedBy")
     if err != nil {
@@ -360,6 +375,7 @@ func (m *AccessPackage) GetModifiedBy()(*string) {
     return nil
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *AccessPackage) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -603,7 +619,6 @@ func (m *AccessPackage) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
-// AccessPackageable 
 type AccessPackageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,7 +2,6 @@ package managedtenants
 import (
     "errors"
 )
-// 
 type AlertStatus int
 
 const (

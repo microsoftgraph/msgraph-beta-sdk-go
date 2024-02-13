@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AssignmentReviewSettings 
 type AssignmentReviewSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAssignmentReviewSettings instantiates a new assignmentReviewSettings and sets the default values.
+// NewAssignmentReviewSettings instantiates a new AssignmentReviewSettings and sets the default values.
 func NewAssignmentReviewSettings()(*AssignmentReviewSettings) {
     m := &AssignmentReviewSettings{
     }
@@ -20,10 +19,12 @@ func NewAssignmentReviewSettings()(*AssignmentReviewSettings) {
     return m
 }
 // CreateAssignmentReviewSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAssignmentReviewSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignmentReviewSettings(), nil
 }
 // GetAccessReviewTimeoutBehavior gets the accessReviewTimeoutBehavior property value. The default decision to apply if the request isn't reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
+// returns a *AccessReviewTimeoutBehavior when successful
 func (m *AssignmentReviewSettings) GetAccessReviewTimeoutBehavior()(*AccessReviewTimeoutBehavior) {
     val, err := m.GetBackingStore().Get("accessReviewTimeoutBehavior")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AssignmentReviewSettings) GetAccessReviewTimeoutBehavior()(*AccessRevie
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AssignmentReviewSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *AssignmentReviewSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AssignmentReviewSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDurationInDays gets the durationInDays property value. The number of days within which reviewers should provide input.
+// returns a *int32 when successful
 func (m *AssignmentReviewSettings) GetDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("durationInDays")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *AssignmentReviewSettings) GetDurationInDays()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accessReviewTimeoutBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -173,6 +178,7 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIsAccessRecommendationEnabled gets the isAccessRecommendationEnabled property value. Specifies whether to display recommendations to the reviewer. The default value is true
+// returns a *bool when successful
 func (m *AssignmentReviewSettings) GetIsAccessRecommendationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isAccessRecommendationEnabled")
     if err != nil {
@@ -184,6 +190,7 @@ func (m *AssignmentReviewSettings) GetIsAccessRecommendationEnabled()(*bool) {
     return nil
 }
 // GetIsApprovalJustificationRequired gets the isApprovalJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
+// returns a *bool when successful
 func (m *AssignmentReviewSettings) GetIsApprovalJustificationRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isApprovalJustificationRequired")
     if err != nil {
@@ -195,6 +202,7 @@ func (m *AssignmentReviewSettings) GetIsApprovalJustificationRequired()(*bool) {
     return nil
 }
 // GetIsEnabled gets the isEnabled property value. If true, access reviews are required for assignments from this policy.
+// returns a *bool when successful
 func (m *AssignmentReviewSettings) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -206,6 +214,7 @@ func (m *AssignmentReviewSettings) GetIsEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AssignmentReviewSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -217,6 +226,7 @@ func (m *AssignmentReviewSettings) GetOdataType()(*string) {
     return nil
 }
 // GetRecurrenceType gets the recurrenceType property value. The interval for recurrence, such as monthly or quarterly.
+// returns a *string when successful
 func (m *AssignmentReviewSettings) GetRecurrenceType()(*string) {
     val, err := m.GetBackingStore().Get("recurrenceType")
     if err != nil {
@@ -228,6 +238,7 @@ func (m *AssignmentReviewSettings) GetRecurrenceType()(*string) {
     return nil
 }
 // GetReviewers gets the reviewers property value. If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.
+// returns a []UserSetable when successful
 func (m *AssignmentReviewSettings) GetReviewers()([]UserSetable) {
     val, err := m.GetBackingStore().Get("reviewers")
     if err != nil {
@@ -239,6 +250,7 @@ func (m *AssignmentReviewSettings) GetReviewers()([]UserSetable) {
     return nil
 }
 // GetReviewerType gets the reviewerType property value. Who should be asked to do the review, either Self, Reviewers or Manager.
+// returns a *string when successful
 func (m *AssignmentReviewSettings) GetReviewerType()(*string) {
     val, err := m.GetBackingStore().Get("reviewerType")
     if err != nil {
@@ -250,6 +262,7 @@ func (m *AssignmentReviewSettings) GetReviewerType()(*string) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. When the first review should start.
+// returns a *Time when successful
 func (m *AssignmentReviewSettings) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -418,7 +431,6 @@ func (m *AssignmentReviewSettings) SetStartDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
-// AssignmentReviewSettingsable 
 type AssignmentReviewSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

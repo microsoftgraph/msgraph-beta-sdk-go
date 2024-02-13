@@ -41,20 +41,21 @@ type LabelsAuthoritiesAuthorityTemplateItemRequestBuilderPatchRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilderInternal instantiates a new AuthorityTemplateItemRequestBuilder and sets the default values.
+// NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilderInternal instantiates a new LabelsAuthoritiesAuthorityTemplateItemRequestBuilder and sets the default values.
 func NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) {
     m := &LabelsAuthoritiesAuthorityTemplateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilder instantiates a new AuthorityTemplateItemRequestBuilder and sets the default values.
+// NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilder instantiates a new LabelsAuthoritiesAuthorityTemplateItemRequestBuilder and sets the default values.
 func NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a authorityTemplate object.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-authorities?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Delete(ctx contex
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,6 +74,8 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Delete(ctx contex
     return nil
 }
 // Get read the properties and relationships of a authorityTemplate object.
+// returns a AuthorityTemplateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0
@@ -83,8 +85,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Get(ctx context.C
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateAuthorityTemplateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -96,14 +97,15 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Get(ctx context.C
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuthorityTemplateable), nil
 }
 // Patch update the navigation property authorities in security
+// returns a AuthorityTemplateable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuthorityTemplateable, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuthorityTemplateable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateAuthorityTemplateFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -115,8 +117,9 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) Patch(ctx context
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuthorityTemplateable), nil
 }
 // ToDeleteRequestInformation delete a authorityTemplate object.
+// returns a *RequestInformation when successful
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -125,6 +128,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToDeleteRequestIn
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a authorityTemplate object.
+// returns a *RequestInformation when successful
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -138,8 +142,9 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property authorities in security
+// returns a *RequestInformation when successful
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuthorityTemplateable, requestConfiguration *LabelsAuthoritiesAuthorityTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -152,6 +157,7 @@ func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) ToPatchRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder when successful
 func (m *LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) WithUrl(rawUrl string)(*LabelsAuthoritiesAuthorityTemplateItemRequestBuilder) {
     return NewLabelsAuthoritiesAuthorityTemplateItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

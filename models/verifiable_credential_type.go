@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// VerifiableCredentialType 
 type VerifiableCredentialType struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewVerifiableCredentialType instantiates a new verifiableCredentialType and sets the default values.
+// NewVerifiableCredentialType instantiates a new VerifiableCredentialType and sets the default values.
 func NewVerifiableCredentialType()(*VerifiableCredentialType) {
     m := &VerifiableCredentialType{
     }
@@ -19,10 +18,12 @@ func NewVerifiableCredentialType()(*VerifiableCredentialType) {
     return m
 }
 // CreateVerifiableCredentialTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVerifiableCredentialTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVerifiableCredentialType(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *VerifiableCredentialType) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *VerifiableCredentialType) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *VerifiableCredentialType) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCredentialType gets the credentialType property value. The type of credential issued, for example, BusinessCardCredential.
+// returns a *string when successful
 func (m *VerifiableCredentialType) GetCredentialType()(*string) {
     val, err := m.GetBackingStore().Get("credentialType")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *VerifiableCredentialType) GetCredentialType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VerifiableCredentialType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["credentialType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -91,6 +95,7 @@ func (m *VerifiableCredentialType) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIssuers gets the issuers property value. List of the accepted issuers authority as identified by the Microsoft Entra Verified ID service, for example, did:ion:EiAlrenrtD3Lsw0GlbzS1O2YFdy3Xtu8yo35W/<SNIP/>....
+// returns a []string when successful
 func (m *VerifiableCredentialType) GetIssuers()([]string) {
     val, err := m.GetBackingStore().Get("issuers")
     if err != nil {
@@ -102,6 +107,7 @@ func (m *VerifiableCredentialType) GetIssuers()([]string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *VerifiableCredentialType) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -172,7 +178,6 @@ func (m *VerifiableCredentialType) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// VerifiableCredentialTypeable 
 type VerifiableCredentialTypeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

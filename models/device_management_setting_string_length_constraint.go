@@ -8,7 +8,7 @@ import (
 type DeviceManagementSettingStringLengthConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementSettingStringLengthConstraint instantiates a new deviceManagementSettingStringLengthConstraint and sets the default values.
+// NewDeviceManagementSettingStringLengthConstraint instantiates a new DeviceManagementSettingStringLengthConstraint and sets the default values.
 func NewDeviceManagementSettingStringLengthConstraint()(*DeviceManagementSettingStringLengthConstraint) {
     m := &DeviceManagementSettingStringLengthConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -18,10 +18,12 @@ func NewDeviceManagementSettingStringLengthConstraint()(*DeviceManagementSetting
     return m
 }
 // CreateDeviceManagementSettingStringLengthConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingStringLengthConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementSettingStringLengthConstraint(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingStringLengthConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
     res["maximumLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *DeviceManagementSettingStringLengthConstraint) GetFieldDeserializers()(
     return res
 }
 // GetMaximumLength gets the maximumLength property value. The maximum permitted string length
+// returns a *int32 when successful
 func (m *DeviceManagementSettingStringLengthConstraint) GetMaximumLength()(*int32) {
     val, err := m.GetBackingStore().Get("maximumLength")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *DeviceManagementSettingStringLengthConstraint) GetMaximumLength()(*int3
     return nil
 }
 // GetMinimumLength gets the minimumLength property value. The minimum permitted string length
+// returns a *int32 when successful
 func (m *DeviceManagementSettingStringLengthConstraint) GetMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("minimumLength")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *DeviceManagementSettingStringLengthConstraint) SetMinimumLength(value *
         panic(err)
     }
 }
-// DeviceManagementSettingStringLengthConstraintable 
 type DeviceManagementSettingStringLengthConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

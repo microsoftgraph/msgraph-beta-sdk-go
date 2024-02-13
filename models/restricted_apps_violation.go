@@ -8,7 +8,7 @@ import (
 type RestrictedAppsViolation struct {
     Entity
 }
-// NewRestrictedAppsViolation instantiates a new restrictedAppsViolation and sets the default values.
+// NewRestrictedAppsViolation instantiates a new RestrictedAppsViolation and sets the default values.
 func NewRestrictedAppsViolation()(*RestrictedAppsViolation) {
     m := &RestrictedAppsViolation{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewRestrictedAppsViolation()(*RestrictedAppsViolation) {
     return m
 }
 // CreateRestrictedAppsViolationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRestrictedAppsViolationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRestrictedAppsViolation(), nil
 }
 // GetDeviceConfigurationId gets the deviceConfigurationId property value. Device configuration profile unique identifier, must be Guid
+// returns a *string when successful
 func (m *RestrictedAppsViolation) GetDeviceConfigurationId()(*string) {
     val, err := m.GetBackingStore().Get("deviceConfigurationId")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *RestrictedAppsViolation) GetDeviceConfigurationId()(*string) {
     return nil
 }
 // GetDeviceConfigurationName gets the deviceConfigurationName property value. Device configuration profile name
+// returns a *string when successful
 func (m *RestrictedAppsViolation) GetDeviceConfigurationName()(*string) {
     val, err := m.GetBackingStore().Get("deviceConfigurationName")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *RestrictedAppsViolation) GetDeviceConfigurationName()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. Device name
+// returns a *string when successful
 func (m *RestrictedAppsViolation) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *RestrictedAppsViolation) GetDeviceName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -154,6 +159,7 @@ func (m *RestrictedAppsViolation) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetManagedDeviceId gets the managedDeviceId property value. Managed device unique identifier, must be Guid
+// returns a *string when successful
 func (m *RestrictedAppsViolation) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -165,6 +171,7 @@ func (m *RestrictedAppsViolation) GetManagedDeviceId()(*string) {
     return nil
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
+// returns a *PolicyPlatformType when successful
 func (m *RestrictedAppsViolation) GetPlatformType()(*PolicyPlatformType) {
     val, err := m.GetBackingStore().Get("platformType")
     if err != nil {
@@ -176,6 +183,7 @@ func (m *RestrictedAppsViolation) GetPlatformType()(*PolicyPlatformType) {
     return nil
 }
 // GetRestrictedApps gets the restrictedApps property value. List of violated restricted apps
+// returns a []ManagedDeviceReportedAppable when successful
 func (m *RestrictedAppsViolation) GetRestrictedApps()([]ManagedDeviceReportedAppable) {
     val, err := m.GetBackingStore().Get("restrictedApps")
     if err != nil {
@@ -187,6 +195,7 @@ func (m *RestrictedAppsViolation) GetRestrictedApps()([]ManagedDeviceReportedApp
     return nil
 }
 // GetRestrictedAppsState gets the restrictedAppsState property value. Restricted apps state
+// returns a *RestrictedAppsState when successful
 func (m *RestrictedAppsViolation) GetRestrictedAppsState()(*RestrictedAppsState) {
     val, err := m.GetBackingStore().Get("restrictedAppsState")
     if err != nil {
@@ -198,6 +207,7 @@ func (m *RestrictedAppsViolation) GetRestrictedAppsState()(*RestrictedAppsState)
     return nil
 }
 // GetUserId gets the userId property value. User unique identifier, must be Guid
+// returns a *string when successful
 func (m *RestrictedAppsViolation) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -209,6 +219,7 @@ func (m *RestrictedAppsViolation) GetUserId()(*string) {
     return nil
 }
 // GetUserName gets the userName property value. User name
+// returns a *string when successful
 func (m *RestrictedAppsViolation) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -352,7 +363,6 @@ func (m *RestrictedAppsViolation) SetUserName(value *string)() {
         panic(err)
     }
 }
-// RestrictedAppsViolationable 
 type RestrictedAppsViolationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

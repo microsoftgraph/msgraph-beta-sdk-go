@@ -32,29 +32,30 @@ type ItemGetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *ItemGetManagedDevicesWithAppFailuresRequestBuilderGetQueryParameters
 }
-// NewItemGetManagedDevicesWithAppFailuresRequestBuilderInternal instantiates a new GetManagedDevicesWithAppFailuresRequestBuilder and sets the default values.
+// NewItemGetManagedDevicesWithAppFailuresRequestBuilderInternal instantiates a new ItemGetManagedDevicesWithAppFailuresRequestBuilder and sets the default values.
 func NewItemGetManagedDevicesWithAppFailuresRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetManagedDevicesWithAppFailuresRequestBuilder) {
     m := &ItemGetManagedDevicesWithAppFailuresRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/getManagedDevicesWithAppFailures(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/getManagedDevicesWithAppFailures(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemGetManagedDevicesWithAppFailuresRequestBuilder instantiates a new GetManagedDevicesWithAppFailuresRequestBuilder and sets the default values.
+// NewItemGetManagedDevicesWithAppFailuresRequestBuilder instantiates a new ItemGetManagedDevicesWithAppFailuresRequestBuilder and sets the default values.
 func NewItemGetManagedDevicesWithAppFailuresRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetManagedDevicesWithAppFailuresRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetManagedDevicesWithAppFailuresRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieves the list of devices with failed apps
-// Deprecated: This method is obsolete. Use GetAsGetManagedDevicesWithAppFailuresGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemGetManagedDevicesWithAppFailuresResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration)(ItemGetManagedDevicesWithAppFailuresResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedDevicesWithAppFailuresResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) Get(ctx context.Con
     return res.(ItemGetManagedDevicesWithAppFailuresResponseable), nil
 }
 // GetAsGetManagedDevicesWithAppFailuresGetResponse retrieves the list of devices with failed apps
+// returns a ItemGetManagedDevicesWithAppFailuresGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) GetAsGetManagedDevicesWithAppFailuresGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration)(ItemGetManagedDevicesWithAppFailuresGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedDevicesWithAppFailuresGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) GetAsGetManagedDevi
     return res.(ItemGetManagedDevicesWithAppFailuresGetResponseable), nil
 }
 // ToGetRequestInformation retrieves the list of devices with failed apps
+// returns a *RequestInformation when successful
 func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithAppFailuresRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemGetManagedDevicesWithAppFailuresRequestBuilder when successful
 func (m *ItemGetManagedDevicesWithAppFailuresRequestBuilder) WithUrl(rawUrl string)(*ItemGetManagedDevicesWithAppFailuresRequestBuilder) {
     return NewItemGetManagedDevicesWithAppFailuresRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

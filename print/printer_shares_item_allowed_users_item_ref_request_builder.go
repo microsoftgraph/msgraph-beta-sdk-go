@@ -17,14 +17,14 @@ type PrinterSharesItemAllowedUsersItemRefRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewPrinterSharesItemAllowedUsersItemRefRequestBuilderInternal instantiates a new RefRequestBuilder and sets the default values.
+// NewPrinterSharesItemAllowedUsersItemRefRequestBuilderInternal instantiates a new PrinterSharesItemAllowedUsersItemRefRequestBuilder and sets the default values.
 func NewPrinterSharesItemAllowedUsersItemRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterSharesItemAllowedUsersItemRefRequestBuilder) {
     m := &PrinterSharesItemAllowedUsersItemRefRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedUsers/{user%2Did}/$ref", pathParameters),
     }
     return m
 }
-// NewPrinterSharesItemAllowedUsersItemRefRequestBuilder instantiates a new RefRequestBuilder and sets the default values.
+// NewPrinterSharesItemAllowedUsersItemRefRequestBuilder instantiates a new PrinterSharesItemAllowedUsersItemRefRequestBuilder and sets the default values.
 func NewPrinterSharesItemAllowedUsersItemRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterSharesItemAllowedUsersItemRefRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -32,6 +32,7 @@ func NewPrinterSharesItemAllowedUsersItemRefRequestBuilder(rawUrl string, reques
 }
 // Delete revoke the specified user's access to submit print jobs to the associated printerShare.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
@@ -41,8 +42,7 @@ func (m *PrinterSharesItemAllowedUsersItemRefRequestBuilder) Delete(ctx context.
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -52,6 +52,7 @@ func (m *PrinterSharesItemAllowedUsersItemRefRequestBuilder) Delete(ctx context.
 }
 // ToDeleteRequestInformation revoke the specified user's access to submit print jobs to the associated printerShare.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a *RequestInformation when successful
 func (m *PrinterSharesItemAllowedUsersItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -63,6 +64,7 @@ func (m *PrinterSharesItemAllowedUsersItemRefRequestBuilder) ToDeleteRequestInfo
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a *PrinterSharesItemAllowedUsersItemRefRequestBuilder when successful
 func (m *PrinterSharesItemAllowedUsersItemRefRequestBuilder) WithUrl(rawUrl string)(*PrinterSharesItemAllowedUsersItemRefRequestBuilder) {
     return NewPrinterSharesItemAllowedUsersItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileUrlThreatSubmission 
 type FileUrlThreatSubmission struct {
     FileThreatSubmission
 }
-// NewFileUrlThreatSubmission instantiates a new fileUrlThreatSubmission and sets the default values.
+// NewFileUrlThreatSubmission instantiates a new FileUrlThreatSubmission and sets the default values.
 func NewFileUrlThreatSubmission()(*FileUrlThreatSubmission) {
     m := &FileUrlThreatSubmission{
         FileThreatSubmission: *NewFileThreatSubmission(),
@@ -18,10 +17,12 @@ func NewFileUrlThreatSubmission()(*FileUrlThreatSubmission) {
     return m
 }
 // CreateFileUrlThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileUrlThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileUrlThreatSubmission(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.FileThreatSubmission.GetFieldDeserializers()
     res["fileUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *FileUrlThreatSubmission) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetFileUrl gets the fileUrl property value. It specifies the URL of the file that needs to be submitted.
+// returns a *string when successful
 func (m *FileUrlThreatSubmission) GetFileUrl()(*string) {
     val, err := m.GetBackingStore().Get("fileUrl")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *FileUrlThreatSubmission) SetFileUrl(value *string)() {
         panic(err)
     }
 }
-// FileUrlThreatSubmissionable 
 type FileUrlThreatSubmissionable interface {
     FileThreatSubmissionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

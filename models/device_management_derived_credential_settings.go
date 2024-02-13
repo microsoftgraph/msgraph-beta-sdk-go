@@ -8,7 +8,7 @@ import (
 type DeviceManagementDerivedCredentialSettings struct {
     Entity
 }
-// NewDeviceManagementDerivedCredentialSettings instantiates a new deviceManagementDerivedCredentialSettings and sets the default values.
+// NewDeviceManagementDerivedCredentialSettings instantiates a new DeviceManagementDerivedCredentialSettings and sets the default values.
 func NewDeviceManagementDerivedCredentialSettings()(*DeviceManagementDerivedCredentialSettings) {
     m := &DeviceManagementDerivedCredentialSettings{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementDerivedCredentialSettings()(*DeviceManagementDerivedCred
     return m
 }
 // CreateDeviceManagementDerivedCredentialSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementDerivedCredentialSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementDerivedCredentialSettings(), nil
 }
 // GetDisplayName gets the displayName property value. The display name for the profile.
+// returns a *string when successful
 func (m *DeviceManagementDerivedCredentialSettings) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +89,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetFieldDeserializers()(map[
     return res
 }
 // GetHelpUrl gets the helpUrl property value. The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.
+// returns a *string when successful
 func (m *DeviceManagementDerivedCredentialSettings) GetHelpUrl()(*string) {
     val, err := m.GetBackingStore().Get("helpUrl")
     if err != nil {
@@ -97,6 +101,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetHelpUrl()(*string) {
     return nil
 }
 // GetIssuer gets the issuer property value. Supported values for the derived credential issuer.
+// returns a *DeviceManagementDerivedCredentialIssuer when successful
 func (m *DeviceManagementDerivedCredentialSettings) GetIssuer()(*DeviceManagementDerivedCredentialIssuer) {
     val, err := m.GetBackingStore().Get("issuer")
     if err != nil {
@@ -108,6 +113,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetIssuer()(*DeviceManagemen
     return nil
 }
 // GetNotificationType gets the notificationType property value. Supported values for the notification type to use.
+// returns a *DeviceManagementDerivedCredentialNotificationType when successful
 func (m *DeviceManagementDerivedCredentialSettings) GetNotificationType()(*DeviceManagementDerivedCredentialNotificationType) {
     val, err := m.GetBackingStore().Get("notificationType")
     if err != nil {
@@ -119,6 +125,7 @@ func (m *DeviceManagementDerivedCredentialSettings) GetNotificationType()(*Devic
     return nil
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. The nominal percentage of time before certificate renewal is initiated by the client.
+// returns a *int32 when successful
 func (m *DeviceManagementDerivedCredentialSettings) GetRenewalThresholdPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("renewalThresholdPercentage")
     if err != nil {
@@ -204,7 +211,6 @@ func (m *DeviceManagementDerivedCredentialSettings) SetRenewalThresholdPercentag
         panic(err)
     }
 }
-// DeviceManagementDerivedCredentialSettingsable 
 type DeviceManagementDerivedCredentialSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

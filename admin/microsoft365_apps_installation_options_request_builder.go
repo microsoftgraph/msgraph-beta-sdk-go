@@ -41,28 +41,28 @@ type Microsoft365AppsInstallationOptionsRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewMicrosoft365AppsInstallationOptionsRequestBuilderInternal instantiates a new InstallationOptionsRequestBuilder and sets the default values.
+// NewMicrosoft365AppsInstallationOptionsRequestBuilderInternal instantiates a new Microsoft365AppsInstallationOptionsRequestBuilder and sets the default values.
 func NewMicrosoft365AppsInstallationOptionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Microsoft365AppsInstallationOptionsRequestBuilder) {
     m := &Microsoft365AppsInstallationOptionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/microsoft365Apps/installationOptions{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/microsoft365Apps/installationOptions{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewMicrosoft365AppsInstallationOptionsRequestBuilder instantiates a new InstallationOptionsRequestBuilder and sets the default values.
+// NewMicrosoft365AppsInstallationOptionsRequestBuilder instantiates a new Microsoft365AppsInstallationOptionsRequestBuilder and sets the default values.
 func NewMicrosoft365AppsInstallationOptionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Microsoft365AppsInstallationOptionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoft365AppsInstallationOptionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property installationOptions for admin
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Microsoft365AppsInstallationOptionsRequestBuilder) Delete(ctx context.Context, requestConfiguration *Microsoft365AppsInstallationOptionsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,6 +71,8 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) Delete(ctx context.C
     return nil
 }
 // Get read the properties and relationships of an m365AppsInstallationOptions object.
+// returns a M365AppsInstallationOptionsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/m365appsinstallationoptions-get?view=graph-rest-1.0
@@ -80,8 +82,7 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) Get(ctx context.Cont
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateM365AppsInstallationOptionsFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,6 +94,8 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) Get(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.M365AppsInstallationOptionsable), nil
 }
 // Patch update the properties of an m365AppsInstallationOptions object.
+// returns a M365AppsInstallationOptionsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/m365appsinstallationoptions-update?view=graph-rest-1.0
@@ -102,8 +105,7 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) Patch(ctx context.Co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateM365AppsInstallationOptionsFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -115,8 +117,9 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) Patch(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.M365AppsInstallationOptionsable), nil
 }
 // ToDeleteRequestInformation delete navigation property installationOptions for admin
+// returns a *RequestInformation when successful
 func (m *Microsoft365AppsInstallationOptionsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *Microsoft365AppsInstallationOptionsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/admin/microsoft365Apps/installationOptions", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -125,6 +128,7 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) ToDeleteRequestInfor
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of an m365AppsInstallationOptions object.
+// returns a *RequestInformation when successful
 func (m *Microsoft365AppsInstallationOptionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Microsoft365AppsInstallationOptionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -138,8 +142,9 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of an m365AppsInstallationOptions object.
+// returns a *RequestInformation when successful
 func (m *Microsoft365AppsInstallationOptionsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.M365AppsInstallationOptionsable, requestConfiguration *Microsoft365AppsInstallationOptionsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/admin/microsoft365Apps/installationOptions", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -152,6 +157,7 @@ func (m *Microsoft365AppsInstallationOptionsRequestBuilder) ToPatchRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *Microsoft365AppsInstallationOptionsRequestBuilder when successful
 func (m *Microsoft365AppsInstallationOptionsRequestBuilder) WithUrl(rawUrl string)(*Microsoft365AppsInstallationOptionsRequestBuilder) {
     return NewMicrosoft365AppsInstallationOptionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

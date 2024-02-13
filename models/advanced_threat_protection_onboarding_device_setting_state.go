@@ -9,7 +9,7 @@ import (
 type AdvancedThreatProtectionOnboardingDeviceSettingState struct {
     Entity
 }
-// NewAdvancedThreatProtectionOnboardingDeviceSettingState instantiates a new advancedThreatProtectionOnboardingDeviceSettingState and sets the default values.
+// NewAdvancedThreatProtectionOnboardingDeviceSettingState instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingState and sets the default values.
 func NewAdvancedThreatProtectionOnboardingDeviceSettingState()(*AdvancedThreatProtectionOnboardingDeviceSettingState) {
     m := &AdvancedThreatProtectionOnboardingDeviceSettingState{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewAdvancedThreatProtectionOnboardingDeviceSettingState()(*AdvancedThreatPr
     return m
 }
 // CreateAdvancedThreatProtectionOnboardingDeviceSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAdvancedThreatProtectionOnboardingDeviceSettingStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdvancedThreatProtectionOnboardingDeviceSettingState(), nil
 }
 // GetComplianceGracePeriodExpirationDateTime gets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
+// returns a *Time when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetComplianceGracePeriodExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("complianceGracePeriodExpirationDateTime")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetComplianceGrac
     return nil
 }
 // GetDeviceId gets the deviceId property value. The Device Id that is being reported
+// returns a *string when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetDeviceId()(*st
     return nil
 }
 // GetDeviceModel gets the deviceModel property value. The device model that is being reported
+// returns a *string when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetDeviceModel()(
     return nil
 }
 // GetDeviceName gets the deviceName property value. The Device Name that is being reported
+// returns a *string when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetDeviceName()(*
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["complianceGracePeriodExpirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,6 +196,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetFieldDeseriali
     return res
 }
 // GetPlatformType gets the platformType property value. Device type.
+// returns a *DeviceType when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetPlatformType()(*DeviceType) {
     val, err := m.GetBackingStore().Get("platformType")
     if err != nil {
@@ -201,6 +208,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetPlatformType()
     return nil
 }
 // GetSetting gets the setting property value. The setting class name and property name.
+// returns a *string when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetSetting()(*string) {
     val, err := m.GetBackingStore().Get("setting")
     if err != nil {
@@ -212,6 +220,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetSetting()(*str
     return nil
 }
 // GetSettingName gets the settingName property value. The Setting Name that is being reported
+// returns a *string when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetSettingName()(*string) {
     val, err := m.GetBackingStore().Get("settingName")
     if err != nil {
@@ -223,6 +232,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetSettingName()(
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *ComplianceStatus when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetState()(*ComplianceStatus) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -234,6 +244,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetState()(*Compl
     return nil
 }
 // GetUserEmail gets the userEmail property value. The User email address that is being reported
+// returns a *string when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserEmail()(*string) {
     val, err := m.GetBackingStore().Get("userEmail")
     if err != nil {
@@ -245,6 +256,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserEmail()(*s
     return nil
 }
 // GetUserId gets the userId property value. The user Id that is being reported
+// returns a *string when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -256,6 +268,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserId()(*stri
     return nil
 }
 // GetUserName gets the userName property value. The User Name that is being reported
+// returns a *string when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -267,6 +280,7 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserName()(*st
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The User PrincipalName that is being reported
+// returns a *string when successful
 func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -443,7 +457,6 @@ func (m *AdvancedThreatProtectionOnboardingDeviceSettingState) SetUserPrincipalN
         panic(err)
     }
 }
-// AdvancedThreatProtectionOnboardingDeviceSettingStateable 
 type AdvancedThreatProtectionOnboardingDeviceSettingStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -41,28 +41,28 @@ type ItemVirtualEventsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemVirtualEventsRequestBuilderInternal instantiates a new VirtualEventsRequestBuilder and sets the default values.
+// NewItemVirtualEventsRequestBuilderInternal instantiates a new ItemVirtualEventsRequestBuilder and sets the default values.
 func NewItemVirtualEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemVirtualEventsRequestBuilder) {
     m := &ItemVirtualEventsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/virtualEvents{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/virtualEvents{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemVirtualEventsRequestBuilder instantiates a new VirtualEventsRequestBuilder and sets the default values.
+// NewItemVirtualEventsRequestBuilder instantiates a new ItemVirtualEventsRequestBuilder and sets the default values.
 func NewItemVirtualEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemVirtualEventsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemVirtualEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property virtualEvents for users
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemVirtualEventsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemVirtualEventsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *ItemVirtualEventsRequestBuilder) Delete(ctx context.Context, requestCon
     return nil
 }
 // Get get virtualEvents from users
+// returns a UserVirtualEventsRootable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemVirtualEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemVirtualEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserVirtualEventsRootFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *ItemVirtualEventsRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable), nil
 }
 // Patch update the navigation property virtualEvents in users
+// returns a UserVirtualEventsRootable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemVirtualEventsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable, requestConfiguration *ItemVirtualEventsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserVirtualEventsRootFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *ItemVirtualEventsRequestBuilder) Patch(ctx context.Context, body ie233e
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable), nil
 }
 // ToDeleteRequestInformation delete navigation property virtualEvents for users
+// returns a *RequestInformation when successful
 func (m *ItemVirtualEventsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemVirtualEventsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/virtualEvents", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *ItemVirtualEventsRequestBuilder) ToDeleteRequestInformation(ctx context
     return requestInfo, nil
 }
 // ToGetRequestInformation get virtualEvents from users
+// returns a *RequestInformation when successful
 func (m *ItemVirtualEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemVirtualEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *ItemVirtualEventsRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property virtualEvents in users
+// returns a *RequestInformation when successful
 func (m *ItemVirtualEventsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable, requestConfiguration *ItemVirtualEventsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/users/{user%2Did}/virtualEvents", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,10 +151,12 @@ func (m *ItemVirtualEventsRequestBuilder) ToPatchRequestInformation(ctx context.
     return requestInfo, nil
 }
 // Webinars provides operations to manage the webinars property of the microsoft.graph.userVirtualEventsRoot entity.
+// returns a *ItemVirtualEventsWebinarsRequestBuilder when successful
 func (m *ItemVirtualEventsRequestBuilder) Webinars()(*ItemVirtualEventsWebinarsRequestBuilder) {
     return NewItemVirtualEventsWebinarsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemVirtualEventsRequestBuilder when successful
 func (m *ItemVirtualEventsRequestBuilder) WithUrl(rawUrl string)(*ItemVirtualEventsRequestBuilder) {
     return NewItemVirtualEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

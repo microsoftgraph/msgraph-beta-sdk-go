@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlatformCredentialAuthenticationMethod 
 type PlatformCredentialAuthenticationMethod struct {
     AuthenticationMethod
 }
-// NewPlatformCredentialAuthenticationMethod instantiates a new platformCredentialAuthenticationMethod and sets the default values.
+// NewPlatformCredentialAuthenticationMethod instantiates a new PlatformCredentialAuthenticationMethod and sets the default values.
 func NewPlatformCredentialAuthenticationMethod()(*PlatformCredentialAuthenticationMethod) {
     m := &PlatformCredentialAuthenticationMethod{
         AuthenticationMethod: *NewAuthenticationMethod(),
@@ -19,10 +18,12 @@ func NewPlatformCredentialAuthenticationMethod()(*PlatformCredentialAuthenticati
     return m
 }
 // CreatePlatformCredentialAuthenticationMethodFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlatformCredentialAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlatformCredentialAuthenticationMethod(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time that this Platform Credential Key was registered.
+// returns a *Time when successful
 func (m *PlatformCredentialAuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetCreatedDateTime()(*i33607480
     return nil
 }
 // GetDevice gets the device property value. The registered device on which this Platform Credential resides. Supports $expand. When you get a user's Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
+// returns a Deviceable when successful
 func (m *PlatformCredentialAuthenticationMethod) GetDevice()(Deviceable) {
     val, err := m.GetBackingStore().Get("device")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetDevice()(Deviceable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the device on which Platform Credential is registered.
+// returns a *string when successful
 func (m *PlatformCredentialAuthenticationMethod) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlatformCredentialAuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethod.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,6 +115,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetFieldDeserializers()(map[str
     return res
 }
 // GetKeyStrength gets the keyStrength property value. Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.
+// returns a *AuthenticationMethodKeyStrength when successful
 func (m *PlatformCredentialAuthenticationMethod) GetKeyStrength()(*AuthenticationMethodKeyStrength) {
     val, err := m.GetBackingStore().Get("keyStrength")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *PlatformCredentialAuthenticationMethod) GetKeyStrength()(*Authenticatio
     return nil
 }
 // GetPlatform gets the platform property value. Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.
+// returns a *AuthenticationMethodPlatform when successful
 func (m *PlatformCredentialAuthenticationMethod) GetPlatform()(*AuthenticationMethodPlatform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -207,7 +213,6 @@ func (m *PlatformCredentialAuthenticationMethod) SetPlatform(value *Authenticati
         panic(err)
     }
 }
-// PlatformCredentialAuthenticationMethodable 
 type PlatformCredentialAuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AgedAccountsReceivable 
 type AgedAccountsReceivable struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAgedAccountsReceivable instantiates a new agedAccountsReceivable and sets the default values.
+// NewAgedAccountsReceivable instantiates a new AgedAccountsReceivable and sets the default values.
 func NewAgedAccountsReceivable()(*AgedAccountsReceivable) {
     m := &AgedAccountsReceivable{
     }
@@ -20,10 +19,12 @@ func NewAgedAccountsReceivable()(*AgedAccountsReceivable) {
     return m
 }
 // CreateAgedAccountsReceivableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAgedAccountsReceivableFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAgedAccountsReceivable(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AgedAccountsReceivable) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *AgedAccountsReceivable) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAgedAsOfDate gets the agedAsOfDate property value. The agedAsOfDate property
+// returns a *DateOnly when successful
 func (m *AgedAccountsReceivable) GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("agedAsOfDate")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *AgedAccountsReceivable) GetAgedAsOfDate()(*i878a80d2330e89d26896388a3f4
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AgedAccountsReceivable) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBalanceDue gets the balanceDue property value. The balanceDue property
+// returns a *float64 when successful
 func (m *AgedAccountsReceivable) GetBalanceDue()(*float64) {
     val, err := m.GetBackingStore().Get("balanceDue")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *AgedAccountsReceivable) GetBalanceDue()(*float64) {
     return nil
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
+// returns a *string when successful
 func (m *AgedAccountsReceivable) GetCurrencyCode()(*string) {
     val, err := m.GetBackingStore().Get("currencyCode")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *AgedAccountsReceivable) GetCurrencyCode()(*string) {
     return nil
 }
 // GetCurrentAmount gets the currentAmount property value. The currentAmount property
+// returns a *float64 when successful
 func (m *AgedAccountsReceivable) GetCurrentAmount()(*float64) {
     val, err := m.GetBackingStore().Get("currentAmount")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *AgedAccountsReceivable) GetCurrentAmount()(*float64) {
     return nil
 }
 // GetCustomerId gets the customerId property value. The customerId property
+// returns a *string when successful
 func (m *AgedAccountsReceivable) GetCustomerId()(*string) {
     val, err := m.GetBackingStore().Get("customerId")
     if err != nil {
@@ -95,6 +102,7 @@ func (m *AgedAccountsReceivable) GetCustomerId()(*string) {
     return nil
 }
 // GetCustomerNumber gets the customerNumber property value. The customerNumber property
+// returns a *string when successful
 func (m *AgedAccountsReceivable) GetCustomerNumber()(*string) {
     val, err := m.GetBackingStore().Get("customerNumber")
     if err != nil {
@@ -106,6 +114,7 @@ func (m *AgedAccountsReceivable) GetCustomerNumber()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["agedAsOfDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -241,6 +250,7 @@ func (m *AgedAccountsReceivable) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *AgedAccountsReceivable) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -252,6 +262,7 @@ func (m *AgedAccountsReceivable) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *AgedAccountsReceivable) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -263,6 +274,7 @@ func (m *AgedAccountsReceivable) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AgedAccountsReceivable) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -274,6 +286,7 @@ func (m *AgedAccountsReceivable) GetOdataType()(*string) {
     return nil
 }
 // GetPeriod1Amount gets the period1Amount property value. The period1Amount property
+// returns a *float64 when successful
 func (m *AgedAccountsReceivable) GetPeriod1Amount()(*float64) {
     val, err := m.GetBackingStore().Get("period1Amount")
     if err != nil {
@@ -285,6 +298,7 @@ func (m *AgedAccountsReceivable) GetPeriod1Amount()(*float64) {
     return nil
 }
 // GetPeriod2Amount gets the period2Amount property value. The period2Amount property
+// returns a *float64 when successful
 func (m *AgedAccountsReceivable) GetPeriod2Amount()(*float64) {
     val, err := m.GetBackingStore().Get("period2Amount")
     if err != nil {
@@ -296,6 +310,7 @@ func (m *AgedAccountsReceivable) GetPeriod2Amount()(*float64) {
     return nil
 }
 // GetPeriod3Amount gets the period3Amount property value. The period3Amount property
+// returns a *float64 when successful
 func (m *AgedAccountsReceivable) GetPeriod3Amount()(*float64) {
     val, err := m.GetBackingStore().Get("period3Amount")
     if err != nil {
@@ -307,6 +322,7 @@ func (m *AgedAccountsReceivable) GetPeriod3Amount()(*float64) {
     return nil
 }
 // GetPeriodLengthFilter gets the periodLengthFilter property value. The periodLengthFilter property
+// returns a *string when successful
 func (m *AgedAccountsReceivable) GetPeriodLengthFilter()(*string) {
     val, err := m.GetBackingStore().Get("periodLengthFilter")
     if err != nil {
@@ -507,7 +523,6 @@ func (m *AgedAccountsReceivable) SetPeriodLengthFilter(value *string)() {
         panic(err)
     }
 }
-// AgedAccountsReceivableable 
 type AgedAccountsReceivableable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

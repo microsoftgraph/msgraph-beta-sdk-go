@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementCachedReportConfigurationCollectionResponse 
 type DeviceManagementCachedReportConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementCachedReportConfigurationCollectionResponse instantiates a new deviceManagementCachedReportConfigurationCollectionResponse and sets the default values.
+// NewDeviceManagementCachedReportConfigurationCollectionResponse instantiates a new DeviceManagementCachedReportConfigurationCollectionResponse and sets the default values.
 func NewDeviceManagementCachedReportConfigurationCollectionResponse()(*DeviceManagementCachedReportConfigurationCollectionResponse) {
     m := &DeviceManagementCachedReportConfigurationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeviceManagementCachedReportConfigurationCollectionResponse()(*DeviceMan
     return m
 }
 // CreateDeviceManagementCachedReportConfigurationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementCachedReportConfigurationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementCachedReportConfigurationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementCachedReportConfigurationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeviceManagementCachedReportConfigurationCollectionResponse) GetFieldDe
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeviceManagementCachedReportConfigurationable when successful
 func (m *DeviceManagementCachedReportConfigurationCollectionResponse) GetValue()([]DeviceManagementCachedReportConfigurationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeviceManagementCachedReportConfigurationCollectionResponse) SetValue(v
         panic(err)
     }
 }
-// DeviceManagementCachedReportConfigurationCollectionResponseable 
 type DeviceManagementCachedReportConfigurationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

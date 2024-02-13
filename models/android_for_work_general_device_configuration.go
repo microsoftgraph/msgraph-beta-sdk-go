@@ -8,7 +8,7 @@ import (
 type AndroidForWorkGeneralDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidForWorkGeneralDeviceConfiguration instantiates a new androidForWorkGeneralDeviceConfiguration and sets the default values.
+// NewAndroidForWorkGeneralDeviceConfiguration instantiates a new AndroidForWorkGeneralDeviceConfiguration and sets the default values.
 func NewAndroidForWorkGeneralDeviceConfiguration()(*AndroidForWorkGeneralDeviceConfiguration) {
     m := &AndroidForWorkGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidForWorkGeneralDeviceConfiguration()(*AndroidForWorkGeneralDeviceC
     return m
 }
 // CreateAndroidForWorkGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidForWorkGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidForWorkGeneralDeviceConfiguration(), nil
 }
 // GetAllowedGoogleAccountDomains gets the allowedGoogleAccountDomains property value. Determine domains allow-list for accounts that can be added to work profile.
+// returns a []string when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetAllowedGoogleAccountDomains()([]string) {
     val, err := m.GetBackingStore().Get("allowedGoogleAccountDomains")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetAllowedGoogleAccountDomain
     return nil
 }
 // GetBlockUnifiedPasswordForWorkProfile gets the blockUnifiedPasswordForWorkProfile property value. Prevent using unified password for unlocking device and work profile.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetBlockUnifiedPasswordForWorkProfile()(*bool) {
     val, err := m.GetBackingStore().Get("blockUnifiedPasswordForWorkProfile")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetBlockUnifiedPasswordForWor
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["allowedGoogleAccountDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -525,6 +529,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetFieldDeserializers()(map[s
     return res
 }
 // GetPasswordBlockFaceUnlock gets the passwordBlockFaceUnlock property value. Indicates whether or not to block face unlock.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockFaceUnlock()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockFaceUnlock")
     if err != nil {
@@ -536,6 +541,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockFaceUnlock()(
     return nil
 }
 // GetPasswordBlockFingerprintUnlock gets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockFingerprintUnlock()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockFingerprintUnlock")
     if err != nil {
@@ -547,6 +553,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockFingerprintUn
     return nil
 }
 // GetPasswordBlockIrisUnlock gets the passwordBlockIrisUnlock property value. Indicates whether or not to block iris unlock.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockIrisUnlock()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockIrisUnlock")
     if err != nil {
@@ -558,6 +565,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockIrisUnlock()(
     return nil
 }
 // GetPasswordBlockTrustAgents gets the passwordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockTrustAgents()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockTrustAgents")
     if err != nil {
@@ -569,6 +577,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordBlockTrustAgents()
     return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordExpirationDays")
     if err != nil {
@@ -580,6 +589,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordExpirationDays()(*
     return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Minimum length of passwords. Valid values 4 to 16
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLength")
     if err != nil {
@@ -591,6 +601,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordMinimumLength()(*i
     return nil
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeScreenTimeout")
     if err != nil {
@@ -602,6 +613,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordMinutesOfInactivit
     return nil
 }
 // GetPasswordPreviousPasswordBlockCount gets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordPreviousPasswordBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("passwordPreviousPasswordBlockCount")
     if err != nil {
@@ -613,6 +625,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordPreviousPasswordBl
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Android For Work required password type.
+// returns a *AndroidForWorkRequiredPasswordType when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidForWorkRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
@@ -624,6 +637,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordRequiredType()(*An
     return nil
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     val, err := m.GetBackingStore().Get("passwordSignInFailureCountBeforeFactoryReset")
     if err != nil {
@@ -635,6 +649,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetPasswordSignInFailureCount
     return nil
 }
 // GetRequiredPasswordComplexity gets the requiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+// returns a *AndroidRequiredPasswordComplexity when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
     val, err := m.GetBackingStore().Get("requiredPasswordComplexity")
     if err != nil {
@@ -646,6 +661,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetRequiredPasswordComplexity
     return nil
 }
 // GetSecurityRequireVerifyApps gets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetSecurityRequireVerifyApps()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireVerifyApps")
     if err != nil {
@@ -657,6 +673,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetSecurityRequireVerifyApps(
     return nil
 }
 // GetVpnAlwaysOnPackageIdentifier gets the vpnAlwaysOnPackageIdentifier property value. Enable lockdown mode for always-on VPN.
+// returns a *string when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetVpnAlwaysOnPackageIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("vpnAlwaysOnPackageIdentifier")
     if err != nil {
@@ -668,6 +685,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetVpnAlwaysOnPackageIdentifi
     return nil
 }
 // GetVpnEnableAlwaysOnLockdownMode gets the vpnEnableAlwaysOnLockdownMode property value. Enable lockdown mode for always-on VPN.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetVpnEnableAlwaysOnLockdownMode()(*bool) {
     val, err := m.GetBackingStore().Get("vpnEnableAlwaysOnLockdownMode")
     if err != nil {
@@ -679,6 +697,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetVpnEnableAlwaysOnLockdownM
     return nil
 }
 // GetWorkProfileAccountUse gets the workProfileAccountUse property value. An enum representing possible values for account use in work profile.
+// returns a *AndroidWorkProfileAccountUse when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileAccountUse()(*AndroidWorkProfileAccountUse) {
     val, err := m.GetBackingStore().Get("workProfileAccountUse")
     if err != nil {
@@ -690,6 +709,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileAccountUse()(*A
     return nil
 }
 // GetWorkProfileAllowWidgets gets the workProfileAllowWidgets property value. Allow widgets from work profile apps.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileAllowWidgets()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileAllowWidgets")
     if err != nil {
@@ -701,6 +721,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileAllowWidgets()(
     return nil
 }
 // GetWorkProfileBlockAddingAccounts gets the workProfileBlockAddingAccounts property value. Block users from adding/removing accounts in work profile.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockAddingAccounts()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileBlockAddingAccounts")
     if err != nil {
@@ -712,6 +733,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockAddingAcco
     return nil
 }
 // GetWorkProfileBlockCamera gets the workProfileBlockCamera property value. Block work profile camera.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCamera()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileBlockCamera")
     if err != nil {
@@ -723,6 +745,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCamera()(*
     return nil
 }
 // GetWorkProfileBlockCrossProfileCallerId gets the workProfileBlockCrossProfileCallerId property value. Block display work profile caller ID in personal profile.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfileCallerId()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileBlockCrossProfileCallerId")
     if err != nil {
@@ -734,6 +757,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfi
     return nil
 }
 // GetWorkProfileBlockCrossProfileContactsSearch gets the workProfileBlockCrossProfileContactsSearch property value. Block work profile contacts availability in personal profile.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfileContactsSearch()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileBlockCrossProfileContactsSearch")
     if err != nil {
@@ -745,6 +769,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfi
     return nil
 }
 // GetWorkProfileBlockCrossProfileCopyPaste gets the workProfileBlockCrossProfileCopyPaste property value. Boolean that indicates if the setting disallow cross profile copy/paste is enabled.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfileCopyPaste()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileBlockCrossProfileCopyPaste")
     if err != nil {
@@ -756,6 +781,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockCrossProfi
     return nil
 }
 // GetWorkProfileBlockNotificationsWhileDeviceLocked gets the workProfileBlockNotificationsWhileDeviceLocked property value. Indicates whether or not to block notifications while device locked.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockNotificationsWhileDeviceLocked()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileBlockNotificationsWhileDeviceLocked")
     if err != nil {
@@ -767,6 +793,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockNotificati
     return nil
 }
 // GetWorkProfileBlockPersonalAppInstallsFromUnknownSources gets the workProfileBlockPersonalAppInstallsFromUnknownSources property value. Prevent app installations from unknown sources in the personal profile.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockPersonalAppInstallsFromUnknownSources()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileBlockPersonalAppInstallsFromUnknownSources")
     if err != nil {
@@ -778,6 +805,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockPersonalAp
     return nil
 }
 // GetWorkProfileBlockScreenCapture gets the workProfileBlockScreenCapture property value. Block screen capture in work profile.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockScreenCapture()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileBlockScreenCapture")
     if err != nil {
@@ -789,6 +817,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBlockScreenCapt
     return nil
 }
 // GetWorkProfileBluetoothEnableContactSharing gets the workProfileBluetoothEnableContactSharing property value. Allow bluetooth devices to access enterprise contacts.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBluetoothEnableContactSharing()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileBluetoothEnableContactSharing")
     if err != nil {
@@ -800,6 +829,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileBluetoothEnable
     return nil
 }
 // GetWorkProfileDataSharingType gets the workProfileDataSharingType property value. Android For Work cross profile data sharing type.
+// returns a *AndroidForWorkCrossProfileDataSharingType when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileDataSharingType()(*AndroidForWorkCrossProfileDataSharingType) {
     val, err := m.GetBackingStore().Get("workProfileDataSharingType")
     if err != nil {
@@ -811,6 +841,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileDataSharingType
     return nil
 }
 // GetWorkProfileDefaultAppPermissionPolicy gets the workProfileDefaultAppPermissionPolicy property value. Android For Work default app permission policy type.
+// returns a *AndroidForWorkDefaultAppPermissionPolicyType when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileDefaultAppPermissionPolicy()(*AndroidForWorkDefaultAppPermissionPolicyType) {
     val, err := m.GetBackingStore().Get("workProfileDefaultAppPermissionPolicy")
     if err != nil {
@@ -822,6 +853,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileDefaultAppPermi
     return nil
 }
 // GetWorkProfilePasswordBlockFaceUnlock gets the workProfilePasswordBlockFaceUnlock property value. Indicates whether or not to block face unlock for work profile.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockFaceUnlock()(*bool) {
     val, err := m.GetBackingStore().Get("workProfilePasswordBlockFaceUnlock")
     if err != nil {
@@ -833,6 +865,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockFa
     return nil
 }
 // GetWorkProfilePasswordBlockFingerprintUnlock gets the workProfilePasswordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock for work profile.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockFingerprintUnlock()(*bool) {
     val, err := m.GetBackingStore().Get("workProfilePasswordBlockFingerprintUnlock")
     if err != nil {
@@ -844,6 +877,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockFi
     return nil
 }
 // GetWorkProfilePasswordBlockIrisUnlock gets the workProfilePasswordBlockIrisUnlock property value. Indicates whether or not to block iris unlock for work profile.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockIrisUnlock()(*bool) {
     val, err := m.GetBackingStore().Get("workProfilePasswordBlockIrisUnlock")
     if err != nil {
@@ -855,6 +889,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockIr
     return nil
 }
 // GetWorkProfilePasswordBlockTrustAgents gets the workProfilePasswordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents for work profile.
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockTrustAgents()(*bool) {
     val, err := m.GetBackingStore().Get("workProfilePasswordBlockTrustAgents")
     if err != nil {
@@ -866,6 +901,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordBlockTr
     return nil
 }
 // GetWorkProfilePasswordExpirationDays gets the workProfilePasswordExpirationDays property value. Number of days before the work profile password expires. Valid values 1 to 365
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordExpirationDays")
     if err != nil {
@@ -877,6 +913,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordExpirat
     return nil
 }
 // GetWorkProfilePasswordMinimumLength gets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinimumLength")
     if err != nil {
@@ -888,6 +925,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinimum
     return nil
 }
 // GetWorkProfilePasswordMinLetterCharacters gets the workProfilePasswordMinLetterCharacters property value. Minimum # of letter characters required in work profile password. Valid values 1 to 10
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinLetterCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinLetterCharacters")
     if err != nil {
@@ -899,6 +937,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinLett
     return nil
 }
 // GetWorkProfilePasswordMinLowerCaseCharacters gets the workProfilePasswordMinLowerCaseCharacters property value. Minimum # of lower-case characters required in work profile password. Valid values 1 to 10
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinLowerCaseCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinLowerCaseCharacters")
     if err != nil {
@@ -910,6 +949,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinLowe
     return nil
 }
 // GetWorkProfilePasswordMinNonLetterCharacters gets the workProfilePasswordMinNonLetterCharacters property value. Minimum # of non-letter characters required in work profile password. Valid values 1 to 10
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinNonLetterCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinNonLetterCharacters")
     if err != nil {
@@ -921,6 +961,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinNonL
     return nil
 }
 // GetWorkProfilePasswordMinNumericCharacters gets the workProfilePasswordMinNumericCharacters property value. Minimum # of numeric characters required in work profile password. Valid values 1 to 10
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinNumericCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinNumericCharacters")
     if err != nil {
@@ -932,6 +973,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinNume
     return nil
 }
 // GetWorkProfilePasswordMinSymbolCharacters gets the workProfilePasswordMinSymbolCharacters property value. Minimum # of symbols required in work profile password. Valid values 1 to 10
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinSymbolCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinSymbolCharacters")
     if err != nil {
@@ -943,6 +985,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinSymb
     return nil
 }
 // GetWorkProfilePasswordMinUpperCaseCharacters gets the workProfilePasswordMinUpperCaseCharacters property value. Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinUpperCaseCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinUpperCaseCharacters")
     if err != nil {
@@ -954,6 +997,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinUppe
     return nil
 }
 // GetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout gets the workProfilePasswordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinutesOfInactivityBeforeScreenTimeout")
     if err != nil {
@@ -965,6 +1009,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordMinutes
     return nil
 }
 // GetWorkProfilePasswordPreviousPasswordBlockCount gets the workProfilePasswordPreviousPasswordBlockCount property value. Number of previous work profile passwords to block. Valid values 0 to 24
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordPreviousPasswordBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordPreviousPasswordBlockCount")
     if err != nil {
@@ -976,6 +1021,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordPreviou
     return nil
 }
 // GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Android For Work required password type.
+// returns a *AndroidForWorkRequiredPasswordType when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordRequiredType()(*AndroidForWorkRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("workProfilePasswordRequiredType")
     if err != nil {
@@ -987,6 +1033,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordRequire
     return nil
 }
 // GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset gets the workProfilePasswordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordSignInFailureCountBeforeFactoryReset")
     if err != nil {
@@ -998,6 +1045,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfilePasswordSignInF
     return nil
 }
 // GetWorkProfileRequiredPasswordComplexity gets the workProfileRequiredPasswordComplexity property value. The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
+// returns a *AndroidRequiredPasswordComplexity when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileRequiredPasswordComplexity()(*AndroidRequiredPasswordComplexity) {
     val, err := m.GetBackingStore().Get("workProfileRequiredPasswordComplexity")
     if err != nil {
@@ -1009,6 +1057,7 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileRequiredPasswor
     return nil
 }
 // GetWorkProfileRequirePassword gets the workProfileRequirePassword property value. Password is required or not for work profile
+// returns a *bool when successful
 func (m *AndroidForWorkGeneralDeviceConfiguration) GetWorkProfileRequirePassword()(*bool) {
     val, err := m.GetBackingStore().Get("workProfileRequirePassword")
     if err != nil {
@@ -1645,7 +1694,6 @@ func (m *AndroidForWorkGeneralDeviceConfiguration) SetWorkProfileRequirePassword
         panic(err)
     }
 }
-// AndroidForWorkGeneralDeviceConfigurationable 
 type AndroidForWorkGeneralDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

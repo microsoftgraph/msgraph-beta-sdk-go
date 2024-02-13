@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsRole 
 type AwsRole struct {
     AwsIdentity
 }
-// NewAwsRole instantiates a new awsRole and sets the default values.
+// NewAwsRole instantiates a new AwsRole and sets the default values.
 func NewAwsRole()(*AwsRole) {
     m := &AwsRole{
         AwsIdentity: *NewAwsIdentity(),
@@ -18,10 +17,12 @@ func NewAwsRole()(*AwsRole) {
     return m
 }
 // CreateAwsRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsRole(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AwsIdentity.GetFieldDeserializers()
     res["roleType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *AwsRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetRoleType gets the roleType property value. The roleType property
+// returns a *AwsRoleType when successful
 func (m *AwsRole) GetRoleType()(*AwsRoleType) {
     val, err := m.GetBackingStore().Get("roleType")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *AwsRole) GetRoleType()(*AwsRoleType) {
     return nil
 }
 // GetTrustEntityType gets the trustEntityType property value. The trustEntityType property
+// returns a *AwsRoleTrustEntityType when successful
 func (m *AwsRole) GetTrustEntityType()(*AwsRoleTrustEntityType) {
     val, err := m.GetBackingStore().Get("trustEntityType")
     if err != nil {
@@ -104,7 +107,6 @@ func (m *AwsRole) SetTrustEntityType(value *AwsRoleTrustEntityType)() {
         panic(err)
     }
 }
-// AwsRoleable 
 type AwsRoleable interface {
     AwsIdentityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

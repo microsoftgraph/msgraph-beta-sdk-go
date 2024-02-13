@@ -8,7 +8,7 @@ import (
 type ZebraFotaArtifact struct {
     Entity
 }
-// NewZebraFotaArtifact instantiates a new zebraFotaArtifact and sets the default values.
+// NewZebraFotaArtifact instantiates a new ZebraFotaArtifact and sets the default values.
 func NewZebraFotaArtifact()(*ZebraFotaArtifact) {
     m := &ZebraFotaArtifact{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewZebraFotaArtifact()(*ZebraFotaArtifact) {
     return m
 }
 // CreateZebraFotaArtifactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateZebraFotaArtifactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewZebraFotaArtifact(), nil
 }
 // GetBoardSupportPackageVersion gets the boardSupportPackageVersion property value. The version of the Board Support Package (BSP. E.g.: 01.18.02.00)
+// returns a *string when successful
 func (m *ZebraFotaArtifact) GetBoardSupportPackageVersion()(*string) {
     val, err := m.GetBackingStore().Get("boardSupportPackageVersion")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *ZebraFotaArtifact) GetBoardSupportPackageVersion()(*string) {
     return nil
 }
 // GetDescription gets the description property value. Artifact description. (e.g.: `LifeGuard Update 98 (released 24-September-2021)
+// returns a *string when successful
 func (m *ZebraFotaArtifact) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *ZebraFotaArtifact) GetDescription()(*string) {
     return nil
 }
 // GetDeviceModel gets the deviceModel property value. Applicable device model (e.g.: TC8300)
+// returns a *string when successful
 func (m *ZebraFotaArtifact) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *ZebraFotaArtifact) GetDeviceModel()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ZebraFotaArtifact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["boardSupportPackageVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +123,7 @@ func (m *ZebraFotaArtifact) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetOsVersion gets the osVersion property value. Artifact OS version (e.g.: 8.1.0)
+// returns a *string when successful
 func (m *ZebraFotaArtifact) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -129,6 +135,7 @@ func (m *ZebraFotaArtifact) GetOsVersion()(*string) {
     return nil
 }
 // GetPatchVersion gets the patchVersion property value. Artifact patch version (e.g.: U00)
+// returns a *string when successful
 func (m *ZebraFotaArtifact) GetPatchVersion()(*string) {
     val, err := m.GetBackingStore().Get("patchVersion")
     if err != nil {
@@ -140,6 +147,7 @@ func (m *ZebraFotaArtifact) GetPatchVersion()(*string) {
     return nil
 }
 // GetReleaseNotesUrl gets the releaseNotesUrl property value. Artifact release notes URL (e.g.: https://www.zebra.com/<filename.pdf>)
+// returns a *string when successful
 func (m *ZebraFotaArtifact) GetReleaseNotesUrl()(*string) {
     val, err := m.GetBackingStore().Get("releaseNotesUrl")
     if err != nil {
@@ -236,7 +244,6 @@ func (m *ZebraFotaArtifact) SetReleaseNotesUrl(value *string)() {
         panic(err)
     }
 }
-// ZebraFotaArtifactable 
 type ZebraFotaArtifactable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type DeviceManagementTemplate struct {
     Entity
 }
-// NewDeviceManagementTemplate instantiates a new deviceManagementTemplate and sets the default values.
+// NewDeviceManagementTemplate instantiates a new DeviceManagementTemplate and sets the default values.
 func NewDeviceManagementTemplate()(*DeviceManagementTemplate) {
     m := &DeviceManagementTemplate{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewDeviceManagementTemplate()(*DeviceManagementTemplate) {
     return m
 }
 // CreateDeviceManagementTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +40,7 @@ func CreateDeviceManagementTemplateFromDiscriminatorValue(parseNode i878a80d2330
     return NewDeviceManagementTemplate(), nil
 }
 // GetCategories gets the categories property value. Collection of setting categories within the template
+// returns a []DeviceManagementTemplateSettingCategoryable when successful
 func (m *DeviceManagementTemplate) GetCategories()([]DeviceManagementTemplateSettingCategoryable) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -50,6 +52,7 @@ func (m *DeviceManagementTemplate) GetCategories()([]DeviceManagementTemplateSet
     return nil
 }
 // GetDescription gets the description property value. The template's description
+// returns a *string when successful
 func (m *DeviceManagementTemplate) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -61,6 +64,7 @@ func (m *DeviceManagementTemplate) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The template's display name
+// returns a *string when successful
 func (m *DeviceManagementTemplate) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -72,6 +76,7 @@ func (m *DeviceManagementTemplate) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -215,6 +220,7 @@ func (m *DeviceManagementTemplate) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIntentCount gets the intentCount property value. Number of Intents created from this template.
+// returns a *int32 when successful
 func (m *DeviceManagementTemplate) GetIntentCount()(*int32) {
     val, err := m.GetBackingStore().Get("intentCount")
     if err != nil {
@@ -226,6 +232,7 @@ func (m *DeviceManagementTemplate) GetIntentCount()(*int32) {
     return nil
 }
 // GetIsDeprecated gets the isDeprecated property value. The template is deprecated or not. Intents cannot be created from a deprecated template.
+// returns a *bool when successful
 func (m *DeviceManagementTemplate) GetIsDeprecated()(*bool) {
     val, err := m.GetBackingStore().Get("isDeprecated")
     if err != nil {
@@ -237,6 +244,7 @@ func (m *DeviceManagementTemplate) GetIsDeprecated()(*bool) {
     return nil
 }
 // GetMigratableTo gets the migratableTo property value. Collection of templates this template can migrate to
+// returns a []DeviceManagementTemplateable when successful
 func (m *DeviceManagementTemplate) GetMigratableTo()([]DeviceManagementTemplateable) {
     val, err := m.GetBackingStore().Get("migratableTo")
     if err != nil {
@@ -248,6 +256,7 @@ func (m *DeviceManagementTemplate) GetMigratableTo()([]DeviceManagementTemplatea
     return nil
 }
 // GetPlatformType gets the platformType property value. Supported platform types for policies.
+// returns a *PolicyPlatformType when successful
 func (m *DeviceManagementTemplate) GetPlatformType()(*PolicyPlatformType) {
     val, err := m.GetBackingStore().Get("platformType")
     if err != nil {
@@ -259,6 +268,7 @@ func (m *DeviceManagementTemplate) GetPlatformType()(*PolicyPlatformType) {
     return nil
 }
 // GetPublishedDateTime gets the publishedDateTime property value. When the template was published
+// returns a *Time when successful
 func (m *DeviceManagementTemplate) GetPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("publishedDateTime")
     if err != nil {
@@ -270,6 +280,7 @@ func (m *DeviceManagementTemplate) GetPublishedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetSettings gets the settings property value. Collection of all settings this template has
+// returns a []DeviceManagementSettingInstanceable when successful
 func (m *DeviceManagementTemplate) GetSettings()([]DeviceManagementSettingInstanceable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -281,6 +292,7 @@ func (m *DeviceManagementTemplate) GetSettings()([]DeviceManagementSettingInstan
     return nil
 }
 // GetTemplateSubtype gets the templateSubtype property value. Template subtype
+// returns a *DeviceManagementTemplateSubtype when successful
 func (m *DeviceManagementTemplate) GetTemplateSubtype()(*DeviceManagementTemplateSubtype) {
     val, err := m.GetBackingStore().Get("templateSubtype")
     if err != nil {
@@ -292,6 +304,7 @@ func (m *DeviceManagementTemplate) GetTemplateSubtype()(*DeviceManagementTemplat
     return nil
 }
 // GetTemplateType gets the templateType property value. Template type
+// returns a *DeviceManagementTemplateType when successful
 func (m *DeviceManagementTemplate) GetTemplateType()(*DeviceManagementTemplateType) {
     val, err := m.GetBackingStore().Get("templateType")
     if err != nil {
@@ -303,6 +316,7 @@ func (m *DeviceManagementTemplate) GetTemplateType()(*DeviceManagementTemplateTy
     return nil
 }
 // GetVersionInfo gets the versionInfo property value. The template's version information
+// returns a *string when successful
 func (m *DeviceManagementTemplate) GetVersionInfo()(*string) {
     val, err := m.GetBackingStore().Get("versionInfo")
     if err != nil {
@@ -498,7 +512,6 @@ func (m *DeviceManagementTemplate) SetVersionInfo(value *string)() {
         panic(err)
     }
 }
-// DeviceManagementTemplateable 
 type DeviceManagementTemplateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

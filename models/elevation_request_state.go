@@ -18,10 +18,12 @@ const (
     EXPIRED_ELEVATIONREQUESTSTATE
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ELEVATIONREQUESTSTATE
+    // Set to expire when Approved for is elapsed or ExpireDate is elapsed, whichever is sooner.
+    REVOKED_ELEVATIONREQUESTSTATE
 )
 
 func (i ElevationRequestState) String() string {
-    return []string{"none", "pending", "approved", "denied", "expired", "unknownFutureValue"}[i]
+    return []string{"none", "pending", "approved", "denied", "expired", "unknownFutureValue", "revoked"}[i]
 }
 func ParseElevationRequestState(v string) (any, error) {
     result := NONE_ELEVATIONREQUESTSTATE
@@ -38,6 +40,8 @@ func ParseElevationRequestState(v string) (any, error) {
             result = EXPIRED_ELEVATIONREQUESTSTATE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ELEVATIONREQUESTSTATE
+        case "revoked":
+            result = REVOKED_ELEVATIONREQUESTSTATE
         default:
             return 0, errors.New("Unknown ElevationRequestState value: " + v)
     }

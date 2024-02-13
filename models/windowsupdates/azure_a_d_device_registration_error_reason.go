@@ -2,7 +2,6 @@ package windowsupdates
 import (
     "errors"
 )
-// 
 type AzureADDeviceRegistrationErrorReason int
 
 const (

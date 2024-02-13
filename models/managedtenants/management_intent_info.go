@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ManagementIntentInfo 
 type ManagementIntentInfo struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewManagementIntentInfo instantiates a new managementIntentInfo and sets the default values.
+// NewManagementIntentInfo instantiates a new ManagementIntentInfo and sets the default values.
 func NewManagementIntentInfo()(*ManagementIntentInfo) {
     m := &ManagementIntentInfo{
     }
@@ -19,10 +18,12 @@ func NewManagementIntentInfo()(*ManagementIntentInfo) {
     return m
 }
 // CreateManagementIntentInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagementIntentInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementIntentInfo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ManagementIntentInfo) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ManagementIntentInfo) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ManagementIntentInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["managementIntentDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,6 +93,7 @@ func (m *ManagementIntentInfo) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetManagementIntentDisplayName gets the managementIntentDisplayName property value. The display name for the management intent. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagementIntentInfo) GetManagementIntentDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("managementIntentDisplayName")
     if err != nil {
@@ -101,6 +105,7 @@ func (m *ManagementIntentInfo) GetManagementIntentDisplayName()(*string) {
     return nil
 }
 // GetManagementIntentId gets the managementIntentId property value. The identifier for the management intent. Required. Read-only.
+// returns a *string when successful
 func (m *ManagementIntentInfo) GetManagementIntentId()(*string) {
     val, err := m.GetBackingStore().Get("managementIntentId")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *ManagementIntentInfo) GetManagementIntentId()(*string) {
     return nil
 }
 // GetManagementTemplates gets the managementTemplates property value. The collection of management template information associated with the management intent. Optional. Read-only.
+// returns a []ManagementTemplateDetailedInfoable when successful
 func (m *ManagementIntentInfo) GetManagementTemplates()([]ManagementTemplateDetailedInfoable) {
     val, err := m.GetBackingStore().Get("managementTemplates")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *ManagementIntentInfo) GetManagementTemplates()([]ManagementTemplateDeta
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ManagementIntentInfo) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *ManagementIntentInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// ManagementIntentInfoable 
 type ManagementIntentInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

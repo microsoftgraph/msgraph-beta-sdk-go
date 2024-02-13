@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AlertRule 
 type AlertRule struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewAlertRule instantiates a new alertRule and sets the default values.
+// NewAlertRule instantiates a new AlertRule and sets the default values.
 func NewAlertRule()(*AlertRule) {
     m := &AlertRule{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewAlertRule()(*AlertRule) {
     return m
 }
 // CreateAlertRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAlertRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAlertRule(), nil
 }
 // GetAlertRuleTemplate gets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
+// returns a *AlertRuleTemplate when successful
 func (m *AlertRule) GetAlertRuleTemplate()(*AlertRuleTemplate) {
     val, err := m.GetBackingStore().Get("alertRuleTemplate")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AlertRule) GetAlertRuleTemplate()(*AlertRuleTemplate) {
     return nil
 }
 // GetConditions gets the conditions property value. The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.
+// returns a []RuleConditionable when successful
 func (m *AlertRule) GetConditions()([]RuleConditionable) {
     val, err := m.GetBackingStore().Get("conditions")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AlertRule) GetConditions()([]RuleConditionable) {
     return nil
 }
 // GetDescription gets the description property value. The rule description.
+// returns a *string when successful
 func (m *AlertRule) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AlertRule) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the rule.
+// returns a *string when successful
 func (m *AlertRule) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AlertRule) GetDisplayName()(*string) {
     return nil
 }
 // GetEnabled gets the enabled property value. The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.
+// returns a *bool when successful
 func (m *AlertRule) GetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("enabled")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AlertRule) GetEnabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alertRuleTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -183,6 +189,7 @@ func (m *AlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetIsSystemRule gets the isSystemRule property value. Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom-defined rule and can be edited. System rules are built in and only a few properties can be edited.
+// returns a *bool when successful
 func (m *AlertRule) GetIsSystemRule()(*bool) {
     val, err := m.GetBackingStore().Get("isSystemRule")
     if err != nil {
@@ -194,6 +201,7 @@ func (m *AlertRule) GetIsSystemRule()(*bool) {
     return nil
 }
 // GetNotificationChannels gets the notificationChannels property value. The notification channels of the rule selected by the user.
+// returns a []NotificationChannelable when successful
 func (m *AlertRule) GetNotificationChannels()([]NotificationChannelable) {
     val, err := m.GetBackingStore().Get("notificationChannels")
     if err != nil {
@@ -205,6 +213,7 @@ func (m *AlertRule) GetNotificationChannels()([]NotificationChannelable) {
     return nil
 }
 // GetSeverity gets the severity property value. The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
+// returns a *RuleSeverityType when successful
 func (m *AlertRule) GetSeverity()(*RuleSeverityType) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
@@ -216,6 +225,7 @@ func (m *AlertRule) GetSeverity()(*RuleSeverityType) {
     return nil
 }
 // GetThreshold gets the threshold property value. The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs. This property is deprecated. Use conditions instead.
+// returns a RuleThresholdable when successful
 func (m *AlertRule) GetThreshold()(RuleThresholdable) {
     val, err := m.GetBackingStore().Get("threshold")
     if err != nil {
@@ -365,7 +375,6 @@ func (m *AlertRule) SetThreshold(value RuleThresholdable)() {
         panic(err)
     }
 }
-// AlertRuleable 
 type AlertRuleable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

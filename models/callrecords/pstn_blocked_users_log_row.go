@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PstnBlockedUsersLogRow 
 type PstnBlockedUsersLogRow struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPstnBlockedUsersLogRow instantiates a new pstnBlockedUsersLogRow and sets the default values.
+// NewPstnBlockedUsersLogRow instantiates a new PstnBlockedUsersLogRow and sets the default values.
 func NewPstnBlockedUsersLogRow()(*PstnBlockedUsersLogRow) {
     m := &PstnBlockedUsersLogRow{
     }
@@ -20,10 +19,12 @@ func NewPstnBlockedUsersLogRow()(*PstnBlockedUsersLogRow) {
     return m
 }
 // CreatePstnBlockedUsersLogRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePstnBlockedUsersLogRowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPstnBlockedUsersLogRow(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PstnBlockedUsersLogRow) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *PstnBlockedUsersLogRow) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PstnBlockedUsersLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBlockDateTime gets the blockDateTime property value. The date and time when the user was blocked/unblocked from making PSTN calls. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *PstnBlockedUsersLogRow) GetBlockDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("blockDateTime")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *PstnBlockedUsersLogRow) GetBlockDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetBlockReason gets the blockReason property value. The reason why the user is blocked/unblocked from making calls.
+// returns a *string when successful
 func (m *PstnBlockedUsersLogRow) GetBlockReason()(*string) {
     val, err := m.GetBackingStore().Get("blockReason")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *PstnBlockedUsersLogRow) GetBlockReason()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PstnBlockedUsersLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["blockDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -157,6 +162,7 @@ func (m *PstnBlockedUsersLogRow) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PstnBlockedUsersLogRow) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -168,6 +174,7 @@ func (m *PstnBlockedUsersLogRow) GetOdataType()(*string) {
     return nil
 }
 // GetRemediationId gets the remediationId property value. Unique identifier (GUID) for the blocking/unblocking action.
+// returns a *string when successful
 func (m *PstnBlockedUsersLogRow) GetRemediationId()(*string) {
     val, err := m.GetBackingStore().Get("remediationId")
     if err != nil {
@@ -179,6 +186,7 @@ func (m *PstnBlockedUsersLogRow) GetRemediationId()(*string) {
     return nil
 }
 // GetUserBlockMode gets the userBlockMode property value. Indicates whether the user is blocked or unblocked from making PSTN calls in Microsoft Teams. The possible values are: blocked, unblocked, unknownFutureValue.
+// returns a *PstnUserBlockMode when successful
 func (m *PstnBlockedUsersLogRow) GetUserBlockMode()(*PstnUserBlockMode) {
     val, err := m.GetBackingStore().Get("userBlockMode")
     if err != nil {
@@ -190,6 +198,7 @@ func (m *PstnBlockedUsersLogRow) GetUserBlockMode()(*PstnUserBlockMode) {
     return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. Display name of the user.
+// returns a *string when successful
 func (m *PstnBlockedUsersLogRow) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -201,6 +210,7 @@ func (m *PstnBlockedUsersLogRow) GetUserDisplayName()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID.
+// returns a *string when successful
 func (m *PstnBlockedUsersLogRow) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -212,6 +222,7 @@ func (m *PstnBlockedUsersLogRow) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
+// returns a *string when successful
 func (m *PstnBlockedUsersLogRow) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -223,6 +234,7 @@ func (m *PstnBlockedUsersLogRow) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUserTelephoneNumber gets the userTelephoneNumber property value. User's blocked number. For details, see E.164.
+// returns a *string when successful
 func (m *PstnBlockedUsersLogRow) GetUserTelephoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("userTelephoneNumber")
     if err != nil {
@@ -372,7 +384,6 @@ func (m *PstnBlockedUsersLogRow) SetUserTelephoneNumber(value *string)() {
         panic(err)
     }
 }
-// PstnBlockedUsersLogRowable 
 type PstnBlockedUsersLogRowable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

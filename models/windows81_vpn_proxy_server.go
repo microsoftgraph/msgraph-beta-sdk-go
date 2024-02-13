@@ -8,7 +8,7 @@ import (
 type Windows81VpnProxyServer struct {
     VpnProxyServer
 }
-// NewWindows81VpnProxyServer instantiates a new windows81VpnProxyServer and sets the default values.
+// NewWindows81VpnProxyServer instantiates a new Windows81VpnProxyServer and sets the default values.
 func NewWindows81VpnProxyServer()(*Windows81VpnProxyServer) {
     m := &Windows81VpnProxyServer{
         VpnProxyServer: *NewVpnProxyServer(),
@@ -18,10 +18,12 @@ func NewWindows81VpnProxyServer()(*Windows81VpnProxyServer) {
     return m
 }
 // CreateWindows81VpnProxyServerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows81VpnProxyServerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows81VpnProxyServer(), nil
 }
 // GetAutomaticallyDetectProxySettings gets the automaticallyDetectProxySettings property value. Automatically detect proxy settings.
+// returns a *bool when successful
 func (m *Windows81VpnProxyServer) GetAutomaticallyDetectProxySettings()(*bool) {
     val, err := m.GetBackingStore().Get("automaticallyDetectProxySettings")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows81VpnProxyServer) GetAutomaticallyDetectProxySettings()(*bool) {
     return nil
 }
 // GetBypassProxyServerForLocalAddress gets the bypassProxyServerForLocalAddress property value. Bypass proxy server for local address.
+// returns a *bool when successful
 func (m *Windows81VpnProxyServer) GetBypassProxyServerForLocalAddress()(*bool) {
     val, err := m.GetBackingStore().Get("bypassProxyServerForLocalAddress")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Windows81VpnProxyServer) GetBypassProxyServerForLocalAddress()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows81VpnProxyServer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VpnProxyServer.GetFieldDeserializers()
     res["automaticallyDetectProxySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,7 +106,6 @@ func (m *Windows81VpnProxyServer) SetBypassProxyServerForLocalAddress(value *boo
         panic(err)
     }
 }
-// Windows81VpnProxyServerable 
 type Windows81VpnProxyServerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VpnProxyServerable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AdminForms 
 type AdminForms struct {
     Entity
 }
-// NewAdminForms instantiates a new adminForms and sets the default values.
+// NewAdminForms instantiates a new AdminForms and sets the default values.
 func NewAdminForms()(*AdminForms) {
     m := &AdminForms{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAdminForms()(*AdminForms) {
     return m
 }
 // CreateAdminFormsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAdminFormsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdminForms(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AdminForms) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *AdminForms) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetSettings gets the settings property value. The settings property
+// returns a FormsSettingsable when successful
 func (m *AdminForms) GetSettings()(FormsSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *AdminForms) SetSettings(value FormsSettingsable)() {
         panic(err)
     }
 }
-// AdminFormsable 
 type AdminFormsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

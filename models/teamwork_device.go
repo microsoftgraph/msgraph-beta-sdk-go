@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDevice 
 type TeamworkDevice struct {
     Entity
 }
-// NewTeamworkDevice instantiates a new teamworkDevice and sets the default values.
+// NewTeamworkDevice instantiates a new TeamworkDevice and sets the default values.
 func NewTeamworkDevice()(*TeamworkDevice) {
     m := &TeamworkDevice{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTeamworkDevice()(*TeamworkDevice) {
     return m
 }
 // CreateTeamworkDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkDevice(), nil
 }
 // GetActivity gets the activity property value. The activity properties that change based on the device usage.
+// returns a TeamworkDeviceActivityable when successful
 func (m *TeamworkDevice) GetActivity()(TeamworkDeviceActivityable) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TeamworkDevice) GetActivity()(TeamworkDeviceActivityable) {
     return nil
 }
 // GetActivityState gets the activityState property value. The activity state of the device. The possible values are: unknown, busy, idle, unavailable, unknownFutureValue.
+// returns a *TeamworkDeviceActivityState when successful
 func (m *TeamworkDevice) GetActivityState()(*TeamworkDeviceActivityState) {
     val, err := m.GetBackingStore().Get("activityState")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TeamworkDevice) GetActivityState()(*TeamworkDeviceActivityState) {
     return nil
 }
 // GetCompanyAssetTag gets the companyAssetTag property value. The company asset tag assigned by the admin on the device.
+// returns a *string when successful
 func (m *TeamworkDevice) GetCompanyAssetTag()(*string) {
     val, err := m.GetBackingStore().Get("companyAssetTag")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TeamworkDevice) GetCompanyAssetTag()(*string) {
     return nil
 }
 // GetConfiguration gets the configuration property value. The configuration properties of the device.
+// returns a TeamworkDeviceConfigurationable when successful
 func (m *TeamworkDevice) GetConfiguration()(TeamworkDeviceConfigurationable) {
     val, err := m.GetBackingStore().Get("configuration")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *TeamworkDevice) GetConfiguration()(TeamworkDeviceConfigurationable) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who enrolled the device to the tenant.
+// returns a IdentitySetable when successful
 func (m *TeamworkDevice) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *TeamworkDevice) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device was enrolled to the tenant.
+// returns a *Time when successful
 func (m *TeamworkDevice) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *TeamworkDevice) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetCurrentUser gets the currentUser property value. The signed-in user on the device.
+// returns a TeamworkUserIdentityable when successful
 func (m *TeamworkDevice) GetCurrentUser()(TeamworkUserIdentityable) {
     val, err := m.GetBackingStore().Get("currentUser")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *TeamworkDevice) GetCurrentUser()(TeamworkUserIdentityable) {
     return nil
 }
 // GetDeviceType gets the deviceType property value. The deviceType property
+// returns a *TeamworkDeviceType when successful
 func (m *TeamworkDevice) GetDeviceType()(*TeamworkDeviceType) {
     val, err := m.GetBackingStore().Get("deviceType")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *TeamworkDevice) GetDeviceType()(*TeamworkDeviceType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -270,6 +279,7 @@ func (m *TeamworkDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetHardwareDetail gets the hardwareDetail property value. The hardwareDetail property
+// returns a TeamworkHardwareDetailable when successful
 func (m *TeamworkDevice) GetHardwareDetail()(TeamworkHardwareDetailable) {
     val, err := m.GetBackingStore().Get("hardwareDetail")
     if err != nil {
@@ -281,6 +291,7 @@ func (m *TeamworkDevice) GetHardwareDetail()(TeamworkHardwareDetailable) {
     return nil
 }
 // GetHealth gets the health property value. The health properties of the device.
+// returns a TeamworkDeviceHealthable when successful
 func (m *TeamworkDevice) GetHealth()(TeamworkDeviceHealthable) {
     val, err := m.GetBackingStore().Get("health")
     if err != nil {
@@ -292,6 +303,7 @@ func (m *TeamworkDevice) GetHealth()(TeamworkDeviceHealthable) {
     return nil
 }
 // GetHealthStatus gets the healthStatus property value. The health status of the device. The possible values are: unknown, offline, critical, nonUrgent, healthy, unknownFutureValue.
+// returns a *TeamworkDeviceHealthStatus when successful
 func (m *TeamworkDevice) GetHealthStatus()(*TeamworkDeviceHealthStatus) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
@@ -303,6 +315,7 @@ func (m *TeamworkDevice) GetHealthStatus()(*TeamworkDeviceHealthStatus) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the device details.
+// returns a IdentitySetable when successful
 func (m *TeamworkDevice) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -314,6 +327,7 @@ func (m *TeamworkDevice) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time when the device detail was last modified.
+// returns a *Time when successful
 func (m *TeamworkDevice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -325,6 +339,7 @@ func (m *TeamworkDevice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetNotes gets the notes property value. The notes added by the admin to the device.
+// returns a *string when successful
 func (m *TeamworkDevice) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -336,6 +351,7 @@ func (m *TeamworkDevice) GetNotes()(*string) {
     return nil
 }
 // GetOperations gets the operations property value. The async operations on the device.
+// returns a []TeamworkDeviceOperationable when successful
 func (m *TeamworkDevice) GetOperations()([]TeamworkDeviceOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -558,7 +574,6 @@ func (m *TeamworkDevice) SetOperations(value []TeamworkDeviceOperationable)() {
         panic(err)
     }
 }
-// TeamworkDeviceable 
 type TeamworkDeviceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

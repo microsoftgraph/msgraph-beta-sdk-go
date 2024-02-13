@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnTokenIssuanceStartCustomExtensionHandler 
 type OnTokenIssuanceStartCustomExtensionHandler struct {
     OnTokenIssuanceStartHandler
 }
-// NewOnTokenIssuanceStartCustomExtensionHandler instantiates a new onTokenIssuanceStartCustomExtensionHandler and sets the default values.
+// NewOnTokenIssuanceStartCustomExtensionHandler instantiates a new OnTokenIssuanceStartCustomExtensionHandler and sets the default values.
 func NewOnTokenIssuanceStartCustomExtensionHandler()(*OnTokenIssuanceStartCustomExtensionHandler) {
     m := &OnTokenIssuanceStartCustomExtensionHandler{
         OnTokenIssuanceStartHandler: *NewOnTokenIssuanceStartHandler(),
@@ -18,10 +17,12 @@ func NewOnTokenIssuanceStartCustomExtensionHandler()(*OnTokenIssuanceStartCustom
     return m
 }
 // CreateOnTokenIssuanceStartCustomExtensionHandlerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnTokenIssuanceStartCustomExtensionHandlerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnTokenIssuanceStartCustomExtensionHandler(), nil
 }
 // GetConfiguration gets the configuration property value. The configuration property
+// returns a CustomExtensionOverwriteConfigurationable when successful
 func (m *OnTokenIssuanceStartCustomExtensionHandler) GetConfiguration()(CustomExtensionOverwriteConfigurationable) {
     val, err := m.GetBackingStore().Get("configuration")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *OnTokenIssuanceStartCustomExtensionHandler) GetConfiguration()(CustomEx
     return nil
 }
 // GetCustomExtension gets the customExtension property value. The customExtension property
+// returns a OnTokenIssuanceStartCustomExtensionable when successful
 func (m *OnTokenIssuanceStartCustomExtensionHandler) GetCustomExtension()(OnTokenIssuanceStartCustomExtensionable) {
     val, err := m.GetBackingStore().Get("customExtension")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *OnTokenIssuanceStartCustomExtensionHandler) GetCustomExtension()(OnToke
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnTokenIssuanceStartCustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnTokenIssuanceStartHandler.GetFieldDeserializers()
     res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,7 +105,6 @@ func (m *OnTokenIssuanceStartCustomExtensionHandler) SetCustomExtension(value On
         panic(err)
     }
 }
-// OnTokenIssuanceStartCustomExtensionHandlerable 
 type OnTokenIssuanceStartCustomExtensionHandlerable interface {
     OnTokenIssuanceStartHandlerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

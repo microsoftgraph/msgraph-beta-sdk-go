@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookTaskGroup 
 type OutlookTaskGroup struct {
     Entity
 }
-// NewOutlookTaskGroup instantiates a new outlookTaskGroup and sets the default values.
+// NewOutlookTaskGroup instantiates a new OutlookTaskGroup and sets the default values.
 func NewOutlookTaskGroup()(*OutlookTaskGroup) {
     m := &OutlookTaskGroup{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewOutlookTaskGroup()(*OutlookTaskGroup) {
     return m
 }
 // CreateOutlookTaskGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOutlookTaskGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOutlookTaskGroup(), nil
 }
 // GetChangeKey gets the changeKey property value. The version of the task group.
+// returns a *string when successful
 func (m *OutlookTaskGroup) GetChangeKey()(*string) {
     val, err := m.GetBackingStore().Get("changeKey")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *OutlookTaskGroup) GetChangeKey()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["changeKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -93,6 +95,7 @@ func (m *OutlookTaskGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetGroupKey gets the groupKey property value. The unique GUID identifier for the task group.
+// returns a *UUID when successful
 func (m *OutlookTaskGroup) GetGroupKey()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("groupKey")
     if err != nil {
@@ -104,6 +107,7 @@ func (m *OutlookTaskGroup) GetGroupKey()(*i561e97a8befe7661a44c8f54600992b4207a3
     return nil
 }
 // GetIsDefaultGroup gets the isDefaultGroup property value. True if the task group is the default task group.
+// returns a *bool when successful
 func (m *OutlookTaskGroup) GetIsDefaultGroup()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultGroup")
     if err != nil {
@@ -115,6 +119,7 @@ func (m *OutlookTaskGroup) GetIsDefaultGroup()(*bool) {
     return nil
 }
 // GetName gets the name property value. The name of the task group.
+// returns a *string when successful
 func (m *OutlookTaskGroup) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -126,6 +131,7 @@ func (m *OutlookTaskGroup) GetName()(*string) {
     return nil
 }
 // GetTaskFolders gets the taskFolders property value. The collection of task folders in the task group. Read-only. Nullable.
+// returns a []OutlookTaskFolderable when successful
 func (m *OutlookTaskGroup) GetTaskFolders()([]OutlookTaskFolderable) {
     val, err := m.GetBackingStore().Get("taskFolders")
     if err != nil {
@@ -215,7 +221,6 @@ func (m *OutlookTaskGroup) SetTaskFolders(value []OutlookTaskFolderable)() {
         panic(err)
     }
 }
-// OutlookTaskGroupable 
 type OutlookTaskGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

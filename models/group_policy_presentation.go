@@ -9,7 +9,7 @@ import (
 type GroupPolicyPresentation struct {
     Entity
 }
-// NewGroupPolicyPresentation instantiates a new groupPolicyPresentation and sets the default values.
+// NewGroupPolicyPresentation instantiates a new GroupPolicyPresentation and sets the default values.
 func NewGroupPolicyPresentation()(*GroupPolicyPresentation) {
     m := &GroupPolicyPresentation{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewGroupPolicyPresentation()(*GroupPolicyPresentation) {
     return m
 }
 // CreateGroupPolicyPresentationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -57,6 +58,7 @@ func CreateGroupPolicyPresentationFromDiscriminatorValue(parseNode i878a80d2330e
     return NewGroupPolicyPresentation(), nil
 }
 // GetDefinition gets the definition property value. The group policy definition associated with the presentation.
+// returns a GroupPolicyDefinitionable when successful
 func (m *GroupPolicyPresentation) GetDefinition()(GroupPolicyDefinitionable) {
     val, err := m.GetBackingStore().Get("definition")
     if err != nil {
@@ -68,6 +70,7 @@ func (m *GroupPolicyPresentation) GetDefinition()(GroupPolicyDefinitionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["definition"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -103,6 +106,7 @@ func (m *GroupPolicyPresentation) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetLabel gets the label property value. Localized text label for any presentation entity. The default value is empty.
+// returns a *string when successful
 func (m *GroupPolicyPresentation) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
@@ -114,6 +118,7 @@ func (m *GroupPolicyPresentation) GetLabel()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+// returns a *Time when successful
 func (m *GroupPolicyPresentation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -171,7 +176,6 @@ func (m *GroupPolicyPresentation) SetLastModifiedDateTime(value *i336074805fc853
         panic(err)
     }
 }
-// GroupPolicyPresentationable 
 type GroupPolicyPresentationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

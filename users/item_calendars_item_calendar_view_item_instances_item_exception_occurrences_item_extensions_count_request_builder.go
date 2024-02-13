@@ -24,28 +24,29 @@ type ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExten
     // Request query parameters
     QueryParameters *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilderGetQueryParameters
 }
-// NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilderInternal instantiates a new ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder) {
     m := &ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}/exceptionOccurrences/{event%2Did2}/extensions/$count{?%24filter}", pathParameters),
     }
     return m
 }
-// NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder instantiates a new ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -57,6 +58,7 @@ func (m *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemE
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -70,6 +72,7 @@ func (m *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemE
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder when successful
 func (m *ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder) {
     return NewItemCalendarsItemCalendarViewItemInstancesItemExceptionOccurrencesItemExtensionsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

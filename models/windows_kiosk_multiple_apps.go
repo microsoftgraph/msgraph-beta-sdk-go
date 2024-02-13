@@ -8,7 +8,7 @@ import (
 type WindowsKioskMultipleApps struct {
     WindowsKioskAppConfiguration
 }
-// NewWindowsKioskMultipleApps instantiates a new windowsKioskMultipleApps and sets the default values.
+// NewWindowsKioskMultipleApps instantiates a new WindowsKioskMultipleApps and sets the default values.
 func NewWindowsKioskMultipleApps()(*WindowsKioskMultipleApps) {
     m := &WindowsKioskMultipleApps{
         WindowsKioskAppConfiguration: *NewWindowsKioskAppConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsKioskMultipleApps()(*WindowsKioskMultipleApps) {
     return m
 }
 // CreateWindowsKioskMultipleAppsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskMultipleAppsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsKioskMultipleApps(), nil
 }
 // GetAllowAccessToDownloadsFolder gets the allowAccessToDownloadsFolder property value. This setting allows access to Downloads folder in file explorer.
+// returns a *bool when successful
 func (m *WindowsKioskMultipleApps) GetAllowAccessToDownloadsFolder()(*bool) {
     val, err := m.GetBackingStore().Get("allowAccessToDownloadsFolder")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsKioskMultipleApps) GetAllowAccessToDownloadsFolder()(*bool) {
     return nil
 }
 // GetApps gets the apps property value. These are the only Windows Store Apps that will be available to launch from the Start menu. This collection can contain a maximum of 128 elements.
+// returns a []WindowsKioskAppBaseable when successful
 func (m *WindowsKioskMultipleApps) GetApps()([]WindowsKioskAppBaseable) {
     val, err := m.GetBackingStore().Get("apps")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsKioskMultipleApps) GetApps()([]WindowsKioskAppBaseable) {
     return nil
 }
 // GetDisallowDesktopApps gets the disallowDesktopApps property value. This setting indicates that desktop apps are allowed. Default to true.
+// returns a *bool when successful
 func (m *WindowsKioskMultipleApps) GetDisallowDesktopApps()(*bool) {
     val, err := m.GetBackingStore().Get("disallowDesktopApps")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *WindowsKioskMultipleApps) GetDisallowDesktopApps()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskMultipleApps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsKioskAppConfiguration.GetFieldDeserializers()
     res["allowAccessToDownloadsFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *WindowsKioskMultipleApps) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetShowTaskBar gets the showTaskBar property value. This setting allows the admin to specify whether the Task Bar is shown or not.
+// returns a *bool when successful
 func (m *WindowsKioskMultipleApps) GetShowTaskBar()(*bool) {
     val, err := m.GetBackingStore().Get("showTaskBar")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *WindowsKioskMultipleApps) GetShowTaskBar()(*bool) {
     return nil
 }
 // GetStartMenuLayoutXml gets the startMenuLayoutXml property value. Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.
+// returns a []byte when successful
 func (m *WindowsKioskMultipleApps) GetStartMenuLayoutXml()([]byte) {
     val, err := m.GetBackingStore().Get("startMenuLayoutXml")
     if err != nil {
@@ -216,7 +223,6 @@ func (m *WindowsKioskMultipleApps) SetStartMenuLayoutXml(value []byte)() {
         panic(err)
     }
 }
-// WindowsKioskMultipleAppsable 
 type WindowsKioskMultipleAppsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsKioskAppConfigurationable

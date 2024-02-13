@@ -41,28 +41,28 @@ type MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderPatchRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderInternal instantiates a new MicrosoftTunnelConfigurationRequestBuilder and sets the default values.
+// NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderInternal instantiates a new MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder and sets the default values.
 func NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) {
     m := &MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/microsoftTunnelConfiguration{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/microsoftTunnelConfiguration{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder instantiates a new MicrosoftTunnelConfigurationRequestBuilder and sets the default values.
+// NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder instantiates a new MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder and sets the default values.
 func NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property microsoftTunnelConfiguration for deviceManagement
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) Delete(ctx context.Context, requestConfiguration *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) Del
     return nil
 }
 // Get the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
+// returns a MicrosoftTunnelConfigurationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMicrosoftTunnelConfigurationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) Get
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelConfigurationable), nil
 }
 // Patch update the navigation property microsoftTunnelConfiguration in deviceManagement
+// returns a MicrosoftTunnelConfigurationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelConfigurationable, requestConfiguration *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMicrosoftTunnelConfigurationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) Pat
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelConfigurationable), nil
 }
 // ToDeleteRequestInformation delete navigation property microsoftTunnelConfiguration for deviceManagement
+// returns a *RequestInformation when successful
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/microsoftTunnelConfiguration", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) ToD
     return requestInfo, nil
 }
 // ToGetRequestInformation the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite
+// returns a *RequestInformation when successful
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) ToG
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property microsoftTunnelConfiguration in deviceManagement
+// returns a *RequestInformation when successful
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MicrosoftTunnelConfigurationable, requestConfiguration *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}/microsoftTunnelConfiguration", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) ToP
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder when successful
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) WithUrl(rawUrl string)(*MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) {
     return NewMicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

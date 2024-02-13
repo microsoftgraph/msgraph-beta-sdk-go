@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ReferenceDefinition 
 type ReferenceDefinition struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewReferenceDefinition instantiates a new referenceDefinition and sets the default values.
+// NewReferenceDefinition instantiates a new ReferenceDefinition and sets the default values.
 func NewReferenceDefinition()(*ReferenceDefinition) {
     m := &ReferenceDefinition{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewReferenceDefinition()(*ReferenceDefinition) {
     return m
 }
 // CreateReferenceDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReferenceDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReferenceDefinition(), nil
 }
 // GetCode gets the code property value. The code value for the definition that must be unique within the referenceType.
+// returns a *string when successful
 func (m *ReferenceDefinition) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ReferenceDefinition) GetCode()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the definition was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *ReferenceDefinition) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ReferenceDefinition) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReferenceDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +122,7 @@ func (m *ReferenceDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIsDisabled gets the isDisabled property value. Indicates whether the definition has been disabled.
+// returns a *bool when successful
 func (m *ReferenceDefinition) GetIsDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDisabled")
     if err != nil {
@@ -130,6 +134,7 @@ func (m *ReferenceDefinition) GetIsDisabled()(*bool) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the definition was most recently changed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *ReferenceDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -141,6 +146,7 @@ func (m *ReferenceDefinition) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetReferenceType gets the referenceType property value. The categorical type for a collection of enumerated values.
+// returns a *string when successful
 func (m *ReferenceDefinition) GetReferenceType()(*string) {
     val, err := m.GetBackingStore().Get("referenceType")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *ReferenceDefinition) GetReferenceType()(*string) {
     return nil
 }
 // GetSortIndex gets the sortIndex property value. The ordering index to present the definitions within a type consistently in user interfaces.
+// returns a *int32 when successful
 func (m *ReferenceDefinition) GetSortIndex()(*int32) {
     val, err := m.GetBackingStore().Get("sortIndex")
     if err != nil {
@@ -163,6 +170,7 @@ func (m *ReferenceDefinition) GetSortIndex()(*int32) {
     return nil
 }
 // GetSource gets the source property value. The standards body or organization source which defined the code.
+// returns a *string when successful
 func (m *ReferenceDefinition) GetSource()(*string) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -254,7 +262,6 @@ func (m *ReferenceDefinition) SetSource(value *string)() {
         panic(err)
     }
 }
-// ReferenceDefinitionable 
 type ReferenceDefinitionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

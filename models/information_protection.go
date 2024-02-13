@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InformationProtection 
 type InformationProtection struct {
     Entity
 }
-// NewInformationProtection instantiates a new informationProtection and sets the default values.
+// NewInformationProtection instantiates a new InformationProtection and sets the default values.
 func NewInformationProtection()(*InformationProtection) {
     m := &InformationProtection{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewInformationProtection()(*InformationProtection) {
     return m
 }
 // CreateInformationProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInformationProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInformationProtection(), nil
 }
 // GetBitlocker gets the bitlocker property value. The bitlocker property
+// returns a Bitlockerable when successful
 func (m *InformationProtection) GetBitlocker()(Bitlockerable) {
     val, err := m.GetBackingStore().Get("bitlocker")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *InformationProtection) GetBitlocker()(Bitlockerable) {
     return nil
 }
 // GetDataLossPreventionPolicies gets the dataLossPreventionPolicies property value. The dataLossPreventionPolicies property
+// returns a []DataLossPreventionPolicyable when successful
 func (m *InformationProtection) GetDataLossPreventionPolicies()([]DataLossPreventionPolicyable) {
     val, err := m.GetBackingStore().Get("dataLossPreventionPolicies")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *InformationProtection) GetDataLossPreventionPolicies()([]DataLossPreven
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bitlocker"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +128,7 @@ func (m *InformationProtection) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetPolicy gets the policy property value. The policy property
+// returns a InformationProtectionPolicyable when successful
 func (m *InformationProtection) GetPolicy()(InformationProtectionPolicyable) {
     val, err := m.GetBackingStore().Get("policy")
     if err != nil {
@@ -136,6 +140,7 @@ func (m *InformationProtection) GetPolicy()(InformationProtectionPolicyable) {
     return nil
 }
 // GetSensitivityLabels gets the sensitivityLabels property value. The sensitivityLabels property
+// returns a []SensitivityLabelable when successful
 func (m *InformationProtection) GetSensitivityLabels()([]SensitivityLabelable) {
     val, err := m.GetBackingStore().Get("sensitivityLabels")
     if err != nil {
@@ -147,6 +152,7 @@ func (m *InformationProtection) GetSensitivityLabels()([]SensitivityLabelable) {
     return nil
 }
 // GetSensitivityPolicySettings gets the sensitivityPolicySettings property value. The sensitivityPolicySettings property
+// returns a SensitivityPolicySettingsable when successful
 func (m *InformationProtection) GetSensitivityPolicySettings()(SensitivityPolicySettingsable) {
     val, err := m.GetBackingStore().Get("sensitivityPolicySettings")
     if err != nil {
@@ -158,6 +164,7 @@ func (m *InformationProtection) GetSensitivityPolicySettings()(SensitivityPolicy
     return nil
 }
 // GetThreatAssessmentRequests gets the threatAssessmentRequests property value. The threatAssessmentRequests property
+// returns a []ThreatAssessmentRequestable when successful
 func (m *InformationProtection) GetThreatAssessmentRequests()([]ThreatAssessmentRequestable) {
     val, err := m.GetBackingStore().Get("threatAssessmentRequests")
     if err != nil {
@@ -272,7 +279,6 @@ func (m *InformationProtection) SetThreatAssessmentRequests(value []ThreatAssess
         panic(err)
     }
 }
-// InformationProtectionable 
 type InformationProtectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

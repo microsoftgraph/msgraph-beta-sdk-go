@@ -26,28 +26,29 @@ type ThreatIntelligenceHostTrackersCountRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *ThreatIntelligenceHostTrackersCountRequestBuilderGetQueryParameters
 }
-// NewThreatIntelligenceHostTrackersCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostTrackersCountRequestBuilderInternal instantiates a new ThreatIntelligenceHostTrackersCountRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostTrackersCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostTrackersCountRequestBuilder) {
     m := &ThreatIntelligenceHostTrackersCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostTrackers/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostTrackers/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceHostTrackersCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostTrackersCountRequestBuilder instantiates a new ThreatIntelligenceHostTrackersCountRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostTrackersCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostTrackersCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostTrackersCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostTrackersCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostTrackersCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ThreatIntelligenceHostTrackersCountRequestBuilder) Get(ctx context.Cont
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostTrackersCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostTrackersCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *ThreatIntelligenceHostTrackersCountRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceHostTrackersCountRequestBuilder when successful
 func (m *ThreatIntelligenceHostTrackersCountRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostTrackersCountRequestBuilder) {
     return NewThreatIntelligenceHostTrackersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

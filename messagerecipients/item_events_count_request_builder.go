@@ -26,28 +26,29 @@ type ItemEventsCountRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemEventsCountRequestBuilderGetQueryParameters
 }
-// NewItemEventsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewItemEventsCountRequestBuilderInternal instantiates a new ItemEventsCountRequestBuilder and sets the default values.
 func NewItemEventsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsCountRequestBuilder) {
     m := &ItemEventsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/messageRecipients/{messageRecipient%2Did}/events/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/messageRecipients/{messageRecipient%2Did}/events/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewItemEventsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewItemEventsCountRequestBuilder instantiates a new ItemEventsCountRequestBuilder and sets the default values.
 func NewItemEventsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemEventsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemEventsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEventsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ItemEventsCountRequestBuilder) Get(ctx context.Context, requestConfigur
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ItemEventsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEventsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *ItemEventsCountRequestBuilder) ToGetRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemEventsCountRequestBuilder when successful
 func (m *ItemEventsCountRequestBuilder) WithUrl(rawUrl string)(*ItemEventsCountRequestBuilder) {
     return NewItemEventsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

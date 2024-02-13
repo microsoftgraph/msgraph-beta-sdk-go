@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ClassificationJobResponse 
 type ClassificationJobResponse struct {
     JobResponseBase
 }
-// NewClassificationJobResponse instantiates a new classificationJobResponse and sets the default values.
+// NewClassificationJobResponse instantiates a new ClassificationJobResponse and sets the default values.
 func NewClassificationJobResponse()(*ClassificationJobResponse) {
     m := &ClassificationJobResponse{
         JobResponseBase: *NewJobResponseBase(),
@@ -16,10 +15,12 @@ func NewClassificationJobResponse()(*ClassificationJobResponse) {
     return m
 }
 // CreateClassificationJobResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateClassificationJobResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClassificationJobResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ClassificationJobResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.JobResponseBase.GetFieldDeserializers()
     res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *ClassificationJobResponse) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetResult gets the result property value. The result property
+// returns a DetectedSensitiveContentWrapperable when successful
 func (m *ClassificationJobResponse) GetResult()(DetectedSensitiveContentWrapperable) {
     val, err := m.GetBackingStore().Get("result")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *ClassificationJobResponse) SetResult(value DetectedSensitiveContentWrap
         panic(err)
     }
 }
-// ClassificationJobResponseable 
 type ClassificationJobResponseable interface {
     JobResponseBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerTrustedRootCertificate struct {
     DeviceConfiguration
 }
-// NewAndroidDeviceOwnerTrustedRootCertificate instantiates a new androidDeviceOwnerTrustedRootCertificate and sets the default values.
+// NewAndroidDeviceOwnerTrustedRootCertificate instantiates a new AndroidDeviceOwnerTrustedRootCertificate and sets the default values.
 func NewAndroidDeviceOwnerTrustedRootCertificate()(*AndroidDeviceOwnerTrustedRootCertificate) {
     m := &AndroidDeviceOwnerTrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceOwnerTrustedRootCertificate()(*AndroidDeviceOwnerTrustedRoo
     return m
 }
 // CreateAndroidDeviceOwnerTrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerTrustedRootCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerTrustedRootCertificate(), nil
 }
 // GetCertFileName gets the certFileName property value. File name to display in UI.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerTrustedRootCertificate) GetCertFileName()(*string) {
     val, err := m.GetBackingStore().Get("certFileName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidDeviceOwnerTrustedRootCertificate) GetCertFileName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerTrustedRootCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["certFileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *AndroidDeviceOwnerTrustedRootCertificate) GetFieldDeserializers()(map[s
     return res
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate
+// returns a []byte when successful
 func (m *AndroidDeviceOwnerTrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
     val, err := m.GetBackingStore().Get("trustedRootCertificate")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *AndroidDeviceOwnerTrustedRootCertificate) SetTrustedRootCertificate(val
         panic(err)
     }
 }
-// AndroidDeviceOwnerTrustedRootCertificateable 
 type AndroidDeviceOwnerTrustedRootCertificateable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

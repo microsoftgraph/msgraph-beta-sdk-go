@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PartnerInformation 
 type PartnerInformation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPartnerInformation instantiates a new partnerInformation and sets the default values.
+// NewPartnerInformation instantiates a new PartnerInformation and sets the default values.
 func NewPartnerInformation()(*PartnerInformation) {
     m := &PartnerInformation{
     }
@@ -19,10 +18,12 @@ func NewPartnerInformation()(*PartnerInformation) {
     return m
 }
 // CreatePartnerInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePartnerInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPartnerInformation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PartnerInformation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PartnerInformation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PartnerInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCommerceUrl gets the commerceUrl property value. The commerceUrl property
+// returns a *string when successful
 func (m *PartnerInformation) GetCommerceUrl()(*string) {
     val, err := m.GetBackingStore().Get("commerceUrl")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *PartnerInformation) GetCommerceUrl()(*string) {
     return nil
 }
 // GetCompanyName gets the companyName property value. The companyName property
+// returns a *string when successful
 func (m *PartnerInformation) GetCompanyName()(*string) {
     val, err := m.GetBackingStore().Get("companyName")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PartnerInformation) GetCompanyName()(*string) {
     return nil
 }
 // GetCompanyType gets the companyType property value. The companyType property
+// returns a *PartnerTenantType when successful
 func (m *PartnerInformation) GetCompanyType()(*PartnerTenantType) {
     val, err := m.GetBackingStore().Get("companyType")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *PartnerInformation) GetCompanyType()(*PartnerTenantType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PartnerInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["commerceUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -179,6 +185,7 @@ func (m *PartnerInformation) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetHelpUrl gets the helpUrl property value. The helpUrl property
+// returns a *string when successful
 func (m *PartnerInformation) GetHelpUrl()(*string) {
     val, err := m.GetBackingStore().Get("helpUrl")
     if err != nil {
@@ -190,6 +197,7 @@ func (m *PartnerInformation) GetHelpUrl()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PartnerInformation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -201,6 +209,7 @@ func (m *PartnerInformation) GetOdataType()(*string) {
     return nil
 }
 // GetPartnerTenantId gets the partnerTenantId property value. The partnerTenantId property
+// returns a *string when successful
 func (m *PartnerInformation) GetPartnerTenantId()(*string) {
     val, err := m.GetBackingStore().Get("partnerTenantId")
     if err != nil {
@@ -212,6 +221,7 @@ func (m *PartnerInformation) GetPartnerTenantId()(*string) {
     return nil
 }
 // GetSupportEmails gets the supportEmails property value. The supportEmails property
+// returns a []string when successful
 func (m *PartnerInformation) GetSupportEmails()([]string) {
     val, err := m.GetBackingStore().Get("supportEmails")
     if err != nil {
@@ -223,6 +233,7 @@ func (m *PartnerInformation) GetSupportEmails()([]string) {
     return nil
 }
 // GetSupportTelephones gets the supportTelephones property value. The supportTelephones property
+// returns a []string when successful
 func (m *PartnerInformation) GetSupportTelephones()([]string) {
     val, err := m.GetBackingStore().Get("supportTelephones")
     if err != nil {
@@ -234,6 +245,7 @@ func (m *PartnerInformation) GetSupportTelephones()([]string) {
     return nil
 }
 // GetSupportUrl gets the supportUrl property value. The supportUrl property
+// returns a *string when successful
 func (m *PartnerInformation) GetSupportUrl()(*string) {
     val, err := m.GetBackingStore().Get("supportUrl")
     if err != nil {
@@ -383,7 +395,6 @@ func (m *PartnerInformation) SetSupportUrl(value *string)() {
         panic(err)
     }
 }
-// PartnerInformationable 
 type PartnerInformationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

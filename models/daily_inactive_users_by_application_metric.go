@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DailyInactiveUsersByApplicationMetric 
 type DailyInactiveUsersByApplicationMetric struct {
     InactiveUsersByApplicationMetricBase
 }
-// NewDailyInactiveUsersByApplicationMetric instantiates a new dailyInactiveUsersByApplicationMetric and sets the default values.
+// NewDailyInactiveUsersByApplicationMetric instantiates a new DailyInactiveUsersByApplicationMetric and sets the default values.
 func NewDailyInactiveUsersByApplicationMetric()(*DailyInactiveUsersByApplicationMetric) {
     m := &DailyInactiveUsersByApplicationMetric{
         InactiveUsersByApplicationMetricBase: *NewInactiveUsersByApplicationMetricBase(),
@@ -16,10 +15,12 @@ func NewDailyInactiveUsersByApplicationMetric()(*DailyInactiveUsersByApplication
     return m
 }
 // CreateDailyInactiveUsersByApplicationMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDailyInactiveUsersByApplicationMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDailyInactiveUsersByApplicationMetric(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DailyInactiveUsersByApplicationMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InactiveUsersByApplicationMetricBase.GetFieldDeserializers()
     res["inactive1DayCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *DailyInactiveUsersByApplicationMetric) GetFieldDeserializers()(map[stri
     return res
 }
 // GetInactive1DayCount gets the inactive1DayCount property value. The inactive1DayCount property
+// returns a *int64 when successful
 func (m *DailyInactiveUsersByApplicationMetric) GetInactive1DayCount()(*int64) {
     val, err := m.GetBackingStore().Get("inactive1DayCount")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *DailyInactiveUsersByApplicationMetric) SetInactive1DayCount(value *int6
         panic(err)
     }
 }
-// DailyInactiveUsersByApplicationMetricable 
 type DailyInactiveUsersByApplicationMetricable interface {
     InactiveUsersByApplicationMetricBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

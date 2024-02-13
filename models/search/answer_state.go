@@ -2,7 +2,6 @@ package search
 import (
     "errors"
 )
-// 
 type AnswerState int
 
 const (

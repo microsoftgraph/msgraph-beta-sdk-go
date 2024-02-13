@@ -27,14 +27,14 @@ type EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetRequestConfigur
     // Request query parameters
     QueryParameters *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetQueryParameters
 }
-// NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal instantiates a new TagItemRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal instantiates a new EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
     m := &EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags/{tag%2Did1}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags/{tag%2Did1}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder instantiates a new TagItemRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder instantiates a new EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -42,14 +42,15 @@ func NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder(rawUrl string,
 }
 // Get returns the tags that are a child of a tag.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a Tagable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateTagFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -62,6 +63,7 @@ func (m *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) Get(ctx cont
 }
 // ToGetRequestInformation returns the tags that are a child of a tag.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -76,6 +78,7 @@ func (m *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) ToGetRequest
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder when successful
 func (m *EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder) {
     return NewEdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

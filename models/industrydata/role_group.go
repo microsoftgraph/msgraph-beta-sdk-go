@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// RoleGroup 
 type RoleGroup struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewRoleGroup instantiates a new roleGroup and sets the default values.
+// NewRoleGroup instantiates a new RoleGroup and sets the default values.
 func NewRoleGroup()(*RoleGroup) {
     m := &RoleGroup{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewRoleGroup()(*RoleGroup) {
     return m
 }
 // CreateRoleGroupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleGroup(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the role group.
+// returns a *string when successful
 func (m *RoleGroup) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *RoleGroup) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -63,6 +65,7 @@ func (m *RoleGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetRoles gets the roles property value. The set of roles included in the role group.
+// returns a []RoleReferenceValueable when successful
 func (m *RoleGroup) GetRoles()([]RoleReferenceValueable) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -113,7 +116,6 @@ func (m *RoleGroup) SetRoles(value []RoleReferenceValueable)() {
         panic(err)
     }
 }
-// RoleGroupable 
 type RoleGroupable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

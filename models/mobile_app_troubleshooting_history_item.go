@@ -11,7 +11,7 @@ type MobileAppTroubleshootingHistoryItem struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMobileAppTroubleshootingHistoryItem instantiates a new mobileAppTroubleshootingHistoryItem and sets the default values.
+// NewMobileAppTroubleshootingHistoryItem instantiates a new MobileAppTroubleshootingHistoryItem and sets the default values.
 func NewMobileAppTroubleshootingHistoryItem()(*MobileAppTroubleshootingHistoryItem) {
     m := &MobileAppTroubleshootingHistoryItem{
     }
@@ -20,6 +20,7 @@ func NewMobileAppTroubleshootingHistoryItem()(*MobileAppTroubleshootingHistoryIt
     return m
 }
 // CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -50,6 +51,7 @@ func CreateMobileAppTroubleshootingHistoryItemFromDiscriminatorValue(parseNode i
     return NewMobileAppTroubleshootingHistoryItem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MobileAppTroubleshootingHistoryItem) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -62,10 +64,12 @@ func (m *MobileAppTroubleshootingHistoryItem) GetAdditionalData()(map[string]any
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MobileAppTroubleshootingHistoryItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppTroubleshootingHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["occurrenceDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +105,7 @@ func (m *MobileAppTroubleshootingHistoryItem) GetFieldDeserializers()(map[string
     return res
 }
 // GetOccurrenceDateTime gets the occurrenceDateTime property value. Time when the history item occurred.
+// returns a *Time when successful
 func (m *MobileAppTroubleshootingHistoryItem) GetOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("occurrenceDateTime")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *MobileAppTroubleshootingHistoryItem) GetOccurrenceDateTime()(*i33607480
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MobileAppTroubleshootingHistoryItem) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *MobileAppTroubleshootingHistoryItem) GetOdataType()(*string) {
     return nil
 }
 // GetTroubleshootingErrorDetails gets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
+// returns a DeviceManagementTroubleshootingErrorDetailsable when successful
 func (m *MobileAppTroubleshootingHistoryItem) GetTroubleshootingErrorDetails()(DeviceManagementTroubleshootingErrorDetailsable) {
     val, err := m.GetBackingStore().Get("troubleshootingErrorDetails")
     if err != nil {
@@ -193,7 +200,6 @@ func (m *MobileAppTroubleshootingHistoryItem) SetTroubleshootingErrorDetails(val
         panic(err)
     }
 }
-// MobileAppTroubleshootingHistoryItemable 
 type MobileAppTroubleshootingHistoryItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -10,7 +10,7 @@ type OperatingSystemVersionRange struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOperatingSystemVersionRange instantiates a new operatingSystemVersionRange and sets the default values.
+// NewOperatingSystemVersionRange instantiates a new OperatingSystemVersionRange and sets the default values.
 func NewOperatingSystemVersionRange()(*OperatingSystemVersionRange) {
     m := &OperatingSystemVersionRange{
     }
@@ -19,10 +19,12 @@ func NewOperatingSystemVersionRange()(*OperatingSystemVersionRange) {
     return m
 }
 // CreateOperatingSystemVersionRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOperatingSystemVersionRangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOperatingSystemVersionRange(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OperatingSystemVersionRange) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *OperatingSystemVersionRange) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OperatingSystemVersionRange) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDescription gets the description property value. The description of this range (e.g. Valid 1702 builds)
+// returns a *string when successful
 func (m *OperatingSystemVersionRange) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *OperatingSystemVersionRange) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OperatingSystemVersionRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +100,7 @@ func (m *OperatingSystemVersionRange) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetHighestVersion gets the highestVersion property value. The highest inclusive version that this range contains.
+// returns a *string when successful
 func (m *OperatingSystemVersionRange) GetHighestVersion()(*string) {
     val, err := m.GetBackingStore().Get("highestVersion")
     if err != nil {
@@ -106,6 +112,7 @@ func (m *OperatingSystemVersionRange) GetHighestVersion()(*string) {
     return nil
 }
 // GetLowestVersion gets the lowestVersion property value. The lowest inclusive version that this range contains.
+// returns a *string when successful
 func (m *OperatingSystemVersionRange) GetLowestVersion()(*string) {
     val, err := m.GetBackingStore().Get("lowestVersion")
     if err != nil {
@@ -117,6 +124,7 @@ func (m *OperatingSystemVersionRange) GetLowestVersion()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OperatingSystemVersionRange) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,7 +208,6 @@ func (m *OperatingSystemVersionRange) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// OperatingSystemVersionRangeable 
 type OperatingSystemVersionRangeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

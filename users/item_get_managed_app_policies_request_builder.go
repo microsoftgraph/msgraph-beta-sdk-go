@@ -14,6 +14,8 @@ type ItemGetManagedAppPoliciesRequestBuilder struct {
 type ItemGetManagedAppPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,29 +38,30 @@ type ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemGetManagedAppPoliciesRequestBuilderGetQueryParameters
 }
-// NewItemGetManagedAppPoliciesRequestBuilderInternal instantiates a new GetManagedAppPoliciesRequestBuilder and sets the default values.
+// NewItemGetManagedAppPoliciesRequestBuilderInternal instantiates a new ItemGetManagedAppPoliciesRequestBuilder and sets the default values.
 func NewItemGetManagedAppPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetManagedAppPoliciesRequestBuilder) {
     m := &ItemGetManagedAppPoliciesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/getManagedAppPolicies(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/getManagedAppPolicies(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemGetManagedAppPoliciesRequestBuilder instantiates a new GetManagedAppPoliciesRequestBuilder and sets the default values.
+// NewItemGetManagedAppPoliciesRequestBuilder instantiates a new ItemGetManagedAppPoliciesRequestBuilder and sets the default values.
 func NewItemGetManagedAppPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetManagedAppPoliciesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetManagedAppPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets app restrictions for a given user.
-// Deprecated: This method is obsolete. Use GetAsGetManagedAppPoliciesGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemGetManagedAppPoliciesResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetManagedAppPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppPoliciesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedAppPoliciesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *ItemGetManagedAppPoliciesRequestBuilder) Get(ctx context.Context, reque
     return res.(ItemGetManagedAppPoliciesResponseable), nil
 }
 // GetAsGetManagedAppPoliciesGetResponse gets app restrictions for a given user.
+// returns a ItemGetManagedAppPoliciesGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetManagedAppPoliciesRequestBuilder) GetAsGetManagedAppPoliciesGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppPoliciesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemGetManagedAppPoliciesGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *ItemGetManagedAppPoliciesRequestBuilder) GetAsGetManagedAppPoliciesGetR
     return res.(ItemGetManagedAppPoliciesGetResponseable), nil
 }
 // ToGetRequestInformation gets app restrictions for a given user.
+// returns a *RequestInformation when successful
 func (m *ItemGetManagedAppPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *ItemGetManagedAppPoliciesRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemGetManagedAppPoliciesRequestBuilder when successful
 func (m *ItemGetManagedAppPoliciesRequestBuilder) WithUrl(rawUrl string)(*ItemGetManagedAppPoliciesRequestBuilder) {
     return NewItemGetManagedAppPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

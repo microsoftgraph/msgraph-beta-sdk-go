@@ -47,6 +47,7 @@ type BucketsItemTasksRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByPlannerTaskId provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
+// returns a *BucketsItemTasksPlannerTaskItemRequestBuilder when successful
 func (m *BucketsItemTasksRequestBuilder) ByPlannerTaskId(plannerTaskId string)(*BucketsItemTasksPlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,28 +58,32 @@ func (m *BucketsItemTasksRequestBuilder) ByPlannerTaskId(plannerTaskId string)(*
     }
     return NewBucketsItemTasksPlannerTaskItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewBucketsItemTasksRequestBuilderInternal instantiates a new TasksRequestBuilder and sets the default values.
+// NewBucketsItemTasksRequestBuilderInternal instantiates a new BucketsItemTasksRequestBuilder and sets the default values.
 func NewBucketsItemTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsItemTasksRequestBuilder) {
     m := &BucketsItemTasksRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/buckets/{plannerBucket%2Did}/tasks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/buckets/{plannerBucket%2Did}/tasks{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewBucketsItemTasksRequestBuilder instantiates a new TasksRequestBuilder and sets the default values.
+// NewBucketsItemTasksRequestBuilder instantiates a new BucketsItemTasksRequestBuilder and sets the default values.
 func NewBucketsItemTasksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsItemTasksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBucketsItemTasksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *BucketsItemTasksCountRequestBuilder when successful
 func (m *BucketsItemTasksRequestBuilder) Count()(*BucketsItemTasksCountRequestBuilder) {
     return NewBucketsItemTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
+// returns a *BucketsItemTasksDeltaRequestBuilder when successful
 func (m *BucketsItemTasksRequestBuilder) Delta()(*BucketsItemTasksDeltaRequestBuilder) {
     return NewBucketsItemTasksDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of plannerTask objects associated to a plannerBucket object.
+// returns a PlannerTaskCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
@@ -88,8 +93,7 @@ func (m *BucketsItemTasksRequestBuilder) Get(ctx context.Context, requestConfigu
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerTaskCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,14 +105,15 @@ func (m *BucketsItemTasksRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskCollectionResponseable), nil
 }
 // Post create new navigation property to tasks for planner
+// returns a PlannerTaskable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BucketsItemTasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable, requestConfiguration *BucketsItemTasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerTaskFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,6 +125,7 @@ func (m *BucketsItemTasksRequestBuilder) Post(ctx context.Context, body ie233ee7
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable), nil
 }
 // ToGetRequestInformation retrieve a list of plannerTask objects associated to a plannerBucket object.
+// returns a *RequestInformation when successful
 func (m *BucketsItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BucketsItemTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -133,8 +139,9 @@ func (m *BucketsItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to tasks for planner
+// returns a *RequestInformation when successful
 func (m *BucketsItemTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable, requestConfiguration *BucketsItemTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/planner/buckets/{plannerBucket%2Did}/tasks", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -147,6 +154,7 @@ func (m *BucketsItemTasksRequestBuilder) ToPostRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *BucketsItemTasksRequestBuilder when successful
 func (m *BucketsItemTasksRequestBuilder) WithUrl(rawUrl string)(*BucketsItemTasksRequestBuilder) {
     return NewBucketsItemTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -8,7 +8,7 @@ import (
 type Windows10XCertificateProfile struct {
     DeviceManagementResourceAccessProfileBase
 }
-// NewWindows10XCertificateProfile instantiates a new windows10XCertificateProfile and sets the default values.
+// NewWindows10XCertificateProfile instantiates a new Windows10XCertificateProfile and sets the default values.
 func NewWindows10XCertificateProfile()(*Windows10XCertificateProfile) {
     m := &Windows10XCertificateProfile{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),
@@ -18,6 +18,7 @@ func NewWindows10XCertificateProfile()(*Windows10XCertificateProfile) {
     return m
 }
 // CreateWindows10XCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10XCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateWindows10XCertificateProfileFromDiscriminatorValue(parseNode i878a80d
     return NewWindows10XCertificateProfile(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10XCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementResourceAccessProfileBase.GetFieldDeserializers()
     return res
@@ -52,7 +54,6 @@ func (m *Windows10XCertificateProfile) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// Windows10XCertificateProfileable 
 type Windows10XCertificateProfileable interface {
     DeviceManagementResourceAccessProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

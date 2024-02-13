@@ -11,7 +11,7 @@ type WindowsDriverUpdateProfileInventorySyncStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWindowsDriverUpdateProfileInventorySyncStatus instantiates a new windowsDriverUpdateProfileInventorySyncStatus and sets the default values.
+// NewWindowsDriverUpdateProfileInventorySyncStatus instantiates a new WindowsDriverUpdateProfileInventorySyncStatus and sets the default values.
 func NewWindowsDriverUpdateProfileInventorySyncStatus()(*WindowsDriverUpdateProfileInventorySyncStatus) {
     m := &WindowsDriverUpdateProfileInventorySyncStatus{
     }
@@ -20,10 +20,12 @@ func NewWindowsDriverUpdateProfileInventorySyncStatus()(*WindowsDriverUpdateProf
     return m
 }
 // CreateWindowsDriverUpdateProfileInventorySyncStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDriverUpdateProfileInventorySyncStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDriverUpdateProfileInventorySyncStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +38,12 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetAdditionalData()(map[
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDriverInventorySyncState gets the driverInventorySyncState property value. Windows DnF update inventory sync state.
+// returns a *WindowsDriverUpdateProfileInventorySyncState when successful
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetDriverInventorySyncState()(*WindowsDriverUpdateProfileInventorySyncState) {
     val, err := m.GetBackingStore().Get("driverInventorySyncState")
     if err != nil {
@@ -51,6 +55,7 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetDriverInventorySyncSt
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["driverInventorySyncState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +91,7 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetFieldDeserializers()(
     return res
 }
 // GetLastSuccessfulSyncDateTime gets the lastSuccessfulSyncDateTime property value. The last successful sync date and time in UTC.
+// returns a *Time when successful
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetLastSuccessfulSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSuccessfulSyncDateTime")
     if err != nil {
@@ -97,6 +103,7 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetLastSuccessfulSyncDat
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WindowsDriverUpdateProfileInventorySyncStatus) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -168,7 +175,6 @@ func (m *WindowsDriverUpdateProfileInventorySyncStatus) SetOdataType(value *stri
         panic(err)
     }
 }
-// WindowsDriverUpdateProfileInventorySyncStatusable 
 type WindowsDriverUpdateProfileInventorySyncStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

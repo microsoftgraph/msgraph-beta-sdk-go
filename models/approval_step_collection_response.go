@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApprovalStepCollectionResponse 
 type ApprovalStepCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewApprovalStepCollectionResponse instantiates a new approvalStepCollectionResponse and sets the default values.
+// NewApprovalStepCollectionResponse instantiates a new ApprovalStepCollectionResponse and sets the default values.
 func NewApprovalStepCollectionResponse()(*ApprovalStepCollectionResponse) {
     m := &ApprovalStepCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewApprovalStepCollectionResponse()(*ApprovalStepCollectionResponse) {
     return m
 }
 // CreateApprovalStepCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApprovalStepCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApprovalStepCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApprovalStepCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ApprovalStepCollectionResponse) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ApprovalStepable when successful
 func (m *ApprovalStepCollectionResponse) GetValue()([]ApprovalStepable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ApprovalStepCollectionResponse) SetValue(value []ApprovalStepable)() {
         panic(err)
     }
 }
-// ApprovalStepCollectionResponseable 
 type ApprovalStepCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

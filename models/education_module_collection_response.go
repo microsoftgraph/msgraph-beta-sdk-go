@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationModuleCollectionResponse 
 type EducationModuleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEducationModuleCollectionResponse instantiates a new educationModuleCollectionResponse and sets the default values.
+// NewEducationModuleCollectionResponse instantiates a new EducationModuleCollectionResponse and sets the default values.
 func NewEducationModuleCollectionResponse()(*EducationModuleCollectionResponse) {
     m := &EducationModuleCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewEducationModuleCollectionResponse()(*EducationModuleCollectionResponse) 
     return m
 }
 // CreateEducationModuleCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationModuleCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationModuleCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationModuleCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *EducationModuleCollectionResponse) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []EducationModuleable when successful
 func (m *EducationModuleCollectionResponse) GetValue()([]EducationModuleable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *EducationModuleCollectionResponse) SetValue(value []EducationModuleable
         panic(err)
     }
 }
-// EducationModuleCollectionResponseable 
 type EducationModuleCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

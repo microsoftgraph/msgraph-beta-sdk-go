@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DataLossPreventionPolicyCollectionResponse 
 type DataLossPreventionPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDataLossPreventionPolicyCollectionResponse instantiates a new dataLossPreventionPolicyCollectionResponse and sets the default values.
+// NewDataLossPreventionPolicyCollectionResponse instantiates a new DataLossPreventionPolicyCollectionResponse and sets the default values.
 func NewDataLossPreventionPolicyCollectionResponse()(*DataLossPreventionPolicyCollectionResponse) {
     m := &DataLossPreventionPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDataLossPreventionPolicyCollectionResponse()(*DataLossPreventionPolicyCo
     return m
 }
 // CreateDataLossPreventionPolicyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDataLossPreventionPolicyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDataLossPreventionPolicyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DataLossPreventionPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DataLossPreventionPolicyCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DataLossPreventionPolicyable when successful
 func (m *DataLossPreventionPolicyCollectionResponse) GetValue()([]DataLossPreventionPolicyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DataLossPreventionPolicyCollectionResponse) SetValue(value []DataLossPr
         panic(err)
     }
 }
-// DataLossPreventionPolicyCollectionResponseable 
 type DataLossPreventionPolicyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

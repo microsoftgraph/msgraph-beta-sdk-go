@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ConnectionOperation 
 type ConnectionOperation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewConnectionOperation instantiates a new connectionOperation and sets the default values.
+// NewConnectionOperation instantiates a new ConnectionOperation and sets the default values.
 func NewConnectionOperation()(*ConnectionOperation) {
     m := &ConnectionOperation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewConnectionOperation()(*ConnectionOperation) {
     return m
 }
 // CreateConnectionOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConnectionOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectionOperation(), nil
 }
 // GetError gets the error property value. If status is failed, provides more information about the error that caused the failure.
+// returns a PublicErrorable when successful
 func (m *ConnectionOperation) GetError()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ConnectionOperation) GetError()(ie233ee762e29b4ba6970aa2a2efce4b7fde116
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *ConnectionOperation) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetStatus gets the status property value. Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
+// returns a *ConnectionOperationStatus when successful
 func (m *ConnectionOperation) GetStatus()(*ConnectionOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *ConnectionOperation) SetStatus(value *ConnectionOperationStatus)() {
         panic(err)
     }
 }
-// ConnectionOperationable 
 type ConnectionOperationable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

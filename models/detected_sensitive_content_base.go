@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DetectedSensitiveContentBase 
 type DetectedSensitiveContentBase struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDetectedSensitiveContentBase instantiates a new detectedSensitiveContentBase and sets the default values.
+// NewDetectedSensitiveContentBase instantiates a new DetectedSensitiveContentBase and sets the default values.
 func NewDetectedSensitiveContentBase()(*DetectedSensitiveContentBase) {
     m := &DetectedSensitiveContentBase{
     }
@@ -20,6 +19,7 @@ func NewDetectedSensitiveContentBase()(*DetectedSensitiveContentBase) {
     return m
 }
 // CreateDetectedSensitiveContentBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDetectedSensitiveContentBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -46,6 +46,7 @@ func CreateDetectedSensitiveContentBaseFromDiscriminatorValue(parseNode i878a80d
     return NewDetectedSensitiveContentBase(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DetectedSensitiveContentBase) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -58,10 +59,12 @@ func (m *DetectedSensitiveContentBase) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DetectedSensitiveContentBase) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConfidence gets the confidence property value. The confidence property
+// returns a *int32 when successful
 func (m *DetectedSensitiveContentBase) GetConfidence()(*int32) {
     val, err := m.GetBackingStore().Get("confidence")
     if err != nil {
@@ -73,6 +76,7 @@ func (m *DetectedSensitiveContentBase) GetConfidence()(*int32) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *DetectedSensitiveContentBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -84,6 +88,7 @@ func (m *DetectedSensitiveContentBase) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DetectedSensitiveContentBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["confidence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -149,6 +154,7 @@ func (m *DetectedSensitiveContentBase) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *DetectedSensitiveContentBase) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -160,6 +166,7 @@ func (m *DetectedSensitiveContentBase) GetId()(*i561e97a8befe7661a44c8f54600992b
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DetectedSensitiveContentBase) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -171,6 +178,7 @@ func (m *DetectedSensitiveContentBase) GetOdataType()(*string) {
     return nil
 }
 // GetRecommendedConfidence gets the recommendedConfidence property value. The recommendedConfidence property
+// returns a *int32 when successful
 func (m *DetectedSensitiveContentBase) GetRecommendedConfidence()(*int32) {
     val, err := m.GetBackingStore().Get("recommendedConfidence")
     if err != nil {
@@ -182,6 +190,7 @@ func (m *DetectedSensitiveContentBase) GetRecommendedConfidence()(*int32) {
     return nil
 }
 // GetUniqueCount gets the uniqueCount property value. The uniqueCount property
+// returns a *int32 when successful
 func (m *DetectedSensitiveContentBase) GetUniqueCount()(*int32) {
     val, err := m.GetBackingStore().Get("uniqueCount")
     if err != nil {
@@ -291,7 +300,6 @@ func (m *DetectedSensitiveContentBase) SetUniqueCount(value *int32)() {
         panic(err)
     }
 }
-// DetectedSensitiveContentBaseable 
 type DetectedSensitiveContentBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

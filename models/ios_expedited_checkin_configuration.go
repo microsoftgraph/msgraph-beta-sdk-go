@@ -8,7 +8,7 @@ import (
 type IosExpeditedCheckinConfiguration struct {
     AppleExpeditedCheckinConfigurationBase
 }
-// NewIosExpeditedCheckinConfiguration instantiates a new iosExpeditedCheckinConfiguration and sets the default values.
+// NewIosExpeditedCheckinConfiguration instantiates a new IosExpeditedCheckinConfiguration and sets the default values.
 func NewIosExpeditedCheckinConfiguration()(*IosExpeditedCheckinConfiguration) {
     m := &IosExpeditedCheckinConfiguration{
         AppleExpeditedCheckinConfigurationBase: *NewAppleExpeditedCheckinConfigurationBase(),
@@ -18,10 +18,12 @@ func NewIosExpeditedCheckinConfiguration()(*IosExpeditedCheckinConfiguration) {
     return m
 }
 // CreateIosExpeditedCheckinConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosExpeditedCheckinConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosExpeditedCheckinConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosExpeditedCheckinConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppleExpeditedCheckinConfigurationBase.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *IosExpeditedCheckinConfiguration) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// IosExpeditedCheckinConfigurationable 
 type IosExpeditedCheckinConfigurationable interface {
     AppleExpeditedCheckinConfigurationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

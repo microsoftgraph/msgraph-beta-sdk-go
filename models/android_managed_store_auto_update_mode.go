@@ -7,7 +7,7 @@ type AndroidManagedStoreAutoUpdateMode int
 
 const (
     // Default update behavior (device must be connected to Wifi, charging and not actively used).
-    DEFAULTESCAPED_ANDROIDMANAGEDSTOREAUTOUPDATEMODE AndroidManagedStoreAutoUpdateMode = iota
+    DEFAULT_ANDROIDMANAGEDSTOREAUTOUPDATEMODE AndroidManagedStoreAutoUpdateMode = iota
     // Updates are postponed for a maximum of 90 days after the app becomes out of date.
     POSTPONED_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
     // The app is updated as soon as possible by the developer. If device is online, it will be updated within minutes.
@@ -20,10 +20,10 @@ func (i AndroidManagedStoreAutoUpdateMode) String() string {
     return []string{"default", "postponed", "priority", "unknownFutureValue"}[i]
 }
 func ParseAndroidManagedStoreAutoUpdateMode(v string) (any, error) {
-    result := DEFAULTESCAPED_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
+    result := DEFAULT_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
     switch v {
         case "default":
-            result = DEFAULTESCAPED_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
+            result = DEFAULT_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
         case "postponed":
             result = POSTPONED_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
         case "priority":

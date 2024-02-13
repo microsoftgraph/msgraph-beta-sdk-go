@@ -47,10 +47,12 @@ type ItemChatsItemMembersRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Add provides operations to call the add method.
+// returns a *ItemChatsItemMembersAddRequestBuilder when successful
 func (m *ItemChatsItemMembersRequestBuilder) Add()(*ItemChatsItemMembersAddRequestBuilder) {
     return NewItemChatsItemMembersAddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByConversationMemberId provides operations to manage the members property of the microsoft.graph.chat entity.
+// returns a *ItemChatsItemMembersConversationMemberItemRequestBuilder when successful
 func (m *ItemChatsItemMembersRequestBuilder) ByConversationMemberId(conversationMemberId string)(*ItemChatsItemMembersConversationMemberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -61,24 +63,27 @@ func (m *ItemChatsItemMembersRequestBuilder) ByConversationMemberId(conversation
     }
     return NewItemChatsItemMembersConversationMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemChatsItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
+// NewItemChatsItemMembersRequestBuilderInternal instantiates a new ItemChatsItemMembersRequestBuilder and sets the default values.
 func NewItemChatsItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChatsItemMembersRequestBuilder) {
     m := &ItemChatsItemMembersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/members{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemChatsItemMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
+// NewItemChatsItemMembersRequestBuilder instantiates a new ItemChatsItemMembersRequestBuilder and sets the default values.
 func NewItemChatsItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChatsItemMembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemChatsItemMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemChatsItemMembersCountRequestBuilder when successful
 func (m *ItemChatsItemMembersRequestBuilder) Count()(*ItemChatsItemMembersCountRequestBuilder) {
     return NewItemChatsItemMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a conversationMember from a chat.
+// returns a ConversationMemberCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
@@ -88,8 +93,7 @@ func (m *ItemChatsItemMembersRequestBuilder) Get(ctx context.Context, requestCon
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConversationMemberCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,6 +105,8 @@ func (m *ItemChatsItemMembersRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberCollectionResponseable), nil
 }
 // Post add a conversationMember to a chat.
+// returns a ConversationMemberable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-post-members?view=graph-rest-1.0
@@ -110,8 +116,7 @@ func (m *ItemChatsItemMembersRequestBuilder) Post(ctx context.Context, body ie23
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConversationMemberFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -123,6 +128,7 @@ func (m *ItemChatsItemMembersRequestBuilder) Post(ctx context.Context, body ie23
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
 // ToGetRequestInformation retrieve a conversationMember from a chat.
+// returns a *RequestInformation when successful
 func (m *ItemChatsItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -136,8 +142,9 @@ func (m *ItemChatsItemMembersRequestBuilder) ToGetRequestInformation(ctx context
     return requestInfo, nil
 }
 // ToPostRequestInformation add a conversationMember to a chat.
+// returns a *RequestInformation when successful
 func (m *ItemChatsItemMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, requestConfiguration *ItemChatsItemMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/members", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -150,6 +157,7 @@ func (m *ItemChatsItemMembersRequestBuilder) ToPostRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemChatsItemMembersRequestBuilder when successful
 func (m *ItemChatsItemMembersRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemMembersRequestBuilder) {
     return NewItemChatsItemMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

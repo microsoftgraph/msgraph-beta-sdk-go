@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// EducationalActivityDetail 
 type EducationalActivityDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEducationalActivityDetail instantiates a new educationalActivityDetail and sets the default values.
+// NewEducationalActivityDetail instantiates a new EducationalActivityDetail and sets the default values.
 func NewEducationalActivityDetail()(*EducationalActivityDetail) {
     m := &EducationalActivityDetail{
     }
@@ -19,10 +18,12 @@ func NewEducationalActivityDetail()(*EducationalActivityDetail) {
     return m
 }
 // CreateEducationalActivityDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationalActivityDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationalActivityDetail(), nil
 }
 // GetAbbreviation gets the abbreviation property value. Shortened name of the degree or program (example: PhD, MBA)
+// returns a *string when successful
 func (m *EducationalActivityDetail) GetAbbreviation()(*string) {
     val, err := m.GetBackingStore().Get("abbreviation")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *EducationalActivityDetail) GetAbbreviation()(*string) {
     return nil
 }
 // GetActivities gets the activities property value. Extracurricular activities undertaken alongside the program.
+// returns a []string when successful
 func (m *EducationalActivityDetail) GetActivities()([]string) {
     val, err := m.GetBackingStore().Get("activities")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *EducationalActivityDetail) GetActivities()([]string) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *EducationalActivityDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *EducationalActivityDetail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAwards gets the awards property value. Any awards or honors associated with the program.
+// returns a []string when successful
 func (m *EducationalActivityDetail) GetAwards()([]string) {
     val, err := m.GetBackingStore().Get("awards")
     if err != nil {
@@ -68,10 +72,12 @@ func (m *EducationalActivityDetail) GetAwards()([]string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *EducationalActivityDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDescription gets the description property value. Short description of the program provided by the user.
+// returns a *string when successful
 func (m *EducationalActivityDetail) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *EducationalActivityDetail) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Long-form name of the program that the user has provided.
+// returns a *string when successful
 func (m *EducationalActivityDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *EducationalActivityDetail) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationalActivityDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["abbreviation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -217,6 +225,7 @@ func (m *EducationalActivityDetail) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetFieldsOfStudy gets the fieldsOfStudy property value. Majors and minors associated with the program. (if applicable)
+// returns a []string when successful
 func (m *EducationalActivityDetail) GetFieldsOfStudy()([]string) {
     val, err := m.GetBackingStore().Get("fieldsOfStudy")
     if err != nil {
@@ -228,6 +237,7 @@ func (m *EducationalActivityDetail) GetFieldsOfStudy()([]string) {
     return nil
 }
 // GetGrade gets the grade property value. The final grade, class, GPA or score.
+// returns a *string when successful
 func (m *EducationalActivityDetail) GetGrade()(*string) {
     val, err := m.GetBackingStore().Get("grade")
     if err != nil {
@@ -239,6 +249,7 @@ func (m *EducationalActivityDetail) GetGrade()(*string) {
     return nil
 }
 // GetNotes gets the notes property value. Additional notes the user has provided.
+// returns a *string when successful
 func (m *EducationalActivityDetail) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -250,6 +261,7 @@ func (m *EducationalActivityDetail) GetNotes()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *EducationalActivityDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -261,6 +273,7 @@ func (m *EducationalActivityDetail) GetOdataType()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. Link to the degree or program page.
+// returns a *string when successful
 func (m *EducationalActivityDetail) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -422,7 +435,6 @@ func (m *EducationalActivityDetail) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// EducationalActivityDetailable 
 type EducationalActivityDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

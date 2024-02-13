@@ -17,28 +17,28 @@ type ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilderInternal instantiates a new OnenotePatchContentRequestBuilder and sets the default values.
+// NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilderInternal instantiates a new ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder and sets the default values.
 func NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder) {
     m := &ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/notebooks/{notebook%2Did}/sections/{onenoteSection%2Did}/pages/{onenotePage%2Did}/onenotePatchContent", pathParameters),
     }
     return m
 }
-// NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder instantiates a new OnenotePatchContentRequestBuilder and sets the default values.
+// NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder instantiates a new ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder and sets the default values.
 func NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action onenotePatchContent
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder) Post(ctx context.Context, body ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentPostRequestBodyable, requestConfiguration *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchConte
     return nil
 }
 // ToPostRequestInformation invoke action onenotePatchContent
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentPostRequestBodyable, requestConfiguration *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchConte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder when successful
 func (m *ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder) {
     return NewItemSitesItemOnenoteNotebooksItemSectionsItemPagesItemOnenotePatchContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

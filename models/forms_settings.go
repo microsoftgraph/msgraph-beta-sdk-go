@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// FormsSettings 
 type FormsSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewFormsSettings instantiates a new formsSettings and sets the default values.
+// NewFormsSettings instantiates a new FormsSettings and sets the default values.
 func NewFormsSettings()(*FormsSettings) {
     m := &FormsSettings{
     }
@@ -19,10 +18,12 @@ func NewFormsSettings()(*FormsSettings) {
     return m
 }
 // CreateFormsSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFormsSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFormsSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *FormsSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *FormsSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *FormsSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FormsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["isBingImageSearchEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -124,6 +127,7 @@ func (m *FormsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIsBingImageSearchEnabled gets the isBingImageSearchEnabled property value. Controls whether users can add images from Bing to forms.
+// returns a *bool when successful
 func (m *FormsSettings) GetIsBingImageSearchEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isBingImageSearchEnabled")
     if err != nil {
@@ -135,6 +139,7 @@ func (m *FormsSettings) GetIsBingImageSearchEnabled()(*bool) {
     return nil
 }
 // GetIsExternalSendFormEnabled gets the isExternalSendFormEnabled property value. Controls whether users can send a link to a form to an external user.
+// returns a *bool when successful
 func (m *FormsSettings) GetIsExternalSendFormEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalSendFormEnabled")
     if err != nil {
@@ -146,6 +151,7 @@ func (m *FormsSettings) GetIsExternalSendFormEnabled()(*bool) {
     return nil
 }
 // GetIsExternalShareCollaborationEnabled gets the isExternalShareCollaborationEnabled property value. Controls whether users can collaborate on a form layout and structure with an external user.
+// returns a *bool when successful
 func (m *FormsSettings) GetIsExternalShareCollaborationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalShareCollaborationEnabled")
     if err != nil {
@@ -157,6 +163,7 @@ func (m *FormsSettings) GetIsExternalShareCollaborationEnabled()(*bool) {
     return nil
 }
 // GetIsExternalShareResultEnabled gets the isExternalShareResultEnabled property value. Controls whether users can share form results with external users.
+// returns a *bool when successful
 func (m *FormsSettings) GetIsExternalShareResultEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalShareResultEnabled")
     if err != nil {
@@ -168,6 +175,7 @@ func (m *FormsSettings) GetIsExternalShareResultEnabled()(*bool) {
     return nil
 }
 // GetIsExternalShareTemplateEnabled gets the isExternalShareTemplateEnabled property value. Controls whether users can share form templates with external users.
+// returns a *bool when successful
 func (m *FormsSettings) GetIsExternalShareTemplateEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isExternalShareTemplateEnabled")
     if err != nil {
@@ -179,6 +187,7 @@ func (m *FormsSettings) GetIsExternalShareTemplateEnabled()(*bool) {
     return nil
 }
 // GetIsInOrgFormsPhishingScanEnabled gets the isInOrgFormsPhishingScanEnabled property value. Controls whether phishing protection is run on forms created by users, blocking the creation of forms if common phishing questions are detected.
+// returns a *bool when successful
 func (m *FormsSettings) GetIsInOrgFormsPhishingScanEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isInOrgFormsPhishingScanEnabled")
     if err != nil {
@@ -190,6 +199,7 @@ func (m *FormsSettings) GetIsInOrgFormsPhishingScanEnabled()(*bool) {
     return nil
 }
 // GetIsRecordIdentityByDefaultEnabled gets the isRecordIdentityByDefaultEnabled property value. Controls whether the names of users who fill out forms are recorded.
+// returns a *bool when successful
 func (m *FormsSettings) GetIsRecordIdentityByDefaultEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRecordIdentityByDefaultEnabled")
     if err != nil {
@@ -201,6 +211,7 @@ func (m *FormsSettings) GetIsRecordIdentityByDefaultEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *FormsSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -336,7 +347,6 @@ func (m *FormsSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// FormsSettingsable 
 type FormsSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

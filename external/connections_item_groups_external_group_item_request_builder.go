@@ -41,20 +41,21 @@ type ConnectionsItemGroupsExternalGroupItemRequestBuilderPatchRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewConnectionsItemGroupsExternalGroupItemRequestBuilderInternal instantiates a new ExternalGroupItemRequestBuilder and sets the default values.
+// NewConnectionsItemGroupsExternalGroupItemRequestBuilderInternal instantiates a new ConnectionsItemGroupsExternalGroupItemRequestBuilder and sets the default values.
 func NewConnectionsItemGroupsExternalGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemGroupsExternalGroupItemRequestBuilder) {
     m := &ConnectionsItemGroupsExternalGroupItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/groups/{externalGroup%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/groups/{externalGroup%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewConnectionsItemGroupsExternalGroupItemRequestBuilder instantiates a new ExternalGroupItemRequestBuilder and sets the default values.
+// NewConnectionsItemGroupsExternalGroupItemRequestBuilder instantiates a new ConnectionsItemGroupsExternalGroupItemRequestBuilder and sets the default values.
 func NewConnectionsItemGroupsExternalGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemGroupsExternalGroupItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConnectionsItemGroupsExternalGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete an externalGroup object.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) Delete(ctx contex
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,14 +74,15 @@ func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) Delete(ctx contex
     return nil
 }
 // Get get groups from external
+// returns a ExternalGroupable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsItemGroupsExternalGroupItemRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.CreateExternalGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,18 +94,20 @@ func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) Get(ctx context.C
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable), nil
 }
 // Members provides operations to manage the members property of the microsoft.graph.externalConnectors.externalGroup entity.
+// returns a *ConnectionsItemGroupsItemMembersRequestBuilder when successful
 func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) Members()(*ConnectionsItemGroupsItemMembersRequestBuilder) {
     return NewConnectionsItemGroupsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property groups in external
+// returns a ExternalGroupable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) Patch(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable, requestConfiguration *ConnectionsItemGroupsExternalGroupItemRequestBuilderPatchRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.CreateExternalGroupFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,8 +119,9 @@ func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) Patch(ctx context
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable), nil
 }
 // ToDeleteRequestInformation delete an externalGroup object.
+// returns a *RequestInformation when successful
 func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemGroupsExternalGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/external/connections/{externalConnection%2Did}/groups/{externalGroup%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -126,6 +130,7 @@ func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) ToDeleteRequestIn
     return requestInfo, nil
 }
 // ToGetRequestInformation get groups from external
+// returns a *RequestInformation when successful
 func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemGroupsExternalGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -139,8 +144,9 @@ func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property groups in external
+// returns a *RequestInformation when successful
 func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalGroupable, requestConfiguration *ConnectionsItemGroupsExternalGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/external/connections/{externalConnection%2Did}/groups/{externalGroup%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -153,6 +159,7 @@ func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) ToPatchRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ConnectionsItemGroupsExternalGroupItemRequestBuilder when successful
 func (m *ConnectionsItemGroupsExternalGroupItemRequestBuilder) WithUrl(rawUrl string)(*ConnectionsItemGroupsExternalGroupItemRequestBuilder) {
     return NewConnectionsItemGroupsExternalGroupItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

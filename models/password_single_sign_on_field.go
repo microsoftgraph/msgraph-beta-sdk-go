@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PasswordSingleSignOnField 
 type PasswordSingleSignOnField struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPasswordSingleSignOnField instantiates a new passwordSingleSignOnField and sets the default values.
+// NewPasswordSingleSignOnField instantiates a new PasswordSingleSignOnField and sets the default values.
 func NewPasswordSingleSignOnField()(*PasswordSingleSignOnField) {
     m := &PasswordSingleSignOnField{
     }
@@ -19,10 +18,12 @@ func NewPasswordSingleSignOnField()(*PasswordSingleSignOnField) {
     return m
 }
 // CreatePasswordSingleSignOnFieldFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePasswordSingleSignOnFieldFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPasswordSingleSignOnField(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PasswordSingleSignOnField) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PasswordSingleSignOnField) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PasswordSingleSignOnField) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCustomizedLabel gets the customizedLabel property value. Title/label override for customization.
+// returns a *string when successful
 func (m *PasswordSingleSignOnField) GetCustomizedLabel()(*string) {
     val, err := m.GetBackingStore().Get("customizedLabel")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *PasswordSingleSignOnField) GetCustomizedLabel()(*string) {
     return nil
 }
 // GetDefaultLabel gets the defaultLabel property value. Label that would be used if no customizedLabel is provided. Read only.
+// returns a *string when successful
 func (m *PasswordSingleSignOnField) GetDefaultLabel()(*string) {
     val, err := m.GetBackingStore().Get("defaultLabel")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PasswordSingleSignOnField) GetDefaultLabel()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PasswordSingleSignOnField) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["customizedLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *PasswordSingleSignOnField) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetFieldId gets the fieldId property value. Id used to identity the field type. This is an internal ID and possible values are param1, param2, paramuserName, parampassword.
+// returns a *string when successful
 func (m *PasswordSingleSignOnField) GetFieldId()(*string) {
     val, err := m.GetBackingStore().Get("fieldId")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *PasswordSingleSignOnField) GetFieldId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PasswordSingleSignOnField) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *PasswordSingleSignOnField) GetOdataType()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. Type of the credential. The values can be text, password.
+// returns a *string when successful
 func (m *PasswordSingleSignOnField) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -234,7 +242,6 @@ func (m *PasswordSingleSignOnField) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// PasswordSingleSignOnFieldable 
 type PasswordSingleSignOnFieldable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcBulkModifyDiskEncryptionType 
 type CloudPcBulkModifyDiskEncryptionType struct {
     CloudPcBulkAction
 }
-// NewCloudPcBulkModifyDiskEncryptionType instantiates a new cloudPcBulkModifyDiskEncryptionType and sets the default values.
+// NewCloudPcBulkModifyDiskEncryptionType instantiates a new CloudPcBulkModifyDiskEncryptionType and sets the default values.
 func NewCloudPcBulkModifyDiskEncryptionType()(*CloudPcBulkModifyDiskEncryptionType) {
     m := &CloudPcBulkModifyDiskEncryptionType{
         CloudPcBulkAction: *NewCloudPcBulkAction(),
@@ -18,10 +17,12 @@ func NewCloudPcBulkModifyDiskEncryptionType()(*CloudPcBulkModifyDiskEncryptionTy
     return m
 }
 // CreateCloudPcBulkModifyDiskEncryptionTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcBulkModifyDiskEncryptionTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcBulkModifyDiskEncryptionType(), nil
 }
 // GetDiskEncryptionType gets the diskEncryptionType property value. The diskEncryptionType property
+// returns a *CloudPcDiskEncryptionType when successful
 func (m *CloudPcBulkModifyDiskEncryptionType) GetDiskEncryptionType()(*CloudPcDiskEncryptionType) {
     val, err := m.GetBackingStore().Get("diskEncryptionType")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CloudPcBulkModifyDiskEncryptionType) GetDiskEncryptionType()(*CloudPcDi
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcBulkModifyDiskEncryptionType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CloudPcBulkAction.GetFieldDeserializers()
     res["diskEncryptionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +71,6 @@ func (m *CloudPcBulkModifyDiskEncryptionType) SetDiskEncryptionType(value *Cloud
         panic(err)
     }
 }
-// CloudPcBulkModifyDiskEncryptionTypeable 
 type CloudPcBulkModifyDiskEncryptionTypeable interface {
     CloudPcBulkActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

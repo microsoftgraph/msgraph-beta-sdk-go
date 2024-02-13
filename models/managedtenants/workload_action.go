@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WorkloadAction 
 type WorkloadAction struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWorkloadAction instantiates a new workloadAction and sets the default values.
+// NewWorkloadAction instantiates a new WorkloadAction and sets the default values.
 func NewWorkloadAction()(*WorkloadAction) {
     m := &WorkloadAction{
     }
@@ -19,10 +18,12 @@ func NewWorkloadAction()(*WorkloadAction) {
     return m
 }
 // CreateWorkloadActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkloadActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkloadAction(), nil
 }
 // GetActionId gets the actionId property value. The unique identifier for the workload action. Required. Read-only.
+// returns a *string when successful
 func (m *WorkloadAction) GetActionId()(*string) {
     val, err := m.GetBackingStore().Get("actionId")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *WorkloadAction) GetActionId()(*string) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WorkloadAction) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *WorkloadAction) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WorkloadAction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCategory gets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
+// returns a *WorkloadActionCategory when successful
 func (m *WorkloadAction) GetCategory()(*WorkloadActionCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *WorkloadAction) GetCategory()(*WorkloadActionCategory) {
     return nil
 }
 // GetDescription gets the description property value. The description for the workload action. Optional. Read-only.
+// returns a *string when successful
 func (m *WorkloadAction) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *WorkloadAction) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the workload action. Optional. Read-only.
+// returns a *string when successful
 func (m *WorkloadAction) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *WorkloadAction) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -180,6 +187,7 @@ func (m *WorkloadAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetLicenses gets the licenses property value. The licenses property
+// returns a []string when successful
 func (m *WorkloadAction) GetLicenses()([]string) {
     val, err := m.GetBackingStore().Get("licenses")
     if err != nil {
@@ -191,6 +199,7 @@ func (m *WorkloadAction) GetLicenses()([]string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WorkloadAction) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -202,6 +211,7 @@ func (m *WorkloadAction) GetOdataType()(*string) {
     return nil
 }
 // GetService gets the service property value. The service associated with workload action. Optional. Read-only.
+// returns a *string when successful
 func (m *WorkloadAction) GetService()(*string) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -213,6 +223,7 @@ func (m *WorkloadAction) GetService()(*string) {
     return nil
 }
 // GetSettings gets the settings property value. The collection of settings associated with the workload action. Optional. Read-only.
+// returns a []Settingable when successful
 func (m *WorkloadAction) GetSettings()([]Settingable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -355,7 +366,6 @@ func (m *WorkloadAction) SetSettings(value []Settingable)() {
         panic(err)
     }
 }
-// WorkloadActionable 
 type WorkloadActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

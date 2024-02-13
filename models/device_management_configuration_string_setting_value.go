@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationStringSettingValue struct {
     DeviceManagementConfigurationSimpleSettingValue
 }
-// NewDeviceManagementConfigurationStringSettingValue instantiates a new deviceManagementConfigurationStringSettingValue and sets the default values.
+// NewDeviceManagementConfigurationStringSettingValue instantiates a new DeviceManagementConfigurationStringSettingValue and sets the default values.
 func NewDeviceManagementConfigurationStringSettingValue()(*DeviceManagementConfigurationStringSettingValue) {
     m := &DeviceManagementConfigurationStringSettingValue{
         DeviceManagementConfigurationSimpleSettingValue: *NewDeviceManagementConfigurationSimpleSettingValue(),
@@ -18,6 +18,7 @@ func NewDeviceManagementConfigurationStringSettingValue()(*DeviceManagementConfi
     return m
 }
 // CreateDeviceManagementConfigurationStringSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationStringSettingValueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateDeviceManagementConfigurationStringSettingValueFromDiscriminatorValue
     return NewDeviceManagementConfigurationStringSettingValue(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationStringSettingValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSimpleSettingValue.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,6 +57,7 @@ func (m *DeviceManagementConfigurationStringSettingValue) GetFieldDeserializers(
     return res
 }
 // GetValue gets the value property value. Value of the string setting.
+// returns a *string when successful
 func (m *DeviceManagementConfigurationStringSettingValue) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -86,7 +89,6 @@ func (m *DeviceManagementConfigurationStringSettingValue) SetValue(value *string
         panic(err)
     }
 }
-// DeviceManagementConfigurationStringSettingValueable 
 type DeviceManagementConfigurationStringSettingValueable interface {
     DeviceManagementConfigurationSimpleSettingValueable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

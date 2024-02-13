@@ -8,7 +8,7 @@ import (
 type IosLobAppProvisioningConfigurationPolicySetItem struct {
     PolicySetItem
 }
-// NewIosLobAppProvisioningConfigurationPolicySetItem instantiates a new iosLobAppProvisioningConfigurationPolicySetItem and sets the default values.
+// NewIosLobAppProvisioningConfigurationPolicySetItem instantiates a new IosLobAppProvisioningConfigurationPolicySetItem and sets the default values.
 func NewIosLobAppProvisioningConfigurationPolicySetItem()(*IosLobAppProvisioningConfigurationPolicySetItem) {
     m := &IosLobAppProvisioningConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
@@ -18,10 +18,12 @@ func NewIosLobAppProvisioningConfigurationPolicySetItem()(*IosLobAppProvisioning
     return m
 }
 // CreateIosLobAppProvisioningConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosLobAppProvisioningConfigurationPolicySetItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosLobAppProvisioningConfigurationPolicySetItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosLobAppProvisioningConfigurationPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicySetItem.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *IosLobAppProvisioningConfigurationPolicySetItem) Serialize(writer i878a
     }
     return nil
 }
-// IosLobAppProvisioningConfigurationPolicySetItemable 
 type IosLobAppProvisioningConfigurationPolicySetItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicySetItemable

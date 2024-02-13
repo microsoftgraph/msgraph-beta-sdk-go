@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEventRegistrationConfiguration 
 type VirtualEventRegistrationConfiguration struct {
     Entity
 }
-// NewVirtualEventRegistrationConfiguration instantiates a new virtualEventRegistrationConfiguration and sets the default values.
+// NewVirtualEventRegistrationConfiguration instantiates a new VirtualEventRegistrationConfiguration and sets the default values.
 func NewVirtualEventRegistrationConfiguration()(*VirtualEventRegistrationConfiguration) {
     m := &VirtualEventRegistrationConfiguration{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewVirtualEventRegistrationConfiguration()(*VirtualEventRegistrationConfigu
     return m
 }
 // CreateVirtualEventRegistrationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualEventRegistrationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +38,7 @@ func CreateVirtualEventRegistrationConfigurationFromDiscriminatorValue(parseNode
     return NewVirtualEventRegistrationConfiguration(), nil
 }
 // GetCapacity gets the capacity property value. Total capacity of the virtual event.
+// returns a *int32 when successful
 func (m *VirtualEventRegistrationConfiguration) GetCapacity()(*int32) {
     val, err := m.GetBackingStore().Get("capacity")
     if err != nil {
@@ -49,6 +50,7 @@ func (m *VirtualEventRegistrationConfiguration) GetCapacity()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEventRegistrationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["capacity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,6 +92,7 @@ func (m *VirtualEventRegistrationConfiguration) GetFieldDeserializers()(map[stri
     return res
 }
 // GetQuestions gets the questions property value. Registration questions.
+// returns a []VirtualEventRegistrationQuestionBaseable when successful
 func (m *VirtualEventRegistrationConfiguration) GetQuestions()([]VirtualEventRegistrationQuestionBaseable) {
     val, err := m.GetBackingStore().Get("questions")
     if err != nil {
@@ -101,6 +104,7 @@ func (m *VirtualEventRegistrationConfiguration) GetQuestions()([]VirtualEventReg
     return nil
 }
 // GetRegistrationWebUrl gets the registrationWebUrl property value. Registration URL of the virtual event.
+// returns a *string when successful
 func (m *VirtualEventRegistrationConfiguration) GetRegistrationWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("registrationWebUrl")
     if err != nil {
@@ -164,7 +168,6 @@ func (m *VirtualEventRegistrationConfiguration) SetRegistrationWebUrl(value *str
         panic(err)
     }
 }
-// VirtualEventRegistrationConfigurationable 
 type VirtualEventRegistrationConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

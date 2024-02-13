@@ -1,24 +1,26 @@
 package managedtenants
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type NotificationDestination int
 
 const (
-    NONE_NOTIFICATIONDESTINATION NotificationDestination = iota
-    API_NOTIFICATIONDESTINATION
-    EMAIL_NOTIFICATIONDESTINATION
-    SMS_NOTIFICATIONDESTINATION
-    UNKNOWNFUTUREVALUE_NOTIFICATIONDESTINATION
+    NONE_NOTIFICATIONDESTINATION = 1
+    API_NOTIFICATIONDESTINATION = 2
+    EMAIL_NOTIFICATIONDESTINATION = 4
+    SMS_NOTIFICATIONDESTINATION = 8
+    UNKNOWNFUTUREVALUE_NOTIFICATIONDESTINATION = 16
 )
 
 func (i NotificationDestination) String() string {
     var values []string
-    for p := NotificationDestination(1); p <= UNKNOWNFUTUREVALUE_NOTIFICATIONDESTINATION; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "api", "email", "sms", "unknownFutureValue"}[p])
+    options := []string{"none", "api", "email", "sms", "unknownFutureValue"}
+    for p := 0; p < 5; p++ {
+        mantis := NotificationDestination(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

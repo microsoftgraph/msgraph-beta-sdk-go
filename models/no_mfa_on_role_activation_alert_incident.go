@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NoMfaOnRoleActivationAlertIncident 
 type NoMfaOnRoleActivationAlertIncident struct {
     UnifiedRoleManagementAlertIncident
 }
-// NewNoMfaOnRoleActivationAlertIncident instantiates a new noMfaOnRoleActivationAlertIncident and sets the default values.
+// NewNoMfaOnRoleActivationAlertIncident instantiates a new NoMfaOnRoleActivationAlertIncident and sets the default values.
 func NewNoMfaOnRoleActivationAlertIncident()(*NoMfaOnRoleActivationAlertIncident) {
     m := &NoMfaOnRoleActivationAlertIncident{
         UnifiedRoleManagementAlertIncident: *NewUnifiedRoleManagementAlertIncident(),
@@ -18,10 +17,12 @@ func NewNoMfaOnRoleActivationAlertIncident()(*NoMfaOnRoleActivationAlertIncident
     return m
 }
 // CreateNoMfaOnRoleActivationAlertIncidentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNoMfaOnRoleActivationAlertIncidentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNoMfaOnRoleActivationAlertIncident(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NoMfaOnRoleActivationAlertIncident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementAlertIncident.GetFieldDeserializers()
     res["roleDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *NoMfaOnRoleActivationAlertIncident) GetFieldDeserializers()(map[string]
     return res
 }
 // GetRoleDisplayName gets the roleDisplayName property value. The name of the Microsoft Entra ID directory role.
+// returns a *string when successful
 func (m *NoMfaOnRoleActivationAlertIncident) GetRoleDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("roleDisplayName")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *NoMfaOnRoleActivationAlertIncident) GetRoleDisplayName()(*string) {
     return nil
 }
 // GetRoleTemplateId gets the roleTemplateId property value. The globally unique identifier for a directory role.
+// returns a *string when successful
 func (m *NoMfaOnRoleActivationAlertIncident) GetRoleTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("roleTemplateId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *NoMfaOnRoleActivationAlertIncident) SetRoleTemplateId(value *string)() 
         panic(err)
     }
 }
-// NoMfaOnRoleActivationAlertIncidentable 
 type NoMfaOnRoleActivationAlertIncidentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementAlertIncidentable

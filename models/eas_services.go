@@ -1,30 +1,33 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Exchange Active Sync services.
 type EasServices int
 
 const (
-    NONE_EASSERVICES EasServices = iota
+    NONE_EASSERVICES = 1
     // Enables synchronization of calendars.
-    CALENDARS_EASSERVICES
+    CALENDARS_EASSERVICES = 2
     // Enables synchronization of contacts.
-    CONTACTS_EASSERVICES
+    CONTACTS_EASSERVICES = 4
     // Enables synchronization of email.
-    EMAIL_EASSERVICES
+    EMAIL_EASSERVICES = 8
     // Enables synchronization of notes.
-    NOTES_EASSERVICES
+    NOTES_EASSERVICES = 16
     // Enables synchronization of reminders.
-    REMINDERS_EASSERVICES
+    REMINDERS_EASSERVICES = 32
 )
 
 func (i EasServices) String() string {
     var values []string
-    for p := EasServices(1); p <= REMINDERS_EASSERVICES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "calendars", "contacts", "email", "notes", "reminders"}[p])
+    options := []string{"none", "calendars", "contacts", "email", "notes", "reminders"}
+    for p := 0; p < 6; p++ {
+        mantis := EasServices(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

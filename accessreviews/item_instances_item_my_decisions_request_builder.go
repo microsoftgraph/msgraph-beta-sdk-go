@@ -47,6 +47,7 @@ type ItemInstancesItemMyDecisionsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAccessReviewDecisionId provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
+// returns a *ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder when successful
 func (m *ItemInstancesItemMyDecisionsRequestBuilder) ByAccessReviewDecisionId(accessReviewDecisionId string)(*ItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *ItemInstancesItemMyDecisionsRequestBuilder) ByAccessReviewDecisionId(ac
     }
     return NewItemInstancesItemMyDecisionsAccessReviewDecisionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemInstancesItemMyDecisionsRequestBuilderInternal instantiates a new MyDecisionsRequestBuilder and sets the default values.
+// NewItemInstancesItemMyDecisionsRequestBuilderInternal instantiates a new ItemInstancesItemMyDecisionsRequestBuilder and sets the default values.
 func NewItemInstancesItemMyDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstancesItemMyDecisionsRequestBuilder) {
     m := &ItemInstancesItemMyDecisionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/myDecisions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/myDecisions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemInstancesItemMyDecisionsRequestBuilder instantiates a new MyDecisionsRequestBuilder and sets the default values.
+// NewItemInstancesItemMyDecisionsRequestBuilder instantiates a new ItemInstancesItemMyDecisionsRequestBuilder and sets the default values.
 func NewItemInstancesItemMyDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstancesItemMyDecisionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemInstancesItemMyDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemInstancesItemMyDecisionsCountRequestBuilder when successful
 func (m *ItemInstancesItemMyDecisionsRequestBuilder) Count()(*ItemInstancesItemMyDecisionsCountRequestBuilder) {
     return NewItemInstancesItemMyDecisionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get in the Microsoft Entra access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
+// returns a AccessReviewDecisionCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-listmydecisions?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *ItemInstancesItemMyDecisionsRequestBuilder) Get(ctx context.Context, re
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessReviewDecisionCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *ItemInstancesItemMyDecisionsRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionCollectionResponseable), nil
 }
 // Post create new navigation property to myDecisions for accessReviews
+// returns a AccessReviewDecisionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInstancesItemMyDecisionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, requestConfiguration *ItemInstancesItemMyDecisionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessReviewDecisionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *ItemInstancesItemMyDecisionsRequestBuilder) Post(ctx context.Context, b
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable), nil
 }
 // ToGetRequestInformation in the Microsoft Entra access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
+// returns a *RequestInformation when successful
 func (m *ItemInstancesItemMyDecisionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInstancesItemMyDecisionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *ItemInstancesItemMyDecisionsRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to myDecisions for accessReviews
+// returns a *RequestInformation when successful
 func (m *ItemInstancesItemMyDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable, requestConfiguration *ItemInstancesItemMyDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/myDecisions", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *ItemInstancesItemMyDecisionsRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemInstancesItemMyDecisionsRequestBuilder when successful
 func (m *ItemInstancesItemMyDecisionsRequestBuilder) WithUrl(rawUrl string)(*ItemInstancesItemMyDecisionsRequestBuilder) {
     return NewItemInstancesItemMyDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -27,28 +27,29 @@ type EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilderGetRe
     // Request query parameters
     QueryParameters *EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilderGetQueryParameters
 }
-// NewEntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilderInternal instantiates a new AppScopeRequestBuilder and sets the default values.
+// NewEntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilderInternal instantiates a new EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder and sets the default values.
 func NewEntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder) {
     m := &EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule%2Did}/appScope{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/entitlementManagement/roleAssignmentSchedules/{unifiedRoleAssignmentSchedule%2Did}/appScope{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder instantiates a new AppScopeRequestBuilder and sets the default values.
+// NewEntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder instantiates a new EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder and sets the default values.
 func NewEntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
+// returns a AppScopeable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAppScopeFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable), nil
 }
 // ToGetRequestInformation read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder when successful
 func (m *EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder) {
     return NewEntitlementManagementRoleAssignmentSchedulesItemAppScopeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

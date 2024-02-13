@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ComanagedDevicesItemGetNonCompliantSettingsResponse 
-// Deprecated: This class is obsolete. Use getNonCompliantSettingsGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ComanagedDevicesItemGetNonCompliantSettingsResponse struct {
     ComanagedDevicesItemGetNonCompliantSettingsGetResponse
 }
@@ -17,11 +16,11 @@ func NewComanagedDevicesItemGetNonCompliantSettingsResponse()(*ComanagedDevicesI
     return m
 }
 // CreateComanagedDevicesItemGetNonCompliantSettingsResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateComanagedDevicesItemGetNonCompliantSettingsResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewComanagedDevicesItemGetNonCompliantSettingsResponse(), nil
 }
-// ComanagedDevicesItemGetNonCompliantSettingsResponseable 
-// Deprecated: This class is obsolete. Use getNonCompliantSettingsGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ComanagedDevicesItemGetNonCompliantSettingsResponseable interface {
     ComanagedDevicesItemGetNonCompliantSettingsGetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

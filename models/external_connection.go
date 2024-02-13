@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalConnection 
 type ExternalConnection struct {
     Entity
 }
-// NewExternalConnection instantiates a new externalConnection and sets the default values.
+// NewExternalConnection instantiates a new ExternalConnection and sets the default values.
 func NewExternalConnection()(*ExternalConnection) {
     m := &ExternalConnection{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewExternalConnection()(*ExternalConnection) {
     return m
 }
 // CreateExternalConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternalConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalConnection(), nil
 }
 // GetConfiguration gets the configuration property value. The configuration property
+// returns a Configurationable when successful
 func (m *ExternalConnection) GetConfiguration()(Configurationable) {
     val, err := m.GetBackingStore().Get("configuration")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ExternalConnection) GetConfiguration()(Configurationable) {
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *ExternalConnection) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ExternalConnection) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -145,6 +148,7 @@ func (m *ExternalConnection) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetGroups gets the groups property value. The groups property
+// returns a []ExternalGroupable when successful
 func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
     val, err := m.GetBackingStore().Get("groups")
     if err != nil {
@@ -156,6 +160,7 @@ func (m *ExternalConnection) GetGroups()([]ExternalGroupable) {
     return nil
 }
 // GetItems gets the items property value. The items property
+// returns a []ExternalItemable when successful
 func (m *ExternalConnection) GetItems()([]ExternalItemable) {
     val, err := m.GetBackingStore().Get("items")
     if err != nil {
@@ -167,6 +172,7 @@ func (m *ExternalConnection) GetItems()([]ExternalItemable) {
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *ExternalConnection) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -178,6 +184,7 @@ func (m *ExternalConnection) GetName()(*string) {
     return nil
 }
 // GetOperations gets the operations property value. The operations property
+// returns a []ConnectionOperationable when successful
 func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -189,6 +196,7 @@ func (m *ExternalConnection) GetOperations()([]ConnectionOperationable) {
     return nil
 }
 // GetSchema gets the schema property value. The schema property
+// returns a Schemaable when successful
 func (m *ExternalConnection) GetSchema()(Schemaable) {
     val, err := m.GetBackingStore().Get("schema")
     if err != nil {
@@ -200,6 +208,7 @@ func (m *ExternalConnection) GetSchema()(Schemaable) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *ConnectionState when successful
 func (m *ExternalConnection) GetState()(*ConnectionState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -334,7 +343,6 @@ func (m *ExternalConnection) SetState(value *ConnectionState)() {
         panic(err)
     }
 }
-// ExternalConnectionable 
 type ExternalConnectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

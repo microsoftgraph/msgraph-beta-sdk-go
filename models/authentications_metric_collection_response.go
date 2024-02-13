@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationsMetricCollectionResponse 
 type AuthenticationsMetricCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthenticationsMetricCollectionResponse instantiates a new authenticationsMetricCollectionResponse and sets the default values.
+// NewAuthenticationsMetricCollectionResponse instantiates a new AuthenticationsMetricCollectionResponse and sets the default values.
 func NewAuthenticationsMetricCollectionResponse()(*AuthenticationsMetricCollectionResponse) {
     m := &AuthenticationsMetricCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAuthenticationsMetricCollectionResponse()(*AuthenticationsMetricCollecti
     return m
 }
 // CreateAuthenticationsMetricCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationsMetricCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationsMetricCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationsMetricCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AuthenticationsMetricCollectionResponse) GetFieldDeserializers()(map[st
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AuthenticationsMetricable when successful
 func (m *AuthenticationsMetricCollectionResponse) GetValue()([]AuthenticationsMetricable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AuthenticationsMetricCollectionResponse) SetValue(value []Authenticatio
         panic(err)
     }
 }
-// AuthenticationsMetricCollectionResponseable 
 type AuthenticationsMetricCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

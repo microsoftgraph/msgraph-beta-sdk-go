@@ -17,20 +17,21 @@ type CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilderInternal instantiates a new MicrosoftGraphSecurityResetToDefaultRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilderInternal instantiates a new CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder) {
     m := &CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/settings/microsoft.graph.security.resetToDefault", pathParameters),
     }
     return m
 }
-// NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder instantiates a new MicrosoftGraphSecurityResetToDefaultRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder instantiates a new CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post reset a caseSettings object to the default values.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycasesettings-resettodefault?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultReq
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultReq
     return nil
 }
 // ToPostRequestInformation reset a caseSettings object to the default values.
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder) {
     return NewCasesEdiscoveryCasesItemSettingsMicrosoftGraphSecurityResetToDefaultRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

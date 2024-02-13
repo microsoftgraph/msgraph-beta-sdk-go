@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CrossTenantAccessPolicyTenantRestrictions 
 type CrossTenantAccessPolicyTenantRestrictions struct {
     CrossTenantAccessPolicyB2BSetting
 }
-// NewCrossTenantAccessPolicyTenantRestrictions instantiates a new crossTenantAccessPolicyTenantRestrictions and sets the default values.
+// NewCrossTenantAccessPolicyTenantRestrictions instantiates a new CrossTenantAccessPolicyTenantRestrictions and sets the default values.
 func NewCrossTenantAccessPolicyTenantRestrictions()(*CrossTenantAccessPolicyTenantRestrictions) {
     m := &CrossTenantAccessPolicyTenantRestrictions{
         CrossTenantAccessPolicyB2BSetting: *NewCrossTenantAccessPolicyB2BSetting(),
@@ -18,10 +17,12 @@ func NewCrossTenantAccessPolicyTenantRestrictions()(*CrossTenantAccessPolicyTena
     return m
 }
 // CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCrossTenantAccessPolicyTenantRestrictionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossTenantAccessPolicyTenantRestrictions(), nil
 }
 // GetDevices gets the devices property value. Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. Not implemented.
+// returns a DevicesFilterable when successful
 func (m *CrossTenantAccessPolicyTenantRestrictions) GetDevices()(DevicesFilterable) {
     val, err := m.GetBackingStore().Get("devices")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CrossTenantAccessPolicyTenantRestrictions) GetDevices()(DevicesFilterab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CrossTenantAccessPolicyTenantRestrictions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CrossTenantAccessPolicyB2BSetting.GetFieldDeserializers()
     res["devices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *CrossTenantAccessPolicyTenantRestrictions) SetDevices(value DevicesFilt
         panic(err)
     }
 }
-// CrossTenantAccessPolicyTenantRestrictionsable 
 type CrossTenantAccessPolicyTenantRestrictionsable interface {
     CrossTenantAccessPolicyB2BSettingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

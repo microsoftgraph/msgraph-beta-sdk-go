@@ -8,7 +8,7 @@ import (
 type AdvancedThreatProtectionOnboardingStateSummary struct {
     Entity
 }
-// NewAdvancedThreatProtectionOnboardingStateSummary instantiates a new advancedThreatProtectionOnboardingStateSummary and sets the default values.
+// NewAdvancedThreatProtectionOnboardingStateSummary instantiates a new AdvancedThreatProtectionOnboardingStateSummary and sets the default values.
 func NewAdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtectionOnboardingStateSummary) {
     m := &AdvancedThreatProtectionOnboardingStateSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewAdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtecti
     return m
 }
 // CreateAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAdvancedThreatProtectionOnboardingStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdvancedThreatProtectionOnboardingStateSummary(), nil
 }
 // GetAdvancedThreatProtectionOnboardingDeviceSettingStates gets the advancedThreatProtectionOnboardingDeviceSettingStates property value. The advancedThreatProtectionOnboardingDeviceSettingStates property
+// returns a []AdvancedThreatProtectionOnboardingDeviceSettingStateable when successful
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetAdvancedThreatProtectionOnboardingDeviceSettingStates()([]AdvancedThreatProtectionOnboardingDeviceSettingStateable) {
     val, err := m.GetBackingStore().Get("advancedThreatProtectionOnboardingDeviceSettingStates")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetAdvancedThreatProtec
     return nil
 }
 // GetCompliantDeviceCount gets the compliantDeviceCount property value. Number of compliant devices
+// returns a *int32 when successful
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("compliantDeviceCount")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetCompliantDeviceCount
     return nil
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. Number of conflict devices
+// returns a *int32 when successful
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetConflictDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("conflictDeviceCount")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetConflictDeviceCount(
     return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Number of error devices
+// returns a *int32 when successful
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetErrorDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorDeviceCount")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetErrorDeviceCount()(*
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["advancedThreatProtectionOnboardingDeviceSettingStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -165,6 +171,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetFieldDeserializers()
     return res
 }
 // GetNonCompliantDeviceCount gets the nonCompliantDeviceCount property value. Number of NonCompliant devices
+// returns a *int32 when successful
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNonCompliantDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("nonCompliantDeviceCount")
     if err != nil {
@@ -176,6 +183,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNonCompliantDeviceCo
     return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of not applicable devices
+// returns a *int32 when successful
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotApplicableDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
     if err != nil {
@@ -187,6 +195,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotApplicableDeviceC
     return nil
 }
 // GetNotAssignedDeviceCount gets the notAssignedDeviceCount property value. Number of not assigned devices
+// returns a *int32 when successful
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotAssignedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notAssignedDeviceCount")
     if err != nil {
@@ -198,6 +207,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetNotAssignedDeviceCou
     return nil
 }
 // GetRemediatedDeviceCount gets the remediatedDeviceCount property value. Number of remediated devices
+// returns a *int32 when successful
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetRemediatedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("remediatedDeviceCount")
     if err != nil {
@@ -209,6 +219,7 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) GetRemediatedDeviceCoun
     return nil
 }
 // GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of unknown devices
+// returns a *int32 when successful
 func (m *AdvancedThreatProtectionOnboardingStateSummary) GetUnknownDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("unknownDeviceCount")
     if err != nil {
@@ -350,7 +361,6 @@ func (m *AdvancedThreatProtectionOnboardingStateSummary) SetUnknownDeviceCount(v
         panic(err)
     }
 }
-// AdvancedThreatProtectionOnboardingStateSummaryable 
 type AdvancedThreatProtectionOnboardingStateSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

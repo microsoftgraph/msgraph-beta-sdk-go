@@ -6,11 +6,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// StrongAuthenticationPhoneAppDetail 
 type StrongAuthenticationPhoneAppDetail struct {
     Entity
 }
-// NewStrongAuthenticationPhoneAppDetail instantiates a new strongAuthenticationPhoneAppDetail and sets the default values.
+// NewStrongAuthenticationPhoneAppDetail instantiates a new StrongAuthenticationPhoneAppDetail and sets the default values.
 func NewStrongAuthenticationPhoneAppDetail()(*StrongAuthenticationPhoneAppDetail) {
     m := &StrongAuthenticationPhoneAppDetail{
         Entity: *NewEntity(),
@@ -18,10 +17,12 @@ func NewStrongAuthenticationPhoneAppDetail()(*StrongAuthenticationPhoneAppDetail
     return m
 }
 // CreateStrongAuthenticationPhoneAppDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateStrongAuthenticationPhoneAppDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStrongAuthenticationPhoneAppDetail(), nil
 }
 // GetAuthenticationType gets the authenticationType property value. The authenticationType property
+// returns a *string when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetAuthenticationType()(*string) {
     val, err := m.GetBackingStore().Get("authenticationType")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetAuthenticationType()(*string) {
     return nil
 }
 // GetAuthenticatorFlavor gets the authenticatorFlavor property value. The authenticatorFlavor property
+// returns a *string when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetAuthenticatorFlavor()(*string) {
     val, err := m.GetBackingStore().Get("authenticatorFlavor")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetAuthenticatorFlavor()(*string) {
     return nil
 }
 // GetDeviceId gets the deviceId property value. The deviceId property
+// returns a *UUID when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetDeviceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetDeviceId()(*i561e97a8befe7661a44
     return nil
 }
 // GetDeviceName gets the deviceName property value. The deviceName property
+// returns a *string when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetDeviceName()(*string) {
     return nil
 }
 // GetDeviceTag gets the deviceTag property value. The deviceTag property
+// returns a *string when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetDeviceTag()(*string) {
     val, err := m.GetBackingStore().Get("deviceTag")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetDeviceTag()(*string) {
     return nil
 }
 // GetDeviceToken gets the deviceToken property value. The deviceToken property
+// returns a *string when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetDeviceToken()(*string) {
     val, err := m.GetBackingStore().Get("deviceToken")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetDeviceToken()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -243,6 +250,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetFieldDeserializers()(map[string]
     return res
 }
 // GetHashFunction gets the hashFunction property value. The hashFunction property
+// returns a *string when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetHashFunction()(*string) {
     val, err := m.GetBackingStore().Get("hashFunction")
     if err != nil {
@@ -254,6 +262,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetHashFunction()(*string) {
     return nil
 }
 // GetLastAuthenticatedDateTime gets the lastAuthenticatedDateTime property value. The lastAuthenticatedDateTime property
+// returns a *Time when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetLastAuthenticatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastAuthenticatedDateTime")
     if err != nil {
@@ -265,6 +274,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetLastAuthenticatedDateTime()(*i33
     return nil
 }
 // GetNotificationType gets the notificationType property value. The notificationType property
+// returns a *string when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetNotificationType()(*string) {
     val, err := m.GetBackingStore().Get("notificationType")
     if err != nil {
@@ -276,6 +286,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetNotificationType()(*string) {
     return nil
 }
 // GetOathSecretKey gets the oathSecretKey property value. The oathSecretKey property
+// returns a *string when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetOathSecretKey()(*string) {
     val, err := m.GetBackingStore().Get("oathSecretKey")
     if err != nil {
@@ -287,6 +298,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetOathSecretKey()(*string) {
     return nil
 }
 // GetOathTokenMetadata gets the oathTokenMetadata property value. The oathTokenMetadata property
+// returns a OathTokenMetadataable when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetOathTokenMetadata()(OathTokenMetadataable) {
     val, err := m.GetBackingStore().Get("oathTokenMetadata")
     if err != nil {
@@ -298,6 +310,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetOathTokenMetadata()(OathTokenMet
     return nil
 }
 // GetOathTokenTimeDriftInSeconds gets the oathTokenTimeDriftInSeconds property value. The oathTokenTimeDriftInSeconds property
+// returns a *int32 when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetOathTokenTimeDriftInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("oathTokenTimeDriftInSeconds")
     if err != nil {
@@ -309,6 +322,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetOathTokenTimeDriftInSeconds()(*i
     return nil
 }
 // GetPhoneAppVersion gets the phoneAppVersion property value. The phoneAppVersion property
+// returns a *string when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetPhoneAppVersion()(*string) {
     val, err := m.GetBackingStore().Get("phoneAppVersion")
     if err != nil {
@@ -320,6 +334,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetPhoneAppVersion()(*string) {
     return nil
 }
 // GetTenantDeviceId gets the tenantDeviceId property value. The tenantDeviceId property
+// returns a *string when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetTenantDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("tenantDeviceId")
     if err != nil {
@@ -331,6 +346,7 @@ func (m *StrongAuthenticationPhoneAppDetail) GetTenantDeviceId()(*string) {
     return nil
 }
 // GetTokenGenerationIntervalInSeconds gets the tokenGenerationIntervalInSeconds property value. The tokenGenerationIntervalInSeconds property
+// returns a *int32 when successful
 func (m *StrongAuthenticationPhoneAppDetail) GetTokenGenerationIntervalInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("tokenGenerationIntervalInSeconds")
     if err != nil {
@@ -544,7 +560,6 @@ func (m *StrongAuthenticationPhoneAppDetail) SetTokenGenerationIntervalInSeconds
         panic(err)
     }
 }
-// StrongAuthenticationPhoneAppDetailable 
 type StrongAuthenticationPhoneAppDetailable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

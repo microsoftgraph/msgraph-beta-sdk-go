@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalCreationConditionSetCollectionResponse 
 type ServicePrincipalCreationConditionSetCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewServicePrincipalCreationConditionSetCollectionResponse instantiates a new servicePrincipalCreationConditionSetCollectionResponse and sets the default values.
+// NewServicePrincipalCreationConditionSetCollectionResponse instantiates a new ServicePrincipalCreationConditionSetCollectionResponse and sets the default values.
 func NewServicePrincipalCreationConditionSetCollectionResponse()(*ServicePrincipalCreationConditionSetCollectionResponse) {
     m := &ServicePrincipalCreationConditionSetCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewServicePrincipalCreationConditionSetCollectionResponse()(*ServicePrincip
     return m
 }
 // CreateServicePrincipalCreationConditionSetCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServicePrincipalCreationConditionSetCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalCreationConditionSetCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServicePrincipalCreationConditionSetCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ServicePrincipalCreationConditionSetCollectionResponse) GetFieldDeseria
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ServicePrincipalCreationConditionSetable when successful
 func (m *ServicePrincipalCreationConditionSetCollectionResponse) GetValue()([]ServicePrincipalCreationConditionSetable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ServicePrincipalCreationConditionSetCollectionResponse) SetValue(value 
         panic(err)
     }
 }
-// ServicePrincipalCreationConditionSetCollectionResponseable 
 type ServicePrincipalCreationConditionSetCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

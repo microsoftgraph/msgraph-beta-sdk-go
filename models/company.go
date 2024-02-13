@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// Company 
 type Company struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCompany instantiates a new company and sets the default values.
+// NewCompany instantiates a new Company and sets the default values.
 func NewCompany()(*Company) {
     m := &Company{
     }
@@ -20,10 +19,12 @@ func NewCompany()(*Company) {
     return m
 }
 // CreateCompanyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCompanyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCompany(), nil
 }
 // GetAccounts gets the accounts property value. The accounts property
+// returns a []Accountable when successful
 func (m *Company) GetAccounts()([]Accountable) {
     val, err := m.GetBackingStore().Get("accounts")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *Company) GetAccounts()([]Accountable) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Company) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -47,6 +49,7 @@ func (m *Company) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAgedAccountsPayable gets the agedAccountsPayable property value. The agedAccountsPayable property
+// returns a []AgedAccountsPayableable when successful
 func (m *Company) GetAgedAccountsPayable()([]AgedAccountsPayableable) {
     val, err := m.GetBackingStore().Get("agedAccountsPayable")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *Company) GetAgedAccountsPayable()([]AgedAccountsPayableable) {
     return nil
 }
 // GetAgedAccountsReceivable gets the agedAccountsReceivable property value. The agedAccountsReceivable property
+// returns a []AgedAccountsReceivableable when successful
 func (m *Company) GetAgedAccountsReceivable()([]AgedAccountsReceivableable) {
     val, err := m.GetBackingStore().Get("agedAccountsReceivable")
     if err != nil {
@@ -69,10 +73,12 @@ func (m *Company) GetAgedAccountsReceivable()([]AgedAccountsReceivableable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *Company) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBusinessProfileId gets the businessProfileId property value. The businessProfileId property
+// returns a *string when successful
 func (m *Company) GetBusinessProfileId()(*string) {
     val, err := m.GetBackingStore().Get("businessProfileId")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *Company) GetBusinessProfileId()(*string) {
     return nil
 }
 // GetCompanyInformation gets the companyInformation property value. The companyInformation property
+// returns a []CompanyInformationable when successful
 func (m *Company) GetCompanyInformation()([]CompanyInformationable) {
     val, err := m.GetBackingStore().Get("companyInformation")
     if err != nil {
@@ -95,6 +102,7 @@ func (m *Company) GetCompanyInformation()([]CompanyInformationable) {
     return nil
 }
 // GetCountriesRegions gets the countriesRegions property value. The countriesRegions property
+// returns a []CountryRegionable when successful
 func (m *Company) GetCountriesRegions()([]CountryRegionable) {
     val, err := m.GetBackingStore().Get("countriesRegions")
     if err != nil {
@@ -106,6 +114,7 @@ func (m *Company) GetCountriesRegions()([]CountryRegionable) {
     return nil
 }
 // GetCurrencies gets the currencies property value. The currencies property
+// returns a []Currencyable when successful
 func (m *Company) GetCurrencies()([]Currencyable) {
     val, err := m.GetBackingStore().Get("currencies")
     if err != nil {
@@ -117,6 +126,7 @@ func (m *Company) GetCurrencies()([]Currencyable) {
     return nil
 }
 // GetCustomerPaymentJournals gets the customerPaymentJournals property value. The customerPaymentJournals property
+// returns a []CustomerPaymentJournalable when successful
 func (m *Company) GetCustomerPaymentJournals()([]CustomerPaymentJournalable) {
     val, err := m.GetBackingStore().Get("customerPaymentJournals")
     if err != nil {
@@ -128,6 +138,7 @@ func (m *Company) GetCustomerPaymentJournals()([]CustomerPaymentJournalable) {
     return nil
 }
 // GetCustomerPayments gets the customerPayments property value. The customerPayments property
+// returns a []CustomerPaymentable when successful
 func (m *Company) GetCustomerPayments()([]CustomerPaymentable) {
     val, err := m.GetBackingStore().Get("customerPayments")
     if err != nil {
@@ -139,6 +150,7 @@ func (m *Company) GetCustomerPayments()([]CustomerPaymentable) {
     return nil
 }
 // GetCustomers gets the customers property value. The customers property
+// returns a []Customerable when successful
 func (m *Company) GetCustomers()([]Customerable) {
     val, err := m.GetBackingStore().Get("customers")
     if err != nil {
@@ -150,6 +162,7 @@ func (m *Company) GetCustomers()([]Customerable) {
     return nil
 }
 // GetDimensions gets the dimensions property value. The dimensions property
+// returns a []Dimensionable when successful
 func (m *Company) GetDimensions()([]Dimensionable) {
     val, err := m.GetBackingStore().Get("dimensions")
     if err != nil {
@@ -161,6 +174,7 @@ func (m *Company) GetDimensions()([]Dimensionable) {
     return nil
 }
 // GetDimensionValues gets the dimensionValues property value. The dimensionValues property
+// returns a []DimensionValueable when successful
 func (m *Company) GetDimensionValues()([]DimensionValueable) {
     val, err := m.GetBackingStore().Get("dimensionValues")
     if err != nil {
@@ -172,6 +186,7 @@ func (m *Company) GetDimensionValues()([]DimensionValueable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *Company) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -183,6 +198,7 @@ func (m *Company) GetDisplayName()(*string) {
     return nil
 }
 // GetEmployees gets the employees property value. The employees property
+// returns a []Employeeable when successful
 func (m *Company) GetEmployees()([]Employeeable) {
     val, err := m.GetBackingStore().Get("employees")
     if err != nil {
@@ -194,6 +210,7 @@ func (m *Company) GetEmployees()([]Employeeable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -819,6 +836,7 @@ func (m *Company) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetGeneralLedgerEntries gets the generalLedgerEntries property value. The generalLedgerEntries property
+// returns a []GeneralLedgerEntryable when successful
 func (m *Company) GetGeneralLedgerEntries()([]GeneralLedgerEntryable) {
     val, err := m.GetBackingStore().Get("generalLedgerEntries")
     if err != nil {
@@ -830,6 +848,7 @@ func (m *Company) GetGeneralLedgerEntries()([]GeneralLedgerEntryable) {
     return nil
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *Company) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -841,6 +860,7 @@ func (m *Company) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e555994
     return nil
 }
 // GetItemCategories gets the itemCategories property value. The itemCategories property
+// returns a []ItemCategoryable when successful
 func (m *Company) GetItemCategories()([]ItemCategoryable) {
     val, err := m.GetBackingStore().Get("itemCategories")
     if err != nil {
@@ -852,6 +872,7 @@ func (m *Company) GetItemCategories()([]ItemCategoryable) {
     return nil
 }
 // GetItems gets the items property value. The items property
+// returns a []Itemable when successful
 func (m *Company) GetItems()([]Itemable) {
     val, err := m.GetBackingStore().Get("items")
     if err != nil {
@@ -863,6 +884,7 @@ func (m *Company) GetItems()([]Itemable) {
     return nil
 }
 // GetJournalLines gets the journalLines property value. The journalLines property
+// returns a []JournalLineable when successful
 func (m *Company) GetJournalLines()([]JournalLineable) {
     val, err := m.GetBackingStore().Get("journalLines")
     if err != nil {
@@ -874,6 +896,7 @@ func (m *Company) GetJournalLines()([]JournalLineable) {
     return nil
 }
 // GetJournals gets the journals property value. The journals property
+// returns a []Journalable when successful
 func (m *Company) GetJournals()([]Journalable) {
     val, err := m.GetBackingStore().Get("journals")
     if err != nil {
@@ -885,6 +908,7 @@ func (m *Company) GetJournals()([]Journalable) {
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *Company) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -896,6 +920,7 @@ func (m *Company) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *Company) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -907,6 +932,7 @@ func (m *Company) GetOdataType()(*string) {
     return nil
 }
 // GetPaymentMethods gets the paymentMethods property value. The paymentMethods property
+// returns a []PaymentMethodable when successful
 func (m *Company) GetPaymentMethods()([]PaymentMethodable) {
     val, err := m.GetBackingStore().Get("paymentMethods")
     if err != nil {
@@ -918,6 +944,7 @@ func (m *Company) GetPaymentMethods()([]PaymentMethodable) {
     return nil
 }
 // GetPaymentTerms gets the paymentTerms property value. The paymentTerms property
+// returns a []PaymentTermable when successful
 func (m *Company) GetPaymentTerms()([]PaymentTermable) {
     val, err := m.GetBackingStore().Get("paymentTerms")
     if err != nil {
@@ -929,6 +956,7 @@ func (m *Company) GetPaymentTerms()([]PaymentTermable) {
     return nil
 }
 // GetPicture gets the picture property value. The picture property
+// returns a []Pictureable when successful
 func (m *Company) GetPicture()([]Pictureable) {
     val, err := m.GetBackingStore().Get("picture")
     if err != nil {
@@ -940,6 +968,7 @@ func (m *Company) GetPicture()([]Pictureable) {
     return nil
 }
 // GetPurchaseInvoiceLines gets the purchaseInvoiceLines property value. The purchaseInvoiceLines property
+// returns a []PurchaseInvoiceLineable when successful
 func (m *Company) GetPurchaseInvoiceLines()([]PurchaseInvoiceLineable) {
     val, err := m.GetBackingStore().Get("purchaseInvoiceLines")
     if err != nil {
@@ -951,6 +980,7 @@ func (m *Company) GetPurchaseInvoiceLines()([]PurchaseInvoiceLineable) {
     return nil
 }
 // GetPurchaseInvoices gets the purchaseInvoices property value. The purchaseInvoices property
+// returns a []PurchaseInvoiceable when successful
 func (m *Company) GetPurchaseInvoices()([]PurchaseInvoiceable) {
     val, err := m.GetBackingStore().Get("purchaseInvoices")
     if err != nil {
@@ -962,6 +992,7 @@ func (m *Company) GetPurchaseInvoices()([]PurchaseInvoiceable) {
     return nil
 }
 // GetSalesCreditMemoLines gets the salesCreditMemoLines property value. The salesCreditMemoLines property
+// returns a []SalesCreditMemoLineable when successful
 func (m *Company) GetSalesCreditMemoLines()([]SalesCreditMemoLineable) {
     val, err := m.GetBackingStore().Get("salesCreditMemoLines")
     if err != nil {
@@ -973,6 +1004,7 @@ func (m *Company) GetSalesCreditMemoLines()([]SalesCreditMemoLineable) {
     return nil
 }
 // GetSalesCreditMemos gets the salesCreditMemos property value. The salesCreditMemos property
+// returns a []SalesCreditMemoable when successful
 func (m *Company) GetSalesCreditMemos()([]SalesCreditMemoable) {
     val, err := m.GetBackingStore().Get("salesCreditMemos")
     if err != nil {
@@ -984,6 +1016,7 @@ func (m *Company) GetSalesCreditMemos()([]SalesCreditMemoable) {
     return nil
 }
 // GetSalesInvoiceLines gets the salesInvoiceLines property value. The salesInvoiceLines property
+// returns a []SalesInvoiceLineable when successful
 func (m *Company) GetSalesInvoiceLines()([]SalesInvoiceLineable) {
     val, err := m.GetBackingStore().Get("salesInvoiceLines")
     if err != nil {
@@ -995,6 +1028,7 @@ func (m *Company) GetSalesInvoiceLines()([]SalesInvoiceLineable) {
     return nil
 }
 // GetSalesInvoices gets the salesInvoices property value. The salesInvoices property
+// returns a []SalesInvoiceable when successful
 func (m *Company) GetSalesInvoices()([]SalesInvoiceable) {
     val, err := m.GetBackingStore().Get("salesInvoices")
     if err != nil {
@@ -1006,6 +1040,7 @@ func (m *Company) GetSalesInvoices()([]SalesInvoiceable) {
     return nil
 }
 // GetSalesOrderLines gets the salesOrderLines property value. The salesOrderLines property
+// returns a []SalesOrderLineable when successful
 func (m *Company) GetSalesOrderLines()([]SalesOrderLineable) {
     val, err := m.GetBackingStore().Get("salesOrderLines")
     if err != nil {
@@ -1017,6 +1052,7 @@ func (m *Company) GetSalesOrderLines()([]SalesOrderLineable) {
     return nil
 }
 // GetSalesOrders gets the salesOrders property value. The salesOrders property
+// returns a []SalesOrderable when successful
 func (m *Company) GetSalesOrders()([]SalesOrderable) {
     val, err := m.GetBackingStore().Get("salesOrders")
     if err != nil {
@@ -1028,6 +1064,7 @@ func (m *Company) GetSalesOrders()([]SalesOrderable) {
     return nil
 }
 // GetSalesQuoteLines gets the salesQuoteLines property value. The salesQuoteLines property
+// returns a []SalesQuoteLineable when successful
 func (m *Company) GetSalesQuoteLines()([]SalesQuoteLineable) {
     val, err := m.GetBackingStore().Get("salesQuoteLines")
     if err != nil {
@@ -1039,6 +1076,7 @@ func (m *Company) GetSalesQuoteLines()([]SalesQuoteLineable) {
     return nil
 }
 // GetSalesQuotes gets the salesQuotes property value. The salesQuotes property
+// returns a []SalesQuoteable when successful
 func (m *Company) GetSalesQuotes()([]SalesQuoteable) {
     val, err := m.GetBackingStore().Get("salesQuotes")
     if err != nil {
@@ -1050,6 +1088,7 @@ func (m *Company) GetSalesQuotes()([]SalesQuoteable) {
     return nil
 }
 // GetShipmentMethods gets the shipmentMethods property value. The shipmentMethods property
+// returns a []ShipmentMethodable when successful
 func (m *Company) GetShipmentMethods()([]ShipmentMethodable) {
     val, err := m.GetBackingStore().Get("shipmentMethods")
     if err != nil {
@@ -1061,6 +1100,7 @@ func (m *Company) GetShipmentMethods()([]ShipmentMethodable) {
     return nil
 }
 // GetSystemVersion gets the systemVersion property value. The systemVersion property
+// returns a *string when successful
 func (m *Company) GetSystemVersion()(*string) {
     val, err := m.GetBackingStore().Get("systemVersion")
     if err != nil {
@@ -1072,6 +1112,7 @@ func (m *Company) GetSystemVersion()(*string) {
     return nil
 }
 // GetTaxAreas gets the taxAreas property value. The taxAreas property
+// returns a []TaxAreaable when successful
 func (m *Company) GetTaxAreas()([]TaxAreaable) {
     val, err := m.GetBackingStore().Get("taxAreas")
     if err != nil {
@@ -1083,6 +1124,7 @@ func (m *Company) GetTaxAreas()([]TaxAreaable) {
     return nil
 }
 // GetTaxGroups gets the taxGroups property value. The taxGroups property
+// returns a []TaxGroupable when successful
 func (m *Company) GetTaxGroups()([]TaxGroupable) {
     val, err := m.GetBackingStore().Get("taxGroups")
     if err != nil {
@@ -1094,6 +1136,7 @@ func (m *Company) GetTaxGroups()([]TaxGroupable) {
     return nil
 }
 // GetUnitsOfMeasure gets the unitsOfMeasure property value. The unitsOfMeasure property
+// returns a []UnitOfMeasureable when successful
 func (m *Company) GetUnitsOfMeasure()([]UnitOfMeasureable) {
     val, err := m.GetBackingStore().Get("unitsOfMeasure")
     if err != nil {
@@ -1105,6 +1148,7 @@ func (m *Company) GetUnitsOfMeasure()([]UnitOfMeasureable) {
     return nil
 }
 // GetVendors gets the vendors property value. The vendors property
+// returns a []VendorEscapedable when successful
 func (m *Company) GetVendors()([]VendorEscapedable) {
     val, err := m.GetBackingStore().Get("vendors")
     if err != nil {
@@ -1879,7 +1923,6 @@ func (m *Company) SetVendors(value []VendorEscapedable)() {
         panic(err)
     }
 }
-// Companyable 
 type Companyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

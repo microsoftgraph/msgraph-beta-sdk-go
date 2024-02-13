@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedRoleSettings 
 type PrivilegedRoleSettings struct {
     Entity
 }
-// NewPrivilegedRoleSettings instantiates a new privilegedRoleSettings and sets the default values.
+// NewPrivilegedRoleSettings instantiates a new PrivilegedRoleSettings and sets the default values.
 func NewPrivilegedRoleSettings()(*PrivilegedRoleSettings) {
     m := &PrivilegedRoleSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPrivilegedRoleSettings()(*PrivilegedRoleSettings) {
     return m
 }
 // CreatePrivilegedRoleSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegedRoleSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedRoleSettings(), nil
 }
 // GetApprovalOnElevation gets the approvalOnElevation property value. The approvalOnElevation property
+// returns a *bool when successful
 func (m *PrivilegedRoleSettings) GetApprovalOnElevation()(*bool) {
     val, err := m.GetBackingStore().Get("approvalOnElevation")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PrivilegedRoleSettings) GetApprovalOnElevation()(*bool) {
     return nil
 }
 // GetApproverIds gets the approverIds property value. The approverIds property
+// returns a []string when successful
 func (m *PrivilegedRoleSettings) GetApproverIds()([]string) {
     val, err := m.GetBackingStore().Get("approverIds")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *PrivilegedRoleSettings) GetApproverIds()([]string) {
     return nil
 }
 // GetElevationDuration gets the elevationDuration property value. The elevationDuration property
+// returns a *ISODuration when successful
 func (m *PrivilegedRoleSettings) GetElevationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("elevationDuration")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *PrivilegedRoleSettings) GetElevationDuration()(*i878a80d2330e89d2689638
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["approvalOnElevation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -164,6 +168,7 @@ func (m *PrivilegedRoleSettings) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetIsMfaOnElevationConfigurable gets the isMfaOnElevationConfigurable property value. The isMfaOnElevationConfigurable property
+// returns a *bool when successful
 func (m *PrivilegedRoleSettings) GetIsMfaOnElevationConfigurable()(*bool) {
     val, err := m.GetBackingStore().Get("isMfaOnElevationConfigurable")
     if err != nil {
@@ -175,6 +180,7 @@ func (m *PrivilegedRoleSettings) GetIsMfaOnElevationConfigurable()(*bool) {
     return nil
 }
 // GetLastGlobalAdmin gets the lastGlobalAdmin property value. The lastGlobalAdmin property
+// returns a *bool when successful
 func (m *PrivilegedRoleSettings) GetLastGlobalAdmin()(*bool) {
     val, err := m.GetBackingStore().Get("lastGlobalAdmin")
     if err != nil {
@@ -186,6 +192,7 @@ func (m *PrivilegedRoleSettings) GetLastGlobalAdmin()(*bool) {
     return nil
 }
 // GetMaxElavationDuration gets the maxElavationDuration property value. The maxElavationDuration property
+// returns a *ISODuration when successful
 func (m *PrivilegedRoleSettings) GetMaxElavationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("maxElavationDuration")
     if err != nil {
@@ -197,6 +204,7 @@ func (m *PrivilegedRoleSettings) GetMaxElavationDuration()(*i878a80d2330e89d2689
     return nil
 }
 // GetMfaOnElevation gets the mfaOnElevation property value. The mfaOnElevation property
+// returns a *bool when successful
 func (m *PrivilegedRoleSettings) GetMfaOnElevation()(*bool) {
     val, err := m.GetBackingStore().Get("mfaOnElevation")
     if err != nil {
@@ -208,6 +216,7 @@ func (m *PrivilegedRoleSettings) GetMfaOnElevation()(*bool) {
     return nil
 }
 // GetMinElevationDuration gets the minElevationDuration property value. The minElevationDuration property
+// returns a *ISODuration when successful
 func (m *PrivilegedRoleSettings) GetMinElevationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("minElevationDuration")
     if err != nil {
@@ -219,6 +228,7 @@ func (m *PrivilegedRoleSettings) GetMinElevationDuration()(*i878a80d2330e89d2689
     return nil
 }
 // GetNotificationToUserOnElevation gets the notificationToUserOnElevation property value. The notificationToUserOnElevation property
+// returns a *bool when successful
 func (m *PrivilegedRoleSettings) GetNotificationToUserOnElevation()(*bool) {
     val, err := m.GetBackingStore().Get("notificationToUserOnElevation")
     if err != nil {
@@ -230,6 +240,7 @@ func (m *PrivilegedRoleSettings) GetNotificationToUserOnElevation()(*bool) {
     return nil
 }
 // GetTicketingInfoOnElevation gets the ticketingInfoOnElevation property value. The ticketingInfoOnElevation property
+// returns a *bool when successful
 func (m *PrivilegedRoleSettings) GetTicketingInfoOnElevation()(*bool) {
     val, err := m.GetBackingStore().Get("ticketingInfoOnElevation")
     if err != nil {
@@ -378,7 +389,6 @@ func (m *PrivilegedRoleSettings) SetTicketingInfoOnElevation(value *bool)() {
         panic(err)
     }
 }
-// PrivilegedRoleSettingsable 
 type PrivilegedRoleSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

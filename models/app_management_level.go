@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Management levels for apps
@@ -8,28 +9,30 @@ type AppManagementLevel int
 
 const (
     // Unspecified
-    UNSPECIFIED_APPMANAGEMENTLEVEL AppManagementLevel = iota
+    UNSPECIFIED_APPMANAGEMENTLEVEL = 1
     // Unmanaged
-    UNMANAGED_APPMANAGEMENTLEVEL
+    UNMANAGED_APPMANAGEMENTLEVEL = 2
     // MDM
-    MDM_APPMANAGEMENTLEVEL
+    MDM_APPMANAGEMENTLEVEL = 4
     // Android Enterprise
-    ANDROIDENTERPRISE_APPMANAGEMENTLEVEL
+    ANDROIDENTERPRISE_APPMANAGEMENTLEVEL = 8
     // Android Enterprise dedicated devices with Azure AD Shared mode
-    ANDROIDENTERPRISEDEDICATEDDEVICESWITHAZUREADSHAREDMODE_APPMANAGEMENTLEVEL
+    ANDROIDENTERPRISEDEDICATEDDEVICESWITHAZUREADSHAREDMODE_APPMANAGEMENTLEVEL = 16
     // Android Open Source Project (AOSP) devices
-    ANDROIDOPENSOURCEPROJECTUSERASSOCIATED_APPMANAGEMENTLEVEL
+    ANDROIDOPENSOURCEPROJECTUSERASSOCIATED_APPMANAGEMENTLEVEL = 32
     // Android Open Source Project (AOSP) userless devices
-    ANDROIDOPENSOURCEPROJECTUSERLESS_APPMANAGEMENTLEVEL
+    ANDROIDOPENSOURCEPROJECTUSERLESS_APPMANAGEMENTLEVEL = 64
     // Place holder for evolvable enum
-    UNKNOWNFUTUREVALUE_APPMANAGEMENTLEVEL
+    UNKNOWNFUTUREVALUE_APPMANAGEMENTLEVEL = 128
 )
 
 func (i AppManagementLevel) String() string {
     var values []string
-    for p := AppManagementLevel(1); p <= UNKNOWNFUTUREVALUE_APPMANAGEMENTLEVEL; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"unspecified", "unmanaged", "mdm", "androidEnterprise", "androidEnterpriseDedicatedDevicesWithAzureAdSharedMode", "androidOpenSourceProjectUserAssociated", "androidOpenSourceProjectUserless", "unknownFutureValue"}[p])
+    options := []string{"unspecified", "unmanaged", "mdm", "androidEnterprise", "androidEnterpriseDedicatedDevicesWithAzureAdSharedMode", "androidOpenSourceProjectUserAssociated", "androidOpenSourceProjectUserless", "unknownFutureValue"}
+    for p := 0; p < 8; p++ {
+        mantis := AppManagementLevel(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

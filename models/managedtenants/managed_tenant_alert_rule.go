@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedTenantAlertRule 
 type ManagedTenantAlertRule struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedTenantAlertRule instantiates a new managedTenantAlertRule and sets the default values.
+// NewManagedTenantAlertRule instantiates a new ManagedTenantAlertRule and sets the default values.
 func NewManagedTenantAlertRule()(*ManagedTenantAlertRule) {
     m := &ManagedTenantAlertRule{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManagedTenantAlertRule()(*ManagedTenantAlertRule) {
     return m
 }
 // CreateManagedTenantAlertRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedTenantAlertRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedTenantAlertRule(), nil
 }
 // GetAlertDisplayName gets the alertDisplayName property value. The alertDisplayName property
+// returns a *string when successful
 func (m *ManagedTenantAlertRule) GetAlertDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("alertDisplayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ManagedTenantAlertRule) GetAlertDisplayName()(*string) {
     return nil
 }
 // GetAlerts gets the alerts property value. The alerts property
+// returns a []ManagedTenantAlertable when successful
 func (m *ManagedTenantAlertRule) GetAlerts()([]ManagedTenantAlertable) {
     val, err := m.GetBackingStore().Get("alerts")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ManagedTenantAlertRule) GetAlerts()([]ManagedTenantAlertable) {
     return nil
 }
 // GetAlertTTL gets the alertTTL property value. The alertTTL property
+// returns a *int32 when successful
 func (m *ManagedTenantAlertRule) GetAlertTTL()(*int32) {
     val, err := m.GetBackingStore().Get("alertTTL")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ManagedTenantAlertRule) GetAlertTTL()(*int32) {
     return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
+// returns a *string when successful
 func (m *ManagedTenantAlertRule) GetCreatedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("createdByUserId")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *ManagedTenantAlertRule) GetCreatedByUserId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantAlertRule) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *ManagedTenantAlertRule) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *ManagedTenantAlertRule) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *ManagedTenantAlertRule) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *ManagedTenantAlertRule) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *ManagedTenantAlertRule) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedTenantAlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alertDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -272,6 +280,7 @@ func (m *ManagedTenantAlertRule) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
+// returns a *string when successful
 func (m *ManagedTenantAlertRule) GetLastActionByUserId()(*string) {
     val, err := m.GetBackingStore().Get("lastActionByUserId")
     if err != nil {
@@ -283,6 +292,7 @@ func (m *ManagedTenantAlertRule) GetLastActionByUserId()(*string) {
     return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantAlertRule) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -294,6 +304,7 @@ func (m *ManagedTenantAlertRule) GetLastActionDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetLastRunDateTime gets the lastRunDateTime property value. The lastRunDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantAlertRule) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRunDateTime")
     if err != nil {
@@ -305,6 +316,7 @@ func (m *ManagedTenantAlertRule) GetLastRunDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetNotificationFinalDestinations gets the notificationFinalDestinations property value. The notificationFinalDestinations property
+// returns a *NotificationDestination when successful
 func (m *ManagedTenantAlertRule) GetNotificationFinalDestinations()(*NotificationDestination) {
     val, err := m.GetBackingStore().Get("notificationFinalDestinations")
     if err != nil {
@@ -316,6 +328,7 @@ func (m *ManagedTenantAlertRule) GetNotificationFinalDestinations()(*Notificatio
     return nil
 }
 // GetRuleDefinition gets the ruleDefinition property value. The ruleDefinition property
+// returns a ManagedTenantAlertRuleDefinitionable when successful
 func (m *ManagedTenantAlertRule) GetRuleDefinition()(ManagedTenantAlertRuleDefinitionable) {
     val, err := m.GetBackingStore().Get("ruleDefinition")
     if err != nil {
@@ -327,6 +340,7 @@ func (m *ManagedTenantAlertRule) GetRuleDefinition()(ManagedTenantAlertRuleDefin
     return nil
 }
 // GetSeverity gets the severity property value. The severity property
+// returns a *AlertSeverity when successful
 func (m *ManagedTenantAlertRule) GetSeverity()(*AlertSeverity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
@@ -338,6 +352,7 @@ func (m *ManagedTenantAlertRule) GetSeverity()(*AlertSeverity) {
     return nil
 }
 // GetTargets gets the targets property value. The targets property
+// returns a []NotificationTargetable when successful
 func (m *ManagedTenantAlertRule) GetTargets()([]NotificationTargetable) {
     val, err := m.GetBackingStore().Get("targets")
     if err != nil {
@@ -349,6 +364,7 @@ func (m *ManagedTenantAlertRule) GetTargets()([]NotificationTargetable) {
     return nil
 }
 // GetTenantIds gets the tenantIds property value. The tenantIds property
+// returns a []TenantInfoable when successful
 func (m *ManagedTenantAlertRule) GetTenantIds()([]TenantInfoable) {
     val, err := m.GetBackingStore().Get("tenantIds")
     if err != nil {
@@ -582,7 +598,6 @@ func (m *ManagedTenantAlertRule) SetTenantIds(value []TenantInfoable)() {
         panic(err)
     }
 }
-// ManagedTenantAlertRuleable 
 type ManagedTenantAlertRuleable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

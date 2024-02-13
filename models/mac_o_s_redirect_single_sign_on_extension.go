@@ -8,7 +8,7 @@ import (
 type MacOSRedirectSingleSignOnExtension struct {
     MacOSSingleSignOnExtension
 }
-// NewMacOSRedirectSingleSignOnExtension instantiates a new macOSRedirectSingleSignOnExtension and sets the default values.
+// NewMacOSRedirectSingleSignOnExtension instantiates a new MacOSRedirectSingleSignOnExtension and sets the default values.
 func NewMacOSRedirectSingleSignOnExtension()(*MacOSRedirectSingleSignOnExtension) {
     m := &MacOSRedirectSingleSignOnExtension{
         MacOSSingleSignOnExtension: *NewMacOSSingleSignOnExtension(),
@@ -18,10 +18,12 @@ func NewMacOSRedirectSingleSignOnExtension()(*MacOSRedirectSingleSignOnExtension
     return m
 }
 // CreateMacOSRedirectSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSRedirectSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSRedirectSingleSignOnExtension(), nil
 }
 // GetConfigurations gets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
+// returns a []KeyTypedValuePairable when successful
 func (m *MacOSRedirectSingleSignOnExtension) GetConfigurations()([]KeyTypedValuePairable) {
     val, err := m.GetBackingStore().Get("configurations")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSRedirectSingleSignOnExtension) GetConfigurations()([]KeyTypedValue
     return nil
 }
 // GetExtensionIdentifier gets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
+// returns a *string when successful
 func (m *MacOSRedirectSingleSignOnExtension) GetExtensionIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("extensionIdentifier")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MacOSRedirectSingleSignOnExtension) GetExtensionIdentifier()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSRedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MacOSSingleSignOnExtension.GetFieldDeserializers()
     res["configurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +105,7 @@ func (m *MacOSRedirectSingleSignOnExtension) GetFieldDeserializers()(map[string]
     return res
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
+// returns a *string when successful
 func (m *MacOSRedirectSingleSignOnExtension) GetTeamIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("teamIdentifier")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *MacOSRedirectSingleSignOnExtension) GetTeamIdentifier()(*string) {
     return nil
 }
 // GetUrlPrefixes gets the urlPrefixes property value. One or more URL prefixes of identity providers on whose behalf the app extension performs single sign-on. URLs must begin with http:// or https://. All URL prefixes must be unique for all profiles.
+// returns a []string when successful
 func (m *MacOSRedirectSingleSignOnExtension) GetUrlPrefixes()([]string) {
     val, err := m.GetBackingStore().Get("urlPrefixes")
     if err != nil {
@@ -188,7 +194,6 @@ func (m *MacOSRedirectSingleSignOnExtension) SetUrlPrefixes(value []string)() {
         panic(err)
     }
 }
-// MacOSRedirectSingleSignOnExtensionable 
 type MacOSRedirectSingleSignOnExtensionable interface {
     MacOSSingleSignOnExtensionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Contains properties for detection operator.
@@ -8,26 +9,28 @@ type Win32LobAppDetectionOperator int
 
 const (
     // Not configured.
-    NOTCONFIGURED_WIN32LOBAPPDETECTIONOPERATOR Win32LobAppDetectionOperator = iota
+    NOTCONFIGURED_WIN32LOBAPPDETECTIONOPERATOR = 1
     // Equal operator.
-    EQUAL_WIN32LOBAPPDETECTIONOPERATOR
+    EQUAL_WIN32LOBAPPDETECTIONOPERATOR = 2
     // Not equal operator.
-    NOTEQUAL_WIN32LOBAPPDETECTIONOPERATOR
+    NOTEQUAL_WIN32LOBAPPDETECTIONOPERATOR = 4
     // Greater than operator.
-    GREATERTHAN_WIN32LOBAPPDETECTIONOPERATOR
+    GREATERTHAN_WIN32LOBAPPDETECTIONOPERATOR = 8
     // Greater than or equal operator.
-    GREATERTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR
+    GREATERTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR = 16
     // Less than operator.
-    LESSTHAN_WIN32LOBAPPDETECTIONOPERATOR
+    LESSTHAN_WIN32LOBAPPDETECTIONOPERATOR = 32
     // Less than or equal operator.
-    LESSTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR
+    LESSTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR = 64
 )
 
 func (i Win32LobAppDetectionOperator) String() string {
     var values []string
-    for p := Win32LobAppDetectionOperator(1); p <= LESSTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"notConfigured", "equal", "notEqual", "greaterThan", "greaterThanOrEqual", "lessThan", "lessThanOrEqual"}[p])
+    options := []string{"notConfigured", "equal", "notEqual", "greaterThan", "greaterThanOrEqual", "lessThan", "lessThanOrEqual"}
+    for p := 0; p < 7; p++ {
+        mantis := Win32LobAppDetectionOperator(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

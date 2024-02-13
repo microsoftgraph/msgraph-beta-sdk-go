@@ -17,28 +17,28 @@ type CompaniesItemSalesInvoicesItemSendRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCompaniesItemSalesInvoicesItemSendRequestBuilderInternal instantiates a new SendRequestBuilder and sets the default values.
+// NewCompaniesItemSalesInvoicesItemSendRequestBuilderInternal instantiates a new CompaniesItemSalesInvoicesItemSendRequestBuilder and sets the default values.
 func NewCompaniesItemSalesInvoicesItemSendRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesInvoicesItemSendRequestBuilder) {
     m := &CompaniesItemSalesInvoicesItemSendRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/send", pathParameters),
     }
     return m
 }
-// NewCompaniesItemSalesInvoicesItemSendRequestBuilder instantiates a new SendRequestBuilder and sets the default values.
+// NewCompaniesItemSalesInvoicesItemSendRequestBuilder instantiates a new CompaniesItemSalesInvoicesItemSendRequestBuilder and sets the default values.
 func NewCompaniesItemSalesInvoicesItemSendRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesInvoicesItemSendRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemSalesInvoicesItemSendRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action send
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemSalesInvoicesItemSendRequestBuilder) Post(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoicesItemSendRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *CompaniesItemSalesInvoicesItemSendRequestBuilder) Post(ctx context.Cont
     return nil
 }
 // ToPostRequestInformation invoke action send
+// returns a *RequestInformation when successful
 func (m *CompaniesItemSalesInvoicesItemSendRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoicesItemSendRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -57,6 +58,7 @@ func (m *CompaniesItemSalesInvoicesItemSendRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemSalesInvoicesItemSendRequestBuilder when successful
 func (m *CompaniesItemSalesInvoicesItemSendRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemSalesInvoicesItemSendRequestBuilder) {
     return NewCompaniesItemSalesInvoicesItemSendRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

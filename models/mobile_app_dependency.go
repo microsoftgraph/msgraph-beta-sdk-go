@@ -8,7 +8,7 @@ import (
 type MobileAppDependency struct {
     MobileAppRelationship
 }
-// NewMobileAppDependency instantiates a new mobileAppDependency and sets the default values.
+// NewMobileAppDependency instantiates a new MobileAppDependency and sets the default values.
 func NewMobileAppDependency()(*MobileAppDependency) {
     m := &MobileAppDependency{
         MobileAppRelationship: *NewMobileAppRelationship(),
@@ -18,10 +18,12 @@ func NewMobileAppDependency()(*MobileAppDependency) {
     return m
 }
 // CreateMobileAppDependencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppDependencyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppDependency(), nil
 }
 // GetDependencyType gets the dependencyType property value. Indicates the dependency type associated with a relationship between two mobile apps.
+// returns a *MobileAppDependencyType when successful
 func (m *MobileAppDependency) GetDependencyType()(*MobileAppDependencyType) {
     val, err := m.GetBackingStore().Get("dependencyType")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MobileAppDependency) GetDependencyType()(*MobileAppDependencyType) {
     return nil
 }
 // GetDependentAppCount gets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app.
+// returns a *int32 when successful
 func (m *MobileAppDependency) GetDependentAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("dependentAppCount")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MobileAppDependency) GetDependentAppCount()(*int32) {
     return nil
 }
 // GetDependsOnAppCount gets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on.
+// returns a *int32 when successful
 func (m *MobileAppDependency) GetDependsOnAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("dependsOnAppCount")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *MobileAppDependency) GetDependsOnAppCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppDependency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppRelationship.GetFieldDeserializers()
     res["dependencyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,7 +142,6 @@ func (m *MobileAppDependency) SetDependsOnAppCount(value *int32)() {
         panic(err)
     }
 }
-// MobileAppDependencyable 
 type MobileAppDependencyable interface {
     MobileAppRelationshipable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

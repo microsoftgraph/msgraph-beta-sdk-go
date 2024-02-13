@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FilteringProfile 
 type FilteringProfile struct {
     Profile
 }
-// NewFilteringProfile instantiates a new filteringProfile and sets the default values.
+// NewFilteringProfile instantiates a new FilteringProfile and sets the default values.
 func NewFilteringProfile()(*FilteringProfile) {
     m := &FilteringProfile{
         Profile: *NewProfile(),
@@ -19,10 +18,12 @@ func NewFilteringProfile()(*FilteringProfile) {
     return m
 }
 // CreateFilteringProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFilteringProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFilteringProfile(), nil
 }
 // GetConditionalAccessPolicies gets the conditionalAccessPolicies property value. A set of associated policies defined to regulate access to resources or systems based on specific conditions. Automatically expanded.
+// returns a []ConditionalAccessPolicyable when successful
 func (m *FilteringProfile) GetConditionalAccessPolicies()([]ConditionalAccessPolicyable) {
     val, err := m.GetBackingStore().Get("conditionalAccessPolicies")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *FilteringProfile) GetConditionalAccessPolicies()([]ConditionalAccessPol
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the filteringProfile was created.
+// returns a *Time when successful
 func (m *FilteringProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *FilteringProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FilteringProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Profile.GetFieldDeserializers()
     res["conditionalAccessPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +89,7 @@ func (m *FilteringProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetPriority gets the priority property value. The priority used to order the profile for processing within a list.
+// returns a *int64 when successful
 func (m *FilteringProfile) GetPriority()(*int64) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -149,7 +153,6 @@ func (m *FilteringProfile) SetPriority(value *int64)() {
         panic(err)
     }
 }
-// FilteringProfileable 
 type FilteringProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Profileable

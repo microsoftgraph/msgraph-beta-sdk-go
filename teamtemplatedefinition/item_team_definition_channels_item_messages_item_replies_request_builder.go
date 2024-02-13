@@ -47,6 +47,7 @@ type ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilderPostRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByChatMessageId1 provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
+// returns a *ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder when successful
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) ByChatMessageId1(chatMessageId1 string)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,28 +58,32 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) ByChat
     }
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesChatMessageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilderInternal instantiates a new RepliesRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilderInternal instantiates a new ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder instantiates a new RepliesRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder instantiates a new ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemTeamDefinitionChannelsItemMessagesItemRepliesCountRequestBuilder when successful
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) Count()(*ItemTeamDefinitionChannelsItemMessagesItemRepliesCountRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
+// returns a *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder when successful
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) Delta()(*ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
+// returns a ChatMessageCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0
@@ -88,8 +93,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) Get(ct
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateChatMessageCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,6 +105,8 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) Get(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageCollectionResponseable), nil
 }
 // Post send a new reply to a chatMessage in a specified channel.
+// returns a ChatMessageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
@@ -110,8 +116,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) Post(c
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateChatMessageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -123,6 +128,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) Post(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
 }
 // ToGetRequestInformation list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -136,8 +142,9 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPostRequestInformation send a new reply to a chatMessage in a specified channel.
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -150,6 +157,7 @@ func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder when successful
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

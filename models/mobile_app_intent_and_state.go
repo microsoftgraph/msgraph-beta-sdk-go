@@ -8,7 +8,7 @@ import (
 type MobileAppIntentAndState struct {
     Entity
 }
-// NewMobileAppIntentAndState instantiates a new mobileAppIntentAndState and sets the default values.
+// NewMobileAppIntentAndState instantiates a new MobileAppIntentAndState and sets the default values.
 func NewMobileAppIntentAndState()(*MobileAppIntentAndState) {
     m := &MobileAppIntentAndState{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewMobileAppIntentAndState()(*MobileAppIntentAndState) {
     return m
 }
 // CreateMobileAppIntentAndStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppIntentAndStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppIntentAndState(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["managedDeviceIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -61,6 +63,7 @@ func (m *MobileAppIntentAndState) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetManagedDeviceIdentifier gets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
+// returns a *string when successful
 func (m *MobileAppIntentAndState) GetManagedDeviceIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceIdentifier")
     if err != nil {
@@ -72,6 +75,7 @@ func (m *MobileAppIntentAndState) GetManagedDeviceIdentifier()(*string) {
     return nil
 }
 // GetMobileAppList gets the mobileAppList property value. The list of payload intents and states for the tenant.
+// returns a []MobileAppIntentAndStateDetailable when successful
 func (m *MobileAppIntentAndState) GetMobileAppList()([]MobileAppIntentAndStateDetailable) {
     val, err := m.GetBackingStore().Get("mobileAppList")
     if err != nil {
@@ -83,6 +87,7 @@ func (m *MobileAppIntentAndState) GetMobileAppList()([]MobileAppIntentAndStateDe
     return nil
 }
 // GetUserId gets the userId property value. Identifier for the user that tried to enroll the device.
+// returns a *string when successful
 func (m *MobileAppIntentAndState) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -146,7 +151,6 @@ func (m *MobileAppIntentAndState) SetUserId(value *string)() {
         panic(err)
     }
 }
-// MobileAppIntentAndStateable 
 type MobileAppIntentAndStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

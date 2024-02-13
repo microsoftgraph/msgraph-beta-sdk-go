@@ -8,7 +8,7 @@ import (
 type WindowsStoreApp struct {
     MobileApp
 }
-// NewWindowsStoreApp instantiates a new windowsStoreApp and sets the default values.
+// NewWindowsStoreApp instantiates a new WindowsStoreApp and sets the default values.
 func NewWindowsStoreApp()(*WindowsStoreApp) {
     m := &WindowsStoreApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewWindowsStoreApp()(*WindowsStoreApp) {
     return m
 }
 // CreateWindowsStoreAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsStoreApp(), nil
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Windows app store URL.
+// returns a *string when successful
 func (m *WindowsStoreApp) GetAppStoreUrl()(*string) {
     val, err := m.GetBackingStore().Get("appStoreUrl")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsStoreApp) GetAppStoreUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["appStoreUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *WindowsStoreApp) SetAppStoreUrl(value *string)() {
         panic(err)
     }
 }
-// WindowsStoreAppable 
 type WindowsStoreAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

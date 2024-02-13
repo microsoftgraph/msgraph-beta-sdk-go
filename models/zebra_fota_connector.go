@@ -9,7 +9,7 @@ import (
 type ZebraFotaConnector struct {
     Entity
 }
-// NewZebraFotaConnector instantiates a new zebraFotaConnector and sets the default values.
+// NewZebraFotaConnector instantiates a new ZebraFotaConnector and sets the default values.
 func NewZebraFotaConnector()(*ZebraFotaConnector) {
     m := &ZebraFotaConnector{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewZebraFotaConnector()(*ZebraFotaConnector) {
     return m
 }
 // CreateZebraFotaConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateZebraFotaConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewZebraFotaConnector(), nil
 }
 // GetEnrollmentAuthorizationUrl gets the enrollmentAuthorizationUrl property value. Complete account enrollment authorization URL. This corresponds to verificationuricomplete in the Zebra API documentations.
+// returns a *string when successful
 func (m *ZebraFotaConnector) GetEnrollmentAuthorizationUrl()(*string) {
     val, err := m.GetBackingStore().Get("enrollmentAuthorizationUrl")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *ZebraFotaConnector) GetEnrollmentAuthorizationUrl()(*string) {
     return nil
 }
 // GetEnrollmentToken gets the enrollmentToken property value. Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.
+// returns a *string when successful
 func (m *ZebraFotaConnector) GetEnrollmentToken()(*string) {
     val, err := m.GetBackingStore().Get("enrollmentToken")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *ZebraFotaConnector) GetEnrollmentToken()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ZebraFotaConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["enrollmentAuthorizationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +102,7 @@ func (m *ZebraFotaConnector) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetFotaAppsApproved gets the fotaAppsApproved property value. Flag indicating if required Firmware Over-the-Air (FOTA) Apps have been approved.
+// returns a *bool when successful
 func (m *ZebraFotaConnector) GetFotaAppsApproved()(*bool) {
     val, err := m.GetBackingStore().Get("fotaAppsApproved")
     if err != nil {
@@ -109,6 +114,7 @@ func (m *ZebraFotaConnector) GetFotaAppsApproved()(*bool) {
     return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Date and time when the account was last synched with Zebra
+// returns a *Time when successful
 func (m *ZebraFotaConnector) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -120,6 +126,7 @@ func (m *ZebraFotaConnector) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetState gets the state property value. Represents various states for Zebra FOTA connector.
+// returns a *ZebraFotaConnectorState when successful
 func (m *ZebraFotaConnector) GetState()(*ZebraFotaConnectorState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -204,7 +211,6 @@ func (m *ZebraFotaConnector) SetState(value *ZebraFotaConnectorState)() {
         panic(err)
     }
 }
-// ZebraFotaConnectorable 
 type ZebraFotaConnectorable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

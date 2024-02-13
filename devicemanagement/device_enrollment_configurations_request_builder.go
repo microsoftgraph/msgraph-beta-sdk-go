@@ -47,6 +47,7 @@ type DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDeviceEnrollmentConfigurationId provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.
+// returns a *DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder when successful
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) ByDeviceEnrollmentConfigurationId(deviceEnrollmentConfigurationId string)(*DeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,7 +61,7 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) ByDeviceEnrollmentConfigu
 // NewDeviceEnrollmentConfigurationsRequestBuilderInternal instantiates a new DeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
 func NewDeviceEnrollmentConfigurationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceEnrollmentConfigurationsRequestBuilder) {
     m := &DeviceEnrollmentConfigurationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceEnrollmentConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceEnrollmentConfigurations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -71,22 +72,25 @@ func NewDeviceEnrollmentConfigurationsRequestBuilder(rawUrl string, requestAdapt
     return NewDeviceEnrollmentConfigurationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *DeviceEnrollmentConfigurationsCountRequestBuilder when successful
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Count()(*DeviceEnrollmentConfigurationsCountRequestBuilder) {
     return NewDeviceEnrollmentConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateEnrollmentNotificationConfiguration provides operations to call the createEnrollmentNotificationConfiguration method.
+// returns a *DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationRequestBuilder when successful
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) CreateEnrollmentNotificationConfiguration()(*DeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationRequestBuilder) {
     return NewDeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of device enrollment configurations
+// returns a DeviceEnrollmentConfigurationCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceEnrollmentConfigurationCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -98,18 +102,20 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationCollectionResponseable), nil
 }
 // HasPayloadLinks provides operations to call the hasPayloadLinks method.
+// returns a *DeviceEnrollmentConfigurationsHasPayloadLinksRequestBuilder when successful
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) HasPayloadLinks()(*DeviceEnrollmentConfigurationsHasPayloadLinksRequestBuilder) {
     return NewDeviceEnrollmentConfigurationsHasPayloadLinksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to deviceEnrollmentConfigurations for deviceManagement
+// returns a DeviceEnrollmentConfigurationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceEnrollmentConfigurationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -121,6 +127,7 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) Post(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable), nil
 }
 // ToGetRequestInformation the list of device enrollment configurations
+// returns a *RequestInformation when successful
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -134,8 +141,9 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to deviceEnrollmentConfigurations for deviceManagement
+// returns a *RequestInformation when successful
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceManagement/deviceEnrollmentConfigurations", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -148,6 +156,7 @@ func (m *DeviceEnrollmentConfigurationsRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceEnrollmentConfigurationsRequestBuilder when successful
 func (m *DeviceEnrollmentConfigurationsRequestBuilder) WithUrl(rawUrl string)(*DeviceEnrollmentConfigurationsRequestBuilder) {
     return NewDeviceEnrollmentConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

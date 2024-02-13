@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AuthenticationRequirementPolicy 
 type AuthenticationRequirementPolicy struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuthenticationRequirementPolicy instantiates a new authenticationRequirementPolicy and sets the default values.
+// NewAuthenticationRequirementPolicy instantiates a new AuthenticationRequirementPolicy and sets the default values.
 func NewAuthenticationRequirementPolicy()(*AuthenticationRequirementPolicy) {
     m := &AuthenticationRequirementPolicy{
     }
@@ -19,10 +18,12 @@ func NewAuthenticationRequirementPolicy()(*AuthenticationRequirementPolicy) {
     return m
 }
 // CreateAuthenticationRequirementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationRequirementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationRequirementPolicy(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuthenticationRequirementPolicy) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AuthenticationRequirementPolicy) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuthenticationRequirementPolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDetail gets the detail property value. Provides additional detail on the feature identified in requirementProvider.
+// returns a *string when successful
 func (m *AuthenticationRequirementPolicy) GetDetail()(*string) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AuthenticationRequirementPolicy) GetDetail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationRequirementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +89,7 @@ func (m *AuthenticationRequirementPolicy) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuthenticationRequirementPolicy) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *AuthenticationRequirementPolicy) GetOdataType()(*string) {
     return nil
 }
 // GetRequirementProvider gets the requirementProvider property value. Identifies what Microsoft Entra feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.
+// returns a *RequirementProvider when successful
 func (m *AuthenticationRequirementPolicy) GetRequirementProvider()(*RequirementProvider) {
     val, err := m.GetBackingStore().Get("requirementProvider")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *AuthenticationRequirementPolicy) SetRequirementProvider(value *Requirem
         panic(err)
     }
 }
-// AuthenticationRequirementPolicyable 
 type AuthenticationRequirementPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -10,7 +10,7 @@ type MacOSLaunchItem struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMacOSLaunchItem instantiates a new macOSLaunchItem and sets the default values.
+// NewMacOSLaunchItem instantiates a new MacOSLaunchItem and sets the default values.
 func NewMacOSLaunchItem()(*MacOSLaunchItem) {
     m := &MacOSLaunchItem{
     }
@@ -19,10 +19,12 @@ func NewMacOSLaunchItem()(*MacOSLaunchItem) {
     return m
 }
 // CreateMacOSLaunchItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSLaunchItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSLaunchItem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MacOSLaunchItem) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *MacOSLaunchItem) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MacOSLaunchItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSLaunchItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["hide"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +78,7 @@ func (m *MacOSLaunchItem) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetHide gets the hide property value. Whether or not to hide the item from the Users and Groups List.
+// returns a *bool when successful
 func (m *MacOSLaunchItem) GetHide()(*bool) {
     val, err := m.GetBackingStore().Get("hide")
     if err != nil {
@@ -85,6 +90,7 @@ func (m *MacOSLaunchItem) GetHide()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MacOSLaunchItem) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +102,7 @@ func (m *MacOSLaunchItem) GetOdataType()(*string) {
     return nil
 }
 // GetPath gets the path property value. Path to the launch item.
+// returns a *string when successful
 func (m *MacOSLaunchItem) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
     if err != nil {
@@ -166,7 +173,6 @@ func (m *MacOSLaunchItem) SetPath(value *string)() {
         panic(err)
     }
 }
-// MacOSLaunchItemable 
 type MacOSLaunchItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

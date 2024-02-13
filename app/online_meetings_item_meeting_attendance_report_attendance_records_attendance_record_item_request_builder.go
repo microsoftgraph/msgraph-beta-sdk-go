@@ -41,28 +41,28 @@ type OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordI
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderInternal instantiates a new AttendanceRecordItemRequestBuilder and sets the default values.
+// NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderInternal instantiates a new OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder and sets the default values.
 func NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) {
     m := &OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/meetingAttendanceReport/attendanceRecords/{attendanceRecord%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/meetingAttendanceReport/attendanceRecords/{attendanceRecord%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder instantiates a new AttendanceRecordItemRequestBuilder and sets the default values.
+// NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder instantiates a new OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder and sets the default values.
 func NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property attendanceRecords for app
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRec
     return nil
 }
 // Get list of attendance records of an attendance report. Read-only.
+// returns a AttendanceRecordable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttendanceRecordFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRec
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable), nil
 }
 // Patch update the navigation property attendanceRecords in app
+// returns a AttendanceRecordable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable, requestConfiguration *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttendanceRecordFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRec
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable), nil
 }
 // ToDeleteRequestInformation delete navigation property attendanceRecords for app
+// returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/meetingAttendanceReport/attendanceRecords/{attendanceRecord%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRec
     return requestInfo, nil
 }
 // ToGetRequestInformation list of attendance records of an attendance report. Read-only.
+// returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRec
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property attendanceRecords in app
+// returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttendanceRecordable, requestConfiguration *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/meetingAttendanceReport/attendanceRecords/{attendanceRecord%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRec
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder when successful
 func (m *OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) WithUrl(rawUrl string)(*OnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder) {
     return NewOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsAttendanceRecordItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// User 
 type User struct {
     DirectoryObject
 }
-// NewUser instantiates a new user and sets the default values.
+// NewUser instantiates a new User and sets the default values.
 func NewUser()(*User) {
     m := &User{
         DirectoryObject: *NewDirectoryObject(),
@@ -19,10 +18,12 @@ func NewUser()(*User) {
     return m
 }
 // CreateUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUser(), nil
 }
 // GetAboutMe gets the aboutMe property value. A freeform text entry field for users to describe themselves. Returned only on $select.
+// returns a *string when successful
 func (m *User) GetAboutMe()(*string) {
     val, err := m.GetBackingStore().Get("aboutMe")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *User) GetAboutMe()(*string) {
     return nil
 }
 // GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
+// returns a *bool when successful
 func (m *User) GetAccountEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("accountEnabled")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *User) GetAccountEnabled()(*bool) {
     return nil
 }
 // GetActivities gets the activities property value. The user's activities across devices. Read-only. Nullable.
+// returns a []UserActivityable when successful
 func (m *User) GetActivities()([]UserActivityable) {
     val, err := m.GetBackingStore().Get("activities")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *User) GetActivities()([]UserActivityable) {
     return nil
 }
 // GetAgeGroup gets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
+// returns a *string when successful
 func (m *User) GetAgeGroup()(*string) {
     val, err := m.GetBackingStore().Get("ageGroup")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *User) GetAgeGroup()(*string) {
     return nil
 }
 // GetAgreementAcceptances gets the agreementAcceptances property value. The user's terms of use acceptance statuses. Read-only. Nullable.
+// returns a []AgreementAcceptanceable when successful
 func (m *User) GetAgreementAcceptances()([]AgreementAcceptanceable) {
     val, err := m.GetBackingStore().Get("agreementAcceptances")
     if err != nil {
@@ -78,6 +83,7 @@ func (m *User) GetAgreementAcceptances()([]AgreementAcceptanceable) {
     return nil
 }
 // GetAnalytics gets the analytics property value. The analytics property
+// returns a UserAnalyticsable when successful
 func (m *User) GetAnalytics()(UserAnalyticsable) {
     val, err := m.GetBackingStore().Get("analytics")
     if err != nil {
@@ -89,6 +95,7 @@ func (m *User) GetAnalytics()(UserAnalyticsable) {
     return nil
 }
 // GetAppConsentRequestsForApproval gets the appConsentRequestsForApproval property value. The appConsentRequestsForApproval property
+// returns a []AppConsentRequestable when successful
 func (m *User) GetAppConsentRequestsForApproval()([]AppConsentRequestable) {
     val, err := m.GetBackingStore().Get("appConsentRequestsForApproval")
     if err != nil {
@@ -100,6 +107,7 @@ func (m *User) GetAppConsentRequestsForApproval()([]AppConsentRequestable) {
     return nil
 }
 // GetAppRoleAssignedResources gets the appRoleAssignedResources property value. The appRoleAssignedResources property
+// returns a []ServicePrincipalable when successful
 func (m *User) GetAppRoleAssignedResources()([]ServicePrincipalable) {
     val, err := m.GetBackingStore().Get("appRoleAssignedResources")
     if err != nil {
@@ -111,6 +119,7 @@ func (m *User) GetAppRoleAssignedResources()([]ServicePrincipalable) {
     return nil
 }
 // GetAppRoleAssignments gets the appRoleAssignments property value. Represents the app roles a user has been granted for an application. Supports $expand.
+// returns a []AppRoleAssignmentable when successful
 func (m *User) GetAppRoleAssignments()([]AppRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("appRoleAssignments")
     if err != nil {
@@ -122,6 +131,7 @@ func (m *User) GetAppRoleAssignments()([]AppRoleAssignmentable) {
     return nil
 }
 // GetApprovals gets the approvals property value. The approvals property
+// returns a []Approvalable when successful
 func (m *User) GetApprovals()([]Approvalable) {
     val, err := m.GetBackingStore().Get("approvals")
     if err != nil {
@@ -133,6 +143,7 @@ func (m *User) GetApprovals()([]Approvalable) {
     return nil
 }
 // GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+// returns a []AssignedLicenseable when successful
 func (m *User) GetAssignedLicenses()([]AssignedLicenseable) {
     val, err := m.GetBackingStore().Get("assignedLicenses")
     if err != nil {
@@ -144,6 +155,7 @@ func (m *User) GetAssignedLicenses()([]AssignedLicenseable) {
     return nil
 }
 // GetAssignedPlans gets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).
+// returns a []AssignedPlanable when successful
 func (m *User) GetAssignedPlans()([]AssignedPlanable) {
     val, err := m.GetBackingStore().Get("assignedPlans")
     if err != nil {
@@ -155,6 +167,7 @@ func (m *User) GetAssignedPlans()([]AssignedPlanable) {
     return nil
 }
 // GetAuthentication gets the authentication property value. The authentication methods that are supported for the user.
+// returns a Authenticationable when successful
 func (m *User) GetAuthentication()(Authenticationable) {
     val, err := m.GetBackingStore().Get("authentication")
     if err != nil {
@@ -166,6 +179,7 @@ func (m *User) GetAuthentication()(Authenticationable) {
     return nil
 }
 // GetAuthorizationInfo gets the authorizationInfo property value. Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can store identifiers for smartcard-based certificates that users use to access on-premises Active Directory deployments or federated access. It can also be used to store the Subject Alternate Name (SAN) that's associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).
+// returns a AuthorizationInfoable when successful
 func (m *User) GetAuthorizationInfo()(AuthorizationInfoable) {
     val, err := m.GetBackingStore().Get("authorizationInfo")
     if err != nil {
@@ -177,6 +191,7 @@ func (m *User) GetAuthorizationInfo()(AuthorizationInfoable) {
     return nil
 }
 // GetBirthday gets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+// returns a *Time when successful
 func (m *User) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("birthday")
     if err != nil {
@@ -188,6 +203,7 @@ func (m *User) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec7
     return nil
 }
 // GetBusinessPhones gets the businessPhones property value. The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).
+// returns a []string when successful
 func (m *User) GetBusinessPhones()([]string) {
     val, err := m.GetBackingStore().Get("businessPhones")
     if err != nil {
@@ -199,6 +215,7 @@ func (m *User) GetBusinessPhones()([]string) {
     return nil
 }
 // GetCalendar gets the calendar property value. The user's primary calendar. Read-only.
+// returns a Calendarable when successful
 func (m *User) GetCalendar()(Calendarable) {
     val, err := m.GetBackingStore().Get("calendar")
     if err != nil {
@@ -210,6 +227,7 @@ func (m *User) GetCalendar()(Calendarable) {
     return nil
 }
 // GetCalendarGroups gets the calendarGroups property value. The user's calendar groups. Read-only. Nullable.
+// returns a []CalendarGroupable when successful
 func (m *User) GetCalendarGroups()([]CalendarGroupable) {
     val, err := m.GetBackingStore().Get("calendarGroups")
     if err != nil {
@@ -221,6 +239,7 @@ func (m *User) GetCalendarGroups()([]CalendarGroupable) {
     return nil
 }
 // GetCalendars gets the calendars property value. The user's calendars. Read-only. Nullable.
+// returns a []Calendarable when successful
 func (m *User) GetCalendars()([]Calendarable) {
     val, err := m.GetBackingStore().Get("calendars")
     if err != nil {
@@ -232,6 +251,7 @@ func (m *User) GetCalendars()([]Calendarable) {
     return nil
 }
 // GetCalendarView gets the calendarView property value. The calendar view for the calendar. Read-only. Nullable.
+// returns a []Eventable when successful
 func (m *User) GetCalendarView()([]Eventable) {
     val, err := m.GetBackingStore().Get("calendarView")
     if err != nil {
@@ -243,6 +263,7 @@ func (m *User) GetCalendarView()([]Eventable) {
     return nil
 }
 // GetChats gets the chats property value. The chats property
+// returns a []Chatable when successful
 func (m *User) GetChats()([]Chatable) {
     val, err := m.GetBackingStore().Get("chats")
     if err != nil {
@@ -254,6 +275,7 @@ func (m *User) GetChats()([]Chatable) {
     return nil
 }
 // GetCity gets the city property value. The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetCity()(*string) {
     val, err := m.GetBackingStore().Get("city")
     if err != nil {
@@ -265,6 +287,7 @@ func (m *User) GetCity()(*string) {
     return nil
 }
 // GetCloudPCs gets the cloudPCs property value. The cloudPCs property
+// returns a []CloudPCable when successful
 func (m *User) GetCloudPCs()([]CloudPCable) {
     val, err := m.GetBackingStore().Get("cloudPCs")
     if err != nil {
@@ -276,6 +299,7 @@ func (m *User) GetCloudPCs()([]CloudPCable) {
     return nil
 }
 // GetCloudRealtimeCommunicationInfo gets the cloudRealtimeCommunicationInfo property value. Microsoft realtime communication information related to the user.  Supports $filter (eq, ne,not).
+// returns a CloudRealtimeCommunicationInfoable when successful
 func (m *User) GetCloudRealtimeCommunicationInfo()(CloudRealtimeCommunicationInfoable) {
     val, err := m.GetBackingStore().Get("cloudRealtimeCommunicationInfo")
     if err != nil {
@@ -287,6 +311,7 @@ func (m *User) GetCloudRealtimeCommunicationInfo()(CloudRealtimeCommunicationInf
     return nil
 }
 // GetCompanyName gets the companyName property value. The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetCompanyName()(*string) {
     val, err := m.GetBackingStore().Get("companyName")
     if err != nil {
@@ -298,6 +323,7 @@ func (m *User) GetCompanyName()(*string) {
     return nil
 }
 // GetConsentProvidedForMinor gets the consentProvidedForMinor property value. Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
+// returns a *string when successful
 func (m *User) GetConsentProvidedForMinor()(*string) {
     val, err := m.GetBackingStore().Get("consentProvidedForMinor")
     if err != nil {
@@ -309,6 +335,7 @@ func (m *User) GetConsentProvidedForMinor()(*string) {
     return nil
 }
 // GetContactFolders gets the contactFolders property value. The user's contacts folders. Read-only. Nullable.
+// returns a []ContactFolderable when successful
 func (m *User) GetContactFolders()([]ContactFolderable) {
     val, err := m.GetBackingStore().Get("contactFolders")
     if err != nil {
@@ -320,6 +347,7 @@ func (m *User) GetContactFolders()([]ContactFolderable) {
     return nil
 }
 // GetContacts gets the contacts property value. The user's contacts. Read-only. Nullable.
+// returns a []Contactable when successful
 func (m *User) GetContacts()([]Contactable) {
     val, err := m.GetBackingStore().Get("contacts")
     if err != nil {
@@ -331,6 +359,7 @@ func (m *User) GetContacts()([]Contactable) {
     return nil
 }
 // GetCountry gets the country property value. The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
     if err != nil {
@@ -342,6 +371,7 @@ func (m *User) GetCountry()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).
+// returns a *Time when successful
 func (m *User) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -353,6 +383,7 @@ func (m *User) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
     return nil
 }
 // GetCreatedObjects gets the createdObjects property value. Directory objects that the user created. Read-only. Nullable.
+// returns a []DirectoryObjectable when successful
 func (m *User) GetCreatedObjects()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("createdObjects")
     if err != nil {
@@ -364,6 +395,7 @@ func (m *User) GetCreatedObjects()([]DirectoryObjectable) {
     return nil
 }
 // GetCreationType gets the creationType property value. Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).
+// returns a *string when successful
 func (m *User) GetCreationType()(*string) {
     val, err := m.GetBackingStore().Get("creationType")
     if err != nil {
@@ -375,6 +407,7 @@ func (m *User) GetCreationType()(*string) {
     return nil
 }
 // GetCustomSecurityAttributes gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive.
+// returns a CustomSecurityAttributeValueable when successful
 func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributes")
     if err != nil {
@@ -386,6 +419,7 @@ func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
     return nil
 }
 // GetDepartment gets the department property value. The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
+// returns a *string when successful
 func (m *User) GetDepartment()(*string) {
     val, err := m.GetBackingStore().Get("department")
     if err != nil {
@@ -397,6 +431,7 @@ func (m *User) GetDepartment()(*string) {
     return nil
 }
 // GetDeviceEnrollmentConfigurations gets the deviceEnrollmentConfigurations property value. Get enrollment configurations targeted to the user
+// returns a []DeviceEnrollmentConfigurationable when successful
 func (m *User) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmentConfigurationable) {
     val, err := m.GetBackingStore().Get("deviceEnrollmentConfigurations")
     if err != nil {
@@ -408,6 +443,7 @@ func (m *User) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmentConfigurati
     return nil
 }
 // GetDeviceEnrollmentLimit gets the deviceEnrollmentLimit property value. The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
+// returns a *int32 when successful
 func (m *User) GetDeviceEnrollmentLimit()(*int32) {
     val, err := m.GetBackingStore().Get("deviceEnrollmentLimit")
     if err != nil {
@@ -419,6 +455,7 @@ func (m *User) GetDeviceEnrollmentLimit()(*int32) {
     return nil
 }
 // GetDeviceKeys gets the deviceKeys property value. The deviceKeys property
+// returns a []DeviceKeyable when successful
 func (m *User) GetDeviceKeys()([]DeviceKeyable) {
     val, err := m.GetBackingStore().Get("deviceKeys")
     if err != nil {
@@ -430,6 +467,7 @@ func (m *User) GetDeviceKeys()([]DeviceKeyable) {
     return nil
 }
 // GetDeviceManagementTroubleshootingEvents gets the deviceManagementTroubleshootingEvents property value. The list of troubleshooting events for this user.
+// returns a []DeviceManagementTroubleshootingEventable when successful
 func (m *User) GetDeviceManagementTroubleshootingEvents()([]DeviceManagementTroubleshootingEventable) {
     val, err := m.GetBackingStore().Get("deviceManagementTroubleshootingEvents")
     if err != nil {
@@ -441,6 +479,7 @@ func (m *User) GetDeviceManagementTroubleshootingEvents()([]DeviceManagementTrou
     return nil
 }
 // GetDevices gets the devices property value. The devices property
+// returns a []Deviceable when successful
 func (m *User) GetDevices()([]Deviceable) {
     val, err := m.GetBackingStore().Get("devices")
     if err != nil {
@@ -452,6 +491,7 @@ func (m *User) GetDevices()([]Deviceable) {
     return nil
 }
 // GetDirectReports gets the directReports property value. The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.
+// returns a []DirectoryObjectable when successful
 func (m *User) GetDirectReports()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("directReports")
     if err != nil {
@@ -463,6 +503,7 @@ func (m *User) GetDirectReports()([]DirectoryObjectable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
+// returns a *string when successful
 func (m *User) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -474,6 +515,7 @@ func (m *User) GetDisplayName()(*string) {
     return nil
 }
 // GetDrive gets the drive property value. The user's OneDrive. Read-only.
+// returns a Driveable when successful
 func (m *User) GetDrive()(Driveable) {
     val, err := m.GetBackingStore().Get("drive")
     if err != nil {
@@ -485,6 +527,7 @@ func (m *User) GetDrive()(Driveable) {
     return nil
 }
 // GetDrives gets the drives property value. A collection of drives available for this user. Read-only.
+// returns a []Driveable when successful
 func (m *User) GetDrives()([]Driveable) {
     val, err := m.GetBackingStore().Get("drives")
     if err != nil {
@@ -496,6 +539,7 @@ func (m *User) GetDrives()([]Driveable) {
     return nil
 }
 // GetEmployeeExperience gets the employeeExperience property value. The employeeExperience property
+// returns a EmployeeExperienceUserable when successful
 func (m *User) GetEmployeeExperience()(EmployeeExperienceUserable) {
     val, err := m.GetBackingStore().Get("employeeExperience")
     if err != nil {
@@ -507,6 +551,7 @@ func (m *User) GetEmployeeExperience()(EmployeeExperienceUserable) {
     return nil
 }
 // GetEmployeeHireDate gets the employeeHireDate property value. The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).
+// returns a *Time when successful
 func (m *User) GetEmployeeHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("employeeHireDate")
     if err != nil {
@@ -518,6 +563,7 @@ func (m *User) GetEmployeeHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     return nil
 }
 // GetEmployeeId gets the employeeId property value. The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetEmployeeId()(*string) {
     val, err := m.GetBackingStore().Get("employeeId")
     if err != nil {
@@ -529,6 +575,7 @@ func (m *User) GetEmployeeId()(*string) {
     return nil
 }
 // GetEmployeeLeaveDateTime gets the employeeLeaveDateTime property value. The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Microsoft Entra roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
+// returns a *Time when successful
 func (m *User) GetEmployeeLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("employeeLeaveDateTime")
     if err != nil {
@@ -540,6 +587,7 @@ func (m *User) GetEmployeeLeaveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetEmployeeOrgData gets the employeeOrgData property value. Represents organization data (for example, division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
+// returns a EmployeeOrgDataable when successful
 func (m *User) GetEmployeeOrgData()(EmployeeOrgDataable) {
     val, err := m.GetBackingStore().Get("employeeOrgData")
     if err != nil {
@@ -551,6 +599,7 @@ func (m *User) GetEmployeeOrgData()(EmployeeOrgDataable) {
     return nil
 }
 // GetEmployeeType gets the employeeType property value. Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).
+// returns a *string when successful
 func (m *User) GetEmployeeType()(*string) {
     val, err := m.GetBackingStore().Get("employeeType")
     if err != nil {
@@ -562,6 +611,7 @@ func (m *User) GetEmployeeType()(*string) {
     return nil
 }
 // GetEvents gets the events property value. The user's events. The default is to show events under the Default Calendar. Read-only. Nullable.
+// returns a []Eventable when successful
 func (m *User) GetEvents()([]Eventable) {
     val, err := m.GetBackingStore().Get("events")
     if err != nil {
@@ -573,6 +623,7 @@ func (m *User) GetEvents()([]Eventable) {
     return nil
 }
 // GetExtensions gets the extensions property value. The collection of open extensions defined for the user. Supports $expand. Nullable.
+// returns a []Extensionable when successful
 func (m *User) GetExtensions()([]Extensionable) {
     val, err := m.GetBackingStore().Get("extensions")
     if err != nil {
@@ -584,6 +635,7 @@ func (m *User) GetExtensions()([]Extensionable) {
     return nil
 }
 // GetExternalUserState gets the externalUserState property value. For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
+// returns a *string when successful
 func (m *User) GetExternalUserState()(*string) {
     val, err := m.GetBackingStore().Get("externalUserState")
     if err != nil {
@@ -595,6 +647,7 @@ func (m *User) GetExternalUserState()(*string) {
     return nil
 }
 // GetExternalUserStateChangeDateTime gets the externalUserStateChangeDateTime property value. Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
+// returns a *string when successful
 func (m *User) GetExternalUserStateChangeDateTime()(*string) {
     val, err := m.GetBackingStore().Get("externalUserStateChangeDateTime")
     if err != nil {
@@ -606,6 +659,7 @@ func (m *User) GetExternalUserStateChangeDateTime()(*string) {
     return nil
 }
 // GetFaxNumber gets the faxNumber property value. The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetFaxNumber()(*string) {
     val, err := m.GetBackingStore().Get("faxNumber")
     if err != nil {
@@ -617,6 +671,7 @@ func (m *User) GetFaxNumber()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["aboutMe"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -2528,6 +2583,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetFollowedSites gets the followedSites property value. The followedSites property
+// returns a []Siteable when successful
 func (m *User) GetFollowedSites()([]Siteable) {
     val, err := m.GetBackingStore().Get("followedSites")
     if err != nil {
@@ -2539,6 +2595,7 @@ func (m *User) GetFollowedSites()([]Siteable) {
     return nil
 }
 // GetGivenName gets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetGivenName()(*string) {
     val, err := m.GetBackingStore().Get("givenName")
     if err != nil {
@@ -2550,6 +2607,7 @@ func (m *User) GetGivenName()(*string) {
     return nil
 }
 // GetHireDate gets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+// returns a *Time when successful
 func (m *User) GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("hireDate")
     if err != nil {
@@ -2561,6 +2619,7 @@ func (m *User) GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec7
     return nil
 }
 // GetIdentities gets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
+// returns a []ObjectIdentityable when successful
 func (m *User) GetIdentities()([]ObjectIdentityable) {
     val, err := m.GetBackingStore().Get("identities")
     if err != nil {
@@ -2572,6 +2631,7 @@ func (m *User) GetIdentities()([]ObjectIdentityable) {
     return nil
 }
 // GetImAddresses gets the imAddresses property value. The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).
+// returns a []string when successful
 func (m *User) GetImAddresses()([]string) {
     val, err := m.GetBackingStore().Get("imAddresses")
     if err != nil {
@@ -2583,6 +2643,7 @@ func (m *User) GetImAddresses()([]string) {
     return nil
 }
 // GetInferenceClassification gets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
+// returns a InferenceClassificationable when successful
 func (m *User) GetInferenceClassification()(InferenceClassificationable) {
     val, err := m.GetBackingStore().Get("inferenceClassification")
     if err != nil {
@@ -2594,6 +2655,7 @@ func (m *User) GetInferenceClassification()(InferenceClassificationable) {
     return nil
 }
 // GetInfoCatalogs gets the infoCatalogs property value. Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).
+// returns a []string when successful
 func (m *User) GetInfoCatalogs()([]string) {
     val, err := m.GetBackingStore().Get("infoCatalogs")
     if err != nil {
@@ -2605,6 +2667,7 @@ func (m *User) GetInfoCatalogs()([]string) {
     return nil
 }
 // GetInformationProtection gets the informationProtection property value. The informationProtection property
+// returns a InformationProtectionable when successful
 func (m *User) GetInformationProtection()(InformationProtectionable) {
     val, err := m.GetBackingStore().Get("informationProtection")
     if err != nil {
@@ -2616,6 +2679,7 @@ func (m *User) GetInformationProtection()(InformationProtectionable) {
     return nil
 }
 // GetInsights gets the insights property value. The insights property
+// returns a ItemInsightsable when successful
 func (m *User) GetInsights()(ItemInsightsable) {
     val, err := m.GetBackingStore().Get("insights")
     if err != nil {
@@ -2627,6 +2691,7 @@ func (m *User) GetInsights()(ItemInsightsable) {
     return nil
 }
 // GetInterests gets the interests property value. A list for users to describe their interests. Returned only on $select.
+// returns a []string when successful
 func (m *User) GetInterests()([]string) {
     val, err := m.GetBackingStore().Get("interests")
     if err != nil {
@@ -2638,6 +2703,7 @@ func (m *User) GetInterests()([]string) {
     return nil
 }
 // GetIsLicenseReconciliationNeeded gets the isLicenseReconciliationNeeded property value. Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
+// returns a *bool when successful
 func (m *User) GetIsLicenseReconciliationNeeded()(*bool) {
     val, err := m.GetBackingStore().Get("isLicenseReconciliationNeeded")
     if err != nil {
@@ -2649,6 +2715,7 @@ func (m *User) GetIsLicenseReconciliationNeeded()(*bool) {
     return nil
 }
 // GetIsManagementRestricted gets the isManagementRestricted property value. true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
+// returns a *bool when successful
 func (m *User) GetIsManagementRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isManagementRestricted")
     if err != nil {
@@ -2660,6 +2727,7 @@ func (m *User) GetIsManagementRestricted()(*bool) {
     return nil
 }
 // GetIsResourceAccount gets the isResourceAccount property value. Do not use – reserved for future use.
+// returns a *bool when successful
 func (m *User) GetIsResourceAccount()(*bool) {
     val, err := m.GetBackingStore().Get("isResourceAccount")
     if err != nil {
@@ -2671,6 +2739,7 @@ func (m *User) GetIsResourceAccount()(*bool) {
     return nil
 }
 // GetJobTitle gets the jobTitle property value. The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetJobTitle()(*string) {
     val, err := m.GetBackingStore().Get("jobTitle")
     if err != nil {
@@ -2682,6 +2751,7 @@ func (m *User) GetJobTitle()(*string) {
     return nil
 }
 // GetJoinedGroups gets the joinedGroups property value. The joinedGroups property
+// returns a []Groupable when successful
 func (m *User) GetJoinedGroups()([]Groupable) {
     val, err := m.GetBackingStore().Get("joinedGroups")
     if err != nil {
@@ -2693,6 +2763,7 @@ func (m *User) GetJoinedGroups()([]Groupable) {
     return nil
 }
 // GetJoinedTeams gets the joinedTeams property value. The Microsoft Teams teams the user is a member of. Read-only. Nullable.
+// returns a []Teamable when successful
 func (m *User) GetJoinedTeams()([]Teamable) {
     val, err := m.GetBackingStore().Get("joinedTeams")
     if err != nil {
@@ -2704,6 +2775,7 @@ func (m *User) GetJoinedTeams()([]Teamable) {
     return nil
 }
 // GetLastPasswordChangeDateTime gets the lastPasswordChangeDateTime property value. When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+// returns a *Time when successful
 func (m *User) GetLastPasswordChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastPasswordChangeDateTime")
     if err != nil {
@@ -2715,6 +2787,7 @@ func (m *User) GetLastPasswordChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetLegalAgeGroupClassification gets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
+// returns a *string when successful
 func (m *User) GetLegalAgeGroupClassification()(*string) {
     val, err := m.GetBackingStore().Get("legalAgeGroupClassification")
     if err != nil {
@@ -2726,6 +2799,7 @@ func (m *User) GetLegalAgeGroupClassification()(*string) {
     return nil
 }
 // GetLicenseAssignmentStates gets the licenseAssignmentStates property value. State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
+// returns a []LicenseAssignmentStateable when successful
 func (m *User) GetLicenseAssignmentStates()([]LicenseAssignmentStateable) {
     val, err := m.GetBackingStore().Get("licenseAssignmentStates")
     if err != nil {
@@ -2737,6 +2811,7 @@ func (m *User) GetLicenseAssignmentStates()([]LicenseAssignmentStateable) {
     return nil
 }
 // GetLicenseDetails gets the licenseDetails property value. The licenseDetails property
+// returns a []LicenseDetailsable when successful
 func (m *User) GetLicenseDetails()([]LicenseDetailsable) {
     val, err := m.GetBackingStore().Get("licenseDetails")
     if err != nil {
@@ -2748,6 +2823,7 @@ func (m *User) GetLicenseDetails()([]LicenseDetailsable) {
     return nil
 }
 // GetMail gets the mail property value. The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetMail()(*string) {
     val, err := m.GetBackingStore().Get("mail")
     if err != nil {
@@ -2759,6 +2835,7 @@ func (m *User) GetMail()(*string) {
     return nil
 }
 // GetMailboxSettings gets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
+// returns a MailboxSettingsable when successful
 func (m *User) GetMailboxSettings()(MailboxSettingsable) {
     val, err := m.GetBackingStore().Get("mailboxSettings")
     if err != nil {
@@ -2770,6 +2847,7 @@ func (m *User) GetMailboxSettings()(MailboxSettingsable) {
     return nil
 }
 // GetMailFolders gets the mailFolders property value. The user's mail folders. Read-only. Nullable.
+// returns a []MailFolderable when successful
 func (m *User) GetMailFolders()([]MailFolderable) {
     val, err := m.GetBackingStore().Get("mailFolders")
     if err != nil {
@@ -2781,6 +2859,7 @@ func (m *User) GetMailFolders()([]MailFolderable) {
     return nil
 }
 // GetMailNickname gets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetMailNickname()(*string) {
     val, err := m.GetBackingStore().Get("mailNickname")
     if err != nil {
@@ -2792,6 +2871,7 @@ func (m *User) GetMailNickname()(*string) {
     return nil
 }
 // GetManagedAppRegistrations gets the managedAppRegistrations property value. Zero or more managed app registrations that belong to the user.
+// returns a []ManagedAppRegistrationable when successful
 func (m *User) GetManagedAppRegistrations()([]ManagedAppRegistrationable) {
     val, err := m.GetBackingStore().Get("managedAppRegistrations")
     if err != nil {
@@ -2803,6 +2883,7 @@ func (m *User) GetManagedAppRegistrations()([]ManagedAppRegistrationable) {
     return nil
 }
 // GetManagedDevices gets the managedDevices property value. The managed devices associated with the user.
+// returns a []ManagedDeviceable when successful
 func (m *User) GetManagedDevices()([]ManagedDeviceable) {
     val, err := m.GetBackingStore().Get("managedDevices")
     if err != nil {
@@ -2814,6 +2895,7 @@ func (m *User) GetManagedDevices()([]ManagedDeviceable) {
     return nil
 }
 // GetManager gets the manager property value. The user or contact that is this user's manager. Read-only. Supports $expand.
+// returns a DirectoryObjectable when successful
 func (m *User) GetManager()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("manager")
     if err != nil {
@@ -2825,6 +2907,7 @@ func (m *User) GetManager()(DirectoryObjectable) {
     return nil
 }
 // GetMemberOf gets the memberOf property value. The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+// returns a []DirectoryObjectable when successful
 func (m *User) GetMemberOf()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("memberOf")
     if err != nil {
@@ -2836,6 +2919,7 @@ func (m *User) GetMemberOf()([]DirectoryObjectable) {
     return nil
 }
 // GetMessages gets the messages property value. The messages in a mailbox or folder. Read-only. Nullable.
+// returns a []Messageable when successful
 func (m *User) GetMessages()([]Messageable) {
     val, err := m.GetBackingStore().Get("messages")
     if err != nil {
@@ -2847,6 +2931,7 @@ func (m *User) GetMessages()([]Messageable) {
     return nil
 }
 // GetMobileAppIntentAndStates gets the mobileAppIntentAndStates property value. The list of troubleshooting events for this user.
+// returns a []MobileAppIntentAndStateable when successful
 func (m *User) GetMobileAppIntentAndStates()([]MobileAppIntentAndStateable) {
     val, err := m.GetBackingStore().Get("mobileAppIntentAndStates")
     if err != nil {
@@ -2858,6 +2943,7 @@ func (m *User) GetMobileAppIntentAndStates()([]MobileAppIntentAndStateable) {
     return nil
 }
 // GetMobileAppTroubleshootingEvents gets the mobileAppTroubleshootingEvents property value. The list of mobile app troubleshooting events for this user.
+// returns a []MobileAppTroubleshootingEventable when successful
 func (m *User) GetMobileAppTroubleshootingEvents()([]MobileAppTroubleshootingEventable) {
     val, err := m.GetBackingStore().Get("mobileAppTroubleshootingEvents")
     if err != nil {
@@ -2869,6 +2955,7 @@ func (m *User) GetMobileAppTroubleshootingEvents()([]MobileAppTroubleshootingEve
     return nil
 }
 // GetMobilePhone gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+// returns a *string when successful
 func (m *User) GetMobilePhone()(*string) {
     val, err := m.GetBackingStore().Get("mobilePhone")
     if err != nil {
@@ -2880,6 +2967,7 @@ func (m *User) GetMobilePhone()(*string) {
     return nil
 }
 // GetMySite gets the mySite property value. The URL for the user's site. Returned only on $select.
+// returns a *string when successful
 func (m *User) GetMySite()(*string) {
     val, err := m.GetBackingStore().Get("mySite")
     if err != nil {
@@ -2891,6 +2979,7 @@ func (m *User) GetMySite()(*string) {
     return nil
 }
 // GetNotifications gets the notifications property value. The notifications property
+// returns a []Notificationable when successful
 func (m *User) GetNotifications()([]Notificationable) {
     val, err := m.GetBackingStore().Get("notifications")
     if err != nil {
@@ -2902,6 +2991,7 @@ func (m *User) GetNotifications()([]Notificationable) {
     return nil
 }
 // GetOauth2PermissionGrants gets the oauth2PermissionGrants property value. The oauth2PermissionGrants property
+// returns a []OAuth2PermissionGrantable when successful
 func (m *User) GetOauth2PermissionGrants()([]OAuth2PermissionGrantable) {
     val, err := m.GetBackingStore().Get("oauth2PermissionGrants")
     if err != nil {
@@ -2913,6 +3003,7 @@ func (m *User) GetOauth2PermissionGrants()([]OAuth2PermissionGrantable) {
     return nil
 }
 // GetOfficeLocation gets the officeLocation property value. The office location in the user's place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetOfficeLocation()(*string) {
     val, err := m.GetBackingStore().Get("officeLocation")
     if err != nil {
@@ -2924,6 +3015,7 @@ func (m *User) GetOfficeLocation()(*string) {
     return nil
 }
 // GetOnenote gets the onenote property value. The onenote property
+// returns a Onenoteable when successful
 func (m *User) GetOnenote()(Onenoteable) {
     val, err := m.GetBackingStore().Get("onenote")
     if err != nil {
@@ -2935,6 +3027,7 @@ func (m *User) GetOnenote()(Onenoteable) {
     return nil
 }
 // GetOnlineMeetings gets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
+// returns a []OnlineMeetingable when successful
 func (m *User) GetOnlineMeetings()([]OnlineMeetingable) {
     val, err := m.GetBackingStore().Get("onlineMeetings")
     if err != nil {
@@ -2946,6 +3039,7 @@ func (m *User) GetOnlineMeetings()([]OnlineMeetingable) {
     return nil
 }
 // GetOnPremisesDistinguishedName gets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+// returns a *string when successful
 func (m *User) GetOnPremisesDistinguishedName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesDistinguishedName")
     if err != nil {
@@ -2957,6 +3051,7 @@ func (m *User) GetOnPremisesDistinguishedName()(*string) {
     return nil
 }
 // GetOnPremisesDomainName gets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.
+// returns a *string when successful
 func (m *User) GetOnPremisesDomainName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesDomainName")
     if err != nil {
@@ -2968,6 +3063,7 @@ func (m *User) GetOnPremisesDomainName()(*string) {
     return nil
 }
 // GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during the creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).
+// returns a OnPremisesExtensionAttributesable when successful
 func (m *User) GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesable) {
     val, err := m.GetBackingStore().Get("onPremisesExtensionAttributes")
     if err != nil {
@@ -2979,6 +3075,7 @@ func (m *User) GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesa
     return nil
 }
 // GetOnPremisesImmutableId gets the onPremisesImmutableId property value. This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+// returns a *string when successful
 func (m *User) GetOnPremisesImmutableId()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesImmutableId")
     if err != nil {
@@ -2990,6 +3087,7 @@ func (m *User) GetOnPremisesImmutableId()(*string) {
     return nil
 }
 // GetOnPremisesLastSyncDateTime gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: '2013-02-16T03:04:54Z'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+// returns a *Time when successful
 func (m *User) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("onPremisesLastSyncDateTime")
     if err != nil {
@@ -3001,6 +3099,7 @@ func (m *User) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetOnPremisesProvisioningErrors gets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).
+// returns a []OnPremisesProvisioningErrorable when successful
 func (m *User) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable) {
     val, err := m.GetBackingStore().Get("onPremisesProvisioningErrors")
     if err != nil {
@@ -3012,6 +3111,7 @@ func (m *User) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorab
     return nil
 }
 // GetOnPremisesSamAccountName gets the onPremisesSamAccountName property value. Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+// returns a *string when successful
 func (m *User) GetOnPremisesSamAccountName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSamAccountName")
     if err != nil {
@@ -3023,6 +3123,7 @@ func (m *User) GetOnPremisesSamAccountName()(*string) {
     return nil
 }
 // GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).
+// returns a *string when successful
 func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
     if err != nil {
@@ -3034,6 +3135,7 @@ func (m *User) GetOnPremisesSecurityIdentifier()(*string) {
     return nil
 }
 // GetOnPremisesSipInfo gets the onPremisesSipInfo property value. Contains all on-premises Session Initiation Protocol (SIP) information related to the user. Read-only.
+// returns a OnPremisesSipInfoable when successful
 func (m *User) GetOnPremisesSipInfo()(OnPremisesSipInfoable) {
     val, err := m.GetBackingStore().Get("onPremisesSipInfo")
     if err != nil {
@@ -3045,6 +3147,7 @@ func (m *User) GetOnPremisesSipInfo()(OnPremisesSipInfoable) {
     return nil
 }
 // GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+// returns a *bool when successful
 func (m *User) GetOnPremisesSyncEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("onPremisesSyncEnabled")
     if err != nil {
@@ -3056,6 +3159,7 @@ func (m *User) GetOnPremisesSyncEnabled()(*bool) {
     return nil
 }
 // GetOnPremisesUserPrincipalName gets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+// returns a *string when successful
 func (m *User) GetOnPremisesUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesUserPrincipalName")
     if err != nil {
@@ -3067,6 +3171,7 @@ func (m *User) GetOnPremisesUserPrincipalName()(*string) {
     return nil
 }
 // GetOtherMails gets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property can't contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
+// returns a []string when successful
 func (m *User) GetOtherMails()([]string) {
     val, err := m.GetBackingStore().Get("otherMails")
     if err != nil {
@@ -3078,6 +3183,7 @@ func (m *User) GetOtherMails()([]string) {
     return nil
 }
 // GetOutlook gets the outlook property value. Selective Outlook services available to the user. Read-only. Nullable.
+// returns a OutlookUserable when successful
 func (m *User) GetOutlook()(OutlookUserable) {
     val, err := m.GetBackingStore().Get("outlook")
     if err != nil {
@@ -3089,6 +3195,7 @@ func (m *User) GetOutlook()(OutlookUserable) {
     return nil
 }
 // GetOwnedDevices gets the ownedDevices property value. Devices owned by the user. Read-only. Nullable. Supports $expand.
+// returns a []DirectoryObjectable when successful
 func (m *User) GetOwnedDevices()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("ownedDevices")
     if err != nil {
@@ -3100,6 +3207,7 @@ func (m *User) GetOwnedDevices()([]DirectoryObjectable) {
     return nil
 }
 // GetOwnedObjects gets the ownedObjects property value. Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// returns a []DirectoryObjectable when successful
 func (m *User) GetOwnedObjects()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("ownedObjects")
     if err != nil {
@@ -3111,6 +3219,7 @@ func (m *User) GetOwnedObjects()([]DirectoryObjectable) {
     return nil
 }
 // GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Microsoft Entra password policies. Supports $filter (ne, not, and eq on null values).
+// returns a *string when successful
 func (m *User) GetPasswordPolicies()(*string) {
     val, err := m.GetBackingStore().Get("passwordPolicies")
     if err != nil {
@@ -3122,6 +3231,7 @@ func (m *User) GetPasswordPolicies()(*string) {
     return nil
 }
 // GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Supports $filter (eq, ne, not, in, and eq on null values).
+// returns a PasswordProfileable when successful
 func (m *User) GetPasswordProfile()(PasswordProfileable) {
     val, err := m.GetBackingStore().Get("passwordProfile")
     if err != nil {
@@ -3133,6 +3243,7 @@ func (m *User) GetPasswordProfile()(PasswordProfileable) {
     return nil
 }
 // GetPastProjects gets the pastProjects property value. A list for users to enumerate their past projects. Returned only on $select.
+// returns a []string when successful
 func (m *User) GetPastProjects()([]string) {
     val, err := m.GetBackingStore().Get("pastProjects")
     if err != nil {
@@ -3144,6 +3255,7 @@ func (m *User) GetPastProjects()([]string) {
     return nil
 }
 // GetPendingAccessReviewInstances gets the pendingAccessReviewInstances property value. Navigation property to get a list of access reviews pending approval by the reviewer.
+// returns a []AccessReviewInstanceable when successful
 func (m *User) GetPendingAccessReviewInstances()([]AccessReviewInstanceable) {
     val, err := m.GetBackingStore().Get("pendingAccessReviewInstances")
     if err != nil {
@@ -3155,6 +3267,7 @@ func (m *User) GetPendingAccessReviewInstances()([]AccessReviewInstanceable) {
     return nil
 }
 // GetPeople gets the people property value. Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
+// returns a []Personable when successful
 func (m *User) GetPeople()([]Personable) {
     val, err := m.GetBackingStore().Get("people")
     if err != nil {
@@ -3166,6 +3279,7 @@ func (m *User) GetPeople()([]Personable) {
     return nil
 }
 // GetPermissionGrants gets the permissionGrants property value. List all resource-specific permission grants of a user.
+// returns a []ResourceSpecificPermissionGrantable when successful
 func (m *User) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
     val, err := m.GetBackingStore().Get("permissionGrants")
     if err != nil {
@@ -3177,6 +3291,7 @@ func (m *User) GetPermissionGrants()([]ResourceSpecificPermissionGrantable) {
     return nil
 }
 // GetPhoto gets the photo property value. The user's profile photo. Read-only.
+// returns a ProfilePhotoable when successful
 func (m *User) GetPhoto()(ProfilePhotoable) {
     val, err := m.GetBackingStore().Get("photo")
     if err != nil {
@@ -3188,6 +3303,7 @@ func (m *User) GetPhoto()(ProfilePhotoable) {
     return nil
 }
 // GetPhotos gets the photos property value. The collection of the user's profile photos in different sizes. Read-only.
+// returns a []ProfilePhotoable when successful
 func (m *User) GetPhotos()([]ProfilePhotoable) {
     val, err := m.GetBackingStore().Get("photos")
     if err != nil {
@@ -3199,6 +3315,7 @@ func (m *User) GetPhotos()([]ProfilePhotoable) {
     return nil
 }
 // GetPlanner gets the planner property value. Selective Planner services available to the user. Read-only. Nullable.
+// returns a PlannerUserable when successful
 func (m *User) GetPlanner()(PlannerUserable) {
     val, err := m.GetBackingStore().Get("planner")
     if err != nil {
@@ -3210,6 +3327,7 @@ func (m *User) GetPlanner()(PlannerUserable) {
     return nil
 }
 // GetPostalCode gets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetPostalCode()(*string) {
     val, err := m.GetBackingStore().Get("postalCode")
     if err != nil {
@@ -3221,6 +3339,7 @@ func (m *User) GetPostalCode()(*string) {
     return nil
 }
 // GetPreferredDataLocation gets the preferredDataLocation property value. The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
+// returns a *string when successful
 func (m *User) GetPreferredDataLocation()(*string) {
     val, err := m.GetBackingStore().Get("preferredDataLocation")
     if err != nil {
@@ -3232,6 +3351,7 @@ func (m *User) GetPreferredDataLocation()(*string) {
     return nil
 }
 // GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: 'en-US', or 'es-ES'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetPreferredLanguage()(*string) {
     val, err := m.GetBackingStore().Get("preferredLanguage")
     if err != nil {
@@ -3243,6 +3363,7 @@ func (m *User) GetPreferredLanguage()(*string) {
     return nil
 }
 // GetPreferredName gets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
+// returns a *string when successful
 func (m *User) GetPreferredName()(*string) {
     val, err := m.GetBackingStore().Get("preferredName")
     if err != nil {
@@ -3254,6 +3375,7 @@ func (m *User) GetPreferredName()(*string) {
     return nil
 }
 // GetPresence gets the presence property value. The presence property
+// returns a Presenceable when successful
 func (m *User) GetPresence()(Presenceable) {
     val, err := m.GetBackingStore().Get("presence")
     if err != nil {
@@ -3265,6 +3387,7 @@ func (m *User) GetPresence()(Presenceable) {
     return nil
 }
 // GetPrint gets the print property value. The print property
+// returns a UserPrintable when successful
 func (m *User) GetPrint()(UserPrintable) {
     val, err := m.GetBackingStore().Get("print")
     if err != nil {
@@ -3276,6 +3399,7 @@ func (m *User) GetPrint()(UserPrintable) {
     return nil
 }
 // GetProfile gets the profile property value. Represents properties that are descriptive of a user in a tenant.
+// returns a Profileable when successful
 func (m *User) GetProfile()(Profileable) {
     val, err := m.GetBackingStore().Get("profile")
     if err != nil {
@@ -3287,6 +3411,7 @@ func (m *User) GetProfile()(Profileable) {
     return nil
 }
 // GetProvisionedPlans gets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Supports $filter (eq, not, ge, le).
+// returns a []ProvisionedPlanable when successful
 func (m *User) GetProvisionedPlans()([]ProvisionedPlanable) {
     val, err := m.GetBackingStore().Get("provisionedPlans")
     if err != nil {
@@ -3298,6 +3423,7 @@ func (m *User) GetProvisionedPlans()([]ProvisionedPlanable) {
     return nil
 }
 // GetProxyAddresses gets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+// returns a []string when successful
 func (m *User) GetProxyAddresses()([]string) {
     val, err := m.GetBackingStore().Get("proxyAddresses")
     if err != nil {
@@ -3309,6 +3435,7 @@ func (m *User) GetProxyAddresses()([]string) {
     return nil
 }
 // GetRefreshTokensValidFromDateTime gets the refreshTokensValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+// returns a *Time when successful
 func (m *User) GetRefreshTokensValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("refreshTokensValidFromDateTime")
     if err != nil {
@@ -3320,6 +3447,7 @@ func (m *User) GetRefreshTokensValidFromDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetRegisteredDevices gets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.
+// returns a []DirectoryObjectable when successful
 func (m *User) GetRegisteredDevices()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("registeredDevices")
     if err != nil {
@@ -3331,6 +3459,7 @@ func (m *User) GetRegisteredDevices()([]DirectoryObjectable) {
     return nil
 }
 // GetResponsibilities gets the responsibilities property value. A list for the user to enumerate their responsibilities. Returned only on $select.
+// returns a []string when successful
 func (m *User) GetResponsibilities()([]string) {
     val, err := m.GetBackingStore().Get("responsibilities")
     if err != nil {
@@ -3342,6 +3471,7 @@ func (m *User) GetResponsibilities()([]string) {
     return nil
 }
 // GetSchools gets the schools property value. A list for the user to enumerate the schools they have attended. Returned only on $select.
+// returns a []string when successful
 func (m *User) GetSchools()([]string) {
     val, err := m.GetBackingStore().Get("schools")
     if err != nil {
@@ -3353,6 +3483,7 @@ func (m *User) GetSchools()([]string) {
     return nil
 }
 // GetScopedRoleMemberOf gets the scopedRoleMemberOf property value. The scoped-role administrative unit memberships for this user. Read-only. Nullable.
+// returns a []ScopedRoleMembershipable when successful
 func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembershipable) {
     val, err := m.GetBackingStore().Get("scopedRoleMemberOf")
     if err != nil {
@@ -3364,6 +3495,7 @@ func (m *User) GetScopedRoleMemberOf()([]ScopedRoleMembershipable) {
     return nil
 }
 // GetSecurityIdentifier gets the securityIdentifier property value. Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
+// returns a *string when successful
 func (m *User) GetSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("securityIdentifier")
     if err != nil {
@@ -3375,6 +3507,7 @@ func (m *User) GetSecurityIdentifier()(*string) {
     return nil
 }
 // GetServiceProvisioningErrors gets the serviceProvisioningErrors property value. Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+// returns a []ServiceProvisioningErrorable when successful
 func (m *User) GetServiceProvisioningErrors()([]ServiceProvisioningErrorable) {
     val, err := m.GetBackingStore().Get("serviceProvisioningErrors")
     if err != nil {
@@ -3386,6 +3519,7 @@ func (m *User) GetServiceProvisioningErrors()([]ServiceProvisioningErrorable) {
     return nil
 }
 // GetSettings gets the settings property value. The settings property
+// returns a UserSettingsable when successful
 func (m *User) GetSettings()(UserSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -3397,6 +3531,7 @@ func (m *User) GetSettings()(UserSettingsable) {
     return nil
 }
 // GetShowInAddressList gets the showInAddressList property value. Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
+// returns a *bool when successful
 func (m *User) GetShowInAddressList()(*bool) {
     val, err := m.GetBackingStore().Get("showInAddressList")
     if err != nil {
@@ -3408,6 +3543,7 @@ func (m *User) GetShowInAddressList()(*bool) {
     return nil
 }
 // GetSignInActivity gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require a Microsoft Entra ID P1 or P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
+// returns a SignInActivityable when successful
 func (m *User) GetSignInActivity()(SignInActivityable) {
     val, err := m.GetBackingStore().Get("signInActivity")
     if err != nil {
@@ -3419,6 +3555,7 @@ func (m *User) GetSignInActivity()(SignInActivityable) {
     return nil
 }
 // GetSignInSessionsValidFromDateTime gets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.
+// returns a *Time when successful
 func (m *User) GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("signInSessionsValidFromDateTime")
     if err != nil {
@@ -3430,6 +3567,7 @@ func (m *User) GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetSkills gets the skills property value. A list for the user to enumerate their skills. Returned only on $select.
+// returns a []string when successful
 func (m *User) GetSkills()([]string) {
     val, err := m.GetBackingStore().Get("skills")
     if err != nil {
@@ -3441,6 +3579,7 @@ func (m *User) GetSkills()([]string) {
     return nil
 }
 // GetSponsors gets the sponsors property value. The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+// returns a []DirectoryObjectable when successful
 func (m *User) GetSponsors()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("sponsors")
     if err != nil {
@@ -3452,6 +3591,7 @@ func (m *User) GetSponsors()([]DirectoryObjectable) {
     return nil
 }
 // GetState gets the state property value. The state or province in the user's address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -3463,6 +3603,7 @@ func (m *User) GetState()(*string) {
     return nil
 }
 // GetStreetAddress gets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetStreetAddress()(*string) {
     val, err := m.GetBackingStore().Get("streetAddress")
     if err != nil {
@@ -3474,6 +3615,7 @@ func (m *User) GetStreetAddress()(*string) {
     return nil
 }
 // GetSurname gets the surname property value. The user's surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetSurname()(*string) {
     val, err := m.GetBackingStore().Get("surname")
     if err != nil {
@@ -3485,6 +3627,7 @@ func (m *User) GetSurname()(*string) {
     return nil
 }
 // GetTeamwork gets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
+// returns a UserTeamworkable when successful
 func (m *User) GetTeamwork()(UserTeamworkable) {
     val, err := m.GetBackingStore().Get("teamwork")
     if err != nil {
@@ -3496,6 +3639,7 @@ func (m *User) GetTeamwork()(UserTeamworkable) {
     return nil
 }
 // GetTodo gets the todo property value. Represents the To Do services available to a user.
+// returns a Todoable when successful
 func (m *User) GetTodo()(Todoable) {
     val, err := m.GetBackingStore().Get("todo")
     if err != nil {
@@ -3507,6 +3651,7 @@ func (m *User) GetTodo()(Todoable) {
     return nil
 }
 // GetTransitiveMemberOf gets the transitiveMemberOf property value. The groups, including nested groups and directory roles that a user is a member of. Nullable.
+// returns a []DirectoryObjectable when successful
 func (m *User) GetTransitiveMemberOf()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("transitiveMemberOf")
     if err != nil {
@@ -3518,6 +3663,7 @@ func (m *User) GetTransitiveMemberOf()([]DirectoryObjectable) {
     return nil
 }
 // GetTransitiveReports gets the transitiveReports property value. The transitive reports for a user. Read-only.
+// returns a []DirectoryObjectable when successful
 func (m *User) GetTransitiveReports()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("transitiveReports")
     if err != nil {
@@ -3529,6 +3675,7 @@ func (m *User) GetTransitiveReports()([]DirectoryObjectable) {
     return nil
 }
 // GetUsageLocation gets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+// returns a *string when successful
 func (m *User) GetUsageLocation()(*string) {
     val, err := m.GetBackingStore().Get("usageLocation")
     if err != nil {
@@ -3540,6 +3687,7 @@ func (m *User) GetUsageLocation()(*string) {
     return nil
 }
 // GetUsageRights gets the usageRights property value. Represents the usage rights a user has been granted.
+// returns a []UsageRightable when successful
 func (m *User) GetUsageRights()([]UsageRightable) {
     val, err := m.GetBackingStore().Get("usageRights")
     if err != nil {
@@ -3551,6 +3699,7 @@ func (m *User) GetUsageRights()([]UsageRightable) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where the domain must be present in the tenant's verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
+// returns a *string when successful
 func (m *User) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -3562,6 +3711,7 @@ func (m *User) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUserType gets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
+// returns a *string when successful
 func (m *User) GetUserType()(*string) {
     val, err := m.GetBackingStore().Get("userType")
     if err != nil {
@@ -3573,6 +3723,7 @@ func (m *User) GetUserType()(*string) {
     return nil
 }
 // GetVirtualEvents gets the virtualEvents property value. The virtualEvents property
+// returns a UserVirtualEventsRootable when successful
 func (m *User) GetVirtualEvents()(UserVirtualEventsRootable) {
     val, err := m.GetBackingStore().Get("virtualEvents")
     if err != nil {
@@ -3584,6 +3735,7 @@ func (m *User) GetVirtualEvents()(UserVirtualEventsRootable) {
     return nil
 }
 // GetWindowsInformationProtectionDeviceRegistrations gets the windowsInformationProtectionDeviceRegistrations property value. Zero or more WIP device registrations that belong to the user.
+// returns a []WindowsInformationProtectionDeviceRegistrationable when successful
 func (m *User) GetWindowsInformationProtectionDeviceRegistrations()([]WindowsInformationProtectionDeviceRegistrationable) {
     val, err := m.GetBackingStore().Get("windowsInformationProtectionDeviceRegistrations")
     if err != nil {
@@ -5901,7 +6053,6 @@ func (m *User) SetWindowsInformationProtectionDeviceRegistrations(value []Window
         panic(err)
     }
 }
-// Userable 
 type Userable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

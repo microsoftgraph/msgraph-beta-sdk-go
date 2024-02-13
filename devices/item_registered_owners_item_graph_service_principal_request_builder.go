@@ -27,28 +27,29 @@ type ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderGetRequestConfig
     // Request query parameters
     QueryParameters *ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderGetQueryParameters
 }
-// NewItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderInternal instantiates a new GraphServicePrincipalRequestBuilder and sets the default values.
+// NewItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderInternal instantiates a new ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder and sets the default values.
 func NewItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder) {
     m := &ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredOwners/{directoryObject%2Did}/graph.servicePrincipal{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/devices/{device%2Did}/registeredOwners/{directoryObject%2Did}/graph.servicePrincipal{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder instantiates a new GraphServicePrincipalRequestBuilder and sets the default values.
+// NewItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder instantiates a new ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder and sets the default values.
 func NewItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+// returns a ServicePrincipalable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateServicePrincipalFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
 // ToGetRequestInformation get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+// returns a *RequestInformation when successful
 func (m *ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder when successful
 func (m *ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder) WithUrl(rawUrl string)(*ItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder) {
     return NewItemRegisteredOwnersItemGraphServicePrincipalRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

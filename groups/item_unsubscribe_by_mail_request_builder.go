@@ -17,20 +17,21 @@ type ItemUnsubscribeByMailRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemUnsubscribeByMailRequestBuilderInternal instantiates a new UnsubscribeByMailRequestBuilder and sets the default values.
+// NewItemUnsubscribeByMailRequestBuilderInternal instantiates a new ItemUnsubscribeByMailRequestBuilder and sets the default values.
 func NewItemUnsubscribeByMailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemUnsubscribeByMailRequestBuilder) {
     m := &ItemUnsubscribeByMailRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/unsubscribeByMail", pathParameters),
     }
     return m
 }
-// NewItemUnsubscribeByMailRequestBuilder instantiates a new UnsubscribeByMailRequestBuilder and sets the default values.
+// NewItemUnsubscribeByMailRequestBuilder instantiates a new ItemUnsubscribeByMailRequestBuilder and sets the default values.
 func NewItemUnsubscribeByMailRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemUnsubscribeByMailRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemUnsubscribeByMailRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post calling this method disables the current user to receive email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-unsubscribebymail?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemUnsubscribeByMailRequestBuilder) Post(ctx context.Context, requestC
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemUnsubscribeByMailRequestBuilder) Post(ctx context.Context, requestC
     return nil
 }
 // ToPostRequestInformation calling this method disables the current user to receive email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.
+// returns a *RequestInformation when successful
 func (m *ItemUnsubscribeByMailRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemUnsubscribeByMailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemUnsubscribeByMailRequestBuilder) ToPostRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemUnsubscribeByMailRequestBuilder when successful
 func (m *ItemUnsubscribeByMailRequestBuilder) WithUrl(rawUrl string)(*ItemUnsubscribeByMailRequestBuilder) {
     return NewItemUnsubscribeByMailRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

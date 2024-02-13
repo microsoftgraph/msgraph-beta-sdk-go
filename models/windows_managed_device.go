@@ -8,7 +8,7 @@ import (
 type WindowsManagedDevice struct {
     ManagedDevice
 }
-// NewWindowsManagedDevice instantiates a new windowsManagedDevice and sets the default values.
+// NewWindowsManagedDevice instantiates a new WindowsManagedDevice and sets the default values.
 func NewWindowsManagedDevice()(*WindowsManagedDevice) {
     m := &WindowsManagedDevice{
         ManagedDevice: *NewManagedDevice(),
@@ -18,10 +18,12 @@ func NewWindowsManagedDevice()(*WindowsManagedDevice) {
     return m
 }
 // CreateWindowsManagedDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsManagedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsManagedDevice(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedDevice.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *WindowsManagedDevice) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// WindowsManagedDeviceable 
 type WindowsManagedDeviceable interface {
     ManagedDeviceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

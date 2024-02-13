@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationSimpleSettingValue struct {
     DeviceManagementConfigurationSettingValue
 }
-// NewDeviceManagementConfigurationSimpleSettingValue instantiates a new deviceManagementConfigurationSimpleSettingValue and sets the default values.
+// NewDeviceManagementConfigurationSimpleSettingValue instantiates a new DeviceManagementConfigurationSimpleSettingValue and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingValue()(*DeviceManagementConfigurationSimpleSettingValue) {
     m := &DeviceManagementConfigurationSimpleSettingValue{
         DeviceManagementConfigurationSettingValue: *NewDeviceManagementConfigurationSettingValue(),
@@ -18,6 +18,7 @@ func NewDeviceManagementConfigurationSimpleSettingValue()(*DeviceManagementConfi
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationSimpleSettingValueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -46,6 +47,7 @@ func CreateDeviceManagementConfigurationSimpleSettingValueFromDiscriminatorValue
     return NewDeviceManagementConfigurationSimpleSettingValue(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationSimpleSettingValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingValue.GetFieldDeserializers()
     return res
@@ -58,7 +60,6 @@ func (m *DeviceManagementConfigurationSimpleSettingValue) Serialize(writer i878a
     }
     return nil
 }
-// DeviceManagementConfigurationSimpleSettingValueable 
 type DeviceManagementConfigurationSimpleSettingValueable interface {
     DeviceManagementConfigurationSettingValueable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

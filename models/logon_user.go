@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// LogonUser 
 type LogonUser struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewLogonUser instantiates a new logonUser and sets the default values.
+// NewLogonUser instantiates a new LogonUser and sets the default values.
 func NewLogonUser()(*LogonUser) {
     m := &LogonUser{
     }
@@ -20,10 +19,12 @@ func NewLogonUser()(*LogonUser) {
     return m
 }
 // CreateLogonUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLogonUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLogonUser(), nil
 }
 // GetAccountDomain gets the accountDomain property value. Domain of user account used to logon.
+// returns a *string when successful
 func (m *LogonUser) GetAccountDomain()(*string) {
     val, err := m.GetBackingStore().Get("accountDomain")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *LogonUser) GetAccountDomain()(*string) {
     return nil
 }
 // GetAccountName gets the accountName property value. Account name of user account used to logon.
+// returns a *string when successful
 func (m *LogonUser) GetAccountName()(*string) {
     val, err := m.GetBackingStore().Get("accountName")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *LogonUser) GetAccountName()(*string) {
     return nil
 }
 // GetAccountType gets the accountType property value. User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.
+// returns a *UserAccountSecurityType when successful
 func (m *LogonUser) GetAccountType()(*UserAccountSecurityType) {
     val, err := m.GetBackingStore().Get("accountType")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *LogonUser) GetAccountType()(*UserAccountSecurityType) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *LogonUser) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -69,10 +73,12 @@ func (m *LogonUser) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *LogonUser) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LogonUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accountDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -164,6 +170,7 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *LogonUser) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -175,6 +182,7 @@ func (m *LogonUser) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *LogonUser) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -186,6 +194,7 @@ func (m *LogonUser) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     return nil
 }
 // GetLogonId gets the logonId property value. User logon ID.
+// returns a *string when successful
 func (m *LogonUser) GetLogonId()(*string) {
     val, err := m.GetBackingStore().Get("logonId")
     if err != nil {
@@ -197,6 +206,7 @@ func (m *LogonUser) GetLogonId()(*string) {
     return nil
 }
 // GetLogonTypes gets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
+// returns a []LogonType when successful
 func (m *LogonUser) GetLogonTypes()([]LogonType) {
     val, err := m.GetBackingStore().Get("logonTypes")
     if err != nil {
@@ -208,6 +218,7 @@ func (m *LogonUser) GetLogonTypes()([]LogonType) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *LogonUser) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -344,7 +355,6 @@ func (m *LogonUser) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// LogonUserable 
 type LogonUserable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

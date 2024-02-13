@@ -8,7 +8,7 @@ import (
 type IosCredentialSingleSignOnExtension struct {
     IosSingleSignOnExtension
 }
-// NewIosCredentialSingleSignOnExtension instantiates a new iosCredentialSingleSignOnExtension and sets the default values.
+// NewIosCredentialSingleSignOnExtension instantiates a new IosCredentialSingleSignOnExtension and sets the default values.
 func NewIosCredentialSingleSignOnExtension()(*IosCredentialSingleSignOnExtension) {
     m := &IosCredentialSingleSignOnExtension{
         IosSingleSignOnExtension: *NewIosSingleSignOnExtension(),
@@ -18,10 +18,12 @@ func NewIosCredentialSingleSignOnExtension()(*IosCredentialSingleSignOnExtension
     return m
 }
 // CreateIosCredentialSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosCredentialSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosCredentialSingleSignOnExtension(), nil
 }
 // GetConfigurations gets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
+// returns a []KeyTypedValuePairable when successful
 func (m *IosCredentialSingleSignOnExtension) GetConfigurations()([]KeyTypedValuePairable) {
     val, err := m.GetBackingStore().Get("configurations")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosCredentialSingleSignOnExtension) GetConfigurations()([]KeyTypedValue
     return nil
 }
 // GetDomains gets the domains property value. Gets or sets a list of hosts or domain names for which the app extension performs SSO.
+// returns a []string when successful
 func (m *IosCredentialSingleSignOnExtension) GetDomains()([]string) {
     val, err := m.GetBackingStore().Get("domains")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *IosCredentialSingleSignOnExtension) GetDomains()([]string) {
     return nil
 }
 // GetExtensionIdentifier gets the extensionIdentifier property value. Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.
+// returns a *string when successful
 func (m *IosCredentialSingleSignOnExtension) GetExtensionIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("extensionIdentifier")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *IosCredentialSingleSignOnExtension) GetExtensionIdentifier()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosCredentialSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosSingleSignOnExtension.GetFieldDeserializers()
     res["configurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -122,6 +127,7 @@ func (m *IosCredentialSingleSignOnExtension) GetFieldDeserializers()(map[string]
     return res
 }
 // GetRealm gets the realm property value. Gets or sets the case-sensitive realm name for this profile.
+// returns a *string when successful
 func (m *IosCredentialSingleSignOnExtension) GetRealm()(*string) {
     val, err := m.GetBackingStore().Get("realm")
     if err != nil {
@@ -133,6 +139,7 @@ func (m *IosCredentialSingleSignOnExtension) GetRealm()(*string) {
     return nil
 }
 // GetTeamIdentifier gets the teamIdentifier property value. Gets or sets the team ID of the app extension that performs SSO for the specified URLs.
+// returns a *string when successful
 func (m *IosCredentialSingleSignOnExtension) GetTeamIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("teamIdentifier")
     if err != nil {
@@ -222,7 +229,6 @@ func (m *IosCredentialSingleSignOnExtension) SetTeamIdentifier(value *string)() 
         panic(err)
     }
 }
-// IosCredentialSingleSignOnExtensionable 
 type IosCredentialSingleSignOnExtensionable interface {
     IosSingleSignOnExtensionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

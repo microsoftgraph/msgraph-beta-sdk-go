@@ -8,7 +8,7 @@ import (
 type DeviceManagementSettingAppConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementSettingAppConstraint instantiates a new deviceManagementSettingAppConstraint and sets the default values.
+// NewDeviceManagementSettingAppConstraint instantiates a new DeviceManagementSettingAppConstraint and sets the default values.
 func NewDeviceManagementSettingAppConstraint()(*DeviceManagementSettingAppConstraint) {
     m := &DeviceManagementSettingAppConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -18,10 +18,12 @@ func NewDeviceManagementSettingAppConstraint()(*DeviceManagementSettingAppConstr
     return m
 }
 // CreateDeviceManagementSettingAppConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingAppConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementSettingAppConstraint(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingAppConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
     res["supportedTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +45,7 @@ func (m *DeviceManagementSettingAppConstraint) GetFieldDeserializers()(map[strin
     return res
 }
 // GetSupportedTypes gets the supportedTypes property value. Acceptable app types to allow for this setting
+// returns a []string when successful
 func (m *DeviceManagementSettingAppConstraint) GetSupportedTypes()([]string) {
     val, err := m.GetBackingStore().Get("supportedTypes")
     if err != nil {
@@ -74,7 +77,6 @@ func (m *DeviceManagementSettingAppConstraint) SetSupportedTypes(value []string)
         panic(err)
     }
 }
-// DeviceManagementSettingAppConstraintable 
 type DeviceManagementSettingAppConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

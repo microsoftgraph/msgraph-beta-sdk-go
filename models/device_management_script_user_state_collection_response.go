@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementScriptUserStateCollectionResponse 
 type DeviceManagementScriptUserStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementScriptUserStateCollectionResponse instantiates a new deviceManagementScriptUserStateCollectionResponse and sets the default values.
+// NewDeviceManagementScriptUserStateCollectionResponse instantiates a new DeviceManagementScriptUserStateCollectionResponse and sets the default values.
 func NewDeviceManagementScriptUserStateCollectionResponse()(*DeviceManagementScriptUserStateCollectionResponse) {
     m := &DeviceManagementScriptUserStateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeviceManagementScriptUserStateCollectionResponse()(*DeviceManagementScr
     return m
 }
 // CreateDeviceManagementScriptUserStateCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementScriptUserStateCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementScriptUserStateCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementScriptUserStateCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeviceManagementScriptUserStateCollectionResponse) GetFieldDeserializer
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeviceManagementScriptUserStateable when successful
 func (m *DeviceManagementScriptUserStateCollectionResponse) GetValue()([]DeviceManagementScriptUserStateable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeviceManagementScriptUserStateCollectionResponse) SetValue(value []Dev
         panic(err)
     }
 }
-// DeviceManagementScriptUserStateCollectionResponseable 
 type DeviceManagementScriptUserStateCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

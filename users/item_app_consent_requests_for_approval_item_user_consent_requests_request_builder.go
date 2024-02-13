@@ -47,6 +47,7 @@ type ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderPostR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByUserConsentRequestId provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
+// returns a *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) ByUserConsentRequestId(userConsentRequestId string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,28 +58,32 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder)
     }
     return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderInternal instantiates a new UserConsentRequestsRequestBuilder and sets the default values.
+// NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderInternal instantiates a new ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder and sets the default values.
 func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) {
     m := &ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval/{appConsentRequest%2Did}/userConsentRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval/{appConsentRequest%2Did}/userConsentRequests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder instantiates a new UserConsentRequestsRequestBuilder and sets the default values.
+// NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder instantiates a new ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder and sets the default values.
 func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemAppConsentRequestsForApprovalItemUserConsentRequestsCountRequestBuilder when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) Count()(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsCountRequestBuilder) {
     return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+// returns a *ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get retrieve a collection of userConsentRequest objects and their properties.
+// returns a UserConsentRequestCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appconsentrequest-list-userconsentrequests?view=graph-rest-1.0
@@ -88,8 +93,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder)
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserConsentRequestCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,14 +105,15 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestCollectionResponseable), nil
 }
 // Post create new navigation property to userConsentRequests for users
+// returns a UserConsentRequestable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserConsentRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,6 +125,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable), nil
 }
 // ToGetRequestInformation retrieve a collection of userConsentRequest objects and their properties.
+// returns a *RequestInformation when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -133,8 +139,9 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder)
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to userConsentRequests for users
+// returns a *RequestInformation when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval/{appConsentRequest%2Did}/userConsentRequests", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -147,6 +154,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) WithUrl(rawUrl string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder) {
     return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

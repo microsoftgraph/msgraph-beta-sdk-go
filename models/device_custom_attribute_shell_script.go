@@ -9,7 +9,7 @@ import (
 type DeviceCustomAttributeShellScript struct {
     Entity
 }
-// NewDeviceCustomAttributeShellScript instantiates a new deviceCustomAttributeShellScript and sets the default values.
+// NewDeviceCustomAttributeShellScript instantiates a new DeviceCustomAttributeShellScript and sets the default values.
 func NewDeviceCustomAttributeShellScript()(*DeviceCustomAttributeShellScript) {
     m := &DeviceCustomAttributeShellScript{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceCustomAttributeShellScript()(*DeviceCustomAttributeShellScript) {
     return m
 }
 // CreateDeviceCustomAttributeShellScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceCustomAttributeShellScriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceCustomAttributeShellScript(), nil
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device management script.
+// returns a []DeviceManagementScriptAssignmentable when successful
 func (m *DeviceCustomAttributeShellScript) GetAssignments()([]DeviceManagementScriptAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceCustomAttributeShellScript) GetAssignments()([]DeviceManagementSc
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the device management script was created. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceCustomAttributeShellScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceCustomAttributeShellScript) GetCreatedDateTime()(*i336074805fc853
     return nil
 }
 // GetCustomAttributeName gets the customAttributeName property value. The name of the custom attribute.
+// returns a *string when successful
 func (m *DeviceCustomAttributeShellScript) GetCustomAttributeName()(*string) {
     val, err := m.GetBackingStore().Get("customAttributeName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *DeviceCustomAttributeShellScript) GetCustomAttributeName()(*string) {
     return nil
 }
 // GetCustomAttributeType gets the customAttributeType property value. Represents the expected type for a macOS custom attribute script value.
+// returns a *DeviceCustomAttributeValueType when successful
 func (m *DeviceCustomAttributeShellScript) GetCustomAttributeType()(*DeviceCustomAttributeValueType) {
     val, err := m.GetBackingStore().Get("customAttributeType")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *DeviceCustomAttributeShellScript) GetCustomAttributeType()(*DeviceCusto
     return nil
 }
 // GetDescription gets the description property value. Optional description for the device management script.
+// returns a *string when successful
 func (m *DeviceCustomAttributeShellScript) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *DeviceCustomAttributeShellScript) GetDescription()(*string) {
     return nil
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for this script across all devices.
+// returns a []DeviceManagementScriptDeviceStateable when successful
 func (m *DeviceCustomAttributeShellScript) GetDeviceRunStates()([]DeviceManagementScriptDeviceStateable) {
     val, err := m.GetBackingStore().Get("deviceRunStates")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *DeviceCustomAttributeShellScript) GetDeviceRunStates()([]DeviceManageme
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the device management script.
+// returns a *string when successful
 func (m *DeviceCustomAttributeShellScript) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *DeviceCustomAttributeShellScript) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceCustomAttributeShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -283,6 +292,7 @@ func (m *DeviceCustomAttributeShellScript) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetFileName gets the fileName property value. Script file name.
+// returns a *string when successful
 func (m *DeviceCustomAttributeShellScript) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -294,6 +304,7 @@ func (m *DeviceCustomAttributeShellScript) GetFileName()(*string) {
     return nil
 }
 // GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device management script.
+// returns a []DeviceManagementScriptGroupAssignmentable when successful
 func (m *DeviceCustomAttributeShellScript) GetGroupAssignments()([]DeviceManagementScriptGroupAssignmentable) {
     val, err := m.GetBackingStore().Get("groupAssignments")
     if err != nil {
@@ -305,6 +316,7 @@ func (m *DeviceCustomAttributeShellScript) GetGroupAssignments()([]DeviceManagem
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the device management script was last modified. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceCustomAttributeShellScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -316,6 +328,7 @@ func (m *DeviceCustomAttributeShellScript) GetLastModifiedDateTime()(*i336074805
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for this PowerShellScript instance.
+// returns a []string when successful
 func (m *DeviceCustomAttributeShellScript) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -327,6 +340,7 @@ func (m *DeviceCustomAttributeShellScript) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
+// returns a *RunAsAccountType when successful
 func (m *DeviceCustomAttributeShellScript) GetRunAsAccount()(*RunAsAccountType) {
     val, err := m.GetBackingStore().Get("runAsAccount")
     if err != nil {
@@ -338,6 +352,7 @@ func (m *DeviceCustomAttributeShellScript) GetRunAsAccount()(*RunAsAccountType) 
     return nil
 }
 // GetRunSummary gets the runSummary property value. Run summary for device management script.
+// returns a DeviceManagementScriptRunSummaryable when successful
 func (m *DeviceCustomAttributeShellScript) GetRunSummary()(DeviceManagementScriptRunSummaryable) {
     val, err := m.GetBackingStore().Get("runSummary")
     if err != nil {
@@ -349,6 +364,7 @@ func (m *DeviceCustomAttributeShellScript) GetRunSummary()(DeviceManagementScrip
     return nil
 }
 // GetScriptContent gets the scriptContent property value. The script content.
+// returns a []byte when successful
 func (m *DeviceCustomAttributeShellScript) GetScriptContent()([]byte) {
     val, err := m.GetBackingStore().Get("scriptContent")
     if err != nil {
@@ -360,6 +376,7 @@ func (m *DeviceCustomAttributeShellScript) GetScriptContent()([]byte) {
     return nil
 }
 // GetUserRunStates gets the userRunStates property value. List of run states for this script across all users.
+// returns a []DeviceManagementScriptUserStateable when successful
 func (m *DeviceCustomAttributeShellScript) GetUserRunStates()([]DeviceManagementScriptUserStateable) {
     val, err := m.GetBackingStore().Get("userRunStates")
     if err != nil {
@@ -587,7 +604,6 @@ func (m *DeviceCustomAttributeShellScript) SetUserRunStates(value []DeviceManage
         panic(err)
     }
 }
-// DeviceCustomAttributeShellScriptable 
 type DeviceCustomAttributeShellScriptable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

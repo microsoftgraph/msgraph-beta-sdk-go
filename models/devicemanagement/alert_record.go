@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AlertRecord 
 type AlertRecord struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewAlertRecord instantiates a new alertRecord and sets the default values.
+// NewAlertRecord instantiates a new AlertRecord and sets the default values.
 func NewAlertRecord()(*AlertRecord) {
     m := &AlertRecord{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewAlertRecord()(*AlertRecord) {
     return m
 }
 // CreateAlertRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAlertRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAlertRecord(), nil
 }
 // GetAlertImpact gets the alertImpact property value. The impact of the alert event. Consists of a list of key-value pair and a number followed by the aggregation type. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. 12 affectedCloudPcPercentage means 12% of Cloud PCs are affected. The list of key-value pair indicates the details of the alert impact.
+// returns a AlertImpactable when successful
 func (m *AlertRecord) GetAlertImpact()(AlertImpactable) {
     val, err := m.GetBackingStore().Get("alertImpact")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AlertRecord) GetAlertImpact()(AlertImpactable) {
     return nil
 }
 // GetAlertRuleId gets the alertRuleId property value. The corresponding ID of the alert rule.
+// returns a *string when successful
 func (m *AlertRecord) GetAlertRuleId()(*string) {
     val, err := m.GetBackingStore().Get("alertRuleId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AlertRecord) GetAlertRuleId()(*string) {
     return nil
 }
 // GetAlertRuleTemplate gets the alertRuleTemplate property value. The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
+// returns a *AlertRuleTemplate when successful
 func (m *AlertRecord) GetAlertRuleTemplate()(*AlertRuleTemplate) {
     val, err := m.GetBackingStore().Get("alertRuleTemplate")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *AlertRecord) GetAlertRuleTemplate()(*AlertRuleTemplate) {
     return nil
 }
 // GetDetectedDateTime gets the detectedDateTime property value. The date and time when the alert event was detected. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AlertRecord) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("detectedDateTime")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *AlertRecord) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the alert record.
+// returns a *string when successful
 func (m *AlertRecord) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *AlertRecord) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AlertRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alertImpact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -172,6 +178,7 @@ func (m *AlertRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date and time when the alert record was last updated. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AlertRecord) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -183,6 +190,7 @@ func (m *AlertRecord) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetResolvedDateTime gets the resolvedDateTime property value. The date and time when the alert event was resolved. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AlertRecord) GetResolvedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("resolvedDateTime")
     if err != nil {
@@ -194,6 +202,7 @@ func (m *AlertRecord) GetResolvedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     return nil
 }
 // GetSeverity gets the severity property value. The severity of the alert event. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
+// returns a *RuleSeverityType when successful
 func (m *AlertRecord) GetSeverity()(*RuleSeverityType) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
@@ -205,6 +214,7 @@ func (m *AlertRecord) GetSeverity()(*RuleSeverityType) {
     return nil
 }
 // GetStatus gets the status property value. The status of the alert record. The possible values are: active, resolved, unknownFutureValue.
+// returns a *AlertStatusType when successful
 func (m *AlertRecord) GetStatus()(*AlertStatusType) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -343,7 +353,6 @@ func (m *AlertRecord) SetStatus(value *AlertStatusType)() {
         panic(err)
     }
 }
-// AlertRecordable 
 type AlertRecordable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

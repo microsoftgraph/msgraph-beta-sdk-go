@@ -9,7 +9,7 @@ import (
 type GroupPolicyDefinitionFile struct {
     Entity
 }
-// NewGroupPolicyDefinitionFile instantiates a new groupPolicyDefinitionFile and sets the default values.
+// NewGroupPolicyDefinitionFile instantiates a new GroupPolicyDefinitionFile and sets the default values.
 func NewGroupPolicyDefinitionFile()(*GroupPolicyDefinitionFile) {
     m := &GroupPolicyDefinitionFile{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewGroupPolicyDefinitionFile()(*GroupPolicyDefinitionFile) {
     return m
 }
 // CreateGroupPolicyDefinitionFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyDefinitionFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +40,7 @@ func CreateGroupPolicyDefinitionFileFromDiscriminatorValue(parseNode i878a80d233
     return NewGroupPolicyDefinitionFile(), nil
 }
 // GetDefinitions gets the definitions property value. The group policy definitions associated with the file.
+// returns a []GroupPolicyDefinitionable when successful
 func (m *GroupPolicyDefinitionFile) GetDefinitions()([]GroupPolicyDefinitionable) {
     val, err := m.GetBackingStore().Get("definitions")
     if err != nil {
@@ -50,6 +52,7 @@ func (m *GroupPolicyDefinitionFile) GetDefinitions()([]GroupPolicyDefinitionable
     return nil
 }
 // GetDescription gets the description property value. The localized description of the policy settings in the ADMX file. The default value is empty.
+// returns a *string when successful
 func (m *GroupPolicyDefinitionFile) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -61,6 +64,7 @@ func (m *GroupPolicyDefinitionFile) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The localized friendly name of the ADMX file.
+// returns a *string when successful
 func (m *GroupPolicyDefinitionFile) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -72,6 +76,7 @@ func (m *GroupPolicyDefinitionFile) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["definitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -189,6 +194,7 @@ func (m *GroupPolicyDefinitionFile) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetFileName gets the fileName property value. The file name of the ADMX file without the path. For example: edge.admx
+// returns a *string when successful
 func (m *GroupPolicyDefinitionFile) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -200,6 +206,7 @@ func (m *GroupPolicyDefinitionFile) GetFileName()(*string) {
     return nil
 }
 // GetLanguageCodes gets the languageCodes property value. The supported language codes for the ADMX file.
+// returns a []string when successful
 func (m *GroupPolicyDefinitionFile) GetLanguageCodes()([]string) {
     val, err := m.GetBackingStore().Get("languageCodes")
     if err != nil {
@@ -211,6 +218,7 @@ func (m *GroupPolicyDefinitionFile) GetLanguageCodes()([]string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+// returns a *Time when successful
 func (m *GroupPolicyDefinitionFile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -222,6 +230,7 @@ func (m *GroupPolicyDefinitionFile) GetLastModifiedDateTime()(*i336074805fc85398
     return nil
 }
 // GetPolicyType gets the policyType property value. Type of Group Policy File or Definition.
+// returns a *GroupPolicyType when successful
 func (m *GroupPolicyDefinitionFile) GetPolicyType()(*GroupPolicyType) {
     val, err := m.GetBackingStore().Get("policyType")
     if err != nil {
@@ -233,6 +242,7 @@ func (m *GroupPolicyDefinitionFile) GetPolicyType()(*GroupPolicyType) {
     return nil
 }
 // GetRevision gets the revision property value. The revision version associated with the file.
+// returns a *string when successful
 func (m *GroupPolicyDefinitionFile) GetRevision()(*string) {
     val, err := m.GetBackingStore().Get("revision")
     if err != nil {
@@ -244,6 +254,7 @@ func (m *GroupPolicyDefinitionFile) GetRevision()(*string) {
     return nil
 }
 // GetTargetNamespace gets the targetNamespace property value. Specifies the URI used to identify the namespace within the ADMX file.
+// returns a *string when successful
 func (m *GroupPolicyDefinitionFile) GetTargetNamespace()(*string) {
     val, err := m.GetBackingStore().Get("targetNamespace")
     if err != nil {
@@ -255,6 +266,7 @@ func (m *GroupPolicyDefinitionFile) GetTargetNamespace()(*string) {
     return nil
 }
 // GetTargetPrefix gets the targetPrefix property value. Specifies the logical name that refers to the namespace within the ADMX file.
+// returns a *string when successful
 func (m *GroupPolicyDefinitionFile) GetTargetPrefix()(*string) {
     val, err := m.GetBackingStore().Get("targetPrefix")
     if err != nil {
@@ -410,7 +422,6 @@ func (m *GroupPolicyDefinitionFile) SetTargetPrefix(value *string)() {
         panic(err)
     }
 }
-// GroupPolicyDefinitionFileable 
 type GroupPolicyDefinitionFileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type MacOSScepCertificateProfile struct {
     MacOSCertificateProfileBase
 }
-// NewMacOSScepCertificateProfile instantiates a new macOSScepCertificateProfile and sets the default values.
+// NewMacOSScepCertificateProfile instantiates a new MacOSScepCertificateProfile and sets the default values.
 func NewMacOSScepCertificateProfile()(*MacOSScepCertificateProfile) {
     m := &MacOSScepCertificateProfile{
         MacOSCertificateProfileBase: *NewMacOSCertificateProfileBase(),
@@ -18,10 +18,12 @@ func NewMacOSScepCertificateProfile()(*MacOSScepCertificateProfile) {
     return m
 }
 // CreateMacOSScepCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSScepCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSScepCertificateProfile(), nil
 }
 // GetAllowAllAppsAccess gets the allowAllAppsAccess property value. AllowAllAppsAccess setting
+// returns a *bool when successful
 func (m *MacOSScepCertificateProfile) GetAllowAllAppsAccess()(*bool) {
     val, err := m.GetBackingStore().Get("allowAllAppsAccess")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSScepCertificateProfile) GetAllowAllAppsAccess()(*bool) {
     return nil
 }
 // GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
+// returns a *CertificateStore when successful
 func (m *MacOSScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MacOSScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
     return nil
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
+// returns a []CustomSubjectAlternativeNameable when successful
 func (m *MacOSScepCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
     val, err := m.GetBackingStore().Get("customSubjectAlternativeNames")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *MacOSScepCertificateProfile) GetCustomSubjectAlternativeNames()([]Custo
     return nil
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
+// returns a []ExtendedKeyUsageable when successful
 func (m *MacOSScepCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
     val, err := m.GetBackingStore().Get("extendedKeyUsages")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *MacOSScepCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsagea
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MacOSCertificateProfileBase.GetFieldDeserializers()
     res["allowAllAppsAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -215,6 +221,7 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetHashAlgorithm gets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
+// returns a *HashAlgorithms when successful
 func (m *MacOSScepCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
     val, err := m.GetBackingStore().Get("hashAlgorithm")
     if err != nil {
@@ -226,6 +233,7 @@ func (m *MacOSScepCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
     return nil
 }
 // GetKeySize gets the keySize property value. Key Size Options.
+// returns a *KeySize when successful
 func (m *MacOSScepCertificateProfile) GetKeySize()(*KeySize) {
     val, err := m.GetBackingStore().Get("keySize")
     if err != nil {
@@ -237,6 +245,7 @@ func (m *MacOSScepCertificateProfile) GetKeySize()(*KeySize) {
     return nil
 }
 // GetKeyUsage gets the keyUsage property value. Key Usage Options.
+// returns a *KeyUsages when successful
 func (m *MacOSScepCertificateProfile) GetKeyUsage()(*KeyUsages) {
     val, err := m.GetBackingStore().Get("keyUsage")
     if err != nil {
@@ -248,6 +257,7 @@ func (m *MacOSScepCertificateProfile) GetKeyUsage()(*KeyUsages) {
     return nil
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+// returns a []ManagedDeviceCertificateStateable when successful
 func (m *MacOSScepCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
     if err != nil {
@@ -259,6 +269,7 @@ func (m *MacOSScepCertificateProfile) GetManagedDeviceCertificateStates()([]Mana
     return nil
 }
 // GetRootCertificate gets the rootCertificate property value. Trusted Root Certificate.
+// returns a MacOSTrustedRootCertificateable when successful
 func (m *MacOSScepCertificateProfile) GetRootCertificate()(MacOSTrustedRootCertificateable) {
     val, err := m.GetBackingStore().Get("rootCertificate")
     if err != nil {
@@ -270,6 +281,7 @@ func (m *MacOSScepCertificateProfile) GetRootCertificate()(MacOSTrustedRootCerti
     return nil
 }
 // GetScepServerUrls gets the scepServerUrls property value. SCEP Server Url(s).
+// returns a []string when successful
 func (m *MacOSScepCertificateProfile) GetScepServerUrls()([]string) {
     val, err := m.GetBackingStore().Get("scepServerUrls")
     if err != nil {
@@ -281,6 +293,7 @@ func (m *MacOSScepCertificateProfile) GetScepServerUrls()([]string) {
     return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
+// returns a *string when successful
 func (m *MacOSScepCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
     if err != nil {
@@ -292,6 +305,7 @@ func (m *MacOSScepCertificateProfile) GetSubjectAlternativeNameFormatString()(*s
     return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
+// returns a *string when successful
 func (m *MacOSScepCertificateProfile) GetSubjectNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectNameFormatString")
     if err != nil {
@@ -488,7 +502,6 @@ func (m *MacOSScepCertificateProfile) SetSubjectNameFormatString(value *string)(
         panic(err)
     }
 }
-// MacOSScepCertificateProfileable 
 type MacOSScepCertificateProfileable interface {
     MacOSCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AlertRuleCollectionResponse 
 type AlertRuleCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewAlertRuleCollectionResponse instantiates a new alertRuleCollectionResponse and sets the default values.
+// NewAlertRuleCollectionResponse instantiates a new AlertRuleCollectionResponse and sets the default values.
 func NewAlertRuleCollectionResponse()(*AlertRuleCollectionResponse) {
     m := &AlertRuleCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),
@@ -17,10 +16,12 @@ func NewAlertRuleCollectionResponse()(*AlertRuleCollectionResponse) {
     return m
 }
 // CreateAlertRuleCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAlertRuleCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAlertRuleCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AlertRuleCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *AlertRuleCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AlertRuleable when successful
 func (m *AlertRuleCollectionResponse) GetValue()([]AlertRuleable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *AlertRuleCollectionResponse) SetValue(value []AlertRuleable)() {
         panic(err)
     }
 }
-// AlertRuleCollectionResponseable 
 type AlertRuleCollectionResponseable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsSource 
 type AwsSource struct {
     AuthorizationSystemIdentitySource
 }
-// NewAwsSource instantiates a new awsSource and sets the default values.
+// NewAwsSource instantiates a new AwsSource and sets the default values.
 func NewAwsSource()(*AwsSource) {
     m := &AwsSource{
         AuthorizationSystemIdentitySource: *NewAuthorizationSystemIdentitySource(),
@@ -18,10 +17,12 @@ func NewAwsSource()(*AwsSource) {
     return m
 }
 // CreateAwsSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsSource(), nil
 }
 // GetAccountId gets the accountId property value. AWS account ID.
+// returns a *string when successful
 func (m *AwsSource) GetAccountId()(*string) {
     val, err := m.GetBackingStore().Get("accountId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AwsSource) GetAccountId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthorizationSystemIdentitySource.GetFieldDeserializers()
     res["accountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *AwsSource) SetAccountId(value *string)() {
         panic(err)
     }
 }
-// AwsSourceable 
 type AwsSourceable interface {
     AuthorizationSystemIdentitySourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

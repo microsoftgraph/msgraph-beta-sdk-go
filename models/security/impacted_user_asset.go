@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ImpactedUserAsset 
 type ImpactedUserAsset struct {
     ImpactedAsset
 }
-// NewImpactedUserAsset instantiates a new impactedUserAsset and sets the default values.
+// NewImpactedUserAsset instantiates a new ImpactedUserAsset and sets the default values.
 func NewImpactedUserAsset()(*ImpactedUserAsset) {
     m := &ImpactedUserAsset{
         ImpactedAsset: *NewImpactedAsset(),
@@ -18,10 +17,12 @@ func NewImpactedUserAsset()(*ImpactedUserAsset) {
     return m
 }
 // CreateImpactedUserAssetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateImpactedUserAssetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewImpactedUserAsset(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ImpactedUserAsset) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ImpactedAsset.GetFieldDeserializers()
     res["identifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *ImpactedUserAsset) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetIdentifier gets the identifier property value. The identifier property
+// returns a *UserAssetIdentifier when successful
 func (m *ImpactedUserAsset) GetIdentifier()(*UserAssetIdentifier) {
     val, err := m.GetBackingStore().Get("identifier")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *ImpactedUserAsset) SetIdentifier(value *UserAssetIdentifier)() {
         panic(err)
     }
 }
-// ImpactedUserAssetable 
 type ImpactedUserAssetable interface {
     ImpactedAssetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

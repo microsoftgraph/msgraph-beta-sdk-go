@@ -10,7 +10,7 @@ type ExcludedApps struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewExcludedApps instantiates a new excludedApps and sets the default values.
+// NewExcludedApps instantiates a new ExcludedApps and sets the default values.
 func NewExcludedApps()(*ExcludedApps) {
     m := &ExcludedApps{
     }
@@ -19,10 +19,12 @@ func NewExcludedApps()(*ExcludedApps) {
     return m
 }
 // CreateExcludedAppsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExcludedAppsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExcludedApps(), nil
 }
 // GetAccess gets the access property value. The value for if MS Office Access should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetAccess()(*bool) {
     val, err := m.GetBackingStore().Get("access")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *ExcludedApps) GetAccess()(*bool) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ExcludedApps) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +49,12 @@ func (m *ExcludedApps) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ExcludedApps) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBing gets the bing property value. The value for if Microsoft Search as default should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetBing()(*bool) {
     val, err := m.GetBackingStore().Get("bing")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *ExcludedApps) GetBing()(*bool) {
     return nil
 }
 // GetExcel gets the excel property value. The value for if MS Office Excel should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetExcel()(*bool) {
     val, err := m.GetBackingStore().Get("excel")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *ExcludedApps) GetExcel()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExcludedApps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["access"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -237,6 +244,7 @@ func (m *ExcludedApps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetGroove gets the groove property value. The value for if MS Office OneDrive for Business - Groove should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetGroove()(*bool) {
     val, err := m.GetBackingStore().Get("groove")
     if err != nil {
@@ -248,6 +256,7 @@ func (m *ExcludedApps) GetGroove()(*bool) {
     return nil
 }
 // GetInfoPath gets the infoPath property value. The value for if MS Office InfoPath should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetInfoPath()(*bool) {
     val, err := m.GetBackingStore().Get("infoPath")
     if err != nil {
@@ -259,6 +268,7 @@ func (m *ExcludedApps) GetInfoPath()(*bool) {
     return nil
 }
 // GetLync gets the lync property value. The value for if MS Office Skype for Business - Lync should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetLync()(*bool) {
     val, err := m.GetBackingStore().Get("lync")
     if err != nil {
@@ -270,6 +280,7 @@ func (m *ExcludedApps) GetLync()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ExcludedApps) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -281,6 +292,7 @@ func (m *ExcludedApps) GetOdataType()(*string) {
     return nil
 }
 // GetOneDrive gets the oneDrive property value. The value for if MS Office OneDrive should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetOneDrive()(*bool) {
     val, err := m.GetBackingStore().Get("oneDrive")
     if err != nil {
@@ -292,6 +304,7 @@ func (m *ExcludedApps) GetOneDrive()(*bool) {
     return nil
 }
 // GetOneNote gets the oneNote property value. The value for if MS Office OneNote should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetOneNote()(*bool) {
     val, err := m.GetBackingStore().Get("oneNote")
     if err != nil {
@@ -303,6 +316,7 @@ func (m *ExcludedApps) GetOneNote()(*bool) {
     return nil
 }
 // GetOutlook gets the outlook property value. The value for if MS Office Outlook should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetOutlook()(*bool) {
     val, err := m.GetBackingStore().Get("outlook")
     if err != nil {
@@ -314,6 +328,7 @@ func (m *ExcludedApps) GetOutlook()(*bool) {
     return nil
 }
 // GetPowerPoint gets the powerPoint property value. The value for if MS Office PowerPoint should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetPowerPoint()(*bool) {
     val, err := m.GetBackingStore().Get("powerPoint")
     if err != nil {
@@ -325,6 +340,7 @@ func (m *ExcludedApps) GetPowerPoint()(*bool) {
     return nil
 }
 // GetPublisher gets the publisher property value. The value for if MS Office Publisher should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetPublisher()(*bool) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -336,6 +352,7 @@ func (m *ExcludedApps) GetPublisher()(*bool) {
     return nil
 }
 // GetSharePointDesigner gets the sharePointDesigner property value. The value for if MS Office SharePointDesigner should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetSharePointDesigner()(*bool) {
     val, err := m.GetBackingStore().Get("sharePointDesigner")
     if err != nil {
@@ -347,6 +364,7 @@ func (m *ExcludedApps) GetSharePointDesigner()(*bool) {
     return nil
 }
 // GetTeams gets the teams property value. The value for if MS Office Teams should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetTeams()(*bool) {
     val, err := m.GetBackingStore().Get("teams")
     if err != nil {
@@ -358,6 +376,7 @@ func (m *ExcludedApps) GetTeams()(*bool) {
     return nil
 }
 // GetVisio gets the visio property value. The value for if MS Office Visio should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetVisio()(*bool) {
     val, err := m.GetBackingStore().Get("visio")
     if err != nil {
@@ -369,6 +388,7 @@ func (m *ExcludedApps) GetVisio()(*bool) {
     return nil
 }
 // GetWord gets the word property value. The value for if MS Office Word should be excluded or not.
+// returns a *bool when successful
 func (m *ExcludedApps) GetWord()(*bool) {
     val, err := m.GetBackingStore().Get("word")
     if err != nil {
@@ -608,7 +628,6 @@ func (m *ExcludedApps) SetWord(value *bool)() {
         panic(err)
     }
 }
-// ExcludedAppsable 
 type ExcludedAppsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

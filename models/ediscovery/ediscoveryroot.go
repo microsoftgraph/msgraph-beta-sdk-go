@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Ediscoveryroot 
 type Ediscoveryroot struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewEdiscoveryroot instantiates a new ediscoveryroot and sets the default values.
+// NewEdiscoveryroot instantiates a new Ediscoveryroot and sets the default values.
 func NewEdiscoveryroot()(*Ediscoveryroot) {
     m := &Ediscoveryroot{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewEdiscoveryroot()(*Ediscoveryroot) {
     return m
 }
 // CreateEdiscoveryrootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdiscoveryrootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryroot(), nil
 }
 // GetCases gets the cases property value. The cases property
+// returns a []CaseEscapedable when successful
 func (m *Ediscoveryroot) GetCases()([]CaseEscapedable) {
     val, err := m.GetBackingStore().Get("cases")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Ediscoveryroot) GetCases()([]CaseEscapedable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Ediscoveryroot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["cases"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,7 +81,6 @@ func (m *Ediscoveryroot) SetCases(value []CaseEscapedable)() {
         panic(err)
     }
 }
-// Ediscoveryrootable 
 type Ediscoveryrootable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

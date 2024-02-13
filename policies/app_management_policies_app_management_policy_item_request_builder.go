@@ -42,23 +42,25 @@ type AppManagementPoliciesAppManagementPolicyItemRequestBuilderPatchRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AppliesTo provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
+// returns a *AppManagementPoliciesItemAppliesToRequestBuilder when successful
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) AppliesTo()(*AppManagementPoliciesItemAppliesToRequestBuilder) {
     return NewAppManagementPoliciesItemAppliesToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
+// NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal instantiates a new AppManagementPoliciesAppManagementPolicyItemRequestBuilder and sets the default values.
 func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     m := &AppManagementPoliciesAppManagementPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewAppManagementPoliciesAppManagementPolicyItemRequestBuilder instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.
+// NewAppManagementPoliciesAppManagementPolicyItemRequestBuilder instantiates a new AppManagementPoliciesAppManagementPolicyItemRequestBuilder and sets the default values.
 func NewAppManagementPoliciesAppManagementPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete an appManagementPolicy object.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-delete?view=graph-rest-1.0
@@ -68,8 +70,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Delete(ctx 
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -78,6 +79,8 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Delete(ctx 
     return nil
 }
 // Get read the properties of an appManagementPolicy object.
+// returns a AppManagementPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-get?view=graph-rest-1.0
@@ -87,8 +90,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Get(ctx con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAppManagementPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -100,6 +102,8 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Get(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable), nil
 }
 // Patch update an appManagementPolicy object.
+// returns a AppManagementPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/appmanagementpolicy-update?view=graph-rest-1.0
@@ -109,8 +113,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Patch(ctx c
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAppManagementPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -122,8 +125,9 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) Patch(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable), nil
 }
 // ToDeleteRequestInformation delete an appManagementPolicy object.
+// returns a *RequestInformation when successful
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -132,6 +136,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToDeleteReq
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties of an appManagementPolicy object.
+// returns a *RequestInformation when successful
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -145,8 +150,9 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // ToPatchRequestInformation update an appManagementPolicy object.
+// returns a *RequestInformation when successful
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, requestConfiguration *AppManagementPoliciesAppManagementPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -159,6 +165,7 @@ func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToPatchRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AppManagementPoliciesAppManagementPolicyItemRequestBuilder when successful
 func (m *AppManagementPoliciesAppManagementPolicyItemRequestBuilder) WithUrl(rawUrl string)(*AppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     return NewAppManagementPoliciesAppManagementPolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

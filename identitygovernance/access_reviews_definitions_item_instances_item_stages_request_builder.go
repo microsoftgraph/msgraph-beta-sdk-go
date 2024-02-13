@@ -47,6 +47,7 @@ type AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderPostRequestCon
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAccessReviewStageId provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
+// returns a *AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder when successful
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ByAccessReviewStageId(accessReviewStageId string)(*AccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,28 +58,32 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ByAccess
     }
     return NewAccessReviewsDefinitionsItemInstancesItemStagesAccessReviewStageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderInternal instantiates a new StagesRequestBuilder and sets the default values.
+// NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderInternal instantiates a new AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder and sets the default values.
 func NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) {
     m := &AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}/stages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}/stages{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder instantiates a new StagesRequestBuilder and sets the default values.
+// NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder instantiates a new AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder and sets the default values.
 func NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *AccessReviewsDefinitionsItemInstancesItemStagesCountRequestBuilder when successful
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Count()(*AccessReviewsDefinitionsItemInstancesItemStagesCountRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesItemStagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+// returns a *AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesItemStagesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get retrieve the stages in a multi-stage access review instance.
+// returns a AccessReviewStageCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-list-stages?view=graph-rest-1.0
@@ -88,8 +93,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Get(ctx 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessReviewStageCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -101,14 +105,15 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Get(ctx 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageCollectionResponseable), nil
 }
 // Post create new navigation property to stages for identityGovernance
+// returns a AccessReviewStageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessReviewStageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -120,6 +125,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) Post(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable), nil
 }
 // ToGetRequestInformation retrieve the stages in a multi-stage access review instance.
+// returns a *RequestInformation when successful
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -133,8 +139,9 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ToGetReq
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to stages for identityGovernance
+// returns a *RequestInformation when successful
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable, requestConfiguration *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}/stages", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -147,6 +154,7 @@ func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) ToPostRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder when successful
 func (m *AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesItemStagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

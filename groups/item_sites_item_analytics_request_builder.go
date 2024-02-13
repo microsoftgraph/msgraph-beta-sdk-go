@@ -42,31 +42,32 @@ type ItemSitesItemAnalyticsRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllTime provides operations to manage the allTime property of the microsoft.graph.itemAnalytics entity.
+// returns a *ItemSitesItemAnalyticsAllTimeRequestBuilder when successful
 func (m *ItemSitesItemAnalyticsRequestBuilder) AllTime()(*ItemSitesItemAnalyticsAllTimeRequestBuilder) {
     return NewItemSitesItemAnalyticsAllTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemSitesItemAnalyticsRequestBuilderInternal instantiates a new AnalyticsRequestBuilder and sets the default values.
+// NewItemSitesItemAnalyticsRequestBuilderInternal instantiates a new ItemSitesItemAnalyticsRequestBuilder and sets the default values.
 func NewItemSitesItemAnalyticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemAnalyticsRequestBuilder) {
     m := &ItemSitesItemAnalyticsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/analytics{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/analytics{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemAnalyticsRequestBuilder instantiates a new AnalyticsRequestBuilder and sets the default values.
+// NewItemSitesItemAnalyticsRequestBuilder instantiates a new ItemSitesItemAnalyticsRequestBuilder and sets the default values.
 func NewItemSitesItemAnalyticsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemAnalyticsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemAnalyticsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property analytics for groups
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemAnalyticsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemAnalyticsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -75,14 +76,15 @@ func (m *ItemSitesItemAnalyticsRequestBuilder) Delete(ctx context.Context, reque
     return nil
 }
 // Get analytics about the view activities that took place in this site.
+// returns a ItemAnalyticsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemAnalyticsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemAnalyticsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAnalyticsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemAnalyticsFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,22 +96,25 @@ func (m *ItemSitesItemAnalyticsRequestBuilder) Get(ctx context.Context, requestC
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAnalyticsable), nil
 }
 // ItemActivityStats provides operations to manage the itemActivityStats property of the microsoft.graph.itemAnalytics entity.
+// returns a *ItemSitesItemAnalyticsItemActivityStatsRequestBuilder when successful
 func (m *ItemSitesItemAnalyticsRequestBuilder) ItemActivityStats()(*ItemSitesItemAnalyticsItemActivityStatsRequestBuilder) {
     return NewItemSitesItemAnalyticsItemActivityStatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LastSevenDays provides operations to manage the lastSevenDays property of the microsoft.graph.itemAnalytics entity.
+// returns a *ItemSitesItemAnalyticsLastSevenDaysRequestBuilder when successful
 func (m *ItemSitesItemAnalyticsRequestBuilder) LastSevenDays()(*ItemSitesItemAnalyticsLastSevenDaysRequestBuilder) {
     return NewItemSitesItemAnalyticsLastSevenDaysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property analytics in groups
+// returns a ItemAnalyticsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemAnalyticsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAnalyticsable, requestConfiguration *ItemSitesItemAnalyticsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAnalyticsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemAnalyticsFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -121,8 +126,9 @@ func (m *ItemSitesItemAnalyticsRequestBuilder) Patch(ctx context.Context, body i
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAnalyticsable), nil
 }
 // ToDeleteRequestInformation delete navigation property analytics for groups
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemAnalyticsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemAnalyticsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/analytics", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -131,6 +137,7 @@ func (m *ItemSitesItemAnalyticsRequestBuilder) ToDeleteRequestInformation(ctx co
     return requestInfo, nil
 }
 // ToGetRequestInformation analytics about the view activities that took place in this site.
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemAnalyticsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemAnalyticsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -144,8 +151,9 @@ func (m *ItemSitesItemAnalyticsRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property analytics in groups
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemAnalyticsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAnalyticsable, requestConfiguration *ItemSitesItemAnalyticsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/analytics", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -158,6 +166,7 @@ func (m *ItemSitesItemAnalyticsRequestBuilder) ToPatchRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemAnalyticsRequestBuilder when successful
 func (m *ItemSitesItemAnalyticsRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemAnalyticsRequestBuilder) {
     return NewItemSitesItemAnalyticsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

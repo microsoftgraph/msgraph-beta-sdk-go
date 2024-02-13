@@ -8,7 +8,7 @@ import (
 type ManagedAppProtection struct {
     ManagedAppPolicy
 }
-// NewManagedAppProtection instantiates a new managedAppProtection and sets the default values.
+// NewManagedAppProtection instantiates a new ManagedAppProtection and sets the default values.
 func NewManagedAppProtection()(*ManagedAppProtection) {
     m := &ManagedAppProtection{
         ManagedAppPolicy: *NewManagedAppPolicy(),
@@ -18,6 +18,7 @@ func NewManagedAppProtection()(*ManagedAppProtection) {
     return m
 }
 // CreateManagedAppProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -46,6 +47,7 @@ func CreateManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewManagedAppProtection(), nil
 }
 // GetAllowedDataIngestionLocations gets the allowedDataIngestionLocations property value. Data storage locations where a user may store managed data.
+// returns a []ManagedAppDataIngestionLocation when successful
 func (m *ManagedAppProtection) GetAllowedDataIngestionLocations()([]ManagedAppDataIngestionLocation) {
     val, err := m.GetBackingStore().Get("allowedDataIngestionLocations")
     if err != nil {
@@ -57,6 +59,7 @@ func (m *ManagedAppProtection) GetAllowedDataIngestionLocations()([]ManagedAppDa
     return nil
 }
 // GetAllowedDataStorageLocations gets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
+// returns a []ManagedAppDataStorageLocation when successful
 func (m *ManagedAppProtection) GetAllowedDataStorageLocations()([]ManagedAppDataStorageLocation) {
     val, err := m.GetBackingStore().Get("allowedDataStorageLocations")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *ManagedAppProtection) GetAllowedDataStorageLocations()([]ManagedAppData
     return nil
 }
 // GetAllowedInboundDataTransferSources gets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
+// returns a *ManagedAppDataTransferLevel when successful
 func (m *ManagedAppProtection) GetAllowedInboundDataTransferSources()(*ManagedAppDataTransferLevel) {
     val, err := m.GetBackingStore().Get("allowedInboundDataTransferSources")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *ManagedAppProtection) GetAllowedInboundDataTransferSources()(*ManagedAp
     return nil
 }
 // GetAllowedOutboundClipboardSharingExceptionLength gets the allowedOutboundClipboardSharingExceptionLength property value. Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of '0' means no exception is allowed.
+// returns a *int32 when successful
 func (m *ManagedAppProtection) GetAllowedOutboundClipboardSharingExceptionLength()(*int32) {
     val, err := m.GetBackingStore().Get("allowedOutboundClipboardSharingExceptionLength")
     if err != nil {
@@ -90,6 +95,7 @@ func (m *ManagedAppProtection) GetAllowedOutboundClipboardSharingExceptionLength
     return nil
 }
 // GetAllowedOutboundClipboardSharingLevel gets the allowedOutboundClipboardSharingLevel property value. Represents the level to which the device's clipboard may be shared between apps
+// returns a *ManagedAppClipboardSharingLevel when successful
 func (m *ManagedAppProtection) GetAllowedOutboundClipboardSharingLevel()(*ManagedAppClipboardSharingLevel) {
     val, err := m.GetBackingStore().Get("allowedOutboundClipboardSharingLevel")
     if err != nil {
@@ -101,6 +107,7 @@ func (m *ManagedAppProtection) GetAllowedOutboundClipboardSharingLevel()(*Manage
     return nil
 }
 // GetAllowedOutboundDataTransferDestinations gets the allowedOutboundDataTransferDestinations property value. Data can be transferred from/to these classes of apps
+// returns a *ManagedAppDataTransferLevel when successful
 func (m *ManagedAppProtection) GetAllowedOutboundDataTransferDestinations()(*ManagedAppDataTransferLevel) {
     val, err := m.GetBackingStore().Get("allowedOutboundDataTransferDestinations")
     if err != nil {
@@ -112,6 +119,7 @@ func (m *ManagedAppProtection) GetAllowedOutboundDataTransferDestinations()(*Man
     return nil
 }
 // GetAppActionIfDeviceComplianceRequired gets the appActionIfDeviceComplianceRequired property value. An admin initiated action to be applied on a managed app.
+// returns a *ManagedAppRemediationAction when successful
 func (m *ManagedAppProtection) GetAppActionIfDeviceComplianceRequired()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfDeviceComplianceRequired")
     if err != nil {
@@ -123,6 +131,7 @@ func (m *ManagedAppProtection) GetAppActionIfDeviceComplianceRequired()(*Managed
     return nil
 }
 // GetAppActionIfMaximumPinRetriesExceeded gets the appActionIfMaximumPinRetriesExceeded property value. An admin initiated action to be applied on a managed app.
+// returns a *ManagedAppRemediationAction when successful
 func (m *ManagedAppProtection) GetAppActionIfMaximumPinRetriesExceeded()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfMaximumPinRetriesExceeded")
     if err != nil {
@@ -134,6 +143,7 @@ func (m *ManagedAppProtection) GetAppActionIfMaximumPinRetriesExceeded()(*Manage
     return nil
 }
 // GetAppActionIfUnableToAuthenticateUser gets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Possible values are: block, wipe, warn.
+// returns a *ManagedAppRemediationAction when successful
 func (m *ManagedAppProtection) GetAppActionIfUnableToAuthenticateUser()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfUnableToAuthenticateUser")
     if err != nil {
@@ -145,6 +155,7 @@ func (m *ManagedAppProtection) GetAppActionIfUnableToAuthenticateUser()(*Managed
     return nil
 }
 // GetBlockDataIngestionIntoOrganizationDocuments gets the blockDataIngestionIntoOrganizationDocuments property value. Indicates whether a user can bring data into org documents.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetBlockDataIngestionIntoOrganizationDocuments()(*bool) {
     val, err := m.GetBackingStore().Get("blockDataIngestionIntoOrganizationDocuments")
     if err != nil {
@@ -156,6 +167,7 @@ func (m *ManagedAppProtection) GetBlockDataIngestionIntoOrganizationDocuments()(
     return nil
 }
 // GetContactSyncBlocked gets the contactSyncBlocked property value. Indicates whether contacts can be synced to the user's device.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetContactSyncBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("contactSyncBlocked")
     if err != nil {
@@ -167,6 +179,7 @@ func (m *ManagedAppProtection) GetContactSyncBlocked()(*bool) {
     return nil
 }
 // GetDataBackupBlocked gets the dataBackupBlocked property value. Indicates whether the backup of a managed app's data is blocked.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetDataBackupBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("dataBackupBlocked")
     if err != nil {
@@ -178,6 +191,7 @@ func (m *ManagedAppProtection) GetDataBackupBlocked()(*bool) {
     return nil
 }
 // GetDeviceComplianceRequired gets the deviceComplianceRequired property value. Indicates whether device compliance is required.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetDeviceComplianceRequired()(*bool) {
     val, err := m.GetBackingStore().Get("deviceComplianceRequired")
     if err != nil {
@@ -189,6 +203,7 @@ func (m *ManagedAppProtection) GetDeviceComplianceRequired()(*bool) {
     return nil
 }
 // GetDialerRestrictionLevel gets the dialerRestrictionLevel property value. The classes of apps that are allowed to click-to-open a phone number, for making phone calls or sending text messages.
+// returns a *ManagedAppPhoneNumberRedirectLevel when successful
 func (m *ManagedAppProtection) GetDialerRestrictionLevel()(*ManagedAppPhoneNumberRedirectLevel) {
     val, err := m.GetBackingStore().Get("dialerRestrictionLevel")
     if err != nil {
@@ -200,6 +215,7 @@ func (m *ManagedAppProtection) GetDialerRestrictionLevel()(*ManagedAppPhoneNumbe
     return nil
 }
 // GetDisableAppPinIfDevicePinIsSet gets the disableAppPinIfDevicePinIsSet property value. Indicates whether use of the app pin is required if the device pin is set.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetDisableAppPinIfDevicePinIsSet()(*bool) {
     val, err := m.GetBackingStore().Get("disableAppPinIfDevicePinIsSet")
     if err != nil {
@@ -211,6 +227,7 @@ func (m *ManagedAppProtection) GetDisableAppPinIfDevicePinIsSet()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
     res["allowedDataIngestionLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -698,6 +715,7 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetFingerprintBlocked gets the fingerprintBlocked property value. Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetFingerprintBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("fingerprintBlocked")
     if err != nil {
@@ -709,6 +727,7 @@ func (m *ManagedAppProtection) GetFingerprintBlocked()(*bool) {
     return nil
 }
 // GetGracePeriodToBlockAppsDuringOffClockHours gets the gracePeriodToBlockAppsDuringOffClockHours property value. A grace period before blocking app access during off clock hours.
+// returns a *ISODuration when successful
 func (m *ManagedAppProtection) GetGracePeriodToBlockAppsDuringOffClockHours()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("gracePeriodToBlockAppsDuringOffClockHours")
     if err != nil {
@@ -720,6 +739,7 @@ func (m *ManagedAppProtection) GetGracePeriodToBlockAppsDuringOffClockHours()(*i
     return nil
 }
 // GetManagedBrowser gets the managedBrowser property value. Type of managed browser
+// returns a *ManagedBrowserType when successful
 func (m *ManagedAppProtection) GetManagedBrowser()(*ManagedBrowserType) {
     val, err := m.GetBackingStore().Get("managedBrowser")
     if err != nil {
@@ -731,6 +751,7 @@ func (m *ManagedAppProtection) GetManagedBrowser()(*ManagedBrowserType) {
     return nil
 }
 // GetManagedBrowserToOpenLinksRequired gets the managedBrowserToOpenLinksRequired property value. Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetManagedBrowserToOpenLinksRequired()(*bool) {
     val, err := m.GetBackingStore().Get("managedBrowserToOpenLinksRequired")
     if err != nil {
@@ -742,6 +763,7 @@ func (m *ManagedAppProtection) GetManagedBrowserToOpenLinksRequired()(*bool) {
     return nil
 }
 // GetMaximumAllowedDeviceThreatLevel gets the maximumAllowedDeviceThreatLevel property value. The maxium threat level allowed for an app to be compliant.
+// returns a *ManagedAppDeviceThreatLevel when successful
 func (m *ManagedAppProtection) GetMaximumAllowedDeviceThreatLevel()(*ManagedAppDeviceThreatLevel) {
     val, err := m.GetBackingStore().Get("maximumAllowedDeviceThreatLevel")
     if err != nil {
@@ -753,6 +775,7 @@ func (m *ManagedAppProtection) GetMaximumAllowedDeviceThreatLevel()(*ManagedAppD
     return nil
 }
 // GetMaximumPinRetries gets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
+// returns a *int32 when successful
 func (m *ManagedAppProtection) GetMaximumPinRetries()(*int32) {
     val, err := m.GetBackingStore().Get("maximumPinRetries")
     if err != nil {
@@ -764,6 +787,7 @@ func (m *ManagedAppProtection) GetMaximumPinRetries()(*int32) {
     return nil
 }
 // GetMaximumRequiredOsVersion gets the maximumRequiredOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data.
+// returns a *string when successful
 func (m *ManagedAppProtection) GetMaximumRequiredOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("maximumRequiredOsVersion")
     if err != nil {
@@ -775,6 +799,7 @@ func (m *ManagedAppProtection) GetMaximumRequiredOsVersion()(*string) {
     return nil
 }
 // GetMaximumWarningOsVersion gets the maximumWarningOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data.
+// returns a *string when successful
 func (m *ManagedAppProtection) GetMaximumWarningOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("maximumWarningOsVersion")
     if err != nil {
@@ -786,6 +811,7 @@ func (m *ManagedAppProtection) GetMaximumWarningOsVersion()(*string) {
     return nil
 }
 // GetMaximumWipeOsVersion gets the maximumWipeOsVersion property value. Versions bigger than the specified version will block the managed app from accessing company data.
+// returns a *string when successful
 func (m *ManagedAppProtection) GetMaximumWipeOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("maximumWipeOsVersion")
     if err != nil {
@@ -797,6 +823,7 @@ func (m *ManagedAppProtection) GetMaximumWipeOsVersion()(*string) {
     return nil
 }
 // GetMinimumPinLength gets the minimumPinLength property value. Minimum pin length required for an app-level pin if PinRequired is set to True
+// returns a *int32 when successful
 func (m *ManagedAppProtection) GetMinimumPinLength()(*int32) {
     val, err := m.GetBackingStore().Get("minimumPinLength")
     if err != nil {
@@ -808,6 +835,7 @@ func (m *ManagedAppProtection) GetMinimumPinLength()(*int32) {
     return nil
 }
 // GetMinimumRequiredAppVersion gets the minimumRequiredAppVersion property value. Versions less than the specified version will block the managed app from accessing company data.
+// returns a *string when successful
 func (m *ManagedAppProtection) GetMinimumRequiredAppVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumRequiredAppVersion")
     if err != nil {
@@ -819,6 +847,7 @@ func (m *ManagedAppProtection) GetMinimumRequiredAppVersion()(*string) {
     return nil
 }
 // GetMinimumRequiredOsVersion gets the minimumRequiredOsVersion property value. Versions less than the specified version will block the managed app from accessing company data.
+// returns a *string when successful
 func (m *ManagedAppProtection) GetMinimumRequiredOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumRequiredOsVersion")
     if err != nil {
@@ -830,6 +859,7 @@ func (m *ManagedAppProtection) GetMinimumRequiredOsVersion()(*string) {
     return nil
 }
 // GetMinimumWarningAppVersion gets the minimumWarningAppVersion property value. Versions less than the specified version will result in warning message on the managed app.
+// returns a *string when successful
 func (m *ManagedAppProtection) GetMinimumWarningAppVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumWarningAppVersion")
     if err != nil {
@@ -841,6 +871,7 @@ func (m *ManagedAppProtection) GetMinimumWarningAppVersion()(*string) {
     return nil
 }
 // GetMinimumWarningOsVersion gets the minimumWarningOsVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
+// returns a *string when successful
 func (m *ManagedAppProtection) GetMinimumWarningOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumWarningOsVersion")
     if err != nil {
@@ -852,6 +883,7 @@ func (m *ManagedAppProtection) GetMinimumWarningOsVersion()(*string) {
     return nil
 }
 // GetMinimumWipeAppVersion gets the minimumWipeAppVersion property value. Versions less than or equal to the specified version will wipe the managed app and the associated company data.
+// returns a *string when successful
 func (m *ManagedAppProtection) GetMinimumWipeAppVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumWipeAppVersion")
     if err != nil {
@@ -863,6 +895,7 @@ func (m *ManagedAppProtection) GetMinimumWipeAppVersion()(*string) {
     return nil
 }
 // GetMinimumWipeOsVersion gets the minimumWipeOsVersion property value. Versions less than or equal to the specified version will wipe the managed app and the associated company data.
+// returns a *string when successful
 func (m *ManagedAppProtection) GetMinimumWipeOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumWipeOsVersion")
     if err != nil {
@@ -874,6 +907,7 @@ func (m *ManagedAppProtection) GetMinimumWipeOsVersion()(*string) {
     return nil
 }
 // GetMobileThreatDefensePartnerPriority gets the mobileThreatDefensePartnerPriority property value. Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.
+// returns a *MobileThreatDefensePartnerPriority when successful
 func (m *ManagedAppProtection) GetMobileThreatDefensePartnerPriority()(*MobileThreatDefensePartnerPriority) {
     val, err := m.GetBackingStore().Get("mobileThreatDefensePartnerPriority")
     if err != nil {
@@ -885,6 +919,7 @@ func (m *ManagedAppProtection) GetMobileThreatDefensePartnerPriority()(*MobileTh
     return nil
 }
 // GetMobileThreatDefenseRemediationAction gets the mobileThreatDefenseRemediationAction property value. An admin initiated action to be applied on a managed app.
+// returns a *ManagedAppRemediationAction when successful
 func (m *ManagedAppProtection) GetMobileThreatDefenseRemediationAction()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("mobileThreatDefenseRemediationAction")
     if err != nil {
@@ -896,6 +931,7 @@ func (m *ManagedAppProtection) GetMobileThreatDefenseRemediationAction()(*Manage
     return nil
 }
 // GetNotificationRestriction gets the notificationRestriction property value. Restrict managed app notification
+// returns a *ManagedAppNotificationRestriction when successful
 func (m *ManagedAppProtection) GetNotificationRestriction()(*ManagedAppNotificationRestriction) {
     val, err := m.GetBackingStore().Get("notificationRestriction")
     if err != nil {
@@ -907,6 +943,7 @@ func (m *ManagedAppProtection) GetNotificationRestriction()(*ManagedAppNotificat
     return nil
 }
 // GetOrganizationalCredentialsRequired gets the organizationalCredentialsRequired property value. Indicates whether organizational credentials are required for app use.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetOrganizationalCredentialsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("organizationalCredentialsRequired")
     if err != nil {
@@ -918,6 +955,7 @@ func (m *ManagedAppProtection) GetOrganizationalCredentialsRequired()(*bool) {
     return nil
 }
 // GetPeriodBeforePinReset gets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
+// returns a *ISODuration when successful
 func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("periodBeforePinReset")
     if err != nil {
@@ -929,6 +967,7 @@ func (m *ManagedAppProtection) GetPeriodBeforePinReset()(*i878a80d2330e89d268963
     return nil
 }
 // GetPeriodOfflineBeforeAccessCheck gets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
+// returns a *ISODuration when successful
 func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("periodOfflineBeforeAccessCheck")
     if err != nil {
@@ -940,6 +979,7 @@ func (m *ManagedAppProtection) GetPeriodOfflineBeforeAccessCheck()(*i878a80d2330
     return nil
 }
 // GetPeriodOfflineBeforeWipeIsEnforced gets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
+// returns a *ISODuration when successful
 func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("periodOfflineBeforeWipeIsEnforced")
     if err != nil {
@@ -951,6 +991,7 @@ func (m *ManagedAppProtection) GetPeriodOfflineBeforeWipeIsEnforced()(*i878a80d2
     return nil
 }
 // GetPeriodOnlineBeforeAccessCheck gets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
+// returns a *ISODuration when successful
 func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("periodOnlineBeforeAccessCheck")
     if err != nil {
@@ -962,6 +1003,7 @@ func (m *ManagedAppProtection) GetPeriodOnlineBeforeAccessCheck()(*i878a80d2330e
     return nil
 }
 // GetPinCharacterSet gets the pinCharacterSet property value. Character set which is to be used for a user's app PIN
+// returns a *ManagedAppPinCharacterSet when successful
 func (m *ManagedAppProtection) GetPinCharacterSet()(*ManagedAppPinCharacterSet) {
     val, err := m.GetBackingStore().Get("pinCharacterSet")
     if err != nil {
@@ -973,6 +1015,7 @@ func (m *ManagedAppProtection) GetPinCharacterSet()(*ManagedAppPinCharacterSet) 
     return nil
 }
 // GetPinRequired gets the pinRequired property value. Indicates whether an app-level pin is required.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetPinRequired()(*bool) {
     val, err := m.GetBackingStore().Get("pinRequired")
     if err != nil {
@@ -984,6 +1027,7 @@ func (m *ManagedAppProtection) GetPinRequired()(*bool) {
     return nil
 }
 // GetPinRequiredInsteadOfBiometricTimeout gets the pinRequiredInsteadOfBiometricTimeout property value. Timeout in minutes for an app pin instead of non biometrics passcode
+// returns a *ISODuration when successful
 func (m *ManagedAppProtection) GetPinRequiredInsteadOfBiometricTimeout()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("pinRequiredInsteadOfBiometricTimeout")
     if err != nil {
@@ -995,6 +1039,7 @@ func (m *ManagedAppProtection) GetPinRequiredInsteadOfBiometricTimeout()(*i878a8
     return nil
 }
 // GetPreviousPinBlockCount gets the previousPinBlockCount property value. Requires a pin to be unique from the number specified in this property.
+// returns a *int32 when successful
 func (m *ManagedAppProtection) GetPreviousPinBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("previousPinBlockCount")
     if err != nil {
@@ -1006,6 +1051,7 @@ func (m *ManagedAppProtection) GetPreviousPinBlockCount()(*int32) {
     return nil
 }
 // GetPrintBlocked gets the printBlocked property value. Indicates whether printing is allowed from managed apps.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetPrintBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("printBlocked")
     if err != nil {
@@ -1017,6 +1063,7 @@ func (m *ManagedAppProtection) GetPrintBlocked()(*bool) {
     return nil
 }
 // GetProtectedMessagingRedirectAppType gets the protectedMessagingRedirectAppType property value. Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
+// returns a *MessagingRedirectAppType when successful
 func (m *ManagedAppProtection) GetProtectedMessagingRedirectAppType()(*MessagingRedirectAppType) {
     val, err := m.GetBackingStore().Get("protectedMessagingRedirectAppType")
     if err != nil {
@@ -1028,6 +1075,7 @@ func (m *ManagedAppProtection) GetProtectedMessagingRedirectAppType()(*Messaging
     return nil
 }
 // GetSaveAsBlocked gets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetSaveAsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("saveAsBlocked")
     if err != nil {
@@ -1039,6 +1087,7 @@ func (m *ManagedAppProtection) GetSaveAsBlocked()(*bool) {
     return nil
 }
 // GetSimplePinBlocked gets the simplePinBlocked property value. Indicates whether simplePin is blocked.
+// returns a *bool when successful
 func (m *ManagedAppProtection) GetSimplePinBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("simplePinBlocked")
     if err != nil {
@@ -1682,7 +1731,6 @@ func (m *ManagedAppProtection) SetSimplePinBlocked(value *bool)() {
         panic(err)
     }
 }
-// ManagedAppProtectionable 
 type ManagedAppProtectionable interface {
     ManagedAppPolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

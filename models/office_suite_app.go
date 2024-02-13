@@ -8,7 +8,7 @@ import (
 type OfficeSuiteApp struct {
     MobileApp
 }
-// NewOfficeSuiteApp instantiates a new officeSuiteApp and sets the default values.
+// NewOfficeSuiteApp instantiates a new OfficeSuiteApp and sets the default values.
 func NewOfficeSuiteApp()(*OfficeSuiteApp) {
     m := &OfficeSuiteApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewOfficeSuiteApp()(*OfficeSuiteApp) {
     return m
 }
 // CreateOfficeSuiteAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOfficeSuiteAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOfficeSuiteApp(), nil
 }
 // GetAutoAcceptEula gets the autoAcceptEula property value. The value to accept the EULA automatically on the enduser's device.
+// returns a *bool when successful
 func (m *OfficeSuiteApp) GetAutoAcceptEula()(*bool) {
     val, err := m.GetBackingStore().Get("autoAcceptEula")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *OfficeSuiteApp) GetAutoAcceptEula()(*bool) {
     return nil
 }
 // GetExcludedApps gets the excludedApps property value. The property to represent the apps which are excluded from the selected Office365 Product Id.
+// returns a ExcludedAppsable when successful
 func (m *OfficeSuiteApp) GetExcludedApps()(ExcludedAppsable) {
     val, err := m.GetBackingStore().Get("excludedApps")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *OfficeSuiteApp) GetExcludedApps()(ExcludedAppsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["autoAcceptEula"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -191,6 +195,7 @@ func (m *OfficeSuiteApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetInstallProgressDisplayLevel gets the installProgressDisplayLevel property value. The Enum to specify the level of display for the Installation Progress Setup UI on the Device.
+// returns a *OfficeSuiteInstallProgressDisplayLevel when successful
 func (m *OfficeSuiteApp) GetInstallProgressDisplayLevel()(*OfficeSuiteInstallProgressDisplayLevel) {
     val, err := m.GetBackingStore().Get("installProgressDisplayLevel")
     if err != nil {
@@ -202,6 +207,7 @@ func (m *OfficeSuiteApp) GetInstallProgressDisplayLevel()(*OfficeSuiteInstallPro
     return nil
 }
 // GetLocalesToInstall gets the localesToInstall property value. The property to represent the locales which are installed when the apps from Office365 is installed. It uses standard RFC 6033. Ref: https://technet.microsoft.com/library/cc179219(v=office.16).aspx
+// returns a []string when successful
 func (m *OfficeSuiteApp) GetLocalesToInstall()([]string) {
     val, err := m.GetBackingStore().Get("localesToInstall")
     if err != nil {
@@ -213,6 +219,7 @@ func (m *OfficeSuiteApp) GetLocalesToInstall()([]string) {
     return nil
 }
 // GetOfficeConfigurationXml gets the officeConfigurationXml property value. The property to represent the XML configuration file that can be specified for Office ProPlus Apps. Takes precedence over all other properties. When present, the XML configuration file will be used to create the app.
+// returns a []byte when successful
 func (m *OfficeSuiteApp) GetOfficeConfigurationXml()([]byte) {
     val, err := m.GetBackingStore().Get("officeConfigurationXml")
     if err != nil {
@@ -224,6 +231,7 @@ func (m *OfficeSuiteApp) GetOfficeConfigurationXml()([]byte) {
     return nil
 }
 // GetOfficePlatformArchitecture gets the officePlatformArchitecture property value. Contains properties for Windows architecture.
+// returns a *WindowsArchitecture when successful
 func (m *OfficeSuiteApp) GetOfficePlatformArchitecture()(*WindowsArchitecture) {
     val, err := m.GetBackingStore().Get("officePlatformArchitecture")
     if err != nil {
@@ -235,6 +243,7 @@ func (m *OfficeSuiteApp) GetOfficePlatformArchitecture()(*WindowsArchitecture) {
     return nil
 }
 // GetOfficeSuiteAppDefaultFileFormat gets the officeSuiteAppDefaultFileFormat property value. Describes the OfficeSuiteApp file format types that can be selected.
+// returns a *OfficeSuiteDefaultFileFormatType when successful
 func (m *OfficeSuiteApp) GetOfficeSuiteAppDefaultFileFormat()(*OfficeSuiteDefaultFileFormatType) {
     val, err := m.GetBackingStore().Get("officeSuiteAppDefaultFileFormat")
     if err != nil {
@@ -246,6 +255,7 @@ func (m *OfficeSuiteApp) GetOfficeSuiteAppDefaultFileFormat()(*OfficeSuiteDefaul
     return nil
 }
 // GetProductIds gets the productIds property value. The Product Ids that represent the Office365 Suite SKU.
+// returns a []OfficeProductId when successful
 func (m *OfficeSuiteApp) GetProductIds()([]OfficeProductId) {
     val, err := m.GetBackingStore().Get("productIds")
     if err != nil {
@@ -257,6 +267,7 @@ func (m *OfficeSuiteApp) GetProductIds()([]OfficeProductId) {
     return nil
 }
 // GetShouldUninstallOlderVersionsOfOffice gets the shouldUninstallOlderVersionsOfOffice property value. The property to determine whether to uninstall existing Office MSI if an Office365 app suite is deployed to the device or not.
+// returns a *bool when successful
 func (m *OfficeSuiteApp) GetShouldUninstallOlderVersionsOfOffice()(*bool) {
     val, err := m.GetBackingStore().Get("shouldUninstallOlderVersionsOfOffice")
     if err != nil {
@@ -268,6 +279,7 @@ func (m *OfficeSuiteApp) GetShouldUninstallOlderVersionsOfOffice()(*bool) {
     return nil
 }
 // GetTargetVersion gets the targetVersion property value. The property to represent the specific target version for the Office365 app suite that should be remained deployed on the devices.
+// returns a *string when successful
 func (m *OfficeSuiteApp) GetTargetVersion()(*string) {
     val, err := m.GetBackingStore().Get("targetVersion")
     if err != nil {
@@ -279,6 +291,7 @@ func (m *OfficeSuiteApp) GetTargetVersion()(*string) {
     return nil
 }
 // GetUpdateChannel gets the updateChannel property value. The Enum to specify the Office365 Updates Channel.
+// returns a *OfficeUpdateChannel when successful
 func (m *OfficeSuiteApp) GetUpdateChannel()(*OfficeUpdateChannel) {
     val, err := m.GetBackingStore().Get("updateChannel")
     if err != nil {
@@ -290,6 +303,7 @@ func (m *OfficeSuiteApp) GetUpdateChannel()(*OfficeUpdateChannel) {
     return nil
 }
 // GetUpdateVersion gets the updateVersion property value. The property to represent the update version in which the specific target version is available for the Office365 app suite.
+// returns a *string when successful
 func (m *OfficeSuiteApp) GetUpdateVersion()(*string) {
     val, err := m.GetBackingStore().Get("updateVersion")
     if err != nil {
@@ -301,6 +315,7 @@ func (m *OfficeSuiteApp) GetUpdateVersion()(*string) {
     return nil
 }
 // GetUseSharedComputerActivation gets the useSharedComputerActivation property value. The property to represent that whether the shared computer activation is used not for Office365 app suite.
+// returns a *bool when successful
 func (m *OfficeSuiteApp) GetUseSharedComputerActivation()(*bool) {
     val, err := m.GetBackingStore().Get("useSharedComputerActivation")
     if err != nil {
@@ -492,7 +507,6 @@ func (m *OfficeSuiteApp) SetUseSharedComputerActivation(value *bool)() {
         panic(err)
     }
 }
-// OfficeSuiteAppable 
 type OfficeSuiteAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

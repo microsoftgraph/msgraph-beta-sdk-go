@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RegionalAndLanguageSettings 
 type RegionalAndLanguageSettings struct {
     Entity
 }
-// NewRegionalAndLanguageSettings instantiates a new regionalAndLanguageSettings and sets the default values.
+// NewRegionalAndLanguageSettings instantiates a new RegionalAndLanguageSettings and sets the default values.
 func NewRegionalAndLanguageSettings()(*RegionalAndLanguageSettings) {
     m := &RegionalAndLanguageSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewRegionalAndLanguageSettings()(*RegionalAndLanguageSettings) {
     return m
 }
 // CreateRegionalAndLanguageSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRegionalAndLanguageSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRegionalAndLanguageSettings(), nil
 }
 // GetAuthoringLanguages gets the authoringLanguages property value. Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.
+// returns a []LocaleInfoable when successful
 func (m *RegionalAndLanguageSettings) GetAuthoringLanguages()([]LocaleInfoable) {
     val, err := m.GetBackingStore().Get("authoringLanguages")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *RegionalAndLanguageSettings) GetAuthoringLanguages()([]LocaleInfoable) 
     return nil
 }
 // GetDefaultDisplayLanguage gets the defaultDisplayLanguage property value. The  user's preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.
+// returns a LocaleInfoable when successful
 func (m *RegionalAndLanguageSettings) GetDefaultDisplayLanguage()(LocaleInfoable) {
     val, err := m.GetBackingStore().Get("defaultDisplayLanguage")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *RegionalAndLanguageSettings) GetDefaultDisplayLanguage()(LocaleInfoable
     return nil
 }
 // GetDefaultRegionalFormat gets the defaultRegionalFormat property value. The locale that drives the default date, time, and calendar formatting.Returned by default.
+// returns a LocaleInfoable when successful
 func (m *RegionalAndLanguageSettings) GetDefaultRegionalFormat()(LocaleInfoable) {
     val, err := m.GetBackingStore().Get("defaultRegionalFormat")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *RegionalAndLanguageSettings) GetDefaultRegionalFormat()(LocaleInfoable)
     return nil
 }
 // GetDefaultSpeechInputLanguage gets the defaultSpeechInputLanguage property value. The language a user expected to use as input for text to speech scenarios.Returned by default.
+// returns a LocaleInfoable when successful
 func (m *RegionalAndLanguageSettings) GetDefaultSpeechInputLanguage()(LocaleInfoable) {
     val, err := m.GetBackingStore().Get("defaultSpeechInputLanguage")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *RegionalAndLanguageSettings) GetDefaultSpeechInputLanguage()(LocaleInfo
     return nil
 }
 // GetDefaultTranslationLanguage gets the defaultTranslationLanguage property value. The language a user expects to have documents, emails, and messages translated into.Returned by default.
+// returns a LocaleInfoable when successful
 func (m *RegionalAndLanguageSettings) GetDefaultTranslationLanguage()(LocaleInfoable) {
     val, err := m.GetBackingStore().Get("defaultTranslationLanguage")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *RegionalAndLanguageSettings) GetDefaultTranslationLanguage()(LocaleInfo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authoringLanguages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +162,7 @@ func (m *RegionalAndLanguageSettings) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetRegionalFormatOverrides gets the regionalFormatOverrides property value. Allows a user to override their defaultRegionalFormat with field specific formats.Returned by default.
+// returns a RegionalFormatOverridesable when successful
 func (m *RegionalAndLanguageSettings) GetRegionalFormatOverrides()(RegionalFormatOverridesable) {
     val, err := m.GetBackingStore().Get("regionalFormatOverrides")
     if err != nil {
@@ -167,6 +174,7 @@ func (m *RegionalAndLanguageSettings) GetRegionalFormatOverrides()(RegionalForma
     return nil
 }
 // GetTranslationPreferences gets the translationPreferences property value. The user's preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.
+// returns a TranslationPreferencesable when successful
 func (m *RegionalAndLanguageSettings) GetTranslationPreferences()(TranslationPreferencesable) {
     val, err := m.GetBackingStore().Get("translationPreferences")
     if err != nil {
@@ -282,7 +290,6 @@ func (m *RegionalAndLanguageSettings) SetTranslationPreferences(value Translatio
         panic(err)
     }
 }
-// RegionalAndLanguageSettingsable 
 type RegionalAndLanguageSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

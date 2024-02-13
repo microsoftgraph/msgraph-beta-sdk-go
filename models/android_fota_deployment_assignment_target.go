@@ -8,7 +8,7 @@ import (
 type AndroidFotaDeploymentAssignmentTarget struct {
     DeviceAndAppManagementAssignmentTarget
 }
-// NewAndroidFotaDeploymentAssignmentTarget instantiates a new androidFotaDeploymentAssignmentTarget and sets the default values.
+// NewAndroidFotaDeploymentAssignmentTarget instantiates a new AndroidFotaDeploymentAssignmentTarget and sets the default values.
 func NewAndroidFotaDeploymentAssignmentTarget()(*AndroidFotaDeploymentAssignmentTarget) {
     m := &AndroidFotaDeploymentAssignmentTarget{
         DeviceAndAppManagementAssignmentTarget: *NewDeviceAndAppManagementAssignmentTarget(),
@@ -18,10 +18,12 @@ func NewAndroidFotaDeploymentAssignmentTarget()(*AndroidFotaDeploymentAssignment
     return m
 }
 // CreateAndroidFotaDeploymentAssignmentTargetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidFotaDeploymentAssignmentTargetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidFotaDeploymentAssignmentTarget(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidFotaDeploymentAssignmentTarget) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceAndAppManagementAssignmentTarget.GetFieldDeserializers()
     res["groupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *AndroidFotaDeploymentAssignmentTarget) GetFieldDeserializers()(map[stri
     return res
 }
 // GetGroupId gets the groupId property value. AAD Group Id.
+// returns a *string when successful
 func (m *AndroidFotaDeploymentAssignmentTarget) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *AndroidFotaDeploymentAssignmentTarget) SetGroupId(value *string)() {
         panic(err)
     }
 }
-// AndroidFotaDeploymentAssignmentTargetable 
 type AndroidFotaDeploymentAssignmentTargetable interface {
     DeviceAndAppManagementAssignmentTargetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

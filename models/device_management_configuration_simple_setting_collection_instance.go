@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationSimpleSettingCollectionInstance struct {
     DeviceManagementConfigurationSettingInstance
 }
-// NewDeviceManagementConfigurationSimpleSettingCollectionInstance instantiates a new deviceManagementConfigurationSimpleSettingCollectionInstance and sets the default values.
+// NewDeviceManagementConfigurationSimpleSettingCollectionInstance instantiates a new DeviceManagementConfigurationSimpleSettingCollectionInstance and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingCollectionInstance()(*DeviceManagementConfigurationSimpleSettingCollectionInstance) {
     m := &DeviceManagementConfigurationSimpleSettingCollectionInstance{
         DeviceManagementConfigurationSettingInstance: *NewDeviceManagementConfigurationSettingInstance(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationSimpleSettingCollectionInstance()(*DeviceMa
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingCollectionInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationSimpleSettingCollectionInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationSimpleSettingCollectionInstance(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingInstance.GetFieldDeserializers()
     res["simpleSettingCollectionValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +45,7 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) GetFieldD
     return res
 }
 // GetSimpleSettingCollectionValue gets the simpleSettingCollectionValue property value. Simple setting collection instance value
+// returns a []DeviceManagementConfigurationSimpleSettingValueable when successful
 func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) GetSimpleSettingCollectionValue()([]DeviceManagementConfigurationSimpleSettingValueable) {
     val, err := m.GetBackingStore().Get("simpleSettingCollectionValue")
     if err != nil {
@@ -80,7 +83,6 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionInstance) SetSimple
         panic(err)
     }
 }
-// DeviceManagementConfigurationSimpleSettingCollectionInstanceable 
 type DeviceManagementConfigurationSimpleSettingCollectionInstanceable interface {
     DeviceManagementConfigurationSettingInstanceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

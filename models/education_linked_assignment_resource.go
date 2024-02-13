@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationLinkedAssignmentResource 
 type EducationLinkedAssignmentResource struct {
     EducationResource
 }
-// NewEducationLinkedAssignmentResource instantiates a new educationLinkedAssignmentResource and sets the default values.
+// NewEducationLinkedAssignmentResource instantiates a new EducationLinkedAssignmentResource and sets the default values.
 func NewEducationLinkedAssignmentResource()(*EducationLinkedAssignmentResource) {
     m := &EducationLinkedAssignmentResource{
         EducationResource: *NewEducationResource(),
@@ -18,10 +17,12 @@ func NewEducationLinkedAssignmentResource()(*EducationLinkedAssignmentResource) 
     return m
 }
 // CreateEducationLinkedAssignmentResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationLinkedAssignmentResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationLinkedAssignmentResource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationLinkedAssignmentResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationResource.GetFieldDeserializers()
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *EducationLinkedAssignmentResource) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetUrl gets the url property value. URL of the actual assignment.
+// returns a *string when successful
 func (m *EducationLinkedAssignmentResource) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *EducationLinkedAssignmentResource) SetUrl(value *string)() {
         panic(err)
     }
 }
-// EducationLinkedAssignmentResourceable 
 type EducationLinkedAssignmentResourceable interface {
     EducationResourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DocumentCommentReply 
 type DocumentCommentReply struct {
     Entity
 }
-// NewDocumentCommentReply instantiates a new documentCommentReply and sets the default values.
+// NewDocumentCommentReply instantiates a new DocumentCommentReply and sets the default values.
 func NewDocumentCommentReply()(*DocumentCommentReply) {
     m := &DocumentCommentReply{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDocumentCommentReply()(*DocumentCommentReply) {
     return m
 }
 // CreateDocumentCommentReplyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDocumentCommentReplyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDocumentCommentReply(), nil
 }
 // GetContent gets the content property value. The content property
+// returns a *string when successful
 func (m *DocumentCommentReply) GetContent()(*string) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *DocumentCommentReply) GetContent()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DocumentCommentReply) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *DocumentCommentReply) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetLocation gets the location property value. The location property
+// returns a *string when successful
 func (m *DocumentCommentReply) GetLocation()(*string) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *DocumentCommentReply) SetLocation(value *string)() {
         panic(err)
     }
 }
-// DocumentCommentReplyable 
 type DocumentCommentReplyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

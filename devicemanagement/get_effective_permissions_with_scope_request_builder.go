@@ -35,7 +35,7 @@ type GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration struc
 // NewGetEffectivePermissionsWithScopeRequestBuilderInternal instantiates a new GetEffectivePermissionsWithScopeRequestBuilder and sets the default values.
 func NewGetEffectivePermissionsWithScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, scope *string)(*GetEffectivePermissionsWithScopeRequestBuilder) {
     m := &GetEffectivePermissionsWithScopeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/getEffectivePermissions(scope='{scope}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/getEffectivePermissions(scope='{scope}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     if scope != nil {
         m.BaseRequestBuilder.PathParameters["scope"] = *scope
@@ -49,15 +49,16 @@ func NewGetEffectivePermissionsWithScopeRequestBuilder(rawUrl string, requestAda
     return NewGetEffectivePermissionsWithScopeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getEffectivePermissions
-// Deprecated: This method is obsolete. Use GetAsGetEffectivePermissionsWithScopeGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a GetEffectivePermissionsWithScopeResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopeResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetEffectivePermissionsWithScopeResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -69,14 +70,15 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) Get(ctx context.Context
     return res.(GetEffectivePermissionsWithScopeResponseable), nil
 }
 // GetAsGetEffectivePermissionsWithScopeGetResponse invoke function getEffectivePermissions
+// returns a GetEffectivePermissionsWithScopeGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetAsGetEffectivePermissionsWithScopeGetResponse(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsWithScopeGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateGetEffectivePermissionsWithScopeGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -88,6 +90,7 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) GetAsGetEffectivePermis
     return res.(GetEffectivePermissionsWithScopeGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getEffectivePermissions
+// returns a *RequestInformation when successful
 func (m *GetEffectivePermissionsWithScopeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetEffectivePermissionsWithScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -101,6 +104,7 @@ func (m *GetEffectivePermissionsWithScopeRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GetEffectivePermissionsWithScopeRequestBuilder when successful
 func (m *GetEffectivePermissionsWithScopeRequestBuilder) WithUrl(rawUrl string)(*GetEffectivePermissionsWithScopeRequestBuilder) {
     return NewGetEffectivePermissionsWithScopeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

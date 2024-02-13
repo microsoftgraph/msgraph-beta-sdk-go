@@ -8,7 +8,7 @@ import (
 type GroupPolicyUploadedPresentation struct {
     GroupPolicyPresentation
 }
-// NewGroupPolicyUploadedPresentation instantiates a new groupPolicyUploadedPresentation and sets the default values.
+// NewGroupPolicyUploadedPresentation instantiates a new GroupPolicyUploadedPresentation and sets the default values.
 func NewGroupPolicyUploadedPresentation()(*GroupPolicyUploadedPresentation) {
     m := &GroupPolicyUploadedPresentation{
         GroupPolicyPresentation: *NewGroupPolicyPresentation(),
@@ -18,6 +18,7 @@ func NewGroupPolicyUploadedPresentation()(*GroupPolicyUploadedPresentation) {
     return m
 }
 // CreateGroupPolicyUploadedPresentationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyUploadedPresentationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -56,6 +57,7 @@ func CreateGroupPolicyUploadedPresentationFromDiscriminatorValue(parseNode i878a
     return NewGroupPolicyUploadedPresentation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyUploadedPresentation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyPresentation.GetFieldDeserializers()
     return res
@@ -68,7 +70,6 @@ func (m *GroupPolicyUploadedPresentation) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// GroupPolicyUploadedPresentationable 
 type GroupPolicyUploadedPresentationable interface {
     GroupPolicyPresentationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type AppleExpeditedCheckinConfigurationBase struct {
     DeviceConfiguration
 }
-// NewAppleExpeditedCheckinConfigurationBase instantiates a new appleExpeditedCheckinConfigurationBase and sets the default values.
+// NewAppleExpeditedCheckinConfigurationBase instantiates a new AppleExpeditedCheckinConfigurationBase and sets the default values.
 func NewAppleExpeditedCheckinConfigurationBase()(*AppleExpeditedCheckinConfigurationBase) {
     m := &AppleExpeditedCheckinConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewAppleExpeditedCheckinConfigurationBase()(*AppleExpeditedCheckinConfigura
     return m
 }
 // CreateAppleExpeditedCheckinConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppleExpeditedCheckinConfigurationBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateAppleExpeditedCheckinConfigurationBaseFromDiscriminatorValue(parseNod
     return NewAppleExpeditedCheckinConfigurationBase(), nil
 }
 // GetEnableExpeditedCheckin gets the enableExpeditedCheckin property value. Gets or sets whether to enable expedited device check-ins.
+// returns a *bool when successful
 func (m *AppleExpeditedCheckinConfigurationBase) GetEnableExpeditedCheckin()(*bool) {
     val, err := m.GetBackingStore().Get("enableExpeditedCheckin")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *AppleExpeditedCheckinConfigurationBase) GetEnableExpeditedCheckin()(*bo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppleExpeditedCheckinConfigurationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["enableExpeditedCheckin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,7 +89,6 @@ func (m *AppleExpeditedCheckinConfigurationBase) SetEnableExpeditedCheckin(value
         panic(err)
     }
 }
-// AppleExpeditedCheckinConfigurationBaseable 
 type AppleExpeditedCheckinConfigurationBaseable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

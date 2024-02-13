@@ -40,6 +40,7 @@ type ItemConnectorsItemMemberOfRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemConnectorsItemMemberOfRequestBuilderGetQueryParameters
 }
 // ByConnectorGroupId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.onPremisesPublishingProfiles.item.connectors.item.memberOf.item collection
+// returns a *ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder when successful
 func (m *ItemConnectorsItemMemberOfRequestBuilder) ByConnectorGroupId(connectorGroupId string)(*ItemConnectorsItemMemberOfConnectorGroupItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *ItemConnectorsItemMemberOfRequestBuilder) ByConnectorGroupId(connectorG
     }
     return NewItemConnectorsItemMemberOfConnectorGroupItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemConnectorsItemMemberOfRequestBuilderInternal instantiates a new MemberOfRequestBuilder and sets the default values.
+// NewItemConnectorsItemMemberOfRequestBuilderInternal instantiates a new ItemConnectorsItemMemberOfRequestBuilder and sets the default values.
 func NewItemConnectorsItemMemberOfRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorsItemMemberOfRequestBuilder) {
     m := &ItemConnectorsItemMemberOfRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectors/{connector%2Did}/memberOf{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectors/{connector%2Did}/memberOf{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemConnectorsItemMemberOfRequestBuilder instantiates a new MemberOfRequestBuilder and sets the default values.
+// NewItemConnectorsItemMemberOfRequestBuilder instantiates a new ItemConnectorsItemMemberOfRequestBuilder and sets the default values.
 func NewItemConnectorsItemMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemConnectorsItemMemberOfRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemConnectorsItemMemberOfRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemConnectorsItemMemberOfCountRequestBuilder when successful
 func (m *ItemConnectorsItemMemberOfRequestBuilder) Count()(*ItemConnectorsItemMemberOfCountRequestBuilder) {
     return NewItemConnectorsItemMemberOfCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the connectorGroup that the connector is a member of. Read-only.
+// returns a ConnectorGroupCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemConnectorsItemMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorsItemMemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConnectorGroupCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,10 +90,12 @@ func (m *ItemConnectorsItemMemberOfRequestBuilder) Get(ctx context.Context, requ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupCollectionResponseable), nil
 }
 // Ref provides operations to manage the collection of onPremisesPublishingProfile entities.
+// returns a *ItemConnectorsItemMemberOfRefRequestBuilder when successful
 func (m *ItemConnectorsItemMemberOfRequestBuilder) Ref()(*ItemConnectorsItemMemberOfRefRequestBuilder) {
     return NewItemConnectorsItemMemberOfRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the connectorGroup that the connector is a member of. Read-only.
+// returns a *RequestInformation when successful
 func (m *ItemConnectorsItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorsItemMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -104,6 +109,7 @@ func (m *ItemConnectorsItemMemberOfRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemConnectorsItemMemberOfRequestBuilder when successful
 func (m *ItemConnectorsItemMemberOfRequestBuilder) WithUrl(rawUrl string)(*ItemConnectorsItemMemberOfRequestBuilder) {
     return NewItemConnectorsItemMemberOfRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -44,7 +44,7 @@ type PeopleRequestBuilderPatchRequestConfiguration struct {
 // NewPeopleRequestBuilderInternal instantiates a new PeopleRequestBuilder and sets the default values.
 func NewPeopleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PeopleRequestBuilder) {
     m := &PeopleRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/people{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/people{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -55,14 +55,14 @@ func NewPeopleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewPeopleRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property people for admin
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PeopleRequestBuilder) Delete(ctx context.Context, requestConfiguration *PeopleRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,6 +71,8 @@ func (m *PeopleRequestBuilder) Delete(ctx context.Context, requestConfiguration 
     return nil
 }
 // Get retrieve the properties and relationships of a peopleAdminSettings object.
+// returns a PeopleAdminSettingsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/peopleadminsettings-get?view=graph-rest-1.0
@@ -80,8 +82,7 @@ func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *Pe
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePeopleAdminSettingsFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -92,15 +93,21 @@ func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *Pe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable), nil
 }
+// ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleItemInsightsRequestBuilder when successful
+func (m *PeopleRequestBuilder) ItemInsights()(*PeopleItemInsightsRequestBuilder) {
+    return NewPeopleItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property people in admin
+// returns a PeopleAdminSettingsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PeopleRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable, requestConfiguration *PeopleRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePeopleAdminSettingsFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -112,16 +119,19 @@ func (m *PeopleRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable), nil
 }
 // ProfileCardProperties provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleProfileCardPropertiesRequestBuilder when successful
 func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfileCardPropertiesRequestBuilder) {
     return NewPeopleProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Pronouns provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeoplePronounsRequestBuilder when successful
 func (m *PeopleRequestBuilder) Pronouns()(*PeoplePronounsRequestBuilder) {
     return NewPeoplePronounsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property people for admin
+// returns a *RequestInformation when successful
 func (m *PeopleRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PeopleRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/admin/people", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -130,6 +140,7 @@ func (m *PeopleRequestBuilder) ToDeleteRequestInformation(ctx context.Context, r
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of a peopleAdminSettings object.
+// returns a *RequestInformation when successful
 func (m *PeopleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PeopleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -143,8 +154,9 @@ func (m *PeopleRequestBuilder) ToGetRequestInformation(ctx context.Context, requ
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property people in admin
+// returns a *RequestInformation when successful
 func (m *PeopleRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable, requestConfiguration *PeopleRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/admin/people", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -157,6 +169,7 @@ func (m *PeopleRequestBuilder) ToPatchRequestInformation(ctx context.Context, bo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *PeopleRequestBuilder when successful
 func (m *PeopleRequestBuilder) WithUrl(rawUrl string)(*PeopleRequestBuilder) {
     return NewPeopleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserExperienceAnalyticsAnomalyCollectionResponse 
 type UserExperienceAnalyticsAnomalyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserExperienceAnalyticsAnomalyCollectionResponse instantiates a new userExperienceAnalyticsAnomalyCollectionResponse and sets the default values.
+// NewUserExperienceAnalyticsAnomalyCollectionResponse instantiates a new UserExperienceAnalyticsAnomalyCollectionResponse and sets the default values.
 func NewUserExperienceAnalyticsAnomalyCollectionResponse()(*UserExperienceAnalyticsAnomalyCollectionResponse) {
     m := &UserExperienceAnalyticsAnomalyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUserExperienceAnalyticsAnomalyCollectionResponse()(*UserExperienceAnalyt
     return m
 }
 // CreateUserExperienceAnalyticsAnomalyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsAnomalyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAnomalyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsAnomalyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UserExperienceAnalyticsAnomalyCollectionResponse) GetFieldDeserializers
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UserExperienceAnalyticsAnomalyable when successful
 func (m *UserExperienceAnalyticsAnomalyCollectionResponse) GetValue()([]UserExperienceAnalyticsAnomalyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UserExperienceAnalyticsAnomalyCollectionResponse) SetValue(value []User
         panic(err)
     }
 }
-// UserExperienceAnalyticsAnomalyCollectionResponseable 
 type UserExperienceAnalyticsAnomalyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

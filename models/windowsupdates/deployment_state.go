@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DeploymentState 
 type DeploymentState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeploymentState instantiates a new deploymentState and sets the default values.
+// NewDeploymentState instantiates a new DeploymentState and sets the default values.
 func NewDeploymentState()(*DeploymentState) {
     m := &DeploymentState{
     }
@@ -19,10 +18,12 @@ func NewDeploymentState()(*DeploymentState) {
     return m
 }
 // CreateDeploymentStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeploymentStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeploymentState(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeploymentState) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *DeploymentState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeploymentState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEffectiveValue gets the effectiveValue property value. The effectiveValue property
+// returns a *DeploymentStateValue when successful
 func (m *DeploymentState) GetEffectiveValue()(*DeploymentStateValue) {
     val, err := m.GetBackingStore().Get("effectiveValue")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *DeploymentState) GetEffectiveValue()(*DeploymentStateValue) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeploymentState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["effectiveValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,6 +105,7 @@ func (m *DeploymentState) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeploymentState) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *DeploymentState) GetOdataType()(*string) {
     return nil
 }
 // GetReasons gets the reasons property value. Specifies the reasons the deployment has its state value. Read-only.
+// returns a []DeploymentStateReasonable when successful
 func (m *DeploymentState) GetReasons()([]DeploymentStateReasonable) {
     val, err := m.GetBackingStore().Get("reasons")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *DeploymentState) GetReasons()([]DeploymentStateReasonable) {
     return nil
 }
 // GetRequestedValue gets the requestedValue property value. The requestedValue property
+// returns a *RequestedDeploymentStateValue when successful
 func (m *DeploymentState) GetRequestedValue()(*RequestedDeploymentStateValue) {
     val, err := m.GetBackingStore().Get("requestedValue")
     if err != nil {
@@ -214,7 +221,6 @@ func (m *DeploymentState) SetRequestedValue(value *RequestedDeploymentStateValue
         panic(err)
     }
 }
-// DeploymentStateable 
 type DeploymentStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

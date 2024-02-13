@@ -2,7 +2,6 @@ package devicemanagement
 import (
     "errors"
 )
-// 
 type AggregationType int
 
 const (

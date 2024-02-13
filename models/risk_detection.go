@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RiskDetection 
 type RiskDetection struct {
     Entity
 }
-// NewRiskDetection instantiates a new riskDetection and sets the default values.
+// NewRiskDetection instantiates a new RiskDetection and sets the default values.
 func NewRiskDetection()(*RiskDetection) {
     m := &RiskDetection{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewRiskDetection()(*RiskDetection) {
     return m
 }
 // CreateRiskDetectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRiskDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRiskDetection(), nil
 }
 // GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.
+// returns a *ActivityType when successful
 func (m *RiskDetection) GetActivity()(*ActivityType) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *RiskDetection) GetActivity()(*ActivityType) {
     return nil
 }
 // GetActivityDateTime gets the activityDateTime property value. Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *RiskDetection) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("activityDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *RiskDetection) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetAdditionalInfo gets the additionalInfo property value. Additional information associated with the risk detection in JSON format.
+// returns a *string when successful
 func (m *RiskDetection) GetAdditionalInfo()(*string) {
     val, err := m.GetBackingStore().Get("additionalInfo")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *RiskDetection) GetAdditionalInfo()(*string) {
     return nil
 }
 // GetCorrelationId gets the correlationId property value. Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
+// returns a *string when successful
 func (m *RiskDetection) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *RiskDetection) GetCorrelationId()(*string) {
     return nil
 }
 // GetDetectedDateTime gets the detectedDateTime property value. Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *RiskDetection) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("detectedDateTime")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *RiskDetection) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetDetectionTimingType gets the detectionTimingType property value. Timing of the detected risk (real-time/offline). The possible values are notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+// returns a *RiskDetectionTimingType when successful
 func (m *RiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) {
     val, err := m.GetBackingStore().Get("detectionTimingType")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *RiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -302,6 +309,7 @@ func (m *RiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIpAddress gets the ipAddress property value. Provides the IP address of the client from where the risk occurred.
+// returns a *string when successful
 func (m *RiskDetection) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -313,6 +321,7 @@ func (m *RiskDetection) GetIpAddress()(*string) {
     return nil
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time that the risk detection was last updated.
+// returns a *Time when successful
 func (m *RiskDetection) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -324,6 +333,7 @@ func (m *RiskDetection) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetLocation gets the location property value. Location of the sign-in.
+// returns a SignInLocationable when successful
 func (m *RiskDetection) GetLocation()(SignInLocationable) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -335,6 +345,7 @@ func (m *RiskDetection) GetLocation()(SignInLocationable) {
     return nil
 }
 // GetMitreTechniqueId gets the mitreTechniqueId property value. The mitreTechniqueId property
+// returns a *string when successful
 func (m *RiskDetection) GetMitreTechniqueId()(*string) {
     val, err := m.GetBackingStore().Get("mitreTechniqueId")
     if err != nil {
@@ -346,6 +357,7 @@ func (m *RiskDetection) GetMitreTechniqueId()(*string) {
     return nil
 }
 // GetRequestId gets the requestId property value. Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
+// returns a *string when successful
 func (m *RiskDetection) GetRequestId()(*string) {
     val, err := m.GetBackingStore().Get("requestId")
     if err != nil {
@@ -357,6 +369,7 @@ func (m *RiskDetection) GetRequestId()(*string) {
     return nil
 }
 // GetRiskDetail gets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal , m365DAdminDismissedDetection. Note: Details for this property are only available for Microsoft Entra ID P2 customers. P1 customers will be returned hidden.
+// returns a *RiskDetail when successful
 func (m *RiskDetection) GetRiskDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
     if err != nil {
@@ -367,7 +380,8 @@ func (m *RiskDetection) GetRiskDetail()(*RiskDetail) {
     }
     return nil
 }
-// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, anomalousUserActivity, userReportedSuspiciousActivity.  For more information about each value, see riskEventType values.
+// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are adminConfirmedUserCompromised, anomalousUserActivity, anonymizedIPAddress, generic, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress,   unfamiliarFeatures, unlikelyTravel, userReportedSuspiciousActivity.  For more information about each value, see riskEventType values.
+// returns a *string when successful
 func (m *RiskDetection) GetRiskEventType()(*string) {
     val, err := m.GetBackingStore().Get("riskEventType")
     if err != nil {
@@ -379,6 +393,7 @@ func (m *RiskDetection) GetRiskEventType()(*string) {
     return nil
 }
 // GetRiskLevel gets the riskLevel property value. Level of the detected risk. The possible values are low, medium, high, hidden, none, unknownFutureValue. Note: Details for this property are only available for Microsoft Entra ID P2 customers. P1 customers will be returned hidden.
+// returns a *RiskLevel when successful
 func (m *RiskDetection) GetRiskLevel()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevel")
     if err != nil {
@@ -390,6 +405,7 @@ func (m *RiskDetection) GetRiskLevel()(*RiskLevel) {
     return nil
 }
 // GetRiskState gets the riskState property value. The state of a detected risky user or sign-in. The possible values are none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, and unknownFutureValue.
+// returns a *RiskState when successful
 func (m *RiskDetection) GetRiskState()(*RiskState) {
     val, err := m.GetBackingStore().Get("riskState")
     if err != nil {
@@ -401,6 +417,7 @@ func (m *RiskDetection) GetRiskState()(*RiskState) {
     return nil
 }
 // GetRiskType gets the riskType property value. The riskType property
+// returns a *RiskEventType when successful
 func (m *RiskDetection) GetRiskType()(*RiskEventType) {
     val, err := m.GetBackingStore().Get("riskType")
     if err != nil {
@@ -412,6 +429,7 @@ func (m *RiskDetection) GetRiskType()(*RiskEventType) {
     return nil
 }
 // GetSource gets the source property value. Source of the risk detection. For example, activeDirectory.
+// returns a *string when successful
 func (m *RiskDetection) GetSource()(*string) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -423,6 +441,7 @@ func (m *RiskDetection) GetSource()(*string) {
     return nil
 }
 // GetTokenIssuerType gets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. The possible values are AzureAD, ADFederationServices, and unknownFutureValue.
+// returns a *TokenIssuerType when successful
 func (m *RiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
     val, err := m.GetBackingStore().Get("tokenIssuerType")
     if err != nil {
@@ -434,6 +453,7 @@ func (m *RiskDetection) GetTokenIssuerType()(*TokenIssuerType) {
     return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. Name of the user.
+// returns a *string when successful
 func (m *RiskDetection) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -445,6 +465,7 @@ func (m *RiskDetection) GetUserDisplayName()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. Unique ID of the user.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *string when successful
 func (m *RiskDetection) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -456,6 +477,7 @@ func (m *RiskDetection) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user.
+// returns a *string when successful
 func (m *RiskDetection) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -691,7 +713,7 @@ func (m *RiskDetection) SetRiskDetail(value *RiskDetail)() {
         panic(err)
     }
 }
-// SetRiskEventType sets the riskEventType property value. The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, investigationsThreatIntelligenceSigninLinked, maliciousIPAddressValidCredentialsBlockedIP, anomalousUserActivity, userReportedSuspiciousActivity.  For more information about each value, see riskEventType values.
+// SetRiskEventType sets the riskEventType property value. The type of risk event detected. The possible values are adminConfirmedUserCompromised, anomalousUserActivity, anonymizedIPAddress, generic, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress,   unfamiliarFeatures, unlikelyTravel, userReportedSuspiciousActivity.  For more information about each value, see riskEventType values.
 func (m *RiskDetection) SetRiskEventType(value *string)() {
     err := m.GetBackingStore().Set("riskEventType", value)
     if err != nil {
@@ -754,7 +776,6 @@ func (m *RiskDetection) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// RiskDetectionable 
 type RiskDetectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ChannelModerationSettings 
 type ChannelModerationSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewChannelModerationSettings instantiates a new channelModerationSettings and sets the default values.
+// NewChannelModerationSettings instantiates a new ChannelModerationSettings and sets the default values.
 func NewChannelModerationSettings()(*ChannelModerationSettings) {
     m := &ChannelModerationSettings{
     }
@@ -19,10 +18,12 @@ func NewChannelModerationSettings()(*ChannelModerationSettings) {
     return m
 }
 // CreateChannelModerationSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChannelModerationSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChannelModerationSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ChannelModerationSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *ChannelModerationSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowNewMessageFromBots gets the allowNewMessageFromBots property value. Indicates whether bots are allowed to post messages.
+// returns a *bool when successful
 func (m *ChannelModerationSettings) GetAllowNewMessageFromBots()(*bool) {
     val, err := m.GetBackingStore().Get("allowNewMessageFromBots")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *ChannelModerationSettings) GetAllowNewMessageFromBots()(*bool) {
     return nil
 }
 // GetAllowNewMessageFromConnectors gets the allowNewMessageFromConnectors property value. Indicates whether connectors are allowed to post messages.
+// returns a *bool when successful
 func (m *ChannelModerationSettings) GetAllowNewMessageFromConnectors()(*bool) {
     val, err := m.GetBackingStore().Get("allowNewMessageFromConnectors")
     if err != nil {
@@ -57,10 +60,12 @@ func (m *ChannelModerationSettings) GetAllowNewMessageFromConnectors()(*bool) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ChannelModerationSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowNewMessageFromBots"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *ChannelModerationSettings) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ChannelModerationSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *ChannelModerationSettings) GetOdataType()(*string) {
     return nil
 }
 // GetReplyRestriction gets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
+// returns a *ReplyRestriction when successful
 func (m *ChannelModerationSettings) GetReplyRestriction()(*ReplyRestriction) {
     val, err := m.GetBackingStore().Get("replyRestriction")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *ChannelModerationSettings) GetReplyRestriction()(*ReplyRestriction) {
     return nil
 }
 // GetUserNewMessageRestriction gets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
+// returns a *UserNewMessageRestriction when successful
 func (m *ChannelModerationSettings) GetUserNewMessageRestriction()(*UserNewMessageRestriction) {
     val, err := m.GetBackingStore().Get("userNewMessageRestriction")
     if err != nil {
@@ -236,7 +244,6 @@ func (m *ChannelModerationSettings) SetUserNewMessageRestriction(value *UserNewM
         panic(err)
     }
 }
-// ChannelModerationSettingsable 
 type ChannelModerationSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

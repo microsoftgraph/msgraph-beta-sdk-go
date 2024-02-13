@@ -9,7 +9,7 @@ import (
 type UserPFXCertificate struct {
     Entity
 }
-// NewUserPFXCertificate instantiates a new userPFXCertificate and sets the default values.
+// NewUserPFXCertificate instantiates a new UserPFXCertificate and sets the default values.
 func NewUserPFXCertificate()(*UserPFXCertificate) {
     m := &UserPFXCertificate{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewUserPFXCertificate()(*UserPFXCertificate) {
     return m
 }
 // CreateUserPFXCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserPFXCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserPFXCertificate(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date/time when this PFX certificate was imported.
+// returns a *Time when successful
 func (m *UserPFXCertificate) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *UserPFXCertificate) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetEncryptedPfxBlob gets the encryptedPfxBlob property value. Encrypted PFX blob.
+// returns a []byte when successful
 func (m *UserPFXCertificate) GetEncryptedPfxBlob()([]byte) {
     val, err := m.GetBackingStore().Get("encryptedPfxBlob")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *UserPFXCertificate) GetEncryptedPfxBlob()([]byte) {
     return nil
 }
 // GetEncryptedPfxPassword gets the encryptedPfxPassword property value. Encrypted PFX password.
+// returns a *string when successful
 func (m *UserPFXCertificate) GetEncryptedPfxPassword()(*string) {
     val, err := m.GetBackingStore().Get("encryptedPfxPassword")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *UserPFXCertificate) GetEncryptedPfxPassword()(*string) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Certificate's validity expiration date/time.
+// returns a *Time when successful
 func (m *UserPFXCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *UserPFXCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,6 +196,7 @@ func (m *UserPFXCertificate) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetIntendedPurpose gets the intendedPurpose property value. Supported values for the intended purpose of a user PFX certificate.
+// returns a *UserPfxIntendedPurpose when successful
 func (m *UserPFXCertificate) GetIntendedPurpose()(*UserPfxIntendedPurpose) {
     val, err := m.GetBackingStore().Get("intendedPurpose")
     if err != nil {
@@ -201,6 +208,7 @@ func (m *UserPFXCertificate) GetIntendedPurpose()(*UserPfxIntendedPurpose) {
     return nil
 }
 // GetKeyName gets the keyName property value. Name of the key (within the provider) used to encrypt the blob.
+// returns a *string when successful
 func (m *UserPFXCertificate) GetKeyName()(*string) {
     val, err := m.GetBackingStore().Get("keyName")
     if err != nil {
@@ -212,6 +220,7 @@ func (m *UserPFXCertificate) GetKeyName()(*string) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date/time when this PFX certificate was last modified.
+// returns a *Time when successful
 func (m *UserPFXCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -223,6 +232,7 @@ func (m *UserPFXCertificate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetPaddingScheme gets the paddingScheme property value. Supported values for the padding scheme used by encryption provider.
+// returns a *UserPfxPaddingScheme when successful
 func (m *UserPFXCertificate) GetPaddingScheme()(*UserPfxPaddingScheme) {
     val, err := m.GetBackingStore().Get("paddingScheme")
     if err != nil {
@@ -234,6 +244,7 @@ func (m *UserPFXCertificate) GetPaddingScheme()(*UserPfxPaddingScheme) {
     return nil
 }
 // GetProviderName gets the providerName property value. Crypto provider used to encrypt this blob.
+// returns a *string when successful
 func (m *UserPFXCertificate) GetProviderName()(*string) {
     val, err := m.GetBackingStore().Get("providerName")
     if err != nil {
@@ -245,6 +256,7 @@ func (m *UserPFXCertificate) GetProviderName()(*string) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. Certificate's validity start date/time.
+// returns a *Time when successful
 func (m *UserPFXCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -256,6 +268,7 @@ func (m *UserPFXCertificate) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetThumbprint gets the thumbprint property value. SHA-1 thumbprint of the PFX certificate.
+// returns a *string when successful
 func (m *UserPFXCertificate) GetThumbprint()(*string) {
     val, err := m.GetBackingStore().Get("thumbprint")
     if err != nil {
@@ -267,6 +280,7 @@ func (m *UserPFXCertificate) GetThumbprint()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name of the PFX certificate.
+// returns a *string when successful
 func (m *UserPFXCertificate) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -443,7 +457,6 @@ func (m *UserPFXCertificate) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// UserPFXCertificateable 
 type UserPFXCertificateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

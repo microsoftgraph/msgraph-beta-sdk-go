@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeletedChatCollectionResponse 
 type DeletedChatCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeletedChatCollectionResponse instantiates a new deletedChatCollectionResponse and sets the default values.
+// NewDeletedChatCollectionResponse instantiates a new DeletedChatCollectionResponse and sets the default values.
 func NewDeletedChatCollectionResponse()(*DeletedChatCollectionResponse) {
     m := &DeletedChatCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeletedChatCollectionResponse()(*DeletedChatCollectionResponse) {
     return m
 }
 // CreateDeletedChatCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeletedChatCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeletedChatCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeletedChatCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeletedChatCollectionResponse) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeletedChatable when successful
 func (m *DeletedChatCollectionResponse) GetValue()([]DeletedChatable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeletedChatCollectionResponse) SetValue(value []DeletedChatable)() {
         panic(err)
     }
 }
-// DeletedChatCollectionResponseable 
 type DeletedChatCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

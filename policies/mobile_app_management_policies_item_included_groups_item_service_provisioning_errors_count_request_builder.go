@@ -26,28 +26,29 @@ type MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsC
     // Request query parameters
     QueryParameters *MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderGetQueryParameters
 }
-// NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderInternal instantiates a new MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder) {
     m := &MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/serviceProvisioningErrors/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/serviceProvisioningErrors/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder instantiates a new MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErr
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErr
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder when successful
 func (m *MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder) WithUrl(rawUrl string)(*MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder) {
     return NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

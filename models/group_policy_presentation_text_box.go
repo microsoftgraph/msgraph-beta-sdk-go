@@ -8,7 +8,7 @@ import (
 type GroupPolicyPresentationTextBox struct {
     GroupPolicyUploadedPresentation
 }
-// NewGroupPolicyPresentationTextBox instantiates a new groupPolicyPresentationTextBox and sets the default values.
+// NewGroupPolicyPresentationTextBox instantiates a new GroupPolicyPresentationTextBox and sets the default values.
 func NewGroupPolicyPresentationTextBox()(*GroupPolicyPresentationTextBox) {
     m := &GroupPolicyPresentationTextBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
@@ -18,10 +18,12 @@ func NewGroupPolicyPresentationTextBox()(*GroupPolicyPresentationTextBox) {
     return m
 }
 // CreateGroupPolicyPresentationTextBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationTextBoxFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyPresentationTextBox(), nil
 }
 // GetDefaultValue gets the defaultValue property value. Localized default string displayed in the text box. The default value is empty.
+// returns a *string when successful
 func (m *GroupPolicyPresentationTextBox) GetDefaultValue()(*string) {
     val, err := m.GetBackingStore().Get("defaultValue")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *GroupPolicyPresentationTextBox) GetDefaultValue()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentationTextBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +71,7 @@ func (m *GroupPolicyPresentationTextBox) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetMaxLength gets the maxLength property value. An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
+// returns a *int64 when successful
 func (m *GroupPolicyPresentationTextBox) GetMaxLength()(*int64) {
     val, err := m.GetBackingStore().Get("maxLength")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *GroupPolicyPresentationTextBox) GetMaxLength()(*int64) {
     return nil
 }
 // GetRequired gets the required property value. Requirement to enter a value in the text box. Default value is false.
+// returns a *bool when successful
 func (m *GroupPolicyPresentationTextBox) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *GroupPolicyPresentationTextBox) SetRequired(value *bool)() {
         panic(err)
     }
 }
-// GroupPolicyPresentationTextBoxable 
 type GroupPolicyPresentationTextBoxable interface {
     GroupPolicyUploadedPresentationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

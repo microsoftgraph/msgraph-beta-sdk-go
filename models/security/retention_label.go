@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// RetentionLabel 
 type RetentionLabel struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewRetentionLabel instantiates a new retentionLabel and sets the default values.
+// NewRetentionLabel instantiates a new RetentionLabel and sets the default values.
 func NewRetentionLabel()(*RetentionLabel) {
     m := &RetentionLabel{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewRetentionLabel()(*RetentionLabel) {
     return m
 }
 // CreateRetentionLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRetentionLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRetentionLabel(), nil
 }
 // GetActionAfterRetentionPeriod gets the actionAfterRetentionPeriod property value. Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.
+// returns a *ActionAfterRetentionPeriod when successful
 func (m *RetentionLabel) GetActionAfterRetentionPeriod()(*ActionAfterRetentionPeriod) {
     val, err := m.GetBackingStore().Get("actionAfterRetentionPeriod")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *RetentionLabel) GetActionAfterRetentionPeriod()(*ActionAfterRetentionPe
     return nil
 }
 // GetBehaviorDuringRetentionPeriod gets the behaviorDuringRetentionPeriod property value. Specifies how the behavior of a document with this label should be during the retention period. The possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue.
+// returns a *BehaviorDuringRetentionPeriod when successful
 func (m *RetentionLabel) GetBehaviorDuringRetentionPeriod()(*BehaviorDuringRetentionPeriod) {
     val, err := m.GetBackingStore().Get("behaviorDuringRetentionPeriod")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *RetentionLabel) GetBehaviorDuringRetentionPeriod()(*BehaviorDuringReten
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Represents the user who created the retentionLabel.
+// returns a IdentitySetable when successful
 func (m *RetentionLabel) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *RetentionLabel) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde1169
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Represents the date and time in which the retentionLabel is created.
+// returns a *Time when successful
 func (m *RetentionLabel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *RetentionLabel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetDefaultRecordBehavior gets the defaultRecordBehavior property value. Specifies the locked or unlocked state of a record label when it is created.The possible values are: startLocked, startUnlocked, unknownFutureValue.
+// returns a *DefaultRecordBehavior when successful
 func (m *RetentionLabel) GetDefaultRecordBehavior()(*DefaultRecordBehavior) {
     val, err := m.GetBackingStore().Get("defaultRecordBehavior")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *RetentionLabel) GetDefaultRecordBehavior()(*DefaultRecordBehavior) {
     return nil
 }
 // GetDescriptionForAdmins gets the descriptionForAdmins property value. Provides label information for the admin. Optional.
+// returns a *string when successful
 func (m *RetentionLabel) GetDescriptionForAdmins()(*string) {
     val, err := m.GetBackingStore().Get("descriptionForAdmins")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *RetentionLabel) GetDescriptionForAdmins()(*string) {
     return nil
 }
 // GetDescriptionForUsers gets the descriptionForUsers property value. Provides the label information for the user. Optional.
+// returns a *string when successful
 func (m *RetentionLabel) GetDescriptionForUsers()(*string) {
     val, err := m.GetBackingStore().Get("descriptionForUsers")
     if err != nil {
@@ -99,6 +106,7 @@ func (m *RetentionLabel) GetDescriptionForUsers()(*string) {
     return nil
 }
 // GetDescriptors gets the descriptors property value. Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
+// returns a FilePlanDescriptorable when successful
 func (m *RetentionLabel) GetDescriptors()(FilePlanDescriptorable) {
     val, err := m.GetBackingStore().Get("descriptors")
     if err != nil {
@@ -110,6 +118,7 @@ func (m *RetentionLabel) GetDescriptors()(FilePlanDescriptorable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Unique string that defines a label name.
+// returns a *string when successful
 func (m *RetentionLabel) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -121,6 +130,7 @@ func (m *RetentionLabel) GetDisplayName()(*string) {
     return nil
 }
 // GetDispositionReviewStages gets the dispositionReviewStages property value. When action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
+// returns a []DispositionReviewStageable when successful
 func (m *RetentionLabel) GetDispositionReviewStages()([]DispositionReviewStageable) {
     val, err := m.GetBackingStore().Get("dispositionReviewStages")
     if err != nil {
@@ -132,6 +142,7 @@ func (m *RetentionLabel) GetDispositionReviewStages()([]DispositionReviewStageab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionAfterRetentionPeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -313,6 +324,7 @@ func (m *RetentionLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetIsInUse gets the isInUse property value. Specifies whether the label is currently being used.
+// returns a *bool when successful
 func (m *RetentionLabel) GetIsInUse()(*bool) {
     val, err := m.GetBackingStore().Get("isInUse")
     if err != nil {
@@ -324,6 +336,7 @@ func (m *RetentionLabel) GetIsInUse()(*bool) {
     return nil
 }
 // GetLabelToBeApplied gets the labelToBeApplied property value. Specifies the replacement label to be applied automatically after the retention period of the current label ends.
+// returns a *string when successful
 func (m *RetentionLabel) GetLabelToBeApplied()(*string) {
     val, err := m.GetBackingStore().Get("labelToBeApplied")
     if err != nil {
@@ -335,6 +348,7 @@ func (m *RetentionLabel) GetLabelToBeApplied()(*string) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The user who last modified the retentionLabel.
+// returns a IdentitySetable when successful
 func (m *RetentionLabel) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -346,6 +360,7 @@ func (m *RetentionLabel) GetLastModifiedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fd
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The latest date time when the retentionLabel was modified.
+// returns a *Time when successful
 func (m *RetentionLabel) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -357,6 +372,7 @@ func (m *RetentionLabel) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetRetentionDuration gets the retentionDuration property value. Specifies the number of days to retain the content.
+// returns a RetentionDurationable when successful
 func (m *RetentionLabel) GetRetentionDuration()(RetentionDurationable) {
     val, err := m.GetBackingStore().Get("retentionDuration")
     if err != nil {
@@ -368,6 +384,7 @@ func (m *RetentionLabel) GetRetentionDuration()(RetentionDurationable) {
     return nil
 }
 // GetRetentionEventType gets the retentionEventType property value. Represents the type associated with a retention event.
+// returns a RetentionEventTypeable when successful
 func (m *RetentionLabel) GetRetentionEventType()(RetentionEventTypeable) {
     val, err := m.GetBackingStore().Get("retentionEventType")
     if err != nil {
@@ -379,6 +396,7 @@ func (m *RetentionLabel) GetRetentionEventType()(RetentionEventTypeable) {
     return nil
 }
 // GetRetentionTrigger gets the retentionTrigger property value. Specifies whether the retention duration is calculated from the content creation date, labeled date, or last modification date. The possible values are: dateLabeled, dateCreated, dateModified, dateOfEvent, unknownFutureValue.
+// returns a *RetentionTrigger when successful
 func (m *RetentionLabel) GetRetentionTrigger()(*RetentionTrigger) {
     val, err := m.GetBackingStore().Get("retentionTrigger")
     if err != nil {
@@ -628,7 +646,6 @@ func (m *RetentionLabel) SetRetentionTrigger(value *RetentionTrigger)() {
         panic(err)
     }
 }
-// RetentionLabelable 
 type RetentionLabelable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

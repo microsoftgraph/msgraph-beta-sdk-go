@@ -40,6 +40,7 @@ type ItemEventsItemInstancesRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemEventsItemInstancesRequestBuilderGetQueryParameters
 }
 // ByEventId1 provides operations to manage the instances property of the microsoft.graph.event entity.
+// returns a *ItemEventsItemInstancesEventItemRequestBuilder when successful
 func (m *ItemEventsItemInstancesRequestBuilder) ByEventId1(eventId1 string)(*ItemEventsItemInstancesEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,28 +51,32 @@ func (m *ItemEventsItemInstancesRequestBuilder) ByEventId1(eventId1 string)(*Ite
     }
     return NewItemEventsItemInstancesEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemEventsItemInstancesRequestBuilderInternal instantiates a new InstancesRequestBuilder and sets the default values.
+// NewItemEventsItemInstancesRequestBuilderInternal instantiates a new ItemEventsItemInstancesRequestBuilder and sets the default values.
 func NewItemEventsItemInstancesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemInstancesRequestBuilder) {
     m := &ItemEventsItemInstancesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/instances{?startDateTime*,endDateTime*,%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/instances?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemEventsItemInstancesRequestBuilder instantiates a new InstancesRequestBuilder and sets the default values.
+// NewItemEventsItemInstancesRequestBuilder instantiates a new ItemEventsItemInstancesRequestBuilder and sets the default values.
 func NewItemEventsItemInstancesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemInstancesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemEventsItemInstancesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemEventsItemInstancesCountRequestBuilder when successful
 func (m *ItemEventsItemInstancesRequestBuilder) Count()(*ItemEventsItemInstancesCountRequestBuilder) {
     return NewItemEventsItemInstancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
+// returns a *ItemEventsItemInstancesDeltaRequestBuilder when successful
 func (m *ItemEventsItemInstancesRequestBuilder) Delta()(*ItemEventsItemInstancesDeltaRequestBuilder) {
     return NewItemEventsItemInstancesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+// returns a EventCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
@@ -81,8 +86,7 @@ func (m *ItemEventsItemInstancesRequestBuilder) Get(ctx context.Context, request
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEventCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,6 +98,7 @@ func (m *ItemEventsItemInstancesRequestBuilder) Get(ctx context.Context, request
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable), nil
 }
 // ToGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+// returns a *RequestInformation when successful
 func (m *ItemEventsItemInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEventsItemInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -107,6 +112,7 @@ func (m *ItemEventsItemInstancesRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemEventsItemInstancesRequestBuilder when successful
 func (m *ItemEventsItemInstancesRequestBuilder) WithUrl(rawUrl string)(*ItemEventsItemInstancesRequestBuilder) {
     return NewItemEventsItemInstancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

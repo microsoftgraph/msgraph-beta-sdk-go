@@ -8,7 +8,7 @@ import (
 type SecurityBaselineSettingState struct {
     Entity
 }
-// NewSecurityBaselineSettingState instantiates a new securityBaselineSettingState and sets the default values.
+// NewSecurityBaselineSettingState instantiates a new SecurityBaselineSettingState and sets the default values.
 func NewSecurityBaselineSettingState()(*SecurityBaselineSettingState) {
     m := &SecurityBaselineSettingState{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewSecurityBaselineSettingState()(*SecurityBaselineSettingState) {
     return m
 }
 // CreateSecurityBaselineSettingStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecurityBaselineSettingStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityBaselineSettingState(), nil
 }
 // GetContributingPolicies gets the contributingPolicies property value. The policies that contribute to this setting instance
+// returns a []SecurityBaselineContributingPolicyable when successful
 func (m *SecurityBaselineSettingState) GetContributingPolicies()([]SecurityBaselineContributingPolicyable) {
     val, err := m.GetBackingStore().Get("contributingPolicies")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *SecurityBaselineSettingState) GetContributingPolicies()([]SecurityBasel
     return nil
 }
 // GetErrorCode gets the errorCode property value. The error code if the setting is in error state
+// returns a *string when successful
 func (m *SecurityBaselineSettingState) GetErrorCode()(*string) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *SecurityBaselineSettingState) GetErrorCode()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contributingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -139,6 +143,7 @@ func (m *SecurityBaselineSettingState) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetSettingCategoryId gets the settingCategoryId property value. The setting category id which this setting belongs to
+// returns a *string when successful
 func (m *SecurityBaselineSettingState) GetSettingCategoryId()(*string) {
     val, err := m.GetBackingStore().Get("settingCategoryId")
     if err != nil {
@@ -150,6 +155,7 @@ func (m *SecurityBaselineSettingState) GetSettingCategoryId()(*string) {
     return nil
 }
 // GetSettingCategoryName gets the settingCategoryName property value. The setting category name which this setting belongs to
+// returns a *string when successful
 func (m *SecurityBaselineSettingState) GetSettingCategoryName()(*string) {
     val, err := m.GetBackingStore().Get("settingCategoryName")
     if err != nil {
@@ -161,6 +167,7 @@ func (m *SecurityBaselineSettingState) GetSettingCategoryName()(*string) {
     return nil
 }
 // GetSettingId gets the settingId property value. The setting id guid
+// returns a *string when successful
 func (m *SecurityBaselineSettingState) GetSettingId()(*string) {
     val, err := m.GetBackingStore().Get("settingId")
     if err != nil {
@@ -172,6 +179,7 @@ func (m *SecurityBaselineSettingState) GetSettingId()(*string) {
     return nil
 }
 // GetSettingName gets the settingName property value. The setting name that is being reported
+// returns a *string when successful
 func (m *SecurityBaselineSettingState) GetSettingName()(*string) {
     val, err := m.GetBackingStore().Get("settingName")
     if err != nil {
@@ -183,6 +191,7 @@ func (m *SecurityBaselineSettingState) GetSettingName()(*string) {
     return nil
 }
 // GetSourcePolicies gets the sourcePolicies property value. The policies that contribute to this setting instance
+// returns a []SettingSourceable when successful
 func (m *SecurityBaselineSettingState) GetSourcePolicies()([]SettingSourceable) {
     val, err := m.GetBackingStore().Get("sourcePolicies")
     if err != nil {
@@ -194,6 +203,7 @@ func (m *SecurityBaselineSettingState) GetSourcePolicies()([]SettingSourceable) 
     return nil
 }
 // GetState gets the state property value. Security Baseline Compliance State
+// returns a *SecurityBaselineComplianceState when successful
 func (m *SecurityBaselineSettingState) GetState()(*SecurityBaselineComplianceState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -329,7 +339,6 @@ func (m *SecurityBaselineSettingState) SetState(value *SecurityBaselineComplianc
         panic(err)
     }
 }
-// SecurityBaselineSettingStateable 
 type SecurityBaselineSettingStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

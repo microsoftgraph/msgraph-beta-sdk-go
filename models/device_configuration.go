@@ -9,7 +9,7 @@ import (
 type DeviceConfiguration struct {
     Entity
 }
-// NewDeviceConfiguration instantiates a new deviceConfiguration and sets the default values.
+// NewDeviceConfiguration instantiates a new DeviceConfiguration and sets the default values.
 func NewDeviceConfiguration()(*DeviceConfiguration) {
     m := &DeviceConfiguration{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewDeviceConfiguration()(*DeviceConfiguration) {
     return m
 }
 // CreateDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -311,6 +312,7 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewDeviceConfiguration(), nil
 }
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
+// returns a []DeviceConfigurationAssignmentable when successful
 func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -322,6 +324,7 @@ func (m *DeviceConfiguration) GetAssignments()([]DeviceConfigurationAssignmentab
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
+// returns a *Time when successful
 func (m *DeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -333,6 +336,7 @@ func (m *DeviceConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
+// returns a *string when successful
 func (m *DeviceConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -344,6 +348,7 @@ func (m *DeviceConfiguration) GetDescription()(*string) {
     return nil
 }
 // GetDeviceManagementApplicabilityRuleDeviceMode gets the deviceManagementApplicabilityRuleDeviceMode property value. The device mode applicability rule for this Policy.
+// returns a DeviceManagementApplicabilityRuleDeviceModeable when successful
 func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleDeviceMode()(DeviceManagementApplicabilityRuleDeviceModeable) {
     val, err := m.GetBackingStore().Get("deviceManagementApplicabilityRuleDeviceMode")
     if err != nil {
@@ -355,6 +360,7 @@ func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleDeviceMode()(D
     return nil
 }
 // GetDeviceManagementApplicabilityRuleOsEdition gets the deviceManagementApplicabilityRuleOsEdition property value. The OS edition applicability for this Policy.
+// returns a DeviceManagementApplicabilityRuleOsEditionable when successful
 func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsEdition()(DeviceManagementApplicabilityRuleOsEditionable) {
     val, err := m.GetBackingStore().Get("deviceManagementApplicabilityRuleOsEdition")
     if err != nil {
@@ -366,6 +372,7 @@ func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsEdition()(De
     return nil
 }
 // GetDeviceManagementApplicabilityRuleOsVersion gets the deviceManagementApplicabilityRuleOsVersion property value. The OS version applicability rule for this Policy.
+// returns a DeviceManagementApplicabilityRuleOsVersionable when successful
 func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsVersion()(DeviceManagementApplicabilityRuleOsVersionable) {
     val, err := m.GetBackingStore().Get("deviceManagementApplicabilityRuleOsVersion")
     if err != nil {
@@ -377,6 +384,7 @@ func (m *DeviceConfiguration) GetDeviceManagementApplicabilityRuleOsVersion()(De
     return nil
 }
 // GetDeviceSettingStateSummaries gets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
+// returns a []SettingStateDeviceSummaryable when successful
 func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDeviceSummaryable) {
     val, err := m.GetBackingStore().Get("deviceSettingStateSummaries")
     if err != nil {
@@ -388,6 +396,7 @@ func (m *DeviceConfiguration) GetDeviceSettingStateSummaries()([]SettingStateDev
     return nil
 }
 // GetDeviceStatuses gets the deviceStatuses property value. Device configuration installation status by device.
+// returns a []DeviceConfigurationDeviceStatusable when successful
 func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceStatusable) {
     val, err := m.GetBackingStore().Get("deviceStatuses")
     if err != nil {
@@ -399,6 +408,7 @@ func (m *DeviceConfiguration) GetDeviceStatuses()([]DeviceConfigurationDeviceSta
     return nil
 }
 // GetDeviceStatusOverview gets the deviceStatusOverview property value. Device Configuration devices status overview
+// returns a DeviceConfigurationDeviceOverviewable when successful
 func (m *DeviceConfiguration) GetDeviceStatusOverview()(DeviceConfigurationDeviceOverviewable) {
     val, err := m.GetBackingStore().Get("deviceStatusOverview")
     if err != nil {
@@ -410,6 +420,7 @@ func (m *DeviceConfiguration) GetDeviceStatusOverview()(DeviceConfigurationDevic
     return nil
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
+// returns a *string when successful
 func (m *DeviceConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -421,6 +432,7 @@ func (m *DeviceConfiguration) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -632,6 +644,7 @@ func (m *DeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device configuration profile.
+// returns a []DeviceConfigurationGroupAssignmentable when successful
 func (m *DeviceConfiguration) GetGroupAssignments()([]DeviceConfigurationGroupAssignmentable) {
     val, err := m.GetBackingStore().Get("groupAssignments")
     if err != nil {
@@ -643,6 +656,7 @@ func (m *DeviceConfiguration) GetGroupAssignments()([]DeviceConfigurationGroupAs
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// returns a *Time when successful
 func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -654,6 +668,7 @@ func (m *DeviceConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+// returns a []string when successful
 func (m *DeviceConfiguration) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -665,6 +680,7 @@ func (m *DeviceConfiguration) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetSupportsScopeTags gets the supportsScopeTags property value. Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.
+// returns a *bool when successful
 func (m *DeviceConfiguration) GetSupportsScopeTags()(*bool) {
     val, err := m.GetBackingStore().Get("supportsScopeTags")
     if err != nil {
@@ -676,6 +692,7 @@ func (m *DeviceConfiguration) GetSupportsScopeTags()(*bool) {
     return nil
 }
 // GetUserStatuses gets the userStatuses property value. Device configuration installation status by user.
+// returns a []DeviceConfigurationUserStatusable when successful
 func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatusable) {
     val, err := m.GetBackingStore().Get("userStatuses")
     if err != nil {
@@ -687,6 +704,7 @@ func (m *DeviceConfiguration) GetUserStatuses()([]DeviceConfigurationUserStatusa
     return nil
 }
 // GetUserStatusOverview gets the userStatusOverview property value. Device Configuration users status overview
+// returns a DeviceConfigurationUserOverviewable when successful
 func (m *DeviceConfiguration) GetUserStatusOverview()(DeviceConfigurationUserOverviewable) {
     val, err := m.GetBackingStore().Get("userStatusOverview")
     if err != nil {
@@ -698,6 +716,7 @@ func (m *DeviceConfiguration) GetUserStatusOverview()(DeviceConfigurationUserOve
     return nil
 }
 // GetVersion gets the version property value. Version of the device configuration.
+// returns a *int32 when successful
 func (m *DeviceConfiguration) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -961,7 +980,6 @@ func (m *DeviceConfiguration) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// DeviceConfigurationable 
 type DeviceConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -47,6 +47,7 @@ type CasesEdiscoveryCasesItemSearchesRequestBuilderPostRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByEdiscoverySearchId provides operations to manage the searches property of the microsoft.graph.security.ediscoveryCase entity.
+// returns a *CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) ByEdiscoverySearchId(ediscoverySearchId string)(*CasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) ByEdiscoverySearchId(ed
     }
     return NewCasesEdiscoveryCasesItemSearchesEdiscoverySearchItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCasesEdiscoveryCasesItemSearchesRequestBuilderInternal instantiates a new SearchesRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemSearchesRequestBuilderInternal instantiates a new CasesEdiscoveryCasesItemSearchesRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemSearchesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemSearchesRequestBuilder) {
     m := &CasesEdiscoveryCasesItemSearchesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCasesEdiscoveryCasesItemSearchesRequestBuilder instantiates a new SearchesRequestBuilder and sets the default values.
+// NewCasesEdiscoveryCasesItemSearchesRequestBuilder instantiates a new CasesEdiscoveryCasesItemSearchesRequestBuilder and sets the default values.
 func NewCasesEdiscoveryCasesItemSearchesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemSearchesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemSearchesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CasesEdiscoveryCasesItemSearchesCountRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) Count()(*CasesEdiscoveryCasesItemSearchesCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemSearchesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of ediscoverySearch resources from an eDiscoveryCase object.
+// returns a EdiscoverySearchCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-list-searches?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) Get(ctx context.Context
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateEdiscoverySearchCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +100,8 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) Get(ctx context.Context
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoverySearchCollectionResponseable), nil
 }
 // Post create a new ediscoverySearch object.
+// returns a EdiscoverySearchable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycase-post-searches?view=graph-rest-1.0
@@ -106,8 +111,7 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) Post(ctx context.Contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateEdiscoverySearchFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,6 +123,7 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) Post(ctx context.Contex
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoverySearchable), nil
 }
 // ToGetRequestInformation get the list of ediscoverySearch resources from an eDiscoveryCase object.
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemSearchesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +137,9 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new ediscoverySearch object.
+// returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoverySearchable, requestConfiguration *CasesEdiscoveryCasesItemSearchesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CasesEdiscoveryCasesItemSearchesRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemSearchesRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemSearchesRequestBuilder) {
     return NewCasesEdiscoveryCasesItemSearchesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnAttributeCollectionExternalUsersSelfServiceSignUp 
 type OnAttributeCollectionExternalUsersSelfServiceSignUp struct {
     OnAttributeCollectionHandler
 }
-// NewOnAttributeCollectionExternalUsersSelfServiceSignUp instantiates a new onAttributeCollectionExternalUsersSelfServiceSignUp and sets the default values.
+// NewOnAttributeCollectionExternalUsersSelfServiceSignUp instantiates a new OnAttributeCollectionExternalUsersSelfServiceSignUp and sets the default values.
 func NewOnAttributeCollectionExternalUsersSelfServiceSignUp()(*OnAttributeCollectionExternalUsersSelfServiceSignUp) {
     m := &OnAttributeCollectionExternalUsersSelfServiceSignUp{
         OnAttributeCollectionHandler: *NewOnAttributeCollectionHandler(),
@@ -18,10 +17,12 @@ func NewOnAttributeCollectionExternalUsersSelfServiceSignUp()(*OnAttributeCollec
     return m
 }
 // CreateOnAttributeCollectionExternalUsersSelfServiceSignUpFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnAttributeCollectionExternalUsersSelfServiceSignUpFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnAttributeCollectionExternalUsersSelfServiceSignUp(), nil
 }
 // GetAttributeCollectionPage gets the attributeCollectionPage property value. Required. The configuration for how attributes are displayed in the sign up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.
+// returns a AuthenticationAttributeCollectionPageable when successful
 func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) GetAttributeCollectionPage()(AuthenticationAttributeCollectionPageable) {
     val, err := m.GetBackingStore().Get("attributeCollectionPage")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) GetAttributeCollec
     return nil
 }
 // GetAttributes gets the attributes property value. The attributes property
+// returns a []IdentityUserFlowAttributeable when successful
 func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) GetAttributes()([]IdentityUserFlowAttributeable) {
     val, err := m.GetBackingStore().Get("attributes")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) GetAttributes()([]
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnAttributeCollectionHandler.GetFieldDeserializers()
     res["attributeCollectionPage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -114,7 +117,6 @@ func (m *OnAttributeCollectionExternalUsersSelfServiceSignUp) SetAttributes(valu
         panic(err)
     }
 }
-// OnAttributeCollectionExternalUsersSelfServiceSignUpable 
 type OnAttributeCollectionExternalUsersSelfServiceSignUpable interface {
     OnAttributeCollectionHandlerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

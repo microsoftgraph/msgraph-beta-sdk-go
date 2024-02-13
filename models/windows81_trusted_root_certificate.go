@@ -8,7 +8,7 @@ import (
 type Windows81TrustedRootCertificate struct {
     DeviceConfiguration
 }
-// NewWindows81TrustedRootCertificate instantiates a new windows81TrustedRootCertificate and sets the default values.
+// NewWindows81TrustedRootCertificate instantiates a new Windows81TrustedRootCertificate and sets the default values.
 func NewWindows81TrustedRootCertificate()(*Windows81TrustedRootCertificate) {
     m := &Windows81TrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindows81TrustedRootCertificate()(*Windows81TrustedRootCertificate) {
     return m
 }
 // CreateWindows81TrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows81TrustedRootCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows81TrustedRootCertificate(), nil
 }
 // GetCertFileName gets the certFileName property value. File name to display in UI.
+// returns a *string when successful
 func (m *Windows81TrustedRootCertificate) GetCertFileName()(*string) {
     val, err := m.GetBackingStore().Get("certFileName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows81TrustedRootCertificate) GetCertFileName()(*string) {
     return nil
 }
 // GetDestinationStore gets the destinationStore property value. Possible values for the Certificate Destination Store.
+// returns a *CertificateDestinationStore when successful
 func (m *Windows81TrustedRootCertificate) GetDestinationStore()(*CertificateDestinationStore) {
     val, err := m.GetBackingStore().Get("destinationStore")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Windows81TrustedRootCertificate) GetDestinationStore()(*CertificateDest
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows81TrustedRootCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["certFileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +83,7 @@ func (m *Windows81TrustedRootCertificate) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate
+// returns a []byte when successful
 func (m *Windows81TrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
     val, err := m.GetBackingStore().Get("trustedRootCertificate")
     if err != nil {
@@ -137,7 +142,6 @@ func (m *Windows81TrustedRootCertificate) SetTrustedRootCertificate(value []byte
         panic(err)
     }
 }
-// Windows81TrustedRootCertificateable 
 type Windows81TrustedRootCertificateable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

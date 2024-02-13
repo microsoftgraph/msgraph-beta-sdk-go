@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsBatteryHealthOsPerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsBatteryHealthOsPerformance instantiates a new userExperienceAnalyticsBatteryHealthOsPerformance and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthOsPerformance instantiates a new UserExperienceAnalyticsBatteryHealthOsPerformance and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthOsPerformance()(*UserExperienceAnalyticsBatteryHealthOsPerformance) {
     m := &UserExperienceAnalyticsBatteryHealthOsPerformance{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsBatteryHealthOsPerformance()(*UserExperienceAnaly
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthOsPerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsBatteryHealthOsPerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthOsPerformance(), nil
 }
 // GetActiveDevices gets the activeDevices property value. Number of active devices for that os version. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetActiveDevices()(*int32) {
     val, err := m.GetBackingStore().Get("activeDevices")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetActiveDevices()(*
     return nil
 }
 // GetAverageBatteryAgeInDays gets the averageBatteryAgeInDays property value. The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageBatteryAgeInDays()(*int32) {
     val, err := m.GetBackingStore().Get("averageBatteryAgeInDays")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageBatteryAge
     return nil
 }
 // GetAverageEstimatedRuntimeInMinutes gets the averageEstimatedRuntimeInMinutes property value. The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageEstimatedRuntimeInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("averageEstimatedRuntimeInMinutes")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageEstimatedR
     return nil
 }
 // GetAverageMaxCapacityPercentage gets the averageMaxCapacityPercentage property value. The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageMaxCapacityPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("averageMaxCapacityPercentage")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetAverageMaxCapacit
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -189,6 +195,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetFieldDeserializer
     return res
 }
 // GetMeanFullBatteryDrainCount gets the meanFullBatteryDrainCount property value. The mean of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices running a particular operating system version in a tenant. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetMeanFullBatteryDrainCount()(*int32) {
     val, err := m.GetBackingStore().Get("meanFullBatteryDrainCount")
     if err != nil {
@@ -200,6 +207,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetMeanFullBatteryDr
     return nil
 }
 // GetMedianEstimatedRuntimeInMinutes gets the medianEstimatedRuntimeInMinutes property value. The median of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetMedianEstimatedRuntimeInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("medianEstimatedRuntimeInMinutes")
     if err != nil {
@@ -211,6 +219,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetMedianEstimatedRu
     return nil
 }
 // GetMedianFullBatteryDrainCount gets the medianFullBatteryDrainCount property value. The median of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices running a particular operating system version in a tenant. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetMedianFullBatteryDrainCount()(*int32) {
     val, err := m.GetBackingStore().Get("medianFullBatteryDrainCount")
     if err != nil {
@@ -222,6 +231,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetMedianFullBattery
     return nil
 }
 // GetMedianMaxCapacityPercentage gets the medianMaxCapacityPercentage property value. The median of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetMedianMaxCapacityPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("medianMaxCapacityPercentage")
     if err != nil {
@@ -233,6 +243,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetMedianMaxCapacity
     return nil
 }
 // GetOsBatteryHealthScore gets the osBatteryHealthScore property value. A weighted average of battery health score across all devices running a particular operating system version. Values range from 0-100. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsBatteryHealthScore()(*int32) {
     val, err := m.GetBackingStore().Get("osBatteryHealthScore")
     if err != nil {
@@ -244,6 +255,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsBatteryHealthSc
     return nil
 }
 // GetOsBuildNumber gets the osBuildNumber property value. Build number of the operating system.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsBuildNumber()(*string) {
     val, err := m.GetBackingStore().Get("osBuildNumber")
     if err != nil {
@@ -255,6 +267,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsBuildNumber()(*
     return nil
 }
 // GetOsHealthStatus gets the osHealthStatus property value. The osHealthStatus property
+// returns a *UserExperienceAnalyticsHealthState when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsHealthStatus()(*UserExperienceAnalyticsHealthState) {
     val, err := m.GetBackingStore().Get("osHealthStatus")
     if err != nil {
@@ -266,6 +279,7 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsHealthStatus()(
     return nil
 }
 // GetOsVersion gets the osVersion property value. Version of the operating system.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -441,7 +455,6 @@ func (m *UserExperienceAnalyticsBatteryHealthOsPerformance) SetOsVersion(value *
         panic(err)
     }
 }
-// UserExperienceAnalyticsBatteryHealthOsPerformanceable 
 type UserExperienceAnalyticsBatteryHealthOsPerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

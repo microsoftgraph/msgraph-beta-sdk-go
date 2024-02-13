@@ -8,7 +8,7 @@ import (
 type WindowsPhone81VpnConfiguration struct {
     Windows81VpnConfiguration
 }
-// NewWindowsPhone81VpnConfiguration instantiates a new windowsPhone81VpnConfiguration and sets the default values.
+// NewWindowsPhone81VpnConfiguration instantiates a new WindowsPhone81VpnConfiguration and sets the default values.
 func NewWindowsPhone81VpnConfiguration()(*WindowsPhone81VpnConfiguration) {
     m := &WindowsPhone81VpnConfiguration{
         Windows81VpnConfiguration: *NewWindows81VpnConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsPhone81VpnConfiguration()(*WindowsPhone81VpnConfiguration) {
     return m
 }
 // CreateWindowsPhone81VpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsPhone81VpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPhone81VpnConfiguration(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
+// returns a *VpnAuthenticationMethod when successful
 func (m *WindowsPhone81VpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsPhone81VpnConfiguration) GetAuthenticationMethod()(*VpnAuthentic
     return nil
 }
 // GetBypassVpnOnCompanyWifi gets the bypassVpnOnCompanyWifi property value. Bypass VPN on company Wi-Fi.
+// returns a *bool when successful
 func (m *WindowsPhone81VpnConfiguration) GetBypassVpnOnCompanyWifi()(*bool) {
     val, err := m.GetBackingStore().Get("bypassVpnOnCompanyWifi")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsPhone81VpnConfiguration) GetBypassVpnOnCompanyWifi()(*bool) {
     return nil
 }
 // GetBypassVpnOnHomeWifi gets the bypassVpnOnHomeWifi property value. Bypass VPN on home Wi-Fi.
+// returns a *bool when successful
 func (m *WindowsPhone81VpnConfiguration) GetBypassVpnOnHomeWifi()(*bool) {
     val, err := m.GetBackingStore().Get("bypassVpnOnHomeWifi")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *WindowsPhone81VpnConfiguration) GetBypassVpnOnHomeWifi()(*bool) {
     return nil
 }
 // GetDnsSuffixSearchList gets the dnsSuffixSearchList property value. DNS suffix search list.
+// returns a []string when successful
 func (m *WindowsPhone81VpnConfiguration) GetDnsSuffixSearchList()([]string) {
     val, err := m.GetBackingStore().Get("dnsSuffixSearchList")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *WindowsPhone81VpnConfiguration) GetDnsSuffixSearchList()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsPhone81VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Windows81VpnConfiguration.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +143,7 @@ func (m *WindowsPhone81VpnConfiguration) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
+// returns a WindowsPhone81CertificateProfileBaseable when successful
 func (m *WindowsPhone81VpnConfiguration) GetIdentityCertificate()(WindowsPhone81CertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificate")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *WindowsPhone81VpnConfiguration) GetIdentityCertificate()(WindowsPhone81
     return nil
 }
 // GetRememberUserCredentials gets the rememberUserCredentials property value. Remember user credentials.
+// returns a *bool when successful
 func (m *WindowsPhone81VpnConfiguration) GetRememberUserCredentials()(*bool) {
     val, err := m.GetBackingStore().Get("rememberUserCredentials")
     if err != nil {
@@ -245,7 +253,6 @@ func (m *WindowsPhone81VpnConfiguration) SetRememberUserCredentials(value *bool)
         panic(err)
     }
 }
-// WindowsPhone81VpnConfigurationable 
 type WindowsPhone81VpnConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Windows81VpnConfigurationable

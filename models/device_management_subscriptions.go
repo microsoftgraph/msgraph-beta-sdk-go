@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Tenant mobile device management subscriptions.
@@ -8,24 +9,26 @@ type DeviceManagementSubscriptions int
 
 const (
     // None
-    NONE_DEVICEMANAGEMENTSUBSCRIPTIONS DeviceManagementSubscriptions = iota
+    NONE_DEVICEMANAGEMENTSUBSCRIPTIONS = 1
     // Microsoft Intune Subscription
-    INTUNE_DEVICEMANAGEMENTSUBSCRIPTIONS
+    INTUNE_DEVICEMANAGEMENTSUBSCRIPTIONS = 2
     // Office365 Subscription
-    OFFICE365_DEVICEMANAGEMENTSUBSCRIPTIONS
+    OFFICE365_DEVICEMANAGEMENTSUBSCRIPTIONS = 4
     // Microsoft Intune Premium Subscription
-    INTUNEPREMIUM_DEVICEMANAGEMENTSUBSCRIPTIONS
+    INTUNEPREMIUM_DEVICEMANAGEMENTSUBSCRIPTIONS = 8
     // Microsoft Intune for Education Subscription
-    INTUNE_EDU_DEVICEMANAGEMENTSUBSCRIPTIONS
+    INTUNE_EDU_DEVICEMANAGEMENTSUBSCRIPTIONS = 16
     // Microsoft Intune for Small Businesses Subscription
-    INTUNE_SMB_DEVICEMANAGEMENTSUBSCRIPTIONS
+    INTUNE_SMB_DEVICEMANAGEMENTSUBSCRIPTIONS = 32
 )
 
 func (i DeviceManagementSubscriptions) String() string {
     var values []string
-    for p := DeviceManagementSubscriptions(1); p <= INTUNE_SMB_DEVICEMANAGEMENTSUBSCRIPTIONS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "intune", "office365", "intunePremium", "intune_EDU", "intune_SMB"}[p])
+    options := []string{"none", "intune", "office365", "intunePremium", "intune_EDU", "intune_SMB"}
+    for p := 0; p < 6; p++ {
+        mantis := DeviceManagementSubscriptions(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

@@ -47,6 +47,7 @@ type AttackSimulationLandingPagesItemDetailsRequestBuilderPostRequestConfigurati
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByLandingPageDetailId provides operations to manage the details property of the microsoft.graph.landingPage entity.
+// returns a *AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilder when successful
 func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) ByLandingPageDetailId(landingPageDetailId string)(*AttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) ByLandingPageDet
     }
     return NewAttackSimulationLandingPagesItemDetailsLandingPageDetailItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewAttackSimulationLandingPagesItemDetailsRequestBuilderInternal instantiates a new DetailsRequestBuilder and sets the default values.
+// NewAttackSimulationLandingPagesItemDetailsRequestBuilderInternal instantiates a new AttackSimulationLandingPagesItemDetailsRequestBuilder and sets the default values.
 func NewAttackSimulationLandingPagesItemDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationLandingPagesItemDetailsRequestBuilder) {
     m := &AttackSimulationLandingPagesItemDetailsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/attackSimulation/landingPages/{landingPage%2Did}/details{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/attackSimulation/landingPages/{landingPage%2Did}/details{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewAttackSimulationLandingPagesItemDetailsRequestBuilder instantiates a new DetailsRequestBuilder and sets the default values.
+// NewAttackSimulationLandingPagesItemDetailsRequestBuilder instantiates a new AttackSimulationLandingPagesItemDetailsRequestBuilder and sets the default values.
 func NewAttackSimulationLandingPagesItemDetailsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationLandingPagesItemDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAttackSimulationLandingPagesItemDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *AttackSimulationLandingPagesItemDetailsCountRequestBuilder when successful
 func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) Count()(*AttackSimulationLandingPagesItemDetailsCountRequestBuilder) {
     return NewAttackSimulationLandingPagesItemDetailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the detail information for a landing page associated with a simulation during its creation.
+// returns a LandingPageDetailCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationLandingPagesItemDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LandingPageDetailCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateLandingPageDetailCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) Get(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LandingPageDetailCollectionResponseable), nil
 }
 // Post create new navigation property to details for security
+// returns a LandingPageDetailable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LandingPageDetailable, requestConfiguration *AttackSimulationLandingPagesItemDetailsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LandingPageDetailable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateLandingPageDetailFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) Post(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LandingPageDetailable), nil
 }
 // ToGetRequestInformation the detail information for a landing page associated with a simulation during its creation.
+// returns a *RequestInformation when successful
 func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationLandingPagesItemDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to details for security
+// returns a *RequestInformation when successful
 func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LandingPageDetailable, requestConfiguration *AttackSimulationLandingPagesItemDetailsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/security/attackSimulation/landingPages/{landingPage%2Did}/details", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AttackSimulationLandingPagesItemDetailsRequestBuilder when successful
 func (m *AttackSimulationLandingPagesItemDetailsRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationLandingPagesItemDetailsRequestBuilder) {
     return NewAttackSimulationLandingPagesItemDetailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

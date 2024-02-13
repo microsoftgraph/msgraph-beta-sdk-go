@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalSignInActivity 
 type ServicePrincipalSignInActivity struct {
     Entity
 }
-// NewServicePrincipalSignInActivity instantiates a new servicePrincipalSignInActivity and sets the default values.
+// NewServicePrincipalSignInActivity instantiates a new ServicePrincipalSignInActivity and sets the default values.
 func NewServicePrincipalSignInActivity()(*ServicePrincipalSignInActivity) {
     m := &ServicePrincipalSignInActivity{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewServicePrincipalSignInActivity()(*ServicePrincipalSignInActivity) {
     return m
 }
 // CreateServicePrincipalSignInActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServicePrincipalSignInActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalSignInActivity(), nil
 }
 // GetAppId gets the appId property value. The application ID of the resource.
+// returns a *string when successful
 func (m *ServicePrincipalSignInActivity) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ServicePrincipalSignInActivity) GetAppId()(*string) {
     return nil
 }
 // GetApplicationAuthenticationClientSignInActivity gets the applicationAuthenticationClientSignInActivity property value. The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a client.
+// returns a SignInActivityable when successful
 func (m *ServicePrincipalSignInActivity) GetApplicationAuthenticationClientSignInActivity()(SignInActivityable) {
     val, err := m.GetBackingStore().Get("applicationAuthenticationClientSignInActivity")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ServicePrincipalSignInActivity) GetApplicationAuthenticationClientSignI
     return nil
 }
 // GetApplicationAuthenticationResourceSignInActivity gets the applicationAuthenticationResourceSignInActivity property value. The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a resource.
+// returns a SignInActivityable when successful
 func (m *ServicePrincipalSignInActivity) GetApplicationAuthenticationResourceSignInActivity()(SignInActivityable) {
     val, err := m.GetBackingStore().Get("applicationAuthenticationResourceSignInActivity")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *ServicePrincipalSignInActivity) GetApplicationAuthenticationResourceSig
     return nil
 }
 // GetDelegatedClientSignInActivity gets the delegatedClientSignInActivity property value. The sign-in activity of the application in a delegated flow (user sign-in) where the application acts like a client.
+// returns a SignInActivityable when successful
 func (m *ServicePrincipalSignInActivity) GetDelegatedClientSignInActivity()(SignInActivityable) {
     val, err := m.GetBackingStore().Get("delegatedClientSignInActivity")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *ServicePrincipalSignInActivity) GetDelegatedClientSignInActivity()(Sign
     return nil
 }
 // GetDelegatedResourceSignInActivity gets the delegatedResourceSignInActivity property value. The sign-in activity of the application in a delegated flow (user sign-in) where the application acts like a resource.
+// returns a SignInActivityable when successful
 func (m *ServicePrincipalSignInActivity) GetDelegatedResourceSignInActivity()(SignInActivityable) {
     val, err := m.GetBackingStore().Get("delegatedResourceSignInActivity")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *ServicePrincipalSignInActivity) GetDelegatedResourceSignInActivity()(Si
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServicePrincipalSignInActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,6 +146,7 @@ func (m *ServicePrincipalSignInActivity) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetLastSignInActivity gets the lastSignInActivity property value. The most recent sign-in activity of the application across delegated or app-only flows where the application is used either as a client or resource.
+// returns a SignInActivityable when successful
 func (m *ServicePrincipalSignInActivity) GetLastSignInActivity()(SignInActivityable) {
     val, err := m.GetBackingStore().Get("lastSignInActivity")
     if err != nil {
@@ -236,7 +243,6 @@ func (m *ServicePrincipalSignInActivity) SetLastSignInActivity(value SignInActiv
         panic(err)
     }
 }
-// ServicePrincipalSignInActivityable 
 type ServicePrincipalSignInActivityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

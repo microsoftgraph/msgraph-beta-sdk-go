@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CveInformation 
 type CveInformation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCveInformation instantiates a new cveInformation and sets the default values.
+// NewCveInformation instantiates a new CveInformation and sets the default values.
 func NewCveInformation()(*CveInformation) {
     m := &CveInformation{
     }
@@ -19,10 +18,12 @@ func NewCveInformation()(*CveInformation) {
     return m
 }
 // CreateCveInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCveInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCveInformation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CveInformation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *CveInformation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CveInformation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CveInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["number"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *CveInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetNumber gets the number property value. Identifies the number of the CVE. Read-only.
+// returns a *string when successful
 func (m *CveInformation) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *CveInformation) GetNumber()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CveInformation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *CveInformation) GetOdataType()(*string) {
     return nil
 }
 // GetUrl gets the url property value. URL to the full CVE information. Read-only.
+// returns a *string when successful
 func (m *CveInformation) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *CveInformation) SetUrl(value *string)() {
         panic(err)
     }
 }
-// CveInformationable 
 type CveInformationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

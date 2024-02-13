@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponse 
-// Deprecated: This class is obsolete. Use generateApplePushNotificationCertificateSigningRequestPostResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponse struct {
     ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestPostResponse
 }
@@ -17,11 +16,11 @@ func NewApplePushNotificationCertificateGenerateApplePushNotificationCertificate
     return m
 }
 // CreateApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponse(), nil
 }
-// ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponseable 
-// Deprecated: This class is obsolete. Use generateApplePushNotificationCertificateSigningRequestPostResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponseable interface {
     ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestPostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

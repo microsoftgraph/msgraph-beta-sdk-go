@@ -8,7 +8,7 @@ import (
 type Windows10EnrollmentCompletionPageConfigurationPolicySetItem struct {
     PolicySetItem
 }
-// NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem instantiates a new windows10EnrollmentCompletionPageConfigurationPolicySetItem and sets the default values.
+// NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem instantiates a new Windows10EnrollmentCompletionPageConfigurationPolicySetItem and sets the default values.
 func NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem()(*Windows10EnrollmentCompletionPageConfigurationPolicySetItem) {
     m := &Windows10EnrollmentCompletionPageConfigurationPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
@@ -18,10 +18,12 @@ func NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem()(*Windows10
     return m
 }
 // CreateWindows10EnrollmentCompletionPageConfigurationPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10EnrollmentCompletionPageConfigurationPolicySetItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10EnrollmentCompletionPageConfigurationPolicySetItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10EnrollmentCompletionPageConfigurationPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicySetItem.GetFieldDeserializers()
     res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *Windows10EnrollmentCompletionPageConfigurationPolicySetItem) GetFieldDe
     return res
 }
 // GetPriority gets the priority property value. Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.
+// returns a *int32 when successful
 func (m *Windows10EnrollmentCompletionPageConfigurationPolicySetItem) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *Windows10EnrollmentCompletionPageConfigurationPolicySetItem) SetPriorit
         panic(err)
     }
 }
-// Windows10EnrollmentCompletionPageConfigurationPolicySetItemable 
 type Windows10EnrollmentCompletionPageConfigurationPolicySetItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicySetItemable

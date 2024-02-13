@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DayNoteCollectionResponse 
 type DayNoteCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDayNoteCollectionResponse instantiates a new dayNoteCollectionResponse and sets the default values.
+// NewDayNoteCollectionResponse instantiates a new DayNoteCollectionResponse and sets the default values.
 func NewDayNoteCollectionResponse()(*DayNoteCollectionResponse) {
     m := &DayNoteCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDayNoteCollectionResponse()(*DayNoteCollectionResponse) {
     return m
 }
 // CreateDayNoteCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDayNoteCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDayNoteCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DayNoteCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DayNoteCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DayNoteable when successful
 func (m *DayNoteCollectionResponse) GetValue()([]DayNoteable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DayNoteCollectionResponse) SetValue(value []DayNoteable)() {
         panic(err)
     }
 }
-// DayNoteCollectionResponseable 
 type DayNoteCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

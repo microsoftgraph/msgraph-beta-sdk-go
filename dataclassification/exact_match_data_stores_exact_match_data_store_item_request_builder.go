@@ -41,28 +41,28 @@ type ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderPatchRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal instantiates a new ExactMatchDataStoreItemRequestBuilder and sets the default values.
+// NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal instantiates a new ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder and sets the default values.
 func NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) {
     m := &ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilder instantiates a new ExactMatchDataStoreItemRequestBuilder and sets the default values.
+// NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilder instantiates a new ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder and sets the default values.
 func NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property exactMatchDataStores for dataClassification
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Delete(ctx c
     return nil
 }
 // Get get exactMatchDataStores from dataClassification
+// returns a ExactMatchDataStoreable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchDataStoreable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateExactMatchDataStoreFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,18 +91,20 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchDataStoreable), nil
 }
 // Lookup provides operations to call the lookup method.
+// returns a *ExactMatchDataStoresItemLookupRequestBuilder when successful
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Lookup()(*ExactMatchDataStoresItemLookupRequestBuilder) {
     return NewExactMatchDataStoresItemLookupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property exactMatchDataStores in dataClassification
+// returns a ExactMatchDataStoreable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchDataStoreable, requestConfiguration *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchDataStoreable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateExactMatchDataStoreFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,12 +116,14 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Patch(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchDataStoreable), nil
 }
 // Sessions provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.
+// returns a *ExactMatchDataStoresItemSessionsRequestBuilder when successful
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) Sessions()(*ExactMatchDataStoresItemSessionsRequestBuilder) {
     return NewExactMatchDataStoresItemSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property exactMatchDataStores for dataClassification
+// returns a *RequestInformation when successful
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -127,6 +132,7 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) ToDeleteRequ
     return requestInfo, nil
 }
 // ToGetRequestInformation get exactMatchDataStores from dataClassification
+// returns a *RequestInformation when successful
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,8 +146,9 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property exactMatchDataStores in dataClassification
+// returns a *RequestInformation when successful
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExactMatchDataStoreable, requestConfiguration *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/dataClassification/exactMatchDataStores/{exactMatchDataStore%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -154,6 +161,7 @@ func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) ToPatchReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder when successful
 func (m *ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) WithUrl(rawUrl string)(*ExactMatchDataStoresExactMatchDataStoreItemRequestBuilder) {
     return NewExactMatchDataStoresExactMatchDataStoreItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

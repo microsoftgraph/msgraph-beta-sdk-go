@@ -8,7 +8,7 @@ import (
 type VpnConfiguration struct {
     DeviceConfiguration
 }
-// NewVpnConfiguration instantiates a new vpnConfiguration and sets the default values.
+// NewVpnConfiguration instantiates a new VpnConfiguration and sets the default values.
 func NewVpnConfiguration()(*VpnConfiguration) {
     m := &VpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewVpnConfiguration()(*VpnConfiguration) {
     return m
 }
 // CreateVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     return NewVpnConfiguration(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
+// returns a *VpnAuthenticationMethod when successful
 func (m *VpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *VpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
     return nil
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
+// returns a *string when successful
 func (m *VpnConfiguration) GetConnectionName()(*string) {
     val, err := m.GetBackingStore().Get("connectionName")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *VpnConfiguration) GetConnectionName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -123,6 +127,7 @@ func (m *VpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetRealm gets the realm property value. Realm when connection type is set to Pulse Secure.
+// returns a *string when successful
 func (m *VpnConfiguration) GetRealm()(*string) {
     val, err := m.GetBackingStore().Get("realm")
     if err != nil {
@@ -134,6 +139,7 @@ func (m *VpnConfiguration) GetRealm()(*string) {
     return nil
 }
 // GetRole gets the role property value. Role when connection type is set to Pulse Secure.
+// returns a *string when successful
 func (m *VpnConfiguration) GetRole()(*string) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -145,6 +151,7 @@ func (m *VpnConfiguration) GetRole()(*string) {
     return nil
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
+// returns a []VpnServerable when successful
 func (m *VpnConfiguration) GetServers()([]VpnServerable) {
     val, err := m.GetBackingStore().Get("servers")
     if err != nil {
@@ -235,7 +242,6 @@ func (m *VpnConfiguration) SetServers(value []VpnServerable)() {
         panic(err)
     }
 }
-// VpnConfigurationable 
 type VpnConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

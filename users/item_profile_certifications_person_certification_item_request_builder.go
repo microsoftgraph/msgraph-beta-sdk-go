@@ -41,20 +41,21 @@ type ItemProfileCertificationsPersonCertificationItemRequestBuilderPatchRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemProfileCertificationsPersonCertificationItemRequestBuilderInternal instantiates a new PersonCertificationItemRequestBuilder and sets the default values.
+// NewItemProfileCertificationsPersonCertificationItemRequestBuilderInternal instantiates a new ItemProfileCertificationsPersonCertificationItemRequestBuilder and sets the default values.
 func NewItemProfileCertificationsPersonCertificationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileCertificationsPersonCertificationItemRequestBuilder) {
     m := &ItemProfileCertificationsPersonCertificationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/certifications/{personCertification%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/certifications/{personCertification%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemProfileCertificationsPersonCertificationItemRequestBuilder instantiates a new PersonCertificationItemRequestBuilder and sets the default values.
+// NewItemProfileCertificationsPersonCertificationItemRequestBuilder instantiates a new ItemProfileCertificationsPersonCertificationItemRequestBuilder and sets the default values.
 func NewItemProfileCertificationsPersonCertificationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileCertificationsPersonCertificationItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileCertificationsPersonCertificationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes a personCertification object from a user's profile.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personcertification-delete?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Delete(
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,6 +74,8 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Delete(
     return nil
 }
 // Get read the properties and relationships of a personCertification object in a user's profile.
+// returns a PersonCertificationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personcertification-get?view=graph-rest-1.0
@@ -83,8 +85,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Get(ctx
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePersonCertificationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -96,6 +97,8 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Get(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable), nil
 }
 // Patch update the properties of a personCertification object from a user's profile.
+// returns a PersonCertificationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/personcertification-update?view=graph-rest-1.0
@@ -105,8 +108,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Patch(c
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePersonCertificationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -118,8 +120,9 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Patch(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable), nil
 }
 // ToDeleteRequestInformation deletes a personCertification object from a user's profile.
+// returns a *RequestInformation when successful
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/profile/certifications/{personCertification%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -128,6 +131,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToDelet
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a personCertification object in a user's profile.
+// returns a *RequestInformation when successful
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -141,8 +145,9 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a personCertification object from a user's profile.
+// returns a *RequestInformation when successful
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/users/{user%2Did}/profile/certifications/{personCertification%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -155,6 +160,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToPatch
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemProfileCertificationsPersonCertificationItemRequestBuilder when successful
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) WithUrl(rawUrl string)(*ItemProfileCertificationsPersonCertificationItemRequestBuilder) {
     return NewItemProfileCertificationsPersonCertificationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

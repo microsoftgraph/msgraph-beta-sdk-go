@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsRemoteConnection struct {
     Entity
 }
-// NewUserExperienceAnalyticsRemoteConnection instantiates a new userExperienceAnalyticsRemoteConnection and sets the default values.
+// NewUserExperienceAnalyticsRemoteConnection instantiates a new UserExperienceAnalyticsRemoteConnection and sets the default values.
 func NewUserExperienceAnalyticsRemoteConnection()(*UserExperienceAnalyticsRemoteConnection) {
     m := &UserExperienceAnalyticsRemoteConnection{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsRemoteConnection()(*UserExperienceAnalyticsRemote
     return m
 }
 // CreateUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsRemoteConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsRemoteConnection(), nil
 }
 // GetCloudPcFailurePercentage gets the cloudPcFailurePercentage property value. The sign in failure percentage of Cloud PC Device. Valid values 0 to 100
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetCloudPcFailurePercentage()(*float64) {
     val, err := m.GetBackingStore().Get("cloudPcFailurePercentage")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetCloudPcFailurePercentage()(
     return nil
 }
 // GetCloudPcRoundTripTime gets the cloudPcRoundTripTime property value. The round tip time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetCloudPcRoundTripTime()(*float64) {
     val, err := m.GetBackingStore().Get("cloudPcRoundTripTime")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetCloudPcRoundTripTime()(*flo
     return nil
 }
 // GetCloudPcSignInTime gets the cloudPcSignInTime property value. The sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetCloudPcSignInTime()(*float64) {
     val, err := m.GetBackingStore().Get("cloudPcSignInTime")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetCloudPcSignInTime()(*float6
     return nil
 }
 // GetCoreBootTime gets the coreBootTime property value. The core boot time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetCoreBootTime()(*float64) {
     val, err := m.GetBackingStore().Get("coreBootTime")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetCoreBootTime()(*float64) {
     return nil
 }
 // GetCoreSignInTime gets the coreSignInTime property value. The core sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetCoreSignInTime()(*float64) {
     val, err := m.GetBackingStore().Get("coreSignInTime")
     if err != nil {
@@ -75,6 +81,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetCoreSignInTime()(*float64) 
     return nil
 }
 // GetDeviceCount gets the deviceCount property value. The count of remote connection. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceCount")
     if err != nil {
@@ -86,6 +93,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceCount()(*int32) {
     return nil
 }
 // GetDeviceId gets the deviceId property value. The id of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -97,6 +105,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. The name of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -108,6 +117,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetDeviceName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["cloudPcFailurePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -243,6 +253,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetFieldDeserializers()(map[st
     return res
 }
 // GetManufacturer gets the manufacturer property value. The user experience analytics manufacturer.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -254,6 +265,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetManufacturer()(*string) {
     return nil
 }
 // GetModel gets the model property value. The user experience analytics device model.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -265,6 +277,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetModel()(*string) {
     return nil
 }
 // GetRemoteSignInTime gets the remoteSignInTime property value. The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetRemoteSignInTime()(*float64) {
     val, err := m.GetBackingStore().Get("remoteSignInTime")
     if err != nil {
@@ -276,6 +289,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetRemoteSignInTime()(*float64
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The user experience analytics userPrincipalName.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -287,6 +301,7 @@ func (m *UserExperienceAnalyticsRemoteConnection) GetUserPrincipalName()(*string
     return nil
 }
 // GetVirtualNetwork gets the virtualNetwork property value. The user experience analytics virtual network.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsRemoteConnection) GetVirtualNetwork()(*string) {
     val, err := m.GetBackingStore().Get("virtualNetwork")
     if err != nil {
@@ -474,7 +489,6 @@ func (m *UserExperienceAnalyticsRemoteConnection) SetVirtualNetwork(value *strin
         panic(err)
     }
 }
-// UserExperienceAnalyticsRemoteConnectionable 
 type UserExperienceAnalyticsRemoteConnectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

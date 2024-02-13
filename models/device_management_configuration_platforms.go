@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Supported platform types.
@@ -8,28 +9,30 @@ type DeviceManagementConfigurationPlatforms int
 
 const (
     // Default. No platform type specified.
-    NONE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS DeviceManagementConfigurationPlatforms = iota
+    NONE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 1
     // Settings for Android platform.
-    ANDROID_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+    ANDROID_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 2
     // Settings for iOS platform.
-    IOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+    IOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 4
     // Settings for MacOS platform.
-    MACOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+    MACOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 8
     // Windows 10 X.
-    WINDOWS10X_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+    WINDOWS10X_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 16
     // Settings for Windows 10 platform.
-    WINDOWS10_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+    WINDOWS10_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 32
     // Settings for Linux platform.
-    LINUX_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+    LINUX_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 64
     // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 128
 )
 
 func (i DeviceManagementConfigurationPlatforms) String() string {
     var values []string
-    for p := DeviceManagementConfigurationPlatforms(1); p <= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "android", "iOS", "macOS", "windows10X", "windows10", "linux", "unknownFutureValue"}[p])
+    options := []string{"none", "android", "iOS", "macOS", "windows10X", "windows10", "linux", "unknownFutureValue"}
+    for p := 0; p < 8; p++ {
+        mantis := DeviceManagementConfigurationPlatforms(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

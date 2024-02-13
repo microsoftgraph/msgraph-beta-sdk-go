@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationCsvDataProvider 
 type EducationCsvDataProvider struct {
     EducationSynchronizationDataProvider
 }
-// NewEducationCsvDataProvider instantiates a new educationCsvDataProvider and sets the default values.
+// NewEducationCsvDataProvider instantiates a new EducationCsvDataProvider and sets the default values.
 func NewEducationCsvDataProvider()(*EducationCsvDataProvider) {
     m := &EducationCsvDataProvider{
         EducationSynchronizationDataProvider: *NewEducationSynchronizationDataProvider(),
@@ -18,10 +17,12 @@ func NewEducationCsvDataProvider()(*EducationCsvDataProvider) {
     return m
 }
 // CreateEducationCsvDataProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationCsvDataProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationCsvDataProvider(), nil
 }
 // GetCustomizations gets the customizations property value. Optional customizations to be applied to the synchronization profile.
+// returns a EducationSynchronizationCustomizationsable when successful
 func (m *EducationCsvDataProvider) GetCustomizations()(EducationSynchronizationCustomizationsable) {
     val, err := m.GetBackingStore().Get("customizations")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EducationCsvDataProvider) GetCustomizations()(EducationSynchronizationC
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationCsvDataProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationSynchronizationDataProvider.GetFieldDeserializers()
     res["customizations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *EducationCsvDataProvider) SetCustomizations(value EducationSynchronizat
         panic(err)
     }
 }
-// EducationCsvDataProviderable 
 type EducationCsvDataProviderable interface {
     EducationSynchronizationDataProviderable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

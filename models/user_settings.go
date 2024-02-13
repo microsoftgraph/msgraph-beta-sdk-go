@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserSettings 
 type UserSettings struct {
     Entity
 }
-// NewUserSettings instantiates a new userSettings and sets the default values.
+// NewUserSettings instantiates a new UserSettings and sets the default values.
 func NewUserSettings()(*UserSettings) {
     m := &UserSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUserSettings()(*UserSettings) {
     return m
 }
 // CreateUserSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserSettings(), nil
 }
 // GetContactMergeSuggestions gets the contactMergeSuggestions property value. The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+// returns a ContactMergeSuggestionsable when successful
 func (m *UserSettings) GetContactMergeSuggestions()(ContactMergeSuggestionsable) {
     val, err := m.GetBackingStore().Get("contactMergeSuggestions")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UserSettings) GetContactMergeSuggestions()(ContactMergeSuggestionsable)
     return nil
 }
 // GetContributionToContentDiscoveryAsOrganizationDisabled gets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+// returns a *bool when successful
 func (m *UserSettings) GetContributionToContentDiscoveryAsOrganizationDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("contributionToContentDiscoveryAsOrganizationDisabled")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *UserSettings) GetContributionToContentDiscoveryAsOrganizationDisabled()
     return nil
 }
 // GetContributionToContentDiscoveryDisabled gets the contributionToContentDiscoveryDisabled property value. When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
+// returns a *bool when successful
 func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("contributionToContentDiscoveryDisabled")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *UserSettings) GetContributionToContentDiscoveryDisabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contactMergeSuggestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +122,7 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetItemInsights gets the itemInsights property value. The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
+// returns a UserInsightsSettingsable when successful
 func (m *UserSettings) GetItemInsights()(UserInsightsSettingsable) {
     val, err := m.GetBackingStore().Get("itemInsights")
     if err != nil {
@@ -129,6 +134,7 @@ func (m *UserSettings) GetItemInsights()(UserInsightsSettingsable) {
     return nil
 }
 // GetRegionalAndLanguageSettings gets the regionalAndLanguageSettings property value. The user's preferences for languages, regional locale and date/time formatting.
+// returns a RegionalAndLanguageSettingsable when successful
 func (m *UserSettings) GetRegionalAndLanguageSettings()(RegionalAndLanguageSettingsable) {
     val, err := m.GetBackingStore().Get("regionalAndLanguageSettings")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *UserSettings) GetRegionalAndLanguageSettings()(RegionalAndLanguageSetti
     return nil
 }
 // GetShiftPreferences gets the shiftPreferences property value. The shift preferences for the user.
+// returns a ShiftPreferencesable when successful
 func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
     val, err := m.GetBackingStore().Get("shiftPreferences")
     if err != nil {
@@ -236,7 +243,6 @@ func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
         panic(err)
     }
 }
-// UserSettingsable 
 type UserSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

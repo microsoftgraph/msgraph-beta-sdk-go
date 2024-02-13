@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthorizationSystemResource 
 type AuthorizationSystemResource struct {
     Entity
 }
-// NewAuthorizationSystemResource instantiates a new authorizationSystemResource and sets the default values.
+// NewAuthorizationSystemResource instantiates a new AuthorizationSystemResource and sets the default values.
 func NewAuthorizationSystemResource()(*AuthorizationSystemResource) {
     m := &AuthorizationSystemResource{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewAuthorizationSystemResource()(*AuthorizationSystemResource) {
     return m
 }
 // CreateAuthorizationSystemResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthorizationSystemResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +42,7 @@ func CreateAuthorizationSystemResourceFromDiscriminatorValue(parseNode i878a80d2
     return NewAuthorizationSystemResource(), nil
 }
 // GetAuthorizationSystem gets the authorizationSystem property value. The authorization system that the resource exists in.
+// returns a AuthorizationSystemable when successful
 func (m *AuthorizationSystemResource) GetAuthorizationSystem()(AuthorizationSystemable) {
     val, err := m.GetBackingStore().Get("authorizationSystem")
     if err != nil {
@@ -53,6 +54,7 @@ func (m *AuthorizationSystemResource) GetAuthorizationSystem()(AuthorizationSyst
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the resource. Read-only. Supports $filter (eq,contains).
+// returns a *string when successful
 func (m *AuthorizationSystemResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *AuthorizationSystemResource) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalId gets the externalId property value. The ID of the resource as defined by the authorization system provider. Read-only. Supports $filter (eq).
+// returns a *string when successful
 func (m *AuthorizationSystemResource) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -75,6 +78,7 @@ func (m *AuthorizationSystemResource) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthorizationSystemResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authorizationSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -120,6 +124,7 @@ func (m *AuthorizationSystemResource) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetResourceType gets the resourceType property value. The type of the resource. Read-only. Supports $filter (eq).
+// returns a *string when successful
 func (m *AuthorizationSystemResource) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
     if err != nil {
@@ -190,7 +195,6 @@ func (m *AuthorizationSystemResource) SetResourceType(value *string)() {
         panic(err)
     }
 }
-// AuthorizationSystemResourceable 
 type AuthorizationSystemResourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

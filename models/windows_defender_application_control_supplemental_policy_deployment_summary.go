@@ -8,7 +8,7 @@ import (
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary struct {
     Entity
 }
-// NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary instantiates a new windowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and sets the default values.
+// NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary()(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) {
     m := &WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary()(*
     return m
 }
 // CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary(), nil
 }
 // GetDeployedDeviceCount gets the deployedDeviceCount property value. Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.
+// returns a *int32 when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetDeployedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("deployedDeviceCount")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) G
     return nil
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Number of Devices that have failed to deploy this WindowsDefenderApplicationControl supplemental policy.
+// returns a *int32 when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetFailedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedDeviceCount")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) G
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deployedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,7 +104,6 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary) S
         panic(err)
     }
 }
-// WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable 
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

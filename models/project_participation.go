@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProjectParticipation 
 type ProjectParticipation struct {
     ItemFacet
 }
-// NewProjectParticipation instantiates a new projectParticipation and sets the default values.
+// NewProjectParticipation instantiates a new ProjectParticipation and sets the default values.
 func NewProjectParticipation()(*ProjectParticipation) {
     m := &ProjectParticipation{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewProjectParticipation()(*ProjectParticipation) {
     return m
 }
 // CreateProjectParticipationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProjectParticipationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProjectParticipation(), nil
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the project (for example, digital transformation, oil rig).
+// returns a []string when successful
 func (m *ProjectParticipation) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ProjectParticipation) GetCategories()([]string) {
     return nil
 }
 // GetClient gets the client property value. Contains detailed information about the client the project was for.
+// returns a CompanyDetailable when successful
 func (m *ProjectParticipation) GetClient()(CompanyDetailable) {
     val, err := m.GetBackingStore().Get("client")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ProjectParticipation) GetClient()(CompanyDetailable) {
     return nil
 }
 // GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
+// returns a []string when successful
 func (m *ProjectParticipation) GetCollaborationTags()([]string) {
     val, err := m.GetBackingStore().Get("collaborationTags")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ProjectParticipation) GetCollaborationTags()([]string) {
     return nil
 }
 // GetColleagues gets the colleagues property value. Lists people that also worked on the project.
+// returns a []RelatedPersonable when successful
 func (m *ProjectParticipation) GetColleagues()([]RelatedPersonable) {
     val, err := m.GetBackingStore().Get("colleagues")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *ProjectParticipation) GetColleagues()([]RelatedPersonable) {
     return nil
 }
 // GetDetail gets the detail property value. Contains detail about the user's role on the project.
+// returns a PositionDetailable when successful
 func (m *ProjectParticipation) GetDetail()(PositionDetailable) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *ProjectParticipation) GetDetail()(PositionDetailable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the project.
+// returns a *string when successful
 func (m *ProjectParticipation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -88,6 +94,7 @@ func (m *ProjectParticipation) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -197,6 +204,7 @@ func (m *ProjectParticipation) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetSponsors gets the sponsors property value. The Person or people who sponsored the project.
+// returns a []RelatedPersonable when successful
 func (m *ProjectParticipation) GetSponsors()([]RelatedPersonable) {
     val, err := m.GetBackingStore().Get("sponsors")
     if err != nil {
@@ -208,6 +216,7 @@ func (m *ProjectParticipation) GetSponsors()([]RelatedPersonable) {
     return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
+// returns a *string when successful
 func (m *ProjectParticipation) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -342,7 +351,6 @@ func (m *ProjectParticipation) SetThumbnailUrl(value *string)() {
         panic(err)
     }
 }
-// ProjectParticipationable 
 type ProjectParticipationable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

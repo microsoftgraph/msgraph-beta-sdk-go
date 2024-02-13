@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // The set of available platforms for the OperationApprovalPolicy. Allows configuration of a policy to specific platform(s) for approval. If no specific platform is required or applicable, the platform is `notApplicable`.
@@ -8,30 +9,32 @@ type OperationApprovalPolicyPlatform int
 
 const (
     // Default. Indicates that a policy platform is not required for a chosen policy type.
-    NOTAPPLICABLE_OPERATIONAPPROVALPOLICYPLATFORM OperationApprovalPolicyPlatform = iota
+    NOTAPPLICABLE_OPERATIONAPPROVALPOLICYPLATFORM = 1
     // Indicates that the configured policy platform is for Android Device Administrator.
-    ANDROIDDEVICEADMINISTRATOR_OPERATIONAPPROVALPOLICYPLATFORM
+    ANDROIDDEVICEADMINISTRATOR_OPERATIONAPPROVALPOLICYPLATFORM = 2
     // Indicates that the configured policy platform is for Android Enterprise.
-    ANDROIDENTERPRISE_OPERATIONAPPROVALPOLICYPLATFORM
+    ANDROIDENTERPRISE_OPERATIONAPPROVALPOLICYPLATFORM = 4
     // Indicates that the configured policy platform is for iOS/iPadOS.
-    IOSIPADOS_OPERATIONAPPROVALPOLICYPLATFORM
+    IOSIPADOS_OPERATIONAPPROVALPOLICYPLATFORM = 8
     // Indicates that the configured policy platform is for macOS.
-    MACOS_OPERATIONAPPROVALPOLICYPLATFORM
+    MACOS_OPERATIONAPPROVALPOLICYPLATFORM = 16
     // Indicates that the configured policy platform is for Windows 10 and later.
-    WINDOWS10ANDLATER_OPERATIONAPPROVALPOLICYPLATFORM
+    WINDOWS10ANDLATER_OPERATIONAPPROVALPOLICYPLATFORM = 32
     // Indicates that the configured policy platform is for Windows 8.1 and later.
-    WINDOWS81ANDLATER_OPERATIONAPPROVALPOLICYPLATFORM
+    WINDOWS81ANDLATER_OPERATIONAPPROVALPOLICYPLATFORM = 64
     // Indicates that the configured policy platform is for Windows 10X.
-    WINDOWS10X_OPERATIONAPPROVALPOLICYPLATFORM
+    WINDOWS10X_OPERATIONAPPROVALPOLICYPLATFORM = 128
     // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYPLATFORM
+    UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYPLATFORM = 256
 )
 
 func (i OperationApprovalPolicyPlatform) String() string {
     var values []string
-    for p := OperationApprovalPolicyPlatform(1); p <= UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYPLATFORM; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"notApplicable", "androidDeviceAdministrator", "androidEnterprise", "iOSiPadOS", "macOS", "windows10AndLater", "windows81AndLater", "windows10X", "unknownFutureValue"}[p])
+    options := []string{"notApplicable", "androidDeviceAdministrator", "androidEnterprise", "iOSiPadOS", "macOS", "windows10AndLater", "windows81AndLater", "windows10X", "unknownFutureValue"}
+    for p := 0; p < 9; p++ {
+        mantis := OperationApprovalPolicyPlatform(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

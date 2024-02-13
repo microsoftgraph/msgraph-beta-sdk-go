@@ -47,6 +47,7 @@ type LogsRemoteNetworksRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByRemoteNetworkHealthEventId provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.logs entity.
+// returns a *LogsRemoteNetworksRemoteNetworkHealthEventItemRequestBuilder when successful
 func (m *LogsRemoteNetworksRequestBuilder) ByRemoteNetworkHealthEventId(remoteNetworkHealthEventId string)(*LogsRemoteNetworksRemoteNetworkHealthEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *LogsRemoteNetworksRequestBuilder) ByRemoteNetworkHealthEventId(remoteNe
     }
     return NewLogsRemoteNetworksRemoteNetworkHealthEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewLogsRemoteNetworksRequestBuilderInternal instantiates a new RemoteNetworksRequestBuilder and sets the default values.
+// NewLogsRemoteNetworksRequestBuilderInternal instantiates a new LogsRemoteNetworksRequestBuilder and sets the default values.
 func NewLogsRemoteNetworksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LogsRemoteNetworksRequestBuilder) {
     m := &LogsRemoteNetworksRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/logs/remoteNetworks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/logs/remoteNetworks{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewLogsRemoteNetworksRequestBuilder instantiates a new RemoteNetworksRequestBuilder and sets the default values.
+// NewLogsRemoteNetworksRequestBuilder instantiates a new LogsRemoteNetworksRequestBuilder and sets the default values.
 func NewLogsRemoteNetworksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LogsRemoteNetworksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewLogsRemoteNetworksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *LogsRemoteNetworksCountRequestBuilder when successful
 func (m *LogsRemoteNetworksRequestBuilder) Count()(*LogsRemoteNetworksCountRequestBuilder) {
     return NewLogsRemoteNetworksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of remote network health status microsoft.graph.networkaccess.remoteNetworkHealthStatusEvent events, providing insights into the health and status of remote networks.
+// returns a RemoteNetworkHealthEventCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-remotenetworkhealthstatusevent-list?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *LogsRemoteNetworksRequestBuilder) Get(ctx context.Context, requestConfi
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateRemoteNetworkHealthEventCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *LogsRemoteNetworksRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.RemoteNetworkHealthEventCollectionResponseable), nil
 }
 // Post create new navigation property to remoteNetworks for networkAccess
+// returns a RemoteNetworkHealthEventable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LogsRemoteNetworksRequestBuilder) Post(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.RemoteNetworkHealthEventable, requestConfiguration *LogsRemoteNetworksRequestBuilderPostRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.RemoteNetworkHealthEventable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateRemoteNetworkHealthEventFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *LogsRemoteNetworksRequestBuilder) Post(ctx context.Context, body i43e72
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.RemoteNetworkHealthEventable), nil
 }
 // ToGetRequestInformation retrieve a list of remote network health status microsoft.graph.networkaccess.remoteNetworkHealthStatusEvent events, providing insights into the health and status of remote networks.
+// returns a *RequestInformation when successful
 func (m *LogsRemoteNetworksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LogsRemoteNetworksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *LogsRemoteNetworksRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to remoteNetworks for networkAccess
+// returns a *RequestInformation when successful
 func (m *LogsRemoteNetworksRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.RemoteNetworkHealthEventable, requestConfiguration *LogsRemoteNetworksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/networkAccess/logs/remoteNetworks", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *LogsRemoteNetworksRequestBuilder) ToPostRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *LogsRemoteNetworksRequestBuilder when successful
 func (m *LogsRemoteNetworksRequestBuilder) WithUrl(rawUrl string)(*LogsRemoteNetworksRequestBuilder) {
     return NewLogsRemoteNetworksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

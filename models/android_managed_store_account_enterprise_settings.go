@@ -9,7 +9,7 @@ import (
 type AndroidManagedStoreAccountEnterpriseSettings struct {
     Entity
 }
-// NewAndroidManagedStoreAccountEnterpriseSettings instantiates a new androidManagedStoreAccountEnterpriseSettings and sets the default values.
+// NewAndroidManagedStoreAccountEnterpriseSettings instantiates a new AndroidManagedStoreAccountEnterpriseSettings and sets the default values.
 func NewAndroidManagedStoreAccountEnterpriseSettings()(*AndroidManagedStoreAccountEnterpriseSettings) {
     m := &AndroidManagedStoreAccountEnterpriseSettings{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewAndroidManagedStoreAccountEnterpriseSettings()(*AndroidManagedStoreAccou
     return m
 }
 // CreateAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidManagedStoreAccountEnterpriseSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidManagedStoreAccountEnterpriseSettings(), nil
 }
 // GetAndroidDeviceOwnerFullyManagedEnrollmentEnabled gets the androidDeviceOwnerFullyManagedEnrollmentEnabled property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
+// returns a *bool when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetAndroidDeviceOwnerFullyManagedEnrollmentEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("androidDeviceOwnerFullyManagedEnrollmentEnabled")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetAndroidDeviceOwnerFull
     return nil
 }
 // GetBindStatus gets the bindStatus property value. Bind status of the tenant with the Google EMM API
+// returns a *AndroidManagedStoreAccountBindStatus when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetBindStatus()(*AndroidManagedStoreAccountBindStatus) {
     val, err := m.GetBackingStore().Get("bindStatus")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetBindStatus()(*AndroidM
     return nil
 }
 // GetCompanyCodes gets the companyCodes property value. Company codes for AndroidManagedStoreAccountEnterpriseSettings
+// returns a []AndroidEnrollmentCompanyCodeable when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetCompanyCodes()([]AndroidEnrollmentCompanyCodeable) {
     val, err := m.GetBackingStore().Get("companyCodes")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetCompanyCodes()([]Andro
     return nil
 }
 // GetDeviceOwnerManagementEnabled gets the deviceOwnerManagementEnabled property value. Indicates if this account is flighting for Android Device Owner Management with CloudDPC.
+// returns a *bool when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetDeviceOwnerManagementEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("deviceOwnerManagementEnabled")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetDeviceOwnerManagementE
     return nil
 }
 // GetEnrollmentTarget gets the enrollmentTarget property value. Android for Work device management targeting type for the account
+// returns a *AndroidManagedStoreAccountEnrollmentTarget when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetEnrollmentTarget()(*AndroidManagedStoreAccountEnrollmentTarget) {
     val, err := m.GetBackingStore().Get("enrollmentTarget")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetEnrollmentTarget()(*An
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["androidDeviceOwnerFullyManagedEnrollmentEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -219,6 +226,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
     return res
 }
 // GetLastAppSyncDateTime gets the lastAppSyncDateTime property value. Last completion time for app sync
+// returns a *Time when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastAppSyncDateTime")
     if err != nil {
@@ -230,6 +238,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncDateTime()(
     return nil
 }
 // GetLastAppSyncStatus gets the lastAppSyncStatus property value. Sync status of the tenant with the Google EMM API
+// returns a *AndroidManagedStoreAccountAppSyncStatus when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncStatus()(*AndroidManagedStoreAccountAppSyncStatus) {
     val, err := m.GetBackingStore().Get("lastAppSyncStatus")
     if err != nil {
@@ -241,6 +250,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastAppSyncStatus()(*A
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last modification time for Android enterprise settings
+// returns a *Time when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -252,6 +262,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastModifiedDateTime()
     return nil
 }
 // GetManagedGooglePlayInitialScopeTagIds gets the managedGooglePlayInitialScopeTagIds property value. Initial scope tags for MGP apps
+// returns a []string when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetManagedGooglePlayInitialScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("managedGooglePlayInitialScopeTagIds")
     if err != nil {
@@ -263,6 +274,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetManagedGooglePlayIniti
     return nil
 }
 // GetOwnerOrganizationName gets the ownerOrganizationName property value. Organization name used when onboarding Android Enterprise
+// returns a *string when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetOwnerOrganizationName()(*string) {
     val, err := m.GetBackingStore().Get("ownerOrganizationName")
     if err != nil {
@@ -274,6 +286,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetOwnerOrganizationName(
     return nil
 }
 // GetOwnerUserPrincipalName gets the ownerUserPrincipalName property value. Owner UPN that created the enterprise
+// returns a *string when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetOwnerUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("ownerUserPrincipalName")
     if err != nil {
@@ -285,6 +298,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetOwnerUserPrincipalName
     return nil
 }
 // GetTargetGroupIds gets the targetGroupIds property value. Specifies which AAD groups can enroll devices in Android for Work device management if enrollmentTarget is set to 'Targeted'
+// returns a []string when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettings) GetTargetGroupIds()([]string) {
     val, err := m.GetBackingStore().Get("targetGroupIds")
     if err != nil {
@@ -468,7 +482,6 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) SetTargetGroupIds(value [
         panic(err)
     }
 }
-// AndroidManagedStoreAccountEnterpriseSettingsable 
 type AndroidManagedStoreAccountEnterpriseSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

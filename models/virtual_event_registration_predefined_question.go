@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEventRegistrationPredefinedQuestion 
 type VirtualEventRegistrationPredefinedQuestion struct {
     VirtualEventRegistrationQuestionBase
 }
-// NewVirtualEventRegistrationPredefinedQuestion instantiates a new virtualEventRegistrationPredefinedQuestion and sets the default values.
+// NewVirtualEventRegistrationPredefinedQuestion instantiates a new VirtualEventRegistrationPredefinedQuestion and sets the default values.
 func NewVirtualEventRegistrationPredefinedQuestion()(*VirtualEventRegistrationPredefinedQuestion) {
     m := &VirtualEventRegistrationPredefinedQuestion{
         VirtualEventRegistrationQuestionBase: *NewVirtualEventRegistrationQuestionBase(),
@@ -18,10 +17,12 @@ func NewVirtualEventRegistrationPredefinedQuestion()(*VirtualEventRegistrationPr
     return m
 }
 // CreateVirtualEventRegistrationPredefinedQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualEventRegistrationPredefinedQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventRegistrationPredefinedQuestion(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEventRegistrationPredefinedQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VirtualEventRegistrationQuestionBase.GetFieldDeserializers()
     res["label"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *VirtualEventRegistrationPredefinedQuestion) GetFieldDeserializers()(map
     return res
 }
 // GetLabel gets the label property value. The label property
+// returns a *VirtualEventRegistrationPredefinedQuestionLabel when successful
 func (m *VirtualEventRegistrationPredefinedQuestion) GetLabel()(*VirtualEventRegistrationPredefinedQuestionLabel) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *VirtualEventRegistrationPredefinedQuestion) SetLabel(value *VirtualEven
         panic(err)
     }
 }
-// VirtualEventRegistrationPredefinedQuestionable 
 type VirtualEventRegistrationPredefinedQuestionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VirtualEventRegistrationQuestionBaseable

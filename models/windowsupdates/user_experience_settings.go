@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// UserExperienceSettings 
 type UserExperienceSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUserExperienceSettings instantiates a new userExperienceSettings and sets the default values.
+// NewUserExperienceSettings instantiates a new UserExperienceSettings and sets the default values.
 func NewUserExperienceSettings()(*UserExperienceSettings) {
     m := &UserExperienceSettings{
     }
@@ -19,10 +18,12 @@ func NewUserExperienceSettings()(*UserExperienceSettings) {
     return m
 }
 // CreateUserExperienceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UserExperienceSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *UserExperienceSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *UserExperienceSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDaysUntilForcedReboot gets the daysUntilForcedReboot property value. Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
+// returns a *int32 when successful
 func (m *UserExperienceSettings) GetDaysUntilForcedReboot()(*int32) {
     val, err := m.GetBackingStore().Get("daysUntilForcedReboot")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *UserExperienceSettings) GetDaysUntilForcedReboot()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["daysUntilForcedReboot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +89,7 @@ func (m *UserExperienceSettings) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *UserExperienceSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *UserExperienceSettings) GetOdataType()(*string) {
     return nil
 }
 // GetOfferAsOptional gets the offerAsOptional property value. Specifies whether the update is offered as Optional rather than Required.
+// returns a *bool when successful
 func (m *UserExperienceSettings) GetOfferAsOptional()(*bool) {
     val, err := m.GetBackingStore().Get("offerAsOptional")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *UserExperienceSettings) SetOfferAsOptional(value *bool)() {
         panic(err)
     }
 }
-// UserExperienceSettingsable 
 type UserExperienceSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

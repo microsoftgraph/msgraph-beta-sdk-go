@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// JobResponseBase 
 type JobResponseBase struct {
     Entity
 }
-// NewJobResponseBase instantiates a new jobResponseBase and sets the default values.
+// NewJobResponseBase instantiates a new JobResponseBase and sets the default values.
 func NewJobResponseBase()(*JobResponseBase) {
     m := &JobResponseBase{
         Entity: *NewEntity(),
@@ -17,6 +16,7 @@ func NewJobResponseBase()(*JobResponseBase) {
     return m
 }
 // CreateJobResponseBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateJobResponseBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +43,7 @@ func CreateJobResponseBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewJobResponseBase(), nil
 }
 // GetCreationDateTime gets the creationDateTime property value. The creationDateTime property
+// returns a *Time when successful
 func (m *JobResponseBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
     if err != nil {
@@ -54,6 +55,7 @@ func (m *JobResponseBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetEndDateTime gets the endDateTime property value. The endDateTime property
+// returns a *Time when successful
 func (m *JobResponseBase) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -65,6 +67,7 @@ func (m *JobResponseBase) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetError gets the error property value. The error property
+// returns a ClassificationErrorable when successful
 func (m *JobResponseBase) GetError()(ClassificationErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -76,6 +79,7 @@ func (m *JobResponseBase) GetError()(ClassificationErrorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["creationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -161,6 +165,7 @@ func (m *JobResponseBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetStartDateTime gets the startDateTime property value. The startDateTime property
+// returns a *Time when successful
 func (m *JobResponseBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -172,6 +177,7 @@ func (m *JobResponseBase) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *string when successful
 func (m *JobResponseBase) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -183,6 +189,7 @@ func (m *JobResponseBase) GetStatus()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
+// returns a *string when successful
 func (m *JobResponseBase) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -194,6 +201,7 @@ func (m *JobResponseBase) GetTenantId()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *JobResponseBase) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -205,6 +213,7 @@ func (m *JobResponseBase) GetTypeEscaped()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The userId property
+// returns a *string when successful
 func (m *JobResponseBase) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -327,7 +336,6 @@ func (m *JobResponseBase) SetUserId(value *string)() {
         panic(err)
     }
 }
-// JobResponseBaseable 
 type JobResponseBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

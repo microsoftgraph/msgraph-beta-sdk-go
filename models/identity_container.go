@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// IdentityContainer 
 type IdentityContainer struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIdentityContainer instantiates a new identityContainer and sets the default values.
+// NewIdentityContainer instantiates a new IdentityContainer and sets the default values.
 func NewIdentityContainer()(*IdentityContainer) {
     m := &IdentityContainer{
     }
@@ -19,10 +18,12 @@ func NewIdentityContainer()(*IdentityContainer) {
     return m
 }
 // CreateIdentityContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIdentityContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIdentityContainer(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IdentityContainer) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *IdentityContainer) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApiConnectors gets the apiConnectors property value. Represents entry point for API connectors.
+// returns a []IdentityApiConnectorable when successful
 func (m *IdentityContainer) GetApiConnectors()([]IdentityApiConnectorable) {
     val, err := m.GetBackingStore().Get("apiConnectors")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *IdentityContainer) GetApiConnectors()([]IdentityApiConnectorable) {
     return nil
 }
 // GetAuthenticationEventListeners gets the authenticationEventListeners property value. The authenticationEventListeners property
+// returns a []AuthenticationEventListenerable when successful
 func (m *IdentityContainer) GetAuthenticationEventListeners()([]AuthenticationEventListenerable) {
     val, err := m.GetBackingStore().Get("authenticationEventListeners")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *IdentityContainer) GetAuthenticationEventListeners()([]AuthenticationEv
     return nil
 }
 // GetAuthenticationEventsFlows gets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
+// returns a []AuthenticationEventsFlowable when successful
 func (m *IdentityContainer) GetAuthenticationEventsFlows()([]AuthenticationEventsFlowable) {
     val, err := m.GetBackingStore().Get("authenticationEventsFlows")
     if err != nil {
@@ -68,6 +72,7 @@ func (m *IdentityContainer) GetAuthenticationEventsFlows()([]AuthenticationEvent
     return nil
 }
 // GetB2cUserFlows gets the b2cUserFlows property value. Represents entry point for B2C identity userflows.
+// returns a []B2cIdentityUserFlowable when successful
 func (m *IdentityContainer) GetB2cUserFlows()([]B2cIdentityUserFlowable) {
     val, err := m.GetBackingStore().Get("b2cUserFlows")
     if err != nil {
@@ -79,6 +84,7 @@ func (m *IdentityContainer) GetB2cUserFlows()([]B2cIdentityUserFlowable) {
     return nil
 }
 // GetB2xUserFlows gets the b2xUserFlows property value. Represents entry point for B2X and self-service sign-up identity userflows.
+// returns a []B2xIdentityUserFlowable when successful
 func (m *IdentityContainer) GetB2xUserFlows()([]B2xIdentityUserFlowable) {
     val, err := m.GetBackingStore().Get("b2xUserFlows")
     if err != nil {
@@ -90,10 +96,12 @@ func (m *IdentityContainer) GetB2xUserFlows()([]B2xIdentityUserFlowable) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *IdentityContainer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConditionalAccess gets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
+// returns a ConditionalAccessRootable when successful
 func (m *IdentityContainer) GetConditionalAccess()(ConditionalAccessRootable) {
     val, err := m.GetBackingStore().Get("conditionalAccess")
     if err != nil {
@@ -105,6 +113,7 @@ func (m *IdentityContainer) GetConditionalAccess()(ConditionalAccessRootable) {
     return nil
 }
 // GetContinuousAccessEvaluationPolicy gets the continuousAccessEvaluationPolicy property value. Represents entry point for continuous access evaluation policy.
+// returns a ContinuousAccessEvaluationPolicyable when successful
 func (m *IdentityContainer) GetContinuousAccessEvaluationPolicy()(ContinuousAccessEvaluationPolicyable) {
     val, err := m.GetBackingStore().Get("continuousAccessEvaluationPolicy")
     if err != nil {
@@ -116,6 +125,7 @@ func (m *IdentityContainer) GetContinuousAccessEvaluationPolicy()(ContinuousAcce
     return nil
 }
 // GetCustomAuthenticationExtensions gets the customAuthenticationExtensions property value. The customAuthenticationExtensions property
+// returns a []CustomAuthenticationExtensionable when successful
 func (m *IdentityContainer) GetCustomAuthenticationExtensions()([]CustomAuthenticationExtensionable) {
     val, err := m.GetBackingStore().Get("customAuthenticationExtensions")
     if err != nil {
@@ -127,6 +137,7 @@ func (m *IdentityContainer) GetCustomAuthenticationExtensions()([]CustomAuthenti
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["apiConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -306,6 +317,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetIdentityProviders gets the identityProviders property value. Represents entry point for identity provider base.
+// returns a []IdentityProviderBaseable when successful
 func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
     val, err := m.GetBackingStore().Get("identityProviders")
     if err != nil {
@@ -317,6 +329,7 @@ func (m *IdentityContainer) GetIdentityProviders()([]IdentityProviderBaseable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *IdentityContainer) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -328,6 +341,7 @@ func (m *IdentityContainer) GetOdataType()(*string) {
     return nil
 }
 // GetUserFlowAttributes gets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
+// returns a []IdentityUserFlowAttributeable when successful
 func (m *IdentityContainer) GetUserFlowAttributes()([]IdentityUserFlowAttributeable) {
     val, err := m.GetBackingStore().Get("userFlowAttributes")
     if err != nil {
@@ -339,6 +353,7 @@ func (m *IdentityContainer) GetUserFlowAttributes()([]IdentityUserFlowAttributea
     return nil
 }
 // GetUserFlows gets the userFlows property value. The userFlows property
+// returns a []IdentityUserFlowable when successful
 func (m *IdentityContainer) GetUserFlows()([]IdentityUserFlowable) {
     val, err := m.GetBackingStore().Get("userFlows")
     if err != nil {
@@ -580,7 +595,6 @@ func (m *IdentityContainer) SetUserFlows(value []IdentityUserFlowable)() {
         panic(err)
     }
 }
-// IdentityContainerable 
 type IdentityContainerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

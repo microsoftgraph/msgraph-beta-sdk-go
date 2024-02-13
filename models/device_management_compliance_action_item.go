@@ -8,7 +8,7 @@ import (
 type DeviceManagementComplianceActionItem struct {
     Entity
 }
-// NewDeviceManagementComplianceActionItem instantiates a new deviceManagementComplianceActionItem and sets the default values.
+// NewDeviceManagementComplianceActionItem instantiates a new DeviceManagementComplianceActionItem and sets the default values.
 func NewDeviceManagementComplianceActionItem()(*DeviceManagementComplianceActionItem) {
     m := &DeviceManagementComplianceActionItem{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementComplianceActionItem()(*DeviceManagementComplianceAction
     return m
 }
 // CreateDeviceManagementComplianceActionItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementComplianceActionItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementComplianceActionItem(), nil
 }
 // GetActionType gets the actionType property value. Scheduled Action Type Enum
+// returns a *DeviceManagementComplianceActionType when successful
 func (m *DeviceManagementComplianceActionItem) GetActionType()(*DeviceManagementComplianceActionType) {
     val, err := m.GetBackingStore().Get("actionType")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceManagementComplianceActionItem) GetActionType()(*DeviceManagement
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,6 +85,7 @@ func (m *DeviceManagementComplianceActionItem) GetFieldDeserializers()(map[strin
     return res
 }
 // GetGracePeriodHours gets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
+// returns a *int32 when successful
 func (m *DeviceManagementComplianceActionItem) GetGracePeriodHours()(*int32) {
     val, err := m.GetBackingStore().Get("gracePeriodHours")
     if err != nil {
@@ -93,6 +97,7 @@ func (m *DeviceManagementComplianceActionItem) GetGracePeriodHours()(*int32) {
     return nil
 }
 // GetNotificationMessageCCList gets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
+// returns a []string when successful
 func (m *DeviceManagementComplianceActionItem) GetNotificationMessageCCList()([]string) {
     val, err := m.GetBackingStore().Get("notificationMessageCCList")
     if err != nil {
@@ -104,6 +109,7 @@ func (m *DeviceManagementComplianceActionItem) GetNotificationMessageCCList()([]
     return nil
 }
 // GetNotificationTemplateId gets the notificationTemplateId property value. What notification Message template to use
+// returns a *string when successful
 func (m *DeviceManagementComplianceActionItem) GetNotificationTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("notificationTemplateId")
     if err != nil {
@@ -175,7 +181,6 @@ func (m *DeviceManagementComplianceActionItem) SetNotificationTemplateId(value *
         panic(err)
     }
 }
-// DeviceManagementComplianceActionItemable 
 type DeviceManagementComplianceActionItemable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

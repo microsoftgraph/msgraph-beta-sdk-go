@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActivityStatistics 
 type ActivityStatistics struct {
     Entity
 }
-// NewActivityStatistics instantiates a new activityStatistics and sets the default values.
+// NewActivityStatistics instantiates a new ActivityStatistics and sets the default values.
 func NewActivityStatistics()(*ActivityStatistics) {
     m := &ActivityStatistics{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewActivityStatistics()(*ActivityStatistics) {
     return m
 }
 // CreateActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActivityStatisticsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -46,6 +46,7 @@ func CreateActivityStatisticsFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewActivityStatistics(), nil
 }
 // GetActivity gets the activity property value. The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.
+// returns a *AnalyticsActivityType when successful
 func (m *ActivityStatistics) GetActivity()(*AnalyticsActivityType) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
@@ -57,6 +58,7 @@ func (m *ActivityStatistics) GetActivity()(*AnalyticsActivityType) {
     return nil
 }
 // GetDuration gets the duration property value. Total hours spent on the activity. The value is represented in ISO 8601 format for durations.
+// returns a *ISODuration when successful
 func (m *ActivityStatistics) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -68,6 +70,7 @@ func (m *ActivityStatistics) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // GetEndDate gets the endDate property value. Date when the activity ended, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-03' that follows the YYYY-MM-DD format.
+// returns a *DateOnly when successful
 func (m *ActivityStatistics) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("endDate")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *ActivityStatistics) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -134,6 +138,7 @@ func (m *ActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetStartDate gets the startDate property value. Date when the activity started, expressed in ISO 8601 format for calendar dates. For example, the property value could be '2019-07-04' that follows the YYYY-MM-DD format.
+// returns a *DateOnly when successful
 func (m *ActivityStatistics) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("startDate")
     if err != nil {
@@ -145,6 +150,7 @@ func (m *ActivityStatistics) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // GetTimeZoneUsed gets the timeZoneUsed property value. The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be 'Pacific Standard Time.'
+// returns a *string when successful
 func (m *ActivityStatistics) GetTimeZoneUsed()(*string) {
     val, err := m.GetBackingStore().Get("timeZoneUsed")
     if err != nil {
@@ -229,7 +235,6 @@ func (m *ActivityStatistics) SetTimeZoneUsed(value *string)() {
         panic(err)
     }
 }
-// ActivityStatisticsable 
 type ActivityStatisticsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

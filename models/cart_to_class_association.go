@@ -9,7 +9,7 @@ import (
 type CartToClassAssociation struct {
     Entity
 }
-// NewCartToClassAssociation instantiates a new cartToClassAssociation and sets the default values.
+// NewCartToClassAssociation instantiates a new CartToClassAssociation and sets the default values.
 func NewCartToClassAssociation()(*CartToClassAssociation) {
     m := &CartToClassAssociation{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewCartToClassAssociation()(*CartToClassAssociation) {
     return m
 }
 // CreateCartToClassAssociationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCartToClassAssociationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCartToClassAssociation(), nil
 }
 // GetClassroomIds gets the classroomIds property value. Identifiers of classrooms to be associated with device carts.
+// returns a []string when successful
 func (m *CartToClassAssociation) GetClassroomIds()([]string) {
     val, err := m.GetBackingStore().Get("classroomIds")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *CartToClassAssociation) GetClassroomIds()([]string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
+// returns a *Time when successful
 func (m *CartToClassAssociation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *CartToClassAssociation) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDescription gets the description property value. Admin provided description of the CartToClassAssociation.
+// returns a *string when successful
 func (m *CartToClassAssociation) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *CartToClassAssociation) GetDescription()(*string) {
     return nil
 }
 // GetDeviceCartIds gets the deviceCartIds property value. Identifiers of device carts to be associated with classes.
+// returns a []string when successful
 func (m *CartToClassAssociation) GetDeviceCartIds()([]string) {
     val, err := m.GetBackingStore().Get("deviceCartIds")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *CartToClassAssociation) GetDeviceCartIds()([]string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
+// returns a *string when successful
 func (m *CartToClassAssociation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *CartToClassAssociation) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CartToClassAssociation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["classroomIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -163,6 +170,7 @@ func (m *CartToClassAssociation) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// returns a *Time when successful
 func (m *CartToClassAssociation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -174,6 +182,7 @@ func (m *CartToClassAssociation) GetLastModifiedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetVersion gets the version property value. Version of the CartToClassAssociation.
+// returns a *int32 when successful
 func (m *CartToClassAssociation) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -283,7 +292,6 @@ func (m *CartToClassAssociation) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// CartToClassAssociationable 
 type CartToClassAssociationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

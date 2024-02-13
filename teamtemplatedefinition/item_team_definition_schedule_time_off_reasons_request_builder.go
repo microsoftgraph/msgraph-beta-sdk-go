@@ -45,6 +45,7 @@ type ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderPostRequestConfigurat
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByTimeOffReasonId provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
+// returns a *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder when successful
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) ByTimeOffReasonId(timeOffReasonId string)(*ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -55,24 +56,27 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) ByTimeOffReason
     }
     return NewItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderInternal instantiates a new TimeOffReasonsRequestBuilder and sets the default values.
+// NewItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderInternal instantiates a new ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder and sets the default values.
 func NewItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) {
     m := &ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeOffReasons{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeOffReasons{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder instantiates a new TimeOffReasonsRequestBuilder and sets the default values.
+// NewItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder instantiates a new ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder and sets the default values.
 func NewItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemTeamDefinitionScheduleTimeOffReasonsCountRequestBuilder when successful
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) Count()(*ItemTeamDefinitionScheduleTimeOffReasonsCountRequestBuilder) {
     return NewItemTeamDefinitionScheduleTimeOffReasonsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of timeOffReasons in a schedule.
+// returns a TimeOffReasonCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
@@ -82,8 +86,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) Get(ctx context
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTimeOffReasonCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -95,6 +98,8 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) Get(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonCollectionResponseable), nil
 }
 // Post create a new timeOffReason.
+// returns a TimeOffReasonable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-1.0
@@ -104,8 +109,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) Post(ctx contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTimeOffReasonFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -117,6 +121,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) Post(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable), nil
 }
 // ToGetRequestInformation get the list of timeOffReasons in a schedule.
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -130,8 +135,9 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new timeOffReason.
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable, requestConfiguration *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeOffReasons", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -144,6 +150,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) ToPostRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder when successful
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) {
     return NewItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -41,28 +41,28 @@ type ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderPatchRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewThreatIntelligenceHostComponentsHostComponentItemRequestBuilderInternal instantiates a new HostComponentItemRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostComponentsHostComponentItemRequestBuilderInternal instantiates a new ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostComponentsHostComponentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) {
     m := &ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostComponents/{hostComponent%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hostComponents/{hostComponent%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceHostComponentsHostComponentItemRequestBuilder instantiates a new HostComponentItemRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostComponentsHostComponentItemRequestBuilder instantiates a new ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostComponentsHostComponentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostComponentsHostComponentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property hostComponents for security
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,6 +71,8 @@ func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Delete
     return nil
 }
 // Get read the properties and relationships of a hostComponent object.
+// returns a HostComponentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-hostcomponent-get?view=graph-rest-1.0
@@ -80,8 +82,7 @@ func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Get(ct
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateHostComponentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,18 +94,20 @@ func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Get(ct
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostComponentable), nil
 }
 // Host provides operations to manage the host property of the microsoft.graph.security.hostComponent entity.
+// returns a *ThreatIntelligenceHostComponentsItemHostRequestBuilder when successful
 func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Host()(*ThreatIntelligenceHostComponentsItemHostRequestBuilder) {
     return NewThreatIntelligenceHostComponentsItemHostRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property hostComponents in security
+// returns a HostComponentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostComponentable, requestConfiguration *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostComponentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateHostComponentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,8 +119,9 @@ func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) Patch(
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostComponentable), nil
 }
 // ToDeleteRequestInformation delete navigation property hostComponents for security
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/threatIntelligence/hostComponents/{hostComponent%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -126,6 +130,7 @@ func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) ToDele
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a hostComponent object.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -139,8 +144,9 @@ func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property hostComponents in security
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostComponentable, requestConfiguration *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/threatIntelligence/hostComponents/{hostComponent%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -153,6 +159,7 @@ func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) ToPatc
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder when successful
 func (m *ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostComponentsHostComponentItemRequestBuilder) {
     return NewThreatIntelligenceHostComponentsHostComponentItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

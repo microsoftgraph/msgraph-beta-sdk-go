@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationEventsFlowCollectionResponse 
 type AuthenticationEventsFlowCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewAuthenticationEventsFlowCollectionResponse instantiates a new authenticationEventsFlowCollectionResponse and sets the default values.
+// NewAuthenticationEventsFlowCollectionResponse instantiates a new AuthenticationEventsFlowCollectionResponse and sets the default values.
 func NewAuthenticationEventsFlowCollectionResponse()(*AuthenticationEventsFlowCollectionResponse) {
     m := &AuthenticationEventsFlowCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewAuthenticationEventsFlowCollectionResponse()(*AuthenticationEventsFlowCo
     return m
 }
 // CreateAuthenticationEventsFlowCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationEventsFlowCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationEventsFlowCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationEventsFlowCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AuthenticationEventsFlowCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AuthenticationEventsFlowable when successful
 func (m *AuthenticationEventsFlowCollectionResponse) GetValue()([]AuthenticationEventsFlowable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AuthenticationEventsFlowCollectionResponse) SetValue(value []Authentica
         panic(err)
     }
 }
-// AuthenticationEventsFlowCollectionResponseable 
 type AuthenticationEventsFlowCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
