@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonWebsite 
 type PersonWebsite struct {
     ItemFacet
 }
-// NewPersonWebsite instantiates a new personWebsite and sets the default values.
+// NewPersonWebsite instantiates a new PersonWebsite and sets the default values.
 func NewPersonWebsite()(*PersonWebsite) {
     m := &PersonWebsite{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewPersonWebsite()(*PersonWebsite) {
     return m
 }
 // CreatePersonWebsiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePersonWebsiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonWebsite(), nil
 }
 // GetCategories gets the categories property value. Contains categories a user has associated with the website (for example, personal, recipes).
+// returns a []string when successful
 func (m *PersonWebsite) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PersonWebsite) GetCategories()([]string) {
     return nil
 }
 // GetDescription gets the description property value. Contains a description of the website.
+// returns a *string when successful
 func (m *PersonWebsite) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *PersonWebsite) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the website.
+// returns a *string when successful
 func (m *PersonWebsite) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *PersonWebsite) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PersonWebsite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +120,7 @@ func (m *PersonWebsite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
+// returns a *string when successful
 func (m *PersonWebsite) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -127,6 +132,7 @@ func (m *PersonWebsite) GetThumbnailUrl()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. Contains a link to the website itself.
+// returns a *string when successful
 func (m *PersonWebsite) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -210,7 +216,6 @@ func (m *PersonWebsite) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// PersonWebsiteable 
 type PersonWebsiteable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

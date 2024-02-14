@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EdiscoveryExportOperation 
 type EdiscoveryExportOperation struct {
     CaseOperation
 }
-// NewEdiscoveryExportOperation instantiates a new ediscoveryExportOperation and sets the default values.
+// NewEdiscoveryExportOperation instantiates a new EdiscoveryExportOperation and sets the default values.
 func NewEdiscoveryExportOperation()(*EdiscoveryExportOperation) {
     m := &EdiscoveryExportOperation{
         CaseOperation: *NewCaseOperation(),
@@ -16,10 +15,12 @@ func NewEdiscoveryExportOperation()(*EdiscoveryExportOperation) {
     return m
 }
 // CreateEdiscoveryExportOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdiscoveryExportOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryExportOperation(), nil
 }
 // GetAzureBlobContainer gets the azureBlobContainer property value. The azureBlobContainer property
+// returns a *string when successful
 func (m *EdiscoveryExportOperation) GetAzureBlobContainer()(*string) {
     val, err := m.GetBackingStore().Get("azureBlobContainer")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *EdiscoveryExportOperation) GetAzureBlobContainer()(*string) {
     return nil
 }
 // GetAzureBlobToken gets the azureBlobToken property value. The azureBlobToken property
+// returns a *string when successful
 func (m *EdiscoveryExportOperation) GetAzureBlobToken()(*string) {
     val, err := m.GetBackingStore().Get("azureBlobToken")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *EdiscoveryExportOperation) GetAzureBlobToken()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The description provided for the export.
+// returns a *string when successful
 func (m *EdiscoveryExportOperation) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *EdiscoveryExportOperation) GetDescription()(*string) {
     return nil
 }
 // GetExportFileMetadata gets the exportFileMetadata property value. The exportFileMetadata property
+// returns a []ExportFileMetadataable when successful
 func (m *EdiscoveryExportOperation) GetExportFileMetadata()([]ExportFileMetadataable) {
     val, err := m.GetBackingStore().Get("exportFileMetadata")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *EdiscoveryExportOperation) GetExportFileMetadata()([]ExportFileMetadata
     return nil
 }
 // GetExportOptions gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30, 2023. Going forward, the summary and load file are always included.
+// returns a *ExportOptions when successful
 func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
     val, err := m.GetBackingStore().Get("exportOptions")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
     return nil
 }
 // GetExportStructure gets the exportStructure property value. The options provided that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
+// returns a *ExportFileStructure when successful
 func (m *EdiscoveryExportOperation) GetExportStructure()(*ExportFileStructure) {
     val, err := m.GetBackingStore().Get("exportStructure")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *EdiscoveryExportOperation) GetExportStructure()(*ExportFileStructure) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdiscoveryExportOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CaseOperation.GetFieldDeserializers()
     res["azureBlobContainer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -197,6 +204,7 @@ func (m *EdiscoveryExportOperation) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetOutputFolderId gets the outputFolderId property value. The outputFolderId property
+// returns a *string when successful
 func (m *EdiscoveryExportOperation) GetOutputFolderId()(*string) {
     val, err := m.GetBackingStore().Get("outputFolderId")
     if err != nil {
@@ -208,6 +216,7 @@ func (m *EdiscoveryExportOperation) GetOutputFolderId()(*string) {
     return nil
 }
 // GetOutputName gets the outputName property value. The name provided for the export.
+// returns a *string when successful
 func (m *EdiscoveryExportOperation) GetOutputName()(*string) {
     val, err := m.GetBackingStore().Get("outputName")
     if err != nil {
@@ -219,6 +228,7 @@ func (m *EdiscoveryExportOperation) GetOutputName()(*string) {
     return nil
 }
 // GetReviewSet gets the reviewSet property value. Review set from where documents are exported.
+// returns a EdiscoveryReviewSetable when successful
 func (m *EdiscoveryExportOperation) GetReviewSet()(EdiscoveryReviewSetable) {
     val, err := m.GetBackingStore().Get("reviewSet")
     if err != nil {
@@ -230,6 +240,7 @@ func (m *EdiscoveryExportOperation) GetReviewSet()(EdiscoveryReviewSetable) {
     return nil
 }
 // GetReviewSetQuery gets the reviewSetQuery property value. The review set query that is used to filter the documents for export.
+// returns a EdiscoveryReviewSetQueryable when successful
 func (m *EdiscoveryExportOperation) GetReviewSetQuery()(EdiscoveryReviewSetQueryable) {
     val, err := m.GetBackingStore().Get("reviewSetQuery")
     if err != nil {
@@ -386,7 +397,6 @@ func (m *EdiscoveryExportOperation) SetReviewSetQuery(value EdiscoveryReviewSetQ
         panic(err)
     }
 }
-// EdiscoveryExportOperationable 
 type EdiscoveryExportOperationable interface {
     CaseOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

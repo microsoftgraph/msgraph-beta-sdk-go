@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerKioskModeFolderItem struct {
     AndroidDeviceOwnerKioskModeHomeScreenItem
 }
-// NewAndroidDeviceOwnerKioskModeFolderItem instantiates a new androidDeviceOwnerKioskModeFolderItem and sets the default values.
+// NewAndroidDeviceOwnerKioskModeFolderItem instantiates a new AndroidDeviceOwnerKioskModeFolderItem and sets the default values.
 func NewAndroidDeviceOwnerKioskModeFolderItem()(*AndroidDeviceOwnerKioskModeFolderItem) {
     m := &AndroidDeviceOwnerKioskModeFolderItem{
         AndroidDeviceOwnerKioskModeHomeScreenItem: *NewAndroidDeviceOwnerKioskModeHomeScreenItem(),
@@ -18,6 +18,7 @@ func NewAndroidDeviceOwnerKioskModeFolderItem()(*AndroidDeviceOwnerKioskModeFold
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeFolderItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerKioskModeFolderItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +43,7 @@ func CreateAndroidDeviceOwnerKioskModeFolderItemFromDiscriminatorValue(parseNode
     return NewAndroidDeviceOwnerKioskModeFolderItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerKioskModeFolderItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidDeviceOwnerKioskModeHomeScreenItem.GetFieldDeserializers()
     return res
@@ -54,7 +56,6 @@ func (m *AndroidDeviceOwnerKioskModeFolderItem) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// AndroidDeviceOwnerKioskModeFolderItemable 
 type AndroidDeviceOwnerKioskModeFolderItemable interface {
     AndroidDeviceOwnerKioskModeHomeScreenItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

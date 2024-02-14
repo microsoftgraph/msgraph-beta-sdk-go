@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsQualityUpdateProfileAssignmentCollectionResponse 
 type WindowsQualityUpdateProfileAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsQualityUpdateProfileAssignmentCollectionResponse instantiates a new windowsQualityUpdateProfileAssignmentCollectionResponse and sets the default values.
+// NewWindowsQualityUpdateProfileAssignmentCollectionResponse instantiates a new WindowsQualityUpdateProfileAssignmentCollectionResponse and sets the default values.
 func NewWindowsQualityUpdateProfileAssignmentCollectionResponse()(*WindowsQualityUpdateProfileAssignmentCollectionResponse) {
     m := &WindowsQualityUpdateProfileAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewWindowsQualityUpdateProfileAssignmentCollectionResponse()(*WindowsQualit
     return m
 }
 // CreateWindowsQualityUpdateProfileAssignmentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsQualityUpdateProfileAssignmentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsQualityUpdateProfileAssignmentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsQualityUpdateProfileAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *WindowsQualityUpdateProfileAssignmentCollectionResponse) GetFieldDeseri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []WindowsQualityUpdateProfileAssignmentable when successful
 func (m *WindowsQualityUpdateProfileAssignmentCollectionResponse) GetValue()([]WindowsQualityUpdateProfileAssignmentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *WindowsQualityUpdateProfileAssignmentCollectionResponse) SetValue(value
         panic(err)
     }
 }
-// WindowsQualityUpdateProfileAssignmentCollectionResponseable 
 type WindowsQualityUpdateProfileAssignmentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

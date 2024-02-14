@@ -8,7 +8,7 @@ import (
 type MacOSCustomAppConfiguration struct {
     DeviceConfiguration
 }
-// NewMacOSCustomAppConfiguration instantiates a new macOSCustomAppConfiguration and sets the default values.
+// NewMacOSCustomAppConfiguration instantiates a new MacOSCustomAppConfiguration and sets the default values.
 func NewMacOSCustomAppConfiguration()(*MacOSCustomAppConfiguration) {
     m := &MacOSCustomAppConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewMacOSCustomAppConfiguration()(*MacOSCustomAppConfiguration) {
     return m
 }
 // CreateMacOSCustomAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSCustomAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSCustomAppConfiguration(), nil
 }
 // GetBundleId gets the bundleId property value. Bundle id for targeting.
+// returns a *string when successful
 func (m *MacOSCustomAppConfiguration) GetBundleId()(*string) {
     val, err := m.GetBackingStore().Get("bundleId")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSCustomAppConfiguration) GetBundleId()(*string) {
     return nil
 }
 // GetConfigurationXml gets the configurationXml property value. Configuration xml. (UTF8 encoded byte array)
+// returns a []byte when successful
 func (m *MacOSCustomAppConfiguration) GetConfigurationXml()([]byte) {
     val, err := m.GetBackingStore().Get("configurationXml")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MacOSCustomAppConfiguration) GetConfigurationXml()([]byte) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSCustomAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["bundleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +83,7 @@ func (m *MacOSCustomAppConfiguration) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetFileName gets the fileName property value. Configuration file name (.plist
+// returns a *string when successful
 func (m *MacOSCustomAppConfiguration) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *MacOSCustomAppConfiguration) SetFileName(value *string)() {
         panic(err)
     }
 }
-// MacOSCustomAppConfigurationable 
 type MacOSCustomAppConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

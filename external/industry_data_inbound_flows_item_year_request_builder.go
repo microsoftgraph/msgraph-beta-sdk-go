@@ -27,28 +27,29 @@ type IndustryDataInboundFlowsItemYearRequestBuilderGetRequestConfiguration struc
     // Request query parameters
     QueryParameters *IndustryDataInboundFlowsItemYearRequestBuilderGetQueryParameters
 }
-// NewIndustryDataInboundFlowsItemYearRequestBuilderInternal instantiates a new YearRequestBuilder and sets the default values.
+// NewIndustryDataInboundFlowsItemYearRequestBuilderInternal instantiates a new IndustryDataInboundFlowsItemYearRequestBuilder and sets the default values.
 func NewIndustryDataInboundFlowsItemYearRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataInboundFlowsItemYearRequestBuilder) {
     m := &IndustryDataInboundFlowsItemYearRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/year{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/year{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewIndustryDataInboundFlowsItemYearRequestBuilder instantiates a new YearRequestBuilder and sets the default values.
+// NewIndustryDataInboundFlowsItemYearRequestBuilder instantiates a new IndustryDataInboundFlowsItemYearRequestBuilder and sets the default values.
 func NewIndustryDataInboundFlowsItemYearRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataInboundFlowsItemYearRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataInboundFlowsItemYearRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the year that the data brought in via this flow applies to.
+// returns a YearTimePeriodDefinitionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IndustryDataInboundFlowsItemYearRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsItemYearRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateYearTimePeriodDefinitionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *IndustryDataInboundFlowsItemYearRequestBuilder) Get(ctx context.Context
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable), nil
 }
 // ToGetRequestInformation the year that the data brought in via this flow applies to.
+// returns a *RequestInformation when successful
 func (m *IndustryDataInboundFlowsItemYearRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsItemYearRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *IndustryDataInboundFlowsItemYearRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IndustryDataInboundFlowsItemYearRequestBuilder when successful
 func (m *IndustryDataInboundFlowsItemYearRequestBuilder) WithUrl(rawUrl string)(*IndustryDataInboundFlowsItemYearRequestBuilder) {
     return NewIndustryDataInboundFlowsItemYearRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

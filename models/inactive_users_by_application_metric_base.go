@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InactiveUsersByApplicationMetricBase 
 type InactiveUsersByApplicationMetricBase struct {
     Entity
 }
-// NewInactiveUsersByApplicationMetricBase instantiates a new inactiveUsersByApplicationMetricBase and sets the default values.
+// NewInactiveUsersByApplicationMetricBase instantiates a new InactiveUsersByApplicationMetricBase and sets the default values.
 func NewInactiveUsersByApplicationMetricBase()(*InactiveUsersByApplicationMetricBase) {
     m := &InactiveUsersByApplicationMetricBase{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewInactiveUsersByApplicationMetricBase()(*InactiveUsersByApplicationMetric
     return m
 }
 // CreateInactiveUsersByApplicationMetricBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInactiveUsersByApplicationMetricBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateInactiveUsersByApplicationMetricBaseFromDiscriminatorValue(parseNode 
     return NewInactiveUsersByApplicationMetricBase(), nil
 }
 // GetAppId gets the appId property value. The appId property
+// returns a *string when successful
 func (m *InactiveUsersByApplicationMetricBase) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *InactiveUsersByApplicationMetricBase) GetAppId()(*string) {
     return nil
 }
 // GetFactDate gets the factDate property value. The factDate property
+// returns a *DateOnly when successful
 func (m *InactiveUsersByApplicationMetricBase) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *InactiveUsersByApplicationMetricBase) GetFactDate()(*i878a80d2330e89d26
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InactiveUsersByApplicationMetricBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +120,7 @@ func (m *InactiveUsersByApplicationMetricBase) GetFieldDeserializers()(map[strin
     return res
 }
 // GetInactive30DayCount gets the inactive30DayCount property value. The inactive30DayCount property
+// returns a *int64 when successful
 func (m *InactiveUsersByApplicationMetricBase) GetInactive30DayCount()(*int64) {
     val, err := m.GetBackingStore().Get("inactive30DayCount")
     if err != nil {
@@ -128,6 +132,7 @@ func (m *InactiveUsersByApplicationMetricBase) GetInactive30DayCount()(*int64) {
     return nil
 }
 // GetInactive60DayCount gets the inactive60DayCount property value. The inactive60DayCount property
+// returns a *int64 when successful
 func (m *InactiveUsersByApplicationMetricBase) GetInactive60DayCount()(*int64) {
     val, err := m.GetBackingStore().Get("inactive60DayCount")
     if err != nil {
@@ -139,6 +144,7 @@ func (m *InactiveUsersByApplicationMetricBase) GetInactive60DayCount()(*int64) {
     return nil
 }
 // GetInactive90DayCount gets the inactive90DayCount property value. The inactive90DayCount property
+// returns a *int64 when successful
 func (m *InactiveUsersByApplicationMetricBase) GetInactive90DayCount()(*int64) {
     val, err := m.GetBackingStore().Get("inactive90DayCount")
     if err != nil {
@@ -222,7 +228,6 @@ func (m *InactiveUsersByApplicationMetricBase) SetInactive90DayCount(value *int6
         panic(err)
     }
 }
-// InactiveUsersByApplicationMetricBaseable 
 type InactiveUsersByApplicationMetricBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MfaCompletionMetric 
 type MfaCompletionMetric struct {
     Entity
 }
-// NewMfaCompletionMetric instantiates a new mfaCompletionMetric and sets the default values.
+// NewMfaCompletionMetric instantiates a new MfaCompletionMetric and sets the default values.
 func NewMfaCompletionMetric()(*MfaCompletionMetric) {
     m := &MfaCompletionMetric{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewMfaCompletionMetric()(*MfaCompletionMetric) {
     return m
 }
 // CreateMfaCompletionMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMfaCompletionMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMfaCompletionMetric(), nil
 }
 // GetAppId gets the appId property value. The ID of the Microsoft Entra application. Supports $filter (eq).
+// returns a *string when successful
 func (m *MfaCompletionMetric) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *MfaCompletionMetric) GetAppId()(*string) {
     return nil
 }
 // GetAttemptsCount gets the attemptsCount property value. Number of users who attempted to sign up. Supports $filter (eq).
+// returns a *int64 when successful
 func (m *MfaCompletionMetric) GetAttemptsCount()(*int64) {
     val, err := m.GetBackingStore().Get("attemptsCount")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *MfaCompletionMetric) GetAttemptsCount()(*int64) {
     return nil
 }
 // GetFactDate gets the factDate property value. The date of the user insight.
+// returns a *DateOnly when successful
 func (m *MfaCompletionMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *MfaCompletionMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MfaCompletionMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +122,7 @@ func (m *MfaCompletionMetric) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetMfaMethod gets the mfaMethod property value. The MFA authentication method used by the customers. Supports $filter (eq).
+// returns a *string when successful
 func (m *MfaCompletionMetric) GetMfaMethod()(*string) {
     val, err := m.GetBackingStore().Get("mfaMethod")
     if err != nil {
@@ -129,6 +134,7 @@ func (m *MfaCompletionMetric) GetMfaMethod()(*string) {
     return nil
 }
 // GetOs gets the os property value. The platform of the device that the customers used. Supports $filter (eq).
+// returns a *string when successful
 func (m *MfaCompletionMetric) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *MfaCompletionMetric) GetOs()(*string) {
     return nil
 }
 // GetSuccessCount gets the successCount property value. Number of users who signed up successfully. Supports $filter (eq).
+// returns a *int64 when successful
 func (m *MfaCompletionMetric) GetSuccessCount()(*int64) {
     val, err := m.GetBackingStore().Get("successCount")
     if err != nil {
@@ -236,7 +243,6 @@ func (m *MfaCompletionMetric) SetSuccessCount(value *int64)() {
         panic(err)
     }
 }
-// MfaCompletionMetricable 
 type MfaCompletionMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

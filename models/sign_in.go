@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SignIn 
 type SignIn struct {
     Entity
 }
-// NewSignIn instantiates a new signIn and sets the default values.
+// NewSignIn instantiates a new SignIn and sets the default values.
 func NewSignIn()(*SignIn) {
     m := &SignIn{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewSignIn()(*SignIn) {
     return m
 }
 // CreateSignInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSignIn(), nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The application name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
+// returns a *string when successful
 func (m *SignIn) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *SignIn) GetAppDisplayName()(*string) {
     return nil
 }
 // GetAppId gets the appId property value. The application identifier in Microsoft Entra ID.  Supports $filter (eq).
+// returns a *string when successful
 func (m *SignIn) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *SignIn) GetAppId()(*string) {
     return nil
 }
 // GetAppliedConditionalAccessPolicies gets the appliedConditionalAccessPolicies property value. A list of conditional access policies that are triggered by the corresponding sign-in activity. Apps need additional Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.
+// returns a []AppliedConditionalAccessPolicyable when successful
 func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable) {
     val, err := m.GetBackingStore().Get("appliedConditionalAccessPolicies")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAcces
     return nil
 }
 // GetAppliedEventListeners gets the appliedEventListeners property value. Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which were triggered by the corresponding events in the sign-in event.
+// returns a []AppliedAuthenticationEventListenerable when successful
 func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable) {
     val, err := m.GetBackingStore().Get("appliedEventListeners")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListener
     return nil
 }
 // GetAppTokenProtectionStatus gets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
+// returns a *TokenProtectionStatus when successful
 func (m *SignIn) GetAppTokenProtectionStatus()(*TokenProtectionStatus) {
     val, err := m.GetBackingStore().Get("appTokenProtectionStatus")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *SignIn) GetAppTokenProtectionStatus()(*TokenProtectionStatus) {
     return nil
 }
 // GetAuthenticationAppDeviceDetails gets the authenticationAppDeviceDetails property value. Provides details about the app and device used during a Microsoft Entra authentication step.
+// returns a AuthenticationAppDeviceDetailsable when successful
 func (m *SignIn) GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable) {
     val, err := m.GetBackingStore().Get("authenticationAppDeviceDetails")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *SignIn) GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDeta
     return nil
 }
 // GetAuthenticationAppPolicyEvaluationDetails gets the authenticationAppPolicyEvaluationDetails property value. Provides details of the Microsoft Entra policies applied to a user and client authentication app during an authentication step.
+// returns a []AuthenticationAppPolicyDetailsable when successful
 func (m *SignIn) GetAuthenticationAppPolicyEvaluationDetails()([]AuthenticationAppPolicyDetailsable) {
     val, err := m.GetBackingStore().Get("authenticationAppPolicyEvaluationDetails")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *SignIn) GetAuthenticationAppPolicyEvaluationDetails()([]AuthenticationA
     return nil
 }
 // GetAuthenticationContextClassReferences gets the authenticationContextClassReferences property value. Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
+// returns a []AuthenticationContextable when successful
 func (m *SignIn) GetAuthenticationContextClassReferences()([]AuthenticationContextable) {
     val, err := m.GetBackingStore().Get("authenticationContextClassReferences")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *SignIn) GetAuthenticationContextClassReferences()([]AuthenticationConte
     return nil
 }
 // GetAuthenticationDetails gets the authenticationDetails property value. The result of the authentication attempt and more details on the authentication method.
+// returns a []AuthenticationDetailable when successful
 func (m *SignIn) GetAuthenticationDetails()([]AuthenticationDetailable) {
     val, err := m.GetBackingStore().Get("authenticationDetails")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *SignIn) GetAuthenticationDetails()([]AuthenticationDetailable) {
     return nil
 }
 // GetAuthenticationMethodsUsed gets the authenticationMethodsUsed property value. The authentication methods used. Possible values: SMS, Authenticator App, App Verification code, Password, FIDO, PTA, or PHS.
+// returns a []string when successful
 func (m *SignIn) GetAuthenticationMethodsUsed()([]string) {
     val, err := m.GetBackingStore().Get("authenticationMethodsUsed")
     if err != nil {
@@ -131,6 +141,7 @@ func (m *SignIn) GetAuthenticationMethodsUsed()([]string) {
     return nil
 }
 // GetAuthenticationProcessingDetails gets the authenticationProcessingDetails property value. More authentication processing details, such as the agent name for  PTA and PHS, or a server or farm name for federated authentication.
+// returns a []KeyValueable when successful
 func (m *SignIn) GetAuthenticationProcessingDetails()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("authenticationProcessingDetails")
     if err != nil {
@@ -142,6 +153,7 @@ func (m *SignIn) GetAuthenticationProcessingDetails()([]KeyValueable) {
     return nil
 }
 // GetAuthenticationProtocol gets the authenticationProtocol property value. Lists the protocol type or grant type used in the authentication. The possible values are: oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue, authenticationTransfer, and none. Use none for all authentications that don't have a specific value in that list.
+// returns a *ProtocolType when successful
 func (m *SignIn) GetAuthenticationProtocol()(*ProtocolType) {
     val, err := m.GetBackingStore().Get("authenticationProtocol")
     if err != nil {
@@ -153,6 +165,7 @@ func (m *SignIn) GetAuthenticationProtocol()(*ProtocolType) {
     return nil
 }
 // GetAuthenticationRequirement gets the authenticationRequirement property value. This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed.  Supports $filter (eq, startsWith).
+// returns a *string when successful
 func (m *SignIn) GetAuthenticationRequirement()(*string) {
     val, err := m.GetBackingStore().Get("authenticationRequirement")
     if err != nil {
@@ -164,6 +177,7 @@ func (m *SignIn) GetAuthenticationRequirement()(*string) {
     return nil
 }
 // GetAuthenticationRequirementPolicies gets the authenticationRequirementPolicies property value. Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.
+// returns a []AuthenticationRequirementPolicyable when successful
 func (m *SignIn) GetAuthenticationRequirementPolicies()([]AuthenticationRequirementPolicyable) {
     val, err := m.GetBackingStore().Get("authenticationRequirementPolicies")
     if err != nil {
@@ -175,6 +189,7 @@ func (m *SignIn) GetAuthenticationRequirementPolicies()([]AuthenticationRequirem
     return nil
 }
 // GetAutonomousSystemNumber gets the autonomousSystemNumber property value. The Autonomous System Number (ASN) of the network used by the actor.
+// returns a *int32 when successful
 func (m *SignIn) GetAutonomousSystemNumber()(*int32) {
     val, err := m.GetBackingStore().Get("autonomousSystemNumber")
     if err != nil {
@@ -186,6 +201,7 @@ func (m *SignIn) GetAutonomousSystemNumber()(*int32) {
     return nil
 }
 // GetAzureResourceId gets the azureResourceId property value. Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.
+// returns a *string when successful
 func (m *SignIn) GetAzureResourceId()(*string) {
     val, err := m.GetBackingStore().Get("azureResourceId")
     if err != nil {
@@ -197,6 +213,7 @@ func (m *SignIn) GetAzureResourceId()(*string) {
     return nil
 }
 // GetClientAppUsed gets the clientAppUsed property value. The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP.  Supports $filter (eq).
+// returns a *string when successful
 func (m *SignIn) GetClientAppUsed()(*string) {
     val, err := m.GetBackingStore().Get("clientAppUsed")
     if err != nil {
@@ -208,6 +225,7 @@ func (m *SignIn) GetClientAppUsed()(*string) {
     return nil
 }
 // GetClientCredentialType gets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Microsoft Entra ID to authenticate itself. You can review this property to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
+// returns a *ClientCredentialType when successful
 func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
     val, err := m.GetBackingStore().Get("clientCredentialType")
     if err != nil {
@@ -219,6 +237,7 @@ func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
     return nil
 }
 // GetConditionalAccessStatus gets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue.  Supports $filter (eq).
+// returns a *ConditionalAccessStatus when successful
 func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
     val, err := m.GetBackingStore().Get("conditionalAccessStatus")
     if err != nil {
@@ -230,6 +249,7 @@ func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
     return nil
 }
 // GetCorrelationId gets the correlationId property value. The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
+// returns a *string when successful
 func (m *SignIn) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
     if err != nil {
@@ -241,6 +261,7 @@ func (m *SignIn) GetCorrelationId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).
+// returns a *Time when successful
 func (m *SignIn) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -252,6 +273,7 @@ func (m *SignIn) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     return nil
 }
 // GetCrossTenantAccessType gets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: passthrough. If the sign in didn't cross tenant boundaries, the value is none.
+// returns a *SignInAccessType when successful
 func (m *SignIn) GetCrossTenantAccessType()(*SignInAccessType) {
     val, err := m.GetBackingStore().Get("crossTenantAccessType")
     if err != nil {
@@ -263,6 +285,7 @@ func (m *SignIn) GetCrossTenantAccessType()(*SignInAccessType) {
     return nil
 }
 // GetDeviceDetail gets the deviceDetail property value. The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser.  Supports $filter (eq, startsWith) on browser and operatingSystem properties.
+// returns a DeviceDetailable when successful
 func (m *SignIn) GetDeviceDetail()(DeviceDetailable) {
     val, err := m.GetBackingStore().Get("deviceDetail")
     if err != nil {
@@ -274,6 +297,7 @@ func (m *SignIn) GetDeviceDetail()(DeviceDetailable) {
     return nil
 }
 // GetFederatedCredentialId gets the federatedCredentialId property value. Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.
+// returns a *string when successful
 func (m *SignIn) GetFederatedCredentialId()(*string) {
     val, err := m.GetBackingStore().Get("federatedCredentialId")
     if err != nil {
@@ -285,6 +309,7 @@ func (m *SignIn) GetFederatedCredentialId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -1032,6 +1057,7 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetFlaggedForReview gets the flaggedForReview property value. During a failed sign-in, a user can select a button in the Azure portal to mark the failed event for tenant admins. If a user selects the button to flag the failed sign-in, this value is true.
+// returns a *bool when successful
 func (m *SignIn) GetFlaggedForReview()(*bool) {
     val, err := m.GetBackingStore().Get("flaggedForReview")
     if err != nil {
@@ -1043,6 +1069,7 @@ func (m *SignIn) GetFlaggedForReview()(*bool) {
     return nil
 }
 // GetHomeTenantId gets the homeTenantId property value. The tenant identifier of the user initiating the sign-in. Not applicable in Managed Identity or service principal sign ins.
+// returns a *string when successful
 func (m *SignIn) GetHomeTenantId()(*string) {
     val, err := m.GetBackingStore().Get("homeTenantId")
     if err != nil {
@@ -1054,6 +1081,7 @@ func (m *SignIn) GetHomeTenantId()(*string) {
     return nil
 }
 // GetHomeTenantName gets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.
+// returns a *string when successful
 func (m *SignIn) GetHomeTenantName()(*string) {
     val, err := m.GetBackingStore().Get("homeTenantName")
     if err != nil {
@@ -1065,6 +1093,7 @@ func (m *SignIn) GetHomeTenantName()(*string) {
     return nil
 }
 // GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Microsoft Entra ID might have also used token types not listed in this enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.
+// returns a *IncomingTokenType when successful
 func (m *SignIn) GetIncomingTokenType()(*IncomingTokenType) {
     val, err := m.GetBackingStore().Get("incomingTokenType")
     if err != nil {
@@ -1076,6 +1105,7 @@ func (m *SignIn) GetIncomingTokenType()(*IncomingTokenType) {
     return nil
 }
 // GetIpAddress gets the ipAddress property value. The IP address of the client from where the sign-in occurred.  Supports $filter (eq, startsWith).
+// returns a *string when successful
 func (m *SignIn) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -1087,6 +1117,7 @@ func (m *SignIn) GetIpAddress()(*string) {
     return nil
 }
 // GetIpAddressFromResourceProvider gets the ipAddressFromResourceProvider property value. The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address that Microsoft Exchange receives from the user can be recorded here. This value is often null.
+// returns a *string when successful
 func (m *SignIn) GetIpAddressFromResourceProvider()(*string) {
     val, err := m.GetBackingStore().Get("ipAddressFromResourceProvider")
     if err != nil {
@@ -1098,6 +1129,7 @@ func (m *SignIn) GetIpAddressFromResourceProvider()(*string) {
     return nil
 }
 // GetIsInteractive gets the isInteractive property value. Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Microsoft Entra ID. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Microsoft Entra ID or an associated app. In non-interactive sign in, the user doesn't provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user's behalf in a process transparent to the user.
+// returns a *bool when successful
 func (m *SignIn) GetIsInteractive()(*bool) {
     val, err := m.GetBackingStore().Get("isInteractive")
     if err != nil {
@@ -1109,6 +1141,7 @@ func (m *SignIn) GetIsInteractive()(*bool) {
     return nil
 }
 // GetIsTenantRestricted gets the isTenantRestricted property value. Shows whether the sign in event was subject to a Microsoft Entra tenant restriction policy.
+// returns a *bool when successful
 func (m *SignIn) GetIsTenantRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isTenantRestricted")
     if err != nil {
@@ -1120,6 +1153,7 @@ func (m *SignIn) GetIsTenantRestricted()(*bool) {
     return nil
 }
 // GetLocation gets the location property value. The city, state, and two letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
+// returns a SignInLocationable when successful
 func (m *SignIn) GetLocation()(SignInLocationable) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -1131,6 +1165,7 @@ func (m *SignIn) GetLocation()(SignInLocationable) {
     return nil
 }
 // GetManagedServiceIdentity gets the managedServiceIdentity property value. Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.
+// returns a ManagedIdentityable when successful
 func (m *SignIn) GetManagedServiceIdentity()(ManagedIdentityable) {
     val, err := m.GetBackingStore().Get("managedServiceIdentity")
     if err != nil {
@@ -1142,6 +1177,7 @@ func (m *SignIn) GetManagedServiceIdentity()(ManagedIdentityable) {
     return nil
 }
 // GetMfaDetail gets the mfaDetail property value. The mfaDetail property
+// returns a MfaDetailable when successful
 func (m *SignIn) GetMfaDetail()(MfaDetailable) {
     val, err := m.GetBackingStore().Get("mfaDetail")
     if err != nil {
@@ -1153,6 +1189,7 @@ func (m *SignIn) GetMfaDetail()(MfaDetailable) {
     return nil
 }
 // GetNetworkLocationDetails gets the networkLocationDetails property value. The network location details including the type of network used and its names.
+// returns a []NetworkLocationDetailable when successful
 func (m *SignIn) GetNetworkLocationDetails()([]NetworkLocationDetailable) {
     val, err := m.GetBackingStore().Get("networkLocationDetails")
     if err != nil {
@@ -1164,6 +1201,7 @@ func (m *SignIn) GetNetworkLocationDetails()([]NetworkLocationDetailable) {
     return nil
 }
 // GetOriginalRequestId gets the originalRequestId property value. The request identifier of the first request in the authentication sequence.  Supports $filter (eq).
+// returns a *string when successful
 func (m *SignIn) GetOriginalRequestId()(*string) {
     val, err := m.GetBackingStore().Get("originalRequestId")
     if err != nil {
@@ -1175,6 +1213,7 @@ func (m *SignIn) GetOriginalRequestId()(*string) {
     return nil
 }
 // GetOriginalTransferMethod gets the originalTransferMethod property value. Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
+// returns a *OriginalTransferMethods when successful
 func (m *SignIn) GetOriginalTransferMethod()(*OriginalTransferMethods) {
     val, err := m.GetBackingStore().Get("originalTransferMethod")
     if err != nil {
@@ -1186,6 +1225,7 @@ func (m *SignIn) GetOriginalTransferMethod()(*OriginalTransferMethods) {
     return nil
 }
 // GetPrivateLinkDetails gets the privateLinkDetails property value. Contains information about the Microsoft Entra Private Link policy that is associated with the sign in event.
+// returns a PrivateLinkDetailsable when successful
 func (m *SignIn) GetPrivateLinkDetails()(PrivateLinkDetailsable) {
     val, err := m.GetBackingStore().Get("privateLinkDetails")
     if err != nil {
@@ -1197,6 +1237,7 @@ func (m *SignIn) GetPrivateLinkDetails()(PrivateLinkDetailsable) {
     return nil
 }
 // GetProcessingTimeInMilliseconds gets the processingTimeInMilliseconds property value. The request processing time in milliseconds in AD STS.
+// returns a *int32 when successful
 func (m *SignIn) GetProcessingTimeInMilliseconds()(*int32) {
     val, err := m.GetBackingStore().Get("processingTimeInMilliseconds")
     if err != nil {
@@ -1208,6 +1249,7 @@ func (m *SignIn) GetProcessingTimeInMilliseconds()(*int32) {
     return nil
 }
 // GetResourceDisplayName gets the resourceDisplayName property value. The name of the resource that the user signed in to.  Supports $filter (eq).
+// returns a *string when successful
 func (m *SignIn) GetResourceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("resourceDisplayName")
     if err != nil {
@@ -1219,6 +1261,7 @@ func (m *SignIn) GetResourceDisplayName()(*string) {
     return nil
 }
 // GetResourceId gets the resourceId property value. The identifier of the resource that the user signed in to.  Supports $filter (eq).
+// returns a *string when successful
 func (m *SignIn) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -1230,6 +1273,7 @@ func (m *SignIn) GetResourceId()(*string) {
     return nil
 }
 // GetResourceServicePrincipalId gets the resourceServicePrincipalId property value. The identifier of the service principal representing the target resource in the sign-in event.
+// returns a *string when successful
 func (m *SignIn) GetResourceServicePrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("resourceServicePrincipalId")
     if err != nil {
@@ -1241,6 +1285,7 @@ func (m *SignIn) GetResourceServicePrincipalId()(*string) {
     return nil
 }
 // GetResourceTenantId gets the resourceTenantId property value. The tenant identifier of the resource referenced in the sign in.
+// returns a *string when successful
 func (m *SignIn) GetResourceTenantId()(*string) {
     val, err := m.GetBackingStore().Get("resourceTenantId")
     if err != nil {
@@ -1252,6 +1297,7 @@ func (m *SignIn) GetResourceTenantId()(*string) {
     return nil
 }
 // GetRiskDetail gets the riskDetail property value. The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that Microsoft Entra risk detection has not flagged the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
+// returns a *RiskDetail when successful
 func (m *SignIn) GetRiskDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
     if err != nil {
@@ -1263,6 +1309,7 @@ func (m *SignIn) GetRiskDetail()(*RiskDetail) {
     return nil
 }
 // GetRiskEventTypesV2 gets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
+// returns a []string when successful
 func (m *SignIn) GetRiskEventTypesV2()([]string) {
     val, err := m.GetBackingStore().Get("riskEventTypes_v2")
     if err != nil {
@@ -1274,6 +1321,7 @@ func (m *SignIn) GetRiskEventTypesV2()([]string) {
     return nil
 }
 // GetRiskLevelAggregated gets the riskLevelAggregated property value. The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
+// returns a *RiskLevel when successful
 func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevelAggregated")
     if err != nil {
@@ -1285,6 +1333,7 @@ func (m *SignIn) GetRiskLevelAggregated()(*RiskLevel) {
     return nil
 }
 // GetRiskLevelDuringSignIn gets the riskLevelDuringSignIn property value. The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn't enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
+// returns a *RiskLevel when successful
 func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevelDuringSignIn")
     if err != nil {
@@ -1296,6 +1345,7 @@ func (m *SignIn) GetRiskLevelDuringSignIn()(*RiskLevel) {
     return nil
 }
 // GetRiskState gets the riskState property value. The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue.  Supports $filter (eq).
+// returns a *RiskState when successful
 func (m *SignIn) GetRiskState()(*RiskState) {
     val, err := m.GetBackingStore().Get("riskState")
     if err != nil {
@@ -1307,6 +1357,7 @@ func (m *SignIn) GetRiskState()(*RiskState) {
     return nil
 }
 // GetServicePrincipalCredentialKeyId gets the servicePrincipalCredentialKeyId property value. The unique identifier of the key credential used by the service principal to authenticate.
+// returns a *string when successful
 func (m *SignIn) GetServicePrincipalCredentialKeyId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalCredentialKeyId")
     if err != nil {
@@ -1318,6 +1369,7 @@ func (m *SignIn) GetServicePrincipalCredentialKeyId()(*string) {
     return nil
 }
 // GetServicePrincipalCredentialThumbprint gets the servicePrincipalCredentialThumbprint property value. The certificate thumbprint of the certificate used by the service principal to authenticate.
+// returns a *string when successful
 func (m *SignIn) GetServicePrincipalCredentialThumbprint()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalCredentialThumbprint")
     if err != nil {
@@ -1329,6 +1381,7 @@ func (m *SignIn) GetServicePrincipalCredentialThumbprint()(*string) {
     return nil
 }
 // GetServicePrincipalId gets the servicePrincipalId property value. The application identifier used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
+// returns a *string when successful
 func (m *SignIn) GetServicePrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalId")
     if err != nil {
@@ -1340,6 +1393,7 @@ func (m *SignIn) GetServicePrincipalId()(*string) {
     return nil
 }
 // GetServicePrincipalName gets the servicePrincipalName property value. The application name used for sign-in. This field is populated when you're signing in using an application.  Supports $filter (eq, startsWith).
+// returns a *string when successful
 func (m *SignIn) GetServicePrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalName")
     if err != nil {
@@ -1351,6 +1405,7 @@ func (m *SignIn) GetServicePrincipalName()(*string) {
     return nil
 }
 // GetSessionLifetimePolicies gets the sessionLifetimePolicies property value. Any conditional access session management policies that were applied during the sign-in event.
+// returns a []SessionLifetimePolicyable when successful
 func (m *SignIn) GetSessionLifetimePolicies()([]SessionLifetimePolicyable) {
     val, err := m.GetBackingStore().Get("sessionLifetimePolicies")
     if err != nil {
@@ -1362,6 +1417,7 @@ func (m *SignIn) GetSessionLifetimePolicies()([]SessionLifetimePolicyable) {
     return nil
 }
 // GetSignInEventTypes gets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).
+// returns a []string when successful
 func (m *SignIn) GetSignInEventTypes()([]string) {
     val, err := m.GetBackingStore().Get("signInEventTypes")
     if err != nil {
@@ -1373,6 +1429,7 @@ func (m *SignIn) GetSignInEventTypes()([]string) {
     return nil
 }
 // GetSignInIdentifier gets the signInIdentifier property value. The identification that the user provided to sign in. It can be the userPrincipalName, but is also populated when a user signs in using other identifiers.
+// returns a *string when successful
 func (m *SignIn) GetSignInIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("signInIdentifier")
     if err != nil {
@@ -1384,6 +1441,7 @@ func (m *SignIn) GetSignInIdentifier()(*string) {
     return nil
 }
 // GetSignInIdentifierType gets the signInIdentifierType property value. The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
+// returns a *SignInIdentifierType when successful
 func (m *SignIn) GetSignInIdentifierType()(*SignInIdentifierType) {
     val, err := m.GetBackingStore().Get("signInIdentifierType")
     if err != nil {
@@ -1395,6 +1453,7 @@ func (m *SignIn) GetSignInIdentifierType()(*SignInIdentifierType) {
     return nil
 }
 // GetSignInTokenProtectionStatus gets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it is issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
+// returns a *TokenProtectionStatus when successful
 func (m *SignIn) GetSignInTokenProtectionStatus()(*TokenProtectionStatus) {
     val, err := m.GetBackingStore().Get("signInTokenProtectionStatus")
     if err != nil {
@@ -1406,6 +1465,7 @@ func (m *SignIn) GetSignInTokenProtectionStatus()(*TokenProtectionStatus) {
     return nil
 }
 // GetStatus gets the status property value. The sign-in status. Includes the error code and description of the error (for a sign-in failure).  Supports $filter (eq) on errorCode property.
+// returns a SignInStatusable when successful
 func (m *SignIn) GetStatus()(SignInStatusable) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -1417,6 +1477,7 @@ func (m *SignIn) GetStatus()(SignInStatusable) {
     return nil
 }
 // GetTokenIssuerName gets the tokenIssuerName property value. The name of the identity provider. For example, sts.microsoft.com.  Supports $filter (eq).
+// returns a *string when successful
 func (m *SignIn) GetTokenIssuerName()(*string) {
     val, err := m.GetBackingStore().Get("tokenIssuerName")
     if err != nil {
@@ -1428,6 +1489,7 @@ func (m *SignIn) GetTokenIssuerName()(*string) {
     return nil
 }
 // GetTokenIssuerType gets the tokenIssuerType property value. The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
+// returns a *TokenIssuerType when successful
 func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
     val, err := m.GetBackingStore().Get("tokenIssuerType")
     if err != nil {
@@ -1439,6 +1501,7 @@ func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
     return nil
 }
 // GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Microsoft Entra ID as they're redeemed at resource providers.
+// returns a *string when successful
 func (m *SignIn) GetUniqueTokenIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("uniqueTokenIdentifier")
     if err != nil {
@@ -1450,6 +1513,7 @@ func (m *SignIn) GetUniqueTokenIdentifier()(*string) {
     return nil
 }
 // GetUserAgent gets the userAgent property value. The user agent information related to sign-in.  Supports $filter (eq, startsWith).
+// returns a *string when successful
 func (m *SignIn) GetUserAgent()(*string) {
     val, err := m.GetBackingStore().Get("userAgent")
     if err != nil {
@@ -1461,6 +1525,7 @@ func (m *SignIn) GetUserAgent()(*string) {
     return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. The display name of the user.  Supports $filter (eq, startsWith).
+// returns a *string when successful
 func (m *SignIn) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -1472,6 +1537,7 @@ func (m *SignIn) GetUserDisplayName()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The identifier of the user.  Supports $filter (eq).
+// returns a *string when successful
 func (m *SignIn) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -1483,6 +1549,7 @@ func (m *SignIn) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The UPN of the user.  Supports $filter (eq, startsWith).
+// returns a *string when successful
 func (m *SignIn) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -1494,6 +1561,7 @@ func (m *SignIn) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUserType gets the userType property value. Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
+// returns a *SignInUserType when successful
 func (m *SignIn) GetUserType()(*SignInUserType) {
     val, err := m.GetBackingStore().Get("userType")
     if err != nil {
@@ -2452,7 +2520,6 @@ func (m *SignIn) SetUserType(value *SignInUserType)() {
         panic(err)
     }
 }
-// SignInable 
 type SignInable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

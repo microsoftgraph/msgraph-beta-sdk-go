@@ -41,28 +41,28 @@ type DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderInternal instantiates a new EnrollmentProfileItemRequestBuilder and sets the default values.
+// NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderInternal instantiates a new DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) {
     m := &DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder instantiates a new EnrollmentProfileItemRequestBuilder and sets the default values.
+// NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder instantiates a new DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property enrollmentProfiles for deviceManagement
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,18 +71,20 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequest
     return nil
 }
 // ExportMobileConfig provides operations to call the exportMobileConfig method.
+// returns a *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder when successful
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) ExportMobileConfig()(*DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder) {
     return NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the enrollment profiles.
+// returns a EnrollmentProfileable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEnrollmentProfileFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +96,15 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequest
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentProfileable), nil
 }
 // Patch update the navigation property enrollmentProfiles in deviceManagement
+// returns a EnrollmentProfileable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentProfileable, requestConfiguration *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentProfileable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEnrollmentProfileFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,12 +116,14 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequest
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentProfileable), nil
 }
 // SetDefaultProfile provides operations to call the setDefaultProfile method.
+// returns a *DepOnboardingSettingsItemEnrollmentProfilesItemSetDefaultProfileRequestBuilder when successful
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) SetDefaultProfile()(*DepOnboardingSettingsItemEnrollmentProfilesItemSetDefaultProfileRequestBuilder) {
     return NewDepOnboardingSettingsItemEnrollmentProfilesItemSetDefaultProfileRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property enrollmentProfiles for deviceManagement
+// returns a *RequestInformation when successful
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -127,6 +132,7 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequest
     return requestInfo, nil
 }
 // ToGetRequestInformation the enrollment profiles.
+// returns a *RequestInformation when successful
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -140,8 +146,9 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequest
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property enrollmentProfiles in deviceManagement
+// returns a *RequestInformation when successful
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentProfileable, requestConfiguration *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -154,10 +161,12 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequest
     return requestInfo, nil
 }
 // UpdateDeviceProfileAssignment provides operations to call the updateDeviceProfileAssignment method.
+// returns a *DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentRequestBuilder when successful
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) UpdateDeviceProfileAssignment()(*DepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentRequestBuilder) {
     return NewDepOnboardingSettingsItemEnrollmentProfilesItemUpdateDeviceProfileAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder when successful
 func (m *DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) WithUrl(rawUrl string)(*DepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder) {
     return NewDepOnboardingSettingsItemEnrollmentProfilesEnrollmentProfileItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

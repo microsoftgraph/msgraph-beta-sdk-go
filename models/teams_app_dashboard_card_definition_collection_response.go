@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsAppDashboardCardDefinitionCollectionResponse 
 type TeamsAppDashboardCardDefinitionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewTeamsAppDashboardCardDefinitionCollectionResponse instantiates a new teamsAppDashboardCardDefinitionCollectionResponse and sets the default values.
+// NewTeamsAppDashboardCardDefinitionCollectionResponse instantiates a new TeamsAppDashboardCardDefinitionCollectionResponse and sets the default values.
 func NewTeamsAppDashboardCardDefinitionCollectionResponse()(*TeamsAppDashboardCardDefinitionCollectionResponse) {
     m := &TeamsAppDashboardCardDefinitionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewTeamsAppDashboardCardDefinitionCollectionResponse()(*TeamsAppDashboardCa
     return m
 }
 // CreateTeamsAppDashboardCardDefinitionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamsAppDashboardCardDefinitionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsAppDashboardCardDefinitionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamsAppDashboardCardDefinitionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *TeamsAppDashboardCardDefinitionCollectionResponse) GetFieldDeserializer
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []TeamsAppDashboardCardDefinitionable when successful
 func (m *TeamsAppDashboardCardDefinitionCollectionResponse) GetValue()([]TeamsAppDashboardCardDefinitionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *TeamsAppDashboardCardDefinitionCollectionResponse) SetValue(value []Tea
         panic(err)
     }
 }
-// TeamsAppDashboardCardDefinitionCollectionResponseable 
 type TeamsAppDashboardCardDefinitionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

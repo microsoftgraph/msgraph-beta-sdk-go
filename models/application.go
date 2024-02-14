@@ -6,11 +6,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Application 
 type Application struct {
     DirectoryObject
 }
-// NewApplication instantiates a new application and sets the default values.
+// NewApplication instantiates a new Application and sets the default values.
 func NewApplication()(*Application) {
     m := &Application{
         DirectoryObject: *NewDirectoryObject(),
@@ -20,10 +19,12 @@ func NewApplication()(*Application) {
     return m
 }
 // CreateApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplication(), nil
 }
 // GetApi gets the api property value. Specifies settings for an application that implements a web API.
+// returns a ApiApplicationable when successful
 func (m *Application) GetApi()(ApiApplicationable) {
     val, err := m.GetBackingStore().Get("api")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *Application) GetApi()(ApiApplicationable) {
     return nil
 }
 // GetAppId gets the appId property value. The unique identifier for the application that is assigned by Microsoft Entra ID. Not nullable. Read-only. Alternate key. Supports $filter (eq).
+// returns a *string when successful
 func (m *Application) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *Application) GetAppId()(*string) {
     return nil
 }
 // GetAppManagementPolicies gets the appManagementPolicies property value. The appManagementPolicy applied to this application.
+// returns a []AppManagementPolicyable when successful
 func (m *Application) GetAppManagementPolicies()([]AppManagementPolicyable) {
     val, err := m.GetBackingStore().Get("appManagementPolicies")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *Application) GetAppManagementPolicies()([]AppManagementPolicyable) {
     return nil
 }
 // GetAppRoles gets the appRoles property value. The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
+// returns a []AppRoleable when successful
 func (m *Application) GetAppRoles()([]AppRoleable) {
     val, err := m.GetBackingStore().Get("appRoles")
     if err != nil {
@@ -68,6 +72,7 @@ func (m *Application) GetAppRoles()([]AppRoleable) {
     return nil
 }
 // GetAuthenticationBehaviors gets the authenticationBehaviors property value. The collection of authentication behaviors set for the application. Authentication behaviors are unset by default and must be explicitly enabled (or disabled). Returned only on $select.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
+// returns a AuthenticationBehaviorsable when successful
 func (m *Application) GetAuthenticationBehaviors()(AuthenticationBehaviorsable) {
     val, err := m.GetBackingStore().Get("authenticationBehaviors")
     if err != nil {
@@ -79,6 +84,7 @@ func (m *Application) GetAuthenticationBehaviors()(AuthenticationBehaviorsable) 
     return nil
 }
 // GetCertification gets the certification property value. Specifies the certification status of the application.
+// returns a Certificationable when successful
 func (m *Application) GetCertification()(Certificationable) {
     val, err := m.GetBackingStore().Get("certification")
     if err != nil {
@@ -90,6 +96,7 @@ func (m *Application) GetCertification()(Certificationable) {
     return nil
 }
 // GetConnectorGroup gets the connectorGroup property value. The connectorGroup the application is using with Microsoft Entra application proxy. Nullable.
+// returns a ConnectorGroupable when successful
 func (m *Application) GetConnectorGroup()(ConnectorGroupable) {
     val, err := m.GetBackingStore().Get("connectorGroup")
     if err != nil {
@@ -101,6 +108,7 @@ func (m *Application) GetConnectorGroup()(ConnectorGroupable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.
+// returns a *Time when successful
 func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -112,6 +120,7 @@ func (m *Application) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetCreatedOnBehalfOf gets the createdOnBehalfOf property value. Supports $filter (/$count eq 0, /$count ne 0). Read-only.
+// returns a DirectoryObjectable when successful
 func (m *Application) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("createdOnBehalfOf")
     if err != nil {
@@ -123,6 +132,7 @@ func (m *Application) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     return nil
 }
 // GetDefaultRedirectUri gets the defaultRedirectUri property value. The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Microsoft Entra ID sends the token to this redirect URI. Microsoft Entra ID also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
+// returns a *string when successful
 func (m *Application) GetDefaultRedirectUri()(*string) {
     val, err := m.GetBackingStore().Get("defaultRedirectUri")
     if err != nil {
@@ -134,6 +144,7 @@ func (m *Application) GetDefaultRedirectUri()(*string) {
     return nil
 }
 // GetDescription gets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// returns a *string when successful
 func (m *Application) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -145,6 +156,7 @@ func (m *Application) GetDescription()(*string) {
     return nil
 }
 // GetDisabledByMicrosoftStatus gets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
+// returns a *string when successful
 func (m *Application) GetDisabledByMicrosoftStatus()(*string) {
     val, err := m.GetBackingStore().Get("disabledByMicrosoftStatus")
     if err != nil {
@@ -156,6 +168,7 @@ func (m *Application) GetDisabledByMicrosoftStatus()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// returns a *string when successful
 func (m *Application) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -167,6 +180,7 @@ func (m *Application) GetDisplayName()(*string) {
     return nil
 }
 // GetExtensionProperties gets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
+// returns a []ExtensionPropertyable when successful
 func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
     val, err := m.GetBackingStore().Get("extensionProperties")
     if err != nil {
@@ -178,6 +192,7 @@ func (m *Application) GetExtensionProperties()([]ExtensionPropertyable) {
     return nil
 }
 // GetFederatedIdentityCredentials gets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
+// returns a []FederatedIdentityCredentialable when successful
 func (m *Application) GetFederatedIdentityCredentials()([]FederatedIdentityCredentialable) {
     val, err := m.GetBackingStore().Get("federatedIdentityCredentials")
     if err != nil {
@@ -189,6 +204,7 @@ func (m *Application) GetFederatedIdentityCredentials()([]FederatedIdentityCrede
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["api"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -742,6 +758,7 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetGroupMembershipClaims gets the groupMembershipClaims property value. Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Microsoft Entra roles), All (this gets all security groups, distribution groups, and Microsoft Entra directory roles that the signed-in user is a member of).
+// returns a *string when successful
 func (m *Application) GetGroupMembershipClaims()(*string) {
     val, err := m.GetBackingStore().Get("groupMembershipClaims")
     if err != nil {
@@ -753,6 +770,7 @@ func (m *Application) GetGroupMembershipClaims()(*string) {
     return nil
 }
 // GetHomeRealmDiscoveryPolicies gets the homeRealmDiscoveryPolicies property value. The homeRealmDiscoveryPolicies property
+// returns a []HomeRealmDiscoveryPolicyable when successful
 func (m *Application) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable) {
     val, err := m.GetBackingStore().Get("homeRealmDiscoveryPolicies")
     if err != nil {
@@ -764,6 +782,7 @@ func (m *Application) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicy
     return nil
 }
 // GetIdentifierUris gets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
+// returns a []string when successful
 func (m *Application) GetIdentifierUris()([]string) {
     val, err := m.GetBackingStore().Get("identifierUris")
     if err != nil {
@@ -775,6 +794,7 @@ func (m *Application) GetIdentifierUris()([]string) {
     return nil
 }
 // GetInfo gets the info property value. Basic profile information of the application, such as it's marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
+// returns a InformationalUrlable when successful
 func (m *Application) GetInfo()(InformationalUrlable) {
     val, err := m.GetBackingStore().Get("info")
     if err != nil {
@@ -786,6 +806,7 @@ func (m *Application) GetInfo()(InformationalUrlable) {
     return nil
 }
 // GetIsDeviceOnlyAuthSupported gets the isDeviceOnlyAuthSupported property value. Specifies whether this application supports device authentication without a user. The default is false.
+// returns a *bool when successful
 func (m *Application) GetIsDeviceOnlyAuthSupported()(*bool) {
     val, err := m.GetBackingStore().Get("isDeviceOnlyAuthSupported")
     if err != nil {
@@ -797,6 +818,7 @@ func (m *Application) GetIsDeviceOnlyAuthSupported()(*bool) {
     return nil
 }
 // GetIsFallbackPublicClient gets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
+// returns a *bool when successful
 func (m *Application) GetIsFallbackPublicClient()(*bool) {
     val, err := m.GetBackingStore().Get("isFallbackPublicClient")
     if err != nil {
@@ -808,6 +830,7 @@ func (m *Application) GetIsFallbackPublicClient()(*bool) {
     return nil
 }
 // GetKeyCredentials gets the keyCredentials property value. The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
+// returns a []KeyCredentialable when successful
 func (m *Application) GetKeyCredentials()([]KeyCredentialable) {
     val, err := m.GetBackingStore().Get("keyCredentials")
     if err != nil {
@@ -819,6 +842,7 @@ func (m *Application) GetKeyCredentials()([]KeyCredentialable) {
     return nil
 }
 // GetLogo gets the logo property value. The main logo for the application. Not nullable.
+// returns a []byte when successful
 func (m *Application) GetLogo()([]byte) {
     val, err := m.GetBackingStore().Get("logo")
     if err != nil {
@@ -830,6 +854,7 @@ func (m *Application) GetLogo()([]byte) {
     return nil
 }
 // GetNotes gets the notes property value. Notes relevant for the management of the application.
+// returns a *string when successful
 func (m *Application) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -841,6 +866,7 @@ func (m *Application) GetNotes()(*string) {
     return nil
 }
 // GetOnPremisesPublishing gets the onPremisesPublishing property value. Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.
+// returns a OnPremisesPublishingable when successful
 func (m *Application) GetOnPremisesPublishing()(OnPremisesPublishingable) {
     val, err := m.GetBackingStore().Get("onPremisesPublishing")
     if err != nil {
@@ -852,6 +878,7 @@ func (m *Application) GetOnPremisesPublishing()(OnPremisesPublishingable) {
     return nil
 }
 // GetOptionalClaims gets the optionalClaims property value. Application developers can configure optional claims in their Microsoft Entra applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
+// returns a OptionalClaimsable when successful
 func (m *Application) GetOptionalClaims()(OptionalClaimsable) {
     val, err := m.GetBackingStore().Get("optionalClaims")
     if err != nil {
@@ -863,6 +890,7 @@ func (m *Application) GetOptionalClaims()(OptionalClaimsable) {
     return nil
 }
 // GetOwners gets the owners property value. Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+// returns a []DirectoryObjectable when successful
 func (m *Application) GetOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("owners")
     if err != nil {
@@ -874,6 +902,7 @@ func (m *Application) GetOwners()([]DirectoryObjectable) {
     return nil
 }
 // GetParentalControlSettings gets the parentalControlSettings property value. Specifies parental control settings for an application.
+// returns a ParentalControlSettingsable when successful
 func (m *Application) GetParentalControlSettings()(ParentalControlSettingsable) {
     val, err := m.GetBackingStore().Get("parentalControlSettings")
     if err != nil {
@@ -885,6 +914,7 @@ func (m *Application) GetParentalControlSettings()(ParentalControlSettingsable) 
     return nil
 }
 // GetPasswordCredentials gets the passwordCredentials property value. The collection of password credentials associated with the application. Not nullable.
+// returns a []PasswordCredentialable when successful
 func (m *Application) GetPasswordCredentials()([]PasswordCredentialable) {
     val, err := m.GetBackingStore().Get("passwordCredentials")
     if err != nil {
@@ -896,6 +926,7 @@ func (m *Application) GetPasswordCredentials()([]PasswordCredentialable) {
     return nil
 }
 // GetPublicClient gets the publicClient property value. Specifies settings for installed clients such as desktop or mobile devices.
+// returns a PublicClientApplicationable when successful
 func (m *Application) GetPublicClient()(PublicClientApplicationable) {
     val, err := m.GetBackingStore().Get("publicClient")
     if err != nil {
@@ -907,6 +938,7 @@ func (m *Application) GetPublicClient()(PublicClientApplicationable) {
     return nil
 }
 // GetPublisherDomain gets the publisherDomain property value. The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).
+// returns a *string when successful
 func (m *Application) GetPublisherDomain()(*string) {
     val, err := m.GetBackingStore().Get("publisherDomain")
     if err != nil {
@@ -918,6 +950,7 @@ func (m *Application) GetPublisherDomain()(*string) {
     return nil
 }
 // GetRequestSignatureVerification gets the requestSignatureVerification property value. Specifies whether this application requires Microsoft Entra ID to verify the signed authentication requests.
+// returns a RequestSignatureVerificationable when successful
 func (m *Application) GetRequestSignatureVerification()(RequestSignatureVerificationable) {
     val, err := m.GetBackingStore().Get("requestSignatureVerification")
     if err != nil {
@@ -929,6 +962,7 @@ func (m *Application) GetRequestSignatureVerification()(RequestSignatureVerifica
     return nil
 }
 // GetRequiredResourceAccess gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
+// returns a []RequiredResourceAccessable when successful
 func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccessable) {
     val, err := m.GetBackingStore().Get("requiredResourceAccess")
     if err != nil {
@@ -940,6 +974,7 @@ func (m *Application) GetRequiredResourceAccess()([]RequiredResourceAccessable) 
     return nil
 }
 // GetSamlMetadataUrl gets the samlMetadataUrl property value. The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
+// returns a *string when successful
 func (m *Application) GetSamlMetadataUrl()(*string) {
     val, err := m.GetBackingStore().Get("samlMetadataUrl")
     if err != nil {
@@ -951,6 +986,7 @@ func (m *Application) GetSamlMetadataUrl()(*string) {
     return nil
 }
 // GetServiceManagementReference gets the serviceManagementReference property value. References application or service contact information from a Service or Asset Management database. Nullable.
+// returns a *string when successful
 func (m *Application) GetServiceManagementReference()(*string) {
     val, err := m.GetBackingStore().Get("serviceManagementReference")
     if err != nil {
@@ -962,6 +998,7 @@ func (m *Application) GetServiceManagementReference()(*string) {
     return nil
 }
 // GetServicePrincipalLockConfiguration gets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+// returns a ServicePrincipalLockConfigurationable when successful
 func (m *Application) GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable) {
     val, err := m.GetBackingStore().Get("servicePrincipalLockConfiguration")
     if err != nil {
@@ -973,6 +1010,7 @@ func (m *Application) GetServicePrincipalLockConfiguration()(ServicePrincipalLoc
     return nil
 }
 // GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
+// returns a *string when successful
 func (m *Application) GetSignInAudience()(*string) {
     val, err := m.GetBackingStore().Get("signInAudience")
     if err != nil {
@@ -984,6 +1022,7 @@ func (m *Application) GetSignInAudience()(*string) {
     return nil
 }
 // GetSpa gets the spa property value. Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
+// returns a SpaApplicationable when successful
 func (m *Application) GetSpa()(SpaApplicationable) {
     val, err := m.GetBackingStore().Get("spa")
     if err != nil {
@@ -995,6 +1034,7 @@ func (m *Application) GetSpa()(SpaApplicationable) {
     return nil
 }
 // GetSynchronization gets the synchronization property value. Represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.
+// returns a Synchronizationable when successful
 func (m *Application) GetSynchronization()(Synchronizationable) {
     val, err := m.GetBackingStore().Get("synchronization")
     if err != nil {
@@ -1006,6 +1046,7 @@ func (m *Application) GetSynchronization()(Synchronizationable) {
     return nil
 }
 // GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
+// returns a []string when successful
 func (m *Application) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -1017,6 +1058,7 @@ func (m *Application) GetTags()([]string) {
     return nil
 }
 // GetTokenEncryptionKeyId gets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Microsoft Entra ID encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
+// returns a *UUID when successful
 func (m *Application) GetTokenEncryptionKeyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("tokenEncryptionKeyId")
     if err != nil {
@@ -1028,6 +1070,7 @@ func (m *Application) GetTokenEncryptionKeyId()(*i561e97a8befe7661a44c8f54600992
     return nil
 }
 // GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The tokenIssuancePolicies property
+// returns a []TokenIssuancePolicyable when successful
 func (m *Application) GetTokenIssuancePolicies()([]TokenIssuancePolicyable) {
     val, err := m.GetBackingStore().Get("tokenIssuancePolicies")
     if err != nil {
@@ -1039,6 +1082,7 @@ func (m *Application) GetTokenIssuancePolicies()([]TokenIssuancePolicyable) {
     return nil
 }
 // GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this application. Supports $expand.
+// returns a []TokenLifetimePolicyable when successful
 func (m *Application) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
     val, err := m.GetBackingStore().Get("tokenLifetimePolicies")
     if err != nil {
@@ -1050,6 +1094,7 @@ func (m *Application) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
     return nil
 }
 // GetUniqueName gets the uniqueName property value. The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.
+// returns a *string when successful
 func (m *Application) GetUniqueName()(*string) {
     val, err := m.GetBackingStore().Get("uniqueName")
     if err != nil {
@@ -1061,6 +1106,7 @@ func (m *Application) GetUniqueName()(*string) {
     return nil
 }
 // GetVerifiedPublisher gets the verifiedPublisher property value. Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
+// returns a VerifiedPublisherable when successful
 func (m *Application) GetVerifiedPublisher()(VerifiedPublisherable) {
     val, err := m.GetBackingStore().Get("verifiedPublisher")
     if err != nil {
@@ -1072,6 +1118,7 @@ func (m *Application) GetVerifiedPublisher()(VerifiedPublisherable) {
     return nil
 }
 // GetWeb gets the web property value. Specifies settings for a web application.
+// returns a WebApplicationable when successful
 func (m *Application) GetWeb()(WebApplicationable) {
     val, err := m.GetBackingStore().Get("web")
     if err != nil {
@@ -1083,6 +1130,7 @@ func (m *Application) GetWeb()(WebApplicationable) {
     return nil
 }
 // GetWindows gets the windows property value. Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
+// returns a WindowsApplicationable when successful
 func (m *Application) GetWindows()(WindowsApplicationable) {
     val, err := m.GetBackingStore().Get("windows")
     if err != nil {
@@ -1778,7 +1826,6 @@ func (m *Application) SetWindows(value WindowsApplicationable)() {
         panic(err)
     }
 }
-// Applicationable 
 type Applicationable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

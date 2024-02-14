@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SensitiveType 
 type SensitiveType struct {
     Entity
 }
-// NewSensitiveType instantiates a new sensitiveType and sets the default values.
+// NewSensitiveType instantiates a new SensitiveType and sets the default values.
 func NewSensitiveType()(*SensitiveType) {
     m := &SensitiveType{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewSensitiveType()(*SensitiveType) {
     return m
 }
 // CreateSensitiveTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSensitiveTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSensitiveType(), nil
 }
 // GetClassificationMethod gets the classificationMethod property value. The classificationMethod property
+// returns a *ClassificationMethod when successful
 func (m *SensitiveType) GetClassificationMethod()(*ClassificationMethod) {
     val, err := m.GetBackingStore().Get("classificationMethod")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *SensitiveType) GetClassificationMethod()(*ClassificationMethod) {
     return nil
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *SensitiveType) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *SensitiveType) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["classificationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +140,7 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *SensitiveType) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -148,6 +152,7 @@ func (m *SensitiveType) GetName()(*string) {
     return nil
 }
 // GetPublisherName gets the publisherName property value. The publisherName property
+// returns a *string when successful
 func (m *SensitiveType) GetPublisherName()(*string) {
     val, err := m.GetBackingStore().Get("publisherName")
     if err != nil {
@@ -159,6 +164,7 @@ func (m *SensitiveType) GetPublisherName()(*string) {
     return nil
 }
 // GetRulePackageId gets the rulePackageId property value. The rulePackageId property
+// returns a *string when successful
 func (m *SensitiveType) GetRulePackageId()(*string) {
     val, err := m.GetBackingStore().Get("rulePackageId")
     if err != nil {
@@ -170,6 +176,7 @@ func (m *SensitiveType) GetRulePackageId()(*string) {
     return nil
 }
 // GetRulePackageType gets the rulePackageType property value. The rulePackageType property
+// returns a *string when successful
 func (m *SensitiveType) GetRulePackageType()(*string) {
     val, err := m.GetBackingStore().Get("rulePackageType")
     if err != nil {
@@ -181,6 +188,7 @@ func (m *SensitiveType) GetRulePackageType()(*string) {
     return nil
 }
 // GetScope gets the scope property value. The scope property
+// returns a *SensitiveTypeScope when successful
 func (m *SensitiveType) GetScope()(*SensitiveTypeScope) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -192,6 +200,7 @@ func (m *SensitiveType) GetScope()(*SensitiveTypeScope) {
     return nil
 }
 // GetSensitiveTypeSource gets the sensitiveTypeSource property value. The sensitiveTypeSource property
+// returns a *SensitiveTypeSource when successful
 func (m *SensitiveType) GetSensitiveTypeSource()(*SensitiveTypeSource) {
     val, err := m.GetBackingStore().Get("sensitiveTypeSource")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *SensitiveType) GetSensitiveTypeSource()(*SensitiveTypeSource) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *SensitiveType) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -341,7 +351,6 @@ func (m *SensitiveType) SetState(value *string)() {
         panic(err)
     }
 }
-// SensitiveTypeable 
 type SensitiveTypeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

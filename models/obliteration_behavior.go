@@ -7,7 +7,7 @@ type ObliterationBehavior int
 
 const (
     // Default. If Erase All Content and Settings (EACS) preflight fails, the device responds to the server with an Error status and then attempts to erase itself. If EACS preflight succeeds but EACS fails, then the device attempts to erase itself.
-    DEFAULTESCAPED_OBLITERATIONBEHAVIOR ObliterationBehavior = iota
+    DEFAULT_OBLITERATIONBEHAVIOR ObliterationBehavior = iota
     // If Erase All Content and Settings (EACS) preflight fails, the device responds to the server with an Error status and doesn’t attempt to erase itself. If EACS preflight succeeds but EACS fails, then the device doesn’t attempt to erase itself.
     DONOTOBLITERATE_OBLITERATIONBEHAVIOR
     // If Erase All Content and Settings (EACS) preflight fails, the device responds with an Acknowledged status and then attempts to erase itself. If EACS preflight succeeds but EACS fails, then the device attempts to erase itself.
@@ -22,10 +22,10 @@ func (i ObliterationBehavior) String() string {
     return []string{"default", "doNotObliterate", "obliterateWithWarning", "always", "unknownFutureValue"}[i]
 }
 func ParseObliterationBehavior(v string) (any, error) {
-    result := DEFAULTESCAPED_OBLITERATIONBEHAVIOR
+    result := DEFAULT_OBLITERATIONBEHAVIOR
     switch v {
         case "default":
-            result = DEFAULTESCAPED_OBLITERATIONBEHAVIOR
+            result = DEFAULT_OBLITERATIONBEHAVIOR
         case "doNotObliterate":
             result = DONOTOBLITERATE_OBLITERATIONBEHAVIOR
         case "obliterateWithWarning":

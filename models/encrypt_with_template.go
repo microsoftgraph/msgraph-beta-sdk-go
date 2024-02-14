@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EncryptWithTemplate 
 type EncryptWithTemplate struct {
     EncryptContent
 }
-// NewEncryptWithTemplate instantiates a new encryptWithTemplate and sets the default values.
+// NewEncryptWithTemplate instantiates a new EncryptWithTemplate and sets the default values.
 func NewEncryptWithTemplate()(*EncryptWithTemplate) {
     m := &EncryptWithTemplate{
         EncryptContent: *NewEncryptContent(),
@@ -18,10 +17,12 @@ func NewEncryptWithTemplate()(*EncryptWithTemplate) {
     return m
 }
 // CreateEncryptWithTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEncryptWithTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEncryptWithTemplate(), nil
 }
 // GetAvailableForEncryption gets the availableForEncryption property value. The availableForEncryption property
+// returns a *bool when successful
 func (m *EncryptWithTemplate) GetAvailableForEncryption()(*bool) {
     val, err := m.GetBackingStore().Get("availableForEncryption")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EncryptWithTemplate) GetAvailableForEncryption()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EncryptWithTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EncryptContent.GetFieldDeserializers()
     res["availableForEncryption"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *EncryptWithTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetTemplateId gets the templateId property value. The templateId property
+// returns a *string when successful
 func (m *EncryptWithTemplate) GetTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("templateId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *EncryptWithTemplate) SetTemplateId(value *string)() {
         panic(err)
     }
 }
-// EncryptWithTemplateable 
 type EncryptWithTemplateable interface {
     EncryptContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

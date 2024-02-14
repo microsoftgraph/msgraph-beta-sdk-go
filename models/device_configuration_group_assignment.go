@@ -8,7 +8,7 @@ import (
 type DeviceConfigurationGroupAssignment struct {
     Entity
 }
-// NewDeviceConfigurationGroupAssignment instantiates a new deviceConfigurationGroupAssignment and sets the default values.
+// NewDeviceConfigurationGroupAssignment instantiates a new DeviceConfigurationGroupAssignment and sets the default values.
 func NewDeviceConfigurationGroupAssignment()(*DeviceConfigurationGroupAssignment) {
     m := &DeviceConfigurationGroupAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceConfigurationGroupAssignment()(*DeviceConfigurationGroupAssignment
     return m
 }
 // CreateDeviceConfigurationGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationGroupAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationGroupAssignment(), nil
 }
 // GetDeviceConfiguration gets the deviceConfiguration property value. The navigation link to the Device Configuration being targeted.
+// returns a DeviceConfigurationable when successful
 func (m *DeviceConfigurationGroupAssignment) GetDeviceConfiguration()(DeviceConfigurationable) {
     val, err := m.GetBackingStore().Get("deviceConfiguration")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceConfigurationGroupAssignment) GetDeviceConfiguration()(DeviceConf
     return nil
 }
 // GetExcludeGroup gets the excludeGroup property value. Indicates if this group is should be excluded. Defaults that the group should be included
+// returns a *bool when successful
 func (m *DeviceConfigurationGroupAssignment) GetExcludeGroup()(*bool) {
     val, err := m.GetBackingStore().Get("excludeGroup")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *DeviceConfigurationGroupAssignment) GetExcludeGroup()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +81,7 @@ func (m *DeviceConfigurationGroupAssignment) GetFieldDeserializers()(map[string]
     return res
 }
 // GetTargetGroupId gets the targetGroupId property value. The Id of the AAD group we are targeting the device configuration to.
+// returns a *string when successful
 func (m *DeviceConfigurationGroupAssignment) GetTargetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("targetGroupId")
     if err != nil {
@@ -134,7 +139,6 @@ func (m *DeviceConfigurationGroupAssignment) SetTargetGroupId(value *string)() {
         panic(err)
     }
 }
-// DeviceConfigurationGroupAssignmentable 
 type DeviceConfigurationGroupAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

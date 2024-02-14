@@ -8,7 +8,7 @@ import (
 type DeviceManagementIntentUserStateSummary struct {
     Entity
 }
-// NewDeviceManagementIntentUserStateSummary instantiates a new deviceManagementIntentUserStateSummary and sets the default values.
+// NewDeviceManagementIntentUserStateSummary instantiates a new DeviceManagementIntentUserStateSummary and sets the default values.
 func NewDeviceManagementIntentUserStateSummary()(*DeviceManagementIntentUserStateSummary) {
     m := &DeviceManagementIntentUserStateSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementIntentUserStateSummary()(*DeviceManagementIntentUserStat
     return m
 }
 // CreateDeviceManagementIntentUserStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementIntentUserStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementIntentUserStateSummary(), nil
 }
 // GetConflictCount gets the conflictCount property value. Number of users in conflict
+// returns a *int32 when successful
 func (m *DeviceManagementIntentUserStateSummary) GetConflictCount()(*int32) {
     val, err := m.GetBackingStore().Get("conflictCount")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceManagementIntentUserStateSummary) GetConflictCount()(*int32) {
     return nil
 }
 // GetErrorCount gets the errorCount property value. Number of error users
+// returns a *int32 when successful
 func (m *DeviceManagementIntentUserStateSummary) GetErrorCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorCount")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *DeviceManagementIntentUserStateSummary) GetErrorCount()(*int32) {
     return nil
 }
 // GetFailedCount gets the failedCount property value. Number of failed users
+// returns a *int32 when successful
 func (m *DeviceManagementIntentUserStateSummary) GetFailedCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedCount")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *DeviceManagementIntentUserStateSummary) GetFailedCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementIntentUserStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["conflictCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +113,7 @@ func (m *DeviceManagementIntentUserStateSummary) GetFieldDeserializers()(map[str
     return res
 }
 // GetNotApplicableCount gets the notApplicableCount property value. Number of not applicable users
+// returns a *int32 when successful
 func (m *DeviceManagementIntentUserStateSummary) GetNotApplicableCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableCount")
     if err != nil {
@@ -119,6 +125,7 @@ func (m *DeviceManagementIntentUserStateSummary) GetNotApplicableCount()(*int32)
     return nil
 }
 // GetSuccessCount gets the successCount property value. Number of succeeded users
+// returns a *int32 when successful
 func (m *DeviceManagementIntentUserStateSummary) GetSuccessCount()(*int32) {
     val, err := m.GetBackingStore().Get("successCount")
     if err != nil {
@@ -202,7 +209,6 @@ func (m *DeviceManagementIntentUserStateSummary) SetSuccessCount(value *int32)()
         panic(err)
     }
 }
-// DeviceManagementIntentUserStateSummaryable 
 type DeviceManagementIntentUserStateSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

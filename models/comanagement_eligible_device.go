@@ -8,7 +8,7 @@ import (
 type ComanagementEligibleDevice struct {
     Entity
 }
-// NewComanagementEligibleDevice instantiates a new comanagementEligibleDevice and sets the default values.
+// NewComanagementEligibleDevice instantiates a new ComanagementEligibleDevice and sets the default values.
 func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {
     m := &ComanagementEligibleDevice{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewComanagementEligibleDevice()(*ComanagementEligibleDevice) {
     return m
 }
 // CreateComanagementEligibleDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateComanagementEligibleDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewComanagementEligibleDevice(), nil
 }
 // GetClientRegistrationStatus gets the clientRegistrationStatus property value. Device registration status.
+// returns a *DeviceRegistrationState when successful
 func (m *ComanagementEligibleDevice) GetClientRegistrationStatus()(*DeviceRegistrationState) {
     val, err := m.GetBackingStore().Get("clientRegistrationStatus")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *ComanagementEligibleDevice) GetClientRegistrationStatus()(*DeviceRegist
     return nil
 }
 // GetDeviceName gets the deviceName property value. DeviceName
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *ComanagementEligibleDevice) GetDeviceName()(*string) {
     return nil
 }
 // GetDeviceType gets the deviceType property value. Device type.
+// returns a *DeviceType when successful
 func (m *ComanagementEligibleDevice) GetDeviceType()(*DeviceType) {
     val, err := m.GetBackingStore().Get("deviceType")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *ComanagementEligibleDevice) GetDeviceType()(*DeviceType) {
     return nil
 }
 // GetEntitySource gets the entitySource property value. EntitySource
+// returns a *int32 when successful
 func (m *ComanagementEligibleDevice) GetEntitySource()(*int32) {
     val, err := m.GetBackingStore().Get("entitySource")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *ComanagementEligibleDevice) GetEntitySource()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["clientRegistrationStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -259,6 +265,7 @@ func (m *ComanagementEligibleDevice) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetManagementAgents gets the managementAgents property value. Management agent type.
+// returns a *ManagementAgentType when successful
 func (m *ComanagementEligibleDevice) GetManagementAgents()(*ManagementAgentType) {
     val, err := m.GetBackingStore().Get("managementAgents")
     if err != nil {
@@ -270,6 +277,7 @@ func (m *ComanagementEligibleDevice) GetManagementAgents()(*ManagementAgentType)
     return nil
 }
 // GetManagementState gets the managementState property value. Management state of device in Microsoft Intune.
+// returns a *ManagementState when successful
 func (m *ComanagementEligibleDevice) GetManagementState()(*ManagementState) {
     val, err := m.GetBackingStore().Get("managementState")
     if err != nil {
@@ -281,6 +289,7 @@ func (m *ComanagementEligibleDevice) GetManagementState()(*ManagementState) {
     return nil
 }
 // GetManufacturer gets the manufacturer property value. Manufacturer
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -292,6 +301,7 @@ func (m *ComanagementEligibleDevice) GetManufacturer()(*string) {
     return nil
 }
 // GetMdmStatus gets the mdmStatus property value. MDMStatus
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetMdmStatus()(*string) {
     val, err := m.GetBackingStore().Get("mdmStatus")
     if err != nil {
@@ -303,6 +313,7 @@ func (m *ComanagementEligibleDevice) GetMdmStatus()(*string) {
     return nil
 }
 // GetModel gets the model property value. Model
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -314,6 +325,7 @@ func (m *ComanagementEligibleDevice) GetModel()(*string) {
     return nil
 }
 // GetOsDescription gets the osDescription property value. OSDescription
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetOsDescription()(*string) {
     val, err := m.GetBackingStore().Get("osDescription")
     if err != nil {
@@ -325,6 +337,7 @@ func (m *ComanagementEligibleDevice) GetOsDescription()(*string) {
     return nil
 }
 // GetOsVersion gets the osVersion property value. OSVersion
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -336,6 +349,7 @@ func (m *ComanagementEligibleDevice) GetOsVersion()(*string) {
     return nil
 }
 // GetOwnerType gets the ownerType property value. Owner type of device.
+// returns a *OwnerType when successful
 func (m *ComanagementEligibleDevice) GetOwnerType()(*OwnerType) {
     val, err := m.GetBackingStore().Get("ownerType")
     if err != nil {
@@ -347,6 +361,7 @@ func (m *ComanagementEligibleDevice) GetOwnerType()(*OwnerType) {
     return nil
 }
 // GetReferenceId gets the referenceId property value. ReferenceId
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetReferenceId()(*string) {
     val, err := m.GetBackingStore().Get("referenceId")
     if err != nil {
@@ -358,6 +373,7 @@ func (m *ComanagementEligibleDevice) GetReferenceId()(*string) {
     return nil
 }
 // GetSerialNumber gets the serialNumber property value. SerialNumber
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -369,6 +385,7 @@ func (m *ComanagementEligibleDevice) GetSerialNumber()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *ComanagementEligibleType when successful
 func (m *ComanagementEligibleDevice) GetStatus()(*ComanagementEligibleType) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -380,6 +397,7 @@ func (m *ComanagementEligibleDevice) GetStatus()(*ComanagementEligibleType) {
     return nil
 }
 // GetUpn gets the upn property value. UPN
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetUpn()(*string) {
     val, err := m.GetBackingStore().Get("upn")
     if err != nil {
@@ -391,6 +409,7 @@ func (m *ComanagementEligibleDevice) GetUpn()(*string) {
     return nil
 }
 // GetUserEmail gets the userEmail property value. UserEmail
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetUserEmail()(*string) {
     val, err := m.GetBackingStore().Get("userEmail")
     if err != nil {
@@ -402,6 +421,7 @@ func (m *ComanagementEligibleDevice) GetUserEmail()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. UserId
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -413,6 +433,7 @@ func (m *ComanagementEligibleDevice) GetUserId()(*string) {
     return nil
 }
 // GetUserName gets the userName property value. UserName
+// returns a *string when successful
 func (m *ComanagementEligibleDevice) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -684,7 +705,6 @@ func (m *ComanagementEligibleDevice) SetUserName(value *string)() {
         panic(err)
     }
 }
-// ComanagementEligibleDeviceable 
 type ComanagementEligibleDeviceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

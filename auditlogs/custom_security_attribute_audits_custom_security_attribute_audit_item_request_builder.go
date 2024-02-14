@@ -41,28 +41,28 @@ type CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderInternal instantiates a new CustomSecurityAttributeAuditItemRequestBuilder and sets the default values.
+// NewCustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderInternal instantiates a new CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder and sets the default values.
 func NewCustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) {
     m := &CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewCustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder instantiates a new CustomSecurityAttributeAuditItemRequestBuilder and sets the default values.
+// NewCustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder instantiates a new CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder and sets the default values.
 func NewCustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property customSecurityAttributeAudits for auditLogs
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBui
     return nil
 }
 // Get represents a custom security attribute audit log.
+// returns a CustomSecurityAttributeAuditable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeAuditable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCustomSecurityAttributeAuditFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBui
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeAuditable), nil
 }
 // Patch update the navigation property customSecurityAttributeAudits in auditLogs
+// returns a CustomSecurityAttributeAuditable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeAuditable, requestConfiguration *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeAuditable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCustomSecurityAttributeAuditFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBui
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeAuditable), nil
 }
 // ToDeleteRequestInformation delete navigation property customSecurityAttributeAudits for auditLogs
+// returns a *RequestInformation when successful
 func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBui
     return requestInfo, nil
 }
 // ToGetRequestInformation represents a custom security attribute audit log.
+// returns a *RequestInformation when successful
 func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBui
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property customSecurityAttributeAudits in auditLogs
+// returns a *RequestInformation when successful
 func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomSecurityAttributeAuditable, requestConfiguration *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/auditLogs/customSecurityAttributeAudits/{customSecurityAttributeAudit%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBui
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder when successful
 func (m *CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) WithUrl(rawUrl string)(*CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder) {
     return NewCustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

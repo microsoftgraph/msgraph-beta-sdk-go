@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcCrossRegionDisasterRecoverySetting 
 type CloudPcCrossRegionDisasterRecoverySetting struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcCrossRegionDisasterRecoverySetting instantiates a new cloudPcCrossRegionDisasterRecoverySetting and sets the default values.
+// NewCloudPcCrossRegionDisasterRecoverySetting instantiates a new CloudPcCrossRegionDisasterRecoverySetting and sets the default values.
 func NewCloudPcCrossRegionDisasterRecoverySetting()(*CloudPcCrossRegionDisasterRecoverySetting) {
     m := &CloudPcCrossRegionDisasterRecoverySetting{
     }
@@ -19,10 +18,12 @@ func NewCloudPcCrossRegionDisasterRecoverySetting()(*CloudPcCrossRegionDisasterR
     return m
 }
 // CreateCloudPcCrossRegionDisasterRecoverySettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcCrossRegionDisasterRecoverySettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcCrossRegionDisasterRecoverySetting(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetAdditionalData()(map[stri
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCrossRegionDisasterRecoveryEnabled gets the crossRegionDisasterRecoveryEnabled property value. The crossRegionDisasterRecoveryEnabled property
+// returns a *bool when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetCrossRegionDisasterRecoveryEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("crossRegionDisasterRecoveryEnabled")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetCrossRegionDisasterRecove
     return nil
 }
 // GetDisasterRecoveryNetworkSetting gets the disasterRecoveryNetworkSetting property value. The disasterRecoveryNetworkSetting property
+// returns a CloudPcDisasterRecoveryNetworkSettingable when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetDisasterRecoveryNetworkSetting()(CloudPcDisasterRecoveryNetworkSettingable) {
     val, err := m.GetBackingStore().Get("disasterRecoveryNetworkSetting")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetDisasterRecoveryNetworkSe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["crossRegionDisasterRecoveryEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +111,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetFieldDeserializers()(map[
     return res
 }
 // GetMaintainCrossRegionRestorePointEnabled gets the maintainCrossRegionRestorePointEnabled property value. The maintainCrossRegionRestorePointEnabled property
+// returns a *bool when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetMaintainCrossRegionRestorePointEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("maintainCrossRegionRestorePointEnabled")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetMaintainCrossRegionRestor
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) SetOdataType(value *string)(
         panic(err)
     }
 }
-// CloudPcCrossRegionDisasterRecoverySettingable 
 type CloudPcCrossRegionDisasterRecoverySettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

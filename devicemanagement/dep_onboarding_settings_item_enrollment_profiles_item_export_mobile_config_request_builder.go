@@ -17,29 +17,30 @@ type DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBui
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilderInternal instantiates a new ExportMobileConfigRequestBuilder and sets the default values.
+// NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilderInternal instantiates a new DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder) {
     m := &DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}/exportMobileConfig()", pathParameters),
     }
     return m
 }
-// NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder instantiates a new ExportMobileConfigRequestBuilder and sets the default values.
+// NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder instantiates a new DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder and sets the default values.
 func NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get exports the mobile configuration
-// Deprecated: This method is obsolete. Use GetAsExportMobileConfigGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder) Get(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilderGetRequestConfiguration)(DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigReques
     return res.(DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigResponseable), nil
 }
 // GetAsExportMobileConfigGetResponse exports the mobile configuration
+// returns a DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder) GetAsExportMobileConfigGetResponse(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilderGetRequestConfiguration)(DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigReques
     return res.(DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigGetResponseable), nil
 }
 // ToGetRequestInformation exports the mobile configuration
+// returns a *RequestInformation when successful
 func (m *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -80,6 +83,7 @@ func (m *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder when successful
 func (m *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder) WithUrl(rawUrl string)(*DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder) {
     return NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

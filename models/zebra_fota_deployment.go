@@ -8,7 +8,7 @@ import (
 type ZebraFotaDeployment struct {
     Entity
 }
-// NewZebraFotaDeployment instantiates a new zebraFotaDeployment and sets the default values.
+// NewZebraFotaDeployment instantiates a new ZebraFotaDeployment and sets the default values.
 func NewZebraFotaDeployment()(*ZebraFotaDeployment) {
     m := &ZebraFotaDeployment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewZebraFotaDeployment()(*ZebraFotaDeployment) {
     return m
 }
 // CreateZebraFotaDeploymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateZebraFotaDeploymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewZebraFotaDeployment(), nil
 }
 // GetDeploymentAssignments gets the deploymentAssignments property value. Collection of Android FOTA Assignment
+// returns a []AndroidFotaDeploymentAssignmentable when successful
 func (m *ZebraFotaDeployment) GetDeploymentAssignments()([]AndroidFotaDeploymentAssignmentable) {
     val, err := m.GetBackingStore().Get("deploymentAssignments")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *ZebraFotaDeployment) GetDeploymentAssignments()([]AndroidFotaDeployment
     return nil
 }
 // GetDeploymentSettings gets the deploymentSettings property value. The Zebra FOTA deployment complex type that describes the settings required to create a FOTA deployment.
+// returns a ZebraFotaDeploymentSettingsable when successful
 func (m *ZebraFotaDeployment) GetDeploymentSettings()(ZebraFotaDeploymentSettingsable) {
     val, err := m.GetBackingStore().Get("deploymentSettings")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *ZebraFotaDeployment) GetDeploymentSettings()(ZebraFotaDeploymentSetting
     return nil
 }
 // GetDeploymentStatus gets the deploymentStatus property value. Represents the deployment status from Zebra. The status is a high level status of the deployment as opposed being a detailed status per device.
+// returns a ZebraFotaDeploymentStatusable when successful
 func (m *ZebraFotaDeployment) GetDeploymentStatus()(ZebraFotaDeploymentStatusable) {
     val, err := m.GetBackingStore().Get("deploymentStatus")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *ZebraFotaDeployment) GetDeploymentStatus()(ZebraFotaDeploymentStatusabl
     return nil
 }
 // GetDescription gets the description property value. A human readable description of the deployment.
+// returns a *string when successful
 func (m *ZebraFotaDeployment) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *ZebraFotaDeployment) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. A human readable name of the deployment.
+// returns a *string when successful
 func (m *ZebraFotaDeployment) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -75,6 +81,7 @@ func (m *ZebraFotaDeployment) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ZebraFotaDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deploymentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -152,6 +159,7 @@ func (m *ZebraFotaDeployment) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance
+// returns a []string when successful
 func (m *ZebraFotaDeployment) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -254,7 +262,6 @@ func (m *ZebraFotaDeployment) SetRoleScopeTagIds(value []string)() {
         panic(err)
     }
 }
-// ZebraFotaDeploymentable 
 type ZebraFotaDeploymentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

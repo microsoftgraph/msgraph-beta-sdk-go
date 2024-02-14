@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PeerConnectivityConfiguration 
 type PeerConnectivityConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPeerConnectivityConfiguration instantiates a new peerConnectivityConfiguration and sets the default values.
+// NewPeerConnectivityConfiguration instantiates a new PeerConnectivityConfiguration and sets the default values.
 func NewPeerConnectivityConfiguration()(*PeerConnectivityConfiguration) {
     m := &PeerConnectivityConfiguration{
     }
@@ -19,10 +18,12 @@ func NewPeerConnectivityConfiguration()(*PeerConnectivityConfiguration) {
     return m
 }
 // CreatePeerConnectivityConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePeerConnectivityConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPeerConnectivityConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PeerConnectivityConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *PeerConnectivityConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAsn gets the asn property value. Specifies ASN of one end of IPSec tunnel (local or peer).
+// returns a *int32 when successful
 func (m *PeerConnectivityConfiguration) GetAsn()(*int32) {
     val, err := m.GetBackingStore().Get("asn")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *PeerConnectivityConfiguration) GetAsn()(*int32) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PeerConnectivityConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBgpAddress gets the bgpAddress property value. Specifies BGP IPv4 address of one end of IPSec tunnel (local or peer).
+// returns a *string when successful
 func (m *PeerConnectivityConfiguration) GetBgpAddress()(*string) {
     val, err := m.GetBackingStore().Get("bgpAddress")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PeerConnectivityConfiguration) GetBgpAddress()(*string) {
     return nil
 }
 // GetEndpoint gets the endpoint property value. Specifies public IPv4 address of one end of IPSec tunnel (local or peer).
+// returns a *string when successful
 func (m *PeerConnectivityConfiguration) GetEndpoint()(*string) {
     val, err := m.GetBackingStore().Get("endpoint")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *PeerConnectivityConfiguration) GetEndpoint()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PeerConnectivityConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["asn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +123,7 @@ func (m *PeerConnectivityConfiguration) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PeerConnectivityConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *PeerConnectivityConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// PeerConnectivityConfigurationable 
 type PeerConnectivityConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

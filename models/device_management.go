@@ -10,7 +10,7 @@ import (
 type DeviceManagement struct {
     Entity
 }
-// NewDeviceManagement instantiates a new deviceManagement and sets the default values.
+// NewDeviceManagement instantiates a new DeviceManagement and sets the default values.
 func NewDeviceManagement()(*DeviceManagement) {
     m := &DeviceManagement{
         Entity: *NewEntity(),
@@ -18,10 +18,12 @@ func NewDeviceManagement()(*DeviceManagement) {
     return m
 }
 // CreateDeviceManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagement(), nil
 }
 // GetAccountMoveCompletionDateTime gets the accountMoveCompletionDateTime property value. The date & time when tenant data moved between scaleunits.
+// returns a *Time when successful
 func (m *DeviceManagement) GetAccountMoveCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("accountMoveCompletionDateTime")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceManagement) GetAccountMoveCompletionDateTime()(*i336074805fc85398
     return nil
 }
 // GetAdminConsent gets the adminConsent property value. Admin consent information.
+// returns a AdminConsentable when successful
 func (m *DeviceManagement) GetAdminConsent()(AdminConsentable) {
     val, err := m.GetBackingStore().Get("adminConsent")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *DeviceManagement) GetAdminConsent()(AdminConsentable) {
     return nil
 }
 // GetAdvancedThreatProtectionOnboardingStateSummary gets the advancedThreatProtectionOnboardingStateSummary property value. The summary state of ATP onboarding state for this account.
+// returns a AdvancedThreatProtectionOnboardingStateSummaryable when successful
 func (m *DeviceManagement) GetAdvancedThreatProtectionOnboardingStateSummary()(AdvancedThreatProtectionOnboardingStateSummaryable) {
     val, err := m.GetBackingStore().Get("advancedThreatProtectionOnboardingStateSummary")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *DeviceManagement) GetAdvancedThreatProtectionOnboardingStateSummary()(A
     return nil
 }
 // GetAndroidDeviceOwnerEnrollmentProfiles gets the androidDeviceOwnerEnrollmentProfiles property value. Android device owner enrollment profile entities.
+// returns a []AndroidDeviceOwnerEnrollmentProfileable when successful
 func (m *DeviceManagement) GetAndroidDeviceOwnerEnrollmentProfiles()([]AndroidDeviceOwnerEnrollmentProfileable) {
     val, err := m.GetBackingStore().Get("androidDeviceOwnerEnrollmentProfiles")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *DeviceManagement) GetAndroidDeviceOwnerEnrollmentProfiles()([]AndroidDe
     return nil
 }
 // GetAndroidForWorkAppConfigurationSchemas gets the androidForWorkAppConfigurationSchemas property value. Android for Work app configuration schema entities.
+// returns a []AndroidForWorkAppConfigurationSchemaable when successful
 func (m *DeviceManagement) GetAndroidForWorkAppConfigurationSchemas()([]AndroidForWorkAppConfigurationSchemaable) {
     val, err := m.GetBackingStore().Get("androidForWorkAppConfigurationSchemas")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *DeviceManagement) GetAndroidForWorkAppConfigurationSchemas()([]AndroidF
     return nil
 }
 // GetAndroidForWorkEnrollmentProfiles gets the androidForWorkEnrollmentProfiles property value. Android for Work enrollment profile entities.
+// returns a []AndroidForWorkEnrollmentProfileable when successful
 func (m *DeviceManagement) GetAndroidForWorkEnrollmentProfiles()([]AndroidForWorkEnrollmentProfileable) {
     val, err := m.GetBackingStore().Get("androidForWorkEnrollmentProfiles")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *DeviceManagement) GetAndroidForWorkEnrollmentProfiles()([]AndroidForWor
     return nil
 }
 // GetAndroidForWorkSettings gets the androidForWorkSettings property value. The singleton Android for Work settings entity.
+// returns a AndroidForWorkSettingsable when successful
 func (m *DeviceManagement) GetAndroidForWorkSettings()(AndroidForWorkSettingsable) {
     val, err := m.GetBackingStore().Get("androidForWorkSettings")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *DeviceManagement) GetAndroidForWorkSettings()(AndroidForWorkSettingsabl
     return nil
 }
 // GetAndroidManagedStoreAccountEnterpriseSettings gets the androidManagedStoreAccountEnterpriseSettings property value. The singleton Android managed store account enterprise settings entity.
+// returns a AndroidManagedStoreAccountEnterpriseSettingsable when successful
 func (m *DeviceManagement) GetAndroidManagedStoreAccountEnterpriseSettings()(AndroidManagedStoreAccountEnterpriseSettingsable) {
     val, err := m.GetBackingStore().Get("androidManagedStoreAccountEnterpriseSettings")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *DeviceManagement) GetAndroidManagedStoreAccountEnterpriseSettings()(And
     return nil
 }
 // GetAndroidManagedStoreAppConfigurationSchemas gets the androidManagedStoreAppConfigurationSchemas property value. Android Enterprise app configuration schema entities.
+// returns a []AndroidManagedStoreAppConfigurationSchemaable when successful
 func (m *DeviceManagement) GetAndroidManagedStoreAppConfigurationSchemas()([]AndroidManagedStoreAppConfigurationSchemaable) {
     val, err := m.GetBackingStore().Get("androidManagedStoreAppConfigurationSchemas")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *DeviceManagement) GetAndroidManagedStoreAppConfigurationSchemas()([]And
     return nil
 }
 // GetApplePushNotificationCertificate gets the applePushNotificationCertificate property value. Apple push notification certificate.
+// returns a ApplePushNotificationCertificateable when successful
 func (m *DeviceManagement) GetApplePushNotificationCertificate()(ApplePushNotificationCertificateable) {
     val, err := m.GetBackingStore().Get("applePushNotificationCertificate")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *DeviceManagement) GetApplePushNotificationCertificate()(ApplePushNotifi
     return nil
 }
 // GetAppleUserInitiatedEnrollmentProfiles gets the appleUserInitiatedEnrollmentProfiles property value. Apple user initiated enrollment profiles
+// returns a []AppleUserInitiatedEnrollmentProfileable when successful
 func (m *DeviceManagement) GetAppleUserInitiatedEnrollmentProfiles()([]AppleUserInitiatedEnrollmentProfileable) {
     val, err := m.GetBackingStore().Get("appleUserInitiatedEnrollmentProfiles")
     if err != nil {
@@ -143,6 +155,7 @@ func (m *DeviceManagement) GetAppleUserInitiatedEnrollmentProfiles()([]AppleUser
     return nil
 }
 // GetAssignmentFilters gets the assignmentFilters property value. The list of assignment filters
+// returns a []DeviceAndAppManagementAssignmentFilterable when successful
 func (m *DeviceManagement) GetAssignmentFilters()([]DeviceAndAppManagementAssignmentFilterable) {
     val, err := m.GetBackingStore().Get("assignmentFilters")
     if err != nil {
@@ -154,6 +167,7 @@ func (m *DeviceManagement) GetAssignmentFilters()([]DeviceAndAppManagementAssign
     return nil
 }
 // GetAuditEvents gets the auditEvents property value. The Audit Events
+// returns a []AuditEventable when successful
 func (m *DeviceManagement) GetAuditEvents()([]AuditEventable) {
     val, err := m.GetBackingStore().Get("auditEvents")
     if err != nil {
@@ -165,6 +179,7 @@ func (m *DeviceManagement) GetAuditEvents()([]AuditEventable) {
     return nil
 }
 // GetAutopilotEvents gets the autopilotEvents property value. The list of autopilot events for the tenant.
+// returns a []DeviceManagementAutopilotEventable when successful
 func (m *DeviceManagement) GetAutopilotEvents()([]DeviceManagementAutopilotEventable) {
     val, err := m.GetBackingStore().Get("autopilotEvents")
     if err != nil {
@@ -176,6 +191,7 @@ func (m *DeviceManagement) GetAutopilotEvents()([]DeviceManagementAutopilotEvent
     return nil
 }
 // GetCartToClassAssociations gets the cartToClassAssociations property value. The Cart To Class Associations.
+// returns a []CartToClassAssociationable when successful
 func (m *DeviceManagement) GetCartToClassAssociations()([]CartToClassAssociationable) {
     val, err := m.GetBackingStore().Get("cartToClassAssociations")
     if err != nil {
@@ -187,6 +203,7 @@ func (m *DeviceManagement) GetCartToClassAssociations()([]CartToClassAssociation
     return nil
 }
 // GetCategories gets the categories property value. The available categories
+// returns a []DeviceManagementSettingCategoryable when successful
 func (m *DeviceManagement) GetCategories()([]DeviceManagementSettingCategoryable) {
     val, err := m.GetBackingStore().Get("categories")
     if err != nil {
@@ -198,6 +215,7 @@ func (m *DeviceManagement) GetCategories()([]DeviceManagementSettingCategoryable
     return nil
 }
 // GetCertificateConnectorDetails gets the certificateConnectorDetails property value. Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
+// returns a []CertificateConnectorDetailsable when successful
 func (m *DeviceManagement) GetCertificateConnectorDetails()([]CertificateConnectorDetailsable) {
     val, err := m.GetBackingStore().Get("certificateConnectorDetails")
     if err != nil {
@@ -209,6 +227,7 @@ func (m *DeviceManagement) GetCertificateConnectorDetails()([]CertificateConnect
     return nil
 }
 // GetChromeOSOnboardingSettings gets the chromeOSOnboardingSettings property value. Collection of ChromeOSOnboardingSettings settings associated with account.
+// returns a []ChromeOSOnboardingSettingsable when successful
 func (m *DeviceManagement) GetChromeOSOnboardingSettings()([]ChromeOSOnboardingSettingsable) {
     val, err := m.GetBackingStore().Get("chromeOSOnboardingSettings")
     if err != nil {
@@ -220,6 +239,7 @@ func (m *DeviceManagement) GetChromeOSOnboardingSettings()([]ChromeOSOnboardingS
     return nil
 }
 // GetCloudPCConnectivityIssues gets the cloudPCConnectivityIssues property value. The list of CloudPC Connectivity Issue.
+// returns a []CloudPCConnectivityIssueable when successful
 func (m *DeviceManagement) GetCloudPCConnectivityIssues()([]CloudPCConnectivityIssueable) {
     val, err := m.GetBackingStore().Get("cloudPCConnectivityIssues")
     if err != nil {
@@ -231,6 +251,7 @@ func (m *DeviceManagement) GetCloudPCConnectivityIssues()([]CloudPCConnectivityI
     return nil
 }
 // GetComanagedDevices gets the comanagedDevices property value. The list of co-managed devices report
+// returns a []ManagedDeviceable when successful
 func (m *DeviceManagement) GetComanagedDevices()([]ManagedDeviceable) {
     val, err := m.GetBackingStore().Get("comanagedDevices")
     if err != nil {
@@ -242,6 +263,7 @@ func (m *DeviceManagement) GetComanagedDevices()([]ManagedDeviceable) {
     return nil
 }
 // GetComanagementEligibleDevices gets the comanagementEligibleDevices property value. The list of co-management eligible devices report
+// returns a []ComanagementEligibleDeviceable when successful
 func (m *DeviceManagement) GetComanagementEligibleDevices()([]ComanagementEligibleDeviceable) {
     val, err := m.GetBackingStore().Get("comanagementEligibleDevices")
     if err != nil {
@@ -253,6 +275,7 @@ func (m *DeviceManagement) GetComanagementEligibleDevices()([]ComanagementEligib
     return nil
 }
 // GetComplianceCategories gets the complianceCategories property value. List of all compliance categories
+// returns a []DeviceManagementConfigurationCategoryable when successful
 func (m *DeviceManagement) GetComplianceCategories()([]DeviceManagementConfigurationCategoryable) {
     val, err := m.GetBackingStore().Get("complianceCategories")
     if err != nil {
@@ -264,6 +287,7 @@ func (m *DeviceManagement) GetComplianceCategories()([]DeviceManagementConfigura
     return nil
 }
 // GetComplianceManagementPartners gets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
+// returns a []ComplianceManagementPartnerable when successful
 func (m *DeviceManagement) GetComplianceManagementPartners()([]ComplianceManagementPartnerable) {
     val, err := m.GetBackingStore().Get("complianceManagementPartners")
     if err != nil {
@@ -275,6 +299,7 @@ func (m *DeviceManagement) GetComplianceManagementPartners()([]ComplianceManagem
     return nil
 }
 // GetCompliancePolicies gets the compliancePolicies property value. List of all compliance policies
+// returns a []DeviceManagementCompliancePolicyable when successful
 func (m *DeviceManagement) GetCompliancePolicies()([]DeviceManagementCompliancePolicyable) {
     val, err := m.GetBackingStore().Get("compliancePolicies")
     if err != nil {
@@ -286,6 +311,7 @@ func (m *DeviceManagement) GetCompliancePolicies()([]DeviceManagementComplianceP
     return nil
 }
 // GetComplianceSettings gets the complianceSettings property value. List of all ComplianceSettings
+// returns a []DeviceManagementConfigurationSettingDefinitionable when successful
 func (m *DeviceManagement) GetComplianceSettings()([]DeviceManagementConfigurationSettingDefinitionable) {
     val, err := m.GetBackingStore().Get("complianceSettings")
     if err != nil {
@@ -297,6 +323,7 @@ func (m *DeviceManagement) GetComplianceSettings()([]DeviceManagementConfigurati
     return nil
 }
 // GetConditionalAccessSettings gets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+// returns a OnPremisesConditionalAccessSettingsable when successful
 func (m *DeviceManagement) GetConditionalAccessSettings()(OnPremisesConditionalAccessSettingsable) {
     val, err := m.GetBackingStore().Get("conditionalAccessSettings")
     if err != nil {
@@ -308,6 +335,7 @@ func (m *DeviceManagement) GetConditionalAccessSettings()(OnPremisesConditionalA
     return nil
 }
 // GetConfigManagerCollections gets the configManagerCollections property value. A list of ConfigManagerCollection
+// returns a []ConfigManagerCollectionable when successful
 func (m *DeviceManagement) GetConfigManagerCollections()([]ConfigManagerCollectionable) {
     val, err := m.GetBackingStore().Get("configManagerCollections")
     if err != nil {
@@ -319,6 +347,7 @@ func (m *DeviceManagement) GetConfigManagerCollections()([]ConfigManagerCollecti
     return nil
 }
 // GetConfigurationCategories gets the configurationCategories property value. List of all Configuration Categories
+// returns a []DeviceManagementConfigurationCategoryable when successful
 func (m *DeviceManagement) GetConfigurationCategories()([]DeviceManagementConfigurationCategoryable) {
     val, err := m.GetBackingStore().Get("configurationCategories")
     if err != nil {
@@ -330,6 +359,7 @@ func (m *DeviceManagement) GetConfigurationCategories()([]DeviceManagementConfig
     return nil
 }
 // GetConfigurationPolicies gets the configurationPolicies property value. List of all Configuration policies
+// returns a []DeviceManagementConfigurationPolicyable when successful
 func (m *DeviceManagement) GetConfigurationPolicies()([]DeviceManagementConfigurationPolicyable) {
     val, err := m.GetBackingStore().Get("configurationPolicies")
     if err != nil {
@@ -341,6 +371,7 @@ func (m *DeviceManagement) GetConfigurationPolicies()([]DeviceManagementConfigur
     return nil
 }
 // GetConfigurationPolicyTemplates gets the configurationPolicyTemplates property value. List of all templates
+// returns a []DeviceManagementConfigurationPolicyTemplateable when successful
 func (m *DeviceManagement) GetConfigurationPolicyTemplates()([]DeviceManagementConfigurationPolicyTemplateable) {
     val, err := m.GetBackingStore().Get("configurationPolicyTemplates")
     if err != nil {
@@ -352,6 +383,7 @@ func (m *DeviceManagement) GetConfigurationPolicyTemplates()([]DeviceManagementC
     return nil
 }
 // GetConfigurationSettings gets the configurationSettings property value. List of all ConfigurationSettings
+// returns a []DeviceManagementConfigurationSettingDefinitionable when successful
 func (m *DeviceManagement) GetConfigurationSettings()([]DeviceManagementConfigurationSettingDefinitionable) {
     val, err := m.GetBackingStore().Get("configurationSettings")
     if err != nil {
@@ -363,6 +395,7 @@ func (m *DeviceManagement) GetConfigurationSettings()([]DeviceManagementConfigur
     return nil
 }
 // GetConnectorStatus gets the connectorStatus property value. The list of connector status for the tenant.
+// returns a []ConnectorStatusDetailsable when successful
 func (m *DeviceManagement) GetConnectorStatus()([]ConnectorStatusDetailsable) {
     val, err := m.GetBackingStore().Get("connectorStatus")
     if err != nil {
@@ -374,6 +407,7 @@ func (m *DeviceManagement) GetConnectorStatus()([]ConnectorStatusDetailsable) {
     return nil
 }
 // GetDataProcessorServiceForWindowsFeaturesOnboarding gets the dataProcessorServiceForWindowsFeaturesOnboarding property value. A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.
+// returns a DataProcessorServiceForWindowsFeaturesOnboardingable when successful
 func (m *DeviceManagement) GetDataProcessorServiceForWindowsFeaturesOnboarding()(DataProcessorServiceForWindowsFeaturesOnboardingable) {
     val, err := m.GetBackingStore().Get("dataProcessorServiceForWindowsFeaturesOnboarding")
     if err != nil {
@@ -385,6 +419,7 @@ func (m *DeviceManagement) GetDataProcessorServiceForWindowsFeaturesOnboarding()
     return nil
 }
 // GetDataSharingConsents gets the dataSharingConsents property value. Data sharing consents.
+// returns a []DataSharingConsentable when successful
 func (m *DeviceManagement) GetDataSharingConsents()([]DataSharingConsentable) {
     val, err := m.GetBackingStore().Get("dataSharingConsents")
     if err != nil {
@@ -396,6 +431,7 @@ func (m *DeviceManagement) GetDataSharingConsents()([]DataSharingConsentable) {
     return nil
 }
 // GetDepOnboardingSettings gets the depOnboardingSettings property value. This collections of multiple DEP tokens per-tenant.
+// returns a []DepOnboardingSettingable when successful
 func (m *DeviceManagement) GetDepOnboardingSettings()([]DepOnboardingSettingable) {
     val, err := m.GetBackingStore().Get("depOnboardingSettings")
     if err != nil {
@@ -407,6 +443,7 @@ func (m *DeviceManagement) GetDepOnboardingSettings()([]DepOnboardingSettingable
     return nil
 }
 // GetDerivedCredentials gets the derivedCredentials property value. Collection of Derived credential settings associated with account.
+// returns a []DeviceManagementDerivedCredentialSettingsable when successful
 func (m *DeviceManagement) GetDerivedCredentials()([]DeviceManagementDerivedCredentialSettingsable) {
     val, err := m.GetBackingStore().Get("derivedCredentials")
     if err != nil {
@@ -418,6 +455,7 @@ func (m *DeviceManagement) GetDerivedCredentials()([]DeviceManagementDerivedCred
     return nil
 }
 // GetDetectedApps gets the detectedApps property value. The list of detected apps associated with a device.
+// returns a []DetectedAppable when successful
 func (m *DeviceManagement) GetDetectedApps()([]DetectedAppable) {
     val, err := m.GetBackingStore().Get("detectedApps")
     if err != nil {
@@ -429,6 +467,7 @@ func (m *DeviceManagement) GetDetectedApps()([]DetectedAppable) {
     return nil
 }
 // GetDeviceCategories gets the deviceCategories property value. The list of device categories with the tenant.
+// returns a []DeviceCategoryable when successful
 func (m *DeviceManagement) GetDeviceCategories()([]DeviceCategoryable) {
     val, err := m.GetBackingStore().Get("deviceCategories")
     if err != nil {
@@ -440,6 +479,7 @@ func (m *DeviceManagement) GetDeviceCategories()([]DeviceCategoryable) {
     return nil
 }
 // GetDeviceCompliancePolicies gets the deviceCompliancePolicies property value. The device compliance policies.
+// returns a []DeviceCompliancePolicyable when successful
 func (m *DeviceManagement) GetDeviceCompliancePolicies()([]DeviceCompliancePolicyable) {
     val, err := m.GetBackingStore().Get("deviceCompliancePolicies")
     if err != nil {
@@ -451,6 +491,7 @@ func (m *DeviceManagement) GetDeviceCompliancePolicies()([]DeviceCompliancePolic
     return nil
 }
 // GetDeviceCompliancePolicyDeviceStateSummary gets the deviceCompliancePolicyDeviceStateSummary property value. The device compliance state summary for this account.
+// returns a DeviceCompliancePolicyDeviceStateSummaryable when successful
 func (m *DeviceManagement) GetDeviceCompliancePolicyDeviceStateSummary()(DeviceCompliancePolicyDeviceStateSummaryable) {
     val, err := m.GetBackingStore().Get("deviceCompliancePolicyDeviceStateSummary")
     if err != nil {
@@ -462,6 +503,7 @@ func (m *DeviceManagement) GetDeviceCompliancePolicyDeviceStateSummary()(DeviceC
     return nil
 }
 // GetDeviceCompliancePolicySettingStateSummaries gets the deviceCompliancePolicySettingStateSummaries property value. The summary states of compliance policy settings for this account.
+// returns a []DeviceCompliancePolicySettingStateSummaryable when successful
 func (m *DeviceManagement) GetDeviceCompliancePolicySettingStateSummaries()([]DeviceCompliancePolicySettingStateSummaryable) {
     val, err := m.GetBackingStore().Get("deviceCompliancePolicySettingStateSummaries")
     if err != nil {
@@ -473,6 +515,7 @@ func (m *DeviceManagement) GetDeviceCompliancePolicySettingStateSummaries()([]De
     return nil
 }
 // GetDeviceComplianceReportSummarizationDateTime gets the deviceComplianceReportSummarizationDateTime property value. The last requested time of device compliance reporting for this account. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceManagement) GetDeviceComplianceReportSummarizationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("deviceComplianceReportSummarizationDateTime")
     if err != nil {
@@ -484,6 +527,7 @@ func (m *DeviceManagement) GetDeviceComplianceReportSummarizationDateTime()(*i33
     return nil
 }
 // GetDeviceComplianceScripts gets the deviceComplianceScripts property value. The list of device compliance scripts associated with the tenant.
+// returns a []DeviceComplianceScriptable when successful
 func (m *DeviceManagement) GetDeviceComplianceScripts()([]DeviceComplianceScriptable) {
     val, err := m.GetBackingStore().Get("deviceComplianceScripts")
     if err != nil {
@@ -495,6 +539,7 @@ func (m *DeviceManagement) GetDeviceComplianceScripts()([]DeviceComplianceScript
     return nil
 }
 // GetDeviceConfigurationConflictSummary gets the deviceConfigurationConflictSummary property value. Summary of policies in conflict state for this account.
+// returns a []DeviceConfigurationConflictSummaryable when successful
 func (m *DeviceManagement) GetDeviceConfigurationConflictSummary()([]DeviceConfigurationConflictSummaryable) {
     val, err := m.GetBackingStore().Get("deviceConfigurationConflictSummary")
     if err != nil {
@@ -506,6 +551,7 @@ func (m *DeviceManagement) GetDeviceConfigurationConflictSummary()([]DeviceConfi
     return nil
 }
 // GetDeviceConfigurationDeviceStateSummaries gets the deviceConfigurationDeviceStateSummaries property value. The device configuration device state summary for this account.
+// returns a DeviceConfigurationDeviceStateSummaryable when successful
 func (m *DeviceManagement) GetDeviceConfigurationDeviceStateSummaries()(DeviceConfigurationDeviceStateSummaryable) {
     val, err := m.GetBackingStore().Get("deviceConfigurationDeviceStateSummaries")
     if err != nil {
@@ -517,6 +563,7 @@ func (m *DeviceManagement) GetDeviceConfigurationDeviceStateSummaries()(DeviceCo
     return nil
 }
 // GetDeviceConfigurationRestrictedAppsViolations gets the deviceConfigurationRestrictedAppsViolations property value. Restricted apps violations for this account.
+// returns a []RestrictedAppsViolationable when successful
 func (m *DeviceManagement) GetDeviceConfigurationRestrictedAppsViolations()([]RestrictedAppsViolationable) {
     val, err := m.GetBackingStore().Get("deviceConfigurationRestrictedAppsViolations")
     if err != nil {
@@ -528,6 +575,7 @@ func (m *DeviceManagement) GetDeviceConfigurationRestrictedAppsViolations()([]Re
     return nil
 }
 // GetDeviceConfigurations gets the deviceConfigurations property value. The device configurations.
+// returns a []DeviceConfigurationable when successful
 func (m *DeviceManagement) GetDeviceConfigurations()([]DeviceConfigurationable) {
     val, err := m.GetBackingStore().Get("deviceConfigurations")
     if err != nil {
@@ -539,6 +587,7 @@ func (m *DeviceManagement) GetDeviceConfigurations()([]DeviceConfigurationable) 
     return nil
 }
 // GetDeviceConfigurationsAllManagedDeviceCertificateStates gets the deviceConfigurationsAllManagedDeviceCertificateStates property value. Summary of all certificates for all devices.
+// returns a []ManagedAllDeviceCertificateStateable when successful
 func (m *DeviceManagement) GetDeviceConfigurationsAllManagedDeviceCertificateStates()([]ManagedAllDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("deviceConfigurationsAllManagedDeviceCertificateStates")
     if err != nil {
@@ -550,6 +599,7 @@ func (m *DeviceManagement) GetDeviceConfigurationsAllManagedDeviceCertificateSta
     return nil
 }
 // GetDeviceConfigurationUserStateSummaries gets the deviceConfigurationUserStateSummaries property value. The device configuration user state summary for this account.
+// returns a DeviceConfigurationUserStateSummaryable when successful
 func (m *DeviceManagement) GetDeviceConfigurationUserStateSummaries()(DeviceConfigurationUserStateSummaryable) {
     val, err := m.GetBackingStore().Get("deviceConfigurationUserStateSummaries")
     if err != nil {
@@ -561,6 +611,7 @@ func (m *DeviceManagement) GetDeviceConfigurationUserStateSummaries()(DeviceConf
     return nil
 }
 // GetDeviceCustomAttributeShellScripts gets the deviceCustomAttributeShellScripts property value. The list of device custom attribute shell scripts associated with the tenant.
+// returns a []DeviceCustomAttributeShellScriptable when successful
 func (m *DeviceManagement) GetDeviceCustomAttributeShellScripts()([]DeviceCustomAttributeShellScriptable) {
     val, err := m.GetBackingStore().Get("deviceCustomAttributeShellScripts")
     if err != nil {
@@ -572,6 +623,7 @@ func (m *DeviceManagement) GetDeviceCustomAttributeShellScripts()([]DeviceCustom
     return nil
 }
 // GetDeviceEnrollmentConfigurations gets the deviceEnrollmentConfigurations property value. The list of device enrollment configurations
+// returns a []DeviceEnrollmentConfigurationable when successful
 func (m *DeviceManagement) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmentConfigurationable) {
     val, err := m.GetBackingStore().Get("deviceEnrollmentConfigurations")
     if err != nil {
@@ -583,6 +635,7 @@ func (m *DeviceManagement) GetDeviceEnrollmentConfigurations()([]DeviceEnrollmen
     return nil
 }
 // GetDeviceHealthScripts gets the deviceHealthScripts property value. The list of device health scripts associated with the tenant.
+// returns a []DeviceHealthScriptable when successful
 func (m *DeviceManagement) GetDeviceHealthScripts()([]DeviceHealthScriptable) {
     val, err := m.GetBackingStore().Get("deviceHealthScripts")
     if err != nil {
@@ -594,6 +647,7 @@ func (m *DeviceManagement) GetDeviceHealthScripts()([]DeviceHealthScriptable) {
     return nil
 }
 // GetDeviceManagementPartners gets the deviceManagementPartners property value. The list of Device Management Partners configured by the tenant.
+// returns a []DeviceManagementPartnerable when successful
 func (m *DeviceManagement) GetDeviceManagementPartners()([]DeviceManagementPartnerable) {
     val, err := m.GetBackingStore().Get("deviceManagementPartners")
     if err != nil {
@@ -605,6 +659,7 @@ func (m *DeviceManagement) GetDeviceManagementPartners()([]DeviceManagementPartn
     return nil
 }
 // GetDeviceManagementScripts gets the deviceManagementScripts property value. The list of device management scripts associated with the tenant.
+// returns a []DeviceManagementScriptable when successful
 func (m *DeviceManagement) GetDeviceManagementScripts()([]DeviceManagementScriptable) {
     val, err := m.GetBackingStore().Get("deviceManagementScripts")
     if err != nil {
@@ -616,6 +671,7 @@ func (m *DeviceManagement) GetDeviceManagementScripts()([]DeviceManagementScript
     return nil
 }
 // GetDeviceProtectionOverview gets the deviceProtectionOverview property value. Device protection overview.
+// returns a DeviceProtectionOverviewable when successful
 func (m *DeviceManagement) GetDeviceProtectionOverview()(DeviceProtectionOverviewable) {
     val, err := m.GetBackingStore().Get("deviceProtectionOverview")
     if err != nil {
@@ -627,6 +683,7 @@ func (m *DeviceManagement) GetDeviceProtectionOverview()(DeviceProtectionOvervie
     return nil
 }
 // GetDeviceShellScripts gets the deviceShellScripts property value. The list of device shell scripts associated with the tenant.
+// returns a []DeviceShellScriptable when successful
 func (m *DeviceManagement) GetDeviceShellScripts()([]DeviceShellScriptable) {
     val, err := m.GetBackingStore().Get("deviceShellScripts")
     if err != nil {
@@ -638,6 +695,7 @@ func (m *DeviceManagement) GetDeviceShellScripts()([]DeviceShellScriptable) {
     return nil
 }
 // GetDomainJoinConnectors gets the domainJoinConnectors property value. A list of connector objects.
+// returns a []DeviceManagementDomainJoinConnectorable when successful
 func (m *DeviceManagement) GetDomainJoinConnectors()([]DeviceManagementDomainJoinConnectorable) {
     val, err := m.GetBackingStore().Get("domainJoinConnectors")
     if err != nil {
@@ -649,6 +707,7 @@ func (m *DeviceManagement) GetDomainJoinConnectors()([]DeviceManagementDomainJoi
     return nil
 }
 // GetElevationRequests gets the elevationRequests property value. List of elevation requests
+// returns a []PrivilegeManagementElevationRequestable when successful
 func (m *DeviceManagement) GetElevationRequests()([]PrivilegeManagementElevationRequestable) {
     val, err := m.GetBackingStore().Get("elevationRequests")
     if err != nil {
@@ -660,6 +719,7 @@ func (m *DeviceManagement) GetElevationRequests()([]PrivilegeManagementElevation
     return nil
 }
 // GetEmbeddedSIMActivationCodePools gets the embeddedSIMActivationCodePools property value. The embedded SIM activation code pools created by this account.
+// returns a []EmbeddedSIMActivationCodePoolable when successful
 func (m *DeviceManagement) GetEmbeddedSIMActivationCodePools()([]EmbeddedSIMActivationCodePoolable) {
     val, err := m.GetBackingStore().Get("embeddedSIMActivationCodePools")
     if err != nil {
@@ -671,6 +731,7 @@ func (m *DeviceManagement) GetEmbeddedSIMActivationCodePools()([]EmbeddedSIMActi
     return nil
 }
 // GetExchangeConnectors gets the exchangeConnectors property value. The list of Exchange Connectors configured by the tenant.
+// returns a []DeviceManagementExchangeConnectorable when successful
 func (m *DeviceManagement) GetExchangeConnectors()([]DeviceManagementExchangeConnectorable) {
     val, err := m.GetBackingStore().Get("exchangeConnectors")
     if err != nil {
@@ -682,6 +743,7 @@ func (m *DeviceManagement) GetExchangeConnectors()([]DeviceManagementExchangeCon
     return nil
 }
 // GetExchangeOnPremisesPolicies gets the exchangeOnPremisesPolicies property value. The list of Exchange On Premisis policies configured by the tenant.
+// returns a []DeviceManagementExchangeOnPremisesPolicyable when successful
 func (m *DeviceManagement) GetExchangeOnPremisesPolicies()([]DeviceManagementExchangeOnPremisesPolicyable) {
     val, err := m.GetBackingStore().Get("exchangeOnPremisesPolicies")
     if err != nil {
@@ -693,6 +755,7 @@ func (m *DeviceManagement) GetExchangeOnPremisesPolicies()([]DeviceManagementExc
     return nil
 }
 // GetExchangeOnPremisesPolicy gets the exchangeOnPremisesPolicy property value. The policy which controls mobile device access to Exchange On Premises
+// returns a DeviceManagementExchangeOnPremisesPolicyable when successful
 func (m *DeviceManagement) GetExchangeOnPremisesPolicy()(DeviceManagementExchangeOnPremisesPolicyable) {
     val, err := m.GetBackingStore().Get("exchangeOnPremisesPolicy")
     if err != nil {
@@ -704,6 +767,7 @@ func (m *DeviceManagement) GetExchangeOnPremisesPolicy()(DeviceManagementExchang
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accountMoveCompletionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -1859,6 +1923,22 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 }
             }
             m.SetMacOSSoftwareUpdateAccountSummaries(res)
+        }
+        return nil
+    }
+    res["managedDeviceCleanupRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceCleanupRuleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ManagedDeviceCleanupRuleable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ManagedDeviceCleanupRuleable)
+                }
+            }
+            m.SetManagedDeviceCleanupRules(res)
         }
         return nil
     }
@@ -3375,6 +3455,7 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetGroupPolicyCategories gets the groupPolicyCategories property value. The available group policy categories for this account.
+// returns a []GroupPolicyCategoryable when successful
 func (m *DeviceManagement) GetGroupPolicyCategories()([]GroupPolicyCategoryable) {
     val, err := m.GetBackingStore().Get("groupPolicyCategories")
     if err != nil {
@@ -3386,6 +3467,7 @@ func (m *DeviceManagement) GetGroupPolicyCategories()([]GroupPolicyCategoryable)
     return nil
 }
 // GetGroupPolicyConfigurations gets the groupPolicyConfigurations property value. The group policy configurations created by this account.
+// returns a []GroupPolicyConfigurationable when successful
 func (m *DeviceManagement) GetGroupPolicyConfigurations()([]GroupPolicyConfigurationable) {
     val, err := m.GetBackingStore().Get("groupPolicyConfigurations")
     if err != nil {
@@ -3397,6 +3479,7 @@ func (m *DeviceManagement) GetGroupPolicyConfigurations()([]GroupPolicyConfigura
     return nil
 }
 // GetGroupPolicyDefinitionFiles gets the groupPolicyDefinitionFiles property value. The available group policy definition files for this account.
+// returns a []GroupPolicyDefinitionFileable when successful
 func (m *DeviceManagement) GetGroupPolicyDefinitionFiles()([]GroupPolicyDefinitionFileable) {
     val, err := m.GetBackingStore().Get("groupPolicyDefinitionFiles")
     if err != nil {
@@ -3408,6 +3491,7 @@ func (m *DeviceManagement) GetGroupPolicyDefinitionFiles()([]GroupPolicyDefiniti
     return nil
 }
 // GetGroupPolicyDefinitions gets the groupPolicyDefinitions property value. The available group policy definitions for this account.
+// returns a []GroupPolicyDefinitionable when successful
 func (m *DeviceManagement) GetGroupPolicyDefinitions()([]GroupPolicyDefinitionable) {
     val, err := m.GetBackingStore().Get("groupPolicyDefinitions")
     if err != nil {
@@ -3419,6 +3503,7 @@ func (m *DeviceManagement) GetGroupPolicyDefinitions()([]GroupPolicyDefinitionab
     return nil
 }
 // GetGroupPolicyMigrationReports gets the groupPolicyMigrationReports property value. A list of Group Policy migration reports.
+// returns a []GroupPolicyMigrationReportable when successful
 func (m *DeviceManagement) GetGroupPolicyMigrationReports()([]GroupPolicyMigrationReportable) {
     val, err := m.GetBackingStore().Get("groupPolicyMigrationReports")
     if err != nil {
@@ -3430,6 +3515,7 @@ func (m *DeviceManagement) GetGroupPolicyMigrationReports()([]GroupPolicyMigrati
     return nil
 }
 // GetGroupPolicyObjectFiles gets the groupPolicyObjectFiles property value. A list of Group Policy Object files uploaded.
+// returns a []GroupPolicyObjectFileable when successful
 func (m *DeviceManagement) GetGroupPolicyObjectFiles()([]GroupPolicyObjectFileable) {
     val, err := m.GetBackingStore().Get("groupPolicyObjectFiles")
     if err != nil {
@@ -3441,6 +3527,7 @@ func (m *DeviceManagement) GetGroupPolicyObjectFiles()([]GroupPolicyObjectFileab
     return nil
 }
 // GetGroupPolicyUploadedDefinitionFiles gets the groupPolicyUploadedDefinitionFiles property value. The available group policy uploaded definition files for this account.
+// returns a []GroupPolicyUploadedDefinitionFileable when successful
 func (m *DeviceManagement) GetGroupPolicyUploadedDefinitionFiles()([]GroupPolicyUploadedDefinitionFileable) {
     val, err := m.GetBackingStore().Get("groupPolicyUploadedDefinitionFiles")
     if err != nil {
@@ -3452,6 +3539,7 @@ func (m *DeviceManagement) GetGroupPolicyUploadedDefinitionFiles()([]GroupPolicy
     return nil
 }
 // GetImportedDeviceIdentities gets the importedDeviceIdentities property value. The imported device identities.
+// returns a []ImportedDeviceIdentityable when successful
 func (m *DeviceManagement) GetImportedDeviceIdentities()([]ImportedDeviceIdentityable) {
     val, err := m.GetBackingStore().Get("importedDeviceIdentities")
     if err != nil {
@@ -3463,6 +3551,7 @@ func (m *DeviceManagement) GetImportedDeviceIdentities()([]ImportedDeviceIdentit
     return nil
 }
 // GetImportedWindowsAutopilotDeviceIdentities gets the importedWindowsAutopilotDeviceIdentities property value. Collection of imported Windows autopilot devices.
+// returns a []ImportedWindowsAutopilotDeviceIdentityable when successful
 func (m *DeviceManagement) GetImportedWindowsAutopilotDeviceIdentities()([]ImportedWindowsAutopilotDeviceIdentityable) {
     val, err := m.GetBackingStore().Get("importedWindowsAutopilotDeviceIdentities")
     if err != nil {
@@ -3474,6 +3563,7 @@ func (m *DeviceManagement) GetImportedWindowsAutopilotDeviceIdentities()([]Impor
     return nil
 }
 // GetIntents gets the intents property value. The device management intents
+// returns a []DeviceManagementIntentable when successful
 func (m *DeviceManagement) GetIntents()([]DeviceManagementIntentable) {
     val, err := m.GetBackingStore().Get("intents")
     if err != nil {
@@ -3485,6 +3575,7 @@ func (m *DeviceManagement) GetIntents()([]DeviceManagementIntentable) {
     return nil
 }
 // GetIntuneAccountId gets the intuneAccountId property value. Intune Account ID for given tenant
+// returns a *UUID when successful
 func (m *DeviceManagement) GetIntuneAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("intuneAccountId")
     if err != nil {
@@ -3496,6 +3587,7 @@ func (m *DeviceManagement) GetIntuneAccountId()(*i561e97a8befe7661a44c8f54600992
     return nil
 }
 // GetIntuneBrand gets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
+// returns a IntuneBrandable when successful
 func (m *DeviceManagement) GetIntuneBrand()(IntuneBrandable) {
     val, err := m.GetBackingStore().Get("intuneBrand")
     if err != nil {
@@ -3507,6 +3599,7 @@ func (m *DeviceManagement) GetIntuneBrand()(IntuneBrandable) {
     return nil
 }
 // GetIntuneBrandingProfiles gets the intuneBrandingProfiles property value. Intune branding profiles targeted to AAD groups
+// returns a []IntuneBrandingProfileable when successful
 func (m *DeviceManagement) GetIntuneBrandingProfiles()([]IntuneBrandingProfileable) {
     val, err := m.GetBackingStore().Get("intuneBrandingProfiles")
     if err != nil {
@@ -3518,6 +3611,7 @@ func (m *DeviceManagement) GetIntuneBrandingProfiles()([]IntuneBrandingProfileab
     return nil
 }
 // GetIosUpdateStatuses gets the iosUpdateStatuses property value. The IOS software update installation statuses for this account.
+// returns a []IosUpdateDeviceStatusable when successful
 func (m *DeviceManagement) GetIosUpdateStatuses()([]IosUpdateDeviceStatusable) {
     val, err := m.GetBackingStore().Get("iosUpdateStatuses")
     if err != nil {
@@ -3529,6 +3623,7 @@ func (m *DeviceManagement) GetIosUpdateStatuses()([]IosUpdateDeviceStatusable) {
     return nil
 }
 // GetLastReportAggregationDateTime gets the lastReportAggregationDateTime property value. The last modified time of reporting for this account. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceManagement) GetLastReportAggregationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastReportAggregationDateTime")
     if err != nil {
@@ -3540,6 +3635,7 @@ func (m *DeviceManagement) GetLastReportAggregationDateTime()(*i336074805fc85398
     return nil
 }
 // GetLegacyPcManangementEnabled gets the legacyPcManangementEnabled property value. The property to enable Non-MDM managed legacy PC management for this account. This property is read-only.
+// returns a *bool when successful
 func (m *DeviceManagement) GetLegacyPcManangementEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("legacyPcManangementEnabled")
     if err != nil {
@@ -3551,6 +3647,7 @@ func (m *DeviceManagement) GetLegacyPcManangementEnabled()(*bool) {
     return nil
 }
 // GetMacOSSoftwareUpdateAccountSummaries gets the macOSSoftwareUpdateAccountSummaries property value. The MacOS software update account summaries for this account.
+// returns a []MacOSSoftwareUpdateAccountSummaryable when successful
 func (m *DeviceManagement) GetMacOSSoftwareUpdateAccountSummaries()([]MacOSSoftwareUpdateAccountSummaryable) {
     val, err := m.GetBackingStore().Get("macOSSoftwareUpdateAccountSummaries")
     if err != nil {
@@ -3561,7 +3658,20 @@ func (m *DeviceManagement) GetMacOSSoftwareUpdateAccountSummaries()([]MacOSSoftw
     }
     return nil
 }
+// GetManagedDeviceCleanupRules gets the managedDeviceCleanupRules property value. Device cleanup rule V2
+// returns a []ManagedDeviceCleanupRuleable when successful
+func (m *DeviceManagement) GetManagedDeviceCleanupRules()([]ManagedDeviceCleanupRuleable) {
+    val, err := m.GetBackingStore().Get("managedDeviceCleanupRules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceCleanupRuleable)
+    }
+    return nil
+}
 // GetManagedDeviceCleanupSettings gets the managedDeviceCleanupSettings property value. Device cleanup rule
+// returns a ManagedDeviceCleanupSettingsable when successful
 func (m *DeviceManagement) GetManagedDeviceCleanupSettings()(ManagedDeviceCleanupSettingsable) {
     val, err := m.GetBackingStore().Get("managedDeviceCleanupSettings")
     if err != nil {
@@ -3573,6 +3683,7 @@ func (m *DeviceManagement) GetManagedDeviceCleanupSettings()(ManagedDeviceCleanu
     return nil
 }
 // GetManagedDeviceEncryptionStates gets the managedDeviceEncryptionStates property value. Encryption report for devices in this account
+// returns a []ManagedDeviceEncryptionStateable when successful
 func (m *DeviceManagement) GetManagedDeviceEncryptionStates()([]ManagedDeviceEncryptionStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceEncryptionStates")
     if err != nil {
@@ -3584,6 +3695,7 @@ func (m *DeviceManagement) GetManagedDeviceEncryptionStates()([]ManagedDeviceEnc
     return nil
 }
 // GetManagedDeviceOverview gets the managedDeviceOverview property value. Device overview
+// returns a ManagedDeviceOverviewable when successful
 func (m *DeviceManagement) GetManagedDeviceOverview()(ManagedDeviceOverviewable) {
     val, err := m.GetBackingStore().Get("managedDeviceOverview")
     if err != nil {
@@ -3595,6 +3707,7 @@ func (m *DeviceManagement) GetManagedDeviceOverview()(ManagedDeviceOverviewable)
     return nil
 }
 // GetManagedDevices gets the managedDevices property value. The list of managed devices.
+// returns a []ManagedDeviceable when successful
 func (m *DeviceManagement) GetManagedDevices()([]ManagedDeviceable) {
     val, err := m.GetBackingStore().Get("managedDevices")
     if err != nil {
@@ -3606,6 +3719,7 @@ func (m *DeviceManagement) GetManagedDevices()([]ManagedDeviceable) {
     return nil
 }
 // GetMaximumDepTokens gets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
+// returns a *int32 when successful
 func (m *DeviceManagement) GetMaximumDepTokens()(*int32) {
     val, err := m.GetBackingStore().Get("maximumDepTokens")
     if err != nil {
@@ -3617,6 +3731,7 @@ func (m *DeviceManagement) GetMaximumDepTokens()(*int32) {
     return nil
 }
 // GetMicrosoftTunnelConfigurations gets the microsoftTunnelConfigurations property value. Collection of MicrosoftTunnelConfiguration settings associated with account.
+// returns a []MicrosoftTunnelConfigurationable when successful
 func (m *DeviceManagement) GetMicrosoftTunnelConfigurations()([]MicrosoftTunnelConfigurationable) {
     val, err := m.GetBackingStore().Get("microsoftTunnelConfigurations")
     if err != nil {
@@ -3628,6 +3743,7 @@ func (m *DeviceManagement) GetMicrosoftTunnelConfigurations()([]MicrosoftTunnelC
     return nil
 }
 // GetMicrosoftTunnelHealthThresholds gets the microsoftTunnelHealthThresholds property value. Collection of MicrosoftTunnelHealthThreshold settings associated with account.
+// returns a []MicrosoftTunnelHealthThresholdable when successful
 func (m *DeviceManagement) GetMicrosoftTunnelHealthThresholds()([]MicrosoftTunnelHealthThresholdable) {
     val, err := m.GetBackingStore().Get("microsoftTunnelHealthThresholds")
     if err != nil {
@@ -3639,6 +3755,7 @@ func (m *DeviceManagement) GetMicrosoftTunnelHealthThresholds()([]MicrosoftTunne
     return nil
 }
 // GetMicrosoftTunnelServerLogCollectionResponses gets the microsoftTunnelServerLogCollectionResponses property value. Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
+// returns a []MicrosoftTunnelServerLogCollectionResponseable when successful
 func (m *DeviceManagement) GetMicrosoftTunnelServerLogCollectionResponses()([]MicrosoftTunnelServerLogCollectionResponseable) {
     val, err := m.GetBackingStore().Get("microsoftTunnelServerLogCollectionResponses")
     if err != nil {
@@ -3650,6 +3767,7 @@ func (m *DeviceManagement) GetMicrosoftTunnelServerLogCollectionResponses()([]Mi
     return nil
 }
 // GetMicrosoftTunnelSites gets the microsoftTunnelSites property value. Collection of MicrosoftTunnelSite settings associated with account.
+// returns a []MicrosoftTunnelSiteable when successful
 func (m *DeviceManagement) GetMicrosoftTunnelSites()([]MicrosoftTunnelSiteable) {
     val, err := m.GetBackingStore().Get("microsoftTunnelSites")
     if err != nil {
@@ -3661,6 +3779,7 @@ func (m *DeviceManagement) GetMicrosoftTunnelSites()([]MicrosoftTunnelSiteable) 
     return nil
 }
 // GetMobileAppTroubleshootingEvents gets the mobileAppTroubleshootingEvents property value. The collection property of MobileAppTroubleshootingEvent.
+// returns a []MobileAppTroubleshootingEventable when successful
 func (m *DeviceManagement) GetMobileAppTroubleshootingEvents()([]MobileAppTroubleshootingEventable) {
     val, err := m.GetBackingStore().Get("mobileAppTroubleshootingEvents")
     if err != nil {
@@ -3672,6 +3791,7 @@ func (m *DeviceManagement) GetMobileAppTroubleshootingEvents()([]MobileAppTroubl
     return nil
 }
 // GetMobileThreatDefenseConnectors gets the mobileThreatDefenseConnectors property value. The list of Mobile threat Defense connectors configured by the tenant.
+// returns a []MobileThreatDefenseConnectorable when successful
 func (m *DeviceManagement) GetMobileThreatDefenseConnectors()([]MobileThreatDefenseConnectorable) {
     val, err := m.GetBackingStore().Get("mobileThreatDefenseConnectors")
     if err != nil {
@@ -3683,6 +3803,7 @@ func (m *DeviceManagement) GetMobileThreatDefenseConnectors()([]MobileThreatDefe
     return nil
 }
 // GetNdesConnectors gets the ndesConnectors property value. The collection of Ndes connectors for this account.
+// returns a []NdesConnectorable when successful
 func (m *DeviceManagement) GetNdesConnectors()([]NdesConnectorable) {
     val, err := m.GetBackingStore().Get("ndesConnectors")
     if err != nil {
@@ -3694,6 +3815,7 @@ func (m *DeviceManagement) GetNdesConnectors()([]NdesConnectorable) {
     return nil
 }
 // GetNotificationMessageTemplates gets the notificationMessageTemplates property value. The Notification Message Templates.
+// returns a []NotificationMessageTemplateable when successful
 func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessageTemplateable) {
     val, err := m.GetBackingStore().Get("notificationMessageTemplates")
     if err != nil {
@@ -3705,6 +3827,7 @@ func (m *DeviceManagement) GetNotificationMessageTemplates()([]NotificationMessa
     return nil
 }
 // GetOperationApprovalPolicies gets the operationApprovalPolicies property value. The Operation Approval Policies
+// returns a []OperationApprovalPolicyable when successful
 func (m *DeviceManagement) GetOperationApprovalPolicies()([]OperationApprovalPolicyable) {
     val, err := m.GetBackingStore().Get("operationApprovalPolicies")
     if err != nil {
@@ -3716,6 +3839,7 @@ func (m *DeviceManagement) GetOperationApprovalPolicies()([]OperationApprovalPol
     return nil
 }
 // GetOperationApprovalRequests gets the operationApprovalRequests property value. The Operation Approval Requests
+// returns a []OperationApprovalRequestable when successful
 func (m *DeviceManagement) GetOperationApprovalRequests()([]OperationApprovalRequestable) {
     val, err := m.GetBackingStore().Get("operationApprovalRequests")
     if err != nil {
@@ -3727,6 +3851,7 @@ func (m *DeviceManagement) GetOperationApprovalRequests()([]OperationApprovalReq
     return nil
 }
 // GetPrivilegeManagementElevations gets the privilegeManagementElevations property value. The endpoint privilege management elevation event entity contains elevation details.
+// returns a []PrivilegeManagementElevationable when successful
 func (m *DeviceManagement) GetPrivilegeManagementElevations()([]PrivilegeManagementElevationable) {
     val, err := m.GetBackingStore().Get("privilegeManagementElevations")
     if err != nil {
@@ -3738,6 +3863,7 @@ func (m *DeviceManagement) GetPrivilegeManagementElevations()([]PrivilegeManagem
     return nil
 }
 // GetRemoteActionAudits gets the remoteActionAudits property value. The list of device remote action audits with the tenant.
+// returns a []RemoteActionAuditable when successful
 func (m *DeviceManagement) GetRemoteActionAudits()([]RemoteActionAuditable) {
     val, err := m.GetBackingStore().Get("remoteActionAudits")
     if err != nil {
@@ -3749,6 +3875,7 @@ func (m *DeviceManagement) GetRemoteActionAudits()([]RemoteActionAuditable) {
     return nil
 }
 // GetRemoteAssistancePartners gets the remoteAssistancePartners property value. The remote assist partners.
+// returns a []RemoteAssistancePartnerable when successful
 func (m *DeviceManagement) GetRemoteAssistancePartners()([]RemoteAssistancePartnerable) {
     val, err := m.GetBackingStore().Get("remoteAssistancePartners")
     if err != nil {
@@ -3760,6 +3887,7 @@ func (m *DeviceManagement) GetRemoteAssistancePartners()([]RemoteAssistancePartn
     return nil
 }
 // GetRemoteAssistanceSettings gets the remoteAssistanceSettings property value. The remote assistance settings singleton
+// returns a RemoteAssistanceSettingsable when successful
 func (m *DeviceManagement) GetRemoteAssistanceSettings()(RemoteAssistanceSettingsable) {
     val, err := m.GetBackingStore().Get("remoteAssistanceSettings")
     if err != nil {
@@ -3771,6 +3899,7 @@ func (m *DeviceManagement) GetRemoteAssistanceSettings()(RemoteAssistanceSetting
     return nil
 }
 // GetReports gets the reports property value. Reports singleton
+// returns a DeviceManagementReportsable when successful
 func (m *DeviceManagement) GetReports()(DeviceManagementReportsable) {
     val, err := m.GetBackingStore().Get("reports")
     if err != nil {
@@ -3782,6 +3911,7 @@ func (m *DeviceManagement) GetReports()(DeviceManagementReportsable) {
     return nil
 }
 // GetResourceAccessProfiles gets the resourceAccessProfiles property value. Collection of resource access settings associated with account.
+// returns a []DeviceManagementResourceAccessProfileBaseable when successful
 func (m *DeviceManagement) GetResourceAccessProfiles()([]DeviceManagementResourceAccessProfileBaseable) {
     val, err := m.GetBackingStore().Get("resourceAccessProfiles")
     if err != nil {
@@ -3793,6 +3923,7 @@ func (m *DeviceManagement) GetResourceAccessProfiles()([]DeviceManagementResourc
     return nil
 }
 // GetResourceOperations gets the resourceOperations property value. The Resource Operations.
+// returns a []ResourceOperationable when successful
 func (m *DeviceManagement) GetResourceOperations()([]ResourceOperationable) {
     val, err := m.GetBackingStore().Get("resourceOperations")
     if err != nil {
@@ -3804,6 +3935,7 @@ func (m *DeviceManagement) GetResourceOperations()([]ResourceOperationable) {
     return nil
 }
 // GetReusablePolicySettings gets the reusablePolicySettings property value. List of all reusable settings that can be referred in a policy
+// returns a []DeviceManagementReusablePolicySettingable when successful
 func (m *DeviceManagement) GetReusablePolicySettings()([]DeviceManagementReusablePolicySettingable) {
     val, err := m.GetBackingStore().Get("reusablePolicySettings")
     if err != nil {
@@ -3815,6 +3947,7 @@ func (m *DeviceManagement) GetReusablePolicySettings()([]DeviceManagementReusabl
     return nil
 }
 // GetReusableSettings gets the reusableSettings property value. List of all reusable settings
+// returns a []DeviceManagementConfigurationSettingDefinitionable when successful
 func (m *DeviceManagement) GetReusableSettings()([]DeviceManagementConfigurationSettingDefinitionable) {
     val, err := m.GetBackingStore().Get("reusableSettings")
     if err != nil {
@@ -3826,6 +3959,7 @@ func (m *DeviceManagement) GetReusableSettings()([]DeviceManagementConfiguration
     return nil
 }
 // GetRoleAssignments gets the roleAssignments property value. The Role Assignments.
+// returns a []DeviceAndAppManagementRoleAssignmentable when successful
 func (m *DeviceManagement) GetRoleAssignments()([]DeviceAndAppManagementRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("roleAssignments")
     if err != nil {
@@ -3837,6 +3971,7 @@ func (m *DeviceManagement) GetRoleAssignments()([]DeviceAndAppManagementRoleAssi
     return nil
 }
 // GetRoleDefinitions gets the roleDefinitions property value. The Role Definitions.
+// returns a []RoleDefinitionable when successful
 func (m *DeviceManagement) GetRoleDefinitions()([]RoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinitions")
     if err != nil {
@@ -3848,6 +3983,7 @@ func (m *DeviceManagement) GetRoleDefinitions()([]RoleDefinitionable) {
     return nil
 }
 // GetRoleScopeTags gets the roleScopeTags property value. The Role Scope Tags.
+// returns a []RoleScopeTagable when successful
 func (m *DeviceManagement) GetRoleScopeTags()([]RoleScopeTagable) {
     val, err := m.GetBackingStore().Get("roleScopeTags")
     if err != nil {
@@ -3859,6 +3995,7 @@ func (m *DeviceManagement) GetRoleScopeTags()([]RoleScopeTagable) {
     return nil
 }
 // GetServiceNowConnections gets the serviceNowConnections property value. A list of ServiceNowConnections
+// returns a []ServiceNowConnectionable when successful
 func (m *DeviceManagement) GetServiceNowConnections()([]ServiceNowConnectionable) {
     val, err := m.GetBackingStore().Get("serviceNowConnections")
     if err != nil {
@@ -3870,6 +4007,7 @@ func (m *DeviceManagement) GetServiceNowConnections()([]ServiceNowConnectionable
     return nil
 }
 // GetSettingDefinitions gets the settingDefinitions property value. The device management intent setting definitions
+// returns a []DeviceManagementSettingDefinitionable when successful
 func (m *DeviceManagement) GetSettingDefinitions()([]DeviceManagementSettingDefinitionable) {
     val, err := m.GetBackingStore().Get("settingDefinitions")
     if err != nil {
@@ -3881,6 +4019,7 @@ func (m *DeviceManagement) GetSettingDefinitions()([]DeviceManagementSettingDefi
     return nil
 }
 // GetSettings gets the settings property value. Account level settings.
+// returns a DeviceManagementSettingsable when successful
 func (m *DeviceManagement) GetSettings()(DeviceManagementSettingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -3892,6 +4031,7 @@ func (m *DeviceManagement) GetSettings()(DeviceManagementSettingsable) {
     return nil
 }
 // GetSoftwareUpdateStatusSummary gets the softwareUpdateStatusSummary property value. The software update status summary.
+// returns a SoftwareUpdateStatusSummaryable when successful
 func (m *DeviceManagement) GetSoftwareUpdateStatusSummary()(SoftwareUpdateStatusSummaryable) {
     val, err := m.GetBackingStore().Get("softwareUpdateStatusSummary")
     if err != nil {
@@ -3903,6 +4043,7 @@ func (m *DeviceManagement) GetSoftwareUpdateStatusSummary()(SoftwareUpdateStatus
     return nil
 }
 // GetSubscriptions gets the subscriptions property value. Tenant mobile device management subscriptions.
+// returns a *DeviceManagementSubscriptions when successful
 func (m *DeviceManagement) GetSubscriptions()(*DeviceManagementSubscriptions) {
     val, err := m.GetBackingStore().Get("subscriptions")
     if err != nil {
@@ -3914,6 +4055,7 @@ func (m *DeviceManagement) GetSubscriptions()(*DeviceManagementSubscriptions) {
     return nil
 }
 // GetSubscriptionState gets the subscriptionState property value. Tenant mobile device management subscription state.
+// returns a *DeviceManagementSubscriptionState when successful
 func (m *DeviceManagement) GetSubscriptionState()(*DeviceManagementSubscriptionState) {
     val, err := m.GetBackingStore().Get("subscriptionState")
     if err != nil {
@@ -3925,6 +4067,7 @@ func (m *DeviceManagement) GetSubscriptionState()(*DeviceManagementSubscriptionS
     return nil
 }
 // GetTelecomExpenseManagementPartners gets the telecomExpenseManagementPartners property value. The telecom expense management partners.
+// returns a []TelecomExpenseManagementPartnerable when successful
 func (m *DeviceManagement) GetTelecomExpenseManagementPartners()([]TelecomExpenseManagementPartnerable) {
     val, err := m.GetBackingStore().Get("telecomExpenseManagementPartners")
     if err != nil {
@@ -3936,6 +4079,7 @@ func (m *DeviceManagement) GetTelecomExpenseManagementPartners()([]TelecomExpens
     return nil
 }
 // GetTemplateInsights gets the templateInsights property value. List of setting insights in a template
+// returns a []DeviceManagementTemplateInsightsDefinitionable when successful
 func (m *DeviceManagement) GetTemplateInsights()([]DeviceManagementTemplateInsightsDefinitionable) {
     val, err := m.GetBackingStore().Get("templateInsights")
     if err != nil {
@@ -3947,6 +4091,7 @@ func (m *DeviceManagement) GetTemplateInsights()([]DeviceManagementTemplateInsig
     return nil
 }
 // GetTemplates gets the templates property value. The available templates
+// returns a []DeviceManagementTemplateable when successful
 func (m *DeviceManagement) GetTemplates()([]DeviceManagementTemplateable) {
     val, err := m.GetBackingStore().Get("templates")
     if err != nil {
@@ -3958,6 +4103,7 @@ func (m *DeviceManagement) GetTemplates()([]DeviceManagementTemplateable) {
     return nil
 }
 // GetTemplateSettings gets the templateSettings property value. List of all TemplateSettings
+// returns a []DeviceManagementConfigurationSettingTemplateable when successful
 func (m *DeviceManagement) GetTemplateSettings()([]DeviceManagementConfigurationSettingTemplateable) {
     val, err := m.GetBackingStore().Get("templateSettings")
     if err != nil {
@@ -3969,6 +4115,7 @@ func (m *DeviceManagement) GetTemplateSettings()([]DeviceManagementConfiguration
     return nil
 }
 // GetTenantAttachRBAC gets the tenantAttachRBAC property value. TenantAttach RBAC Enablement
+// returns a TenantAttachRBACable when successful
 func (m *DeviceManagement) GetTenantAttachRBAC()(TenantAttachRBACable) {
     val, err := m.GetBackingStore().Get("tenantAttachRBAC")
     if err != nil {
@@ -3980,6 +4127,7 @@ func (m *DeviceManagement) GetTenantAttachRBAC()(TenantAttachRBACable) {
     return nil
 }
 // GetTermsAndConditions gets the termsAndConditions property value. The terms and conditions associated with device management of the company.
+// returns a []TermsAndConditionsable when successful
 func (m *DeviceManagement) GetTermsAndConditions()([]TermsAndConditionsable) {
     val, err := m.GetBackingStore().Get("termsAndConditions")
     if err != nil {
@@ -3991,6 +4139,7 @@ func (m *DeviceManagement) GetTermsAndConditions()([]TermsAndConditionsable) {
     return nil
 }
 // GetTroubleshootingEvents gets the troubleshootingEvents property value. The list of troubleshooting events for the tenant.
+// returns a []DeviceManagementTroubleshootingEventable when successful
 func (m *DeviceManagement) GetTroubleshootingEvents()([]DeviceManagementTroubleshootingEventable) {
     val, err := m.GetBackingStore().Get("troubleshootingEvents")
     if err != nil {
@@ -4002,6 +4151,7 @@ func (m *DeviceManagement) GetTroubleshootingEvents()([]DeviceManagementTroubles
     return nil
 }
 // GetUnlicensedAdminstratorsEnabled gets the unlicensedAdminstratorsEnabled property value. When enabled, users assigned as administrators via Role Assignment Memberships do not require an assigned Intune license. Prior to this, only Intune licensed users were granted permissions with an Intune role unless they were assigned a role via Azure Active Directory. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators are unaffected, do not have to be direct members, nor does the 350 member limit apply. This property is read-only.
+// returns a *bool when successful
 func (m *DeviceManagement) GetUnlicensedAdminstratorsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("unlicensedAdminstratorsEnabled")
     if err != nil {
@@ -4013,6 +4163,7 @@ func (m *DeviceManagement) GetUnlicensedAdminstratorsEnabled()(*bool) {
     return nil
 }
 // GetUserExperienceAnalyticsAnomaly gets the userExperienceAnalyticsAnomaly property value. The user experience analytics anomaly entity contains anomaly details.
+// returns a []UserExperienceAnalyticsAnomalyable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAnomaly()([]UserExperienceAnalyticsAnomalyable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAnomaly")
     if err != nil {
@@ -4024,6 +4175,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAnomaly()([]UserExperienceA
     return nil
 }
 // GetUserExperienceAnalyticsAnomalyCorrelationGroupOverview gets the userExperienceAnalyticsAnomalyCorrelationGroupOverview property value. The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
+// returns a []UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAnomalyCorrelationGroupOverview()([]UserExperienceAnalyticsAnomalyCorrelationGroupOverviewable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAnomalyCorrelationGroupOverview")
     if err != nil {
@@ -4035,6 +4187,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAnomalyCorrelationGroupOver
     return nil
 }
 // GetUserExperienceAnalyticsAnomalyDevice gets the userExperienceAnalyticsAnomalyDevice property value. The user experience analytics anomaly entity contains device details.
+// returns a []UserExperienceAnalyticsAnomalyDeviceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAnomalyDevice()([]UserExperienceAnalyticsAnomalyDeviceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAnomalyDevice")
     if err != nil {
@@ -4046,6 +4199,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAnomalyDevice()([]UserExper
     return nil
 }
 // GetUserExperienceAnalyticsAnomalySeverityOverview gets the userExperienceAnalyticsAnomalySeverityOverview property value. The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.
+// returns a UserExperienceAnalyticsAnomalySeverityOverviewable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAnomalySeverityOverview()(UserExperienceAnalyticsAnomalySeverityOverviewable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAnomalySeverityOverview")
     if err != nil {
@@ -4057,6 +4211,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAnomalySeverityOverview()(U
     return nil
 }
 // GetUserExperienceAnalyticsAppHealthApplicationPerformance gets the userExperienceAnalyticsAppHealthApplicationPerformance property value. User experience analytics appHealth Application Performance
+// returns a []UserExperienceAnalyticsAppHealthApplicationPerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerformance()([]UserExperienceAnalyticsAppHealthApplicationPerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAppHealthApplicationPerformance")
     if err != nil {
@@ -4068,6 +4223,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerform
     return nil
 }
 // GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion gets the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property value. User experience analytics appHealth Application Performance by App Version
+// returns a []UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion()([]UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion")
     if err != nil {
@@ -4079,6 +4235,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerform
     return nil
 }
 // GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails gets the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property value. User experience analytics appHealth Application Performance by App Version details
+// returns a []UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails()([]UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails")
     if err != nil {
@@ -4090,6 +4247,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerform
     return nil
 }
 // GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId gets the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property value. User experience analytics appHealth Application Performance by App Version Device Id
+// returns a []UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId()([]UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceIdable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId")
     if err != nil {
@@ -4101,6 +4259,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerform
     return nil
 }
 // GetUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion gets the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property value. User experience analytics appHealth Application Performance by OS Version
+// returns a []UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion()([]UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion")
     if err != nil {
@@ -4112,6 +4271,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthApplicationPerform
     return nil
 }
 // GetUserExperienceAnalyticsAppHealthDeviceModelPerformance gets the userExperienceAnalyticsAppHealthDeviceModelPerformance property value. User experience analytics appHealth Model Performance
+// returns a []UserExperienceAnalyticsAppHealthDeviceModelPerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthDeviceModelPerformance()([]UserExperienceAnalyticsAppHealthDeviceModelPerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAppHealthDeviceModelPerformance")
     if err != nil {
@@ -4123,6 +4283,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthDeviceModelPerform
     return nil
 }
 // GetUserExperienceAnalyticsAppHealthDevicePerformance gets the userExperienceAnalyticsAppHealthDevicePerformance property value. User experience analytics appHealth Device Performance
+// returns a []UserExperienceAnalyticsAppHealthDevicePerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthDevicePerformance()([]UserExperienceAnalyticsAppHealthDevicePerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAppHealthDevicePerformance")
     if err != nil {
@@ -4134,6 +4295,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthDevicePerformance(
     return nil
 }
 // GetUserExperienceAnalyticsAppHealthDevicePerformanceDetails gets the userExperienceAnalyticsAppHealthDevicePerformanceDetails property value. User experience analytics device performance details
+// returns a []UserExperienceAnalyticsAppHealthDevicePerformanceDetailsable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthDevicePerformanceDetails()([]UserExperienceAnalyticsAppHealthDevicePerformanceDetailsable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAppHealthDevicePerformanceDetails")
     if err != nil {
@@ -4145,6 +4307,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthDevicePerformanceD
     return nil
 }
 // GetUserExperienceAnalyticsAppHealthOSVersionPerformance gets the userExperienceAnalyticsAppHealthOSVersionPerformance property value. User experience analytics appHealth OS version Performance
+// returns a []UserExperienceAnalyticsAppHealthOSVersionPerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthOSVersionPerformance()([]UserExperienceAnalyticsAppHealthOSVersionPerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAppHealthOSVersionPerformance")
     if err != nil {
@@ -4156,6 +4319,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthOSVersionPerforman
     return nil
 }
 // GetUserExperienceAnalyticsAppHealthOverview gets the userExperienceAnalyticsAppHealthOverview property value. User experience analytics appHealth overview
+// returns a UserExperienceAnalyticsCategoryable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthOverview()(UserExperienceAnalyticsCategoryable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsAppHealthOverview")
     if err != nil {
@@ -4167,6 +4331,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsAppHealthOverview()(UserExp
     return nil
 }
 // GetUserExperienceAnalyticsBaselines gets the userExperienceAnalyticsBaselines property value. User experience analytics baselines
+// returns a []UserExperienceAnalyticsBaselineable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsBaselines()([]UserExperienceAnalyticsBaselineable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsBaselines")
     if err != nil {
@@ -4178,6 +4343,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsBaselines()([]UserExperienc
     return nil
 }
 // GetUserExperienceAnalyticsBatteryHealthAppImpact gets the userExperienceAnalyticsBatteryHealthAppImpact property value. User Experience Analytics Battery Health App Impact
+// returns a []UserExperienceAnalyticsBatteryHealthAppImpactable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthAppImpact()([]UserExperienceAnalyticsBatteryHealthAppImpactable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsBatteryHealthAppImpact")
     if err != nil {
@@ -4189,6 +4355,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthAppImpact()([]
     return nil
 }
 // GetUserExperienceAnalyticsBatteryHealthCapacityDetails gets the userExperienceAnalyticsBatteryHealthCapacityDetails property value. User Experience Analytics Battery Health Capacity Details
+// returns a UserExperienceAnalyticsBatteryHealthCapacityDetailsable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthCapacityDetails()(UserExperienceAnalyticsBatteryHealthCapacityDetailsable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsBatteryHealthCapacityDetails")
     if err != nil {
@@ -4200,6 +4367,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthCapacityDetail
     return nil
 }
 // GetUserExperienceAnalyticsBatteryHealthDeviceAppImpact gets the userExperienceAnalyticsBatteryHealthDeviceAppImpact property value. User Experience Analytics Battery Health Device App Impact
+// returns a []UserExperienceAnalyticsBatteryHealthDeviceAppImpactable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthDeviceAppImpact()([]UserExperienceAnalyticsBatteryHealthDeviceAppImpactable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsBatteryHealthDeviceAppImpact")
     if err != nil {
@@ -4211,6 +4379,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthDeviceAppImpac
     return nil
 }
 // GetUserExperienceAnalyticsBatteryHealthDevicePerformance gets the userExperienceAnalyticsBatteryHealthDevicePerformance property value. User Experience Analytics Battery Health Device Performance
+// returns a []UserExperienceAnalyticsBatteryHealthDevicePerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthDevicePerformance()([]UserExperienceAnalyticsBatteryHealthDevicePerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsBatteryHealthDevicePerformance")
     if err != nil {
@@ -4222,6 +4391,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthDevicePerforma
     return nil
 }
 // GetUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory gets the userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory property value. User Experience Analytics Battery Health Device Runtime History
+// returns a []UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()([]UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory")
     if err != nil {
@@ -4233,6 +4403,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthDeviceRuntimeH
     return nil
 }
 // GetUserExperienceAnalyticsBatteryHealthModelPerformance gets the userExperienceAnalyticsBatteryHealthModelPerformance property value. User Experience Analytics Battery Health Model Performance
+// returns a []UserExperienceAnalyticsBatteryHealthModelPerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthModelPerformance()([]UserExperienceAnalyticsBatteryHealthModelPerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsBatteryHealthModelPerformance")
     if err != nil {
@@ -4244,6 +4415,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthModelPerforman
     return nil
 }
 // GetUserExperienceAnalyticsBatteryHealthOsPerformance gets the userExperienceAnalyticsBatteryHealthOsPerformance property value. User Experience Analytics Battery Health Os Performance
+// returns a []UserExperienceAnalyticsBatteryHealthOsPerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthOsPerformance()([]UserExperienceAnalyticsBatteryHealthOsPerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsBatteryHealthOsPerformance")
     if err != nil {
@@ -4255,6 +4427,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthOsPerformance(
     return nil
 }
 // GetUserExperienceAnalyticsBatteryHealthRuntimeDetails gets the userExperienceAnalyticsBatteryHealthRuntimeDetails property value. User Experience Analytics Battery Health Runtime Details
+// returns a UserExperienceAnalyticsBatteryHealthRuntimeDetailsable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthRuntimeDetails()(UserExperienceAnalyticsBatteryHealthRuntimeDetailsable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsBatteryHealthRuntimeDetails")
     if err != nil {
@@ -4266,6 +4439,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsBatteryHealthRuntimeDetails
     return nil
 }
 // GetUserExperienceAnalyticsCategories gets the userExperienceAnalyticsCategories property value. User experience analytics categories
+// returns a []UserExperienceAnalyticsCategoryable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsCategories()([]UserExperienceAnalyticsCategoryable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsCategories")
     if err != nil {
@@ -4277,6 +4451,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsCategories()([]UserExperien
     return nil
 }
 // GetUserExperienceAnalyticsDeviceMetricHistory gets the userExperienceAnalyticsDeviceMetricHistory property value. User experience analytics device metric history
+// returns a []UserExperienceAnalyticsMetricHistoryable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceMetricHistory()([]UserExperienceAnalyticsMetricHistoryable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDeviceMetricHistory")
     if err != nil {
@@ -4288,6 +4463,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceMetricHistory()([]Use
     return nil
 }
 // GetUserExperienceAnalyticsDevicePerformance gets the userExperienceAnalyticsDevicePerformance property value. User experience analytics device performance
+// returns a []UserExperienceAnalyticsDevicePerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDevicePerformance()([]UserExperienceAnalyticsDevicePerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDevicePerformance")
     if err != nil {
@@ -4299,6 +4475,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDevicePerformance()([]UserE
     return nil
 }
 // GetUserExperienceAnalyticsDeviceScope gets the userExperienceAnalyticsDeviceScope property value. The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
+// returns a UserExperienceAnalyticsDeviceScopeable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceScope()(UserExperienceAnalyticsDeviceScopeable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDeviceScope")
     if err != nil {
@@ -4310,6 +4487,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceScope()(UserExperienc
     return nil
 }
 // GetUserExperienceAnalyticsDeviceScopes gets the userExperienceAnalyticsDeviceScopes property value. The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.
+// returns a []UserExperienceAnalyticsDeviceScopeable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceScopes()([]UserExperienceAnalyticsDeviceScopeable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDeviceScopes")
     if err != nil {
@@ -4321,6 +4499,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceScopes()([]UserExperi
     return nil
 }
 // GetUserExperienceAnalyticsDeviceScores gets the userExperienceAnalyticsDeviceScores property value. User experience analytics device scores
+// returns a []UserExperienceAnalyticsDeviceScoresable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceScores()([]UserExperienceAnalyticsDeviceScoresable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDeviceScores")
     if err != nil {
@@ -4332,6 +4511,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceScores()([]UserExperi
     return nil
 }
 // GetUserExperienceAnalyticsDeviceStartupHistory gets the userExperienceAnalyticsDeviceStartupHistory property value. User experience analytics device Startup History
+// returns a []UserExperienceAnalyticsDeviceStartupHistoryable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceStartupHistory()([]UserExperienceAnalyticsDeviceStartupHistoryable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDeviceStartupHistory")
     if err != nil {
@@ -4343,6 +4523,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceStartupHistory()([]Us
     return nil
 }
 // GetUserExperienceAnalyticsDeviceStartupProcesses gets the userExperienceAnalyticsDeviceStartupProcesses property value. User experience analytics device Startup Processes
+// returns a []UserExperienceAnalyticsDeviceStartupProcessable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceStartupProcesses()([]UserExperienceAnalyticsDeviceStartupProcessable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDeviceStartupProcesses")
     if err != nil {
@@ -4354,6 +4535,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceStartupProcesses()([]
     return nil
 }
 // GetUserExperienceAnalyticsDeviceStartupProcessPerformance gets the userExperienceAnalyticsDeviceStartupProcessPerformance property value. User experience analytics device Startup Process Performance
+// returns a []UserExperienceAnalyticsDeviceStartupProcessPerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceStartupProcessPerformance()([]UserExperienceAnalyticsDeviceStartupProcessPerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDeviceStartupProcessPerformance")
     if err != nil {
@@ -4365,6 +4547,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceStartupProcessPerform
     return nil
 }
 // GetUserExperienceAnalyticsDevicesWithoutCloudIdentity gets the userExperienceAnalyticsDevicesWithoutCloudIdentity property value. User experience analytics devices without cloud identity.
+// returns a []UserExperienceAnalyticsDeviceWithoutCloudIdentityable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDevicesWithoutCloudIdentity()([]UserExperienceAnalyticsDeviceWithoutCloudIdentityable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDevicesWithoutCloudIdentity")
     if err != nil {
@@ -4376,6 +4559,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDevicesWithoutCloudIdentity
     return nil
 }
 // GetUserExperienceAnalyticsDeviceTimelineEvent gets the userExperienceAnalyticsDeviceTimelineEvent property value. The user experience analytics device events entity contains NRT device timeline event details.
+// returns a []UserExperienceAnalyticsDeviceTimelineEventable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceTimelineEvent()([]UserExperienceAnalyticsDeviceTimelineEventable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDeviceTimelineEvent")
     if err != nil {
@@ -4387,6 +4571,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceTimelineEvent()([]Use
     return nil
 }
 // GetUserExperienceAnalyticsImpactingProcess gets the userExperienceAnalyticsImpactingProcess property value. User experience analytics impacting process
+// returns a []UserExperienceAnalyticsImpactingProcessable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsImpactingProcess()([]UserExperienceAnalyticsImpactingProcessable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsImpactingProcess")
     if err != nil {
@@ -4398,6 +4583,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsImpactingProcess()([]UserEx
     return nil
 }
 // GetUserExperienceAnalyticsMetricHistory gets the userExperienceAnalyticsMetricHistory property value. User experience analytics metric history
+// returns a []UserExperienceAnalyticsMetricHistoryable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsMetricHistory()([]UserExperienceAnalyticsMetricHistoryable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsMetricHistory")
     if err != nil {
@@ -4409,6 +4595,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsMetricHistory()([]UserExper
     return nil
 }
 // GetUserExperienceAnalyticsModelScores gets the userExperienceAnalyticsModelScores property value. User experience analytics model scores
+// returns a []UserExperienceAnalyticsModelScoresable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsModelScores()([]UserExperienceAnalyticsModelScoresable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsModelScores")
     if err != nil {
@@ -4420,6 +4607,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsModelScores()([]UserExperie
     return nil
 }
 // GetUserExperienceAnalyticsNotAutopilotReadyDevice gets the userExperienceAnalyticsNotAutopilotReadyDevice property value. User experience analytics devices not Windows Autopilot ready.
+// returns a []UserExperienceAnalyticsNotAutopilotReadyDeviceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsNotAutopilotReadyDevice()([]UserExperienceAnalyticsNotAutopilotReadyDeviceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsNotAutopilotReadyDevice")
     if err != nil {
@@ -4431,6 +4619,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsNotAutopilotReadyDevice()([
     return nil
 }
 // GetUserExperienceAnalyticsOverview gets the userExperienceAnalyticsOverview property value. User experience analytics overview
+// returns a UserExperienceAnalyticsOverviewable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsOverview()(UserExperienceAnalyticsOverviewable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsOverview")
     if err != nil {
@@ -4442,6 +4631,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsOverview()(UserExperienceAn
     return nil
 }
 // GetUserExperienceAnalyticsRemoteConnection gets the userExperienceAnalyticsRemoteConnection property value. User experience analytics remote connection
+// returns a []UserExperienceAnalyticsRemoteConnectionable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsRemoteConnection()([]UserExperienceAnalyticsRemoteConnectionable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsRemoteConnection")
     if err != nil {
@@ -4453,6 +4643,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsRemoteConnection()([]UserEx
     return nil
 }
 // GetUserExperienceAnalyticsResourcePerformance gets the userExperienceAnalyticsResourcePerformance property value. User experience analytics resource performance
+// returns a []UserExperienceAnalyticsResourcePerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsResourcePerformance()([]UserExperienceAnalyticsResourcePerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsResourcePerformance")
     if err != nil {
@@ -4464,6 +4655,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsResourcePerformance()([]Use
     return nil
 }
 // GetUserExperienceAnalyticsScoreHistory gets the userExperienceAnalyticsScoreHistory property value. User experience analytics device Startup Score History
+// returns a []UserExperienceAnalyticsScoreHistoryable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsScoreHistory()([]UserExperienceAnalyticsScoreHistoryable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsScoreHistory")
     if err != nil {
@@ -4475,6 +4667,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsScoreHistory()([]UserExperi
     return nil
 }
 // GetUserExperienceAnalyticsSettings gets the userExperienceAnalyticsSettings property value. User experience analytics device settings
+// returns a UserExperienceAnalyticsSettingsable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsSettings()(UserExperienceAnalyticsSettingsable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsSettings")
     if err != nil {
@@ -4486,6 +4679,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsSettings()(UserExperienceAn
     return nil
 }
 // GetUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric gets the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property value. User experience analytics work from anywhere hardware readiness metrics.
+// returns a UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric()(UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric")
     if err != nil {
@@ -4497,6 +4691,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereHardwareRea
     return nil
 }
 // GetUserExperienceAnalyticsWorkFromAnywhereMetrics gets the userExperienceAnalyticsWorkFromAnywhereMetrics property value. User experience analytics work from anywhere metrics.
+// returns a []UserExperienceAnalyticsWorkFromAnywhereMetricable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereMetrics()([]UserExperienceAnalyticsWorkFromAnywhereMetricable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsWorkFromAnywhereMetrics")
     if err != nil {
@@ -4508,6 +4703,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereMetrics()([
     return nil
 }
 // GetUserExperienceAnalyticsWorkFromAnywhereModelPerformance gets the userExperienceAnalyticsWorkFromAnywhereModelPerformance property value. The user experience analytics work from anywhere model performance
+// returns a []UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereModelPerformance()([]UserExperienceAnalyticsWorkFromAnywhereModelPerformanceable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsWorkFromAnywhereModelPerformance")
     if err != nil {
@@ -4519,6 +4715,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsWorkFromAnywhereModelPerfor
     return nil
 }
 // GetUserPfxCertificates gets the userPfxCertificates property value. Collection of PFX certificates associated with a user.
+// returns a []UserPFXCertificateable when successful
 func (m *DeviceManagement) GetUserPfxCertificates()([]UserPFXCertificateable) {
     val, err := m.GetBackingStore().Get("userPfxCertificates")
     if err != nil {
@@ -4530,6 +4727,7 @@ func (m *DeviceManagement) GetUserPfxCertificates()([]UserPFXCertificateable) {
     return nil
 }
 // GetVirtualEndpoint gets the virtualEndpoint property value. The virtualEndpoint property
+// returns a VirtualEndpointable when successful
 func (m *DeviceManagement) GetVirtualEndpoint()(VirtualEndpointable) {
     val, err := m.GetBackingStore().Get("virtualEndpoint")
     if err != nil {
@@ -4541,6 +4739,7 @@ func (m *DeviceManagement) GetVirtualEndpoint()(VirtualEndpointable) {
     return nil
 }
 // GetWindowsAutopilotDeploymentProfiles gets the windowsAutopilotDeploymentProfiles property value. Windows auto pilot deployment profiles
+// returns a []WindowsAutopilotDeploymentProfileable when successful
 func (m *DeviceManagement) GetWindowsAutopilotDeploymentProfiles()([]WindowsAutopilotDeploymentProfileable) {
     val, err := m.GetBackingStore().Get("windowsAutopilotDeploymentProfiles")
     if err != nil {
@@ -4552,6 +4751,7 @@ func (m *DeviceManagement) GetWindowsAutopilotDeploymentProfiles()([]WindowsAuto
     return nil
 }
 // GetWindowsAutopilotDeviceIdentities gets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.
+// returns a []WindowsAutopilotDeviceIdentityable when successful
 func (m *DeviceManagement) GetWindowsAutopilotDeviceIdentities()([]WindowsAutopilotDeviceIdentityable) {
     val, err := m.GetBackingStore().Get("windowsAutopilotDeviceIdentities")
     if err != nil {
@@ -4563,6 +4763,7 @@ func (m *DeviceManagement) GetWindowsAutopilotDeviceIdentities()([]WindowsAutopi
     return nil
 }
 // GetWindowsAutopilotSettings gets the windowsAutopilotSettings property value. The Windows autopilot account settings.
+// returns a WindowsAutopilotSettingsable when successful
 func (m *DeviceManagement) GetWindowsAutopilotSettings()(WindowsAutopilotSettingsable) {
     val, err := m.GetBackingStore().Get("windowsAutopilotSettings")
     if err != nil {
@@ -4574,6 +4775,7 @@ func (m *DeviceManagement) GetWindowsAutopilotSettings()(WindowsAutopilotSetting
     return nil
 }
 // GetWindowsDriverUpdateProfiles gets the windowsDriverUpdateProfiles property value. A collection of windows driver update profiles
+// returns a []WindowsDriverUpdateProfileable when successful
 func (m *DeviceManagement) GetWindowsDriverUpdateProfiles()([]WindowsDriverUpdateProfileable) {
     val, err := m.GetBackingStore().Get("windowsDriverUpdateProfiles")
     if err != nil {
@@ -4585,6 +4787,7 @@ func (m *DeviceManagement) GetWindowsDriverUpdateProfiles()([]WindowsDriverUpdat
     return nil
 }
 // GetWindowsFeatureUpdateProfiles gets the windowsFeatureUpdateProfiles property value. A collection of windows feature update profiles
+// returns a []WindowsFeatureUpdateProfileable when successful
 func (m *DeviceManagement) GetWindowsFeatureUpdateProfiles()([]WindowsFeatureUpdateProfileable) {
     val, err := m.GetBackingStore().Get("windowsFeatureUpdateProfiles")
     if err != nil {
@@ -4596,6 +4799,7 @@ func (m *DeviceManagement) GetWindowsFeatureUpdateProfiles()([]WindowsFeatureUpd
     return nil
 }
 // GetWindowsInformationProtectionAppLearningSummaries gets the windowsInformationProtectionAppLearningSummaries property value. The windows information protection app learning summaries.
+// returns a []WindowsInformationProtectionAppLearningSummaryable when successful
 func (m *DeviceManagement) GetWindowsInformationProtectionAppLearningSummaries()([]WindowsInformationProtectionAppLearningSummaryable) {
     val, err := m.GetBackingStore().Get("windowsInformationProtectionAppLearningSummaries")
     if err != nil {
@@ -4607,6 +4811,7 @@ func (m *DeviceManagement) GetWindowsInformationProtectionAppLearningSummaries()
     return nil
 }
 // GetWindowsInformationProtectionNetworkLearningSummaries gets the windowsInformationProtectionNetworkLearningSummaries property value. The windows information protection network learning summaries.
+// returns a []WindowsInformationProtectionNetworkLearningSummaryable when successful
 func (m *DeviceManagement) GetWindowsInformationProtectionNetworkLearningSummaries()([]WindowsInformationProtectionNetworkLearningSummaryable) {
     val, err := m.GetBackingStore().Get("windowsInformationProtectionNetworkLearningSummaries")
     if err != nil {
@@ -4618,6 +4823,7 @@ func (m *DeviceManagement) GetWindowsInformationProtectionNetworkLearningSummari
     return nil
 }
 // GetWindowsMalwareInformation gets the windowsMalwareInformation property value. The list of affected malware in the tenant.
+// returns a []WindowsMalwareInformationable when successful
 func (m *DeviceManagement) GetWindowsMalwareInformation()([]WindowsMalwareInformationable) {
     val, err := m.GetBackingStore().Get("windowsMalwareInformation")
     if err != nil {
@@ -4629,6 +4835,7 @@ func (m *DeviceManagement) GetWindowsMalwareInformation()([]WindowsMalwareInform
     return nil
 }
 // GetWindowsMalwareOverview gets the windowsMalwareOverview property value. Malware overview for windows devices.
+// returns a WindowsMalwareOverviewable when successful
 func (m *DeviceManagement) GetWindowsMalwareOverview()(WindowsMalwareOverviewable) {
     val, err := m.GetBackingStore().Get("windowsMalwareOverview")
     if err != nil {
@@ -4640,6 +4847,7 @@ func (m *DeviceManagement) GetWindowsMalwareOverview()(WindowsMalwareOverviewabl
     return nil
 }
 // GetWindowsQualityUpdateProfiles gets the windowsQualityUpdateProfiles property value. A collection of windows quality update profiles
+// returns a []WindowsQualityUpdateProfileable when successful
 func (m *DeviceManagement) GetWindowsQualityUpdateProfiles()([]WindowsQualityUpdateProfileable) {
     val, err := m.GetBackingStore().Get("windowsQualityUpdateProfiles")
     if err != nil {
@@ -4651,6 +4859,7 @@ func (m *DeviceManagement) GetWindowsQualityUpdateProfiles()([]WindowsQualityUpd
     return nil
 }
 // GetWindowsUpdateCatalogItems gets the windowsUpdateCatalogItems property value. A collection of windows update catalog items (fetaure updates item , quality updates item)
+// returns a []WindowsUpdateCatalogItemable when successful
 func (m *DeviceManagement) GetWindowsUpdateCatalogItems()([]WindowsUpdateCatalogItemable) {
     val, err := m.GetBackingStore().Get("windowsUpdateCatalogItems")
     if err != nil {
@@ -4662,6 +4871,7 @@ func (m *DeviceManagement) GetWindowsUpdateCatalogItems()([]WindowsUpdateCatalog
     return nil
 }
 // GetZebraFotaArtifacts gets the zebraFotaArtifacts property value. The Collection of ZebraFotaArtifacts.
+// returns a []ZebraFotaArtifactable when successful
 func (m *DeviceManagement) GetZebraFotaArtifacts()([]ZebraFotaArtifactable) {
     val, err := m.GetBackingStore().Get("zebraFotaArtifacts")
     if err != nil {
@@ -4673,6 +4883,7 @@ func (m *DeviceManagement) GetZebraFotaArtifacts()([]ZebraFotaArtifactable) {
     return nil
 }
 // GetZebraFotaConnector gets the zebraFotaConnector property value. The singleton ZebraFotaConnector associated with account.
+// returns a ZebraFotaConnectorable when successful
 func (m *DeviceManagement) GetZebraFotaConnector()(ZebraFotaConnectorable) {
     val, err := m.GetBackingStore().Get("zebraFotaConnector")
     if err != nil {
@@ -4684,6 +4895,7 @@ func (m *DeviceManagement) GetZebraFotaConnector()(ZebraFotaConnectorable) {
     return nil
 }
 // GetZebraFotaDeployments gets the zebraFotaDeployments property value. Collection of ZebraFotaDeployments associated with account.
+// returns a []ZebraFotaDeploymentable when successful
 func (m *DeviceManagement) GetZebraFotaDeployments()([]ZebraFotaDeploymentable) {
     val, err := m.GetBackingStore().Get("zebraFotaDeployments")
     if err != nil {
@@ -5518,6 +5730,18 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             }
         }
         err = writer.WriteCollectionOfObjectValues("macOSSoftwareUpdateAccountSummaries", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagedDeviceCleanupRules() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDeviceCleanupRules()))
+        for i, v := range m.GetManagedDeviceCleanupRules() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("managedDeviceCleanupRules", cast)
         if err != nil {
             return err
         }
@@ -7171,6 +7395,13 @@ func (m *DeviceManagement) SetMacOSSoftwareUpdateAccountSummaries(value []MacOSS
         panic(err)
     }
 }
+// SetManagedDeviceCleanupRules sets the managedDeviceCleanupRules property value. Device cleanup rule V2
+func (m *DeviceManagement) SetManagedDeviceCleanupRules(value []ManagedDeviceCleanupRuleable)() {
+    err := m.GetBackingStore().Set("managedDeviceCleanupRules", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManagedDeviceCleanupSettings sets the managedDeviceCleanupSettings property value. Device cleanup rule
 func (m *DeviceManagement) SetManagedDeviceCleanupSettings(value ManagedDeviceCleanupSettingsable)() {
     err := m.GetBackingStore().Set("managedDeviceCleanupSettings", value)
@@ -7892,7 +8123,6 @@ func (m *DeviceManagement) SetZebraFotaDeployments(value []ZebraFotaDeploymentab
         panic(err)
     }
 }
-// DeviceManagementable 
 type DeviceManagementable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -7975,6 +8205,7 @@ type DeviceManagementable interface {
     GetLastReportAggregationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLegacyPcManangementEnabled()(*bool)
     GetMacOSSoftwareUpdateAccountSummaries()([]MacOSSoftwareUpdateAccountSummaryable)
+    GetManagedDeviceCleanupRules()([]ManagedDeviceCleanupRuleable)
     GetManagedDeviceCleanupSettings()(ManagedDeviceCleanupSettingsable)
     GetManagedDeviceEncryptionStates()([]ManagedDeviceEncryptionStateable)
     GetManagedDeviceOverview()(ManagedDeviceOverviewable)
@@ -8157,6 +8388,7 @@ type DeviceManagementable interface {
     SetLastReportAggregationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLegacyPcManangementEnabled(value *bool)()
     SetMacOSSoftwareUpdateAccountSummaries(value []MacOSSoftwareUpdateAccountSummaryable)()
+    SetManagedDeviceCleanupRules(value []ManagedDeviceCleanupRuleable)()
     SetManagedDeviceCleanupSettings(value ManagedDeviceCleanupSettingsable)()
     SetManagedDeviceEncryptionStates(value []ManagedDeviceEncryptionStateable)()
     SetManagedDeviceOverview(value ManagedDeviceOverviewable)()

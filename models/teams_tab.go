@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamsTab 
 type TeamsTab struct {
     Entity
 }
-// NewTeamsTab instantiates a new teamsTab and sets the default values.
+// NewTeamsTab instantiates a new TeamsTab and sets the default values.
 func NewTeamsTab()(*TeamsTab) {
     m := &TeamsTab{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTeamsTab()(*TeamsTab) {
     return m
 }
 // CreateTeamsTabFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamsTabFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsTab(), nil
 }
 // GetConfiguration gets the configuration property value. Container for custom settings applied to a tab. The tab is considered configured only once this property is set.
+// returns a TeamsTabConfigurationable when successful
 func (m *TeamsTab) GetConfiguration()(TeamsTabConfigurationable) {
     val, err := m.GetBackingStore().Get("configuration")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *TeamsTab) GetConfiguration()(TeamsTabConfigurationable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the tab.
+// returns a *string when successful
 func (m *TeamsTab) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *TeamsTab) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamsTab) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["configuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -117,6 +120,7 @@ func (m *TeamsTab) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetMessageId gets the messageId property value. The messageId property
+// returns a *string when successful
 func (m *TeamsTab) GetMessageId()(*string) {
     val, err := m.GetBackingStore().Get("messageId")
     if err != nil {
@@ -128,6 +132,7 @@ func (m *TeamsTab) GetMessageId()(*string) {
     return nil
 }
 // GetSortOrderIndex gets the sortOrderIndex property value. Index of the order used for sorting tabs.
+// returns a *string when successful
 func (m *TeamsTab) GetSortOrderIndex()(*string) {
     val, err := m.GetBackingStore().Get("sortOrderIndex")
     if err != nil {
@@ -139,6 +144,7 @@ func (m *TeamsTab) GetSortOrderIndex()(*string) {
     return nil
 }
 // GetTeamsApp gets the teamsApp property value. The application that is linked to the tab.
+// returns a TeamsAppable when successful
 func (m *TeamsTab) GetTeamsApp()(TeamsAppable) {
     val, err := m.GetBackingStore().Get("teamsApp")
     if err != nil {
@@ -150,6 +156,7 @@ func (m *TeamsTab) GetTeamsApp()(TeamsAppable) {
     return nil
 }
 // GetTeamsAppId gets the teamsAppId property value. The teamsAppId property
+// returns a *string when successful
 func (m *TeamsTab) GetTeamsAppId()(*string) {
     val, err := m.GetBackingStore().Get("teamsAppId")
     if err != nil {
@@ -161,6 +168,7 @@ func (m *TeamsTab) GetTeamsAppId()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. Deep link URL of the tab instance. Read only.
+// returns a *string when successful
 func (m *TeamsTab) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -270,7 +278,6 @@ func (m *TeamsTab) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// TeamsTabable 
 type TeamsTabable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

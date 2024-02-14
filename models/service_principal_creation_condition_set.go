@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalCreationConditionSet 
 type ServicePrincipalCreationConditionSet struct {
     Entity
 }
-// NewServicePrincipalCreationConditionSet instantiates a new servicePrincipalCreationConditionSet and sets the default values.
+// NewServicePrincipalCreationConditionSet instantiates a new ServicePrincipalCreationConditionSet and sets the default values.
 func NewServicePrincipalCreationConditionSet()(*ServicePrincipalCreationConditionSet) {
     m := &ServicePrincipalCreationConditionSet{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewServicePrincipalCreationConditionSet()(*ServicePrincipalCreationConditio
     return m
 }
 // CreateServicePrincipalCreationConditionSetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServicePrincipalCreationConditionSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalCreationConditionSet(), nil
 }
 // GetApplicationIds gets the applicationIds property value. The applicationIds property
+// returns a []string when successful
 func (m *ServicePrincipalCreationConditionSet) GetApplicationIds()([]string) {
     val, err := m.GetBackingStore().Get("applicationIds")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ServicePrincipalCreationConditionSet) GetApplicationIds()([]string) {
     return nil
 }
 // GetApplicationPublisherIds gets the applicationPublisherIds property value. The applicationPublisherIds property
+// returns a []string when successful
 func (m *ServicePrincipalCreationConditionSet) GetApplicationPublisherIds()([]string) {
     val, err := m.GetBackingStore().Get("applicationPublisherIds")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ServicePrincipalCreationConditionSet) GetApplicationPublisherIds()([]st
     return nil
 }
 // GetApplicationsFromVerifiedPublisherOnly gets the applicationsFromVerifiedPublisherOnly property value. The applicationsFromVerifiedPublisherOnly property
+// returns a *bool when successful
 func (m *ServicePrincipalCreationConditionSet) GetApplicationsFromVerifiedPublisherOnly()(*bool) {
     val, err := m.GetBackingStore().Get("applicationsFromVerifiedPublisherOnly")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *ServicePrincipalCreationConditionSet) GetApplicationsFromVerifiedPublis
     return nil
 }
 // GetApplicationTenantIds gets the applicationTenantIds property value. The applicationTenantIds property
+// returns a []string when successful
 func (m *ServicePrincipalCreationConditionSet) GetApplicationTenantIds()([]string) {
     val, err := m.GetBackingStore().Get("applicationTenantIds")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *ServicePrincipalCreationConditionSet) GetApplicationTenantIds()([]strin
     return nil
 }
 // GetCertifiedApplicationsOnly gets the certifiedApplicationsOnly property value. The certifiedApplicationsOnly property
+// returns a *bool when successful
 func (m *ServicePrincipalCreationConditionSet) GetCertifiedApplicationsOnly()(*bool) {
     val, err := m.GetBackingStore().Get("certifiedApplicationsOnly")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *ServicePrincipalCreationConditionSet) GetCertifiedApplicationsOnly()(*b
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServicePrincipalCreationConditionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicationIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -220,7 +226,6 @@ func (m *ServicePrincipalCreationConditionSet) SetCertifiedApplicationsOnly(valu
         panic(err)
     }
 }
-// ServicePrincipalCreationConditionSetable 
 type ServicePrincipalCreationConditionSetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

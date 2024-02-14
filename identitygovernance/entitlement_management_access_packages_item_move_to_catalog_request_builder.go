@@ -17,20 +17,21 @@ type EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilderPostReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilderInternal instantiates a new MoveToCatalogRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilderInternal instantiates a new EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder) {
     m := &EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/moveToCatalog", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder instantiates a new MoveToCatalogRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder instantiates a new EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post in Microsoft Entra entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog. The resources in the access package must be present in the target catalog.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-movetocatalog?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder) Pos
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder) Pos
     return nil
 }
 // ToPostRequestInformation in Microsoft Entra entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog. The resources in the access package must be present in the target catalog.
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder) ToPostRequestInformation(ctx context.Context, body EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBodyable, requestConfiguration *EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder) ToP
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

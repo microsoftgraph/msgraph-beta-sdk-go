@@ -8,7 +8,7 @@ import (
 type SecurityBaselineState struct {
     Entity
 }
-// NewSecurityBaselineState instantiates a new securityBaselineState and sets the default values.
+// NewSecurityBaselineState instantiates a new SecurityBaselineState and sets the default values.
 func NewSecurityBaselineState()(*SecurityBaselineState) {
     m := &SecurityBaselineState{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewSecurityBaselineState()(*SecurityBaselineState) {
     return m
 }
 // CreateSecurityBaselineStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecurityBaselineStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityBaselineState(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of the security baseline
+// returns a *string when successful
 func (m *SecurityBaselineState) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *SecurityBaselineState) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -92,6 +95,7 @@ func (m *SecurityBaselineState) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetSecurityBaselineTemplateId gets the securityBaselineTemplateId property value. The security baseline template id
+// returns a *string when successful
 func (m *SecurityBaselineState) GetSecurityBaselineTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("securityBaselineTemplateId")
     if err != nil {
@@ -103,6 +107,7 @@ func (m *SecurityBaselineState) GetSecurityBaselineTemplateId()(*string) {
     return nil
 }
 // GetSettingStates gets the settingStates property value. The security baseline state for different settings for a device
+// returns a []SecurityBaselineSettingStateable when successful
 func (m *SecurityBaselineState) GetSettingStates()([]SecurityBaselineSettingStateable) {
     val, err := m.GetBackingStore().Get("settingStates")
     if err != nil {
@@ -114,6 +119,7 @@ func (m *SecurityBaselineState) GetSettingStates()([]SecurityBaselineSettingStat
     return nil
 }
 // GetState gets the state property value. Security Baseline Compliance State
+// returns a *SecurityBaselineComplianceState when successful
 func (m *SecurityBaselineState) GetState()(*SecurityBaselineComplianceState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -125,6 +131,7 @@ func (m *SecurityBaselineState) GetState()(*SecurityBaselineComplianceState) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name
+// returns a *string when successful
 func (m *SecurityBaselineState) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -215,7 +222,6 @@ func (m *SecurityBaselineState) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// SecurityBaselineStateable 
 type SecurityBaselineStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

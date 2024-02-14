@@ -10,7 +10,7 @@ type AppleVpnAlwaysOnConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAppleVpnAlwaysOnConfiguration instantiates a new appleVpnAlwaysOnConfiguration and sets the default values.
+// NewAppleVpnAlwaysOnConfiguration instantiates a new AppleVpnAlwaysOnConfiguration and sets the default values.
 func NewAppleVpnAlwaysOnConfiguration()(*AppleVpnAlwaysOnConfiguration) {
     m := &AppleVpnAlwaysOnConfiguration{
     }
@@ -19,10 +19,12 @@ func NewAppleVpnAlwaysOnConfiguration()(*AppleVpnAlwaysOnConfiguration) {
     return m
 }
 // CreateAppleVpnAlwaysOnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppleVpnAlwaysOnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppleVpnAlwaysOnConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +37,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAirPrintExceptionAction gets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+// returns a *VpnServiceExceptionAction when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetAirPrintExceptionAction()(*VpnServiceExceptionAction) {
     val, err := m.GetBackingStore().Get("airPrintExceptionAction")
     if err != nil {
@@ -46,6 +49,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetAirPrintExceptionAction()(*VpnService
     return nil
 }
 // GetAllowAllCaptiveNetworkPlugins gets the allowAllCaptiveNetworkPlugins property value. Specifies whether traffic from all captive network plugins should be allowed outside the vpn
+// returns a *bool when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetAllowAllCaptiveNetworkPlugins()(*bool) {
     val, err := m.GetBackingStore().Get("allowAllCaptiveNetworkPlugins")
     if err != nil {
@@ -57,6 +61,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetAllowAllCaptiveNetworkPlugins()(*bool
     return nil
 }
 // GetAllowCaptiveWebSheet gets the allowCaptiveWebSheet property value. Determines whether traffic from the Websheet app is allowed outside of the VPN
+// returns a *bool when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetAllowCaptiveWebSheet()(*bool) {
     val, err := m.GetBackingStore().Get("allowCaptiveWebSheet")
     if err != nil {
@@ -68,6 +73,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetAllowCaptiveWebSheet()(*bool) {
     return nil
 }
 // GetAllowedCaptiveNetworkPlugins gets the allowedCaptiveNetworkPlugins property value. Determines whether all, some, or no non-native captive networking apps are allowed
+// returns a SpecifiedCaptiveNetworkPluginsable when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetAllowedCaptiveNetworkPlugins()(SpecifiedCaptiveNetworkPluginsable) {
     val, err := m.GetBackingStore().Get("allowedCaptiveNetworkPlugins")
     if err != nil {
@@ -79,10 +85,12 @@ func (m *AppleVpnAlwaysOnConfiguration) GetAllowedCaptiveNetworkPlugins()(Specif
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCellularExceptionAction gets the cellularExceptionAction property value. Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+// returns a *VpnServiceExceptionAction when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetCellularExceptionAction()(*VpnServiceExceptionAction) {
     val, err := m.GetBackingStore().Get("cellularExceptionAction")
     if err != nil {
@@ -94,6 +102,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetCellularExceptionAction()(*VpnService
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["airPrintExceptionAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -209,6 +218,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetNatKeepAliveIntervalInSeconds gets the natKeepAliveIntervalInSeconds property value. Specifies how often in seconds to send a network address translation keepalive package through the VPN
+// returns a *int32 when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetNatKeepAliveIntervalInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("natKeepAliveIntervalInSeconds")
     if err != nil {
@@ -220,6 +230,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetNatKeepAliveIntervalInSeconds()(*int3
     return nil
 }
 // GetNatKeepAliveOffloadEnable gets the natKeepAliveOffloadEnable property value. Enable hardware offloading of NAT keepalive signals when the device is asleep
+// returns a *bool when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetNatKeepAliveOffloadEnable()(*bool) {
     val, err := m.GetBackingStore().Get("natKeepAliveOffloadEnable")
     if err != nil {
@@ -231,6 +242,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetNatKeepAliveOffloadEnable()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -242,6 +254,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetTunnelConfiguration gets the tunnelConfiguration property value. The type of tunnels that will be present to the VPN client for configuration
+// returns a *VpnTunnelConfigurationType when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetTunnelConfiguration()(*VpnTunnelConfigurationType) {
     val, err := m.GetBackingStore().Get("tunnelConfiguration")
     if err != nil {
@@ -253,6 +266,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetTunnelConfiguration()(*VpnTunnelConfi
     return nil
 }
 // GetUserToggleEnabled gets the userToggleEnabled property value. Allow the user to toggle the VPN configuration using the UI
+// returns a *bool when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetUserToggleEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("userToggleEnabled")
     if err != nil {
@@ -264,6 +278,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetUserToggleEnabled()(*bool) {
     return nil
 }
 // GetVoicemailExceptionAction gets the voicemailExceptionAction property value. Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+// returns a *VpnServiceExceptionAction when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetVoicemailExceptionAction()(*VpnServiceExceptionAction) {
     val, err := m.GetBackingStore().Get("voicemailExceptionAction")
     if err != nil {
@@ -442,7 +457,6 @@ func (m *AppleVpnAlwaysOnConfiguration) SetVoicemailExceptionAction(value *VpnSe
         panic(err)
     }
 }
-// AppleVpnAlwaysOnConfigurationable 
 type AppleVpnAlwaysOnConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

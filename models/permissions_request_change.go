@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionsRequestChange 
 type PermissionsRequestChange struct {
     Entity
 }
-// NewPermissionsRequestChange instantiates a new permissionsRequestChange and sets the default values.
+// NewPermissionsRequestChange instantiates a new PermissionsRequestChange and sets the default values.
 func NewPermissionsRequestChange()(*PermissionsRequestChange) {
     m := &PermissionsRequestChange{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPermissionsRequestChange()(*PermissionsRequestChange) {
     return m
 }
 // CreatePermissionsRequestChangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePermissionsRequestChangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionsRequestChange(), nil
 }
 // GetActiveOccurrenceStatus gets the activeOccurrenceStatus property value. The status of the active occurence of the schedule if one exists. The possible values are: grantingFailed, granted, granting, revoked, revoking, revokingFailed, unknownFutureValue.
+// returns a *PermissionsRequestOccurrenceStatus when successful
 func (m *PermissionsRequestChange) GetActiveOccurrenceStatus()(*PermissionsRequestOccurrenceStatus) {
     val, err := m.GetBackingStore().Get("activeOccurrenceStatus")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *PermissionsRequestChange) GetActiveOccurrenceStatus()(*PermissionsReque
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PermissionsRequestChange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeOccurrenceStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +89,7 @@ func (m *PermissionsRequestChange) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetModificationDateTime gets the modificationDateTime property value. Time when the change occurred.
+// returns a *Time when successful
 func (m *PermissionsRequestChange) GetModificationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modificationDateTime")
     if err != nil {
@@ -98,6 +101,7 @@ func (m *PermissionsRequestChange) GetModificationDateTime()(*i336074805fc853987
     return nil
 }
 // GetPermissionsRequestId gets the permissionsRequestId property value. The ID of the scheduledPermissionsRequest object.
+// returns a *string when successful
 func (m *PermissionsRequestChange) GetPermissionsRequestId()(*string) {
     val, err := m.GetBackingStore().Get("permissionsRequestId")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *PermissionsRequestChange) GetPermissionsRequestId()(*string) {
     return nil
 }
 // GetStatusDetail gets the statusDetail property value. The statusDetail property
+// returns a *StatusDetail when successful
 func (m *PermissionsRequestChange) GetStatusDetail()(*StatusDetail) {
     val, err := m.GetBackingStore().Get("statusDetail")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *PermissionsRequestChange) GetStatusDetail()(*StatusDetail) {
     return nil
 }
 // GetTicketId gets the ticketId property value. Represents the ticketing system identifier.
+// returns a *string when successful
 func (m *PermissionsRequestChange) GetTicketId()(*string) {
     val, err := m.GetBackingStore().Get("ticketId")
     if err != nil {
@@ -205,7 +211,6 @@ func (m *PermissionsRequestChange) SetTicketId(value *string)() {
         panic(err)
     }
 }
-// PermissionsRequestChangeable 
 type PermissionsRequestChangeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

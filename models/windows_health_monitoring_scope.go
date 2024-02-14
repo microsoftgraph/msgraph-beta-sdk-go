@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Device health monitoring scope
@@ -8,22 +9,24 @@ type WindowsHealthMonitoringScope int
 
 const (
     // Undefined
-    UNDEFINED_WINDOWSHEALTHMONITORINGSCOPE WindowsHealthMonitoringScope = iota
+    UNDEFINED_WINDOWSHEALTHMONITORINGSCOPE = 1
     // Basic events for windows device health monitoring
-    HEALTHMONITORING_WINDOWSHEALTHMONITORINGSCOPE
+    HEALTHMONITORING_WINDOWSHEALTHMONITORINGSCOPE = 2
     // Boot performance events
-    BOOTPERFORMANCE_WINDOWSHEALTHMONITORINGSCOPE
+    BOOTPERFORMANCE_WINDOWSHEALTHMONITORINGSCOPE = 4
     // Windows updates events
-    WINDOWSUPDATES_WINDOWSHEALTHMONITORINGSCOPE
+    WINDOWSUPDATES_WINDOWSHEALTHMONITORINGSCOPE = 8
     // PrivilegeManagement
-    PRIVILEGEMANAGEMENT_WINDOWSHEALTHMONITORINGSCOPE
+    PRIVILEGEMANAGEMENT_WINDOWSHEALTHMONITORINGSCOPE = 16
 )
 
 func (i WindowsHealthMonitoringScope) String() string {
     var values []string
-    for p := WindowsHealthMonitoringScope(1); p <= PRIVILEGEMANAGEMENT_WINDOWSHEALTHMONITORINGSCOPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"undefined", "healthMonitoring", "bootPerformance", "windowsUpdates", "privilegeManagement"}[p])
+    options := []string{"undefined", "healthMonitoring", "bootPerformance", "windowsUpdates", "privilegeManagement"}
+    for p := 0; p < 5; p++ {
+        mantis := WindowsHealthMonitoringScope(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

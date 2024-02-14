@@ -27,28 +27,29 @@ type UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilderGetRe
     // Request query parameters
     QueryParameters *UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilderGetQueryParameters
 }
-// NewUserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilderInternal instantiates a new BatteryHealthMetricsRequestBuilder and sets the default values.
+// NewUserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilderInternal instantiates a new UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder) {
     m := &UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/batteryHealthMetrics{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/batteryHealthMetrics{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewUserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder instantiates a new BatteryHealthMetricsRequestBuilder and sets the default values.
+// NewUserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder instantiates a new UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the scores and insights for the battery health metrics.
+// returns a UserExperienceAnalyticsCategoryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserExperienceAnalyticsCategoryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsCategoryable), nil
 }
 // ToGetRequestInformation the scores and insights for the battery health metrics.
+// returns a *RequestInformation when successful
 func (m *UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder when successful
 func (m *UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder) WithUrl(rawUrl string)(*UserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder) {
     return NewUserExperienceAnalyticsBaselinesItemBatteryHealthMetricsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

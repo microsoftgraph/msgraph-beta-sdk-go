@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// MonitoringRule 
 type MonitoringRule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMonitoringRule instantiates a new monitoringRule and sets the default values.
+// NewMonitoringRule instantiates a new MonitoringRule and sets the default values.
 func NewMonitoringRule()(*MonitoringRule) {
     m := &MonitoringRule{
     }
@@ -19,10 +18,12 @@ func NewMonitoringRule()(*MonitoringRule) {
     return m
 }
 // CreateMonitoringRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMonitoringRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMonitoringRule(), nil
 }
 // GetAction gets the action property value. The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.
+// returns a *MonitoringAction when successful
 func (m *MonitoringRule) GetAction()(*MonitoringAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *MonitoringRule) GetAction()(*MonitoringAction) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MonitoringRule) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *MonitoringRule) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MonitoringRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *MonitoringRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MonitoringRule) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *MonitoringRule) GetOdataType()(*string) {
     return nil
 }
 // GetSignal gets the signal property value. The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.
+// returns a *MonitoringSignal when successful
 func (m *MonitoringRule) GetSignal()(*MonitoringSignal) {
     val, err := m.GetBackingStore().Get("signal")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *MonitoringRule) GetSignal()(*MonitoringSignal) {
     return nil
 }
 // GetThreshold gets the threshold property value. The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.
+// returns a *int32 when successful
 func (m *MonitoringRule) GetThreshold()(*int32) {
     val, err := m.GetBackingStore().Get("threshold")
     if err != nil {
@@ -202,7 +209,6 @@ func (m *MonitoringRule) SetThreshold(value *int32)() {
         panic(err)
     }
 }
-// MonitoringRuleable 
 type MonitoringRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -4,22 +4,25 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEventTownhall 
 type VirtualEventTownhall struct {
     VirtualEvent
 }
-// NewVirtualEventTownhall instantiates a new virtualEventTownhall and sets the default values.
+// NewVirtualEventTownhall instantiates a new VirtualEventTownhall and sets the default values.
 func NewVirtualEventTownhall()(*VirtualEventTownhall) {
     m := &VirtualEventTownhall{
         VirtualEvent: *NewVirtualEvent(),
     }
+    odataTypeValue := "#microsoft.graph.virtualEventTownhall"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateVirtualEventTownhallFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualEventTownhallFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventTownhall(), nil
 }
 // GetAudience gets the audience property value. The audience property
+// returns a *MeetingAudience when successful
 func (m *VirtualEventTownhall) GetAudience()(*MeetingAudience) {
     val, err := m.GetBackingStore().Get("audience")
     if err != nil {
@@ -31,6 +34,7 @@ func (m *VirtualEventTownhall) GetAudience()(*MeetingAudience) {
     return nil
 }
 // GetCoOrganizers gets the coOrganizers property value. The coOrganizers property
+// returns a []CommunicationsUserIdentityable when successful
 func (m *VirtualEventTownhall) GetCoOrganizers()([]CommunicationsUserIdentityable) {
     val, err := m.GetBackingStore().Get("coOrganizers")
     if err != nil {
@@ -42,6 +46,7 @@ func (m *VirtualEventTownhall) GetCoOrganizers()([]CommunicationsUserIdentityabl
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEventTownhall) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VirtualEvent.GetFieldDeserializers()
     res["audience"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,6 +104,7 @@ func (m *VirtualEventTownhall) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetInvitedAttendees gets the invitedAttendees property value. The invitedAttendees property
+// returns a []CommunicationsUserIdentityable when successful
 func (m *VirtualEventTownhall) GetInvitedAttendees()([]CommunicationsUserIdentityable) {
     val, err := m.GetBackingStore().Get("invitedAttendees")
     if err != nil {
@@ -110,6 +116,7 @@ func (m *VirtualEventTownhall) GetInvitedAttendees()([]CommunicationsUserIdentit
     return nil
 }
 // GetIsInviteOnly gets the isInviteOnly property value. The isInviteOnly property
+// returns a *bool when successful
 func (m *VirtualEventTownhall) GetIsInviteOnly()(*bool) {
     val, err := m.GetBackingStore().Get("isInviteOnly")
     if err != nil {
@@ -193,7 +200,6 @@ func (m *VirtualEventTownhall) SetIsInviteOnly(value *bool)() {
         panic(err)
     }
 }
-// VirtualEventTownhallable 
 type VirtualEventTownhallable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VirtualEventable

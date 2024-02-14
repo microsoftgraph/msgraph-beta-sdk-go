@@ -1,22 +1,24 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type DecisionItemPrincipalResourceMembershipType int
 
 const (
-    DIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE DecisionItemPrincipalResourceMembershipType = iota
-    INDIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
-    UNKNOWNFUTUREVALUE_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE
+    DIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE = 1
+    INDIRECT_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE = 2
+    UNKNOWNFUTUREVALUE_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE = 4
 )
 
 func (i DecisionItemPrincipalResourceMembershipType) String() string {
     var values []string
-    for p := DecisionItemPrincipalResourceMembershipType(1); p <= UNKNOWNFUTUREVALUE_DECISIONITEMPRINCIPALRESOURCEMEMBERSHIPTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"direct", "indirect", "unknownFutureValue"}[p])
+    options := []string{"direct", "indirect", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := DecisionItemPrincipalResourceMembershipType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

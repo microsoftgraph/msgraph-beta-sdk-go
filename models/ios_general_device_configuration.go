@@ -8,7 +8,7 @@ import (
 type IosGeneralDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewIosGeneralDeviceConfiguration instantiates a new iosGeneralDeviceConfiguration and sets the default values.
+// NewIosGeneralDeviceConfiguration instantiates a new IosGeneralDeviceConfiguration and sets the default values.
 func NewIosGeneralDeviceConfiguration()(*IosGeneralDeviceConfiguration) {
     m := &IosGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewIosGeneralDeviceConfiguration()(*IosGeneralDeviceConfiguration) {
     return m
 }
 // CreateIosGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosGeneralDeviceConfiguration(), nil
 }
 // GetAccountBlockModification gets the accountBlockModification property value. Indicates whether or not to allow account modification when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAccountBlockModification()(*bool) {
     val, err := m.GetBackingStore().Get("accountBlockModification")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosGeneralDeviceConfiguration) GetAccountBlockModification()(*bool) {
     return nil
 }
 // GetActivationLockAllowWhenSupervised gets the activationLockAllowWhenSupervised property value. Indicates whether or not to allow activation lock when the device is in the supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetActivationLockAllowWhenSupervised()(*bool) {
     val, err := m.GetBackingStore().Get("activationLockAllowWhenSupervised")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *IosGeneralDeviceConfiguration) GetActivationLockAllowWhenSupervised()(*
     return nil
 }
 // GetAirDropBlocked gets the airDropBlocked property value. Indicates whether or not to allow AirDrop when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAirDropBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("airDropBlocked")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *IosGeneralDeviceConfiguration) GetAirDropBlocked()(*bool) {
     return nil
 }
 // GetAirDropForceUnmanagedDropTarget gets the airDropForceUnmanagedDropTarget property value. Indicates whether or not to cause AirDrop to be considered an unmanaged drop target (iOS 9.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAirDropForceUnmanagedDropTarget()(*bool) {
     val, err := m.GetBackingStore().Get("airDropForceUnmanagedDropTarget")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *IosGeneralDeviceConfiguration) GetAirDropForceUnmanagedDropTarget()(*bo
     return nil
 }
 // GetAirPlayForcePairingPasswordForOutgoingRequests gets the airPlayForcePairingPasswordForOutgoingRequests property value. Indicates whether or not to enforce all devices receiving AirPlay requests from this device to use a pairing password.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAirPlayForcePairingPasswordForOutgoingRequests()(*bool) {
     val, err := m.GetBackingStore().Get("airPlayForcePairingPasswordForOutgoingRequests")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *IosGeneralDeviceConfiguration) GetAirPlayForcePairingPasswordForOutgoin
     return nil
 }
 // GetAirPrintBlockCredentialsStorage gets the airPrintBlockCredentialsStorage property value. Indicates whether or not keychain storage of username and password for Airprint is blocked (iOS 11.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAirPrintBlockCredentialsStorage()(*bool) {
     val, err := m.GetBackingStore().Get("airPrintBlockCredentialsStorage")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *IosGeneralDeviceConfiguration) GetAirPrintBlockCredentialsStorage()(*bo
     return nil
 }
 // GetAirPrintBlocked gets the airPrintBlocked property value. Indicates whether or not AirPrint is blocked (iOS 11.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAirPrintBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("airPrintBlocked")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *IosGeneralDeviceConfiguration) GetAirPrintBlocked()(*bool) {
     return nil
 }
 // GetAirPrintBlockiBeaconDiscovery gets the airPrintBlockiBeaconDiscovery property value. Indicates whether or not iBeacon discovery of AirPrint printers is blocked. This prevents spurious AirPrint Bluetooth beacons from phishing for network traffic (iOS 11.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAirPrintBlockiBeaconDiscovery()(*bool) {
     val, err := m.GetBackingStore().Get("airPrintBlockiBeaconDiscovery")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *IosGeneralDeviceConfiguration) GetAirPrintBlockiBeaconDiscovery()(*bool
     return nil
 }
 // GetAirPrintForceTrustedTLS gets the airPrintForceTrustedTLS property value. Indicates if trusted certificates are required for TLS printing communication (iOS 11.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAirPrintForceTrustedTLS()(*bool) {
     val, err := m.GetBackingStore().Get("airPrintForceTrustedTLS")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *IosGeneralDeviceConfiguration) GetAirPrintForceTrustedTLS()(*bool) {
     return nil
 }
 // GetAppClipsBlocked gets the appClipsBlocked property value. Prevents a user from adding any App Clips and removes any existing App Clips on the device.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAppClipsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("appClipsBlocked")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppClipsBlocked()(*bool) {
     return nil
 }
 // GetAppleNewsBlocked gets the appleNewsBlocked property value. Indicates whether or not to block the user from using News when the device is in supervised mode (iOS 9.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAppleNewsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("appleNewsBlocked")
     if err != nil {
@@ -143,6 +155,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppleNewsBlocked()(*bool) {
     return nil
 }
 // GetApplePersonalizedAdsBlocked gets the applePersonalizedAdsBlocked property value. Limits Apple personalized advertising when true. Available in iOS 14 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetApplePersonalizedAdsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("applePersonalizedAdsBlocked")
     if err != nil {
@@ -154,6 +167,7 @@ func (m *IosGeneralDeviceConfiguration) GetApplePersonalizedAdsBlocked()(*bool) 
     return nil
 }
 // GetAppleWatchBlockPairing gets the appleWatchBlockPairing property value. Indicates whether or not to allow Apple Watch pairing when the device is in supervised mode (iOS 9.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAppleWatchBlockPairing()(*bool) {
     val, err := m.GetBackingStore().Get("appleWatchBlockPairing")
     if err != nil {
@@ -165,6 +179,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppleWatchBlockPairing()(*bool) {
     return nil
 }
 // GetAppleWatchForceWristDetection gets the appleWatchForceWristDetection property value. Indicates whether or not to force a paired Apple Watch to use Wrist Detection (iOS 8.2 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAppleWatchForceWristDetection()(*bool) {
     val, err := m.GetBackingStore().Get("appleWatchForceWristDetection")
     if err != nil {
@@ -176,6 +191,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppleWatchForceWristDetection()(*bool
     return nil
 }
 // GetAppRemovalBlocked gets the appRemovalBlocked property value. Indicates if the removal of apps is allowed.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAppRemovalBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("appRemovalBlocked")
     if err != nil {
@@ -187,6 +203,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppRemovalBlocked()(*bool) {
     return nil
 }
 // GetAppsSingleAppModeList gets the appsSingleAppModeList property value. Gets or sets the list of iOS apps allowed to autonomously enter Single App Mode. Supervised only. iOS 7.0 and later. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *IosGeneralDeviceConfiguration) GetAppsSingleAppModeList()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("appsSingleAppModeList")
     if err != nil {
@@ -198,6 +215,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppsSingleAppModeList()([]AppListItem
     return nil
 }
 // GetAppStoreBlockAutomaticDownloads gets the appStoreBlockAutomaticDownloads property value. Indicates whether or not to block the automatic downloading of apps purchased on other devices when the device is in supervised mode (iOS 9.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAppStoreBlockAutomaticDownloads()(*bool) {
     val, err := m.GetBackingStore().Get("appStoreBlockAutomaticDownloads")
     if err != nil {
@@ -209,6 +227,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppStoreBlockAutomaticDownloads()(*bo
     return nil
 }
 // GetAppStoreBlocked gets the appStoreBlocked property value. Indicates whether or not to block the user from using the App Store. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAppStoreBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("appStoreBlocked")
     if err != nil {
@@ -220,6 +239,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppStoreBlocked()(*bool) {
     return nil
 }
 // GetAppStoreBlockInAppPurchases gets the appStoreBlockInAppPurchases property value. Indicates whether or not to block the user from making in app purchases.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAppStoreBlockInAppPurchases()(*bool) {
     val, err := m.GetBackingStore().Get("appStoreBlockInAppPurchases")
     if err != nil {
@@ -231,6 +251,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppStoreBlockInAppPurchases()(*bool) 
     return nil
 }
 // GetAppStoreBlockUIAppInstallation gets the appStoreBlockUIAppInstallation property value. Indicates whether or not to block the App Store app, not restricting installation through Host apps. Applies to supervised mode only (iOS 9.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAppStoreBlockUIAppInstallation()(*bool) {
     val, err := m.GetBackingStore().Get("appStoreBlockUIAppInstallation")
     if err != nil {
@@ -242,6 +263,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppStoreBlockUIAppInstallation()(*boo
     return nil
 }
 // GetAppStoreRequirePassword gets the appStoreRequirePassword property value. Indicates whether or not to require a password when using the app store.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAppStoreRequirePassword()(*bool) {
     val, err := m.GetBackingStore().Get("appStoreRequirePassword")
     if err != nil {
@@ -253,6 +275,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppStoreRequirePassword()(*bool) {
     return nil
 }
 // GetAppsVisibilityList gets the appsVisibilityList property value. List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.
+// returns a []AppListItemable when successful
 func (m *IosGeneralDeviceConfiguration) GetAppsVisibilityList()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("appsVisibilityList")
     if err != nil {
@@ -264,6 +287,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppsVisibilityList()([]AppListItemabl
     return nil
 }
 // GetAppsVisibilityListType gets the appsVisibilityListType property value. Possible values of the compliance app list.
+// returns a *AppListType when successful
 func (m *IosGeneralDeviceConfiguration) GetAppsVisibilityListType()(*AppListType) {
     val, err := m.GetBackingStore().Get("appsVisibilityListType")
     if err != nil {
@@ -275,6 +299,7 @@ func (m *IosGeneralDeviceConfiguration) GetAppsVisibilityListType()(*AppListType
     return nil
 }
 // GetAutoFillForceAuthentication gets the autoFillForceAuthentication property value. Indicates whether or not to force user authentication before autofilling passwords and credit card information in Safari and other apps on supervised devices.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAutoFillForceAuthentication()(*bool) {
     val, err := m.GetBackingStore().Get("autoFillForceAuthentication")
     if err != nil {
@@ -286,6 +311,7 @@ func (m *IosGeneralDeviceConfiguration) GetAutoFillForceAuthentication()(*bool) 
     return nil
 }
 // GetAutoUnlockBlocked gets the autoUnlockBlocked property value. Blocks users from unlocking their device with Apple Watch. Available for devices running iOS and iPadOS versions 14.5 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetAutoUnlockBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("autoUnlockBlocked")
     if err != nil {
@@ -297,6 +323,7 @@ func (m *IosGeneralDeviceConfiguration) GetAutoUnlockBlocked()(*bool) {
     return nil
 }
 // GetBlockSystemAppRemoval gets the blockSystemAppRemoval property value. Indicates whether or not the removal of system apps from the device is blocked on a supervised device (iOS 11.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetBlockSystemAppRemoval()(*bool) {
     val, err := m.GetBackingStore().Get("blockSystemAppRemoval")
     if err != nil {
@@ -308,6 +335,7 @@ func (m *IosGeneralDeviceConfiguration) GetBlockSystemAppRemoval()(*bool) {
     return nil
 }
 // GetBluetoothBlockModification gets the bluetoothBlockModification property value. Indicates whether or not to allow modification of Bluetooth settings when the device is in supervised mode (iOS 10.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetBluetoothBlockModification()(*bool) {
     val, err := m.GetBackingStore().Get("bluetoothBlockModification")
     if err != nil {
@@ -319,6 +347,7 @@ func (m *IosGeneralDeviceConfiguration) GetBluetoothBlockModification()(*bool) {
     return nil
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to block the user from accessing the camera of the device. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetCameraBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("cameraBlocked")
     if err != nil {
@@ -330,6 +359,7 @@ func (m *IosGeneralDeviceConfiguration) GetCameraBlocked()(*bool) {
     return nil
 }
 // GetCellularBlockDataRoaming gets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockDataRoaming()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockDataRoaming")
     if err != nil {
@@ -341,6 +371,7 @@ func (m *IosGeneralDeviceConfiguration) GetCellularBlockDataRoaming()(*bool) {
     return nil
 }
 // GetCellularBlockGlobalBackgroundFetchWhileRoaming gets the cellularBlockGlobalBackgroundFetchWhileRoaming property value. Indicates whether or not to block global background fetch while roaming.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockGlobalBackgroundFetchWhileRoaming()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockGlobalBackgroundFetchWhileRoaming")
     if err != nil {
@@ -352,6 +383,7 @@ func (m *IosGeneralDeviceConfiguration) GetCellularBlockGlobalBackgroundFetchWhi
     return nil
 }
 // GetCellularBlockPerAppDataModification gets the cellularBlockPerAppDataModification property value. Indicates whether or not to allow changes to cellular app data usage settings when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockPerAppDataModification()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockPerAppDataModification")
     if err != nil {
@@ -363,6 +395,7 @@ func (m *IosGeneralDeviceConfiguration) GetCellularBlockPerAppDataModification()
     return nil
 }
 // GetCellularBlockPersonalHotspot gets the cellularBlockPersonalHotspot property value. Indicates whether or not to block Personal Hotspot.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockPersonalHotspot()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockPersonalHotspot")
     if err != nil {
@@ -374,6 +407,7 @@ func (m *IosGeneralDeviceConfiguration) GetCellularBlockPersonalHotspot()(*bool)
     return nil
 }
 // GetCellularBlockPersonalHotspotModification gets the cellularBlockPersonalHotspotModification property value. Indicates whether or not to block the user from modifying the personal hotspot setting (iOS 12.2 or later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockPersonalHotspotModification()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockPersonalHotspotModification")
     if err != nil {
@@ -385,6 +419,7 @@ func (m *IosGeneralDeviceConfiguration) GetCellularBlockPersonalHotspotModificat
     return nil
 }
 // GetCellularBlockPlanModification gets the cellularBlockPlanModification property value. Indicates whether or not to allow users to change the settings of the cellular plan on a supervised device.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockPlanModification()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockPlanModification")
     if err != nil {
@@ -396,6 +431,7 @@ func (m *IosGeneralDeviceConfiguration) GetCellularBlockPlanModification()(*bool
     return nil
 }
 // GetCellularBlockVoiceRoaming gets the cellularBlockVoiceRoaming property value. Indicates whether or not to block voice roaming.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetCellularBlockVoiceRoaming()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockVoiceRoaming")
     if err != nil {
@@ -407,6 +443,7 @@ func (m *IosGeneralDeviceConfiguration) GetCellularBlockVoiceRoaming()(*bool) {
     return nil
 }
 // GetCertificatesBlockUntrustedTlsCertificates gets the certificatesBlockUntrustedTlsCertificates property value. Indicates whether or not to block untrusted TLS certificates.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetCertificatesBlockUntrustedTlsCertificates()(*bool) {
     val, err := m.GetBackingStore().Get("certificatesBlockUntrustedTlsCertificates")
     if err != nil {
@@ -418,6 +455,7 @@ func (m *IosGeneralDeviceConfiguration) GetCertificatesBlockUntrustedTlsCertific
     return nil
 }
 // GetClassroomAppBlockRemoteScreenObservation gets the classroomAppBlockRemoteScreenObservation property value. Indicates whether or not to allow remote screen observation by Classroom app when the device is in supervised mode (iOS 9.3 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetClassroomAppBlockRemoteScreenObservation()(*bool) {
     val, err := m.GetBackingStore().Get("classroomAppBlockRemoteScreenObservation")
     if err != nil {
@@ -429,6 +467,7 @@ func (m *IosGeneralDeviceConfiguration) GetClassroomAppBlockRemoteScreenObservat
     return nil
 }
 // GetClassroomAppForceUnpromptedScreenObservation gets the classroomAppForceUnpromptedScreenObservation property value. Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetClassroomAppForceUnpromptedScreenObservation()(*bool) {
     val, err := m.GetBackingStore().Get("classroomAppForceUnpromptedScreenObservation")
     if err != nil {
@@ -440,6 +479,7 @@ func (m *IosGeneralDeviceConfiguration) GetClassroomAppForceUnpromptedScreenObse
     return nil
 }
 // GetClassroomForceAutomaticallyJoinClasses gets the classroomForceAutomaticallyJoinClasses property value. Indicates whether or not to automatically give permission to the teacher's requests, without prompting the student, when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetClassroomForceAutomaticallyJoinClasses()(*bool) {
     val, err := m.GetBackingStore().Get("classroomForceAutomaticallyJoinClasses")
     if err != nil {
@@ -451,6 +491,7 @@ func (m *IosGeneralDeviceConfiguration) GetClassroomForceAutomaticallyJoinClasse
     return nil
 }
 // GetClassroomForceRequestPermissionToLeaveClasses gets the classroomForceRequestPermissionToLeaveClasses property value. Indicates whether a student enrolled in an unmanaged course via Classroom will request permission from the teacher when attempting to leave the course (iOS 11.3 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetClassroomForceRequestPermissionToLeaveClasses()(*bool) {
     val, err := m.GetBackingStore().Get("classroomForceRequestPermissionToLeaveClasses")
     if err != nil {
@@ -462,6 +503,7 @@ func (m *IosGeneralDeviceConfiguration) GetClassroomForceRequestPermissionToLeav
     return nil
 }
 // GetClassroomForceUnpromptedAppAndDeviceLock gets the classroomForceUnpromptedAppAndDeviceLock property value. Indicates whether or not to allow the teacher to lock apps or the device without prompting the student. Supervised only.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetClassroomForceUnpromptedAppAndDeviceLock()(*bool) {
     val, err := m.GetBackingStore().Get("classroomForceUnpromptedAppAndDeviceLock")
     if err != nil {
@@ -473,6 +515,7 @@ func (m *IosGeneralDeviceConfiguration) GetClassroomForceUnpromptedAppAndDeviceL
     return nil
 }
 // GetCompliantAppListType gets the compliantAppListType property value. Possible values of the compliance app list.
+// returns a *AppListType when successful
 func (m *IosGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType) {
     val, err := m.GetBackingStore().Get("compliantAppListType")
     if err != nil {
@@ -484,6 +527,7 @@ func (m *IosGeneralDeviceConfiguration) GetCompliantAppListType()(*AppListType) 
     return nil
 }
 // GetCompliantAppsList gets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
+// returns a []AppListItemable when successful
 func (m *IosGeneralDeviceConfiguration) GetCompliantAppsList()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("compliantAppsList")
     if err != nil {
@@ -495,6 +539,7 @@ func (m *IosGeneralDeviceConfiguration) GetCompliantAppsList()([]AppListItemable
     return nil
 }
 // GetConfigurationProfileBlockChanges gets the configurationProfileBlockChanges property value. Indicates whether or not to block the user from installing configuration profiles and certificates interactively when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetConfigurationProfileBlockChanges()(*bool) {
     val, err := m.GetBackingStore().Get("configurationProfileBlockChanges")
     if err != nil {
@@ -506,6 +551,7 @@ func (m *IosGeneralDeviceConfiguration) GetConfigurationProfileBlockChanges()(*b
     return nil
 }
 // GetContactsAllowManagedToUnmanagedWrite gets the contactsAllowManagedToUnmanagedWrite property value. Indicates whether or not managed apps can write contacts to unmanaged contacts accounts (iOS 12.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetContactsAllowManagedToUnmanagedWrite()(*bool) {
     val, err := m.GetBackingStore().Get("contactsAllowManagedToUnmanagedWrite")
     if err != nil {
@@ -517,6 +563,7 @@ func (m *IosGeneralDeviceConfiguration) GetContactsAllowManagedToUnmanagedWrite(
     return nil
 }
 // GetContactsAllowUnmanagedToManagedRead gets the contactsAllowUnmanagedToManagedRead property value. Indicates whether or not unmanaged apps can read from managed contacts accounts (iOS 12.0 or later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetContactsAllowUnmanagedToManagedRead()(*bool) {
     val, err := m.GetBackingStore().Get("contactsAllowUnmanagedToManagedRead")
     if err != nil {
@@ -528,6 +575,7 @@ func (m *IosGeneralDeviceConfiguration) GetContactsAllowUnmanagedToManagedRead()
     return nil
 }
 // GetContinuousPathKeyboardBlocked gets the continuousPathKeyboardBlocked property value. Indicates whether or not to block the continuous path keyboard when the device is supervised (iOS 13 or later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetContinuousPathKeyboardBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("continuousPathKeyboardBlocked")
     if err != nil {
@@ -539,6 +587,7 @@ func (m *IosGeneralDeviceConfiguration) GetContinuousPathKeyboardBlocked()(*bool
     return nil
 }
 // GetDateAndTimeForceSetAutomatically gets the dateAndTimeForceSetAutomatically property value. Indicates whether or not the Date and Time 'Set Automatically' feature is enabled and cannot be turned off by the user (iOS 12.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetDateAndTimeForceSetAutomatically()(*bool) {
     val, err := m.GetBackingStore().Get("dateAndTimeForceSetAutomatically")
     if err != nil {
@@ -550,6 +599,7 @@ func (m *IosGeneralDeviceConfiguration) GetDateAndTimeForceSetAutomatically()(*b
     return nil
 }
 // GetDefinitionLookupBlocked gets the definitionLookupBlocked property value. Indicates whether or not to block definition lookup when the device is in supervised mode (iOS 8.1.3 and later ).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetDefinitionLookupBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("definitionLookupBlocked")
     if err != nil {
@@ -561,6 +611,7 @@ func (m *IosGeneralDeviceConfiguration) GetDefinitionLookupBlocked()(*bool) {
     return nil
 }
 // GetDeviceBlockEnableRestrictions gets the deviceBlockEnableRestrictions property value. Indicates whether or not to allow the user to enables restrictions in the device settings when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetDeviceBlockEnableRestrictions()(*bool) {
     val, err := m.GetBackingStore().Get("deviceBlockEnableRestrictions")
     if err != nil {
@@ -572,6 +623,7 @@ func (m *IosGeneralDeviceConfiguration) GetDeviceBlockEnableRestrictions()(*bool
     return nil
 }
 // GetDeviceBlockEraseContentAndSettings gets the deviceBlockEraseContentAndSettings property value. Indicates whether or not to allow the use of the 'Erase all content and settings' option on the device when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetDeviceBlockEraseContentAndSettings()(*bool) {
     val, err := m.GetBackingStore().Get("deviceBlockEraseContentAndSettings")
     if err != nil {
@@ -583,6 +635,7 @@ func (m *IosGeneralDeviceConfiguration) GetDeviceBlockEraseContentAndSettings()(
     return nil
 }
 // GetDeviceBlockNameModification gets the deviceBlockNameModification property value. Indicates whether or not to allow device name modification when the device is in supervised mode (iOS 9.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetDeviceBlockNameModification()(*bool) {
     val, err := m.GetBackingStore().Get("deviceBlockNameModification")
     if err != nil {
@@ -594,6 +647,7 @@ func (m *IosGeneralDeviceConfiguration) GetDeviceBlockNameModification()(*bool) 
     return nil
 }
 // GetDiagnosticDataBlockSubmission gets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetDiagnosticDataBlockSubmission()(*bool) {
     val, err := m.GetBackingStore().Get("diagnosticDataBlockSubmission")
     if err != nil {
@@ -605,6 +659,7 @@ func (m *IosGeneralDeviceConfiguration) GetDiagnosticDataBlockSubmission()(*bool
     return nil
 }
 // GetDiagnosticDataBlockSubmissionModification gets the diagnosticDataBlockSubmissionModification property value. Indicates whether or not to allow diagnostics submission settings modification when the device is in supervised mode (iOS 9.3.2 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetDiagnosticDataBlockSubmissionModification()(*bool) {
     val, err := m.GetBackingStore().Get("diagnosticDataBlockSubmissionModification")
     if err != nil {
@@ -616,6 +671,7 @@ func (m *IosGeneralDeviceConfiguration) GetDiagnosticDataBlockSubmissionModifica
     return nil
 }
 // GetDocumentsBlockManagedDocumentsInUnmanagedApps gets the documentsBlockManagedDocumentsInUnmanagedApps property value. Indicates whether or not to block the user from viewing managed documents in unmanaged apps.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetDocumentsBlockManagedDocumentsInUnmanagedApps()(*bool) {
     val, err := m.GetBackingStore().Get("documentsBlockManagedDocumentsInUnmanagedApps")
     if err != nil {
@@ -627,6 +683,7 @@ func (m *IosGeneralDeviceConfiguration) GetDocumentsBlockManagedDocumentsInUnman
     return nil
 }
 // GetDocumentsBlockUnmanagedDocumentsInManagedApps gets the documentsBlockUnmanagedDocumentsInManagedApps property value. Indicates whether or not to block the user from viewing unmanaged documents in managed apps.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetDocumentsBlockUnmanagedDocumentsInManagedApps()(*bool) {
     val, err := m.GetBackingStore().Get("documentsBlockUnmanagedDocumentsInManagedApps")
     if err != nil {
@@ -638,6 +695,7 @@ func (m *IosGeneralDeviceConfiguration) GetDocumentsBlockUnmanagedDocumentsInMan
     return nil
 }
 // GetEmailInDomainSuffixes gets the emailInDomainSuffixes property value. An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
+// returns a []string when successful
 func (m *IosGeneralDeviceConfiguration) GetEmailInDomainSuffixes()([]string) {
     val, err := m.GetBackingStore().Get("emailInDomainSuffixes")
     if err != nil {
@@ -649,6 +707,7 @@ func (m *IosGeneralDeviceConfiguration) GetEmailInDomainSuffixes()([]string) {
     return nil
 }
 // GetEnterpriseAppBlockTrust gets the enterpriseAppBlockTrust property value. Indicates whether or not to block the user from trusting an enterprise app.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetEnterpriseAppBlockTrust()(*bool) {
     val, err := m.GetBackingStore().Get("enterpriseAppBlockTrust")
     if err != nil {
@@ -660,6 +719,7 @@ func (m *IosGeneralDeviceConfiguration) GetEnterpriseAppBlockTrust()(*bool) {
     return nil
 }
 // GetEnterpriseAppBlockTrustModification gets the enterpriseAppBlockTrustModification property value. [Deprecated] Configuring this setting and setting the value to 'true' has no effect on the device.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetEnterpriseAppBlockTrustModification()(*bool) {
     val, err := m.GetBackingStore().Get("enterpriseAppBlockTrustModification")
     if err != nil {
@@ -671,6 +731,7 @@ func (m *IosGeneralDeviceConfiguration) GetEnterpriseAppBlockTrustModification()
     return nil
 }
 // GetEnterpriseBookBlockBackup gets the enterpriseBookBlockBackup property value. Indicates whether or not Enterprise book back up is blocked.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetEnterpriseBookBlockBackup()(*bool) {
     val, err := m.GetBackingStore().Get("enterpriseBookBlockBackup")
     if err != nil {
@@ -682,6 +743,7 @@ func (m *IosGeneralDeviceConfiguration) GetEnterpriseBookBlockBackup()(*bool) {
     return nil
 }
 // GetEnterpriseBookBlockMetadataSync gets the enterpriseBookBlockMetadataSync property value. Indicates whether or not Enterprise book notes and highlights sync is blocked.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetEnterpriseBookBlockMetadataSync()(*bool) {
     val, err := m.GetBackingStore().Get("enterpriseBookBlockMetadataSync")
     if err != nil {
@@ -693,6 +755,7 @@ func (m *IosGeneralDeviceConfiguration) GetEnterpriseBookBlockMetadataSync()(*bo
     return nil
 }
 // GetEsimBlockModification gets the esimBlockModification property value. Indicates whether or not to allow the addition or removal of cellular plans on the eSIM of a supervised device.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetEsimBlockModification()(*bool) {
     val, err := m.GetBackingStore().Get("esimBlockModification")
     if err != nil {
@@ -704,6 +767,7 @@ func (m *IosGeneralDeviceConfiguration) GetEsimBlockModification()(*bool) {
     return nil
 }
 // GetFaceTimeBlocked gets the faceTimeBlocked property value. Indicates whether or not to block the user from using FaceTime. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetFaceTimeBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("faceTimeBlocked")
     if err != nil {
@@ -715,6 +779,7 @@ func (m *IosGeneralDeviceConfiguration) GetFaceTimeBlocked()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["accountBlockModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -2632,6 +2697,7 @@ func (m *IosGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetFilesNetworkDriveAccessBlocked gets the filesNetworkDriveAccessBlocked property value. Indicates if devices can access files or other resources on a network server using the Server Message Block (SMB) protocol. Available for devices running iOS and iPadOS, versions 13.0 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetFilesNetworkDriveAccessBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("filesNetworkDriveAccessBlocked")
     if err != nil {
@@ -2643,6 +2709,7 @@ func (m *IosGeneralDeviceConfiguration) GetFilesNetworkDriveAccessBlocked()(*boo
     return nil
 }
 // GetFilesUsbDriveAccessBlocked gets the filesUsbDriveAccessBlocked property value. Indicates if sevices with access can connect to and open files on a USB drive. Available for devices running iOS and iPadOS, versions 13.0 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetFilesUsbDriveAccessBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("filesUsbDriveAccessBlocked")
     if err != nil {
@@ -2654,6 +2721,7 @@ func (m *IosGeneralDeviceConfiguration) GetFilesUsbDriveAccessBlocked()(*bool) {
     return nil
 }
 // GetFindMyDeviceInFindMyAppBlocked gets the findMyDeviceInFindMyAppBlocked property value. Indicates whether or not to block Find My Device when the device is supervised (iOS 13 or later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetFindMyDeviceInFindMyAppBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("findMyDeviceInFindMyAppBlocked")
     if err != nil {
@@ -2665,6 +2733,7 @@ func (m *IosGeneralDeviceConfiguration) GetFindMyDeviceInFindMyAppBlocked()(*boo
     return nil
 }
 // GetFindMyFriendsBlocked gets the findMyFriendsBlocked property value. Indicates whether or not to block changes to Find My Friends when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetFindMyFriendsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("findMyFriendsBlocked")
     if err != nil {
@@ -2676,6 +2745,7 @@ func (m *IosGeneralDeviceConfiguration) GetFindMyFriendsBlocked()(*bool) {
     return nil
 }
 // GetFindMyFriendsInFindMyAppBlocked gets the findMyFriendsInFindMyAppBlocked property value. Indicates whether or not to block Find My Friends when the device is supervised (iOS 13 or later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetFindMyFriendsInFindMyAppBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("findMyFriendsInFindMyAppBlocked")
     if err != nil {
@@ -2687,6 +2757,7 @@ func (m *IosGeneralDeviceConfiguration) GetFindMyFriendsInFindMyAppBlocked()(*bo
     return nil
 }
 // GetGameCenterBlocked gets the gameCenterBlocked property value. Indicates whether or not to block the user from using Game Center when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetGameCenterBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("gameCenterBlocked")
     if err != nil {
@@ -2698,6 +2769,7 @@ func (m *IosGeneralDeviceConfiguration) GetGameCenterBlocked()(*bool) {
     return nil
 }
 // GetGamingBlockGameCenterFriends gets the gamingBlockGameCenterFriends property value. Indicates whether or not to block the user from having friends in Game Center. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetGamingBlockGameCenterFriends()(*bool) {
     val, err := m.GetBackingStore().Get("gamingBlockGameCenterFriends")
     if err != nil {
@@ -2709,6 +2781,7 @@ func (m *IosGeneralDeviceConfiguration) GetGamingBlockGameCenterFriends()(*bool)
     return nil
 }
 // GetGamingBlockMultiplayer gets the gamingBlockMultiplayer property value. Indicates whether or not to block the user from using multiplayer gaming. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetGamingBlockMultiplayer()(*bool) {
     val, err := m.GetBackingStore().Get("gamingBlockMultiplayer")
     if err != nil {
@@ -2720,6 +2793,7 @@ func (m *IosGeneralDeviceConfiguration) GetGamingBlockMultiplayer()(*bool) {
     return nil
 }
 // GetHostPairingBlocked gets the hostPairingBlocked property value. indicates whether or not to allow host pairing to control the devices an iOS device can pair with when the iOS device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetHostPairingBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("hostPairingBlocked")
     if err != nil {
@@ -2731,6 +2805,7 @@ func (m *IosGeneralDeviceConfiguration) GetHostPairingBlocked()(*bool) {
     return nil
 }
 // GetIBooksStoreBlocked gets the iBooksStoreBlocked property value. Indicates whether or not to block the user from using the iBooks Store when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetIBooksStoreBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("iBooksStoreBlocked")
     if err != nil {
@@ -2742,6 +2817,7 @@ func (m *IosGeneralDeviceConfiguration) GetIBooksStoreBlocked()(*bool) {
     return nil
 }
 // GetIBooksStoreBlockErotica gets the iBooksStoreBlockErotica property value. Indicates whether or not to block the user from downloading media from the iBookstore that has been tagged as erotica.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetIBooksStoreBlockErotica()(*bool) {
     val, err := m.GetBackingStore().Get("iBooksStoreBlockErotica")
     if err != nil {
@@ -2753,6 +2829,7 @@ func (m *IosGeneralDeviceConfiguration) GetIBooksStoreBlockErotica()(*bool) {
     return nil
 }
 // GetICloudBlockActivityContinuation gets the iCloudBlockActivityContinuation property value. Indicates whether or not to block the user from continuing work they started on iOS device to another iOS or macOS device.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockActivityContinuation()(*bool) {
     val, err := m.GetBackingStore().Get("iCloudBlockActivityContinuation")
     if err != nil {
@@ -2764,6 +2841,7 @@ func (m *IosGeneralDeviceConfiguration) GetICloudBlockActivityContinuation()(*bo
     return nil
 }
 // GetICloudBlockBackup gets the iCloudBlockBackup property value. Indicates whether or not to block iCloud backup. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockBackup()(*bool) {
     val, err := m.GetBackingStore().Get("iCloudBlockBackup")
     if err != nil {
@@ -2775,6 +2853,7 @@ func (m *IosGeneralDeviceConfiguration) GetICloudBlockBackup()(*bool) {
     return nil
 }
 // GetICloudBlockDocumentSync gets the iCloudBlockDocumentSync property value. Indicates whether or not to block iCloud document sync. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockDocumentSync()(*bool) {
     val, err := m.GetBackingStore().Get("iCloudBlockDocumentSync")
     if err != nil {
@@ -2786,6 +2865,7 @@ func (m *IosGeneralDeviceConfiguration) GetICloudBlockDocumentSync()(*bool) {
     return nil
 }
 // GetICloudBlockManagedAppsSync gets the iCloudBlockManagedAppsSync property value. Indicates whether or not to block Managed Apps Cloud Sync.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockManagedAppsSync()(*bool) {
     val, err := m.GetBackingStore().Get("iCloudBlockManagedAppsSync")
     if err != nil {
@@ -2797,6 +2877,7 @@ func (m *IosGeneralDeviceConfiguration) GetICloudBlockManagedAppsSync()(*bool) {
     return nil
 }
 // GetICloudBlockPhotoLibrary gets the iCloudBlockPhotoLibrary property value. Indicates whether or not to block iCloud Photo Library.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockPhotoLibrary()(*bool) {
     val, err := m.GetBackingStore().Get("iCloudBlockPhotoLibrary")
     if err != nil {
@@ -2808,6 +2889,7 @@ func (m *IosGeneralDeviceConfiguration) GetICloudBlockPhotoLibrary()(*bool) {
     return nil
 }
 // GetICloudBlockPhotoStreamSync gets the iCloudBlockPhotoStreamSync property value. Indicates whether or not to block iCloud Photo Stream Sync.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockPhotoStreamSync()(*bool) {
     val, err := m.GetBackingStore().Get("iCloudBlockPhotoStreamSync")
     if err != nil {
@@ -2819,6 +2901,7 @@ func (m *IosGeneralDeviceConfiguration) GetICloudBlockPhotoStreamSync()(*bool) {
     return nil
 }
 // GetICloudBlockSharedPhotoStream gets the iCloudBlockSharedPhotoStream property value. Indicates whether or not to block Shared Photo Stream.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetICloudBlockSharedPhotoStream()(*bool) {
     val, err := m.GetBackingStore().Get("iCloudBlockSharedPhotoStream")
     if err != nil {
@@ -2830,6 +2913,7 @@ func (m *IosGeneralDeviceConfiguration) GetICloudBlockSharedPhotoStream()(*bool)
     return nil
 }
 // GetICloudPrivateRelayBlocked gets the iCloudPrivateRelayBlocked property value. iCloud private relay is an iCloud+ service that prevents networks and servers from monitoring a person's activity across the internet. By blocking iCloud private relay, Apple will not encrypt the traffic leaving the device. Available for devices running iOS 15 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetICloudPrivateRelayBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("iCloudPrivateRelayBlocked")
     if err != nil {
@@ -2841,6 +2925,7 @@ func (m *IosGeneralDeviceConfiguration) GetICloudPrivateRelayBlocked()(*bool) {
     return nil
 }
 // GetICloudRequireEncryptedBackup gets the iCloudRequireEncryptedBackup property value. Indicates whether or not to require backups to iCloud be encrypted.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetICloudRequireEncryptedBackup()(*bool) {
     val, err := m.GetBackingStore().Get("iCloudRequireEncryptedBackup")
     if err != nil {
@@ -2852,6 +2937,7 @@ func (m *IosGeneralDeviceConfiguration) GetICloudRequireEncryptedBackup()(*bool)
     return nil
 }
 // GetITunesBlocked gets the iTunesBlocked property value. Indicates whether or not to block the iTunes app. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetITunesBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("iTunesBlocked")
     if err != nil {
@@ -2863,6 +2949,7 @@ func (m *IosGeneralDeviceConfiguration) GetITunesBlocked()(*bool) {
     return nil
 }
 // GetITunesBlockExplicitContent gets the iTunesBlockExplicitContent property value. Indicates whether or not to block the user from accessing explicit content in iTunes and the App Store. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetITunesBlockExplicitContent()(*bool) {
     val, err := m.GetBackingStore().Get("iTunesBlockExplicitContent")
     if err != nil {
@@ -2874,6 +2961,7 @@ func (m *IosGeneralDeviceConfiguration) GetITunesBlockExplicitContent()(*bool) {
     return nil
 }
 // GetITunesBlockMusicService gets the iTunesBlockMusicService property value. Indicates whether or not to block Music service and revert Music app to classic mode when the device is in supervised mode (iOS 9.3 and later and macOS 10.12 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetITunesBlockMusicService()(*bool) {
     val, err := m.GetBackingStore().Get("iTunesBlockMusicService")
     if err != nil {
@@ -2885,6 +2973,7 @@ func (m *IosGeneralDeviceConfiguration) GetITunesBlockMusicService()(*bool) {
     return nil
 }
 // GetITunesBlockRadio gets the iTunesBlockRadio property value. Indicates whether or not to block the user from using iTunes Radio when the device is in supervised mode (iOS 9.3 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetITunesBlockRadio()(*bool) {
     val, err := m.GetBackingStore().Get("iTunesBlockRadio")
     if err != nil {
@@ -2896,6 +2985,7 @@ func (m *IosGeneralDeviceConfiguration) GetITunesBlockRadio()(*bool) {
     return nil
 }
 // GetKeyboardBlockAutoCorrect gets the keyboardBlockAutoCorrect property value. Indicates whether or not to block keyboard auto-correction when the device is in supervised mode (iOS 8.1.3 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockAutoCorrect()(*bool) {
     val, err := m.GetBackingStore().Get("keyboardBlockAutoCorrect")
     if err != nil {
@@ -2907,6 +2997,7 @@ func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockAutoCorrect()(*bool) {
     return nil
 }
 // GetKeyboardBlockDictation gets the keyboardBlockDictation property value. Indicates whether or not to block the user from using dictation input when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockDictation()(*bool) {
     val, err := m.GetBackingStore().Get("keyboardBlockDictation")
     if err != nil {
@@ -2918,6 +3009,7 @@ func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockDictation()(*bool) {
     return nil
 }
 // GetKeyboardBlockPredictive gets the keyboardBlockPredictive property value. Indicates whether or not to block predictive keyboards when device is in supervised mode (iOS 8.1.3 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockPredictive()(*bool) {
     val, err := m.GetBackingStore().Get("keyboardBlockPredictive")
     if err != nil {
@@ -2929,6 +3021,7 @@ func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockPredictive()(*bool) {
     return nil
 }
 // GetKeyboardBlockShortcuts gets the keyboardBlockShortcuts property value. Indicates whether or not to block keyboard shortcuts when the device is in supervised mode (iOS 9.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockShortcuts()(*bool) {
     val, err := m.GetBackingStore().Get("keyboardBlockShortcuts")
     if err != nil {
@@ -2940,6 +3033,7 @@ func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockShortcuts()(*bool) {
     return nil
 }
 // GetKeyboardBlockSpellCheck gets the keyboardBlockSpellCheck property value. Indicates whether or not to block keyboard spell-checking when the device is in supervised mode (iOS 8.1.3 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockSpellCheck()(*bool) {
     val, err := m.GetBackingStore().Get("keyboardBlockSpellCheck")
     if err != nil {
@@ -2951,6 +3045,7 @@ func (m *IosGeneralDeviceConfiguration) GetKeyboardBlockSpellCheck()(*bool) {
     return nil
 }
 // GetKeychainBlockCloudSync gets the keychainBlockCloudSync property value. Indicates whether or not iCloud keychain synchronization is blocked. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKeychainBlockCloudSync()(*bool) {
     val, err := m.GetBackingStore().Get("keychainBlockCloudSync")
     if err != nil {
@@ -2962,6 +3057,7 @@ func (m *IosGeneralDeviceConfiguration) GetKeychainBlockCloudSync()(*bool) {
     return nil
 }
 // GetKioskModeAllowAssistiveSpeak gets the kioskModeAllowAssistiveSpeak property value. Indicates whether or not to allow assistive speak while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowAssistiveSpeak()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowAssistiveSpeak")
     if err != nil {
@@ -2973,6 +3069,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowAssistiveSpeak()(*bool)
     return nil
 }
 // GetKioskModeAllowAssistiveTouchSettings gets the kioskModeAllowAssistiveTouchSettings property value. Indicates whether or not to allow access to the Assistive Touch Settings while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowAssistiveTouchSettings()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowAssistiveTouchSettings")
     if err != nil {
@@ -2984,6 +3081,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowAssistiveTouchSettings(
     return nil
 }
 // GetKioskModeAllowAutoLock gets the kioskModeAllowAutoLock property value. Indicates whether or not to allow device auto lock while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockAutoLock instead.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowAutoLock()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowAutoLock")
     if err != nil {
@@ -2995,6 +3093,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowAutoLock()(*bool) {
     return nil
 }
 // GetKioskModeAllowColorInversionSettings gets the kioskModeAllowColorInversionSettings property value. Indicates whether or not to allow access to the Color Inversion Settings while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowColorInversionSettings()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowColorInversionSettings")
     if err != nil {
@@ -3006,6 +3105,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowColorInversionSettings(
     return nil
 }
 // GetKioskModeAllowRingerSwitch gets the kioskModeAllowRingerSwitch property value. Indicates whether or not to allow use of the ringer switch while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockRingerSwitch instead.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowRingerSwitch()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowRingerSwitch")
     if err != nil {
@@ -3017,6 +3117,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowRingerSwitch()(*bool) {
     return nil
 }
 // GetKioskModeAllowScreenRotation gets the kioskModeAllowScreenRotation property value. Indicates whether or not to allow screen rotation while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockScreenRotation instead.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowScreenRotation()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowScreenRotation")
     if err != nil {
@@ -3028,6 +3129,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowScreenRotation()(*bool)
     return nil
 }
 // GetKioskModeAllowSleepButton gets the kioskModeAllowSleepButton property value. Indicates whether or not to allow use of the sleep button while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockSleepButton instead.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowSleepButton()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowSleepButton")
     if err != nil {
@@ -3039,6 +3141,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowSleepButton()(*bool) {
     return nil
 }
 // GetKioskModeAllowTouchscreen gets the kioskModeAllowTouchscreen property value. Indicates whether or not to allow use of the touchscreen while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockTouchscreen instead.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowTouchscreen()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowTouchscreen")
     if err != nil {
@@ -3050,6 +3153,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowTouchscreen()(*bool) {
     return nil
 }
 // GetKioskModeAllowVoiceControlModification gets the kioskModeAllowVoiceControlModification property value. Indicates whether or not to allow the user to toggle voice control in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowVoiceControlModification()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowVoiceControlModification")
     if err != nil {
@@ -3061,6 +3165,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowVoiceControlModificatio
     return nil
 }
 // GetKioskModeAllowVoiceOverSettings gets the kioskModeAllowVoiceOverSettings property value. Indicates whether or not to allow access to the voice over settings while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowVoiceOverSettings()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowVoiceOverSettings")
     if err != nil {
@@ -3072,6 +3177,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowVoiceOverSettings()(*bo
     return nil
 }
 // GetKioskModeAllowVolumeButtons gets the kioskModeAllowVolumeButtons property value. Indicates whether or not to allow use of the volume buttons while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockVolumeButtons instead.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowVolumeButtons()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowVolumeButtons")
     if err != nil {
@@ -3083,6 +3189,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowVolumeButtons()(*bool) 
     return nil
 }
 // GetKioskModeAllowZoomSettings gets the kioskModeAllowZoomSettings property value. Indicates whether or not to allow access to the zoom settings while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowZoomSettings()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAllowZoomSettings")
     if err != nil {
@@ -3094,6 +3201,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAllowZoomSettings()(*bool) {
     return nil
 }
 // GetKioskModeAppStoreUrl gets the kioskModeAppStoreUrl property value. URL in the app store to the app to use for kiosk mode. Use if KioskModeManagedAppId is not known.
+// returns a *string when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAppStoreUrl()(*string) {
     val, err := m.GetBackingStore().Get("kioskModeAppStoreUrl")
     if err != nil {
@@ -3105,6 +3213,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAppStoreUrl()(*string) {
     return nil
 }
 // GetKioskModeAppType gets the kioskModeAppType property value. App source options for iOS kiosk mode.
+// returns a *IosKioskModeAppType when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeAppType()(*IosKioskModeAppType) {
     val, err := m.GetBackingStore().Get("kioskModeAppType")
     if err != nil {
@@ -3116,6 +3225,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeAppType()(*IosKioskModeAppTy
     return nil
 }
 // GetKioskModeBlockAutoLock gets the kioskModeBlockAutoLock property value. Indicates whether or not to block device auto lock while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockAutoLock()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeBlockAutoLock")
     if err != nil {
@@ -3127,6 +3237,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockAutoLock()(*bool) {
     return nil
 }
 // GetKioskModeBlockRingerSwitch gets the kioskModeBlockRingerSwitch property value. Indicates whether or not to block use of the ringer switch while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockRingerSwitch()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeBlockRingerSwitch")
     if err != nil {
@@ -3138,6 +3249,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockRingerSwitch()(*bool) {
     return nil
 }
 // GetKioskModeBlockScreenRotation gets the kioskModeBlockScreenRotation property value. Indicates whether or not to block screen rotation while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockScreenRotation()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeBlockScreenRotation")
     if err != nil {
@@ -3149,6 +3261,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockScreenRotation()(*bool)
     return nil
 }
 // GetKioskModeBlockSleepButton gets the kioskModeBlockSleepButton property value. Indicates whether or not to block use of the sleep button while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockSleepButton()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeBlockSleepButton")
     if err != nil {
@@ -3160,6 +3273,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockSleepButton()(*bool) {
     return nil
 }
 // GetKioskModeBlockTouchscreen gets the kioskModeBlockTouchscreen property value. Indicates whether or not to block use of the touchscreen while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockTouchscreen()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeBlockTouchscreen")
     if err != nil {
@@ -3171,6 +3285,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockTouchscreen()(*bool) {
     return nil
 }
 // GetKioskModeBlockVolumeButtons gets the kioskModeBlockVolumeButtons property value. Indicates whether or not to block the volume buttons while in Kiosk Mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockVolumeButtons()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeBlockVolumeButtons")
     if err != nil {
@@ -3182,6 +3297,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeBlockVolumeButtons()(*bool) 
     return nil
 }
 // GetKioskModeBuiltInAppId gets the kioskModeBuiltInAppId property value. ID for built-in apps to use for kiosk mode. Used when KioskModeManagedAppId and KioskModeAppStoreUrl are not set.
+// returns a *string when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeBuiltInAppId()(*string) {
     val, err := m.GetBackingStore().Get("kioskModeBuiltInAppId")
     if err != nil {
@@ -3193,6 +3309,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeBuiltInAppId()(*string) {
     return nil
 }
 // GetKioskModeEnableVoiceControl gets the kioskModeEnableVoiceControl property value. Indicates whether or not to enable voice control in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeEnableVoiceControl()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeEnableVoiceControl")
     if err != nil {
@@ -3204,6 +3321,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeEnableVoiceControl()(*bool) 
     return nil
 }
 // GetKioskModeManagedAppId gets the kioskModeManagedAppId property value. Managed app id of the app to use for kiosk mode. If KioskModeManagedAppId is specified then KioskModeAppStoreUrl will be ignored.
+// returns a *string when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeManagedAppId()(*string) {
     val, err := m.GetBackingStore().Get("kioskModeManagedAppId")
     if err != nil {
@@ -3215,6 +3333,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeManagedAppId()(*string) {
     return nil
 }
 // GetKioskModeRequireAssistiveTouch gets the kioskModeRequireAssistiveTouch property value. Indicates whether or not to require assistive touch while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireAssistiveTouch()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeRequireAssistiveTouch")
     if err != nil {
@@ -3226,6 +3345,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireAssistiveTouch()(*boo
     return nil
 }
 // GetKioskModeRequireColorInversion gets the kioskModeRequireColorInversion property value. Indicates whether or not to require color inversion while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireColorInversion()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeRequireColorInversion")
     if err != nil {
@@ -3237,6 +3357,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireColorInversion()(*boo
     return nil
 }
 // GetKioskModeRequireMonoAudio gets the kioskModeRequireMonoAudio property value. Indicates whether or not to require mono audio while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireMonoAudio()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeRequireMonoAudio")
     if err != nil {
@@ -3248,6 +3369,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireMonoAudio()(*bool) {
     return nil
 }
 // GetKioskModeRequireVoiceOver gets the kioskModeRequireVoiceOver property value. Indicates whether or not to require voice over while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireVoiceOver()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeRequireVoiceOver")
     if err != nil {
@@ -3259,6 +3381,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireVoiceOver()(*bool) {
     return nil
 }
 // GetKioskModeRequireZoom gets the kioskModeRequireZoom property value. Indicates whether or not to require zoom while in kiosk mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireZoom()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeRequireZoom")
     if err != nil {
@@ -3270,6 +3393,7 @@ func (m *IosGeneralDeviceConfiguration) GetKioskModeRequireZoom()(*bool) {
     return nil
 }
 // GetLockScreenBlockControlCenter gets the lockScreenBlockControlCenter property value. Indicates whether or not to block the user from using control center on the lock screen.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockControlCenter()(*bool) {
     val, err := m.GetBackingStore().Get("lockScreenBlockControlCenter")
     if err != nil {
@@ -3281,6 +3405,7 @@ func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockControlCenter()(*bool)
     return nil
 }
 // GetLockScreenBlockNotificationView gets the lockScreenBlockNotificationView property value. Indicates whether or not to block the user from using the notification view on the lock screen.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockNotificationView()(*bool) {
     val, err := m.GetBackingStore().Get("lockScreenBlockNotificationView")
     if err != nil {
@@ -3292,6 +3417,7 @@ func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockNotificationView()(*bo
     return nil
 }
 // GetLockScreenBlockPassbook gets the lockScreenBlockPassbook property value. Indicates whether or not to block the user from using passbook when the device is locked.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockPassbook()(*bool) {
     val, err := m.GetBackingStore().Get("lockScreenBlockPassbook")
     if err != nil {
@@ -3303,6 +3429,7 @@ func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockPassbook()(*bool) {
     return nil
 }
 // GetLockScreenBlockTodayView gets the lockScreenBlockTodayView property value. Indicates whether or not to block the user from using the Today View on the lock screen.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockTodayView()(*bool) {
     val, err := m.GetBackingStore().Get("lockScreenBlockTodayView")
     if err != nil {
@@ -3314,6 +3441,7 @@ func (m *IosGeneralDeviceConfiguration) GetLockScreenBlockTodayView()(*bool) {
     return nil
 }
 // GetManagedPasteboardRequired gets the managedPasteboardRequired property value. Open-in management controls how people share data between unmanaged and managed apps. Setting this to true enforces copy/paste restrictions based on how you configured Block viewing corporate documents in unmanaged apps  and  Block viewing non-corporate documents in corporate apps.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetManagedPasteboardRequired()(*bool) {
     val, err := m.GetBackingStore().Get("managedPasteboardRequired")
     if err != nil {
@@ -3325,6 +3453,7 @@ func (m *IosGeneralDeviceConfiguration) GetManagedPasteboardRequired()(*bool) {
     return nil
 }
 // GetMediaContentRatingApps gets the mediaContentRatingApps property value. Apps rating as in media content
+// returns a *RatingAppsType when successful
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingApps()(*RatingAppsType) {
     val, err := m.GetBackingStore().Get("mediaContentRatingApps")
     if err != nil {
@@ -3336,6 +3465,7 @@ func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingApps()(*RatingAppsT
     return nil
 }
 // GetMediaContentRatingAustralia gets the mediaContentRatingAustralia property value. Media content rating settings for Australia
+// returns a MediaContentRatingAustraliaable when successful
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingAustralia()(MediaContentRatingAustraliaable) {
     val, err := m.GetBackingStore().Get("mediaContentRatingAustralia")
     if err != nil {
@@ -3347,6 +3477,7 @@ func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingAustralia()(MediaCo
     return nil
 }
 // GetMediaContentRatingCanada gets the mediaContentRatingCanada property value. Media content rating settings for Canada
+// returns a MediaContentRatingCanadaable when successful
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingCanada()(MediaContentRatingCanadaable) {
     val, err := m.GetBackingStore().Get("mediaContentRatingCanada")
     if err != nil {
@@ -3358,6 +3489,7 @@ func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingCanada()(MediaConte
     return nil
 }
 // GetMediaContentRatingFrance gets the mediaContentRatingFrance property value. Media content rating settings for France
+// returns a MediaContentRatingFranceable when successful
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingFrance()(MediaContentRatingFranceable) {
     val, err := m.GetBackingStore().Get("mediaContentRatingFrance")
     if err != nil {
@@ -3369,6 +3501,7 @@ func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingFrance()(MediaConte
     return nil
 }
 // GetMediaContentRatingGermany gets the mediaContentRatingGermany property value. Media content rating settings for Germany
+// returns a MediaContentRatingGermanyable when successful
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingGermany()(MediaContentRatingGermanyable) {
     val, err := m.GetBackingStore().Get("mediaContentRatingGermany")
     if err != nil {
@@ -3380,6 +3513,7 @@ func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingGermany()(MediaCont
     return nil
 }
 // GetMediaContentRatingIreland gets the mediaContentRatingIreland property value. Media content rating settings for Ireland
+// returns a MediaContentRatingIrelandable when successful
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingIreland()(MediaContentRatingIrelandable) {
     val, err := m.GetBackingStore().Get("mediaContentRatingIreland")
     if err != nil {
@@ -3391,6 +3525,7 @@ func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingIreland()(MediaCont
     return nil
 }
 // GetMediaContentRatingJapan gets the mediaContentRatingJapan property value. Media content rating settings for Japan
+// returns a MediaContentRatingJapanable when successful
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingJapan()(MediaContentRatingJapanable) {
     val, err := m.GetBackingStore().Get("mediaContentRatingJapan")
     if err != nil {
@@ -3402,6 +3537,7 @@ func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingJapan()(MediaConten
     return nil
 }
 // GetMediaContentRatingNewZealand gets the mediaContentRatingNewZealand property value. Media content rating settings for New Zealand
+// returns a MediaContentRatingNewZealandable when successful
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingNewZealand()(MediaContentRatingNewZealandable) {
     val, err := m.GetBackingStore().Get("mediaContentRatingNewZealand")
     if err != nil {
@@ -3413,6 +3549,7 @@ func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingNewZealand()(MediaC
     return nil
 }
 // GetMediaContentRatingUnitedKingdom gets the mediaContentRatingUnitedKingdom property value. Media content rating settings for United Kingdom
+// returns a MediaContentRatingUnitedKingdomable when successful
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingUnitedKingdom()(MediaContentRatingUnitedKingdomable) {
     val, err := m.GetBackingStore().Get("mediaContentRatingUnitedKingdom")
     if err != nil {
@@ -3424,6 +3561,7 @@ func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingUnitedKingdom()(Med
     return nil
 }
 // GetMediaContentRatingUnitedStates gets the mediaContentRatingUnitedStates property value. Media content rating settings for United States
+// returns a MediaContentRatingUnitedStatesable when successful
 func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingUnitedStates()(MediaContentRatingUnitedStatesable) {
     val, err := m.GetBackingStore().Get("mediaContentRatingUnitedStates")
     if err != nil {
@@ -3435,6 +3573,7 @@ func (m *IosGeneralDeviceConfiguration) GetMediaContentRatingUnitedStates()(Medi
     return nil
 }
 // GetMessagesBlocked gets the messagesBlocked property value. Indicates whether or not to block the user from using the Messages app on the supervised device.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetMessagesBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("messagesBlocked")
     if err != nil {
@@ -3446,6 +3585,7 @@ func (m *IosGeneralDeviceConfiguration) GetMessagesBlocked()(*bool) {
     return nil
 }
 // GetNetworkUsageRules gets the networkUsageRules property value. List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.
+// returns a []IosNetworkUsageRuleable when successful
 func (m *IosGeneralDeviceConfiguration) GetNetworkUsageRules()([]IosNetworkUsageRuleable) {
     val, err := m.GetBackingStore().Get("networkUsageRules")
     if err != nil {
@@ -3457,6 +3597,7 @@ func (m *IosGeneralDeviceConfiguration) GetNetworkUsageRules()([]IosNetworkUsage
     return nil
 }
 // GetNfcBlocked gets the nfcBlocked property value. Disable NFC to prevent devices from pairing with other NFC-enabled devices. Available for iOS/iPadOS devices running 14.2 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetNfcBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("nfcBlocked")
     if err != nil {
@@ -3468,6 +3609,7 @@ func (m *IosGeneralDeviceConfiguration) GetNfcBlocked()(*bool) {
     return nil
 }
 // GetNotificationsBlockSettingsModification gets the notificationsBlockSettingsModification property value. Indicates whether or not to allow notifications settings modification (iOS 9.3 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetNotificationsBlockSettingsModification()(*bool) {
     val, err := m.GetBackingStore().Get("notificationsBlockSettingsModification")
     if err != nil {
@@ -3479,6 +3621,7 @@ func (m *IosGeneralDeviceConfiguration) GetNotificationsBlockSettingsModificatio
     return nil
 }
 // GetOnDeviceOnlyDictationForced gets the onDeviceOnlyDictationForced property value. Disables connections to Siri servers so that users can’t use Siri to dictate text. Available for devices running iOS and iPadOS versions 14.5 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetOnDeviceOnlyDictationForced()(*bool) {
     val, err := m.GetBackingStore().Get("onDeviceOnlyDictationForced")
     if err != nil {
@@ -3490,6 +3633,7 @@ func (m *IosGeneralDeviceConfiguration) GetOnDeviceOnlyDictationForced()(*bool) 
     return nil
 }
 // GetOnDeviceOnlyTranslationForced gets the onDeviceOnlyTranslationForced property value. When set to TRUE, the setting disables connections to Siri servers so that users can’t use Siri to translate text. When set to FALSE, the setting allows connections to to Siri servers to users can use Siri to translate text. Available for devices running iOS and iPadOS versions 15.0 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetOnDeviceOnlyTranslationForced()(*bool) {
     val, err := m.GetBackingStore().Get("onDeviceOnlyTranslationForced")
     if err != nil {
@@ -3501,6 +3645,7 @@ func (m *IosGeneralDeviceConfiguration) GetOnDeviceOnlyTranslationForced()(*bool
     return nil
 }
 // GetPasscodeBlockFingerprintModification gets the passcodeBlockFingerprintModification property value. Block modification of registered Touch ID fingerprints when in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockFingerprintModification()(*bool) {
     val, err := m.GetBackingStore().Get("passcodeBlockFingerprintModification")
     if err != nil {
@@ -3512,6 +3657,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockFingerprintModification(
     return nil
 }
 // GetPasscodeBlockFingerprintUnlock gets the passcodeBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockFingerprintUnlock()(*bool) {
     val, err := m.GetBackingStore().Get("passcodeBlockFingerprintUnlock")
     if err != nil {
@@ -3523,6 +3669,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockFingerprintUnlock()(*boo
     return nil
 }
 // GetPasscodeBlockModification gets the passcodeBlockModification property value. Indicates whether or not to allow passcode modification on the supervised device (iOS 9.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockModification()(*bool) {
     val, err := m.GetBackingStore().Get("passcodeBlockModification")
     if err != nil {
@@ -3534,6 +3681,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockModification()(*bool) {
     return nil
 }
 // GetPasscodeBlockSimple gets the passcodeBlockSimple property value. Indicates whether or not to block simple passcodes.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockSimple()(*bool) {
     val, err := m.GetBackingStore().Get("passcodeBlockSimple")
     if err != nil {
@@ -3545,6 +3693,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeBlockSimple()(*bool) {
     return nil
 }
 // GetPasscodeExpirationDays gets the passcodeExpirationDays property value. Number of days before the passcode expires. Valid values 1 to 65535
+// returns a *int32 when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passcodeExpirationDays")
     if err != nil {
@@ -3556,6 +3705,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeExpirationDays()(*int32) {
     return nil
 }
 // GetPasscodeMinimumCharacterSetCount gets the passcodeMinimumCharacterSetCount property value. Number of character sets a passcode must contain. Valid values 0 to 4
+// returns a *int32 when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeMinimumCharacterSetCount()(*int32) {
     val, err := m.GetBackingStore().Get("passcodeMinimumCharacterSetCount")
     if err != nil {
@@ -3567,6 +3717,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeMinimumCharacterSetCount()(*i
     return nil
 }
 // GetPasscodeMinimumLength gets the passcodeMinimumLength property value. Minimum length of passcode. Valid values 4 to 14
+// returns a *int32 when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("passcodeMinimumLength")
     if err != nil {
@@ -3578,6 +3729,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeMinimumLength()(*int32) {
     return nil
 }
 // GetPasscodeMinutesOfInactivityBeforeLock gets the passcodeMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a passcode is required.
+// returns a *int32 when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeMinutesOfInactivityBeforeLock()(*int32) {
     val, err := m.GetBackingStore().Get("passcodeMinutesOfInactivityBeforeLock")
     if err != nil {
@@ -3589,6 +3741,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeMinutesOfInactivityBeforeLock
     return nil
 }
 // GetPasscodeMinutesOfInactivityBeforeScreenTimeout gets the passcodeMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
+// returns a *int32 when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeMinutesOfInactivityBeforeScreenTimeout()(*int32) {
     val, err := m.GetBackingStore().Get("passcodeMinutesOfInactivityBeforeScreenTimeout")
     if err != nil {
@@ -3600,6 +3753,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeMinutesOfInactivityBeforeScre
     return nil
 }
 // GetPasscodePreviousPasscodeBlockCount gets the passcodePreviousPasscodeBlockCount property value. Number of previous passcodes to block. Valid values 1 to 24
+// returns a *int32 when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodePreviousPasscodeBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("passcodePreviousPasscodeBlockCount")
     if err != nil {
@@ -3611,6 +3765,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodePreviousPasscodeBlockCount()(
     return nil
 }
 // GetPasscodeRequired gets the passcodeRequired property value. Indicates whether or not to require a passcode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeRequired()(*bool) {
     val, err := m.GetBackingStore().Get("passcodeRequired")
     if err != nil {
@@ -3622,6 +3777,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeRequired()(*bool) {
     return nil
 }
 // GetPasscodeRequiredType gets the passcodeRequiredType property value. Possible values of required passwords.
+// returns a *RequiredPasswordType when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeRequiredType()(*RequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passcodeRequiredType")
     if err != nil {
@@ -3633,6 +3789,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeRequiredType()(*RequiredPassw
     return nil
 }
 // GetPasscodeSignInFailureCountBeforeWipe gets the passcodeSignInFailureCountBeforeWipe property value. Number of sign in failures allowed before wiping the device. Valid values 2 to 11
+// returns a *int32 when successful
 func (m *IosGeneralDeviceConfiguration) GetPasscodeSignInFailureCountBeforeWipe()(*int32) {
     val, err := m.GetBackingStore().Get("passcodeSignInFailureCountBeforeWipe")
     if err != nil {
@@ -3644,6 +3801,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasscodeSignInFailureCountBeforeWipe(
     return nil
 }
 // GetPasswordBlockAirDropSharing gets the passwordBlockAirDropSharing property value. Indicates whether or not to block sharing passwords with the AirDrop passwords feature iOS 12.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPasswordBlockAirDropSharing()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockAirDropSharing")
     if err != nil {
@@ -3655,6 +3813,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasswordBlockAirDropSharing()(*bool) 
     return nil
 }
 // GetPasswordBlockAutoFill gets the passwordBlockAutoFill property value. Indicates if the AutoFill passwords feature is allowed (iOS 12.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPasswordBlockAutoFill()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockAutoFill")
     if err != nil {
@@ -3666,6 +3825,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasswordBlockAutoFill()(*bool) {
     return nil
 }
 // GetPasswordBlockProximityRequests gets the passwordBlockProximityRequests property value. Indicates whether or not to block requesting passwords from nearby devices (iOS 12.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPasswordBlockProximityRequests()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockProximityRequests")
     if err != nil {
@@ -3677,6 +3837,7 @@ func (m *IosGeneralDeviceConfiguration) GetPasswordBlockProximityRequests()(*boo
     return nil
 }
 // GetPkiBlockOTAUpdates gets the pkiBlockOTAUpdates property value. Indicates whether or not over-the-air PKI updates are blocked. Setting this restriction to false does not disable CRL and OCSP checks (iOS 7.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPkiBlockOTAUpdates()(*bool) {
     val, err := m.GetBackingStore().Get("pkiBlockOTAUpdates")
     if err != nil {
@@ -3688,6 +3849,7 @@ func (m *IosGeneralDeviceConfiguration) GetPkiBlockOTAUpdates()(*bool) {
     return nil
 }
 // GetPodcastsBlocked gets the podcastsBlocked property value. Indicates whether or not to block the user from using podcasts on the supervised device (iOS 8.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPodcastsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("podcastsBlocked")
     if err != nil {
@@ -3699,6 +3861,7 @@ func (m *IosGeneralDeviceConfiguration) GetPodcastsBlocked()(*bool) {
     return nil
 }
 // GetPrivacyForceLimitAdTracking gets the privacyForceLimitAdTracking property value. Indicates if ad tracking is limited.(iOS 7.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetPrivacyForceLimitAdTracking()(*bool) {
     val, err := m.GetBackingStore().Get("privacyForceLimitAdTracking")
     if err != nil {
@@ -3710,6 +3873,7 @@ func (m *IosGeneralDeviceConfiguration) GetPrivacyForceLimitAdTracking()(*bool) 
     return nil
 }
 // GetProximityBlockSetupToNewDevice gets the proximityBlockSetupToNewDevice property value. Indicates whether or not to enable the prompt to setup nearby devices with a supervised device.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetProximityBlockSetupToNewDevice()(*bool) {
     val, err := m.GetBackingStore().Get("proximityBlockSetupToNewDevice")
     if err != nil {
@@ -3721,6 +3885,7 @@ func (m *IosGeneralDeviceConfiguration) GetProximityBlockSetupToNewDevice()(*boo
     return nil
 }
 // GetSafariBlockAutofill gets the safariBlockAutofill property value. Indicates whether or not to block the user from using Auto fill in Safari. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSafariBlockAutofill()(*bool) {
     val, err := m.GetBackingStore().Get("safariBlockAutofill")
     if err != nil {
@@ -3732,6 +3897,7 @@ func (m *IosGeneralDeviceConfiguration) GetSafariBlockAutofill()(*bool) {
     return nil
 }
 // GetSafariBlocked gets the safariBlocked property value. Indicates whether or not to block the user from using Safari. Requires a supervised device for iOS 13 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSafariBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("safariBlocked")
     if err != nil {
@@ -3743,6 +3909,7 @@ func (m *IosGeneralDeviceConfiguration) GetSafariBlocked()(*bool) {
     return nil
 }
 // GetSafariBlockJavaScript gets the safariBlockJavaScript property value. Indicates whether or not to block JavaScript in Safari.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSafariBlockJavaScript()(*bool) {
     val, err := m.GetBackingStore().Get("safariBlockJavaScript")
     if err != nil {
@@ -3754,6 +3921,7 @@ func (m *IosGeneralDeviceConfiguration) GetSafariBlockJavaScript()(*bool) {
     return nil
 }
 // GetSafariBlockPopups gets the safariBlockPopups property value. Indicates whether or not to block popups in Safari.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSafariBlockPopups()(*bool) {
     val, err := m.GetBackingStore().Get("safariBlockPopups")
     if err != nil {
@@ -3765,6 +3933,7 @@ func (m *IosGeneralDeviceConfiguration) GetSafariBlockPopups()(*bool) {
     return nil
 }
 // GetSafariCookieSettings gets the safariCookieSettings property value. Web Browser Cookie Settings.
+// returns a *WebBrowserCookieSettings when successful
 func (m *IosGeneralDeviceConfiguration) GetSafariCookieSettings()(*WebBrowserCookieSettings) {
     val, err := m.GetBackingStore().Get("safariCookieSettings")
     if err != nil {
@@ -3776,6 +3945,7 @@ func (m *IosGeneralDeviceConfiguration) GetSafariCookieSettings()(*WebBrowserCoo
     return nil
 }
 // GetSafariManagedDomains gets the safariManagedDomains property value. URLs matching the patterns listed here will be considered managed.
+// returns a []string when successful
 func (m *IosGeneralDeviceConfiguration) GetSafariManagedDomains()([]string) {
     val, err := m.GetBackingStore().Get("safariManagedDomains")
     if err != nil {
@@ -3787,6 +3957,7 @@ func (m *IosGeneralDeviceConfiguration) GetSafariManagedDomains()([]string) {
     return nil
 }
 // GetSafariPasswordAutoFillDomains gets the safariPasswordAutoFillDomains property value. Users can save passwords in Safari only from URLs matching the patterns listed here. Applies to devices in supervised mode (iOS 9.3 and later).
+// returns a []string when successful
 func (m *IosGeneralDeviceConfiguration) GetSafariPasswordAutoFillDomains()([]string) {
     val, err := m.GetBackingStore().Get("safariPasswordAutoFillDomains")
     if err != nil {
@@ -3798,6 +3969,7 @@ func (m *IosGeneralDeviceConfiguration) GetSafariPasswordAutoFillDomains()([]str
     return nil
 }
 // GetSafariRequireFraudWarning gets the safariRequireFraudWarning property value. Indicates whether or not to require fraud warning in Safari.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSafariRequireFraudWarning()(*bool) {
     val, err := m.GetBackingStore().Get("safariRequireFraudWarning")
     if err != nil {
@@ -3809,6 +3981,7 @@ func (m *IosGeneralDeviceConfiguration) GetSafariRequireFraudWarning()(*bool) {
     return nil
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to block the user from taking Screenshots.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("screenCaptureBlocked")
     if err != nil {
@@ -3820,6 +3993,7 @@ func (m *IosGeneralDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
     return nil
 }
 // GetSharedDeviceBlockTemporarySessions gets the sharedDeviceBlockTemporarySessions property value. Indicates whether or not to block temporary sessions on Shared iPads (iOS 13.4 or later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSharedDeviceBlockTemporarySessions()(*bool) {
     val, err := m.GetBackingStore().Get("sharedDeviceBlockTemporarySessions")
     if err != nil {
@@ -3831,6 +4005,7 @@ func (m *IosGeneralDeviceConfiguration) GetSharedDeviceBlockTemporarySessions()(
     return nil
 }
 // GetSiriBlocked gets the siriBlocked property value. Indicates whether or not to block the user from using Siri.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSiriBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("siriBlocked")
     if err != nil {
@@ -3842,6 +4017,7 @@ func (m *IosGeneralDeviceConfiguration) GetSiriBlocked()(*bool) {
     return nil
 }
 // GetSiriBlockedWhenLocked gets the siriBlockedWhenLocked property value. Indicates whether or not to block the user from using Siri when locked.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSiriBlockedWhenLocked()(*bool) {
     val, err := m.GetBackingStore().Get("siriBlockedWhenLocked")
     if err != nil {
@@ -3853,6 +4029,7 @@ func (m *IosGeneralDeviceConfiguration) GetSiriBlockedWhenLocked()(*bool) {
     return nil
 }
 // GetSiriBlockUserGeneratedContent gets the siriBlockUserGeneratedContent property value. Indicates whether or not to block Siri from querying user-generated content when used on a supervised device.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSiriBlockUserGeneratedContent()(*bool) {
     val, err := m.GetBackingStore().Get("siriBlockUserGeneratedContent")
     if err != nil {
@@ -3864,6 +4041,7 @@ func (m *IosGeneralDeviceConfiguration) GetSiriBlockUserGeneratedContent()(*bool
     return nil
 }
 // GetSiriRequireProfanityFilter gets the siriRequireProfanityFilter property value. Indicates whether or not to prevent Siri from dictating, or speaking profane language on supervised device.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSiriRequireProfanityFilter()(*bool) {
     val, err := m.GetBackingStore().Get("siriRequireProfanityFilter")
     if err != nil {
@@ -3875,6 +4053,7 @@ func (m *IosGeneralDeviceConfiguration) GetSiriRequireProfanityFilter()(*bool) {
     return nil
 }
 // GetSoftwareUpdatesEnforcedDelayInDays gets the softwareUpdatesEnforcedDelayInDays property value. Sets how many days a software update will be delyed for a supervised device. Valid values 0 to 90
+// returns a *int32 when successful
 func (m *IosGeneralDeviceConfiguration) GetSoftwareUpdatesEnforcedDelayInDays()(*int32) {
     val, err := m.GetBackingStore().Get("softwareUpdatesEnforcedDelayInDays")
     if err != nil {
@@ -3886,6 +4065,7 @@ func (m *IosGeneralDeviceConfiguration) GetSoftwareUpdatesEnforcedDelayInDays()(
     return nil
 }
 // GetSoftwareUpdatesForceDelayed gets the softwareUpdatesForceDelayed property value. Indicates whether or not to delay user visibility of software updates when the device is in supervised mode.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSoftwareUpdatesForceDelayed()(*bool) {
     val, err := m.GetBackingStore().Get("softwareUpdatesForceDelayed")
     if err != nil {
@@ -3897,6 +4077,7 @@ func (m *IosGeneralDeviceConfiguration) GetSoftwareUpdatesForceDelayed()(*bool) 
     return nil
 }
 // GetSpotlightBlockInternetResults gets the spotlightBlockInternetResults property value. Indicates whether or not to block Spotlight search from returning internet results on supervised device.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetSpotlightBlockInternetResults()(*bool) {
     val, err := m.GetBackingStore().Get("spotlightBlockInternetResults")
     if err != nil {
@@ -3908,6 +4089,7 @@ func (m *IosGeneralDeviceConfiguration) GetSpotlightBlockInternetResults()(*bool
     return nil
 }
 // GetUnpairedExternalBootToRecoveryAllowed gets the unpairedExternalBootToRecoveryAllowed property value. Allow users to boot devices into recovery mode with unpaired devices. Available for devices running iOS and iPadOS versions 14.5 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetUnpairedExternalBootToRecoveryAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("unpairedExternalBootToRecoveryAllowed")
     if err != nil {
@@ -3919,6 +4101,7 @@ func (m *IosGeneralDeviceConfiguration) GetUnpairedExternalBootToRecoveryAllowed
     return nil
 }
 // GetUsbRestrictedModeBlocked gets the usbRestrictedModeBlocked property value. Indicates if connecting to USB accessories while the device is locked is allowed (iOS 11.4.1 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetUsbRestrictedModeBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("usbRestrictedModeBlocked")
     if err != nil {
@@ -3930,6 +4113,7 @@ func (m *IosGeneralDeviceConfiguration) GetUsbRestrictedModeBlocked()(*bool) {
     return nil
 }
 // GetVoiceDialingBlocked gets the voiceDialingBlocked property value. Indicates whether or not to block voice dialing.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetVoiceDialingBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("voiceDialingBlocked")
     if err != nil {
@@ -3941,6 +4125,7 @@ func (m *IosGeneralDeviceConfiguration) GetVoiceDialingBlocked()(*bool) {
     return nil
 }
 // GetVpnBlockCreation gets the vpnBlockCreation property value. Indicates whether or not the creation of VPN configurations is blocked (iOS 11.0 and later).
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetVpnBlockCreation()(*bool) {
     val, err := m.GetBackingStore().Get("vpnBlockCreation")
     if err != nil {
@@ -3952,6 +4137,7 @@ func (m *IosGeneralDeviceConfiguration) GetVpnBlockCreation()(*bool) {
     return nil
 }
 // GetWallpaperBlockModification gets the wallpaperBlockModification property value. Indicates whether or not to allow wallpaper modification on supervised device (iOS 9.0 and later) .
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetWallpaperBlockModification()(*bool) {
     val, err := m.GetBackingStore().Get("wallpaperBlockModification")
     if err != nil {
@@ -3963,6 +4149,7 @@ func (m *IosGeneralDeviceConfiguration) GetWallpaperBlockModification()(*bool) {
     return nil
 }
 // GetWiFiConnectOnlyToConfiguredNetworks gets the wiFiConnectOnlyToConfiguredNetworks property value. Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode. Available for devices running iOS and iPadOS versions 14.4 and earlier. Devices running 14.5+ should use the setting, 'WiFiConnectToAllowedNetworksOnlyForced.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetWiFiConnectOnlyToConfiguredNetworks()(*bool) {
     val, err := m.GetBackingStore().Get("wiFiConnectOnlyToConfiguredNetworks")
     if err != nil {
@@ -3974,6 +4161,7 @@ func (m *IosGeneralDeviceConfiguration) GetWiFiConnectOnlyToConfiguredNetworks()
     return nil
 }
 // GetWiFiConnectToAllowedNetworksOnlyForced gets the wiFiConnectToAllowedNetworksOnlyForced property value. Require devices to use Wi-Fi networks set up via configuration profiles. Available for devices running iOS and iPadOS versions 14.5 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetWiFiConnectToAllowedNetworksOnlyForced()(*bool) {
     val, err := m.GetBackingStore().Get("wiFiConnectToAllowedNetworksOnlyForced")
     if err != nil {
@@ -3985,6 +4173,7 @@ func (m *IosGeneralDeviceConfiguration) GetWiFiConnectToAllowedNetworksOnlyForce
     return nil
 }
 // GetWifiPowerOnForced gets the wifiPowerOnForced property value. Indicates whether or not Wi-Fi remains on, even when device is in airplane mode. Available for devices running iOS and iPadOS, versions 13.0 and later.
+// returns a *bool when successful
 func (m *IosGeneralDeviceConfiguration) GetWifiPowerOnForced()(*bool) {
     val, err := m.GetBackingStore().Get("wifiPowerOnForced")
     if err != nil {
@@ -6464,7 +6653,6 @@ func (m *IosGeneralDeviceConfiguration) SetWifiPowerOnForced(value *bool)() {
         panic(err)
     }
 }
-// IosGeneralDeviceConfigurationable 
 type IosGeneralDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

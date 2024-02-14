@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EnumeratedAccountsWithAccess 
 type EnumeratedAccountsWithAccess struct {
     AccountsWithAccess
 }
-// NewEnumeratedAccountsWithAccess instantiates a new enumeratedAccountsWithAccess and sets the default values.
+// NewEnumeratedAccountsWithAccess instantiates a new EnumeratedAccountsWithAccess and sets the default values.
 func NewEnumeratedAccountsWithAccess()(*EnumeratedAccountsWithAccess) {
     m := &EnumeratedAccountsWithAccess{
         AccountsWithAccess: *NewAccountsWithAccess(),
@@ -18,10 +17,12 @@ func NewEnumeratedAccountsWithAccess()(*EnumeratedAccountsWithAccess) {
     return m
 }
 // CreateEnumeratedAccountsWithAccessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnumeratedAccountsWithAccessFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnumeratedAccountsWithAccess(), nil
 }
 // GetAccounts gets the accounts property value. The accounts property
+// returns a []AuthorizationSystemable when successful
 func (m *EnumeratedAccountsWithAccess) GetAccounts()([]AuthorizationSystemable) {
     val, err := m.GetBackingStore().Get("accounts")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EnumeratedAccountsWithAccess) GetAccounts()([]AuthorizationSystemable) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EnumeratedAccountsWithAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccountsWithAccess.GetFieldDeserializers()
     res["accounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,7 +82,6 @@ func (m *EnumeratedAccountsWithAccess) SetAccounts(value []AuthorizationSystemab
         panic(err)
     }
 }
-// EnumeratedAccountsWithAccessable 
 type EnumeratedAccountsWithAccessable interface {
     AccountsWithAccessable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

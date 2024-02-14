@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SymantecCodeSigningCertificate 
 type SymantecCodeSigningCertificate struct {
     Entity
 }
-// NewSymantecCodeSigningCertificate instantiates a new symantecCodeSigningCertificate and sets the default values.
+// NewSymantecCodeSigningCertificate instantiates a new SymantecCodeSigningCertificate and sets the default values.
 func NewSymantecCodeSigningCertificate()(*SymantecCodeSigningCertificate) {
     m := &SymantecCodeSigningCertificate{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewSymantecCodeSigningCertificate()(*SymantecCodeSigningCertificate) {
     return m
 }
 // CreateSymantecCodeSigningCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSymantecCodeSigningCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSymantecCodeSigningCertificate(), nil
 }
 // GetContent gets the content property value. The Windows Symantec Code-Signing Certificate in the raw data format.
+// returns a []byte when successful
 func (m *SymantecCodeSigningCertificate) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *SymantecCodeSigningCertificate) GetContent()([]byte) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The Cert Expiration Date.
+// returns a *Time when successful
 func (m *SymantecCodeSigningCertificate) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *SymantecCodeSigningCertificate) GetExpirationDateTime()(*i336074805fc85
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SymantecCodeSigningCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,6 +141,7 @@ func (m *SymantecCodeSigningCertificate) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetIssuer gets the issuer property value. The Issuer value for the cert.
+// returns a *string when successful
 func (m *SymantecCodeSigningCertificate) GetIssuer()(*string) {
     val, err := m.GetBackingStore().Get("issuer")
     if err != nil {
@@ -149,6 +153,7 @@ func (m *SymantecCodeSigningCertificate) GetIssuer()(*string) {
     return nil
 }
 // GetIssuerName gets the issuerName property value. The Issuer Name for the cert.
+// returns a *string when successful
 func (m *SymantecCodeSigningCertificate) GetIssuerName()(*string) {
     val, err := m.GetBackingStore().Get("issuerName")
     if err != nil {
@@ -160,6 +165,7 @@ func (m *SymantecCodeSigningCertificate) GetIssuerName()(*string) {
     return nil
 }
 // GetPassword gets the password property value. The Password required for .pfx file.
+// returns a *string when successful
 func (m *SymantecCodeSigningCertificate) GetPassword()(*string) {
     val, err := m.GetBackingStore().Get("password")
     if err != nil {
@@ -171,6 +177,7 @@ func (m *SymantecCodeSigningCertificate) GetPassword()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *CertificateStatus when successful
 func (m *SymantecCodeSigningCertificate) GetStatus()(*CertificateStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -182,6 +189,7 @@ func (m *SymantecCodeSigningCertificate) GetStatus()(*CertificateStatus) {
     return nil
 }
 // GetSubject gets the subject property value. The Subject value for the cert.
+// returns a *string when successful
 func (m *SymantecCodeSigningCertificate) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -193,6 +201,7 @@ func (m *SymantecCodeSigningCertificate) GetSubject()(*string) {
     return nil
 }
 // GetSubjectName gets the subjectName property value. The Subject Name for the cert.
+// returns a *string when successful
 func (m *SymantecCodeSigningCertificate) GetSubjectName()(*string) {
     val, err := m.GetBackingStore().Get("subjectName")
     if err != nil {
@@ -204,6 +213,7 @@ func (m *SymantecCodeSigningCertificate) GetSubjectName()(*string) {
     return nil
 }
 // GetUploadDateTime gets the uploadDateTime property value. The Type of the CodeSigning Cert as Symantec Cert.
+// returns a *Time when successful
 func (m *SymantecCodeSigningCertificate) GetUploadDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("uploadDateTime")
     if err != nil {
@@ -340,7 +350,6 @@ func (m *SymantecCodeSigningCertificate) SetUploadDateTime(value *i336074805fc85
         panic(err)
     }
 }
-// SymantecCodeSigningCertificateable 
 type SymantecCodeSigningCertificateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -47,6 +47,7 @@ type OperationApprovalPoliciesRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByOperationApprovalPolicyId provides operations to manage the operationApprovalPolicies property of the microsoft.graph.deviceManagement entity.
+// returns a *OperationApprovalPoliciesOperationApprovalPolicyItemRequestBuilder when successful
 func (m *OperationApprovalPoliciesRequestBuilder) ByOperationApprovalPolicyId(operationApprovalPolicyId string)(*OperationApprovalPoliciesOperationApprovalPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,7 +61,7 @@ func (m *OperationApprovalPoliciesRequestBuilder) ByOperationApprovalPolicyId(op
 // NewOperationApprovalPoliciesRequestBuilderInternal instantiates a new OperationApprovalPoliciesRequestBuilder and sets the default values.
 func NewOperationApprovalPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OperationApprovalPoliciesRequestBuilder) {
     m := &OperationApprovalPoliciesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -71,18 +72,20 @@ func NewOperationApprovalPoliciesRequestBuilder(rawUrl string, requestAdapter i2
     return NewOperationApprovalPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *OperationApprovalPoliciesCountRequestBuilder when successful
 func (m *OperationApprovalPoliciesRequestBuilder) Count()(*OperationApprovalPoliciesCountRequestBuilder) {
     return NewOperationApprovalPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the Operation Approval Policies
+// returns a OperationApprovalPolicyCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OperationApprovalPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationApprovalPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OperationApprovalPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOperationApprovalPolicyCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,22 +97,25 @@ func (m *OperationApprovalPoliciesRequestBuilder) Get(ctx context.Context, reque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OperationApprovalPolicyCollectionResponseable), nil
 }
 // GetApprovableOperations provides operations to call the getApprovableOperations method.
+// returns a *OperationApprovalPoliciesGetApprovableOperationsRequestBuilder when successful
 func (m *OperationApprovalPoliciesRequestBuilder) GetApprovableOperations()(*OperationApprovalPoliciesGetApprovableOperationsRequestBuilder) {
     return NewOperationApprovalPoliciesGetApprovableOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetOperationsRequiringApproval provides operations to call the getOperationsRequiringApproval method.
+// returns a *OperationApprovalPoliciesGetOperationsRequiringApprovalRequestBuilder when successful
 func (m *OperationApprovalPoliciesRequestBuilder) GetOperationsRequiringApproval()(*OperationApprovalPoliciesGetOperationsRequiringApprovalRequestBuilder) {
     return NewOperationApprovalPoliciesGetOperationsRequiringApprovalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to operationApprovalPolicies for deviceManagement
+// returns a OperationApprovalPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OperationApprovalPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OperationApprovalPolicyable, requestConfiguration *OperationApprovalPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OperationApprovalPolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOperationApprovalPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -121,14 +127,17 @@ func (m *OperationApprovalPoliciesRequestBuilder) Post(ctx context.Context, body
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OperationApprovalPolicyable), nil
 }
 // RetrieveApprovableOperations provides operations to call the retrieveApprovableOperations method.
+// returns a *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder when successful
 func (m *OperationApprovalPoliciesRequestBuilder) RetrieveApprovableOperations()(*OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) {
     return NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetrieveOperationsRequiringApproval provides operations to call the retrieveOperationsRequiringApproval method.
+// returns a *OperationApprovalPoliciesRetrieveOperationsRequiringApprovalRequestBuilder when successful
 func (m *OperationApprovalPoliciesRequestBuilder) RetrieveOperationsRequiringApproval()(*OperationApprovalPoliciesRetrieveOperationsRequiringApprovalRequestBuilder) {
     return NewOperationApprovalPoliciesRetrieveOperationsRequiringApprovalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the Operation Approval Policies
+// returns a *RequestInformation when successful
 func (m *OperationApprovalPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OperationApprovalPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -142,8 +151,9 @@ func (m *OperationApprovalPoliciesRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to operationApprovalPolicies for deviceManagement
+// returns a *RequestInformation when successful
 func (m *OperationApprovalPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OperationApprovalPolicyable, requestConfiguration *OperationApprovalPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceManagement/operationApprovalPolicies", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -156,6 +166,7 @@ func (m *OperationApprovalPoliciesRequestBuilder) ToPostRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *OperationApprovalPoliciesRequestBuilder when successful
 func (m *OperationApprovalPoliciesRequestBuilder) WithUrl(rawUrl string)(*OperationApprovalPoliciesRequestBuilder) {
     return NewOperationApprovalPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

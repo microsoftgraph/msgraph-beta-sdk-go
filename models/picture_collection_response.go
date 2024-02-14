@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PictureCollectionResponse 
 type PictureCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPictureCollectionResponse instantiates a new pictureCollectionResponse and sets the default values.
+// NewPictureCollectionResponse instantiates a new PictureCollectionResponse and sets the default values.
 func NewPictureCollectionResponse()(*PictureCollectionResponse) {
     m := &PictureCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewPictureCollectionResponse()(*PictureCollectionResponse) {
     return m
 }
 // CreatePictureCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePictureCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPictureCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PictureCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *PictureCollectionResponse) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Pictureable when successful
 func (m *PictureCollectionResponse) GetValue()([]Pictureable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *PictureCollectionResponse) SetValue(value []Pictureable)() {
         panic(err)
     }
 }
-// PictureCollectionResponseable 
 type PictureCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

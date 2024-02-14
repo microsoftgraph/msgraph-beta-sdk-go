@@ -9,7 +9,7 @@ import (
 type BookingAppointment struct {
     Entity
 }
-// NewBookingAppointment instantiates a new bookingAppointment and sets the default values.
+// NewBookingAppointment instantiates a new BookingAppointment and sets the default values.
 func NewBookingAppointment()(*BookingAppointment) {
     m := &BookingAppointment{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewBookingAppointment()(*BookingAppointment) {
     return m
 }
 // CreateBookingAppointmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingAppointmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingAppointment(), nil
 }
 // GetAdditionalInformation gets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
+// returns a *string when successful
 func (m *BookingAppointment) GetAdditionalInformation()(*string) {
     val, err := m.GetBackingStore().Get("additionalInformation")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *BookingAppointment) GetAdditionalInformation()(*string) {
     return nil
 }
 // GetAnonymousJoinWebUrl gets the anonymousJoinWebUrl property value. The URL of the meeting to join anonymously.
+// returns a *string when successful
 func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("anonymousJoinWebUrl")
     if err != nil {
@@ -42,7 +45,8 @@ func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
     }
     return nil
 }
-// GetAppointmentLabel gets the appointmentLabel property value. Custom label that can be stamped on this appointment by users.
+// GetAppointmentLabel gets the appointmentLabel property value. Custom label that can be stamped on this appointment by the user.
+// returns a *string when successful
 func (m *BookingAppointment) GetAppointmentLabel()(*string) {
     val, err := m.GetBackingStore().Get("appointmentLabel")
     if err != nil {
@@ -53,7 +57,8 @@ func (m *BookingAppointment) GetAppointmentLabel()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date, time and timezone when the appointment was created.
+// returns a *Time when successful
 func (m *BookingAppointment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *BookingAppointment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetCustomerEmailAddress gets the customerEmailAddress property value. The SMTP address of the bookingCustomer who is booking the appointment.
+// returns a *string when successful
 func (m *BookingAppointment) GetCustomerEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("customerEmailAddress")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *BookingAppointment) GetCustomerEmailAddress()(*string) {
     return nil
 }
 // GetCustomerId gets the customerId property value. The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
+// returns a *string when successful
 func (m *BookingAppointment) GetCustomerId()(*string) {
     val, err := m.GetBackingStore().Get("customerId")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *BookingAppointment) GetCustomerId()(*string) {
     return nil
 }
 // GetCustomerLocation gets the customerLocation property value. Represents location information for the bookingCustomer who is booking the appointment.
+// returns a Locationable when successful
 func (m *BookingAppointment) GetCustomerLocation()(Locationable) {
     val, err := m.GetBackingStore().Get("customerLocation")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *BookingAppointment) GetCustomerLocation()(Locationable) {
     return nil
 }
 // GetCustomerName gets the customerName property value. The customer's name.
+// returns a *string when successful
 func (m *BookingAppointment) GetCustomerName()(*string) {
     val, err := m.GetBackingStore().Get("customerName")
     if err != nil {
@@ -109,6 +118,7 @@ func (m *BookingAppointment) GetCustomerName()(*string) {
     return nil
 }
 // GetCustomerNotes gets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
+// returns a *string when successful
 func (m *BookingAppointment) GetCustomerNotes()(*string) {
     val, err := m.GetBackingStore().Get("customerNotes")
     if err != nil {
@@ -120,6 +130,7 @@ func (m *BookingAppointment) GetCustomerNotes()(*string) {
     return nil
 }
 // GetCustomerPhone gets the customerPhone property value. The customer's phone number.
+// returns a *string when successful
 func (m *BookingAppointment) GetCustomerPhone()(*string) {
     val, err := m.GetBackingStore().Get("customerPhone")
     if err != nil {
@@ -131,6 +142,7 @@ func (m *BookingAppointment) GetCustomerPhone()(*string) {
     return nil
 }
 // GetCustomers gets the customers property value. A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+// returns a []BookingCustomerInformationBaseable when successful
 func (m *BookingAppointment) GetCustomers()([]BookingCustomerInformationBaseable) {
     val, err := m.GetBackingStore().Get("customers")
     if err != nil {
@@ -142,6 +154,7 @@ func (m *BookingAppointment) GetCustomers()([]BookingCustomerInformationBaseable
     return nil
 }
 // GetCustomerTimeZone gets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
+// returns a *string when successful
 func (m *BookingAppointment) GetCustomerTimeZone()(*string) {
     val, err := m.GetBackingStore().Get("customerTimeZone")
     if err != nil {
@@ -153,6 +166,7 @@ func (m *BookingAppointment) GetCustomerTimeZone()(*string) {
     return nil
 }
 // GetDuration gets the duration property value. The length of the appointment, denoted in ISO8601 format.
+// returns a *ISODuration when successful
 func (m *BookingAppointment) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("duration")
     if err != nil {
@@ -164,6 +178,7 @@ func (m *BookingAppointment) GetDuration()(*i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // GetEnd gets the end property value. The end property
+// returns a DateTimeTimeZoneable when successful
 func (m *BookingAppointment) GetEnd()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("end")
     if err != nil {
@@ -175,6 +190,7 @@ func (m *BookingAppointment) GetEnd()(DateTimeTimeZoneable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["additionalInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -588,6 +604,7 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetFilledAttendeesCount gets the filledAttendeesCount property value. The current number of customers in the appointment.
+// returns a *int32 when successful
 func (m *BookingAppointment) GetFilledAttendeesCount()(*int32) {
     val, err := m.GetBackingStore().Get("filledAttendeesCount")
     if err != nil {
@@ -599,6 +616,7 @@ func (m *BookingAppointment) GetFilledAttendeesCount()(*int32) {
     return nil
 }
 // GetInvoiceAmount gets the invoiceAmount property value. The billed amount on the invoice.
+// returns a *float64 when successful
 func (m *BookingAppointment) GetInvoiceAmount()(*float64) {
     val, err := m.GetBackingStore().Get("invoiceAmount")
     if err != nil {
@@ -610,6 +628,7 @@ func (m *BookingAppointment) GetInvoiceAmount()(*float64) {
     return nil
 }
 // GetInvoiceDate gets the invoiceDate property value. The date, time, and time zone of the invoice for this appointment.
+// returns a DateTimeTimeZoneable when successful
 func (m *BookingAppointment) GetInvoiceDate()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("invoiceDate")
     if err != nil {
@@ -621,6 +640,7 @@ func (m *BookingAppointment) GetInvoiceDate()(DateTimeTimeZoneable) {
     return nil
 }
 // GetInvoiceId gets the invoiceId property value. The ID of the invoice.
+// returns a *string when successful
 func (m *BookingAppointment) GetInvoiceId()(*string) {
     val, err := m.GetBackingStore().Get("invoiceId")
     if err != nil {
@@ -632,6 +652,7 @@ func (m *BookingAppointment) GetInvoiceId()(*string) {
     return nil
 }
 // GetInvoiceStatus gets the invoiceStatus property value. The invoiceStatus property
+// returns a *BookingInvoiceStatus when successful
 func (m *BookingAppointment) GetInvoiceStatus()(*BookingInvoiceStatus) {
     val, err := m.GetBackingStore().Get("invoiceStatus")
     if err != nil {
@@ -643,6 +664,7 @@ func (m *BookingAppointment) GetInvoiceStatus()(*BookingInvoiceStatus) {
     return nil
 }
 // GetInvoiceUrl gets the invoiceUrl property value. The URL of the invoice in Microsoft Bookings.
+// returns a *string when successful
 func (m *BookingAppointment) GetInvoiceUrl()(*string) {
     val, err := m.GetBackingStore().Get("invoiceUrl")
     if err != nil {
@@ -654,6 +676,7 @@ func (m *BookingAppointment) GetInvoiceUrl()(*string) {
     return nil
 }
 // GetIsLocationOnline gets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
+// returns a *bool when successful
 func (m *BookingAppointment) GetIsLocationOnline()(*bool) {
     val, err := m.GetBackingStore().Get("isLocationOnline")
     if err != nil {
@@ -665,6 +688,7 @@ func (m *BookingAppointment) GetIsLocationOnline()(*bool) {
     return nil
 }
 // GetJoinWebUrl gets the joinWebUrl property value. The URL of the online meeting for the appointment.
+// returns a *string when successful
 func (m *BookingAppointment) GetJoinWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("joinWebUrl")
     if err != nil {
@@ -675,7 +699,8 @@ func (m *BookingAppointment) GetJoinWebUrl()(*string) {
     }
     return nil
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date, time and timezone when the booking business was last updated.
+// returns a *Time when successful
 func (m *BookingAppointment) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -687,6 +712,7 @@ func (m *BookingAppointment) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetMaximumAttendeesCount gets the maximumAttendeesCount property value. The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
+// returns a *int32 when successful
 func (m *BookingAppointment) GetMaximumAttendeesCount()(*int32) {
     val, err := m.GetBackingStore().Get("maximumAttendeesCount")
     if err != nil {
@@ -698,6 +724,7 @@ func (m *BookingAppointment) GetMaximumAttendeesCount()(*int32) {
     return nil
 }
 // GetOnlineMeetingUrl gets the onlineMeetingUrl property value. The onlineMeetingUrl property
+// returns a *string when successful
 func (m *BookingAppointment) GetOnlineMeetingUrl()(*string) {
     val, err := m.GetBackingStore().Get("onlineMeetingUrl")
     if err != nil {
@@ -709,6 +736,7 @@ func (m *BookingAppointment) GetOnlineMeetingUrl()(*string) {
     return nil
 }
 // GetOptOutOfCustomerEmail gets the optOutOfCustomerEmail property value. True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+// returns a *bool when successful
 func (m *BookingAppointment) GetOptOutOfCustomerEmail()(*bool) {
     val, err := m.GetBackingStore().Get("optOutOfCustomerEmail")
     if err != nil {
@@ -720,6 +748,7 @@ func (m *BookingAppointment) GetOptOutOfCustomerEmail()(*bool) {
     return nil
 }
 // GetPostBuffer gets the postBuffer property value. The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
+// returns a *ISODuration when successful
 func (m *BookingAppointment) GetPostBuffer()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("postBuffer")
     if err != nil {
@@ -731,6 +760,7 @@ func (m *BookingAppointment) GetPostBuffer()(*i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // GetPreBuffer gets the preBuffer property value. The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
+// returns a *ISODuration when successful
 func (m *BookingAppointment) GetPreBuffer()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("preBuffer")
     if err != nil {
@@ -742,6 +772,7 @@ func (m *BookingAppointment) GetPreBuffer()(*i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // GetPrice gets the price property value. The regular price for an appointment for the specified bookingService.
+// returns a *float64 when successful
 func (m *BookingAppointment) GetPrice()(*float64) {
     val, err := m.GetBackingStore().Get("price")
     if err != nil {
@@ -753,6 +784,7 @@ func (m *BookingAppointment) GetPrice()(*float64) {
     return nil
 }
 // GetPriceType gets the priceType property value. Represents the type of pricing of a booking service.
+// returns a *BookingPriceType when successful
 func (m *BookingAppointment) GetPriceType()(*BookingPriceType) {
     val, err := m.GetBackingStore().Get("priceType")
     if err != nil {
@@ -764,6 +796,7 @@ func (m *BookingAppointment) GetPriceType()(*BookingPriceType) {
     return nil
 }
 // GetReminders gets the reminders property value. The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
+// returns a []BookingReminderable when successful
 func (m *BookingAppointment) GetReminders()([]BookingReminderable) {
     val, err := m.GetBackingStore().Get("reminders")
     if err != nil {
@@ -775,6 +808,7 @@ func (m *BookingAppointment) GetReminders()([]BookingReminderable) {
     return nil
 }
 // GetSelfServiceAppointmentId gets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+// returns a *string when successful
 func (m *BookingAppointment) GetSelfServiceAppointmentId()(*string) {
     val, err := m.GetBackingStore().Get("selfServiceAppointmentId")
     if err != nil {
@@ -786,6 +820,7 @@ func (m *BookingAppointment) GetSelfServiceAppointmentId()(*string) {
     return nil
 }
 // GetServiceId gets the serviceId property value. The ID of the bookingService associated with this appointment.
+// returns a *string when successful
 func (m *BookingAppointment) GetServiceId()(*string) {
     val, err := m.GetBackingStore().Get("serviceId")
     if err != nil {
@@ -797,6 +832,7 @@ func (m *BookingAppointment) GetServiceId()(*string) {
     return nil
 }
 // GetServiceLocation gets the serviceLocation property value. The location where the service is delivered.
+// returns a Locationable when successful
 func (m *BookingAppointment) GetServiceLocation()(Locationable) {
     val, err := m.GetBackingStore().Get("serviceLocation")
     if err != nil {
@@ -808,6 +844,7 @@ func (m *BookingAppointment) GetServiceLocation()(Locationable) {
     return nil
 }
 // GetServiceName gets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
+// returns a *string when successful
 func (m *BookingAppointment) GetServiceName()(*string) {
     val, err := m.GetBackingStore().Get("serviceName")
     if err != nil {
@@ -819,6 +856,7 @@ func (m *BookingAppointment) GetServiceName()(*string) {
     return nil
 }
 // GetServiceNotes gets the serviceNotes property value. Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
+// returns a *string when successful
 func (m *BookingAppointment) GetServiceNotes()(*string) {
     val, err := m.GetBackingStore().Get("serviceNotes")
     if err != nil {
@@ -830,6 +868,7 @@ func (m *BookingAppointment) GetServiceNotes()(*string) {
     return nil
 }
 // GetSmsNotificationsEnabled gets the smsNotificationsEnabled property value. True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+// returns a *bool when successful
 func (m *BookingAppointment) GetSmsNotificationsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("smsNotificationsEnabled")
     if err != nil {
@@ -841,6 +880,7 @@ func (m *BookingAppointment) GetSmsNotificationsEnabled()(*bool) {
     return nil
 }
 // GetStaffMemberIds gets the staffMemberIds property value. The ID of each bookingStaffMember who is scheduled in this appointment.
+// returns a []string when successful
 func (m *BookingAppointment) GetStaffMemberIds()([]string) {
     val, err := m.GetBackingStore().Get("staffMemberIds")
     if err != nil {
@@ -852,6 +892,7 @@ func (m *BookingAppointment) GetStaffMemberIds()([]string) {
     return nil
 }
 // GetStart gets the start property value. The start property
+// returns a DateTimeTimeZoneable when successful
 func (m *BookingAppointment) GetStart()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("start")
     if err != nil {
@@ -1120,14 +1161,14 @@ func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetAppointmentLabel sets the appointmentLabel property value. Custom label that can be stamped on this appointment by users.
+// SetAppointmentLabel sets the appointmentLabel property value. Custom label that can be stamped on this appointment by the user.
 func (m *BookingAppointment) SetAppointmentLabel(value *string)() {
     err := m.GetBackingStore().Set("appointmentLabel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date, time and timezone when the appointment was created.
 func (m *BookingAppointment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -1260,7 +1301,7 @@ func (m *BookingAppointment) SetJoinWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date, time and timezone when the booking business was last updated.
 func (m *BookingAppointment) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
@@ -1379,7 +1420,6 @@ func (m *BookingAppointment) SetStart(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// BookingAppointmentable 
 type BookingAppointmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

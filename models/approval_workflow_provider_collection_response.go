@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApprovalWorkflowProviderCollectionResponse 
 type ApprovalWorkflowProviderCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewApprovalWorkflowProviderCollectionResponse instantiates a new approvalWorkflowProviderCollectionResponse and sets the default values.
+// NewApprovalWorkflowProviderCollectionResponse instantiates a new ApprovalWorkflowProviderCollectionResponse and sets the default values.
 func NewApprovalWorkflowProviderCollectionResponse()(*ApprovalWorkflowProviderCollectionResponse) {
     m := &ApprovalWorkflowProviderCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewApprovalWorkflowProviderCollectionResponse()(*ApprovalWorkflowProviderCo
     return m
 }
 // CreateApprovalWorkflowProviderCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApprovalWorkflowProviderCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApprovalWorkflowProviderCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApprovalWorkflowProviderCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ApprovalWorkflowProviderCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ApprovalWorkflowProviderable when successful
 func (m *ApprovalWorkflowProviderCollectionResponse) GetValue()([]ApprovalWorkflowProviderable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ApprovalWorkflowProviderCollectionResponse) SetValue(value []ApprovalWo
         panic(err)
     }
 }
-// ApprovalWorkflowProviderCollectionResponseable 
 type ApprovalWorkflowProviderCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,20 +17,21 @@ type IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilderInternal instantiates a new MicrosoftGraphIndustryDataValidateRequestBuilder and sets the default values.
+// NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilderInternal instantiates a new IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder and sets the default values.
 func NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder) {
     m := &IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/microsoft.graph.industryData.validate", pathParameters),
     }
     return m
 }
-// NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder instantiates a new MicrosoftGraphIndustryDataValidateRequestBuilder and sets the default values.
+// NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder instantiates a new IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder and sets the default values.
 func NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post perform validations applicable for the specific instance of the data connector.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequest
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequest
     return nil
 }
 // ToPostRequestInformation perform validations applicable for the specific instance of the data connector.
+// returns a *RequestInformation when successful
 func (m *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder when successful
 func (m *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder) WithUrl(rawUrl string)(*IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder) {
     return NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

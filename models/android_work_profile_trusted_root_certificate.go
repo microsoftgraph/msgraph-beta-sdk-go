@@ -8,7 +8,7 @@ import (
 type AndroidWorkProfileTrustedRootCertificate struct {
     DeviceConfiguration
 }
-// NewAndroidWorkProfileTrustedRootCertificate instantiates a new androidWorkProfileTrustedRootCertificate and sets the default values.
+// NewAndroidWorkProfileTrustedRootCertificate instantiates a new AndroidWorkProfileTrustedRootCertificate and sets the default values.
 func NewAndroidWorkProfileTrustedRootCertificate()(*AndroidWorkProfileTrustedRootCertificate) {
     m := &AndroidWorkProfileTrustedRootCertificate{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidWorkProfileTrustedRootCertificate()(*AndroidWorkProfileTrustedRoo
     return m
 }
 // CreateAndroidWorkProfileTrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidWorkProfileTrustedRootCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidWorkProfileTrustedRootCertificate(), nil
 }
 // GetCertFileName gets the certFileName property value. File name to display in UI.
+// returns a *string when successful
 func (m *AndroidWorkProfileTrustedRootCertificate) GetCertFileName()(*string) {
     val, err := m.GetBackingStore().Get("certFileName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidWorkProfileTrustedRootCertificate) GetCertFileName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidWorkProfileTrustedRootCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["certFileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *AndroidWorkProfileTrustedRootCertificate) GetFieldDeserializers()(map[s
     return res
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate
+// returns a []byte when successful
 func (m *AndroidWorkProfileTrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
     val, err := m.GetBackingStore().Get("trustedRootCertificate")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *AndroidWorkProfileTrustedRootCertificate) SetTrustedRootCertificate(val
         panic(err)
     }
 }
-// AndroidWorkProfileTrustedRootCertificateable 
 type AndroidWorkProfileTrustedRootCertificateable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

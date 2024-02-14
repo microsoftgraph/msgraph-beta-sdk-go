@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BusinessFlowSettings 
 type BusinessFlowSettings struct {
     AccessReviewSettings
 }
-// NewBusinessFlowSettings instantiates a new businessFlowSettings and sets the default values.
+// NewBusinessFlowSettings instantiates a new BusinessFlowSettings and sets the default values.
 func NewBusinessFlowSettings()(*BusinessFlowSettings) {
     m := &BusinessFlowSettings{
         AccessReviewSettings: *NewAccessReviewSettings(),
@@ -18,10 +17,12 @@ func NewBusinessFlowSettings()(*BusinessFlowSettings) {
     return m
 }
 // CreateBusinessFlowSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBusinessFlowSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBusinessFlowSettings(), nil
 }
 // GetDurationInDays gets the durationInDays property value. The durationInDays property
+// returns a *int32 when successful
 func (m *BusinessFlowSettings) GetDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("durationInDays")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *BusinessFlowSettings) GetDurationInDays()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BusinessFlowSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewSettings.GetFieldDeserializers()
     res["durationInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *BusinessFlowSettings) SetDurationInDays(value *int32)() {
         panic(err)
     }
 }
-// BusinessFlowSettingsable 
 type BusinessFlowSettingsable interface {
     AccessReviewSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

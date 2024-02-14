@@ -17,20 +17,21 @@ type ItemEventsItemInstancesItemForwardRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemEventsItemInstancesItemForwardRequestBuilderInternal instantiates a new ForwardRequestBuilder and sets the default values.
+// NewItemEventsItemInstancesItemForwardRequestBuilderInternal instantiates a new ItemEventsItemInstancesItemForwardRequestBuilder and sets the default values.
 func NewItemEventsItemInstancesItemForwardRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemInstancesItemForwardRequestBuilder) {
     m := &ItemEventsItemInstancesItemForwardRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/{event%2Did}/instances/{event%2Did1}/forward", pathParameters),
     }
     return m
 }
-// NewItemEventsItemInstancesItemForwardRequestBuilder instantiates a new ForwardRequestBuilder and sets the default values.
+// NewItemEventsItemInstancesItemForwardRequestBuilder instantiates a new ItemEventsItemInstancesItemForwardRequestBuilder and sets the default values.
 func NewItemEventsItemInstancesItemForwardRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsItemInstancesItemForwardRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemEventsItemInstancesItemForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post this action allows the organizer or attendee of a meeting event to forward the meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemEventsItemInstancesItemForwardRequestBuilder) Post(ctx context.Cont
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemEventsItemInstancesItemForwardRequestBuilder) Post(ctx context.Cont
     return nil
 }
 // ToPostRequestInformation this action allows the organizer or attendee of a meeting event to forward the meeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action also sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's copy of the meeting event. This convenience is not available when forwarding from an Outlook.com account.
+// returns a *RequestInformation when successful
 func (m *ItemEventsItemInstancesItemForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemEventsItemInstancesItemForwardPostRequestBodyable, requestConfiguration *ItemEventsItemInstancesItemForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *ItemEventsItemInstancesItemForwardRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemEventsItemInstancesItemForwardRequestBuilder when successful
 func (m *ItemEventsItemInstancesItemForwardRequestBuilder) WithUrl(rawUrl string)(*ItemEventsItemInstancesItemForwardRequestBuilder) {
     return NewItemEventsItemInstancesItemForwardRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

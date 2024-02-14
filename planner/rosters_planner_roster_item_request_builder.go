@@ -41,20 +41,21 @@ type RostersPlannerRosterItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewRostersPlannerRosterItemRequestBuilderInternal instantiates a new PlannerRosterItemRequestBuilder and sets the default values.
+// NewRostersPlannerRosterItemRequestBuilderInternal instantiates a new RostersPlannerRosterItemRequestBuilder and sets the default values.
 func NewRostersPlannerRosterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RostersPlannerRosterItemRequestBuilder) {
     m := &RostersPlannerRosterItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/rosters/{plannerRoster%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/rosters/{plannerRoster%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewRostersPlannerRosterItemRequestBuilder instantiates a new PlannerRosterItemRequestBuilder and sets the default values.
+// NewRostersPlannerRosterItemRequestBuilder instantiates a new RostersPlannerRosterItemRequestBuilder and sets the default values.
 func NewRostersPlannerRosterItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RostersPlannerRosterItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewRostersPlannerRosterItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a plannerRoster object.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerroster-delete?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) Delete(ctx context.Context, req
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,6 +74,8 @@ func (m *RostersPlannerRosterItemRequestBuilder) Delete(ctx context.Context, req
     return nil
 }
 // Get read the properties and relationships of a plannerRoster object.
+// returns a PlannerRosterable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerroster-get?view=graph-rest-1.0
@@ -83,8 +85,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) Get(ctx context.Context, reques
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerRosterFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -96,18 +97,20 @@ func (m *RostersPlannerRosterItemRequestBuilder) Get(ctx context.Context, reques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable), nil
 }
 // Members provides operations to manage the members property of the microsoft.graph.plannerRoster entity.
+// returns a *RostersItemMembersRequestBuilder when successful
 func (m *RostersPlannerRosterItemRequestBuilder) Members()(*RostersItemMembersRequestBuilder) {
     return NewRostersItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property rosters in planner
+// returns a PlannerRosterable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RostersPlannerRosterItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, requestConfiguration *RostersPlannerRosterItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerRosterFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,12 +122,14 @@ func (m *RostersPlannerRosterItemRequestBuilder) Patch(ctx context.Context, body
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable), nil
 }
 // Plans provides operations to manage the plans property of the microsoft.graph.plannerRoster entity.
+// returns a *RostersItemPlansRequestBuilder when successful
 func (m *RostersPlannerRosterItemRequestBuilder) Plans()(*RostersItemPlansRequestBuilder) {
     return NewRostersItemPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a plannerRoster object.
+// returns a *RequestInformation when successful
 func (m *RostersPlannerRosterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/planner/rosters/{plannerRoster%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -133,6 +138,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) ToDeleteRequestInformation(ctx 
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a plannerRoster object.
+// returns a *RequestInformation when successful
 func (m *RostersPlannerRosterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -146,8 +152,9 @@ func (m *RostersPlannerRosterItemRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property rosters in planner
+// returns a *RequestInformation when successful
 func (m *RostersPlannerRosterItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, requestConfiguration *RostersPlannerRosterItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/planner/rosters/{plannerRoster%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -160,6 +167,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) ToPatchRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *RostersPlannerRosterItemRequestBuilder when successful
 func (m *RostersPlannerRosterItemRequestBuilder) WithUrl(rawUrl string)(*RostersPlannerRosterItemRequestBuilder) {
     return NewRostersPlannerRosterItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

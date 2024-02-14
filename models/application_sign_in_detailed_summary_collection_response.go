@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApplicationSignInDetailedSummaryCollectionResponse 
 type ApplicationSignInDetailedSummaryCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewApplicationSignInDetailedSummaryCollectionResponse instantiates a new applicationSignInDetailedSummaryCollectionResponse and sets the default values.
+// NewApplicationSignInDetailedSummaryCollectionResponse instantiates a new ApplicationSignInDetailedSummaryCollectionResponse and sets the default values.
 func NewApplicationSignInDetailedSummaryCollectionResponse()(*ApplicationSignInDetailedSummaryCollectionResponse) {
     m := &ApplicationSignInDetailedSummaryCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewApplicationSignInDetailedSummaryCollectionResponse()(*ApplicationSignInD
     return m
 }
 // CreateApplicationSignInDetailedSummaryCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApplicationSignInDetailedSummaryCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplicationSignInDetailedSummaryCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApplicationSignInDetailedSummaryCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ApplicationSignInDetailedSummaryCollectionResponse) GetFieldDeserialize
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ApplicationSignInDetailedSummaryable when successful
 func (m *ApplicationSignInDetailedSummaryCollectionResponse) GetValue()([]ApplicationSignInDetailedSummaryable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ApplicationSignInDetailedSummaryCollectionResponse) SetValue(value []Ap
         panic(err)
     }
 }
-// ApplicationSignInDetailedSummaryCollectionResponseable 
 type ApplicationSignInDetailedSummaryCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

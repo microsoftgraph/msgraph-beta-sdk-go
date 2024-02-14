@@ -8,7 +8,7 @@ import (
 type DeviceManagementAbstractComplexSettingInstance struct {
     DeviceManagementSettingInstance
 }
-// NewDeviceManagementAbstractComplexSettingInstance instantiates a new deviceManagementAbstractComplexSettingInstance and sets the default values.
+// NewDeviceManagementAbstractComplexSettingInstance instantiates a new DeviceManagementAbstractComplexSettingInstance and sets the default values.
 func NewDeviceManagementAbstractComplexSettingInstance()(*DeviceManagementAbstractComplexSettingInstance) {
     m := &DeviceManagementAbstractComplexSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
@@ -18,10 +18,12 @@ func NewDeviceManagementAbstractComplexSettingInstance()(*DeviceManagementAbstra
     return m
 }
 // CreateDeviceManagementAbstractComplexSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementAbstractComplexSettingInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementAbstractComplexSettingInstance(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementAbstractComplexSettingInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementSettingInstance.GetFieldDeserializers()
     res["implementationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -53,6 +55,7 @@ func (m *DeviceManagementAbstractComplexSettingInstance) GetFieldDeserializers()
     return res
 }
 // GetImplementationId gets the implementationId property value. The definition ID for the chosen implementation of this complex setting
+// returns a *string when successful
 func (m *DeviceManagementAbstractComplexSettingInstance) GetImplementationId()(*string) {
     val, err := m.GetBackingStore().Get("implementationId")
     if err != nil {
@@ -64,6 +67,7 @@ func (m *DeviceManagementAbstractComplexSettingInstance) GetImplementationId()(*
     return nil
 }
 // GetValue gets the value property value. The values that make up the complex setting
+// returns a []DeviceManagementSettingInstanceable when successful
 func (m *DeviceManagementAbstractComplexSettingInstance) GetValue()([]DeviceManagementSettingInstanceable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -114,7 +118,6 @@ func (m *DeviceManagementAbstractComplexSettingInstance) SetValue(value []Device
         panic(err)
     }
 }
-// DeviceManagementAbstractComplexSettingInstanceable 
 type DeviceManagementAbstractComplexSettingInstanceable interface {
     DeviceManagementSettingInstanceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

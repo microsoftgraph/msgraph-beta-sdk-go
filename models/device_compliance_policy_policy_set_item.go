@@ -8,7 +8,7 @@ import (
 type DeviceCompliancePolicyPolicySetItem struct {
     PolicySetItem
 }
-// NewDeviceCompliancePolicyPolicySetItem instantiates a new deviceCompliancePolicyPolicySetItem and sets the default values.
+// NewDeviceCompliancePolicyPolicySetItem instantiates a new DeviceCompliancePolicyPolicySetItem and sets the default values.
 func NewDeviceCompliancePolicyPolicySetItem()(*DeviceCompliancePolicyPolicySetItem) {
     m := &DeviceCompliancePolicyPolicySetItem{
         PolicySetItem: *NewPolicySetItem(),
@@ -18,10 +18,12 @@ func NewDeviceCompliancePolicyPolicySetItem()(*DeviceCompliancePolicyPolicySetIt
     return m
 }
 // CreateDeviceCompliancePolicyPolicySetItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceCompliancePolicyPolicySetItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceCompliancePolicyPolicySetItem(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceCompliancePolicyPolicySetItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicySetItem.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *DeviceCompliancePolicyPolicySetItem) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// DeviceCompliancePolicyPolicySetItemable 
 type DeviceCompliancePolicyPolicySetItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicySetItemable

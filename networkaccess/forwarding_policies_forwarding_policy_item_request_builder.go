@@ -41,28 +41,28 @@ type ForwardingPoliciesForwardingPolicyItemRequestBuilderPatchRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewForwardingPoliciesForwardingPolicyItemRequestBuilderInternal instantiates a new ForwardingPolicyItemRequestBuilder and sets the default values.
+// NewForwardingPoliciesForwardingPolicyItemRequestBuilderInternal instantiates a new ForwardingPoliciesForwardingPolicyItemRequestBuilder and sets the default values.
 func NewForwardingPoliciesForwardingPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ForwardingPoliciesForwardingPolicyItemRequestBuilder) {
     m := &ForwardingPoliciesForwardingPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/forwardingPolicies/{forwardingPolicy%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/forwardingPolicies/{forwardingPolicy%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewForwardingPoliciesForwardingPolicyItemRequestBuilder instantiates a new ForwardingPolicyItemRequestBuilder and sets the default values.
+// NewForwardingPoliciesForwardingPolicyItemRequestBuilder instantiates a new ForwardingPoliciesForwardingPolicyItemRequestBuilder and sets the default values.
 func NewForwardingPoliciesForwardingPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ForwardingPoliciesForwardingPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewForwardingPoliciesForwardingPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property forwardingPolicies for networkAccess
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ForwardingPoliciesForwardingPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,6 +71,8 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) Delete(ctx contex
     return nil
 }
 // Get retrieve information about a specific forwarding policy.
+// returns a ForwardingPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-forwardingpolicy-get?view=graph-rest-1.0
@@ -80,8 +82,7 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) Get(ctx context.C
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateForwardingPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,18 +94,20 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) Get(ctx context.C
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyable), nil
 }
 // MicrosoftGraphNetworkaccessUpdatePolicyRules provides operations to call the updatePolicyRules method.
+// returns a *ForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilder when successful
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) MicrosoftGraphNetworkaccessUpdatePolicyRules()(*ForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilder) {
     return NewForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property forwardingPolicies in networkAccess
+// returns a ForwardingPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyable, requestConfiguration *ForwardingPoliciesForwardingPolicyItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateForwardingPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,12 +119,14 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) Patch(ctx context
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyable), nil
 }
 // PolicyRules provides operations to manage the policyRules property of the microsoft.graph.networkaccess.policy entity.
+// returns a *ForwardingPoliciesItemPolicyRulesRequestBuilder when successful
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) PolicyRules()(*ForwardingPoliciesItemPolicyRulesRequestBuilder) {
     return NewForwardingPoliciesItemPolicyRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property forwardingPolicies for networkAccess
+// returns a *RequestInformation when successful
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ForwardingPoliciesForwardingPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/networkAccess/forwardingPolicies/{forwardingPolicy%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -130,6 +135,7 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) ToDeleteRequestIn
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve information about a specific forwarding policy.
+// returns a *RequestInformation when successful
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingPoliciesForwardingPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -143,8 +149,9 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property forwardingPolicies in networkAccess
+// returns a *RequestInformation when successful
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyable, requestConfiguration *ForwardingPoliciesForwardingPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/networkAccess/forwardingPolicies/{forwardingPolicy%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -157,6 +164,7 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) ToPatchRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ForwardingPoliciesForwardingPolicyItemRequestBuilder when successful
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) WithUrl(rawUrl string)(*ForwardingPoliciesForwardingPolicyItemRequestBuilder) {
     return NewForwardingPoliciesForwardingPolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

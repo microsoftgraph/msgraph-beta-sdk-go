@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EntitlementsDataCollection 
 type EntitlementsDataCollection struct {
     EntitlementsDataCollectionInfo
 }
-// NewEntitlementsDataCollection instantiates a new entitlementsDataCollection and sets the default values.
+// NewEntitlementsDataCollection instantiates a new EntitlementsDataCollection and sets the default values.
 func NewEntitlementsDataCollection()(*EntitlementsDataCollection) {
     m := &EntitlementsDataCollection{
         EntitlementsDataCollectionInfo: *NewEntitlementsDataCollectionInfo(),
@@ -19,10 +18,12 @@ func NewEntitlementsDataCollection()(*EntitlementsDataCollection) {
     return m
 }
 // CreateEntitlementsDataCollectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEntitlementsDataCollectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEntitlementsDataCollection(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EntitlementsDataCollection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EntitlementsDataCollectionInfo.GetFieldDeserializers()
     res["lastCollectionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +59,7 @@ func (m *EntitlementsDataCollection) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetLastCollectionDateTime gets the lastCollectionDateTime property value. Last transformation time of entitlements.
+// returns a *Time when successful
 func (m *EntitlementsDataCollection) GetLastCollectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastCollectionDateTime")
     if err != nil {
@@ -69,6 +71,7 @@ func (m *EntitlementsDataCollection) GetLastCollectionDateTime()(*i336074805fc85
     return nil
 }
 // GetPermissionsModificationCapability gets the permissionsModificationCapability property value. The permissionsModificationCapability property
+// returns a *PermissionsModificationCapability when successful
 func (m *EntitlementsDataCollection) GetPermissionsModificationCapability()(*PermissionsModificationCapability) {
     val, err := m.GetBackingStore().Get("permissionsModificationCapability")
     if err != nil {
@@ -80,6 +83,7 @@ func (m *EntitlementsDataCollection) GetPermissionsModificationCapability()(*Per
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *DataCollectionStatus when successful
 func (m *EntitlementsDataCollection) GetStatus()(*DataCollectionStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -139,7 +143,6 @@ func (m *EntitlementsDataCollection) SetStatus(value *DataCollectionStatus)() {
         panic(err)
     }
 }
-// EntitlementsDataCollectionable 
 type EntitlementsDataCollectionable interface {
     EntitlementsDataCollectionInfoable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

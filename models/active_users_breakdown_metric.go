@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActiveUsersBreakdownMetric 
 type ActiveUsersBreakdownMetric struct {
     Entity
 }
-// NewActiveUsersBreakdownMetric instantiates a new activeUsersBreakdownMetric and sets the default values.
+// NewActiveUsersBreakdownMetric instantiates a new ActiveUsersBreakdownMetric and sets the default values.
 func NewActiveUsersBreakdownMetric()(*ActiveUsersBreakdownMetric) {
     m := &ActiveUsersBreakdownMetric{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewActiveUsersBreakdownMetric()(*ActiveUsersBreakdownMetric) {
     return m
 }
 // CreateActiveUsersBreakdownMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActiveUsersBreakdownMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActiveUsersBreakdownMetric(), nil
 }
 // GetAppId gets the appId property value. The ID of the Microsoft Entra application.
+// returns a *string when successful
 func (m *ActiveUsersBreakdownMetric) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ActiveUsersBreakdownMetric) GetAppId()(*string) {
     return nil
 }
 // GetAppName gets the appName property value. Name of the application users authenticated to.
+// returns a *string when successful
 func (m *ActiveUsersBreakdownMetric) GetAppName()(*string) {
     val, err := m.GetBackingStore().Get("appName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ActiveUsersBreakdownMetric) GetAppName()(*string) {
     return nil
 }
 // GetCount gets the count property value. The total number of users who made at least one authentication request within the specified time period.
+// returns a *int64 when successful
 func (m *ActiveUsersBreakdownMetric) GetCount()(*int64) {
     val, err := m.GetBackingStore().Get("count")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *ActiveUsersBreakdownMetric) GetCount()(*int64) {
     return nil
 }
 // GetFactDate gets the factDate property value. The date of the insight.
+// returns a *DateOnly when successful
 func (m *ActiveUsersBreakdownMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *ActiveUsersBreakdownMetric) GetFactDate()(*i878a80d2330e89d26896388a3f4
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ActiveUsersBreakdownMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +124,7 @@ func (m *ActiveUsersBreakdownMetric) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetOs gets the os property value. The platform for the device that the customers used. Supports $filter (eq).
+// returns a *string when successful
 func (m *ActiveUsersBreakdownMetric) GetOs()(*string) {
     val, err := m.GetBackingStore().Get("os")
     if err != nil {
@@ -202,7 +208,6 @@ func (m *ActiveUsersBreakdownMetric) SetOs(value *string)() {
         panic(err)
     }
 }
-// ActiveUsersBreakdownMetricable 
 type ActiveUsersBreakdownMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

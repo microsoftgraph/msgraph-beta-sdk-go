@@ -27,28 +27,29 @@ type ItemSitesItemInformationProtectionBitlockerRequestBuilderGetRequestConfigur
     // Request query parameters
     QueryParameters *ItemSitesItemInformationProtectionBitlockerRequestBuilderGetQueryParameters
 }
-// NewItemSitesItemInformationProtectionBitlockerRequestBuilderInternal instantiates a new BitlockerRequestBuilder and sets the default values.
+// NewItemSitesItemInformationProtectionBitlockerRequestBuilderInternal instantiates a new ItemSitesItemInformationProtectionBitlockerRequestBuilder and sets the default values.
 func NewItemSitesItemInformationProtectionBitlockerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemInformationProtectionBitlockerRequestBuilder) {
     m := &ItemSitesItemInformationProtectionBitlockerRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection/bitlocker{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection/bitlocker{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemSitesItemInformationProtectionBitlockerRequestBuilder instantiates a new BitlockerRequestBuilder and sets the default values.
+// NewItemSitesItemInformationProtectionBitlockerRequestBuilder instantiates a new ItemSitesItemInformationProtectionBitlockerRequestBuilder and sets the default values.
 func NewItemSitesItemInformationProtectionBitlockerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSitesItemInformationProtectionBitlockerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemInformationProtectionBitlockerRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get bitlocker from groups
+// returns a Bitlockerable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemInformationProtectionBitlockerRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionBitlockerRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bitlockerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateBitlockerFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,10 +61,12 @@ func (m *ItemSitesItemInformationProtectionBitlockerRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bitlockerable), nil
 }
 // RecoveryKeys provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
+// returns a *ItemSitesItemInformationProtectionBitlockerRecoveryKeysRequestBuilder when successful
 func (m *ItemSitesItemInformationProtectionBitlockerRequestBuilder) RecoveryKeys()(*ItemSitesItemInformationProtectionBitlockerRecoveryKeysRequestBuilder) {
     return NewItemSitesItemInformationProtectionBitlockerRecoveryKeysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get bitlocker from groups
+// returns a *RequestInformation when successful
 func (m *ItemSitesItemInformationProtectionBitlockerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionBitlockerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -77,6 +80,7 @@ func (m *ItemSitesItemInformationProtectionBitlockerRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemSitesItemInformationProtectionBitlockerRequestBuilder when successful
 func (m *ItemSitesItemInformationProtectionBitlockerRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemInformationProtectionBitlockerRequestBuilder) {
     return NewItemSitesItemInformationProtectionBitlockerRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

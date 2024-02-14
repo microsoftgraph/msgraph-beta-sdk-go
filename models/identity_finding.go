@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IdentityFinding 
 type IdentityFinding struct {
     Finding
 }
-// NewIdentityFinding instantiates a new identityFinding and sets the default values.
+// NewIdentityFinding instantiates a new IdentityFinding and sets the default values.
 func NewIdentityFinding()(*IdentityFinding) {
     m := &IdentityFinding{
         Finding: *NewFinding(),
@@ -16,6 +15,7 @@ func NewIdentityFinding()(*IdentityFinding) {
     return m
 }
 // CreateIdentityFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIdentityFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -74,6 +74,7 @@ func CreateIdentityFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewIdentityFinding(), nil
 }
 // GetActionSummary gets the actionSummary property value. The actionSummary property
+// returns a ActionSummaryable when successful
 func (m *IdentityFinding) GetActionSummary()(ActionSummaryable) {
     val, err := m.GetBackingStore().Get("actionSummary")
     if err != nil {
@@ -85,6 +86,7 @@ func (m *IdentityFinding) GetActionSummary()(ActionSummaryable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IdentityFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["actionSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,6 +132,7 @@ func (m *IdentityFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetIdentity gets the identity property value. The identity property
+// returns a AuthorizationSystemIdentityable when successful
 func (m *IdentityFinding) GetIdentity()(AuthorizationSystemIdentityable) {
     val, err := m.GetBackingStore().Get("identity")
     if err != nil {
@@ -141,6 +144,7 @@ func (m *IdentityFinding) GetIdentity()(AuthorizationSystemIdentityable) {
     return nil
 }
 // GetIdentityDetails gets the identityDetails property value. An identity's information details.
+// returns a IdentityDetailsable when successful
 func (m *IdentityFinding) GetIdentityDetails()(IdentityDetailsable) {
     val, err := m.GetBackingStore().Get("identityDetails")
     if err != nil {
@@ -152,6 +156,7 @@ func (m *IdentityFinding) GetIdentityDetails()(IdentityDetailsable) {
     return nil
 }
 // GetPermissionsCreepIndex gets the permissionsCreepIndex property value. The permissionsCreepIndex property
+// returns a PermissionsCreepIndexable when successful
 func (m *IdentityFinding) GetPermissionsCreepIndex()(PermissionsCreepIndexable) {
     val, err := m.GetBackingStore().Get("permissionsCreepIndex")
     if err != nil {
@@ -222,7 +227,6 @@ func (m *IdentityFinding) SetPermissionsCreepIndex(value PermissionsCreepIndexab
         panic(err)
     }
 }
-// IdentityFindingable 
 type IdentityFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

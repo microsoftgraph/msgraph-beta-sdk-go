@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Custodian 
 type Custodian struct {
     DataSourceContainer
 }
-// NewCustodian instantiates a new custodian and sets the default values.
+// NewCustodian instantiates a new Custodian and sets the default values.
 func NewCustodian()(*Custodian) {
     m := &Custodian{
         DataSourceContainer: *NewDataSourceContainer(),
@@ -19,10 +18,12 @@ func NewCustodian()(*Custodian) {
     return m
 }
 // CreateCustodianFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustodianFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustodian(), nil
 }
 // GetAcknowledgedDateTime gets the acknowledgedDateTime property value. Date and time the custodian acknowledged a hold notification.
+// returns a *Time when successful
 func (m *Custodian) GetAcknowledgedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("acknowledgedDateTime")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *Custodian) GetAcknowledgedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetApplyHoldToSources gets the applyHoldToSources property value. Identifies whether a custodian's sources were placed on hold during creation.
+// returns a *bool when successful
 func (m *Custodian) GetApplyHoldToSources()(*bool) {
     val, err := m.GetBackingStore().Get("applyHoldToSources")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *Custodian) GetApplyHoldToSources()(*bool) {
     return nil
 }
 // GetEmail gets the email property value. Email address of the custodian.
+// returns a *string when successful
 func (m *Custodian) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *Custodian) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Custodian) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSourceContainer.GetFieldDeserializers()
     res["acknowledgedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -139,6 +143,7 @@ func (m *Custodian) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetSiteSources gets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
+// returns a []SiteSourceable when successful
 func (m *Custodian) GetSiteSources()([]SiteSourceable) {
     val, err := m.GetBackingStore().Get("siteSources")
     if err != nil {
@@ -150,6 +155,7 @@ func (m *Custodian) GetSiteSources()([]SiteSourceable) {
     return nil
 }
 // GetUnifiedGroupSources gets the unifiedGroupSources property value. Data source entity for groups associated with the custodian.
+// returns a []UnifiedGroupSourceable when successful
 func (m *Custodian) GetUnifiedGroupSources()([]UnifiedGroupSourceable) {
     val, err := m.GetBackingStore().Get("unifiedGroupSources")
     if err != nil {
@@ -161,6 +167,7 @@ func (m *Custodian) GetUnifiedGroupSources()([]UnifiedGroupSourceable) {
     return nil
 }
 // GetUserSources gets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+// returns a []UserSourceable when successful
 func (m *Custodian) GetUserSources()([]UserSourceable) {
     val, err := m.GetBackingStore().Get("userSources")
     if err != nil {
@@ -275,7 +282,6 @@ func (m *Custodian) SetUserSources(value []UserSourceable)() {
         panic(err)
     }
 }
-// Custodianable 
 type Custodianable interface {
     DataSourceContainerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

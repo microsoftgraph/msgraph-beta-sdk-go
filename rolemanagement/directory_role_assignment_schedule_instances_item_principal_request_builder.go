@@ -27,28 +27,29 @@ type DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetReque
     // Request query parameters
     QueryParameters *DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetQueryParameters
 }
-// NewDirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderInternal instantiates a new PrincipalRequestBuilder and sets the default values.
+// NewDirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderInternal instantiates a new DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder) {
     m := &DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance%2Did}/principal{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance%2Did}/principal{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewDirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder instantiates a new PrincipalRequestBuilder and sets the default values.
+// NewDirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder instantiates a new DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the principal that's getting a role assignment or role eligibility through the request.
+// returns a DirectoryObjectable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDirectoryObjectFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder) Ge
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
 // ToGetRequestInformation the principal that's getting a role assignment or role eligibility through the request.
+// returns a *RequestInformation when successful
 func (m *DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder when successful
 func (m *DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder) {
     return NewDirectoryRoleAssignmentScheduleInstancesItemPrincipalRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

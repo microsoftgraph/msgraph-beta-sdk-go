@@ -9,7 +9,7 @@ import (
 type IosLobAppProvisioningConfiguration struct {
     Entity
 }
-// NewIosLobAppProvisioningConfiguration instantiates a new iosLobAppProvisioningConfiguration and sets the default values.
+// NewIosLobAppProvisioningConfiguration instantiates a new IosLobAppProvisioningConfiguration and sets the default values.
 func NewIosLobAppProvisioningConfiguration()(*IosLobAppProvisioningConfiguration) {
     m := &IosLobAppProvisioningConfiguration{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewIosLobAppProvisioningConfiguration()(*IosLobAppProvisioningConfiguration
     return m
 }
 // CreateIosLobAppProvisioningConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosLobAppProvisioningConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosLobAppProvisioningConfiguration(), nil
 }
 // GetAssignments gets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
+// returns a []IosLobAppProvisioningConfigurationAssignmentable when successful
 func (m *IosLobAppProvisioningConfiguration) GetAssignments()([]IosLobAppProvisioningConfigurationAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *IosLobAppProvisioningConfiguration) GetAssignments()([]IosLobAppProvisi
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
+// returns a *Time when successful
 func (m *IosLobAppProvisioningConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *IosLobAppProvisioningConfiguration) GetCreatedDateTime()(*i336074805fc8
     return nil
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
+// returns a *string when successful
 func (m *IosLobAppProvisioningConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *IosLobAppProvisioningConfiguration) GetDescription()(*string) {
     return nil
 }
 // GetDeviceStatuses gets the deviceStatuses property value. The list of device installation states for this mobile app configuration.
+// returns a []ManagedDeviceMobileAppConfigurationDeviceStatusable when successful
 func (m *IosLobAppProvisioningConfiguration) GetDeviceStatuses()([]ManagedDeviceMobileAppConfigurationDeviceStatusable) {
     val, err := m.GetBackingStore().Get("deviceStatuses")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *IosLobAppProvisioningConfiguration) GetDeviceStatuses()([]ManagedDevice
     return nil
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
+// returns a *string when successful
 func (m *IosLobAppProvisioningConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *IosLobAppProvisioningConfiguration) GetDisplayName()(*string) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Optional profile expiration date and time.
+// returns a *Time when successful
 func (m *IosLobAppProvisioningConfiguration) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *IosLobAppProvisioningConfiguration) GetExpirationDateTime()(*i336074805
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -252,6 +260,7 @@ func (m *IosLobAppProvisioningConfiguration) GetFieldDeserializers()(map[string]
     return res
 }
 // GetGroupAssignments gets the groupAssignments property value. The associated group assignments.
+// returns a []MobileAppProvisioningConfigGroupAssignmentable when successful
 func (m *IosLobAppProvisioningConfiguration) GetGroupAssignments()([]MobileAppProvisioningConfigGroupAssignmentable) {
     val, err := m.GetBackingStore().Get("groupAssignments")
     if err != nil {
@@ -263,6 +272,7 @@ func (m *IosLobAppProvisioningConfiguration) GetGroupAssignments()([]MobileAppPr
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// returns a *Time when successful
 func (m *IosLobAppProvisioningConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -274,6 +284,7 @@ func (m *IosLobAppProvisioningConfiguration) GetLastModifiedDateTime()(*i3360748
     return nil
 }
 // GetPayload gets the payload property value. Payload. (UTF8 encoded byte array)
+// returns a []byte when successful
 func (m *IosLobAppProvisioningConfiguration) GetPayload()([]byte) {
     val, err := m.GetBackingStore().Get("payload")
     if err != nil {
@@ -285,6 +296,7 @@ func (m *IosLobAppProvisioningConfiguration) GetPayload()([]byte) {
     return nil
 }
 // GetPayloadFileName gets the payloadFileName property value. Payload file name (.mobileprovision
+// returns a *string when successful
 func (m *IosLobAppProvisioningConfiguration) GetPayloadFileName()(*string) {
     val, err := m.GetBackingStore().Get("payloadFileName")
     if err != nil {
@@ -296,6 +308,7 @@ func (m *IosLobAppProvisioningConfiguration) GetPayloadFileName()(*string) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this iOS LOB app provisioning configuration entity.
+// returns a []string when successful
 func (m *IosLobAppProvisioningConfiguration) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -307,6 +320,7 @@ func (m *IosLobAppProvisioningConfiguration) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetUserStatuses gets the userStatuses property value. The list of user installation states for this mobile app configuration.
+// returns a []ManagedDeviceMobileAppConfigurationUserStatusable when successful
 func (m *IosLobAppProvisioningConfiguration) GetUserStatuses()([]ManagedDeviceMobileAppConfigurationUserStatusable) {
     val, err := m.GetBackingStore().Get("userStatuses")
     if err != nil {
@@ -318,6 +332,7 @@ func (m *IosLobAppProvisioningConfiguration) GetUserStatuses()([]ManagedDeviceMo
     return nil
 }
 // GetVersion gets the version property value. Version of the device configuration.
+// returns a *int32 when successful
 func (m *IosLobAppProvisioningConfiguration) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -529,7 +544,6 @@ func (m *IosLobAppProvisioningConfiguration) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// IosLobAppProvisioningConfigurationable 
 type IosLobAppProvisioningConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

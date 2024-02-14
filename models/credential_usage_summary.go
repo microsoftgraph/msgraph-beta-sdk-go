@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CredentialUsageSummary 
 type CredentialUsageSummary struct {
     Entity
 }
-// NewCredentialUsageSummary instantiates a new credentialUsageSummary and sets the default values.
+// NewCredentialUsageSummary instantiates a new CredentialUsageSummary and sets the default values.
 func NewCredentialUsageSummary()(*CredentialUsageSummary) {
     m := &CredentialUsageSummary{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCredentialUsageSummary()(*CredentialUsageSummary) {
     return m
 }
 // CreateCredentialUsageSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCredentialUsageSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCredentialUsageSummary(), nil
 }
 // GetAuthMethod gets the authMethod property value. The authMethod property
+// returns a *UsageAuthMethod when successful
 func (m *CredentialUsageSummary) GetAuthMethod()(*UsageAuthMethod) {
     val, err := m.GetBackingStore().Get("authMethod")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CredentialUsageSummary) GetAuthMethod()(*UsageAuthMethod) {
     return nil
 }
 // GetFailureActivityCount gets the failureActivityCount property value. Provides the count of failed resets or registration data.
+// returns a *int64 when successful
 func (m *CredentialUsageSummary) GetFailureActivityCount()(*int64) {
     val, err := m.GetBackingStore().Get("failureActivityCount")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *CredentialUsageSummary) GetFailureActivityCount()(*int64) {
     return nil
 }
 // GetFeature gets the feature property value. The feature property
+// returns a *FeatureType when successful
 func (m *CredentialUsageSummary) GetFeature()(*FeatureType) {
     val, err := m.GetBackingStore().Get("feature")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *CredentialUsageSummary) GetFeature()(*FeatureType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +102,7 @@ func (m *CredentialUsageSummary) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetSuccessfulActivityCount gets the successfulActivityCount property value. Provides the count of successful registrations or resets.
+// returns a *int64 when successful
 func (m *CredentialUsageSummary) GetSuccessfulActivityCount()(*int64) {
     val, err := m.GetBackingStore().Get("successfulActivityCount")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *CredentialUsageSummary) SetSuccessfulActivityCount(value *int64)() {
         panic(err)
     }
 }
-// CredentialUsageSummaryable 
 type CredentialUsageSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

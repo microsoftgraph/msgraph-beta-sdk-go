@@ -48,6 +48,7 @@ type EdiscoveryCasesItemOperationsRequestBuilderPostRequestConfiguration struct 
 }
 // ByCaseOperationId provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder when successful
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) ByCaseOperationId(caseOperationId string)(*EdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -58,33 +59,35 @@ func (m *EdiscoveryCasesItemOperationsRequestBuilder) ByCaseOperationId(caseOper
     }
     return NewEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewEdiscoveryCasesItemOperationsRequestBuilderInternal instantiates a new OperationsRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemOperationsRequestBuilderInternal instantiates a new EdiscoveryCasesItemOperationsRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemOperationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemOperationsRequestBuilder) {
     m := &EdiscoveryCasesItemOperationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewEdiscoveryCasesItemOperationsRequestBuilder instantiates a new OperationsRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemOperationsRequestBuilder instantiates a new EdiscoveryCasesItemOperationsRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemOperationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *EdiscoveryCasesItemOperationsCountRequestBuilder when successful
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) Count()(*EdiscoveryCasesItemOperationsCountRequestBuilder) {
     return NewEdiscoveryCasesItemOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get returns a list of case operation objects for this case. Nullable.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a CaseOperationCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemOperationsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateCaseOperationCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -96,19 +99,21 @@ func (m *EdiscoveryCasesItemOperationsRequestBuilder) Get(ctx context.Context, r
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationCollectionResponseable), nil
 }
 // MicrosoftGraphEdiscoveryCaseExportOperation casts the previous resource to caseExportOperation.
+// returns a *EdiscoveryCasesItemOperationsMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder when successful
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) MicrosoftGraphEdiscoveryCaseExportOperation()(*EdiscoveryCasesItemOperationsMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder) {
     return NewEdiscoveryCasesItemOperationsMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to operations for compliance
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a CaseOperationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationable, requestConfiguration *EdiscoveryCasesItemOperationsRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateCaseOperationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -121,6 +126,7 @@ func (m *EdiscoveryCasesItemOperationsRequestBuilder) Post(ctx context.Context, 
 }
 // ToGetRequestInformation returns a list of case operation objects for this case. Nullable.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -135,8 +141,9 @@ func (m *EdiscoveryCasesItemOperationsRequestBuilder) ToGetRequestInformation(ct
 }
 // ToPostRequestInformation create new navigation property to operations for compliance
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationable, requestConfiguration *EdiscoveryCasesItemOperationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/operations", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -150,6 +157,7 @@ func (m *EdiscoveryCasesItemOperationsRequestBuilder) ToPostRequestInformation(c
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemOperationsRequestBuilder when successful
 func (m *EdiscoveryCasesItemOperationsRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemOperationsRequestBuilder) {
     return NewEdiscoveryCasesItemOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

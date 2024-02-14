@@ -5,7 +5,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ManagedDevicesBulkReprovisionCloudPcPostRequestBody 
 type ManagedDevicesBulkReprovisionCloudPcPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -19,10 +18,12 @@ func NewManagedDevicesBulkReprovisionCloudPcPostRequestBody()(*ManagedDevicesBul
     return m
 }
 // CreateManagedDevicesBulkReprovisionCloudPcPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedDevicesBulkReprovisionCloudPcPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDevicesBulkReprovisionCloudPcPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ManagedDevicesBulkReprovisionCloudPcPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ManagedDevicesBulkReprovisionCloudPcPostRequestBody) GetAdditionalData(
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ManagedDevicesBulkReprovisionCloudPcPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedDevicesBulkReprovisionCloudPcPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["managedDeviceIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -60,6 +63,7 @@ func (m *ManagedDevicesBulkReprovisionCloudPcPostRequestBody) GetFieldDeserializ
     return res
 }
 // GetManagedDeviceIds gets the managedDeviceIds property value. The managedDeviceIds property
+// returns a []string when successful
 func (m *ManagedDevicesBulkReprovisionCloudPcPostRequestBody) GetManagedDeviceIds()([]string) {
     val, err := m.GetBackingStore().Get("managedDeviceIds")
     if err != nil {
@@ -104,7 +108,6 @@ func (m *ManagedDevicesBulkReprovisionCloudPcPostRequestBody) SetManagedDeviceId
         panic(err)
     }
 }
-// ManagedDevicesBulkReprovisionCloudPcPostRequestBodyable 
 type ManagedDevicesBulkReprovisionCloudPcPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

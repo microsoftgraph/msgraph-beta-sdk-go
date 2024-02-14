@@ -46,20 +46,22 @@ type ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderPostReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderInternal instantiates a new ContentTypesRequestBuilder and sets the default values.
+// NewItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderInternal instantiates a new ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) {
     m := &ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/contentTypes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/contentTypes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder instantiates a new ContentTypesRequestBuilder and sets the default values.
+// NewItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder instantiates a new ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the collection of [contentType][contentType] resources in a [site][].
+// returns a ContentTypeCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0
@@ -69,8 +71,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) Get(
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateContentTypeCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -82,6 +83,8 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) Get(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeCollectionResponseable), nil
 }
 // Post create a new [contentType][] for a [site][].
+// returns a ContentTypeable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0
@@ -91,8 +94,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) Post
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateContentTypeFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -104,6 +106,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) Post
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable), nil
 }
 // ToGetRequestInformation get the collection of [contentType][contentType] resources in a [site][].
+// returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -117,8 +120,9 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) ToGe
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new [contentType][] for a [site][].
+// returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/getByPath(path='{path1}')/contentTypes", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -131,6 +135,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) ToPo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) WithUrl(rawUrl string)(*ItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder) {
     return NewItemGetByPathWithPathGetByPathWithPath1ContentTypesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -18,14 +18,14 @@ type PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderInternal instantiates a new CreateUploadSessionRequestBuilder and sets the default values.
+// NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderInternal instantiates a new PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder and sets the default values.
 func NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) {
     m := &PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printerShares/{printerShare%2Did}/jobs/{printJob%2Did}/documents/{printDocument%2Did}/createUploadSession", pathParameters),
     }
     return m
 }
-// NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder instantiates a new CreateUploadSessionRequestBuilder and sets the default values.
+// NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder instantiates a new PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder and sets the default values.
 func NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -33,6 +33,8 @@ func NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder(
 }
 // Post create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. 
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a UploadSessionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
@@ -42,8 +44,7 @@ func (m *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUploadSessionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -56,6 +57,7 @@ func (m *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder
 }
 // ToPostRequestInformation create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. 
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a *RequestInformation when successful
 func (m *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) ToPostRequestInformation(ctx context.Context, body PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionPostRequestBodyable, requestConfiguration *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -71,6 +73,7 @@ func (m *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// returns a *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder when successful
 func (m *PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) WithUrl(rawUrl string)(*PrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) {
     return NewPrinterSharesItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

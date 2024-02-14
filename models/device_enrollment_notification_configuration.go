@@ -9,7 +9,7 @@ import (
 type DeviceEnrollmentNotificationConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewDeviceEnrollmentNotificationConfiguration instantiates a new deviceEnrollmentNotificationConfiguration and sets the default values.
+// NewDeviceEnrollmentNotificationConfiguration instantiates a new DeviceEnrollmentNotificationConfiguration and sets the default values.
 func NewDeviceEnrollmentNotificationConfiguration()(*DeviceEnrollmentNotificationConfiguration) {
     m := &DeviceEnrollmentNotificationConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
@@ -19,10 +19,12 @@ func NewDeviceEnrollmentNotificationConfiguration()(*DeviceEnrollmentNotificatio
     return m
 }
 // CreateDeviceEnrollmentNotificationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceEnrollmentNotificationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEnrollmentNotificationConfiguration(), nil
 }
 // GetBrandingOptions gets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
+// returns a *EnrollmentNotificationBrandingOptions when successful
 func (m *DeviceEnrollmentNotificationConfiguration) GetBrandingOptions()(*EnrollmentNotificationBrandingOptions) {
     val, err := m.GetBackingStore().Get("brandingOptions")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetBrandingOptions()(*Enroll
     return nil
 }
 // GetDefaultLocale gets the defaultLocale property value. DefaultLocale for the Enrollment Notification
+// returns a *string when successful
 func (m *DeviceEnrollmentNotificationConfiguration) GetDefaultLocale()(*string) {
     val, err := m.GetBackingStore().Get("defaultLocale")
     if err != nil {
@@ -45,6 +48,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetDefaultLocale()(*string) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceEnrollmentNotificationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
     res["brandingOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +120,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetFieldDeserializers()(map[
     return res
 }
 // GetNotificationMessageTemplateId gets the notificationMessageTemplateId property value. Notification Message Template Id
+// returns a *UUID when successful
 func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationMessageTemplateId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("notificationMessageTemplateId")
     if err != nil {
@@ -127,6 +132,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationMessageTempla
     return nil
 }
 // GetNotificationTemplates gets the notificationTemplates property value. The list of notification data -
+// returns a []string when successful
 func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationTemplates()([]string) {
     val, err := m.GetBackingStore().Get("notificationTemplates")
     if err != nil {
@@ -138,6 +144,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetNotificationTemplates()([
     return nil
 }
 // GetPlatformType gets the platformType property value. This enum indicates the platform type for which the enrollment restriction applies.
+// returns a *EnrollmentRestrictionPlatformType when successful
 func (m *DeviceEnrollmentNotificationConfiguration) GetPlatformType()(*EnrollmentRestrictionPlatformType) {
     val, err := m.GetBackingStore().Get("platformType")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *DeviceEnrollmentNotificationConfiguration) GetPlatformType()(*Enrollmen
     return nil
 }
 // GetTemplateType gets the templateType property value. This enum indicates the Template type for which the enrollment notification applies.
+// returns a *EnrollmentNotificationTemplateType when successful
 func (m *DeviceEnrollmentNotificationConfiguration) GetTemplateType()(*EnrollmentNotificationTemplateType) {
     val, err := m.GetBackingStore().Get("templateType")
     if err != nil {
@@ -248,7 +256,6 @@ func (m *DeviceEnrollmentNotificationConfiguration) SetTemplateType(value *Enrol
         panic(err)
     }
 }
-// DeviceEnrollmentNotificationConfigurationable 
 type DeviceEnrollmentNotificationConfigurationable interface {
     DeviceEnrollmentConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

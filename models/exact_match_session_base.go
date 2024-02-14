@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchSessionBase 
 type ExactMatchSessionBase struct {
     ExactMatchJobBase
 }
-// NewExactMatchSessionBase instantiates a new exactMatchSessionBase and sets the default values.
+// NewExactMatchSessionBase instantiates a new ExactMatchSessionBase and sets the default values.
 func NewExactMatchSessionBase()(*ExactMatchSessionBase) {
     m := &ExactMatchSessionBase{
         ExactMatchJobBase: *NewExactMatchJobBase(),
@@ -19,6 +18,7 @@ func NewExactMatchSessionBase()(*ExactMatchSessionBase) {
     return m
 }
 // CreateExactMatchSessionBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExactMatchSessionBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateExactMatchSessionBaseFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewExactMatchSessionBase(), nil
 }
 // GetDataStoreId gets the dataStoreId property value. The dataStoreId property
+// returns a *string when successful
 func (m *ExactMatchSessionBase) GetDataStoreId()(*string) {
     val, err := m.GetBackingStore().Get("dataStoreId")
     if err != nil {
@@ -52,6 +53,7 @@ func (m *ExactMatchSessionBase) GetDataStoreId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ExactMatchJobBase.GetFieldDeserializers()
     res["dataStoreId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +139,7 @@ func (m *ExactMatchSessionBase) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetProcessingCompletionDateTime gets the processingCompletionDateTime property value. The processingCompletionDateTime property
+// returns a *Time when successful
 func (m *ExactMatchSessionBase) GetProcessingCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("processingCompletionDateTime")
     if err != nil {
@@ -148,6 +151,7 @@ func (m *ExactMatchSessionBase) GetProcessingCompletionDateTime()(*i336074805fc8
     return nil
 }
 // GetRemainingBlockCount gets the remainingBlockCount property value. The remainingBlockCount property
+// returns a *int32 when successful
 func (m *ExactMatchSessionBase) GetRemainingBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("remainingBlockCount")
     if err != nil {
@@ -159,6 +163,7 @@ func (m *ExactMatchSessionBase) GetRemainingBlockCount()(*int32) {
     return nil
 }
 // GetRemainingJobCount gets the remainingJobCount property value. The remainingJobCount property
+// returns a *int32 when successful
 func (m *ExactMatchSessionBase) GetRemainingJobCount()(*int32) {
     val, err := m.GetBackingStore().Get("remainingJobCount")
     if err != nil {
@@ -170,6 +175,7 @@ func (m *ExactMatchSessionBase) GetRemainingJobCount()(*int32) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *ExactMatchSessionBase) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -181,6 +187,7 @@ func (m *ExactMatchSessionBase) GetState()(*string) {
     return nil
 }
 // GetTotalBlockCount gets the totalBlockCount property value. The totalBlockCount property
+// returns a *int32 when successful
 func (m *ExactMatchSessionBase) GetTotalBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalBlockCount")
     if err != nil {
@@ -192,6 +199,7 @@ func (m *ExactMatchSessionBase) GetTotalBlockCount()(*int32) {
     return nil
 }
 // GetTotalJobCount gets the totalJobCount property value. The totalJobCount property
+// returns a *int32 when successful
 func (m *ExactMatchSessionBase) GetTotalJobCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalJobCount")
     if err != nil {
@@ -203,6 +211,7 @@ func (m *ExactMatchSessionBase) GetTotalJobCount()(*int32) {
     return nil
 }
 // GetUploadCompletionDateTime gets the uploadCompletionDateTime property value. The uploadCompletionDateTime property
+// returns a *Time when successful
 func (m *ExactMatchSessionBase) GetUploadCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("uploadCompletionDateTime")
     if err != nil {
@@ -325,7 +334,6 @@ func (m *ExactMatchSessionBase) SetUploadCompletionDateTime(value *i336074805fc8
         panic(err)
     }
 }
-// ExactMatchSessionBaseable 
 type ExactMatchSessionBaseable interface {
     ExactMatchJobBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

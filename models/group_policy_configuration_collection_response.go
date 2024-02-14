@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GroupPolicyConfigurationCollectionResponse 
 type GroupPolicyConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewGroupPolicyConfigurationCollectionResponse instantiates a new groupPolicyConfigurationCollectionResponse and sets the default values.
+// NewGroupPolicyConfigurationCollectionResponse instantiates a new GroupPolicyConfigurationCollectionResponse and sets the default values.
 func NewGroupPolicyConfigurationCollectionResponse()(*GroupPolicyConfigurationCollectionResponse) {
     m := &GroupPolicyConfigurationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewGroupPolicyConfigurationCollectionResponse()(*GroupPolicyConfigurationCo
     return m
 }
 // CreateGroupPolicyConfigurationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyConfigurationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyConfigurationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyConfigurationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *GroupPolicyConfigurationCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []GroupPolicyConfigurationable when successful
 func (m *GroupPolicyConfigurationCollectionResponse) GetValue()([]GroupPolicyConfigurationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *GroupPolicyConfigurationCollectionResponse) SetValue(value []GroupPolic
         panic(err)
     }
 }
-// GroupPolicyConfigurationCollectionResponseable 
 type GroupPolicyConfigurationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

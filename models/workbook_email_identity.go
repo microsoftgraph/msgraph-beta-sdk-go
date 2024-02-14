@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WorkbookEmailIdentity 
 type WorkbookEmailIdentity struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWorkbookEmailIdentity instantiates a new workbookEmailIdentity and sets the default values.
+// NewWorkbookEmailIdentity instantiates a new WorkbookEmailIdentity and sets the default values.
 func NewWorkbookEmailIdentity()(*WorkbookEmailIdentity) {
     m := &WorkbookEmailIdentity{
     }
@@ -19,10 +18,12 @@ func NewWorkbookEmailIdentity()(*WorkbookEmailIdentity) {
     return m
 }
 // CreateWorkbookEmailIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookEmailIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookEmailIdentity(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WorkbookEmailIdentity) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *WorkbookEmailIdentity) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WorkbookEmailIdentity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. Display name of the user.
+// returns a *string when successful
 func (m *WorkbookEmailIdentity) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *WorkbookEmailIdentity) GetDisplayName()(*string) {
     return nil
 }
 // GetEmail gets the email property value. Email address of the user.
+// returns a *string when successful
 func (m *WorkbookEmailIdentity) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *WorkbookEmailIdentity) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookEmailIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +111,7 @@ func (m *WorkbookEmailIdentity) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetId gets the id property value. The unique identifier of the user.
+// returns a *string when successful
 func (m *WorkbookEmailIdentity) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *WorkbookEmailIdentity) GetId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WorkbookEmailIdentity) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *WorkbookEmailIdentity) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// WorkbookEmailIdentityable 
 type WorkbookEmailIdentityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

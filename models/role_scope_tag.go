@@ -8,7 +8,7 @@ import (
 type RoleScopeTag struct {
     Entity
 }
-// NewRoleScopeTag instantiates a new roleScopeTag and sets the default values.
+// NewRoleScopeTag instantiates a new RoleScopeTag and sets the default values.
 func NewRoleScopeTag()(*RoleScopeTag) {
     m := &RoleScopeTag{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewRoleScopeTag()(*RoleScopeTag) {
     return m
 }
 // CreateRoleScopeTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleScopeTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleScopeTag(), nil
 }
 // GetAssignments gets the assignments property value. The list of assignments for this Role Scope Tag.
+// returns a []RoleScopeTagAutoAssignmentable when successful
 func (m *RoleScopeTag) GetAssignments()([]RoleScopeTagAutoAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *RoleScopeTag) GetAssignments()([]RoleScopeTagAutoAssignmentable) {
     return nil
 }
 // GetDescription gets the description property value. Description of the Role Scope Tag.
+// returns a *string when successful
 func (m *RoleScopeTag) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *RoleScopeTag) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display or friendly name of the Role Scope Tag.
+// returns a *string when successful
 func (m *RoleScopeTag) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *RoleScopeTag) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -104,6 +109,7 @@ func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Description of the Role Scope Tag. This property is read-only.
+// returns a *bool when successful
 func (m *RoleScopeTag) GetIsBuiltIn()(*bool) {
     val, err := m.GetBackingStore().Get("isBuiltIn")
     if err != nil {
@@ -174,7 +180,6 @@ func (m *RoleScopeTag) SetIsBuiltIn(value *bool)() {
         panic(err)
     }
 }
-// RoleScopeTagable 
 type RoleScopeTagable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

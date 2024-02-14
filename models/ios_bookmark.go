@@ -10,7 +10,7 @@ type IosBookmark struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIosBookmark instantiates a new iosBookmark and sets the default values.
+// NewIosBookmark instantiates a new IosBookmark and sets the default values.
 func NewIosBookmark()(*IosBookmark) {
     m := &IosBookmark{
     }
@@ -19,10 +19,12 @@ func NewIosBookmark()(*IosBookmark) {
     return m
 }
 // CreateIosBookmarkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosBookmarkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosBookmark(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IosBookmark) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *IosBookmark) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *IosBookmark) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBookmarkFolder gets the bookmarkFolder property value. The folder into which the bookmark should be added in Safari
+// returns a *string when successful
 func (m *IosBookmark) GetBookmarkFolder()(*string) {
     val, err := m.GetBackingStore().Get("bookmarkFolder")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *IosBookmark) GetBookmarkFolder()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the bookmark
+// returns a *string when successful
 func (m *IosBookmark) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *IosBookmark) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosBookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bookmarkFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +112,7 @@ func (m *IosBookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *IosBookmark) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +124,7 @@ func (m *IosBookmark) GetOdataType()(*string) {
     return nil
 }
 // GetUrl gets the url property value. URL allowed to access
+// returns a *string when successful
 func (m *IosBookmark) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -200,7 +208,6 @@ func (m *IosBookmark) SetUrl(value *string)() {
         panic(err)
     }
 }
-// IosBookmarkable 
 type IosBookmarkable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

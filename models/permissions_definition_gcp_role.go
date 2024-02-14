@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionsDefinitionGcpRole 
 type PermissionsDefinitionGcpRole struct {
     Entity
 }
-// NewPermissionsDefinitionGcpRole instantiates a new permissionsDefinitionGcpRole and sets the default values.
+// NewPermissionsDefinitionGcpRole instantiates a new PermissionsDefinitionGcpRole and sets the default values.
 func NewPermissionsDefinitionGcpRole()(*PermissionsDefinitionGcpRole) {
     m := &PermissionsDefinitionGcpRole{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPermissionsDefinitionGcpRole()(*PermissionsDefinitionGcpRole) {
     return m
 }
 // CreatePermissionsDefinitionGcpRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePermissionsDefinitionGcpRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionsDefinitionGcpRole(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PermissionsDefinitionGcpRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     return res
@@ -32,7 +33,6 @@ func (m *PermissionsDefinitionGcpRole) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// PermissionsDefinitionGcpRoleable 
 type PermissionsDefinitionGcpRoleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDeviceHealth 
 type TeamworkDeviceHealth struct {
     Entity
 }
-// NewTeamworkDeviceHealth instantiates a new teamworkDeviceHealth and sets the default values.
+// NewTeamworkDeviceHealth instantiates a new TeamworkDeviceHealth and sets the default values.
 func NewTeamworkDeviceHealth()(*TeamworkDeviceHealth) {
     m := &TeamworkDeviceHealth{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTeamworkDeviceHealth()(*TeamworkDeviceHealth) {
     return m
 }
 // CreateTeamworkDeviceHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkDeviceHealthFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkDeviceHealth(), nil
 }
 // GetConnection gets the connection property value. The connection property
+// returns a TeamworkConnectionable when successful
 func (m *TeamworkDeviceHealth) GetConnection()(TeamworkConnectionable) {
     val, err := m.GetBackingStore().Get("connection")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TeamworkDeviceHealth) GetConnection()(TeamworkConnectionable) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the device health document.
+// returns a IdentitySetable when successful
 func (m *TeamworkDeviceHealth) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TeamworkDeviceHealth) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device health document was created.
+// returns a *Time when successful
 func (m *TeamworkDeviceHealth) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TeamworkDeviceHealth) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["connection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -149,6 +153,7 @@ func (m *TeamworkDeviceHealth) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetHardwareHealth gets the hardwareHealth property value. Health details about the device hardware.
+// returns a TeamworkHardwareHealthable when successful
 func (m *TeamworkDeviceHealth) GetHardwareHealth()(TeamworkHardwareHealthable) {
     val, err := m.GetBackingStore().Get("hardwareHealth")
     if err != nil {
@@ -160,6 +165,7 @@ func (m *TeamworkDeviceHealth) GetHardwareHealth()(TeamworkHardwareHealthable) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who last modified the device health details.
+// returns a IdentitySetable when successful
 func (m *TeamworkDeviceHealth) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -171,6 +177,7 @@ func (m *TeamworkDeviceHealth) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The UTC date and time when the device health detail was last modified.
+// returns a *Time when successful
 func (m *TeamworkDeviceHealth) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -182,6 +189,7 @@ func (m *TeamworkDeviceHealth) GetLastModifiedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetLoginStatus gets the loginStatus property value. The login status of Microsoft Teams, Skype for Business, and Exchange.
+// returns a TeamworkLoginStatusable when successful
 func (m *TeamworkDeviceHealth) GetLoginStatus()(TeamworkLoginStatusable) {
     val, err := m.GetBackingStore().Get("loginStatus")
     if err != nil {
@@ -193,6 +201,7 @@ func (m *TeamworkDeviceHealth) GetLoginStatus()(TeamworkLoginStatusable) {
     return nil
 }
 // GetPeripheralsHealth gets the peripheralsHealth property value. Health details about all peripherals (for example, speaker and microphone) attached to a device.
+// returns a TeamworkPeripheralsHealthable when successful
 func (m *TeamworkDeviceHealth) GetPeripheralsHealth()(TeamworkPeripheralsHealthable) {
     val, err := m.GetBackingStore().Get("peripheralsHealth")
     if err != nil {
@@ -204,6 +213,7 @@ func (m *TeamworkDeviceHealth) GetPeripheralsHealth()(TeamworkPeripheralsHealtha
     return nil
 }
 // GetSoftwareUpdateHealth gets the softwareUpdateHealth property value. Software updates available for the device.
+// returns a TeamworkSoftwareUpdateHealthable when successful
 func (m *TeamworkDeviceHealth) GetSoftwareUpdateHealth()(TeamworkSoftwareUpdateHealthable) {
     val, err := m.GetBackingStore().Get("softwareUpdateHealth")
     if err != nil {
@@ -339,7 +349,6 @@ func (m *TeamworkDeviceHealth) SetSoftwareUpdateHealth(value TeamworkSoftwareUpd
         panic(err)
     }
 }
-// TeamworkDeviceHealthable 
 type TeamworkDeviceHealthable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

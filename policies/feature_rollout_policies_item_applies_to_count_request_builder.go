@@ -26,28 +26,29 @@ type FeatureRolloutPoliciesItemAppliesToCountRequestBuilderGetRequestConfigurati
     // Request query parameters
     QueryParameters *FeatureRolloutPoliciesItemAppliesToCountRequestBuilderGetQueryParameters
 }
-// NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilderInternal instantiates a new FeatureRolloutPoliciesItemAppliesToCountRequestBuilder and sets the default values.
 func NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) {
     m := &FeatureRolloutPoliciesItemAppliesToCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilder instantiates a new FeatureRolloutPoliciesItemAppliesToCountRequestBuilder and sets the default values.
 func NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) Get(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) Get(ctx context
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *FeatureRolloutPoliciesItemAppliesToCountRequestBuilder when successful
 func (m *FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) WithUrl(rawUrl string)(*FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) {
     return NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

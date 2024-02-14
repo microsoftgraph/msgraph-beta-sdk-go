@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Directory 
 type Directory struct {
     Entity
 }
-// NewDirectory instantiates a new directory and sets the default values.
+// NewDirectory instantiates a new Directory and sets the default values.
 func NewDirectory()(*Directory) {
     m := &Directory{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDirectory()(*Directory) {
     return m
 }
 // CreateDirectoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDirectoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectory(), nil
 }
 // GetAdministrativeUnits gets the administrativeUnits property value. Conceptual container for user and group directory objects.
+// returns a []AdministrativeUnitable when successful
 func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
     val, err := m.GetBackingStore().Get("administrativeUnits")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Directory) GetAdministrativeUnits()([]AdministrativeUnitable) {
     return nil
 }
 // GetAttributeSets gets the attributeSets property value. Group of related custom security attribute definitions.
+// returns a []AttributeSetable when successful
 func (m *Directory) GetAttributeSets()([]AttributeSetable) {
     val, err := m.GetBackingStore().Get("attributeSets")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Directory) GetAttributeSets()([]AttributeSetable) {
     return nil
 }
 // GetCertificateAuthorities gets the certificateAuthorities property value. The certificateAuthorities property
+// returns a CertificateAuthorityPathable when successful
 func (m *Directory) GetCertificateAuthorities()(CertificateAuthorityPathable) {
     val, err := m.GetBackingStore().Get("certificateAuthorities")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *Directory) GetCertificateAuthorities()(CertificateAuthorityPathable) {
     return nil
 }
 // GetCustomSecurityAttributeDefinitions gets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
+// returns a []CustomSecurityAttributeDefinitionable when successful
 func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributeDefinitions")
     if err != nil {
@@ -63,7 +67,8 @@ func (m *Directory) GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttr
     }
     return nil
 }
-// GetDeletedItems gets the deletedItems property value. The deletedItems property
+// GetDeletedItems gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
+// returns a []DirectoryObjectable when successful
 func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("deletedItems")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *Directory) GetDeletedItems()([]DirectoryObjectable) {
     return nil
 }
 // GetDeviceLocalCredentials gets the deviceLocalCredentials property value. The credentials of the device's local administrator account backed up to Microsoft Entra ID.
+// returns a []DeviceLocalCredentialInfoable when successful
 func (m *Directory) GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable) {
     val, err := m.GetBackingStore().Get("deviceLocalCredentials")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *Directory) GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable)
     return nil
 }
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The featureRolloutPolicies property
+// returns a []FeatureRolloutPolicyable when successful
 func (m *Directory) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
     val, err := m.GetBackingStore().Get("featureRolloutPolicies")
     if err != nil {
@@ -97,6 +104,7 @@ func (m *Directory) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
     return nil
 }
 // GetFederationConfigurations gets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+// returns a []IdentityProviderBaseable when successful
 func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
     val, err := m.GetBackingStore().Get("federationConfigurations")
     if err != nil {
@@ -108,6 +116,7 @@ func (m *Directory) GetFederationConfigurations()([]IdentityProviderBaseable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["administrativeUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -347,6 +356,7 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetImpactedResources gets the impactedResources property value. The impactedResources property
+// returns a []ImpactedResourceable when successful
 func (m *Directory) GetImpactedResources()([]ImpactedResourceable) {
     val, err := m.GetBackingStore().Get("impactedResources")
     if err != nil {
@@ -357,7 +367,8 @@ func (m *Directory) GetImpactedResources()([]ImpactedResourceable) {
     }
     return nil
 }
-// GetInboundSharedUserProfiles gets the inboundSharedUserProfiles property value. A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
+// GetInboundSharedUserProfiles gets the inboundSharedUserProfiles property value. A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+// returns a []InboundSharedUserProfileable when successful
 func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfileable) {
     val, err := m.GetBackingStore().Get("inboundSharedUserProfiles")
     if err != nil {
@@ -369,6 +380,7 @@ func (m *Directory) GetInboundSharedUserProfiles()([]InboundSharedUserProfileabl
     return nil
 }
 // GetOnPremisesSynchronization gets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
+// returns a []OnPremisesDirectorySynchronizationable when successful
 func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable) {
     val, err := m.GetBackingStore().Get("onPremisesSynchronization")
     if err != nil {
@@ -380,6 +392,7 @@ func (m *Directory) GetOnPremisesSynchronization()([]OnPremisesDirectorySynchron
     return nil
 }
 // GetOutboundSharedUserProfiles gets the outboundSharedUserProfiles property value. The outboundSharedUserProfiles property
+// returns a []OutboundSharedUserProfileable when successful
 func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable) {
     val, err := m.GetBackingStore().Get("outboundSharedUserProfiles")
     if err != nil {
@@ -391,6 +404,7 @@ func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfilea
     return nil
 }
 // GetRecommendations gets the recommendations property value. List of recommended improvements to improve tenant posture.
+// returns a []Recommendationable when successful
 func (m *Directory) GetRecommendations()([]Recommendationable) {
     val, err := m.GetBackingStore().Get("recommendations")
     if err != nil {
@@ -402,6 +416,7 @@ func (m *Directory) GetRecommendations()([]Recommendationable) {
     return nil
 }
 // GetSharedEmailDomains gets the sharedEmailDomains property value. The sharedEmailDomains property
+// returns a []SharedEmailDomainable when successful
 func (m *Directory) GetSharedEmailDomains()([]SharedEmailDomainable) {
     val, err := m.GetBackingStore().Get("sharedEmailDomains")
     if err != nil {
@@ -412,7 +427,8 @@ func (m *Directory) GetSharedEmailDomains()([]SharedEmailDomainable) {
     }
     return nil
 }
-// GetSubscriptions gets the subscriptions property value. List of commercial subscriptions that an organization has acquired.
+// GetSubscriptions gets the subscriptions property value. List of commercial subscriptions that an organization has.
+// returns a []CompanySubscriptionable when successful
 func (m *Directory) GetSubscriptions()([]CompanySubscriptionable) {
     val, err := m.GetBackingStore().Get("subscriptions")
     if err != nil {
@@ -633,7 +649,7 @@ func (m *Directory) SetCustomSecurityAttributeDefinitions(value []CustomSecurity
         panic(err)
     }
 }
-// SetDeletedItems sets the deletedItems property value. The deletedItems property
+// SetDeletedItems sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
 func (m *Directory) SetDeletedItems(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("deletedItems", value)
     if err != nil {
@@ -668,7 +684,7 @@ func (m *Directory) SetImpactedResources(value []ImpactedResourceable)() {
         panic(err)
     }
 }
-// SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
+// SetInboundSharedUserProfiles sets the inboundSharedUserProfiles property value. A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
 func (m *Directory) SetInboundSharedUserProfiles(value []InboundSharedUserProfileable)() {
     err := m.GetBackingStore().Set("inboundSharedUserProfiles", value)
     if err != nil {
@@ -703,14 +719,13 @@ func (m *Directory) SetSharedEmailDomains(value []SharedEmailDomainable)() {
         panic(err)
     }
 }
-// SetSubscriptions sets the subscriptions property value. List of commercial subscriptions that an organization has acquired.
+// SetSubscriptions sets the subscriptions property value. List of commercial subscriptions that an organization has.
 func (m *Directory) SetSubscriptions(value []CompanySubscriptionable)() {
     err := m.GetBackingStore().Set("subscriptions", value)
     if err != nil {
         panic(err)
     }
 }
-// Directoryable 
 type Directoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

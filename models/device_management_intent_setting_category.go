@@ -8,7 +8,7 @@ import (
 type DeviceManagementIntentSettingCategory struct {
     DeviceManagementSettingCategory
 }
-// NewDeviceManagementIntentSettingCategory instantiates a new deviceManagementIntentSettingCategory and sets the default values.
+// NewDeviceManagementIntentSettingCategory instantiates a new DeviceManagementIntentSettingCategory and sets the default values.
 func NewDeviceManagementIntentSettingCategory()(*DeviceManagementIntentSettingCategory) {
     m := &DeviceManagementIntentSettingCategory{
         DeviceManagementSettingCategory: *NewDeviceManagementSettingCategory(),
@@ -16,10 +16,12 @@ func NewDeviceManagementIntentSettingCategory()(*DeviceManagementIntentSettingCa
     return m
 }
 // CreateDeviceManagementIntentSettingCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementIntentSettingCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementIntentSettingCategory(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementIntentSettingCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementSettingCategory.GetFieldDeserializers()
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +43,7 @@ func (m *DeviceManagementIntentSettingCategory) GetFieldDeserializers()(map[stri
     return res
 }
 // GetSettings gets the settings property value. The settings this category contains
+// returns a []DeviceManagementSettingInstanceable when successful
 func (m *DeviceManagementIntentSettingCategory) GetSettings()([]DeviceManagementSettingInstanceable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -78,7 +81,6 @@ func (m *DeviceManagementIntentSettingCategory) SetSettings(value []DeviceManage
         panic(err)
     }
 }
-// DeviceManagementIntentSettingCategoryable 
 type DeviceManagementIntentSettingCategoryable interface {
     DeviceManagementSettingCategoryable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

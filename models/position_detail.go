@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PositionDetail 
 type PositionDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPositionDetail instantiates a new positionDetail and sets the default values.
+// NewPositionDetail instantiates a new PositionDetail and sets the default values.
 func NewPositionDetail()(*PositionDetail) {
     m := &PositionDetail{
     }
@@ -19,10 +18,12 @@ func NewPositionDetail()(*PositionDetail) {
     return m
 }
 // CreatePositionDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePositionDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPositionDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PositionDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PositionDetail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PositionDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCompany gets the company property value. Detail about the company or employer.
+// returns a CompanyDetailable when successful
 func (m *PositionDetail) GetCompany()(CompanyDetailable) {
     val, err := m.GetBackingStore().Get("company")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *PositionDetail) GetCompany()(CompanyDetailable) {
     return nil
 }
 // GetDescription gets the description property value. Description of the position in question.
+// returns a *string when successful
 func (m *PositionDetail) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PositionDetail) GetDescription()(*string) {
     return nil
 }
 // GetEndMonthYear gets the endMonthYear property value. When the position ended.
+// returns a *DateOnly when successful
 func (m *PositionDetail) GetEndMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("endMonthYear")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *PositionDetail) GetEndMonthYear()(*i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PositionDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["company"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -177,6 +183,7 @@ func (m *PositionDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetJobTitle gets the jobTitle property value. The title held when in that position.
+// returns a *string when successful
 func (m *PositionDetail) GetJobTitle()(*string) {
     val, err := m.GetBackingStore().Get("jobTitle")
     if err != nil {
@@ -188,6 +195,7 @@ func (m *PositionDetail) GetJobTitle()(*string) {
     return nil
 }
 // GetLayer gets the layer property value. The place where the employee is within the organizational hierarchy.
+// returns a *int32 when successful
 func (m *PositionDetail) GetLayer()(*int32) {
     val, err := m.GetBackingStore().Get("layer")
     if err != nil {
@@ -199,6 +207,7 @@ func (m *PositionDetail) GetLayer()(*int32) {
     return nil
 }
 // GetLevel gets the level property value. The employee’s experience or management level.
+// returns a *string when successful
 func (m *PositionDetail) GetLevel()(*string) {
     val, err := m.GetBackingStore().Get("level")
     if err != nil {
@@ -210,6 +219,7 @@ func (m *PositionDetail) GetLevel()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PositionDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -221,6 +231,7 @@ func (m *PositionDetail) GetOdataType()(*string) {
     return nil
 }
 // GetRole gets the role property value. The role the position entailed.
+// returns a *string when successful
 func (m *PositionDetail) GetRole()(*string) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -232,6 +243,7 @@ func (m *PositionDetail) GetRole()(*string) {
     return nil
 }
 // GetStartMonthYear gets the startMonthYear property value. The start month and year of the position.
+// returns a *DateOnly when successful
 func (m *PositionDetail) GetStartMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("startMonthYear")
     if err != nil {
@@ -243,6 +255,7 @@ func (m *PositionDetail) GetStartMonthYear()(*i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // GetSummary gets the summary property value. summary of the position.
+// returns a *string when successful
 func (m *PositionDetail) GetSummary()(*string) {
     val, err := m.GetBackingStore().Get("summary")
     if err != nil {
@@ -404,7 +417,6 @@ func (m *PositionDetail) SetSummary(value *string)() {
         panic(err)
     }
 }
-// PositionDetailable 
 type PositionDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

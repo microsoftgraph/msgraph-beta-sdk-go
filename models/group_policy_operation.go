@@ -9,7 +9,7 @@ import (
 type GroupPolicyOperation struct {
     Entity
 }
-// NewGroupPolicyOperation instantiates a new groupPolicyOperation and sets the default values.
+// NewGroupPolicyOperation instantiates a new GroupPolicyOperation and sets the default values.
 func NewGroupPolicyOperation()(*GroupPolicyOperation) {
     m := &GroupPolicyOperation{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewGroupPolicyOperation()(*GroupPolicyOperation) {
     return m
 }
 // CreateGroupPolicyOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyOperation(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,6 +68,7 @@ func (m *GroupPolicyOperation) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+// returns a *Time when successful
 func (m *GroupPolicyOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -77,6 +80,7 @@ func (m *GroupPolicyOperation) GetLastModifiedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetOperationStatus gets the operationStatus property value. Type of Group Policy operation status.
+// returns a *GroupPolicyOperationStatus when successful
 func (m *GroupPolicyOperation) GetOperationStatus()(*GroupPolicyOperationStatus) {
     val, err := m.GetBackingStore().Get("operationStatus")
     if err != nil {
@@ -88,6 +92,7 @@ func (m *GroupPolicyOperation) GetOperationStatus()(*GroupPolicyOperationStatus)
     return nil
 }
 // GetOperationType gets the operationType property value. Type of Group Policy operation.
+// returns a *GroupPolicyOperationType when successful
 func (m *GroupPolicyOperation) GetOperationType()(*GroupPolicyOperationType) {
     val, err := m.GetBackingStore().Get("operationType")
     if err != nil {
@@ -99,6 +104,7 @@ func (m *GroupPolicyOperation) GetOperationType()(*GroupPolicyOperationType) {
     return nil
 }
 // GetStatusDetails gets the statusDetails property value. The group policy operation status detail.
+// returns a *string when successful
 func (m *GroupPolicyOperation) GetStatusDetails()(*string) {
     val, err := m.GetBackingStore().Get("statusDetails")
     if err != nil {
@@ -171,7 +177,6 @@ func (m *GroupPolicyOperation) SetStatusDetails(value *string)() {
         panic(err)
     }
 }
-// GroupPolicyOperationable 
 type GroupPolicyOperationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

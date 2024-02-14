@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AlertHistoryState 
 type AlertHistoryState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAlertHistoryState instantiates a new alertHistoryState and sets the default values.
+// NewAlertHistoryState instantiates a new AlertHistoryState and sets the default values.
 func NewAlertHistoryState()(*AlertHistoryState) {
     m := &AlertHistoryState{
     }
@@ -20,10 +19,12 @@ func NewAlertHistoryState()(*AlertHistoryState) {
     return m
 }
 // CreateAlertHistoryStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAlertHistoryStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAlertHistoryState(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AlertHistoryState) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *AlertHistoryState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAppId gets the appId property value. The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.
+// returns a *string when successful
 func (m *AlertHistoryState) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -47,6 +49,7 @@ func (m *AlertHistoryState) GetAppId()(*string) {
     return nil
 }
 // GetAssignedTo gets the assignedTo property value. UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).
+// returns a *string when successful
 func (m *AlertHistoryState) GetAssignedTo()(*string) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -58,10 +61,12 @@ func (m *AlertHistoryState) GetAssignedTo()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AlertHistoryState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetComments gets the comments property value. Comment entered by signed-in user.
+// returns a []string when successful
 func (m *AlertHistoryState) GetComments()([]string) {
     val, err := m.GetBackingStore().Get("comments")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *AlertHistoryState) GetComments()([]string) {
     return nil
 }
 // GetFeedback gets the feedback property value. Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
+// returns a *AlertFeedback when successful
 func (m *AlertHistoryState) GetFeedback()(*AlertFeedback) {
     val, err := m.GetBackingStore().Get("feedback")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *AlertHistoryState) GetFeedback()(*AlertFeedback) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -175,6 +182,7 @@ func (m *AlertHistoryState) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AlertHistoryState) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -186,6 +194,7 @@ func (m *AlertHistoryState) GetOdataType()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
+// returns a *AlertStatus when successful
 func (m *AlertHistoryState) GetStatus()(*AlertStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -197,6 +206,7 @@ func (m *AlertHistoryState) GetStatus()(*AlertStatus) {
     return nil
 }
 // GetUpdatedDateTime gets the updatedDateTime property value. Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *AlertHistoryState) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("updatedDateTime")
     if err != nil {
@@ -208,6 +218,7 @@ func (m *AlertHistoryState) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetUser gets the user property value. UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).
+// returns a *string when successful
 func (m *AlertHistoryState) GetUser()(*string) {
     val, err := m.GetBackingStore().Get("user")
     if err != nil {
@@ -345,7 +356,6 @@ func (m *AlertHistoryState) SetUser(value *string)() {
         panic(err)
     }
 }
-// AlertHistoryStateable 
 type AlertHistoryStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

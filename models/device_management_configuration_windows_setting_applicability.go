@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationWindowsSettingApplicability 
 type DeviceManagementConfigurationWindowsSettingApplicability struct {
     DeviceManagementConfigurationSettingApplicability
 }
-// NewDeviceManagementConfigurationWindowsSettingApplicability instantiates a new deviceManagementConfigurationWindowsSettingApplicability and sets the default values.
+// NewDeviceManagementConfigurationWindowsSettingApplicability instantiates a new DeviceManagementConfigurationWindowsSettingApplicability and sets the default values.
 func NewDeviceManagementConfigurationWindowsSettingApplicability()(*DeviceManagementConfigurationWindowsSettingApplicability) {
     m := &DeviceManagementConfigurationWindowsSettingApplicability{
         DeviceManagementConfigurationSettingApplicability: *NewDeviceManagementConfigurationSettingApplicability(),
@@ -18,10 +17,12 @@ func NewDeviceManagementConfigurationWindowsSettingApplicability()(*DeviceManage
     return m
 }
 // CreateDeviceManagementConfigurationWindowsSettingApplicabilityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationWindowsSettingApplicabilityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationWindowsSettingApplicability(), nil
 }
 // GetConfigurationServiceProviderVersion gets the configurationServiceProviderVersion property value. Version of CSP setting is a part of
+// returns a *string when successful
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetConfigurationServiceProviderVersion()(*string) {
     val, err := m.GetBackingStore().Get("configurationServiceProviderVersion")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetConfigurat
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingApplicability.GetFieldDeserializers()
     res["configurationServiceProviderVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -104,6 +106,7 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetFieldDeser
     return res
 }
 // GetMaximumSupportedVersion gets the maximumSupportedVersion property value. Maximum supported version of Windows
+// returns a *string when successful
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetMaximumSupportedVersion()(*string) {
     val, err := m.GetBackingStore().Get("maximumSupportedVersion")
     if err != nil {
@@ -115,6 +118,7 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetMaximumSup
     return nil
 }
 // GetMinimumSupportedVersion gets the minimumSupportedVersion property value. Minimum supported version of Windows
+// returns a *string when successful
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetMinimumSupportedVersion()(*string) {
     val, err := m.GetBackingStore().Get("minimumSupportedVersion")
     if err != nil {
@@ -126,6 +130,7 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetMinimumSup
     return nil
 }
 // GetRequiredAzureAdTrustType gets the requiredAzureAdTrustType property value. Required AAD Trust Type
+// returns a *DeviceManagementConfigurationAzureAdTrustType when successful
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetRequiredAzureAdTrustType()(*DeviceManagementConfigurationAzureAdTrustType) {
     val, err := m.GetBackingStore().Get("requiredAzureAdTrustType")
     if err != nil {
@@ -137,6 +142,7 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetRequiredAz
     return nil
 }
 // GetRequiresAzureAd gets the requiresAzureAd property value. AzureAD setting requirement
+// returns a *bool when successful
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetRequiresAzureAd()(*bool) {
     val, err := m.GetBackingStore().Get("requiresAzureAd")
     if err != nil {
@@ -148,6 +154,7 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetRequiresAz
     return nil
 }
 // GetWindowsSkus gets the windowsSkus property value. List of Windows SKUs that the setting is applicable for
+// returns a []DeviceManagementConfigurationWindowsSkus when successful
 func (m *DeviceManagementConfigurationWindowsSettingApplicability) GetWindowsSkus()([]DeviceManagementConfigurationWindowsSkus) {
     val, err := m.GetBackingStore().Get("windowsSkus")
     if err != nil {
@@ -245,7 +252,6 @@ func (m *DeviceManagementConfigurationWindowsSettingApplicability) SetWindowsSku
         panic(err)
     }
 }
-// DeviceManagementConfigurationWindowsSettingApplicabilityable 
 type DeviceManagementConfigurationWindowsSettingApplicabilityable interface {
     DeviceManagementConfigurationSettingApplicabilityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

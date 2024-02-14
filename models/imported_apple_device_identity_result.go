@@ -8,7 +8,7 @@ import (
 type ImportedAppleDeviceIdentityResult struct {
     ImportedAppleDeviceIdentity
 }
-// NewImportedAppleDeviceIdentityResult instantiates a new importedAppleDeviceIdentityResult and sets the default values.
+// NewImportedAppleDeviceIdentityResult instantiates a new ImportedAppleDeviceIdentityResult and sets the default values.
 func NewImportedAppleDeviceIdentityResult()(*ImportedAppleDeviceIdentityResult) {
     m := &ImportedAppleDeviceIdentityResult{
         ImportedAppleDeviceIdentity: *NewImportedAppleDeviceIdentity(),
@@ -16,10 +16,12 @@ func NewImportedAppleDeviceIdentityResult()(*ImportedAppleDeviceIdentityResult) 
     return m
 }
 // CreateImportedAppleDeviceIdentityResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateImportedAppleDeviceIdentityResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewImportedAppleDeviceIdentityResult(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ImportedAppleDeviceIdentityResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ImportedAppleDeviceIdentity.GetFieldDeserializers()
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *ImportedAppleDeviceIdentityResult) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetStatus gets the status property value. Status of imported device identity
+// returns a *bool when successful
 func (m *ImportedAppleDeviceIdentityResult) GetStatus()(*bool) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *ImportedAppleDeviceIdentityResult) SetStatus(value *bool)() {
         panic(err)
     }
 }
-// ImportedAppleDeviceIdentityResultable 
 type ImportedAppleDeviceIdentityResultable interface {
     ImportedAppleDeviceIdentityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

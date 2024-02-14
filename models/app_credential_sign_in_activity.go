@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppCredentialSignInActivity 
 type AppCredentialSignInActivity struct {
     Entity
 }
-// NewAppCredentialSignInActivity instantiates a new appCredentialSignInActivity and sets the default values.
+// NewAppCredentialSignInActivity instantiates a new AppCredentialSignInActivity and sets the default values.
 func NewAppCredentialSignInActivity()(*AppCredentialSignInActivity) {
     m := &AppCredentialSignInActivity{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAppCredentialSignInActivity()(*AppCredentialSignInActivity) {
     return m
 }
 // CreateAppCredentialSignInActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppCredentialSignInActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppCredentialSignInActivity(), nil
 }
 // GetAppId gets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.
+// returns a *string when successful
 func (m *AppCredentialSignInActivity) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AppCredentialSignInActivity) GetAppId()(*string) {
     return nil
 }
 // GetAppObjectId gets the appObjectId property value. The ID of the credential application instance.
+// returns a *string when successful
 func (m *AppCredentialSignInActivity) GetAppObjectId()(*string) {
     val, err := m.GetBackingStore().Get("appObjectId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AppCredentialSignInActivity) GetAppObjectId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the credential was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AppCredentialSignInActivity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AppCredentialSignInActivity) GetCreatedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetCredentialOrigin gets the credentialOrigin property value. The credentialOrigin property
+// returns a *ApplicationKeyOrigin when successful
 func (m *AppCredentialSignInActivity) GetCredentialOrigin()(*ApplicationKeyOrigin) {
     val, err := m.GetBackingStore().Get("credentialOrigin")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AppCredentialSignInActivity) GetCredentialOrigin()(*ApplicationKeyOrigi
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The date and time when the credential is set to expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *AppCredentialSignInActivity) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AppCredentialSignInActivity) GetExpirationDateTime()(*i336074805fc85398
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppCredentialSignInActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -191,6 +197,7 @@ func (m *AppCredentialSignInActivity) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetKeyId gets the keyId property value. The key ID of the credential.
+// returns a *string when successful
 func (m *AppCredentialSignInActivity) GetKeyId()(*string) {
     val, err := m.GetBackingStore().Get("keyId")
     if err != nil {
@@ -202,6 +209,7 @@ func (m *AppCredentialSignInActivity) GetKeyId()(*string) {
     return nil
 }
 // GetKeyType gets the keyType property value. Specifies the key type. The possible values are: clientSecret, certificate, unknownFutureValue.
+// returns a *ApplicationKeyType when successful
 func (m *AppCredentialSignInActivity) GetKeyType()(*ApplicationKeyType) {
     val, err := m.GetBackingStore().Get("keyType")
     if err != nil {
@@ -213,6 +221,7 @@ func (m *AppCredentialSignInActivity) GetKeyType()(*ApplicationKeyType) {
     return nil
 }
 // GetKeyUsage gets the keyUsage property value. Specifies what the key was used for. The possible values are: sign, verify, unknownFutureValue.
+// returns a *ApplicationKeyUsage when successful
 func (m *AppCredentialSignInActivity) GetKeyUsage()(*ApplicationKeyUsage) {
     val, err := m.GetBackingStore().Get("keyUsage")
     if err != nil {
@@ -224,6 +233,7 @@ func (m *AppCredentialSignInActivity) GetKeyUsage()(*ApplicationKeyUsage) {
     return nil
 }
 // GetResourceId gets the resourceId property value. The ID of the accessed resource.
+// returns a *string when successful
 func (m *AppCredentialSignInActivity) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
     if err != nil {
@@ -235,6 +245,7 @@ func (m *AppCredentialSignInActivity) GetResourceId()(*string) {
     return nil
 }
 // GetServicePrincipalObjectId gets the servicePrincipalObjectId property value. The ID of the service principal.
+// returns a *string when successful
 func (m *AppCredentialSignInActivity) GetServicePrincipalObjectId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalObjectId")
     if err != nil {
@@ -246,6 +257,7 @@ func (m *AppCredentialSignInActivity) GetServicePrincipalObjectId()(*string) {
     return nil
 }
 // GetSignInActivity gets the signInActivity property value. The signInActivity property
+// returns a SignInActivityable when successful
 func (m *AppCredentialSignInActivity) GetSignInActivity()(SignInActivityable) {
     val, err := m.GetBackingStore().Get("signInActivity")
     if err != nil {
@@ -410,7 +422,6 @@ func (m *AppCredentialSignInActivity) SetSignInActivity(value SignInActivityable
         panic(err)
     }
 }
-// AppCredentialSignInActivityable 
 type AppCredentialSignInActivityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

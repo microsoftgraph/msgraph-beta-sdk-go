@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerWiFiConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidDeviceOwnerWiFiConfiguration instantiates a new androidDeviceOwnerWiFiConfiguration and sets the default values.
+// NewAndroidDeviceOwnerWiFiConfiguration instantiates a new AndroidDeviceOwnerWiFiConfiguration and sets the default values.
 func NewAndroidDeviceOwnerWiFiConfiguration()(*AndroidDeviceOwnerWiFiConfiguration) {
     m := &AndroidDeviceOwnerWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewAndroidDeviceOwnerWiFiConfiguration()(*AndroidDeviceOwnerWiFiConfigurati
     return m
 }
 // CreateAndroidDeviceOwnerWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateAndroidDeviceOwnerWiFiConfigurationFromDiscriminatorValue(parseNode i
     return NewAndroidDeviceOwnerWiFiConfiguration(), nil
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetConnectAutomatically()(*bool) {
     val, err := m.GetBackingStore().Get("connectAutomatically")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetConnectAutomatically()(*bool) {
     return nil
 }
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
     val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetConnectWhenNetworkNameIsHidden(
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["connectAutomatically"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -81,6 +85,16 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string
         }
         if val != nil {
             m.SetConnectWhenNetworkNameIsHidden(val)
+        }
+        return nil
+    }
+    res["macAddressRandomizationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMacAddressRandomizationMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMacAddressRandomizationMode(val.(*MacAddressRandomizationMode))
         }
         return nil
     }
@@ -186,7 +200,20 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string
     }
     return res
 }
+// GetMacAddressRandomizationMode gets the macAddressRandomizationMode property value. The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic.
+// returns a *MacAddressRandomizationMode when successful
+func (m *AndroidDeviceOwnerWiFiConfiguration) GetMacAddressRandomizationMode()(*MacAddressRandomizationMode) {
+    val, err := m.GetBackingStore().Get("macAddressRandomizationMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MacAddressRandomizationMode)
+    }
+    return nil
+}
 // GetNetworkName gets the networkName property value. Network Name
+// returns a *string when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetNetworkName()(*string) {
     val, err := m.GetBackingStore().Get("networkName")
     if err != nil {
@@ -198,6 +225,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetNetworkName()(*string) {
     return nil
 }
 // GetPreSharedKey gets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetPreSharedKey()(*string) {
     val, err := m.GetBackingStore().Get("preSharedKey")
     if err != nil {
@@ -209,6 +237,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetPreSharedKey()(*string) {
     return nil
 }
 // GetPreSharedKeyIsSet gets the preSharedKeyIsSet property value. This is the pre-shared key for WPA Personal Wi-Fi network.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetPreSharedKeyIsSet()(*bool) {
     val, err := m.GetBackingStore().Get("preSharedKeyIsSet")
     if err != nil {
@@ -220,6 +249,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetPreSharedKeyIsSet()(*bool) {
     return nil
 }
 // GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. Specify the proxy server configuration script URL.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
     val, err := m.GetBackingStore().Get("proxyAutomaticConfigurationUrl")
     if err != nil {
@@ -231,6 +261,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyAutomaticConfigurationUrl(
     return nil
 }
 // GetProxyExclusionList gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyExclusionList()(*string) {
     val, err := m.GetBackingStore().Get("proxyExclusionList")
     if err != nil {
@@ -242,6 +273,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyExclusionList()(*string) {
     return nil
 }
 // GetProxyManualAddress gets the proxyManualAddress property value. Specify the proxy server IP address. Android documentation does not specify IPv4 or IPv6. For example: 192.168.1.1.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyManualAddress()(*string) {
     val, err := m.GetBackingStore().Get("proxyManualAddress")
     if err != nil {
@@ -253,6 +285,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyManualAddress()(*string) {
     return nil
 }
 // GetProxyManualPort gets the proxyManualPort property value. Specify the proxy server port.
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyManualPort()(*int32) {
     val, err := m.GetBackingStore().Get("proxyManualPort")
     if err != nil {
@@ -264,6 +297,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxyManualPort()(*int32) {
     return nil
 }
 // GetProxySettings gets the proxySettings property value. Wi-Fi Proxy Settings.
+// returns a *WiFiProxySetting when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxySettings()(*WiFiProxySetting) {
     val, err := m.GetBackingStore().Get("proxySettings")
     if err != nil {
@@ -275,6 +309,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetProxySettings()(*WiFiProxySetti
     return nil
 }
 // GetSsid gets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetSsid()(*string) {
     val, err := m.GetBackingStore().Get("ssid")
     if err != nil {
@@ -286,6 +321,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetSsid()(*string) {
     return nil
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for Android Device Owner.
+// returns a *AndroidDeviceOwnerWiFiSecurityType when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetWiFiSecurityType()(*AndroidDeviceOwnerWiFiSecurityType) {
     val, err := m.GetBackingStore().Get("wiFiSecurityType")
     if err != nil {
@@ -310,6 +346,13 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) Serialize(writer i878a80d2330e89d2
     }
     {
         err = writer.WriteBoolValue("connectWhenNetworkNameIsHidden", m.GetConnectWhenNetworkNameIsHidden())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMacAddressRandomizationMode() != nil {
+        cast := (*m.GetMacAddressRandomizationMode()).String()
+        err = writer.WriteStringValue("macAddressRandomizationMode", &cast)
         if err != nil {
             return err
         }
@@ -392,6 +435,13 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(
         panic(err)
     }
 }
+// SetMacAddressRandomizationMode sets the macAddressRandomizationMode property value. The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic.
+func (m *AndroidDeviceOwnerWiFiConfiguration) SetMacAddressRandomizationMode(value *MacAddressRandomizationMode)() {
+    err := m.GetBackingStore().Set("macAddressRandomizationMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNetworkName sets the networkName property value. Network Name
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetNetworkName(value *string)() {
     err := m.GetBackingStore().Set("networkName", value)
@@ -462,12 +512,12 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) SetWiFiSecurityType(value *Android
         panic(err)
     }
 }
-// AndroidDeviceOwnerWiFiConfigurationable 
 type AndroidDeviceOwnerWiFiConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConnectAutomatically()(*bool)
     GetConnectWhenNetworkNameIsHidden()(*bool)
+    GetMacAddressRandomizationMode()(*MacAddressRandomizationMode)
     GetNetworkName()(*string)
     GetPreSharedKey()(*string)
     GetPreSharedKeyIsSet()(*bool)
@@ -480,6 +530,7 @@ type AndroidDeviceOwnerWiFiConfigurationable interface {
     GetWiFiSecurityType()(*AndroidDeviceOwnerWiFiSecurityType)
     SetConnectAutomatically(value *bool)()
     SetConnectWhenNetworkNameIsHidden(value *bool)()
+    SetMacAddressRandomizationMode(value *MacAddressRandomizationMode)()
     SetNetworkName(value *string)()
     SetPreSharedKey(value *string)()
     SetPreSharedKeyIsSet(value *bool)()

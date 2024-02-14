@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DeviceManagementApplicabilityRuleOsEdition 
 type DeviceManagementApplicabilityRuleOsEdition struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceManagementApplicabilityRuleOsEdition instantiates a new deviceManagementApplicabilityRuleOsEdition and sets the default values.
+// NewDeviceManagementApplicabilityRuleOsEdition instantiates a new DeviceManagementApplicabilityRuleOsEdition and sets the default values.
 func NewDeviceManagementApplicabilityRuleOsEdition()(*DeviceManagementApplicabilityRuleOsEdition) {
     m := &DeviceManagementApplicabilityRuleOsEdition{
     }
@@ -19,10 +18,12 @@ func NewDeviceManagementApplicabilityRuleOsEdition()(*DeviceManagementApplicabil
     return m
 }
 // CreateDeviceManagementApplicabilityRuleOsEditionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementApplicabilityRuleOsEditionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementApplicabilityRuleOsEdition(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetAdditionalData()(map[str
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,6 +93,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetFieldDeserializers()(map
     return res
 }
 // GetName gets the name property value. Name for object.
+// returns a *string when successful
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -101,6 +105,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -112,6 +117,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetOdataType()(*string) {
     return nil
 }
 // GetOsEditionTypes gets the osEditionTypes property value. Applicability rule OS edition type.
+// returns a []Windows10EditionType when successful
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetOsEditionTypes()([]Windows10EditionType) {
     val, err := m.GetBackingStore().Get("osEditionTypes")
     if err != nil {
@@ -123,6 +129,7 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) GetOsEditionTypes()([]Windo
     return nil
 }
 // GetRuleType gets the ruleType property value. Supported Applicability rule types for Device Configuration
+// returns a *DeviceManagementApplicabilityRuleType when successful
 func (m *DeviceManagementApplicabilityRuleOsEdition) GetRuleType()(*DeviceManagementApplicabilityRuleType) {
     val, err := m.GetBackingStore().Get("ruleType")
     if err != nil {
@@ -207,7 +214,6 @@ func (m *DeviceManagementApplicabilityRuleOsEdition) SetRuleType(value *DeviceMa
         panic(err)
     }
 }
-// DeviceManagementApplicabilityRuleOsEditionable 
 type DeviceManagementApplicabilityRuleOsEditionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

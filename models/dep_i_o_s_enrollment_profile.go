@@ -8,7 +8,7 @@ import (
 type DepIOSEnrollmentProfile struct {
     DepEnrollmentBaseProfile
 }
-// NewDepIOSEnrollmentProfile instantiates a new depIOSEnrollmentProfile and sets the default values.
+// NewDepIOSEnrollmentProfile instantiates a new DepIOSEnrollmentProfile and sets the default values.
 func NewDepIOSEnrollmentProfile()(*DepIOSEnrollmentProfile) {
     m := &DepIOSEnrollmentProfile{
         DepEnrollmentBaseProfile: *NewDepEnrollmentBaseProfile(),
@@ -18,10 +18,12 @@ func NewDepIOSEnrollmentProfile()(*DepIOSEnrollmentProfile) {
     return m
 }
 // CreateDepIOSEnrollmentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDepIOSEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDepIOSEnrollmentProfile(), nil
 }
 // GetAppearanceScreenDisabled gets the appearanceScreenDisabled property value. Indicates if Apperance screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetAppearanceScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("appearanceScreenDisabled")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DepIOSEnrollmentProfile) GetAppearanceScreenDisabled()(*bool) {
     return nil
 }
 // GetAwaitDeviceConfiguredConfirmation gets the awaitDeviceConfiguredConfirmation property value. Indicates if the device will need to wait for configured confirmation
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetAwaitDeviceConfiguredConfirmation()(*bool) {
     val, err := m.GetBackingStore().Get("awaitDeviceConfiguredConfirmation")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *DepIOSEnrollmentProfile) GetAwaitDeviceConfiguredConfirmation()(*bool) 
     return nil
 }
 // GetCarrierActivationUrl gets the carrierActivationUrl property value. Carrier URL for activating device eSIM.
+// returns a *string when successful
 func (m *DepIOSEnrollmentProfile) GetCarrierActivationUrl()(*string) {
     val, err := m.GetBackingStore().Get("carrierActivationUrl")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *DepIOSEnrollmentProfile) GetCarrierActivationUrl()(*string) {
     return nil
 }
 // GetCompanyPortalVppTokenId gets the companyPortalVppTokenId property value. If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. 'enableAuthenticationViaCompanyPortal' must be set in order for this property to be set.
+// returns a *string when successful
 func (m *DepIOSEnrollmentProfile) GetCompanyPortalVppTokenId()(*string) {
     val, err := m.GetBackingStore().Get("companyPortalVppTokenId")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *DepIOSEnrollmentProfile) GetCompanyPortalVppTokenId()(*string) {
     return nil
 }
 // GetDeviceToDeviceMigrationDisabled gets the deviceToDeviceMigrationDisabled property value. Indicates if Device To Device Migration is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetDeviceToDeviceMigrationDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("deviceToDeviceMigrationDisabled")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *DepIOSEnrollmentProfile) GetDeviceToDeviceMigrationDisabled()(*bool) {
     return nil
 }
 // GetEnableSharedIPad gets the enableSharedIPad property value. This indicates whether the device is to be enrolled in a mode which enables multi user scenarios. Only applicable in shared iPads.
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetEnableSharedIPad()(*bool) {
     val, err := m.GetBackingStore().Get("enableSharedIPad")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *DepIOSEnrollmentProfile) GetEnableSharedIPad()(*bool) {
     return nil
 }
 // GetEnableSingleAppEnrollmentMode gets the enableSingleAppEnrollmentMode property value. Tells the device to enable single app mode and apply app-lock during enrollment. Default is false. 'enableAuthenticationViaCompanyPortal' and 'companyPortalVppTokenId' must be set for this property to be set.
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetEnableSingleAppEnrollmentMode()(*bool) {
     val, err := m.GetBackingStore().Get("enableSingleAppEnrollmentMode")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *DepIOSEnrollmentProfile) GetEnableSingleAppEnrollmentMode()(*bool) {
     return nil
 }
 // GetExpressLanguageScreenDisabled gets the expressLanguageScreenDisabled property value. Indicates if Express Language screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetExpressLanguageScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("expressLanguageScreenDisabled")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *DepIOSEnrollmentProfile) GetExpressLanguageScreenDisabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DepEnrollmentBaseProfile.GetFieldDeserializers()
     res["appearanceScreenDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -411,6 +421,7 @@ func (m *DepIOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetForceTemporarySession gets the forceTemporarySession property value. Indicates if temporary sessions is enabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetForceTemporarySession()(*bool) {
     val, err := m.GetBackingStore().Get("forceTemporarySession")
     if err != nil {
@@ -422,6 +433,7 @@ func (m *DepIOSEnrollmentProfile) GetForceTemporarySession()(*bool) {
     return nil
 }
 // GetHomeButtonScreenDisabled gets the homeButtonScreenDisabled property value. Indicates if home button sensitivity screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetHomeButtonScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("homeButtonScreenDisabled")
     if err != nil {
@@ -433,6 +445,7 @@ func (m *DepIOSEnrollmentProfile) GetHomeButtonScreenDisabled()(*bool) {
     return nil
 }
 // GetIMessageAndFaceTimeScreenDisabled gets the iMessageAndFaceTimeScreenDisabled property value. Indicates if iMessage and FaceTime screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetIMessageAndFaceTimeScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("iMessageAndFaceTimeScreenDisabled")
     if err != nil {
@@ -444,6 +457,7 @@ func (m *DepIOSEnrollmentProfile) GetIMessageAndFaceTimeScreenDisabled()(*bool) 
     return nil
 }
 // GetITunesPairingMode gets the iTunesPairingMode property value. The iTunesPairingMode property
+// returns a *ITunesPairingMode when successful
 func (m *DepIOSEnrollmentProfile) GetITunesPairingMode()(*ITunesPairingMode) {
     val, err := m.GetBackingStore().Get("iTunesPairingMode")
     if err != nil {
@@ -455,6 +469,7 @@ func (m *DepIOSEnrollmentProfile) GetITunesPairingMode()(*ITunesPairingMode) {
     return nil
 }
 // GetManagementCertificates gets the managementCertificates property value. Management certificates for Apple Configurator
+// returns a []ManagementCertificateWithThumbprintable when successful
 func (m *DepIOSEnrollmentProfile) GetManagementCertificates()([]ManagementCertificateWithThumbprintable) {
     val, err := m.GetBackingStore().Get("managementCertificates")
     if err != nil {
@@ -466,6 +481,7 @@ func (m *DepIOSEnrollmentProfile) GetManagementCertificates()([]ManagementCertif
     return nil
 }
 // GetOnBoardingScreenDisabled gets the onBoardingScreenDisabled property value. Indicates if onboarding setup screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetOnBoardingScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("onBoardingScreenDisabled")
     if err != nil {
@@ -477,6 +493,7 @@ func (m *DepIOSEnrollmentProfile) GetOnBoardingScreenDisabled()(*bool) {
     return nil
 }
 // GetPassCodeDisabled gets the passCodeDisabled property value. Indicates if Passcode setup pane is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetPassCodeDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("passCodeDisabled")
     if err != nil {
@@ -488,6 +505,7 @@ func (m *DepIOSEnrollmentProfile) GetPassCodeDisabled()(*bool) {
     return nil
 }
 // GetPasscodeLockGracePeriodInSeconds gets the passcodeLockGracePeriodInSeconds property value. Indicates timeout before locked screen requires the user to enter the device passocde to unlock it
+// returns a *int32 when successful
 func (m *DepIOSEnrollmentProfile) GetPasscodeLockGracePeriodInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("passcodeLockGracePeriodInSeconds")
     if err != nil {
@@ -499,6 +517,7 @@ func (m *DepIOSEnrollmentProfile) GetPasscodeLockGracePeriodInSeconds()(*int32) 
     return nil
 }
 // GetPreferredLanguageScreenDisabled gets the preferredLanguageScreenDisabled property value. Indicates if Preferred language screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetPreferredLanguageScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("preferredLanguageScreenDisabled")
     if err != nil {
@@ -510,6 +529,7 @@ func (m *DepIOSEnrollmentProfile) GetPreferredLanguageScreenDisabled()(*bool) {
     return nil
 }
 // GetRestoreCompletedScreenDisabled gets the restoreCompletedScreenDisabled property value. Indicates if Weclome screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetRestoreCompletedScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("restoreCompletedScreenDisabled")
     if err != nil {
@@ -521,6 +541,7 @@ func (m *DepIOSEnrollmentProfile) GetRestoreCompletedScreenDisabled()(*bool) {
     return nil
 }
 // GetRestoreFromAndroidDisabled gets the restoreFromAndroidDisabled property value. Indicates if Restore from Android is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetRestoreFromAndroidDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("restoreFromAndroidDisabled")
     if err != nil {
@@ -532,6 +553,7 @@ func (m *DepIOSEnrollmentProfile) GetRestoreFromAndroidDisabled()(*bool) {
     return nil
 }
 // GetSharedIPadMaximumUserCount gets the sharedIPadMaximumUserCount property value. This specifies the maximum number of users that can use a shared iPad. Only applicable in shared iPad mode.
+// returns a *int32 when successful
 func (m *DepIOSEnrollmentProfile) GetSharedIPadMaximumUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("sharedIPadMaximumUserCount")
     if err != nil {
@@ -543,6 +565,7 @@ func (m *DepIOSEnrollmentProfile) GetSharedIPadMaximumUserCount()(*int32) {
     return nil
 }
 // GetSimSetupScreenDisabled gets the simSetupScreenDisabled property value. Indicates if the SIMSetup screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetSimSetupScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("simSetupScreenDisabled")
     if err != nil {
@@ -554,6 +577,7 @@ func (m *DepIOSEnrollmentProfile) GetSimSetupScreenDisabled()(*bool) {
     return nil
 }
 // GetSoftwareUpdateScreenDisabled gets the softwareUpdateScreenDisabled property value. Indicates if the mandatory sofware update screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetSoftwareUpdateScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("softwareUpdateScreenDisabled")
     if err != nil {
@@ -565,6 +589,7 @@ func (m *DepIOSEnrollmentProfile) GetSoftwareUpdateScreenDisabled()(*bool) {
     return nil
 }
 // GetTemporarySessionTimeoutInSeconds gets the temporarySessionTimeoutInSeconds property value. Indicates timeout of temporary session
+// returns a *int32 when successful
 func (m *DepIOSEnrollmentProfile) GetTemporarySessionTimeoutInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("temporarySessionTimeoutInSeconds")
     if err != nil {
@@ -576,6 +601,7 @@ func (m *DepIOSEnrollmentProfile) GetTemporarySessionTimeoutInSeconds()(*int32) 
     return nil
 }
 // GetUpdateCompleteScreenDisabled gets the updateCompleteScreenDisabled property value. Indicates if Weclome screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetUpdateCompleteScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("updateCompleteScreenDisabled")
     if err != nil {
@@ -587,6 +613,7 @@ func (m *DepIOSEnrollmentProfile) GetUpdateCompleteScreenDisabled()(*bool) {
     return nil
 }
 // GetUserlessSharedAadModeEnabled gets the userlessSharedAadModeEnabled property value. Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetUserlessSharedAadModeEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("userlessSharedAadModeEnabled")
     if err != nil {
@@ -598,6 +625,7 @@ func (m *DepIOSEnrollmentProfile) GetUserlessSharedAadModeEnabled()(*bool) {
     return nil
 }
 // GetUserSessionTimeoutInSeconds gets the userSessionTimeoutInSeconds property value. Indicates timeout of temporary session
+// returns a *int32 when successful
 func (m *DepIOSEnrollmentProfile) GetUserSessionTimeoutInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("userSessionTimeoutInSeconds")
     if err != nil {
@@ -609,6 +637,7 @@ func (m *DepIOSEnrollmentProfile) GetUserSessionTimeoutInSeconds()(*int32) {
     return nil
 }
 // GetWatchMigrationScreenDisabled gets the watchMigrationScreenDisabled property value. Indicates if the watch migration screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetWatchMigrationScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("watchMigrationScreenDisabled")
     if err != nil {
@@ -620,6 +649,7 @@ func (m *DepIOSEnrollmentProfile) GetWatchMigrationScreenDisabled()(*bool) {
     return nil
 }
 // GetWelcomeScreenDisabled gets the welcomeScreenDisabled property value. Indicates if Weclome screen is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetWelcomeScreenDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("welcomeScreenDisabled")
     if err != nil {
@@ -631,6 +661,7 @@ func (m *DepIOSEnrollmentProfile) GetWelcomeScreenDisabled()(*bool) {
     return nil
 }
 // GetZoomDisabled gets the zoomDisabled property value. Indicates if zoom setup pane is disabled
+// returns a *bool when successful
 func (m *DepIOSEnrollmentProfile) GetZoomDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("zoomDisabled")
     if err != nil {
@@ -1033,7 +1064,6 @@ func (m *DepIOSEnrollmentProfile) SetZoomDisabled(value *bool)() {
         panic(err)
     }
 }
-// DepIOSEnrollmentProfileable 
 type DepIOSEnrollmentProfileable interface {
     DepEnrollmentBaseProfileable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

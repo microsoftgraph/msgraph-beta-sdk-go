@@ -9,7 +9,7 @@ import (
 type DeviceManagementConfigurationPolicy struct {
     Entity
 }
-// NewDeviceManagementConfigurationPolicy instantiates a new deviceManagementConfigurationPolicy and sets the default values.
+// NewDeviceManagementConfigurationPolicy instantiates a new DeviceManagementConfigurationPolicy and sets the default values.
 func NewDeviceManagementConfigurationPolicy()(*DeviceManagementConfigurationPolicy) {
     m := &DeviceManagementConfigurationPolicy{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceManagementConfigurationPolicy()(*DeviceManagementConfigurationPoli
     return m
 }
 // CreateDeviceManagementConfigurationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationPolicy(), nil
 }
 // GetAssignments gets the assignments property value. Policy assignments
+// returns a []DeviceManagementConfigurationPolicyAssignmentable when successful
 func (m *DeviceManagementConfigurationPolicy) GetAssignments()([]DeviceManagementConfigurationPolicyAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceManagementConfigurationPolicy) GetAssignments()([]DeviceManagemen
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Policy creation date and time
+// returns a *Time when successful
 func (m *DeviceManagementConfigurationPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceManagementConfigurationPolicy) GetCreatedDateTime()(*i336074805fc
     return nil
 }
 // GetCreationSource gets the creationSource property value. Policy creation source
+// returns a *string when successful
 func (m *DeviceManagementConfigurationPolicy) GetCreationSource()(*string) {
     val, err := m.GetBackingStore().Get("creationSource")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *DeviceManagementConfigurationPolicy) GetCreationSource()(*string) {
     return nil
 }
 // GetDescription gets the description property value. Policy description
+// returns a *string when successful
 func (m *DeviceManagementConfigurationPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *DeviceManagementConfigurationPolicy) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -228,6 +234,7 @@ func (m *DeviceManagementConfigurationPolicy) GetFieldDeserializers()(map[string
     return res
 }
 // GetIsAssigned gets the isAssigned property value. Policy assignment status. This property is read-only.
+// returns a *bool when successful
 func (m *DeviceManagementConfigurationPolicy) GetIsAssigned()(*bool) {
     val, err := m.GetBackingStore().Get("isAssigned")
     if err != nil {
@@ -239,6 +246,7 @@ func (m *DeviceManagementConfigurationPolicy) GetIsAssigned()(*bool) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Policy last modification date and time
+// returns a *Time when successful
 func (m *DeviceManagementConfigurationPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -250,6 +258,7 @@ func (m *DeviceManagementConfigurationPolicy) GetLastModifiedDateTime()(*i336074
     return nil
 }
 // GetName gets the name property value. Policy name
+// returns a *string when successful
 func (m *DeviceManagementConfigurationPolicy) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -261,6 +270,7 @@ func (m *DeviceManagementConfigurationPolicy) GetName()(*string) {
     return nil
 }
 // GetPlatforms gets the platforms property value. Supported platform types.
+// returns a *DeviceManagementConfigurationPlatforms when successful
 func (m *DeviceManagementConfigurationPolicy) GetPlatforms()(*DeviceManagementConfigurationPlatforms) {
     val, err := m.GetBackingStore().Get("platforms")
     if err != nil {
@@ -272,6 +282,7 @@ func (m *DeviceManagementConfigurationPolicy) GetPlatforms()(*DeviceManagementCo
     return nil
 }
 // GetPriorityMetaData gets the priorityMetaData property value. Indicates the priority of each policies that are selected by the admin during enrollment process
+// returns a DeviceManagementPriorityMetaDataable when successful
 func (m *DeviceManagementConfigurationPolicy) GetPriorityMetaData()(DeviceManagementPriorityMetaDataable) {
     val, err := m.GetBackingStore().Get("priorityMetaData")
     if err != nil {
@@ -283,6 +294,7 @@ func (m *DeviceManagementConfigurationPolicy) GetPriorityMetaData()(DeviceManage
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+// returns a []string when successful
 func (m *DeviceManagementConfigurationPolicy) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -294,6 +306,7 @@ func (m *DeviceManagementConfigurationPolicy) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetSettingCount gets the settingCount property value. Number of settings
+// returns a *int32 when successful
 func (m *DeviceManagementConfigurationPolicy) GetSettingCount()(*int32) {
     val, err := m.GetBackingStore().Get("settingCount")
     if err != nil {
@@ -305,6 +318,7 @@ func (m *DeviceManagementConfigurationPolicy) GetSettingCount()(*int32) {
     return nil
 }
 // GetSettings gets the settings property value. Policy settings
+// returns a []DeviceManagementConfigurationSettingable when successful
 func (m *DeviceManagementConfigurationPolicy) GetSettings()([]DeviceManagementConfigurationSettingable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -316,6 +330,7 @@ func (m *DeviceManagementConfigurationPolicy) GetSettings()([]DeviceManagementCo
     return nil
 }
 // GetTechnologies gets the technologies property value. Describes which technology this setting can be deployed with
+// returns a *DeviceManagementConfigurationTechnologies when successful
 func (m *DeviceManagementConfigurationPolicy) GetTechnologies()(*DeviceManagementConfigurationTechnologies) {
     val, err := m.GetBackingStore().Get("technologies")
     if err != nil {
@@ -327,6 +342,7 @@ func (m *DeviceManagementConfigurationPolicy) GetTechnologies()(*DeviceManagemen
     return nil
 }
 // GetTemplateReference gets the templateReference property value. Template reference information
+// returns a DeviceManagementConfigurationPolicyTemplateReferenceable when successful
 func (m *DeviceManagementConfigurationPolicy) GetTemplateReference()(DeviceManagementConfigurationPolicyTemplateReferenceable) {
     val, err := m.GetBackingStore().Get("templateReference")
     if err != nil {
@@ -535,7 +551,6 @@ func (m *DeviceManagementConfigurationPolicy) SetTemplateReference(value DeviceM
         panic(err)
     }
 }
-// DeviceManagementConfigurationPolicyable 
 type DeviceManagementConfigurationPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

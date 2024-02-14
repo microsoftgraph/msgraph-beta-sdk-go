@@ -24,20 +24,22 @@ type ItemPhotosItemValueContentRequestBuilderPutRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemPhotosItemValueContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
+// NewItemPhotosItemValueContentRequestBuilderInternal instantiates a new ItemPhotosItemValueContentRequestBuilder and sets the default values.
 func NewItemPhotosItemValueContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPhotosItemValueContentRequestBuilder) {
     m := &ItemPhotosItemValueContentRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos/{profilePhoto%2Did}/$value", pathParameters),
     }
     return m
 }
-// NewItemPhotosItemValueContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.
+// NewItemPhotosItemValueContentRequestBuilder instantiates a new ItemPhotosItemValueContentRequestBuilder and sets the default values.
 func NewItemPhotosItemValueContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPhotosItemValueContentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPhotosItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property photos from groups
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
@@ -47,8 +49,7 @@ func (m *ItemPhotosItemValueContentRequestBuilder) Get(ctx context.Context, requ
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -60,14 +61,15 @@ func (m *ItemPhotosItemValueContentRequestBuilder) Get(ctx context.Context, requ
     return res.([]byte), nil
 }
 // Put update media content for the navigation property photos in groups
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPhotosItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemPhotosItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -79,6 +81,7 @@ func (m *ItemPhotosItemValueContentRequestBuilder) Put(ctx context.Context, body
     return res.([]byte), nil
 }
 // ToGetRequestInformation get media content for the navigation property photos from groups
+// returns a *RequestInformation when successful
 func (m *ItemPhotosItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPhotosItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *ItemPhotosItemValueContentRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // ToPutRequestInformation update media content for the navigation property photos in groups
+// returns a *RequestInformation when successful
 func (m *ItemPhotosItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemPhotosItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *ItemPhotosItemValueContentRequestBuilder) ToPutRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPhotosItemValueContentRequestBuilder when successful
 func (m *ItemPhotosItemValueContentRequestBuilder) WithUrl(rawUrl string)(*ItemPhotosItemValueContentRequestBuilder) {
     return NewItemPhotosItemValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

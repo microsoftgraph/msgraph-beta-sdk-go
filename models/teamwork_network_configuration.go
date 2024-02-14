@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamworkNetworkConfiguration 
 type TeamworkNetworkConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamworkNetworkConfiguration instantiates a new teamworkNetworkConfiguration and sets the default values.
+// NewTeamworkNetworkConfiguration instantiates a new TeamworkNetworkConfiguration and sets the default values.
 func NewTeamworkNetworkConfiguration()(*TeamworkNetworkConfiguration) {
     m := &TeamworkNetworkConfiguration{
     }
@@ -19,10 +18,12 @@ func NewTeamworkNetworkConfiguration()(*TeamworkNetworkConfiguration) {
     return m
 }
 // CreateTeamworkNetworkConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkNetworkConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkNetworkConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamworkNetworkConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TeamworkNetworkConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamworkNetworkConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDefaultGateway gets the defaultGateway property value. The default gateway is the path used to pass information when the destination is unknown to the device.
+// returns a *string when successful
 func (m *TeamworkNetworkConfiguration) GetDefaultGateway()(*string) {
     val, err := m.GetBackingStore().Get("defaultGateway")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TeamworkNetworkConfiguration) GetDefaultGateway()(*string) {
     return nil
 }
 // GetDomainName gets the domainName property value. The network domain of the device, for example, contoso.com.
+// returns a *string when successful
 func (m *TeamworkNetworkConfiguration) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *TeamworkNetworkConfiguration) GetDomainName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["defaultGateway"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -166,6 +171,7 @@ func (m *TeamworkNetworkConfiguration) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetHostName gets the hostName property value. The device name on a network.
+// returns a *string when successful
 func (m *TeamworkNetworkConfiguration) GetHostName()(*string) {
     val, err := m.GetBackingStore().Get("hostName")
     if err != nil {
@@ -177,6 +183,7 @@ func (m *TeamworkNetworkConfiguration) GetHostName()(*string) {
     return nil
 }
 // GetIpAddress gets the ipAddress property value. The IP address is a numerical label that uniquely identifies every device connected to the internet.
+// returns a *string when successful
 func (m *TeamworkNetworkConfiguration) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -188,6 +195,7 @@ func (m *TeamworkNetworkConfiguration) GetIpAddress()(*string) {
     return nil
 }
 // GetIsDhcpEnabled gets the isDhcpEnabled property value. True if DHCP is enabled.
+// returns a *bool when successful
 func (m *TeamworkNetworkConfiguration) GetIsDhcpEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDhcpEnabled")
     if err != nil {
@@ -199,6 +207,7 @@ func (m *TeamworkNetworkConfiguration) GetIsDhcpEnabled()(*bool) {
     return nil
 }
 // GetIsPCPortEnabled gets the isPCPortEnabled property value. True if the PC port is enabled.
+// returns a *bool when successful
 func (m *TeamworkNetworkConfiguration) GetIsPCPortEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isPCPortEnabled")
     if err != nil {
@@ -210,6 +219,7 @@ func (m *TeamworkNetworkConfiguration) GetIsPCPortEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamworkNetworkConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -221,6 +231,7 @@ func (m *TeamworkNetworkConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetPrimaryDns gets the primaryDns property value. A primary DNS is the first point of contact for a device that translates the hostname into an IP address.
+// returns a *string when successful
 func (m *TeamworkNetworkConfiguration) GetPrimaryDns()(*string) {
     val, err := m.GetBackingStore().Get("primaryDns")
     if err != nil {
@@ -232,6 +243,7 @@ func (m *TeamworkNetworkConfiguration) GetPrimaryDns()(*string) {
     return nil
 }
 // GetSecondaryDns gets the secondaryDns property value. A secondary DNS is used when the primary DNS is not available.
+// returns a *string when successful
 func (m *TeamworkNetworkConfiguration) GetSecondaryDns()(*string) {
     val, err := m.GetBackingStore().Get("secondaryDns")
     if err != nil {
@@ -243,6 +255,7 @@ func (m *TeamworkNetworkConfiguration) GetSecondaryDns()(*string) {
     return nil
 }
 // GetSubnetMask gets the subnetMask property value. A subnet mask is a number that distinguishes the network address and the host address within an IP address.
+// returns a *string when successful
 func (m *TeamworkNetworkConfiguration) GetSubnetMask()(*string) {
     val, err := m.GetBackingStore().Get("subnetMask")
     if err != nil {
@@ -404,7 +417,6 @@ func (m *TeamworkNetworkConfiguration) SetSubnetMask(value *string)() {
         panic(err)
     }
 }
-// TeamworkNetworkConfigurationable 
 type TeamworkNetworkConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

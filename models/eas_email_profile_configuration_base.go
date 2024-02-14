@@ -8,7 +8,7 @@ import (
 type EasEmailProfileConfigurationBase struct {
     DeviceConfiguration
 }
-// NewEasEmailProfileConfigurationBase instantiates a new easEmailProfileConfigurationBase and sets the default values.
+// NewEasEmailProfileConfigurationBase instantiates a new EasEmailProfileConfigurationBase and sets the default values.
 func NewEasEmailProfileConfigurationBase()(*EasEmailProfileConfigurationBase) {
     m := &EasEmailProfileConfigurationBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewEasEmailProfileConfigurationBase()(*EasEmailProfileConfigurationBase) {
     return m
 }
 // CreateEasEmailProfileConfigurationBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEasEmailProfileConfigurationBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -44,6 +45,7 @@ func CreateEasEmailProfileConfigurationBaseFromDiscriminatorValue(parseNode i878
     return NewEasEmailProfileConfigurationBase(), nil
 }
 // GetCustomDomainName gets the customDomainName property value. Custom domain name value used while generating an email profile before installing on the device.
+// returns a *string when successful
 func (m *EasEmailProfileConfigurationBase) GetCustomDomainName()(*string) {
     val, err := m.GetBackingStore().Get("customDomainName")
     if err != nil {
@@ -55,6 +57,7 @@ func (m *EasEmailProfileConfigurationBase) GetCustomDomainName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EasEmailProfileConfigurationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["customDomainName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,6 +103,7 @@ func (m *EasEmailProfileConfigurationBase) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
+// returns a *DomainNameSource when successful
 func (m *EasEmailProfileConfigurationBase) GetUserDomainNameSource()(*DomainNameSource) {
     val, err := m.GetBackingStore().Get("userDomainNameSource")
     if err != nil {
@@ -111,6 +115,7 @@ func (m *EasEmailProfileConfigurationBase) GetUserDomainNameSource()(*DomainName
     return nil
 }
 // GetUsernameAADSource gets the usernameAADSource property value. Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
+// returns a *UsernameSource when successful
 func (m *EasEmailProfileConfigurationBase) GetUsernameAADSource()(*UsernameSource) {
     val, err := m.GetBackingStore().Get("usernameAADSource")
     if err != nil {
@@ -122,6 +127,7 @@ func (m *EasEmailProfileConfigurationBase) GetUsernameAADSource()(*UsernameSourc
     return nil
 }
 // GetUsernameSource gets the usernameSource property value. Possible values for username source or email source.
+// returns a *UserEmailSource when successful
 func (m *EasEmailProfileConfigurationBase) GetUsernameSource()(*UserEmailSource) {
     val, err := m.GetBackingStore().Get("usernameSource")
     if err != nil {
@@ -195,7 +201,6 @@ func (m *EasEmailProfileConfigurationBase) SetUsernameSource(value *UserEmailSou
         panic(err)
     }
 }
-// EasEmailProfileConfigurationBaseable 
 type EasEmailProfileConfigurationBaseable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

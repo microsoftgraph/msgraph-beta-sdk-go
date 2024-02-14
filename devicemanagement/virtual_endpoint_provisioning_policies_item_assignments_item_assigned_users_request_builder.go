@@ -41,6 +41,7 @@ type VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestB
 }
 // ByUserId provides operations to manage the assignedUsers property of the microsoft.graph.cloudPcProvisioningPolicyAssignment entity.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) ByUserId(userId string)(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -51,33 +52,35 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequ
     }
     return NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersUserItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilderInternal instantiates a new AssignedUsersRequestBuilder and sets the default values.
+// NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilderInternal instantiates a new VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) {
     m := &VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments/{cloudPcProvisioningPolicyAssignment%2Did}/assignedUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments/{cloudPcProvisioningPolicyAssignment%2Did}/assignedUsers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder instantiates a new AssignedUsersRequestBuilder and sets the default values.
+// NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder instantiates a new VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersCountRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) Count()(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersCountRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a UserCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequ
 }
 // ToGetRequestInformation the assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -104,6 +108,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequ
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
+// returns a *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemAssignedUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

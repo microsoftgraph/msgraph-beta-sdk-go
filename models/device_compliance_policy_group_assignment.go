@@ -8,7 +8,7 @@ import (
 type DeviceCompliancePolicyGroupAssignment struct {
     Entity
 }
-// NewDeviceCompliancePolicyGroupAssignment instantiates a new deviceCompliancePolicyGroupAssignment and sets the default values.
+// NewDeviceCompliancePolicyGroupAssignment instantiates a new DeviceCompliancePolicyGroupAssignment and sets the default values.
 func NewDeviceCompliancePolicyGroupAssignment()(*DeviceCompliancePolicyGroupAssignment) {
     m := &DeviceCompliancePolicyGroupAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceCompliancePolicyGroupAssignment()(*DeviceCompliancePolicyGroupAssi
     return m
 }
 // CreateDeviceCompliancePolicyGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceCompliancePolicyGroupAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceCompliancePolicyGroupAssignment(), nil
 }
 // GetDeviceCompliancePolicy gets the deviceCompliancePolicy property value. The navigation link to the  device compliance polic targeted.
+// returns a DeviceCompliancePolicyable when successful
 func (m *DeviceCompliancePolicyGroupAssignment) GetDeviceCompliancePolicy()(DeviceCompliancePolicyable) {
     val, err := m.GetBackingStore().Get("deviceCompliancePolicy")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceCompliancePolicyGroupAssignment) GetDeviceCompliancePolicy()(Devi
     return nil
 }
 // GetExcludeGroup gets the excludeGroup property value. Indicates if this group is should be excluded. Defaults that the group should be included
+// returns a *bool when successful
 func (m *DeviceCompliancePolicyGroupAssignment) GetExcludeGroup()(*bool) {
     val, err := m.GetBackingStore().Get("excludeGroup")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *DeviceCompliancePolicyGroupAssignment) GetExcludeGroup()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceCompliancePolicyGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceCompliancePolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +81,7 @@ func (m *DeviceCompliancePolicyGroupAssignment) GetFieldDeserializers()(map[stri
     return res
 }
 // GetTargetGroupId gets the targetGroupId property value. The Id of the AAD group we are targeting the device compliance policy to.
+// returns a *string when successful
 func (m *DeviceCompliancePolicyGroupAssignment) GetTargetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("targetGroupId")
     if err != nil {
@@ -134,7 +139,6 @@ func (m *DeviceCompliancePolicyGroupAssignment) SetTargetGroupId(value *string)(
         panic(err)
     }
 }
-// DeviceCompliancePolicyGroupAssignmentable 
 type DeviceCompliancePolicyGroupAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type RevokeAppleVppLicensesActionResult struct {
     DeviceActionResult
 }
-// NewRevokeAppleVppLicensesActionResult instantiates a new revokeAppleVppLicensesActionResult and sets the default values.
+// NewRevokeAppleVppLicensesActionResult instantiates a new RevokeAppleVppLicensesActionResult and sets the default values.
 func NewRevokeAppleVppLicensesActionResult()(*RevokeAppleVppLicensesActionResult) {
     m := &RevokeAppleVppLicensesActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
@@ -16,10 +16,12 @@ func NewRevokeAppleVppLicensesActionResult()(*RevokeAppleVppLicensesActionResult
     return m
 }
 // CreateRevokeAppleVppLicensesActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRevokeAppleVppLicensesActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRevokeAppleVppLicensesActionResult(), nil
 }
 // GetFailedLicensesCount gets the failedLicensesCount property value. Total number of Apple Vpp licenses that failed to revoke
+// returns a *int32 when successful
 func (m *RevokeAppleVppLicensesActionResult) GetFailedLicensesCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedLicensesCount")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *RevokeAppleVppLicensesActionResult) GetFailedLicensesCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RevokeAppleVppLicensesActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceActionResult.GetFieldDeserializers()
     res["failedLicensesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +59,7 @@ func (m *RevokeAppleVppLicensesActionResult) GetFieldDeserializers()(map[string]
     return res
 }
 // GetTotalLicensesCount gets the totalLicensesCount property value. Total number of Apple Vpp licenses associated
+// returns a *int32 when successful
 func (m *RevokeAppleVppLicensesActionResult) GetTotalLicensesCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalLicensesCount")
     if err != nil {
@@ -100,7 +104,6 @@ func (m *RevokeAppleVppLicensesActionResult) SetTotalLicensesCount(value *int32)
         panic(err)
     }
 }
-// RevokeAppleVppLicensesActionResultable 
 type RevokeAppleVppLicensesActionResultable interface {
     DeviceActionResultable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

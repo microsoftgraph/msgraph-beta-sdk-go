@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternalUsersSelfServiceSignUpEventsFlow 
 type ExternalUsersSelfServiceSignUpEventsFlow struct {
     AuthenticationEventsFlow
 }
-// NewExternalUsersSelfServiceSignUpEventsFlow instantiates a new externalUsersSelfServiceSignUpEventsFlow and sets the default values.
+// NewExternalUsersSelfServiceSignUpEventsFlow instantiates a new ExternalUsersSelfServiceSignUpEventsFlow and sets the default values.
 func NewExternalUsersSelfServiceSignUpEventsFlow()(*ExternalUsersSelfServiceSignUpEventsFlow) {
     m := &ExternalUsersSelfServiceSignUpEventsFlow{
         AuthenticationEventsFlow: *NewAuthenticationEventsFlow(),
@@ -18,10 +17,12 @@ func NewExternalUsersSelfServiceSignUpEventsFlow()(*ExternalUsersSelfServiceSign
     return m
 }
 // CreateExternalUsersSelfServiceSignUpEventsFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternalUsersSelfServiceSignUpEventsFlowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalUsersSelfServiceSignUpEventsFlow(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationEventsFlow.GetFieldDeserializers()
     res["onAttributeCollection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +88,7 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetFieldDeserializers()(map[s
     return res
 }
 // GetOnAttributeCollection gets the onAttributeCollection property value. The configuration for what to invoke when attributes are ready to be collected from the user.
+// returns a OnAttributeCollectionHandlerable when successful
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollection()(OnAttributeCollectionHandlerable) {
     val, err := m.GetBackingStore().Get("onAttributeCollection")
     if err != nil {
@@ -98,6 +100,7 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollection()(On
     return nil
 }
 // GetOnAttributeCollectionStart gets the onAttributeCollectionStart property value. The configuration for what to invoke when attribution collection has started.
+// returns a OnAttributeCollectionStartHandlerable when successful
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollectionStart()(OnAttributeCollectionStartHandlerable) {
     val, err := m.GetBackingStore().Get("onAttributeCollectionStart")
     if err != nil {
@@ -109,6 +112,7 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollectionStart
     return nil
 }
 // GetOnAttributeCollectionSubmit gets the onAttributeCollectionSubmit property value. The configuration for what to invoke when attributes have been submitted at the end of attribution collection.
+// returns a OnAttributeCollectionSubmitHandlerable when successful
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollectionSubmit()(OnAttributeCollectionSubmitHandlerable) {
     val, err := m.GetBackingStore().Get("onAttributeCollectionSubmit")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollectionSubmi
     return nil
 }
 // GetOnAuthenticationMethodLoadStart gets the onAuthenticationMethodLoadStart property value. Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.
+// returns a OnAuthenticationMethodLoadStartHandlerable when successful
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAuthenticationMethodLoadStart()(OnAuthenticationMethodLoadStartHandlerable) {
     val, err := m.GetBackingStore().Get("onAuthenticationMethodLoadStart")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAuthenticationMethodLoad
     return nil
 }
 // GetOnInteractiveAuthFlowStart gets the onInteractiveAuthFlowStart property value. Required. The configuration for what to invoke when an authentication flow is ready to be initiated.
+// returns a OnInteractiveAuthFlowStartHandlerable when successful
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnInteractiveAuthFlowStart()(OnInteractiveAuthFlowStartHandlerable) {
     val, err := m.GetBackingStore().Get("onInteractiveAuthFlowStart")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnInteractiveAuthFlowStart
     return nil
 }
 // GetOnUserCreateStart gets the onUserCreateStart property value. The configuration for what to invoke during user creation.
+// returns a OnUserCreateStartHandlerable when successful
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnUserCreateStart()(OnUserCreateStartHandlerable) {
     val, err := m.GetBackingStore().Get("onUserCreateStart")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) SetOnUserCreateStart(value On
         panic(err)
     }
 }
-// ExternalUsersSelfServiceSignUpEventsFlowable 
 type ExternalUsersSelfServiceSignUpEventsFlowable interface {
     AuthenticationEventsFlowable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

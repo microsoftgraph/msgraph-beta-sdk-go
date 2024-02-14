@@ -17,20 +17,21 @@ type ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilderPost
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilderInternal instantiates a new AcceptRecommendationsRequestBuilder and sets the default values.
+// NewItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilderInternal instantiates a new ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder and sets the default values.
 func NewItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder) {
     m := &ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/acceptRecommendations", pathParameters),
     }
     return m
 }
-// NewItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder instantiates a new AcceptRecommendationsRequestBuilder and sets the default values.
+// NewItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder instantiates a new ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder and sets the default values.
 func NewItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed for an accessReviewInstance object for which the calling user is a reviewer. Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object. If there isn't a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-acceptrecommendations?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder
     return nil
 }
 // ToPostRequestInformation allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that haven't been reviewed for an accessReviewInstance object for which the calling user is a reviewer. Recommendations are generated if recommendationsEnabled is true on the accessReviewScheduleDefinition object. If there isn't a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
+// returns a *RequestInformation when successful
 func (m *ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder) WithUrl(rawUrl string)(*ItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemAcceptRecommendationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProviderTenantSetting 
 type ProviderTenantSetting struct {
     Entity
 }
-// NewProviderTenantSetting instantiates a new providerTenantSetting and sets the default values.
+// NewProviderTenantSetting instantiates a new ProviderTenantSetting and sets the default values.
 func NewProviderTenantSetting()(*ProviderTenantSetting) {
     m := &ProviderTenantSetting{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewProviderTenantSetting()(*ProviderTenantSetting) {
     return m
 }
 // CreateProviderTenantSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProviderTenantSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProviderTenantSetting(), nil
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
+// returns a *string when successful
 func (m *ProviderTenantSetting) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ProviderTenantSetting) GetAzureTenantId()(*string) {
     return nil
 }
 // GetEnabled gets the enabled property value. The enabled property
+// returns a *bool when successful
 func (m *ProviderTenantSetting) GetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("enabled")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ProviderTenantSetting) GetEnabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["azureTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +101,7 @@ func (m *ProviderTenantSetting) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *ProviderTenantSetting) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *ProviderTenantSetting) GetLastModifiedDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetProvider gets the provider property value. The provider property
+// returns a *string when successful
 func (m *ProviderTenantSetting) GetProvider()(*string) {
     val, err := m.GetBackingStore().Get("provider")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *ProviderTenantSetting) GetProvider()(*string) {
     return nil
 }
 // GetVendorEscaped gets the vendor property value. The vendor property
+// returns a *string when successful
 func (m *ProviderTenantSetting) GetVendorEscaped()(*string) {
     val, err := m.GetBackingStore().Get("vendorEscaped")
     if err != nil {
@@ -203,7 +209,6 @@ func (m *ProviderTenantSetting) SetVendorEscaped(value *string)() {
         panic(err)
     }
 }
-// ProviderTenantSettingable 
 type ProviderTenantSettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

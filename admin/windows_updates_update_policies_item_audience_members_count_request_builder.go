@@ -26,28 +26,29 @@ type WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilderGetReques
     // Request query parameters
     QueryParameters *WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilderGetQueryParameters
 }
-// NewWindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewWindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilderInternal instantiates a new WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder) {
     m := &WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/audience/members/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/audience/members/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewWindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewWindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder instantiates a new WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder) Get
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder) ToG
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder when successful
 func (m *WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder) {
     return NewWindowsUpdatesUpdatePoliciesItemAudienceMembersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

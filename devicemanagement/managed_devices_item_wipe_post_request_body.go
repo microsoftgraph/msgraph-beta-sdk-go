@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ManagedDevicesItemWipePostRequestBody 
 type ManagedDevicesItemWipePostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewManagedDevicesItemWipePostRequestBody()(*ManagedDevicesItemWipePostReque
     return m
 }
 // CreateManagedDevicesItemWipePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedDevicesItemWipePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDevicesItemWipePostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ManagedDevicesItemWipePostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ManagedDevicesItemWipePostRequestBody) GetAdditionalData()(map[string]a
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ManagedDevicesItemWipePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedDevicesItemWipePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["keepEnrollmentData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +108,7 @@ func (m *ManagedDevicesItemWipePostRequestBody) GetFieldDeserializers()(map[stri
     return res
 }
 // GetKeepEnrollmentData gets the keepEnrollmentData property value. The keepEnrollmentData property
+// returns a *bool when successful
 func (m *ManagedDevicesItemWipePostRequestBody) GetKeepEnrollmentData()(*bool) {
     val, err := m.GetBackingStore().Get("keepEnrollmentData")
     if err != nil {
@@ -116,6 +120,7 @@ func (m *ManagedDevicesItemWipePostRequestBody) GetKeepEnrollmentData()(*bool) {
     return nil
 }
 // GetKeepUserData gets the keepUserData property value. The keepUserData property
+// returns a *bool when successful
 func (m *ManagedDevicesItemWipePostRequestBody) GetKeepUserData()(*bool) {
     val, err := m.GetBackingStore().Get("keepUserData")
     if err != nil {
@@ -127,6 +132,7 @@ func (m *ManagedDevicesItemWipePostRequestBody) GetKeepUserData()(*bool) {
     return nil
 }
 // GetMacOsUnlockCode gets the macOsUnlockCode property value. The macOsUnlockCode property
+// returns a *string when successful
 func (m *ManagedDevicesItemWipePostRequestBody) GetMacOsUnlockCode()(*string) {
     val, err := m.GetBackingStore().Get("macOsUnlockCode")
     if err != nil {
@@ -138,6 +144,7 @@ func (m *ManagedDevicesItemWipePostRequestBody) GetMacOsUnlockCode()(*string) {
     return nil
 }
 // GetObliterationBehavior gets the obliterationBehavior property value. The obliterationBehavior property
+// returns a *ObliterationBehavior when successful
 func (m *ManagedDevicesItemWipePostRequestBody) GetObliterationBehavior()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ObliterationBehavior) {
     val, err := m.GetBackingStore().Get("obliterationBehavior")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *ManagedDevicesItemWipePostRequestBody) GetObliterationBehavior()(*ie233
     return nil
 }
 // GetPersistEsimDataPlan gets the persistEsimDataPlan property value. The persistEsimDataPlan property
+// returns a *bool when successful
 func (m *ManagedDevicesItemWipePostRequestBody) GetPersistEsimDataPlan()(*bool) {
     val, err := m.GetBackingStore().Get("persistEsimDataPlan")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *ManagedDevicesItemWipePostRequestBody) GetPersistEsimDataPlan()(*bool) 
     return nil
 }
 // GetUseProtectedWipe gets the useProtectedWipe property value. The useProtectedWipe property
+// returns a *bool when successful
 func (m *ManagedDevicesItemWipePostRequestBody) GetUseProtectedWipe()(*bool) {
     val, err := m.GetBackingStore().Get("useProtectedWipe")
     if err != nil {
@@ -270,7 +279,6 @@ func (m *ManagedDevicesItemWipePostRequestBody) SetUseProtectedWipe(value *bool)
         panic(err)
     }
 }
-// ManagedDevicesItemWipePostRequestBodyable 
 type ManagedDevicesItemWipePostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

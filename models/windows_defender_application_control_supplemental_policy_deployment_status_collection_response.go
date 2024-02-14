@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse 
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse instantiates a new windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse and sets the default values.
+// NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse()(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse) {
     m := &WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusColle
     return m
 }
 // CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusColl
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponse) GetValue()([]WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusColl
         panic(err)
     }
 }
-// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponseable 
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

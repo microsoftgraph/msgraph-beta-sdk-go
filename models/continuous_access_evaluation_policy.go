@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContinuousAccessEvaluationPolicy 
 type ContinuousAccessEvaluationPolicy struct {
     Entity
 }
-// NewContinuousAccessEvaluationPolicy instantiates a new continuousAccessEvaluationPolicy and sets the default values.
+// NewContinuousAccessEvaluationPolicy instantiates a new ContinuousAccessEvaluationPolicy and sets the default values.
 func NewContinuousAccessEvaluationPolicy()(*ContinuousAccessEvaluationPolicy) {
     m := &ContinuousAccessEvaluationPolicy{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewContinuousAccessEvaluationPolicy()(*ContinuousAccessEvaluationPolicy) {
     return m
 }
 // CreateContinuousAccessEvaluationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContinuousAccessEvaluationPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContinuousAccessEvaluationPolicy(), nil
 }
 // GetDescription gets the description property value. Continuous access evaluation automatically blocks access to resources and applications in near real time when a user's access is removed or a client IP address changes. Read-only.
+// returns a *string when successful
 func (m *ContinuousAccessEvaluationPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The value is always Continuous Access Evaluation. Read-only.
+// returns a *string when successful
 func (m *ContinuousAccessEvaluationPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +122,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetGroups gets the groups property value. The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
+// returns a []string when successful
 func (m *ContinuousAccessEvaluationPolicy) GetGroups()([]string) {
     val, err := m.GetBackingStore().Get("groups")
     if err != nil {
@@ -130,6 +134,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetGroups()([]string) {
     return nil
 }
 // GetIsEnabled gets the isEnabled property value. true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
+// returns a *bool when successful
 func (m *ContinuousAccessEvaluationPolicy) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -141,6 +146,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetIsEnabled()(*bool) {
     return nil
 }
 // GetMigrate gets the migrate property value. true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
+// returns a *bool when successful
 func (m *ContinuousAccessEvaluationPolicy) GetMigrate()(*bool) {
     val, err := m.GetBackingStore().Get("migrate")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *ContinuousAccessEvaluationPolicy) GetMigrate()(*bool) {
     return nil
 }
 // GetUsers gets the users property value. The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
+// returns a []string when successful
 func (m *ContinuousAccessEvaluationPolicy) GetUsers()([]string) {
     val, err := m.GetBackingStore().Get("users")
     if err != nil {
@@ -248,7 +255,6 @@ func (m *ContinuousAccessEvaluationPolicy) SetUsers(value []string)() {
         panic(err)
     }
 }
-// ContinuousAccessEvaluationPolicyable 
 type ContinuousAccessEvaluationPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

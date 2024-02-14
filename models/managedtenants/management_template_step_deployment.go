@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementTemplateStepDeployment 
 type ManagementTemplateStepDeployment struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagementTemplateStepDeployment instantiates a new managementTemplateStepDeployment and sets the default values.
+// NewManagementTemplateStepDeployment instantiates a new ManagementTemplateStepDeployment and sets the default values.
 func NewManagementTemplateStepDeployment()(*ManagementTemplateStepDeployment) {
     m := &ManagementTemplateStepDeployment{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManagementTemplateStepDeployment()(*ManagementTemplateStepDeployment) {
     return m
 }
 // CreateManagementTemplateStepDeploymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagementTemplateStepDeploymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementTemplateStepDeployment(), nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
+// returns a *string when successful
 func (m *ManagementTemplateStepDeployment) GetCreatedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("createdByUserId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ManagementTemplateStepDeployment) GetCreatedByUserId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *ManagementTemplateStepDeployment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ManagementTemplateStepDeployment) GetCreatedDateTime()(*i336074805fc853
     return nil
 }
 // GetError gets the error property value. The error property
+// returns a GraphAPIErrorDetailsable when successful
 func (m *ManagementTemplateStepDeployment) GetError()(GraphAPIErrorDetailsable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ManagementTemplateStepDeployment) GetError()(GraphAPIErrorDetailsable) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,6 +144,7 @@ func (m *ManagementTemplateStepDeployment) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
+// returns a *string when successful
 func (m *ManagementTemplateStepDeployment) GetLastActionByUserId()(*string) {
     val, err := m.GetBackingStore().Get("lastActionByUserId")
     if err != nil {
@@ -151,6 +156,7 @@ func (m *ManagementTemplateStepDeployment) GetLastActionByUserId()(*string) {
     return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
+// returns a *Time when successful
 func (m *ManagementTemplateStepDeployment) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -162,6 +168,7 @@ func (m *ManagementTemplateStepDeployment) GetLastActionDateTime()(*i336074805fc
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *ManagementTemplateDeploymentStatus when successful
 func (m *ManagementTemplateStepDeployment) GetStatus()(*ManagementTemplateDeploymentStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -173,6 +180,7 @@ func (m *ManagementTemplateStepDeployment) GetStatus()(*ManagementTemplateDeploy
     return nil
 }
 // GetTemplateStepVersion gets the templateStepVersion property value. The templateStepVersion property
+// returns a ManagementTemplateStepVersionable when successful
 func (m *ManagementTemplateStepDeployment) GetTemplateStepVersion()(ManagementTemplateStepVersionable) {
     val, err := m.GetBackingStore().Get("templateStepVersion")
     if err != nil {
@@ -184,6 +192,7 @@ func (m *ManagementTemplateStepDeployment) GetTemplateStepVersion()(ManagementTe
     return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
+// returns a *string when successful
 func (m *ManagementTemplateStepDeployment) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -307,7 +316,6 @@ func (m *ManagementTemplateStepDeployment) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// ManagementTemplateStepDeploymentable 
 type ManagementTemplateStepDeploymentable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

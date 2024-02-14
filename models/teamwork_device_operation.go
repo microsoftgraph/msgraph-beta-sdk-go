@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamworkDeviceOperation 
 type TeamworkDeviceOperation struct {
     Entity
 }
-// NewTeamworkDeviceOperation instantiates a new teamworkDeviceOperation and sets the default values.
+// NewTeamworkDeviceOperation instantiates a new TeamworkDeviceOperation and sets the default values.
 func NewTeamworkDeviceOperation()(*TeamworkDeviceOperation) {
     m := &TeamworkDeviceOperation{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewTeamworkDeviceOperation()(*TeamworkDeviceOperation) {
     return m
 }
 // CreateTeamworkDeviceOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkDeviceOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkDeviceOperation(), nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
+// returns a *Time when successful
 func (m *TeamworkDeviceOperation) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TeamworkDeviceOperation) GetCompletedDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Identity of the user who created the device operation.
+// returns a IdentitySetable when successful
 func (m *TeamworkDeviceOperation) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TeamworkDeviceOperation) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The UTC date and time when the device operation was created.
+// returns a *Time when successful
 func (m *TeamworkDeviceOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *TeamworkDeviceOperation) GetCreatedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetError gets the error property value. Error details are available only in case of a failed status.
+// returns a OperationErrorable when successful
 func (m *TeamworkDeviceOperation) GetError()(OperationErrorable) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *TeamworkDeviceOperation) GetError()(OperationErrorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["completedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -160,6 +165,7 @@ func (m *TeamworkDeviceOperation) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetLastActionBy gets the lastActionBy property value. Identity of the user who last modified the device operation.
+// returns a IdentitySetable when successful
 func (m *TeamworkDeviceOperation) GetLastActionBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastActionBy")
     if err != nil {
@@ -171,6 +177,7 @@ func (m *TeamworkDeviceOperation) GetLastActionBy()(IdentitySetable) {
     return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The UTC date and time when the device operation was last modified.
+// returns a *Time when successful
 func (m *TeamworkDeviceOperation) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -182,6 +189,7 @@ func (m *TeamworkDeviceOperation) GetLastActionDateTime()(*i336074805fc853987abe
     return nil
 }
 // GetOperationType gets the operationType property value. The operationType property
+// returns a *TeamworkDeviceOperationType when successful
 func (m *TeamworkDeviceOperation) GetOperationType()(*TeamworkDeviceOperationType) {
     val, err := m.GetBackingStore().Get("operationType")
     if err != nil {
@@ -193,6 +201,7 @@ func (m *TeamworkDeviceOperation) GetOperationType()(*TeamworkDeviceOperationTyp
     return nil
 }
 // GetStartedDateTime gets the startedDateTime property value. Time at which the operation was started.
+// returns a *Time when successful
 func (m *TeamworkDeviceOperation) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startedDateTime")
     if err != nil {
@@ -204,6 +213,7 @@ func (m *TeamworkDeviceOperation) GetStartedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetStatus gets the status property value. The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
+// returns a *string when successful
 func (m *TeamworkDeviceOperation) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -340,7 +350,6 @@ func (m *TeamworkDeviceOperation) SetStatus(value *string)() {
         panic(err)
     }
 }
-// TeamworkDeviceOperationable 
 type TeamworkDeviceOperationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

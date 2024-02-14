@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AllowedDataLocation 
 type AllowedDataLocation struct {
     Entity
 }
-// NewAllowedDataLocation instantiates a new allowedDataLocation and sets the default values.
+// NewAllowedDataLocation instantiates a new AllowedDataLocation and sets the default values.
 func NewAllowedDataLocation()(*AllowedDataLocation) {
     m := &AllowedDataLocation{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAllowedDataLocation()(*AllowedDataLocation) {
     return m
 }
 // CreateAllowedDataLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAllowedDataLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAllowedDataLocation(), nil
 }
 // GetAppId gets the appId property value. The appId property
+// returns a *string when successful
 func (m *AllowedDataLocation) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AllowedDataLocation) GetAppId()(*string) {
     return nil
 }
 // GetDomain gets the domain property value. The domain property
+// returns a *string when successful
 func (m *AllowedDataLocation) GetDomain()(*string) {
     val, err := m.GetBackingStore().Get("domain")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AllowedDataLocation) GetDomain()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +90,7 @@ func (m *AllowedDataLocation) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIsDefault gets the isDefault property value. The isDefault property
+// returns a *bool when successful
 func (m *AllowedDataLocation) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *AllowedDataLocation) GetIsDefault()(*bool) {
     return nil
 }
 // GetLocation gets the location property value. The location property
+// returns a *string when successful
 func (m *AllowedDataLocation) GetLocation()(*string) {
     val, err := m.GetBackingStore().Get("location")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *AllowedDataLocation) SetLocation(value *string)() {
         panic(err)
     }
 }
-// AllowedDataLocationable 
 type AllowedDataLocationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

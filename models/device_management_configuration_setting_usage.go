@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Supported setting types
@@ -8,20 +9,22 @@ type DeviceManagementConfigurationSettingUsage int
 
 const (
     // Default. No setting type specified.
-    NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE DeviceManagementConfigurationSettingUsage = iota
+    NONE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE = 1
     // Configuration setting type.
-    CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+    CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE = 2
     // Compliance setting type.
-    COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+    COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE = 4
     // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE = 8
 )
 
 func (i DeviceManagementConfigurationSettingUsage) String() string {
     var values []string
-    for p := DeviceManagementConfigurationSettingUsage(1); p <= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "configuration", "compliance", "unknownFutureValue"}[p])
+    options := []string{"none", "configuration", "compliance", "unknownFutureValue"}
+    for p := 0; p < 4; p++ {
+        mantis := DeviceManagementConfigurationSettingUsage(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

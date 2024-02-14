@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamworkPeripheralsHealth 
 type TeamworkPeripheralsHealth struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamworkPeripheralsHealth instantiates a new teamworkPeripheralsHealth and sets the default values.
+// NewTeamworkPeripheralsHealth instantiates a new TeamworkPeripheralsHealth and sets the default values.
 func NewTeamworkPeripheralsHealth()(*TeamworkPeripheralsHealth) {
     m := &TeamworkPeripheralsHealth{
     }
@@ -19,10 +18,12 @@ func NewTeamworkPeripheralsHealth()(*TeamworkPeripheralsHealth) {
     return m
 }
 // CreateTeamworkPeripheralsHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkPeripheralsHealthFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkPeripheralsHealth(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamworkPeripheralsHealth) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TeamworkPeripheralsHealth) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamworkPeripheralsHealth) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCommunicationSpeakerHealth gets the communicationSpeakerHealth property value. The health details about the communication speaker.
+// returns a TeamworkPeripheralHealthable when successful
 func (m *TeamworkPeripheralsHealth) GetCommunicationSpeakerHealth()(TeamworkPeripheralHealthable) {
     val, err := m.GetBackingStore().Get("communicationSpeakerHealth")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TeamworkPeripheralsHealth) GetCommunicationSpeakerHealth()(TeamworkPeri
     return nil
 }
 // GetContentCameraHealth gets the contentCameraHealth property value. The health details about the content camera.
+// returns a TeamworkPeripheralHealthable when successful
 func (m *TeamworkPeripheralsHealth) GetContentCameraHealth()(TeamworkPeripheralHealthable) {
     val, err := m.GetBackingStore().Get("contentCameraHealth")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *TeamworkPeripheralsHealth) GetContentCameraHealth()(TeamworkPeripheralH
     return nil
 }
 // GetDisplayHealthCollection gets the displayHealthCollection property value. The health details about displays.
+// returns a []TeamworkPeripheralHealthable when successful
 func (m *TeamworkPeripheralsHealth) GetDisplayHealthCollection()([]TeamworkPeripheralHealthable) {
     val, err := m.GetBackingStore().Get("displayHealthCollection")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *TeamworkPeripheralsHealth) GetDisplayHealthCollection()([]TeamworkPerip
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["communicationSpeakerHealth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -153,6 +159,7 @@ func (m *TeamworkPeripheralsHealth) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetMicrophoneHealth gets the microphoneHealth property value. The health details about the microphone.
+// returns a TeamworkPeripheralHealthable when successful
 func (m *TeamworkPeripheralsHealth) GetMicrophoneHealth()(TeamworkPeripheralHealthable) {
     val, err := m.GetBackingStore().Get("microphoneHealth")
     if err != nil {
@@ -164,6 +171,7 @@ func (m *TeamworkPeripheralsHealth) GetMicrophoneHealth()(TeamworkPeripheralHeal
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamworkPeripheralsHealth) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -175,6 +183,7 @@ func (m *TeamworkPeripheralsHealth) GetOdataType()(*string) {
     return nil
 }
 // GetRoomCameraHealth gets the roomCameraHealth property value. The health details about the room camera.
+// returns a TeamworkPeripheralHealthable when successful
 func (m *TeamworkPeripheralsHealth) GetRoomCameraHealth()(TeamworkPeripheralHealthable) {
     val, err := m.GetBackingStore().Get("roomCameraHealth")
     if err != nil {
@@ -186,6 +195,7 @@ func (m *TeamworkPeripheralsHealth) GetRoomCameraHealth()(TeamworkPeripheralHeal
     return nil
 }
 // GetSpeakerHealth gets the speakerHealth property value. The health details about the speaker.
+// returns a TeamworkPeripheralHealthable when successful
 func (m *TeamworkPeripheralsHealth) GetSpeakerHealth()(TeamworkPeripheralHealthable) {
     val, err := m.GetBackingStore().Get("speakerHealth")
     if err != nil {
@@ -314,7 +324,6 @@ func (m *TeamworkPeripheralsHealth) SetSpeakerHealth(value TeamworkPeripheralHea
         panic(err)
     }
 }
-// TeamworkPeripheralsHealthable 
 type TeamworkPeripheralsHealthable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

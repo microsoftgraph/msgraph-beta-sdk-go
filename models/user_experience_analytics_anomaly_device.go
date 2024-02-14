@@ -9,7 +9,7 @@ import (
 type UserExperienceAnalyticsAnomalyDevice struct {
     Entity
 }
-// NewUserExperienceAnalyticsAnomalyDevice instantiates a new userExperienceAnalyticsAnomalyDevice and sets the default values.
+// NewUserExperienceAnalyticsAnomalyDevice instantiates a new UserExperienceAnalyticsAnomalyDevice and sets the default values.
 func NewUserExperienceAnalyticsAnomalyDevice()(*UserExperienceAnalyticsAnomalyDevice) {
     m := &UserExperienceAnalyticsAnomalyDevice{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewUserExperienceAnalyticsAnomalyDevice()(*UserExperienceAnalyticsAnomalyDe
     return m
 }
 // CreateUserExperienceAnalyticsAnomalyDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsAnomalyDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAnomalyDevice(), nil
 }
 // GetAnomalyId gets the anomalyId property value. The unique identifier of the anomaly.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetAnomalyId()(*string) {
     val, err := m.GetBackingStore().Get("anomalyId")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetAnomalyId()(*string) {
     return nil
 }
 // GetAnomalyOnDeviceFirstOccurrenceDateTime gets the anomalyOnDeviceFirstOccurrenceDateTime property value. Indicates the first occurance date and time for the anomaly on the device.
+// returns a *Time when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetAnomalyOnDeviceFirstOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("anomalyOnDeviceFirstOccurrenceDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetAnomalyOnDeviceFirstOccurrence
     return nil
 }
 // GetAnomalyOnDeviceLatestOccurrenceDateTime gets the anomalyOnDeviceLatestOccurrenceDateTime property value. Indicates the latest occurance date and time for the anomaly on the device.
+// returns a *Time when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetAnomalyOnDeviceLatestOccurrenceDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("anomalyOnDeviceLatestOccurrenceDateTime")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetAnomalyOnDeviceLatestOccurrenc
     return nil
 }
 // GetCorrelationGroupId gets the correlationGroupId property value. The unique identifier of the correlation group.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetCorrelationGroupId()(*string) {
     val, err := m.GetBackingStore().Get("correlationGroupId")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetCorrelationGroupId()(*string) 
     return nil
 }
 // GetDeviceId gets the deviceId property value. The unique identifier of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceManufacturer gets the deviceManufacturer property value. The manufacturer name of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("deviceManufacturer")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceManufacturer()(*string) 
     return nil
 }
 // GetDeviceModel gets the deviceModel property value. The model name of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceModel()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. The name of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -109,6 +118,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceName()(*string) {
     return nil
 }
 // GetDeviceStatus gets the deviceStatus property value. Indicates the status of the device in the correlation group. Eg: Device status can be anomalous, affected, at risk.
+// returns a *UserExperienceAnalyticsDeviceStatus when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceStatus()(*UserExperienceAnalyticsDeviceStatus) {
     val, err := m.GetBackingStore().Get("deviceStatus")
     if err != nil {
@@ -120,6 +130,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetDeviceStatus()(*UserExperience
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["anomalyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -235,6 +246,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetFieldDeserializers()(map[strin
     return res
 }
 // GetOsName gets the osName property value. The name of the OS installed on the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetOsName()(*string) {
     val, err := m.GetBackingStore().Get("osName")
     if err != nil {
@@ -246,6 +258,7 @@ func (m *UserExperienceAnalyticsAnomalyDevice) GetOsName()(*string) {
     return nil
 }
 // GetOsVersion gets the osVersion property value. The OS version installed on the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAnomalyDevice) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -408,7 +421,6 @@ func (m *UserExperienceAnalyticsAnomalyDevice) SetOsVersion(value *string)() {
         panic(err)
     }
 }
-// UserExperienceAnalyticsAnomalyDeviceable 
 type UserExperienceAnalyticsAnomalyDeviceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

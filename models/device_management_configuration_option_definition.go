@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DeviceManagementConfigurationOptionDefinition 
 type DeviceManagementConfigurationOptionDefinition struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceManagementConfigurationOptionDefinition instantiates a new deviceManagementConfigurationOptionDefinition and sets the default values.
+// NewDeviceManagementConfigurationOptionDefinition instantiates a new DeviceManagementConfigurationOptionDefinition and sets the default values.
 func NewDeviceManagementConfigurationOptionDefinition()(*DeviceManagementConfigurationOptionDefinition) {
     m := &DeviceManagementConfigurationOptionDefinition{
     }
@@ -19,10 +18,12 @@ func NewDeviceManagementConfigurationOptionDefinition()(*DeviceManagementConfigu
     return m
 }
 // CreateDeviceManagementConfigurationOptionDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationOptionDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationOptionDefinition(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetAdditionalData()(map[
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDependedOnBy gets the dependedOnBy property value. List of Settings that depends on this option
+// returns a []DeviceManagementConfigurationSettingDependedOnByable when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable) {
     val, err := m.GetBackingStore().Get("dependedOnBy")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetDependedOnBy()([]Devi
     return nil
 }
 // GetDependentOn gets the dependentOn property value. List of dependent settings for this option
+// returns a []DeviceManagementConfigurationDependentOnable when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetDependentOn()([]DeviceManagementConfigurationDependentOnable) {
     val, err := m.GetBackingStore().Get("dependentOn")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetDependentOn()([]Devic
     return nil
 }
 // GetDescription gets the description property value. Description of the option
+// returns a *string when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetDescription()(*string
     return nil
 }
 // GetDisplayName gets the displayName property value. Friendly name of the option
+// returns a *string when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetDisplayName()(*string
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dependedOnBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,6 +197,7 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetFieldDeserializers()(
     return res
 }
 // GetHelpText gets the helpText property value. Help text of the option
+// returns a *string when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetHelpText()(*string) {
     val, err := m.GetBackingStore().Get("helpText")
     if err != nil {
@@ -201,6 +209,7 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetHelpText()(*string) {
     return nil
 }
 // GetItemId gets the itemId property value. Identifier of option
+// returns a *string when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetItemId()(*string) {
     val, err := m.GetBackingStore().Get("itemId")
     if err != nil {
@@ -212,6 +221,7 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetItemId()(*string) {
     return nil
 }
 // GetName gets the name property value. Name of the option
+// returns a *string when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -223,6 +233,7 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -234,6 +245,7 @@ func (m *DeviceManagementConfigurationOptionDefinition) GetOdataType()(*string) 
     return nil
 }
 // GetOptionValue gets the optionValue property value. Value of the option
+// returns a DeviceManagementConfigurationSettingValueable when successful
 func (m *DeviceManagementConfigurationOptionDefinition) GetOptionValue()(DeviceManagementConfigurationSettingValueable) {
     val, err := m.GetBackingStore().Get("optionValue")
     if err != nil {
@@ -394,7 +406,6 @@ func (m *DeviceManagementConfigurationOptionDefinition) SetOptionValue(value Dev
         panic(err)
     }
 }
-// DeviceManagementConfigurationOptionDefinitionable 
 type DeviceManagementConfigurationOptionDefinitionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

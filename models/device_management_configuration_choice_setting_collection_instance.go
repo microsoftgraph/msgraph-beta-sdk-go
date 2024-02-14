@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationChoiceSettingCollectionInstance struct {
     DeviceManagementConfigurationSettingInstance
 }
-// NewDeviceManagementConfigurationChoiceSettingCollectionInstance instantiates a new deviceManagementConfigurationChoiceSettingCollectionInstance and sets the default values.
+// NewDeviceManagementConfigurationChoiceSettingCollectionInstance instantiates a new DeviceManagementConfigurationChoiceSettingCollectionInstance and sets the default values.
 func NewDeviceManagementConfigurationChoiceSettingCollectionInstance()(*DeviceManagementConfigurationChoiceSettingCollectionInstance) {
     m := &DeviceManagementConfigurationChoiceSettingCollectionInstance{
         DeviceManagementConfigurationSettingInstance: *NewDeviceManagementConfigurationSettingInstance(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationChoiceSettingCollectionInstance()(*DeviceMa
     return m
 }
 // CreateDeviceManagementConfigurationChoiceSettingCollectionInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationChoiceSettingCollectionInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationChoiceSettingCollectionInstance(), nil
 }
 // GetChoiceSettingCollectionValue gets the choiceSettingCollectionValue property value. Choice setting collection value
+// returns a []DeviceManagementConfigurationChoiceSettingValueable when successful
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstance) GetChoiceSettingCollectionValue()([]DeviceManagementConfigurationChoiceSettingValueable) {
     val, err := m.GetBackingStore().Get("choiceSettingCollectionValue")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionInstance) GetChoice
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationChoiceSettingCollectionInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingInstance.GetFieldDeserializers()
     res["choiceSettingCollectionValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,7 +83,6 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionInstance) SetChoice
         panic(err)
     }
 }
-// DeviceManagementConfigurationChoiceSettingCollectionInstanceable 
 type DeviceManagementConfigurationChoiceSettingCollectionInstanceable interface {
     DeviceManagementConfigurationSettingInstanceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

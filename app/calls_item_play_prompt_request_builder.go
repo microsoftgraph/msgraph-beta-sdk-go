@@ -18,20 +18,22 @@ type CallsItemPlayPromptRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCallsItemPlayPromptRequestBuilderInternal instantiates a new PlayPromptRequestBuilder and sets the default values.
+// NewCallsItemPlayPromptRequestBuilderInternal instantiates a new CallsItemPlayPromptRequestBuilder and sets the default values.
 func NewCallsItemPlayPromptRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemPlayPromptRequestBuilder) {
     m := &CallsItemPlayPromptRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/playPrompt", pathParameters),
     }
     return m
 }
-// NewCallsItemPlayPromptRequestBuilder instantiates a new PlayPromptRequestBuilder and sets the default values.
+// NewCallsItemPlayPromptRequestBuilder instantiates a new CallsItemPlayPromptRequestBuilder and sets the default values.
 func NewCallsItemPlayPromptRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemPlayPromptRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCallsItemPlayPromptRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post play a prompt in the call. For more information about how to handle operations, see commsOperation
+// returns a PlayPromptOperationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *CallsItemPlayPromptRequestBuilder) Post(ctx context.Context, body Calls
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlayPromptOperationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *CallsItemPlayPromptRequestBuilder) Post(ctx context.Context, body Calls
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlayPromptOperationable), nil
 }
 // ToPostRequestInformation play a prompt in the call. For more information about how to handle operations, see commsOperation
+// returns a *RequestInformation when successful
 func (m *CallsItemPlayPromptRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemPlayPromptPostRequestBodyable, requestConfiguration *CallsItemPlayPromptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *CallsItemPlayPromptRequestBuilder) ToPostRequestInformation(ctx context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CallsItemPlayPromptRequestBuilder when successful
 func (m *CallsItemPlayPromptRequestBuilder) WithUrl(rawUrl string)(*CallsItemPlayPromptRequestBuilder) {
     return NewCallsItemPlayPromptRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

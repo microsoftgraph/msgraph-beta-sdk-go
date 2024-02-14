@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityDetail 
 type Office365GroupsActivityDetail struct {
     Entity
 }
-// NewOffice365GroupsActivityDetail instantiates a new office365GroupsActivityDetail and sets the default values.
+// NewOffice365GroupsActivityDetail instantiates a new Office365GroupsActivityDetail and sets the default values.
 func NewOffice365GroupsActivityDetail()(*Office365GroupsActivityDetail) {
     m := &Office365GroupsActivityDetail{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOffice365GroupsActivityDetail()(*Office365GroupsActivityDetail) {
     return m
 }
 // CreateOffice365GroupsActivityDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOffice365GroupsActivityDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOffice365GroupsActivityDetail(), nil
 }
 // GetExchangeMailboxStorageUsedInBytes gets the exchangeMailboxStorageUsedInBytes property value. The storage used of the group mailbox.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetExchangeMailboxStorageUsedInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("exchangeMailboxStorageUsedInBytes")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Office365GroupsActivityDetail) GetExchangeMailboxStorageUsedInBytes()(*
     return nil
 }
 // GetExchangeMailboxTotalItemCount gets the exchangeMailboxTotalItemCount property value. The number of items in the group mailbox.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetExchangeMailboxTotalItemCount()(*int64) {
     val, err := m.GetBackingStore().Get("exchangeMailboxTotalItemCount")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Office365GroupsActivityDetail) GetExchangeMailboxTotalItemCount()(*int6
     return nil
 }
 // GetExchangeReceivedEmailCount gets the exchangeReceivedEmailCount property value. The number of emails that the group mailbox received.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetExchangeReceivedEmailCount()(*int64) {
     val, err := m.GetBackingStore().Get("exchangeReceivedEmailCount")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *Office365GroupsActivityDetail) GetExchangeReceivedEmailCount()(*int64) 
     return nil
 }
 // GetExternalMemberCount gets the externalMemberCount property value. The group external member count.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetExternalMemberCount()(*int64) {
     val, err := m.GetBackingStore().Get("externalMemberCount")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *Office365GroupsActivityDetail) GetExternalMemberCount()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["exchangeMailboxStorageUsedInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -279,6 +284,7 @@ func (m *Office365GroupsActivityDetail) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetGroupDisplayName gets the groupDisplayName property value. The display name of the group.
+// returns a *string when successful
 func (m *Office365GroupsActivityDetail) GetGroupDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("groupDisplayName")
     if err != nil {
@@ -290,6 +296,7 @@ func (m *Office365GroupsActivityDetail) GetGroupDisplayName()(*string) {
     return nil
 }
 // GetGroupId gets the groupId property value. The group id.
+// returns a *string when successful
 func (m *Office365GroupsActivityDetail) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
     if err != nil {
@@ -301,6 +308,7 @@ func (m *Office365GroupsActivityDetail) GetGroupId()(*string) {
     return nil
 }
 // GetGroupType gets the groupType property value. The group type. Possible values are: Public or Private.
+// returns a *string when successful
 func (m *Office365GroupsActivityDetail) GetGroupType()(*string) {
     val, err := m.GetBackingStore().Get("groupType")
     if err != nil {
@@ -312,6 +320,7 @@ func (m *Office365GroupsActivityDetail) GetGroupType()(*string) {
     return nil
 }
 // GetIsDeleted gets the isDeleted property value. Whether this user has been deleted or soft deleted.
+// returns a *bool when successful
 func (m *Office365GroupsActivityDetail) GetIsDeleted()(*bool) {
     val, err := m.GetBackingStore().Get("isDeleted")
     if err != nil {
@@ -323,6 +332,7 @@ func (m *Office365GroupsActivityDetail) GetIsDeleted()(*bool) {
     return nil
 }
 // GetLastActivityDate gets the lastActivityDate property value. The last activity date for the following scenarios:  group mailbox received email; user viewed, edited, shared, or synced files in SharePoint document library; user viewed SharePoint pages; user posted, read, or liked messages in Yammer groups.
+// returns a *DateOnly when successful
 func (m *Office365GroupsActivityDetail) GetLastActivityDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("lastActivityDate")
     if err != nil {
@@ -334,6 +344,7 @@ func (m *Office365GroupsActivityDetail) GetLastActivityDate()(*i878a80d2330e89d2
     return nil
 }
 // GetMemberCount gets the memberCount property value. The group member count.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetMemberCount()(*int64) {
     val, err := m.GetBackingStore().Get("memberCount")
     if err != nil {
@@ -345,6 +356,7 @@ func (m *Office365GroupsActivityDetail) GetMemberCount()(*int64) {
     return nil
 }
 // GetOwnerPrincipalName gets the ownerPrincipalName property value. The group owner principal name.
+// returns a *string when successful
 func (m *Office365GroupsActivityDetail) GetOwnerPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("ownerPrincipalName")
     if err != nil {
@@ -356,6 +368,7 @@ func (m *Office365GroupsActivityDetail) GetOwnerPrincipalName()(*string) {
     return nil
 }
 // GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
+// returns a *string when successful
 func (m *Office365GroupsActivityDetail) GetReportPeriod()(*string) {
     val, err := m.GetBackingStore().Get("reportPeriod")
     if err != nil {
@@ -367,6 +380,7 @@ func (m *Office365GroupsActivityDetail) GetReportPeriod()(*string) {
     return nil
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
+// returns a *DateOnly when successful
 func (m *Office365GroupsActivityDetail) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("reportRefreshDate")
     if err != nil {
@@ -378,6 +392,7 @@ func (m *Office365GroupsActivityDetail) GetReportRefreshDate()(*i878a80d2330e89d
     return nil
 }
 // GetSharePointActiveFileCount gets the sharePointActiveFileCount property value. The number of active files in SharePoint Group site.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetSharePointActiveFileCount()(*int64) {
     val, err := m.GetBackingStore().Get("sharePointActiveFileCount")
     if err != nil {
@@ -389,6 +404,7 @@ func (m *Office365GroupsActivityDetail) GetSharePointActiveFileCount()(*int64) {
     return nil
 }
 // GetSharePointSiteStorageUsedInBytes gets the sharePointSiteStorageUsedInBytes property value. The storage used by SharePoint Group site.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetSharePointSiteStorageUsedInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("sharePointSiteStorageUsedInBytes")
     if err != nil {
@@ -400,6 +416,7 @@ func (m *Office365GroupsActivityDetail) GetSharePointSiteStorageUsedInBytes()(*i
     return nil
 }
 // GetSharePointTotalFileCount gets the sharePointTotalFileCount property value. The total number of files in SharePoint Group site.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetSharePointTotalFileCount()(*int64) {
     val, err := m.GetBackingStore().Get("sharePointTotalFileCount")
     if err != nil {
@@ -411,6 +428,7 @@ func (m *Office365GroupsActivityDetail) GetSharePointTotalFileCount()(*int64) {
     return nil
 }
 // GetTeamsChannelMessagesCount gets the teamsChannelMessagesCount property value. The number of channel messages in Teams team.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetTeamsChannelMessagesCount()(*int64) {
     val, err := m.GetBackingStore().Get("teamsChannelMessagesCount")
     if err != nil {
@@ -422,6 +440,7 @@ func (m *Office365GroupsActivityDetail) GetTeamsChannelMessagesCount()(*int64) {
     return nil
 }
 // GetTeamsMeetingsOrganizedCount gets the teamsMeetingsOrganizedCount property value. The number of meetings organized in Teams team.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetTeamsMeetingsOrganizedCount()(*int64) {
     val, err := m.GetBackingStore().Get("teamsMeetingsOrganizedCount")
     if err != nil {
@@ -433,6 +452,7 @@ func (m *Office365GroupsActivityDetail) GetTeamsMeetingsOrganizedCount()(*int64)
     return nil
 }
 // GetYammerLikedMessageCount gets the yammerLikedMessageCount property value. The number of messages liked in Yammer groups.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetYammerLikedMessageCount()(*int64) {
     val, err := m.GetBackingStore().Get("yammerLikedMessageCount")
     if err != nil {
@@ -444,6 +464,7 @@ func (m *Office365GroupsActivityDetail) GetYammerLikedMessageCount()(*int64) {
     return nil
 }
 // GetYammerPostedMessageCount gets the yammerPostedMessageCount property value. The number of messages posted to Yammer groups.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetYammerPostedMessageCount()(*int64) {
     val, err := m.GetBackingStore().Get("yammerPostedMessageCount")
     if err != nil {
@@ -455,6 +476,7 @@ func (m *Office365GroupsActivityDetail) GetYammerPostedMessageCount()(*int64) {
     return nil
 }
 // GetYammerReadMessageCount gets the yammerReadMessageCount property value. The number of messages read in Yammer groups.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityDetail) GetYammerReadMessageCount()(*int64) {
     val, err := m.GetBackingStore().Get("yammerReadMessageCount")
     if err != nil {
@@ -746,7 +768,6 @@ func (m *Office365GroupsActivityDetail) SetYammerReadMessageCount(value *int64)(
         panic(err)
     }
 }
-// Office365GroupsActivityDetailable 
 type Office365GroupsActivityDetailable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,20 +17,21 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilderInternal instantiates a new UpgradeRequestBuilder and sets the default values.
+// NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilderInternal instantiates a new TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder) {
     m := &TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/installedApps/{teamsAppInstallation%2Did}/upgrade", pathParameters),
     }
     return m
 }
-// NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder instantiates a new UpgradeRequestBuilder and sets the default values.
+// NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder instantiates a new TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder and sets the default values.
 func NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post upgrade an app installation within a chat.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeR
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeR
     return nil
 }
 // ToPostRequestInformation upgrade an app installation within a chat.
+// returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder) ToPostRequestInformation(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradePostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder) WithUrl(rawUrl string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionInstalledAppsItemUpgradeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

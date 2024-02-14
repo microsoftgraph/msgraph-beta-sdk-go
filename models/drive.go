@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Drive 
 type Drive struct {
     BaseItem
 }
-// NewDrive instantiates a new drive and sets the default values.
+// NewDrive instantiates a new Drive and sets the default values.
 func NewDrive()(*Drive) {
     m := &Drive{
         BaseItem: *NewBaseItem(),
@@ -18,10 +17,12 @@ func NewDrive()(*Drive) {
     return m
 }
 // CreateDriveFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDriveFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDrive(), nil
 }
 // GetActivities gets the activities property value. The list of recent activities that took place under this drive.
+// returns a []ItemActivityOLDable when successful
 func (m *Drive) GetActivities()([]ItemActivityOLDable) {
     val, err := m.GetBackingStore().Get("activities")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Drive) GetActivities()([]ItemActivityOLDable) {
     return nil
 }
 // GetBundles gets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// returns a []DriveItemable when successful
 func (m *Drive) GetBundles()([]DriveItemable) {
     val, err := m.GetBackingStore().Get("bundles")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Drive) GetBundles()([]DriveItemable) {
     return nil
 }
 // GetDriveType gets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.
+// returns a *string when successful
 func (m *Drive) GetDriveType()(*string) {
     val, err := m.GetBackingStore().Get("driveType")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Drive) GetDriveType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Drive) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseItem.GetFieldDeserializers()
     res["activities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -210,6 +214,7 @@ func (m *Drive) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetFollowing gets the following property value. The list of items the user is following. Only in OneDrive for Business.
+// returns a []DriveItemable when successful
 func (m *Drive) GetFollowing()([]DriveItemable) {
     val, err := m.GetBackingStore().Get("following")
     if err != nil {
@@ -221,6 +226,7 @@ func (m *Drive) GetFollowing()([]DriveItemable) {
     return nil
 }
 // GetItems gets the items property value. All items contained in the drive. Read-only. Nullable.
+// returns a []DriveItemable when successful
 func (m *Drive) GetItems()([]DriveItemable) {
     val, err := m.GetBackingStore().Get("items")
     if err != nil {
@@ -232,6 +238,7 @@ func (m *Drive) GetItems()([]DriveItemable) {
     return nil
 }
 // GetList gets the list property value. For drives in SharePoint, the underlying document library list. Read-only. Nullable.
+// returns a Listable when successful
 func (m *Drive) GetList()(Listable) {
     val, err := m.GetBackingStore().Get("list")
     if err != nil {
@@ -243,6 +250,7 @@ func (m *Drive) GetList()(Listable) {
     return nil
 }
 // GetOwner gets the owner property value. Optional. The user account that owns the drive. Read-only.
+// returns a IdentitySetable when successful
 func (m *Drive) GetOwner()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("owner")
     if err != nil {
@@ -254,6 +262,7 @@ func (m *Drive) GetOwner()(IdentitySetable) {
     return nil
 }
 // GetQuota gets the quota property value. Optional. Information about the drive's storage space quota. Read-only.
+// returns a Quotaable when successful
 func (m *Drive) GetQuota()(Quotaable) {
     val, err := m.GetBackingStore().Get("quota")
     if err != nil {
@@ -265,6 +274,7 @@ func (m *Drive) GetQuota()(Quotaable) {
     return nil
 }
 // GetRoot gets the root property value. The root folder of the drive. Read-only.
+// returns a DriveItemable when successful
 func (m *Drive) GetRoot()(DriveItemable) {
     val, err := m.GetBackingStore().Get("root")
     if err != nil {
@@ -276,6 +286,7 @@ func (m *Drive) GetRoot()(DriveItemable) {
     return nil
 }
 // GetSharePointIds gets the sharePointIds property value. The sharePointIds property
+// returns a SharepointIdsable when successful
 func (m *Drive) GetSharePointIds()(SharepointIdsable) {
     val, err := m.GetBackingStore().Get("sharePointIds")
     if err != nil {
@@ -287,6 +298,7 @@ func (m *Drive) GetSharePointIds()(SharepointIdsable) {
     return nil
 }
 // GetSpecial gets the special property value. Collection of common folders available in OneDrive. Read-only. Nullable.
+// returns a []DriveItemable when successful
 func (m *Drive) GetSpecial()([]DriveItemable) {
     val, err := m.GetBackingStore().Get("special")
     if err != nil {
@@ -298,6 +310,7 @@ func (m *Drive) GetSpecial()([]DriveItemable) {
     return nil
 }
 // GetSystem gets the system property value. If present, indicates that this is a system-managed drive. Read-only.
+// returns a SystemFacetable when successful
 func (m *Drive) GetSystem()(SystemFacetable) {
     val, err := m.GetBackingStore().Get("system")
     if err != nil {
@@ -502,7 +515,6 @@ func (m *Drive) SetSystem(value SystemFacetable)() {
         panic(err)
     }
 }
-// Driveable 
 type Driveable interface {
     BaseItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

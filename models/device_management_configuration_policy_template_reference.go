@@ -10,7 +10,7 @@ type DeviceManagementConfigurationPolicyTemplateReference struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceManagementConfigurationPolicyTemplateReference instantiates a new deviceManagementConfigurationPolicyTemplateReference and sets the default values.
+// NewDeviceManagementConfigurationPolicyTemplateReference instantiates a new DeviceManagementConfigurationPolicyTemplateReference and sets the default values.
 func NewDeviceManagementConfigurationPolicyTemplateReference()(*DeviceManagementConfigurationPolicyTemplateReference) {
     m := &DeviceManagementConfigurationPolicyTemplateReference{
     }
@@ -19,10 +19,12 @@ func NewDeviceManagementConfigurationPolicyTemplateReference()(*DeviceManagement
     return m
 }
 // CreateDeviceManagementConfigurationPolicyTemplateReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationPolicyTemplateReferenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationPolicyTemplateReference(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetAdditionalData
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,6 +98,7 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetFieldDeseriali
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -105,6 +110,7 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetOdataType()(*s
     return nil
 }
 // GetTemplateDisplayName gets the templateDisplayName property value. Template Display Name of the referenced template. This property is read-only.
+// returns a *string when successful
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("templateDisplayName")
     if err != nil {
@@ -116,6 +122,7 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateDispla
     return nil
 }
 // GetTemplateDisplayVersion gets the templateDisplayVersion property value. Template Display Version of the referenced Template. This property is read-only.
+// returns a *string when successful
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateDisplayVersion()(*string) {
     val, err := m.GetBackingStore().Get("templateDisplayVersion")
     if err != nil {
@@ -127,6 +134,7 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateDispla
     return nil
 }
 // GetTemplateFamily gets the templateFamily property value. Describes the TemplateFamily for the Template entity
+// returns a *DeviceManagementConfigurationTemplateFamily when successful
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateFamily()(*DeviceManagementConfigurationTemplateFamily) {
     val, err := m.GetBackingStore().Get("templateFamily")
     if err != nil {
@@ -138,6 +146,7 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateFamily
     return nil
 }
 // GetTemplateId gets the templateId property value. Template id
+// returns a *string when successful
 func (m *DeviceManagementConfigurationPolicyTemplateReference) GetTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("templateId")
     if err != nil {
@@ -223,7 +232,6 @@ func (m *DeviceManagementConfigurationPolicyTemplateReference) SetTemplateId(val
         panic(err)
     }
 }
-// DeviceManagementConfigurationPolicyTemplateReferenceable 
 type DeviceManagementConfigurationPolicyTemplateReferenceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

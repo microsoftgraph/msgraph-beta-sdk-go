@@ -8,7 +8,7 @@ import (
 type AndroidForWorkCustomConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidForWorkCustomConfiguration instantiates a new androidForWorkCustomConfiguration and sets the default values.
+// NewAndroidForWorkCustomConfiguration instantiates a new AndroidForWorkCustomConfiguration and sets the default values.
 func NewAndroidForWorkCustomConfiguration()(*AndroidForWorkCustomConfiguration) {
     m := &AndroidForWorkCustomConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidForWorkCustomConfiguration()(*AndroidForWorkCustomConfiguration) 
     return m
 }
 // CreateAndroidForWorkCustomConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidForWorkCustomConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidForWorkCustomConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidForWorkCustomConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["omaSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +45,7 @@ func (m *AndroidForWorkCustomConfiguration) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetOmaSettings gets the omaSettings property value. OMA settings. This collection can contain a maximum of 500 elements.
+// returns a []OmaSettingable when successful
 func (m *AndroidForWorkCustomConfiguration) GetOmaSettings()([]OmaSettingable) {
     val, err := m.GetBackingStore().Get("omaSettings")
     if err != nil {
@@ -80,7 +83,6 @@ func (m *AndroidForWorkCustomConfiguration) SetOmaSettings(value []OmaSettingabl
         panic(err)
     }
 }
-// AndroidForWorkCustomConfigurationable 
 type AndroidForWorkCustomConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

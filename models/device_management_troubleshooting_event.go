@@ -9,7 +9,7 @@ import (
 type DeviceManagementTroubleshootingEvent struct {
     Entity
 }
-// NewDeviceManagementTroubleshootingEvent instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
+// NewDeviceManagementTroubleshootingEvent instantiates a new DeviceManagementTroubleshootingEvent and sets the default values.
 func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingEvent) {
     m := &DeviceManagementTroubleshootingEvent{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewDeviceManagementTroubleshootingEvent()(*DeviceManagementTroubleshootingE
     return m
 }
 // CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +44,7 @@ func CreateDeviceManagementTroubleshootingEventFromDiscriminatorValue(parseNode 
     return NewDeviceManagementTroubleshootingEvent(), nil
 }
 // GetAdditionalInformation gets the additionalInformation property value. A set of string key and string value pairs which provides additional information on the Troubleshooting event
+// returns a []KeyValuePairable when successful
 func (m *DeviceManagementTroubleshootingEvent) GetAdditionalInformation()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("additionalInformation")
     if err != nil {
@@ -54,6 +56,7 @@ func (m *DeviceManagementTroubleshootingEvent) GetAdditionalInformation()([]KeyV
     return nil
 }
 // GetCorrelationId gets the correlationId property value. Id used for tracing the failure in the service.
+// returns a *string when successful
 func (m *DeviceManagementTroubleshootingEvent) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
     if err != nil {
@@ -65,6 +68,7 @@ func (m *DeviceManagementTroubleshootingEvent) GetCorrelationId()(*string) {
     return nil
 }
 // GetEventDateTime gets the eventDateTime property value. Time when the event occurred .
+// returns a *Time when successful
 func (m *DeviceManagementTroubleshootingEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
     if err != nil {
@@ -76,6 +80,7 @@ func (m *DeviceManagementTroubleshootingEvent) GetEventDateTime()(*i336074805fc8
     return nil
 }
 // GetEventName gets the eventName property value. Event Name corresponding to the Troubleshooting Event. It is an Optional field
+// returns a *string when successful
 func (m *DeviceManagementTroubleshootingEvent) GetEventName()(*string) {
     val, err := m.GetBackingStore().Get("eventName")
     if err != nil {
@@ -87,6 +92,7 @@ func (m *DeviceManagementTroubleshootingEvent) GetEventName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["additionalInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -148,6 +154,7 @@ func (m *DeviceManagementTroubleshootingEvent) GetFieldDeserializers()(map[strin
     return res
 }
 // GetTroubleshootingErrorDetails gets the troubleshootingErrorDetails property value. Object containing detailed information about the error and its remediation.
+// returns a DeviceManagementTroubleshootingErrorDetailsable when successful
 func (m *DeviceManagementTroubleshootingEvent) GetTroubleshootingErrorDetails()(DeviceManagementTroubleshootingErrorDetailsable) {
     val, err := m.GetBackingStore().Get("troubleshootingErrorDetails")
     if err != nil {
@@ -237,7 +244,6 @@ func (m *DeviceManagementTroubleshootingEvent) SetTroubleshootingErrorDetails(va
         panic(err)
     }
 }
-// DeviceManagementTroubleshootingEventable 
 type DeviceManagementTroubleshootingEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// File 
 type File struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewFile instantiates a new file and sets the default values.
+// NewFile instantiates a new File and sets the default values.
 func NewFile()(*File) {
     m := &File{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,6 +17,7 @@ func NewFile()(*File) {
     return m
 }
 // CreateFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
     return NewFile(), nil
 }
 // GetContent gets the content property value. The content property
+// returns a []byte when successful
 func (m *File) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -51,6 +52,7 @@ func (m *File) GetContent()([]byte) {
     return nil
 }
 // GetDateTime gets the dateTime property value. The dateTime property
+// returns a *Time when successful
 func (m *File) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dateTime")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *File) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec7
     return nil
 }
 // GetExtension gets the extension property value. The extension property
+// returns a *string when successful
 func (m *File) GetExtension()(*string) {
     val, err := m.GetBackingStore().Get("extension")
     if err != nil {
@@ -73,6 +76,7 @@ func (m *File) GetExtension()(*string) {
     return nil
 }
 // GetExtractedTextContent gets the extractedTextContent property value. The extractedTextContent property
+// returns a []byte when successful
 func (m *File) GetExtractedTextContent()([]byte) {
     val, err := m.GetBackingStore().Get("extractedTextContent")
     if err != nil {
@@ -84,6 +88,7 @@ func (m *File) GetExtractedTextContent()([]byte) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -215,6 +220,7 @@ func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetMediaType gets the mediaType property value. The mediaType property
+// returns a *string when successful
 func (m *File) GetMediaType()(*string) {
     val, err := m.GetBackingStore().Get("mediaType")
     if err != nil {
@@ -226,6 +232,7 @@ func (m *File) GetMediaType()(*string) {
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *File) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -237,6 +244,7 @@ func (m *File) GetName()(*string) {
     return nil
 }
 // GetOtherProperties gets the otherProperties property value. The otherProperties property
+// returns a StringValueDictionaryable when successful
 func (m *File) GetOtherProperties()(StringValueDictionaryable) {
     val, err := m.GetBackingStore().Get("otherProperties")
     if err != nil {
@@ -248,6 +256,7 @@ func (m *File) GetOtherProperties()(StringValueDictionaryable) {
     return nil
 }
 // GetProcessingStatus gets the processingStatus property value. The processingStatus property
+// returns a *FileProcessingStatus when successful
 func (m *File) GetProcessingStatus()(*FileProcessingStatus) {
     val, err := m.GetBackingStore().Get("processingStatus")
     if err != nil {
@@ -259,6 +268,7 @@ func (m *File) GetProcessingStatus()(*FileProcessingStatus) {
     return nil
 }
 // GetSenderOrAuthors gets the senderOrAuthors property value. The senderOrAuthors property
+// returns a []string when successful
 func (m *File) GetSenderOrAuthors()([]string) {
     val, err := m.GetBackingStore().Get("senderOrAuthors")
     if err != nil {
@@ -270,6 +280,7 @@ func (m *File) GetSenderOrAuthors()([]string) {
     return nil
 }
 // GetSize gets the size property value. The size property
+// returns a *int64 when successful
 func (m *File) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -281,6 +292,7 @@ func (m *File) GetSize()(*int64) {
     return nil
 }
 // GetSourceType gets the sourceType property value. The sourceType property
+// returns a *SourceType when successful
 func (m *File) GetSourceType()(*SourceType) {
     val, err := m.GetBackingStore().Get("sourceType")
     if err != nil {
@@ -292,6 +304,7 @@ func (m *File) GetSourceType()(*SourceType) {
     return nil
 }
 // GetSubjectTitle gets the subjectTitle property value. The subjectTitle property
+// returns a *string when successful
 func (m *File) GetSubjectTitle()(*string) {
     val, err := m.GetBackingStore().Get("subjectTitle")
     if err != nil {
@@ -468,7 +481,6 @@ func (m *File) SetSubjectTitle(value *string)() {
         panic(err)
     }
 }
-// Fileable 
 type Fileable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

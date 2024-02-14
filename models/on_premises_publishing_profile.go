@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnPremisesPublishingProfile 
 type OnPremisesPublishingProfile struct {
     Entity
 }
-// NewOnPremisesPublishingProfile instantiates a new onPremisesPublishingProfile and sets the default values.
+// NewOnPremisesPublishingProfile instantiates a new OnPremisesPublishingProfile and sets the default values.
 func NewOnPremisesPublishingProfile()(*OnPremisesPublishingProfile) {
     m := &OnPremisesPublishingProfile{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOnPremisesPublishingProfile()(*OnPremisesPublishingProfile) {
     return m
 }
 // CreateOnPremisesPublishingProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesPublishingProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesPublishingProfile(), nil
 }
 // GetAgentGroups gets the agentGroups property value. List of existing onPremisesAgentGroup objects. Read-only. Nullable.
+// returns a []OnPremisesAgentGroupable when successful
 func (m *OnPremisesPublishingProfile) GetAgentGroups()([]OnPremisesAgentGroupable) {
     val, err := m.GetBackingStore().Get("agentGroups")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *OnPremisesPublishingProfile) GetAgentGroups()([]OnPremisesAgentGroupabl
     return nil
 }
 // GetAgents gets the agents property value. List of existing onPremisesAgent objects. Read-only. Nullable.
+// returns a []OnPremisesAgentable when successful
 func (m *OnPremisesPublishingProfile) GetAgents()([]OnPremisesAgentable) {
     val, err := m.GetBackingStore().Get("agents")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *OnPremisesPublishingProfile) GetAgents()([]OnPremisesAgentable) {
     return nil
 }
 // GetConnectorGroups gets the connectorGroups property value. List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+// returns a []ConnectorGroupable when successful
 func (m *OnPremisesPublishingProfile) GetConnectorGroups()([]ConnectorGroupable) {
     val, err := m.GetBackingStore().Get("connectorGroups")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *OnPremisesPublishingProfile) GetConnectorGroups()([]ConnectorGroupable)
     return nil
 }
 // GetConnectors gets the connectors property value. List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
+// returns a []Connectorable when successful
 func (m *OnPremisesPublishingProfile) GetConnectors()([]Connectorable) {
     val, err := m.GetBackingStore().Get("connectors")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *OnPremisesPublishingProfile) GetConnectors()([]Connectorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["agentGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -179,6 +184,7 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetHybridAgentUpdaterConfiguration gets the hybridAgentUpdaterConfiguration property value. Represents a hybridAgentUpdaterConfiguration object.
+// returns a HybridAgentUpdaterConfigurationable when successful
 func (m *OnPremisesPublishingProfile) GetHybridAgentUpdaterConfiguration()(HybridAgentUpdaterConfigurationable) {
     val, err := m.GetBackingStore().Get("hybridAgentUpdaterConfiguration")
     if err != nil {
@@ -190,6 +196,7 @@ func (m *OnPremisesPublishingProfile) GetHybridAgentUpdaterConfiguration()(Hybri
     return nil
 }
 // GetIsDefaultAccessEnabled gets the isDefaultAccessEnabled property value. The isDefaultAccessEnabled property
+// returns a *bool when successful
 func (m *OnPremisesPublishingProfile) GetIsDefaultAccessEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultAccessEnabled")
     if err != nil {
@@ -201,6 +208,7 @@ func (m *OnPremisesPublishingProfile) GetIsDefaultAccessEnabled()(*bool) {
     return nil
 }
 // GetIsEnabled gets the isEnabled property value. Represents if Microsoft Entra application proxy is enabled for the tenant.
+// returns a *bool when successful
 func (m *OnPremisesPublishingProfile) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -212,6 +220,7 @@ func (m *OnPremisesPublishingProfile) GetIsEnabled()(*bool) {
     return nil
 }
 // GetPublishedResources gets the publishedResources property value. List of existing publishedResource objects. Read-only. Nullable.
+// returns a []PublishedResourceable when successful
 func (m *OnPremisesPublishingProfile) GetPublishedResources()([]PublishedResourceable) {
     val, err := m.GetBackingStore().Get("publishedResources")
     if err != nil {
@@ -364,7 +373,6 @@ func (m *OnPremisesPublishingProfile) SetPublishedResources(value []PublishedRes
         panic(err)
     }
 }
-// OnPremisesPublishingProfileable 
 type OnPremisesPublishingProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type DeviceManagementResourceAccessProfileBase struct {
     Entity
 }
-// NewDeviceManagementResourceAccessProfileBase instantiates a new deviceManagementResourceAccessProfileBase and sets the default values.
+// NewDeviceManagementResourceAccessProfileBase instantiates a new DeviceManagementResourceAccessProfileBase and sets the default values.
 func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAccessProfileBase) {
     m := &DeviceManagementResourceAccessProfileBase{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewDeviceManagementResourceAccessProfileBase()(*DeviceManagementResourceAcc
     return m
 }
 // CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -47,6 +48,7 @@ func CreateDeviceManagementResourceAccessProfileBaseFromDiscriminatorValue(parse
     return NewDeviceManagementResourceAccessProfileBase(), nil
 }
 // GetAssignments gets the assignments property value. The list of assignments for the device configuration profile.
+// returns a []DeviceManagementResourceAccessProfileAssignmentable when successful
 func (m *DeviceManagementResourceAccessProfileBase) GetAssignments()([]DeviceManagementResourceAccessProfileAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetAssignments()([]DeviceMan
     return nil
 }
 // GetCreationDateTime gets the creationDateTime property value. DateTime profile was created
+// returns a *Time when successful
 func (m *DeviceManagementResourceAccessProfileBase) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
     if err != nil {
@@ -69,6 +72,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetCreationDateTime()(*i3360
     return nil
 }
 // GetDescription gets the description property value. Profile description
+// returns a *string when successful
 func (m *DeviceManagementResourceAccessProfileBase) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -80,6 +84,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Profile display name
+// returns a *string when successful
 func (m *DeviceManagementResourceAccessProfileBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -91,6 +96,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -178,6 +184,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetFieldDeserializers()(map[
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime profile was last modified
+// returns a *Time when successful
 func (m *DeviceManagementResourceAccessProfileBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -189,6 +196,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetLastModifiedDateTime()(*i
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. Scope Tags
+// returns a []string when successful
 func (m *DeviceManagementResourceAccessProfileBase) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -200,6 +208,7 @@ func (m *DeviceManagementResourceAccessProfileBase) GetRoleScopeTagIds()([]strin
     return nil
 }
 // GetVersion gets the version property value. Version of the profile
+// returns a *int32 when successful
 func (m *DeviceManagementResourceAccessProfileBase) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -315,7 +324,6 @@ func (m *DeviceManagementResourceAccessProfileBase) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// DeviceManagementResourceAccessProfileBaseable 
 type DeviceManagementResourceAccessProfileBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

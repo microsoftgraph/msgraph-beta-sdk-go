@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MessageRecipientCollectionResponse 
 type MessageRecipientCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewMessageRecipientCollectionResponse instantiates a new messageRecipientCollectionResponse and sets the default values.
+// NewMessageRecipientCollectionResponse instantiates a new MessageRecipientCollectionResponse and sets the default values.
 func NewMessageRecipientCollectionResponse()(*MessageRecipientCollectionResponse) {
     m := &MessageRecipientCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewMessageRecipientCollectionResponse()(*MessageRecipientCollectionResponse
     return m
 }
 // CreateMessageRecipientCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMessageRecipientCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMessageRecipientCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MessageRecipientCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *MessageRecipientCollectionResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []MessageRecipientable when successful
 func (m *MessageRecipientCollectionResponse) GetValue()([]MessageRecipientable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *MessageRecipientCollectionResponse) SetValue(value []MessageRecipientab
         panic(err)
     }
 }
-// MessageRecipientCollectionResponseable 
 type MessageRecipientCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

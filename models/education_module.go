@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationModule 
 type EducationModule struct {
     Entity
 }
-// NewEducationModule instantiates a new educationModule and sets the default values.
+// NewEducationModule instantiates a new EducationModule and sets the default values.
 func NewEducationModule()(*EducationModule) {
     m := &EducationModule{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewEducationModule()(*EducationModule) {
     return m
 }
 // CreateEducationModuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationModuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationModule(), nil
 }
 // GetCreatedBy gets the createdBy property value. The display name of the user that created the module.
+// returns a IdentitySetable when successful
 func (m *EducationModule) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *EducationModule) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date time the module was created.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *EducationModule) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *EducationModule) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetDescription gets the description property value. Description of the module.
+// returns a *string when successful
 func (m *EducationModule) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *EducationModule) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the module.
+// returns a *string when successful
 func (m *EducationModule) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *EducationModule) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationModule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -176,6 +181,7 @@ func (m *EducationModule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetIsPinned gets the isPinned property value. Indicates whether the module is pinned or not.
+// returns a *bool when successful
 func (m *EducationModule) GetIsPinned()(*bool) {
     val, err := m.GetBackingStore().Get("isPinned")
     if err != nil {
@@ -187,6 +193,7 @@ func (m *EducationModule) GetIsPinned()(*bool) {
     return nil
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. The last user that modified the module.
+// returns a IdentitySetable when successful
 func (m *EducationModule) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
     if err != nil {
@@ -198,6 +205,7 @@ func (m *EducationModule) GetLastModifiedBy()(IdentitySetable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date time the module was last modified.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *EducationModule) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -209,6 +217,7 @@ func (m *EducationModule) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetResources gets the resources property value. Learning objects that are associated with this module.  Only teachers can modify this list. Nullable.
+// returns a []EducationModuleResourceable when successful
 func (m *EducationModule) GetResources()([]EducationModuleResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -220,6 +229,7 @@ func (m *EducationModule) GetResources()([]EducationModuleResourceable) {
     return nil
 }
 // GetResourcesFolderUrl gets the resourcesFolderUrl property value. Folder URL where all the file resources for this module are stored.
+// returns a *string when successful
 func (m *EducationModule) GetResourcesFolderUrl()(*string) {
     val, err := m.GetBackingStore().Get("resourcesFolderUrl")
     if err != nil {
@@ -231,6 +241,7 @@ func (m *EducationModule) GetResourcesFolderUrl()(*string) {
     return nil
 }
 // GetStatus gets the status property value. Status of the module.  You can't use a PATCH operation to update this value. Possible values are: draft and published.
+// returns a *EducationModuleStatus when successful
 func (m *EducationModule) GetStatus()(*EducationModuleStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -349,7 +360,6 @@ func (m *EducationModule) SetStatus(value *EducationModuleStatus)() {
         panic(err)
     }
 }
-// EducationModuleable 
 type EducationModuleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

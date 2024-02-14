@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsEc2Instance 
 type AwsEc2Instance struct {
     AwsIdentity
 }
-// NewAwsEc2Instance instantiates a new awsEc2Instance and sets the default values.
+// NewAwsEc2Instance instantiates a new AwsEc2Instance and sets the default values.
 func NewAwsEc2Instance()(*AwsEc2Instance) {
     m := &AwsEc2Instance{
         AwsIdentity: *NewAwsIdentity(),
@@ -18,10 +17,12 @@ func NewAwsEc2Instance()(*AwsEc2Instance) {
     return m
 }
 // CreateAwsEc2InstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsEc2InstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsEc2Instance(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsEc2Instance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AwsIdentity.GetFieldDeserializers()
     res["resource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *AwsEc2Instance) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetResource gets the resource property value. Represents the resources in an authorization system.
+// returns a AwsAuthorizationSystemResourceable when successful
 func (m *AwsEc2Instance) GetResource()(AwsAuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *AwsEc2Instance) SetResource(value AwsAuthorizationSystemResourceable)()
         panic(err)
     }
 }
-// AwsEc2Instanceable 
 type AwsEc2Instanceable interface {
     AwsIdentityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

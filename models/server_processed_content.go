@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ServerProcessedContent 
 type ServerProcessedContent struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewServerProcessedContent instantiates a new serverProcessedContent and sets the default values.
+// NewServerProcessedContent instantiates a new ServerProcessedContent and sets the default values.
 func NewServerProcessedContent()(*ServerProcessedContent) {
     m := &ServerProcessedContent{
     }
@@ -19,10 +18,12 @@ func NewServerProcessedContent()(*ServerProcessedContent) {
     return m
 }
 // CreateServerProcessedContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServerProcessedContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServerProcessedContent(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ServerProcessedContent) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *ServerProcessedContent) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ServerProcessedContent) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetComponentDependencies gets the componentDependencies property value. A key-value map where keys are string identifiers and values are component ids. SharePoint servers might decide to use this hint to preload the script for corresponding components for performance boost.
+// returns a []MetaDataKeyStringPairable when successful
 func (m *ServerProcessedContent) GetComponentDependencies()([]MetaDataKeyStringPairable) {
     val, err := m.GetBackingStore().Get("componentDependencies")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *ServerProcessedContent) GetComponentDependencies()([]MetaDataKeyStringP
     return nil
 }
 // GetCustomMetadata gets the customMetadata property value. A key-value map where keys are string identifier and values are object of custom key-value pair.
+// returns a []MetaDataKeyValuePairable when successful
 func (m *ServerProcessedContent) GetCustomMetadata()([]MetaDataKeyValuePairable) {
     val, err := m.GetBackingStore().Get("customMetadata")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *ServerProcessedContent) GetCustomMetadata()([]MetaDataKeyValuePairable)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServerProcessedContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["componentDependencies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -172,6 +177,7 @@ func (m *ServerProcessedContent) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetHtmlStrings gets the htmlStrings property value. A key-value map where keys are string identifiers and values are rich text with HTML format. SharePoint servers treat the values as HTML content and run services like safety checks, search index and link fixup on them.
+// returns a []MetaDataKeyStringPairable when successful
 func (m *ServerProcessedContent) GetHtmlStrings()([]MetaDataKeyStringPairable) {
     val, err := m.GetBackingStore().Get("htmlStrings")
     if err != nil {
@@ -183,6 +189,7 @@ func (m *ServerProcessedContent) GetHtmlStrings()([]MetaDataKeyStringPairable) {
     return nil
 }
 // GetImageSources gets the imageSources property value. A key-value map where keys are string identifiers and values are image sources. SharePoint servers treat the values as image sources and run services like search index and link fixup on them.
+// returns a []MetaDataKeyStringPairable when successful
 func (m *ServerProcessedContent) GetImageSources()([]MetaDataKeyStringPairable) {
     val, err := m.GetBackingStore().Get("imageSources")
     if err != nil {
@@ -194,6 +201,7 @@ func (m *ServerProcessedContent) GetImageSources()([]MetaDataKeyStringPairable) 
     return nil
 }
 // GetLinks gets the links property value. A key-value map where keys are string identifiers and values are links. SharePoint servers treat the values as links and run services like link fixup on them.
+// returns a []MetaDataKeyStringPairable when successful
 func (m *ServerProcessedContent) GetLinks()([]MetaDataKeyStringPairable) {
     val, err := m.GetBackingStore().Get("links")
     if err != nil {
@@ -205,6 +213,7 @@ func (m *ServerProcessedContent) GetLinks()([]MetaDataKeyStringPairable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ServerProcessedContent) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -216,6 +225,7 @@ func (m *ServerProcessedContent) GetOdataType()(*string) {
     return nil
 }
 // GetSearchablePlainTexts gets the searchablePlainTexts property value. A key-value map where keys are string identifiers and values are strings that should be search indexed.
+// returns a []MetaDataKeyStringPairable when successful
 func (m *ServerProcessedContent) GetSearchablePlainTexts()([]MetaDataKeyStringPairable) {
     val, err := m.GetBackingStore().Get("searchablePlainTexts")
     if err != nil {
@@ -374,7 +384,6 @@ func (m *ServerProcessedContent) SetSearchablePlainTexts(value []MetaDataKeyStri
         panic(err)
     }
 }
-// ServerProcessedContentable 
 type ServerProcessedContentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcReports 
 type CloudPcReports struct {
     Entity
 }
-// NewCloudPcReports instantiates a new cloudPcReports and sets the default values.
+// NewCloudPcReports instantiates a new CloudPcReports and sets the default values.
 func NewCloudPcReports()(*CloudPcReports) {
     m := &CloudPcReports{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCloudPcReports()(*CloudPcReports) {
     return m
 }
 // CreateCloudPcReportsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcReportsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcReports(), nil
 }
 // GetExportJobs gets the exportJobs property value. The export jobs created for downloading reports.
+// returns a []CloudPcExportJobable when successful
 func (m *CloudPcReports) GetExportJobs()([]CloudPcExportJobable) {
     val, err := m.GetBackingStore().Get("exportJobs")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CloudPcReports) GetExportJobs()([]CloudPcExportJobable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcReports) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["exportJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,7 +80,6 @@ func (m *CloudPcReports) SetExportJobs(value []CloudPcExportJobable)() {
         panic(err)
     }
 }
-// CloudPcReportsable 
 type CloudPcReportsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

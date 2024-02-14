@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftApplicationDataAccessSettings 
 type MicrosoftApplicationDataAccessSettings struct {
     Entity
 }
-// NewMicrosoftApplicationDataAccessSettings instantiates a new microsoftApplicationDataAccessSettings and sets the default values.
+// NewMicrosoftApplicationDataAccessSettings instantiates a new MicrosoftApplicationDataAccessSettings and sets the default values.
 func NewMicrosoftApplicationDataAccessSettings()(*MicrosoftApplicationDataAccessSettings) {
     m := &MicrosoftApplicationDataAccessSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewMicrosoftApplicationDataAccessSettings()(*MicrosoftApplicationDataAccess
     return m
 }
 // CreateMicrosoftApplicationDataAccessSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftApplicationDataAccessSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftApplicationDataAccessSettings(), nil
 }
 // GetDisabledForGroup gets the disabledForGroup property value. The ID of a Microsoft Entra security group for which the members are allowed to access Microsoft 365 data using only Microsoft 365 apps, but not other Microsoft apps such as Edge.  This is only applicable if isEnabledForAllMicrosoftApplications is set to true.
+// returns a *string when successful
 func (m *MicrosoftApplicationDataAccessSettings) GetDisabledForGroup()(*string) {
     val, err := m.GetBackingStore().Get("disabledForGroup")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *MicrosoftApplicationDataAccessSettings) GetDisabledForGroup()(*string) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftApplicationDataAccessSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["disabledForGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *MicrosoftApplicationDataAccessSettings) GetFieldDeserializers()(map[str
     return res
 }
 // GetIsEnabledForAllMicrosoftApplications gets the isEnabledForAllMicrosoftApplications property value. When set to true, all users in the organization can access in a Microsoft app any Microsoft 365 data that the user has been authorized to access. The Microsoft app can be a Microsoft 365 app (for example, Excel, Outlook) or non-Microsoft 365 app (for example, Edge). The default is true.  It is possible to disable this access for a subset of users in a Microsoft Entra security group, by specifying the group in the disabledForGroup property.  When set to false, all users can access authorized Microsoft 365 data only in a Microsoft 365 app.
+// returns a *bool when successful
 func (m *MicrosoftApplicationDataAccessSettings) GetIsEnabledForAllMicrosoftApplications()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabledForAllMicrosoftApplications")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *MicrosoftApplicationDataAccessSettings) SetIsEnabledForAllMicrosoftAppl
         panic(err)
     }
 }
-// MicrosoftApplicationDataAccessSettingsable 
 type MicrosoftApplicationDataAccessSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AssignedComputeInstanceDetails 
 type AssignedComputeInstanceDetails struct {
     Entity
 }
-// NewAssignedComputeInstanceDetails instantiates a new assignedComputeInstanceDetails and sets the default values.
+// NewAssignedComputeInstanceDetails instantiates a new AssignedComputeInstanceDetails and sets the default values.
 func NewAssignedComputeInstanceDetails()(*AssignedComputeInstanceDetails) {
     m := &AssignedComputeInstanceDetails{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAssignedComputeInstanceDetails()(*AssignedComputeInstanceDetails) {
     return m
 }
 // CreateAssignedComputeInstanceDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAssignedComputeInstanceDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignedComputeInstanceDetails(), nil
 }
 // GetAccessedStorageBuckets gets the accessedStorageBuckets property value. Represents a set of S3 buckets accessed by this EC2 instance.
+// returns a []AuthorizationSystemResourceable when successful
 func (m *AssignedComputeInstanceDetails) GetAccessedStorageBuckets()([]AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("accessedStorageBuckets")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AssignedComputeInstanceDetails) GetAccessedStorageBuckets()([]Authoriza
     return nil
 }
 // GetAssignedComputeInstance gets the assignedComputeInstance property value. assigned EC2 instance.
+// returns a AuthorizationSystemResourceable when successful
 func (m *AssignedComputeInstanceDetails) GetAssignedComputeInstance()(AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("assignedComputeInstance")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AssignedComputeInstanceDetails) GetAssignedComputeInstance()(Authorizat
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AssignedComputeInstanceDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessedStorageBuckets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,7 +115,6 @@ func (m *AssignedComputeInstanceDetails) SetAssignedComputeInstance(value Author
         panic(err)
     }
 }
-// AssignedComputeInstanceDetailsable 
 type AssignedComputeInstanceDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

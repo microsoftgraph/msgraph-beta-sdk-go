@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AppliedCategory 
 type AppliedCategory struct {
     FilePlanDescriptorBase
 }
-// NewAppliedCategory instantiates a new appliedCategory and sets the default values.
+// NewAppliedCategory instantiates a new AppliedCategory and sets the default values.
 func NewAppliedCategory()(*AppliedCategory) {
     m := &AppliedCategory{
         FilePlanDescriptorBase: *NewFilePlanDescriptorBase(),
@@ -16,10 +15,12 @@ func NewAppliedCategory()(*AppliedCategory) {
     return m
 }
 // CreateAppliedCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppliedCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppliedCategory(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppliedCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.FilePlanDescriptorBase.GetFieldDeserializers()
     res["subCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *AppliedCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetSubCategory gets the subCategory property value. Represents the file plan descriptor for a subcategory under a specific category, which has been assigned to a particular retention label.
+// returns a SubCategoryable when successful
 func (m *AppliedCategory) GetSubCategory()(SubCategoryable) {
     val, err := m.GetBackingStore().Get("subCategory")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *AppliedCategory) SetSubCategory(value SubCategoryable)() {
         panic(err)
     }
 }
-// AppliedCategoryable 
 type AppliedCategoryable interface {
     FilePlanDescriptorBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

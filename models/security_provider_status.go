@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SecurityProviderStatus 
 type SecurityProviderStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSecurityProviderStatus instantiates a new securityProviderStatus and sets the default values.
+// NewSecurityProviderStatus instantiates a new SecurityProviderStatus and sets the default values.
 func NewSecurityProviderStatus()(*SecurityProviderStatus) {
     m := &SecurityProviderStatus{
     }
@@ -19,10 +18,12 @@ func NewSecurityProviderStatus()(*SecurityProviderStatus) {
     return m
 }
 // CreateSecurityProviderStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecurityProviderStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityProviderStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SecurityProviderStatus) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SecurityProviderStatus) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SecurityProviderStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEnabled gets the enabled property value. The enabled property
+// returns a *bool when successful
 func (m *SecurityProviderStatus) GetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("enabled")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *SecurityProviderStatus) GetEnabled()(*bool) {
     return nil
 }
 // GetEndpoint gets the endpoint property value. The endpoint property
+// returns a *string when successful
 func (m *SecurityProviderStatus) GetEndpoint()(*string) {
     val, err := m.GetBackingStore().Get("endpoint")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *SecurityProviderStatus) GetEndpoint()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecurityProviderStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +131,7 @@ func (m *SecurityProviderStatus) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SecurityProviderStatus) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *SecurityProviderStatus) GetOdataType()(*string) {
     return nil
 }
 // GetProvider gets the provider property value. The provider property
+// returns a *string when successful
 func (m *SecurityProviderStatus) GetProvider()(*string) {
     val, err := m.GetBackingStore().Get("provider")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *SecurityProviderStatus) GetProvider()(*string) {
     return nil
 }
 // GetRegion gets the region property value. The region property
+// returns a *string when successful
 func (m *SecurityProviderStatus) GetRegion()(*string) {
     val, err := m.GetBackingStore().Get("region")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *SecurityProviderStatus) GetRegion()(*string) {
     return nil
 }
 // GetVendorEscaped gets the vendor property value. The vendor property
+// returns a *string when successful
 func (m *SecurityProviderStatus) GetVendorEscaped()(*string) {
     val, err := m.GetBackingStore().Get("vendorEscaped")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *SecurityProviderStatus) SetVendorEscaped(value *string)() {
         panic(err)
     }
 }
-// SecurityProviderStatusable 
 type SecurityProviderStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

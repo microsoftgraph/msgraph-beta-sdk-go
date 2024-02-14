@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcExternalPartnerSetting 
 type CloudPcExternalPartnerSetting struct {
     Entity
 }
-// NewCloudPcExternalPartnerSetting instantiates a new cloudPcExternalPartnerSetting and sets the default values.
+// NewCloudPcExternalPartnerSetting instantiates a new CloudPcExternalPartnerSetting and sets the default values.
 func NewCloudPcExternalPartnerSetting()(*CloudPcExternalPartnerSetting) {
     m := &CloudPcExternalPartnerSetting{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCloudPcExternalPartnerSetting()(*CloudPcExternalPartnerSetting) {
     return m
 }
 // CreateCloudPcExternalPartnerSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcExternalPartnerSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcExternalPartnerSetting(), nil
 }
 // GetEnableConnection gets the enableConnection property value. Enable or disable the connection to an external partner. If true, an external partner API will accept incoming calls from external partners. Required. Supports $filter (eq).
+// returns a *bool when successful
 func (m *CloudPcExternalPartnerSetting) GetEnableConnection()(*bool) {
     val, err := m.GetBackingStore().Get("enableConnection")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CloudPcExternalPartnerSetting) GetEnableConnection()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcExternalPartnerSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["enableConnection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +89,7 @@ func (m *CloudPcExternalPartnerSetting) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last data sync time for this external partner. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
+// returns a *Time when successful
 func (m *CloudPcExternalPartnerSetting) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -98,6 +101,7 @@ func (m *CloudPcExternalPartnerSetting) GetLastSyncDateTime()(*i336074805fc85398
     return nil
 }
 // GetPartnerId gets the partnerId property value. The external partner ID.
+// returns a *string when successful
 func (m *CloudPcExternalPartnerSetting) GetPartnerId()(*string) {
     val, err := m.GetBackingStore().Get("partnerId")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *CloudPcExternalPartnerSetting) GetPartnerId()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *CloudPcExternalPartnerStatus when successful
 func (m *CloudPcExternalPartnerSetting) GetStatus()(*CloudPcExternalPartnerStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *CloudPcExternalPartnerSetting) GetStatus()(*CloudPcExternalPartnerStatu
     return nil
 }
 // GetStatusDetails gets the statusDetails property value. Status details message.
+// returns a *string when successful
 func (m *CloudPcExternalPartnerSetting) GetStatusDetails()(*string) {
     val, err := m.GetBackingStore().Get("statusDetails")
     if err != nil {
@@ -204,7 +210,6 @@ func (m *CloudPcExternalPartnerSetting) SetStatusDetails(value *string)() {
         panic(err)
     }
 }
-// CloudPcExternalPartnerSettingable 
 type CloudPcExternalPartnerSettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

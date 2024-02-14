@@ -26,28 +26,29 @@ type EvaluateDlpPoliciesJobsCountRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *EvaluateDlpPoliciesJobsCountRequestBuilderGetQueryParameters
 }
-// NewEvaluateDlpPoliciesJobsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewEvaluateDlpPoliciesJobsCountRequestBuilderInternal instantiates a new EvaluateDlpPoliciesJobsCountRequestBuilder and sets the default values.
 func NewEvaluateDlpPoliciesJobsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EvaluateDlpPoliciesJobsCountRequestBuilder) {
     m := &EvaluateDlpPoliciesJobsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/evaluateDlpPoliciesJobs/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/evaluateDlpPoliciesJobs/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewEvaluateDlpPoliciesJobsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewEvaluateDlpPoliciesJobsCountRequestBuilder instantiates a new EvaluateDlpPoliciesJobsCountRequestBuilder and sets the default values.
 func NewEvaluateDlpPoliciesJobsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EvaluateDlpPoliciesJobsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEvaluateDlpPoliciesJobsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EvaluateDlpPoliciesJobsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *EvaluateDlpPoliciesJobsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *EvaluateDlpPoliciesJobsCountRequestBuilder) Get(ctx context.Context, re
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *EvaluateDlpPoliciesJobsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EvaluateDlpPoliciesJobsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *EvaluateDlpPoliciesJobsCountRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EvaluateDlpPoliciesJobsCountRequestBuilder when successful
 func (m *EvaluateDlpPoliciesJobsCountRequestBuilder) WithUrl(rawUrl string)(*EvaluateDlpPoliciesJobsCountRequestBuilder) {
     return NewEvaluateDlpPoliciesJobsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AppsInstallationOptionsForMac 
 type AppsInstallationOptionsForMac struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAppsInstallationOptionsForMac instantiates a new appsInstallationOptionsForMac and sets the default values.
+// NewAppsInstallationOptionsForMac instantiates a new AppsInstallationOptionsForMac and sets the default values.
 func NewAppsInstallationOptionsForMac()(*AppsInstallationOptionsForMac) {
     m := &AppsInstallationOptionsForMac{
     }
@@ -19,10 +18,12 @@ func NewAppsInstallationOptionsForMac()(*AppsInstallationOptionsForMac) {
     return m
 }
 // CreateAppsInstallationOptionsForMacFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppsInstallationOptionsForMacFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppsInstallationOptionsForMac(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AppsInstallationOptionsForMac) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AppsInstallationOptionsForMac) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AppsInstallationOptionsForMac) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppsInstallationOptionsForMac) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["isMicrosoft365AppsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *AppsInstallationOptionsForMac) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetIsMicrosoft365AppsEnabled gets the isMicrosoft365AppsEnabled property value. Specifies whether users can install Microsoft 365 apps on their MAC devices. The default value is true.
+// returns a *bool when successful
 func (m *AppsInstallationOptionsForMac) GetIsMicrosoft365AppsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isMicrosoft365AppsEnabled")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *AppsInstallationOptionsForMac) GetIsMicrosoft365AppsEnabled()(*bool) {
     return nil
 }
 // GetIsSkypeForBusinessEnabled gets the isSkypeForBusinessEnabled property value. Specifies whether users can install Skype for Business on their MAC devices running OS X El Capitan 10.11 or later. The default value is true.
+// returns a *bool when successful
 func (m *AppsInstallationOptionsForMac) GetIsSkypeForBusinessEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSkypeForBusinessEnabled")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *AppsInstallationOptionsForMac) GetIsSkypeForBusinessEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AppsInstallationOptionsForMac) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -166,7 +172,6 @@ func (m *AppsInstallationOptionsForMac) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// AppsInstallationOptionsForMacable 
 type AppsInstallationOptionsForMacable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

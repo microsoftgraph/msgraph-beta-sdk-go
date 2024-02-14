@@ -10,7 +10,7 @@ type EmbeddedSIMActivationCode struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewEmbeddedSIMActivationCode instantiates a new embeddedSIMActivationCode and sets the default values.
+// NewEmbeddedSIMActivationCode instantiates a new EmbeddedSIMActivationCode and sets the default values.
 func NewEmbeddedSIMActivationCode()(*EmbeddedSIMActivationCode) {
     m := &EmbeddedSIMActivationCode{
     }
@@ -19,10 +19,12 @@ func NewEmbeddedSIMActivationCode()(*EmbeddedSIMActivationCode) {
     return m
 }
 // CreateEmbeddedSIMActivationCodeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEmbeddedSIMActivationCodeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmbeddedSIMActivationCode(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *EmbeddedSIMActivationCode) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *EmbeddedSIMActivationCode) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *EmbeddedSIMActivationCode) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmbeddedSIMActivationCode) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["integratedCircuitCardIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +88,7 @@ func (m *EmbeddedSIMActivationCode) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetIntegratedCircuitCardIdentifier gets the integratedCircuitCardIdentifier property value. The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.
+// returns a *string when successful
 func (m *EmbeddedSIMActivationCode) GetIntegratedCircuitCardIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("integratedCircuitCardIdentifier")
     if err != nil {
@@ -95,6 +100,7 @@ func (m *EmbeddedSIMActivationCode) GetIntegratedCircuitCardIdentifier()(*string
     return nil
 }
 // GetMatchingIdentifier gets the matchingIdentifier property value. The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.
+// returns a *string when successful
 func (m *EmbeddedSIMActivationCode) GetMatchingIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("matchingIdentifier")
     if err != nil {
@@ -106,6 +112,7 @@ func (m *EmbeddedSIMActivationCode) GetMatchingIdentifier()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *EmbeddedSIMActivationCode) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +124,7 @@ func (m *EmbeddedSIMActivationCode) GetOdataType()(*string) {
     return nil
 }
 // GetSmdpPlusServerAddress gets the smdpPlusServerAddress property value. The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.
+// returns a *string when successful
 func (m *EmbeddedSIMActivationCode) GetSmdpPlusServerAddress()(*string) {
     val, err := m.GetBackingStore().Get("smdpPlusServerAddress")
     if err != nil {
@@ -200,7 +208,6 @@ func (m *EmbeddedSIMActivationCode) SetSmdpPlusServerAddress(value *string)() {
         panic(err)
     }
 }
-// EmbeddedSIMActivationCodeable 
 type EmbeddedSIMActivationCodeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

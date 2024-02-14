@@ -1,27 +1,29 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type ProtocolType int
 
 const (
-    NONE_PROTOCOLTYPE ProtocolType = iota
-    OAUTH2_PROTOCOLTYPE
-    ROPC_PROTOCOLTYPE
-    WSFEDERATION_PROTOCOLTYPE
-    SAML20_PROTOCOLTYPE
-    DEVICECODE_PROTOCOLTYPE
-    UNKNOWNFUTUREVALUE_PROTOCOLTYPE
-    AUTHENTICATIONTRANSFER_PROTOCOLTYPE
+    NONE_PROTOCOLTYPE = 1
+    OAUTH2_PROTOCOLTYPE = 2
+    ROPC_PROTOCOLTYPE = 4
+    WSFEDERATION_PROTOCOLTYPE = 8
+    SAML20_PROTOCOLTYPE = 16
+    DEVICECODE_PROTOCOLTYPE = 32
+    UNKNOWNFUTUREVALUE_PROTOCOLTYPE = 64
+    AUTHENTICATIONTRANSFER_PROTOCOLTYPE = 128
 )
 
 func (i ProtocolType) String() string {
     var values []string
-    for p := ProtocolType(1); p <= AUTHENTICATIONTRANSFER_PROTOCOLTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "oAuth2", "ropc", "wsFederation", "saml20", "deviceCode", "unknownFutureValue", "authenticationTransfer"}[p])
+    options := []string{"none", "oAuth2", "ropc", "wsFederation", "saml20", "deviceCode", "unknownFutureValue", "authenticationTransfer"}
+    for p := 0; p < 8; p++ {
+        mantis := ProtocolType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

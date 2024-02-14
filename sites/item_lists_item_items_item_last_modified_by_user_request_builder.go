@@ -27,28 +27,29 @@ type ItemListsItemItemsItemLastModifiedByUserRequestBuilderGetRequestConfigurati
     // Request query parameters
     QueryParameters *ItemListsItemItemsItemLastModifiedByUserRequestBuilderGetQueryParameters
 }
-// NewItemListsItemItemsItemLastModifiedByUserRequestBuilderInternal instantiates a new LastModifiedByUserRequestBuilder and sets the default values.
+// NewItemListsItemItemsItemLastModifiedByUserRequestBuilderInternal instantiates a new ItemListsItemItemsItemLastModifiedByUserRequestBuilder and sets the default values.
 func NewItemListsItemItemsItemLastModifiedByUserRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsItemLastModifiedByUserRequestBuilder) {
     m := &ItemListsItemItemsItemLastModifiedByUserRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/lastModifiedByUser{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/lastModifiedByUser{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemListsItemItemsItemLastModifiedByUserRequestBuilder instantiates a new LastModifiedByUserRequestBuilder and sets the default values.
+// NewItemListsItemItemsItemLastModifiedByUserRequestBuilder instantiates a new ItemListsItemItemsItemLastModifiedByUserRequestBuilder and sets the default values.
 func NewItemListsItemItemsItemLastModifiedByUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsItemLastModifiedByUserRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemListsItemItemsItemLastModifiedByUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get lastModifiedByUser from sites
+// returns a Userable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListsItemItemsItemLastModifiedByUserRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemItemsItemLastModifiedByUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,14 +61,17 @@ func (m *ItemListsItemItemsItemLastModifiedByUserRequestBuilder) Get(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable), nil
 }
 // MailboxSettings the mailboxSettings property
+// returns a *ItemListsItemItemsItemLastModifiedByUserMailboxSettingsRequestBuilder when successful
 func (m *ItemListsItemItemsItemLastModifiedByUserRequestBuilder) MailboxSettings()(*ItemListsItemItemsItemLastModifiedByUserMailboxSettingsRequestBuilder) {
     return NewItemListsItemItemsItemLastModifiedByUserMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
+// returns a *ItemListsItemItemsItemLastModifiedByUserServiceProvisioningErrorsRequestBuilder when successful
 func (m *ItemListsItemItemsItemLastModifiedByUserRequestBuilder) ServiceProvisioningErrors()(*ItemListsItemItemsItemLastModifiedByUserServiceProvisioningErrorsRequestBuilder) {
     return NewItemListsItemItemsItemLastModifiedByUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get lastModifiedByUser from sites
+// returns a *RequestInformation when successful
 func (m *ItemListsItemItemsItemLastModifiedByUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsItemLastModifiedByUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -81,6 +85,7 @@ func (m *ItemListsItemItemsItemLastModifiedByUserRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemListsItemItemsItemLastModifiedByUserRequestBuilder when successful
 func (m *ItemListsItemItemsItemLastModifiedByUserRequestBuilder) WithUrl(rawUrl string)(*ItemListsItemItemsItemLastModifiedByUserRequestBuilder) {
     return NewItemListsItemItemsItemLastModifiedByUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

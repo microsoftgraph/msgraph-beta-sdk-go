@@ -47,6 +47,7 @@ type DeviceCompliancePoliciesRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDeviceCompliancePolicyId provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
+// returns a *DeviceCompliancePoliciesDeviceCompliancePolicyItemRequestBuilder when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) ByDeviceCompliancePolicyId(deviceCompliancePolicyId string)(*DeviceCompliancePoliciesDeviceCompliancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,7 +61,7 @@ func (m *DeviceCompliancePoliciesRequestBuilder) ByDeviceCompliancePolicyId(devi
 // NewDeviceCompliancePoliciesRequestBuilderInternal instantiates a new DeviceCompliancePoliciesRequestBuilder and sets the default values.
 func NewDeviceCompliancePoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCompliancePoliciesRequestBuilder) {
     m := &DeviceCompliancePoliciesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -71,18 +72,20 @@ func NewDeviceCompliancePoliciesRequestBuilder(rawUrl string, requestAdapter i2a
     return NewDeviceCompliancePoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *DeviceCompliancePoliciesCountRequestBuilder when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) Count()(*DeviceCompliancePoliciesCountRequestBuilder) {
     return NewDeviceCompliancePoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the device compliance policies.
+// returns a DeviceCompliancePolicyCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceCompliancePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceCompliancePolicyCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,26 +97,30 @@ func (m *DeviceCompliancePoliciesRequestBuilder) Get(ctx context.Context, reques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyCollectionResponseable), nil
 }
 // GetDevicesScheduledToRetire provides operations to call the getDevicesScheduledToRetire method.
+// returns a *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) GetDevicesScheduledToRetire()(*DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) {
     return NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetNoncompliantDevicesToRetire provides operations to call the getNoncompliantDevicesToRetire method.
+// returns a *DeviceCompliancePoliciesGetNoncompliantDevicesToRetireRequestBuilder when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) GetNoncompliantDevicesToRetire()(*DeviceCompliancePoliciesGetNoncompliantDevicesToRetireRequestBuilder) {
     return NewDeviceCompliancePoliciesGetNoncompliantDevicesToRetireRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // HasPayloadLinks provides operations to call the hasPayloadLinks method.
+// returns a *DeviceCompliancePoliciesHasPayloadLinksRequestBuilder when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) HasPayloadLinks()(*DeviceCompliancePoliciesHasPayloadLinksRequestBuilder) {
     return NewDeviceCompliancePoliciesHasPayloadLinksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to deviceCompliancePolicies for deviceManagement
+// returns a DeviceCompliancePolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceCompliancePoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyable, requestConfiguration *DeviceCompliancePoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceCompliancePolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -125,14 +132,17 @@ func (m *DeviceCompliancePoliciesRequestBuilder) Post(ctx context.Context, body 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyable), nil
 }
 // RefreshDeviceComplianceReportSummarization provides operations to call the refreshDeviceComplianceReportSummarization method.
+// returns a *DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) RefreshDeviceComplianceReportSummarization()(*DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder) {
     return NewDeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetScheduledRetireState provides operations to call the setScheduledRetireState method.
+// returns a *DeviceCompliancePoliciesSetScheduledRetireStateRequestBuilder when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) SetScheduledRetireState()(*DeviceCompliancePoliciesSetScheduledRetireStateRequestBuilder) {
     return NewDeviceCompliancePoliciesSetScheduledRetireStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the device compliance policies.
+// returns a *RequestInformation when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -146,8 +156,9 @@ func (m *DeviceCompliancePoliciesRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to deviceCompliancePolicies for deviceManagement
+// returns a *RequestInformation when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCompliancePolicyable, requestConfiguration *DeviceCompliancePoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceManagement/deviceCompliancePolicies", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -160,10 +171,12 @@ func (m *DeviceCompliancePoliciesRequestBuilder) ToPostRequestInformation(ctx co
     return requestInfo, nil
 }
 // ValidateComplianceScript provides operations to call the validateComplianceScript method.
+// returns a *DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) ValidateComplianceScript()(*DeviceCompliancePoliciesValidateComplianceScriptRequestBuilder) {
     return NewDeviceCompliancePoliciesValidateComplianceScriptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceCompliancePoliciesRequestBuilder when successful
 func (m *DeviceCompliancePoliciesRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesRequestBuilder) {
     return NewDeviceCompliancePoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

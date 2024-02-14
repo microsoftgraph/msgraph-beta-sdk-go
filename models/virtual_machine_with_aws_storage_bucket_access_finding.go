@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualMachineWithAwsStorageBucketAccessFinding 
 type VirtualMachineWithAwsStorageBucketAccessFinding struct {
     Finding
 }
-// NewVirtualMachineWithAwsStorageBucketAccessFinding instantiates a new virtualMachineWithAwsStorageBucketAccessFinding and sets the default values.
+// NewVirtualMachineWithAwsStorageBucketAccessFinding instantiates a new VirtualMachineWithAwsStorageBucketAccessFinding and sets the default values.
 func NewVirtualMachineWithAwsStorageBucketAccessFinding()(*VirtualMachineWithAwsStorageBucketAccessFinding) {
     m := &VirtualMachineWithAwsStorageBucketAccessFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewVirtualMachineWithAwsStorageBucketAccessFinding()(*VirtualMachineWithAws
     return m
 }
 // CreateVirtualMachineWithAwsStorageBucketAccessFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualMachineWithAwsStorageBucketAccessFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualMachineWithAwsStorageBucketAccessFinding(), nil
 }
 // GetAccessibleCount gets the accessibleCount property value. The total number of storage buckets that the EC2 instance can access using the role.
+// returns a *int32 when successful
 func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetAccessibleCount()(*int32) {
     val, err := m.GetBackingStore().Get("accessibleCount")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetAccessibleCount()(*
     return nil
 }
 // GetBucketCount gets the bucketCount property value. The total number of storage buckets in the authorization system that hosts the EC2 instance.
+// returns a *int32 when successful
 func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetBucketCount()(*int32) {
     val, err := m.GetBackingStore().Get("bucketCount")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetBucketCount()(*int3
     return nil
 }
 // GetEc2Instance gets the ec2Instance property value. The ec2Instance property
+// returns a AuthorizationSystemResourceable when successful
 func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetEc2Instance()(AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("ec2Instance")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetEc2Instance()(Autho
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["accessibleCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +112,7 @@ func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetFieldDeserializers(
     return res
 }
 // GetPermissionsCreepIndex gets the permissionsCreepIndex property value. The permissionsCreepIndex property
+// returns a PermissionsCreepIndexable when successful
 func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetPermissionsCreepIndex()(PermissionsCreepIndexable) {
     val, err := m.GetBackingStore().Get("permissionsCreepIndex")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetPermissionsCreepInd
     return nil
 }
 // GetRole gets the role property value. The role property
+// returns a AwsRoleable when successful
 func (m *VirtualMachineWithAwsStorageBucketAccessFinding) GetRole()(AwsRoleable) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -202,7 +208,6 @@ func (m *VirtualMachineWithAwsStorageBucketAccessFinding) SetRole(value AwsRolea
         panic(err)
     }
 }
-// VirtualMachineWithAwsStorageBucketAccessFindingable 
 type VirtualMachineWithAwsStorageBucketAccessFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

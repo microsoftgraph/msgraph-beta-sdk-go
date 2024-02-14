@@ -8,7 +8,7 @@ import (
 type WindowsAppIdentifier struct {
     MobileAppIdentifier
 }
-// NewWindowsAppIdentifier instantiates a new windowsAppIdentifier and sets the default values.
+// NewWindowsAppIdentifier instantiates a new WindowsAppIdentifier and sets the default values.
 func NewWindowsAppIdentifier()(*WindowsAppIdentifier) {
     m := &WindowsAppIdentifier{
         MobileAppIdentifier: *NewMobileAppIdentifier(),
@@ -18,10 +18,12 @@ func NewWindowsAppIdentifier()(*WindowsAppIdentifier) {
     return m
 }
 // CreateWindowsAppIdentifierFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsAppIdentifierFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsAppIdentifier(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsAppIdentifier) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppIdentifier.GetFieldDeserializers()
     res["windowsAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *WindowsAppIdentifier) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetWindowsAppId gets the windowsAppId property value. The identifier for an app, as specified in the app store.
+// returns a *string when successful
 func (m *WindowsAppIdentifier) GetWindowsAppId()(*string) {
     val, err := m.GetBackingStore().Get("windowsAppId")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *WindowsAppIdentifier) SetWindowsAppId(value *string)() {
         panic(err)
     }
 }
-// WindowsAppIdentifierable 
 type WindowsAppIdentifierable interface {
     MobileAppIdentifierable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

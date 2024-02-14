@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AggregatedInboundStatistics 
 type AggregatedInboundStatistics struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAggregatedInboundStatistics instantiates a new aggregatedInboundStatistics and sets the default values.
+// NewAggregatedInboundStatistics instantiates a new AggregatedInboundStatistics and sets the default values.
 func NewAggregatedInboundStatistics()(*AggregatedInboundStatistics) {
     m := &AggregatedInboundStatistics{
     }
@@ -19,10 +18,12 @@ func NewAggregatedInboundStatistics()(*AggregatedInboundStatistics) {
     return m
 }
 // CreateAggregatedInboundStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAggregatedInboundStatisticsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAggregatedInboundStatistics(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AggregatedInboundStatistics) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AggregatedInboundStatistics) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AggregatedInboundStatistics) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetErrors gets the errors property value. The aggregate count of errors encountered by activities during this run.
+// returns a *int32 when successful
 func (m *AggregatedInboundStatistics) GetErrors()(*int32) {
     val, err := m.GetBackingStore().Get("errors")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AggregatedInboundStatistics) GetErrors()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AggregatedInboundStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["errors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -157,6 +161,7 @@ func (m *AggregatedInboundStatistics) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetGroups gets the groups property value. The aggregate count of active inbound groups processed during the run.
+// returns a *int32 when successful
 func (m *AggregatedInboundStatistics) GetGroups()(*int32) {
     val, err := m.GetBackingStore().Get("groups")
     if err != nil {
@@ -168,6 +173,7 @@ func (m *AggregatedInboundStatistics) GetGroups()(*int32) {
     return nil
 }
 // GetMatchedPeopleByRole gets the matchedPeopleByRole property value. The aggregate count of active people matched to a Microsoft Entra user, by role.
+// returns a []IndustryDataRunRoleCountMetricable when successful
 func (m *AggregatedInboundStatistics) GetMatchedPeopleByRole()([]IndustryDataRunRoleCountMetricable) {
     val, err := m.GetBackingStore().Get("matchedPeopleByRole")
     if err != nil {
@@ -179,6 +185,7 @@ func (m *AggregatedInboundStatistics) GetMatchedPeopleByRole()([]IndustryDataRun
     return nil
 }
 // GetMemberships gets the memberships property value. The aggregate count of active inbound memberships processed during the run.
+// returns a *int32 when successful
 func (m *AggregatedInboundStatistics) GetMemberships()(*int32) {
     val, err := m.GetBackingStore().Get("memberships")
     if err != nil {
@@ -190,6 +197,7 @@ func (m *AggregatedInboundStatistics) GetMemberships()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AggregatedInboundStatistics) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -201,6 +209,7 @@ func (m *AggregatedInboundStatistics) GetOdataType()(*string) {
     return nil
 }
 // GetOrganizations gets the organizations property value. The aggregate count of active inbound organizations processed during the run.
+// returns a *int32 when successful
 func (m *AggregatedInboundStatistics) GetOrganizations()(*int32) {
     val, err := m.GetBackingStore().Get("organizations")
     if err != nil {
@@ -212,6 +221,7 @@ func (m *AggregatedInboundStatistics) GetOrganizations()(*int32) {
     return nil
 }
 // GetPeople gets the people property value. The aggregate count of active inbound people processed during the run.
+// returns a *int32 when successful
 func (m *AggregatedInboundStatistics) GetPeople()(*int32) {
     val, err := m.GetBackingStore().Get("people")
     if err != nil {
@@ -223,6 +233,7 @@ func (m *AggregatedInboundStatistics) GetPeople()(*int32) {
     return nil
 }
 // GetUnmatchedPeopleByRole gets the unmatchedPeopleByRole property value. The aggregate count of active people not matched to a Microsoft Entra user, by role.
+// returns a []IndustryDataRunRoleCountMetricable when successful
 func (m *AggregatedInboundStatistics) GetUnmatchedPeopleByRole()([]IndustryDataRunRoleCountMetricable) {
     val, err := m.GetBackingStore().Get("unmatchedPeopleByRole")
     if err != nil {
@@ -234,6 +245,7 @@ func (m *AggregatedInboundStatistics) GetUnmatchedPeopleByRole()([]IndustryDataR
     return nil
 }
 // GetWarnings gets the warnings property value. The aggregate count of warnings generated by activities during this run.
+// returns a *int32 when successful
 func (m *AggregatedInboundStatistics) GetWarnings()(*int32) {
     val, err := m.GetBackingStore().Get("warnings")
     if err != nil {
@@ -334,7 +346,6 @@ func (m *AggregatedInboundStatistics) SetWarnings(value *int32)() {
         panic(err)
     }
 }
-// AggregatedInboundStatisticsable 
 type AggregatedInboundStatisticsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

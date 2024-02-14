@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSettingGroupDefinition 
 type DeviceManagementConfigurationSettingGroupDefinition struct {
     DeviceManagementConfigurationSettingDefinition
 }
-// NewDeviceManagementConfigurationSettingGroupDefinition instantiates a new deviceManagementConfigurationSettingGroupDefinition and sets the default values.
+// NewDeviceManagementConfigurationSettingGroupDefinition instantiates a new DeviceManagementConfigurationSettingGroupDefinition and sets the default values.
 func NewDeviceManagementConfigurationSettingGroupDefinition()(*DeviceManagementConfigurationSettingGroupDefinition) {
     m := &DeviceManagementConfigurationSettingGroupDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
@@ -16,6 +15,7 @@ func NewDeviceManagementConfigurationSettingGroupDefinition()(*DeviceManagementC
     return m
 }
 // CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -37,7 +37,8 @@ func CreateDeviceManagementConfigurationSettingGroupDefinitionFromDiscriminatorV
     }
     return NewDeviceManagementConfigurationSettingGroupDefinition(), nil
 }
-// GetChildIds gets the childIds property value. Dependent child settings to this group of settings
+// GetChildIds gets the childIds property value. Dependent child settings to this group of settings.
+// returns a []string when successful
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetChildIds()([]string) {
     val, err := m.GetBackingStore().Get("childIds")
     if err != nil {
@@ -49,6 +50,7 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) GetChildIds()([]st
     return nil
 }
 // GetDependedOnBy gets the dependedOnBy property value. List of child settings that depend on this setting
+// returns a []DeviceManagementConfigurationSettingDependedOnByable when successful
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable) {
     val, err := m.GetBackingStore().Get("dependedOnBy")
     if err != nil {
@@ -60,6 +62,7 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) GetDependedOnBy()(
     return nil
 }
 // GetDependentOn gets the dependentOn property value. List of Dependencies for the setting group
+// returns a []DeviceManagementConfigurationDependentOnable when successful
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetDependentOn()([]DeviceManagementConfigurationDependentOnable) {
     val, err := m.GetBackingStore().Get("dependentOn")
     if err != nil {
@@ -71,6 +74,7 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) GetDependentOn()([
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationSettingGroupDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingDefinition.GetFieldDeserializers()
     res["childIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -161,7 +165,7 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) Serialize(writer i
     }
     return nil
 }
-// SetChildIds sets the childIds property value. Dependent child settings to this group of settings
+// SetChildIds sets the childIds property value. Dependent child settings to this group of settings.
 func (m *DeviceManagementConfigurationSettingGroupDefinition) SetChildIds(value []string)() {
     err := m.GetBackingStore().Set("childIds", value)
     if err != nil {
@@ -182,7 +186,6 @@ func (m *DeviceManagementConfigurationSettingGroupDefinition) SetDependentOn(val
         panic(err)
     }
 }
-// DeviceManagementConfigurationSettingGroupDefinitionable 
 type DeviceManagementConfigurationSettingGroupDefinitionable interface {
     DeviceManagementConfigurationSettingDefinitionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

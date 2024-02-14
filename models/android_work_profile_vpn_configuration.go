@@ -8,7 +8,7 @@ import (
 type AndroidWorkProfileVpnConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidWorkProfileVpnConfiguration instantiates a new androidWorkProfileVpnConfiguration and sets the default values.
+// NewAndroidWorkProfileVpnConfiguration instantiates a new AndroidWorkProfileVpnConfiguration and sets the default values.
 func NewAndroidWorkProfileVpnConfiguration()(*AndroidWorkProfileVpnConfiguration) {
     m := &AndroidWorkProfileVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidWorkProfileVpnConfiguration()(*AndroidWorkProfileVpnConfiguration
     return m
 }
 // CreateAndroidWorkProfileVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidWorkProfileVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidWorkProfileVpnConfiguration(), nil
 }
 // GetAlwaysOn gets the alwaysOn property value. Whether or not to enable always-on VPN connection.
+// returns a *bool when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetAlwaysOn()(*bool) {
     val, err := m.GetBackingStore().Get("alwaysOn")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetAlwaysOn()(*bool) {
     return nil
 }
 // GetAlwaysOnLockdown gets the alwaysOnLockdown property value. If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
+// returns a *bool when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetAlwaysOnLockdown()(*bool) {
     val, err := m.GetBackingStore().Get("alwaysOnLockdown")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetAlwaysOnLockdown()(*bool) {
     return nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. VPN Authentication Method.
+// returns a *VpnAuthenticationMethod when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetAuthenticationMethod()(*VpnAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetAuthenticationMethod()(*VpnAuthe
     return nil
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
+// returns a *string when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetConnectionName()(*string) {
     val, err := m.GetBackingStore().Get("connectionName")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetConnectionName()(*string) {
     return nil
 }
 // GetConnectionType gets the connectionType property value. Android Work Profile VPN connection type.
+// returns a *AndroidWorkProfileVpnConnectionType when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetConnectionType()(*AndroidWorkProfileVpnConnectionType) {
     val, err := m.GetBackingStore().Get("connectionType")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetConnectionType()(*AndroidWorkPro
     return nil
 }
 // GetCustomData gets the customData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
+// returns a []KeyValueable when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetCustomData()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("customData")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetCustomData()([]KeyValueable) {
     return nil
 }
 // GetCustomKeyValueData gets the customKeyValueData property value. Custom data when connection type is set to Citrix. This collection can contain a maximum of 25 elements.
+// returns a []KeyValuePairable when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetCustomKeyValueData()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("customKeyValueData")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetCustomKeyValueData()([]KeyValueP
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["alwaysOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -310,6 +319,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetFieldDeserializers()(map[string]
     return res
 }
 // GetFingerprint gets the fingerprint property value. Fingerprint is a string that will be used to verify the VPN server can be trusted, which is only applicable when connection type is Check Point Capsule VPN.
+// returns a *string when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetFingerprint()(*string) {
     val, err := m.GetBackingStore().Get("fingerprint")
     if err != nil {
@@ -321,6 +331,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetFingerprint()(*string) {
     return nil
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
+// returns a AndroidWorkProfileCertificateProfileBaseable when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetIdentityCertificate()(AndroidWorkProfileCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificate")
     if err != nil {
@@ -332,6 +343,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetIdentityCertificate()(AndroidWor
     return nil
 }
 // GetMicrosoftTunnelSiteId gets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
+// returns a *string when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
     val, err := m.GetBackingStore().Get("microsoftTunnelSiteId")
     if err != nil {
@@ -343,6 +355,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetMicrosoftTunnelSiteId()(*string)
     return nil
 }
 // GetProxyExclusionList gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
+// returns a []string when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetProxyExclusionList()([]string) {
     val, err := m.GetBackingStore().Get("proxyExclusionList")
     if err != nil {
@@ -354,6 +367,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetProxyExclusionList()([]string) {
     return nil
 }
 // GetProxyServer gets the proxyServer property value. Proxy server.
+// returns a VpnProxyServerable when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetProxyServer()(VpnProxyServerable) {
     val, err := m.GetBackingStore().Get("proxyServer")
     if err != nil {
@@ -365,6 +379,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetProxyServer()(VpnProxyServerable
     return nil
 }
 // GetRealm gets the realm property value. Realm when connection type is set to Pulse Secure.
+// returns a *string when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetRealm()(*string) {
     val, err := m.GetBackingStore().Get("realm")
     if err != nil {
@@ -376,6 +391,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetRealm()(*string) {
     return nil
 }
 // GetRole gets the role property value. Role when connection type is set to Pulse Secure.
+// returns a *string when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetRole()(*string) {
     val, err := m.GetBackingStore().Get("role")
     if err != nil {
@@ -387,6 +403,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetRole()(*string) {
     return nil
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
+// returns a []VpnServerable when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetServers()([]VpnServerable) {
     val, err := m.GetBackingStore().Get("servers")
     if err != nil {
@@ -398,6 +415,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetServers()([]VpnServerable) {
     return nil
 }
 // GetTargetedMobileApps gets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetTargetedMobileApps()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("targetedMobileApps")
     if err != nil {
@@ -409,6 +427,7 @@ func (m *AndroidWorkProfileVpnConfiguration) GetTargetedMobileApps()([]AppListIt
     return nil
 }
 // GetTargetedPackageIds gets the targetedPackageIds property value. Targeted App package IDs.
+// returns a []string when successful
 func (m *AndroidWorkProfileVpnConfiguration) GetTargetedPackageIds()([]string) {
     val, err := m.GetBackingStore().Get("targetedPackageIds")
     if err != nil {
@@ -674,7 +693,6 @@ func (m *AndroidWorkProfileVpnConfiguration) SetTargetedPackageIds(value []strin
         panic(err)
     }
 }
-// AndroidWorkProfileVpnConfigurationable 
 type AndroidWorkProfileVpnConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

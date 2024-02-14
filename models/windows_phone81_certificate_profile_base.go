@@ -8,7 +8,7 @@ import (
 type WindowsPhone81CertificateProfileBase struct {
     DeviceConfiguration
 }
-// NewWindowsPhone81CertificateProfileBase instantiates a new windowsPhone81CertificateProfileBase and sets the default values.
+// NewWindowsPhone81CertificateProfileBase instantiates a new WindowsPhone81CertificateProfileBase and sets the default values.
 func NewWindowsPhone81CertificateProfileBase()(*WindowsPhone81CertificateProfileBase) {
     m := &WindowsPhone81CertificateProfileBase{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewWindowsPhone81CertificateProfileBase()(*WindowsPhone81CertificateProfile
     return m
 }
 // CreateWindowsPhone81CertificateProfileBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsPhone81CertificateProfileBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateWindowsPhone81CertificateProfileBaseFromDiscriminatorValue(parseNode 
     return NewWindowsPhone81CertificateProfileBase(), nil
 }
 // GetCertificateValidityPeriodScale gets the certificateValidityPeriodScale property value. Certificate Validity Period Options.
+// returns a *CertificateValidityPeriodScale when successful
 func (m *WindowsPhone81CertificateProfileBase) GetCertificateValidityPeriodScale()(*CertificateValidityPeriodScale) {
     val, err := m.GetBackingStore().Get("certificateValidityPeriodScale")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *WindowsPhone81CertificateProfileBase) GetCertificateValidityPeriodScale
     return nil
 }
 // GetCertificateValidityPeriodValue gets the certificateValidityPeriodValue property value. Value for the Certificate Validtiy Period.
+// returns a *int32 when successful
 func (m *WindowsPhone81CertificateProfileBase) GetCertificateValidityPeriodValue()(*int32) {
     val, err := m.GetBackingStore().Get("certificateValidityPeriodValue")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *WindowsPhone81CertificateProfileBase) GetCertificateValidityPeriodValue
     return nil
 }
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
+// returns a []ExtendedKeyUsageable when successful
 func (m *WindowsPhone81CertificateProfileBase) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
     val, err := m.GetBackingStore().Get("extendedKeyUsages")
     if err != nil {
@@ -73,6 +77,7 @@ func (m *WindowsPhone81CertificateProfileBase) GetExtendedKeyUsages()([]Extended
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsPhone81CertificateProfileBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["certificateValidityPeriodScale"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -154,6 +159,7 @@ func (m *WindowsPhone81CertificateProfileBase) GetFieldDeserializers()(map[strin
     return res
 }
 // GetKeyStorageProvider gets the keyStorageProvider property value. Key Storage Provider (KSP) Import Options.
+// returns a *KeyStorageProviderOption when successful
 func (m *WindowsPhone81CertificateProfileBase) GetKeyStorageProvider()(*KeyStorageProviderOption) {
     val, err := m.GetBackingStore().Get("keyStorageProvider")
     if err != nil {
@@ -165,6 +171,7 @@ func (m *WindowsPhone81CertificateProfileBase) GetKeyStorageProvider()(*KeyStora
     return nil
 }
 // GetRenewalThresholdPercentage gets the renewalThresholdPercentage property value. Certificate renewal threshold percentage.
+// returns a *int32 when successful
 func (m *WindowsPhone81CertificateProfileBase) GetRenewalThresholdPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("renewalThresholdPercentage")
     if err != nil {
@@ -176,6 +183,7 @@ func (m *WindowsPhone81CertificateProfileBase) GetRenewalThresholdPercentage()(*
     return nil
 }
 // GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Subject Alternative Name Options.
+// returns a *SubjectAlternativeNameType when successful
 func (m *WindowsPhone81CertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
     if err != nil {
@@ -187,6 +195,7 @@ func (m *WindowsPhone81CertificateProfileBase) GetSubjectAlternativeNameType()(*
     return nil
 }
 // GetSubjectNameFormat gets the subjectNameFormat property value. Subject Name Format Options.
+// returns a *SubjectNameFormat when successful
 func (m *WindowsPhone81CertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
     val, err := m.GetBackingStore().Get("subjectNameFormat")
     if err != nil {
@@ -306,7 +315,6 @@ func (m *WindowsPhone81CertificateProfileBase) SetSubjectNameFormat(value *Subje
         panic(err)
     }
 }
-// WindowsPhone81CertificateProfileBaseable 
 type WindowsPhone81CertificateProfileBaseable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationErrorCollectionResponse 
 type EducationSynchronizationErrorCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewEducationSynchronizationErrorCollectionResponse instantiates a new educationSynchronizationErrorCollectionResponse and sets the default values.
+// NewEducationSynchronizationErrorCollectionResponse instantiates a new EducationSynchronizationErrorCollectionResponse and sets the default values.
 func NewEducationSynchronizationErrorCollectionResponse()(*EducationSynchronizationErrorCollectionResponse) {
     m := &EducationSynchronizationErrorCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewEducationSynchronizationErrorCollectionResponse()(*EducationSynchronizat
     return m
 }
 // CreateEducationSynchronizationErrorCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationSynchronizationErrorCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSynchronizationErrorCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationSynchronizationErrorCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *EducationSynchronizationErrorCollectionResponse) GetFieldDeserializers(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []EducationSynchronizationErrorable when successful
 func (m *EducationSynchronizationErrorCollectionResponse) GetValue()([]EducationSynchronizationErrorable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *EducationSynchronizationErrorCollectionResponse) SetValue(value []Educa
         panic(err)
     }
 }
-// EducationSynchronizationErrorCollectionResponseable 
 type EducationSynchronizationErrorCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

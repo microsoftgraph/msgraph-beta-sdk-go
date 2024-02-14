@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AuthenticationAttributeCollectionInputConfiguration 
 type AuthenticationAttributeCollectionInputConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAuthenticationAttributeCollectionInputConfiguration instantiates a new authenticationAttributeCollectionInputConfiguration and sets the default values.
+// NewAuthenticationAttributeCollectionInputConfiguration instantiates a new AuthenticationAttributeCollectionInputConfiguration and sets the default values.
 func NewAuthenticationAttributeCollectionInputConfiguration()(*AuthenticationAttributeCollectionInputConfiguration) {
     m := &AuthenticationAttributeCollectionInputConfiguration{
     }
@@ -19,10 +18,12 @@ func NewAuthenticationAttributeCollectionInputConfiguration()(*AuthenticationAtt
     return m
 }
 // CreateAuthenticationAttributeCollectionInputConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationAttributeCollectionInputConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationAttributeCollectionInputConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetAdditionalData(
     return val.(map[string]any)
 }
 // GetAttribute gets the attribute property value. The built-in or custom attribute for which a value is being collected.
+// returns a *string when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetAttribute()(*string) {
     val, err := m.GetBackingStore().Get("attribute")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetAttribute()(*st
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDefaultValue gets the defaultValue property value. The default value of the attribute displayed to the end user.
+// returns a *string when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetDefaultValue()(*string) {
     val, err := m.GetBackingStore().Get("defaultValue")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetDefaultValue()(
     return nil
 }
 // GetEditable gets the editable property value. Whether the attribute is editable by the end user.
+// returns a *bool when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetEditable()(*bool) {
     val, err := m.GetBackingStore().Get("editable")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetEditable()(*boo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["attribute"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -193,6 +199,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetFieldDeserializ
     return res
 }
 // GetHidden gets the hidden property value. Whether the attribute is displayed to the end user.
+// returns a *bool when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
     if err != nil {
@@ -204,6 +211,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetHidden()(*bool)
     return nil
 }
 // GetInputType gets the inputType property value. The inputType property
+// returns a *AuthenticationAttributeCollectionInputType when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetInputType()(*AuthenticationAttributeCollectionInputType) {
     val, err := m.GetBackingStore().Get("inputType")
     if err != nil {
@@ -215,6 +223,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetInputType()(*Au
     return nil
 }
 // GetLabel gets the label property value. The label of the attribute field that is displayed to end user, unless overridden.
+// returns a *string when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
@@ -226,6 +235,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetLabel()(*string
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -237,6 +247,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetOdataType()(*st
     return nil
 }
 // GetOptions gets the options property value. The option values for certain multiple-option input types.
+// returns a []AuthenticationAttributeCollectionOptionConfigurationable when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetOptions()([]AuthenticationAttributeCollectionOptionConfigurationable) {
     val, err := m.GetBackingStore().Get("options")
     if err != nil {
@@ -248,6 +259,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetOptions()([]Aut
     return nil
 }
 // GetRequired gets the required property value. Whether the field is required.
+// returns a *bool when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
     if err != nil {
@@ -259,6 +271,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetRequired()(*boo
     return nil
 }
 // GetValidationRegEx gets the validationRegEx property value. The regex for the value of the field.
+// returns a *string when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetValidationRegEx()(*string) {
     val, err := m.GetBackingStore().Get("validationRegEx")
     if err != nil {
@@ -270,6 +283,7 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) GetValidationRegEx
     return nil
 }
 // GetWriteToDirectory gets the writeToDirectory property value. Whether the value collected is stored.
+// returns a *bool when successful
 func (m *AuthenticationAttributeCollectionInputConfiguration) GetWriteToDirectory()(*bool) {
     val, err := m.GetBackingStore().Get("writeToDirectory")
     if err != nil {
@@ -451,7 +465,6 @@ func (m *AuthenticationAttributeCollectionInputConfiguration) SetWriteToDirector
         panic(err)
     }
 }
-// AuthenticationAttributeCollectionInputConfigurationable 
 type AuthenticationAttributeCollectionInputConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

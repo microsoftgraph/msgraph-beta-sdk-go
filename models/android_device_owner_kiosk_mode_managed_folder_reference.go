@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerKioskModeManagedFolderReference struct {
     AndroidDeviceOwnerKioskModeHomeScreenItem
 }
-// NewAndroidDeviceOwnerKioskModeManagedFolderReference instantiates a new androidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
+// NewAndroidDeviceOwnerKioskModeManagedFolderReference instantiates a new AndroidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
 func NewAndroidDeviceOwnerKioskModeManagedFolderReference()(*AndroidDeviceOwnerKioskModeManagedFolderReference) {
     m := &AndroidDeviceOwnerKioskModeManagedFolderReference{
         AndroidDeviceOwnerKioskModeHomeScreenItem: *NewAndroidDeviceOwnerKioskModeHomeScreenItem(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceOwnerKioskModeManagedFolderReference()(*AndroidDeviceOwnerK
     return m
 }
 // CreateAndroidDeviceOwnerKioskModeManagedFolderReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerKioskModeManagedFolderReferenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerKioskModeManagedFolderReference(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidDeviceOwnerKioskModeHomeScreenItem.GetFieldDeserializers()
     res["folderIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +49,7 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFieldDeserializer
     return res
 }
 // GetFolderIdentifier gets the folderIdentifier property value. Unique identifier for the folder
+// returns a *string when successful
 func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFolderIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("folderIdentifier")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFolderIdentifier(
     return nil
 }
 // GetFolderName gets the folderName property value. Name of the folder
+// returns a *string when successful
 func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) GetFolderName()(*string) {
     val, err := m.GetBackingStore().Get("folderName")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *AndroidDeviceOwnerKioskModeManagedFolderReference) SetFolderName(value 
         panic(err)
     }
 }
-// AndroidDeviceOwnerKioskModeManagedFolderReferenceable 
 type AndroidDeviceOwnerKioskModeManagedFolderReferenceable interface {
     AndroidDeviceOwnerKioskModeHomeScreenItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

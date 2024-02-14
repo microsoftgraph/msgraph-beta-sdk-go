@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// DeviceCompliancePolicySettingStateSummary 
 type DeviceCompliancePolicySettingStateSummary struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewDeviceCompliancePolicySettingStateSummary instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
+// NewDeviceCompliancePolicySettingStateSummary instantiates a new DeviceCompliancePolicySettingStateSummary and sets the default values.
 func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySettingStateSummary) {
     m := &DeviceCompliancePolicySettingStateSummary{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewDeviceCompliancePolicySettingStateSummary()(*DeviceCompliancePolicySetti
     return m
 }
 // CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceCompliancePolicySettingStateSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceCompliancePolicySettingStateSummary(), nil
 }
 // GetConflictDeviceCount gets the conflictDeviceCount property value. The number of devices in a conflict state. Optional. Read-only.
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetConflictDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("conflictDeviceCount")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetConflictDeviceCount()(*in
     return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. The number of devices in an error state. Optional. Read-only.
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetErrorDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorDeviceCount")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetErrorDeviceCount()(*int32
     return nil
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. The number of devices in a failed state. Optional. Read-only.
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetFailedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedDeviceCount")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFailedDeviceCount()(*int3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["conflictDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,6 +194,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetFieldDeserializers()(map[
     return res
 }
 // GetIntuneAccountId gets the intuneAccountId property value. The identifer for the Microsoft Intune account. Required. Read-only.
+// returns a *string when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetIntuneAccountId()(*string) {
     val, err := m.GetBackingStore().Get("intuneAccountId")
     if err != nil {
@@ -201,6 +206,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetIntuneAccountId()(*string
     return nil
 }
 // GetIntuneSettingId gets the intuneSettingId property value. The identifier for the Intune setting. Optional. Read-only.
+// returns a *string when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetIntuneSettingId()(*string) {
     val, err := m.GetBackingStore().Get("intuneSettingId")
     if err != nil {
@@ -212,6 +218,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetIntuneSettingId()(*string
     return nil
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
+// returns a *Time when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshedDateTime")
     if err != nil {
@@ -223,6 +230,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetLastRefreshedDateTime()(*
     return nil
 }
 // GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. The number of devices in a not applicable state. Optional. Read-only.
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetNotApplicableDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
     if err != nil {
@@ -234,6 +242,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetNotApplicableDeviceCount(
     return nil
 }
 // GetPendingDeviceCount gets the pendingDeviceCount property value. The number of devices in a pending state. Optional. Read-only.
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetPendingDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingDeviceCount")
     if err != nil {
@@ -245,6 +254,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetPendingDeviceCount()(*int
     return nil
 }
 // GetPolicyType gets the policyType property value. The type for the device compliance policy. Optional. Read-only.
+// returns a *string when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetPolicyType()(*string) {
     val, err := m.GetBackingStore().Get("policyType")
     if err != nil {
@@ -256,6 +266,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetPolicyType()(*string) {
     return nil
 }
 // GetSettingName gets the settingName property value. The name for the setting within the device compliance policy. Optional. Read-only.
+// returns a *string when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetSettingName()(*string) {
     val, err := m.GetBackingStore().Get("settingName")
     if err != nil {
@@ -267,6 +278,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetSettingName()(*string) {
     return nil
 }
 // GetSucceededDeviceCount gets the succeededDeviceCount property value. The number of devices in a succeeded state. Optional. Read-only.
+// returns a *int32 when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetSucceededDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("succeededDeviceCount")
     if err != nil {
@@ -278,6 +290,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetSucceededDeviceCount()(*i
     return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
+// returns a *string when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetTenantDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("tenantDisplayName")
     if err != nil {
@@ -289,6 +302,7 @@ func (m *DeviceCompliancePolicySettingStateSummary) GetTenantDisplayName()(*stri
     return nil
 }
 // GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
+// returns a *string when successful
 func (m *DeviceCompliancePolicySettingStateSummary) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -476,7 +490,6 @@ func (m *DeviceCompliancePolicySettingStateSummary) SetTenantId(value *string)()
         panic(err)
     }
 }
-// DeviceCompliancePolicySettingStateSummaryable 
 type DeviceCompliancePolicySettingStateSummaryable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

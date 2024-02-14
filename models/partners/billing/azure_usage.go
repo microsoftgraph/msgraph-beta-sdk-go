@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AzureUsage 
 type AzureUsage struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewAzureUsage instantiates a new azureUsage and sets the default values.
+// NewAzureUsage instantiates a new AzureUsage and sets the default values.
 func NewAzureUsage()(*AzureUsage) {
     m := &AzureUsage{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewAzureUsage()(*AzureUsage) {
     return m
 }
 // CreateAzureUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAzureUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureUsage(), nil
 }
 // GetBilled gets the billed property value. The billed property
+// returns a BilledUsageable when successful
 func (m *AzureUsage) GetBilled()(BilledUsageable) {
     val, err := m.GetBackingStore().Get("billed")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AzureUsage) GetBilled()(BilledUsageable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["billed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *AzureUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetUnbilled gets the unbilled property value. The unbilled property
+// returns a UnbilledUsageable when successful
 func (m *AzureUsage) GetUnbilled()(UnbilledUsageable) {
     val, err := m.GetBackingStore().Get("unbilled")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *AzureUsage) SetUnbilled(value UnbilledUsageable)() {
         panic(err)
     }
 }
-// AzureUsageable 
 type AzureUsageable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

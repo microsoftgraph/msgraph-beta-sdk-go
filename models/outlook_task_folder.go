@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OutlookTaskFolder 
 type OutlookTaskFolder struct {
     Entity
 }
-// NewOutlookTaskFolder instantiates a new outlookTaskFolder and sets the default values.
+// NewOutlookTaskFolder instantiates a new OutlookTaskFolder and sets the default values.
 func NewOutlookTaskFolder()(*OutlookTaskFolder) {
     m := &OutlookTaskFolder{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewOutlookTaskFolder()(*OutlookTaskFolder) {
     return m
 }
 // CreateOutlookTaskFolderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOutlookTaskFolderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOutlookTaskFolder(), nil
 }
 // GetChangeKey gets the changeKey property value. The version of the task folder.
+// returns a *string when successful
 func (m *OutlookTaskFolder) GetChangeKey()(*string) {
     val, err := m.GetBackingStore().Get("changeKey")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *OutlookTaskFolder) GetChangeKey()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["changeKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +127,7 @@ func (m *OutlookTaskFolder) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetIsDefaultFolder gets the isDefaultFolder property value. True if the folder is the default task folder.
+// returns a *bool when successful
 func (m *OutlookTaskFolder) GetIsDefaultFolder()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultFolder")
     if err != nil {
@@ -136,6 +139,7 @@ func (m *OutlookTaskFolder) GetIsDefaultFolder()(*bool) {
     return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
+// returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *OutlookTaskFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
     if err != nil {
@@ -147,6 +151,7 @@ func (m *OutlookTaskFolder) GetMultiValueExtendedProperties()([]MultiValueLegacy
     return nil
 }
 // GetName gets the name property value. The name of the task folder.
+// returns a *string when successful
 func (m *OutlookTaskFolder) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -158,6 +163,7 @@ func (m *OutlookTaskFolder) GetName()(*string) {
     return nil
 }
 // GetParentGroupKey gets the parentGroupKey property value. The unique GUID identifier for the task folder's parent group.
+// returns a *UUID when successful
 func (m *OutlookTaskFolder) GetParentGroupKey()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("parentGroupKey")
     if err != nil {
@@ -169,6 +175,7 @@ func (m *OutlookTaskFolder) GetParentGroupKey()(*i561e97a8befe7661a44c8f54600992
     return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
+// returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *OutlookTaskFolder) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
     if err != nil {
@@ -180,6 +187,7 @@ func (m *OutlookTaskFolder) GetSingleValueExtendedProperties()([]SingleValueLega
     return nil
 }
 // GetTasks gets the tasks property value. The tasks in this task folder. Read-only. Nullable.
+// returns a []OutlookTaskable when successful
 func (m *OutlookTaskFolder) GetTasks()([]OutlookTaskable) {
     val, err := m.GetBackingStore().Get("tasks")
     if err != nil {
@@ -307,7 +315,6 @@ func (m *OutlookTaskFolder) SetTasks(value []OutlookTaskable)() {
         panic(err)
     }
 }
-// OutlookTaskFolderable 
 type OutlookTaskFolderable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type AospDeviceOwnerWiFiConfiguration struct {
     DeviceConfiguration
 }
-// NewAospDeviceOwnerWiFiConfiguration instantiates a new aospDeviceOwnerWiFiConfiguration and sets the default values.
+// NewAospDeviceOwnerWiFiConfiguration instantiates a new AospDeviceOwnerWiFiConfiguration and sets the default values.
 func NewAospDeviceOwnerWiFiConfiguration()(*AospDeviceOwnerWiFiConfiguration) {
     m := &AospDeviceOwnerWiFiConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewAospDeviceOwnerWiFiConfiguration()(*AospDeviceOwnerWiFiConfiguration) {
     return m
 }
 // CreateAospDeviceOwnerWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAospDeviceOwnerWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +41,7 @@ func CreateAospDeviceOwnerWiFiConfigurationFromDiscriminatorValue(parseNode i878
     return NewAospDeviceOwnerWiFiConfiguration(), nil
 }
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
+// returns a *bool when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetConnectAutomatically()(*bool) {
     val, err := m.GetBackingStore().Get("connectAutomatically")
     if err != nil {
@@ -51,6 +53,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetConnectAutomatically()(*bool) {
     return nil
 }
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
+// returns a *bool when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
     val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["connectAutomatically"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -193,6 +197,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetNetworkName gets the networkName property value. Network Name
+// returns a *string when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetNetworkName()(*string) {
     val, err := m.GetBackingStore().Get("networkName")
     if err != nil {
@@ -204,6 +209,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetNetworkName()(*string) {
     return nil
 }
 // GetPreSharedKey gets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
+// returns a *string when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKey()(*string) {
     val, err := m.GetBackingStore().Get("preSharedKey")
     if err != nil {
@@ -215,6 +221,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKey()(*string) {
     return nil
 }
 // GetPreSharedKeyIsSet gets the preSharedKeyIsSet property value. This is the pre-shared key for WPA Personal Wi-Fi network.
+// returns a *bool when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKeyIsSet()(*bool) {
     val, err := m.GetBackingStore().Get("preSharedKeyIsSet")
     if err != nil {
@@ -226,6 +233,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKeyIsSet()(*bool) {
     return nil
 }
 // GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. Specify the proxy server configuration script URL.
+// returns a *string when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
     val, err := m.GetBackingStore().Get("proxyAutomaticConfigurationUrl")
     if err != nil {
@@ -237,6 +245,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*
     return nil
 }
 // GetProxyExclusionList gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
+// returns a []string when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetProxyExclusionList()([]string) {
     val, err := m.GetBackingStore().Get("proxyExclusionList")
     if err != nil {
@@ -248,6 +257,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetProxyExclusionList()([]string) {
     return nil
 }
 // GetProxyManualAddress gets the proxyManualAddress property value. Specify the proxy server IP address. Both IPv4 and IPv6 addresses are supported. For example: 192.168.1.1.
+// returns a *string when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetProxyManualAddress()(*string) {
     val, err := m.GetBackingStore().Get("proxyManualAddress")
     if err != nil {
@@ -259,6 +269,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetProxyManualAddress()(*string) {
     return nil
 }
 // GetProxyManualPort gets the proxyManualPort property value. Specify the proxy server port.
+// returns a *int32 when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetProxyManualPort()(*int32) {
     val, err := m.GetBackingStore().Get("proxyManualPort")
     if err != nil {
@@ -270,6 +281,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetProxyManualPort()(*int32) {
     return nil
 }
 // GetProxySetting gets the proxySetting property value. Wi-Fi Proxy Settings.
+// returns a *WiFiProxySetting when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetProxySetting()(*WiFiProxySetting) {
     val, err := m.GetBackingStore().Get("proxySetting")
     if err != nil {
@@ -281,6 +293,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetProxySetting()(*WiFiProxySetting) 
     return nil
 }
 // GetSsid gets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
+// returns a *string when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetSsid()(*string) {
     val, err := m.GetBackingStore().Get("ssid")
     if err != nil {
@@ -292,6 +305,7 @@ func (m *AospDeviceOwnerWiFiConfiguration) GetSsid()(*string) {
     return nil
 }
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for AOSP Device Owner.
+// returns a *AospDeviceOwnerWiFiSecurityType when successful
 func (m *AospDeviceOwnerWiFiConfiguration) GetWiFiSecurityType()(*AospDeviceOwnerWiFiSecurityType) {
     val, err := m.GetBackingStore().Get("wiFiSecurityType")
     if err != nil {
@@ -468,7 +482,6 @@ func (m *AospDeviceOwnerWiFiConfiguration) SetWiFiSecurityType(value *AospDevice
         panic(err)
     }
 }
-// AospDeviceOwnerWiFiConfigurationable 
 type AospDeviceOwnerWiFiConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

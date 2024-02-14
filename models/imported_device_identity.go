@@ -9,7 +9,7 @@ import (
 type ImportedDeviceIdentity struct {
     Entity
 }
-// NewImportedDeviceIdentity instantiates a new importedDeviceIdentity and sets the default values.
+// NewImportedDeviceIdentity instantiates a new ImportedDeviceIdentity and sets the default values.
 func NewImportedDeviceIdentity()(*ImportedDeviceIdentity) {
     m := &ImportedDeviceIdentity{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewImportedDeviceIdentity()(*ImportedDeviceIdentity) {
     return m
 }
 // CreateImportedDeviceIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateImportedDeviceIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +40,7 @@ func CreateImportedDeviceIdentityFromDiscriminatorValue(parseNode i878a80d2330e8
     return NewImportedDeviceIdentity(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Created Date Time of the device
+// returns a *Time when successful
 func (m *ImportedDeviceIdentity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -50,6 +52,7 @@ func (m *ImportedDeviceIdentity) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDescription gets the description property value. The description of the device
+// returns a *string when successful
 func (m *ImportedDeviceIdentity) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -61,6 +64,7 @@ func (m *ImportedDeviceIdentity) GetDescription()(*string) {
     return nil
 }
 // GetEnrollmentState gets the enrollmentState property value. The enrollmentState property
+// returns a *EnrollmentState when successful
 func (m *ImportedDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
     val, err := m.GetBackingStore().Get("enrollmentState")
     if err != nil {
@@ -72,6 +76,7 @@ func (m *ImportedDeviceIdentity) GetEnrollmentState()(*EnrollmentState) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -157,6 +162,7 @@ func (m *ImportedDeviceIdentity) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetImportedDeviceIdentifier gets the importedDeviceIdentifier property value. Imported Device Identifier
+// returns a *string when successful
 func (m *ImportedDeviceIdentity) GetImportedDeviceIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("importedDeviceIdentifier")
     if err != nil {
@@ -168,6 +174,7 @@ func (m *ImportedDeviceIdentity) GetImportedDeviceIdentifier()(*string) {
     return nil
 }
 // GetImportedDeviceIdentityType gets the importedDeviceIdentityType property value. The importedDeviceIdentityType property
+// returns a *ImportedDeviceIdentityType when successful
 func (m *ImportedDeviceIdentity) GetImportedDeviceIdentityType()(*ImportedDeviceIdentityType) {
     val, err := m.GetBackingStore().Get("importedDeviceIdentityType")
     if err != nil {
@@ -179,6 +186,7 @@ func (m *ImportedDeviceIdentity) GetImportedDeviceIdentityType()(*ImportedDevice
     return nil
 }
 // GetLastContactedDateTime gets the lastContactedDateTime property value. Last Contacted Date Time of the device
+// returns a *Time when successful
 func (m *ImportedDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastContactedDateTime")
     if err != nil {
@@ -190,6 +198,7 @@ func (m *ImportedDeviceIdentity) GetLastContactedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last Modified DateTime of the description
+// returns a *Time when successful
 func (m *ImportedDeviceIdentity) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -201,6 +210,7 @@ func (m *ImportedDeviceIdentity) GetLastModifiedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetPlatform gets the platform property value. The platform property
+// returns a *Platform when successful
 func (m *ImportedDeviceIdentity) GetPlatform()(*Platform) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -326,7 +336,6 @@ func (m *ImportedDeviceIdentity) SetPlatform(value *Platform)() {
         panic(err)
     }
 }
-// ImportedDeviceIdentityable 
 type ImportedDeviceIdentityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

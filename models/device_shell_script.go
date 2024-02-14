@@ -9,7 +9,7 @@ import (
 type DeviceShellScript struct {
     Entity
 }
-// NewDeviceShellScript instantiates a new deviceShellScript and sets the default values.
+// NewDeviceShellScript instantiates a new DeviceShellScript and sets the default values.
 func NewDeviceShellScript()(*DeviceShellScript) {
     m := &DeviceShellScript{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceShellScript()(*DeviceShellScript) {
     return m
 }
 // CreateDeviceShellScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceShellScriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceShellScript(), nil
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device management script.
+// returns a []DeviceManagementScriptAssignmentable when successful
 func (m *DeviceShellScript) GetAssignments()([]DeviceManagementScriptAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceShellScript) GetAssignments()([]DeviceManagementScriptAssignmenta
     return nil
 }
 // GetBlockExecutionNotifications gets the blockExecutionNotifications property value. Does not notify the user a script is being executed
+// returns a *bool when successful
 func (m *DeviceShellScript) GetBlockExecutionNotifications()(*bool) {
     val, err := m.GetBackingStore().Get("blockExecutionNotifications")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceShellScript) GetBlockExecutionNotifications()(*bool) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the device management script was created. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceShellScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *DeviceShellScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetDescription gets the description property value. Optional description for the device management script.
+// returns a *string when successful
 func (m *DeviceShellScript) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *DeviceShellScript) GetDescription()(*string) {
     return nil
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for this script across all devices.
+// returns a []DeviceManagementScriptDeviceStateable when successful
 func (m *DeviceShellScript) GetDeviceRunStates()([]DeviceManagementScriptDeviceStateable) {
     val, err := m.GetBackingStore().Get("deviceRunStates")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *DeviceShellScript) GetDeviceRunStates()([]DeviceManagementScriptDeviceS
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the device management script.
+// returns a *string when successful
 func (m *DeviceShellScript) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *DeviceShellScript) GetDisplayName()(*string) {
     return nil
 }
 // GetExecutionFrequency gets the executionFrequency property value. The interval for script to run. If not defined the script will run once
+// returns a *ISODuration when successful
 func (m *DeviceShellScript) GetExecutionFrequency()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("executionFrequency")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *DeviceShellScript) GetExecutionFrequency()(*i878a80d2330e89d26896388a3f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -293,6 +302,7 @@ func (m *DeviceShellScript) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFileName gets the fileName property value. Script file name.
+// returns a *string when successful
 func (m *DeviceShellScript) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -304,6 +314,7 @@ func (m *DeviceShellScript) GetFileName()(*string) {
     return nil
 }
 // GetGroupAssignments gets the groupAssignments property value. The list of group assignments for the device management script.
+// returns a []DeviceManagementScriptGroupAssignmentable when successful
 func (m *DeviceShellScript) GetGroupAssignments()([]DeviceManagementScriptGroupAssignmentable) {
     val, err := m.GetBackingStore().Get("groupAssignments")
     if err != nil {
@@ -315,6 +326,7 @@ func (m *DeviceShellScript) GetGroupAssignments()([]DeviceManagementScriptGroupA
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the device management script was last modified. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceShellScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -326,6 +338,7 @@ func (m *DeviceShellScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetRetryCount gets the retryCount property value. Number of times for the script to be retried if it fails
+// returns a *int32 when successful
 func (m *DeviceShellScript) GetRetryCount()(*int32) {
     val, err := m.GetBackingStore().Get("retryCount")
     if err != nil {
@@ -337,6 +350,7 @@ func (m *DeviceShellScript) GetRetryCount()(*int32) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for this PowerShellScript instance.
+// returns a []string when successful
 func (m *DeviceShellScript) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -348,6 +362,7 @@ func (m *DeviceShellScript) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
+// returns a *RunAsAccountType when successful
 func (m *DeviceShellScript) GetRunAsAccount()(*RunAsAccountType) {
     val, err := m.GetBackingStore().Get("runAsAccount")
     if err != nil {
@@ -359,6 +374,7 @@ func (m *DeviceShellScript) GetRunAsAccount()(*RunAsAccountType) {
     return nil
 }
 // GetRunSummary gets the runSummary property value. Run summary for device management script.
+// returns a DeviceManagementScriptRunSummaryable when successful
 func (m *DeviceShellScript) GetRunSummary()(DeviceManagementScriptRunSummaryable) {
     val, err := m.GetBackingStore().Get("runSummary")
     if err != nil {
@@ -370,6 +386,7 @@ func (m *DeviceShellScript) GetRunSummary()(DeviceManagementScriptRunSummaryable
     return nil
 }
 // GetScriptContent gets the scriptContent property value. The script content.
+// returns a []byte when successful
 func (m *DeviceShellScript) GetScriptContent()([]byte) {
     val, err := m.GetBackingStore().Get("scriptContent")
     if err != nil {
@@ -381,6 +398,7 @@ func (m *DeviceShellScript) GetScriptContent()([]byte) {
     return nil
 }
 // GetUserRunStates gets the userRunStates property value. List of run states for this script across all users.
+// returns a []DeviceManagementScriptUserStateable when successful
 func (m *DeviceShellScript) GetUserRunStates()([]DeviceManagementScriptUserStateable) {
     val, err := m.GetBackingStore().Get("userRunStates")
     if err != nil {
@@ -620,7 +638,6 @@ func (m *DeviceShellScript) SetUserRunStates(value []DeviceManagementScriptUserS
         panic(err)
     }
 }
-// DeviceShellScriptable 
 type DeviceShellScriptable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

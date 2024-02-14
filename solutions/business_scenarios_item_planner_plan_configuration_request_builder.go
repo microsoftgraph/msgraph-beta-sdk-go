@@ -41,28 +41,28 @@ type BusinessScenariosItemPlannerPlanConfigurationRequestBuilderPatchRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilderInternal instantiates a new PlanConfigurationRequestBuilder and sets the default values.
+// NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilderInternal instantiates a new BusinessScenariosItemPlannerPlanConfigurationRequestBuilder and sets the default values.
 func NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) {
     m := &BusinessScenariosItemPlannerPlanConfigurationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilder instantiates a new PlanConfigurationRequestBuilder and sets the default values.
+// NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilder instantiates a new BusinessScenariosItemPlannerPlanConfigurationRequestBuilder and sets the default values.
 func NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property planConfiguration for solutions
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Delete(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,6 +71,8 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Delete(ctx
     return nil
 }
 // Get read the properties and relationships of a plannerPlanConfiguration object.
+// returns a PlannerPlanConfigurationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-1.0
@@ -80,8 +82,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Get(ctx co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerPlanConfigurationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,10 +94,13 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable), nil
 }
 // Localizations provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.
+// returns a *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Localizations()(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) {
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of a plannerPlanConfiguration object for a businessScenario.
+// returns a PlannerPlanConfigurationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-1.0
@@ -106,8 +110,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Patch(ctx 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerPlanConfigurationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,8 +122,9 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) Patch(ctx 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable), nil
 }
 // ToDeleteRequestInformation delete navigation property planConfiguration for solutions
+// returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -129,6 +133,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToDeleteRe
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a plannerPlanConfiguration object.
+// returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -142,8 +147,9 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a plannerPlanConfiguration object for a businessScenario.
+// returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -156,6 +162,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToPatchReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) WithUrl(rawUrl string)(*BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) {
     return NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -8,7 +8,7 @@ import (
 type DeliveryOptimizationGroupIdCustom struct {
     DeliveryOptimizationGroupIdSource
 }
-// NewDeliveryOptimizationGroupIdCustom instantiates a new deliveryOptimizationGroupIdCustom and sets the default values.
+// NewDeliveryOptimizationGroupIdCustom instantiates a new DeliveryOptimizationGroupIdCustom and sets the default values.
 func NewDeliveryOptimizationGroupIdCustom()(*DeliveryOptimizationGroupIdCustom) {
     m := &DeliveryOptimizationGroupIdCustom{
         DeliveryOptimizationGroupIdSource: *NewDeliveryOptimizationGroupIdSource(),
@@ -18,10 +18,12 @@ func NewDeliveryOptimizationGroupIdCustom()(*DeliveryOptimizationGroupIdCustom) 
     return m
 }
 // CreateDeliveryOptimizationGroupIdCustomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeliveryOptimizationGroupIdCustomFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeliveryOptimizationGroupIdCustom(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeliveryOptimizationGroupIdCustom) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeliveryOptimizationGroupIdSource.GetFieldDeserializers()
     res["groupIdCustom"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *DeliveryOptimizationGroupIdCustom) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetGroupIdCustom gets the groupIdCustom property value. Specifies an arbitrary group ID that the device belongs to
+// returns a *string when successful
 func (m *DeliveryOptimizationGroupIdCustom) GetGroupIdCustom()(*string) {
     val, err := m.GetBackingStore().Get("groupIdCustom")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *DeliveryOptimizationGroupIdCustom) SetGroupIdCustom(value *string)() {
         panic(err)
     }
 }
-// DeliveryOptimizationGroupIdCustomable 
 type DeliveryOptimizationGroupIdCustomable interface {
     DeliveryOptimizationGroupIdSourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

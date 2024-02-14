@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserInsightsRoot 
 type UserInsightsRoot struct {
     Entity
 }
-// NewUserInsightsRoot instantiates a new userInsightsRoot and sets the default values.
+// NewUserInsightsRoot instantiates a new UserInsightsRoot and sets the default values.
 func NewUserInsightsRoot()(*UserInsightsRoot) {
     m := &UserInsightsRoot{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUserInsightsRoot()(*UserInsightsRoot) {
     return m
 }
 // CreateUserInsightsRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserInsightsRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserInsightsRoot(), nil
 }
 // GetDaily gets the daily property value. Summaries of daily user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.
+// returns a DailyUserInsightMetricsRootable when successful
 func (m *UserInsightsRoot) GetDaily()(DailyUserInsightMetricsRootable) {
     val, err := m.GetBackingStore().Get("daily")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UserInsightsRoot) GetDaily()(DailyUserInsightMetricsRootable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserInsightsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["daily"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *UserInsightsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetMonthly gets the monthly property value. Summaries of monthly user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.
+// returns a MonthlyUserInsightMetricsRootable when successful
 func (m *UserInsightsRoot) GetMonthly()(MonthlyUserInsightMetricsRootable) {
     val, err := m.GetBackingStore().Get("monthly")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *UserInsightsRoot) SetMonthly(value MonthlyUserInsightMetricsRootable)()
         panic(err)
     }
 }
-// UserInsightsRootable 
 type UserInsightsRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

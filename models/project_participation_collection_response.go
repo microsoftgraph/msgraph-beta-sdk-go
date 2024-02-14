@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProjectParticipationCollectionResponse 
 type ProjectParticipationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProjectParticipationCollectionResponse instantiates a new projectParticipationCollectionResponse and sets the default values.
+// NewProjectParticipationCollectionResponse instantiates a new ProjectParticipationCollectionResponse and sets the default values.
 func NewProjectParticipationCollectionResponse()(*ProjectParticipationCollectionResponse) {
     m := &ProjectParticipationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewProjectParticipationCollectionResponse()(*ProjectParticipationCollection
     return m
 }
 // CreateProjectParticipationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProjectParticipationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProjectParticipationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProjectParticipationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ProjectParticipationCollectionResponse) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ProjectParticipationable when successful
 func (m *ProjectParticipationCollectionResponse) GetValue()([]ProjectParticipationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ProjectParticipationCollectionResponse) SetValue(value []ProjectPartici
         panic(err)
     }
 }
-// ProjectParticipationCollectionResponseable 
 type ProjectParticipationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

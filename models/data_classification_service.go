@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DataClassificationService 
 type DataClassificationService struct {
     Entity
 }
-// NewDataClassificationService instantiates a new dataClassificationService and sets the default values.
+// NewDataClassificationService instantiates a new DataClassificationService and sets the default values.
 func NewDataClassificationService()(*DataClassificationService) {
     m := &DataClassificationService{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDataClassificationService()(*DataClassificationService) {
     return m
 }
 // CreateDataClassificationServiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDataClassificationServiceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDataClassificationService(), nil
 }
 // GetClassifyFileJobs gets the classifyFileJobs property value. The classifyFileJobs property
+// returns a []JobResponseBaseable when successful
 func (m *DataClassificationService) GetClassifyFileJobs()([]JobResponseBaseable) {
     val, err := m.GetBackingStore().Get("classifyFileJobs")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *DataClassificationService) GetClassifyFileJobs()([]JobResponseBaseable)
     return nil
 }
 // GetClassifyTextJobs gets the classifyTextJobs property value. The classifyTextJobs property
+// returns a []JobResponseBaseable when successful
 func (m *DataClassificationService) GetClassifyTextJobs()([]JobResponseBaseable) {
     val, err := m.GetBackingStore().Get("classifyTextJobs")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *DataClassificationService) GetClassifyTextJobs()([]JobResponseBaseable)
     return nil
 }
 // GetEvaluateDlpPoliciesJobs gets the evaluateDlpPoliciesJobs property value. The evaluateDlpPoliciesJobs property
+// returns a []JobResponseBaseable when successful
 func (m *DataClassificationService) GetEvaluateDlpPoliciesJobs()([]JobResponseBaseable) {
     val, err := m.GetBackingStore().Get("evaluateDlpPoliciesJobs")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *DataClassificationService) GetEvaluateDlpPoliciesJobs()([]JobResponseBa
     return nil
 }
 // GetEvaluateLabelJobs gets the evaluateLabelJobs property value. The evaluateLabelJobs property
+// returns a []JobResponseBaseable when successful
 func (m *DataClassificationService) GetEvaluateLabelJobs()([]JobResponseBaseable) {
     val, err := m.GetBackingStore().Get("evaluateLabelJobs")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *DataClassificationService) GetEvaluateLabelJobs()([]JobResponseBaseable
     return nil
 }
 // GetExactMatchDataStores gets the exactMatchDataStores property value. The exactMatchDataStores property
+// returns a []ExactMatchDataStoreable when successful
 func (m *DataClassificationService) GetExactMatchDataStores()([]ExactMatchDataStoreable) {
     val, err := m.GetBackingStore().Get("exactMatchDataStores")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *DataClassificationService) GetExactMatchDataStores()([]ExactMatchDataSt
     return nil
 }
 // GetExactMatchUploadAgents gets the exactMatchUploadAgents property value. The exactMatchUploadAgents property
+// returns a []ExactMatchUploadAgentable when successful
 func (m *DataClassificationService) GetExactMatchUploadAgents()([]ExactMatchUploadAgentable) {
     val, err := m.GetBackingStore().Get("exactMatchUploadAgents")
     if err != nil {
@@ -86,6 +92,7 @@ func (m *DataClassificationService) GetExactMatchUploadAgents()([]ExactMatchUplo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["classifyFileJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -235,6 +242,7 @@ func (m *DataClassificationService) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetJobs gets the jobs property value. The jobs property
+// returns a []JobResponseBaseable when successful
 func (m *DataClassificationService) GetJobs()([]JobResponseBaseable) {
     val, err := m.GetBackingStore().Get("jobs")
     if err != nil {
@@ -246,6 +254,7 @@ func (m *DataClassificationService) GetJobs()([]JobResponseBaseable) {
     return nil
 }
 // GetSensitiveTypes gets the sensitiveTypes property value. The sensitiveTypes property
+// returns a []SensitiveTypeable when successful
 func (m *DataClassificationService) GetSensitiveTypes()([]SensitiveTypeable) {
     val, err := m.GetBackingStore().Get("sensitiveTypes")
     if err != nil {
@@ -257,6 +266,7 @@ func (m *DataClassificationService) GetSensitiveTypes()([]SensitiveTypeable) {
     return nil
 }
 // GetSensitivityLabels gets the sensitivityLabels property value. The sensitivityLabels property
+// returns a []SensitivityLabelable when successful
 func (m *DataClassificationService) GetSensitivityLabels()([]SensitivityLabelable) {
     val, err := m.GetBackingStore().Get("sensitivityLabels")
     if err != nil {
@@ -446,7 +456,6 @@ func (m *DataClassificationService) SetSensitivityLabels(value []SensitivityLabe
         panic(err)
     }
 }
-// DataClassificationServiceable 
 type DataClassificationServiceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

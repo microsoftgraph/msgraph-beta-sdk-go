@@ -17,20 +17,21 @@ type VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderPostRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderInternal instantiates a new RunHealthChecksRequestBuilder and sets the default values.
+// NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderInternal instantiates a new VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder and sets the default values.
 func NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) {
     m := &VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection%2Did}/runHealthChecks", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder instantiates a new RunHealthChecksRequestBuilder and sets the default values.
+// NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder instantiates a new VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder and sets the default values.
 func NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post run health checks on the cloudPcOnPremisesConnection object. This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) 
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) 
     return nil
 }
 // ToPostRequestInformation run health checks on the cloudPcOnPremisesConnection object. This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder when successful
 func (m *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) {
     return NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

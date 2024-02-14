@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcUserSettingAssignmentCollectionResponse 
 type CloudPcUserSettingAssignmentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcUserSettingAssignmentCollectionResponse instantiates a new cloudPcUserSettingAssignmentCollectionResponse and sets the default values.
+// NewCloudPcUserSettingAssignmentCollectionResponse instantiates a new CloudPcUserSettingAssignmentCollectionResponse and sets the default values.
 func NewCloudPcUserSettingAssignmentCollectionResponse()(*CloudPcUserSettingAssignmentCollectionResponse) {
     m := &CloudPcUserSettingAssignmentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCloudPcUserSettingAssignmentCollectionResponse()(*CloudPcUserSettingAssi
     return m
 }
 // CreateCloudPcUserSettingAssignmentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcUserSettingAssignmentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcUserSettingAssignmentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcUserSettingAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CloudPcUserSettingAssignmentCollectionResponse) GetFieldDeserializers()
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []CloudPcUserSettingAssignmentable when successful
 func (m *CloudPcUserSettingAssignmentCollectionResponse) GetValue()([]CloudPcUserSettingAssignmentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CloudPcUserSettingAssignmentCollectionResponse) SetValue(value []CloudP
         panic(err)
     }
 }
-// CloudPcUserSettingAssignmentCollectionResponseable 
 type CloudPcUserSettingAssignmentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

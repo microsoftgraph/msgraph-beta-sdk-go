@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingActivityStatistics 
 type MeetingActivityStatistics struct {
     ActivityStatistics
 }
-// NewMeetingActivityStatistics instantiates a new meetingActivityStatistics and sets the default values.
+// NewMeetingActivityStatistics instantiates a new MeetingActivityStatistics and sets the default values.
 func NewMeetingActivityStatistics()(*MeetingActivityStatistics) {
     m := &MeetingActivityStatistics{
         ActivityStatistics: *NewActivityStatistics(),
@@ -18,10 +17,12 @@ func NewMeetingActivityStatistics()(*MeetingActivityStatistics) {
     return m
 }
 // CreateMeetingActivityStatisticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMeetingActivityStatisticsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMeetingActivityStatistics(), nil
 }
 // GetAfterHours gets the afterHours property value. Time spent on meetings outside of working hours, which is based on the user's Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.
+// returns a *ISODuration when successful
 func (m *MeetingActivityStatistics) GetAfterHours()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("afterHours")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *MeetingActivityStatistics) GetAfterHours()(*i878a80d2330e89d26896388a3f
     return nil
 }
 // GetConflicting gets the conflicting property value. Time spent in conflicting meetings (meetings that overlap with other meetings that the person accepted and where the person’s status is set to Busy). The value is represented in ISO 8601 format for durations.
+// returns a *ISODuration when successful
 func (m *MeetingActivityStatistics) GetConflicting()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("conflicting")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *MeetingActivityStatistics) GetConflicting()(*i878a80d2330e89d26896388a3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MeetingActivityStatistics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ActivityStatistics.GetFieldDeserializers()
     res["afterHours"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +112,7 @@ func (m *MeetingActivityStatistics) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetLong gets the long property value. Time spent in long meetings (more than an hour in duration). The value is represented in ISO 8601 format for durations.
+// returns a *ISODuration when successful
 func (m *MeetingActivityStatistics) GetLong()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("long")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *MeetingActivityStatistics) GetLong()(*i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // GetMultitasking gets the multitasking property value. Time spent in meetings where the person was multitasking (read/sent more than a minimum number of emails and/or sent more than a minimum number of messages in Teams or in Skype for Business). The value is represented in ISO 8601 format for durations.
+// returns a *ISODuration when successful
 func (m *MeetingActivityStatistics) GetMultitasking()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("multitasking")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *MeetingActivityStatistics) GetMultitasking()(*i878a80d2330e89d26896388a
     return nil
 }
 // GetOrganized gets the organized property value. Time spent in meetings organized by the user. The value is represented in ISO 8601 format for durations.
+// returns a *ISODuration when successful
 func (m *MeetingActivityStatistics) GetOrganized()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("organized")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *MeetingActivityStatistics) GetOrganized()(*i878a80d2330e89d26896388a3f4
     return nil
 }
 // GetRecurring gets the recurring property value. Time spent on recurring meetings. The value is represented in ISO 8601 format for durations.
+// returns a *ISODuration when successful
 func (m *MeetingActivityStatistics) GetRecurring()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
     val, err := m.GetBackingStore().Get("recurring")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *MeetingActivityStatistics) SetRecurring(value *i878a80d2330e89d26896388
         panic(err)
     }
 }
-// MeetingActivityStatisticsable 
 type MeetingActivityStatisticsable interface {
     ActivityStatisticsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

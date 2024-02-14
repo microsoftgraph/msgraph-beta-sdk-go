@@ -17,29 +17,30 @@ type IosManagedAppProtectionsHasPayloadLinksRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewIosManagedAppProtectionsHasPayloadLinksRequestBuilderInternal instantiates a new HasPayloadLinksRequestBuilder and sets the default values.
+// NewIosManagedAppProtectionsHasPayloadLinksRequestBuilderInternal instantiates a new IosManagedAppProtectionsHasPayloadLinksRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionsHasPayloadLinksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosManagedAppProtectionsHasPayloadLinksRequestBuilder) {
     m := &IosManagedAppProtectionsHasPayloadLinksRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/iosManagedAppProtections/hasPayloadLinks", pathParameters),
     }
     return m
 }
-// NewIosManagedAppProtectionsHasPayloadLinksRequestBuilder instantiates a new HasPayloadLinksRequestBuilder and sets the default values.
+// NewIosManagedAppProtectionsHasPayloadLinksRequestBuilder instantiates a new IosManagedAppProtectionsHasPayloadLinksRequestBuilder and sets the default values.
 func NewIosManagedAppProtectionsHasPayloadLinksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IosManagedAppProtectionsHasPayloadLinksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIosManagedAppProtectionsHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action hasPayloadLinks
-// Deprecated: This method is obsolete. Use PostAsHasPayloadLinksPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a IosManagedAppProtectionsHasPayloadLinksResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IosManagedAppProtectionsHasPayloadLinksRequestBuilder) Post(ctx context.Context, body IosManagedAppProtectionsHasPayloadLinksPostRequestBodyable, requestConfiguration *IosManagedAppProtectionsHasPayloadLinksRequestBuilderPostRequestConfiguration)(IosManagedAppProtectionsHasPayloadLinksResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateIosManagedAppProtectionsHasPayloadLinksResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *IosManagedAppProtectionsHasPayloadLinksRequestBuilder) Post(ctx context
     return res.(IosManagedAppProtectionsHasPayloadLinksResponseable), nil
 }
 // PostAsHasPayloadLinksPostResponse invoke action hasPayloadLinks
+// returns a IosManagedAppProtectionsHasPayloadLinksPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IosManagedAppProtectionsHasPayloadLinksRequestBuilder) PostAsHasPayloadLinksPostResponse(ctx context.Context, body IosManagedAppProtectionsHasPayloadLinksPostRequestBodyable, requestConfiguration *IosManagedAppProtectionsHasPayloadLinksRequestBuilderPostRequestConfiguration)(IosManagedAppProtectionsHasPayloadLinksPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateIosManagedAppProtectionsHasPayloadLinksPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *IosManagedAppProtectionsHasPayloadLinksRequestBuilder) PostAsHasPayload
     return res.(IosManagedAppProtectionsHasPayloadLinksPostResponseable), nil
 }
 // ToPostRequestInformation invoke action hasPayloadLinks
+// returns a *RequestInformation when successful
 func (m *IosManagedAppProtectionsHasPayloadLinksRequestBuilder) ToPostRequestInformation(ctx context.Context, body IosManagedAppProtectionsHasPayloadLinksPostRequestBodyable, requestConfiguration *IosManagedAppProtectionsHasPayloadLinksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -84,6 +87,7 @@ func (m *IosManagedAppProtectionsHasPayloadLinksRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IosManagedAppProtectionsHasPayloadLinksRequestBuilder when successful
 func (m *IosManagedAppProtectionsHasPayloadLinksRequestBuilder) WithUrl(rawUrl string)(*IosManagedAppProtectionsHasPayloadLinksRequestBuilder) {
     return NewIosManagedAppProtectionsHasPayloadLinksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

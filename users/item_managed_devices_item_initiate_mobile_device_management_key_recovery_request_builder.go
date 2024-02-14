@@ -17,28 +17,28 @@ type ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilderInternal instantiates a new InitiateMobileDeviceManagementKeyRecoveryRequestBuilder and sets the default values.
+// NewItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilderInternal instantiates a new ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder and sets the default values.
 func NewItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder) {
     m := &ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/initiateMobileDeviceManagementKeyRecovery", pathParameters),
     }
     return m
 }
-// NewItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder instantiates a new InitiateMobileDeviceManagementKeyRecoveryRequestBuilder and sets the default values.
+// NewItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder instantiates a new ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder and sets the default values.
 func NewItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post perform MDM key recovery and TPM attestation
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestB
     return nil
 }
 // ToPostRequestInformation perform MDM key recovery and TPM attestation
+// returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -57,6 +58,7 @@ func (m *ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestB
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder when successful
 func (m *ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder) {
     return NewItemManagedDevicesItemInitiateMobileDeviceManagementKeyRecoveryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

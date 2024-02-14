@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommunityCollectionResponse 
 type CommunityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCommunityCollectionResponse instantiates a new communityCollectionResponse and sets the default values.
+// NewCommunityCollectionResponse instantiates a new CommunityCollectionResponse and sets the default values.
 func NewCommunityCollectionResponse()(*CommunityCollectionResponse) {
     m := &CommunityCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCommunityCollectionResponse()(*CommunityCollectionResponse) {
     return m
 }
 // CreateCommunityCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommunityCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommunityCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommunityCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CommunityCollectionResponse) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Communityable when successful
 func (m *CommunityCollectionResponse) GetValue()([]Communityable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CommunityCollectionResponse) SetValue(value []Communityable)() {
         panic(err)
     }
 }
-// CommunityCollectionResponseable 
 type CommunityCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

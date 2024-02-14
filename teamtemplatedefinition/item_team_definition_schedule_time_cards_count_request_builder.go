@@ -26,28 +26,29 @@ type ItemTeamDefinitionScheduleTimeCardsCountRequestBuilderGetRequestConfigurati
     // Request query parameters
     QueryParameters *ItemTeamDefinitionScheduleTimeCardsCountRequestBuilderGetQueryParameters
 }
-// NewItemTeamDefinitionScheduleTimeCardsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewItemTeamDefinitionScheduleTimeCardsCountRequestBuilderInternal instantiates a new ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder and sets the default values.
 func NewItemTeamDefinitionScheduleTimeCardsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) {
     m := &ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeCards/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeCards/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewItemTeamDefinitionScheduleTimeCardsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewItemTeamDefinitionScheduleTimeCardsCountRequestBuilder instantiates a new ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder and sets the default values.
 func NewItemTeamDefinitionScheduleTimeCardsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionScheduleTimeCardsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) Get(ctx context
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeCardsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder when successful
 func (m *ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionScheduleTimeCardsCountRequestBuilder) {
     return NewItemTeamDefinitionScheduleTimeCardsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

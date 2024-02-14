@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PostalAddressType 
 type PostalAddressType struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPostalAddressType instantiates a new postalAddressType and sets the default values.
+// NewPostalAddressType instantiates a new PostalAddressType and sets the default values.
 func NewPostalAddressType()(*PostalAddressType) {
     m := &PostalAddressType{
     }
@@ -19,10 +18,12 @@ func NewPostalAddressType()(*PostalAddressType) {
     return m
 }
 // CreatePostalAddressTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePostalAddressTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPostalAddressType(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PostalAddressType) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PostalAddressType) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PostalAddressType) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCity gets the city property value. The city property
+// returns a *string when successful
 func (m *PostalAddressType) GetCity()(*string) {
     val, err := m.GetBackingStore().Get("city")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *PostalAddressType) GetCity()(*string) {
     return nil
 }
 // GetCountryLetterCode gets the countryLetterCode property value. The countryLetterCode property
+// returns a *string when successful
 func (m *PostalAddressType) GetCountryLetterCode()(*string) {
     val, err := m.GetBackingStore().Get("countryLetterCode")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *PostalAddressType) GetCountryLetterCode()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PostalAddressType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["city"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +131,7 @@ func (m *PostalAddressType) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PostalAddressType) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -137,6 +143,7 @@ func (m *PostalAddressType) GetOdataType()(*string) {
     return nil
 }
 // GetPostalCode gets the postalCode property value. The postalCode property
+// returns a *string when successful
 func (m *PostalAddressType) GetPostalCode()(*string) {
     val, err := m.GetBackingStore().Get("postalCode")
     if err != nil {
@@ -148,6 +155,7 @@ func (m *PostalAddressType) GetPostalCode()(*string) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *PostalAddressType) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -159,6 +167,7 @@ func (m *PostalAddressType) GetState()(*string) {
     return nil
 }
 // GetStreet gets the street property value. The street property
+// returns a *string when successful
 func (m *PostalAddressType) GetStreet()(*string) {
     val, err := m.GetBackingStore().Get("street")
     if err != nil {
@@ -268,7 +277,6 @@ func (m *PostalAddressType) SetStreet(value *string)() {
         panic(err)
     }
 }
-// PostalAddressTypeable 
 type PostalAddressTypeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

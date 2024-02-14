@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsBatteryHealthDevicePerformance struct {
     Entity
 }
-// NewUserExperienceAnalyticsBatteryHealthDevicePerformance instantiates a new userExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthDevicePerformance instantiates a new UserExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDevicePerformance()(*UserExperienceAnalyticsBatteryHealthDevicePerformance) {
     m := &UserExperienceAnalyticsBatteryHealthDevicePerformance{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsBatteryHealthDevicePerformance()(*UserExperienceA
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthDevicePerformanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsBatteryHealthDevicePerformanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthDevicePerformance(), nil
 }
 // GetBatteryAgeInDays gets the batteryAgeInDays property value. Estimated battery age. Unit in days. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetBatteryAgeInDays()(*int32) {
     val, err := m.GetBackingStore().Get("batteryAgeInDays")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetBatteryAgeInD
     return nil
 }
 // GetDeviceBatteriesDetails gets the deviceBatteriesDetails property value. Properties (maxCapacity and cycleCount) related to all batteries of the device.
+// returns a []UserExperienceAnalyticsDeviceBatteryDetailable when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteriesDetails()([]UserExperienceAnalyticsDeviceBatteryDetailable) {
     val, err := m.GetBackingStore().Get("deviceBatteriesDetails")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteri
     return nil
 }
 // GetDeviceBatteryCount gets the deviceBatteryCount property value. Number of batteries in a user device. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteryCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceBatteryCount")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBattery
     return nil
 }
 // GetDeviceBatteryHealthScore gets the deviceBatteryHealthScore property value. A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteryHealthScore()(*int32) {
     val, err := m.GetBackingStore().Get("deviceBatteryHealthScore")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBattery
     return nil
 }
 // GetDeviceBatteryTags gets the deviceBatteryTags property value. Tags for computed information on how battery on the device is behaving. E.g. newbattery, batterycapacityred, designcapacityzero, etc.
+// returns a []string when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBatteryTags()([]string) {
     val, err := m.GetBackingStore().Get("deviceBatteryTags")
     if err != nil {
@@ -75,6 +81,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceBattery
     return nil
 }
 // GetDeviceId gets the deviceId property value. The unique identifier of the device, Intune DeviceID.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -86,6 +93,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceId()(*s
     return nil
 }
 // GetDeviceName gets the deviceName property value. Device friendly name.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -97,6 +105,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceName()(
     return nil
 }
 // GetEstimatedRuntimeInMinutes gets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetEstimatedRuntimeInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("estimatedRuntimeInMinutes")
     if err != nil {
@@ -108,6 +117,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetEstimatedRunt
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["batteryAgeInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -255,6 +265,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
     return res
 }
 // GetFullBatteryDrainCount gets the fullBatteryDrainCount property value. Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFullBatteryDrainCount()(*int32) {
     val, err := m.GetBackingStore().Get("fullBatteryDrainCount")
     if err != nil {
@@ -266,6 +277,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFullBatteryDr
     return nil
 }
 // GetHealthStatus gets the healthStatus property value. The healthStatus property
+// returns a *UserExperienceAnalyticsHealthState when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus()(*UserExperienceAnalyticsHealthState) {
     val, err := m.GetBackingStore().Get("healthStatus")
     if err != nil {
@@ -277,6 +289,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus(
     return nil
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer name of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -288,6 +301,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetManufacturer(
     return nil
 }
 // GetMaxCapacityPercentage gets the maxCapacityPercentage property value. Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetMaxCapacityPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("maxCapacityPercentage")
     if err != nil {
@@ -299,6 +313,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetMaxCapacityPe
     return nil
 }
 // GetModel gets the model property value. The model name of the device.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
     if err != nil {
@@ -493,7 +508,6 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetModel(value *
         panic(err)
     }
 }
-// UserExperienceAnalyticsBatteryHealthDevicePerformanceable 
 type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,29 +17,30 @@ type ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderInternal instantiates a new ImportDeviceIdentityListRequestBuilder and sets the default values.
+// NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderInternal instantiates a new ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder and sets the default values.
 func NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) {
     m := &ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/importedDeviceIdentities/importDeviceIdentityList", pathParameters),
     }
     return m
 }
-// NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder instantiates a new ImportDeviceIdentityListRequestBuilder and sets the default values.
+// NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder instantiates a new ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder and sets the default values.
 func NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action importDeviceIdentityList
-// Deprecated: This method is obsolete. Use PostAsImportDeviceIdentityListPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ImportedDeviceIdentitiesImportDeviceIdentityListResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) Post(ctx context.Context, body ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBodyable, requestConfiguration *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderPostRequestConfiguration)(ImportedDeviceIdentitiesImportDeviceIdentityListResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateImportedDeviceIdentitiesImportDeviceIdentityListResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) Post(ct
     return res.(ImportedDeviceIdentitiesImportDeviceIdentityListResponseable), nil
 }
 // PostAsImportDeviceIdentityListPostResponse invoke action importDeviceIdentityList
+// returns a ImportedDeviceIdentitiesImportDeviceIdentityListPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) PostAsImportDeviceIdentityListPostResponse(ctx context.Context, body ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBodyable, requestConfiguration *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderPostRequestConfiguration)(ImportedDeviceIdentitiesImportDeviceIdentityListPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateImportedDeviceIdentitiesImportDeviceIdentityListPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) PostAsI
     return res.(ImportedDeviceIdentitiesImportDeviceIdentityListPostResponseable), nil
 }
 // ToPostRequestInformation invoke action importDeviceIdentityList
+// returns a *RequestInformation when successful
 func (m *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) ToPostRequestInformation(ctx context.Context, body ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBodyable, requestConfiguration *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -84,6 +87,7 @@ func (m *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) ToPostR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder when successful
 func (m *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) WithUrl(rawUrl string)(*ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) {
     return NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

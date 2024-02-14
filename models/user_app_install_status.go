@@ -8,7 +8,7 @@ import (
 type UserAppInstallStatus struct {
     Entity
 }
-// NewUserAppInstallStatus instantiates a new userAppInstallStatus and sets the default values.
+// NewUserAppInstallStatus instantiates a new UserAppInstallStatus and sets the default values.
 func NewUserAppInstallStatus()(*UserAppInstallStatus) {
     m := &UserAppInstallStatus{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserAppInstallStatus()(*UserAppInstallStatus) {
     return m
 }
 // CreateUserAppInstallStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserAppInstallStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserAppInstallStatus(), nil
 }
 // GetApp gets the app property value. The navigation link to the mobile app.
+// returns a MobileAppable when successful
 func (m *UserAppInstallStatus) GetApp()(MobileAppable) {
     val, err := m.GetBackingStore().Get("app")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserAppInstallStatus) GetApp()(MobileAppable) {
     return nil
 }
 // GetDeviceStatuses gets the deviceStatuses property value. The install state of the app on devices.
+// returns a []MobileAppInstallStatusable when successful
 func (m *UserAppInstallStatus) GetDeviceStatuses()([]MobileAppInstallStatusable) {
     val, err := m.GetBackingStore().Get("deviceStatuses")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserAppInstallStatus) GetDeviceStatuses()([]MobileAppInstallStatusable)
     return nil
 }
 // GetFailedDeviceCount gets the failedDeviceCount property value. Failed Device Count.
+// returns a *int32 when successful
 func (m *UserAppInstallStatus) GetFailedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedDeviceCount")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserAppInstallStatus) GetFailedDeviceCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["app"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -134,6 +139,7 @@ func (m *UserAppInstallStatus) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetInstalledDeviceCount gets the installedDeviceCount property value. Installed Device Count.
+// returns a *int32 when successful
 func (m *UserAppInstallStatus) GetInstalledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("installedDeviceCount")
     if err != nil {
@@ -145,6 +151,7 @@ func (m *UserAppInstallStatus) GetInstalledDeviceCount()(*int32) {
     return nil
 }
 // GetNotInstalledDeviceCount gets the notInstalledDeviceCount property value. Not installed device count.
+// returns a *int32 when successful
 func (m *UserAppInstallStatus) GetNotInstalledDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("notInstalledDeviceCount")
     if err != nil {
@@ -156,6 +163,7 @@ func (m *UserAppInstallStatus) GetNotInstalledDeviceCount()(*int32) {
     return nil
 }
 // GetUserName gets the userName property value. User name.
+// returns a *string when successful
 func (m *UserAppInstallStatus) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -167,6 +175,7 @@ func (m *UserAppInstallStatus) GetUserName()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
+// returns a *string when successful
 func (m *UserAppInstallStatus) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -282,7 +291,6 @@ func (m *UserAppInstallStatus) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// UserAppInstallStatusable 
 type UserAppInstallStatusable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

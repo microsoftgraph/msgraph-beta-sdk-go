@@ -8,7 +8,7 @@ import (
 type DeviceManagementTemplateSettingCategory struct {
     DeviceManagementSettingCategory
 }
-// NewDeviceManagementTemplateSettingCategory instantiates a new deviceManagementTemplateSettingCategory and sets the default values.
+// NewDeviceManagementTemplateSettingCategory instantiates a new DeviceManagementTemplateSettingCategory and sets the default values.
 func NewDeviceManagementTemplateSettingCategory()(*DeviceManagementTemplateSettingCategory) {
     m := &DeviceManagementTemplateSettingCategory{
         DeviceManagementSettingCategory: *NewDeviceManagementSettingCategory(),
@@ -16,10 +16,12 @@ func NewDeviceManagementTemplateSettingCategory()(*DeviceManagementTemplateSetti
     return m
 }
 // CreateDeviceManagementTemplateSettingCategoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementTemplateSettingCategoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementTemplateSettingCategory(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementTemplateSettingCategory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementSettingCategory.GetFieldDeserializers()
     res["recommendedSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +43,7 @@ func (m *DeviceManagementTemplateSettingCategory) GetFieldDeserializers()(map[st
     return res
 }
 // GetRecommendedSettings gets the recommendedSettings property value. The settings this category contains
+// returns a []DeviceManagementSettingInstanceable when successful
 func (m *DeviceManagementTemplateSettingCategory) GetRecommendedSettings()([]DeviceManagementSettingInstanceable) {
     val, err := m.GetBackingStore().Get("recommendedSettings")
     if err != nil {
@@ -78,7 +81,6 @@ func (m *DeviceManagementTemplateSettingCategory) SetRecommendedSettings(value [
         panic(err)
     }
 }
-// DeviceManagementTemplateSettingCategoryable 
 type DeviceManagementTemplateSettingCategoryable interface {
     DeviceManagementSettingCategoryable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

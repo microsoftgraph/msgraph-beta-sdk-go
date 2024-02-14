@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerVpnConfiguration struct {
     VpnConfiguration
 }
-// NewAndroidDeviceOwnerVpnConfiguration instantiates a new androidDeviceOwnerVpnConfiguration and sets the default values.
+// NewAndroidDeviceOwnerVpnConfiguration instantiates a new AndroidDeviceOwnerVpnConfiguration and sets the default values.
 func NewAndroidDeviceOwnerVpnConfiguration()(*AndroidDeviceOwnerVpnConfiguration) {
     m := &AndroidDeviceOwnerVpnConfiguration{
         VpnConfiguration: *NewVpnConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceOwnerVpnConfiguration()(*AndroidDeviceOwnerVpnConfiguration
     return m
 }
 // CreateAndroidDeviceOwnerVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerVpnConfiguration(), nil
 }
 // GetAlwaysOn gets the alwaysOn property value. Whether or not to enable always-on VPN connection.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetAlwaysOn()(*bool) {
     val, err := m.GetBackingStore().Get("alwaysOn")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetAlwaysOn()(*bool) {
     return nil
 }
 // GetAlwaysOnLockdown gets the alwaysOnLockdown property value. If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetAlwaysOnLockdown()(*bool) {
     val, err := m.GetBackingStore().Get("alwaysOnLockdown")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetAlwaysOnLockdown()(*bool) {
     return nil
 }
 // GetConnectionType gets the connectionType property value. Android VPN connection type.
+// returns a *AndroidVpnConnectionType when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetConnectionType()(*AndroidVpnConnectionType) {
     val, err := m.GetBackingStore().Get("connectionType")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetConnectionType()(*AndroidVpnConn
     return nil
 }
 // GetCustomData gets the customData property value. Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
+// returns a []KeyValueable when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetCustomData()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("customData")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetCustomData()([]KeyValueable) {
     return nil
 }
 // GetCustomKeyValueData gets the customKeyValueData property value. Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.
+// returns a []KeyValuePairable when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetCustomKeyValueData()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("customKeyValueData")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetCustomKeyValueData()([]KeyValueP
     return nil
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
+// returns a DeviceManagementDerivedCredentialSettingsable when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
     val, err := m.GetBackingStore().Get("derivedCredentialSettings")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetDerivedCredentialSettings()(Devi
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.VpnConfiguration.GetFieldDeserializers()
     res["alwaysOn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -243,6 +251,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetFieldDeserializers()(map[string]
     return res
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
+// returns a AndroidDeviceOwnerCertificateProfileBaseable when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetIdentityCertificate()(AndroidDeviceOwnerCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificate")
     if err != nil {
@@ -254,6 +263,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetIdentityCertificate()(AndroidDev
     return nil
 }
 // GetMicrosoftTunnelSiteId gets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetMicrosoftTunnelSiteId()(*string) {
     val, err := m.GetBackingStore().Get("microsoftTunnelSiteId")
     if err != nil {
@@ -265,6 +275,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetMicrosoftTunnelSiteId()(*string)
     return nil
 }
 // GetProxyExclusionList gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
+// returns a []string when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetProxyExclusionList()([]string) {
     val, err := m.GetBackingStore().Get("proxyExclusionList")
     if err != nil {
@@ -276,6 +287,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetProxyExclusionList()([]string) {
     return nil
 }
 // GetProxyServer gets the proxyServer property value. Proxy server.
+// returns a VpnProxyServerable when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetProxyServer()(VpnProxyServerable) {
     val, err := m.GetBackingStore().Get("proxyServer")
     if err != nil {
@@ -287,6 +299,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetProxyServer()(VpnProxyServerable
     return nil
 }
 // GetTargetedMobileApps gets the targetedMobileApps property value. Targeted mobile apps. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetTargetedMobileApps()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("targetedMobileApps")
     if err != nil {
@@ -298,6 +311,7 @@ func (m *AndroidDeviceOwnerVpnConfiguration) GetTargetedMobileApps()([]AppListIt
     return nil
 }
 // GetTargetedPackageIds gets the targetedPackageIds property value. Targeted App package IDs.
+// returns a []string when successful
 func (m *AndroidDeviceOwnerVpnConfiguration) GetTargetedPackageIds()([]string) {
     val, err := m.GetBackingStore().Get("targetedPackageIds")
     if err != nil {
@@ -491,7 +505,6 @@ func (m *AndroidDeviceOwnerVpnConfiguration) SetTargetedPackageIds(value []strin
         panic(err)
     }
 }
-// AndroidDeviceOwnerVpnConfigurationable 
 type AndroidDeviceOwnerVpnConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VpnConfigurationable

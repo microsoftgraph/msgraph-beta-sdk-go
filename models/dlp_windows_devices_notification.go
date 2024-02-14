@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DlpWindowsDevicesNotification 
 type DlpWindowsDevicesNotification struct {
     DlpNotification
 }
-// NewDlpWindowsDevicesNotification instantiates a new dlpWindowsDevicesNotification and sets the default values.
+// NewDlpWindowsDevicesNotification instantiates a new DlpWindowsDevicesNotification and sets the default values.
 func NewDlpWindowsDevicesNotification()(*DlpWindowsDevicesNotification) {
     m := &DlpWindowsDevicesNotification{
         DlpNotification: *NewDlpNotification(),
@@ -18,10 +17,12 @@ func NewDlpWindowsDevicesNotification()(*DlpWindowsDevicesNotification) {
     return m
 }
 // CreateDlpWindowsDevicesNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDlpWindowsDevicesNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDlpWindowsDevicesNotification(), nil
 }
 // GetContentName gets the contentName property value. The contentName property
+// returns a *string when successful
 func (m *DlpWindowsDevicesNotification) GetContentName()(*string) {
     val, err := m.GetBackingStore().Get("contentName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DlpWindowsDevicesNotification) GetContentName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DlpWindowsDevicesNotification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DlpNotification.GetFieldDeserializers()
     res["contentName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *DlpWindowsDevicesNotification) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetLastModfiedBy gets the lastModfiedBy property value. The lastModfiedBy property
+// returns a *string when successful
 func (m *DlpWindowsDevicesNotification) GetLastModfiedBy()(*string) {
     val, err := m.GetBackingStore().Get("lastModfiedBy")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *DlpWindowsDevicesNotification) SetLastModfiedBy(value *string)() {
         panic(err)
     }
 }
-// DlpWindowsDevicesNotificationable 
 type DlpWindowsDevicesNotificationable interface {
     DlpNotificationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

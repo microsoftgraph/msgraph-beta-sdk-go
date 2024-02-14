@@ -8,7 +8,7 @@ import (
 type ResourceOperation struct {
     Entity
 }
-// NewResourceOperation instantiates a new resourceOperation and sets the default values.
+// NewResourceOperation instantiates a new ResourceOperation and sets the default values.
 func NewResourceOperation()(*ResourceOperation) {
     m := &ResourceOperation{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewResourceOperation()(*ResourceOperation) {
     return m
 }
 // CreateResourceOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateResourceOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewResourceOperation(), nil
 }
 // GetActionName gets the actionName property value. Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
+// returns a *string when successful
 func (m *ResourceOperation) GetActionName()(*string) {
     val, err := m.GetBackingStore().Get("actionName")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *ResourceOperation) GetActionName()(*string) {
     return nil
 }
 // GetDescription gets the description property value. Description of the resource operation. The description is used in mouse-over text for the operation when shown in the Azure Portal.
+// returns a *string when successful
 func (m *ResourceOperation) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *ResourceOperation) GetDescription()(*string) {
     return nil
 }
 // GetEnabledForScopeValidation gets the enabledForScopeValidation property value. Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
+// returns a *bool when successful
 func (m *ResourceOperation) GetEnabledForScopeValidation()(*bool) {
     val, err := m.GetBackingStore().Get("enabledForScopeValidation")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *ResourceOperation) GetEnabledForScopeValidation()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["actionName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +113,7 @@ func (m *ResourceOperation) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetResource gets the resource property value. Resource category to which this Operation belongs. This property is read-only.
+// returns a *string when successful
 func (m *ResourceOperation) GetResource()(*string) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -119,6 +125,7 @@ func (m *ResourceOperation) GetResource()(*string) {
     return nil
 }
 // GetResourceName gets the resourceName property value. Name of the Resource this operation is performed on.
+// returns a *string when successful
 func (m *ResourceOperation) GetResourceName()(*string) {
     val, err := m.GetBackingStore().Get("resourceName")
     if err != nil {
@@ -190,7 +197,6 @@ func (m *ResourceOperation) SetResourceName(value *string)() {
         panic(err)
     }
 }
-// ResourceOperationable 
 type ResourceOperationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

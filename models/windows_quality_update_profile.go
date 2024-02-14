@@ -9,7 +9,7 @@ import (
 type WindowsQualityUpdateProfile struct {
     Entity
 }
-// NewWindowsQualityUpdateProfile instantiates a new windowsQualityUpdateProfile and sets the default values.
+// NewWindowsQualityUpdateProfile instantiates a new WindowsQualityUpdateProfile and sets the default values.
 func NewWindowsQualityUpdateProfile()(*WindowsQualityUpdateProfile) {
     m := &WindowsQualityUpdateProfile{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewWindowsQualityUpdateProfile()(*WindowsQualityUpdateProfile) {
     return m
 }
 // CreateWindowsQualityUpdateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsQualityUpdateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsQualityUpdateProfile(), nil
 }
 // GetAssignments gets the assignments property value. The list of group assignments of the profile.
+// returns a []WindowsQualityUpdateProfileAssignmentable when successful
 func (m *WindowsQualityUpdateProfile) GetAssignments()([]WindowsQualityUpdateProfileAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *WindowsQualityUpdateProfile) GetAssignments()([]WindowsQualityUpdatePro
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date time that the profile was created.
+// returns a *Time when successful
 func (m *WindowsQualityUpdateProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *WindowsQualityUpdateProfile) GetCreatedDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetDeployableContentDisplayName gets the deployableContentDisplayName property value. Friendly display name of the quality update profile deployable content
+// returns a *string when successful
 func (m *WindowsQualityUpdateProfile) GetDeployableContentDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("deployableContentDisplayName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *WindowsQualityUpdateProfile) GetDeployableContentDisplayName()(*string)
     return nil
 }
 // GetDescription gets the description property value. The description of the profile which is specified by the user.
+// returns a *string when successful
 func (m *WindowsQualityUpdateProfile) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *WindowsQualityUpdateProfile) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the profile.
+// returns a *string when successful
 func (m *WindowsQualityUpdateProfile) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *WindowsQualityUpdateProfile) GetDisplayName()(*string) {
     return nil
 }
 // GetExpeditedUpdateSettings gets the expeditedUpdateSettings property value. Expedited update settings.
+// returns a ExpeditedWindowsQualityUpdateSettingsable when successful
 func (m *WindowsQualityUpdateProfile) GetExpeditedUpdateSettings()(ExpeditedWindowsQualityUpdateSettingsable) {
     val, err := m.GetBackingStore().Get("expeditedUpdateSettings")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *WindowsQualityUpdateProfile) GetExpeditedUpdateSettings()(ExpeditedWind
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -194,6 +202,7 @@ func (m *WindowsQualityUpdateProfile) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date time that the profile was last modified.
+// returns a *Time when successful
 func (m *WindowsQualityUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -205,6 +214,7 @@ func (m *WindowsQualityUpdateProfile) GetLastModifiedDateTime()(*i336074805fc853
     return nil
 }
 // GetReleaseDateDisplayName gets the releaseDateDisplayName property value. Friendly release date to display for a Quality Update release
+// returns a *string when successful
 func (m *WindowsQualityUpdateProfile) GetReleaseDateDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("releaseDateDisplayName")
     if err != nil {
@@ -216,6 +226,7 @@ func (m *WindowsQualityUpdateProfile) GetReleaseDateDisplayName()(*string) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Quality Update entity.
+// returns a []string when successful
 func (m *WindowsQualityUpdateProfile) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -357,7 +368,6 @@ func (m *WindowsQualityUpdateProfile) SetRoleScopeTagIds(value []string)() {
         panic(err)
     }
 }
-// WindowsQualityUpdateProfileable 
 type WindowsQualityUpdateProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

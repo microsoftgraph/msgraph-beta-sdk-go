@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BlockFileResponseAction 
 type BlockFileResponseAction struct {
     ResponseAction
 }
-// NewBlockFileResponseAction instantiates a new blockFileResponseAction and sets the default values.
+// NewBlockFileResponseAction instantiates a new BlockFileResponseAction and sets the default values.
 func NewBlockFileResponseAction()(*BlockFileResponseAction) {
     m := &BlockFileResponseAction{
         ResponseAction: *NewResponseAction(),
@@ -18,10 +17,12 @@ func NewBlockFileResponseAction()(*BlockFileResponseAction) {
     return m
 }
 // CreateBlockFileResponseActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBlockFileResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBlockFileResponseAction(), nil
 }
-// GetDeviceGroupNames gets the deviceGroupNames property value. The deviceGroupNames property
+// GetDeviceGroupNames gets the deviceGroupNames property value. Device groups to which the actions set in the custom detection rule are applied. More information
+// returns a []string when successful
 func (m *BlockFileResponseAction) GetDeviceGroupNames()([]string) {
     val, err := m.GetBackingStore().Get("deviceGroupNames")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *BlockFileResponseAction) GetDeviceGroupNames()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BlockFileResponseAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ResponseAction.GetFieldDeserializers()
     res["deviceGroupNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +66,7 @@ func (m *BlockFileResponseAction) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetIdentifier gets the identifier property value. The identifier property
+// returns a *FileEntityIdentifier when successful
 func (m *BlockFileResponseAction) GetIdentifier()(*FileEntityIdentifier) {
     val, err := m.GetBackingStore().Get("identifier")
     if err != nil {
@@ -95,7 +98,7 @@ func (m *BlockFileResponseAction) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetDeviceGroupNames sets the deviceGroupNames property value. The deviceGroupNames property
+// SetDeviceGroupNames sets the deviceGroupNames property value. Device groups to which the actions set in the custom detection rule are applied. More information
 func (m *BlockFileResponseAction) SetDeviceGroupNames(value []string)() {
     err := m.GetBackingStore().Set("deviceGroupNames", value)
     if err != nil {
@@ -109,7 +112,6 @@ func (m *BlockFileResponseAction) SetIdentifier(value *FileEntityIdentifier)() {
         panic(err)
     }
 }
-// BlockFileResponseActionable 
 type BlockFileResponseActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ResponseActionable

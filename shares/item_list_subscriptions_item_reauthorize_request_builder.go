@@ -17,20 +17,21 @@ type ItemListSubscriptionsItemReauthorizeRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemListSubscriptionsItemReauthorizeRequestBuilderInternal instantiates a new ReauthorizeRequestBuilder and sets the default values.
+// NewItemListSubscriptionsItemReauthorizeRequestBuilderInternal instantiates a new ItemListSubscriptionsItemReauthorizeRequestBuilder and sets the default values.
 func NewItemListSubscriptionsItemReauthorizeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListSubscriptionsItemReauthorizeRequestBuilder) {
     m := &ItemListSubscriptionsItemReauthorizeRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/subscriptions/{subscription%2Did}/reauthorize", pathParameters),
     }
     return m
 }
-// NewItemListSubscriptionsItemReauthorizeRequestBuilder instantiates a new ReauthorizeRequestBuilder and sets the default values.
+// NewItemListSubscriptionsItemReauthorizeRequestBuilder instantiates a new ItemListSubscriptionsItemReauthorizeRequestBuilder and sets the default values.
 func NewItemListSubscriptionsItemReauthorizeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListSubscriptionsItemReauthorizeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemListSubscriptionsItemReauthorizeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post reauthorize a subscription when you receive a reauthorizationRequired challenge.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemListSubscriptionsItemReauthorizeRequestBuilder) Post(ctx context.Co
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemListSubscriptionsItemReauthorizeRequestBuilder) Post(ctx context.Co
     return nil
 }
 // ToPostRequestInformation reauthorize a subscription when you receive a reauthorizationRequired challenge.
+// returns a *RequestInformation when successful
 func (m *ItemListSubscriptionsItemReauthorizeRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemListSubscriptionsItemReauthorizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemListSubscriptionsItemReauthorizeRequestBuilder) ToPostRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemListSubscriptionsItemReauthorizeRequestBuilder when successful
 func (m *ItemListSubscriptionsItemReauthorizeRequestBuilder) WithUrl(rawUrl string)(*ItemListSubscriptionsItemReauthorizeRequestBuilder) {
     return NewItemListSubscriptionsItemReauthorizeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

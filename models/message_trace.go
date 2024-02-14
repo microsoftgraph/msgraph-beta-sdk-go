@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MessageTrace 
 type MessageTrace struct {
     Entity
 }
-// NewMessageTrace instantiates a new messageTrace and sets the default values.
+// NewMessageTrace instantiates a new MessageTrace and sets the default values.
 func NewMessageTrace()(*MessageTrace) {
     m := &MessageTrace{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewMessageTrace()(*MessageTrace) {
     return m
 }
 // CreateMessageTraceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMessageTraceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMessageTrace(), nil
 }
 // GetDestinationIPAddress gets the destinationIPAddress property value. The destinationIPAddress property
+// returns a *string when successful
 func (m *MessageTrace) GetDestinationIPAddress()(*string) {
     val, err := m.GetBackingStore().Get("destinationIPAddress")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *MessageTrace) GetDestinationIPAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MessageTrace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["destinationIPAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -123,6 +125,7 @@ func (m *MessageTrace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetMessageId gets the messageId property value. The messageId property
+// returns a *string when successful
 func (m *MessageTrace) GetMessageId()(*string) {
     val, err := m.GetBackingStore().Get("messageId")
     if err != nil {
@@ -134,6 +137,7 @@ func (m *MessageTrace) GetMessageId()(*string) {
     return nil
 }
 // GetReceivedDateTime gets the receivedDateTime property value. The receivedDateTime property
+// returns a *Time when successful
 func (m *MessageTrace) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("receivedDateTime")
     if err != nil {
@@ -145,6 +149,7 @@ func (m *MessageTrace) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetRecipients gets the recipients property value. The recipients property
+// returns a []MessageRecipientable when successful
 func (m *MessageTrace) GetRecipients()([]MessageRecipientable) {
     val, err := m.GetBackingStore().Get("recipients")
     if err != nil {
@@ -156,6 +161,7 @@ func (m *MessageTrace) GetRecipients()([]MessageRecipientable) {
     return nil
 }
 // GetSenderEmail gets the senderEmail property value. The senderEmail property
+// returns a *string when successful
 func (m *MessageTrace) GetSenderEmail()(*string) {
     val, err := m.GetBackingStore().Get("senderEmail")
     if err != nil {
@@ -167,6 +173,7 @@ func (m *MessageTrace) GetSenderEmail()(*string) {
     return nil
 }
 // GetSize gets the size property value. The size property
+// returns a *int32 when successful
 func (m *MessageTrace) GetSize()(*int32) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *MessageTrace) GetSize()(*int32) {
     return nil
 }
 // GetSourceIPAddress gets the sourceIPAddress property value. The sourceIPAddress property
+// returns a *string when successful
 func (m *MessageTrace) GetSourceIPAddress()(*string) {
     val, err := m.GetBackingStore().Get("sourceIPAddress")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *MessageTrace) GetSourceIPAddress()(*string) {
     return nil
 }
 // GetSubject gets the subject property value. The subject property
+// returns a *string when successful
 func (m *MessageTrace) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -317,7 +326,6 @@ func (m *MessageTrace) SetSubject(value *string)() {
         panic(err)
     }
 }
-// MessageTraceable 
 type MessageTraceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

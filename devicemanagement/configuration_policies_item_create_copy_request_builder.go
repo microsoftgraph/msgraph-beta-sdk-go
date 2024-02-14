@@ -18,28 +18,29 @@ type ConfigurationPoliciesItemCreateCopyRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewConfigurationPoliciesItemCreateCopyRequestBuilderInternal instantiates a new CreateCopyRequestBuilder and sets the default values.
+// NewConfigurationPoliciesItemCreateCopyRequestBuilderInternal instantiates a new ConfigurationPoliciesItemCreateCopyRequestBuilder and sets the default values.
 func NewConfigurationPoliciesItemCreateCopyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPoliciesItemCreateCopyRequestBuilder) {
     m := &ConfigurationPoliciesItemCreateCopyRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy%2Did}/createCopy", pathParameters),
     }
     return m
 }
-// NewConfigurationPoliciesItemCreateCopyRequestBuilder instantiates a new CreateCopyRequestBuilder and sets the default values.
+// NewConfigurationPoliciesItemCreateCopyRequestBuilder instantiates a new ConfigurationPoliciesItemCreateCopyRequestBuilder and sets the default values.
 func NewConfigurationPoliciesItemCreateCopyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationPoliciesItemCreateCopyRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationPoliciesItemCreateCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action createCopy
+// returns a DeviceManagementConfigurationPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConfigurationPoliciesItemCreateCopyRequestBuilder) Post(ctx context.Context, body ConfigurationPoliciesItemCreateCopyPostRequestBodyable, requestConfiguration *ConfigurationPoliciesItemCreateCopyRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementConfigurationPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ConfigurationPoliciesItemCreateCopyRequestBuilder) Post(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementConfigurationPolicyable), nil
 }
 // ToPostRequestInformation invoke action createCopy
+// returns a *RequestInformation when successful
 func (m *ConfigurationPoliciesItemCreateCopyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ConfigurationPoliciesItemCreateCopyPostRequestBodyable, requestConfiguration *ConfigurationPoliciesItemCreateCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ConfigurationPoliciesItemCreateCopyRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ConfigurationPoliciesItemCreateCopyRequestBuilder when successful
 func (m *ConfigurationPoliciesItemCreateCopyRequestBuilder) WithUrl(rawUrl string)(*ConfigurationPoliciesItemCreateCopyRequestBuilder) {
     return NewConfigurationPoliciesItemCreateCopyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

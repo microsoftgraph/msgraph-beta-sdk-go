@@ -8,7 +8,7 @@ import (
 type IosDeviceFeaturesConfiguration struct {
     AppleDeviceFeaturesConfigurationBase
 }
-// NewIosDeviceFeaturesConfiguration instantiates a new iosDeviceFeaturesConfiguration and sets the default values.
+// NewIosDeviceFeaturesConfiguration instantiates a new IosDeviceFeaturesConfiguration and sets the default values.
 func NewIosDeviceFeaturesConfiguration()(*IosDeviceFeaturesConfiguration) {
     m := &IosDeviceFeaturesConfiguration{
         AppleDeviceFeaturesConfigurationBase: *NewAppleDeviceFeaturesConfigurationBase(),
@@ -18,10 +18,12 @@ func NewIosDeviceFeaturesConfiguration()(*IosDeviceFeaturesConfiguration) {
     return m
 }
 // CreateIosDeviceFeaturesConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosDeviceFeaturesConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosDeviceFeaturesConfiguration(), nil
 }
 // GetAssetTagTemplate gets the assetTagTemplate property value. Asset tag information for the device, displayed on the login window and lock screen.
+// returns a *string when successful
 func (m *IosDeviceFeaturesConfiguration) GetAssetTagTemplate()(*string) {
     val, err := m.GetBackingStore().Get("assetTagTemplate")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosDeviceFeaturesConfiguration) GetAssetTagTemplate()(*string) {
     return nil
 }
 // GetContentFilterSettings gets the contentFilterSettings property value. Gets or sets iOS Web Content Filter settings, supervised mode only
+// returns a IosWebContentFilterBaseable when successful
 func (m *IosDeviceFeaturesConfiguration) GetContentFilterSettings()(IosWebContentFilterBaseable) {
     val, err := m.GetBackingStore().Get("contentFilterSettings")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *IosDeviceFeaturesConfiguration) GetContentFilterSettings()(IosWebConten
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppleDeviceFeaturesConfigurationBase.GetFieldDeserializers()
     res["assetTagTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -217,6 +221,7 @@ func (m *IosDeviceFeaturesConfiguration) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetHomeScreenDockIcons gets the homeScreenDockIcons property value. A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
+// returns a []IosHomeScreenItemable when successful
 func (m *IosDeviceFeaturesConfiguration) GetHomeScreenDockIcons()([]IosHomeScreenItemable) {
     val, err := m.GetBackingStore().Get("homeScreenDockIcons")
     if err != nil {
@@ -228,6 +233,7 @@ func (m *IosDeviceFeaturesConfiguration) GetHomeScreenDockIcons()([]IosHomeScree
     return nil
 }
 // GetHomeScreenGridHeight gets the homeScreenGridHeight property value. Gets or sets the number of rows to render when configuring iOS home screen layout settings. If this value is configured, homeScreenGridWidth must be configured as well.
+// returns a *int32 when successful
 func (m *IosDeviceFeaturesConfiguration) GetHomeScreenGridHeight()(*int32) {
     val, err := m.GetBackingStore().Get("homeScreenGridHeight")
     if err != nil {
@@ -239,6 +245,7 @@ func (m *IosDeviceFeaturesConfiguration) GetHomeScreenGridHeight()(*int32) {
     return nil
 }
 // GetHomeScreenGridWidth gets the homeScreenGridWidth property value. Gets or sets the number of columns to render when configuring iOS home screen layout settings. If this value is configured, homeScreenGridHeight must be configured as well.
+// returns a *int32 when successful
 func (m *IosDeviceFeaturesConfiguration) GetHomeScreenGridWidth()(*int32) {
     val, err := m.GetBackingStore().Get("homeScreenGridWidth")
     if err != nil {
@@ -250,6 +257,7 @@ func (m *IosDeviceFeaturesConfiguration) GetHomeScreenGridWidth()(*int32) {
     return nil
 }
 // GetHomeScreenPages gets the homeScreenPages property value. A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.
+// returns a []IosHomeScreenPageable when successful
 func (m *IosDeviceFeaturesConfiguration) GetHomeScreenPages()([]IosHomeScreenPageable) {
     val, err := m.GetBackingStore().Get("homeScreenPages")
     if err != nil {
@@ -261,6 +269,7 @@ func (m *IosDeviceFeaturesConfiguration) GetHomeScreenPages()([]IosHomeScreenPag
     return nil
 }
 // GetIdentityCertificateForClientAuthentication gets the identityCertificateForClientAuthentication property value. Identity Certificate for the renewal of Kerberos ticket used in single sign-on settings.
+// returns a IosCertificateProfileBaseable when successful
 func (m *IosDeviceFeaturesConfiguration) GetIdentityCertificateForClientAuthentication()(IosCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificateForClientAuthentication")
     if err != nil {
@@ -272,6 +281,7 @@ func (m *IosDeviceFeaturesConfiguration) GetIdentityCertificateForClientAuthenti
     return nil
 }
 // GetIosSingleSignOnExtension gets the iosSingleSignOnExtension property value. Gets or sets a single sign-on extension profile.
+// returns a IosSingleSignOnExtensionable when successful
 func (m *IosDeviceFeaturesConfiguration) GetIosSingleSignOnExtension()(IosSingleSignOnExtensionable) {
     val, err := m.GetBackingStore().Get("iosSingleSignOnExtension")
     if err != nil {
@@ -283,6 +293,7 @@ func (m *IosDeviceFeaturesConfiguration) GetIosSingleSignOnExtension()(IosSingle
     return nil
 }
 // GetLockScreenFootnote gets the lockScreenFootnote property value. A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
+// returns a *string when successful
 func (m *IosDeviceFeaturesConfiguration) GetLockScreenFootnote()(*string) {
     val, err := m.GetBackingStore().Get("lockScreenFootnote")
     if err != nil {
@@ -294,6 +305,7 @@ func (m *IosDeviceFeaturesConfiguration) GetLockScreenFootnote()(*string) {
     return nil
 }
 // GetNotificationSettings gets the notificationSettings property value. Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.
+// returns a []IosNotificationSettingsable when successful
 func (m *IosDeviceFeaturesConfiguration) GetNotificationSettings()([]IosNotificationSettingsable) {
     val, err := m.GetBackingStore().Get("notificationSettings")
     if err != nil {
@@ -305,6 +317,7 @@ func (m *IosDeviceFeaturesConfiguration) GetNotificationSettings()([]IosNotifica
     return nil
 }
 // GetSingleSignOnExtension gets the singleSignOnExtension property value. Gets or sets a single sign-on extension profile. Deprecated: use IOSSingleSignOnExtension instead.
+// returns a SingleSignOnExtensionable when successful
 func (m *IosDeviceFeaturesConfiguration) GetSingleSignOnExtension()(SingleSignOnExtensionable) {
     val, err := m.GetBackingStore().Get("singleSignOnExtension")
     if err != nil {
@@ -316,6 +329,7 @@ func (m *IosDeviceFeaturesConfiguration) GetSingleSignOnExtension()(SingleSignOn
     return nil
 }
 // GetSingleSignOnExtensionPkinitCertificate gets the singleSignOnExtensionPkinitCertificate property value. PKINIT Certificate for the authentication with single sign-on extension settings.
+// returns a IosCertificateProfileBaseable when successful
 func (m *IosDeviceFeaturesConfiguration) GetSingleSignOnExtensionPkinitCertificate()(IosCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("singleSignOnExtensionPkinitCertificate")
     if err != nil {
@@ -327,6 +341,7 @@ func (m *IosDeviceFeaturesConfiguration) GetSingleSignOnExtensionPkinitCertifica
     return nil
 }
 // GetSingleSignOnSettings gets the singleSignOnSettings property value. The Kerberos login settings that enable apps on receiving devices to authenticate smoothly.
+// returns a IosSingleSignOnSettingsable when successful
 func (m *IosDeviceFeaturesConfiguration) GetSingleSignOnSettings()(IosSingleSignOnSettingsable) {
     val, err := m.GetBackingStore().Get("singleSignOnSettings")
     if err != nil {
@@ -338,6 +353,7 @@ func (m *IosDeviceFeaturesConfiguration) GetSingleSignOnSettings()(IosSingleSign
     return nil
 }
 // GetWallpaperDisplayLocation gets the wallpaperDisplayLocation property value. An enum type for wallpaper display location specifier.
+// returns a *IosWallpaperDisplayLocation when successful
 func (m *IosDeviceFeaturesConfiguration) GetWallpaperDisplayLocation()(*IosWallpaperDisplayLocation) {
     val, err := m.GetBackingStore().Get("wallpaperDisplayLocation")
     if err != nil {
@@ -349,6 +365,7 @@ func (m *IosDeviceFeaturesConfiguration) GetWallpaperDisplayLocation()(*IosWallp
     return nil
 }
 // GetWallpaperImage gets the wallpaperImage property value. A wallpaper image must be in either PNG or JPEG format. It requires a supervised device with iOS 8 or later version.
+// returns a MimeContentable when successful
 func (m *IosDeviceFeaturesConfiguration) GetWallpaperImage()(MimeContentable) {
     val, err := m.GetBackingStore().Get("wallpaperImage")
     if err != nil {
@@ -581,7 +598,6 @@ func (m *IosDeviceFeaturesConfiguration) SetWallpaperImage(value MimeContentable
         panic(err)
     }
 }
-// IosDeviceFeaturesConfigurationable 
 type IosDeviceFeaturesConfigurationable interface {
     AppleDeviceFeaturesConfigurationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

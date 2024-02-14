@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TargetPolicyEndpoints 
 type TargetPolicyEndpoints struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTargetPolicyEndpoints instantiates a new targetPolicyEndpoints and sets the default values.
+// NewTargetPolicyEndpoints instantiates a new TargetPolicyEndpoints and sets the default values.
 func NewTargetPolicyEndpoints()(*TargetPolicyEndpoints) {
     m := &TargetPolicyEndpoints{
     }
@@ -19,10 +18,12 @@ func NewTargetPolicyEndpoints()(*TargetPolicyEndpoints) {
     return m
 }
 // CreateTargetPolicyEndpointsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTargetPolicyEndpointsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTargetPolicyEndpoints(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TargetPolicyEndpoints) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TargetPolicyEndpoints) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TargetPolicyEndpoints) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TargetPolicyEndpoints) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,6 +73,7 @@ func (m *TargetPolicyEndpoints) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TargetPolicyEndpoints) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -81,6 +85,7 @@ func (m *TargetPolicyEndpoints) GetOdataType()(*string) {
     return nil
 }
 // GetPlatformTypes gets the platformTypes property value. Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.
+// returns a []string when successful
 func (m *TargetPolicyEndpoints) GetPlatformTypes()([]string) {
     val, err := m.GetBackingStore().Get("platformTypes")
     if err != nil {
@@ -138,7 +143,6 @@ func (m *TargetPolicyEndpoints) SetPlatformTypes(value []string)() {
         panic(err)
     }
 }
-// TargetPolicyEndpointsable 
 type TargetPolicyEndpointsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

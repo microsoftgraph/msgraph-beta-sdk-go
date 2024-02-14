@@ -8,7 +8,7 @@ import (
 type DeviceManagementSettingAbstractImplementationConstraint struct {
     DeviceManagementConstraint
 }
-// NewDeviceManagementSettingAbstractImplementationConstraint instantiates a new deviceManagementSettingAbstractImplementationConstraint and sets the default values.
+// NewDeviceManagementSettingAbstractImplementationConstraint instantiates a new DeviceManagementSettingAbstractImplementationConstraint and sets the default values.
 func NewDeviceManagementSettingAbstractImplementationConstraint()(*DeviceManagementSettingAbstractImplementationConstraint) {
     m := &DeviceManagementSettingAbstractImplementationConstraint{
         DeviceManagementConstraint: *NewDeviceManagementConstraint(),
@@ -18,10 +18,12 @@ func NewDeviceManagementSettingAbstractImplementationConstraint()(*DeviceManagem
     return m
 }
 // CreateDeviceManagementSettingAbstractImplementationConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingAbstractImplementationConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementSettingAbstractImplementationConstraint(), nil
 }
 // GetAllowedAbstractImplementationDefinitionIds gets the allowedAbstractImplementationDefinitionIds property value. List of value which means not configured for the setting
+// returns a []string when successful
 func (m *DeviceManagementSettingAbstractImplementationConstraint) GetAllowedAbstractImplementationDefinitionIds()([]string) {
     val, err := m.GetBackingStore().Get("allowedAbstractImplementationDefinitionIds")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *DeviceManagementSettingAbstractImplementationConstraint) GetAllowedAbst
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingAbstractImplementationConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConstraint.GetFieldDeserializers()
     res["allowedAbstractImplementationDefinitionIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,7 +77,6 @@ func (m *DeviceManagementSettingAbstractImplementationConstraint) SetAllowedAbst
         panic(err)
     }
 }
-// DeviceManagementSettingAbstractImplementationConstraintable 
 type DeviceManagementSettingAbstractImplementationConstraintable interface {
     DeviceManagementConstraintable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

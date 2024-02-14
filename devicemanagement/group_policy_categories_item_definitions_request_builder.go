@@ -40,6 +40,7 @@ type GroupPolicyCategoriesItemDefinitionsRequestBuilderGetRequestConfiguration s
     QueryParameters *GroupPolicyCategoriesItemDefinitionsRequestBuilderGetQueryParameters
 }
 // ByGroupPolicyDefinitionId provides operations to manage the definitions property of the microsoft.graph.groupPolicyCategory entity.
+// returns a *GroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder when successful
 func (m *GroupPolicyCategoriesItemDefinitionsRequestBuilder) ByGroupPolicyDefinitionId(groupPolicyDefinitionId string)(*GroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *GroupPolicyCategoriesItemDefinitionsRequestBuilder) ByGroupPolicyDefini
     }
     return NewGroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewGroupPolicyCategoriesItemDefinitionsRequestBuilderInternal instantiates a new DefinitionsRequestBuilder and sets the default values.
+// NewGroupPolicyCategoriesItemDefinitionsRequestBuilderInternal instantiates a new GroupPolicyCategoriesItemDefinitionsRequestBuilder and sets the default values.
 func NewGroupPolicyCategoriesItemDefinitionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyCategoriesItemDefinitionsRequestBuilder) {
     m := &GroupPolicyCategoriesItemDefinitionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/definitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/definitions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewGroupPolicyCategoriesItemDefinitionsRequestBuilder instantiates a new DefinitionsRequestBuilder and sets the default values.
+// NewGroupPolicyCategoriesItemDefinitionsRequestBuilder instantiates a new GroupPolicyCategoriesItemDefinitionsRequestBuilder and sets the default values.
 func NewGroupPolicyCategoriesItemDefinitionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyCategoriesItemDefinitionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewGroupPolicyCategoriesItemDefinitionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *GroupPolicyCategoriesItemDefinitionsCountRequestBuilder when successful
 func (m *GroupPolicyCategoriesItemDefinitionsRequestBuilder) Count()(*GroupPolicyCategoriesItemDefinitionsCountRequestBuilder) {
     return NewGroupPolicyCategoriesItemDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the immediate GroupPolicyDefinition children of the category
+// returns a GroupPolicyDefinitionCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GroupPolicyCategoriesItemDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupPolicyCategoriesItemDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGroupPolicyDefinitionCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *GroupPolicyCategoriesItemDefinitionsRequestBuilder) Get(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupPolicyDefinitionCollectionResponseable), nil
 }
 // ToGetRequestInformation the immediate GroupPolicyDefinition children of the category
+// returns a *RequestInformation when successful
 func (m *GroupPolicyCategoriesItemDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyCategoriesItemDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *GroupPolicyCategoriesItemDefinitionsRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GroupPolicyCategoriesItemDefinitionsRequestBuilder when successful
 func (m *GroupPolicyCategoriesItemDefinitionsRequestBuilder) WithUrl(rawUrl string)(*GroupPolicyCategoriesItemDefinitionsRequestBuilder) {
     return NewGroupPolicyCategoriesItemDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

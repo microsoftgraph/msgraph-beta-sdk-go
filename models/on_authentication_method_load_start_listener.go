@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnAuthenticationMethodLoadStartListener 
 type OnAuthenticationMethodLoadStartListener struct {
     AuthenticationEventListener
 }
-// NewOnAuthenticationMethodLoadStartListener instantiates a new onAuthenticationMethodLoadStartListener and sets the default values.
+// NewOnAuthenticationMethodLoadStartListener instantiates a new OnAuthenticationMethodLoadStartListener and sets the default values.
 func NewOnAuthenticationMethodLoadStartListener()(*OnAuthenticationMethodLoadStartListener) {
     m := &OnAuthenticationMethodLoadStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),
@@ -18,10 +17,12 @@ func NewOnAuthenticationMethodLoadStartListener()(*OnAuthenticationMethodLoadSta
     return m
 }
 // CreateOnAuthenticationMethodLoadStartListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnAuthenticationMethodLoadStartListenerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnAuthenticationMethodLoadStartListener(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnAuthenticationMethodLoadStartListener) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationEventListener.GetFieldDeserializers()
     res["handler"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *OnAuthenticationMethodLoadStartListener) GetFieldDeserializers()(map[st
     return res
 }
 // GetHandler gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+// returns a OnAuthenticationMethodLoadStartHandlerable when successful
 func (m *OnAuthenticationMethodLoadStartListener) GetHandler()(OnAuthenticationMethodLoadStartHandlerable) {
     val, err := m.GetBackingStore().Get("handler")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *OnAuthenticationMethodLoadStartListener) SetHandler(value OnAuthenticat
         panic(err)
     }
 }
-// OnAuthenticationMethodLoadStartListenerable 
 type OnAuthenticationMethodLoadStartListenerable interface {
     AuthenticationEventListenerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

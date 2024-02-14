@@ -8,7 +8,7 @@ import (
 type WindowsKioskWin32App struct {
     WindowsKioskAppBase
 }
-// NewWindowsKioskWin32App instantiates a new windowsKioskWin32App and sets the default values.
+// NewWindowsKioskWin32App instantiates a new WindowsKioskWin32App and sets the default values.
 func NewWindowsKioskWin32App()(*WindowsKioskWin32App) {
     m := &WindowsKioskWin32App{
         WindowsKioskAppBase: *NewWindowsKioskAppBase(),
@@ -18,10 +18,12 @@ func NewWindowsKioskWin32App()(*WindowsKioskWin32App) {
     return m
 }
 // CreateWindowsKioskWin32AppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskWin32AppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsKioskWin32App(), nil
 }
 // GetClassicAppPath gets the classicAppPath property value. This is the classicapppath to be used by v4 Win32 app while in Kiosk Mode
+// returns a *string when successful
 func (m *WindowsKioskWin32App) GetClassicAppPath()(*string) {
     val, err := m.GetBackingStore().Get("classicAppPath")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsKioskWin32App) GetClassicAppPath()(*string) {
     return nil
 }
 // GetEdgeKiosk gets the edgeKiosk property value. Edge kiosk (url) for Edge kiosk mode
+// returns a *string when successful
 func (m *WindowsKioskWin32App) GetEdgeKiosk()(*string) {
     val, err := m.GetBackingStore().Get("edgeKiosk")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsKioskWin32App) GetEdgeKiosk()(*string) {
     return nil
 }
 // GetEdgeKioskIdleTimeoutMinutes gets the edgeKioskIdleTimeoutMinutes property value. Edge kiosk idle timeout in minutes for Edge kiosk mode. Valid values 0 to 1440
+// returns a *int32 when successful
 func (m *WindowsKioskWin32App) GetEdgeKioskIdleTimeoutMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("edgeKioskIdleTimeoutMinutes")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *WindowsKioskWin32App) GetEdgeKioskIdleTimeoutMinutes()(*int32) {
     return nil
 }
 // GetEdgeKioskType gets the edgeKioskType property value. Edge kiosk type
+// returns a *WindowsEdgeKioskType when successful
 func (m *WindowsKioskWin32App) GetEdgeKioskType()(*WindowsEdgeKioskType) {
     val, err := m.GetBackingStore().Get("edgeKioskType")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *WindowsKioskWin32App) GetEdgeKioskType()(*WindowsEdgeKioskType) {
     return nil
 }
 // GetEdgeNoFirstRun gets the edgeNoFirstRun property value. Edge first run flag for Edge kiosk mode
+// returns a *bool when successful
 func (m *WindowsKioskWin32App) GetEdgeNoFirstRun()(*bool) {
     val, err := m.GetBackingStore().Get("edgeNoFirstRun")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *WindowsKioskWin32App) GetEdgeNoFirstRun()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskWin32App) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsKioskAppBase.GetFieldDeserializers()
     res["classicAppPath"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -205,7 +212,6 @@ func (m *WindowsKioskWin32App) SetEdgeNoFirstRun(value *bool)() {
         panic(err)
     }
 }
-// WindowsKioskWin32Appable 
 type WindowsKioskWin32Appable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsKioskAppBaseable

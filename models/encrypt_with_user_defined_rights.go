@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EncryptWithUserDefinedRights 
 type EncryptWithUserDefinedRights struct {
     EncryptContent
 }
-// NewEncryptWithUserDefinedRights instantiates a new encryptWithUserDefinedRights and sets the default values.
+// NewEncryptWithUserDefinedRights instantiates a new EncryptWithUserDefinedRights and sets the default values.
 func NewEncryptWithUserDefinedRights()(*EncryptWithUserDefinedRights) {
     m := &EncryptWithUserDefinedRights{
         EncryptContent: *NewEncryptContent(),
@@ -18,10 +17,12 @@ func NewEncryptWithUserDefinedRights()(*EncryptWithUserDefinedRights) {
     return m
 }
 // CreateEncryptWithUserDefinedRightsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEncryptWithUserDefinedRightsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEncryptWithUserDefinedRights(), nil
 }
 // GetAllowAdHocPermissions gets the allowAdHocPermissions property value. The allowAdHocPermissions property
+// returns a *bool when successful
 func (m *EncryptWithUserDefinedRights) GetAllowAdHocPermissions()(*bool) {
     val, err := m.GetBackingStore().Get("allowAdHocPermissions")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EncryptWithUserDefinedRights) GetAllowAdHocPermissions()(*bool) {
     return nil
 }
 // GetAllowMailForwarding gets the allowMailForwarding property value. The allowMailForwarding property
+// returns a *bool when successful
 func (m *EncryptWithUserDefinedRights) GetAllowMailForwarding()(*bool) {
     val, err := m.GetBackingStore().Get("allowMailForwarding")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *EncryptWithUserDefinedRights) GetAllowMailForwarding()(*bool) {
     return nil
 }
 // GetDecryptionRightsManagementTemplateId gets the decryptionRightsManagementTemplateId property value. The decryptionRightsManagementTemplateId property
+// returns a *string when successful
 func (m *EncryptWithUserDefinedRights) GetDecryptionRightsManagementTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("decryptionRightsManagementTemplateId")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *EncryptWithUserDefinedRights) GetDecryptionRightsManagementTemplateId()
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EncryptWithUserDefinedRights) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EncryptContent.GetFieldDeserializers()
     res["allowAdHocPermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -136,7 +140,6 @@ func (m *EncryptWithUserDefinedRights) SetDecryptionRightsManagementTemplateId(v
         panic(err)
     }
 }
-// EncryptWithUserDefinedRightsable 
 type EncryptWithUserDefinedRightsable interface {
     EncryptContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

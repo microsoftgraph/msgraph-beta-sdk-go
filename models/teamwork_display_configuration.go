@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamworkDisplayConfiguration 
 type TeamworkDisplayConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamworkDisplayConfiguration instantiates a new teamworkDisplayConfiguration and sets the default values.
+// NewTeamworkDisplayConfiguration instantiates a new TeamworkDisplayConfiguration and sets the default values.
 func NewTeamworkDisplayConfiguration()(*TeamworkDisplayConfiguration) {
     m := &TeamworkDisplayConfiguration{
     }
@@ -19,10 +18,12 @@ func NewTeamworkDisplayConfiguration()(*TeamworkDisplayConfiguration) {
     return m
 }
 // CreateTeamworkDisplayConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkDisplayConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkDisplayConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamworkDisplayConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TeamworkDisplayConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamworkDisplayConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConfiguredDisplays gets the configuredDisplays property value. The list of configured displays. Applicable only for Microsoft Teams Rooms devices.
+// returns a []TeamworkConfiguredPeripheralable when successful
 func (m *TeamworkDisplayConfiguration) GetConfiguredDisplays()([]TeamworkConfiguredPeripheralable) {
     val, err := m.GetBackingStore().Get("configuredDisplays")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TeamworkDisplayConfiguration) GetConfiguredDisplays()([]TeamworkConfigu
     return nil
 }
 // GetDisplayCount gets the displayCount property value. Total number of connected displays, including the inbuilt display. Applicable only for Teams Rooms devices.
+// returns a *int32 when successful
 func (m *TeamworkDisplayConfiguration) GetDisplayCount()(*int32) {
     val, err := m.GetBackingStore().Get("displayCount")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *TeamworkDisplayConfiguration) GetDisplayCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkDisplayConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["configuredDisplays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -132,6 +137,7 @@ func (m *TeamworkDisplayConfiguration) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetInBuiltDisplayScreenConfiguration gets the inBuiltDisplayScreenConfiguration property value. Configuration for the inbuilt display. Not applicable for Teams Rooms devices.
+// returns a TeamworkDisplayScreenConfigurationable when successful
 func (m *TeamworkDisplayConfiguration) GetInBuiltDisplayScreenConfiguration()(TeamworkDisplayScreenConfigurationable) {
     val, err := m.GetBackingStore().Get("inBuiltDisplayScreenConfiguration")
     if err != nil {
@@ -143,6 +149,7 @@ func (m *TeamworkDisplayConfiguration) GetInBuiltDisplayScreenConfiguration()(Te
     return nil
 }
 // GetIsContentDuplicationAllowed gets the isContentDuplicationAllowed property value. True if content duplication is allowed. Applicable only for Teams Rooms devices.
+// returns a *bool when successful
 func (m *TeamworkDisplayConfiguration) GetIsContentDuplicationAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isContentDuplicationAllowed")
     if err != nil {
@@ -154,6 +161,7 @@ func (m *TeamworkDisplayConfiguration) GetIsContentDuplicationAllowed()(*bool) {
     return nil
 }
 // GetIsDualDisplayModeEnabled gets the isDualDisplayModeEnabled property value. True if dual display mode is enabled. If isDualDisplayModeEnabled is true, then the content will be displayed on both front of room screens instead of just the one screen, when it is shared via the HDMI ingest module on the Microsoft Teams Rooms device. Applicable only for Teams Rooms devices.
+// returns a *bool when successful
 func (m *TeamworkDisplayConfiguration) GetIsDualDisplayModeEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDualDisplayModeEnabled")
     if err != nil {
@@ -165,6 +173,7 @@ func (m *TeamworkDisplayConfiguration) GetIsDualDisplayModeEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamworkDisplayConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -280,7 +289,6 @@ func (m *TeamworkDisplayConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// TeamworkDisplayConfigurationable 
 type TeamworkDisplayConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

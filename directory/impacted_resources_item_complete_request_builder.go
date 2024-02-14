@@ -18,20 +18,22 @@ type ImpactedResourcesItemCompleteRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewImpactedResourcesItemCompleteRequestBuilderInternal instantiates a new CompleteRequestBuilder and sets the default values.
+// NewImpactedResourcesItemCompleteRequestBuilderInternal instantiates a new ImpactedResourcesItemCompleteRequestBuilder and sets the default values.
 func NewImpactedResourcesItemCompleteRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ImpactedResourcesItemCompleteRequestBuilder) {
     m := &ImpactedResourcesItemCompleteRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/impactedResources/{impactedResource%2Did}/complete", pathParameters),
     }
     return m
 }
-// NewImpactedResourcesItemCompleteRequestBuilder instantiates a new CompleteRequestBuilder and sets the default values.
+// NewImpactedResourcesItemCompleteRequestBuilder instantiates a new ImpactedResourcesItemCompleteRequestBuilder and sets the default values.
 func NewImpactedResourcesItemCompleteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ImpactedResourcesItemCompleteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewImpactedResourcesItemCompleteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post complete an impactedResource object and update its status to completedByUser.
+// returns a ImpactedResourceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ImpactedResourcesItemCompleteRequestBuilder) Post(ctx context.Context, 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateImpactedResourceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *ImpactedResourcesItemCompleteRequestBuilder) Post(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
 }
 // ToPostRequestInformation complete an impactedResource object and update its status to completedByUser.
+// returns a *RequestInformation when successful
 func (m *ImpactedResourcesItemCompleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ImpactedResourcesItemCompleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +66,7 @@ func (m *ImpactedResourcesItemCompleteRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ImpactedResourcesItemCompleteRequestBuilder when successful
 func (m *ImpactedResourcesItemCompleteRequestBuilder) WithUrl(rawUrl string)(*ImpactedResourcesItemCompleteRequestBuilder) {
     return NewImpactedResourcesItemCompleteRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

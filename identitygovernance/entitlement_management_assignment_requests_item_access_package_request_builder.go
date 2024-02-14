@@ -27,14 +27,14 @@ type EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilderGetRe
     // Request query parameters
     QueryParameters *EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilderGetQueryParameters
 }
-// NewEntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilderInternal instantiates a new AccessPackageRequestBuilder and sets the default values.
+// NewEntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilderInternal instantiates a new EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder) {
     m := &EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest%2Did}/accessPackage{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest%2Did}/accessPackage{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder instantiates a new AccessPackageRequestBuilder and sets the default values.
+// NewEntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder instantiates a new EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder and sets the default values.
 func NewEntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -42,14 +42,15 @@ func NewEntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder(r
 }
 // Get the access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a AccessPackageable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessPackageFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -62,6 +63,7 @@ func (m *EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder)
 }
 // ToGetRequestInformation the access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -76,6 +78,7 @@ func (m *EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder when successful
 func (m *EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder) {
     return NewEntitlementManagementAssignmentRequestsItemAccessPackageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

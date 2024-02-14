@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// NetworkAccessRoot 
 type NetworkAccessRoot struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewNetworkAccessRoot instantiates a new networkAccessRoot and sets the default values.
+// NewNetworkAccessRoot instantiates a new NetworkAccessRoot and sets the default values.
 func NewNetworkAccessRoot()(*NetworkAccessRoot) {
     m := &NetworkAccessRoot{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewNetworkAccessRoot()(*NetworkAccessRoot) {
     return m
 }
 // CreateNetworkAccessRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNetworkAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkAccessRoot(), nil
 }
 // GetConnectivity gets the connectivity property value. Connectivity represents all the connectivity components in Global Secure Access.
+// returns a Connectivityable when successful
 func (m *NetworkAccessRoot) GetConnectivity()(Connectivityable) {
     val, err := m.GetBackingStore().Get("connectivity")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *NetworkAccessRoot) GetConnectivity()(Connectivityable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["connectivity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -151,6 +153,7 @@ func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFilteringPolicies gets the filteringPolicies property value. A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
+// returns a []FilteringPolicyable when successful
 func (m *NetworkAccessRoot) GetFilteringPolicies()([]FilteringPolicyable) {
     val, err := m.GetBackingStore().Get("filteringPolicies")
     if err != nil {
@@ -162,6 +165,7 @@ func (m *NetworkAccessRoot) GetFilteringPolicies()([]FilteringPolicyable) {
     return nil
 }
 // GetFilteringProfiles gets the filteringProfiles property value. A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
+// returns a []FilteringProfileable when successful
 func (m *NetworkAccessRoot) GetFilteringProfiles()([]FilteringProfileable) {
     val, err := m.GetBackingStore().Get("filteringProfiles")
     if err != nil {
@@ -173,6 +177,7 @@ func (m *NetworkAccessRoot) GetFilteringProfiles()([]FilteringProfileable) {
     return nil
 }
 // GetForwardingPolicies gets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
+// returns a []ForwardingPolicyable when successful
 func (m *NetworkAccessRoot) GetForwardingPolicies()([]ForwardingPolicyable) {
     val, err := m.GetBackingStore().Get("forwardingPolicies")
     if err != nil {
@@ -184,6 +189,7 @@ func (m *NetworkAccessRoot) GetForwardingPolicies()([]ForwardingPolicyable) {
     return nil
 }
 // GetForwardingProfiles gets the forwardingProfiles property value. A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
+// returns a []ForwardingProfileable when successful
 func (m *NetworkAccessRoot) GetForwardingProfiles()([]ForwardingProfileable) {
     val, err := m.GetBackingStore().Get("forwardingProfiles")
     if err != nil {
@@ -195,6 +201,7 @@ func (m *NetworkAccessRoot) GetForwardingProfiles()([]ForwardingProfileable) {
     return nil
 }
 // GetLogs gets the logs property value. Represents network connections that are routed through Global Secure Access.
+// returns a Logsable when successful
 func (m *NetworkAccessRoot) GetLogs()(Logsable) {
     val, err := m.GetBackingStore().Get("logs")
     if err != nil {
@@ -206,6 +213,7 @@ func (m *NetworkAccessRoot) GetLogs()(Logsable) {
     return nil
 }
 // GetReports gets the reports property value. Represents the status of the Global Secure Access services for the tenant.
+// returns a Reportsable when successful
 func (m *NetworkAccessRoot) GetReports()(Reportsable) {
     val, err := m.GetBackingStore().Get("reports")
     if err != nil {
@@ -217,6 +225,7 @@ func (m *NetworkAccessRoot) GetReports()(Reportsable) {
     return nil
 }
 // GetSettings gets the settings property value. Global Secure Access settings.
+// returns a Settingsable when successful
 func (m *NetworkAccessRoot) GetSettings()(Settingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -228,6 +237,7 @@ func (m *NetworkAccessRoot) GetSettings()(Settingsable) {
     return nil
 }
 // GetTenantStatus gets the tenantStatus property value. Represents the status of the Global Secure Access services for the tenant.
+// returns a TenantStatusable when successful
 func (m *NetworkAccessRoot) GetTenantStatus()(TenantStatusable) {
     val, err := m.GetBackingStore().Get("tenantStatus")
     if err != nil {
@@ -387,7 +397,6 @@ func (m *NetworkAccessRoot) SetTenantStatus(value TenantStatusable)() {
         panic(err)
     }
 }
-// NetworkAccessRootable 
 type NetworkAccessRootable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,21 +17,23 @@ type TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewTiIndicatorsUpdateTiIndicatorsRequestBuilderInternal instantiates a new UpdateTiIndicatorsRequestBuilder and sets the default values.
+// NewTiIndicatorsUpdateTiIndicatorsRequestBuilderInternal instantiates a new TiIndicatorsUpdateTiIndicatorsRequestBuilder and sets the default values.
 func NewTiIndicatorsUpdateTiIndicatorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TiIndicatorsUpdateTiIndicatorsRequestBuilder) {
     m := &TiIndicatorsUpdateTiIndicatorsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/tiIndicators/updateTiIndicators", pathParameters),
     }
     return m
 }
-// NewTiIndicatorsUpdateTiIndicatorsRequestBuilder instantiates a new UpdateTiIndicatorsRequestBuilder and sets the default values.
+// NewTiIndicatorsUpdateTiIndicatorsRequestBuilder instantiates a new TiIndicatorsUpdateTiIndicatorsRequestBuilder and sets the default values.
 func NewTiIndicatorsUpdateTiIndicatorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TiIndicatorsUpdateTiIndicatorsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsUpdateTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-// Deprecated: This method is obsolete. Use PostAsUpdateTiIndicatorsPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a TiIndicatorsUpdateTiIndicatorsResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) Post(ctx context.Context,
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTiIndicatorsUpdateTiIndicatorsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) Post(ctx context.Context,
     return res.(TiIndicatorsUpdateTiIndicatorsResponseable), nil
 }
 // PostAsUpdateTiIndicatorsPostResponse update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+// returns a TiIndicatorsUpdateTiIndicatorsPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) PostAsUpdateTiIndicatorsP
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateTiIndicatorsUpdateTiIndicatorsPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) PostAsUpdateTiIndicatorsP
     return res.(TiIndicatorsUpdateTiIndicatorsPostResponseable), nil
 }
 // ToPostRequestInformation update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+// returns a *RequestInformation when successful
 func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body TiIndicatorsUpdateTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TiIndicatorsUpdateTiIndicatorsRequestBuilder when successful
 func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) WithUrl(rawUrl string)(*TiIndicatorsUpdateTiIndicatorsRequestBuilder) {
     return NewTiIndicatorsUpdateTiIndicatorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

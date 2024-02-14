@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// OathTokenMetadata 
 type OathTokenMetadata struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOathTokenMetadata instantiates a new oathTokenMetadata and sets the default values.
+// NewOathTokenMetadata instantiates a new OathTokenMetadata and sets the default values.
 func NewOathTokenMetadata()(*OathTokenMetadata) {
     m := &OathTokenMetadata{
     }
@@ -19,10 +18,12 @@ func NewOathTokenMetadata()(*OathTokenMetadata) {
     return m
 }
 // CreateOathTokenMetadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOathTokenMetadataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOathTokenMetadata(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OathTokenMetadata) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *OathTokenMetadata) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OathTokenMetadata) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEnabled gets the enabled property value. The enabled property
+// returns a *bool when successful
 func (m *OathTokenMetadata) GetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("enabled")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *OathTokenMetadata) GetEnabled()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OathTokenMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -121,6 +125,7 @@ func (m *OathTokenMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetManufacturer gets the manufacturer property value. The manufacturer property
+// returns a *string when successful
 func (m *OathTokenMetadata) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
     if err != nil {
@@ -132,6 +137,7 @@ func (m *OathTokenMetadata) GetManufacturer()(*string) {
     return nil
 }
 // GetManufacturerProperties gets the manufacturerProperties property value. The manufacturerProperties property
+// returns a []KeyValueable when successful
 func (m *OathTokenMetadata) GetManufacturerProperties()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("manufacturerProperties")
     if err != nil {
@@ -143,6 +149,7 @@ func (m *OathTokenMetadata) GetManufacturerProperties()([]KeyValueable) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OathTokenMetadata) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -154,6 +161,7 @@ func (m *OathTokenMetadata) GetOdataType()(*string) {
     return nil
 }
 // GetSerialNumber gets the serialNumber property value. The serialNumber property
+// returns a *string when successful
 func (m *OathTokenMetadata) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
     if err != nil {
@@ -165,6 +173,7 @@ func (m *OathTokenMetadata) GetSerialNumber()(*string) {
     return nil
 }
 // GetTokenType gets the tokenType property value. The tokenType property
+// returns a *string when successful
 func (m *OathTokenMetadata) GetTokenType()(*string) {
     val, err := m.GetBackingStore().Get("tokenType")
     if err != nil {
@@ -280,7 +289,6 @@ func (m *OathTokenMetadata) SetTokenType(value *string)() {
         panic(err)
     }
 }
-// OathTokenMetadataable 
 type OathTokenMetadataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// YearTimePeriodDefinition 
 type YearTimePeriodDefinition struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewYearTimePeriodDefinition instantiates a new yearTimePeriodDefinition and sets the default values.
+// NewYearTimePeriodDefinition instantiates a new YearTimePeriodDefinition and sets the default values.
 func NewYearTimePeriodDefinition()(*YearTimePeriodDefinition) {
     m := &YearTimePeriodDefinition{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewYearTimePeriodDefinition()(*YearTimePeriodDefinition) {
     return m
 }
 // CreateYearTimePeriodDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateYearTimePeriodDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewYearTimePeriodDefinition(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the year. Maximum supported length is 100 characters.
+// returns a *string when successful
 func (m *YearTimePeriodDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *YearTimePeriodDefinition) GetDisplayName()(*string) {
     return nil
 }
 // GetEndDate gets the endDate property value. The last day of the year using ISO 8601 format for date.
+// returns a *DateOnly when successful
 func (m *YearTimePeriodDefinition) GetEndDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("endDate")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *YearTimePeriodDefinition) GetEndDate()(*i878a80d2330e89d26896388a3f487e
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *YearTimePeriodDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,6 +91,7 @@ func (m *YearTimePeriodDefinition) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetStartDate gets the startDate property value. The first day of the year using ISO 8601 format for date.
+// returns a *DateOnly when successful
 func (m *YearTimePeriodDefinition) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("startDate")
     if err != nil {
@@ -99,6 +103,7 @@ func (m *YearTimePeriodDefinition) GetStartDate()(*i878a80d2330e89d26896388a3f48
     return nil
 }
 // GetYear gets the year property value. The year property
+// returns a YearReferenceValueable when successful
 func (m *YearTimePeriodDefinition) GetYear()(YearReferenceValueable) {
     val, err := m.GetBackingStore().Get("year")
     if err != nil {
@@ -169,7 +174,6 @@ func (m *YearTimePeriodDefinition) SetYear(value YearReferenceValueable)() {
         panic(err)
     }
 }
-// YearTimePeriodDefinitionable 
 type YearTimePeriodDefinitionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

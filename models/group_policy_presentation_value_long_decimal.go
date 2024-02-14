@@ -8,7 +8,7 @@ import (
 type GroupPolicyPresentationValueLongDecimal struct {
     GroupPolicyPresentationValue
 }
-// NewGroupPolicyPresentationValueLongDecimal instantiates a new groupPolicyPresentationValueLongDecimal and sets the default values.
+// NewGroupPolicyPresentationValueLongDecimal instantiates a new GroupPolicyPresentationValueLongDecimal and sets the default values.
 func NewGroupPolicyPresentationValueLongDecimal()(*GroupPolicyPresentationValueLongDecimal) {
     m := &GroupPolicyPresentationValueLongDecimal{
         GroupPolicyPresentationValue: *NewGroupPolicyPresentationValue(),
@@ -16,10 +16,12 @@ func NewGroupPolicyPresentationValueLongDecimal()(*GroupPolicyPresentationValueL
     return m
 }
 // CreateGroupPolicyPresentationValueLongDecimalFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationValueLongDecimalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyPresentationValueLongDecimal(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentationValueLongDecimal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyPresentationValue.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *GroupPolicyPresentationValueLongDecimal) GetFieldDeserializers()(map[st
     return res
 }
 // GetValue gets the value property value. An unsigned long value for the associated presentation.
+// returns a *int64 when successful
 func (m *GroupPolicyPresentationValueLongDecimal) GetValue()(*int64) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *GroupPolicyPresentationValueLongDecimal) SetValue(value *int64)() {
         panic(err)
     }
 }
-// GroupPolicyPresentationValueLongDecimalable 
 type GroupPolicyPresentationValueLongDecimalable interface {
     GroupPolicyPresentationValueable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

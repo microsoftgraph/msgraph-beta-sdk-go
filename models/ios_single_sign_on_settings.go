@@ -10,7 +10,7 @@ type IosSingleSignOnSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewIosSingleSignOnSettings instantiates a new iosSingleSignOnSettings and sets the default values.
+// NewIosSingleSignOnSettings instantiates a new IosSingleSignOnSettings and sets the default values.
 func NewIosSingleSignOnSettings()(*IosSingleSignOnSettings) {
     m := &IosSingleSignOnSettings{
     }
@@ -19,10 +19,12 @@ func NewIosSingleSignOnSettings()(*IosSingleSignOnSettings) {
     return m
 }
 // CreateIosSingleSignOnSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosSingleSignOnSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosSingleSignOnSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IosSingleSignOnSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +37,7 @@ func (m *IosSingleSignOnSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowedAppsList gets the allowedAppsList property value. List of app identifiers that are allowed to use this login. If this field is omitted, the login applies to all applications on the device. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *IosSingleSignOnSettings) GetAllowedAppsList()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("allowedAppsList")
     if err != nil {
@@ -46,6 +49,7 @@ func (m *IosSingleSignOnSettings) GetAllowedAppsList()([]AppListItemable) {
     return nil
 }
 // GetAllowedUrls gets the allowedUrls property value. List of HTTP URLs that must be matched in order to use this login. With iOS 9.0 or later, a wildcard characters may be used.
+// returns a []string when successful
 func (m *IosSingleSignOnSettings) GetAllowedUrls()([]string) {
     val, err := m.GetBackingStore().Get("allowedUrls")
     if err != nil {
@@ -57,10 +61,12 @@ func (m *IosSingleSignOnSettings) GetAllowedUrls()([]string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *IosSingleSignOnSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. The display name of login settings shown on the receiving device.
+// returns a *string when successful
 func (m *IosSingleSignOnSettings) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *IosSingleSignOnSettings) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowedAppsList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -149,6 +156,7 @@ func (m *IosSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetKerberosPrincipalName gets the kerberosPrincipalName property value. A Kerberos principal name. If not provided, the user is prompted for one during profile installation.
+// returns a *string when successful
 func (m *IosSingleSignOnSettings) GetKerberosPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("kerberosPrincipalName")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *IosSingleSignOnSettings) GetKerberosPrincipalName()(*string) {
     return nil
 }
 // GetKerberosRealm gets the kerberosRealm property value. A Kerberos realm name. Case sensitive.
+// returns a *string when successful
 func (m *IosSingleSignOnSettings) GetKerberosRealm()(*string) {
     val, err := m.GetBackingStore().Get("kerberosRealm")
     if err != nil {
@@ -171,6 +180,7 @@ func (m *IosSingleSignOnSettings) GetKerberosRealm()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *IosSingleSignOnSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -286,7 +296,6 @@ func (m *IosSingleSignOnSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// IosSingleSignOnSettingsable 
 type IosSingleSignOnSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

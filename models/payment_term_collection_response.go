@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PaymentTermCollectionResponse 
 type PaymentTermCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewPaymentTermCollectionResponse instantiates a new paymentTermCollectionResponse and sets the default values.
+// NewPaymentTermCollectionResponse instantiates a new PaymentTermCollectionResponse and sets the default values.
 func NewPaymentTermCollectionResponse()(*PaymentTermCollectionResponse) {
     m := &PaymentTermCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewPaymentTermCollectionResponse()(*PaymentTermCollectionResponse) {
     return m
 }
 // CreatePaymentTermCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePaymentTermCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPaymentTermCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PaymentTermCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *PaymentTermCollectionResponse) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []PaymentTermable when successful
 func (m *PaymentTermCollectionResponse) GetValue()([]PaymentTermable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *PaymentTermCollectionResponse) SetValue(value []PaymentTermable)() {
         panic(err)
     }
 }
-// PaymentTermCollectionResponseable 
 type PaymentTermCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

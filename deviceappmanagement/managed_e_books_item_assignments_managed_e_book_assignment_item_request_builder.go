@@ -41,28 +41,28 @@ type ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderPatchRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal instantiates a new ManagedEBookAssignmentItemRequestBuilder and sets the default values.
+// NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal instantiates a new ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder and sets the default values.
 func NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
     m := &ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder instantiates a new ManagedEBookAssignmentItemRequestBuilder and sets the default values.
+// NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder instantiates a new ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder and sets the default values.
 func NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property assignments for deviceAppManagement
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) D
     return nil
 }
 // Get the list of assignments for this eBook.
+// returns a ManagedEBookAssignmentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagedEBookAssignmentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) G
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookAssignmentable), nil
 }
 // Patch update the navigation property assignments in deviceAppManagement
+// returns a ManagedEBookAssignmentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookAssignmentable, requestConfiguration *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookAssignmentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateManagedEBookAssignmentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) P
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookAssignmentable), nil
 }
 // ToDeleteRequestInformation delete navigation property assignments for deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) T
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of assignments for this eBook.
+// returns a *RequestInformation when successful
 func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) T
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property assignments in deviceAppManagement
+// returns a *RequestInformation when successful
 func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedEBookAssignmentable, requestConfiguration *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments/{managedEBookAssignment%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) T
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder when successful
 func (m *ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) WithUrl(rawUrl string)(*ManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder) {
     return NewManagedEBooksItemAssignmentsManagedEBookAssignmentItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

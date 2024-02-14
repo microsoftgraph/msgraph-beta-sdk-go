@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcOnPremisesConnectionCollectionResponse 
 type CloudPcOnPremisesConnectionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcOnPremisesConnectionCollectionResponse instantiates a new cloudPcOnPremisesConnectionCollectionResponse and sets the default values.
+// NewCloudPcOnPremisesConnectionCollectionResponse instantiates a new CloudPcOnPremisesConnectionCollectionResponse and sets the default values.
 func NewCloudPcOnPremisesConnectionCollectionResponse()(*CloudPcOnPremisesConnectionCollectionResponse) {
     m := &CloudPcOnPremisesConnectionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCloudPcOnPremisesConnectionCollectionResponse()(*CloudPcOnPremisesConnec
     return m
 }
 // CreateCloudPcOnPremisesConnectionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcOnPremisesConnectionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcOnPremisesConnectionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcOnPremisesConnectionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CloudPcOnPremisesConnectionCollectionResponse) GetFieldDeserializers()(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []CloudPcOnPremisesConnectionable when successful
 func (m *CloudPcOnPremisesConnectionCollectionResponse) GetValue()([]CloudPcOnPremisesConnectionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CloudPcOnPremisesConnectionCollectionResponse) SetValue(value []CloudPc
         panic(err)
     }
 }
-// CloudPcOnPremisesConnectionCollectionResponseable 
 type CloudPcOnPremisesConnectionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

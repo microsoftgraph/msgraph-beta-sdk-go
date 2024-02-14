@@ -9,7 +9,7 @@ import (
 type MacOSSoftwareUpdateCategorySummary struct {
     Entity
 }
-// NewMacOSSoftwareUpdateCategorySummary instantiates a new macOSSoftwareUpdateCategorySummary and sets the default values.
+// NewMacOSSoftwareUpdateCategorySummary instantiates a new MacOSSoftwareUpdateCategorySummary and sets the default values.
 func NewMacOSSoftwareUpdateCategorySummary()(*MacOSSoftwareUpdateCategorySummary) {
     m := &MacOSSoftwareUpdateCategorySummary{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewMacOSSoftwareUpdateCategorySummary()(*MacOSSoftwareUpdateCategorySummary
     return m
 }
 // CreateMacOSSoftwareUpdateCategorySummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSSoftwareUpdateCategorySummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSSoftwareUpdateCategorySummary(), nil
 }
 // GetDeviceId gets the deviceId property value. The device ID.
+// returns a *string when successful
 func (m *MacOSSoftwareUpdateCategorySummary) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetDeviceId()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the report
+// returns a *string when successful
 func (m *MacOSSoftwareUpdateCategorySummary) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetDisplayName()(*string) {
     return nil
 }
 // GetFailedUpdateCount gets the failedUpdateCount property value. Number of failed updates on the device
+// returns a *int32 when successful
 func (m *MacOSSoftwareUpdateCategorySummary) GetFailedUpdateCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedUpdateCount")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFailedUpdateCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -155,6 +160,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetFieldDeserializers()(map[string]
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last date time the report for this device was updated.
+// returns a *Time when successful
 func (m *MacOSSoftwareUpdateCategorySummary) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -166,6 +172,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetLastUpdatedDateTime()(*i33607480
     return nil
 }
 // GetSuccessfulUpdateCount gets the successfulUpdateCount property value. Number of successful updates on the device
+// returns a *int32 when successful
 func (m *MacOSSoftwareUpdateCategorySummary) GetSuccessfulUpdateCount()(*int32) {
     val, err := m.GetBackingStore().Get("successfulUpdateCount")
     if err != nil {
@@ -177,6 +184,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetSuccessfulUpdateCount()(*int32) 
     return nil
 }
 // GetTotalUpdateCount gets the totalUpdateCount property value. Number of total updates on the device
+// returns a *int32 when successful
 func (m *MacOSSoftwareUpdateCategorySummary) GetTotalUpdateCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalUpdateCount")
     if err != nil {
@@ -188,6 +196,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetTotalUpdateCount()(*int32) {
     return nil
 }
 // GetUpdateCategory gets the updateCategory property value. MacOS Software Update Category
+// returns a *MacOSSoftwareUpdateCategory when successful
 func (m *MacOSSoftwareUpdateCategorySummary) GetUpdateCategory()(*MacOSSoftwareUpdateCategory) {
     val, err := m.GetBackingStore().Get("updateCategory")
     if err != nil {
@@ -199,6 +208,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetUpdateCategory()(*MacOSSoftwareU
     return nil
 }
 // GetUpdateStateSummaries gets the updateStateSummaries property value. Summary of the update states.
+// returns a []MacOSSoftwareUpdateStateSummaryable when successful
 func (m *MacOSSoftwareUpdateCategorySummary) GetUpdateStateSummaries()([]MacOSSoftwareUpdateStateSummaryable) {
     val, err := m.GetBackingStore().Get("updateStateSummaries")
     if err != nil {
@@ -210,6 +220,7 @@ func (m *MacOSSoftwareUpdateCategorySummary) GetUpdateStateSummaries()([]MacOSSo
     return nil
 }
 // GetUserId gets the userId property value. The user ID.
+// returns a *string when successful
 func (m *MacOSSoftwareUpdateCategorySummary) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -352,7 +363,6 @@ func (m *MacOSSoftwareUpdateCategorySummary) SetUserId(value *string)() {
         panic(err)
     }
 }
-// MacOSSoftwareUpdateCategorySummaryable 
 type MacOSSoftwareUpdateCategorySummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

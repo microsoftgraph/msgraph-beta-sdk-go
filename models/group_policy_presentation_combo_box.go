@@ -8,7 +8,7 @@ import (
 type GroupPolicyPresentationComboBox struct {
     GroupPolicyUploadedPresentation
 }
-// NewGroupPolicyPresentationComboBox instantiates a new groupPolicyPresentationComboBox and sets the default values.
+// NewGroupPolicyPresentationComboBox instantiates a new GroupPolicyPresentationComboBox and sets the default values.
 func NewGroupPolicyPresentationComboBox()(*GroupPolicyPresentationComboBox) {
     m := &GroupPolicyPresentationComboBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
@@ -18,10 +18,12 @@ func NewGroupPolicyPresentationComboBox()(*GroupPolicyPresentationComboBox) {
     return m
 }
 // CreateGroupPolicyPresentationComboBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationComboBoxFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyPresentationComboBox(), nil
 }
 // GetDefaultValue gets the defaultValue property value. Localized default string displayed in the combo box. The default value is empty.
+// returns a *string when successful
 func (m *GroupPolicyPresentationComboBox) GetDefaultValue()(*string) {
     val, err := m.GetBackingStore().Get("defaultValue")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *GroupPolicyPresentationComboBox) GetDefaultValue()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentationComboBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *GroupPolicyPresentationComboBox) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetMaxLength gets the maxLength property value. An unsigned integer that specifies the maximum number of text characters for the parameter. The default value is 1023.
+// returns a *int64 when successful
 func (m *GroupPolicyPresentationComboBox) GetMaxLength()(*int64) {
     val, err := m.GetBackingStore().Get("maxLength")
     if err != nil {
@@ -95,6 +99,7 @@ func (m *GroupPolicyPresentationComboBox) GetMaxLength()(*int64) {
     return nil
 }
 // GetRequired gets the required property value. Specifies whether a value must be specified for the parameter. The default value is false.
+// returns a *bool when successful
 func (m *GroupPolicyPresentationComboBox) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *GroupPolicyPresentationComboBox) GetRequired()(*bool) {
     return nil
 }
 // GetSuggestions gets the suggestions property value. Localized strings listed in the drop-down list of the combo box. The default value is empty.
+// returns a []string when successful
 func (m *GroupPolicyPresentationComboBox) GetSuggestions()([]string) {
     val, err := m.GetBackingStore().Get("suggestions")
     if err != nil {
@@ -176,7 +182,6 @@ func (m *GroupPolicyPresentationComboBox) SetSuggestions(value []string)() {
         panic(err)
     }
 }
-// GroupPolicyPresentationComboBoxable 
 type GroupPolicyPresentationComboBoxable interface {
     GroupPolicyUploadedPresentationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

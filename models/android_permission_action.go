@@ -10,7 +10,7 @@ type AndroidPermissionAction struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAndroidPermissionAction instantiates a new androidPermissionAction and sets the default values.
+// NewAndroidPermissionAction instantiates a new AndroidPermissionAction and sets the default values.
 func NewAndroidPermissionAction()(*AndroidPermissionAction) {
     m := &AndroidPermissionAction{
     }
@@ -19,10 +19,12 @@ func NewAndroidPermissionAction()(*AndroidPermissionAction) {
     return m
 }
 // CreateAndroidPermissionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidPermissionActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidPermissionAction(), nil
 }
 // GetAction gets the action property value. Android action taken when an app requests a dangerous permission.
+// returns a *AndroidPermissionActionType when successful
 func (m *AndroidPermissionAction) GetAction()(*AndroidPermissionActionType) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *AndroidPermissionAction) GetAction()(*AndroidPermissionActionType) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AndroidPermissionAction) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +49,12 @@ func (m *AndroidPermissionAction) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AndroidPermissionAction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidPermissionAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +90,7 @@ func (m *AndroidPermissionAction) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AndroidPermissionAction) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +102,7 @@ func (m *AndroidPermissionAction) GetOdataType()(*string) {
     return nil
 }
 // GetPermission gets the permission property value. Android permission string, defined in the official Android documentation.  Example 'android.permission.READ_CONTACTS'.
+// returns a *string when successful
 func (m *AndroidPermissionAction) GetPermission()(*string) {
     val, err := m.GetBackingStore().Get("permission")
     if err != nil {
@@ -167,7 +174,6 @@ func (m *AndroidPermissionAction) SetPermission(value *string)() {
         panic(err)
     }
 }
-// AndroidPermissionActionable 
 type AndroidPermissionActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

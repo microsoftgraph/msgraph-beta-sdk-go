@@ -8,7 +8,7 @@ import (
 type WindowsPhoneEASEmailProfileConfiguration struct {
     EasEmailProfileConfigurationBase
 }
-// NewWindowsPhoneEASEmailProfileConfiguration instantiates a new windowsPhoneEASEmailProfileConfiguration and sets the default values.
+// NewWindowsPhoneEASEmailProfileConfiguration instantiates a new WindowsPhoneEASEmailProfileConfiguration and sets the default values.
 func NewWindowsPhoneEASEmailProfileConfiguration()(*WindowsPhoneEASEmailProfileConfiguration) {
     m := &WindowsPhoneEASEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),
@@ -18,10 +18,12 @@ func NewWindowsPhoneEASEmailProfileConfiguration()(*WindowsPhoneEASEmailProfileC
     return m
 }
 // CreateWindowsPhoneEASEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsPhoneEASEmailProfileConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPhoneEASEmailProfileConfiguration(), nil
 }
 // GetAccountName gets the accountName property value. Account name.
+// returns a *string when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetAccountName()(*string) {
     val, err := m.GetBackingStore().Get("accountName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetAccountName()(*string) {
     return nil
 }
 // GetApplyOnlyToWindowsPhone81 gets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
+// returns a *bool when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetApplyOnlyToWindowsPhone81()(*bool) {
     val, err := m.GetBackingStore().Get("applyOnlyToWindowsPhone81")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetApplyOnlyToWindowsPhone81(
     return nil
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
+// returns a *EmailSyncDuration when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncDuration) {
     val, err := m.GetBackingStore().Get("durationOfEmailToSync")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetDurationOfEmailToSync()(*E
     return nil
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Email attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: userPrincipalName, primarySmtpAddress.
+// returns a *UserEmailSource when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
     val, err := m.GetBackingStore().Get("emailAddressSource")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetEmailAddressSource()(*User
     return nil
 }
 // GetEmailSyncSchedule gets the emailSyncSchedule property value. Possible values for email sync schedule.
+// returns a *EmailSyncSchedule when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetEmailSyncSchedule()(*EmailSyncSchedule) {
     val, err := m.GetBackingStore().Get("emailSyncSchedule")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetEmailSyncSchedule()(*Email
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EasEmailProfileConfigurationBase.GetFieldDeserializers()
     res["accountName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -182,6 +189,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetFieldDeserializers()(map[s
     return res
 }
 // GetHostName gets the hostName property value. Exchange location that (URL) that the native mail app connects to.
+// returns a *string when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetHostName()(*string) {
     val, err := m.GetBackingStore().Get("hostName")
     if err != nil {
@@ -193,6 +201,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetHostName()(*string) {
     return nil
 }
 // GetRequireSsl gets the requireSsl property value. Indicates whether or not to use SSL.
+// returns a *bool when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetRequireSsl()(*bool) {
     val, err := m.GetBackingStore().Get("requireSsl")
     if err != nil {
@@ -204,6 +213,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetRequireSsl()(*bool) {
     return nil
 }
 // GetSyncCalendar gets the syncCalendar property value. Whether or not to sync the calendar.
+// returns a *bool when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetSyncCalendar()(*bool) {
     val, err := m.GetBackingStore().Get("syncCalendar")
     if err != nil {
@@ -215,6 +225,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetSyncCalendar()(*bool) {
     return nil
 }
 // GetSyncContacts gets the syncContacts property value. Whether or not to sync contacts.
+// returns a *bool when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetSyncContacts()(*bool) {
     val, err := m.GetBackingStore().Get("syncContacts")
     if err != nil {
@@ -226,6 +237,7 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) GetSyncContacts()(*bool) {
     return nil
 }
 // GetSyncTasks gets the syncTasks property value. Whether or not to sync tasks.
+// returns a *bool when successful
 func (m *WindowsPhoneEASEmailProfileConfiguration) GetSyncTasks()(*bool) {
     val, err := m.GetBackingStore().Get("syncTasks")
     if err != nil {
@@ -371,7 +383,6 @@ func (m *WindowsPhoneEASEmailProfileConfiguration) SetSyncTasks(value *bool)() {
         panic(err)
     }
 }
-// WindowsPhoneEASEmailProfileConfigurationable 
 type WindowsPhoneEASEmailProfileConfigurationable interface {
     EasEmailProfileConfigurationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

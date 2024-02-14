@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FeatureUpdateCatalogEntry 
 type FeatureUpdateCatalogEntry struct {
     SoftwareUpdateCatalogEntry
 }
-// NewFeatureUpdateCatalogEntry instantiates a new featureUpdateCatalogEntry and sets the default values.
+// NewFeatureUpdateCatalogEntry instantiates a new FeatureUpdateCatalogEntry and sets the default values.
 func NewFeatureUpdateCatalogEntry()(*FeatureUpdateCatalogEntry) {
     m := &FeatureUpdateCatalogEntry{
         SoftwareUpdateCatalogEntry: *NewSoftwareUpdateCatalogEntry(),
@@ -18,10 +17,12 @@ func NewFeatureUpdateCatalogEntry()(*FeatureUpdateCatalogEntry) {
     return m
 }
 // CreateFeatureUpdateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFeatureUpdateCatalogEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFeatureUpdateCatalogEntry(), nil
 }
 // GetBuildNumber gets the buildNumber property value. The build number of the feature update. Read-only.
+// returns a *string when successful
 func (m *FeatureUpdateCatalogEntry) GetBuildNumber()(*string) {
     val, err := m.GetBackingStore().Get("buildNumber")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *FeatureUpdateCatalogEntry) GetBuildNumber()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FeatureUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SoftwareUpdateCatalogEntry.GetFieldDeserializers()
     res["buildNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *FeatureUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetVersion gets the version property value. The version of the feature update. Read-only.
+// returns a *string when successful
 func (m *FeatureUpdateCatalogEntry) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *FeatureUpdateCatalogEntry) SetVersion(value *string)() {
         panic(err)
     }
 }
-// FeatureUpdateCatalogEntryable 
 type FeatureUpdateCatalogEntryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SoftwareUpdateCatalogEntryable

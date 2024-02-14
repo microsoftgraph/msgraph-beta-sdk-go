@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// BranchSite 
 type BranchSite struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewBranchSite instantiates a new branchSite and sets the default values.
+// NewBranchSite instantiates a new BranchSite and sets the default values.
 func NewBranchSite()(*BranchSite) {
     m := &BranchSite{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewBranchSite()(*BranchSite) {
     return m
 }
 // CreateBranchSiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBranchSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchSite(), nil
 }
 // GetBandwidthCapacity gets the bandwidthCapacity property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
+// returns a *int64 when successful
 func (m *BranchSite) GetBandwidthCapacity()(*int64) {
     val, err := m.GetBackingStore().Get("bandwidthCapacity")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *BranchSite) GetBandwidthCapacity()(*int64) {
     return nil
 }
 // GetConnectivityConfiguration gets the connectivityConfiguration property value. Specifies the connectivity details of all device links associated with a branch.
+// returns a BranchConnectivityConfigurationable when successful
 func (m *BranchSite) GetConnectivityConfiguration()(BranchConnectivityConfigurationable) {
     val, err := m.GetBackingStore().Get("connectivityConfiguration")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *BranchSite) GetConnectivityConfiguration()(BranchConnectivityConfigurat
     return nil
 }
 // GetConnectivityState gets the connectivityState property value. Determines the branch site status. The possible values are: pending, connected, inactive, error.
+// returns a *ConnectivityState when successful
 func (m *BranchSite) GetConnectivityState()(*ConnectivityState) {
     val, err := m.GetBackingStore().Get("connectivityState")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *BranchSite) GetConnectivityState()(*ConnectivityState) {
     return nil
 }
 // GetCountry gets the country property value. The country property
+// returns a *string when successful
 func (m *BranchSite) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *BranchSite) GetCountry()(*string) {
     return nil
 }
 // GetDeviceLinks gets the deviceLinks property value. Each unique CPE device associated with a branch is specified. Supports $expand.
+// returns a []DeviceLinkable when successful
 func (m *BranchSite) GetDeviceLinks()([]DeviceLinkable) {
     val, err := m.GetBackingStore().Get("deviceLinks")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *BranchSite) GetDeviceLinks()([]DeviceLinkable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["bandwidthCapacity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -194,6 +200,7 @@ func (m *BranchSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetForwardingProfiles gets the forwardingProfiles property value. Each forwarding profile associated with a branch site is specified. Supports $expand.
+// returns a []ForwardingProfileable when successful
 func (m *BranchSite) GetForwardingProfiles()([]ForwardingProfileable) {
     val, err := m.GetBackingStore().Get("forwardingProfiles")
     if err != nil {
@@ -205,6 +212,7 @@ func (m *BranchSite) GetForwardingProfiles()([]ForwardingProfileable) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. last modified time.
+// returns a *Time when successful
 func (m *BranchSite) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -216,6 +224,7 @@ func (m *BranchSite) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetName gets the name property value. Name.
+// returns a *string when successful
 func (m *BranchSite) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -227,6 +236,7 @@ func (m *BranchSite) GetName()(*string) {
     return nil
 }
 // GetRegion gets the region property value. The region property
+// returns a *Region when successful
 func (m *BranchSite) GetRegion()(*Region) {
     val, err := m.GetBackingStore().Get("region")
     if err != nil {
@@ -238,6 +248,7 @@ func (m *BranchSite) GetRegion()(*Region) {
     return nil
 }
 // GetVersion gets the version property value. The branch version.
+// returns a *string when successful
 func (m *BranchSite) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -400,7 +411,6 @@ func (m *BranchSite) SetVersion(value *string)() {
         panic(err)
     }
 }
-// BranchSiteable 
 type BranchSiteable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

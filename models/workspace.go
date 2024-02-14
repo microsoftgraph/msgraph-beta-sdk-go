@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Workspace 
 type Workspace struct {
     Place
 }
-// NewWorkspace instantiates a new workspace and sets the default values.
+// NewWorkspace instantiates a new Workspace and sets the default values.
 func NewWorkspace()(*Workspace) {
     m := &Workspace{
         Place: *NewPlace(),
@@ -18,10 +17,12 @@ func NewWorkspace()(*Workspace) {
     return m
 }
 // CreateWorkspaceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkspaceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkspace(), nil
 }
 // GetBuilding gets the building property value. Specifies the building name or building number that the workspace is in.
+// returns a *string when successful
 func (m *Workspace) GetBuilding()(*string) {
     val, err := m.GetBackingStore().Get("building")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Workspace) GetBuilding()(*string) {
     return nil
 }
 // GetCapacity gets the capacity property value. Specifies the capacity of the workspace.
+// returns a *int32 when successful
 func (m *Workspace) GetCapacity()(*int32) {
     val, err := m.GetBackingStore().Get("capacity")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Workspace) GetCapacity()(*int32) {
     return nil
 }
 // GetEmailAddress gets the emailAddress property value. Email address of the workspace.
+// returns a *string when successful
 func (m *Workspace) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Workspace) GetEmailAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Workspace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Place.GetFieldDeserializers()
     res["building"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +160,7 @@ func (m *Workspace) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetFloorLabel gets the floorLabel property value. Specifies a descriptive label for the floor, for example, P.
+// returns a *string when successful
 func (m *Workspace) GetFloorLabel()(*string) {
     val, err := m.GetBackingStore().Get("floorLabel")
     if err != nil {
@@ -167,6 +172,7 @@ func (m *Workspace) GetFloorLabel()(*string) {
     return nil
 }
 // GetFloorNumber gets the floorNumber property value. Specifies the floor number that the workspace is on.
+// returns a *int32 when successful
 func (m *Workspace) GetFloorNumber()(*int32) {
     val, err := m.GetBackingStore().Get("floorNumber")
     if err != nil {
@@ -178,6 +184,7 @@ func (m *Workspace) GetFloorNumber()(*int32) {
     return nil
 }
 // GetIsWheelChairAccessible gets the isWheelChairAccessible property value. Specifies whether the workspace is wheelchair accessible.
+// returns a *bool when successful
 func (m *Workspace) GetIsWheelChairAccessible()(*bool) {
     val, err := m.GetBackingStore().Get("isWheelChairAccessible")
     if err != nil {
@@ -189,6 +196,7 @@ func (m *Workspace) GetIsWheelChairAccessible()(*bool) {
     return nil
 }
 // GetLabel gets the label property value. Specifies a descriptive label for the workspace, for example, a number or name.
+// returns a *string when successful
 func (m *Workspace) GetLabel()(*string) {
     val, err := m.GetBackingStore().Get("label")
     if err != nil {
@@ -200,6 +208,7 @@ func (m *Workspace) GetLabel()(*string) {
     return nil
 }
 // GetNickname gets the nickname property value. Specifies a nickname for the workspace, for example, 'quiet workspace'.
+// returns a *string when successful
 func (m *Workspace) GetNickname()(*string) {
     val, err := m.GetBackingStore().Get("nickname")
     if err != nil {
@@ -210,7 +219,8 @@ func (m *Workspace) GetNickname()(*string) {
     }
     return nil
 }
-// GetTags gets the tags property value. Specifies additional features of the workspace, for example, details like the type of view or furniture type.
+// GetTags gets the tags property value. Specifies other features of the workspace; for example, the type of view or furniture type.
+// returns a []string when successful
 func (m *Workspace) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -339,14 +349,13 @@ func (m *Workspace) SetNickname(value *string)() {
         panic(err)
     }
 }
-// SetTags sets the tags property value. Specifies additional features of the workspace, for example, details like the type of view or furniture type.
+// SetTags sets the tags property value. Specifies other features of the workspace; for example, the type of view or furniture type.
 func (m *Workspace) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {
         panic(err)
     }
 }
-// Workspaceable 
 type Workspaceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Placeable

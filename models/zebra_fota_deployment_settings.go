@@ -11,7 +11,7 @@ type ZebraFotaDeploymentSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewZebraFotaDeploymentSettings instantiates a new zebraFotaDeploymentSettings and sets the default values.
+// NewZebraFotaDeploymentSettings instantiates a new ZebraFotaDeploymentSettings and sets the default values.
 func NewZebraFotaDeploymentSettings()(*ZebraFotaDeploymentSettings) {
     m := &ZebraFotaDeploymentSettings{
     }
@@ -20,10 +20,12 @@ func NewZebraFotaDeploymentSettings()(*ZebraFotaDeploymentSettings) {
     return m
 }
 // CreateZebraFotaDeploymentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateZebraFotaDeploymentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewZebraFotaDeploymentSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ZebraFotaDeploymentSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +38,12 @@ func (m *ZebraFotaDeploymentSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ZebraFotaDeploymentSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBatteryRuleMinimumBatteryLevelPercentage gets the batteryRuleMinimumBatteryLevelPercentage property value. Minimum battery level (%) required for both download and installation. Default: -1 (System defaults). Maximum is 100.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentSettings) GetBatteryRuleMinimumBatteryLevelPercentage()(*int32) {
     val, err := m.GetBackingStore().Get("batteryRuleMinimumBatteryLevelPercentage")
     if err != nil {
@@ -51,6 +55,7 @@ func (m *ZebraFotaDeploymentSettings) GetBatteryRuleMinimumBatteryLevelPercentag
     return nil
 }
 // GetBatteryRuleRequireCharger gets the batteryRuleRequireCharger property value. Flag indicating if charger is required. When set to false, the client can install updates whether the device is in or out of the charger. Applied only for installation. Defaults to false.
+// returns a *bool when successful
 func (m *ZebraFotaDeploymentSettings) GetBatteryRuleRequireCharger()(*bool) {
     val, err := m.GetBackingStore().Get("batteryRuleRequireCharger")
     if err != nil {
@@ -62,6 +67,7 @@ func (m *ZebraFotaDeploymentSettings) GetBatteryRuleRequireCharger()(*bool) {
     return nil
 }
 // GetDeviceModel gets the deviceModel property value. Deploy update for devices with this model only.
+// returns a *string when successful
 func (m *ZebraFotaDeploymentSettings) GetDeviceModel()(*string) {
     val, err := m.GetBackingStore().Get("deviceModel")
     if err != nil {
@@ -73,6 +79,7 @@ func (m *ZebraFotaDeploymentSettings) GetDeviceModel()(*string) {
     return nil
 }
 // GetDownloadRuleNetworkType gets the downloadRuleNetworkType property value. Represents various network types for Zebra FOTA deployment.
+// returns a *ZebraFotaNetworkType when successful
 func (m *ZebraFotaDeploymentSettings) GetDownloadRuleNetworkType()(*ZebraFotaNetworkType) {
     val, err := m.GetBackingStore().Get("downloadRuleNetworkType")
     if err != nil {
@@ -84,6 +91,7 @@ func (m *ZebraFotaDeploymentSettings) GetDownloadRuleNetworkType()(*ZebraFotaNet
     return nil
 }
 // GetDownloadRuleStartDateTime gets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.
+// returns a *Time when successful
 func (m *ZebraFotaDeploymentSettings) GetDownloadRuleStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("downloadRuleStartDateTime")
     if err != nil {
@@ -95,6 +103,7 @@ func (m *ZebraFotaDeploymentSettings) GetDownloadRuleStartDateTime()(*i336074805
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ZebraFotaDeploymentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["batteryRuleMinimumBatteryLevelPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -270,6 +279,7 @@ func (m *ZebraFotaDeploymentSettings) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetFirmwareTargetArtifactDescription gets the firmwareTargetArtifactDescription property value. A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).
+// returns a *string when successful
 func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetArtifactDescription()(*string) {
     val, err := m.GetBackingStore().Get("firmwareTargetArtifactDescription")
     if err != nil {
@@ -281,6 +291,7 @@ func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetArtifactDescription()(*st
     return nil
 }
 // GetFirmwareTargetBoardSupportPackageVersion gets the firmwareTargetBoardSupportPackageVersion property value. Deployment's Board Support Package (BSP. E.g.: '01.18.02.00'). Required only for custom update type.
+// returns a *string when successful
 func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetBoardSupportPackageVersion()(*string) {
     val, err := m.GetBackingStore().Get("firmwareTargetBoardSupportPackageVersion")
     if err != nil {
@@ -292,6 +303,7 @@ func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetBoardSupportPackageVersio
     return nil
 }
 // GetFirmwareTargetOsVersion gets the firmwareTargetOsVersion property value. Target OS Version (e.g.: '8.1.0'). Required only for custom update type.
+// returns a *string when successful
 func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("firmwareTargetOsVersion")
     if err != nil {
@@ -303,6 +315,7 @@ func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetOsVersion()(*string) {
     return nil
 }
 // GetFirmwareTargetPatch gets the firmwareTargetPatch property value. Target patch name (e.g.: 'U06'). Required only for custom update type.
+// returns a *string when successful
 func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetPatch()(*string) {
     val, err := m.GetBackingStore().Get("firmwareTargetPatch")
     if err != nil {
@@ -314,6 +327,7 @@ func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetPatch()(*string) {
     return nil
 }
 // GetInstallRuleStartDateTime gets the installRuleStartDateTime property value. Date and time in device time zone when the install will start. Default - download startDate if configured, otherwise defaults to NOW. Ignored when deployment update type was set to auto.
+// returns a *Time when successful
 func (m *ZebraFotaDeploymentSettings) GetInstallRuleStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("installRuleStartDateTime")
     if err != nil {
@@ -325,6 +339,7 @@ func (m *ZebraFotaDeploymentSettings) GetInstallRuleStartDateTime()(*i336074805f
     return nil
 }
 // GetInstallRuleWindowEndTime gets the installRuleWindowEndTime property value. Time of day after which the install cannot start. Possible range is 00:30:00 to 23:59:59. Should be greater than 'installRuleWindowStartTime' by 30 mins. The time is expressed in a 24-hour format, as hh:mm, and is in the device time zone. Default - 23:59:59. Respected for all values of update type, including AUTO.
+// returns a *TimeOnly when successful
 func (m *ZebraFotaDeploymentSettings) GetInstallRuleWindowEndTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
     val, err := m.GetBackingStore().Get("installRuleWindowEndTime")
     if err != nil {
@@ -336,6 +351,7 @@ func (m *ZebraFotaDeploymentSettings) GetInstallRuleWindowEndTime()(*i878a80d233
     return nil
 }
 // GetInstallRuleWindowStartTime gets the installRuleWindowStartTime property value. Time of day (00:00:00 - 23:30:00) when installation should begin. The time is expressed in a 24-hour format, as hh:mm, and is in the device time zone. Default - 00:00:00. Respected for all values of update type, including AUTO.
+// returns a *TimeOnly when successful
 func (m *ZebraFotaDeploymentSettings) GetInstallRuleWindowStartTime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
     val, err := m.GetBackingStore().Get("installRuleWindowStartTime")
     if err != nil {
@@ -347,6 +363,7 @@ func (m *ZebraFotaDeploymentSettings) GetInstallRuleWindowStartTime()(*i878a80d2
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ZebraFotaDeploymentSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -358,6 +375,7 @@ func (m *ZebraFotaDeploymentSettings) GetOdataType()(*string) {
     return nil
 }
 // GetScheduleDurationInDays gets the scheduleDurationInDays property value. Maximum 28 days. Default is 28 days. Sequence of dates are: 1) Download start date. 2) Install start date. 3) Schedule end date. If any of the values are not provided, the date provided in the preceding step of the sequence is used. If no values are provided, the string value of the current UTC is used.
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentSettings) GetScheduleDurationInDays()(*int32) {
     val, err := m.GetBackingStore().Get("scheduleDurationInDays")
     if err != nil {
@@ -369,6 +387,7 @@ func (m *ZebraFotaDeploymentSettings) GetScheduleDurationInDays()(*int32) {
     return nil
 }
 // GetScheduleMode gets the scheduleMode property value. Represents various schedule modes for Zebra FOTA deployment.
+// returns a *ZebraFotaScheduleMode when successful
 func (m *ZebraFotaDeploymentSettings) GetScheduleMode()(*ZebraFotaScheduleMode) {
     val, err := m.GetBackingStore().Get("scheduleMode")
     if err != nil {
@@ -380,6 +399,7 @@ func (m *ZebraFotaDeploymentSettings) GetScheduleMode()(*ZebraFotaScheduleMode) 
     return nil
 }
 // GetTimeZoneOffsetInMinutes gets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
+// returns a *int32 when successful
 func (m *ZebraFotaDeploymentSettings) GetTimeZoneOffsetInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("timeZoneOffsetInMinutes")
     if err != nil {
@@ -391,6 +411,7 @@ func (m *ZebraFotaDeploymentSettings) GetTimeZoneOffsetInMinutes()(*int32) {
     return nil
 }
 // GetUpdateType gets the updateType property value. Represents various update types for Zebra FOTA deployment.
+// returns a *ZebraFotaUpdateType when successful
 func (m *ZebraFotaDeploymentSettings) GetUpdateType()(*ZebraFotaUpdateType) {
     val, err := m.GetBackingStore().Get("updateType")
     if err != nil {
@@ -646,7 +667,6 @@ func (m *ZebraFotaDeploymentSettings) SetUpdateType(value *ZebraFotaUpdateType)(
         panic(err)
     }
 }
-// ZebraFotaDeploymentSettingsable 
 type ZebraFotaDeploymentSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -27,28 +27,29 @@ type IndustryDataDataConnectorsItemSourceSystemRequestBuilderGetRequestConfigura
     // Request query parameters
     QueryParameters *IndustryDataDataConnectorsItemSourceSystemRequestBuilderGetQueryParameters
 }
-// NewIndustryDataDataConnectorsItemSourceSystemRequestBuilderInternal instantiates a new SourceSystemRequestBuilder and sets the default values.
+// NewIndustryDataDataConnectorsItemSourceSystemRequestBuilderInternal instantiates a new IndustryDataDataConnectorsItemSourceSystemRequestBuilder and sets the default values.
 func NewIndustryDataDataConnectorsItemSourceSystemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataDataConnectorsItemSourceSystemRequestBuilder) {
     m := &IndustryDataDataConnectorsItemSourceSystemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewIndustryDataDataConnectorsItemSourceSystemRequestBuilder instantiates a new SourceSystemRequestBuilder and sets the default values.
+// NewIndustryDataDataConnectorsItemSourceSystemRequestBuilder instantiates a new IndustryDataDataConnectorsItemSourceSystemRequestBuilder and sets the default values.
 func NewIndustryDataDataConnectorsItemSourceSystemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataDataConnectorsItemSourceSystemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataDataConnectorsItemSourceSystemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the sourceSystemDefinition this connector is connected to.
+// returns a SourceSystemDefinitionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IndustryDataDataConnectorsItemSourceSystemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsItemSourceSystemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateSourceSystemDefinitionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *IndustryDataDataConnectorsItemSourceSystemRequestBuilder) Get(ctx conte
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.SourceSystemDefinitionable), nil
 }
 // ToGetRequestInformation the sourceSystemDefinition this connector is connected to.
+// returns a *RequestInformation when successful
 func (m *IndustryDataDataConnectorsItemSourceSystemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsItemSourceSystemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *IndustryDataDataConnectorsItemSourceSystemRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IndustryDataDataConnectorsItemSourceSystemRequestBuilder when successful
 func (m *IndustryDataDataConnectorsItemSourceSystemRequestBuilder) WithUrl(rawUrl string)(*IndustryDataDataConnectorsItemSourceSystemRequestBuilder) {
     return NewIndustryDataDataConnectorsItemSourceSystemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

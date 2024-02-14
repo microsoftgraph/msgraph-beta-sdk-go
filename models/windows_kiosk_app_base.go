@@ -10,7 +10,7 @@ type WindowsKioskAppBase struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWindowsKioskAppBase instantiates a new windowsKioskAppBase and sets the default values.
+// NewWindowsKioskAppBase instantiates a new WindowsKioskAppBase and sets the default values.
 func NewWindowsKioskAppBase()(*WindowsKioskAppBase) {
     m := &WindowsKioskAppBase{
     }
@@ -19,6 +19,7 @@ func NewWindowsKioskAppBase()(*WindowsKioskAppBase) {
     return m
 }
 // CreateWindowsKioskAppBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskAppBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -45,6 +46,7 @@ func CreateWindowsKioskAppBaseFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewWindowsKioskAppBase(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsKioskAppBase) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -57,6 +59,7 @@ func (m *WindowsKioskAppBase) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAppType gets the appType property value. The type of Windows kiosk app.
+// returns a *WindowsKioskAppType when successful
 func (m *WindowsKioskAppBase) GetAppType()(*WindowsKioskAppType) {
     val, err := m.GetBackingStore().Get("appType")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *WindowsKioskAppBase) GetAppType()(*WindowsKioskAppType) {
     return nil
 }
 // GetAutoLaunch gets the autoLaunch property value. Allow the app to be auto-launched in multi-app kiosk mode
+// returns a *bool when successful
 func (m *WindowsKioskAppBase) GetAutoLaunch()(*bool) {
     val, err := m.GetBackingStore().Get("autoLaunch")
     if err != nil {
@@ -79,10 +83,12 @@ func (m *WindowsKioskAppBase) GetAutoLaunch()(*bool) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsKioskAppBase) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskAppBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["appType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,6 +144,7 @@ func (m *WindowsKioskAppBase) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetName gets the name property value. Represents the friendly name of an app
+// returns a *string when successful
 func (m *WindowsKioskAppBase) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -149,6 +156,7 @@ func (m *WindowsKioskAppBase) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WindowsKioskAppBase) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *WindowsKioskAppBase) GetOdataType()(*string) {
     return nil
 }
 // GetStartLayoutTileSize gets the startLayoutTileSize property value. The tile size of Windows app in the start layout.
+// returns a *WindowsAppStartLayoutTileSize when successful
 func (m *WindowsKioskAppBase) GetStartLayoutTileSize()(*WindowsAppStartLayoutTileSize) {
     val, err := m.GetBackingStore().Get("startLayoutTileSize")
     if err != nil {
@@ -258,7 +267,6 @@ func (m *WindowsKioskAppBase) SetStartLayoutTileSize(value *WindowsAppStartLayou
         panic(err)
     }
 }
-// WindowsKioskAppBaseable 
 type WindowsKioskAppBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

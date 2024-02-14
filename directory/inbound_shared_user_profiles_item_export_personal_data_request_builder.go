@@ -17,20 +17,21 @@ type InboundSharedUserProfilesItemExportPersonalDataRequestBuilderPostRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilderInternal instantiates a new ExportPersonalDataRequestBuilder and sets the default values.
+// NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilderInternal instantiates a new InboundSharedUserProfilesItemExportPersonalDataRequestBuilder and sets the default values.
 func NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) {
     m := &InboundSharedUserProfilesItemExportPersonalDataRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}/exportPersonalData", pathParameters),
     }
     return m
 }
-// NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilder instantiates a new ExportPersonalDataRequestBuilder and sets the default values.
+// NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilder instantiates a new InboundSharedUserProfilesItemExportPersonalDataRequestBuilder and sets the default values.
 func NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post create a request to export the personal data for an inboundSharedUserProfile.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/inboundshareduserprofile-exportpersonaldata?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) Post(ctx
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) Post(ctx
     return nil
 }
 // ToPostRequestInformation create a request to export the personal data for an inboundSharedUserProfile.
+// returns a *RequestInformation when successful
 func (m *InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) ToPostRequestInformation(ctx context.Context, body InboundSharedUserProfilesItemExportPersonalDataPostRequestBodyable, requestConfiguration *InboundSharedUserProfilesItemExportPersonalDataRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +65,7 @@ func (m *InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) ToPostRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *InboundSharedUserProfilesItemExportPersonalDataRequestBuilder when successful
 func (m *InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) WithUrl(rawUrl string)(*InboundSharedUserProfilesItemExportPersonalDataRequestBuilder) {
     return NewInboundSharedUserProfilesItemExportPersonalDataRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

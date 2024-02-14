@@ -34,15 +34,16 @@ func NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder(rawUrl 
     return NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function verifyWindowsEnrollmentAutoDiscovery
-// Deprecated: This method is obsolete. Use GetAsVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) Get(ctx context.Context, requestConfiguration *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderGetRequestConfiguration)(VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,14 +55,15 @@ func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) Get(c
     return res.(VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponseable), nil
 }
 // GetAsVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse invoke function verifyWindowsEnrollmentAutoDiscovery
+// returns a VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) GetAsVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponse(ctx context.Context, requestConfiguration *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderGetRequestConfiguration)(VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -73,6 +75,7 @@ func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) GetAs
     return res.(VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameGetResponseable), nil
 }
 // ToGetRequestInformation invoke function verifyWindowsEnrollmentAutoDiscovery
+// returns a *RequestInformation when successful
 func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -83,6 +86,7 @@ func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) ToGet
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder when successful
 func (m *VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) WithUrl(rawUrl string)(*VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder) {
     return NewVerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

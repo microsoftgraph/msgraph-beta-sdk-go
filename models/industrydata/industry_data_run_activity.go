@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// IndustryDataRunActivity 
 type IndustryDataRunActivity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewIndustryDataRunActivity instantiates a new industryDataRunActivity and sets the default values.
+// NewIndustryDataRunActivity instantiates a new IndustryDataRunActivity and sets the default values.
 func NewIndustryDataRunActivity()(*IndustryDataRunActivity) {
     m := &IndustryDataRunActivity{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,6 +16,7 @@ func NewIndustryDataRunActivity()(*IndustryDataRunActivity) {
     return m
 }
 // CreateIndustryDataRunActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIndustryDataRunActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateIndustryDataRunActivityFromDiscriminatorValue(parseNode i878a80d2330e
     return NewIndustryDataRunActivity(), nil
 }
 // GetActivity gets the activity property value. The flow that was run by this activity.
+// returns a IndustryDataActivityable when successful
 func (m *IndustryDataRunActivity) GetActivity()(IndustryDataActivityable) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
@@ -52,6 +53,7 @@ func (m *IndustryDataRunActivity) GetActivity()(IndustryDataActivityable) {
     return nil
 }
 // GetBlockingError gets the blockingError property value. An error object to diagnose critical failures in an activity.
+// returns a PublicErrorable when successful
 func (m *IndustryDataRunActivity) GetBlockingError()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicErrorable) {
     val, err := m.GetBackingStore().Get("blockingError")
     if err != nil {
@@ -63,6 +65,7 @@ func (m *IndustryDataRunActivity) GetBlockingError()(ie233ee762e29b4ba6970aa2a2e
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the running flow.
+// returns a *string when successful
 func (m *IndustryDataRunActivity) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -74,6 +77,7 @@ func (m *IndustryDataRunActivity) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IndustryDataRunActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +123,7 @@ func (m *IndustryDataRunActivity) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetStatus gets the status property value. The status property
+// returns a *IndustryDataActivityStatus when successful
 func (m *IndustryDataRunActivity) GetStatus()(*IndustryDataActivityStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -178,7 +183,6 @@ func (m *IndustryDataRunActivity) SetStatus(value *IndustryDataActivityStatus)()
         panic(err)
     }
 }
-// IndustryDataRunActivityable 
 type IndustryDataRunActivityable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

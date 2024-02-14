@@ -18,20 +18,22 @@ type ItemItemsItemWorkbookNamesAddRequestBuilderPostRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookNamesAddRequestBuilderInternal instantiates a new AddRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookNamesAddRequestBuilderInternal instantiates a new ItemItemsItemWorkbookNamesAddRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookNamesAddRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookNamesAddRequestBuilder) {
     m := &ItemItemsItemWorkbookNamesAddRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/add", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookNamesAddRequestBuilder instantiates a new AddRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookNamesAddRequestBuilder instantiates a new ItemItemsItemWorkbookNamesAddRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookNamesAddRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookNamesAddRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookNamesAddRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post adds a new name to the collection of the given scope using the user's locale for the formula.
+// returns a WorkbookNamedItemable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-add?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemItemsItemWorkbookNamesAddRequestBuilder) Post(ctx context.Context, 
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookNamedItemFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *ItemItemsItemWorkbookNamesAddRequestBuilder) Post(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable), nil
 }
 // ToPostRequestInformation adds a new name to the collection of the given scope using the user's locale for the formula.
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookNamesAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookNamesAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookNamesAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *ItemItemsItemWorkbookNamesAddRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookNamesAddRequestBuilder when successful
 func (m *ItemItemsItemWorkbookNamesAddRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookNamesAddRequestBuilder) {
     return NewItemItemsItemWorkbookNamesAddRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

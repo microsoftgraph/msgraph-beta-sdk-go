@@ -8,7 +8,7 @@ import (
 type ConfigurationManagerActionResult struct {
     DeviceActionResult
 }
-// NewConfigurationManagerActionResult instantiates a new configurationManagerActionResult and sets the default values.
+// NewConfigurationManagerActionResult instantiates a new ConfigurationManagerActionResult and sets the default values.
 func NewConfigurationManagerActionResult()(*ConfigurationManagerActionResult) {
     m := &ConfigurationManagerActionResult{
         DeviceActionResult: *NewDeviceActionResult(),
@@ -16,10 +16,12 @@ func NewConfigurationManagerActionResult()(*ConfigurationManagerActionResult) {
     return m
 }
 // CreateConfigurationManagerActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConfigurationManagerActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigurationManagerActionResult(), nil
 }
 // GetActionDeliveryStatus gets the actionDeliveryStatus property value. Delivery state of Configuration Manager device action
+// returns a *ConfigurationManagerActionDeliveryStatus when successful
 func (m *ConfigurationManagerActionResult) GetActionDeliveryStatus()(*ConfigurationManagerActionDeliveryStatus) {
     val, err := m.GetBackingStore().Get("actionDeliveryStatus")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *ConfigurationManagerActionResult) GetActionDeliveryStatus()(*Configurat
     return nil
 }
 // GetErrorCode gets the errorCode property value. Error code of Configuration Manager action from client
+// returns a *int32 when successful
 func (m *ConfigurationManagerActionResult) GetErrorCode()(*int32) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *ConfigurationManagerActionResult) GetErrorCode()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConfigurationManagerActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceActionResult.GetFieldDeserializers()
     res["actionDeliveryStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,7 +105,6 @@ func (m *ConfigurationManagerActionResult) SetErrorCode(value *int32)() {
         panic(err)
     }
 }
-// ConfigurationManagerActionResultable 
 type ConfigurationManagerActionResultable interface {
     DeviceActionResultable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

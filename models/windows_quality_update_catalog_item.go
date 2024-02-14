@@ -8,7 +8,7 @@ import (
 type WindowsQualityUpdateCatalogItem struct {
     WindowsUpdateCatalogItem
 }
-// NewWindowsQualityUpdateCatalogItem instantiates a new windowsQualityUpdateCatalogItem and sets the default values.
+// NewWindowsQualityUpdateCatalogItem instantiates a new WindowsQualityUpdateCatalogItem and sets the default values.
 func NewWindowsQualityUpdateCatalogItem()(*WindowsQualityUpdateCatalogItem) {
     m := &WindowsQualityUpdateCatalogItem{
         WindowsUpdateCatalogItem: *NewWindowsUpdateCatalogItem(),
@@ -18,10 +18,12 @@ func NewWindowsQualityUpdateCatalogItem()(*WindowsQualityUpdateCatalogItem) {
     return m
 }
 // CreateWindowsQualityUpdateCatalogItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsQualityUpdateCatalogItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsQualityUpdateCatalogItem(), nil
 }
 // GetClassification gets the classification property value. Windows quality update classification
+// returns a *WindowsQualityUpdateClassification when successful
 func (m *WindowsQualityUpdateCatalogItem) GetClassification()(*WindowsQualityUpdateClassification) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsQualityUpdateCatalogItem) GetClassification()(*WindowsQualityUpd
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsUpdateCatalogItem.GetFieldDeserializers()
     res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +71,7 @@ func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetIsExpeditable gets the isExpeditable property value. Flag indicating if update qualifies for expedite
+// returns a *bool when successful
 func (m *WindowsQualityUpdateCatalogItem) GetIsExpeditable()(*bool) {
     val, err := m.GetBackingStore().Get("isExpeditable")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *WindowsQualityUpdateCatalogItem) GetIsExpeditable()(*bool) {
     return nil
 }
 // GetKbArticleId gets the kbArticleId property value. Knowledge base article id
+// returns a *string when successful
 func (m *WindowsQualityUpdateCatalogItem) GetKbArticleId()(*string) {
     val, err := m.GetBackingStore().Get("kbArticleId")
     if err != nil {
@@ -137,7 +142,6 @@ func (m *WindowsQualityUpdateCatalogItem) SetKbArticleId(value *string)() {
         panic(err)
     }
 }
-// WindowsQualityUpdateCatalogItemable 
 type WindowsQualityUpdateCatalogItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsUpdateCatalogItemable

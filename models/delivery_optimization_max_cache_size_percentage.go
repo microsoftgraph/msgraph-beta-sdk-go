@@ -8,7 +8,7 @@ import (
 type DeliveryOptimizationMaxCacheSizePercentage struct {
     DeliveryOptimizationMaxCacheSize
 }
-// NewDeliveryOptimizationMaxCacheSizePercentage instantiates a new deliveryOptimizationMaxCacheSizePercentage and sets the default values.
+// NewDeliveryOptimizationMaxCacheSizePercentage instantiates a new DeliveryOptimizationMaxCacheSizePercentage and sets the default values.
 func NewDeliveryOptimizationMaxCacheSizePercentage()(*DeliveryOptimizationMaxCacheSizePercentage) {
     m := &DeliveryOptimizationMaxCacheSizePercentage{
         DeliveryOptimizationMaxCacheSize: *NewDeliveryOptimizationMaxCacheSize(),
@@ -18,10 +18,12 @@ func NewDeliveryOptimizationMaxCacheSizePercentage()(*DeliveryOptimizationMaxCac
     return m
 }
 // CreateDeliveryOptimizationMaxCacheSizePercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeliveryOptimizationMaxCacheSizePercentageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeliveryOptimizationMaxCacheSizePercentage(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeliveryOptimizationMaxCacheSizePercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeliveryOptimizationMaxCacheSize.GetFieldDeserializers()
     res["maximumCacheSizePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *DeliveryOptimizationMaxCacheSizePercentage) GetFieldDeserializers()(map
     return res
 }
 // GetMaximumCacheSizePercentage gets the maximumCacheSizePercentage property value. Specifies the maximum cache size that Delivery Optimization can utilize, as a percentage of disk size (1-100). Valid values 1 to 100
+// returns a *int32 when successful
 func (m *DeliveryOptimizationMaxCacheSizePercentage) GetMaximumCacheSizePercentage()(*int32) {
     val, err := m.GetBackingStore().Get("maximumCacheSizePercentage")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *DeliveryOptimizationMaxCacheSizePercentage) SetMaximumCacheSizePercenta
         panic(err)
     }
 }
-// DeliveryOptimizationMaxCacheSizePercentageable 
 type DeliveryOptimizationMaxCacheSizePercentageable interface {
     DeliveryOptimizationMaxCacheSizeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

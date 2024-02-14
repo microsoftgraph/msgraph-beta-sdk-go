@@ -9,7 +9,7 @@ import (
 type MicrosoftTunnelConfiguration struct {
     Entity
 }
-// NewMicrosoftTunnelConfiguration instantiates a new microsoftTunnelConfiguration and sets the default values.
+// NewMicrosoftTunnelConfiguration instantiates a new MicrosoftTunnelConfiguration and sets the default values.
 func NewMicrosoftTunnelConfiguration()(*MicrosoftTunnelConfiguration) {
     m := &MicrosoftTunnelConfiguration{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewMicrosoftTunnelConfiguration()(*MicrosoftTunnelConfiguration) {
     return m
 }
 // CreateMicrosoftTunnelConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftTunnelConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTunnelConfiguration(), nil
 }
 // GetAdvancedSettings gets the advancedSettings property value. Additional settings that may be applied to the server
+// returns a []KeyValuePairable when successful
 func (m *MicrosoftTunnelConfiguration) GetAdvancedSettings()([]KeyValuePairable) {
     val, err := m.GetBackingStore().Get("advancedSettings")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *MicrosoftTunnelConfiguration) GetAdvancedSettings()([]KeyValuePairable)
     return nil
 }
 // GetDefaultDomainSuffix gets the defaultDomainSuffix property value. The Default Domain appendix that will be used by the clients
+// returns a *string when successful
 func (m *MicrosoftTunnelConfiguration) GetDefaultDomainSuffix()(*string) {
     val, err := m.GetBackingStore().Get("defaultDomainSuffix")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *MicrosoftTunnelConfiguration) GetDefaultDomainSuffix()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The configuration's description (optional)
+// returns a *string when successful
 func (m *MicrosoftTunnelConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *MicrosoftTunnelConfiguration) GetDescription()(*string) {
     return nil
 }
 // GetDisableUdpConnections gets the disableUdpConnections property value. When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to transfer data.
+// returns a *bool when successful
 func (m *MicrosoftTunnelConfiguration) GetDisableUdpConnections()(*bool) {
     val, err := m.GetBackingStore().Get("disableUdpConnections")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *MicrosoftTunnelConfiguration) GetDisableUdpConnections()(*bool) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the server configuration. This property is required when a server is created.
+// returns a *string when successful
 func (m *MicrosoftTunnelConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *MicrosoftTunnelConfiguration) GetDisplayName()(*string) {
     return nil
 }
 // GetDnsServers gets the dnsServers property value. The DNS servers that will be used by the clients
+// returns a []string when successful
 func (m *MicrosoftTunnelConfiguration) GetDnsServers()([]string) {
     val, err := m.GetBackingStore().Get("dnsServers")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *MicrosoftTunnelConfiguration) GetDnsServers()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["advancedSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -290,6 +298,7 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. When the configuration was last updated
+// returns a *Time when successful
 func (m *MicrosoftTunnelConfiguration) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdateDateTime")
     if err != nil {
@@ -301,6 +310,7 @@ func (m *MicrosoftTunnelConfiguration) GetLastUpdateDateTime()(*i336074805fc8539
     return nil
 }
 // GetListenPort gets the listenPort property value. The port that both TCP and UPD will listen over on the server
+// returns a *int32 when successful
 func (m *MicrosoftTunnelConfiguration) GetListenPort()(*int32) {
     val, err := m.GetBackingStore().Get("listenPort")
     if err != nil {
@@ -312,6 +322,7 @@ func (m *MicrosoftTunnelConfiguration) GetListenPort()(*int32) {
     return nil
 }
 // GetNetwork gets the network property value. The subnet that will be used to allocate virtual address for the clients
+// returns a *string when successful
 func (m *MicrosoftTunnelConfiguration) GetNetwork()(*string) {
     val, err := m.GetBackingStore().Get("network")
     if err != nil {
@@ -323,6 +334,7 @@ func (m *MicrosoftTunnelConfiguration) GetNetwork()(*string) {
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance
+// returns a []string when successful
 func (m *MicrosoftTunnelConfiguration) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -334,6 +346,7 @@ func (m *MicrosoftTunnelConfiguration) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetRouteExcludes gets the routeExcludes property value. Subsets of the routes that will not be routed by the server
+// returns a []string when successful
 func (m *MicrosoftTunnelConfiguration) GetRouteExcludes()([]string) {
     val, err := m.GetBackingStore().Get("routeExcludes")
     if err != nil {
@@ -345,6 +358,7 @@ func (m *MicrosoftTunnelConfiguration) GetRouteExcludes()([]string) {
     return nil
 }
 // GetRouteIncludes gets the routeIncludes property value. The routes that will be routed by the server
+// returns a []string when successful
 func (m *MicrosoftTunnelConfiguration) GetRouteIncludes()([]string) {
     val, err := m.GetBackingStore().Get("routeIncludes")
     if err != nil {
@@ -356,6 +370,7 @@ func (m *MicrosoftTunnelConfiguration) GetRouteIncludes()([]string) {
     return nil
 }
 // GetRoutesExclude gets the routesExclude property value. Subsets of the routes that will not be routed by the server. This property is going to be deprecated with the option of using the new property, 'RouteExcludes'.
+// returns a []string when successful
 func (m *MicrosoftTunnelConfiguration) GetRoutesExclude()([]string) {
     val, err := m.GetBackingStore().Get("routesExclude")
     if err != nil {
@@ -367,6 +382,7 @@ func (m *MicrosoftTunnelConfiguration) GetRoutesExclude()([]string) {
     return nil
 }
 // GetRoutesInclude gets the routesInclude property value. The routes that will be routed by the server. This property is going to be deprecated with the option of using the new property, 'RouteIncludes'.
+// returns a []string when successful
 func (m *MicrosoftTunnelConfiguration) GetRoutesInclude()([]string) {
     val, err := m.GetBackingStore().Get("routesInclude")
     if err != nil {
@@ -378,6 +394,7 @@ func (m *MicrosoftTunnelConfiguration) GetRoutesInclude()([]string) {
     return nil
 }
 // GetSplitDNS gets the splitDNS property value. The domains that will be resolved using the provided dns servers
+// returns a []string when successful
 func (m *MicrosoftTunnelConfiguration) GetSplitDNS()([]string) {
     val, err := m.GetBackingStore().Get("splitDNS")
     if err != nil {
@@ -597,7 +614,6 @@ func (m *MicrosoftTunnelConfiguration) SetSplitDNS(value []string)() {
         panic(err)
     }
 }
-// MicrosoftTunnelConfigurationable 
 type MicrosoftTunnelConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

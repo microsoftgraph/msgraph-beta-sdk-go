@@ -8,7 +8,7 @@ import (
 type MacOSAzureAdSingleSignOnExtension struct {
     MacOSSingleSignOnExtension
 }
-// NewMacOSAzureAdSingleSignOnExtension instantiates a new macOSAzureAdSingleSignOnExtension and sets the default values.
+// NewMacOSAzureAdSingleSignOnExtension instantiates a new MacOSAzureAdSingleSignOnExtension and sets the default values.
 func NewMacOSAzureAdSingleSignOnExtension()(*MacOSAzureAdSingleSignOnExtension) {
     m := &MacOSAzureAdSingleSignOnExtension{
         MacOSSingleSignOnExtension: *NewMacOSSingleSignOnExtension(),
@@ -18,10 +18,12 @@ func NewMacOSAzureAdSingleSignOnExtension()(*MacOSAzureAdSingleSignOnExtension) 
     return m
 }
 // CreateMacOSAzureAdSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMacOSAzureAdSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSAzureAdSingleSignOnExtension(), nil
 }
 // GetBundleIdAccessControlList gets the bundleIdAccessControlList property value. An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.
+// returns a []string when successful
 func (m *MacOSAzureAdSingleSignOnExtension) GetBundleIdAccessControlList()([]string) {
     val, err := m.GetBackingStore().Get("bundleIdAccessControlList")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *MacOSAzureAdSingleSignOnExtension) GetBundleIdAccessControlList()([]str
     return nil
 }
 // GetConfigurations gets the configurations property value. Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.
+// returns a []KeyTypedValuePairable when successful
 func (m *MacOSAzureAdSingleSignOnExtension) GetConfigurations()([]KeyTypedValuePairable) {
     val, err := m.GetBackingStore().Get("configurations")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *MacOSAzureAdSingleSignOnExtension) GetConfigurations()([]KeyTypedValueP
     return nil
 }
 // GetEnableSharedDeviceMode gets the enableSharedDeviceMode property value. Enables or disables shared device mode.
+// returns a *bool when successful
 func (m *MacOSAzureAdSingleSignOnExtension) GetEnableSharedDeviceMode()(*bool) {
     val, err := m.GetBackingStore().Get("enableSharedDeviceMode")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *MacOSAzureAdSingleSignOnExtension) GetEnableSharedDeviceMode()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSAzureAdSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MacOSSingleSignOnExtension.GetFieldDeserializers()
     res["bundleIdAccessControlList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -154,7 +159,6 @@ func (m *MacOSAzureAdSingleSignOnExtension) SetEnableSharedDeviceMode(value *boo
         panic(err)
     }
 }
-// MacOSAzureAdSingleSignOnExtensionable 
 type MacOSAzureAdSingleSignOnExtensionable interface {
     MacOSSingleSignOnExtensionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

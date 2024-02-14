@@ -8,7 +8,7 @@ import (
 type DeviceManagementScriptAssignment struct {
     Entity
 }
-// NewDeviceManagementScriptAssignment instantiates a new deviceManagementScriptAssignment and sets the default values.
+// NewDeviceManagementScriptAssignment instantiates a new DeviceManagementScriptAssignment and sets the default values.
 func NewDeviceManagementScriptAssignment()(*DeviceManagementScriptAssignment) {
     m := &DeviceManagementScriptAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementScriptAssignment()(*DeviceManagementScriptAssignment) {
     return m
 }
 // CreateDeviceManagementScriptAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementScriptAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementScriptAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementScriptAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["target"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *DeviceManagementScriptAssignment) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetTarget gets the target property value. The Id of the Azure Active Directory group we are targeting the script to.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *DeviceManagementScriptAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *DeviceManagementScriptAssignment) SetTarget(value DeviceAndAppManagemen
         panic(err)
     }
 }
-// DeviceManagementScriptAssignmentable 
 type DeviceManagementScriptAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

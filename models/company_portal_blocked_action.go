@@ -10,7 +10,7 @@ type CompanyPortalBlockedAction struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCompanyPortalBlockedAction instantiates a new companyPortalBlockedAction and sets the default values.
+// NewCompanyPortalBlockedAction instantiates a new CompanyPortalBlockedAction and sets the default values.
 func NewCompanyPortalBlockedAction()(*CompanyPortalBlockedAction) {
     m := &CompanyPortalBlockedAction{
     }
@@ -19,10 +19,12 @@ func NewCompanyPortalBlockedAction()(*CompanyPortalBlockedAction) {
     return m
 }
 // CreateCompanyPortalBlockedActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCompanyPortalBlockedActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCompanyPortalBlockedAction(), nil
 }
 // GetAction gets the action property value. Action on a device that can be executed in the Company Portal
+// returns a *CompanyPortalAction when successful
 func (m *CompanyPortalBlockedAction) GetAction()(*CompanyPortalAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *CompanyPortalBlockedAction) GetAction()(*CompanyPortalAction) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CompanyPortalBlockedAction) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +49,12 @@ func (m *CompanyPortalBlockedAction) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CompanyPortalBlockedAction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +100,7 @@ func (m *CompanyPortalBlockedAction) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CompanyPortalBlockedAction) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +112,7 @@ func (m *CompanyPortalBlockedAction) GetOdataType()(*string) {
     return nil
 }
 // GetOwnerType gets the ownerType property value. Owner type of device.
+// returns a *OwnerType when successful
 func (m *CompanyPortalBlockedAction) GetOwnerType()(*OwnerType) {
     val, err := m.GetBackingStore().Get("ownerType")
     if err != nil {
@@ -117,6 +124,7 @@ func (m *CompanyPortalBlockedAction) GetOwnerType()(*OwnerType) {
     return nil
 }
 // GetPlatform gets the platform property value. Supported platform types.
+// returns a *DevicePlatformType when successful
 func (m *CompanyPortalBlockedAction) GetPlatform()(*DevicePlatformType) {
     val, err := m.GetBackingStore().Get("platform")
     if err != nil {
@@ -203,7 +211,6 @@ func (m *CompanyPortalBlockedAction) SetPlatform(value *DevicePlatformType)() {
         panic(err)
     }
 }
-// CompanyPortalBlockedActionable 
 type CompanyPortalBlockedActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

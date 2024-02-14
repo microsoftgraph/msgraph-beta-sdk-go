@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserInsightsSettings 
 type UserInsightsSettings struct {
     Entity
 }
-// NewUserInsightsSettings instantiates a new userInsightsSettings and sets the default values.
+// NewUserInsightsSettings instantiates a new UserInsightsSettings and sets the default values.
 func NewUserInsightsSettings()(*UserInsightsSettings) {
     m := &UserInsightsSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUserInsightsSettings()(*UserInsightsSettings) {
     return m
 }
 // CreateUserInsightsSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserInsightsSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserInsightsSettings(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserInsightsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +36,7 @@ func (m *UserInsightsSettings) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetIsEnabled gets the isEnabled property value. true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+// returns a *bool when successful
 func (m *UserInsightsSettings) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -66,7 +68,6 @@ func (m *UserInsightsSettings) SetIsEnabled(value *bool)() {
         panic(err)
     }
 }
-// UserInsightsSettingsable 
 type UserInsightsSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

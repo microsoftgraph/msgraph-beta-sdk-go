@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementTemplateStepVersion 
 type ManagementTemplateStepVersion struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagementTemplateStepVersion instantiates a new managementTemplateStepVersion and sets the default values.
+// NewManagementTemplateStepVersion instantiates a new ManagementTemplateStepVersion and sets the default values.
 func NewManagementTemplateStepVersion()(*ManagementTemplateStepVersion) {
     m := &ManagementTemplateStepVersion{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManagementTemplateStepVersion()(*ManagementTemplateStepVersion) {
     return m
 }
 // CreateManagementTemplateStepVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagementTemplateStepVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementTemplateStepVersion(), nil
 }
 // GetAcceptedFor gets the acceptedFor property value. The acceptedFor property
+// returns a ManagementTemplateStepable when successful
 func (m *ManagementTemplateStepVersion) GetAcceptedFor()(ManagementTemplateStepable) {
     val, err := m.GetBackingStore().Get("acceptedFor")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ManagementTemplateStepVersion) GetAcceptedFor()(ManagementTemplateStepa
     return nil
 }
 // GetContentMarkdown gets the contentMarkdown property value. The contentMarkdown property
+// returns a *string when successful
 func (m *ManagementTemplateStepVersion) GetContentMarkdown()(*string) {
     val, err := m.GetBackingStore().Get("contentMarkdown")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ManagementTemplateStepVersion) GetContentMarkdown()(*string) {
     return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
+// returns a *string when successful
 func (m *ManagementTemplateStepVersion) GetCreatedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("createdByUserId")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ManagementTemplateStepVersion) GetCreatedByUserId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *ManagementTemplateStepVersion) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *ManagementTemplateStepVersion) GetCreatedDateTime()(*i336074805fc853987
     return nil
 }
 // GetDeployments gets the deployments property value. The deployments property
+// returns a []ManagementTemplateStepDeploymentable when successful
 func (m *ManagementTemplateStepVersion) GetDeployments()([]ManagementTemplateStepDeploymentable) {
     val, err := m.GetBackingStore().Get("deployments")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *ManagementTemplateStepVersion) GetDeployments()([]ManagementTemplateSte
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["acceptedFor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -198,6 +204,7 @@ func (m *ManagementTemplateStepVersion) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
+// returns a *string when successful
 func (m *ManagementTemplateStepVersion) GetLastActionByUserId()(*string) {
     val, err := m.GetBackingStore().Get("lastActionByUserId")
     if err != nil {
@@ -209,6 +216,7 @@ func (m *ManagementTemplateStepVersion) GetLastActionByUserId()(*string) {
     return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
+// returns a *Time when successful
 func (m *ManagementTemplateStepVersion) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -220,6 +228,7 @@ func (m *ManagementTemplateStepVersion) GetLastActionDateTime()(*i336074805fc853
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *ManagementTemplateStepVersion) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -231,6 +240,7 @@ func (m *ManagementTemplateStepVersion) GetName()(*string) {
     return nil
 }
 // GetTemplateStep gets the templateStep property value. The templateStep property
+// returns a ManagementTemplateStepable when successful
 func (m *ManagementTemplateStepVersion) GetTemplateStep()(ManagementTemplateStepable) {
     val, err := m.GetBackingStore().Get("templateStep")
     if err != nil {
@@ -242,6 +252,7 @@ func (m *ManagementTemplateStepVersion) GetTemplateStep()(ManagementTemplateStep
     return nil
 }
 // GetVersion gets the version property value. The version property
+// returns a *int32 when successful
 func (m *ManagementTemplateStepVersion) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -253,6 +264,7 @@ func (m *ManagementTemplateStepVersion) GetVersion()(*int32) {
     return nil
 }
 // GetVersionInformation gets the versionInformation property value. The versionInformation property
+// returns a *string when successful
 func (m *ManagementTemplateStepVersion) GetVersionInformation()(*string) {
     val, err := m.GetBackingStore().Get("versionInformation")
     if err != nil {
@@ -420,7 +432,6 @@ func (m *ManagementTemplateStepVersion) SetVersionInformation(value *string)() {
         panic(err)
     }
 }
-// ManagementTemplateStepVersionable 
 type ManagementTemplateStepVersionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

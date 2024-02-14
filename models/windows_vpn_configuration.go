@@ -8,7 +8,7 @@ import (
 type WindowsVpnConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsVpnConfiguration instantiates a new windowsVpnConfiguration and sets the default values.
+// NewWindowsVpnConfiguration instantiates a new WindowsVpnConfiguration and sets the default values.
 func NewWindowsVpnConfiguration()(*WindowsVpnConfiguration) {
     m := &WindowsVpnConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,6 +18,7 @@ func NewWindowsVpnConfiguration()(*WindowsVpnConfiguration) {
     return m
 }
 // CreateWindowsVpnConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -44,6 +45,7 @@ func CreateWindowsVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e
     return NewWindowsVpnConfiguration(), nil
 }
 // GetConnectionName gets the connectionName property value. Connection name displayed to the user.
+// returns a *string when successful
 func (m *WindowsVpnConfiguration) GetConnectionName()(*string) {
     val, err := m.GetBackingStore().Get("connectionName")
     if err != nil {
@@ -55,6 +57,7 @@ func (m *WindowsVpnConfiguration) GetConnectionName()(*string) {
     return nil
 }
 // GetCustomXml gets the customXml property value. Custom XML commands that configures the VPN connection. (UTF8 encoded byte array)
+// returns a []byte when successful
 func (m *WindowsVpnConfiguration) GetCustomXml()([]byte) {
     val, err := m.GetBackingStore().Get("customXml")
     if err != nil {
@@ -66,6 +69,7 @@ func (m *WindowsVpnConfiguration) GetCustomXml()([]byte) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["connectionName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +111,7 @@ func (m *WindowsVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetServers gets the servers property value. List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.
+// returns a []VpnServerable when successful
 func (m *WindowsVpnConfiguration) GetServers()([]VpnServerable) {
     val, err := m.GetBackingStore().Get("servers")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *WindowsVpnConfiguration) SetServers(value []VpnServerable)() {
         panic(err)
     }
 }
-// WindowsVpnConfigurationable 
 type WindowsVpnConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,28 +17,28 @@ type WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdates
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderInternal instantiates a new MicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder and sets the default values.
+// NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderInternal instantiates a new WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) {
     m := &WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}/audience/exclusions/microsoft.graph.windowsUpdates.unenrollAssets", pathParameters),
     }
     return m
 }
-// NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder instantiates a new MicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder and sets the default values.
+// NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder instantiates a new WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action unenrollAssets
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) Post(ctx context.Context, body WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsUnenrollAssetsPostRequestBodyable, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpd
     return nil
 }
 // ToPostRequestInformation invoke action unenrollAssets
+// returns a *RequestInformation when successful
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) ToPostRequestInformation(ctx context.Context, body WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsUnenrollAssetsPostRequestBodyable, requestConfiguration *WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpd
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder when successful
 func (m *WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) {
     return NewWindowsUpdatesDeploymentsItemAudienceExclusionsMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

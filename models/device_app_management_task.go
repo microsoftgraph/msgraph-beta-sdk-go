@@ -9,7 +9,7 @@ import (
 type DeviceAppManagementTask struct {
     Entity
 }
-// NewDeviceAppManagementTask instantiates a new deviceAppManagementTask and sets the default values.
+// NewDeviceAppManagementTask instantiates a new DeviceAppManagementTask and sets the default values.
 func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
     m := &DeviceAppManagementTask{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewDeviceAppManagementTask()(*DeviceAppManagementTask) {
     return m
 }
 // CreateDeviceAppManagementTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceAppManagementTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +44,7 @@ func CreateDeviceAppManagementTaskFromDiscriminatorValue(parseNode i878a80d2330e
     return NewDeviceAppManagementTask(), nil
 }
 // GetAssignedTo gets the assignedTo property value. The name or email of the admin this task is assigned to.
+// returns a *string when successful
 func (m *DeviceAppManagementTask) GetAssignedTo()(*string) {
     val, err := m.GetBackingStore().Get("assignedTo")
     if err != nil {
@@ -54,6 +56,7 @@ func (m *DeviceAppManagementTask) GetAssignedTo()(*string) {
     return nil
 }
 // GetCategory gets the category property value. Device app management task category.
+// returns a *DeviceAppManagementTaskCategory when successful
 func (m *DeviceAppManagementTask) GetCategory()(*DeviceAppManagementTaskCategory) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -65,6 +68,7 @@ func (m *DeviceAppManagementTask) GetCategory()(*DeviceAppManagementTaskCategory
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The created date.
+// returns a *Time when successful
 func (m *DeviceAppManagementTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -76,6 +80,7 @@ func (m *DeviceAppManagementTask) GetCreatedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetCreator gets the creator property value. The email address of the creator.
+// returns a *string when successful
 func (m *DeviceAppManagementTask) GetCreator()(*string) {
     val, err := m.GetBackingStore().Get("creator")
     if err != nil {
@@ -87,6 +92,7 @@ func (m *DeviceAppManagementTask) GetCreator()(*string) {
     return nil
 }
 // GetCreatorNotes gets the creatorNotes property value. Notes from the creator.
+// returns a *string when successful
 func (m *DeviceAppManagementTask) GetCreatorNotes()(*string) {
     val, err := m.GetBackingStore().Get("creatorNotes")
     if err != nil {
@@ -98,6 +104,7 @@ func (m *DeviceAppManagementTask) GetCreatorNotes()(*string) {
     return nil
 }
 // GetDescription gets the description property value. The description.
+// returns a *string when successful
 func (m *DeviceAppManagementTask) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -109,6 +116,7 @@ func (m *DeviceAppManagementTask) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name.
+// returns a *string when successful
 func (m *DeviceAppManagementTask) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -120,6 +128,7 @@ func (m *DeviceAppManagementTask) GetDisplayName()(*string) {
     return nil
 }
 // GetDueDateTime gets the dueDateTime property value. The due date.
+// returns a *Time when successful
 func (m *DeviceAppManagementTask) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dueDateTime")
     if err != nil {
@@ -131,6 +140,7 @@ func (m *DeviceAppManagementTask) GetDueDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignedTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -236,6 +246,7 @@ func (m *DeviceAppManagementTask) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetPriority gets the priority property value. Device app management task priority.
+// returns a *DeviceAppManagementTaskPriority when successful
 func (m *DeviceAppManagementTask) GetPriority()(*DeviceAppManagementTaskPriority) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -247,6 +258,7 @@ func (m *DeviceAppManagementTask) GetPriority()(*DeviceAppManagementTaskPriority
     return nil
 }
 // GetStatus gets the status property value. Device app management task status.
+// returns a *DeviceAppManagementTaskStatus when successful
 func (m *DeviceAppManagementTask) GetStatus()(*DeviceAppManagementTaskStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -398,7 +410,6 @@ func (m *DeviceAppManagementTask) SetStatus(value *DeviceAppManagementTaskStatus
         panic(err)
     }
 }
-// DeviceAppManagementTaskable 
 type DeviceAppManagementTaskable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

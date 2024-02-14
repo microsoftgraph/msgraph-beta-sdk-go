@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcConnectivityEvent 
 type CloudPcConnectivityEvent struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcConnectivityEvent instantiates a new cloudPcConnectivityEvent and sets the default values.
+// NewCloudPcConnectivityEvent instantiates a new CloudPcConnectivityEvent and sets the default values.
 func NewCloudPcConnectivityEvent()(*CloudPcConnectivityEvent) {
     m := &CloudPcConnectivityEvent{
     }
@@ -20,10 +19,12 @@ func NewCloudPcConnectivityEvent()(*CloudPcConnectivityEvent) {
     return m
 }
 // CreateCloudPcConnectivityEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcConnectivityEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcConnectivityEvent(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcConnectivityEvent) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *CloudPcConnectivityEvent) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcConnectivityEvent) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEventDateTime gets the eventDateTime property value. Indicates the date and time when this event was created. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPcConnectivityEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *CloudPcConnectivityEvent) GetEventDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetEventName gets the eventName property value. Name of the event.
+// returns a *string when successful
 func (m *CloudPcConnectivityEvent) GetEventName()(*string) {
     val, err := m.GetBackingStore().Get("eventName")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *CloudPcConnectivityEvent) GetEventName()(*string) {
     return nil
 }
 // GetEventResult gets the eventResult property value. The eventResult property
+// returns a *CloudPcConnectivityEventResult when successful
 func (m *CloudPcConnectivityEvent) GetEventResult()(*CloudPcConnectivityEventResult) {
     val, err := m.GetBackingStore().Get("eventResult")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *CloudPcConnectivityEvent) GetEventResult()(*CloudPcConnectivityEventRes
     return nil
 }
 // GetEventType gets the eventType property value. The eventType property
+// returns a *CloudPcConnectivityEventType when successful
 func (m *CloudPcConnectivityEvent) GetEventType()(*CloudPcConnectivityEventType) {
     val, err := m.GetBackingStore().Get("eventType")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *CloudPcConnectivityEvent) GetEventType()(*CloudPcConnectivityEventType)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcConnectivityEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["eventDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -149,6 +156,7 @@ func (m *CloudPcConnectivityEvent) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetMessage gets the message property value. Additional message for this event.
+// returns a *string when successful
 func (m *CloudPcConnectivityEvent) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -160,6 +168,7 @@ func (m *CloudPcConnectivityEvent) GetMessage()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcConnectivityEvent) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -271,7 +280,6 @@ func (m *CloudPcConnectivityEvent) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// CloudPcConnectivityEventable 
 type CloudPcConnectivityEventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

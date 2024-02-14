@@ -44,7 +44,7 @@ type DirectoryRoleAccessReviewPolicyRequestBuilderPatchRequestConfiguration stru
 // NewDirectoryRoleAccessReviewPolicyRequestBuilderInternal instantiates a new DirectoryRoleAccessReviewPolicyRequestBuilder and sets the default values.
 func NewDirectoryRoleAccessReviewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAccessReviewPolicyRequestBuilder) {
     m := &DirectoryRoleAccessReviewPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/directoryRoleAccessReviewPolicy{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/directoryRoleAccessReviewPolicy{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -55,14 +55,14 @@ func NewDirectoryRoleAccessReviewPolicyRequestBuilder(rawUrl string, requestAdap
     return NewDirectoryRoleAccessReviewPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property directoryRoleAccessReviewPolicy for policies
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Delete(ctx context.Context, requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,14 +71,15 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Delete(ctx context.Conte
     return nil
 }
 // Get get directoryRoleAccessReviewPolicy from policies
+// returns a DirectoryRoleAccessReviewPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDirectoryRoleAccessReviewPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,14 +91,15 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Get(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable), nil
 }
 // Patch update the navigation property directoryRoleAccessReviewPolicy in policies
+// returns a DirectoryRoleAccessReviewPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDirectoryRoleAccessReviewPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -109,8 +111,9 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) Patch(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable), nil
 }
 // ToDeleteRequestInformation delete navigation property directoryRoleAccessReviewPolicy for policies
+// returns a *RequestInformation when successful
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/policies/directoryRoleAccessReviewPolicy", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -119,6 +122,7 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) ToDeleteRequestInformati
     return requestInfo, nil
 }
 // ToGetRequestInformation get directoryRoleAccessReviewPolicy from policies
+// returns a *RequestInformation when successful
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +136,9 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) ToGetRequestInformation(
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property directoryRoleAccessReviewPolicy in policies
+// returns a *RequestInformation when successful
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleAccessReviewPolicyable, requestConfiguration *DirectoryRoleAccessReviewPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/policies/directoryRoleAccessReviewPolicy", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +151,7 @@ func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) ToPatchRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DirectoryRoleAccessReviewPolicyRequestBuilder when successful
 func (m *DirectoryRoleAccessReviewPolicyRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleAccessReviewPolicyRequestBuilder) {
     return NewDirectoryRoleAccessReviewPolicyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -10,7 +10,7 @@ type WindowsNetworkIsolationPolicy struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWindowsNetworkIsolationPolicy instantiates a new windowsNetworkIsolationPolicy and sets the default values.
+// NewWindowsNetworkIsolationPolicy instantiates a new WindowsNetworkIsolationPolicy and sets the default values.
 func NewWindowsNetworkIsolationPolicy()(*WindowsNetworkIsolationPolicy) {
     m := &WindowsNetworkIsolationPolicy{
     }
@@ -19,10 +19,12 @@ func NewWindowsNetworkIsolationPolicy()(*WindowsNetworkIsolationPolicy) {
     return m
 }
 // CreateWindowsNetworkIsolationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsNetworkIsolationPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsNetworkIsolationPolicy(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsNetworkIsolationPolicy) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *WindowsNetworkIsolationPolicy) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsNetworkIsolationPolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEnterpriseCloudResources gets the enterpriseCloudResources property value. Contains a list of enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy. This collection can contain a maximum of 500 elements.
+// returns a []ProxiedDomainable when successful
 func (m *WindowsNetworkIsolationPolicy) GetEnterpriseCloudResources()([]ProxiedDomainable) {
     val, err := m.GetBackingStore().Get("enterpriseCloudResources")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *WindowsNetworkIsolationPolicy) GetEnterpriseCloudResources()([]ProxiedD
     return nil
 }
 // GetEnterpriseInternalProxyServers gets the enterpriseInternalProxyServers property value. This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseCloudResources policy to force traffic to the matched cloud resources through these proxies.
+// returns a []string when successful
 func (m *WindowsNetworkIsolationPolicy) GetEnterpriseInternalProxyServers()([]string) {
     val, err := m.GetBackingStore().Get("enterpriseInternalProxyServers")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *WindowsNetworkIsolationPolicy) GetEnterpriseInternalProxyServers()([]st
     return nil
 }
 // GetEnterpriseIPRanges gets the enterpriseIPRanges property value. Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to. This collection can contain a maximum of 500 elements.
+// returns a []IpRangeable when successful
 func (m *WindowsNetworkIsolationPolicy) GetEnterpriseIPRanges()([]IpRangeable) {
     val, err := m.GetBackingStore().Get("enterpriseIPRanges")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *WindowsNetworkIsolationPolicy) GetEnterpriseIPRanges()([]IpRangeable) {
     return nil
 }
 // GetEnterpriseIPRangesAreAuthoritative gets the enterpriseIPRangesAreAuthoritative property value. Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false.
+// returns a *bool when successful
 func (m *WindowsNetworkIsolationPolicy) GetEnterpriseIPRangesAreAuthoritative()(*bool) {
     val, err := m.GetBackingStore().Get("enterpriseIPRangesAreAuthoritative")
     if err != nil {
@@ -83,6 +90,7 @@ func (m *WindowsNetworkIsolationPolicy) GetEnterpriseIPRangesAreAuthoritative()(
     return nil
 }
 // GetEnterpriseNetworkDomainNames gets the enterpriseNetworkDomainNames property value. This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected. These locations will be considered a safe destination for enterprise data to be shared to.
+// returns a []string when successful
 func (m *WindowsNetworkIsolationPolicy) GetEnterpriseNetworkDomainNames()([]string) {
     val, err := m.GetBackingStore().Get("enterpriseNetworkDomainNames")
     if err != nil {
@@ -94,6 +102,7 @@ func (m *WindowsNetworkIsolationPolicy) GetEnterpriseNetworkDomainNames()([]stri
     return nil
 }
 // GetEnterpriseProxyServers gets the enterpriseProxyServers property value. This is a list of proxy servers. Any server not on this list is considered non-enterprise.
+// returns a []string when successful
 func (m *WindowsNetworkIsolationPolicy) GetEnterpriseProxyServers()([]string) {
     val, err := m.GetBackingStore().Get("enterpriseProxyServers")
     if err != nil {
@@ -105,6 +114,7 @@ func (m *WindowsNetworkIsolationPolicy) GetEnterpriseProxyServers()([]string) {
     return nil
 }
 // GetEnterpriseProxyServersAreAuthoritative gets the enterpriseProxyServersAreAuthoritative property value. Boolean value that tells the client to accept the configured list of proxies and not try to detect other work proxies. Default is false
+// returns a *bool when successful
 func (m *WindowsNetworkIsolationPolicy) GetEnterpriseProxyServersAreAuthoritative()(*bool) {
     val, err := m.GetBackingStore().Get("enterpriseProxyServersAreAuthoritative")
     if err != nil {
@@ -116,6 +126,7 @@ func (m *WindowsNetworkIsolationPolicy) GetEnterpriseProxyServersAreAuthoritativ
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsNetworkIsolationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["enterpriseCloudResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -247,6 +258,7 @@ func (m *WindowsNetworkIsolationPolicy) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetNeutralDomainResources gets the neutralDomainResources property value. List of domain names that can used for work or personal resource.
+// returns a []string when successful
 func (m *WindowsNetworkIsolationPolicy) GetNeutralDomainResources()([]string) {
     val, err := m.GetBackingStore().Get("neutralDomainResources")
     if err != nil {
@@ -258,6 +270,7 @@ func (m *WindowsNetworkIsolationPolicy) GetNeutralDomainResources()([]string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WindowsNetworkIsolationPolicy) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -418,7 +431,6 @@ func (m *WindowsNetworkIsolationPolicy) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// WindowsNetworkIsolationPolicyable 
 type WindowsNetworkIsolationPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

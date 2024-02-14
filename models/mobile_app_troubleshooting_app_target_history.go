@@ -8,7 +8,7 @@ import (
 type MobileAppTroubleshootingAppTargetHistory struct {
     MobileAppTroubleshootingHistoryItem
 }
-// NewMobileAppTroubleshootingAppTargetHistory instantiates a new mobileAppTroubleshootingAppTargetHistory and sets the default values.
+// NewMobileAppTroubleshootingAppTargetHistory instantiates a new MobileAppTroubleshootingAppTargetHistory and sets the default values.
 func NewMobileAppTroubleshootingAppTargetHistory()(*MobileAppTroubleshootingAppTargetHistory) {
     m := &MobileAppTroubleshootingAppTargetHistory{
         MobileAppTroubleshootingHistoryItem: *NewMobileAppTroubleshootingHistoryItem(),
@@ -16,10 +16,12 @@ func NewMobileAppTroubleshootingAppTargetHistory()(*MobileAppTroubleshootingAppT
     return m
 }
 // CreateMobileAppTroubleshootingAppTargetHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppTroubleshootingAppTargetHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppTroubleshootingAppTargetHistory(), nil
 }
 // GetErrorCode gets the errorCode property value. Error code for the failure, empty if no failure.
+// returns a *string when successful
 func (m *MobileAppTroubleshootingAppTargetHistory) GetErrorCode()(*string) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *MobileAppTroubleshootingAppTargetHistory) GetErrorCode()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppTroubleshootingAppTargetHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileAppTroubleshootingHistoryItem.GetFieldDeserializers()
     res["errorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,6 +69,7 @@ func (m *MobileAppTroubleshootingAppTargetHistory) GetFieldDeserializers()(map[s
     return res
 }
 // GetRunState gets the runState property value. Indicates the type of execution status of the device management script.
+// returns a *RunState when successful
 func (m *MobileAppTroubleshootingAppTargetHistory) GetRunState()(*RunState) {
     val, err := m.GetBackingStore().Get("runState")
     if err != nil {
@@ -77,6 +81,7 @@ func (m *MobileAppTroubleshootingAppTargetHistory) GetRunState()(*RunState) {
     return nil
 }
 // GetSecurityGroupId gets the securityGroupId property value. AAD security group id to which it was targeted.
+// returns a *string when successful
 func (m *MobileAppTroubleshootingAppTargetHistory) GetSecurityGroupId()(*string) {
     val, err := m.GetBackingStore().Get("securityGroupId")
     if err != nil {
@@ -135,7 +140,6 @@ func (m *MobileAppTroubleshootingAppTargetHistory) SetSecurityGroupId(value *str
         panic(err)
     }
 }
-// MobileAppTroubleshootingAppTargetHistoryable 
 type MobileAppTroubleshootingAppTargetHistoryable interface {
     MobileAppTroubleshootingHistoryItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -48,6 +48,7 @@ type ItemInformationProtectionPolicyLabelsRequestBuilderPostRequestConfiguration
 }
 // ByInformationProtectionLabelId provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder when successful
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ByInformationProtectionLabelId(informationProtectionLabelId string)(*ItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -58,41 +59,48 @@ func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ByInformationProte
     }
     return NewItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemInformationProtectionPolicyLabelsRequestBuilderInternal instantiates a new LabelsRequestBuilder and sets the default values.
+// NewItemInformationProtectionPolicyLabelsRequestBuilderInternal instantiates a new ItemInformationProtectionPolicyLabelsRequestBuilder and sets the default values.
 func NewItemInformationProtectionPolicyLabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionPolicyLabelsRequestBuilder) {
     m := &ItemInformationProtectionPolicyLabelsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/informationProtection/policy/labels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/informationProtection/policy/labels{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemInformationProtectionPolicyLabelsRequestBuilder instantiates a new LabelsRequestBuilder and sets the default values.
+// NewItemInformationProtectionPolicyLabelsRequestBuilder instantiates a new ItemInformationProtectionPolicyLabelsRequestBuilder and sets the default values.
 func NewItemInformationProtectionPolicyLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionPolicyLabelsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemInformationProtectionPolicyLabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemInformationProtectionPolicyLabelsCountRequestBuilder when successful
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) Count()(*ItemInformationProtectionPolicyLabelsCountRequestBuilder) {
     return NewItemInformationProtectionPolicyLabelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EvaluateApplication provides operations to call the evaluateApplication method.
+// returns a *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder when successful
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) EvaluateApplication()(*ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder) {
     return NewItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
+// returns a *ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilder when successful
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) EvaluateClassificationResults()(*ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilder) {
     return NewItemInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EvaluateRemoval provides operations to call the evaluateRemoval method.
+// returns a *ItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder when successful
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) EvaluateRemoval()(*ItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) {
     return NewItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ExtractLabel provides operations to call the extractLabel method.
+// returns a *ItemInformationProtectionPolicyLabelsExtractLabelRequestBuilder when successful
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ExtractLabel()(*ItemInformationProtectionPolicyLabelsExtractLabelRequestBuilder) {
     return NewItemInformationProtectionPolicyLabelsExtractLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a collection of information protection labels available to the user or to the organization.
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a InformationProtectionLabelCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionpolicy-list-labels?view=graph-rest-1.0
@@ -102,8 +110,7 @@ func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) Get(ctx context.Co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateInformationProtectionLabelCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,14 +123,15 @@ func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) Get(ctx context.Co
 }
 // Post create new navigation property to labels for users
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a InformationProtectionLabelable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, requestConfiguration *ItemInformationProtectionPolicyLabelsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateInformationProtectionLabelFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -136,6 +144,7 @@ func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) Post(ctx context.C
 }
 // ToGetRequestInformation get a collection of information protection labels available to the user or to the organization.
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *RequestInformation when successful
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInformationProtectionPolicyLabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -150,8 +159,9 @@ func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ToGetRequestInform
 }
 // ToPostRequestInformation create new navigation property to labels for users
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *RequestInformation when successful
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, requestConfiguration *ItemInformationProtectionPolicyLabelsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/informationProtection/policy/labels", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -165,6 +175,7 @@ func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) ToPostRequestInfor
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *ItemInformationProtectionPolicyLabelsRequestBuilder when successful
 func (m *ItemInformationProtectionPolicyLabelsRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionPolicyLabelsRequestBuilder) {
     return NewItemInformationProtectionPolicyLabelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AddHeader 
 type AddHeader struct {
     MarkContent
 }
-// NewAddHeader instantiates a new addHeader and sets the default values.
+// NewAddHeader instantiates a new AddHeader and sets the default values.
 func NewAddHeader()(*AddHeader) {
     m := &AddHeader{
         MarkContent: *NewMarkContent(),
@@ -18,10 +17,12 @@ func NewAddHeader()(*AddHeader) {
     return m
 }
 // CreateAddHeaderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAddHeaderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAddHeader(), nil
 }
 // GetAlignment gets the alignment property value. The alignment property
+// returns a *Alignment when successful
 func (m *AddHeader) GetAlignment()(*Alignment) {
     val, err := m.GetBackingStore().Get("alignment")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AddHeader) GetAlignment()(*Alignment) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AddHeader) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MarkContent.GetFieldDeserializers()
     res["alignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *AddHeader) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetMargin gets the margin property value. The margin property
+// returns a *int32 when successful
 func (m *AddHeader) GetMargin()(*int32) {
     val, err := m.GetBackingStore().Get("margin")
     if err != nil {
@@ -103,7 +106,6 @@ func (m *AddHeader) SetMargin(value *int32)() {
         panic(err)
     }
 }
-// AddHeaderable 
 type AddHeaderable interface {
     MarkContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type AndroidForWorkApp struct {
     MobileApp
 }
-// NewAndroidForWorkApp instantiates a new androidForWorkApp and sets the default values.
+// NewAndroidForWorkApp instantiates a new AndroidForWorkApp and sets the default values.
 func NewAndroidForWorkApp()(*AndroidForWorkApp) {
     m := &AndroidForWorkApp{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewAndroidForWorkApp()(*AndroidForWorkApp) {
     return m
 }
 // CreateAndroidForWorkAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidForWorkAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidForWorkApp(), nil
 }
 // GetAppIdentifier gets the appIdentifier property value. The Identity Name.
+// returns a *string when successful
 func (m *AndroidForWorkApp) GetAppIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("appIdentifier")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidForWorkApp) GetAppIdentifier()(*string) {
     return nil
 }
 // GetAppStoreUrl gets the appStoreUrl property value. The Play for Work Store app URL.
+// returns a *string when successful
 func (m *AndroidForWorkApp) GetAppStoreUrl()(*string) {
     val, err := m.GetBackingStore().Get("appStoreUrl")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidForWorkApp) GetAppStoreUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidForWorkApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["appIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,6 +103,7 @@ func (m *AndroidForWorkApp) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetPackageId gets the packageId property value. The package identifier.
+// returns a *string when successful
 func (m *AndroidForWorkApp) GetPackageId()(*string) {
     val, err := m.GetBackingStore().Get("packageId")
     if err != nil {
@@ -110,6 +115,7 @@ func (m *AndroidForWorkApp) GetPackageId()(*string) {
     return nil
 }
 // GetTotalLicenseCount gets the totalLicenseCount property value. The total number of VPP licenses.
+// returns a *int32 when successful
 func (m *AndroidForWorkApp) GetTotalLicenseCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalLicenseCount")
     if err != nil {
@@ -121,6 +127,7 @@ func (m *AndroidForWorkApp) GetTotalLicenseCount()(*int32) {
     return nil
 }
 // GetUsedLicenseCount gets the usedLicenseCount property value. The number of VPP licenses in use.
+// returns a *int32 when successful
 func (m *AndroidForWorkApp) GetUsedLicenseCount()(*int32) {
     val, err := m.GetBackingStore().Get("usedLicenseCount")
     if err != nil {
@@ -204,7 +211,6 @@ func (m *AndroidForWorkApp) SetUsedLicenseCount(value *int32)() {
         panic(err)
     }
 }
-// AndroidForWorkAppable 
 type AndroidForWorkAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

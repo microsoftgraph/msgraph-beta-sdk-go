@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleAssignmentMultipleCollectionResponse 
 type UnifiedRoleAssignmentMultipleCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUnifiedRoleAssignmentMultipleCollectionResponse instantiates a new unifiedRoleAssignmentMultipleCollectionResponse and sets the default values.
+// NewUnifiedRoleAssignmentMultipleCollectionResponse instantiates a new UnifiedRoleAssignmentMultipleCollectionResponse and sets the default values.
 func NewUnifiedRoleAssignmentMultipleCollectionResponse()(*UnifiedRoleAssignmentMultipleCollectionResponse) {
     m := &UnifiedRoleAssignmentMultipleCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUnifiedRoleAssignmentMultipleCollectionResponse()(*UnifiedRoleAssignment
     return m
 }
 // CreateUnifiedRoleAssignmentMultipleCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleAssignmentMultipleCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleAssignmentMultipleCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleAssignmentMultipleCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UnifiedRoleAssignmentMultipleCollectionResponse) GetFieldDeserializers(
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UnifiedRoleAssignmentMultipleable when successful
 func (m *UnifiedRoleAssignmentMultipleCollectionResponse) GetValue()([]UnifiedRoleAssignmentMultipleable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UnifiedRoleAssignmentMultipleCollectionResponse) SetValue(value []Unifi
         panic(err)
     }
 }
-// UnifiedRoleAssignmentMultipleCollectionResponseable 
 type UnifiedRoleAssignmentMultipleCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

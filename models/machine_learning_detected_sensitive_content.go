@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MachineLearningDetectedSensitiveContent 
 type MachineLearningDetectedSensitiveContent struct {
     DetectedSensitiveContent
 }
-// NewMachineLearningDetectedSensitiveContent instantiates a new machineLearningDetectedSensitiveContent and sets the default values.
+// NewMachineLearningDetectedSensitiveContent instantiates a new MachineLearningDetectedSensitiveContent and sets the default values.
 func NewMachineLearningDetectedSensitiveContent()(*MachineLearningDetectedSensitiveContent) {
     m := &MachineLearningDetectedSensitiveContent{
         DetectedSensitiveContent: *NewDetectedSensitiveContent(),
@@ -16,10 +15,12 @@ func NewMachineLearningDetectedSensitiveContent()(*MachineLearningDetectedSensit
     return m
 }
 // CreateMachineLearningDetectedSensitiveContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMachineLearningDetectedSensitiveContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMachineLearningDetectedSensitiveContent(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MachineLearningDetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DetectedSensitiveContent.GetFieldDeserializers()
     res["matchTolerance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *MachineLearningDetectedSensitiveContent) GetFieldDeserializers()(map[st
     return res
 }
 // GetMatchTolerance gets the matchTolerance property value. The matchTolerance property
+// returns a *MlClassificationMatchTolerance when successful
 func (m *MachineLearningDetectedSensitiveContent) GetMatchTolerance()(*MlClassificationMatchTolerance) {
     val, err := m.GetBackingStore().Get("matchTolerance")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *MachineLearningDetectedSensitiveContent) GetMatchTolerance()(*MlClassif
     return nil
 }
 // GetModelVersion gets the modelVersion property value. The modelVersion property
+// returns a *string when successful
 func (m *MachineLearningDetectedSensitiveContent) GetModelVersion()(*string) {
     val, err := m.GetBackingStore().Get("modelVersion")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *MachineLearningDetectedSensitiveContent) SetModelVersion(value *string)
         panic(err)
     }
 }
-// MachineLearningDetectedSensitiveContentable 
 type MachineLearningDetectedSensitiveContentable interface {
     DetectedSensitiveContentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

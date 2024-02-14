@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Specifies which platform(s) can be targeted for a given Android LOB application or Managed Android LOB application.
@@ -8,18 +9,20 @@ type AndroidTargetedPlatforms int
 
 const (
     // Indicates the Android targeted platform is Android Device Administrator.
-    ANDROIDDEVICEADMINISTRATOR_ANDROIDTARGETEDPLATFORMS AndroidTargetedPlatforms = iota
+    ANDROIDDEVICEADMINISTRATOR_ANDROIDTARGETEDPLATFORMS = 1
     // Indicates the Android targeted platform is Android Open Source Project.
-    ANDROIDOPENSOURCEPROJECT_ANDROIDTARGETEDPLATFORMS
+    ANDROIDOPENSOURCEPROJECT_ANDROIDTARGETEDPLATFORMS = 2
     // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_ANDROIDTARGETEDPLATFORMS
+    UNKNOWNFUTUREVALUE_ANDROIDTARGETEDPLATFORMS = 4
 )
 
 func (i AndroidTargetedPlatforms) String() string {
     var values []string
-    for p := AndroidTargetedPlatforms(1); p <= UNKNOWNFUTUREVALUE_ANDROIDTARGETEDPLATFORMS; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"androidDeviceAdministrator", "androidOpenSourceProject", "unknownFutureValue"}[p])
+    options := []string{"androidDeviceAdministrator", "androidOpenSourceProject", "unknownFutureValue"}
+    for p := 0; p < 3; p++ {
+        mantis := AndroidTargetedPlatforms(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

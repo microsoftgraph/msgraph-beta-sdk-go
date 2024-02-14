@@ -41,20 +41,21 @@ type TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderPatchReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderInternal instantiates a new RetentionEventTypeItemRequestBuilder and sets the default values.
+// NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderInternal instantiates a new TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder and sets the default values.
 func NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) {
     m := &TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/triggerTypes/retentionEventTypes/{retentionEventType%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/triggerTypes/retentionEventTypes/{retentionEventType%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder instantiates a new RetentionEventTypeItemRequestBuilder and sets the default values.
+// NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder instantiates a new TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder and sets the default values.
 func NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a retentionEventType object.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-retentioneventtype-delete?view=graph-rest-1.0
@@ -64,8 +65,7 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) De
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -74,6 +74,8 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) De
     return nil
 }
 // Get read the properties and relationships of a retentionEventType object.
+// returns a RetentionEventTypeable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-1.0
@@ -83,8 +85,7 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) Ge
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateRetentionEventTypeFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -96,14 +97,15 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) Ge
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable), nil
 }
 // Patch update the navigation property retentionEventTypes in security
+// returns a RetentionEventTypeable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable, requestConfiguration *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateRetentionEventTypeFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -115,8 +117,9 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) Pa
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable), nil
 }
 // ToDeleteRequestInformation delete a retentionEventType object.
+// returns a *RequestInformation when successful
 func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/triggerTypes/retentionEventTypes/{retentionEventType%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -125,6 +128,7 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) To
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a retentionEventType object.
+// returns a *RequestInformation when successful
 func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -138,8 +142,9 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) To
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property retentionEventTypes in security
+// returns a *RequestInformation when successful
 func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RetentionEventTypeable, requestConfiguration *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/triggerTypes/retentionEventTypes/{retentionEventType%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -152,6 +157,7 @@ func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder when successful
 func (m *TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) WithUrl(rawUrl string)(*TriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder) {
     return NewTriggerTypesRetentionEventTypesRetentionEventTypeItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

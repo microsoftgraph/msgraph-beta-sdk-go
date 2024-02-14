@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationProfileStatus 
 type EducationSynchronizationProfileStatus struct {
     Entity
 }
-// NewEducationSynchronizationProfileStatus instantiates a new educationSynchronizationProfileStatus and sets the default values.
+// NewEducationSynchronizationProfileStatus instantiates a new EducationSynchronizationProfileStatus and sets the default values.
 func NewEducationSynchronizationProfileStatus()(*EducationSynchronizationProfileStatus) {
     m := &EducationSynchronizationProfileStatus{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewEducationSynchronizationProfileStatus()(*EducationSynchronizationProfile
     return m
 }
 // CreateEducationSynchronizationProfileStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationSynchronizationProfileStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSynchronizationProfileStatus(), nil
 }
 // GetErrorCount gets the errorCount property value. Number of errors during synchronization.
+// returns a *int64 when successful
 func (m *EducationSynchronizationProfileStatus) GetErrorCount()(*int64) {
     val, err := m.GetBackingStore().Get("errorCount")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *EducationSynchronizationProfileStatus) GetErrorCount()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["errorCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +89,7 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
     return res
 }
 // GetLastActivityDateTime gets the lastActivityDateTime property value. Date and time when most recent changes were observed in the profile.
+// returns a *Time when successful
 func (m *EducationSynchronizationProfileStatus) GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActivityDateTime")
     if err != nil {
@@ -98,6 +101,7 @@ func (m *EducationSynchronizationProfileStatus) GetLastActivityDateTime()(*i3360
     return nil
 }
 // GetLastSynchronizationDateTime gets the lastSynchronizationDateTime property value. Date and time of the most recent successful synchronization.
+// returns a *Time when successful
 func (m *EducationSynchronizationProfileStatus) GetLastSynchronizationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSynchronizationDateTime")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *EducationSynchronizationProfileStatus) GetLastSynchronizationDateTime()
     return nil
 }
 // GetStatus gets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
+// returns a *EducationSynchronizationStatus when successful
 func (m *EducationSynchronizationProfileStatus) GetStatus()(*EducationSynchronizationStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *EducationSynchronizationProfileStatus) GetStatus()(*EducationSynchroniz
     return nil
 }
 // GetStatusMessage gets the statusMessage property value. Status message for the synchronization stage of the current profile.
+// returns a *string when successful
 func (m *EducationSynchronizationProfileStatus) GetStatusMessage()(*string) {
     val, err := m.GetBackingStore().Get("statusMessage")
     if err != nil {
@@ -204,7 +210,6 @@ func (m *EducationSynchronizationProfileStatus) SetStatusMessage(value *string)(
         panic(err)
     }
 }
-// EducationSynchronizationProfileStatusable 
 type EducationSynchronizationProfileStatusable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

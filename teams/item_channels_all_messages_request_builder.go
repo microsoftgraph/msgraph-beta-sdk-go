@@ -14,6 +14,8 @@ type ItemChannelsAllMessagesRequestBuilder struct {
 type ItemChannelsAllMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,29 +38,30 @@ type ItemChannelsAllMessagesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemChannelsAllMessagesRequestBuilderGetQueryParameters
 }
-// NewItemChannelsAllMessagesRequestBuilderInternal instantiates a new AllMessagesRequestBuilder and sets the default values.
+// NewItemChannelsAllMessagesRequestBuilderInternal instantiates a new ItemChannelsAllMessagesRequestBuilder and sets the default values.
 func NewItemChannelsAllMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsAllMessagesRequestBuilder) {
     m := &ItemChannelsAllMessagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/channels/allMessages(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/channels/allMessages(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemChannelsAllMessagesRequestBuilder instantiates a new AllMessagesRequestBuilder and sets the default values.
+// NewItemChannelsAllMessagesRequestBuilder instantiates a new ItemChannelsAllMessagesRequestBuilder and sets the default values.
 func NewItemChannelsAllMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsAllMessagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemChannelsAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function allMessages
-// Deprecated: This method is obsolete. Use GetAsAllMessagesGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemChannelsAllMessagesResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChannelsAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChannelsAllMessagesRequestBuilderGetRequestConfiguration)(ItemChannelsAllMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemChannelsAllMessagesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *ItemChannelsAllMessagesRequestBuilder) Get(ctx context.Context, request
     return res.(ItemChannelsAllMessagesResponseable), nil
 }
 // GetAsAllMessagesGetResponse invoke function allMessages
+// returns a ItemChannelsAllMessagesGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChannelsAllMessagesRequestBuilder) GetAsAllMessagesGetResponse(ctx context.Context, requestConfiguration *ItemChannelsAllMessagesRequestBuilderGetRequestConfiguration)(ItemChannelsAllMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemChannelsAllMessagesGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *ItemChannelsAllMessagesRequestBuilder) GetAsAllMessagesGetResponse(ctx 
     return res.(ItemChannelsAllMessagesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function allMessages
+// returns a *RequestInformation when successful
 func (m *ItemChannelsAllMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsAllMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *ItemChannelsAllMessagesRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemChannelsAllMessagesRequestBuilder when successful
 func (m *ItemChannelsAllMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemChannelsAllMessagesRequestBuilder) {
     return NewItemChannelsAllMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

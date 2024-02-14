@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CertificateBasedApplicationConfiguration 
 type CertificateBasedApplicationConfiguration struct {
     TrustedCertificateAuthorityAsEntityBase
 }
-// NewCertificateBasedApplicationConfiguration instantiates a new certificateBasedApplicationConfiguration and sets the default values.
+// NewCertificateBasedApplicationConfiguration instantiates a new CertificateBasedApplicationConfiguration and sets the default values.
 func NewCertificateBasedApplicationConfiguration()(*CertificateBasedApplicationConfiguration) {
     m := &CertificateBasedApplicationConfiguration{
         TrustedCertificateAuthorityAsEntityBase: *NewTrustedCertificateAuthorityAsEntityBase(),
@@ -18,10 +17,12 @@ func NewCertificateBasedApplicationConfiguration()(*CertificateBasedApplicationC
     return m
 }
 // CreateCertificateBasedApplicationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCertificateBasedApplicationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertificateBasedApplicationConfiguration(), nil
 }
 // GetDescription gets the description property value. The description of the trusted certificate authorities.
+// returns a *string when successful
 func (m *CertificateBasedApplicationConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *CertificateBasedApplicationConfiguration) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the trusted certificate authorities.
+// returns a *string when successful
 func (m *CertificateBasedApplicationConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *CertificateBasedApplicationConfiguration) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CertificateBasedApplicationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.TrustedCertificateAuthorityAsEntityBase.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,7 +105,6 @@ func (m *CertificateBasedApplicationConfiguration) SetDisplayName(value *string)
         panic(err)
     }
 }
-// CertificateBasedApplicationConfigurationable 
 type CertificateBasedApplicationConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TrustedCertificateAuthorityAsEntityBaseable

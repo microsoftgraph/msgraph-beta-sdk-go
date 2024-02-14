@@ -18,20 +18,22 @@ type UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilderPostRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewUsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilderInternal instantiates a new SubmitRequestBuilder and sets the default values.
+// NewUsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilderInternal instantiates a new UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder and sets the default values.
 func NewUsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder) {
     m := &UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/submit", pathParameters),
     }
     return m
 }
-// NewUsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder instantiates a new SubmitRequestBuilder and sets the default values.
+// NewUsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder instantiates a new UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder and sets the default values.
 func NewUsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewUsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from working to submitted. During the submit process, all the resources are copied to the submittedResources bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student's assignment on their behalf.
+// returns a EducationSubmissionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/educationsubmission-submit?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder) Post(ctx c
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEducationSubmissionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder) Post(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSubmissionable), nil
 }
 // ToPostRequestInformation indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from working to submitted. During the submit process, all the resources are copied to the submittedResources bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student's assignment on their behalf.
+// returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -64,6 +66,7 @@ func (m *UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder when successful
 func (m *UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder) WithUrl(rawUrl string)(*UsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder) {
     return NewUsersItemAssignmentsItemSubmissionsItemSubmitRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

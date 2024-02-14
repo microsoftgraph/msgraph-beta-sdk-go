@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserCountMetric 
 type UserCountMetric struct {
     Entity
 }
-// NewUserCountMetric instantiates a new userCountMetric and sets the default values.
+// NewUserCountMetric instantiates a new UserCountMetric and sets the default values.
 func NewUserCountMetric()(*UserCountMetric) {
     m := &UserCountMetric{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUserCountMetric()(*UserCountMetric) {
     return m
 }
 // CreateUserCountMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserCountMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserCountMetric(), nil
 }
 // GetCount gets the count property value. The total number of users in the tenant over time.
+// returns a *int64 when successful
 func (m *UserCountMetric) GetCount()(*int64) {
     val, err := m.GetBackingStore().Get("count")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UserCountMetric) GetCount()(*int64) {
     return nil
 }
 // GetFactDate gets the factDate property value. The date of the insight.
+// returns a *DateOnly when successful
 func (m *UserCountMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *UserCountMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserCountMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,7 +103,6 @@ func (m *UserCountMetric) SetFactDate(value *i878a80d2330e89d26896388a3f487eef27
         panic(err)
     }
 }
-// UserCountMetricable 
 type UserCountMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

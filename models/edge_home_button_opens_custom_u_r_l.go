@@ -8,7 +8,7 @@ import (
 type EdgeHomeButtonOpensCustomURL struct {
     EdgeHomeButtonConfiguration
 }
-// NewEdgeHomeButtonOpensCustomURL instantiates a new edgeHomeButtonOpensCustomURL and sets the default values.
+// NewEdgeHomeButtonOpensCustomURL instantiates a new EdgeHomeButtonOpensCustomURL and sets the default values.
 func NewEdgeHomeButtonOpensCustomURL()(*EdgeHomeButtonOpensCustomURL) {
     m := &EdgeHomeButtonOpensCustomURL{
         EdgeHomeButtonConfiguration: *NewEdgeHomeButtonConfiguration(),
@@ -18,10 +18,12 @@ func NewEdgeHomeButtonOpensCustomURL()(*EdgeHomeButtonOpensCustomURL) {
     return m
 }
 // CreateEdgeHomeButtonOpensCustomURLFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEdgeHomeButtonOpensCustomURLFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdgeHomeButtonOpensCustomURL(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EdgeHomeButtonOpensCustomURL) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EdgeHomeButtonConfiguration.GetFieldDeserializers()
     res["homeButtonCustomURL"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *EdgeHomeButtonOpensCustomURL) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetHomeButtonCustomURL gets the homeButtonCustomURL property value. The specific URL to load.
+// returns a *string when successful
 func (m *EdgeHomeButtonOpensCustomURL) GetHomeButtonCustomURL()(*string) {
     val, err := m.GetBackingStore().Get("homeButtonCustomURL")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *EdgeHomeButtonOpensCustomURL) SetHomeButtonCustomURL(value *string)() {
         panic(err)
     }
 }
-// EdgeHomeButtonOpensCustomURLable 
 type EdgeHomeButtonOpensCustomURLable interface {
     EdgeHomeButtonConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

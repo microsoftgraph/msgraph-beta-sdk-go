@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementDerivedCredentialSettingsCollectionResponse 
 type DeviceManagementDerivedCredentialSettingsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementDerivedCredentialSettingsCollectionResponse instantiates a new deviceManagementDerivedCredentialSettingsCollectionResponse and sets the default values.
+// NewDeviceManagementDerivedCredentialSettingsCollectionResponse instantiates a new DeviceManagementDerivedCredentialSettingsCollectionResponse and sets the default values.
 func NewDeviceManagementDerivedCredentialSettingsCollectionResponse()(*DeviceManagementDerivedCredentialSettingsCollectionResponse) {
     m := &DeviceManagementDerivedCredentialSettingsCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeviceManagementDerivedCredentialSettingsCollectionResponse()(*DeviceMan
     return m
 }
 // CreateDeviceManagementDerivedCredentialSettingsCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementDerivedCredentialSettingsCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementDerivedCredentialSettingsCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementDerivedCredentialSettingsCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeviceManagementDerivedCredentialSettingsCollectionResponse) GetFieldDe
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeviceManagementDerivedCredentialSettingsable when successful
 func (m *DeviceManagementDerivedCredentialSettingsCollectionResponse) GetValue()([]DeviceManagementDerivedCredentialSettingsable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeviceManagementDerivedCredentialSettingsCollectionResponse) SetValue(v
         panic(err)
     }
 }
-// DeviceManagementDerivedCredentialSettingsCollectionResponseable 
 type DeviceManagementDerivedCredentialSettingsCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

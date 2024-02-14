@@ -47,6 +47,7 @@ type VirtualEventsTownhallsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByVirtualEventTownhallId provides operations to manage the townhalls property of the microsoft.graph.virtualEventsRoot entity.
+// returns a *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder when successful
 func (m *VirtualEventsTownhallsRequestBuilder) ByVirtualEventTownhallId(virtualEventTownhallId string)(*VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *VirtualEventsTownhallsRequestBuilder) ByVirtualEventTownhallId(virtualE
     }
     return NewVirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewVirtualEventsTownhallsRequestBuilderInternal instantiates a new TownhallsRequestBuilder and sets the default values.
+// NewVirtualEventsTownhallsRequestBuilderInternal instantiates a new VirtualEventsTownhallsRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsRequestBuilder) {
     m := &VirtualEventsTownhallsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewVirtualEventsTownhallsRequestBuilder instantiates a new TownhallsRequestBuilder and sets the default values.
+// NewVirtualEventsTownhallsRequestBuilder instantiates a new VirtualEventsTownhallsRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsTownhallsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *VirtualEventsTownhallsCountRequestBuilder when successful
 func (m *VirtualEventsTownhallsRequestBuilder) Count()(*VirtualEventsTownhallsCountRequestBuilder) {
     return NewVirtualEventsTownhallsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get townhalls from solutions
+// returns a VirtualEventTownhallCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventTownhallCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVirtualEventTownhallCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,22 +97,25 @@ func (m *VirtualEventsTownhallsRequestBuilder) Get(ctx context.Context, requestC
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventTownhallCollectionResponseable), nil
 }
 // GetByUserIdAndRoleWithUserIdWithRole provides operations to call the getByUserIdAndRole method.
+// returns a *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder when successful
 func (m *VirtualEventsTownhallsRequestBuilder) GetByUserIdAndRoleWithUserIdWithRole(role *string, userId *string)(*VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) {
     return NewVirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, role, userId)
 }
 // GetByUserRoleWithRole provides operations to call the getByUserRole method.
+// returns a *VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder when successful
 func (m *VirtualEventsTownhallsRequestBuilder) GetByUserRoleWithRole(role *string)(*VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder) {
     return NewVirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, role)
 }
 // Post create new navigation property to townhalls for solutions
+// returns a VirtualEventTownhallable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventTownhallable, requestConfiguration *VirtualEventsTownhallsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventTownhallable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateVirtualEventTownhallFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -121,6 +127,7 @@ func (m *VirtualEventsTownhallsRequestBuilder) Post(ctx context.Context, body ie
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventTownhallable), nil
 }
 // ToGetRequestInformation get townhalls from solutions
+// returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -134,8 +141,9 @@ func (m *VirtualEventsTownhallsRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to townhalls for solutions
+// returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventTownhallable, requestConfiguration *VirtualEventsTownhallsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/solutions/virtualEvents/townhalls", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -148,6 +156,7 @@ func (m *VirtualEventsTownhallsRequestBuilder) ToPostRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEventsTownhallsRequestBuilder when successful
 func (m *VirtualEventsTownhallsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsTownhallsRequestBuilder) {
     return NewVirtualEventsTownhallsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -40,6 +40,7 @@ type ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder
     QueryParameters *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilderGetQueryParameters
 }
 // ByManagedTenantAlertRuleId provides operations to manage the alertRules property of the microsoft.graph.managedTenants.managedTenantAlertRuleDefinition entity.
+// returns a *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesManagedTenantAlertRuleItemRequestBuilder when successful
 func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder) ByManagedTenantAlertRuleId(managedTenantAlertRuleId string)(*ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesManagedTenantAlertRuleItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBui
     }
     return NewManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesManagedTenantAlertRuleItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilderInternal instantiates a new AlertRulesRequestBuilder and sets the default values.
+// NewManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilderInternal instantiates a new ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder) {
     m := &ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition%2Did}/alertRules{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedTenantAlertRuleDefinitions/{managedTenantAlertRuleDefinition%2Did}/alertRules{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder instantiates a new AlertRulesRequestBuilder and sets the default values.
+// NewManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder instantiates a new ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder and sets the default values.
 func NewManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesCountRequestBuilder when successful
 func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder) Count()(*ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesCountRequestBuilder) {
     return NewManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get alertRules from tenantRelationships
+// returns a ManagedTenantAlertRuleCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantAlertRuleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CreateManagedTenantAlertRuleCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBui
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagedTenantAlertRuleCollectionResponseable), nil
 }
 // ToGetRequestInformation get alertRules from tenantRelationships
+// returns a *RequestInformation when successful
 func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBui
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder when successful
 func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder) {
     return NewManagedTenantsManagedTenantAlertRuleDefinitionsItemAlertRulesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

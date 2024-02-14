@@ -10,7 +10,7 @@ type DeviceManagementSettingDependency struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceManagementSettingDependency instantiates a new deviceManagementSettingDependency and sets the default values.
+// NewDeviceManagementSettingDependency instantiates a new DeviceManagementSettingDependency and sets the default values.
 func NewDeviceManagementSettingDependency()(*DeviceManagementSettingDependency) {
     m := &DeviceManagementSettingDependency{
     }
@@ -19,10 +19,12 @@ func NewDeviceManagementSettingDependency()(*DeviceManagementSettingDependency) 
     return m
 }
 // CreateDeviceManagementSettingDependencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementSettingDependencyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementSettingDependency(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceManagementSettingDependency) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *DeviceManagementSettingDependency) GetAdditionalData()(map[string]any) 
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceManagementSettingDependency) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConstraints gets the constraints property value. Collection of constraints for the dependency setting value
+// returns a []DeviceManagementConstraintable when successful
 func (m *DeviceManagementSettingDependency) GetConstraints()([]DeviceManagementConstraintable) {
     val, err := m.GetBackingStore().Get("constraints")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *DeviceManagementSettingDependency) GetConstraints()([]DeviceManagementC
     return nil
 }
 // GetDefinitionId gets the definitionId property value. The setting definition ID of the setting depended on
+// returns a *string when successful
 func (m *DeviceManagementSettingDependency) GetDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("definitionId")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *DeviceManagementSettingDependency) GetDefinitionId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementSettingDependency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["constraints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,6 +108,7 @@ func (m *DeviceManagementSettingDependency) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceManagementSettingDependency) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -178,7 +185,6 @@ func (m *DeviceManagementSettingDependency) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// DeviceManagementSettingDependencyable 
 type DeviceManagementSettingDependencyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

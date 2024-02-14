@@ -17,21 +17,23 @@ type PolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewPolicyLabelsEvaluateRemovalRequestBuilderInternal instantiates a new EvaluateRemovalRequestBuilder and sets the default values.
+// NewPolicyLabelsEvaluateRemovalRequestBuilderInternal instantiates a new PolicyLabelsEvaluateRemovalRequestBuilder and sets the default values.
 func NewPolicyLabelsEvaluateRemovalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicyLabelsEvaluateRemovalRequestBuilder) {
     m := &PolicyLabelsEvaluateRemovalRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/policy/labels/evaluateRemoval", pathParameters),
     }
     return m
 }
-// NewPolicyLabelsEvaluateRemovalRequestBuilder instantiates a new EvaluateRemovalRequestBuilder and sets the default values.
+// NewPolicyLabelsEvaluateRemovalRequestBuilder instantiates a new PolicyLabelsEvaluateRemovalRequestBuilder and sets the default values.
 func NewPolicyLabelsEvaluateRemovalRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicyLabelsEvaluateRemovalRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPolicyLabelsEvaluateRemovalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
-// Deprecated: This method is obsolete. Use PostAsEvaluateRemovalPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a PolicyLabelsEvaluateRemovalResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *PolicyLabelsEvaluateRemovalRequestBuilder) Post(ctx context.Context, bo
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreatePolicyLabelsEvaluateRemovalResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -55,6 +56,8 @@ func (m *PolicyLabelsEvaluateRemovalRequestBuilder) Post(ctx context.Context, bo
 }
 // PostAsEvaluateRemovalPostResponse indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a PolicyLabelsEvaluateRemovalPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-1.0
@@ -64,8 +67,7 @@ func (m *PolicyLabelsEvaluateRemovalRequestBuilder) PostAsEvaluateRemovalPostRes
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreatePolicyLabelsEvaluateRemovalPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -78,6 +80,7 @@ func (m *PolicyLabelsEvaluateRemovalRequestBuilder) PostAsEvaluateRemovalPostRes
 }
 // ToPostRequestInformation indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *RequestInformation when successful
 func (m *PolicyLabelsEvaluateRemovalRequestBuilder) ToPostRequestInformation(ctx context.Context, body PolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -93,6 +96,7 @@ func (m *PolicyLabelsEvaluateRemovalRequestBuilder) ToPostRequestInformation(ctx
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// returns a *PolicyLabelsEvaluateRemovalRequestBuilder when successful
 func (m *PolicyLabelsEvaluateRemovalRequestBuilder) WithUrl(rawUrl string)(*PolicyLabelsEvaluateRemovalRequestBuilder) {
     return NewPolicyLabelsEvaluateRemovalRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

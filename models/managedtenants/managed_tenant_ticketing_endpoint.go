@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedTenantTicketingEndpoint 
 type ManagedTenantTicketingEndpoint struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedTenantTicketingEndpoint instantiates a new managedTenantTicketingEndpoint and sets the default values.
+// NewManagedTenantTicketingEndpoint instantiates a new ManagedTenantTicketingEndpoint and sets the default values.
 func NewManagedTenantTicketingEndpoint()(*ManagedTenantTicketingEndpoint) {
     m := &ManagedTenantTicketingEndpoint{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManagedTenantTicketingEndpoint()(*ManagedTenantTicketingEndpoint) {
     return m
 }
 // CreateManagedTenantTicketingEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedTenantTicketingEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedTenantTicketingEndpoint(), nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
+// returns a *string when successful
 func (m *ManagedTenantTicketingEndpoint) GetCreatedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("createdByUserId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ManagedTenantTicketingEndpoint) GetCreatedByUserId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantTicketingEndpoint) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ManagedTenantTicketingEndpoint) GetCreatedDateTime()(*i336074805fc85398
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *ManagedTenantTicketingEndpoint) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ManagedTenantTicketingEndpoint) GetDisplayName()(*string) {
     return nil
 }
 // GetEmailAddress gets the emailAddress property value. The emailAddress property
+// returns a *string when successful
 func (m *ManagedTenantTicketingEndpoint) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *ManagedTenantTicketingEndpoint) GetEmailAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedTenantTicketingEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdByUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -141,6 +146,7 @@ func (m *ManagedTenantTicketingEndpoint) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
+// returns a *string when successful
 func (m *ManagedTenantTicketingEndpoint) GetLastActionByUserId()(*string) {
     val, err := m.GetBackingStore().Get("lastActionByUserId")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *ManagedTenantTicketingEndpoint) GetLastActionByUserId()(*string) {
     return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantTicketingEndpoint) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -163,6 +170,7 @@ func (m *ManagedTenantTicketingEndpoint) GetLastActionDateTime()(*i336074805fc85
     return nil
 }
 // GetPhoneNumber gets the phoneNumber property value. The phoneNumber property
+// returns a *string when successful
 func (m *ManagedTenantTicketingEndpoint) GetPhoneNumber()(*string) {
     val, err := m.GetBackingStore().Get("phoneNumber")
     if err != nil {
@@ -272,7 +280,6 @@ func (m *ManagedTenantTicketingEndpoint) SetPhoneNumber(value *string)() {
         panic(err)
     }
 }
-// ManagedTenantTicketingEndpointable 
 type ManagedTenantTicketingEndpointable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

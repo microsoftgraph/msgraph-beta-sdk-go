@@ -8,7 +8,7 @@ import (
 type DeviceConfigurationConflictSummary struct {
     Entity
 }
-// NewDeviceConfigurationConflictSummary instantiates a new deviceConfigurationConflictSummary and sets the default values.
+// NewDeviceConfigurationConflictSummary instantiates a new DeviceConfigurationConflictSummary and sets the default values.
 func NewDeviceConfigurationConflictSummary()(*DeviceConfigurationConflictSummary) {
     m := &DeviceConfigurationConflictSummary{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceConfigurationConflictSummary()(*DeviceConfigurationConflictSummary
     return m
 }
 // CreateDeviceConfigurationConflictSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceConfigurationConflictSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceConfigurationConflictSummary(), nil
 }
 // GetConflictingDeviceConfigurations gets the conflictingDeviceConfigurations property value. The set of policies in conflict with the given setting
+// returns a []SettingSourceable when successful
 func (m *DeviceConfigurationConflictSummary) GetConflictingDeviceConfigurations()([]SettingSourceable) {
     val, err := m.GetBackingStore().Get("conflictingDeviceConfigurations")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceConfigurationConflictSummary) GetConflictingDeviceConfigurations(
     return nil
 }
 // GetContributingSettings gets the contributingSettings property value. The set of settings in conflict with the given policies
+// returns a []string when successful
 func (m *DeviceConfigurationConflictSummary) GetContributingSettings()([]string) {
     val, err := m.GetBackingStore().Get("contributingSettings")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *DeviceConfigurationConflictSummary) GetContributingSettings()([]string)
     return nil
 }
 // GetDeviceCheckinsImpacted gets the deviceCheckinsImpacted property value. The count of checkins impacted by the conflicting policies and settings
+// returns a *int32 when successful
 func (m *DeviceConfigurationConflictSummary) GetDeviceCheckinsImpacted()(*int32) {
     val, err := m.GetBackingStore().Get("deviceCheckinsImpacted")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *DeviceConfigurationConflictSummary) GetDeviceCheckinsImpacted()(*int32)
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceConfigurationConflictSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["conflictingDeviceConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -152,7 +157,6 @@ func (m *DeviceConfigurationConflictSummary) SetDeviceCheckinsImpacted(value *in
         panic(err)
     }
 }
-// DeviceConfigurationConflictSummaryable 
 type DeviceConfigurationConflictSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

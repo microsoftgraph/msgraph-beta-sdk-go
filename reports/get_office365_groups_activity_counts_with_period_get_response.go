@@ -5,7 +5,6 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// GetOffice365GroupsActivityCountsWithPeriodGetResponse 
 type GetOffice365GroupsActivityCountsWithPeriodGetResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
@@ -17,10 +16,12 @@ func NewGetOffice365GroupsActivityCountsWithPeriodGetResponse()(*GetOffice365Gro
     return m
 }
 // CreateGetOffice365GroupsActivityCountsWithPeriodGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGetOffice365GroupsActivityCountsWithPeriodGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGetOffice365GroupsActivityCountsWithPeriodGetResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GetOffice365GroupsActivityCountsWithPeriodGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *GetOffice365GroupsActivityCountsWithPeriodGetResponse) GetFieldDeserial
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Office365GroupsActivityCountsable when successful
 func (m *GetOffice365GroupsActivityCountsWithPeriodGetResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Office365GroupsActivityCountsable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *GetOffice365GroupsActivityCountsWithPeriodGetResponse) SetValue(value [
         panic(err)
     }
 }
-// GetOffice365GroupsActivityCountsWithPeriodGetResponseable 
 type GetOffice365GroupsActivityCountsWithPeriodGetResponseable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

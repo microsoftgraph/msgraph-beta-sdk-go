@@ -9,7 +9,7 @@ import (
 type MicrosoftTunnelServerLogCollectionResponse struct {
     Entity
 }
-// NewMicrosoftTunnelServerLogCollectionResponse instantiates a new microsoftTunnelServerLogCollectionResponse and sets the default values.
+// NewMicrosoftTunnelServerLogCollectionResponse instantiates a new MicrosoftTunnelServerLogCollectionResponse and sets the default values.
 func NewMicrosoftTunnelServerLogCollectionResponse()(*MicrosoftTunnelServerLogCollectionResponse) {
     m := &MicrosoftTunnelServerLogCollectionResponse{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewMicrosoftTunnelServerLogCollectionResponse()(*MicrosoftTunnelServerLogCo
     return m
 }
 // CreateMicrosoftTunnelServerLogCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftTunnelServerLogCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTunnelServerLogCollectionResponse(), nil
 }
 // GetEndDateTime gets the endDateTime property value. The end time of the logs collected
+// returns a *Time when successful
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetEndDateTime()(*i33607480
     return nil
 }
 // GetExpiryDateTime gets the expiryDateTime property value. The time when the log collection is expired
+// returns a *Time when successful
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expiryDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetExpiryDateTime()(*i33607
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +122,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetRequestDateTime gets the requestDateTime property value. The time when the log collection was requested
+// returns a *Time when successful
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestDateTime")
     if err != nil {
@@ -129,6 +134,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetRequestDateTime()(*i3360
     return nil
 }
 // GetServerId gets the serverId property value. ID of the server the log collection is requested upon
+// returns a *string when successful
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetServerId()(*string) {
     val, err := m.GetBackingStore().Get("serverId")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetServerId()(*string) {
     return nil
 }
 // GetSizeInBytes gets the sizeInBytes property value. The size of the logs in bytes
+// returns a *int64 when successful
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetSizeInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("sizeInBytes")
     if err != nil {
@@ -151,6 +158,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetSizeInBytes()(*int64) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. The start time of the logs collected
+// returns a *Time when successful
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -162,6 +170,7 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) GetStartDateTime()(*i336074
     return nil
 }
 // GetStatus gets the status property value. Enum type that represent the status of log collection
+// returns a *MicrosoftTunnelLogCollectionStatus when successful
 func (m *MicrosoftTunnelServerLogCollectionResponse) GetStatus()(*MicrosoftTunnelLogCollectionStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -272,7 +281,6 @@ func (m *MicrosoftTunnelServerLogCollectionResponse) SetStatus(value *MicrosoftT
         panic(err)
     }
 }
-// MicrosoftTunnelServerLogCollectionResponseable 
 type MicrosoftTunnelServerLogCollectionResponseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

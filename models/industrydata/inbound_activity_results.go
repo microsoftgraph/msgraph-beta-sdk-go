@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InboundActivityResults 
 type InboundActivityResults struct {
     IndustryDataActivityStatistics
 }
-// NewInboundActivityResults instantiates a new inboundActivityResults and sets the default values.
+// NewInboundActivityResults instantiates a new InboundActivityResults and sets the default values.
 func NewInboundActivityResults()(*InboundActivityResults) {
     m := &InboundActivityResults{
         IndustryDataActivityStatistics: *NewIndustryDataActivityStatistics(),
@@ -18,10 +17,12 @@ func NewInboundActivityResults()(*InboundActivityResults) {
     return m
 }
 // CreateInboundActivityResultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInboundActivityResultsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInboundActivityResults(), nil
 }
 // GetErrors gets the errors property value. Number of errors encountered while processing the inbound flow.
+// returns a *int32 when successful
 func (m *InboundActivityResults) GetErrors()(*int32) {
     val, err := m.GetBackingStore().Get("errors")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *InboundActivityResults) GetErrors()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InboundActivityResults) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IndustryDataActivityStatistics.GetFieldDeserializers()
     res["errors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,6 +132,7 @@ func (m *InboundActivityResults) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetGroups gets the groups property value. Counts of active and inactive groups processed by the inbound flow.
+// returns a IndustryDataRunEntityCountMetricable when successful
 func (m *InboundActivityResults) GetGroups()(IndustryDataRunEntityCountMetricable) {
     val, err := m.GetBackingStore().Get("groups")
     if err != nil {
@@ -141,6 +144,7 @@ func (m *InboundActivityResults) GetGroups()(IndustryDataRunEntityCountMetricabl
     return nil
 }
 // GetMatchedPeopleByRole gets the matchedPeopleByRole property value. Number of people matched to a Microsoft Entra user, by role.
+// returns a []IndustryDataRunRoleCountMetricable when successful
 func (m *InboundActivityResults) GetMatchedPeopleByRole()([]IndustryDataRunRoleCountMetricable) {
     val, err := m.GetBackingStore().Get("matchedPeopleByRole")
     if err != nil {
@@ -152,6 +156,7 @@ func (m *InboundActivityResults) GetMatchedPeopleByRole()([]IndustryDataRunRoleC
     return nil
 }
 // GetMemberships gets the memberships property value. Counts of active and inactive memberships processed by the inbound flow.
+// returns a IndustryDataRunEntityCountMetricable when successful
 func (m *InboundActivityResults) GetMemberships()(IndustryDataRunEntityCountMetricable) {
     val, err := m.GetBackingStore().Get("memberships")
     if err != nil {
@@ -163,6 +168,7 @@ func (m *InboundActivityResults) GetMemberships()(IndustryDataRunEntityCountMetr
     return nil
 }
 // GetOrganizations gets the organizations property value. Counts of active and inactive organizations processed by the inbound flow.
+// returns a IndustryDataRunEntityCountMetricable when successful
 func (m *InboundActivityResults) GetOrganizations()(IndustryDataRunEntityCountMetricable) {
     val, err := m.GetBackingStore().Get("organizations")
     if err != nil {
@@ -174,6 +180,7 @@ func (m *InboundActivityResults) GetOrganizations()(IndustryDataRunEntityCountMe
     return nil
 }
 // GetPeople gets the people property value. Counts of active and inactive people processed by the inbound flow.
+// returns a IndustryDataRunEntityCountMetricable when successful
 func (m *InboundActivityResults) GetPeople()(IndustryDataRunEntityCountMetricable) {
     val, err := m.GetBackingStore().Get("people")
     if err != nil {
@@ -185,6 +192,7 @@ func (m *InboundActivityResults) GetPeople()(IndustryDataRunEntityCountMetricabl
     return nil
 }
 // GetUnmatchedPeopleByRole gets the unmatchedPeopleByRole property value. Number of people not matched to a Microsoft Entra user, by role.
+// returns a []IndustryDataRunRoleCountMetricable when successful
 func (m *InboundActivityResults) GetUnmatchedPeopleByRole()([]IndustryDataRunRoleCountMetricable) {
     val, err := m.GetBackingStore().Get("unmatchedPeopleByRole")
     if err != nil {
@@ -196,6 +204,7 @@ func (m *InboundActivityResults) GetUnmatchedPeopleByRole()([]IndustryDataRunRol
     return nil
 }
 // GetWarnings gets the warnings property value. Number of warnings encountered while processing the inbound flow.
+// returns a *int32 when successful
 func (m *InboundActivityResults) GetWarnings()(*int32) {
     val, err := m.GetBackingStore().Get("warnings")
     if err != nil {
@@ -270,7 +279,6 @@ func (m *InboundActivityResults) SetWarnings(value *int32)() {
         panic(err)
     }
 }
-// InboundActivityResultsable 
 type InboundActivityResultsable interface {
     IndustryDataActivityStatisticsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

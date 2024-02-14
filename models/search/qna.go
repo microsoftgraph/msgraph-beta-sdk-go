@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Qna 
 type Qna struct {
     SearchAnswer
 }
-// NewQna instantiates a new qna and sets the default values.
+// NewQna instantiates a new Qna and sets the default values.
 func NewQna()(*Qna) {
     m := &Qna{
         SearchAnswer: *NewSearchAnswer(),
@@ -18,10 +17,12 @@ func NewQna()(*Qna) {
     return m
 }
 // CreateQnaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateQnaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewQna(), nil
 }
 // GetAvailabilityEndDateTime gets the availabilityEndDateTime property value. Timestamp of when the qna stops to appear as a search result. Set as null for always available.
+// returns a *Time when successful
 func (m *Qna) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("availabilityEndDateTime")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Qna) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetAvailabilityStartDateTime gets the availabilityStartDateTime property value. Timestamp of when the qna starts to appear as a search result. Set as null for always available.
+// returns a *Time when successful
 func (m *Qna) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("availabilityStartDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Qna) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Qna) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SearchAnswer.GetFieldDeserializers()
     res["availabilityEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -163,6 +166,7 @@ func (m *Qna) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     return res
 }
 // GetGroupIds gets the groupIds property value. List of security groups able to view this qna.
+// returns a []string when successful
 func (m *Qna) GetGroupIds()([]string) {
     val, err := m.GetBackingStore().Get("groupIds")
     if err != nil {
@@ -174,6 +178,7 @@ func (m *Qna) GetGroupIds()([]string) {
     return nil
 }
 // GetIsSuggested gets the isSuggested property value. True if a user or Microsoft suggested this qna to the admin. Read-only.
+// returns a *bool when successful
 func (m *Qna) GetIsSuggested()(*bool) {
     val, err := m.GetBackingStore().Get("isSuggested")
     if err != nil {
@@ -185,6 +190,7 @@ func (m *Qna) GetIsSuggested()(*bool) {
     return nil
 }
 // GetKeywords gets the keywords property value. Keywords that trigger this qna to appear in search results.
+// returns a AnswerKeywordable when successful
 func (m *Qna) GetKeywords()(AnswerKeywordable) {
     val, err := m.GetBackingStore().Get("keywords")
     if err != nil {
@@ -196,6 +202,7 @@ func (m *Qna) GetKeywords()(AnswerKeywordable) {
     return nil
 }
 // GetLanguageTags gets the languageTags property value. A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.
+// returns a []string when successful
 func (m *Qna) GetLanguageTags()([]string) {
     val, err := m.GetBackingStore().Get("languageTags")
     if err != nil {
@@ -207,6 +214,7 @@ func (m *Qna) GetLanguageTags()([]string) {
     return nil
 }
 // GetPlatforms gets the platforms property value. List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+// returns a []DevicePlatformType when successful
 func (m *Qna) GetPlatforms()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType) {
     val, err := m.GetBackingStore().Get("platforms")
     if err != nil {
@@ -218,6 +226,7 @@ func (m *Qna) GetPlatforms()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea810
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *AnswerState when successful
 func (m *Qna) GetState()(*AnswerState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -229,6 +238,7 @@ func (m *Qna) GetState()(*AnswerState) {
     return nil
 }
 // GetTargetedVariations gets the targetedVariations property value. Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
+// returns a []AnswerVariantable when successful
 func (m *Qna) GetTargetedVariations()([]AnswerVariantable) {
     val, err := m.GetBackingStore().Get("targetedVariations")
     if err != nil {
@@ -371,7 +381,6 @@ func (m *Qna) SetTargetedVariations(value []AnswerVariantable)() {
         panic(err)
     }
 }
-// Qnaable 
 type Qnaable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SearchAnswerable

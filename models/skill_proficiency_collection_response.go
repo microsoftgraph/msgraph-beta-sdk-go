@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SkillProficiencyCollectionResponse 
 type SkillProficiencyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSkillProficiencyCollectionResponse instantiates a new skillProficiencyCollectionResponse and sets the default values.
+// NewSkillProficiencyCollectionResponse instantiates a new SkillProficiencyCollectionResponse and sets the default values.
 func NewSkillProficiencyCollectionResponse()(*SkillProficiencyCollectionResponse) {
     m := &SkillProficiencyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSkillProficiencyCollectionResponse()(*SkillProficiencyCollectionResponse
     return m
 }
 // CreateSkillProficiencyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSkillProficiencyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSkillProficiencyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SkillProficiencyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SkillProficiencyCollectionResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []SkillProficiencyable when successful
 func (m *SkillProficiencyCollectionResponse) GetValue()([]SkillProficiencyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SkillProficiencyCollectionResponse) SetValue(value []SkillProficiencyab
         panic(err)
     }
 }
-// SkillProficiencyCollectionResponseable 
 type SkillProficiencyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ServiceProvisioningResourceErrorDetail 
 type ServiceProvisioningResourceErrorDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewServiceProvisioningResourceErrorDetail instantiates a new serviceProvisioningResourceErrorDetail and sets the default values.
+// NewServiceProvisioningResourceErrorDetail instantiates a new ServiceProvisioningResourceErrorDetail and sets the default values.
 func NewServiceProvisioningResourceErrorDetail()(*ServiceProvisioningResourceErrorDetail) {
     m := &ServiceProvisioningResourceErrorDetail{
     }
@@ -19,6 +18,7 @@ func NewServiceProvisioningResourceErrorDetail()(*ServiceProvisioningResourceErr
     return m
 }
 // CreateServiceProvisioningResourceErrorDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceProvisioningResourceErrorDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateServiceProvisioningResourceErrorDetailFromDiscriminatorValue(parseNod
     return NewServiceProvisioningResourceErrorDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ServiceProvisioningResourceErrorDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -53,10 +54,12 @@ func (m *ServiceProvisioningResourceErrorDetail) GetAdditionalData()(map[string]
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ServiceProvisioningResourceErrorDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCode gets the code property value. The code property
+// returns a *string when successful
 func (m *ServiceProvisioningResourceErrorDetail) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *ServiceProvisioningResourceErrorDetail) GetCode()(*string) {
     return nil
 }
 // GetDetails gets the details property value. The details property
+// returns a *string when successful
 func (m *ServiceProvisioningResourceErrorDetail) GetDetails()(*string) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *ServiceProvisioningResourceErrorDetail) GetDetails()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceProvisioningResourceErrorDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -124,6 +129,7 @@ func (m *ServiceProvisioningResourceErrorDetail) GetFieldDeserializers()(map[str
     return res
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *ServiceProvisioningResourceErrorDetail) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
     if err != nil {
@@ -135,6 +141,7 @@ func (m *ServiceProvisioningResourceErrorDetail) GetMessage()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ServiceProvisioningResourceErrorDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -218,7 +225,6 @@ func (m *ServiceProvisioningResourceErrorDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// ServiceProvisioningResourceErrorDetailable 
 type ServiceProvisioningResourceErrorDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -27,28 +27,29 @@ type IndustryDataInboundFlowsItemDataConnectorRequestBuilderGetRequestConfigurat
     // Request query parameters
     QueryParameters *IndustryDataInboundFlowsItemDataConnectorRequestBuilderGetQueryParameters
 }
-// NewIndustryDataInboundFlowsItemDataConnectorRequestBuilderInternal instantiates a new DataConnectorRequestBuilder and sets the default values.
+// NewIndustryDataInboundFlowsItemDataConnectorRequestBuilderInternal instantiates a new IndustryDataInboundFlowsItemDataConnectorRequestBuilder and sets the default values.
 func NewIndustryDataInboundFlowsItemDataConnectorRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataInboundFlowsItemDataConnectorRequestBuilder) {
     m := &IndustryDataInboundFlowsItemDataConnectorRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewIndustryDataInboundFlowsItemDataConnectorRequestBuilder instantiates a new DataConnectorRequestBuilder and sets the default values.
+// NewIndustryDataInboundFlowsItemDataConnectorRequestBuilder instantiates a new IndustryDataInboundFlowsItemDataConnectorRequestBuilder and sets the default values.
 func NewIndustryDataInboundFlowsItemDataConnectorRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataInboundFlowsItemDataConnectorRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataInboundFlowsItemDataConnectorRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the data connector in the context of which this flow pulls in data from a source system.
+// returns a IndustryDataConnectorable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IndustryDataInboundFlowsItemDataConnectorRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsItemDataConnectorRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.CreateIndustryDataConnectorFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *IndustryDataInboundFlowsItemDataConnectorRequestBuilder) Get(ctx contex
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable), nil
 }
 // ToGetRequestInformation the data connector in the context of which this flow pulls in data from a source system.
+// returns a *RequestInformation when successful
 func (m *IndustryDataInboundFlowsItemDataConnectorRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsItemDataConnectorRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *IndustryDataInboundFlowsItemDataConnectorRequestBuilder) ToGetRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IndustryDataInboundFlowsItemDataConnectorRequestBuilder when successful
 func (m *IndustryDataInboundFlowsItemDataConnectorRequestBuilder) WithUrl(rawUrl string)(*IndustryDataInboundFlowsItemDataConnectorRequestBuilder) {
     return NewIndustryDataInboundFlowsItemDataConnectorRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

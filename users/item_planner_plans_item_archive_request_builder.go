@@ -17,28 +17,28 @@ type ItemPlannerPlansItemArchiveRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemPlannerPlansItemArchiveRequestBuilderInternal instantiates a new ArchiveRequestBuilder and sets the default values.
+// NewItemPlannerPlansItemArchiveRequestBuilderInternal instantiates a new ItemPlannerPlansItemArchiveRequestBuilder and sets the default values.
 func NewItemPlannerPlansItemArchiveRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerPlansItemArchiveRequestBuilder) {
     m := &ItemPlannerPlansItemArchiveRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}/archive", pathParameters),
     }
     return m
 }
-// NewItemPlannerPlansItemArchiveRequestBuilder instantiates a new ArchiveRequestBuilder and sets the default values.
+// NewItemPlannerPlansItemArchiveRequestBuilder instantiates a new ItemPlannerPlansItemArchiveRequestBuilder and sets the default values.
 func NewItemPlannerPlansItemArchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPlannerPlansItemArchiveRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPlannerPlansItemArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action archive
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerPlansItemArchiveRequestBuilder) Post(ctx context.Context, body ItemPlannerPlansItemArchivePostRequestBodyable, requestConfiguration *ItemPlannerPlansItemArchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemPlannerPlansItemArchiveRequestBuilder) Post(ctx context.Context, bo
     return nil
 }
 // ToPostRequestInformation invoke action archive
+// returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemArchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPlannerPlansItemArchivePostRequestBodyable, requestConfiguration *ItemPlannerPlansItemArchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *ItemPlannerPlansItemArchiveRequestBuilder) ToPostRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPlannerPlansItemArchiveRequestBuilder when successful
 func (m *ItemPlannerPlansItemArchiveRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerPlansItemArchiveRequestBuilder) {
     return NewItemPlannerPlansItemArchiveRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

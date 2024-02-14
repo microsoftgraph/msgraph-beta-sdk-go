@@ -27,28 +27,29 @@ type DeviceShellScriptsItemRunSummaryRequestBuilderGetRequestConfiguration struc
     // Request query parameters
     QueryParameters *DeviceShellScriptsItemRunSummaryRequestBuilderGetQueryParameters
 }
-// NewDeviceShellScriptsItemRunSummaryRequestBuilderInternal instantiates a new RunSummaryRequestBuilder and sets the default values.
+// NewDeviceShellScriptsItemRunSummaryRequestBuilderInternal instantiates a new DeviceShellScriptsItemRunSummaryRequestBuilder and sets the default values.
 func NewDeviceShellScriptsItemRunSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptsItemRunSummaryRequestBuilder) {
     m := &DeviceShellScriptsItemRunSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript%2Did}/runSummary{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceShellScripts/{deviceShellScript%2Did}/runSummary{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewDeviceShellScriptsItemRunSummaryRequestBuilder instantiates a new RunSummaryRequestBuilder and sets the default values.
+// NewDeviceShellScriptsItemRunSummaryRequestBuilder instantiates a new DeviceShellScriptsItemRunSummaryRequestBuilder and sets the default values.
 func NewDeviceShellScriptsItemRunSummaryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceShellScriptsItemRunSummaryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceShellScriptsItemRunSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get run summary for device management script.
+// returns a DeviceManagementScriptRunSummaryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceShellScriptsItemRunSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceShellScriptsItemRunSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptRunSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceManagementScriptRunSummaryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *DeviceShellScriptsItemRunSummaryRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementScriptRunSummaryable), nil
 }
 // ToGetRequestInformation run summary for device management script.
+// returns a *RequestInformation when successful
 func (m *DeviceShellScriptsItemRunSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceShellScriptsItemRunSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *DeviceShellScriptsItemRunSummaryRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceShellScriptsItemRunSummaryRequestBuilder when successful
 func (m *DeviceShellScriptsItemRunSummaryRequestBuilder) WithUrl(rawUrl string)(*DeviceShellScriptsItemRunSummaryRequestBuilder) {
     return NewDeviceShellScriptsItemRunSummaryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

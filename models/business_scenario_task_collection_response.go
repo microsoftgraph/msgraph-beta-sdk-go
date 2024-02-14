@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BusinessScenarioTaskCollectionResponse 
 type BusinessScenarioTaskCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewBusinessScenarioTaskCollectionResponse instantiates a new businessScenarioTaskCollectionResponse and sets the default values.
+// NewBusinessScenarioTaskCollectionResponse instantiates a new BusinessScenarioTaskCollectionResponse and sets the default values.
 func NewBusinessScenarioTaskCollectionResponse()(*BusinessScenarioTaskCollectionResponse) {
     m := &BusinessScenarioTaskCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewBusinessScenarioTaskCollectionResponse()(*BusinessScenarioTaskCollection
     return m
 }
 // CreateBusinessScenarioTaskCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBusinessScenarioTaskCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBusinessScenarioTaskCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BusinessScenarioTaskCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *BusinessScenarioTaskCollectionResponse) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []BusinessScenarioTaskable when successful
 func (m *BusinessScenarioTaskCollectionResponse) GetValue()([]BusinessScenarioTaskable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *BusinessScenarioTaskCollectionResponse) SetValue(value []BusinessScenar
         panic(err)
     }
 }
-// BusinessScenarioTaskCollectionResponseable 
 type BusinessScenarioTaskCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

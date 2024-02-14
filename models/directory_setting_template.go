@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DirectorySettingTemplate 
 type DirectorySettingTemplate struct {
     DirectoryObject
 }
-// NewDirectorySettingTemplate instantiates a new directorySettingTemplate and sets the default values.
+// NewDirectorySettingTemplate instantiates a new DirectorySettingTemplate and sets the default values.
 func NewDirectorySettingTemplate()(*DirectorySettingTemplate) {
     m := &DirectorySettingTemplate{
         DirectoryObject: *NewDirectoryObject(),
@@ -18,10 +17,12 @@ func NewDirectorySettingTemplate()(*DirectorySettingTemplate) {
     return m
 }
 // CreateDirectorySettingTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDirectorySettingTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDirectorySettingTemplate(), nil
 }
 // GetDescription gets the description property value. Description of the template. Read-only.
+// returns a *string when successful
 func (m *DirectorySettingTemplate) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DirectorySettingTemplate) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the template. Read-only.
+// returns a *string when successful
 func (m *DirectorySettingTemplate) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *DirectorySettingTemplate) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +88,7 @@ func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetValues gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
+// returns a []SettingTemplateValueable when successful
 func (m *DirectorySettingTemplate) GetValues()([]SettingTemplateValueable) {
     val, err := m.GetBackingStore().Get("values")
     if err != nil {
@@ -148,7 +152,6 @@ func (m *DirectorySettingTemplate) SetValues(value []SettingTemplateValueable)()
         panic(err)
     }
 }
-// DirectorySettingTemplateable 
 type DirectorySettingTemplateable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type GroupPolicyPresentationValue struct {
     Entity
 }
-// NewGroupPolicyPresentationValue instantiates a new groupPolicyPresentationValue and sets the default values.
+// NewGroupPolicyPresentationValue instantiates a new GroupPolicyPresentationValue and sets the default values.
 func NewGroupPolicyPresentationValue()(*GroupPolicyPresentationValue) {
     m := &GroupPolicyPresentationValue{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewGroupPolicyPresentationValue()(*GroupPolicyPresentationValue) {
     return m
 }
 // CreateGroupPolicyPresentationValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationValueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -49,6 +50,7 @@ func CreateGroupPolicyPresentationValueFromDiscriminatorValue(parseNode i878a80d
     return NewGroupPolicyPresentationValue(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the object was created.
+// returns a *Time when successful
 func (m *GroupPolicyPresentationValue) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -60,6 +62,7 @@ func (m *GroupPolicyPresentationValue) GetCreatedDateTime()(*i336074805fc853987a
     return nil
 }
 // GetDefinitionValue gets the definitionValue property value. The group policy definition value associated with the presentation value.
+// returns a GroupPolicyDefinitionValueable when successful
 func (m *GroupPolicyPresentationValue) GetDefinitionValue()(GroupPolicyDefinitionValueable) {
     val, err := m.GetBackingStore().Get("definitionValue")
     if err != nil {
@@ -71,6 +74,7 @@ func (m *GroupPolicyPresentationValue) GetDefinitionValue()(GroupPolicyDefinitio
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +120,7 @@ func (m *GroupPolicyPresentationValue) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the object was last modified.
+// returns a *Time when successful
 func (m *GroupPolicyPresentationValue) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -127,6 +132,7 @@ func (m *GroupPolicyPresentationValue) GetLastModifiedDateTime()(*i336074805fc85
     return nil
 }
 // GetPresentation gets the presentation property value. The group policy presentation associated with the presentation value.
+// returns a GroupPolicyPresentationable when successful
 func (m *GroupPolicyPresentationValue) GetPresentation()(GroupPolicyPresentationable) {
     val, err := m.GetBackingStore().Get("presentation")
     if err != nil {
@@ -197,7 +203,6 @@ func (m *GroupPolicyPresentationValue) SetPresentation(value GroupPolicyPresenta
         panic(err)
     }
 }
-// GroupPolicyPresentationValueable 
 type GroupPolicyPresentationValueable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

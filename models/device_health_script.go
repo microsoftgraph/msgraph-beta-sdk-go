@@ -9,7 +9,7 @@ import (
 type DeviceHealthScript struct {
     Entity
 }
-// NewDeviceHealthScript instantiates a new deviceHealthScript and sets the default values.
+// NewDeviceHealthScript instantiates a new DeviceHealthScript and sets the default values.
 func NewDeviceHealthScript()(*DeviceHealthScript) {
     m := &DeviceHealthScript{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceHealthScript()(*DeviceHealthScript) {
     return m
 }
 // CreateDeviceHealthScriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceHealthScriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceHealthScript(), nil
 }
 // GetAssignments gets the assignments property value. The list of group assignments for the device health script
+// returns a []DeviceHealthScriptAssignmentable when successful
 func (m *DeviceHealthScript) GetAssignments()([]DeviceHealthScriptAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceHealthScript) GetAssignments()([]DeviceHealthScriptAssignmentable
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The timestamp of when the device health script was created. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceHealthScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceHealthScript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetDescription gets the description property value. Description of the device health script
+// returns a *string when successful
 func (m *DeviceHealthScript) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *DeviceHealthScript) GetDescription()(*string) {
     return nil
 }
 // GetDetectionScriptContent gets the detectionScriptContent property value. The entire content of the detection powershell script
+// returns a []byte when successful
 func (m *DeviceHealthScript) GetDetectionScriptContent()([]byte) {
     val, err := m.GetBackingStore().Get("detectionScriptContent")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *DeviceHealthScript) GetDetectionScriptContent()([]byte) {
     return nil
 }
 // GetDetectionScriptParameters gets the detectionScriptParameters property value. List of ComplexType DetectionScriptParameters objects.
+// returns a []DeviceHealthScriptParameterable when successful
 func (m *DeviceHealthScript) GetDetectionScriptParameters()([]DeviceHealthScriptParameterable) {
     val, err := m.GetBackingStore().Get("detectionScriptParameters")
     if err != nil {
@@ -76,6 +82,7 @@ func (m *DeviceHealthScript) GetDetectionScriptParameters()([]DeviceHealthScript
     return nil
 }
 // GetDeviceHealthScriptType gets the deviceHealthScriptType property value. Indicates the type of device script.
+// returns a *DeviceHealthScriptType when successful
 func (m *DeviceHealthScript) GetDeviceHealthScriptType()(*DeviceHealthScriptType) {
     val, err := m.GetBackingStore().Get("deviceHealthScriptType")
     if err != nil {
@@ -87,6 +94,7 @@ func (m *DeviceHealthScript) GetDeviceHealthScriptType()(*DeviceHealthScriptType
     return nil
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for the device health script across all devices
+// returns a []DeviceHealthScriptDeviceStateable when successful
 func (m *DeviceHealthScript) GetDeviceRunStates()([]DeviceHealthScriptDeviceStateable) {
     val, err := m.GetBackingStore().Get("deviceRunStates")
     if err != nil {
@@ -98,6 +106,7 @@ func (m *DeviceHealthScript) GetDeviceRunStates()([]DeviceHealthScriptDeviceStat
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the device health script
+// returns a *string when successful
 func (m *DeviceHealthScript) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -109,6 +118,7 @@ func (m *DeviceHealthScript) GetDisplayName()(*string) {
     return nil
 }
 // GetEnforceSignatureCheck gets the enforceSignatureCheck property value. Indicate whether the script signature needs be checked
+// returns a *bool when successful
 func (m *DeviceHealthScript) GetEnforceSignatureCheck()(*bool) {
     val, err := m.GetBackingStore().Get("enforceSignatureCheck")
     if err != nil {
@@ -120,6 +130,7 @@ func (m *DeviceHealthScript) GetEnforceSignatureCheck()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -355,6 +366,7 @@ func (m *DeviceHealthScript) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetHighestAvailableVersion gets the highestAvailableVersion property value. Highest available version for a Microsoft Proprietary script
+// returns a *string when successful
 func (m *DeviceHealthScript) GetHighestAvailableVersion()(*string) {
     val, err := m.GetBackingStore().Get("highestAvailableVersion")
     if err != nil {
@@ -366,6 +378,7 @@ func (m *DeviceHealthScript) GetHighestAvailableVersion()(*string) {
     return nil
 }
 // GetIsGlobalScript gets the isGlobalScript property value. Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only
+// returns a *bool when successful
 func (m *DeviceHealthScript) GetIsGlobalScript()(*bool) {
     val, err := m.GetBackingStore().Get("isGlobalScript")
     if err != nil {
@@ -377,6 +390,7 @@ func (m *DeviceHealthScript) GetIsGlobalScript()(*bool) {
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The timestamp of when the device health script was modified. This property is read-only.
+// returns a *Time when successful
 func (m *DeviceHealthScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -388,6 +402,7 @@ func (m *DeviceHealthScript) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetPublisher gets the publisher property value. Name of the device health script publisher
+// returns a *string when successful
 func (m *DeviceHealthScript) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -399,6 +414,7 @@ func (m *DeviceHealthScript) GetPublisher()(*string) {
     return nil
 }
 // GetRemediationScriptContent gets the remediationScriptContent property value. The entire content of the remediation powershell script
+// returns a []byte when successful
 func (m *DeviceHealthScript) GetRemediationScriptContent()([]byte) {
     val, err := m.GetBackingStore().Get("remediationScriptContent")
     if err != nil {
@@ -410,6 +426,7 @@ func (m *DeviceHealthScript) GetRemediationScriptContent()([]byte) {
     return nil
 }
 // GetRemediationScriptParameters gets the remediationScriptParameters property value. List of ComplexType RemediationScriptParameters objects.
+// returns a []DeviceHealthScriptParameterable when successful
 func (m *DeviceHealthScript) GetRemediationScriptParameters()([]DeviceHealthScriptParameterable) {
     val, err := m.GetBackingStore().Get("remediationScriptParameters")
     if err != nil {
@@ -421,6 +438,7 @@ func (m *DeviceHealthScript) GetRemediationScriptParameters()([]DeviceHealthScri
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for the device health script
+// returns a []string when successful
 func (m *DeviceHealthScript) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -432,6 +450,7 @@ func (m *DeviceHealthScript) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetRunAs32Bit gets the runAs32Bit property value. Indicate whether PowerShell script(s) should run as 32-bit
+// returns a *bool when successful
 func (m *DeviceHealthScript) GetRunAs32Bit()(*bool) {
     val, err := m.GetBackingStore().Get("runAs32Bit")
     if err != nil {
@@ -443,6 +462,7 @@ func (m *DeviceHealthScript) GetRunAs32Bit()(*bool) {
     return nil
 }
 // GetRunAsAccount gets the runAsAccount property value. Indicates the type of execution context the app runs in.
+// returns a *RunAsAccountType when successful
 func (m *DeviceHealthScript) GetRunAsAccount()(*RunAsAccountType) {
     val, err := m.GetBackingStore().Get("runAsAccount")
     if err != nil {
@@ -454,6 +474,7 @@ func (m *DeviceHealthScript) GetRunAsAccount()(*RunAsAccountType) {
     return nil
 }
 // GetRunSummary gets the runSummary property value. High level run summary for device health script.
+// returns a DeviceHealthScriptRunSummaryable when successful
 func (m *DeviceHealthScript) GetRunSummary()(DeviceHealthScriptRunSummaryable) {
     val, err := m.GetBackingStore().Get("runSummary")
     if err != nil {
@@ -465,6 +486,7 @@ func (m *DeviceHealthScript) GetRunSummary()(DeviceHealthScriptRunSummaryable) {
     return nil
 }
 // GetVersion gets the version property value. Version of the device health script
+// returns a *string when successful
 func (m *DeviceHealthScript) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -757,7 +779,6 @@ func (m *DeviceHealthScript) SetVersion(value *string)() {
         panic(err)
     }
 }
-// DeviceHealthScriptable 
 type DeviceHealthScriptable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

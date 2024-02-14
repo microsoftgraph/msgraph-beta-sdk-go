@@ -1,23 +1,25 @@
 package security
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type StopAndQuarantineFileEntityIdentifier int
 
 const (
-    DEVICEID_STOPANDQUARANTINEFILEENTITYIDENTIFIER StopAndQuarantineFileEntityIdentifier = iota
-    SHA1_STOPANDQUARANTINEFILEENTITYIDENTIFIER
-    INITIATINGPROCESSSHA1_STOPANDQUARANTINEFILEENTITYIDENTIFIER
-    UNKNOWNFUTUREVALUE_STOPANDQUARANTINEFILEENTITYIDENTIFIER
+    DEVICEID_STOPANDQUARANTINEFILEENTITYIDENTIFIER = 1
+    SHA1_STOPANDQUARANTINEFILEENTITYIDENTIFIER = 2
+    INITIATINGPROCESSSHA1_STOPANDQUARANTINEFILEENTITYIDENTIFIER = 4
+    UNKNOWNFUTUREVALUE_STOPANDQUARANTINEFILEENTITYIDENTIFIER = 8
 )
 
 func (i StopAndQuarantineFileEntityIdentifier) String() string {
     var values []string
-    for p := StopAndQuarantineFileEntityIdentifier(1); p <= UNKNOWNFUTUREVALUE_STOPANDQUARANTINEFILEENTITYIDENTIFIER; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"deviceId", "sha1", "initiatingProcessSHA1", "unknownFutureValue"}[p])
+    options := []string{"deviceId", "sha1", "initiatingProcessSHA1", "unknownFutureValue"}
+    for p := 0; p < 4; p++ {
+        mantis := StopAndQuarantineFileEntityIdentifier(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

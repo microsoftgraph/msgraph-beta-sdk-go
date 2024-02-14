@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SecurityActionCollectionResponse 
 type SecurityActionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewSecurityActionCollectionResponse instantiates a new securityActionCollectionResponse and sets the default values.
+// NewSecurityActionCollectionResponse instantiates a new SecurityActionCollectionResponse and sets the default values.
 func NewSecurityActionCollectionResponse()(*SecurityActionCollectionResponse) {
     m := &SecurityActionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewSecurityActionCollectionResponse()(*SecurityActionCollectionResponse) {
     return m
 }
 // CreateSecurityActionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecurityActionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurityActionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecurityActionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *SecurityActionCollectionResponse) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []SecurityActionable when successful
 func (m *SecurityActionCollectionResponse) GetValue()([]SecurityActionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *SecurityActionCollectionResponse) SetValue(value []SecurityActionable)(
         panic(err)
     }
 }
-// SecurityActionCollectionResponseable 
 type SecurityActionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

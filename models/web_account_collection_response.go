@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WebAccountCollectionResponse 
 type WebAccountCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewWebAccountCollectionResponse instantiates a new webAccountCollectionResponse and sets the default values.
+// NewWebAccountCollectionResponse instantiates a new WebAccountCollectionResponse and sets the default values.
 func NewWebAccountCollectionResponse()(*WebAccountCollectionResponse) {
     m := &WebAccountCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewWebAccountCollectionResponse()(*WebAccountCollectionResponse) {
     return m
 }
 // CreateWebAccountCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebAccountCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebAccountCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WebAccountCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *WebAccountCollectionResponse) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []WebAccountable when successful
 func (m *WebAccountCollectionResponse) GetValue()([]WebAccountable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *WebAccountCollectionResponse) SetValue(value []WebAccountable)() {
         panic(err)
     }
 }
-// WebAccountCollectionResponseable 
 type WebAccountCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

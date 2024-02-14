@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GoalsExportJob 
 type GoalsExportJob struct {
     LongRunningOperation
 }
-// NewGoalsExportJob instantiates a new goalsExportJob and sets the default values.
+// NewGoalsExportJob instantiates a new GoalsExportJob and sets the default values.
 func NewGoalsExportJob()(*GoalsExportJob) {
     m := &GoalsExportJob{
         LongRunningOperation: *NewLongRunningOperation(),
@@ -17,10 +16,12 @@ func NewGoalsExportJob()(*GoalsExportJob) {
     return m
 }
 // CreateGoalsExportJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGoalsExportJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGoalsExportJob(), nil
 }
 // GetContent gets the content property value. The content of the goalsExportJob.
+// returns a []byte when successful
 func (m *GoalsExportJob) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *GoalsExportJob) GetContent()([]byte) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The date and time of expiry of the result of the operation.
+// returns a *Time when successful
 func (m *GoalsExportJob) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *GoalsExportJob) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetExplorerViewId gets the explorerViewId property value. The unique identifier of the explorer view to be exported.
+// returns a *string when successful
 func (m *GoalsExportJob) GetExplorerViewId()(*string) {
     val, err := m.GetBackingStore().Get("explorerViewId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *GoalsExportJob) GetExplorerViewId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GoalsExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.LongRunningOperation.GetFieldDeserializers()
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,6 +103,7 @@ func (m *GoalsExportJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetGoalsOrganizationId gets the goalsOrganizationId property value. The unique identifier of the viva goals organization.
+// returns a *string when successful
 func (m *GoalsExportJob) GetGoalsOrganizationId()(*string) {
     val, err := m.GetBackingStore().Get("goalsOrganizationId")
     if err != nil {
@@ -169,7 +174,6 @@ func (m *GoalsExportJob) SetGoalsOrganizationId(value *string)() {
         panic(err)
     }
 }
-// GoalsExportJobable 
 type GoalsExportJobable interface {
     LongRunningOperationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationError 
 type EducationSynchronizationError struct {
     Entity
 }
-// NewEducationSynchronizationError instantiates a new educationSynchronizationError and sets the default values.
+// NewEducationSynchronizationError instantiates a new EducationSynchronizationError and sets the default values.
 func NewEducationSynchronizationError()(*EducationSynchronizationError) {
     m := &EducationSynchronizationError{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewEducationSynchronizationError()(*EducationSynchronizationError) {
     return m
 }
 // CreateEducationSynchronizationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationSynchronizationErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSynchronizationError(), nil
 }
 // GetEntryType gets the entryType property value. Represents the sync entity (school, section, student, teacher).
+// returns a *string when successful
 func (m *EducationSynchronizationError) GetEntryType()(*string) {
     val, err := m.GetBackingStore().Get("entryType")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *EducationSynchronizationError) GetEntryType()(*string) {
     return nil
 }
 // GetErrorCode gets the errorCode property value. Represents the error code for this error.
+// returns a *string when successful
 func (m *EducationSynchronizationError) GetErrorCode()(*string) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *EducationSynchronizationError) GetErrorCode()(*string) {
     return nil
 }
 // GetErrorMessage gets the errorMessage property value. Contains a description of the error.
+// returns a *string when successful
 func (m *EducationSynchronizationError) GetErrorMessage()(*string) {
     val, err := m.GetBackingStore().Get("errorMessage")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *EducationSynchronizationError) GetErrorMessage()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["entryType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +123,7 @@ func (m *EducationSynchronizationError) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetJoiningValue gets the joiningValue property value. The unique identifier for the entry.
+// returns a *string when successful
 func (m *EducationSynchronizationError) GetJoiningValue()(*string) {
     val, err := m.GetBackingStore().Get("joiningValue")
     if err != nil {
@@ -130,6 +135,7 @@ func (m *EducationSynchronizationError) GetJoiningValue()(*string) {
     return nil
 }
 // GetRecordedDateTime gets the recordedDateTime property value. The time of occurrence of this error.
+// returns a *Time when successful
 func (m *EducationSynchronizationError) GetRecordedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("recordedDateTime")
     if err != nil {
@@ -141,6 +147,7 @@ func (m *EducationSynchronizationError) GetRecordedDateTime()(*i336074805fc85398
     return nil
 }
 // GetReportableIdentifier gets the reportableIdentifier property value. The identifier of this error entry.
+// returns a *string when successful
 func (m *EducationSynchronizationError) GetReportableIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("reportableIdentifier")
     if err != nil {
@@ -237,7 +244,6 @@ func (m *EducationSynchronizationError) SetReportableIdentifier(value *string)()
         panic(err)
     }
 }
-// EducationSynchronizationErrorable 
 type EducationSynchronizationErrorable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

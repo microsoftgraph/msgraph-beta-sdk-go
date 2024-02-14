@@ -47,6 +47,7 @@ type BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderPos
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByPlannerPlanConfigurationLocalizationId provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.
+// returns a *BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) ByPlannerPlanConfigurationLocalizationId(plannerPlanConfigurationLocalizationId string)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
     }
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsPlannerPlanConfigurationLocalizationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal instantiates a new LocalizationsRequestBuilder and sets the default values.
+// NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal instantiates a new BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder and sets the default values.
 func NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) {
     m := &BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration/localizations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration/localizations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder instantiates a new LocalizationsRequestBuilder and sets the default values.
+// NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder instantiates a new BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder and sets the default values.
 func NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *BusinessScenariosItemPlannerPlanConfigurationLocalizationsCountRequestBuilder when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) Count()(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsCountRequestBuilder) {
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the plannerPlanConfigurationLocalization objects and their properties.
+// returns a PlannerPlanConfigurationLocalizationCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerPlanConfigurationLocalizationCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,6 +100,8 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationCollectionResponseable), nil
 }
 // Post create a new plannerPlanConfigurationLocalization object.
+// returns a PlannerPlanConfigurationLocalizationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-1.0
@@ -106,8 +111,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePlannerPlanConfigurationLocalizationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -119,6 +123,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable), nil
 }
 // ToGetRequestInformation get a list of the plannerPlanConfigurationLocalization objects and their properties.
+// returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -132,8 +137,9 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new plannerPlanConfigurationLocalization object.
+// returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationLocalizationable, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration/localizations", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -146,6 +152,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) WithUrl(rawUrl string)(*BusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder) {
     return NewBusinessScenariosItemPlannerPlanConfigurationLocalizationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

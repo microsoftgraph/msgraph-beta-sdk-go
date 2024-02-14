@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemAddress 
 type ItemAddress struct {
     ItemFacet
 }
-// NewItemAddress instantiates a new itemAddress and sets the default values.
+// NewItemAddress instantiates a new ItemAddress and sets the default values.
 func NewItemAddress()(*ItemAddress) {
     m := &ItemAddress{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewItemAddress()(*ItemAddress) {
     return m
 }
 // CreateItemAddressFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemAddressFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemAddress(), nil
 }
 // GetDetail gets the detail property value. The detail property
+// returns a PhysicalAddressable when successful
 func (m *ItemAddress) GetDetail()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ItemAddress) GetDetail()(PhysicalAddressable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Friendly name the user has assigned to this address.
+// returns a *string when successful
 func (m *ItemAddress) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ItemAddress) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +82,7 @@ func (m *ItemAddress) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetGeoCoordinates gets the geoCoordinates property value. The geocoordinates of the address.
+// returns a GeoCoordinatesable when successful
 func (m *ItemAddress) GetGeoCoordinates()(GeoCoordinatesable) {
     val, err := m.GetBackingStore().Get("geoCoordinates")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *ItemAddress) SetGeoCoordinates(value GeoCoordinatesable)() {
         panic(err)
     }
 }
-// ItemAddressable 
 type ItemAddressable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

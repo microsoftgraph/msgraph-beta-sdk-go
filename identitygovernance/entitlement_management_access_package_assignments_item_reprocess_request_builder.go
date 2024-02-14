@@ -17,28 +17,28 @@ type EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilderPos
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilderInternal instantiates a new ReprocessRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilderInternal instantiates a new EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder) {
     m := &EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/reprocess", pathParameters),
     }
     return m
 }
-// NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder instantiates a new ReprocessRequestBuilder and sets the default values.
+// NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder instantiates a new EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action reprocess
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder) Post(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilde
     return nil
 }
 // ToPostRequestInformation invoke action reprocess
+// returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -57,6 +58,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

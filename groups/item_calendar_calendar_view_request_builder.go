@@ -40,6 +40,7 @@ type ItemCalendarCalendarViewRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemCalendarCalendarViewRequestBuilderGetQueryParameters
 }
 // ByEventId provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
+// returns a *ItemCalendarCalendarViewEventItemRequestBuilder when successful
 func (m *ItemCalendarCalendarViewRequestBuilder) ByEventId(eventId string)(*ItemCalendarCalendarViewEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,28 +51,32 @@ func (m *ItemCalendarCalendarViewRequestBuilder) ByEventId(eventId string)(*Item
     }
     return NewItemCalendarCalendarViewEventItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemCalendarCalendarViewRequestBuilderInternal instantiates a new CalendarViewRequestBuilder and sets the default values.
+// NewItemCalendarCalendarViewRequestBuilderInternal instantiates a new ItemCalendarCalendarViewRequestBuilder and sets the default values.
 func NewItemCalendarCalendarViewRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarCalendarViewRequestBuilder) {
     m := &ItemCalendarCalendarViewRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendar/calendarView{?startDateTime*,endDateTime*,%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendar/calendarView?endDateTime={endDateTime}&startDateTime={startDateTime}{&%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemCalendarCalendarViewRequestBuilder instantiates a new CalendarViewRequestBuilder and sets the default values.
+// NewItemCalendarCalendarViewRequestBuilder instantiates a new ItemCalendarCalendarViewRequestBuilder and sets the default values.
 func NewItemCalendarCalendarViewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarCalendarViewRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCalendarCalendarViewRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ItemCalendarCalendarViewCountRequestBuilder when successful
 func (m *ItemCalendarCalendarViewRequestBuilder) Count()(*ItemCalendarCalendarViewCountRequestBuilder) {
     return NewItemCalendarCalendarViewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delta provides operations to call the delta method.
+// returns a *ItemCalendarCalendarViewDeltaRequestBuilder when successful
 func (m *ItemCalendarCalendarViewRequestBuilder) Delta()(*ItemCalendarCalendarViewDeltaRequestBuilder) {
     return NewItemCalendarCalendarViewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the calendar view for the calendar. Navigation property. Read-only.
+// returns a EventCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0
@@ -81,8 +86,7 @@ func (m *ItemCalendarCalendarViewRequestBuilder) Get(ctx context.Context, reques
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEventCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,6 +98,7 @@ func (m *ItemCalendarCalendarViewRequestBuilder) Get(ctx context.Context, reques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable), nil
 }
 // ToGetRequestInformation the calendar view for the calendar. Navigation property. Read-only.
+// returns a *RequestInformation when successful
 func (m *ItemCalendarCalendarViewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -107,6 +112,7 @@ func (m *ItemCalendarCalendarViewRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCalendarCalendarViewRequestBuilder when successful
 func (m *ItemCalendarCalendarViewRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarCalendarViewRequestBuilder) {
     return NewItemCalendarCalendarViewRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

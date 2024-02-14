@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ForwardingPolicy 
 type ForwardingPolicy struct {
     Policy
 }
-// NewForwardingPolicy instantiates a new forwardingPolicy and sets the default values.
+// NewForwardingPolicy instantiates a new ForwardingPolicy and sets the default values.
 func NewForwardingPolicy()(*ForwardingPolicy) {
     m := &ForwardingPolicy{
         Policy: *NewPolicy(),
@@ -18,10 +17,12 @@ func NewForwardingPolicy()(*ForwardingPolicy) {
     return m
 }
 // CreateForwardingPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateForwardingPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewForwardingPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ForwardingPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Policy.GetFieldDeserializers()
     res["trafficForwardingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *ForwardingPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetTrafficForwardingType gets the trafficForwardingType property value. The trafficForwardingType property
+// returns a *TrafficForwardingType when successful
 func (m *ForwardingPolicy) GetTrafficForwardingType()(*TrafficForwardingType) {
     val, err := m.GetBackingStore().Get("trafficForwardingType")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *ForwardingPolicy) SetTrafficForwardingType(value *TrafficForwardingType
         panic(err)
     }
 }
-// ForwardingPolicyable 
 type ForwardingPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Policyable

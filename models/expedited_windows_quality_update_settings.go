@@ -10,7 +10,7 @@ type ExpeditedWindowsQualityUpdateSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewExpeditedWindowsQualityUpdateSettings instantiates a new expeditedWindowsQualityUpdateSettings and sets the default values.
+// NewExpeditedWindowsQualityUpdateSettings instantiates a new ExpeditedWindowsQualityUpdateSettings and sets the default values.
 func NewExpeditedWindowsQualityUpdateSettings()(*ExpeditedWindowsQualityUpdateSettings) {
     m := &ExpeditedWindowsQualityUpdateSettings{
     }
@@ -19,10 +19,12 @@ func NewExpeditedWindowsQualityUpdateSettings()(*ExpeditedWindowsQualityUpdateSe
     return m
 }
 // CreateExpeditedWindowsQualityUpdateSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExpeditedWindowsQualityUpdateSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExpeditedWindowsQualityUpdateSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ExpeditedWindowsQualityUpdateSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetAdditionalData()(map[string]a
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ExpeditedWindowsQualityUpdateSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDaysUntilForcedReboot gets the daysUntilForcedReboot property value. The number of days after installation that forced reboot will happen.
+// returns a *int32 when successful
 func (m *ExpeditedWindowsQualityUpdateSettings) GetDaysUntilForcedReboot()(*int32) {
     val, err := m.GetBackingStore().Get("daysUntilForcedReboot")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetDaysUntilForcedReboot()(*int3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExpeditedWindowsQualityUpdateSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["daysUntilForcedReboot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +90,7 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetFieldDeserializers()(map[stri
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ExpeditedWindowsQualityUpdateSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +102,7 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetOdataType()(*string) {
     return nil
 }
 // GetQualityUpdateRelease gets the qualityUpdateRelease property value. The release date to identify a quality update.
+// returns a *string when successful
 func (m *ExpeditedWindowsQualityUpdateSettings) GetQualityUpdateRelease()(*string) {
     val, err := m.GetBackingStore().Get("qualityUpdateRelease")
     if err != nil {
@@ -166,7 +173,6 @@ func (m *ExpeditedWindowsQualityUpdateSettings) SetQualityUpdateRelease(value *s
         panic(err)
     }
 }
-// ExpeditedWindowsQualityUpdateSettingsable 
 type ExpeditedWindowsQualityUpdateSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

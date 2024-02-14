@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory struct {
     Entity
 }
-// NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory instantiates a new userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory instantiates a new UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()(*UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) {
     m := &UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory()(*UserExperien
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory(), nil
 }
 // GetDeviceId gets the deviceId property value. The unique identifier of the device, Intune DeviceID or SCCM device id.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetDeviceId()
     return nil
 }
 // GetEstimatedRuntimeInMinutes gets the estimatedRuntimeInMinutes property value. The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetEstimatedRuntimeInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("estimatedRuntimeInMinutes")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetEstimatedR
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +81,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetFieldDeser
     return res
 }
 // GetRuntimeDateTime gets the runtimeDateTime property value. The datetime for the instance of runtime history.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) GetRuntimeDateTime()(*string) {
     val, err := m.GetBackingStore().Get("runtimeDateTime")
     if err != nil {
@@ -134,7 +139,6 @@ func (m *UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory) SetRuntimeDat
         panic(err)
     }
 }
-// UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable 
 type UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

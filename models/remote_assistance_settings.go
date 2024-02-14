@@ -8,7 +8,7 @@ import (
 type RemoteAssistanceSettings struct {
     Entity
 }
-// NewRemoteAssistanceSettings instantiates a new remoteAssistanceSettings and sets the default values.
+// NewRemoteAssistanceSettings instantiates a new RemoteAssistanceSettings and sets the default values.
 func NewRemoteAssistanceSettings()(*RemoteAssistanceSettings) {
     m := &RemoteAssistanceSettings{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewRemoteAssistanceSettings()(*RemoteAssistanceSettings) {
     return m
 }
 // CreateRemoteAssistanceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRemoteAssistanceSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteAssistanceSettings(), nil
 }
 // GetAllowSessionsToUnenrolledDevices gets the allowSessionsToUnenrolledDevices property value. Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
+// returns a *bool when successful
 func (m *RemoteAssistanceSettings) GetAllowSessionsToUnenrolledDevices()(*bool) {
     val, err := m.GetBackingStore().Get("allowSessionsToUnenrolledDevices")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *RemoteAssistanceSettings) GetAllowSessionsToUnenrolledDevices()(*bool) 
     return nil
 }
 // GetBlockChat gets the blockChat property value. Indicates if sessions to block chat function. This setting is configurable by the admin. Default value is false.
+// returns a *bool when successful
 func (m *RemoteAssistanceSettings) GetBlockChat()(*bool) {
     val, err := m.GetBackingStore().Get("blockChat")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *RemoteAssistanceSettings) GetBlockChat()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["allowSessionsToUnenrolledDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +81,7 @@ func (m *RemoteAssistanceSettings) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetRemoteAssistanceState gets the remoteAssistanceState property value. State of remote assistance for the account
+// returns a *RemoteAssistanceState when successful
 func (m *RemoteAssistanceSettings) GetRemoteAssistanceState()(*RemoteAssistanceState) {
     val, err := m.GetBackingStore().Get("remoteAssistanceState")
     if err != nil {
@@ -135,7 +140,6 @@ func (m *RemoteAssistanceSettings) SetRemoteAssistanceState(value *RemoteAssista
         panic(err)
     }
 }
-// RemoteAssistanceSettingsable 
 type RemoteAssistanceSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

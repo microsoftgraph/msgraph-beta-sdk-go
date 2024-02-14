@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcAuditEventCollectionResponse 
 type CloudPcAuditEventCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcAuditEventCollectionResponse instantiates a new cloudPcAuditEventCollectionResponse and sets the default values.
+// NewCloudPcAuditEventCollectionResponse instantiates a new CloudPcAuditEventCollectionResponse and sets the default values.
 func NewCloudPcAuditEventCollectionResponse()(*CloudPcAuditEventCollectionResponse) {
     m := &CloudPcAuditEventCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCloudPcAuditEventCollectionResponse()(*CloudPcAuditEventCollectionRespon
     return m
 }
 // CreateCloudPcAuditEventCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcAuditEventCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcAuditEventCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcAuditEventCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CloudPcAuditEventCollectionResponse) GetFieldDeserializers()(map[string
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []CloudPcAuditEventable when successful
 func (m *CloudPcAuditEventCollectionResponse) GetValue()([]CloudPcAuditEventable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CloudPcAuditEventCollectionResponse) SetValue(value []CloudPcAuditEvent
         panic(err)
     }
 }
-// CloudPcAuditEventCollectionResponseable 
 type CloudPcAuditEventCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -10,7 +10,7 @@ type ApplicationDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewApplicationDetail instantiates a new applicationDetail and sets the default values.
+// NewApplicationDetail instantiates a new ApplicationDetail and sets the default values.
 func NewApplicationDetail()(*ApplicationDetail) {
     m := &ApplicationDetail{
     }
@@ -19,10 +19,12 @@ func NewApplicationDetail()(*ApplicationDetail) {
     return m
 }
 // CreateApplicationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApplicationDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplicationDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ApplicationDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *ApplicationDetail) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ApplicationDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApplicationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fileDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -121,6 +125,16 @@ func (m *ApplicationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["publisherCert"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPublisherCert(val)
+        }
+        return nil
+    }
     res["publisherName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -134,6 +148,7 @@ func (m *ApplicationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFileDescription gets the fileDescription property value. The path of the file in the request for elevation, for example, %programfiles%\git\cmd
+// returns a *string when successful
 func (m *ApplicationDetail) GetFileDescription()(*string) {
     val, err := m.GetBackingStore().Get("fileDescription")
     if err != nil {
@@ -145,6 +160,7 @@ func (m *ApplicationDetail) GetFileDescription()(*string) {
     return nil
 }
 // GetFileHash gets the fileHash property value. The SHA256 hash of the file in the request for elevation, for example, '18ee24150dcb1d96752a4d6dd0f20dfd8ba8c38527e40aa8509b7adecf78f9c6'
+// returns a *string when successful
 func (m *ApplicationDetail) GetFileHash()(*string) {
     val, err := m.GetBackingStore().Get("fileHash")
     if err != nil {
@@ -156,6 +172,7 @@ func (m *ApplicationDetail) GetFileHash()(*string) {
     return nil
 }
 // GetFileName gets the fileName property value. The name of the file in the request for elevation, for example, git.exe
+// returns a *string when successful
 func (m *ApplicationDetail) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -167,6 +184,7 @@ func (m *ApplicationDetail) GetFileName()(*string) {
     return nil
 }
 // GetFilePath gets the filePath property value. The path of the file in the request for elevation, for example, %programfiles%\git\cmd
+// returns a *string when successful
 func (m *ApplicationDetail) GetFilePath()(*string) {
     val, err := m.GetBackingStore().Get("filePath")
     if err != nil {
@@ -178,6 +196,7 @@ func (m *ApplicationDetail) GetFilePath()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ApplicationDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -189,6 +208,7 @@ func (m *ApplicationDetail) GetOdataType()(*string) {
     return nil
 }
 // GetProductInternalName gets the productInternalName property value. The internal name of the application for which elevation request has been made. For example, 'git'
+// returns a *string when successful
 func (m *ApplicationDetail) GetProductInternalName()(*string) {
     val, err := m.GetBackingStore().Get("productInternalName")
     if err != nil {
@@ -200,6 +220,7 @@ func (m *ApplicationDetail) GetProductInternalName()(*string) {
     return nil
 }
 // GetProductName gets the productName property value. The product name of the application for which elevation request has been made. For example, 'Git'
+// returns a *string when successful
 func (m *ApplicationDetail) GetProductName()(*string) {
     val, err := m.GetBackingStore().Get("productName")
     if err != nil {
@@ -211,6 +232,7 @@ func (m *ApplicationDetail) GetProductName()(*string) {
     return nil
 }
 // GetProductVersion gets the productVersion property value. The product version of the application for which elevation request has been made. For example, '2.40.1.0'
+// returns a *string when successful
 func (m *ApplicationDetail) GetProductVersion()(*string) {
     val, err := m.GetBackingStore().Get("productVersion")
     if err != nil {
@@ -221,7 +243,20 @@ func (m *ApplicationDetail) GetProductVersion()(*string) {
     }
     return nil
 }
+// GetPublisherCert gets the publisherCert property value. The list of base64 encoded certificate for each signer, for example, string[encoded_leaf_cert1, encoded_leaf_cert2....]
+// returns a *string when successful
+func (m *ApplicationDetail) GetPublisherCert()(*string) {
+    val, err := m.GetBackingStore().Get("publisherCert")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPublisherName gets the publisherName property value. The certificate issuer name of the certificate used to sign the application, for example, 'Sectigo Public Code Signing CA R36'
+// returns a *string when successful
 func (m *ApplicationDetail) GetPublisherName()(*string) {
     val, err := m.GetBackingStore().Get("publisherName")
     if err != nil {
@@ -278,6 +313,12 @@ func (m *ApplicationDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("productVersion", m.GetProductVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("publisherCert", m.GetPublisherCert())
         if err != nil {
             return err
         }
@@ -363,6 +404,13 @@ func (m *ApplicationDetail) SetProductVersion(value *string)() {
         panic(err)
     }
 }
+// SetPublisherCert sets the publisherCert property value. The list of base64 encoded certificate for each signer, for example, string[encoded_leaf_cert1, encoded_leaf_cert2....]
+func (m *ApplicationDetail) SetPublisherCert(value *string)() {
+    err := m.GetBackingStore().Set("publisherCert", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPublisherName sets the publisherName property value. The certificate issuer name of the certificate used to sign the application, for example, 'Sectigo Public Code Signing CA R36'
 func (m *ApplicationDetail) SetPublisherName(value *string)() {
     err := m.GetBackingStore().Set("publisherName", value)
@@ -370,7 +418,6 @@ func (m *ApplicationDetail) SetPublisherName(value *string)() {
         panic(err)
     }
 }
-// ApplicationDetailable 
 type ApplicationDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -384,6 +431,7 @@ type ApplicationDetailable interface {
     GetProductInternalName()(*string)
     GetProductName()(*string)
     GetProductVersion()(*string)
+    GetPublisherCert()(*string)
     GetPublisherName()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetFileDescription(value *string)()
@@ -394,5 +442,6 @@ type ApplicationDetailable interface {
     SetProductInternalName(value *string)()
     SetProductName(value *string)()
     SetProductVersion(value *string)()
+    SetPublisherCert(value *string)()
     SetPublisherName(value *string)()
 }

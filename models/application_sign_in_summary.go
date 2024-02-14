@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApplicationSignInSummary 
 type ApplicationSignInSummary struct {
     Entity
 }
-// NewApplicationSignInSummary instantiates a new applicationSignInSummary and sets the default values.
+// NewApplicationSignInSummary instantiates a new ApplicationSignInSummary and sets the default values.
 func NewApplicationSignInSummary()(*ApplicationSignInSummary) {
     m := &ApplicationSignInSummary{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewApplicationSignInSummary()(*ApplicationSignInSummary) {
     return m
 }
 // CreateApplicationSignInSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApplicationSignInSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplicationSignInSummary(), nil
 }
 // GetAppDisplayName gets the appDisplayName property value. Name of the application that the user signed into.
+// returns a *string when successful
 func (m *ApplicationSignInSummary) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ApplicationSignInSummary) GetAppDisplayName()(*string) {
     return nil
 }
 // GetFailedSignInCount gets the failedSignInCount property value. Count of failed sign-ins made by the application.
+// returns a *int64 when successful
 func (m *ApplicationSignInSummary) GetFailedSignInCount()(*int64) {
     val, err := m.GetBackingStore().Get("failedSignInCount")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ApplicationSignInSummary) GetFailedSignInCount()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +90,7 @@ func (m *ApplicationSignInSummary) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetSuccessfulSignInCount gets the successfulSignInCount property value. Count of successful sign-ins made by the application.
+// returns a *int64 when successful
 func (m *ApplicationSignInSummary) GetSuccessfulSignInCount()(*int64) {
     val, err := m.GetBackingStore().Get("successfulSignInCount")
     if err != nil {
@@ -98,6 +102,7 @@ func (m *ApplicationSignInSummary) GetSuccessfulSignInCount()(*int64) {
     return nil
 }
 // GetSuccessPercentage gets the successPercentage property value. Percentage of successful sign-ins made by the application.
+// returns a *float64 when successful
 func (m *ApplicationSignInSummary) GetSuccessPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("successPercentage")
     if err != nil {
@@ -168,7 +173,6 @@ func (m *ApplicationSignInSummary) SetSuccessPercentage(value *float64)() {
         panic(err)
     }
 }
-// ApplicationSignInSummaryable 
 type ApplicationSignInSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

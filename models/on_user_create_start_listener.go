@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnUserCreateStartListener 
 type OnUserCreateStartListener struct {
     AuthenticationEventListener
 }
-// NewOnUserCreateStartListener instantiates a new onUserCreateStartListener and sets the default values.
+// NewOnUserCreateStartListener instantiates a new OnUserCreateStartListener and sets the default values.
 func NewOnUserCreateStartListener()(*OnUserCreateStartListener) {
     m := &OnUserCreateStartListener{
         AuthenticationEventListener: *NewAuthenticationEventListener(),
@@ -18,10 +17,12 @@ func NewOnUserCreateStartListener()(*OnUserCreateStartListener) {
     return m
 }
 // CreateOnUserCreateStartListenerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnUserCreateStartListenerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnUserCreateStartListener(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnUserCreateStartListener) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationEventListener.GetFieldDeserializers()
     res["handler"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *OnUserCreateStartListener) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetHandler gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+// returns a OnUserCreateStartHandlerable when successful
 func (m *OnUserCreateStartListener) GetHandler()(OnUserCreateStartHandlerable) {
     val, err := m.GetBackingStore().Get("handler")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *OnUserCreateStartListener) SetHandler(value OnUserCreateStartHandlerabl
         panic(err)
     }
 }
-// OnUserCreateStartListenerable 
 type OnUserCreateStartListenerable interface {
     AuthenticationEventListenerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

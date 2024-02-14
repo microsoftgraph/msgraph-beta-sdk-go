@@ -8,7 +8,7 @@ import (
 type IosSingleSignOnExtension struct {
     SingleSignOnExtension
 }
-// NewIosSingleSignOnExtension instantiates a new iosSingleSignOnExtension and sets the default values.
+// NewIosSingleSignOnExtension instantiates a new IosSingleSignOnExtension and sets the default values.
 func NewIosSingleSignOnExtension()(*IosSingleSignOnExtension) {
     m := &IosSingleSignOnExtension{
         SingleSignOnExtension: *NewSingleSignOnExtension(),
@@ -18,6 +18,7 @@ func NewIosSingleSignOnExtension()(*IosSingleSignOnExtension) {
     return m
 }
 // CreateIosSingleSignOnExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -46,6 +47,7 @@ func CreateIosSingleSignOnExtensionFromDiscriminatorValue(parseNode i878a80d2330
     return NewIosSingleSignOnExtension(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosSingleSignOnExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.SingleSignOnExtension.GetFieldDeserializers()
     return res
@@ -58,7 +60,6 @@ func (m *IosSingleSignOnExtension) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// IosSingleSignOnExtensionable 
 type IosSingleSignOnExtensionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SingleSignOnExtensionable

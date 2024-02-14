@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RecycleBinItemCollectionResponse 
 type RecycleBinItemCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewRecycleBinItemCollectionResponse instantiates a new recycleBinItemCollectionResponse and sets the default values.
+// NewRecycleBinItemCollectionResponse instantiates a new RecycleBinItemCollectionResponse and sets the default values.
 func NewRecycleBinItemCollectionResponse()(*RecycleBinItemCollectionResponse) {
     m := &RecycleBinItemCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewRecycleBinItemCollectionResponse()(*RecycleBinItemCollectionResponse) {
     return m
 }
 // CreateRecycleBinItemCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRecycleBinItemCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRecycleBinItemCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RecycleBinItemCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *RecycleBinItemCollectionResponse) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []RecycleBinItemable when successful
 func (m *RecycleBinItemCollectionResponse) GetValue()([]RecycleBinItemable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *RecycleBinItemCollectionResponse) SetValue(value []RecycleBinItemable)(
         panic(err)
     }
 }
-// RecycleBinItemCollectionResponseable 
 type RecycleBinItemCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

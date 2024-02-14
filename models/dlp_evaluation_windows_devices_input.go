@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DlpEvaluationWindowsDevicesInput 
 type DlpEvaluationWindowsDevicesInput struct {
     DlpEvaluationInput
 }
-// NewDlpEvaluationWindowsDevicesInput instantiates a new dlpEvaluationWindowsDevicesInput and sets the default values.
+// NewDlpEvaluationWindowsDevicesInput instantiates a new DlpEvaluationWindowsDevicesInput and sets the default values.
 func NewDlpEvaluationWindowsDevicesInput()(*DlpEvaluationWindowsDevicesInput) {
     m := &DlpEvaluationWindowsDevicesInput{
         DlpEvaluationInput: *NewDlpEvaluationInput(),
@@ -18,10 +17,12 @@ func NewDlpEvaluationWindowsDevicesInput()(*DlpEvaluationWindowsDevicesInput) {
     return m
 }
 // CreateDlpEvaluationWindowsDevicesInputFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDlpEvaluationWindowsDevicesInputFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDlpEvaluationWindowsDevicesInput(), nil
 }
 // GetContentProperties gets the contentProperties property value. The contentProperties property
+// returns a ContentPropertiesable when successful
 func (m *DlpEvaluationWindowsDevicesInput) GetContentProperties()(ContentPropertiesable) {
     val, err := m.GetBackingStore().Get("contentProperties")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *DlpEvaluationWindowsDevicesInput) GetContentProperties()(ContentPropert
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DlpEvaluationWindowsDevicesInput) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DlpEvaluationInput.GetFieldDeserializers()
     res["contentProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +60,7 @@ func (m *DlpEvaluationWindowsDevicesInput) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetSharedBy gets the sharedBy property value. The sharedBy property
+// returns a *string when successful
 func (m *DlpEvaluationWindowsDevicesInput) GetSharedBy()(*string) {
     val, err := m.GetBackingStore().Get("sharedBy")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *DlpEvaluationWindowsDevicesInput) SetSharedBy(value *string)() {
         panic(err)
     }
 }
-// DlpEvaluationWindowsDevicesInputable 
 type DlpEvaluationWindowsDevicesInputable interface {
     DlpEvaluationInputable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

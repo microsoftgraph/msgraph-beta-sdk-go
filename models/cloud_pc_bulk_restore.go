@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcBulkRestore 
 type CloudPcBulkRestore struct {
     CloudPcBulkAction
 }
-// NewCloudPcBulkRestore instantiates a new cloudPcBulkRestore and sets the default values.
+// NewCloudPcBulkRestore instantiates a new CloudPcBulkRestore and sets the default values.
 func NewCloudPcBulkRestore()(*CloudPcBulkRestore) {
     m := &CloudPcBulkRestore{
         CloudPcBulkAction: *NewCloudPcBulkAction(),
@@ -19,10 +18,12 @@ func NewCloudPcBulkRestore()(*CloudPcBulkRestore) {
     return m
 }
 // CreateCloudPcBulkRestoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcBulkRestoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcBulkRestore(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcBulkRestore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CloudPcBulkAction.GetFieldDeserializers()
     res["restorePointDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -48,6 +49,7 @@ func (m *CloudPcBulkRestore) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetRestorePointDateTime gets the restorePointDateTime property value. The restorePointDateTime property
+// returns a *Time when successful
 func (m *CloudPcBulkRestore) GetRestorePointDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restorePointDateTime")
     if err != nil {
@@ -59,6 +61,7 @@ func (m *CloudPcBulkRestore) GetRestorePointDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetTimeRange gets the timeRange property value. The timeRange property
+// returns a *RestoreTimeRange when successful
 func (m *CloudPcBulkRestore) GetTimeRange()(*RestoreTimeRange) {
     val, err := m.GetBackingStore().Get("timeRange")
     if err != nil {
@@ -104,7 +107,6 @@ func (m *CloudPcBulkRestore) SetTimeRange(value *RestoreTimeRange)() {
         panic(err)
     }
 }
-// CloudPcBulkRestoreable 
 type CloudPcBulkRestoreable interface {
     CloudPcBulkActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

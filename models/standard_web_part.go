@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// StandardWebPart 
 type StandardWebPart struct {
     WebPart
 }
-// NewStandardWebPart instantiates a new standardWebPart and sets the default values.
+// NewStandardWebPart instantiates a new StandardWebPart and sets the default values.
 func NewStandardWebPart()(*StandardWebPart) {
     m := &StandardWebPart{
         WebPart: *NewWebPart(),
@@ -18,10 +17,12 @@ func NewStandardWebPart()(*StandardWebPart) {
     return m
 }
 // CreateStandardWebPartFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateStandardWebPartFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStandardWebPart(), nil
 }
 // GetContainerTextWebPartId gets the containerTextWebPartId property value. The instance identifier of the container text webPart. It only works for inline standard webPart in rich text webParts.
+// returns a *string when successful
 func (m *StandardWebPart) GetContainerTextWebPartId()(*string) {
     val, err := m.GetBackingStore().Get("containerTextWebPartId")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *StandardWebPart) GetContainerTextWebPartId()(*string) {
     return nil
 }
 // GetData gets the data property value. Data of the webPart.
+// returns a WebPartDataable when successful
 func (m *StandardWebPart) GetData()(WebPartDataable) {
     val, err := m.GetBackingStore().Get("data")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *StandardWebPart) GetData()(WebPartDataable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *StandardWebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WebPart.GetFieldDeserializers()
     res["containerTextWebPartId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +82,7 @@ func (m *StandardWebPart) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetWebPartType gets the webPartType property value. A Guid that indicates the webPart type.
+// returns a *string when successful
 func (m *StandardWebPart) GetWebPartType()(*string) {
     val, err := m.GetBackingStore().Get("webPartType")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *StandardWebPart) SetWebPartType(value *string)() {
         panic(err)
     }
 }
-// StandardWebPartable 
 type StandardWebPartable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WebPartable

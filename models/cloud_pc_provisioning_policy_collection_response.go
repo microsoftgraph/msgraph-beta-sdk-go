@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcProvisioningPolicyCollectionResponse 
 type CloudPcProvisioningPolicyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCloudPcProvisioningPolicyCollectionResponse instantiates a new cloudPcProvisioningPolicyCollectionResponse and sets the default values.
+// NewCloudPcProvisioningPolicyCollectionResponse instantiates a new CloudPcProvisioningPolicyCollectionResponse and sets the default values.
 func NewCloudPcProvisioningPolicyCollectionResponse()(*CloudPcProvisioningPolicyCollectionResponse) {
     m := &CloudPcProvisioningPolicyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCloudPcProvisioningPolicyCollectionResponse()(*CloudPcProvisioningPolicy
     return m
 }
 // CreateCloudPcProvisioningPolicyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcProvisioningPolicyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcProvisioningPolicyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcProvisioningPolicyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CloudPcProvisioningPolicyCollectionResponse) GetFieldDeserializers()(ma
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []CloudPcProvisioningPolicyable when successful
 func (m *CloudPcProvisioningPolicyCollectionResponse) GetValue()([]CloudPcProvisioningPolicyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CloudPcProvisioningPolicyCollectionResponse) SetValue(value []CloudPcPr
         panic(err)
     }
 }
-// CloudPcProvisioningPolicyCollectionResponseable 
 type CloudPcProvisioningPolicyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

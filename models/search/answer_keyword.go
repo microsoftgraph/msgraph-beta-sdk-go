@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AnswerKeyword 
 type AnswerKeyword struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAnswerKeyword instantiates a new answerKeyword and sets the default values.
+// NewAnswerKeyword instantiates a new AnswerKeyword and sets the default values.
 func NewAnswerKeyword()(*AnswerKeyword) {
     m := &AnswerKeyword{
     }
@@ -19,10 +18,12 @@ func NewAnswerKeyword()(*AnswerKeyword) {
     return m
 }
 // CreateAnswerKeywordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAnswerKeywordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAnswerKeyword(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AnswerKeyword) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AnswerKeyword) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AnswerKeyword) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["keywords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,6 +99,7 @@ func (m *AnswerKeyword) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetKeywords gets the keywords property value. A collection of keywords used to trigger the search answer.
+// returns a []string when successful
 func (m *AnswerKeyword) GetKeywords()([]string) {
     val, err := m.GetBackingStore().Get("keywords")
     if err != nil {
@@ -107,6 +111,7 @@ func (m *AnswerKeyword) GetKeywords()([]string) {
     return nil
 }
 // GetMatchSimilarKeywords gets the matchSimilarKeywords property value. If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
+// returns a *bool when successful
 func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
     val, err := m.GetBackingStore().Get("matchSimilarKeywords")
     if err != nil {
@@ -118,6 +123,7 @@ func (m *AnswerKeyword) GetMatchSimilarKeywords()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AnswerKeyword) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -129,6 +135,7 @@ func (m *AnswerKeyword) GetOdataType()(*string) {
     return nil
 }
 // GetReservedKeywords gets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.
+// returns a []string when successful
 func (m *AnswerKeyword) GetReservedKeywords()([]string) {
     val, err := m.GetBackingStore().Get("reservedKeywords")
     if err != nil {
@@ -212,7 +219,6 @@ func (m *AnswerKeyword) SetReservedKeywords(value []string)() {
         panic(err)
     }
 }
-// AnswerKeywordable 
 type AnswerKeywordable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

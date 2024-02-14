@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Notification 
 type Notification struct {
     Entity
 }
-// NewNotification instantiates a new notification and sets the default values.
+// NewNotification instantiates a new Notification and sets the default values.
 func NewNotification()(*Notification) {
     m := &Notification{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewNotification()(*Notification) {
     return m
 }
 // CreateNotificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNotificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNotification(), nil
 }
 // GetDisplayTimeToLive gets the displayTimeToLive property value. Sets how long (in seconds) this notification content stays in each platform's notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user's Windows Action Center.
+// returns a *int32 when successful
 func (m *Notification) GetDisplayTimeToLive()(*int32) {
     val, err := m.GetBackingStore().Get("displayTimeToLive")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Notification) GetDisplayTimeToLive()(*int32) {
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. Sets a UTC expiration date and time on a user notification using ISO 8601 format (for example, midnight UTC on Jan 1, 2019 would look like this: '2019-01-01T00:00:00Z'). When time is up, the notification is removed from the Microsoft Graph notification feed store completely and is no longer part of notification history. Max value is 30 days.
+// returns a *Time when successful
 func (m *Notification) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *Notification) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Notification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayTimeToLive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +121,7 @@ func (m *Notification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetGroupName gets the groupName property value. The name of the group that this notification belongs to. It is set by the developer for grouping notifications together.
+// returns a *string when successful
 func (m *Notification) GetGroupName()(*string) {
     val, err := m.GetBackingStore().Get("groupName")
     if err != nil {
@@ -129,6 +133,7 @@ func (m *Notification) GetGroupName()(*string) {
     return nil
 }
 // GetPayload gets the payload property value. The payload property
+// returns a PayloadTypesable when successful
 func (m *Notification) GetPayload()(PayloadTypesable) {
     val, err := m.GetBackingStore().Get("payload")
     if err != nil {
@@ -140,6 +145,7 @@ func (m *Notification) GetPayload()(PayloadTypesable) {
     return nil
 }
 // GetPriority gets the priority property value. Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are None, High and Low.
+// returns a *Priority when successful
 func (m *Notification) GetPriority()(*Priority) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -151,6 +157,7 @@ func (m *Notification) GetPriority()(*Priority) {
     return nil
 }
 // GetTargetHostName gets the targetHostName property value. Represents the host name of the app to which the calling service wants to post the notification, for the given user. If targeting web endpoints (see targetPolicy.platformTypes), ensure that targetHostName is the same as the name used when creating a subscription on the client side within the application JSON property.
+// returns a *string when successful
 func (m *Notification) GetTargetHostName()(*string) {
     val, err := m.GetBackingStore().Get("targetHostName")
     if err != nil {
@@ -162,6 +169,7 @@ func (m *Notification) GetTargetHostName()(*string) {
     return nil
 }
 // GetTargetPolicy gets the targetPolicy property value. Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.
+// returns a TargetPolicyEndpointsable when successful
 func (m *Notification) GetTargetPolicy()(TargetPolicyEndpointsable) {
     val, err := m.GetBackingStore().Get("targetPolicy")
     if err != nil {
@@ -272,7 +280,6 @@ func (m *Notification) SetTargetPolicy(value TargetPolicyEndpointsable)() {
         panic(err)
     }
 }
-// Notificationable 
 type Notificationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

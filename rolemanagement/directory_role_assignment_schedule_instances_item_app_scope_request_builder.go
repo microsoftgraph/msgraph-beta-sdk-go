@@ -27,28 +27,29 @@ type DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilderGetReques
     // Request query parameters
     QueryParameters *DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilderGetQueryParameters
 }
-// NewDirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilderInternal instantiates a new AppScopeRequestBuilder and sets the default values.
+// NewDirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilderInternal instantiates a new DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder) {
     m := &DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance%2Did}/appScope{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignmentScheduleInstances/{unifiedRoleAssignmentScheduleInstance%2Did}/appScope{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewDirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder instantiates a new AppScopeRequestBuilder and sets the default values.
+// NewDirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder instantiates a new DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app. Nullable.
+// returns a AppScopeable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAppScopeFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder) Get
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable), nil
 }
 // ToGetRequestInformation read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app. Nullable.
+// returns a *RequestInformation when successful
 func (m *DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder) ToG
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder when successful
 func (m *DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder) WithUrl(rawUrl string)(*DirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder) {
     return NewDirectoryRoleAssignmentScheduleInstancesItemAppScopeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRoleAssignment 
 type UnifiedRoleAssignment struct {
     Entity
 }
-// NewUnifiedRoleAssignment instantiates a new unifiedRoleAssignment and sets the default values.
+// NewUnifiedRoleAssignment instantiates a new UnifiedRoleAssignment and sets the default values.
 func NewUnifiedRoleAssignment()(*UnifiedRoleAssignment) {
     m := &UnifiedRoleAssignment{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUnifiedRoleAssignment()(*UnifiedRoleAssignment) {
     return m
 }
 // CreateUnifiedRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleAssignment(), nil
 }
 // GetAppScope gets the appScope property value. Details of the app specific scope when the assignment scope is app specific. Containment entity.
+// returns a AppScopeable when successful
 func (m *UnifiedRoleAssignment) GetAppScope()(AppScopeable) {
     val, err := m.GetBackingStore().Get("appScope")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UnifiedRoleAssignment) GetAppScope()(AppScopeable) {
     return nil
 }
 // GetAppScopeId gets the appScopeId property value. Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by a resource application only. For the entitlement management provider, use this property to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997. Supports $filter (eq, in). For example /roleManagement/entitlementManagement/roleAssignments?$filter=appScopeId eq '/AccessPackageCatalog/{catalog id}'.
+// returns a *string when successful
 func (m *UnifiedRoleAssignment) GetAppScopeId()(*string) {
     val, err := m.GetBackingStore().Get("appScopeId")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *UnifiedRoleAssignment) GetAppScopeId()(*string) {
     return nil
 }
 // GetCondition gets the condition property value. The condition property
+// returns a *string when successful
 func (m *UnifiedRoleAssignment) GetCondition()(*string) {
     val, err := m.GetBackingStore().Get("condition")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *UnifiedRoleAssignment) GetCondition()(*string) {
     return nil
 }
 // GetDirectoryScope gets the directoryScope property value. The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+// returns a DirectoryObjectable when successful
 func (m *UnifiedRoleAssignment) GetDirectoryScope()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("directoryScope")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *UnifiedRoleAssignment) GetDirectoryScope()(DirectoryObjectable) {
     return nil
 }
 // GetDirectoryScopeId gets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications, unlike app scopes that are defined and understood by a resource application only. Supports $filter (eq, in).
+// returns a *string when successful
 func (m *UnifiedRoleAssignment) GetDirectoryScopeId()(*string) {
     val, err := m.GetBackingStore().Get("directoryScopeId")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *UnifiedRoleAssignment) GetDirectoryScopeId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,6 +196,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetPrincipal gets the principal property value. The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+// returns a DirectoryObjectable when successful
 func (m *UnifiedRoleAssignment) GetPrincipal()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("principal")
     if err != nil {
@@ -201,6 +208,7 @@ func (m *UnifiedRoleAssignment) GetPrincipal()(DirectoryObjectable) {
     return nil
 }
 // GetPrincipalId gets the principalId property value. Identifier of the principal to which the assignment is granted. Supported principals are users, role-assignable groups, and service principals. Supports $filter (eq, in).
+// returns a *string when successful
 func (m *UnifiedRoleAssignment) GetPrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("principalId")
     if err != nil {
@@ -212,6 +220,7 @@ func (m *UnifiedRoleAssignment) GetPrincipalId()(*string) {
     return nil
 }
 // GetPrincipalOrganizationId gets the principalOrganizationId property value. Identifier of the home tenant for the principal to which the assignment is granted.
+// returns a *string when successful
 func (m *UnifiedRoleAssignment) GetPrincipalOrganizationId()(*string) {
     val, err := m.GetBackingStore().Get("principalOrganizationId")
     if err != nil {
@@ -223,6 +232,7 @@ func (m *UnifiedRoleAssignment) GetPrincipalOrganizationId()(*string) {
     return nil
 }
 // GetResourceScope gets the resourceScope property value. The scope at which the unifiedRoleAssignment applies. This is / for service-wide. DO NOT USE. This property will be deprecated soon.
+// returns a *string when successful
 func (m *UnifiedRoleAssignment) GetResourceScope()(*string) {
     val, err := m.GetBackingStore().Get("resourceScope")
     if err != nil {
@@ -234,6 +244,7 @@ func (m *UnifiedRoleAssignment) GetResourceScope()(*string) {
     return nil
 }
 // GetRoleDefinition gets the roleDefinition property value. The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+// returns a UnifiedRoleDefinitionable when successful
 func (m *UnifiedRoleAssignment) GetRoleDefinition()(UnifiedRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinition")
     if err != nil {
@@ -245,6 +256,7 @@ func (m *UnifiedRoleAssignment) GetRoleDefinition()(UnifiedRoleDefinitionable) {
     return nil
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq, in).
+// returns a *string when successful
 func (m *UnifiedRoleAssignment) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -406,7 +418,6 @@ func (m *UnifiedRoleAssignment) SetRoleDefinitionId(value *string)() {
         panic(err)
     }
 }
-// UnifiedRoleAssignmentable 
 type UnifiedRoleAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

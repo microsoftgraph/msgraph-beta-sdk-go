@@ -27,28 +27,29 @@ type ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetRequestConfigura
     // Request query parameters
     QueryParameters *ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetQueryParameters
 }
-// NewItemActivitiesItemHistoryItemsItemActivityRequestBuilderInternal instantiates a new ActivityRequestBuilder and sets the default values.
+// NewItemActivitiesItemHistoryItemsItemActivityRequestBuilderInternal instantiates a new ItemActivitiesItemHistoryItemsItemActivityRequestBuilder and sets the default values.
 func NewItemActivitiesItemHistoryItemsItemActivityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) {
     m := &ItemActivitiesItemHistoryItemsItemActivityRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/activities/{userActivity%2Did}/historyItems/{activityHistoryItem%2Did}/activity{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/activities/{userActivity%2Did}/historyItems/{activityHistoryItem%2Did}/activity{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemActivitiesItemHistoryItemsItemActivityRequestBuilder instantiates a new ActivityRequestBuilder and sets the default values.
+// NewItemActivitiesItemHistoryItemsItemActivityRequestBuilder instantiates a new ItemActivitiesItemHistoryItemsItemActivityRequestBuilder and sets the default values.
 func NewItemActivitiesItemHistoryItemsItemActivityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemActivitiesItemHistoryItemsItemActivityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get activity from users
+// returns a UserActivityable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserActivityFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,6 +61,7 @@ func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) Get(ctx conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable), nil
 }
 // ToGetRequestInformation get activity from users
+// returns a *RequestInformation when successful
 func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder when successful
 func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) WithUrl(rawUrl string)(*ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) {
     return NewItemActivitiesItemHistoryItemsItemActivityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

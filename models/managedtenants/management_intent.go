@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagementIntent 
 type ManagementIntent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagementIntent instantiates a new managementIntent and sets the default values.
+// NewManagementIntent instantiates a new ManagementIntent and sets the default values.
 func NewManagementIntent()(*ManagementIntent) {
     m := &ManagementIntent{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewManagementIntent()(*ManagementIntent) {
     return m
 }
 // CreateManagementIntentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagementIntentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementIntent(), nil
 }
 // GetDisplayName gets the displayName property value. The display name for the management intent. Optional. Read-only.
+// returns a *string when successful
 func (m *ManagementIntent) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ManagementIntent) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagementIntent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,6 +75,7 @@ func (m *ManagementIntent) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetIsGlobal gets the isGlobal property value. A flag indicating whether the management intent is global. Required. Read-only.
+// returns a *bool when successful
 func (m *ManagementIntent) GetIsGlobal()(*bool) {
     val, err := m.GetBackingStore().Get("isGlobal")
     if err != nil {
@@ -84,6 +87,7 @@ func (m *ManagementIntent) GetIsGlobal()(*bool) {
     return nil
 }
 // GetManagementTemplates gets the managementTemplates property value. The collection of management templates associated with the management intent. Optional. Read-only.
+// returns a []ManagementTemplateDetailedInfoable when successful
 func (m *ManagementIntent) GetManagementTemplates()([]ManagementTemplateDetailedInfoable) {
     val, err := m.GetBackingStore().Get("managementTemplates")
     if err != nil {
@@ -147,7 +151,6 @@ func (m *ManagementIntent) SetManagementTemplates(value []ManagementTemplateDeta
         panic(err)
     }
 }
-// ManagementIntentable 
 type ManagementIntentable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

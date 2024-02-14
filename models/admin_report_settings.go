@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AdminReportSettings 
 type AdminReportSettings struct {
     Entity
 }
-// NewAdminReportSettings instantiates a new adminReportSettings and sets the default values.
+// NewAdminReportSettings instantiates a new AdminReportSettings and sets the default values.
 func NewAdminReportSettings()(*AdminReportSettings) {
     m := &AdminReportSettings{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAdminReportSettings()(*AdminReportSettings) {
     return m
 }
 // CreateAdminReportSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAdminReportSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdminReportSettings(), nil
 }
 // GetDisplayConcealedNames gets the displayConcealedNames property value. If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
+// returns a *bool when successful
 func (m *AdminReportSettings) GetDisplayConcealedNames()(*bool) {
     val, err := m.GetBackingStore().Get("displayConcealedNames")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AdminReportSettings) GetDisplayConcealedNames()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AdminReportSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayConcealedNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,7 +68,6 @@ func (m *AdminReportSettings) SetDisplayConcealedNames(value *bool)() {
         panic(err)
     }
 }
-// AdminReportSettingsable 
 type AdminReportSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

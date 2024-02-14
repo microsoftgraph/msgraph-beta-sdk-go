@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InformationProtectionPolicy 
 type InformationProtectionPolicy struct {
     Entity
 }
-// NewInformationProtectionPolicy instantiates a new informationProtectionPolicy and sets the default values.
+// NewInformationProtectionPolicy instantiates a new InformationProtectionPolicy and sets the default values.
 func NewInformationProtectionPolicy()(*InformationProtectionPolicy) {
     m := &InformationProtectionPolicy{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewInformationProtectionPolicy()(*InformationProtectionPolicy) {
     return m
 }
 // CreateInformationProtectionPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInformationProtectionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInformationProtectionPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetLabels gets the labels property value. The labels property
+// returns a []InformationProtectionLabelable when successful
 func (m *InformationProtectionPolicy) GetLabels()([]InformationProtectionLabelable) {
     val, err := m.GetBackingStore().Get("labels")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *InformationProtectionPolicy) SetLabels(value []InformationProtectionLab
         panic(err)
     }
 }
-// InformationProtectionPolicyable 
 type InformationProtectionPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

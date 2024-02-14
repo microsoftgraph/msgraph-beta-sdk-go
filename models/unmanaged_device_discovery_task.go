@@ -8,7 +8,7 @@ import (
 type UnmanagedDeviceDiscoveryTask struct {
     DeviceAppManagementTask
 }
-// NewUnmanagedDeviceDiscoveryTask instantiates a new unmanagedDeviceDiscoveryTask and sets the default values.
+// NewUnmanagedDeviceDiscoveryTask instantiates a new UnmanagedDeviceDiscoveryTask and sets the default values.
 func NewUnmanagedDeviceDiscoveryTask()(*UnmanagedDeviceDiscoveryTask) {
     m := &UnmanagedDeviceDiscoveryTask{
         DeviceAppManagementTask: *NewDeviceAppManagementTask(),
@@ -18,10 +18,12 @@ func NewUnmanagedDeviceDiscoveryTask()(*UnmanagedDeviceDiscoveryTask) {
     return m
 }
 // CreateUnmanagedDeviceDiscoveryTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnmanagedDeviceDiscoveryTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnmanagedDeviceDiscoveryTask(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnmanagedDeviceDiscoveryTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceAppManagementTask.GetFieldDeserializers()
     res["unmanagedDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +45,7 @@ func (m *UnmanagedDeviceDiscoveryTask) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetUnmanagedDevices gets the unmanagedDevices property value. Unmanaged devices discovered in the network.
+// returns a []UnmanagedDeviceable when successful
 func (m *UnmanagedDeviceDiscoveryTask) GetUnmanagedDevices()([]UnmanagedDeviceable) {
     val, err := m.GetBackingStore().Get("unmanagedDevices")
     if err != nil {
@@ -80,7 +83,6 @@ func (m *UnmanagedDeviceDiscoveryTask) SetUnmanagedDevices(value []UnmanagedDevi
         panic(err)
     }
 }
-// UnmanagedDeviceDiscoveryTaskable 
 type UnmanagedDeviceDiscoveryTaskable interface {
     DeviceAppManagementTaskable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

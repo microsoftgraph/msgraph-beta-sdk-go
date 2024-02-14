@@ -47,6 +47,7 @@ type ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByWorkbookDocumentTaskChangeId provides operations to manage the changes property of the microsoft.graph.workbookDocumentTask entity.
+// returns a *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesWorkbookDocumentTaskChangeItemRequestBuilder when successful
 func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) ByWorkbookDocumentTaskChangeId(workbookDocumentTaskChangeId string)(*ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesWorkbookDocumentTaskChangeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesReque
     }
     return NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesWorkbookDocumentTaskChangeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilderInternal instantiates a new ChangesRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilderInternal instantiates a new ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) {
     m := &ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/comments/{workbookComment%2Did}/replies/{workbookCommentReply%2Did}/task/comment/task/changes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/comments/{workbookComment%2Did}/replies/{workbookCommentReply%2Did}/task/comment/task/changes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder instantiates a new ChangesRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder instantiates a new ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to call the count method.
+// returns a *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesCountRequestBuilder when successful
 func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) Count()(*ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesCountRequestBuilder) {
     return NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a collection of task change histories.
+// returns a WorkbookDocumentTaskChangeCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookDocumentTaskChangeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookDocumentTaskChangeCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,18 +97,20 @@ func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookDocumentTaskChangeCollectionResponseable), nil
 }
 // ItemAtWithIndex provides operations to call the itemAt method.
+// returns a *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesItemAtWithIndexRequestBuilder when successful
 func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) ItemAtWithIndex(index *int32)(*ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesItemAtWithIndexRequestBuilder) {
     return NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesItemAtWithIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, index)
 }
 // Post create new navigation property to changes for drives
+// returns a WorkbookDocumentTaskChangeable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookDocumentTaskChangeable, requestConfiguration *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookDocumentTaskChangeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookDocumentTaskChangeFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -117,6 +122,7 @@ func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookDocumentTaskChangeable), nil
 }
 // ToGetRequestInformation a collection of task change histories.
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -130,8 +136,9 @@ func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesReque
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to changes for drives
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookDocumentTaskChangeable, requestConfiguration *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/comments/{workbookComment%2Did}/replies/{workbookCommentReply%2Did}/task/comment/task/changes", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -144,6 +151,7 @@ func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder when successful
 func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder) {
     return NewItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

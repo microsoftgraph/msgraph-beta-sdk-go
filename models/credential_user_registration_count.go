@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CredentialUserRegistrationCount 
 type CredentialUserRegistrationCount struct {
     Entity
 }
-// NewCredentialUserRegistrationCount instantiates a new credentialUserRegistrationCount and sets the default values.
+// NewCredentialUserRegistrationCount instantiates a new CredentialUserRegistrationCount and sets the default values.
 func NewCredentialUserRegistrationCount()(*CredentialUserRegistrationCount) {
     m := &CredentialUserRegistrationCount{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCredentialUserRegistrationCount()(*CredentialUserRegistrationCount) {
     return m
 }
 // CreateCredentialUserRegistrationCountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCredentialUserRegistrationCountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCredentialUserRegistrationCount(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["totalUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -51,6 +52,7 @@ func (m *CredentialUserRegistrationCount) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetTotalUserCount gets the totalUserCount property value. Provides the count of users with accountEnabled set to true in the tenant.
+// returns a *int64 when successful
 func (m *CredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
     val, err := m.GetBackingStore().Get("totalUserCount")
     if err != nil {
@@ -62,6 +64,7 @@ func (m *CredentialUserRegistrationCount) GetTotalUserCount()(*int64) {
     return nil
 }
 // GetUserRegistrationCounts gets the userRegistrationCounts property value. A collection of registration count and status information for users in your tenant.
+// returns a []UserRegistrationCountable when successful
 func (m *CredentialUserRegistrationCount) GetUserRegistrationCounts()([]UserRegistrationCountable) {
     val, err := m.GetBackingStore().Get("userRegistrationCounts")
     if err != nil {
@@ -112,7 +115,6 @@ func (m *CredentialUserRegistrationCount) SetUserRegistrationCounts(value []User
         panic(err)
     }
 }
-// CredentialUserRegistrationCountable 
 type CredentialUserRegistrationCountable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

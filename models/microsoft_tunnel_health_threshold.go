@@ -8,7 +8,7 @@ import (
 type MicrosoftTunnelHealthThreshold struct {
     Entity
 }
-// NewMicrosoftTunnelHealthThreshold instantiates a new microsoftTunnelHealthThreshold and sets the default values.
+// NewMicrosoftTunnelHealthThreshold instantiates a new MicrosoftTunnelHealthThreshold and sets the default values.
 func NewMicrosoftTunnelHealthThreshold()(*MicrosoftTunnelHealthThreshold) {
     m := &MicrosoftTunnelHealthThreshold{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewMicrosoftTunnelHealthThreshold()(*MicrosoftTunnelHealthThreshold) {
     return m
 }
 // CreateMicrosoftTunnelHealthThresholdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftTunnelHealthThresholdFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTunnelHealthThreshold(), nil
 }
 // GetDefaultHealthyThreshold gets the defaultHealthyThreshold property value. The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized. Read-only.
+// returns a *int64 when successful
 func (m *MicrosoftTunnelHealthThreshold) GetDefaultHealthyThreshold()(*int64) {
     val, err := m.GetBackingStore().Get("defaultHealthyThreshold")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetDefaultHealthyThreshold()(*int64) {
     return nil
 }
 // GetDefaultUnhealthyThreshold gets the defaultUnhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency unhealthy > 20ms, health metrics can be customized. Read-only.
+// returns a *int64 when successful
 func (m *MicrosoftTunnelHealthThreshold) GetDefaultUnhealthyThreshold()(*int64) {
     val, err := m.GetBackingStore().Get("defaultUnhealthyThreshold")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetDefaultUnhealthyThreshold()(*int64) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["defaultHealthyThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +91,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetHealthyThreshold gets the healthyThreshold property value. The threshold for being healthy based on default health status metrics: CPU usage healthy < 50%, Memory usage healthy < 50%, Disk space healthy > 5GB, Latency healthy < 10ms, health metrics can be customized.
+// returns a *int64 when successful
 func (m *MicrosoftTunnelHealthThreshold) GetHealthyThreshold()(*int64) {
     val, err := m.GetBackingStore().Get("healthyThreshold")
     if err != nil {
@@ -98,6 +103,7 @@ func (m *MicrosoftTunnelHealthThreshold) GetHealthyThreshold()(*int64) {
     return nil
 }
 // GetUnhealthyThreshold gets the unhealthyThreshold property value. The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy > 75%, Memory usage unhealthy > 75%, Disk space < 3GB, Latency Unhealthy > 20ms, health metrics can be customized.
+// returns a *int64 when successful
 func (m *MicrosoftTunnelHealthThreshold) GetUnhealthyThreshold()(*int64) {
     val, err := m.GetBackingStore().Get("unhealthyThreshold")
     if err != nil {
@@ -168,7 +174,6 @@ func (m *MicrosoftTunnelHealthThreshold) SetUnhealthyThreshold(value *int64)() {
         panic(err)
     }
 }
-// MicrosoftTunnelHealthThresholdable 
 type MicrosoftTunnelHealthThresholdable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

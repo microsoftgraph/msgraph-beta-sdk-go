@@ -1,24 +1,26 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
-// 
 type SensitivityLabelTarget int
 
 const (
-    EMAIL_SENSITIVITYLABELTARGET SensitivityLabelTarget = iota
-    SITE_SENSITIVITYLABELTARGET
-    UNIFIEDGROUP_SENSITIVITYLABELTARGET
-    TEAMWORK_SENSITIVITYLABELTARGET
-    UNKNOWNFUTUREVALUE_SENSITIVITYLABELTARGET
+    EMAIL_SENSITIVITYLABELTARGET = 1
+    SITE_SENSITIVITYLABELTARGET = 2
+    UNIFIEDGROUP_SENSITIVITYLABELTARGET = 4
+    TEAMWORK_SENSITIVITYLABELTARGET = 8
+    UNKNOWNFUTUREVALUE_SENSITIVITYLABELTARGET = 16
 )
 
 func (i SensitivityLabelTarget) String() string {
     var values []string
-    for p := SensitivityLabelTarget(1); p <= UNKNOWNFUTUREVALUE_SENSITIVITYLABELTARGET; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"email", "site", "unifiedGroup", "teamwork", "unknownFutureValue"}[p])
+    options := []string{"email", "site", "unifiedGroup", "teamwork", "unknownFutureValue"}
+    for p := 0; p < 5; p++ {
+        mantis := SensitivityLabelTarget(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

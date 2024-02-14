@@ -17,28 +17,28 @@ type WindowsAutopilotSettingsSyncRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewWindowsAutopilotSettingsSyncRequestBuilderInternal instantiates a new SyncRequestBuilder and sets the default values.
+// NewWindowsAutopilotSettingsSyncRequestBuilderInternal instantiates a new WindowsAutopilotSettingsSyncRequestBuilder and sets the default values.
 func NewWindowsAutopilotSettingsSyncRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotSettingsSyncRequestBuilder) {
     m := &WindowsAutopilotSettingsSyncRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotSettings/sync", pathParameters),
     }
     return m
 }
-// NewWindowsAutopilotSettingsSyncRequestBuilder instantiates a new SyncRequestBuilder and sets the default values.
+// NewWindowsAutopilotSettingsSyncRequestBuilder instantiates a new WindowsAutopilotSettingsSyncRequestBuilder and sets the default values.
 func NewWindowsAutopilotSettingsSyncRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotSettingsSyncRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotSettingsSyncRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post initiates a sync of all AutoPilot registered devices from Store for Business and other portals. If the sync successful, this action returns a 204 No Content response code. If a sync is already in progress, the action returns a 409 Conflict response code.  If this sync action is called within 10 minutes of the previous sync, the action returns a 429 Too Many Requests response code.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsAutopilotSettingsSyncRequestBuilder) Post(ctx context.Context, requestConfiguration *WindowsAutopilotSettingsSyncRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *WindowsAutopilotSettingsSyncRequestBuilder) Post(ctx context.Context, r
     return nil
 }
 // ToPostRequestInformation initiates a sync of all AutoPilot registered devices from Store for Business and other portals. If the sync successful, this action returns a 204 No Content response code. If a sync is already in progress, the action returns a 409 Conflict response code.  If this sync action is called within 10 minutes of the previous sync, the action returns a 429 Too Many Requests response code.
+// returns a *RequestInformation when successful
 func (m *WindowsAutopilotSettingsSyncRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *WindowsAutopilotSettingsSyncRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -57,6 +58,7 @@ func (m *WindowsAutopilotSettingsSyncRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsAutopilotSettingsSyncRequestBuilder when successful
 func (m *WindowsAutopilotSettingsSyncRequestBuilder) WithUrl(rawUrl string)(*WindowsAutopilotSettingsSyncRequestBuilder) {
     return NewWindowsAutopilotSettingsSyncRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

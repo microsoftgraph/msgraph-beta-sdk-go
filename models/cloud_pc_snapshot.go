@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcSnapshot 
 type CloudPcSnapshot struct {
     Entity
 }
-// NewCloudPcSnapshot instantiates a new cloudPcSnapshot and sets the default values.
+// NewCloudPcSnapshot instantiates a new CloudPcSnapshot and sets the default values.
 func NewCloudPcSnapshot()(*CloudPcSnapshot) {
     m := &CloudPcSnapshot{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewCloudPcSnapshot()(*CloudPcSnapshot) {
     return m
 }
 // CreateCloudPcSnapshotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcSnapshotFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcSnapshot(), nil
 }
 // GetCloudPcId gets the cloudPcId property value. The unique identifier for the Cloud PC.
+// returns a *string when successful
 func (m *CloudPcSnapshot) GetCloudPcId()(*string) {
     val, err := m.GetBackingStore().Get("cloudPcId")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *CloudPcSnapshot) GetCloudPcId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPcSnapshot) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *CloudPcSnapshot) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPcSnapshot) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *CloudPcSnapshot) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcSnapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["cloudPcId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,6 +123,7 @@ func (m *CloudPcSnapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetLastRestoredDateTime gets the lastRestoredDateTime property value. The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *CloudPcSnapshot) GetLastRestoredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRestoredDateTime")
     if err != nil {
@@ -130,6 +135,7 @@ func (m *CloudPcSnapshot) GetLastRestoredDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetSnapshotType gets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual. Default value is automatic.
+// returns a *CloudPcSnapshotType when successful
 func (m *CloudPcSnapshot) GetSnapshotType()(*CloudPcSnapshotType) {
     val, err := m.GetBackingStore().Get("snapshotType")
     if err != nil {
@@ -141,6 +147,7 @@ func (m *CloudPcSnapshot) GetSnapshotType()(*CloudPcSnapshotType) {
     return nil
 }
 // GetStatus gets the status property value. The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.
+// returns a *CloudPcSnapshotStatus when successful
 func (m *CloudPcSnapshot) GetStatus()(*CloudPcSnapshotStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -239,7 +246,6 @@ func (m *CloudPcSnapshot) SetStatus(value *CloudPcSnapshotStatus)() {
         panic(err)
     }
 }
-// CloudPcSnapshotable 
 type CloudPcSnapshotable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

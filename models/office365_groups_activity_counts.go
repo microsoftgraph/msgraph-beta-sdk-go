@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityCounts 
 type Office365GroupsActivityCounts struct {
     Entity
 }
-// NewOffice365GroupsActivityCounts instantiates a new office365GroupsActivityCounts and sets the default values.
+// NewOffice365GroupsActivityCounts instantiates a new Office365GroupsActivityCounts and sets the default values.
 func NewOffice365GroupsActivityCounts()(*Office365GroupsActivityCounts) {
     m := &Office365GroupsActivityCounts{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOffice365GroupsActivityCounts()(*Office365GroupsActivityCounts) {
     return m
 }
 // CreateOffice365GroupsActivityCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOffice365GroupsActivityCountsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOffice365GroupsActivityCounts(), nil
 }
 // GetExchangeEmailsReceived gets the exchangeEmailsReceived property value. The number of emails received by Group mailboxes.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityCounts) GetExchangeEmailsReceived()(*int64) {
     val, err := m.GetBackingStore().Get("exchangeEmailsReceived")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Office365GroupsActivityCounts) GetExchangeEmailsReceived()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Office365GroupsActivityCounts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["exchangeEmailsReceived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +128,7 @@ func (m *Office365GroupsActivityCounts) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetReportDate gets the reportDate property value. The date on which a number of emails were sent to a group mailbox or a number of messages were posted, read, or liked in a Yammer group
+// returns a *DateOnly when successful
 func (m *Office365GroupsActivityCounts) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("reportDate")
     if err != nil {
@@ -137,6 +140,7 @@ func (m *Office365GroupsActivityCounts) GetReportDate()(*i878a80d2330e89d2689638
     return nil
 }
 // GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
+// returns a *string when successful
 func (m *Office365GroupsActivityCounts) GetReportPeriod()(*string) {
     val, err := m.GetBackingStore().Get("reportPeriod")
     if err != nil {
@@ -148,6 +152,7 @@ func (m *Office365GroupsActivityCounts) GetReportPeriod()(*string) {
     return nil
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
+// returns a *DateOnly when successful
 func (m *Office365GroupsActivityCounts) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("reportRefreshDate")
     if err != nil {
@@ -159,6 +164,7 @@ func (m *Office365GroupsActivityCounts) GetReportRefreshDate()(*i878a80d2330e89d
     return nil
 }
 // GetTeamsChannelMessages gets the teamsChannelMessages property value. The number of channel messages in Teams team.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityCounts) GetTeamsChannelMessages()(*int64) {
     val, err := m.GetBackingStore().Get("teamsChannelMessages")
     if err != nil {
@@ -170,6 +176,7 @@ func (m *Office365GroupsActivityCounts) GetTeamsChannelMessages()(*int64) {
     return nil
 }
 // GetTeamsMeetingsOrganized gets the teamsMeetingsOrganized property value. The number of meetings organized in Teams team.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityCounts) GetTeamsMeetingsOrganized()(*int64) {
     val, err := m.GetBackingStore().Get("teamsMeetingsOrganized")
     if err != nil {
@@ -181,6 +188,7 @@ func (m *Office365GroupsActivityCounts) GetTeamsMeetingsOrganized()(*int64) {
     return nil
 }
 // GetYammerMessagesLiked gets the yammerMessagesLiked property value. The number of messages liked in Yammer groups.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityCounts) GetYammerMessagesLiked()(*int64) {
     val, err := m.GetBackingStore().Get("yammerMessagesLiked")
     if err != nil {
@@ -192,6 +200,7 @@ func (m *Office365GroupsActivityCounts) GetYammerMessagesLiked()(*int64) {
     return nil
 }
 // GetYammerMessagesPosted gets the yammerMessagesPosted property value. The number of messages posted to Yammer groups.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityCounts) GetYammerMessagesPosted()(*int64) {
     val, err := m.GetBackingStore().Get("yammerMessagesPosted")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *Office365GroupsActivityCounts) GetYammerMessagesPosted()(*int64) {
     return nil
 }
 // GetYammerMessagesRead gets the yammerMessagesRead property value. The number of messages read in Yammer groups.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityCounts) GetYammerMessagesRead()(*int64) {
     val, err := m.GetBackingStore().Get("yammerMessagesRead")
     if err != nil {
@@ -338,7 +348,6 @@ func (m *Office365GroupsActivityCounts) SetYammerMessagesRead(value *int64)() {
         panic(err)
     }
 }
-// Office365GroupsActivityCountsable 
 type Office365GroupsActivityCountsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

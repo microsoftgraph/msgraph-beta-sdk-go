@@ -17,28 +17,28 @@ type ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderPostRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderInternal instantiates a new SetPriorityRequestBuilder and sets the default values.
+// NewItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderInternal instantiates a new ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder and sets the default values.
 func NewItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) {
     m := &ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}/setPriority", pathParameters),
     }
     return m
 }
-// NewItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder instantiates a new SetPriorityRequestBuilder and sets the default values.
+// NewItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder instantiates a new ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder and sets the default values.
 func NewItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action setPriority
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) Post(ctx context.Context, body ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBodyable, requestConfiguration *ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) Post(c
     return nil
 }
 // ToPostRequestInformation invoke action setPriority
+// returns a *RequestInformation when successful
 func (m *ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemDeviceEnrollmentConfigurationsItemSetPriorityPostRequestBodyable, requestConfiguration *ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder when successful
 func (m *ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) WithUrl(rawUrl string)(*ItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder) {
     return NewItemDeviceEnrollmentConfigurationsItemSetPriorityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

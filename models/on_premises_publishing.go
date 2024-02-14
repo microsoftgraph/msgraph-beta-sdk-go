@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// OnPremisesPublishing 
 type OnPremisesPublishing struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOnPremisesPublishing instantiates a new onPremisesPublishing and sets the default values.
+// NewOnPremisesPublishing instantiates a new OnPremisesPublishing and sets the default values.
 func NewOnPremisesPublishing()(*OnPremisesPublishing) {
     m := &OnPremisesPublishing{
     }
@@ -19,10 +18,12 @@ func NewOnPremisesPublishing()(*OnPremisesPublishing) {
     return m
 }
 // CreateOnPremisesPublishingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesPublishingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesPublishing(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OnPremisesPublishing) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *OnPremisesPublishing) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.
+// returns a *string when successful
 func (m *OnPremisesPublishing) GetAlternateUrl()(*string) {
     val, err := m.GetBackingStore().Get("alternateUrl")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *OnPremisesPublishing) GetAlternateUrl()(*string) {
     return nil
 }
 // GetApplicationServerTimeout gets the applicationServerTimeout property value. The duration the connector waits for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
+// returns a *string when successful
 func (m *OnPremisesPublishing) GetApplicationServerTimeout()(*string) {
     val, err := m.GetBackingStore().Get("applicationServerTimeout")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *OnPremisesPublishing) GetApplicationServerTimeout()(*string) {
     return nil
 }
 // GetApplicationType gets the applicationType property value. Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.
+// returns a *string when successful
 func (m *OnPremisesPublishing) GetApplicationType()(*string) {
     val, err := m.GetBackingStore().Get("applicationType")
     if err != nil {
@@ -68,10 +72,12 @@ func (m *OnPremisesPublishing) GetApplicationType()(*string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OnPremisesPublishing) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExternalAuthenticationType gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
+// returns a *ExternalAuthenticationType when successful
 func (m *OnPremisesPublishing) GetExternalAuthenticationType()(*ExternalAuthenticationType) {
     val, err := m.GetBackingStore().Get("externalAuthenticationType")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *OnPremisesPublishing) GetExternalAuthenticationType()(*ExternalAuthenti
     return nil
 }
 // GetExternalUrl gets the externalUrl property value. The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.
+// returns a *string when successful
 func (m *OnPremisesPublishing) GetExternalUrl()(*string) {
     val, err := m.GetBackingStore().Get("externalUrl")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *OnPremisesPublishing) GetExternalUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["alternateUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -345,6 +353,7 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetInternalUrl gets the internalUrl property value. The internal url of the application. For example, https://intranet/.
+// returns a *string when successful
 func (m *OnPremisesPublishing) GetInternalUrl()(*string) {
     val, err := m.GetBackingStore().Get("internalUrl")
     if err != nil {
@@ -356,6 +365,7 @@ func (m *OnPremisesPublishing) GetInternalUrl()(*string) {
     return nil
 }
 // GetIsAccessibleViaZTNAClient gets the isAccessibleViaZTNAClient property value. The isAccessibleViaZTNAClient property
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsAccessibleViaZTNAClient()(*bool) {
     val, err := m.GetBackingStore().Get("isAccessibleViaZTNAClient")
     if err != nil {
@@ -367,6 +377,7 @@ func (m *OnPremisesPublishing) GetIsAccessibleViaZTNAClient()(*bool) {
     return nil
 }
 // GetIsBackendCertificateValidationEnabled gets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isBackendCertificateValidationEnabled")
     if err != nil {
@@ -378,6 +389,7 @@ func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool)
     return nil
 }
 // GetIsDnsResolutionEnabled gets the isDnsResolutionEnabled property value. The isDnsResolutionEnabled property
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsDnsResolutionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDnsResolutionEnabled")
     if err != nil {
@@ -389,6 +401,7 @@ func (m *OnPremisesPublishing) GetIsDnsResolutionEnabled()(*bool) {
     return nil
 }
 // GetIsHttpOnlyCookieEnabled gets the isHttpOnlyCookieEnabled property value. Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsHttpOnlyCookieEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isHttpOnlyCookieEnabled")
     if err != nil {
@@ -400,6 +413,7 @@ func (m *OnPremisesPublishing) GetIsHttpOnlyCookieEnabled()(*bool) {
     return nil
 }
 // GetIsOnPremPublishingEnabled gets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only.
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsOnPremPublishingEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isOnPremPublishingEnabled")
     if err != nil {
@@ -411,6 +425,7 @@ func (m *OnPremisesPublishing) GetIsOnPremPublishingEnabled()(*bool) {
     return nil
 }
 // GetIsPersistentCookieEnabled gets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Microsoft Entra ID. Default value is false.
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsPersistentCookieEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isPersistentCookieEnabled")
     if err != nil {
@@ -422,6 +437,7 @@ func (m *OnPremisesPublishing) GetIsPersistentCookieEnabled()(*bool) {
     return nil
 }
 // GetIsSecureCookieEnabled gets the isSecureCookieEnabled property value. Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsSecureCookieEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSecureCookieEnabled")
     if err != nil {
@@ -433,6 +449,7 @@ func (m *OnPremisesPublishing) GetIsSecureCookieEnabled()(*bool) {
     return nil
 }
 // GetIsStateSessionEnabled gets the isStateSessionEnabled property value. Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsStateSessionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isStateSessionEnabled")
     if err != nil {
@@ -444,6 +461,7 @@ func (m *OnPremisesPublishing) GetIsStateSessionEnabled()(*bool) {
     return nil
 }
 // GetIsTranslateHostHeaderEnabled gets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the response headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsTranslateHostHeaderEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isTranslateHostHeaderEnabled")
     if err != nil {
@@ -455,6 +473,7 @@ func (m *OnPremisesPublishing) GetIsTranslateHostHeaderEnabled()(*bool) {
     return nil
 }
 // GetIsTranslateLinksInBodyEnabled gets the isTranslateLinksInBodyEnabled property value. Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsTranslateLinksInBodyEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isTranslateLinksInBodyEnabled")
     if err != nil {
@@ -466,6 +485,7 @@ func (m *OnPremisesPublishing) GetIsTranslateLinksInBodyEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OnPremisesPublishing) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -477,6 +497,7 @@ func (m *OnPremisesPublishing) GetOdataType()(*string) {
     return nil
 }
 // GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
+// returns a []OnPremisesApplicationSegmentable when successful
 func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable) {
     val, err := m.GetBackingStore().Get("onPremisesApplicationSegments")
     if err != nil {
@@ -488,6 +509,7 @@ func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments()([]OnPremisesAp
     return nil
 }
 // GetSegmentsConfiguration gets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Microsoft Entra application proxy.
+// returns a SegmentConfigurationable when successful
 func (m *OnPremisesPublishing) GetSegmentsConfiguration()(SegmentConfigurationable) {
     val, err := m.GetBackingStore().Get("segmentsConfiguration")
     if err != nil {
@@ -499,6 +521,7 @@ func (m *OnPremisesPublishing) GetSegmentsConfiguration()(SegmentConfigurationab
     return nil
 }
 // GetSingleSignOnSettings gets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
+// returns a OnPremisesPublishingSingleSignOnable when successful
 func (m *OnPremisesPublishing) GetSingleSignOnSettings()(OnPremisesPublishingSingleSignOnable) {
     val, err := m.GetBackingStore().Get("singleSignOnSettings")
     if err != nil {
@@ -510,6 +533,7 @@ func (m *OnPremisesPublishing) GetSingleSignOnSettings()(OnPremisesPublishingSin
     return nil
 }
 // GetUseAlternateUrlForTranslationAndRedirect gets the useAlternateUrlForTranslationAndRedirect property value. The useAlternateUrlForTranslationAndRedirect property
+// returns a *bool when successful
 func (m *OnPremisesPublishing) GetUseAlternateUrlForTranslationAndRedirect()(*bool) {
     val, err := m.GetBackingStore().Get("useAlternateUrlForTranslationAndRedirect")
     if err != nil {
@@ -521,6 +545,7 @@ func (m *OnPremisesPublishing) GetUseAlternateUrlForTranslationAndRedirect()(*bo
     return nil
 }
 // GetVerifiedCustomDomainCertificatesMetadata gets the verifiedCustomDomainCertificatesMetadata property value. Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.
+// returns a VerifiedCustomDomainCertificatesMetadataable when successful
 func (m *OnPremisesPublishing) GetVerifiedCustomDomainCertificatesMetadata()(VerifiedCustomDomainCertificatesMetadataable) {
     val, err := m.GetBackingStore().Get("verifiedCustomDomainCertificatesMetadata")
     if err != nil {
@@ -532,6 +557,7 @@ func (m *OnPremisesPublishing) GetVerifiedCustomDomainCertificatesMetadata()(Ver
     return nil
 }
 // GetVerifiedCustomDomainKeyCredential gets the verifiedCustomDomainKeyCredential property value. The associated key credential for the custom domain used.
+// returns a KeyCredentialable when successful
 func (m *OnPremisesPublishing) GetVerifiedCustomDomainKeyCredential()(KeyCredentialable) {
     val, err := m.GetBackingStore().Get("verifiedCustomDomainKeyCredential")
     if err != nil {
@@ -543,6 +569,7 @@ func (m *OnPremisesPublishing) GetVerifiedCustomDomainKeyCredential()(KeyCredent
     return nil
 }
 // GetVerifiedCustomDomainPasswordCredential gets the verifiedCustomDomainPasswordCredential property value. The associated password credential for the custom domain used.
+// returns a PasswordCredentialable when successful
 func (m *OnPremisesPublishing) GetVerifiedCustomDomainPasswordCredential()(PasswordCredentialable) {
     val, err := m.GetBackingStore().Get("verifiedCustomDomainPasswordCredential")
     if err != nil {
@@ -893,7 +920,6 @@ func (m *OnPremisesPublishing) SetVerifiedCustomDomainPasswordCredential(value P
         panic(err)
     }
 }
-// OnPremisesPublishingable 
 type OnPremisesPublishingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

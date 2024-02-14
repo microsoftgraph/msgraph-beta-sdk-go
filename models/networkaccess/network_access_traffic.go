@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// NetworkAccessTraffic 
 type NetworkAccessTraffic struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewNetworkAccessTraffic instantiates a new networkAccessTraffic and sets the default values.
+// NewNetworkAccessTraffic instantiates a new NetworkAccessTraffic and sets the default values.
 func NewNetworkAccessTraffic()(*NetworkAccessTraffic) {
     m := &NetworkAccessTraffic{
     }
@@ -20,10 +19,12 @@ func NewNetworkAccessTraffic()(*NetworkAccessTraffic) {
     return m
 }
 // CreateNetworkAccessTrafficFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNetworkAccessTrafficFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkAccessTraffic(), nil
 }
 // GetAction gets the action property value. The action property
+// returns a *FilteringPolicyAction when successful
 func (m *NetworkAccessTraffic) GetAction()(*FilteringPolicyAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *NetworkAccessTraffic) GetAction()(*FilteringPolicyAction) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *NetworkAccessTraffic) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -47,6 +49,7 @@ func (m *NetworkAccessTraffic) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAgentVersion gets the agentVersion property value. Represents the version of the Global Secure Access client agent software. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetAgentVersion()(*string) {
     val, err := m.GetBackingStore().Get("agentVersion")
     if err != nil {
@@ -58,6 +61,7 @@ func (m *NetworkAccessTraffic) GetAgentVersion()(*string) {
     return nil
 }
 // GetApplicationSnapshot gets the applicationSnapshot property value. The applicationSnapshot property
+// returns a ApplicationSnapshotable when successful
 func (m *NetworkAccessTraffic) GetApplicationSnapshot()(ApplicationSnapshotable) {
     val, err := m.GetBackingStore().Get("applicationSnapshot")
     if err != nil {
@@ -69,10 +73,12 @@ func (m *NetworkAccessTraffic) GetApplicationSnapshot()(ApplicationSnapshotable)
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *NetworkAccessTraffic) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConnectionId gets the connectionId property value. Represents a unique identifier assigned to a connection. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetConnectionId()(*string) {
     val, err := m.GetBackingStore().Get("connectionId")
     if err != nil {
@@ -84,6 +90,7 @@ func (m *NetworkAccessTraffic) GetConnectionId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Represents the date and time when a network access traffic log entry was created. Supports $filter (eq) and $orderby.
+// returns a *Time when successful
 func (m *NetworkAccessTraffic) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -95,6 +102,7 @@ func (m *NetworkAccessTraffic) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetDestinationFQDN gets the destinationFQDN property value. Represents the Fully Qualified Domain Name (FQDN) of the destination host or server in a network communication. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetDestinationFQDN()(*string) {
     val, err := m.GetBackingStore().Get("destinationFQDN")
     if err != nil {
@@ -106,6 +114,7 @@ func (m *NetworkAccessTraffic) GetDestinationFQDN()(*string) {
     return nil
 }
 // GetDestinationIp gets the destinationIp property value. Represents the IP address of the destination host or server in a network communication. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetDestinationIp()(*string) {
     val, err := m.GetBackingStore().Get("destinationIp")
     if err != nil {
@@ -117,6 +126,7 @@ func (m *NetworkAccessTraffic) GetDestinationIp()(*string) {
     return nil
 }
 // GetDestinationPort gets the destinationPort property value. Represents the network port number on the destination host or server in a network communication. Supports $filter (eq) and $orderby.
+// returns a *int32 when successful
 func (m *NetworkAccessTraffic) GetDestinationPort()(*int32) {
     val, err := m.GetBackingStore().Get("destinationPort")
     if err != nil {
@@ -127,7 +137,20 @@ func (m *NetworkAccessTraffic) GetDestinationPort()(*int32) {
     }
     return nil
 }
+// GetDestinationUrl gets the destinationUrl property value. The destinationUrl property
+// returns a *string when successful
+func (m *NetworkAccessTraffic) GetDestinationUrl()(*string) {
+    val, err := m.GetBackingStore().Get("destinationUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDestinationWebCategory gets the destinationWebCategory property value. The destinationWebCategory property
+// returns a WebCategoryable when successful
 func (m *NetworkAccessTraffic) GetDestinationWebCategory()(WebCategoryable) {
     val, err := m.GetBackingStore().Get("destinationWebCategory")
     if err != nil {
@@ -139,6 +162,7 @@ func (m *NetworkAccessTraffic) GetDestinationWebCategory()(WebCategoryable) {
     return nil
 }
 // GetDeviceCategory gets the deviceCategory property value. Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.
+// returns a *DeviceCategory when successful
 func (m *NetworkAccessTraffic) GetDeviceCategory()(*DeviceCategory) {
     val, err := m.GetBackingStore().Get("deviceCategory")
     if err != nil {
@@ -150,6 +174,7 @@ func (m *NetworkAccessTraffic) GetDeviceCategory()(*DeviceCategory) {
     return nil
 }
 // GetDeviceId gets the deviceId property value. Represents a unique identifier assigned to a device within a network infrastructure. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -161,6 +186,7 @@ func (m *NetworkAccessTraffic) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceOperatingSystem gets the deviceOperatingSystem property value. Represents the operating system installed on a device within a network infrastructure. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetDeviceOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("deviceOperatingSystem")
     if err != nil {
@@ -172,6 +198,7 @@ func (m *NetworkAccessTraffic) GetDeviceOperatingSystem()(*string) {
     return nil
 }
 // GetDeviceOperatingSystemVersion gets the deviceOperatingSystemVersion property value. Represents the version or release number of the operating system installed on a device within a network infrastructure. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetDeviceOperatingSystemVersion()(*string) {
     val, err := m.GetBackingStore().Get("deviceOperatingSystemVersion")
     if err != nil {
@@ -183,6 +210,7 @@ func (m *NetworkAccessTraffic) GetDeviceOperatingSystemVersion()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -262,6 +290,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetDestinationPort(val)
+        }
+        return nil
+    }
+    res["destinationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDestinationUrl(val)
         }
         return nil
     }
@@ -495,6 +533,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["threatType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetThreatType(val)
+        }
+        return nil
+    }
     res["trafficType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTrafficType)
         if err != nil {
@@ -548,6 +596,7 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetFilteringProfileId gets the filteringProfileId property value. The filteringProfileId property
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetFilteringProfileId()(*string) {
     val, err := m.GetBackingStore().Get("filteringProfileId")
     if err != nil {
@@ -559,6 +608,7 @@ func (m *NetworkAccessTraffic) GetFilteringProfileId()(*string) {
     return nil
 }
 // GetFilteringProfileName gets the filteringProfileName property value. The filteringProfileName property
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetFilteringProfileName()(*string) {
     val, err := m.GetBackingStore().Get("filteringProfileName")
     if err != nil {
@@ -570,6 +620,7 @@ func (m *NetworkAccessTraffic) GetFilteringProfileName()(*string) {
     return nil
 }
 // GetHeaders gets the headers property value. Represents the headers included in a network request or response. Supports $filter (eq) and $orderby.
+// returns a Headersable when successful
 func (m *NetworkAccessTraffic) GetHeaders()(Headersable) {
     val, err := m.GetBackingStore().Get("headers")
     if err != nil {
@@ -581,6 +632,7 @@ func (m *NetworkAccessTraffic) GetHeaders()(Headersable) {
     return nil
 }
 // GetInitiatingProcessName gets the initiatingProcessName property value. The initiatingProcessName property
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetInitiatingProcessName()(*string) {
     val, err := m.GetBackingStore().Get("initiatingProcessName")
     if err != nil {
@@ -592,6 +644,7 @@ func (m *NetworkAccessTraffic) GetInitiatingProcessName()(*string) {
     return nil
 }
 // GetNetworkProtocol gets the networkProtocol property value. Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
+// returns a *NetworkingProtocol when successful
 func (m *NetworkAccessTraffic) GetNetworkProtocol()(*NetworkingProtocol) {
     val, err := m.GetBackingStore().Get("networkProtocol")
     if err != nil {
@@ -603,6 +656,7 @@ func (m *NetworkAccessTraffic) GetNetworkProtocol()(*NetworkingProtocol) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -614,6 +668,7 @@ func (m *NetworkAccessTraffic) GetOdataType()(*string) {
     return nil
 }
 // GetPolicyId gets the policyId property value. Represents a unique identifier assigned to a policy. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("policyId")
     if err != nil {
@@ -625,6 +680,7 @@ func (m *NetworkAccessTraffic) GetPolicyId()(*string) {
     return nil
 }
 // GetPolicyName gets the policyName property value. The policyName property
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetPolicyName()(*string) {
     val, err := m.GetBackingStore().Get("policyName")
     if err != nil {
@@ -636,6 +692,7 @@ func (m *NetworkAccessTraffic) GetPolicyName()(*string) {
     return nil
 }
 // GetPolicyRuleId gets the policyRuleId property value. Represents a unique identifier assigned to a policy rule. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetPolicyRuleId()(*string) {
     val, err := m.GetBackingStore().Get("policyRuleId")
     if err != nil {
@@ -647,6 +704,7 @@ func (m *NetworkAccessTraffic) GetPolicyRuleId()(*string) {
     return nil
 }
 // GetPolicyRuleName gets the policyRuleName property value. The policyRuleName property
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetPolicyRuleName()(*string) {
     val, err := m.GetBackingStore().Get("policyRuleName")
     if err != nil {
@@ -658,6 +716,7 @@ func (m *NetworkAccessTraffic) GetPolicyRuleName()(*string) {
     return nil
 }
 // GetPrivateAccessDetails gets the privateAccessDetails property value. The privateAccessDetails property
+// returns a PrivateAccessDetailsable when successful
 func (m *NetworkAccessTraffic) GetPrivateAccessDetails()(PrivateAccessDetailsable) {
     val, err := m.GetBackingStore().Get("privateAccessDetails")
     if err != nil {
@@ -669,6 +728,7 @@ func (m *NetworkAccessTraffic) GetPrivateAccessDetails()(PrivateAccessDetailsabl
     return nil
 }
 // GetReceivedBytes gets the receivedBytes property value. Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.
+// returns a *int64 when successful
 func (m *NetworkAccessTraffic) GetReceivedBytes()(*int64) {
     val, err := m.GetBackingStore().Get("receivedBytes")
     if err != nil {
@@ -680,6 +740,7 @@ func (m *NetworkAccessTraffic) GetReceivedBytes()(*int64) {
     return nil
 }
 // GetResourceTenantId gets the resourceTenantId property value. The resourceTenantId property
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetResourceTenantId()(*string) {
     val, err := m.GetBackingStore().Get("resourceTenantId")
     if err != nil {
@@ -691,6 +752,7 @@ func (m *NetworkAccessTraffic) GetResourceTenantId()(*string) {
     return nil
 }
 // GetSentBytes gets the sentBytes property value. Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.
+// returns a *int64 when successful
 func (m *NetworkAccessTraffic) GetSentBytes()(*int64) {
     val, err := m.GetBackingStore().Get("sentBytes")
     if err != nil {
@@ -702,6 +764,7 @@ func (m *NetworkAccessTraffic) GetSentBytes()(*int64) {
     return nil
 }
 // GetSessionId gets the sessionId property value. Represents a unique identifier assigned to a session or connection within a network infrastructure. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetSessionId()(*string) {
     val, err := m.GetBackingStore().Get("sessionId")
     if err != nil {
@@ -713,6 +776,7 @@ func (m *NetworkAccessTraffic) GetSessionId()(*string) {
     return nil
 }
 // GetSourceIp gets the sourceIp property value. Represents the source IP address in a network communication. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetSourceIp()(*string) {
     val, err := m.GetBackingStore().Get("sourceIp")
     if err != nil {
@@ -724,6 +788,7 @@ func (m *NetworkAccessTraffic) GetSourceIp()(*string) {
     return nil
 }
 // GetSourcePort gets the sourcePort property value. Represents the network port number on the source host or device in a network communication. Supports $filter (eq) and $orderby.
+// returns a *int32 when successful
 func (m *NetworkAccessTraffic) GetSourcePort()(*int32) {
     val, err := m.GetBackingStore().Get("sourcePort")
     if err != nil {
@@ -735,6 +800,7 @@ func (m *NetworkAccessTraffic) GetSourcePort()(*int32) {
     return nil
 }
 // GetTenantId gets the tenantId property value. Represents a unique identifier assigned to a tenant within a network infrastructure. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -745,7 +811,20 @@ func (m *NetworkAccessTraffic) GetTenantId()(*string) {
     }
     return nil
 }
+// GetThreatType gets the threatType property value. The threatType property
+// returns a *string when successful
+func (m *NetworkAccessTraffic) GetThreatType()(*string) {
+    val, err := m.GetBackingStore().Get("threatType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTrafficType gets the trafficType property value. The trafficType property
+// returns a *TrafficType when successful
 func (m *NetworkAccessTraffic) GetTrafficType()(*TrafficType) {
     val, err := m.GetBackingStore().Get("trafficType")
     if err != nil {
@@ -757,6 +836,7 @@ func (m *NetworkAccessTraffic) GetTrafficType()(*TrafficType) {
     return nil
 }
 // GetTransactionId gets the transactionId property value. Represents a unique identifier assigned to a specific transaction or operation. Key. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetTransactionId()(*string) {
     val, err := m.GetBackingStore().Get("transactionId")
     if err != nil {
@@ -768,6 +848,7 @@ func (m *NetworkAccessTraffic) GetTransactionId()(*string) {
     return nil
 }
 // GetTransportProtocol gets the transportProtocol property value. Represents the transport protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.
+// returns a *NetworkingProtocol when successful
 func (m *NetworkAccessTraffic) GetTransportProtocol()(*NetworkingProtocol) {
     val, err := m.GetBackingStore().Get("transportProtocol")
     if err != nil {
@@ -779,6 +860,7 @@ func (m *NetworkAccessTraffic) GetTransportProtocol()(*NetworkingProtocol) {
     return nil
 }
 // GetUserId gets the userId property value. Represents a unique identifier assigned to a user. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -790,6 +872,7 @@ func (m *NetworkAccessTraffic) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. Represents the user principal name (UPN) associated with a user. Supports $filter (eq) and $orderby.
+// returns a *string when successful
 func (m *NetworkAccessTraffic) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -847,6 +930,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteInt32Value("destinationPort", m.GetDestinationPort())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("destinationUrl", m.GetDestinationUrl())
         if err != nil {
             return err
         }
@@ -991,6 +1080,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err := writer.WriteStringValue("threatType", m.GetThreatType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTrafficType() != nil {
         cast := (*m.GetTrafficType()).String()
         err := writer.WriteStringValue("trafficType", &cast)
@@ -1094,6 +1189,13 @@ func (m *NetworkAccessTraffic) SetDestinationIp(value *string)() {
 // SetDestinationPort sets the destinationPort property value. Represents the network port number on the destination host or server in a network communication. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetDestinationPort(value *int32)() {
     err := m.GetBackingStore().Set("destinationPort", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDestinationUrl sets the destinationUrl property value. The destinationUrl property
+func (m *NetworkAccessTraffic) SetDestinationUrl(value *string)() {
+    err := m.GetBackingStore().Set("destinationUrl", value)
     if err != nil {
         panic(err)
     }
@@ -1259,6 +1361,13 @@ func (m *NetworkAccessTraffic) SetTenantId(value *string)() {
         panic(err)
     }
 }
+// SetThreatType sets the threatType property value. The threatType property
+func (m *NetworkAccessTraffic) SetThreatType(value *string)() {
+    err := m.GetBackingStore().Set("threatType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTrafficType sets the trafficType property value. The trafficType property
 func (m *NetworkAccessTraffic) SetTrafficType(value *TrafficType)() {
     err := m.GetBackingStore().Set("trafficType", value)
@@ -1294,7 +1403,6 @@ func (m *NetworkAccessTraffic) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// NetworkAccessTrafficable 
 type NetworkAccessTrafficable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -1308,6 +1416,7 @@ type NetworkAccessTrafficable interface {
     GetDestinationFQDN()(*string)
     GetDestinationIp()(*string)
     GetDestinationPort()(*int32)
+    GetDestinationUrl()(*string)
     GetDestinationWebCategory()(WebCategoryable)
     GetDeviceCategory()(*DeviceCategory)
     GetDeviceId()(*string)
@@ -1331,6 +1440,7 @@ type NetworkAccessTrafficable interface {
     GetSourceIp()(*string)
     GetSourcePort()(*int32)
     GetTenantId()(*string)
+    GetThreatType()(*string)
     GetTrafficType()(*TrafficType)
     GetTransactionId()(*string)
     GetTransportProtocol()(*NetworkingProtocol)
@@ -1345,6 +1455,7 @@ type NetworkAccessTrafficable interface {
     SetDestinationFQDN(value *string)()
     SetDestinationIp(value *string)()
     SetDestinationPort(value *int32)()
+    SetDestinationUrl(value *string)()
     SetDestinationWebCategory(value WebCategoryable)()
     SetDeviceCategory(value *DeviceCategory)()
     SetDeviceId(value *string)()
@@ -1368,6 +1479,7 @@ type NetworkAccessTrafficable interface {
     SetSourceIp(value *string)()
     SetSourcePort(value *int32)()
     SetTenantId(value *string)()
+    SetThreatType(value *string)()
     SetTrafficType(value *TrafficType)()
     SetTransactionId(value *string)()
     SetTransportProtocol(value *NetworkingProtocol)()

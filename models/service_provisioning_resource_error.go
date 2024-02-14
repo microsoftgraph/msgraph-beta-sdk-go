@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServiceProvisioningResourceError 
 type ServiceProvisioningResourceError struct {
     ServiceProvisioningError
 }
-// NewServiceProvisioningResourceError instantiates a new serviceProvisioningResourceError and sets the default values.
+// NewServiceProvisioningResourceError instantiates a new ServiceProvisioningResourceError and sets the default values.
 func NewServiceProvisioningResourceError()(*ServiceProvisioningResourceError) {
     m := &ServiceProvisioningResourceError{
         ServiceProvisioningError: *NewServiceProvisioningError(),
@@ -18,10 +17,12 @@ func NewServiceProvisioningResourceError()(*ServiceProvisioningResourceError) {
     return m
 }
 // CreateServiceProvisioningResourceErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServiceProvisioningResourceErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceProvisioningResourceError(), nil
 }
 // GetErrors gets the errors property value. The errors property
+// returns a []ServiceProvisioningResourceErrorDetailable when successful
 func (m *ServiceProvisioningResourceError) GetErrors()([]ServiceProvisioningResourceErrorDetailable) {
     val, err := m.GetBackingStore().Get("errors")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ServiceProvisioningResourceError) GetErrors()([]ServiceProvisioningReso
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceProvisioningResourceError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ServiceProvisioningError.GetFieldDeserializers()
     res["errors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,7 +82,6 @@ func (m *ServiceProvisioningResourceError) SetErrors(value []ServiceProvisioning
         panic(err)
     }
 }
-// ServiceProvisioningResourceErrorable 
 type ServiceProvisioningResourceErrorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ServiceProvisioningErrorable

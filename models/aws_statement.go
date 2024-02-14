@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AwsStatement 
 type AwsStatement struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAwsStatement instantiates a new awsStatement and sets the default values.
+// NewAwsStatement instantiates a new AwsStatement and sets the default values.
 func NewAwsStatement()(*AwsStatement) {
     m := &AwsStatement{
     }
@@ -19,10 +18,12 @@ func NewAwsStatement()(*AwsStatement) {
     return m
 }
 // CreateAwsStatementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsStatementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsStatement(), nil
 }
 // GetActions gets the actions property value. The AWS actions.
+// returns a []string when successful
 func (m *AwsStatement) GetActions()([]string) {
     val, err := m.GetBackingStore().Get("actions")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *AwsStatement) GetActions()([]string) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AwsStatement) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *AwsStatement) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AwsStatement) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCondition gets the condition property value. The AWS conditions associated with the statement.
+// returns a AwsConditionable when successful
 func (m *AwsStatement) GetCondition()(AwsConditionable) {
     val, err := m.GetBackingStore().Get("condition")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *AwsStatement) GetCondition()(AwsConditionable) {
     return nil
 }
 // GetEffect gets the effect property value. The effect property
+// returns a *AwsStatementEffect when successful
 func (m *AwsStatement) GetEffect()(*AwsStatementEffect) {
     val, err := m.GetBackingStore().Get("effect")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *AwsStatement) GetEffect()(*AwsStatementEffect) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsStatement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -181,6 +187,7 @@ func (m *AwsStatement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetNotActions gets the notActions property value. AWS Not Actions
+// returns a []string when successful
 func (m *AwsStatement) GetNotActions()([]string) {
     val, err := m.GetBackingStore().Get("notActions")
     if err != nil {
@@ -192,6 +199,7 @@ func (m *AwsStatement) GetNotActions()([]string) {
     return nil
 }
 // GetNotResources gets the notResources property value. AWS Not Resources
+// returns a []string when successful
 func (m *AwsStatement) GetNotResources()([]string) {
     val, err := m.GetBackingStore().Get("notResources")
     if err != nil {
@@ -203,6 +211,7 @@ func (m *AwsStatement) GetNotResources()([]string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AwsStatement) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -214,6 +223,7 @@ func (m *AwsStatement) GetOdataType()(*string) {
     return nil
 }
 // GetResources gets the resources property value. The AWS resources associated with the statement.
+// returns a []string when successful
 func (m *AwsStatement) GetResources()([]string) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -225,6 +235,7 @@ func (m *AwsStatement) GetResources()([]string) {
     return nil
 }
 // GetStatementId gets the statementId property value. The ID of the AWS statement.
+// returns a *string when successful
 func (m *AwsStatement) GetStatementId()(*string) {
     val, err := m.GetBackingStore().Get("statementId")
     if err != nil {
@@ -361,7 +372,6 @@ func (m *AwsStatement) SetStatementId(value *string)() {
         panic(err)
     }
 }
-// AwsStatementable 
 type AwsStatementable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

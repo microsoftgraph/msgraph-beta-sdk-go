@@ -8,7 +8,7 @@ import (
 type MobileAppProvisioningConfigGroupAssignment struct {
     Entity
 }
-// NewMobileAppProvisioningConfigGroupAssignment instantiates a new mobileAppProvisioningConfigGroupAssignment and sets the default values.
+// NewMobileAppProvisioningConfigGroupAssignment instantiates a new MobileAppProvisioningConfigGroupAssignment and sets the default values.
 func NewMobileAppProvisioningConfigGroupAssignment()(*MobileAppProvisioningConfigGroupAssignment) {
     m := &MobileAppProvisioningConfigGroupAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewMobileAppProvisioningConfigGroupAssignment()(*MobileAppProvisioningConfi
     return m
 }
 // CreateMobileAppProvisioningConfigGroupAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobileAppProvisioningConfigGroupAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobileAppProvisioningConfigGroupAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppProvisioningConfigGroupAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["targetGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -35,6 +37,7 @@ func (m *MobileAppProvisioningConfigGroupAssignment) GetFieldDeserializers()(map
     return res
 }
 // GetTargetGroupId gets the targetGroupId property value. The ID of the AAD group in which the app provisioning configuration is being targeted.
+// returns a *string when successful
 func (m *MobileAppProvisioningConfigGroupAssignment) GetTargetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("targetGroupId")
     if err != nil {
@@ -66,7 +69,6 @@ func (m *MobileAppProvisioningConfigGroupAssignment) SetTargetGroupId(value *str
         panic(err)
     }
 }
-// MobileAppProvisioningConfigGroupAssignmentable 
 type MobileAppProvisioningConfigGroupAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

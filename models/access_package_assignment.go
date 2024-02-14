@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignment 
 type AccessPackageAssignment struct {
     Entity
 }
-// NewAccessPackageAssignment instantiates a new accessPackageAssignment and sets the default values.
+// NewAccessPackageAssignment instantiates a new AccessPackageAssignment and sets the default values.
 func NewAccessPackageAssignment()(*AccessPackageAssignment) {
     m := &AccessPackageAssignment{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessPackageAssignment()(*AccessPackageAssignment) {
     return m
 }
 // CreateAccessPackageAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignment(), nil
 }
 // GetAccessPackage gets the accessPackage property value. Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
+// returns a AccessPackageable when successful
 func (m *AccessPackageAssignment) GetAccessPackage()(AccessPackageable) {
     val, err := m.GetBackingStore().Get("accessPackage")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessPackageAssignment) GetAccessPackage()(AccessPackageable) {
     return nil
 }
 // GetAccessPackageAssignmentPolicy gets the accessPackageAssignmentPolicy property value. Read-only. Nullable. Supports $filter (eq) on the id property
+// returns a AccessPackageAssignmentPolicyable when successful
 func (m *AccessPackageAssignment) GetAccessPackageAssignmentPolicy()(AccessPackageAssignmentPolicyable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignmentPolicy")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessPackageAssignment) GetAccessPackageAssignmentPolicy()(AccessPacka
     return nil
 }
 // GetAccessPackageAssignmentRequests gets the accessPackageAssignmentRequests property value. The accessPackageAssignmentRequests property
+// returns a []AccessPackageAssignmentRequestable when successful
 func (m *AccessPackageAssignment) GetAccessPackageAssignmentRequests()([]AccessPackageAssignmentRequestable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignmentRequests")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessPackageAssignment) GetAccessPackageAssignmentRequests()([]AccessP
     return nil
 }
 // GetAccessPackageAssignmentResourceRoles gets the accessPackageAssignmentResourceRoles property value. The resource roles delivered to the target user for this assignment. Read-only. Nullable.
+// returns a []AccessPackageAssignmentResourceRoleable when successful
 func (m *AccessPackageAssignment) GetAccessPackageAssignmentResourceRoles()([]AccessPackageAssignmentResourceRoleable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignmentResourceRoles")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessPackageAssignment) GetAccessPackageAssignmentResourceRoles()([]Ac
     return nil
 }
 // GetAccessPackageId gets the accessPackageId property value. The identifier of the access package. Read-only.
+// returns a *string when successful
 func (m *AccessPackageAssignment) GetAccessPackageId()(*string) {
     val, err := m.GetBackingStore().Get("accessPackageId")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AccessPackageAssignment) GetAccessPackageId()(*string) {
     return nil
 }
 // GetAssignmentPolicyId gets the assignmentPolicyId property value. The identifier of the access package assignment policy. Read-only.
+// returns a *string when successful
 func (m *AccessPackageAssignment) GetAssignmentPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("assignmentPolicyId")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *AccessPackageAssignment) GetAssignmentPolicyId()(*string) {
     return nil
 }
 // GetAssignmentState gets the assignmentState property value. The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only. Supports $filter (eq).
+// returns a *string when successful
 func (m *AccessPackageAssignment) GetAssignmentState()(*string) {
     val, err := m.GetBackingStore().Get("assignmentState")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *AccessPackageAssignment) GetAssignmentState()(*string) {
     return nil
 }
 // GetAssignmentStatus gets the assignmentStatus property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+// returns a *string when successful
 func (m *AccessPackageAssignment) GetAssignmentStatus()(*string) {
     val, err := m.GetBackingStore().Get("assignmentStatus")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *AccessPackageAssignment) GetAssignmentStatus()(*string) {
     return nil
 }
 // GetCatalogId gets the catalogId property value. The identifier of the catalog containing the access package. Read-only.
+// returns a *string when successful
 func (m *AccessPackageAssignment) GetCatalogId()(*string) {
     val, err := m.GetBackingStore().Get("catalogId")
     if err != nil {
@@ -120,6 +129,7 @@ func (m *AccessPackageAssignment) GetCatalogId()(*string) {
     return nil
 }
 // GetCustomExtensionCalloutInstances gets the customExtensionCalloutInstances property value. Information about all the custom extension calls that were made during the access package assignment workflow.
+// returns a []CustomExtensionCalloutInstanceable when successful
 func (m *AccessPackageAssignment) GetCustomExtensionCalloutInstances()([]CustomExtensionCalloutInstanceable) {
     val, err := m.GetBackingStore().Get("customExtensionCalloutInstances")
     if err != nil {
@@ -131,6 +141,7 @@ func (m *AccessPackageAssignment) GetCustomExtensionCalloutInstances()([]CustomE
     return nil
 }
 // GetExpiredDateTime gets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *AccessPackageAssignment) GetExpiredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expiredDateTime")
     if err != nil {
@@ -142,6 +153,7 @@ func (m *AccessPackageAssignment) GetExpiredDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -315,6 +327,7 @@ func (m *AccessPackageAssignment) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetIsExtended gets the isExtended property value. Indicates whether the access package assignment is extended. Read-only.
+// returns a *bool when successful
 func (m *AccessPackageAssignment) GetIsExtended()(*bool) {
     val, err := m.GetBackingStore().Get("isExtended")
     if err != nil {
@@ -326,6 +339,7 @@ func (m *AccessPackageAssignment) GetIsExtended()(*bool) {
     return nil
 }
 // GetSchedule gets the schedule property value. When the access assignment is to be in place. Read-only.
+// returns a RequestScheduleable when successful
 func (m *AccessPackageAssignment) GetSchedule()(RequestScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
     if err != nil {
@@ -337,6 +351,7 @@ func (m *AccessPackageAssignment) GetSchedule()(RequestScheduleable) {
     return nil
 }
 // GetTarget gets the target property value. The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
+// returns a AccessPackageSubjectable when successful
 func (m *AccessPackageAssignment) GetTarget()(AccessPackageSubjectable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -348,6 +363,7 @@ func (m *AccessPackageAssignment) GetTarget()(AccessPackageSubjectable) {
     return nil
 }
 // GetTargetId gets the targetId property value. The ID of the subject with the assignment. Read-only.
+// returns a *string when successful
 func (m *AccessPackageAssignment) GetTargetId()(*string) {
     val, err := m.GetBackingStore().Get("targetId")
     if err != nil {
@@ -579,7 +595,6 @@ func (m *AccessPackageAssignment) SetTargetId(value *string)() {
         panic(err)
     }
 }
-// AccessPackageAssignmentable 
 type AccessPackageAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

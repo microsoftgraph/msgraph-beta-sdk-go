@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TextClassificationRequest 
 type TextClassificationRequest struct {
     Entity
 }
-// NewTextClassificationRequest instantiates a new textClassificationRequest and sets the default values.
+// NewTextClassificationRequest instantiates a new TextClassificationRequest and sets the default values.
 func NewTextClassificationRequest()(*TextClassificationRequest) {
     m := &TextClassificationRequest{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewTextClassificationRequest()(*TextClassificationRequest) {
     return m
 }
 // CreateTextClassificationRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTextClassificationRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTextClassificationRequest(), nil
 }
 // GetContentMetaData gets the contentMetaData property value. The contentMetaData property
+// returns a ClassificationRequestContentMetaDataable when successful
 func (m *TextClassificationRequest) GetContentMetaData()(ClassificationRequestContentMetaDataable) {
     val, err := m.GetBackingStore().Get("contentMetaData")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *TextClassificationRequest) GetContentMetaData()(ClassificationRequestCo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TextClassificationRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contentMetaData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,6 +104,7 @@ func (m *TextClassificationRequest) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetFileExtension gets the fileExtension property value. The fileExtension property
+// returns a *string when successful
 func (m *TextClassificationRequest) GetFileExtension()(*string) {
     val, err := m.GetBackingStore().Get("fileExtension")
     if err != nil {
@@ -113,6 +116,7 @@ func (m *TextClassificationRequest) GetFileExtension()(*string) {
     return nil
 }
 // GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
+// returns a *MlClassificationMatchTolerance when successful
 func (m *TextClassificationRequest) GetMatchTolerancesToInclude()(*MlClassificationMatchTolerance) {
     val, err := m.GetBackingStore().Get("matchTolerancesToInclude")
     if err != nil {
@@ -124,6 +128,7 @@ func (m *TextClassificationRequest) GetMatchTolerancesToInclude()(*MlClassificat
     return nil
 }
 // GetScopesToRun gets the scopesToRun property value. The scopesToRun property
+// returns a *SensitiveTypeScope when successful
 func (m *TextClassificationRequest) GetScopesToRun()(*SensitiveTypeScope) {
     val, err := m.GetBackingStore().Get("scopesToRun")
     if err != nil {
@@ -135,6 +140,7 @@ func (m *TextClassificationRequest) GetScopesToRun()(*SensitiveTypeScope) {
     return nil
 }
 // GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
+// returns a []string when successful
 func (m *TextClassificationRequest) GetSensitiveTypeIds()([]string) {
     val, err := m.GetBackingStore().Get("sensitiveTypeIds")
     if err != nil {
@@ -146,6 +152,7 @@ func (m *TextClassificationRequest) GetSensitiveTypeIds()([]string) {
     return nil
 }
 // GetText gets the text property value. The text property
+// returns a *string when successful
 func (m *TextClassificationRequest) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
     if err != nil {
@@ -244,7 +251,6 @@ func (m *TextClassificationRequest) SetText(value *string)() {
         panic(err)
     }
 }
-// TextClassificationRequestable 
 type TextClassificationRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProtectDoNotForwardAction 
 type ProtectDoNotForwardAction struct {
     InformationProtectionAction
 }
-// NewProtectDoNotForwardAction instantiates a new protectDoNotForwardAction and sets the default values.
+// NewProtectDoNotForwardAction instantiates a new ProtectDoNotForwardAction and sets the default values.
 func NewProtectDoNotForwardAction()(*ProtectDoNotForwardAction) {
     m := &ProtectDoNotForwardAction{
         InformationProtectionAction: *NewInformationProtectionAction(),
@@ -18,10 +17,12 @@ func NewProtectDoNotForwardAction()(*ProtectDoNotForwardAction) {
     return m
 }
 // CreateProtectDoNotForwardActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProtectDoNotForwardActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProtectDoNotForwardAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProtectDoNotForwardAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.InformationProtectionAction.GetFieldDeserializers()
     return res
@@ -34,7 +35,6 @@ func (m *ProtectDoNotForwardAction) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// ProtectDoNotForwardActionable 
 type ProtectDoNotForwardActionable interface {
     InformationProtectionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

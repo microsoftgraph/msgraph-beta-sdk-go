@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Describes which technology this setting can be deployed with
@@ -8,36 +9,40 @@ type DeviceManagementConfigurationTechnologies int
 
 const (
     // Default. Setting cannot be deployed through any channel.
-    NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES DeviceManagementConfigurationTechnologies = iota
+    NONE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 1
     // Setting can be deployed through the MDM channel.
-    MDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    MDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 2
     // Setting can be deployed through the Windows10XManagement channel
-    WINDOWS10XMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    WINDOWS10XMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 4
     // Setting can be deployed through the ConfigManager channel.
-    CONFIGMANAGER_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    CONFIGMANAGER_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 8
     // Setting can be deployed through the AppleRemoteManagement channel.
-    APPLEREMOTEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    APPLEREMOTEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 16
     // Setting can be deployed through the SENSE agent channel.
-    MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 32
     // Setting can be deployed through the Exchange Online agent channel.
-    EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 64
     // Setting can be deployed through the Mobile Application Management (MAM) channel
-    MOBILEAPPLICATIONMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    MOBILEAPPLICATIONMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 128
     // Setting can be deployed through the Linux Mdm channel.
-    LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 256
     // Setting can be deployed through device enrollment.
-    ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 512
     // Setting can be deployed using the Endpoint privilege management channel
-    ENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    ENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 1024
     // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 2048
+    // Setting can be deployed using the Operating System Recovery channel
+    WINDOWSOSRECOVERY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 4096
 )
 
 func (i DeviceManagementConfigurationTechnologies) String() string {
     var values []string
-    for p := DeviceManagementConfigurationTechnologies(1); p <= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "mobileApplicationManagement", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue"}[p])
+    options := []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "mobileApplicationManagement", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue", "windowsOsRecovery"}
+    for p := 0; p < 13; p++ {
+        mantis := DeviceManagementConfigurationTechnologies(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")
@@ -71,6 +76,8 @@ func ParseDeviceManagementConfigurationTechnologies(v string) (any, error) {
                 result |= ENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "windowsOsRecovery":
+                result |= WINDOWSOSRECOVERY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             default:
                 return 0, errors.New("Unknown DeviceManagementConfigurationTechnologies value: " + v)
         }

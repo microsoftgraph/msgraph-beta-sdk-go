@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemSitesItemInformationProtectionEncryptBufferPostRequestBody 
 type ItemSitesItemInformationProtectionEncryptBufferPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemSitesItemInformationProtectionEncryptBufferPostRequestBody()(*ItemSi
     return m
 }
 // CreateItemSitesItemInformationProtectionEncryptBufferPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemSitesItemInformationProtectionEncryptBufferPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemSitesItemInformationProtectionEncryptBufferPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemSitesItemInformationProtectionEncryptBufferPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *ItemSitesItemInformationProtectionEncryptBufferPostRequestBody) GetAddi
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemSitesItemInformationProtectionEncryptBufferPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBuffer gets the buffer property value. The buffer property
+// returns a []byte when successful
 func (m *ItemSitesItemInformationProtectionEncryptBufferPostRequestBody) GetBuffer()([]byte) {
     val, err := m.GetBackingStore().Get("buffer")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *ItemSitesItemInformationProtectionEncryptBufferPostRequestBody) GetBuff
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemSitesItemInformationProtectionEncryptBufferPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["buffer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +80,7 @@ func (m *ItemSitesItemInformationProtectionEncryptBufferPostRequestBody) GetFiel
     return res
 }
 // GetLabelId gets the labelId property value. The labelId property
+// returns a *UUID when successful
 func (m *ItemSitesItemInformationProtectionEncryptBufferPostRequestBody) GetLabelId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("labelId")
     if err != nil {
@@ -133,7 +138,6 @@ func (m *ItemSitesItemInformationProtectionEncryptBufferPostRequestBody) SetLabe
         panic(err)
     }
 }
-// ItemSitesItemInformationProtectionEncryptBufferPostRequestBodyable 
 type ItemSitesItemInformationProtectionEncryptBufferPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

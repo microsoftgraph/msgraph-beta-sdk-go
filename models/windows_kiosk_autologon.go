@@ -8,7 +8,7 @@ import (
 type WindowsKioskAutologon struct {
     WindowsKioskUser
 }
-// NewWindowsKioskAutologon instantiates a new windowsKioskAutologon and sets the default values.
+// NewWindowsKioskAutologon instantiates a new WindowsKioskAutologon and sets the default values.
 func NewWindowsKioskAutologon()(*WindowsKioskAutologon) {
     m := &WindowsKioskAutologon{
         WindowsKioskUser: *NewWindowsKioskUser(),
@@ -18,10 +18,12 @@ func NewWindowsKioskAutologon()(*WindowsKioskAutologon) {
     return m
 }
 // CreateWindowsKioskAutologonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskAutologonFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsKioskAutologon(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskAutologon) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsKioskUser.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *WindowsKioskAutologon) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// WindowsKioskAutologonable 
 type WindowsKioskAutologonable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsKioskUserable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchLookupJob 
 type ExactMatchLookupJob struct {
     ExactMatchJobBase
 }
-// NewExactMatchLookupJob instantiates a new exactMatchLookupJob and sets the default values.
+// NewExactMatchLookupJob instantiates a new ExactMatchLookupJob and sets the default values.
 func NewExactMatchLookupJob()(*ExactMatchLookupJob) {
     m := &ExactMatchLookupJob{
         ExactMatchJobBase: *NewExactMatchJobBase(),
@@ -18,10 +17,12 @@ func NewExactMatchLookupJob()(*ExactMatchLookupJob) {
     return m
 }
 // CreateExactMatchLookupJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExactMatchLookupJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExactMatchLookupJob(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExactMatchLookupJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ExactMatchJobBase.GetFieldDeserializers()
     res["matchingRows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -53,6 +54,7 @@ func (m *ExactMatchLookupJob) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetMatchingRows gets the matchingRows property value. The matchingRows property
+// returns a []LookupResultRowable when successful
 func (m *ExactMatchLookupJob) GetMatchingRows()([]LookupResultRowable) {
     val, err := m.GetBackingStore().Get("matchingRows")
     if err != nil {
@@ -64,6 +66,7 @@ func (m *ExactMatchLookupJob) GetMatchingRows()([]LookupResultRowable) {
     return nil
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *ExactMatchLookupJob) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -114,7 +117,6 @@ func (m *ExactMatchLookupJob) SetState(value *string)() {
         panic(err)
     }
 }
-// ExactMatchLookupJobable 
 type ExactMatchLookupJobable interface {
     ExactMatchJobBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

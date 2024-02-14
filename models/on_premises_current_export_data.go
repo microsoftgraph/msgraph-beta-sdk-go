@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// OnPremisesCurrentExportData 
 type OnPremisesCurrentExportData struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOnPremisesCurrentExportData instantiates a new onPremisesCurrentExportData and sets the default values.
+// NewOnPremisesCurrentExportData instantiates a new OnPremisesCurrentExportData and sets the default values.
 func NewOnPremisesCurrentExportData()(*OnPremisesCurrentExportData) {
     m := &OnPremisesCurrentExportData{
     }
@@ -19,10 +18,12 @@ func NewOnPremisesCurrentExportData()(*OnPremisesCurrentExportData) {
     return m
 }
 // CreateOnPremisesCurrentExportDataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnPremisesCurrentExportDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnPremisesCurrentExportData(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OnPremisesCurrentExportData) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *OnPremisesCurrentExportData) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OnPremisesCurrentExportData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetClientMachineName gets the clientMachineName property value. The name of the onPremises client machine that ran the last export.
+// returns a *string when successful
 func (m *OnPremisesCurrentExportData) GetClientMachineName()(*string) {
     val, err := m.GetBackingStore().Get("clientMachineName")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *OnPremisesCurrentExportData) GetClientMachineName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnPremisesCurrentExportData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["clientMachineName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -145,6 +149,7 @@ func (m *OnPremisesCurrentExportData) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OnPremisesCurrentExportData) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -156,6 +161,7 @@ func (m *OnPremisesCurrentExportData) GetOdataType()(*string) {
     return nil
 }
 // GetPendingObjectsAddition gets the pendingObjectsAddition property value. The count of pending adds from on-premises directory.
+// returns a *int32 when successful
 func (m *OnPremisesCurrentExportData) GetPendingObjectsAddition()(*int32) {
     val, err := m.GetBackingStore().Get("pendingObjectsAddition")
     if err != nil {
@@ -167,6 +173,7 @@ func (m *OnPremisesCurrentExportData) GetPendingObjectsAddition()(*int32) {
     return nil
 }
 // GetPendingObjectsDeletion gets the pendingObjectsDeletion property value. The count of pending deletes from on-premises directory.
+// returns a *int32 when successful
 func (m *OnPremisesCurrentExportData) GetPendingObjectsDeletion()(*int32) {
     val, err := m.GetBackingStore().Get("pendingObjectsDeletion")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *OnPremisesCurrentExportData) GetPendingObjectsDeletion()(*int32) {
     return nil
 }
 // GetPendingObjectsUpdate gets the pendingObjectsUpdate property value. The count of pending updates from on-premises directory.
+// returns a *int32 when successful
 func (m *OnPremisesCurrentExportData) GetPendingObjectsUpdate()(*int32) {
     val, err := m.GetBackingStore().Get("pendingObjectsUpdate")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *OnPremisesCurrentExportData) GetPendingObjectsUpdate()(*int32) {
     return nil
 }
 // GetServiceAccount gets the serviceAccount property value. The name of the dirsync service account that is configured to connect to the directory.
+// returns a *string when successful
 func (m *OnPremisesCurrentExportData) GetServiceAccount()(*string) {
     val, err := m.GetBackingStore().Get("serviceAccount")
     if err != nil {
@@ -200,6 +209,7 @@ func (m *OnPremisesCurrentExportData) GetServiceAccount()(*string) {
     return nil
 }
 // GetSuccessfulLinksProvisioningCount gets the successfulLinksProvisioningCount property value. The count of updated links during the current directory sync export run.
+// returns a *int64 when successful
 func (m *OnPremisesCurrentExportData) GetSuccessfulLinksProvisioningCount()(*int64) {
     val, err := m.GetBackingStore().Get("successfulLinksProvisioningCount")
     if err != nil {
@@ -211,6 +221,7 @@ func (m *OnPremisesCurrentExportData) GetSuccessfulLinksProvisioningCount()(*int
     return nil
 }
 // GetSuccessfulObjectsProvisioningCount gets the successfulObjectsProvisioningCount property value. The count of objects that were successfully provisioned during the current directory sync export run.
+// returns a *int32 when successful
 func (m *OnPremisesCurrentExportData) GetSuccessfulObjectsProvisioningCount()(*int32) {
     val, err := m.GetBackingStore().Get("successfulObjectsProvisioningCount")
     if err != nil {
@@ -222,6 +233,7 @@ func (m *OnPremisesCurrentExportData) GetSuccessfulObjectsProvisioningCount()(*i
     return nil
 }
 // GetTotalConnectorSpaceObjects gets the totalConnectorSpaceObjects property value. The total number of objects in the AAD Connector Space.
+// returns a *int32 when successful
 func (m *OnPremisesCurrentExportData) GetTotalConnectorSpaceObjects()(*int32) {
     val, err := m.GetBackingStore().Get("totalConnectorSpaceObjects")
     if err != nil {
@@ -370,7 +382,6 @@ func (m *OnPremisesCurrentExportData) SetTotalConnectorSpaceObjects(value *int32
         panic(err)
     }
 }
-// OnPremisesCurrentExportDataable 
 type OnPremisesCurrentExportDataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

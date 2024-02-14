@@ -40,6 +40,7 @@ type ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetRequestCo
     QueryParameters *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetQueryParameters
 }
 // ByHostId provides operations to manage the relatedHosts property of the microsoft.graph.security.sslCertificate entity.
+// returns a *ThreatIntelligenceSslCertificatesItemRelatedHostsHostItemRequestBuilder when successful
 func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) ByHostId(hostId string)(*ThreatIntelligenceSslCertificatesItemRelatedHostsHostItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) ByHost
     }
     return NewThreatIntelligenceSslCertificatesItemRelatedHostsHostItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderInternal instantiates a new RelatedHostsRequestBuilder and sets the default values.
+// NewThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderInternal instantiates a new ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder and sets the default values.
 func NewThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) {
     m := &ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/sslCertificates/{sslCertificate%2Did}/relatedHosts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/sslCertificates/{sslCertificate%2Did}/relatedHosts{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder instantiates a new RelatedHostsRequestBuilder and sets the default values.
+// NewThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder instantiates a new ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder and sets the default values.
 func NewThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ThreatIntelligenceSslCertificatesItemRelatedHostsCountRequestBuilder when successful
 func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) Count()(*ThreatIntelligenceSslCertificatesItemRelatedHostsCountRequestBuilder) {
     return NewThreatIntelligenceSslCertificatesItemRelatedHostsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the hosts related with this sslCertificate.
+// returns a HostCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateHostCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) Get(ct
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostCollectionResponseable), nil
 }
 // ToGetRequestInformation the hosts related with this sslCertificate.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder when successful
 func (m *ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder) {
     return NewThreatIntelligenceSslCertificatesItemRelatedHostsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

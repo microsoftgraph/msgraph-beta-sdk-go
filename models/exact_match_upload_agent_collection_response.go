@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExactMatchUploadAgentCollectionResponse 
 type ExactMatchUploadAgentCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewExactMatchUploadAgentCollectionResponse instantiates a new exactMatchUploadAgentCollectionResponse and sets the default values.
+// NewExactMatchUploadAgentCollectionResponse instantiates a new ExactMatchUploadAgentCollectionResponse and sets the default values.
 func NewExactMatchUploadAgentCollectionResponse()(*ExactMatchUploadAgentCollectionResponse) {
     m := &ExactMatchUploadAgentCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewExactMatchUploadAgentCollectionResponse()(*ExactMatchUploadAgentCollecti
     return m
 }
 // CreateExactMatchUploadAgentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExactMatchUploadAgentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExactMatchUploadAgentCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExactMatchUploadAgentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ExactMatchUploadAgentCollectionResponse) GetFieldDeserializers()(map[st
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ExactMatchUploadAgentable when successful
 func (m *ExactMatchUploadAgentCollectionResponse) GetValue()([]ExactMatchUploadAgentable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ExactMatchUploadAgentCollectionResponse) SetValue(value []ExactMatchUpl
         panic(err)
     }
 }
-// ExactMatchUploadAgentCollectionResponseable 
 type ExactMatchUploadAgentCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

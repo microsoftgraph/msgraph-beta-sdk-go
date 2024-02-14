@@ -8,7 +8,7 @@ import (
 type GroupPolicyPresentationMultiTextBox struct {
     GroupPolicyUploadedPresentation
 }
-// NewGroupPolicyPresentationMultiTextBox instantiates a new groupPolicyPresentationMultiTextBox and sets the default values.
+// NewGroupPolicyPresentationMultiTextBox instantiates a new GroupPolicyPresentationMultiTextBox and sets the default values.
 func NewGroupPolicyPresentationMultiTextBox()(*GroupPolicyPresentationMultiTextBox) {
     m := &GroupPolicyPresentationMultiTextBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
@@ -18,10 +18,12 @@ func NewGroupPolicyPresentationMultiTextBox()(*GroupPolicyPresentationMultiTextB
     return m
 }
 // CreateGroupPolicyPresentationMultiTextBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationMultiTextBoxFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyPresentationMultiTextBox(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentationMultiTextBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["maxLength"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *GroupPolicyPresentationMultiTextBox) GetFieldDeserializers()(map[string
     return res
 }
 // GetMaxLength gets the maxLength property value. An unsigned integer that specifies the maximum number of text characters. Default value is 1023.
+// returns a *int64 when successful
 func (m *GroupPolicyPresentationMultiTextBox) GetMaxLength()(*int64) {
     val, err := m.GetBackingStore().Get("maxLength")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *GroupPolicyPresentationMultiTextBox) GetMaxLength()(*int64) {
     return nil
 }
 // GetMaxStrings gets the maxStrings property value. An unsigned integer that specifies the maximum number of strings. Default value is 0.
+// returns a *int64 when successful
 func (m *GroupPolicyPresentationMultiTextBox) GetMaxStrings()(*int64) {
     val, err := m.GetBackingStore().Get("maxStrings")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *GroupPolicyPresentationMultiTextBox) GetMaxStrings()(*int64) {
     return nil
 }
 // GetRequired gets the required property value. Requirement to enter a value in the text box. Default value is false.
+// returns a *bool when successful
 func (m *GroupPolicyPresentationMultiTextBox) GetRequired()(*bool) {
     val, err := m.GetBackingStore().Get("required")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *GroupPolicyPresentationMultiTextBox) SetRequired(value *bool)() {
         panic(err)
     }
 }
-// GroupPolicyPresentationMultiTextBoxable 
 type GroupPolicyPresentationMultiTextBoxable interface {
     GroupPolicyUploadedPresentationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

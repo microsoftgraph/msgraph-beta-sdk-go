@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GovernanceRoleSettingCollectionResponse 
 type GovernanceRoleSettingCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewGovernanceRoleSettingCollectionResponse instantiates a new governanceRoleSettingCollectionResponse and sets the default values.
+// NewGovernanceRoleSettingCollectionResponse instantiates a new GovernanceRoleSettingCollectionResponse and sets the default values.
 func NewGovernanceRoleSettingCollectionResponse()(*GovernanceRoleSettingCollectionResponse) {
     m := &GovernanceRoleSettingCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewGovernanceRoleSettingCollectionResponse()(*GovernanceRoleSettingCollecti
     return m
 }
 // CreateGovernanceRoleSettingCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGovernanceRoleSettingCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGovernanceRoleSettingCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GovernanceRoleSettingCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *GovernanceRoleSettingCollectionResponse) GetFieldDeserializers()(map[st
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []GovernanceRoleSettingable when successful
 func (m *GovernanceRoleSettingCollectionResponse) GetValue()([]GovernanceRoleSettingable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *GovernanceRoleSettingCollectionResponse) SetValue(value []GovernanceRol
         panic(err)
     }
 }
-// GovernanceRoleSettingCollectionResponseable 
 type GovernanceRoleSettingCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type DeliveryOptimizationMaxCacheSizeAbsolute struct {
     DeliveryOptimizationMaxCacheSize
 }
-// NewDeliveryOptimizationMaxCacheSizeAbsolute instantiates a new deliveryOptimizationMaxCacheSizeAbsolute and sets the default values.
+// NewDeliveryOptimizationMaxCacheSizeAbsolute instantiates a new DeliveryOptimizationMaxCacheSizeAbsolute and sets the default values.
 func NewDeliveryOptimizationMaxCacheSizeAbsolute()(*DeliveryOptimizationMaxCacheSizeAbsolute) {
     m := &DeliveryOptimizationMaxCacheSizeAbsolute{
         DeliveryOptimizationMaxCacheSize: *NewDeliveryOptimizationMaxCacheSize(),
@@ -18,10 +18,12 @@ func NewDeliveryOptimizationMaxCacheSizeAbsolute()(*DeliveryOptimizationMaxCache
     return m
 }
 // CreateDeliveryOptimizationMaxCacheSizeAbsoluteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeliveryOptimizationMaxCacheSizeAbsoluteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeliveryOptimizationMaxCacheSizeAbsolute(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeliveryOptimizationMaxCacheSizeAbsolute) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeliveryOptimizationMaxCacheSize.GetFieldDeserializers()
     res["maximumCacheSizeInGigabytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *DeliveryOptimizationMaxCacheSizeAbsolute) GetFieldDeserializers()(map[s
     return res
 }
 // GetMaximumCacheSizeInGigabytes gets the maximumCacheSizeInGigabytes property value. Specifies the maximum size in GB of Delivery Optimization cache. Valid values 0 to 4294967295
+// returns a *int64 when successful
 func (m *DeliveryOptimizationMaxCacheSizeAbsolute) GetMaximumCacheSizeInGigabytes()(*int64) {
     val, err := m.GetBackingStore().Get("maximumCacheSizeInGigabytes")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *DeliveryOptimizationMaxCacheSizeAbsolute) SetMaximumCacheSizeInGigabyte
         panic(err)
     }
 }
-// DeliveryOptimizationMaxCacheSizeAbsoluteable 
 type DeliveryOptimizationMaxCacheSizeAbsoluteable interface {
     DeliveryOptimizationMaxCacheSizeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

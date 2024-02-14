@@ -10,7 +10,7 @@ type WindowsFirewallRule struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWindowsFirewallRule instantiates a new windowsFirewallRule and sets the default values.
+// NewWindowsFirewallRule instantiates a new WindowsFirewallRule and sets the default values.
 func NewWindowsFirewallRule()(*WindowsFirewallRule) {
     m := &WindowsFirewallRule{
     }
@@ -19,10 +19,12 @@ func NewWindowsFirewallRule()(*WindowsFirewallRule) {
     return m
 }
 // CreateWindowsFirewallRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsFirewallRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsFirewallRule(), nil
 }
 // GetAction gets the action property value. State Management Setting.
+// returns a *StateManagementSetting when successful
 func (m *WindowsFirewallRule) GetAction()(*StateManagementSetting) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -34,6 +36,7 @@ func (m *WindowsFirewallRule) GetAction()(*StateManagementSetting) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsFirewallRule) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -46,10 +49,12 @@ func (m *WindowsFirewallRule) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsFirewallRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDescription gets the description property value. The description of the rule.
+// returns a *string when successful
 func (m *WindowsFirewallRule) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *WindowsFirewallRule) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the rule. Does not need to be unique.
+// returns a *string when successful
 func (m *WindowsFirewallRule) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *WindowsFirewallRule) GetDisplayName()(*string) {
     return nil
 }
 // GetEdgeTraversal gets the edgeTraversal property value. State Management Setting.
+// returns a *StateManagementSetting when successful
 func (m *WindowsFirewallRule) GetEdgeTraversal()(*StateManagementSetting) {
     val, err := m.GetBackingStore().Get("edgeTraversal")
     if err != nil {
@@ -83,6 +90,7 @@ func (m *WindowsFirewallRule) GetEdgeTraversal()(*StateManagementSetting) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsFirewallRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -282,6 +290,7 @@ func (m *WindowsFirewallRule) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFilePath gets the filePath property value. The full file path of an app that's affected by the firewall rule.
+// returns a *string when successful
 func (m *WindowsFirewallRule) GetFilePath()(*string) {
     val, err := m.GetBackingStore().Get("filePath")
     if err != nil {
@@ -293,6 +302,7 @@ func (m *WindowsFirewallRule) GetFilePath()(*string) {
     return nil
 }
 // GetInterfaceTypes gets the interfaceTypes property value. Flags representing firewall rule interface types.
+// returns a *WindowsFirewallRuleInterfaceTypes when successful
 func (m *WindowsFirewallRule) GetInterfaceTypes()(*WindowsFirewallRuleInterfaceTypes) {
     val, err := m.GetBackingStore().Get("interfaceTypes")
     if err != nil {
@@ -304,6 +314,7 @@ func (m *WindowsFirewallRule) GetInterfaceTypes()(*WindowsFirewallRuleInterfaceT
     return nil
 }
 // GetLocalAddressRanges gets the localAddressRanges property value. List of local addresses covered by the rule. Default is any address. Valid tokens include:'' indicates any local address. If present, this must be the only token included.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of 'start address - end address' with no spaces included.An IPv6 address range in the format of 'start address - end address' with no spaces included.
+// returns a []string when successful
 func (m *WindowsFirewallRule) GetLocalAddressRanges()([]string) {
     val, err := m.GetBackingStore().Get("localAddressRanges")
     if err != nil {
@@ -315,6 +326,7 @@ func (m *WindowsFirewallRule) GetLocalAddressRanges()([]string) {
     return nil
 }
 // GetLocalPortRanges gets the localPortRanges property value. List of local port ranges. For example, '100-120', '200', '300-320'. If not specified, the default is All.
+// returns a []string when successful
 func (m *WindowsFirewallRule) GetLocalPortRanges()([]string) {
     val, err := m.GetBackingStore().Get("localPortRanges")
     if err != nil {
@@ -326,6 +338,7 @@ func (m *WindowsFirewallRule) GetLocalPortRanges()([]string) {
     return nil
 }
 // GetLocalUserAuthorizations gets the localUserAuthorizations property value. Specifies the list of authorized local users for the app container. This is a string in Security Descriptor Definition Language (SDDL) format.
+// returns a *string when successful
 func (m *WindowsFirewallRule) GetLocalUserAuthorizations()(*string) {
     val, err := m.GetBackingStore().Get("localUserAuthorizations")
     if err != nil {
@@ -337,6 +350,7 @@ func (m *WindowsFirewallRule) GetLocalUserAuthorizations()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WindowsFirewallRule) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -348,6 +362,7 @@ func (m *WindowsFirewallRule) GetOdataType()(*string) {
     return nil
 }
 // GetPackageFamilyName gets the packageFamilyName property value. The package family name of a Microsoft Store application that's affected by the firewall rule.
+// returns a *string when successful
 func (m *WindowsFirewallRule) GetPackageFamilyName()(*string) {
     val, err := m.GetBackingStore().Get("packageFamilyName")
     if err != nil {
@@ -359,6 +374,7 @@ func (m *WindowsFirewallRule) GetPackageFamilyName()(*string) {
     return nil
 }
 // GetProfileTypes gets the profileTypes property value. Flags representing which network profile types apply to a firewall rule.
+// returns a *WindowsFirewallRuleNetworkProfileTypes when successful
 func (m *WindowsFirewallRule) GetProfileTypes()(*WindowsFirewallRuleNetworkProfileTypes) {
     val, err := m.GetBackingStore().Get("profileTypes")
     if err != nil {
@@ -370,6 +386,7 @@ func (m *WindowsFirewallRule) GetProfileTypes()(*WindowsFirewallRuleNetworkProfi
     return nil
 }
 // GetProtocol gets the protocol property value. 0-255 number representing the IP protocol (TCP = 6, UDP = 17). If not specified, the default is All. Valid values 0 to 255
+// returns a *int32 when successful
 func (m *WindowsFirewallRule) GetProtocol()(*int32) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
@@ -381,6 +398,7 @@ func (m *WindowsFirewallRule) GetProtocol()(*int32) {
     return nil
 }
 // GetRemoteAddressRanges gets the remoteAddressRanges property value. List of tokens specifying the remote addresses covered by the rule. Tokens are case insensitive. Default is any address. Valid tokens include:'' indicates any remote address. If present, this must be the only token included.'Defaultgateway''DHCP''DNS''WINS''Intranet' (supported on Windows versions 1809+)'RmtIntranet' (supported on Windows versions 1809+)'Internet' (supported on Windows versions 1809+)'Ply2Renders' (supported on Windows versions 1809+)'LocalSubnet' indicates any local address on the local subnet.A subnet can be specified using either the subnet mask or network prefix notation. If neither a subnet mask nor a network prefix is specified, the subnet mask defaults to 255.255.255.255.A valid IPv6 address.An IPv4 address range in the format of 'start address - end address' with no spaces included.An IPv6 address range in the format of 'start address - end address' with no spaces included.
+// returns a []string when successful
 func (m *WindowsFirewallRule) GetRemoteAddressRanges()([]string) {
     val, err := m.GetBackingStore().Get("remoteAddressRanges")
     if err != nil {
@@ -392,6 +410,7 @@ func (m *WindowsFirewallRule) GetRemoteAddressRanges()([]string) {
     return nil
 }
 // GetRemotePortRanges gets the remotePortRanges property value. List of remote port ranges. For example, '100-120', '200', '300-320'. If not specified, the default is All.
+// returns a []string when successful
 func (m *WindowsFirewallRule) GetRemotePortRanges()([]string) {
     val, err := m.GetBackingStore().Get("remotePortRanges")
     if err != nil {
@@ -403,6 +422,7 @@ func (m *WindowsFirewallRule) GetRemotePortRanges()([]string) {
     return nil
 }
 // GetServiceName gets the serviceName property value. The name used in cases when a service, not an application, is sending or receiving traffic.
+// returns a *string when successful
 func (m *WindowsFirewallRule) GetServiceName()(*string) {
     val, err := m.GetBackingStore().Get("serviceName")
     if err != nil {
@@ -414,6 +434,7 @@ func (m *WindowsFirewallRule) GetServiceName()(*string) {
     return nil
 }
 // GetTrafficDirection gets the trafficDirection property value. Firewall rule traffic directions.
+// returns a *WindowsFirewallRuleTrafficDirectionType when successful
 func (m *WindowsFirewallRule) GetTrafficDirection()(*WindowsFirewallRuleTrafficDirectionType) {
     val, err := m.GetBackingStore().Get("trafficDirection")
     if err != nil {
@@ -671,7 +692,6 @@ func (m *WindowsFirewallRule) SetTrafficDirection(value *WindowsFirewallRuleTraf
         panic(err)
     }
 }
-// WindowsFirewallRuleable 
 type WindowsFirewallRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

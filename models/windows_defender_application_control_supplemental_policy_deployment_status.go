@@ -9,7 +9,7 @@ import (
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus struct {
     Entity
 }
-// NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus instantiates a new windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus and sets the default values.
+// NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus instantiates a new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus and sets the default values.
 func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus()(*WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) {
     m := &WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus()(*W
     return m
 }
 // CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus(), nil
 }
 // GetDeploymentStatus gets the deploymentStatus property value. Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.
+// returns a *WindowsDefenderApplicationControlSupplementalPolicyStatuses when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetDeploymentStatus()(*WindowsDefenderApplicationControlSupplementalPolicyStatuses) {
     val, err := m.GetBackingStore().Get("deploymentStatus")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     return nil
 }
 // GetDeviceId gets the deviceId property value. Device ID.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     return nil
 }
 // GetDeviceName gets the deviceName property value. Device name.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deploymentStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -159,6 +164,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     return res
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. Last sync date time.
+// returns a *Time when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -170,6 +176,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     return nil
 }
 // GetOsDescription gets the osDescription property value. Windows OS Version Description.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetOsDescription()(*string) {
     val, err := m.GetBackingStore().Get("osDescription")
     if err != nil {
@@ -181,6 +188,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     return nil
 }
 // GetOsVersion gets the osVersion property value. Windows OS Version.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -192,6 +200,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     return nil
 }
 // GetPolicy gets the policy property value. The navigation link to the WindowsDefenderApplicationControl supplemental policy.
+// returns a WindowsDefenderApplicationControlSupplementalPolicyable when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetPolicy()(WindowsDefenderApplicationControlSupplementalPolicyable) {
     val, err := m.GetBackingStore().Get("policy")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     return nil
 }
 // GetPolicyVersion gets the policyVersion property value. Human readable version of the WindowsDefenderApplicationControl supplemental policy.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetPolicyVersion()(*string) {
     val, err := m.GetBackingStore().Get("policyVersion")
     if err != nil {
@@ -214,6 +224,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     return nil
 }
 // GetUserName gets the userName property value. The name of the user of this device.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -225,6 +236,7 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Ge
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User Principal Name.
+// returns a *string when successful
 func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -374,7 +386,6 @@ func (m *WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus) Se
         panic(err)
     }
 }
-// WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable 
 type WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

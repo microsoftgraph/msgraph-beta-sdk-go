@@ -24,20 +24,22 @@ type ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal instantiates a new BroadcastRecordingRequestBuilder and sets the default values.
+// NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal instantiates a new ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder and sets the default values.
 func NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) {
     m := &ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/broadcastRecording", pathParameters),
     }
     return m
 }
-// NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilder instantiates a new BroadcastRecordingRequestBuilder and sets the default values.
+// NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilder instantiates a new ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder and sets the default values.
 func NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get broadcastRecording for the navigation property onlineMeetings from users
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
@@ -47,8 +49,7 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Get(ctx context
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -60,14 +61,15 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Get(ctx context
     return res.([]byte), nil
 }
 // Put update broadcastRecording for the navigation property onlineMeetings in users
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -79,6 +81,7 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Put(ctx context
     return res.([]byte), nil
 }
 // ToGetRequestInformation get broadcastRecording for the navigation property onlineMeetings from users
+// returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -89,6 +92,7 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // ToPutRequestInformation update broadcastRecording for the navigation property onlineMeetings in users
+// returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToPutRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder when successful
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) {
     return NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -19,32 +19,34 @@ type Alerts_v2ItemCommentsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewAlerts_v2ItemCommentsRequestBuilderInternal instantiates a new CommentsRequestBuilder and sets the default values.
+// NewAlerts_v2ItemCommentsRequestBuilderInternal instantiates a new Alerts_v2ItemCommentsRequestBuilder and sets the default values.
 func NewAlerts_v2ItemCommentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Alerts_v2ItemCommentsRequestBuilder) {
     m := &Alerts_v2ItemCommentsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/alerts_v2/{alert%2Did}/comments", pathParameters),
     }
     return m
 }
-// NewAlerts_v2ItemCommentsRequestBuilder instantiates a new CommentsRequestBuilder and sets the default values.
+// NewAlerts_v2ItemCommentsRequestBuilder instantiates a new Alerts_v2ItemCommentsRequestBuilder and sets the default values.
 func NewAlerts_v2ItemCommentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Alerts_v2ItemCommentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAlerts_v2ItemCommentsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *Alerts_v2ItemCommentsCountRequestBuilder when successful
 func (m *Alerts_v2ItemCommentsRequestBuilder) Count()(*Alerts_v2ItemCommentsCountRequestBuilder) {
     return NewAlerts_v2ItemCommentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post sets a new value for the collection of alertComment.
+// returns a []AlertCommentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Alerts_v2ItemCommentsRequestBuilder) Post(ctx context.Context, body []i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCommentable, requestConfiguration *Alerts_v2ItemCommentsRequestBuilderPostRequestConfiguration)([]i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCommentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateAlertCommentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -59,6 +61,7 @@ func (m *Alerts_v2ItemCommentsRequestBuilder) Post(ctx context.Context, body []i
     return val, nil
 }
 // ToPostRequestInformation sets a new value for the collection of alertComment.
+// returns a *RequestInformation when successful
 func (m *Alerts_v2ItemCommentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body []i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCommentable, requestConfiguration *Alerts_v2ItemCommentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -79,6 +82,7 @@ func (m *Alerts_v2ItemCommentsRequestBuilder) ToPostRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *Alerts_v2ItemCommentsRequestBuilder when successful
 func (m *Alerts_v2ItemCommentsRequestBuilder) WithUrl(rawUrl string)(*Alerts_v2ItemCommentsRequestBuilder) {
     return NewAlerts_v2ItemCommentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

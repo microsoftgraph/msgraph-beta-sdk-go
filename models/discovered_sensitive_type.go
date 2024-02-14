@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// DiscoveredSensitiveType 
 type DiscoveredSensitiveType struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDiscoveredSensitiveType instantiates a new discoveredSensitiveType and sets the default values.
+// NewDiscoveredSensitiveType instantiates a new DiscoveredSensitiveType and sets the default values.
 func NewDiscoveredSensitiveType()(*DiscoveredSensitiveType) {
     m := &DiscoveredSensitiveType{
     }
@@ -20,10 +19,12 @@ func NewDiscoveredSensitiveType()(*DiscoveredSensitiveType) {
     return m
 }
 // CreateDiscoveredSensitiveTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDiscoveredSensitiveTypeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDiscoveredSensitiveType(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DiscoveredSensitiveType) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *DiscoveredSensitiveType) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DiscoveredSensitiveType) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetClassificationAttributes gets the classificationAttributes property value. The classificationAttributes property
+// returns a []ClassificationAttributeable when successful
 func (m *DiscoveredSensitiveType) GetClassificationAttributes()([]ClassificationAttributeable) {
     val, err := m.GetBackingStore().Get("classificationAttributes")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *DiscoveredSensitiveType) GetClassificationAttributes()([]Classification
     return nil
 }
 // GetConfidence gets the confidence property value. The confidence property
+// returns a *int32 when successful
 func (m *DiscoveredSensitiveType) GetConfidence()(*int32) {
     val, err := m.GetBackingStore().Get("confidence")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *DiscoveredSensitiveType) GetConfidence()(*int32) {
     return nil
 }
 // GetCount gets the count property value. The count property
+// returns a *int32 when successful
 func (m *DiscoveredSensitiveType) GetCount()(*int32) {
     val, err := m.GetBackingStore().Get("count")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *DiscoveredSensitiveType) GetCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["classificationAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -134,6 +140,7 @@ func (m *DiscoveredSensitiveType) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *DiscoveredSensitiveType) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -145,6 +152,7 @@ func (m *DiscoveredSensitiveType) GetId()(*i561e97a8befe7661a44c8f54600992b4207a
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DiscoveredSensitiveType) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -247,7 +255,6 @@ func (m *DiscoveredSensitiveType) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// DiscoveredSensitiveTypeable 
 type DiscoveredSensitiveTypeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

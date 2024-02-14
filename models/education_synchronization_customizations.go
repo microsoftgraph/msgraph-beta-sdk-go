@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationSynchronizationCustomizations 
 type EducationSynchronizationCustomizations struct {
     EducationSynchronizationCustomizationsBase
 }
-// NewEducationSynchronizationCustomizations instantiates a new educationSynchronizationCustomizations and sets the default values.
+// NewEducationSynchronizationCustomizations instantiates a new EducationSynchronizationCustomizations and sets the default values.
 func NewEducationSynchronizationCustomizations()(*EducationSynchronizationCustomizations) {
     m := &EducationSynchronizationCustomizations{
         EducationSynchronizationCustomizationsBase: *NewEducationSynchronizationCustomizationsBase(),
@@ -18,10 +17,12 @@ func NewEducationSynchronizationCustomizations()(*EducationSynchronizationCustom
     return m
 }
 // CreateEducationSynchronizationCustomizationsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationSynchronizationCustomizationsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSynchronizationCustomizations(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationSynchronizationCustomizations) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationSynchronizationCustomizationsBase.GetFieldDeserializers()
     res["school"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +88,7 @@ func (m *EducationSynchronizationCustomizations) GetFieldDeserializers()(map[str
     return res
 }
 // GetSchool gets the school property value. Customizations for School entities.
+// returns a EducationSynchronizationCustomizationable when successful
 func (m *EducationSynchronizationCustomizations) GetSchool()(EducationSynchronizationCustomizationable) {
     val, err := m.GetBackingStore().Get("school")
     if err != nil {
@@ -98,6 +100,7 @@ func (m *EducationSynchronizationCustomizations) GetSchool()(EducationSynchroniz
     return nil
 }
 // GetSection gets the section property value. Customizations for Section entities.
+// returns a EducationSynchronizationCustomizationable when successful
 func (m *EducationSynchronizationCustomizations) GetSection()(EducationSynchronizationCustomizationable) {
     val, err := m.GetBackingStore().Get("section")
     if err != nil {
@@ -109,6 +112,7 @@ func (m *EducationSynchronizationCustomizations) GetSection()(EducationSynchroni
     return nil
 }
 // GetStudent gets the student property value. Customizations for Student entities.
+// returns a EducationSynchronizationCustomizationable when successful
 func (m *EducationSynchronizationCustomizations) GetStudent()(EducationSynchronizationCustomizationable) {
     val, err := m.GetBackingStore().Get("student")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *EducationSynchronizationCustomizations) GetStudent()(EducationSynchroni
     return nil
 }
 // GetStudentEnrollment gets the studentEnrollment property value. Customizations for Student Enrollments.
+// returns a EducationSynchronizationCustomizationable when successful
 func (m *EducationSynchronizationCustomizations) GetStudentEnrollment()(EducationSynchronizationCustomizationable) {
     val, err := m.GetBackingStore().Get("studentEnrollment")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *EducationSynchronizationCustomizations) GetStudentEnrollment()(Educatio
     return nil
 }
 // GetTeacher gets the teacher property value. Customizations for Teacher entities.
+// returns a EducationSynchronizationCustomizationable when successful
 func (m *EducationSynchronizationCustomizations) GetTeacher()(EducationSynchronizationCustomizationable) {
     val, err := m.GetBackingStore().Get("teacher")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *EducationSynchronizationCustomizations) GetTeacher()(EducationSynchroni
     return nil
 }
 // GetTeacherRoster gets the teacherRoster property value. Customizations for Teacher Rosters.
+// returns a EducationSynchronizationCustomizationable when successful
 func (m *EducationSynchronizationCustomizations) GetTeacherRoster()(EducationSynchronizationCustomizationable) {
     val, err := m.GetBackingStore().Get("teacherRoster")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *EducationSynchronizationCustomizations) SetTeacherRoster(value Educatio
         panic(err)
     }
 }
-// EducationSynchronizationCustomizationsable 
 type EducationSynchronizationCustomizationsable interface {
     EducationSynchronizationCustomizationsBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -49,6 +49,7 @@ type CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderPostR
 }
 // ByCustomerPaymentId provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
+// returns a *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilder when successful
 func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) ByCustomerPaymentId(customerPaymentId string)(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,6 +61,7 @@ func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder)
     return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByCustomerPaymentIdGuid provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.
+// returns a *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilder when successful
 func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) ByCustomerPaymentIdGuid(customerPaymentId i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -68,32 +70,34 @@ func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder)
     urlTplParams["customerPayment%2Did"] = customerPaymentId.String()
     return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCustomerPaymentItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderInternal instantiates a new CustomerPaymentsRequestBuilder and sets the default values.
+// NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderInternal instantiates a new CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder and sets the default values.
 func NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) {
     m := &CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPaymentJournals/{customerPaymentJournal%2Did}/customerPayments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPaymentJournals/{customerPaymentJournal%2Did}/customerPayments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder instantiates a new CustomerPaymentsRequestBuilder and sets the default values.
+// NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder instantiates a new CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder and sets the default values.
 func NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCountRequestBuilder when successful
 func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) Count()(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCountRequestBuilder) {
     return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get customerPayments from financials
+// returns a CustomerPaymentCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomerPaymentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCustomerPaymentCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -105,14 +109,15 @@ func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomerPaymentCollectionResponseable), nil
 }
 // Post create new navigation property to customerPayments for financials
+// returns a CustomerPaymentable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomerPaymentable, requestConfiguration *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomerPaymentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCustomerPaymentFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -124,6 +129,7 @@ func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomerPaymentable), nil
 }
 // ToGetRequestInformation get customerPayments from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +143,9 @@ func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder)
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to customerPayments for financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomerPaymentable, requestConfiguration *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/financials/companies/{company%2Did}/customerPaymentJournals/{customerPaymentJournal%2Did}/customerPayments", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -151,6 +158,7 @@ func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder when successful
 func (m *CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder) {
     return NewCompaniesItemCustomerPaymentJournalsItemCustomerPaymentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

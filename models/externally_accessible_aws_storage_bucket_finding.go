@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExternallyAccessibleAwsStorageBucketFinding 
 type ExternallyAccessibleAwsStorageBucketFinding struct {
     Finding
 }
-// NewExternallyAccessibleAwsStorageBucketFinding instantiates a new externallyAccessibleAwsStorageBucketFinding and sets the default values.
+// NewExternallyAccessibleAwsStorageBucketFinding instantiates a new ExternallyAccessibleAwsStorageBucketFinding and sets the default values.
 func NewExternallyAccessibleAwsStorageBucketFinding()(*ExternallyAccessibleAwsStorageBucketFinding) {
     m := &ExternallyAccessibleAwsStorageBucketFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewExternallyAccessibleAwsStorageBucketFinding()(*ExternallyAccessibleAwsSt
     return m
 }
 // CreateExternallyAccessibleAwsStorageBucketFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateExternallyAccessibleAwsStorageBucketFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternallyAccessibleAwsStorageBucketFinding(), nil
 }
 // GetAccessibility gets the accessibility property value. The accessibility property
+// returns a *AwsAccessType when successful
 func (m *ExternallyAccessibleAwsStorageBucketFinding) GetAccessibility()(*AwsAccessType) {
     val, err := m.GetBackingStore().Get("accessibility")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ExternallyAccessibleAwsStorageBucketFinding) GetAccessibility()(*AwsAcc
     return nil
 }
 // GetAccountsWithAccess gets the accountsWithAccess property value. The accountsWithAccess property
+// returns a AccountsWithAccessable when successful
 func (m *ExternallyAccessibleAwsStorageBucketFinding) GetAccountsWithAccess()(AccountsWithAccessable) {
     val, err := m.GetBackingStore().Get("accountsWithAccess")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *ExternallyAccessibleAwsStorageBucketFinding) GetAccountsWithAccess()(Ac
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ExternallyAccessibleAwsStorageBucketFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["accessibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +80,7 @@ func (m *ExternallyAccessibleAwsStorageBucketFinding) GetFieldDeserializers()(ma
     return res
 }
 // GetStorageBucket gets the storageBucket property value. The storageBucket property
+// returns a AuthorizationSystemResourceable when successful
 func (m *ExternallyAccessibleAwsStorageBucketFinding) GetStorageBucket()(AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("storageBucket")
     if err != nil {
@@ -135,7 +139,6 @@ func (m *ExternallyAccessibleAwsStorageBucketFinding) SetStorageBucket(value Aut
         panic(err)
     }
 }
-// ExternallyAccessibleAwsStorageBucketFindingable 
 type ExternallyAccessibleAwsStorageBucketFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

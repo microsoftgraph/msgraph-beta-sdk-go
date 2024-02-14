@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Fqdn 
 type Fqdn struct {
     RuleDestination
 }
-// NewFqdn instantiates a new fqdn and sets the default values.
+// NewFqdn instantiates a new Fqdn and sets the default values.
 func NewFqdn()(*Fqdn) {
     m := &Fqdn{
         RuleDestination: *NewRuleDestination(),
@@ -18,10 +17,12 @@ func NewFqdn()(*Fqdn) {
     return m
 }
 // CreateFqdnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFqdnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFqdn(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Fqdn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RuleDestination.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *Fqdn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetValue gets the value property value. Defines the FQDN used in a destination for a rule.
+// returns a *string when successful
 func (m *Fqdn) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *Fqdn) SetValue(value *string)() {
         panic(err)
     }
 }
-// Fqdnable 
 type Fqdnable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RuleDestinationable

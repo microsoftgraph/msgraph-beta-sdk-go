@@ -17,28 +17,28 @@ type IntentsItemUpdateSettingsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewIntentsItemUpdateSettingsRequestBuilderInternal instantiates a new UpdateSettingsRequestBuilder and sets the default values.
+// NewIntentsItemUpdateSettingsRequestBuilderInternal instantiates a new IntentsItemUpdateSettingsRequestBuilder and sets the default values.
 func NewIntentsItemUpdateSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemUpdateSettingsRequestBuilder) {
     m := &IntentsItemUpdateSettingsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/updateSettings", pathParameters),
     }
     return m
 }
-// NewIntentsItemUpdateSettingsRequestBuilder instantiates a new UpdateSettingsRequestBuilder and sets the default values.
+// NewIntentsItemUpdateSettingsRequestBuilder instantiates a new IntentsItemUpdateSettingsRequestBuilder and sets the default values.
 func NewIntentsItemUpdateSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemUpdateSettingsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewIntentsItemUpdateSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action updateSettings
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IntentsItemUpdateSettingsRequestBuilder) Post(ctx context.Context, body IntentsItemUpdateSettingsPostRequestBodyable, requestConfiguration *IntentsItemUpdateSettingsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *IntentsItemUpdateSettingsRequestBuilder) Post(ctx context.Context, body
     return nil
 }
 // ToPostRequestInformation invoke action updateSettings
+// returns a *RequestInformation when successful
 func (m *IntentsItemUpdateSettingsRequestBuilder) ToPostRequestInformation(ctx context.Context, body IntentsItemUpdateSettingsPostRequestBodyable, requestConfiguration *IntentsItemUpdateSettingsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *IntentsItemUpdateSettingsRequestBuilder) ToPostRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *IntentsItemUpdateSettingsRequestBuilder when successful
 func (m *IntentsItemUpdateSettingsRequestBuilder) WithUrl(rawUrl string)(*IntentsItemUpdateSettingsRequestBuilder) {
     return NewIntentsItemUpdateSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

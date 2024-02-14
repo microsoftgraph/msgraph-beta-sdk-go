@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RateDrivenRolloutSettings 
 type RateDrivenRolloutSettings struct {
     GradualRolloutSettings
 }
-// NewRateDrivenRolloutSettings instantiates a new rateDrivenRolloutSettings and sets the default values.
+// NewRateDrivenRolloutSettings instantiates a new RateDrivenRolloutSettings and sets the default values.
 func NewRateDrivenRolloutSettings()(*RateDrivenRolloutSettings) {
     m := &RateDrivenRolloutSettings{
         GradualRolloutSettings: *NewGradualRolloutSettings(),
@@ -18,10 +17,12 @@ func NewRateDrivenRolloutSettings()(*RateDrivenRolloutSettings) {
     return m
 }
 // CreateRateDrivenRolloutSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRateDrivenRolloutSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRateDrivenRolloutSettings(), nil
 }
 // GetDevicesPerOffer gets the devicesPerOffer property value. Specifies the number of devices that are offered at the same time. When not set, all devices in the deployment are offered content at the same time.
+// returns a *int32 when successful
 func (m *RateDrivenRolloutSettings) GetDevicesPerOffer()(*int32) {
     val, err := m.GetBackingStore().Get("devicesPerOffer")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *RateDrivenRolloutSettings) GetDevicesPerOffer()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RateDrivenRolloutSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GradualRolloutSettings.GetFieldDeserializers()
     res["devicesPerOffer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +70,6 @@ func (m *RateDrivenRolloutSettings) SetDevicesPerOffer(value *int32)() {
         panic(err)
     }
 }
-// RateDrivenRolloutSettingsable 
 type RateDrivenRolloutSettingsable interface {
     GradualRolloutSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

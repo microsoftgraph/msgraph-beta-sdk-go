@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AzureRolePermissionsDefinitionAction 
 type AzureRolePermissionsDefinitionAction struct {
     AzurePermissionsDefinitionAction
 }
-// NewAzureRolePermissionsDefinitionAction instantiates a new azureRolePermissionsDefinitionAction and sets the default values.
+// NewAzureRolePermissionsDefinitionAction instantiates a new AzureRolePermissionsDefinitionAction and sets the default values.
 func NewAzureRolePermissionsDefinitionAction()(*AzureRolePermissionsDefinitionAction) {
     m := &AzureRolePermissionsDefinitionAction{
         AzurePermissionsDefinitionAction: *NewAzurePermissionsDefinitionAction(),
@@ -18,10 +17,12 @@ func NewAzureRolePermissionsDefinitionAction()(*AzureRolePermissionsDefinitionAc
     return m
 }
 // CreateAzureRolePermissionsDefinitionActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAzureRolePermissionsDefinitionActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureRolePermissionsDefinitionAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureRolePermissionsDefinitionAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AzurePermissionsDefinitionAction.GetFieldDeserializers()
     res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *AzureRolePermissionsDefinitionAction) GetFieldDeserializers()(map[strin
     return res
 }
 // GetRoles gets the roles property value. The roles property
+// returns a []PermissionsDefinitionAzureRoleable when successful
 func (m *AzureRolePermissionsDefinitionAction) GetRoles()([]PermissionsDefinitionAzureRoleable) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
@@ -80,7 +82,6 @@ func (m *AzureRolePermissionsDefinitionAction) SetRoles(value []PermissionsDefin
         panic(err)
     }
 }
-// AzureRolePermissionsDefinitionActionable 
 type AzureRolePermissionsDefinitionActionable interface {
     AzurePermissionsDefinitionActionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

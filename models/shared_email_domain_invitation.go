@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SharedEmailDomainInvitation 
 type SharedEmailDomainInvitation struct {
     Entity
 }
-// NewSharedEmailDomainInvitation instantiates a new sharedEmailDomainInvitation and sets the default values.
+// NewSharedEmailDomainInvitation instantiates a new SharedEmailDomainInvitation and sets the default values.
 func NewSharedEmailDomainInvitation()(*SharedEmailDomainInvitation) {
     m := &SharedEmailDomainInvitation{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewSharedEmailDomainInvitation()(*SharedEmailDomainInvitation) {
     return m
 }
 // CreateSharedEmailDomainInvitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSharedEmailDomainInvitationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharedEmailDomainInvitation(), nil
 }
 // GetExpiryTime gets the expiryTime property value. The expiryTime property
+// returns a *Time when successful
 func (m *SharedEmailDomainInvitation) GetExpiryTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expiryTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *SharedEmailDomainInvitation) GetExpiryTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SharedEmailDomainInvitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["expiryTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -67,6 +69,7 @@ func (m *SharedEmailDomainInvitation) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetInvitationDomain gets the invitationDomain property value. The invitationDomain property
+// returns a *string when successful
 func (m *SharedEmailDomainInvitation) GetInvitationDomain()(*string) {
     val, err := m.GetBackingStore().Get("invitationDomain")
     if err != nil {
@@ -78,6 +81,7 @@ func (m *SharedEmailDomainInvitation) GetInvitationDomain()(*string) {
     return nil
 }
 // GetInvitationStatus gets the invitationStatus property value. The invitationStatus property
+// returns a *string when successful
 func (m *SharedEmailDomainInvitation) GetInvitationStatus()(*string) {
     val, err := m.GetBackingStore().Get("invitationStatus")
     if err != nil {
@@ -135,7 +139,6 @@ func (m *SharedEmailDomainInvitation) SetInvitationStatus(value *string)() {
         panic(err)
     }
 }
-// SharedEmailDomainInvitationable 
 type SharedEmailDomainInvitationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

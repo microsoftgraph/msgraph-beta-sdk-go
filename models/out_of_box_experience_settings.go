@@ -10,7 +10,7 @@ type OutOfBoxExperienceSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOutOfBoxExperienceSettings instantiates a new outOfBoxExperienceSettings and sets the default values.
+// NewOutOfBoxExperienceSettings instantiates a new OutOfBoxExperienceSettings and sets the default values.
 func NewOutOfBoxExperienceSettings()(*OutOfBoxExperienceSettings) {
     m := &OutOfBoxExperienceSettings{
     }
@@ -19,10 +19,12 @@ func NewOutOfBoxExperienceSettings()(*OutOfBoxExperienceSettings) {
     return m
 }
 // CreateOutOfBoxExperienceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOutOfBoxExperienceSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOutOfBoxExperienceSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OutOfBoxExperienceSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *OutOfBoxExperienceSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OutOfBoxExperienceSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDeviceUsageType gets the deviceUsageType property value. The deviceUsageType property
+// returns a *WindowsDeviceUsageType when successful
 func (m *OutOfBoxExperienceSettings) GetDeviceUsageType()(*WindowsDeviceUsageType) {
     val, err := m.GetBackingStore().Get("deviceUsageType")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *OutOfBoxExperienceSettings) GetDeviceUsageType()(*WindowsDeviceUsageTyp
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deviceUsageType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +130,7 @@ func (m *OutOfBoxExperienceSettings) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetHideEscapeLink gets the hideEscapeLink property value. If set to true, then the user can't start over with different account, on company sign-in
+// returns a *bool when successful
 func (m *OutOfBoxExperienceSettings) GetHideEscapeLink()(*bool) {
     val, err := m.GetBackingStore().Get("hideEscapeLink")
     if err != nil {
@@ -136,6 +142,7 @@ func (m *OutOfBoxExperienceSettings) GetHideEscapeLink()(*bool) {
     return nil
 }
 // GetHideEULA gets the hideEULA property value. Show or hide EULA to user
+// returns a *bool when successful
 func (m *OutOfBoxExperienceSettings) GetHideEULA()(*bool) {
     val, err := m.GetBackingStore().Get("hideEULA")
     if err != nil {
@@ -147,6 +154,7 @@ func (m *OutOfBoxExperienceSettings) GetHideEULA()(*bool) {
     return nil
 }
 // GetHidePrivacySettings gets the hidePrivacySettings property value. Show or hide privacy settings to user
+// returns a *bool when successful
 func (m *OutOfBoxExperienceSettings) GetHidePrivacySettings()(*bool) {
     val, err := m.GetBackingStore().Get("hidePrivacySettings")
     if err != nil {
@@ -158,6 +166,7 @@ func (m *OutOfBoxExperienceSettings) GetHidePrivacySettings()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OutOfBoxExperienceSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -169,6 +178,7 @@ func (m *OutOfBoxExperienceSettings) GetOdataType()(*string) {
     return nil
 }
 // GetSkipKeyboardSelectionPage gets the skipKeyboardSelectionPage property value. If set, then skip the keyboard selection page if Language and Region are set
+// returns a *bool when successful
 func (m *OutOfBoxExperienceSettings) GetSkipKeyboardSelectionPage()(*bool) {
     val, err := m.GetBackingStore().Get("skipKeyboardSelectionPage")
     if err != nil {
@@ -180,6 +190,7 @@ func (m *OutOfBoxExperienceSettings) GetSkipKeyboardSelectionPage()(*bool) {
     return nil
 }
 // GetUserType gets the userType property value. The userType property
+// returns a *WindowsUserType when successful
 func (m *OutOfBoxExperienceSettings) GetUserType()(*WindowsUserType) {
     val, err := m.GetBackingStore().Get("userType")
     if err != nil {
@@ -304,7 +315,6 @@ func (m *OutOfBoxExperienceSettings) SetUserType(value *WindowsUserType)() {
         panic(err)
     }
 }
-// OutOfBoxExperienceSettingsable 
 type OutOfBoxExperienceSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

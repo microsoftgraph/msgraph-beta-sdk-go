@@ -17,29 +17,30 @@ type ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilderInternal instantiates a new GenerateApplePushNotificationCertificateSigningRequestRequestBuilder and sets the default values.
+// NewApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilderInternal instantiates a new ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder and sets the default values.
 func NewApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder) {
     m := &ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/applePushNotificationCertificate/generateApplePushNotificationCertificateSigningRequest", pathParameters),
     }
     return m
 }
-// NewApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder instantiates a new GenerateApplePushNotificationCertificateSigningRequestRequestBuilder and sets the default values.
+// NewApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder instantiates a new ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder and sets the default values.
 func NewApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post download Apple push notification certificate signing request
-// Deprecated: This method is obsolete. Use PostAsGenerateApplePushNotificationCertificateSigningRequestPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder) Post(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration)(ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *ApplePushNotificationCertificateGenerateApplePushNotificationCertificat
     return res.(ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestResponseable), nil
 }
 // PostAsGenerateApplePushNotificationCertificateSigningRequestPostResponse download Apple push notification certificate signing request
+// returns a ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder) PostAsGenerateApplePushNotificationCertificateSigningRequestPostResponse(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration)(ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *ApplePushNotificationCertificateGenerateApplePushNotificationCertificat
     return res.(ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestPostResponseable), nil
 }
 // ToPostRequestInformation download Apple push notification certificate signing request
+// returns a *RequestInformation when successful
 func (m *ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -80,6 +83,7 @@ func (m *ApplePushNotificationCertificateGenerateApplePushNotificationCertificat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder when successful
 func (m *ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder) WithUrl(rawUrl string)(*ApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder) {
     return NewApplePushNotificationCertificateGenerateApplePushNotificationCertificateSigningRequestRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CredentialUserRegistrationDetails 
 type CredentialUserRegistrationDetails struct {
     Entity
 }
-// NewCredentialUserRegistrationDetails instantiates a new credentialUserRegistrationDetails and sets the default values.
+// NewCredentialUserRegistrationDetails instantiates a new CredentialUserRegistrationDetails and sets the default values.
 func NewCredentialUserRegistrationDetails()(*CredentialUserRegistrationDetails) {
     m := &CredentialUserRegistrationDetails{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCredentialUserRegistrationDetails()(*CredentialUserRegistrationDetails) 
     return m
 }
 // CreateCredentialUserRegistrationDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCredentialUserRegistrationDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCredentialUserRegistrationDetails(), nil
 }
 // GetAuthMethods gets the authMethods property value. Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
+// returns a []RegistrationAuthMethod when successful
 func (m *CredentialUserRegistrationDetails) GetAuthMethods()([]RegistrationAuthMethod) {
     val, err := m.GetBackingStore().Get("authMethods")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CredentialUserRegistrationDetails) GetAuthMethods()([]RegistrationAuthM
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -112,6 +114,7 @@ func (m *CredentialUserRegistrationDetails) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetIsCapable gets the isCapable property value. Indicates whether the user is ready to perform self-service password reset or MFA.
+// returns a *bool when successful
 func (m *CredentialUserRegistrationDetails) GetIsCapable()(*bool) {
     val, err := m.GetBackingStore().Get("isCapable")
     if err != nil {
@@ -123,6 +126,7 @@ func (m *CredentialUserRegistrationDetails) GetIsCapable()(*bool) {
     return nil
 }
 // GetIsEnabled gets the isEnabled property value. Indicates whether the user enabled to perform self-service password reset.
+// returns a *bool when successful
 func (m *CredentialUserRegistrationDetails) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -134,6 +138,7 @@ func (m *CredentialUserRegistrationDetails) GetIsEnabled()(*bool) {
     return nil
 }
 // GetIsMfaRegistered gets the isMfaRegistered property value. Indicates whether the user is registered for MFA.
+// returns a *bool when successful
 func (m *CredentialUserRegistrationDetails) GetIsMfaRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("isMfaRegistered")
     if err != nil {
@@ -145,6 +150,7 @@ func (m *CredentialUserRegistrationDetails) GetIsMfaRegistered()(*bool) {
     return nil
 }
 // GetIsRegistered gets the isRegistered property value. Indicates whether the user has registered any authentication methods for self-service password reset.
+// returns a *bool when successful
 func (m *CredentialUserRegistrationDetails) GetIsRegistered()(*bool) {
     val, err := m.GetBackingStore().Get("isRegistered")
     if err != nil {
@@ -156,6 +162,7 @@ func (m *CredentialUserRegistrationDetails) GetIsRegistered()(*bool) {
     return nil
 }
 // GetUserDisplayName gets the userDisplayName property value. Provides the user name of the corresponding user.
+// returns a *string when successful
 func (m *CredentialUserRegistrationDetails) GetUserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("userDisplayName")
     if err != nil {
@@ -167,6 +174,7 @@ func (m *CredentialUserRegistrationDetails) GetUserDisplayName()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. Provides the user principal name of the corresponding user.
+// returns a *string when successful
 func (m *CredentialUserRegistrationDetails) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -276,7 +284,6 @@ func (m *CredentialUserRegistrationDetails) SetUserPrincipalName(value *string)(
         panic(err)
     }
 }
-// CredentialUserRegistrationDetailsable 
 type CredentialUserRegistrationDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

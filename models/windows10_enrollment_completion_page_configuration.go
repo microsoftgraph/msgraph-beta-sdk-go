@@ -8,7 +8,7 @@ import (
 type Windows10EnrollmentCompletionPageConfiguration struct {
     DeviceEnrollmentConfiguration
 }
-// NewWindows10EnrollmentCompletionPageConfiguration instantiates a new windows10EnrollmentCompletionPageConfiguration and sets the default values.
+// NewWindows10EnrollmentCompletionPageConfiguration instantiates a new Windows10EnrollmentCompletionPageConfiguration and sets the default values.
 func NewWindows10EnrollmentCompletionPageConfiguration()(*Windows10EnrollmentCompletionPageConfiguration) {
     m := &Windows10EnrollmentCompletionPageConfiguration{
         DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
@@ -18,10 +18,12 @@ func NewWindows10EnrollmentCompletionPageConfiguration()(*Windows10EnrollmentCom
     return m
 }
 // CreateWindows10EnrollmentCompletionPageConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10EnrollmentCompletionPageConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10EnrollmentCompletionPageConfiguration(), nil
 }
 // GetAllowDeviceResetOnInstallFailure gets the allowDeviceResetOnInstallFailure property value. Allow or block device reset on installation failure
+// returns a *bool when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowDeviceResetOnInstallFailure()(*bool) {
     val, err := m.GetBackingStore().Get("allowDeviceResetOnInstallFailure")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowDeviceResetOnIn
     return nil
 }
 // GetAllowDeviceUseOnInstallFailure gets the allowDeviceUseOnInstallFailure property value. Allow the user to continue using the device on installation failure
+// returns a *bool when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowDeviceUseOnInstallFailure()(*bool) {
     val, err := m.GetBackingStore().Get("allowDeviceUseOnInstallFailure")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowDeviceUseOnInst
     return nil
 }
 // GetAllowLogCollectionOnInstallFailure gets the allowLogCollectionOnInstallFailure property value. Allow or block log collection on installation failure
+// returns a *bool when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowLogCollectionOnInstallFailure()(*bool) {
     val, err := m.GetBackingStore().Get("allowLogCollectionOnInstallFailure")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowLogCollectionOn
     return nil
 }
 // GetAllowNonBlockingAppInstallation gets the allowNonBlockingAppInstallation property value. Install all required apps as non blocking apps during white glove
+// returns a *bool when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowNonBlockingAppInstallation()(*bool) {
     val, err := m.GetBackingStore().Get("allowNonBlockingAppInstallation")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetAllowNonBlockingAppI
     return nil
 }
 // GetBlockDeviceSetupRetryByUser gets the blockDeviceSetupRetryByUser property value. Allow the user to retry the setup on installation failure
+// returns a *bool when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetBlockDeviceSetupRetryByUser()(*bool) {
     val, err := m.GetBackingStore().Get("blockDeviceSetupRetryByUser")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetBlockDeviceSetupRetr
     return nil
 }
 // GetCustomErrorMessage gets the customErrorMessage property value. Set custom error message to show upon installation failure
+// returns a *string when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetCustomErrorMessage()(*string) {
     val, err := m.GetBackingStore().Get("customErrorMessage")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetCustomErrorMessage()
     return nil
 }
 // GetDisableUserStatusTrackingAfterFirstUser gets the disableUserStatusTrackingAfterFirstUser property value. Only show installation progress for first user post enrollment
+// returns a *bool when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetDisableUserStatusTrackingAfterFirstUser()(*bool) {
     val, err := m.GetBackingStore().Get("disableUserStatusTrackingAfterFirstUser")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetDisableUserStatusTra
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
     res["allowDeviceResetOnInstallFailure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -230,6 +239,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetFieldDeserializers()
     return res
 }
 // GetInstallProgressTimeoutInMinutes gets the installProgressTimeoutInMinutes property value. Set installation progress timeout in minutes
+// returns a *int32 when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetInstallProgressTimeoutInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("installProgressTimeoutInMinutes")
     if err != nil {
@@ -241,6 +251,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetInstallProgressTimeo
     return nil
 }
 // GetInstallQualityUpdates gets the installQualityUpdates property value. Allows quality updates installation during OOBE
+// returns a *bool when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetInstallQualityUpdates()(*bool) {
     val, err := m.GetBackingStore().Get("installQualityUpdates")
     if err != nil {
@@ -252,6 +263,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetInstallQualityUpdate
     return nil
 }
 // GetSelectedMobileAppIds gets the selectedMobileAppIds property value. Selected applications to track the installation status
+// returns a []string when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetSelectedMobileAppIds()([]string) {
     val, err := m.GetBackingStore().Get("selectedMobileAppIds")
     if err != nil {
@@ -263,6 +275,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetSelectedMobileAppIds
     return nil
 }
 // GetShowInstallationProgress gets the showInstallationProgress property value. Show or hide installation progress to user
+// returns a *bool when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetShowInstallationProgress()(*bool) {
     val, err := m.GetBackingStore().Get("showInstallationProgress")
     if err != nil {
@@ -274,6 +287,7 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) GetShowInstallationProg
     return nil
 }
 // GetTrackInstallProgressForAutopilotOnly gets the trackInstallProgressForAutopilotOnly property value. Only show installation progress for Autopilot enrollment scenarios
+// returns a *bool when successful
 func (m *Windows10EnrollmentCompletionPageConfiguration) GetTrackInstallProgressForAutopilotOnly()(*bool) {
     val, err := m.GetBackingStore().Get("trackInstallProgressForAutopilotOnly")
     if err != nil {
@@ -448,7 +462,6 @@ func (m *Windows10EnrollmentCompletionPageConfiguration) SetTrackInstallProgress
         panic(err)
     }
 }
-// Windows10EnrollmentCompletionPageConfigurationable 
 type Windows10EnrollmentCompletionPageConfigurationable interface {
     DeviceEnrollmentConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

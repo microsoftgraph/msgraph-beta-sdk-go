@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MeetingRegistrantBase 
 type MeetingRegistrantBase struct {
     Entity
 }
-// NewMeetingRegistrantBase instantiates a new meetingRegistrantBase and sets the default values.
+// NewMeetingRegistrantBase instantiates a new MeetingRegistrantBase and sets the default values.
 func NewMeetingRegistrantBase()(*MeetingRegistrantBase) {
     m := &MeetingRegistrantBase{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewMeetingRegistrantBase()(*MeetingRegistrantBase) {
     return m
 }
 // CreateMeetingRegistrantBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMeetingRegistrantBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -40,6 +40,7 @@ func CreateMeetingRegistrantBaseFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewMeetingRegistrantBase(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MeetingRegistrantBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["joinWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,6 +56,7 @@ func (m *MeetingRegistrantBase) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetJoinWebUrl gets the joinWebUrl property value. A unique web URL for the registrant to join the meeting. Read-only.
+// returns a *string when successful
 func (m *MeetingRegistrantBase) GetJoinWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("joinWebUrl")
     if err != nil {
@@ -86,7 +88,6 @@ func (m *MeetingRegistrantBase) SetJoinWebUrl(value *string)() {
         panic(err)
     }
 }
-// MeetingRegistrantBaseable 
 type MeetingRegistrantBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

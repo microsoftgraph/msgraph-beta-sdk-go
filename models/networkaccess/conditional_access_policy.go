@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ConditionalAccessPolicy 
 type ConditionalAccessPolicy struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewConditionalAccessPolicy instantiates a new conditionalAccessPolicy and sets the default values.
+// NewConditionalAccessPolicy instantiates a new ConditionalAccessPolicy and sets the default values.
 func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {
     m := &ConditionalAccessPolicy{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewConditionalAccessPolicy()(*ConditionalAccessPolicy) {
     return m
 }
 // CreateConditionalAccessPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConditionalAccessPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessPolicy(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Indicates the date and time the conditional access policy was created.
+// returns a *Time when successful
 func (m *ConditionalAccessPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ConditionalAccessPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetDescription gets the description property value. Provides a summary of the conditional access policy.
+// returns a *string when successful
 func (m *ConditionalAccessPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ConditionalAccessPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Represents the human-readable name or title assigned to the conditional access policy.
+// returns a *string when successful
 func (m *ConditionalAccessPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ConditionalAccessPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -100,6 +104,7 @@ func (m *ConditionalAccessPolicy) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. Indicates the date and time when the conditional access policy was last modified.
+// returns a *Time when successful
 func (m *ConditionalAccessPolicy) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -170,7 +175,6 @@ func (m *ConditionalAccessPolicy) SetModifiedDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
-// ConditionalAccessPolicyable 
 type ConditionalAccessPolicyable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

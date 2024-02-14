@@ -18,28 +18,29 @@ type ItemItemsItemWorkbookFunctionsSheetRequestBuilderPostRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookFunctionsSheetRequestBuilderInternal instantiates a new SheetRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsSheetRequestBuilderInternal instantiates a new ItemItemsItemWorkbookFunctionsSheetRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsSheetRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsSheetRequestBuilder) {
     m := &ItemItemsItemWorkbookFunctionsSheetRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/sheet", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookFunctionsSheetRequestBuilder instantiates a new SheetRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookFunctionsSheetRequestBuilder instantiates a new ItemItemsItemWorkbookFunctionsSheetRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookFunctionsSheetRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookFunctionsSheetRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookFunctionsSheetRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action sheet
+// returns a WorkbookFunctionResultable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookFunctionsSheetRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookFunctionsSheetPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsSheetRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookFunctionResultFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,6 +52,7 @@ func (m *ItemItemsItemWorkbookFunctionsSheetRequestBuilder) Post(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionResultable), nil
 }
 // ToPostRequestInformation invoke action sheet
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookFunctionsSheetRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemWorkbookFunctionsSheetPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookFunctionsSheetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -65,6 +67,7 @@ func (m *ItemItemsItemWorkbookFunctionsSheetRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookFunctionsSheetRequestBuilder when successful
 func (m *ItemItemsItemWorkbookFunctionsSheetRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookFunctionsSheetRequestBuilder) {
     return NewItemItemsItemWorkbookFunctionsSheetRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

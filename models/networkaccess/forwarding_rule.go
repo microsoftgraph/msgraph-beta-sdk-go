@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ForwardingRule 
 type ForwardingRule struct {
     PolicyRule
 }
-// NewForwardingRule instantiates a new forwardingRule and sets the default values.
+// NewForwardingRule instantiates a new ForwardingRule and sets the default values.
 func NewForwardingRule()(*ForwardingRule) {
     m := &ForwardingRule{
         PolicyRule: *NewPolicyRule(),
@@ -18,6 +17,7 @@ func NewForwardingRule()(*ForwardingRule) {
     return m
 }
 // CreateForwardingRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateForwardingRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -44,6 +44,7 @@ func CreateForwardingRuleFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     return NewForwardingRule(), nil
 }
 // GetAction gets the action property value. The action property
+// returns a *ForwardingRuleAction when successful
 func (m *ForwardingRule) GetAction()(*ForwardingRuleAction) {
     val, err := m.GetBackingStore().Get("action")
     if err != nil {
@@ -55,6 +56,7 @@ func (m *ForwardingRule) GetAction()(*ForwardingRuleAction) {
     return nil
 }
 // GetDestinations gets the destinations property value. Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.
+// returns a []RuleDestinationable when successful
 func (m *ForwardingRule) GetDestinations()([]RuleDestinationable) {
     val, err := m.GetBackingStore().Get("destinations")
     if err != nil {
@@ -66,6 +68,7 @@ func (m *ForwardingRule) GetDestinations()([]RuleDestinationable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ForwardingRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyRule.GetFieldDeserializers()
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,6 +110,7 @@ func (m *ForwardingRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetRuleType gets the ruleType property value. The ruleType property
+// returns a *NetworkDestinationType when successful
 func (m *ForwardingRule) GetRuleType()(*NetworkDestinationType) {
     val, err := m.GetBackingStore().Get("ruleType")
     if err != nil {
@@ -172,7 +176,6 @@ func (m *ForwardingRule) SetRuleType(value *NetworkDestinationType)() {
         panic(err)
     }
 }
-// ForwardingRuleable 
 type ForwardingRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyRuleable

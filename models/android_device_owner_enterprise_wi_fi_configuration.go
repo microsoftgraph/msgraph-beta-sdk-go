@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerEnterpriseWiFiConfiguration struct {
     AndroidDeviceOwnerWiFiConfiguration
 }
-// NewAndroidDeviceOwnerEnterpriseWiFiConfiguration instantiates a new androidDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
+// NewAndroidDeviceOwnerEnterpriseWiFiConfiguration instantiates a new AndroidDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
 func NewAndroidDeviceOwnerEnterpriseWiFiConfiguration()(*AndroidDeviceOwnerEnterpriseWiFiConfiguration) {
     m := &AndroidDeviceOwnerEnterpriseWiFiConfiguration{
         AndroidDeviceOwnerWiFiConfiguration: *NewAndroidDeviceOwnerWiFiConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceOwnerEnterpriseWiFiConfiguration()(*AndroidDeviceOwnerEnter
     return m
 }
 // CreateAndroidDeviceOwnerEnterpriseWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerEnterpriseWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerEnterpriseWiFiConfiguration(), nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
+// returns a *WiFiAuthenticationMethod when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetAuthenticationMethod()(*WiFiAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetAuthenticationMethod(
     return nil
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
+// returns a DeviceManagementDerivedCredentialSettingsable when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
     val, err := m.GetBackingStore().Get("derivedCredentialSettings")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetDerivedCredentialSett
     return nil
 }
 // GetEapType gets the eapType property value. Extensible Authentication Protocol (EAP) Configuration Types.
+// returns a *AndroidEapType when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetEapType()(*AndroidEapType) {
     val, err := m.GetBackingStore().Get("eapType")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetEapType()(*AndroidEap
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AndroidDeviceOwnerWiFiConfiguration.GetFieldDeserializers()
     res["authenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,6 +161,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetFieldDeserializers()(
     return res
 }
 // GetIdentityCertificateForClientAuthentication gets the identityCertificateForClientAuthentication property value. Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication). This is the certificate presented by client to the Wi-Fi endpoint. The authentication server sitting behind the Wi-Fi endpoint must accept this certificate to successfully establish a Wi-Fi connection.
+// returns a AndroidDeviceOwnerCertificateProfileBaseable when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetIdentityCertificateForClientAuthentication()(AndroidDeviceOwnerCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificateForClientAuthentication")
     if err != nil {
@@ -167,6 +173,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetIdentityCertificateFo
     return nil
 }
 // GetInnerAuthenticationProtocolForEapTtls gets the innerAuthenticationProtocolForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
+// returns a *NonEapAuthenticationMethodForEapTtlsType when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType) {
     val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForEapTtls")
     if err != nil {
@@ -178,6 +185,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetInnerAuthenticationPr
     return nil
 }
 // GetInnerAuthenticationProtocolForPeap gets the innerAuthenticationProtocolForPeap property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. Possible values are: none, microsoftChapVersionTwo.
+// returns a *NonEapAuthenticationMethodForPeap when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetInnerAuthenticationProtocolForPeap()(*NonEapAuthenticationMethodForPeap) {
     val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForPeap")
     if err != nil {
@@ -189,6 +197,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetInnerAuthenticationPr
     return nil
 }
 // GetOuterIdentityPrivacyTemporaryValue gets the outerIdentityPrivacyTemporaryValue property value. Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS or PEAP. The String provided here is used to mask the username of individual users when they attempt to connect to Wi-Fi network.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetOuterIdentityPrivacyTemporaryValue()(*string) {
     val, err := m.GetBackingStore().Get("outerIdentityPrivacyTemporaryValue")
     if err != nil {
@@ -200,6 +209,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetOuterIdentityPrivacyT
     return nil
 }
 // GetRootCertificateForServerValidation gets the rootCertificateForServerValidation property value. Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
+// returns a AndroidDeviceOwnerTrustedRootCertificateable when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetRootCertificateForServerValidation()(AndroidDeviceOwnerTrustedRootCertificateable) {
     val, err := m.GetBackingStore().Get("rootCertificateForServerValidation")
     if err != nil {
@@ -211,6 +221,7 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetRootCertificateForSer
     return nil
 }
 // GetTrustedServerCertificateNames gets the trustedServerCertificateNames property value. Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
+// returns a []string when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetTrustedServerCertificateNames()([]string) {
     val, err := m.GetBackingStore().Get("trustedServerCertificateNames")
     if err != nil {
@@ -350,7 +361,6 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) SetTrustedServerCertific
         panic(err)
     }
 }
-// AndroidDeviceOwnerEnterpriseWiFiConfigurationable 
 type AndroidDeviceOwnerEnterpriseWiFiConfigurationable interface {
     AndroidDeviceOwnerWiFiConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

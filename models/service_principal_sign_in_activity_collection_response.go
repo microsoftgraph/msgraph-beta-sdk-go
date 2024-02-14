@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ServicePrincipalSignInActivityCollectionResponse 
 type ServicePrincipalSignInActivityCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewServicePrincipalSignInActivityCollectionResponse instantiates a new servicePrincipalSignInActivityCollectionResponse and sets the default values.
+// NewServicePrincipalSignInActivityCollectionResponse instantiates a new ServicePrincipalSignInActivityCollectionResponse and sets the default values.
 func NewServicePrincipalSignInActivityCollectionResponse()(*ServicePrincipalSignInActivityCollectionResponse) {
     m := &ServicePrincipalSignInActivityCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewServicePrincipalSignInActivityCollectionResponse()(*ServicePrincipalSign
     return m
 }
 // CreateServicePrincipalSignInActivityCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateServicePrincipalSignInActivityCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalSignInActivityCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServicePrincipalSignInActivityCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ServicePrincipalSignInActivityCollectionResponse) GetFieldDeserializers
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ServicePrincipalSignInActivityable when successful
 func (m *ServicePrincipalSignInActivityCollectionResponse) GetValue()([]ServicePrincipalSignInActivityable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ServicePrincipalSignInActivityCollectionResponse) SetValue(value []Serv
         panic(err)
     }
 }
-// ServicePrincipalSignInActivityCollectionResponseable 
 type ServicePrincipalSignInActivityCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

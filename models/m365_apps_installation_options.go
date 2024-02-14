@@ -5,11 +5,10 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// M365AppsInstallationOptions 
 type M365AppsInstallationOptions struct {
     Entity
 }
-// NewM365AppsInstallationOptions instantiates a new m365AppsInstallationOptions and sets the default values.
+// NewM365AppsInstallationOptions instantiates a new M365AppsInstallationOptions and sets the default values.
 func NewM365AppsInstallationOptions()(*M365AppsInstallationOptions) {
     m := &M365AppsInstallationOptions{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewM365AppsInstallationOptions()(*M365AppsInstallationOptions) {
     return m
 }
 // CreateM365AppsInstallationOptionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateM365AppsInstallationOptionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewM365AppsInstallationOptions(), nil
 }
 // GetAppsForMac gets the appsForMac property value. The appsForMac property
+// returns a AppsInstallationOptionsForMacable when successful
 func (m *M365AppsInstallationOptions) GetAppsForMac()(AppsInstallationOptionsForMacable) {
     val, err := m.GetBackingStore().Get("appsForMac")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *M365AppsInstallationOptions) GetAppsForMac()(AppsInstallationOptionsFor
     return nil
 }
 // GetAppsForWindows gets the appsForWindows property value. The appsForWindows property
+// returns a AppsInstallationOptionsForWindowsable when successful
 func (m *M365AppsInstallationOptions) GetAppsForWindows()(AppsInstallationOptionsForWindowsable) {
     val, err := m.GetBackingStore().Get("appsForWindows")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *M365AppsInstallationOptions) GetAppsForWindows()(AppsInstallationOption
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *M365AppsInstallationOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appsForMac"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,6 +81,7 @@ func (m *M365AppsInstallationOptions) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetUpdateChannel gets the updateChannel property value. The updateChannel property
+// returns a *AppsUpdateChannelType when successful
 func (m *M365AppsInstallationOptions) GetUpdateChannel()(*AppsUpdateChannelType) {
     val, err := m.GetBackingStore().Get("updateChannel")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *M365AppsInstallationOptions) SetUpdateChannel(value *AppsUpdateChannelT
         panic(err)
     }
 }
-// M365AppsInstallationOptionsable 
 type M365AppsInstallationOptionsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -148,13 +151,11 @@ type M365AppsInstallationOptionsable interface {
     SetUpdateChannel(value *AppsUpdateChannelType)()
 }
 
-
-// AppsInstallationOptionsForWindows 
 type AppsInstallationOptionsForWindows struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAppsInstallationOptionsForWindows instantiates a new appsInstallationOptionsForWindows and sets the default values.
+// NewAppsInstallationOptionsForWindows instantiates a new AppsInstallationOptionsForWindows and sets the default values.
 func NewAppsInstallationOptionsForWindows()(*AppsInstallationOptionsForWindows) {
     m := &AppsInstallationOptionsForWindows{
     }
@@ -163,10 +164,12 @@ func NewAppsInstallationOptionsForWindows()(*AppsInstallationOptionsForWindows) 
     return m
 }
 // CreateAppsInstallationOptionsForWindowsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppsInstallationOptionsForWindowsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppsInstallationOptionsForWindows(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AppsInstallationOptionsForWindows) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -179,10 +182,12 @@ func (m *AppsInstallationOptionsForWindows) GetAdditionalData()(map[string]any) 
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AppsInstallationOptionsForWindows) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppsInstallationOptionsForWindows) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["isMicrosoft365AppsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -238,6 +243,7 @@ func (m *AppsInstallationOptionsForWindows) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetIsMicrosoft365AppsEnabled gets the isMicrosoft365AppsEnabled property value. Specifies whether users can install Microsoft 365 apps, including Skype for Business, on their Windows devices. The default value is true.
+// returns a *bool when successful
 func (m *AppsInstallationOptionsForWindows) GetIsMicrosoft365AppsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isMicrosoft365AppsEnabled")
     if err != nil {
@@ -249,6 +255,7 @@ func (m *AppsInstallationOptionsForWindows) GetIsMicrosoft365AppsEnabled()(*bool
     return nil
 }
 // GetIsProjectEnabled gets the isProjectEnabled property value. Specifies whether users can install Microsoft Project on their Windows devices. The default value is true.
+// returns a *bool when successful
 func (m *AppsInstallationOptionsForWindows) GetIsProjectEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isProjectEnabled")
     if err != nil {
@@ -260,6 +267,7 @@ func (m *AppsInstallationOptionsForWindows) GetIsProjectEnabled()(*bool) {
     return nil
 }
 // GetIsSkypeForBusinessEnabled gets the isSkypeForBusinessEnabled property value. Specifies whether users can install Skype for Business (standalone) on their Windows devices. The default value is true.
+// returns a *bool when successful
 func (m *AppsInstallationOptionsForWindows) GetIsSkypeForBusinessEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSkypeForBusinessEnabled")
     if err != nil {
@@ -271,6 +279,7 @@ func (m *AppsInstallationOptionsForWindows) GetIsSkypeForBusinessEnabled()(*bool
     return nil
 }
 // GetIsVisioEnabled gets the isVisioEnabled property value. Specifies whether users can install Visio on their Windows devices. The default value is true.
+// returns a *bool when successful
 func (m *AppsInstallationOptionsForWindows) GetIsVisioEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isVisioEnabled")
     if err != nil {
@@ -282,6 +291,7 @@ func (m *AppsInstallationOptionsForWindows) GetIsVisioEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AppsInstallationOptionsForWindows) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -378,7 +388,6 @@ func (m *AppsInstallationOptionsForWindows) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// AppsInstallationOptionsForWindowsable 
 type AppsInstallationOptionsForWindowsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

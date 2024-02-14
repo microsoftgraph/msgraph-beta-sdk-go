@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DimensionValueCollectionResponse 
 type DimensionValueCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDimensionValueCollectionResponse instantiates a new dimensionValueCollectionResponse and sets the default values.
+// NewDimensionValueCollectionResponse instantiates a new DimensionValueCollectionResponse and sets the default values.
 func NewDimensionValueCollectionResponse()(*DimensionValueCollectionResponse) {
     m := &DimensionValueCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDimensionValueCollectionResponse()(*DimensionValueCollectionResponse) {
     return m
 }
 // CreateDimensionValueCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDimensionValueCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDimensionValueCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DimensionValueCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DimensionValueCollectionResponse) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DimensionValueable when successful
 func (m *DimensionValueCollectionResponse) GetValue()([]DimensionValueable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DimensionValueCollectionResponse) SetValue(value []DimensionValueable)(
         panic(err)
     }
 }
-// DimensionValueCollectionResponseable 
 type DimensionValueCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

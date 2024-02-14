@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationGroupSettingCollectionInstance struct {
     DeviceManagementConfigurationSettingInstance
 }
-// NewDeviceManagementConfigurationGroupSettingCollectionInstance instantiates a new deviceManagementConfigurationGroupSettingCollectionInstance and sets the default values.
+// NewDeviceManagementConfigurationGroupSettingCollectionInstance instantiates a new DeviceManagementConfigurationGroupSettingCollectionInstance and sets the default values.
 func NewDeviceManagementConfigurationGroupSettingCollectionInstance()(*DeviceManagementConfigurationGroupSettingCollectionInstance) {
     m := &DeviceManagementConfigurationGroupSettingCollectionInstance{
         DeviceManagementConfigurationSettingInstance: *NewDeviceManagementConfigurationSettingInstance(),
@@ -18,10 +18,12 @@ func NewDeviceManagementConfigurationGroupSettingCollectionInstance()(*DeviceMan
     return m
 }
 // CreateDeviceManagementConfigurationGroupSettingCollectionInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationGroupSettingCollectionInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationGroupSettingCollectionInstance(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingInstance.GetFieldDeserializers()
     res["groupSettingCollectionValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +45,7 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) GetFieldDe
     return res
 }
 // GetGroupSettingCollectionValue gets the groupSettingCollectionValue property value. A collection of GroupSetting values
+// returns a []DeviceManagementConfigurationGroupSettingValueable when successful
 func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) GetGroupSettingCollectionValue()([]DeviceManagementConfigurationGroupSettingValueable) {
     val, err := m.GetBackingStore().Get("groupSettingCollectionValue")
     if err != nil {
@@ -80,7 +83,6 @@ func (m *DeviceManagementConfigurationGroupSettingCollectionInstance) SetGroupSe
         panic(err)
     }
 }
-// DeviceManagementConfigurationGroupSettingCollectionInstanceable 
 type DeviceManagementConfigurationGroupSettingCollectionInstanceable interface {
     DeviceManagementConfigurationSettingInstanceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

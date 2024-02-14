@@ -25,28 +25,29 @@ type ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderPutReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
+// NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderInternal instantiates a new ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) {
     m := &ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachmentSessions/{attachmentSession%2Did}/content", pathParameters),
     }
     return m
 }
-// NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.
+// NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder instantiates a new ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder and sets the default values.
 func NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the content streams that are uploaded.
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -58,14 +59,15 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) 
     return res.([]byte), nil
 }
 // Put the content streams that are uploaded.
+// returns a AttachmentSessionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAttachmentSessionFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -77,6 +79,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionable), nil
 }
 // ToGetRequestInformation the content streams that are uploaded.
+// returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -87,6 +90,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) 
     return requestInfo, nil
 }
 // ToPutRequestInformation the content streams that are uploaded.
+// returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +102,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder when successful
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

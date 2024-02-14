@@ -28,35 +28,38 @@ type MobileAppsItemGraphWinGetAppRequestBuilderGetRequestConfiguration struct {
     QueryParameters *MobileAppsItemGraphWinGetAppRequestBuilderGetQueryParameters
 }
 // Assignments provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder when successful
 func (m *MobileAppsItemGraphWinGetAppRequestBuilder) Assignments()(*MobileAppsItemGraphWinGetAppAssignmentsRequestBuilder) {
     return NewMobileAppsItemGraphWinGetAppAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Categories provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphWinGetAppCategoriesRequestBuilder when successful
 func (m *MobileAppsItemGraphWinGetAppRequestBuilder) Categories()(*MobileAppsItemGraphWinGetAppCategoriesRequestBuilder) {
     return NewMobileAppsItemGraphWinGetAppCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMobileAppsItemGraphWinGetAppRequestBuilderInternal instantiates a new GraphWinGetAppRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWinGetAppRequestBuilderInternal instantiates a new MobileAppsItemGraphWinGetAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWinGetAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWinGetAppRequestBuilder) {
     m := &MobileAppsItemGraphWinGetAppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphWinGetAppRequestBuilder instantiates a new GraphWinGetAppRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphWinGetAppRequestBuilder instantiates a new MobileAppsItemGraphWinGetAppRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWinGetAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWinGetAppRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphWinGetAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the item of type microsoft.graph.mobileApp as microsoft.graph.winGetApp
+// returns a WinGetAppable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWinGetAppRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWinGetAppRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WinGetAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWinGetAppFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -68,10 +71,12 @@ func (m *MobileAppsItemGraphWinGetAppRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WinGetAppable), nil
 }
 // Relationships provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.
+// returns a *MobileAppsItemGraphWinGetAppRelationshipsRequestBuilder when successful
 func (m *MobileAppsItemGraphWinGetAppRequestBuilder) Relationships()(*MobileAppsItemGraphWinGetAppRelationshipsRequestBuilder) {
     return NewMobileAppsItemGraphWinGetAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the item of type microsoft.graph.mobileApp as microsoft.graph.winGetApp
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWinGetAppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWinGetAppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -85,6 +90,7 @@ func (m *MobileAppsItemGraphWinGetAppRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphWinGetAppRequestBuilder when successful
 func (m *MobileAppsItemGraphWinGetAppRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphWinGetAppRequestBuilder) {
     return NewMobileAppsItemGraphWinGetAppRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

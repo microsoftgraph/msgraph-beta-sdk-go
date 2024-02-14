@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AzureADDevice 
 type AzureADDevice struct {
     UpdatableAsset
 }
-// NewAzureADDevice instantiates a new azureADDevice and sets the default values.
+// NewAzureADDevice instantiates a new AzureADDevice and sets the default values.
 func NewAzureADDevice()(*AzureADDevice) {
     m := &AzureADDevice{
         UpdatableAsset: *NewUpdatableAsset(),
@@ -18,10 +17,12 @@ func NewAzureADDevice()(*AzureADDevice) {
     return m
 }
 // CreateAzureADDeviceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAzureADDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureADDevice(), nil
 }
 // GetEnrollments gets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
+// returns a []UpdatableAssetEnrollmentable when successful
 func (m *AzureADDevice) GetEnrollments()([]UpdatableAssetEnrollmentable) {
     val, err := m.GetBackingStore().Get("enrollments")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AzureADDevice) GetEnrollments()([]UpdatableAssetEnrollmentable) {
     return nil
 }
 // GetErrors gets the errors property value. Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
+// returns a []UpdatableAssetErrorable when successful
 func (m *AzureADDevice) GetErrors()([]UpdatableAssetErrorable) {
     val, err := m.GetBackingStore().Get("errors")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AzureADDevice) GetErrors()([]UpdatableAssetErrorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureADDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UpdatableAsset.GetFieldDeserializers()
     res["enrollments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,7 +129,6 @@ func (m *AzureADDevice) SetErrors(value []UpdatableAssetErrorable)() {
         panic(err)
     }
 }
-// AzureADDeviceable 
 type AzureADDeviceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UpdatableAssetable

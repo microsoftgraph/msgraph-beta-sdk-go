@@ -9,7 +9,7 @@ import (
 type BookingCustomer struct {
     BookingPerson
 }
-// NewBookingCustomer instantiates a new bookingCustomer and sets the default values.
+// NewBookingCustomer instantiates a new BookingCustomer and sets the default values.
 func NewBookingCustomer()(*BookingCustomer) {
     m := &BookingCustomer{
         BookingPerson: *NewBookingPerson(),
@@ -17,10 +17,12 @@ func NewBookingCustomer()(*BookingCustomer) {
     return m
 }
 // CreateBookingCustomerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBookingCustomerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookingCustomer(), nil
 }
 // GetAddresses gets the addresses property value. Addresses associated with the customer, including home, business and other addresses.
+// returns a []PhysicalAddressable when successful
 func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("addresses")
     if err != nil {
@@ -31,7 +33,8 @@ func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date, time and timezone when the customer was created.
+// returns a *Time when successful
 func (m *BookingCustomer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *BookingCustomer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BookingPerson.GetFieldDeserializers()
     res["addresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,7 +103,8 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date, time and timezone when the customer was last updated.
+// returns a *Time when successful
 func (m *BookingCustomer) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -111,6 +116,7 @@ func (m *BookingCustomer) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetPhones gets the phones property value. Phone numbers associated with the customer, including home, business and mobile numbers.
+// returns a []Phoneable when successful
 func (m *BookingCustomer) GetPhones()([]Phoneable) {
     val, err := m.GetBackingStore().Get("phones")
     if err != nil {
@@ -172,14 +178,14 @@ func (m *BookingCustomer) SetAddresses(value []PhysicalAddressable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date, time and timezone when the customer was created.
 func (m *BookingCustomer) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date, time and timezone when the customer was last updated.
 func (m *BookingCustomer) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
@@ -193,7 +199,6 @@ func (m *BookingCustomer) SetPhones(value []Phoneable)() {
         panic(err)
     }
 }
-// BookingCustomerable 
 type BookingCustomerable interface {
     BookingPersonable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

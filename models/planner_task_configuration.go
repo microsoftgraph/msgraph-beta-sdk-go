@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerTaskConfiguration 
 type PlannerTaskConfiguration struct {
     Entity
 }
-// NewPlannerTaskConfiguration instantiates a new plannerTaskConfiguration and sets the default values.
+// NewPlannerTaskConfiguration instantiates a new PlannerTaskConfiguration and sets the default values.
 func NewPlannerTaskConfiguration()(*PlannerTaskConfiguration) {
     m := &PlannerTaskConfiguration{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPlannerTaskConfiguration()(*PlannerTaskConfiguration) {
     return m
 }
 // CreatePlannerTaskConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerTaskConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskConfiguration(), nil
 }
 // GetEditPolicy gets the editPolicy property value. Policy configuration for tasks created for the businessScenario when they're being changed outside of the scenario.
+// returns a PlannerTaskPolicyable when successful
 func (m *PlannerTaskConfiguration) GetEditPolicy()(PlannerTaskPolicyable) {
     val, err := m.GetBackingStore().Get("editPolicy")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PlannerTaskConfiguration) GetEditPolicy()(PlannerTaskPolicyable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerTaskConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["editPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,7 +68,6 @@ func (m *PlannerTaskConfiguration) SetEditPolicy(value PlannerTaskPolicyable)() 
         panic(err)
     }
 }
-// PlannerTaskConfigurationable 
 type PlannerTaskConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

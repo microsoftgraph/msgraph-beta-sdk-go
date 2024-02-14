@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EducationalActivity 
 type EducationalActivity struct {
     ItemFacet
 }
-// NewEducationalActivity instantiates a new educationalActivity and sets the default values.
+// NewEducationalActivity instantiates a new EducationalActivity and sets the default values.
 func NewEducationalActivity()(*EducationalActivity) {
     m := &EducationalActivity{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewEducationalActivity()(*EducationalActivity) {
     return m
 }
 // CreateEducationalActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEducationalActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationalActivity(), nil
 }
 // GetCompletionMonthYear gets the completionMonthYear property value. The month and year the user graduated or completed the activity.
+// returns a *DateOnly when successful
 func (m *EducationalActivity) GetCompletionMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("completionMonthYear")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *EducationalActivity) GetCompletionMonthYear()(*i878a80d2330e89d26896388
     return nil
 }
 // GetEndMonthYear gets the endMonthYear property value. The month and year the user completed the educational activity referenced.
+// returns a *DateOnly when successful
 func (m *EducationalActivity) GetEndMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("endMonthYear")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *EducationalActivity) GetEndMonthYear()(*i878a80d2330e89d26896388a3f487e
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["completionMonthYear"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,6 +102,7 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetInstitution gets the institution property value. The institution property
+// returns a InstitutionDataable when successful
 func (m *EducationalActivity) GetInstitution()(InstitutionDataable) {
     val, err := m.GetBackingStore().Get("institution")
     if err != nil {
@@ -110,6 +114,7 @@ func (m *EducationalActivity) GetInstitution()(InstitutionDataable) {
     return nil
 }
 // GetProgram gets the program property value. The program property
+// returns a EducationalActivityDetailable when successful
 func (m *EducationalActivity) GetProgram()(EducationalActivityDetailable) {
     val, err := m.GetBackingStore().Get("program")
     if err != nil {
@@ -121,6 +126,7 @@ func (m *EducationalActivity) GetProgram()(EducationalActivityDetailable) {
     return nil
 }
 // GetStartMonthYear gets the startMonthYear property value. The month and year the user commenced the activity referenced.
+// returns a *DateOnly when successful
 func (m *EducationalActivity) GetStartMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("startMonthYear")
     if err != nil {
@@ -204,7 +210,6 @@ func (m *EducationalActivity) SetStartMonthYear(value *i878a80d2330e89d26896388a
         panic(err)
     }
 }
-// EducationalActivityable 
 type EducationalActivityable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

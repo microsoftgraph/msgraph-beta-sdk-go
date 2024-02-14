@@ -17,28 +17,28 @@ type WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilderPostReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilderInternal instantiates a new AssignUserToDeviceRequestBuilder and sets the default values.
+// NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilderInternal instantiates a new WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder) {
     m := &WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}/assignUserToDevice", pathParameters),
     }
     return m
 }
-// NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder instantiates a new AssignUserToDeviceRequestBuilder and sets the default values.
+// NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder instantiates a new WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder and sets the default values.
 func NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post assigns user to Autopilot devices.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder) Post(ctx context.Context, body WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBodyable, requestConfiguration *WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder) P
     return nil
 }
 // ToPostRequestInformation assigns user to Autopilot devices.
+// returns a *RequestInformation when successful
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder) ToPostRequestInformation(ctx context.Context, body WindowsAutopilotDeviceIdentitiesItemAssignUserToDevicePostRequestBodyable, requestConfiguration *WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder) T
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder when successful
 func (m *WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder) WithUrl(rawUrl string)(*WindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder) {
     return NewWindowsAutopilotDeviceIdentitiesItemAssignUserToDeviceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

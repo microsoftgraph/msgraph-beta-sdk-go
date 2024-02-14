@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationEventsPolicy 
 type AuthenticationEventsPolicy struct {
     Entity
 }
-// NewAuthenticationEventsPolicy instantiates a new authenticationEventsPolicy and sets the default values.
+// NewAuthenticationEventsPolicy instantiates a new AuthenticationEventsPolicy and sets the default values.
 func NewAuthenticationEventsPolicy()(*AuthenticationEventsPolicy) {
     m := &AuthenticationEventsPolicy{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewAuthenticationEventsPolicy()(*AuthenticationEventsPolicy) {
     return m
 }
 // CreateAuthenticationEventsPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationEventsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationEventsPolicy(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationEventsPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["onSignupStart"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *AuthenticationEventsPolicy) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetOnSignupStart gets the onSignupStart property value. A list of applicable actions to be taken on sign-up.
+// returns a []AuthenticationListenerable when successful
 func (m *AuthenticationEventsPolicy) GetOnSignupStart()([]AuthenticationListenerable) {
     val, err := m.GetBackingStore().Get("onSignupStart")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *AuthenticationEventsPolicy) SetOnSignupStart(value []AuthenticationList
         panic(err)
     }
 }
-// AuthenticationEventsPolicyable 
 type AuthenticationEventsPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

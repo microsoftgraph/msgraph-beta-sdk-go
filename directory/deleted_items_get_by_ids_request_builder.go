@@ -17,21 +17,23 @@ type DeletedItemsGetByIdsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewDeletedItemsGetByIdsRequestBuilderInternal instantiates a new GetByIdsRequestBuilder and sets the default values.
+// NewDeletedItemsGetByIdsRequestBuilderInternal instantiates a new DeletedItemsGetByIdsRequestBuilder and sets the default values.
 func NewDeletedItemsGetByIdsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsGetByIdsRequestBuilder) {
     m := &DeletedItemsGetByIdsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/deletedItems/getByIds", pathParameters),
     }
     return m
 }
-// NewDeletedItemsGetByIdsRequestBuilder instantiates a new GetByIdsRequestBuilder and sets the default values.
+// NewDeletedItemsGetByIdsRequestBuilder instantiates a new DeletedItemsGetByIdsRequestBuilder and sets the default values.
 func NewDeletedItemsGetByIdsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsGetByIdsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsGetByIdsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post return the directory objects specified in a list of IDs. Some common uses for this function are to:
-// Deprecated: This method is obsolete. Use PostAsGetByIdsPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a DeletedItemsGetByIdsResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *DeletedItemsGetByIdsRequestBuilder) Post(ctx context.Context, body Dele
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedItemsGetByIdsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *DeletedItemsGetByIdsRequestBuilder) Post(ctx context.Context, body Dele
     return res.(DeletedItemsGetByIdsResponseable), nil
 }
 // PostAsGetByIdsPostResponse return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// returns a DeletedItemsGetByIdsPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *DeletedItemsGetByIdsRequestBuilder) PostAsGetByIdsPostResponse(ctx cont
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeletedItemsGetByIdsPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *DeletedItemsGetByIdsRequestBuilder) PostAsGetByIdsPostResponse(ctx cont
     return res.(DeletedItemsGetByIdsPostResponseable), nil
 }
 // ToPostRequestInformation return the directory objects specified in a list of IDs. Some common uses for this function are to:
+// returns a *RequestInformation when successful
 func (m *DeletedItemsGetByIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeletedItemsGetByIdsPostRequestBodyable, requestConfiguration *DeletedItemsGetByIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *DeletedItemsGetByIdsRequestBuilder) ToPostRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeletedItemsGetByIdsRequestBuilder when successful
 func (m *DeletedItemsGetByIdsRequestBuilder) WithUrl(rawUrl string)(*DeletedItemsGetByIdsRequestBuilder) {
     return NewDeletedItemsGetByIdsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

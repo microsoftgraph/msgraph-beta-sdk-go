@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NoncustodialDataSource 
 type NoncustodialDataSource struct {
     DataSourceContainer
 }
-// NewNoncustodialDataSource instantiates a new noncustodialDataSource and sets the default values.
+// NewNoncustodialDataSource instantiates a new NoncustodialDataSource and sets the default values.
 func NewNoncustodialDataSource()(*NoncustodialDataSource) {
     m := &NoncustodialDataSource{
         DataSourceContainer: *NewDataSourceContainer(),
@@ -18,10 +17,12 @@ func NewNoncustodialDataSource()(*NoncustodialDataSource) {
     return m
 }
 // CreateNoncustodialDataSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNoncustodialDataSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNoncustodialDataSource(), nil
 }
 // GetApplyHoldToSource gets the applyHoldToSource property value. Indicates if hold is applied to noncustodial data source (such as mailbox or site).
+// returns a *bool when successful
 func (m *NoncustodialDataSource) GetApplyHoldToSource()(*bool) {
     val, err := m.GetBackingStore().Get("applyHoldToSource")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *NoncustodialDataSource) GetApplyHoldToSource()(*bool) {
     return nil
 }
 // GetDataSource gets the dataSource property value. User source or SharePoint site data source as noncustodial data source.
+// returns a DataSourceable when successful
 func (m *NoncustodialDataSource) GetDataSource()(DataSourceable) {
     val, err := m.GetBackingStore().Get("dataSource")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *NoncustodialDataSource) GetDataSource()(DataSourceable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NoncustodialDataSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSourceContainer.GetFieldDeserializers()
     res["applyHoldToSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,7 +105,6 @@ func (m *NoncustodialDataSource) SetDataSource(value DataSourceable)() {
         panic(err)
     }
 }
-// NoncustodialDataSourceable 
 type NoncustodialDataSourceable interface {
     DataSourceContainerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

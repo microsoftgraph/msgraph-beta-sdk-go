@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// MatchingLabel 
 type MatchingLabel struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewMatchingLabel instantiates a new matchingLabel and sets the default values.
+// NewMatchingLabel instantiates a new MatchingLabel and sets the default values.
 func NewMatchingLabel()(*MatchingLabel) {
     m := &MatchingLabel{
     }
@@ -19,10 +18,12 @@ func NewMatchingLabel()(*MatchingLabel) {
     return m
 }
 // CreateMatchingLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMatchingLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMatchingLabel(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MatchingLabel) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *MatchingLabel) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetApplicationMode gets the applicationMode property value. The applicationMode property
+// returns a *ApplicationMode when successful
 func (m *MatchingLabel) GetApplicationMode()(*ApplicationMode) {
     val, err := m.GetBackingStore().Get("applicationMode")
     if err != nil {
@@ -46,10 +48,12 @@ func (m *MatchingLabel) GetApplicationMode()(*ApplicationMode) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *MatchingLabel) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *MatchingLabel) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *MatchingLabel) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *MatchingLabel) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *MatchingLabel) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["applicationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -193,6 +199,7 @@ func (m *MatchingLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *string when successful
 func (m *MatchingLabel) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -204,6 +211,7 @@ func (m *MatchingLabel) GetId()(*string) {
     return nil
 }
 // GetIsEndpointProtectionEnabled gets the isEndpointProtectionEnabled property value. The isEndpointProtectionEnabled property
+// returns a *bool when successful
 func (m *MatchingLabel) GetIsEndpointProtectionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEndpointProtectionEnabled")
     if err != nil {
@@ -215,6 +223,7 @@ func (m *MatchingLabel) GetIsEndpointProtectionEnabled()(*bool) {
     return nil
 }
 // GetLabelActions gets the labelActions property value. The labelActions property
+// returns a []LabelActionBaseable when successful
 func (m *MatchingLabel) GetLabelActions()([]LabelActionBaseable) {
     val, err := m.GetBackingStore().Get("labelActions")
     if err != nil {
@@ -226,6 +235,7 @@ func (m *MatchingLabel) GetLabelActions()([]LabelActionBaseable) {
     return nil
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *MatchingLabel) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -237,6 +247,7 @@ func (m *MatchingLabel) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *MatchingLabel) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -248,6 +259,7 @@ func (m *MatchingLabel) GetOdataType()(*string) {
     return nil
 }
 // GetPolicyTip gets the policyTip property value. The policyTip property
+// returns a *string when successful
 func (m *MatchingLabel) GetPolicyTip()(*string) {
     val, err := m.GetBackingStore().Get("policyTip")
     if err != nil {
@@ -259,6 +271,7 @@ func (m *MatchingLabel) GetPolicyTip()(*string) {
     return nil
 }
 // GetPriority gets the priority property value. The priority property
+// returns a *int32 when successful
 func (m *MatchingLabel) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -270,6 +283,7 @@ func (m *MatchingLabel) GetPriority()(*int32) {
     return nil
 }
 // GetToolTip gets the toolTip property value. The toolTip property
+// returns a *string when successful
 func (m *MatchingLabel) GetToolTip()(*string) {
     val, err := m.GetBackingStore().Get("toolTip")
     if err != nil {
@@ -451,7 +465,6 @@ func (m *MatchingLabel) SetToolTip(value *string)() {
         panic(err)
     }
 }
-// MatchingLabelable 
 type MatchingLabelable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

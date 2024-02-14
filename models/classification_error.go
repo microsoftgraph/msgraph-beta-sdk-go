@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ClassificationError 
 type ClassificationError struct {
     ClassifcationErrorBase
 }
-// NewClassificationError instantiates a new classificationError and sets the default values.
+// NewClassificationError instantiates a new ClassificationError and sets the default values.
 func NewClassificationError()(*ClassificationError) {
     m := &ClassificationError{
         ClassifcationErrorBase: *NewClassifcationErrorBase(),
@@ -16,10 +15,12 @@ func NewClassificationError()(*ClassificationError) {
     return m
 }
 // CreateClassificationErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateClassificationErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClassificationError(), nil
 }
 // GetDetails gets the details property value. The details property
+// returns a []ClassifcationErrorBaseable when successful
 func (m *ClassificationError) GetDetails()([]ClassifcationErrorBaseable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *ClassificationError) GetDetails()([]ClassifcationErrorBaseable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ClassificationError) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ClassifcationErrorBase.GetFieldDeserializers()
     res["details"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,7 +80,6 @@ func (m *ClassificationError) SetDetails(value []ClassifcationErrorBaseable)() {
         panic(err)
     }
 }
-// ClassificationErrorable 
 type ClassificationErrorable interface {
     ClassifcationErrorBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

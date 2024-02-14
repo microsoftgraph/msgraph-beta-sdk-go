@@ -8,7 +8,7 @@ import (
 type WindowsKioskVisitor struct {
     WindowsKioskUser
 }
-// NewWindowsKioskVisitor instantiates a new windowsKioskVisitor and sets the default values.
+// NewWindowsKioskVisitor instantiates a new WindowsKioskVisitor and sets the default values.
 func NewWindowsKioskVisitor()(*WindowsKioskVisitor) {
     m := &WindowsKioskVisitor{
         WindowsKioskUser: *NewWindowsKioskUser(),
@@ -18,10 +18,12 @@ func NewWindowsKioskVisitor()(*WindowsKioskVisitor) {
     return m
 }
 // CreateWindowsKioskVisitorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskVisitorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsKioskVisitor(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskVisitor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsKioskUser.GetFieldDeserializers()
     return res
@@ -34,7 +36,6 @@ func (m *WindowsKioskVisitor) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// WindowsKioskVisitorable 
 type WindowsKioskVisitorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsKioskUserable

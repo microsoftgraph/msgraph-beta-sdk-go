@@ -26,28 +26,29 @@ type TiIndicatorsCountRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *TiIndicatorsCountRequestBuilderGetQueryParameters
 }
-// NewTiIndicatorsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewTiIndicatorsCountRequestBuilderInternal instantiates a new TiIndicatorsCountRequestBuilder and sets the default values.
 func NewTiIndicatorsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TiIndicatorsCountRequestBuilder) {
     m := &TiIndicatorsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/tiIndicators/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/tiIndicators/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewTiIndicatorsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewTiIndicatorsCountRequestBuilder instantiates a new TiIndicatorsCountRequestBuilder and sets the default values.
 func NewTiIndicatorsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TiIndicatorsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewTiIndicatorsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TiIndicatorsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *TiIndicatorsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *TiIndicatorsCountRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *TiIndicatorsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TiIndicatorsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *TiIndicatorsCountRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TiIndicatorsCountRequestBuilder when successful
 func (m *TiIndicatorsCountRequestBuilder) WithUrl(rawUrl string)(*TiIndicatorsCountRequestBuilder) {
     return NewTiIndicatorsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

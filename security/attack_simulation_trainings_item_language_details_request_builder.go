@@ -47,6 +47,7 @@ type AttackSimulationTrainingsItemLanguageDetailsRequestBuilderPostRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByTrainingLanguageDetailId provides operations to manage the languageDetails property of the microsoft.graph.training entity.
+// returns a *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder when successful
 func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) ByTrainingLanguageDetailId(trainingLanguageDetailId string)(*AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,32 +58,34 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) ByTrainingL
     }
     return NewAttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewAttackSimulationTrainingsItemLanguageDetailsRequestBuilderInternal instantiates a new LanguageDetailsRequestBuilder and sets the default values.
+// NewAttackSimulationTrainingsItemLanguageDetailsRequestBuilderInternal instantiates a new AttackSimulationTrainingsItemLanguageDetailsRequestBuilder and sets the default values.
 func NewAttackSimulationTrainingsItemLanguageDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) {
     m := &AttackSimulationTrainingsItemLanguageDetailsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/attackSimulation/trainings/{training%2Did}/languageDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/attackSimulation/trainings/{training%2Did}/languageDetails{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewAttackSimulationTrainingsItemLanguageDetailsRequestBuilder instantiates a new LanguageDetailsRequestBuilder and sets the default values.
+// NewAttackSimulationTrainingsItemLanguageDetailsRequestBuilder instantiates a new AttackSimulationTrainingsItemLanguageDetailsRequestBuilder and sets the default values.
 func NewAttackSimulationTrainingsItemLanguageDetailsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAttackSimulationTrainingsItemLanguageDetailsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *AttackSimulationTrainingsItemLanguageDetailsCountRequestBuilder when successful
 func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) Count()(*AttackSimulationTrainingsItemLanguageDetailsCountRequestBuilder) {
     return NewAttackSimulationTrainingsItemLanguageDetailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get language specific details on a training.
+// returns a TrainingLanguageDetailCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTrainingLanguageDetailCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +97,15 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) Get(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailCollectionResponseable), nil
 }
 // Post create new navigation property to languageDetails for security
+// returns a TrainingLanguageDetailable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailable, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTrainingLanguageDetailFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,6 +117,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) Post(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailable), nil
 }
 // ToGetRequestInformation language specific details on a training.
+// returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -126,8 +131,9 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to languageDetails for security
+// returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailable, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/security/attackSimulation/trainings/{training%2Did}/languageDetails", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder when successful
 func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) WithUrl(rawUrl string)(*AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) {
     return NewAttackSimulationTrainingsItemLanguageDetailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

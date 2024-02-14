@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// IndustryDataRoot 
 type IndustryDataRoot struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewIndustryDataRoot instantiates a new industryDataRoot and sets the default values.
+// NewIndustryDataRoot instantiates a new IndustryDataRoot and sets the default values.
 func NewIndustryDataRoot()(*IndustryDataRoot) {
     m := &IndustryDataRoot{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewIndustryDataRoot()(*IndustryDataRoot) {
     return m
 }
 // CreateIndustryDataRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIndustryDataRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIndustryDataRoot(), nil
 }
 // GetDataConnectors gets the dataConnectors property value. Set of connectors for importing data from source systems.
+// returns a []IndustryDataConnectorable when successful
 func (m *IndustryDataRoot) GetDataConnectors()([]IndustryDataConnectorable) {
     val, err := m.GetBackingStore().Get("dataConnectors")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *IndustryDataRoot) GetDataConnectors()([]IndustryDataConnectorable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["dataConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -165,6 +167,7 @@ func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetInboundFlows gets the inboundFlows property value. Set of data import flow activities to bring data into the canonical store via a connector.
+// returns a []InboundFlowable when successful
 func (m *IndustryDataRoot) GetInboundFlows()([]InboundFlowable) {
     val, err := m.GetBackingStore().Get("inboundFlows")
     if err != nil {
@@ -176,6 +179,7 @@ func (m *IndustryDataRoot) GetInboundFlows()([]InboundFlowable) {
     return nil
 }
 // GetOperations gets the operations property value. Set of ephemeral operations that the system runs currently. Read-only.
+// returns a []LongRunningOperationable when successful
 func (m *IndustryDataRoot) GetOperations()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable) {
     val, err := m.GetBackingStore().Get("operations")
     if err != nil {
@@ -187,6 +191,7 @@ func (m *IndustryDataRoot) GetOperations()([]ie233ee762e29b4ba6970aa2a2efce4b7fd
     return nil
 }
 // GetReferenceDefinitions gets the referenceDefinitions property value. Set of user modifiable system picker types.
+// returns a []ReferenceDefinitionable when successful
 func (m *IndustryDataRoot) GetReferenceDefinitions()([]ReferenceDefinitionable) {
     val, err := m.GetBackingStore().Get("referenceDefinitions")
     if err != nil {
@@ -198,6 +203,7 @@ func (m *IndustryDataRoot) GetReferenceDefinitions()([]ReferenceDefinitionable) 
     return nil
 }
 // GetRoleGroups gets the roleGroups property value. Set of groups of individual roles that makes role-based admin simpler.
+// returns a []RoleGroupable when successful
 func (m *IndustryDataRoot) GetRoleGroups()([]RoleGroupable) {
     val, err := m.GetBackingStore().Get("roleGroups")
     if err != nil {
@@ -209,6 +215,7 @@ func (m *IndustryDataRoot) GetRoleGroups()([]RoleGroupable) {
     return nil
 }
 // GetRuns gets the runs property value. Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+// returns a []IndustryDataRunable when successful
 func (m *IndustryDataRoot) GetRuns()([]IndustryDataRunable) {
     val, err := m.GetBackingStore().Get("runs")
     if err != nil {
@@ -220,6 +227,7 @@ func (m *IndustryDataRoot) GetRuns()([]IndustryDataRunable) {
     return nil
 }
 // GetSourceSystems gets the sourceSystems property value. Set of source definitions that represents real-world external systems.
+// returns a []SourceSystemDefinitionable when successful
 func (m *IndustryDataRoot) GetSourceSystems()([]SourceSystemDefinitionable) {
     val, err := m.GetBackingStore().Get("sourceSystems")
     if err != nil {
@@ -231,6 +239,7 @@ func (m *IndustryDataRoot) GetSourceSystems()([]SourceSystemDefinitionable) {
     return nil
 }
 // GetYears gets the years property value. Set of years represented in the system.
+// returns a []YearTimePeriodDefinitionable when successful
 func (m *IndustryDataRoot) GetYears()([]YearTimePeriodDefinitionable) {
     val, err := m.GetBackingStore().Get("years")
     if err != nil {
@@ -401,7 +410,6 @@ func (m *IndustryDataRoot) SetYears(value []YearTimePeriodDefinitionable)() {
         panic(err)
     }
 }
-// IndustryDataRootable 
 type IndustryDataRootable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

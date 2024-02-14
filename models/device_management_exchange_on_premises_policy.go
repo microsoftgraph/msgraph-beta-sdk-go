@@ -8,7 +8,7 @@ import (
 type DeviceManagementExchangeOnPremisesPolicy struct {
     Entity
 }
-// NewDeviceManagementExchangeOnPremisesPolicy instantiates a new deviceManagementExchangeOnPremisesPolicy and sets the default values.
+// NewDeviceManagementExchangeOnPremisesPolicy instantiates a new DeviceManagementExchangeOnPremisesPolicy and sets the default values.
 func NewDeviceManagementExchangeOnPremisesPolicy()(*DeviceManagementExchangeOnPremisesPolicy) {
     m := &DeviceManagementExchangeOnPremisesPolicy{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementExchangeOnPremisesPolicy()(*DeviceManagementExchangeOnPr
     return m
 }
 // CreateDeviceManagementExchangeOnPremisesPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementExchangeOnPremisesPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementExchangeOnPremisesPolicy(), nil
 }
 // GetAccessRules gets the accessRules property value. The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization
+// returns a []DeviceManagementExchangeAccessRuleable when successful
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetAccessRules()([]DeviceManagementExchangeAccessRuleable) {
     val, err := m.GetBackingStore().Get("accessRules")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetAccessRules()([]DeviceMana
     return nil
 }
 // GetConditionalAccessSettings gets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+// returns a OnPremisesConditionalAccessSettingsable when successful
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetConditionalAccessSettings()(OnPremisesConditionalAccessSettingsable) {
     val, err := m.GetBackingStore().Get("conditionalAccessSettings")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetConditionalAccessSettings(
     return nil
 }
 // GetDefaultAccessLevel gets the defaultAccessLevel property value. Access Level in Exchange.
+// returns a *DeviceManagementExchangeAccessLevel when successful
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetDefaultAccessLevel()(*DeviceManagementExchangeAccessLevel) {
     val, err := m.GetBackingStore().Get("defaultAccessLevel")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetDefaultAccessLevel()(*Devi
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -120,6 +125,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetFieldDeserializers()(map[s
     return res
 }
 // GetKnownDeviceClasses gets the knownDeviceClasses property value. The list of device classes known to Exchange
+// returns a []DeviceManagementExchangeDeviceClassable when successful
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetKnownDeviceClasses()([]DeviceManagementExchangeDeviceClassable) {
     val, err := m.GetBackingStore().Get("knownDeviceClasses")
     if err != nil {
@@ -131,6 +137,7 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) GetKnownDeviceClasses()([]Dev
     return nil
 }
 // GetNotificationContent gets the notificationContent property value. Notification text that will be sent to users quarantined by this policy. This is UTF8 encoded byte array HTML.
+// returns a []byte when successful
 func (m *DeviceManagementExchangeOnPremisesPolicy) GetNotificationContent()([]byte) {
     val, err := m.GetBackingStore().Get("notificationContent")
     if err != nil {
@@ -227,7 +234,6 @@ func (m *DeviceManagementExchangeOnPremisesPolicy) SetNotificationContent(value 
         panic(err)
     }
 }
-// DeviceManagementExchangeOnPremisesPolicyable 
 type DeviceManagementExchangeOnPremisesPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

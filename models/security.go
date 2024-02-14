@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Security 
 type Security struct {
     Entity
 }
-// NewSecurity instantiates a new security and sets the default values.
+// NewSecurity instantiates a new Security and sets the default values.
 func NewSecurity()(*Security) {
     m := &Security{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewSecurity()(*Security) {
     return m
 }
 // CreateSecurityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecurityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurity(), nil
 }
 // GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
+// returns a []Alertable when successful
 func (m *Security) GetAlerts()([]Alertable) {
     val, err := m.GetBackingStore().Get("alerts")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Security) GetAlerts()([]Alertable) {
     return nil
 }
 // GetAttackSimulation gets the attackSimulation property value. Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+// returns a AttackSimulationRootable when successful
 func (m *Security) GetAttackSimulation()(AttackSimulationRootable) {
     val, err := m.GetBackingStore().Get("attackSimulation")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Security) GetAttackSimulation()(AttackSimulationRootable) {
     return nil
 }
 // GetCloudAppSecurityProfiles gets the cloudAppSecurityProfiles property value. The cloudAppSecurityProfiles property
+// returns a []CloudAppSecurityProfileable when successful
 func (m *Security) GetCloudAppSecurityProfiles()([]CloudAppSecurityProfileable) {
     val, err := m.GetBackingStore().Get("cloudAppSecurityProfiles")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *Security) GetCloudAppSecurityProfiles()([]CloudAppSecurityProfileable) 
     return nil
 }
 // GetDomainSecurityProfiles gets the domainSecurityProfiles property value. The domainSecurityProfiles property
+// returns a []DomainSecurityProfileable when successful
 func (m *Security) GetDomainSecurityProfiles()([]DomainSecurityProfileable) {
     val, err := m.GetBackingStore().Get("domainSecurityProfiles")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *Security) GetDomainSecurityProfiles()([]DomainSecurityProfileable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alerts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -303,6 +308,7 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetFileSecurityProfiles gets the fileSecurityProfiles property value. The fileSecurityProfiles property
+// returns a []FileSecurityProfileable when successful
 func (m *Security) GetFileSecurityProfiles()([]FileSecurityProfileable) {
     val, err := m.GetBackingStore().Get("fileSecurityProfiles")
     if err != nil {
@@ -314,6 +320,7 @@ func (m *Security) GetFileSecurityProfiles()([]FileSecurityProfileable) {
     return nil
 }
 // GetHostSecurityProfiles gets the hostSecurityProfiles property value. The hostSecurityProfiles property
+// returns a []HostSecurityProfileable when successful
 func (m *Security) GetHostSecurityProfiles()([]HostSecurityProfileable) {
     val, err := m.GetBackingStore().Get("hostSecurityProfiles")
     if err != nil {
@@ -325,6 +332,7 @@ func (m *Security) GetHostSecurityProfiles()([]HostSecurityProfileable) {
     return nil
 }
 // GetIpSecurityProfiles gets the ipSecurityProfiles property value. The ipSecurityProfiles property
+// returns a []IpSecurityProfileable when successful
 func (m *Security) GetIpSecurityProfiles()([]IpSecurityProfileable) {
     val, err := m.GetBackingStore().Get("ipSecurityProfiles")
     if err != nil {
@@ -336,6 +344,7 @@ func (m *Security) GetIpSecurityProfiles()([]IpSecurityProfileable) {
     return nil
 }
 // GetProviderStatus gets the providerStatus property value. The providerStatus property
+// returns a []SecurityProviderStatusable when successful
 func (m *Security) GetProviderStatus()([]SecurityProviderStatusable) {
     val, err := m.GetBackingStore().Get("providerStatus")
     if err != nil {
@@ -347,6 +356,7 @@ func (m *Security) GetProviderStatus()([]SecurityProviderStatusable) {
     return nil
 }
 // GetProviderTenantSettings gets the providerTenantSettings property value. The providerTenantSettings property
+// returns a []ProviderTenantSettingable when successful
 func (m *Security) GetProviderTenantSettings()([]ProviderTenantSettingable) {
     val, err := m.GetBackingStore().Get("providerTenantSettings")
     if err != nil {
@@ -358,6 +368,7 @@ func (m *Security) GetProviderTenantSettings()([]ProviderTenantSettingable) {
     return nil
 }
 // GetSecureScoreControlProfiles gets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
+// returns a []SecureScoreControlProfileable when successful
 func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfileable) {
     val, err := m.GetBackingStore().Get("secureScoreControlProfiles")
     if err != nil {
@@ -369,6 +380,7 @@ func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfileab
     return nil
 }
 // GetSecureScores gets the secureScores property value. Measurements of tenants’ security posture to help protect them from threats.
+// returns a []SecureScoreable when successful
 func (m *Security) GetSecureScores()([]SecureScoreable) {
     val, err := m.GetBackingStore().Get("secureScores")
     if err != nil {
@@ -380,6 +392,7 @@ func (m *Security) GetSecureScores()([]SecureScoreable) {
     return nil
 }
 // GetSecurityActions gets the securityActions property value. The securityActions property
+// returns a []SecurityActionable when successful
 func (m *Security) GetSecurityActions()([]SecurityActionable) {
     val, err := m.GetBackingStore().Get("securityActions")
     if err != nil {
@@ -391,6 +404,7 @@ func (m *Security) GetSecurityActions()([]SecurityActionable) {
     return nil
 }
 // GetSubjectRightsRequests gets the subjectRightsRequests property value. The subjectRightsRequests property
+// returns a []SubjectRightsRequestable when successful
 func (m *Security) GetSubjectRightsRequests()([]SubjectRightsRequestable) {
     val, err := m.GetBackingStore().Get("subjectRightsRequests")
     if err != nil {
@@ -402,6 +416,7 @@ func (m *Security) GetSubjectRightsRequests()([]SubjectRightsRequestable) {
     return nil
 }
 // GetTiIndicators gets the tiIndicators property value. The tiIndicators property
+// returns a []TiIndicatorable when successful
 func (m *Security) GetTiIndicators()([]TiIndicatorable) {
     val, err := m.GetBackingStore().Get("tiIndicators")
     if err != nil {
@@ -413,6 +428,7 @@ func (m *Security) GetTiIndicators()([]TiIndicatorable) {
     return nil
 }
 // GetUserSecurityProfiles gets the userSecurityProfiles property value. The userSecurityProfiles property
+// returns a []UserSecurityProfileable when successful
 func (m *Security) GetUserSecurityProfiles()([]UserSecurityProfileable) {
     val, err := m.GetBackingStore().Get("userSecurityProfiles")
     if err != nil {
@@ -710,7 +726,6 @@ func (m *Security) SetUserSecurityProfiles(value []UserSecurityProfileable)() {
         panic(err)
     }
 }
-// Securityable 
 type Securityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

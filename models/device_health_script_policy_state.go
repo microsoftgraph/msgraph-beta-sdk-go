@@ -11,7 +11,7 @@ type DeviceHealthScriptPolicyState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceHealthScriptPolicyState instantiates a new deviceHealthScriptPolicyState and sets the default values.
+// NewDeviceHealthScriptPolicyState instantiates a new DeviceHealthScriptPolicyState and sets the default values.
 func NewDeviceHealthScriptPolicyState()(*DeviceHealthScriptPolicyState) {
     m := &DeviceHealthScriptPolicyState{
     }
@@ -20,10 +20,12 @@ func NewDeviceHealthScriptPolicyState()(*DeviceHealthScriptPolicyState) {
     return m
 }
 // CreateDeviceHealthScriptPolicyStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceHealthScriptPolicyStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceHealthScriptPolicyState(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceHealthScriptPolicyState) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +38,7 @@ func (m *DeviceHealthScriptPolicyState) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAssignmentFilterIds gets the assignmentFilterIds property value. A list of the assignment filter ids used for health script applicability evaluation
+// returns a []string when successful
 func (m *DeviceHealthScriptPolicyState) GetAssignmentFilterIds()([]string) {
     val, err := m.GetBackingStore().Get("assignmentFilterIds")
     if err != nil {
@@ -47,10 +50,12 @@ func (m *DeviceHealthScriptPolicyState) GetAssignmentFilterIds()([]string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceHealthScriptPolicyState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDetectionState gets the detectionState property value. Indicates the type of execution status of the device management script.
+// returns a *RunState when successful
 func (m *DeviceHealthScriptPolicyState) GetDetectionState()(*RunState) {
     val, err := m.GetBackingStore().Get("detectionState")
     if err != nil {
@@ -62,6 +67,7 @@ func (m *DeviceHealthScriptPolicyState) GetDetectionState()(*RunState) {
     return nil
 }
 // GetDeviceId gets the deviceId property value. The Intune device Id
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -73,6 +79,7 @@ func (m *DeviceHealthScriptPolicyState) GetDeviceId()(*string) {
     return nil
 }
 // GetDeviceName gets the deviceName property value. Display name of the device
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -84,6 +91,7 @@ func (m *DeviceHealthScriptPolicyState) GetDeviceName()(*string) {
     return nil
 }
 // GetExpectedStateUpdateDateTime gets the expectedStateUpdateDateTime property value. The next timestamp of when the device health script is expected to execute
+// returns a *Time when successful
 func (m *DeviceHealthScriptPolicyState) GetExpectedStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expectedStateUpdateDateTime")
     if err != nil {
@@ -95,6 +103,7 @@ func (m *DeviceHealthScriptPolicyState) GetExpectedStateUpdateDateTime()(*i33607
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceHealthScriptPolicyState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignmentFilterIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -296,6 +305,7 @@ func (m *DeviceHealthScriptPolicyState) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetId gets the id property value. Key of the device health script policy state is a concatenation of the MT sideCar policy Id and Intune device Id
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -307,6 +317,7 @@ func (m *DeviceHealthScriptPolicyState) GetId()(*string) {
     return nil
 }
 // GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. The last timestamp of when the device health script executed
+// returns a *Time when successful
 func (m *DeviceHealthScriptPolicyState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastStateUpdateDateTime")
     if err != nil {
@@ -318,6 +329,7 @@ func (m *DeviceHealthScriptPolicyState) GetLastStateUpdateDateTime()(*i336074805
     return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
+// returns a *Time when successful
 func (m *DeviceHealthScriptPolicyState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -329,6 +341,7 @@ func (m *DeviceHealthScriptPolicyState) GetLastSyncDateTime()(*i336074805fc85398
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -340,6 +353,7 @@ func (m *DeviceHealthScriptPolicyState) GetOdataType()(*string) {
     return nil
 }
 // GetOsVersion gets the osVersion property value. Value of the OS Version in string
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("osVersion")
     if err != nil {
@@ -351,6 +365,7 @@ func (m *DeviceHealthScriptPolicyState) GetOsVersion()(*string) {
     return nil
 }
 // GetPolicyId gets the policyId property value. The MT sideCar policy Id
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("policyId")
     if err != nil {
@@ -362,6 +377,7 @@ func (m *DeviceHealthScriptPolicyState) GetPolicyId()(*string) {
     return nil
 }
 // GetPolicyName gets the policyName property value. Display name of the device health script
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetPolicyName()(*string) {
     val, err := m.GetBackingStore().Get("policyName")
     if err != nil {
@@ -373,6 +389,7 @@ func (m *DeviceHealthScriptPolicyState) GetPolicyName()(*string) {
     return nil
 }
 // GetPostRemediationDetectionScriptError gets the postRemediationDetectionScriptError property value. Error from the detection script after remediation
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetPostRemediationDetectionScriptError()(*string) {
     val, err := m.GetBackingStore().Get("postRemediationDetectionScriptError")
     if err != nil {
@@ -384,6 +401,7 @@ func (m *DeviceHealthScriptPolicyState) GetPostRemediationDetectionScriptError()
     return nil
 }
 // GetPostRemediationDetectionScriptOutput gets the postRemediationDetectionScriptOutput property value. Detection script output after remediation
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetPostRemediationDetectionScriptOutput()(*string) {
     val, err := m.GetBackingStore().Get("postRemediationDetectionScriptOutput")
     if err != nil {
@@ -395,6 +413,7 @@ func (m *DeviceHealthScriptPolicyState) GetPostRemediationDetectionScriptOutput(
     return nil
 }
 // GetPreRemediationDetectionScriptError gets the preRemediationDetectionScriptError property value. Error from the detection script before remediation
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetPreRemediationDetectionScriptError()(*string) {
     val, err := m.GetBackingStore().Get("preRemediationDetectionScriptError")
     if err != nil {
@@ -406,6 +425,7 @@ func (m *DeviceHealthScriptPolicyState) GetPreRemediationDetectionScriptError()(
     return nil
 }
 // GetPreRemediationDetectionScriptOutput gets the preRemediationDetectionScriptOutput property value. Output of the detection script before remediation
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetPreRemediationDetectionScriptOutput()(*string) {
     val, err := m.GetBackingStore().Get("preRemediationDetectionScriptOutput")
     if err != nil {
@@ -417,6 +437,7 @@ func (m *DeviceHealthScriptPolicyState) GetPreRemediationDetectionScriptOutput()
     return nil
 }
 // GetRemediationScriptError gets the remediationScriptError property value. Error output of the remediation script
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetRemediationScriptError()(*string) {
     val, err := m.GetBackingStore().Get("remediationScriptError")
     if err != nil {
@@ -428,6 +449,7 @@ func (m *DeviceHealthScriptPolicyState) GetRemediationScriptError()(*string) {
     return nil
 }
 // GetRemediationState gets the remediationState property value. Indicates the type of execution status of the device management script.
+// returns a *RemediationState when successful
 func (m *DeviceHealthScriptPolicyState) GetRemediationState()(*RemediationState) {
     val, err := m.GetBackingStore().Get("remediationState")
     if err != nil {
@@ -439,6 +461,7 @@ func (m *DeviceHealthScriptPolicyState) GetRemediationState()(*RemediationState)
     return nil
 }
 // GetUserName gets the userName property value. Name of the user whom ran the device health script
+// returns a *string when successful
 func (m *DeviceHealthScriptPolicyState) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -719,7 +742,6 @@ func (m *DeviceHealthScriptPolicyState) SetUserName(value *string)() {
         panic(err)
     }
 }
-// DeviceHealthScriptPolicyStateable 
 type DeviceHealthScriptPolicyStateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

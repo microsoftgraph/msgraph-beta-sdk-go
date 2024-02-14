@@ -8,7 +8,7 @@ import (
 type Windows81WifiImportConfiguration struct {
     DeviceConfiguration
 }
-// NewWindows81WifiImportConfiguration instantiates a new windows81WifiImportConfiguration and sets the default values.
+// NewWindows81WifiImportConfiguration instantiates a new Windows81WifiImportConfiguration and sets the default values.
 func NewWindows81WifiImportConfiguration()(*Windows81WifiImportConfiguration) {
     m := &Windows81WifiImportConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindows81WifiImportConfiguration()(*Windows81WifiImportConfiguration) {
     return m
 }
 // CreateWindows81WifiImportConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows81WifiImportConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows81WifiImportConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows81WifiImportConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +59,7 @@ func (m *Windows81WifiImportConfiguration) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetPayload gets the payload property value. Payload. (UTF8 encoded byte array). This is the XML file saved on the device you used to connect to the Wi-Fi endpoint.
+// returns a []byte when successful
 func (m *Windows81WifiImportConfiguration) GetPayload()([]byte) {
     val, err := m.GetBackingStore().Get("payload")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *Windows81WifiImportConfiguration) GetPayload()([]byte) {
     return nil
 }
 // GetPayloadFileName gets the payloadFileName property value. Payload file name (.xml).
+// returns a *string when successful
 func (m *Windows81WifiImportConfiguration) GetPayloadFileName()(*string) {
     val, err := m.GetBackingStore().Get("payloadFileName")
     if err != nil {
@@ -79,6 +83,7 @@ func (m *Windows81WifiImportConfiguration) GetPayloadFileName()(*string) {
     return nil
 }
 // GetProfileName gets the profileName property value. Profile name displayed in the UI.
+// returns a *string when successful
 func (m *Windows81WifiImportConfiguration) GetProfileName()(*string) {
     val, err := m.GetBackingStore().Get("profileName")
     if err != nil {
@@ -136,7 +141,6 @@ func (m *Windows81WifiImportConfiguration) SetProfileName(value *string)() {
         panic(err)
     }
 }
-// Windows81WifiImportConfigurationable 
 type Windows81WifiImportConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

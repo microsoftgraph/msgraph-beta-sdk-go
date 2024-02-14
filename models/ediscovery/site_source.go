@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// SiteSource 
 type SiteSource struct {
     DataSource
 }
-// NewSiteSource instantiates a new siteSource and sets the default values.
+// NewSiteSource instantiates a new SiteSource and sets the default values.
 func NewSiteSource()(*SiteSource) {
     m := &SiteSource{
         DataSource: *NewDataSource(),
@@ -19,10 +18,12 @@ func NewSiteSource()(*SiteSource) {
     return m
 }
 // CreateSiteSourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSiteSourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSiteSource(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SiteSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSource.GetFieldDeserializers()
     res["site"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -38,6 +39,7 @@ func (m *SiteSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetSite gets the site property value. The site property
+// returns a Siteable when successful
 func (m *SiteSource) GetSite()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Siteable) {
     val, err := m.GetBackingStore().Get("site")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *SiteSource) SetSite(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9e
         panic(err)
     }
 }
-// SiteSourceable 
 type SiteSourceable interface {
     DataSourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

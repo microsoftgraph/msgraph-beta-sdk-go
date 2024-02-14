@@ -9,7 +9,7 @@ import (
 type ManagedDeviceMobileAppConfiguration struct {
     Entity
 }
-// NewManagedDeviceMobileAppConfiguration instantiates a new managedDeviceMobileAppConfiguration and sets the default values.
+// NewManagedDeviceMobileAppConfiguration instantiates a new ManagedDeviceMobileAppConfiguration and sets the default values.
 func NewManagedDeviceMobileAppConfiguration()(*ManagedDeviceMobileAppConfiguration) {
     m := &ManagedDeviceMobileAppConfiguration{
         Entity: *NewEntity(),
@@ -17,6 +17,7 @@ func NewManagedDeviceMobileAppConfiguration()(*ManagedDeviceMobileAppConfigurati
     return m
 }
 // CreateManagedDeviceMobileAppConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedDeviceMobileAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -43,6 +44,7 @@ func CreateManagedDeviceMobileAppConfigurationFromDiscriminatorValue(parseNode i
     return NewManagedDeviceMobileAppConfiguration(), nil
 }
 // GetAssignments gets the assignments property value. The list of group assignemenets for app configration.
+// returns a []ManagedDeviceMobileAppConfigurationAssignmentable when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetAssignments()([]ManagedDeviceMobileAppConfigurationAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
     if err != nil {
@@ -54,6 +56,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetAssignments()([]ManagedDeviceMo
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime the object was created.
+// returns a *Time when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,6 +68,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetCreatedDateTime()(*i336074805fc
     return nil
 }
 // GetDescription gets the description property value. Admin provided description of the Device Configuration.
+// returns a *string when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -76,6 +80,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetDescription()(*string) {
     return nil
 }
 // GetDeviceStatuses gets the deviceStatuses property value. List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+// returns a []ManagedDeviceMobileAppConfigurationDeviceStatusable when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetDeviceStatuses()([]ManagedDeviceMobileAppConfigurationDeviceStatusable) {
     val, err := m.GetBackingStore().Get("deviceStatuses")
     if err != nil {
@@ -87,6 +92,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetDeviceStatuses()([]ManagedDevic
     return nil
 }
 // GetDeviceStatusSummary gets the deviceStatusSummary property value. App configuration device status summary.
+// returns a ManagedDeviceMobileAppConfigurationDeviceSummaryable when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetDeviceStatusSummary()(ManagedDeviceMobileAppConfigurationDeviceSummaryable) {
     val, err := m.GetBackingStore().Get("deviceStatusSummary")
     if err != nil {
@@ -98,6 +104,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetDeviceStatusSummary()(ManagedDe
     return nil
 }
 // GetDisplayName gets the displayName property value. Admin provided name of the device configuration.
+// returns a *string when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -109,6 +116,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -264,6 +272,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetFieldDeserializers()(map[string
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. DateTime the object was last modified.
+// returns a *Time when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -275,6 +284,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetLastModifiedDateTime()(*i336074
     return nil
 }
 // GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tags for this App configuration entity.
+// returns a []string when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
@@ -286,6 +296,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetRoleScopeTagIds()([]string) {
     return nil
 }
 // GetTargetedMobileApps gets the targetedMobileApps property value. the associated app.
+// returns a []string when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetTargetedMobileApps()([]string) {
     val, err := m.GetBackingStore().Get("targetedMobileApps")
     if err != nil {
@@ -297,6 +308,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetTargetedMobileApps()([]string) 
     return nil
 }
 // GetUserStatuses gets the userStatuses property value. List of ManagedDeviceMobileAppConfigurationUserStatus.
+// returns a []ManagedDeviceMobileAppConfigurationUserStatusable when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetUserStatuses()([]ManagedDeviceMobileAppConfigurationUserStatusable) {
     val, err := m.GetBackingStore().Get("userStatuses")
     if err != nil {
@@ -308,6 +320,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetUserStatuses()([]ManagedDeviceM
     return nil
 }
 // GetUserStatusSummary gets the userStatusSummary property value. App configuration user status summary.
+// returns a ManagedDeviceMobileAppConfigurationUserSummaryable when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetUserStatusSummary()(ManagedDeviceMobileAppConfigurationUserSummaryable) {
     val, err := m.GetBackingStore().Get("userStatusSummary")
     if err != nil {
@@ -319,6 +332,7 @@ func (m *ManagedDeviceMobileAppConfiguration) GetUserStatusSummary()(ManagedDevi
     return nil
 }
 // GetVersion gets the version property value. Version of the device configuration.
+// returns a *int32 when successful
 func (m *ManagedDeviceMobileAppConfiguration) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -511,7 +525,6 @@ func (m *ManagedDeviceMobileAppConfiguration) SetVersion(value *int32)() {
         panic(err)
     }
 }
-// ManagedDeviceMobileAppConfigurationable 
 type ManagedDeviceMobileAppConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

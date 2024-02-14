@@ -41,32 +41,33 @@ type SharesItemJobsItemTasksPrintTaskItemRequestBuilderPatchRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewSharesItemJobsItemTasksPrintTaskItemRequestBuilderInternal instantiates a new PrintTaskItemRequestBuilder and sets the default values.
+// NewSharesItemJobsItemTasksPrintTaskItemRequestBuilderInternal instantiates a new SharesItemJobsItemTasksPrintTaskItemRequestBuilder and sets the default values.
 func NewSharesItemJobsItemTasksPrintTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemJobsItemTasksPrintTaskItemRequestBuilder) {
     m := &SharesItemJobsItemTasksPrintTaskItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewSharesItemJobsItemTasksPrintTaskItemRequestBuilder instantiates a new PrintTaskItemRequestBuilder and sets the default values.
+// NewSharesItemJobsItemTasksPrintTaskItemRequestBuilder instantiates a new SharesItemJobsItemTasksPrintTaskItemRequestBuilder and sets the default values.
 func NewSharesItemJobsItemTasksPrintTaskItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemJobsItemTasksPrintTaskItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSharesItemJobsItemTasksPrintTaskItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Definition provides operations to manage the definition property of the microsoft.graph.printTask entity.
+// returns a *SharesItemJobsItemTasksItemDefinitionRequestBuilder when successful
 func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) Definition()(*SharesItemJobsItemTasksItemDefinitionRequestBuilder) {
     return NewSharesItemJobsItemTasksItemDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property tasks for print
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharesItemJobsItemTasksPrintTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -75,14 +76,15 @@ func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) Delete(ctx context.
     return nil
 }
 // Get a list of printTasks that were triggered by this print job.
+// returns a PrintTaskable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SharesItemJobsItemTasksPrintTaskItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrintTaskFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +96,15 @@ func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) Get(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable), nil
 }
 // Patch update the navigation property tasks in print
+// returns a PrintTaskable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, requestConfiguration *SharesItemJobsItemTasksPrintTaskItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePrintTaskFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,8 +116,9 @@ func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) Patch(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable), nil
 }
 // ToDeleteRequestInformation delete navigation property tasks for print
+// returns a *RequestInformation when successful
 func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharesItemJobsItemTasksPrintTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -123,6 +127,7 @@ func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToDeleteRequestInfo
     return requestInfo, nil
 }
 // ToGetRequestInformation a list of printTasks that were triggered by this print job.
+// returns a *RequestInformation when successful
 func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesItemJobsItemTasksPrintTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -136,8 +141,9 @@ func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property tasks in print
+// returns a *RequestInformation when successful
 func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, requestConfiguration *SharesItemJobsItemTasksPrintTaskItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/print/shares/{printerShare%2Did}/jobs/{printJob%2Did}/tasks/{printTask%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -150,10 +156,12 @@ func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToPatchRequestInfor
     return requestInfo, nil
 }
 // Trigger provides operations to manage the trigger property of the microsoft.graph.printTask entity.
+// returns a *SharesItemJobsItemTasksItemTriggerRequestBuilder when successful
 func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) Trigger()(*SharesItemJobsItemTasksItemTriggerRequestBuilder) {
     return NewSharesItemJobsItemTasksItemTriggerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SharesItemJobsItemTasksPrintTaskItemRequestBuilder when successful
 func (m *SharesItemJobsItemTasksPrintTaskItemRequestBuilder) WithUrl(rawUrl string)(*SharesItemJobsItemTasksPrintTaskItemRequestBuilder) {
     return NewSharesItemJobsItemTasksPrintTaskItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

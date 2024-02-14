@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody 
 type ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody()(*Item
     return m
 }
 // CreateItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody) GetAd
     return val.(map[string]any)
 }
 // GetAtApprovedLocation gets the atApprovedLocation property value. The atApprovedLocation property
+// returns a *bool when successful
 func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody) GetAtApprovedLocation()(*bool) {
     val, err := m.GetBackingStore().Get("atApprovedLocation")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody) GetAt
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["atApprovedLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +80,7 @@ func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody) GetFi
     return res
 }
 // GetNotes gets the notes property value. The notes property
+// returns a ItemBodyable when successful
 func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody) GetNotes()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable) {
     val, err := m.GetBackingStore().Get("notes")
     if err != nil {
@@ -133,7 +138,6 @@ func (m *ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBody) SetNo
         panic(err)
     }
 }
-// ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBodyable 
 type ItemTeamDefinitionScheduleTimeCardsItemStartBreakPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

@@ -2,7 +2,6 @@ package managedtenants
 import (
     "errors"
 )
-// 
 type ManagementCategory int
 
 const (

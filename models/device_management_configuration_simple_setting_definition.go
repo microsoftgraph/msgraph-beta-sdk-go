@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementConfigurationSimpleSettingDefinition 
 type DeviceManagementConfigurationSimpleSettingDefinition struct {
     DeviceManagementConfigurationSettingDefinition
 }
-// NewDeviceManagementConfigurationSimpleSettingDefinition instantiates a new deviceManagementConfigurationSimpleSettingDefinition and sets the default values.
+// NewDeviceManagementConfigurationSimpleSettingDefinition instantiates a new DeviceManagementConfigurationSimpleSettingDefinition and sets the default values.
 func NewDeviceManagementConfigurationSimpleSettingDefinition()(*DeviceManagementConfigurationSimpleSettingDefinition) {
     m := &DeviceManagementConfigurationSimpleSettingDefinition{
         DeviceManagementConfigurationSettingDefinition: *NewDeviceManagementConfigurationSettingDefinition(),
@@ -16,6 +15,7 @@ func NewDeviceManagementConfigurationSimpleSettingDefinition()(*DeviceManagement
     return m
 }
 // CreateDeviceManagementConfigurationSimpleSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationSimpleSettingDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -37,7 +37,8 @@ func CreateDeviceManagementConfigurationSimpleSettingDefinitionFromDiscriminator
     }
     return NewDeviceManagementConfigurationSimpleSettingDefinition(), nil
 }
-// GetDefaultValue gets the defaultValue property value. Default setting value for this setting.
+// GetDefaultValue gets the defaultValue property value. Default setting value for this setting
+// returns a DeviceManagementConfigurationSettingValueable when successful
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDefaultValue()(DeviceManagementConfigurationSettingValueable) {
     val, err := m.GetBackingStore().Get("defaultValue")
     if err != nil {
@@ -48,7 +49,8 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDefaultValue()
     }
     return nil
 }
-// GetDependedOnBy gets the dependedOnBy property value. list of child settings that depend on this setting.
+// GetDependedOnBy gets the dependedOnBy property value. list of child settings that depend on this setting
+// returns a []DeviceManagementConfigurationSettingDependedOnByable when successful
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependedOnBy()([]DeviceManagementConfigurationSettingDependedOnByable) {
     val, err := m.GetBackingStore().Get("dependedOnBy")
     if err != nil {
@@ -59,7 +61,8 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependedOnBy()
     }
     return nil
 }
-// GetDependentOn gets the dependentOn property value. list of parent settings this setting is dependent on.
+// GetDependentOn gets the dependentOn property value. list of parent settings this setting is dependent on
+// returns a []DeviceManagementConfigurationDependentOnable when successful
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependentOn()([]DeviceManagementConfigurationDependentOnable) {
     val, err := m.GetBackingStore().Get("dependentOn")
     if err != nil {
@@ -71,6 +74,7 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetDependentOn()(
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementConfigurationSettingDefinition.GetFieldDeserializers()
     res["defaultValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,7 +131,8 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetFieldDeseriali
     }
     return res
 }
-// GetValueDefinition gets the valueDefinition property value. Definition of the value for this setting.
+// GetValueDefinition gets the valueDefinition property value. Definition of the value for this setting
+// returns a DeviceManagementConfigurationSettingValueDefinitionable when successful
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) GetValueDefinition()(DeviceManagementConfigurationSettingValueDefinitionable) {
     val, err := m.GetBackingStore().Get("valueDefinition")
     if err != nil {
@@ -182,35 +187,34 @@ func (m *DeviceManagementConfigurationSimpleSettingDefinition) Serialize(writer 
     }
     return nil
 }
-// SetDefaultValue sets the defaultValue property value. Default setting value for this setting.
+// SetDefaultValue sets the defaultValue property value. Default setting value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDefaultValue(value DeviceManagementConfigurationSettingValueable)() {
     err := m.GetBackingStore().Set("defaultValue", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDependedOnBy sets the dependedOnBy property value. list of child settings that depend on this setting.
+// SetDependedOnBy sets the dependedOnBy property value. list of child settings that depend on this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDependedOnBy(value []DeviceManagementConfigurationSettingDependedOnByable)() {
     err := m.GetBackingStore().Set("dependedOnBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDependentOn sets the dependentOn property value. list of parent settings this setting is dependent on.
+// SetDependentOn sets the dependentOn property value. list of parent settings this setting is dependent on
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetDependentOn(value []DeviceManagementConfigurationDependentOnable)() {
     err := m.GetBackingStore().Set("dependentOn", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValueDefinition sets the valueDefinition property value. Definition of the value for this setting.
+// SetValueDefinition sets the valueDefinition property value. Definition of the value for this setting
 func (m *DeviceManagementConfigurationSimpleSettingDefinition) SetValueDefinition(value DeviceManagementConfigurationSettingValueDefinitionable)() {
     err := m.GetBackingStore().Set("valueDefinition", value)
     if err != nil {
         panic(err)
     }
 }
-// DeviceManagementConfigurationSimpleSettingDefinitionable 
 type DeviceManagementConfigurationSimpleSettingDefinitionable interface {
     DeviceManagementConfigurationSettingDefinitionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

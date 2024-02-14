@@ -9,7 +9,7 @@ import (
 type UserExperienceAnalyticsBatteryHealthCapacityDetails struct {
     Entity
 }
-// NewUserExperienceAnalyticsBatteryHealthCapacityDetails instantiates a new userExperienceAnalyticsBatteryHealthCapacityDetails and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthCapacityDetails instantiates a new UserExperienceAnalyticsBatteryHealthCapacityDetails and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthCapacityDetails()(*UserExperienceAnalyticsBatteryHealthCapacityDetails) {
     m := &UserExperienceAnalyticsBatteryHealthCapacityDetails{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewUserExperienceAnalyticsBatteryHealthCapacityDetails()(*UserExperienceAna
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthCapacityDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsBatteryHealthCapacityDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthCapacityDetails(), nil
 }
 // GetActiveDevices gets the activeDevices property value. Number of active devices within the tenant. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetActiveDevices()(*int32) {
     val, err := m.GetBackingStore().Get("activeDevices")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetActiveDevices()
     return nil
 }
 // GetBatteryCapacityFair gets the batteryCapacityFair property value. Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacityFair()(*int32) {
     val, err := m.GetBackingStore().Get("batteryCapacityFair")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacity
     return nil
 }
 // GetBatteryCapacityGood gets the batteryCapacityGood property value. Number of devices whose battery maximum capacity is greater than 80%. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacityGood()(*int32) {
     val, err := m.GetBackingStore().Get("batteryCapacityGood")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacity
     return nil
 }
 // GetBatteryCapacityPoor gets the batteryCapacityPoor property value. Number of devices whose battery maximum capacity is lesser than 50%. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacityPoor()(*int32) {
     val, err := m.GetBackingStore().Get("batteryCapacityPoor")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetBatteryCapacity
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -120,6 +126,7 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetFieldDeserializ
     return res
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Recorded date time of this capacity details instance.
+// returns a *Time when successful
 func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshedDateTime")
     if err != nil {
@@ -203,7 +210,6 @@ func (m *UserExperienceAnalyticsBatteryHealthCapacityDetails) SetLastRefreshedDa
         panic(err)
     }
 }
-// UserExperienceAnalyticsBatteryHealthCapacityDetailsable 
 type UserExperienceAnalyticsBatteryHealthCapacityDetailsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

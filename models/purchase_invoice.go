@@ -7,12 +7,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PurchaseInvoice 
 type PurchaseInvoice struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPurchaseInvoice instantiates a new purchaseInvoice and sets the default values.
+// NewPurchaseInvoice instantiates a new PurchaseInvoice and sets the default values.
 func NewPurchaseInvoice()(*PurchaseInvoice) {
     m := &PurchaseInvoice{
     }
@@ -21,10 +20,12 @@ func NewPurchaseInvoice()(*PurchaseInvoice) {
     return m
 }
 // CreatePurchaseInvoiceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePurchaseInvoiceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPurchaseInvoice(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PurchaseInvoice) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -37,10 +38,12 @@ func (m *PurchaseInvoice) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PurchaseInvoice) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetBuyFromAddress gets the buyFromAddress property value. The buyFromAddress property
+// returns a PostalAddressTypeable when successful
 func (m *PurchaseInvoice) GetBuyFromAddress()(PostalAddressTypeable) {
     val, err := m.GetBackingStore().Get("buyFromAddress")
     if err != nil {
@@ -52,6 +55,7 @@ func (m *PurchaseInvoice) GetBuyFromAddress()(PostalAddressTypeable) {
     return nil
 }
 // GetCurrency gets the currency property value. The currency property
+// returns a Currencyable when successful
 func (m *PurchaseInvoice) GetCurrency()(Currencyable) {
     val, err := m.GetBackingStore().Get("currency")
     if err != nil {
@@ -63,6 +67,7 @@ func (m *PurchaseInvoice) GetCurrency()(Currencyable) {
     return nil
 }
 // GetCurrencyCode gets the currencyCode property value. The currencyCode property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetCurrencyCode()(*string) {
     val, err := m.GetBackingStore().Get("currencyCode")
     if err != nil {
@@ -74,6 +79,7 @@ func (m *PurchaseInvoice) GetCurrencyCode()(*string) {
     return nil
 }
 // GetCurrencyId gets the currencyId property value. The currencyId property
+// returns a *UUID when successful
 func (m *PurchaseInvoice) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("currencyId")
     if err != nil {
@@ -85,6 +91,7 @@ func (m *PurchaseInvoice) GetCurrencyId()(*i561e97a8befe7661a44c8f54600992b4207a
     return nil
 }
 // GetDiscountAmount gets the discountAmount property value. The discountAmount property
+// returns a *float64 when successful
 func (m *PurchaseInvoice) GetDiscountAmount()(*float64) {
     val, err := m.GetBackingStore().Get("discountAmount")
     if err != nil {
@@ -96,6 +103,7 @@ func (m *PurchaseInvoice) GetDiscountAmount()(*float64) {
     return nil
 }
 // GetDiscountAppliedBeforeTax gets the discountAppliedBeforeTax property value. The discountAppliedBeforeTax property
+// returns a *bool when successful
 func (m *PurchaseInvoice) GetDiscountAppliedBeforeTax()(*bool) {
     val, err := m.GetBackingStore().Get("discountAppliedBeforeTax")
     if err != nil {
@@ -107,6 +115,7 @@ func (m *PurchaseInvoice) GetDiscountAppliedBeforeTax()(*bool) {
     return nil
 }
 // GetDueDate gets the dueDate property value. The dueDate property
+// returns a *DateOnly when successful
 func (m *PurchaseInvoice) GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("dueDate")
     if err != nil {
@@ -118,6 +127,7 @@ func (m *PurchaseInvoice) GetDueDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["buyFromAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -439,6 +449,7 @@ func (m *PurchaseInvoice) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *UUID when successful
 func (m *PurchaseInvoice) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("id")
     if err != nil {
@@ -450,6 +461,7 @@ func (m *PurchaseInvoice) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf677
     return nil
 }
 // GetInvoiceDate gets the invoiceDate property value. The invoiceDate property
+// returns a *DateOnly when successful
 func (m *PurchaseInvoice) GetInvoiceDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("invoiceDate")
     if err != nil {
@@ -461,6 +473,7 @@ func (m *PurchaseInvoice) GetInvoiceDate()(*i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *PurchaseInvoice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -472,6 +485,7 @@ func (m *PurchaseInvoice) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetNumber gets the number property value. The number property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
     if err != nil {
@@ -483,6 +497,7 @@ func (m *PurchaseInvoice) GetNumber()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -494,6 +509,7 @@ func (m *PurchaseInvoice) GetOdataType()(*string) {
     return nil
 }
 // GetPayToAddress gets the payToAddress property value. The payToAddress property
+// returns a PostalAddressTypeable when successful
 func (m *PurchaseInvoice) GetPayToAddress()(PostalAddressTypeable) {
     val, err := m.GetBackingStore().Get("payToAddress")
     if err != nil {
@@ -505,6 +521,7 @@ func (m *PurchaseInvoice) GetPayToAddress()(PostalAddressTypeable) {
     return nil
 }
 // GetPayToContact gets the payToContact property value. The payToContact property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetPayToContact()(*string) {
     val, err := m.GetBackingStore().Get("payToContact")
     if err != nil {
@@ -516,6 +533,7 @@ func (m *PurchaseInvoice) GetPayToContact()(*string) {
     return nil
 }
 // GetPayToName gets the payToName property value. The payToName property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetPayToName()(*string) {
     val, err := m.GetBackingStore().Get("payToName")
     if err != nil {
@@ -527,6 +545,7 @@ func (m *PurchaseInvoice) GetPayToName()(*string) {
     return nil
 }
 // GetPayToVendorId gets the payToVendorId property value. The payToVendorId property
+// returns a *UUID when successful
 func (m *PurchaseInvoice) GetPayToVendorId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("payToVendorId")
     if err != nil {
@@ -538,6 +557,7 @@ func (m *PurchaseInvoice) GetPayToVendorId()(*i561e97a8befe7661a44c8f54600992b42
     return nil
 }
 // GetPayToVendorNumber gets the payToVendorNumber property value. The payToVendorNumber property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetPayToVendorNumber()(*string) {
     val, err := m.GetBackingStore().Get("payToVendorNumber")
     if err != nil {
@@ -549,6 +569,7 @@ func (m *PurchaseInvoice) GetPayToVendorNumber()(*string) {
     return nil
 }
 // GetPricesIncludeTax gets the pricesIncludeTax property value. The pricesIncludeTax property
+// returns a *bool when successful
 func (m *PurchaseInvoice) GetPricesIncludeTax()(*bool) {
     val, err := m.GetBackingStore().Get("pricesIncludeTax")
     if err != nil {
@@ -560,6 +581,7 @@ func (m *PurchaseInvoice) GetPricesIncludeTax()(*bool) {
     return nil
 }
 // GetPurchaseInvoiceLines gets the purchaseInvoiceLines property value. The purchaseInvoiceLines property
+// returns a []PurchaseInvoiceLineable when successful
 func (m *PurchaseInvoice) GetPurchaseInvoiceLines()([]PurchaseInvoiceLineable) {
     val, err := m.GetBackingStore().Get("purchaseInvoiceLines")
     if err != nil {
@@ -571,6 +593,7 @@ func (m *PurchaseInvoice) GetPurchaseInvoiceLines()([]PurchaseInvoiceLineable) {
     return nil
 }
 // GetShipToAddress gets the shipToAddress property value. The shipToAddress property
+// returns a PostalAddressTypeable when successful
 func (m *PurchaseInvoice) GetShipToAddress()(PostalAddressTypeable) {
     val, err := m.GetBackingStore().Get("shipToAddress")
     if err != nil {
@@ -582,6 +605,7 @@ func (m *PurchaseInvoice) GetShipToAddress()(PostalAddressTypeable) {
     return nil
 }
 // GetShipToContact gets the shipToContact property value. The shipToContact property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetShipToContact()(*string) {
     val, err := m.GetBackingStore().Get("shipToContact")
     if err != nil {
@@ -593,6 +617,7 @@ func (m *PurchaseInvoice) GetShipToContact()(*string) {
     return nil
 }
 // GetShipToName gets the shipToName property value. The shipToName property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetShipToName()(*string) {
     val, err := m.GetBackingStore().Get("shipToName")
     if err != nil {
@@ -604,6 +629,7 @@ func (m *PurchaseInvoice) GetShipToName()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -615,6 +641,7 @@ func (m *PurchaseInvoice) GetStatus()(*string) {
     return nil
 }
 // GetTotalAmountExcludingTax gets the totalAmountExcludingTax property value. The totalAmountExcludingTax property
+// returns a *float64 when successful
 func (m *PurchaseInvoice) GetTotalAmountExcludingTax()(*float64) {
     val, err := m.GetBackingStore().Get("totalAmountExcludingTax")
     if err != nil {
@@ -626,6 +653,7 @@ func (m *PurchaseInvoice) GetTotalAmountExcludingTax()(*float64) {
     return nil
 }
 // GetTotalAmountIncludingTax gets the totalAmountIncludingTax property value. The totalAmountIncludingTax property
+// returns a *float64 when successful
 func (m *PurchaseInvoice) GetTotalAmountIncludingTax()(*float64) {
     val, err := m.GetBackingStore().Get("totalAmountIncludingTax")
     if err != nil {
@@ -637,6 +665,7 @@ func (m *PurchaseInvoice) GetTotalAmountIncludingTax()(*float64) {
     return nil
 }
 // GetTotalTaxAmount gets the totalTaxAmount property value. The totalTaxAmount property
+// returns a *float64 when successful
 func (m *PurchaseInvoice) GetTotalTaxAmount()(*float64) {
     val, err := m.GetBackingStore().Get("totalTaxAmount")
     if err != nil {
@@ -648,6 +677,7 @@ func (m *PurchaseInvoice) GetTotalTaxAmount()(*float64) {
     return nil
 }
 // GetVendorEscaped gets the vendor property value. The vendor property
+// returns a VendorEscapedable when successful
 func (m *PurchaseInvoice) GetVendorEscaped()(VendorEscapedable) {
     val, err := m.GetBackingStore().Get("vendorEscaped")
     if err != nil {
@@ -659,6 +689,7 @@ func (m *PurchaseInvoice) GetVendorEscaped()(VendorEscapedable) {
     return nil
 }
 // GetVendorId gets the vendorId property value. The vendorId property
+// returns a *UUID when successful
 func (m *PurchaseInvoice) GetVendorId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("vendorId")
     if err != nil {
@@ -670,6 +701,7 @@ func (m *PurchaseInvoice) GetVendorId()(*i561e97a8befe7661a44c8f54600992b4207a3a
     return nil
 }
 // GetVendorInvoiceNumber gets the vendorInvoiceNumber property value. The vendorInvoiceNumber property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetVendorInvoiceNumber()(*string) {
     val, err := m.GetBackingStore().Get("vendorInvoiceNumber")
     if err != nil {
@@ -681,6 +713,7 @@ func (m *PurchaseInvoice) GetVendorInvoiceNumber()(*string) {
     return nil
 }
 // GetVendorName gets the vendorName property value. The vendorName property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetVendorName()(*string) {
     val, err := m.GetBackingStore().Get("vendorName")
     if err != nil {
@@ -692,6 +725,7 @@ func (m *PurchaseInvoice) GetVendorName()(*string) {
     return nil
 }
 // GetVendorNumber gets the vendorNumber property value. The vendorNumber property
+// returns a *string when successful
 func (m *PurchaseInvoice) GetVendorNumber()(*string) {
     val, err := m.GetBackingStore().Get("vendorNumber")
     if err != nil {
@@ -1132,7 +1166,6 @@ func (m *PurchaseInvoice) SetVendorNumber(value *string)() {
         panic(err)
     }
 }
-// PurchaseInvoiceable 
 type PurchaseInvoiceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

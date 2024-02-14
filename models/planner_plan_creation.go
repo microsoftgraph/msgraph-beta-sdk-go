@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PlannerPlanCreation 
 type PlannerPlanCreation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPlannerPlanCreation instantiates a new plannerPlanCreation and sets the default values.
+// NewPlannerPlanCreation instantiates a new PlannerPlanCreation and sets the default values.
 func NewPlannerPlanCreation()(*PlannerPlanCreation) {
     m := &PlannerPlanCreation{
     }
@@ -19,6 +18,7 @@ func NewPlannerPlanCreation()(*PlannerPlanCreation) {
     return m
 }
 // CreatePlannerPlanCreationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerPlanCreationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreatePlannerPlanCreationFromDiscriminatorValue(parseNode i878a80d2330e89d2
     return NewPlannerPlanCreation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PlannerPlanCreation) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -53,10 +54,12 @@ func (m *PlannerPlanCreation) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PlannerPlanCreation) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCreationSourceKind gets the creationSourceKind property value. Specifies what kind of creation source the plan is created with. The possible values are: external, publication and unknownFutureValue.
+// returns a *PlannerCreationSourceKind when successful
 func (m *PlannerPlanCreation) GetCreationSourceKind()(*PlannerCreationSourceKind) {
     val, err := m.GetBackingStore().Get("creationSourceKind")
     if err != nil {
@@ -68,6 +71,7 @@ func (m *PlannerPlanCreation) GetCreationSourceKind()(*PlannerCreationSourceKind
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerPlanCreation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["creationSourceKind"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -93,6 +97,7 @@ func (m *PlannerPlanCreation) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PlannerPlanCreation) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -151,7 +156,6 @@ func (m *PlannerPlanCreation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// PlannerPlanCreationable 
 type PlannerPlanCreationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

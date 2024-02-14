@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// VirtualEventPresenterInfo 
 type VirtualEventPresenterInfo struct {
     MeetingParticipantInfo
 }
-// NewVirtualEventPresenterInfo instantiates a new virtualEventPresenterInfo and sets the default values.
+// NewVirtualEventPresenterInfo instantiates a new VirtualEventPresenterInfo and sets the default values.
 func NewVirtualEventPresenterInfo()(*VirtualEventPresenterInfo) {
     m := &VirtualEventPresenterInfo{
         MeetingParticipantInfo: *NewMeetingParticipantInfo(),
@@ -18,10 +17,12 @@ func NewVirtualEventPresenterInfo()(*VirtualEventPresenterInfo) {
     return m
 }
 // CreateVirtualEventPresenterInfoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVirtualEventPresenterInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventPresenterInfo(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEventPresenterInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MeetingParticipantInfo.GetFieldDeserializers()
     res["presenterDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *VirtualEventPresenterInfo) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetPresenterDetails gets the presenterDetails property value. The presenterDetails property
+// returns a VirtualEventPresenterDetailsable when successful
 func (m *VirtualEventPresenterInfo) GetPresenterDetails()(VirtualEventPresenterDetailsable) {
     val, err := m.GetBackingStore().Get("presenterDetails")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *VirtualEventPresenterInfo) SetPresenterDetails(value VirtualEventPresen
         panic(err)
     }
 }
-// VirtualEventPresenterInfoable 
 type VirtualEventPresenterInfoable interface {
     MeetingParticipantInfoable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

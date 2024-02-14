@@ -8,7 +8,7 @@ import (
 type IosVppAppAssignedUserLicense struct {
     IosVppAppAssignedLicense
 }
-// NewIosVppAppAssignedUserLicense instantiates a new iosVppAppAssignedUserLicense and sets the default values.
+// NewIosVppAppAssignedUserLicense instantiates a new IosVppAppAssignedUserLicense and sets the default values.
 func NewIosVppAppAssignedUserLicense()(*IosVppAppAssignedUserLicense) {
     m := &IosVppAppAssignedUserLicense{
         IosVppAppAssignedLicense: *NewIosVppAppAssignedLicense(),
@@ -16,10 +16,12 @@ func NewIosVppAppAssignedUserLicense()(*IosVppAppAssignedUserLicense) {
     return m
 }
 // CreateIosVppAppAssignedUserLicenseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosVppAppAssignedUserLicenseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosVppAppAssignedUserLicense(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosVppAppAssignedUserLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosVppAppAssignedLicense.GetFieldDeserializers()
     return res
@@ -32,7 +34,6 @@ func (m *IosVppAppAssignedUserLicense) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// IosVppAppAssignedUserLicenseable 
 type IosVppAppAssignedUserLicenseable interface {
     IosVppAppAssignedLicenseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

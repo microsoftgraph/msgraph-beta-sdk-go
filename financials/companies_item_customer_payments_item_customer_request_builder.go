@@ -41,32 +41,33 @@ type CompaniesItemCustomerPaymentsItemCustomerRequestBuilderPatchRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewCompaniesItemCustomerPaymentsItemCustomerRequestBuilderInternal instantiates a new CustomerRequestBuilder and sets the default values.
+// NewCompaniesItemCustomerPaymentsItemCustomerRequestBuilderInternal instantiates a new CompaniesItemCustomerPaymentsItemCustomerRequestBuilder and sets the default values.
 func NewCompaniesItemCustomerPaymentsItemCustomerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) {
     m := &CompaniesItemCustomerPaymentsItemCustomerRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemCustomerPaymentsItemCustomerRequestBuilder instantiates a new CustomerRequestBuilder and sets the default values.
+// NewCompaniesItemCustomerPaymentsItemCustomerRequestBuilder instantiates a new CompaniesItemCustomerPaymentsItemCustomerRequestBuilder and sets the default values.
 func NewCompaniesItemCustomerPaymentsItemCustomerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemCustomerPaymentsItemCustomerRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Currency provides operations to manage the currency property of the microsoft.graph.customer entity.
+// returns a *CompaniesItemCustomerPaymentsItemCustomerCurrencyRequestBuilder when successful
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) Currency()(*CompaniesItemCustomerPaymentsItemCustomerCurrencyRequestBuilder) {
     return NewCompaniesItemCustomerPaymentsItemCustomerCurrencyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property customer for financials
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) Delete(ctx context.Context, requestConfiguration *CompaniesItemCustomerPaymentsItemCustomerRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -75,14 +76,15 @@ func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) Delete(ctx con
     return nil
 }
 // Get get customer from financials
+// returns a Customerable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemCustomerPaymentsItemCustomerRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Customerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCustomerFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -94,14 +96,15 @@ func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) Get(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Customerable), nil
 }
 // Patch update the navigation property customer in financials
+// returns a Customerable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Customerable, requestConfiguration *CompaniesItemCustomerPaymentsItemCustomerRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Customerable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCustomerFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -113,24 +116,29 @@ func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) Patch(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Customerable), nil
 }
 // PaymentMethod provides operations to manage the paymentMethod property of the microsoft.graph.customer entity.
+// returns a *CompaniesItemCustomerPaymentsItemCustomerPaymentMethodRequestBuilder when successful
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) PaymentMethod()(*CompaniesItemCustomerPaymentsItemCustomerPaymentMethodRequestBuilder) {
     return NewCompaniesItemCustomerPaymentsItemCustomerPaymentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.customer entity.
+// returns a *CompaniesItemCustomerPaymentsItemCustomerPaymentTermRequestBuilder when successful
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) PaymentTerm()(*CompaniesItemCustomerPaymentsItemCustomerPaymentTermRequestBuilder) {
     return NewCompaniesItemCustomerPaymentsItemCustomerPaymentTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.customer entity.
+// returns a *CompaniesItemCustomerPaymentsItemCustomerPictureRequestBuilder when successful
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) Picture()(*CompaniesItemCustomerPaymentsItemCustomerPictureRequestBuilder) {
     return NewCompaniesItemCustomerPaymentsItemCustomerPictureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ShipmentMethod provides operations to manage the shipmentMethod property of the microsoft.graph.customer entity.
+// returns a *CompaniesItemCustomerPaymentsItemCustomerShipmentMethodRequestBuilder when successful
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) ShipmentMethod()(*CompaniesItemCustomerPaymentsItemCustomerShipmentMethodRequestBuilder) {
     return NewCompaniesItemCustomerPaymentsItemCustomerShipmentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property customer for financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemCustomerPaymentsItemCustomerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -139,6 +147,7 @@ func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) ToDeleteReques
     return requestInfo, nil
 }
 // ToGetRequestInformation get customer from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemCustomerPaymentsItemCustomerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -152,8 +161,9 @@ func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) ToGetRequestIn
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property customer in financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Customerable, requestConfiguration *CompaniesItemCustomerPaymentsItemCustomerRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -166,6 +176,7 @@ func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) ToPatchRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder when successful
 func (m *CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemCustomerPaymentsItemCustomerRequestBuilder) {
     return NewCompaniesItemCustomerPaymentsItemCustomerRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

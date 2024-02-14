@@ -17,29 +17,30 @@ type EmbeddedSIMActivationCodePoolsItemAssignRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilderInternal instantiates a new AssignRequestBuilder and sets the default values.
+// NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilderInternal instantiates a new EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) {
     m := &EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}/assign", pathParameters),
     }
     return m
 }
-// NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilder instantiates a new AssignRequestBuilder and sets the default values.
+// NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilder instantiates a new EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder and sets the default values.
 func NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
-// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a EmbeddedSIMActivationCodePoolsItemAssignResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) Post(ctx context.Context, body EmbeddedSIMActivationCodePoolsItemAssignPostRequestBodyable, requestConfiguration *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilderPostRequestConfiguration)(EmbeddedSIMActivationCodePoolsItemAssignResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEmbeddedSIMActivationCodePoolsItemAssignResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -51,14 +52,15 @@ func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) Post(ctx contex
     return res.(EmbeddedSIMActivationCodePoolsItemAssignResponseable), nil
 }
 // PostAsAssignPostResponse invoke action assign
+// returns a EmbeddedSIMActivationCodePoolsItemAssignPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) PostAsAssignPostResponse(ctx context.Context, body EmbeddedSIMActivationCodePoolsItemAssignPostRequestBodyable, requestConfiguration *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilderPostRequestConfiguration)(EmbeddedSIMActivationCodePoolsItemAssignPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateEmbeddedSIMActivationCodePoolsItemAssignPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,6 +72,7 @@ func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) PostAsAssignPos
     return res.(EmbeddedSIMActivationCodePoolsItemAssignPostResponseable), nil
 }
 // ToPostRequestInformation invoke action assign
+// returns a *RequestInformation when successful
 func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) ToPostRequestInformation(ctx context.Context, body EmbeddedSIMActivationCodePoolsItemAssignPostRequestBodyable, requestConfiguration *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -84,6 +87,7 @@ func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) ToPostRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder when successful
 func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) WithUrl(rawUrl string)(*EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) {
     return NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

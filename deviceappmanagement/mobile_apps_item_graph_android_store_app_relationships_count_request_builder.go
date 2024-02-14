@@ -26,28 +26,29 @@ type MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilderGetReques
     // Request query parameters
     QueryParameters *MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilderGetQueryParameters
 }
-// NewMobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilderInternal instantiates a new MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder) {
     m := &MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.androidStoreApp/relationships/$count{?%24search,%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.androidStoreApp/relationships/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder instantiates a new MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder) Get
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -72,6 +74,7 @@ func (m *MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder) ToG
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder when successful
 func (m *MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder) {
     return NewMobileAppsItemGraphAndroidStoreAppRelationshipsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

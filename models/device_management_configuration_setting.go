@@ -8,7 +8,7 @@ import (
 type DeviceManagementConfigurationSetting struct {
     Entity
 }
-// NewDeviceManagementConfigurationSetting instantiates a new deviceManagementConfigurationSetting and sets the default values.
+// NewDeviceManagementConfigurationSetting instantiates a new DeviceManagementConfigurationSetting and sets the default values.
 func NewDeviceManagementConfigurationSetting()(*DeviceManagementConfigurationSetting) {
     m := &DeviceManagementConfigurationSetting{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementConfigurationSetting()(*DeviceManagementConfigurationSet
     return m
 }
 // CreateDeviceManagementConfigurationSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementConfigurationSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementConfigurationSetting(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["settingDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -51,6 +53,7 @@ func (m *DeviceManagementConfigurationSetting) GetFieldDeserializers()(map[strin
     return res
 }
 // GetSettingDefinitions gets the settingDefinitions property value. List of related Setting Definitions. This property is read-only.
+// returns a []DeviceManagementConfigurationSettingDefinitionable when successful
 func (m *DeviceManagementConfigurationSetting) GetSettingDefinitions()([]DeviceManagementConfigurationSettingDefinitionable) {
     val, err := m.GetBackingStore().Get("settingDefinitions")
     if err != nil {
@@ -62,6 +65,7 @@ func (m *DeviceManagementConfigurationSetting) GetSettingDefinitions()([]DeviceM
     return nil
 }
 // GetSettingInstance gets the settingInstance property value. Setting instance within policy
+// returns a DeviceManagementConfigurationSettingInstanceable when successful
 func (m *DeviceManagementConfigurationSetting) GetSettingInstance()(DeviceManagementConfigurationSettingInstanceable) {
     val, err := m.GetBackingStore().Get("settingInstance")
     if err != nil {
@@ -112,7 +116,6 @@ func (m *DeviceManagementConfigurationSetting) SetSettingInstance(value DeviceMa
         panic(err)
     }
 }
-// DeviceManagementConfigurationSettingable 
 type DeviceManagementConfigurationSettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

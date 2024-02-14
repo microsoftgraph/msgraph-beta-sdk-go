@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Command 
 type Command struct {
     Entity
 }
-// NewCommand instantiates a new command and sets the default values.
+// NewCommand instantiates a new Command and sets the default values.
 func NewCommand()(*Command) {
     m := &Command{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCommand()(*Command) {
     return m
 }
 // CreateCommandFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommandFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommand(), nil
 }
 // GetAppServiceName gets the appServiceName property value. The appServiceName property
+// returns a *string when successful
 func (m *Command) GetAppServiceName()(*string) {
     val, err := m.GetBackingStore().Get("appServiceName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Command) GetAppServiceName()(*string) {
     return nil
 }
 // GetError gets the error property value. The error property
+// returns a *string when successful
 func (m *Command) GetError()(*string) {
     val, err := m.GetBackingStore().Get("error")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *Command) GetError()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Command) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appServiceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +140,7 @@ func (m *Command) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetPackageFamilyName gets the packageFamilyName property value. The packageFamilyName property
+// returns a *string when successful
 func (m *Command) GetPackageFamilyName()(*string) {
     val, err := m.GetBackingStore().Get("packageFamilyName")
     if err != nil {
@@ -148,6 +152,7 @@ func (m *Command) GetPackageFamilyName()(*string) {
     return nil
 }
 // GetPayload gets the payload property value. The payload property
+// returns a PayloadRequestable when successful
 func (m *Command) GetPayload()(PayloadRequestable) {
     val, err := m.GetBackingStore().Get("payload")
     if err != nil {
@@ -159,6 +164,7 @@ func (m *Command) GetPayload()(PayloadRequestable) {
     return nil
 }
 // GetPermissionTicket gets the permissionTicket property value. The permissionTicket property
+// returns a *string when successful
 func (m *Command) GetPermissionTicket()(*string) {
     val, err := m.GetBackingStore().Get("permissionTicket")
     if err != nil {
@@ -170,6 +176,7 @@ func (m *Command) GetPermissionTicket()(*string) {
     return nil
 }
 // GetPostBackUri gets the postBackUri property value. The postBackUri property
+// returns a *string when successful
 func (m *Command) GetPostBackUri()(*string) {
     val, err := m.GetBackingStore().Get("postBackUri")
     if err != nil {
@@ -181,6 +188,7 @@ func (m *Command) GetPostBackUri()(*string) {
     return nil
 }
 // GetResponsepayload gets the responsepayload property value. The responsepayload property
+// returns a PayloadResponseable when successful
 func (m *Command) GetResponsepayload()(PayloadResponseable) {
     val, err := m.GetBackingStore().Get("responsepayload")
     if err != nil {
@@ -192,6 +200,7 @@ func (m *Command) GetResponsepayload()(PayloadResponseable) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *string when successful
 func (m *Command) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -203,6 +212,7 @@ func (m *Command) GetStatus()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *Command) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -338,7 +348,6 @@ func (m *Command) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// Commandable 
 type Commandable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

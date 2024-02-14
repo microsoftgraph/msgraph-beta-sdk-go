@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceRegistrationPolicy 
 type DeviceRegistrationPolicy struct {
     Entity
 }
-// NewDeviceRegistrationPolicy instantiates a new deviceRegistrationPolicy and sets the default values.
+// NewDeviceRegistrationPolicy instantiates a new DeviceRegistrationPolicy and sets the default values.
 func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
     m := &DeviceRegistrationPolicy{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewDeviceRegistrationPolicy()(*DeviceRegistrationPolicy) {
     return m
 }
 // CreateDeviceRegistrationPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceRegistrationPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceRegistrationPolicy(), nil
 }
 // GetAzureADJoin gets the azureADJoin property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.
+// returns a AzureADJoinPolicyable when successful
 func (m *DeviceRegistrationPolicy) GetAzureADJoin()(AzureADJoinPolicyable) {
     val, err := m.GetBackingStore().Get("azureADJoin")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *DeviceRegistrationPolicy) GetAzureADJoin()(AzureADJoinPolicyable) {
     return nil
 }
 // GetAzureADRegistration gets the azureADRegistration property value. Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.
+// returns a AzureADRegistrationPolicyable when successful
 func (m *DeviceRegistrationPolicy) GetAzureADRegistration()(AzureADRegistrationPolicyable) {
     val, err := m.GetBackingStore().Get("azureADRegistration")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *DeviceRegistrationPolicy) GetAzureADRegistration()(AzureADRegistrationP
     return nil
 }
 // GetDescription gets the description property value. The description of the device registration policy. It's always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.
+// returns a *string when successful
 func (m *DeviceRegistrationPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *DeviceRegistrationPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The name of the device registration policy. It's always set to Device Registration Policy. Read-only.
+// returns a *string when successful
 func (m *DeviceRegistrationPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *DeviceRegistrationPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["azureADJoin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -139,6 +144,7 @@ func (m *DeviceRegistrationPolicy) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetLocalAdminPassword gets the localAdminPassword property value. Specifies the setting for Local Admin Password Solution (LAPS) within your organization.
+// returns a LocalAdminPasswordSettingsable when successful
 func (m *DeviceRegistrationPolicy) GetLocalAdminPassword()(LocalAdminPasswordSettingsable) {
     val, err := m.GetBackingStore().Get("localAdminPassword")
     if err != nil {
@@ -150,6 +156,7 @@ func (m *DeviceRegistrationPolicy) GetLocalAdminPassword()(LocalAdminPasswordSet
     return nil
 }
 // GetMultiFactorAuthConfiguration gets the multiFactorAuthConfiguration property value. The multiFactorAuthConfiguration property
+// returns a *MultiFactorAuthConfiguration when successful
 func (m *DeviceRegistrationPolicy) GetMultiFactorAuthConfiguration()(*MultiFactorAuthConfiguration) {
     val, err := m.GetBackingStore().Get("multiFactorAuthConfiguration")
     if err != nil {
@@ -161,6 +168,7 @@ func (m *DeviceRegistrationPolicy) GetMultiFactorAuthConfiguration()(*MultiFacto
     return nil
 }
 // GetUserDeviceQuota gets the userDeviceQuota property value. Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn't specified during the policy update operation, it's automatically reset to 0 to indicate that users aren't allowed to join any devices.
+// returns a *int32 when successful
 func (m *DeviceRegistrationPolicy) GetUserDeviceQuota()(*int32) {
     val, err := m.GetBackingStore().Get("userDeviceQuota")
     if err != nil {
@@ -271,7 +279,6 @@ func (m *DeviceRegistrationPolicy) SetUserDeviceQuota(value *int32)() {
         panic(err)
     }
 }
-// DeviceRegistrationPolicyable 
 type DeviceRegistrationPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

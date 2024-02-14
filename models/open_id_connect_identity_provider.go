@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OpenIdConnectIdentityProvider 
 type OpenIdConnectIdentityProvider struct {
     IdentityProviderBase
 }
-// NewOpenIdConnectIdentityProvider instantiates a new openIdConnectIdentityProvider and sets the default values.
+// NewOpenIdConnectIdentityProvider instantiates a new OpenIdConnectIdentityProvider and sets the default values.
 func NewOpenIdConnectIdentityProvider()(*OpenIdConnectIdentityProvider) {
     m := &OpenIdConnectIdentityProvider{
         IdentityProviderBase: *NewIdentityProviderBase(),
@@ -18,10 +17,12 @@ func NewOpenIdConnectIdentityProvider()(*OpenIdConnectIdentityProvider) {
     return m
 }
 // CreateOpenIdConnectIdentityProviderFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOpenIdConnectIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOpenIdConnectIdentityProvider(), nil
 }
 // GetClaimsMapping gets the claimsMapping property value. After the OIDC provider sends an ID token back to Microsoft Entra ID, Microsoft Entra ID needs to be able to map the claims from the received token to the claims that Microsoft Entra ID recognizes and uses. This complex type captures that mapping. Required.
+// returns a ClaimsMappingable when successful
 func (m *OpenIdConnectIdentityProvider) GetClaimsMapping()(ClaimsMappingable) {
     val, err := m.GetBackingStore().Get("claimsMapping")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *OpenIdConnectIdentityProvider) GetClaimsMapping()(ClaimsMappingable) {
     return nil
 }
 // GetClientId gets the clientId property value. The client identifier for the application obtained when registering the application with the identity provider. Required.
+// returns a *string when successful
 func (m *OpenIdConnectIdentityProvider) GetClientId()(*string) {
     val, err := m.GetBackingStore().Get("clientId")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *OpenIdConnectIdentityProvider) GetClientId()(*string) {
     return nil
 }
 // GetClientSecret gets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is idtoken the secret is not required because there is no code exchange. The idtoken is returned directly from the authorization response. This is write-only. A read operation returns .
+// returns a *string when successful
 func (m *OpenIdConnectIdentityProvider) GetClientSecret()(*string) {
     val, err := m.GetBackingStore().Get("clientSecret")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *OpenIdConnectIdentityProvider) GetClientSecret()(*string) {
     return nil
 }
 // GetDomainHint gets the domainHint property value. The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.
+// returns a *string when successful
 func (m *OpenIdConnectIdentityProvider) GetDomainHint()(*string) {
     val, err := m.GetBackingStore().Get("domainHint")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *OpenIdConnectIdentityProvider) GetDomainHint()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OpenIdConnectIdentityProvider) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IdentityProviderBase.GetFieldDeserializers()
     res["claimsMapping"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -151,6 +156,7 @@ func (m *OpenIdConnectIdentityProvider) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetMetadataUrl gets the metadataUrl property value. The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service's public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in .well-known/openid-configuration. Provide the metadata URL for the OpenID Connect identity provider you add. Read-only. Required.
+// returns a *string when successful
 func (m *OpenIdConnectIdentityProvider) GetMetadataUrl()(*string) {
     val, err := m.GetBackingStore().Get("metadataUrl")
     if err != nil {
@@ -162,6 +168,7 @@ func (m *OpenIdConnectIdentityProvider) GetMetadataUrl()(*string) {
     return nil
 }
 // GetResponseMode gets the responseMode property value. The responseMode property
+// returns a *OpenIdConnectResponseMode when successful
 func (m *OpenIdConnectIdentityProvider) GetResponseMode()(*OpenIdConnectResponseMode) {
     val, err := m.GetBackingStore().Get("responseMode")
     if err != nil {
@@ -173,6 +180,7 @@ func (m *OpenIdConnectIdentityProvider) GetResponseMode()(*OpenIdConnectResponse
     return nil
 }
 // GetResponseType gets the responseType property value. The responseType property
+// returns a *OpenIdConnectResponseTypes when successful
 func (m *OpenIdConnectIdentityProvider) GetResponseType()(*OpenIdConnectResponseTypes) {
     val, err := m.GetBackingStore().Get("responseType")
     if err != nil {
@@ -184,6 +192,7 @@ func (m *OpenIdConnectIdentityProvider) GetResponseType()(*OpenIdConnectResponse
     return nil
 }
 // GetScope gets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations, see RFC6749 Section 3.3. Required.
+// returns a *string when successful
 func (m *OpenIdConnectIdentityProvider) GetScope()(*string) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -308,7 +317,6 @@ func (m *OpenIdConnectIdentityProvider) SetScope(value *string)() {
         panic(err)
     }
 }
-// OpenIdConnectIdentityProviderable 
 type OpenIdConnectIdentityProviderable interface {
     IdentityProviderBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

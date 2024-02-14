@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserConfigurationCollectionResponse 
 type UserConfigurationCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewUserConfigurationCollectionResponse instantiates a new userConfigurationCollectionResponse and sets the default values.
+// NewUserConfigurationCollectionResponse instantiates a new UserConfigurationCollectionResponse and sets the default values.
 func NewUserConfigurationCollectionResponse()(*UserConfigurationCollectionResponse) {
     m := &UserConfigurationCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewUserConfigurationCollectionResponse()(*UserConfigurationCollectionRespon
     return m
 }
 // CreateUserConfigurationCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserConfigurationCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserConfigurationCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserConfigurationCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *UserConfigurationCollectionResponse) GetFieldDeserializers()(map[string
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []UserConfigurationable when successful
 func (m *UserConfigurationCollectionResponse) GetValue()([]UserConfigurationable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *UserConfigurationCollectionResponse) SetValue(value []UserConfiguration
         panic(err)
     }
 }
-// UserConfigurationCollectionResponseable 
 type UserConfigurationCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

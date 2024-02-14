@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ForceUserPasswordResetResponseAction 
 type ForceUserPasswordResetResponseAction struct {
     ResponseAction
 }
-// NewForceUserPasswordResetResponseAction instantiates a new forceUserPasswordResetResponseAction and sets the default values.
+// NewForceUserPasswordResetResponseAction instantiates a new ForceUserPasswordResetResponseAction and sets the default values.
 func NewForceUserPasswordResetResponseAction()(*ForceUserPasswordResetResponseAction) {
     m := &ForceUserPasswordResetResponseAction{
         ResponseAction: *NewResponseAction(),
@@ -18,10 +17,12 @@ func NewForceUserPasswordResetResponseAction()(*ForceUserPasswordResetResponseAc
     return m
 }
 // CreateForceUserPasswordResetResponseActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateForceUserPasswordResetResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewForceUserPasswordResetResponseAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ForceUserPasswordResetResponseAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ResponseAction.GetFieldDeserializers()
     res["identifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *ForceUserPasswordResetResponseAction) GetFieldDeserializers()(map[strin
     return res
 }
 // GetIdentifier gets the identifier property value. The identifier property
+// returns a *ForceUserPasswordResetEntityIdentifier when successful
 func (m *ForceUserPasswordResetResponseAction) GetIdentifier()(*ForceUserPasswordResetEntityIdentifier) {
     val, err := m.GetBackingStore().Get("identifier")
     if err != nil {
@@ -69,7 +71,6 @@ func (m *ForceUserPasswordResetResponseAction) SetIdentifier(value *ForceUserPas
         panic(err)
     }
 }
-// ForceUserPasswordResetResponseActionable 
 type ForceUserPasswordResetResponseActionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ResponseActionable

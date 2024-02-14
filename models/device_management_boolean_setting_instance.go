@@ -8,7 +8,7 @@ import (
 type DeviceManagementBooleanSettingInstance struct {
     DeviceManagementSettingInstance
 }
-// NewDeviceManagementBooleanSettingInstance instantiates a new deviceManagementBooleanSettingInstance and sets the default values.
+// NewDeviceManagementBooleanSettingInstance instantiates a new DeviceManagementBooleanSettingInstance and sets the default values.
 func NewDeviceManagementBooleanSettingInstance()(*DeviceManagementBooleanSettingInstance) {
     m := &DeviceManagementBooleanSettingInstance{
         DeviceManagementSettingInstance: *NewDeviceManagementSettingInstance(),
@@ -18,10 +18,12 @@ func NewDeviceManagementBooleanSettingInstance()(*DeviceManagementBooleanSetting
     return m
 }
 // CreateDeviceManagementBooleanSettingInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementBooleanSettingInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementBooleanSettingInstance(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementBooleanSettingInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementSettingInstance.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *DeviceManagementBooleanSettingInstance) GetFieldDeserializers()(map[str
     return res
 }
 // GetValue gets the value property value. The boolean value
+// returns a *bool when successful
 func (m *DeviceManagementBooleanSettingInstance) GetValue()(*bool) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *DeviceManagementBooleanSettingInstance) SetValue(value *bool)() {
         panic(err)
     }
 }
-// DeviceManagementBooleanSettingInstanceable 
 type DeviceManagementBooleanSettingInstanceable interface {
     DeviceManagementSettingInstanceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

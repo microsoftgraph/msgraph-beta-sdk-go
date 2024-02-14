@@ -8,7 +8,7 @@ import (
 type WindowsPhone81AppXBundle struct {
     WindowsPhone81AppX
 }
-// NewWindowsPhone81AppXBundle instantiates a new windowsPhone81AppXBundle and sets the default values.
+// NewWindowsPhone81AppXBundle instantiates a new WindowsPhone81AppXBundle and sets the default values.
 func NewWindowsPhone81AppXBundle()(*WindowsPhone81AppXBundle) {
     m := &WindowsPhone81AppXBundle{
         WindowsPhone81AppX: *NewWindowsPhone81AppX(),
@@ -18,10 +18,12 @@ func NewWindowsPhone81AppXBundle()(*WindowsPhone81AppXBundle) {
     return m
 }
 // CreateWindowsPhone81AppXBundleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsPhone81AppXBundleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsPhone81AppXBundle(), nil
 }
 // GetAppXPackageInformationList gets the appXPackageInformationList property value. The list of AppX Package Information.
+// returns a []WindowsPackageInformationable when successful
 func (m *WindowsPhone81AppXBundle) GetAppXPackageInformationList()([]WindowsPackageInformationable) {
     val, err := m.GetBackingStore().Get("appXPackageInformationList")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsPhone81AppXBundle) GetAppXPackageInformationList()([]WindowsPack
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsPhone81AppXBundle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsPhone81AppX.GetFieldDeserializers()
     res["appXPackageInformationList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,7 +83,6 @@ func (m *WindowsPhone81AppXBundle) SetAppXPackageInformationList(value []Windows
         panic(err)
     }
 }
-// WindowsPhone81AppXBundleable 
 type WindowsPhone81AppXBundleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsPhone81AppXable

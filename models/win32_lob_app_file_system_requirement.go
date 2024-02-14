@@ -8,7 +8,7 @@ import (
 type Win32LobAppFileSystemRequirement struct {
     Win32LobAppRequirement
 }
-// NewWin32LobAppFileSystemRequirement instantiates a new win32LobAppFileSystemRequirement and sets the default values.
+// NewWin32LobAppFileSystemRequirement instantiates a new Win32LobAppFileSystemRequirement and sets the default values.
 func NewWin32LobAppFileSystemRequirement()(*Win32LobAppFileSystemRequirement) {
     m := &Win32LobAppFileSystemRequirement{
         Win32LobAppRequirement: *NewWin32LobAppRequirement(),
@@ -18,10 +18,12 @@ func NewWin32LobAppFileSystemRequirement()(*Win32LobAppFileSystemRequirement) {
     return m
 }
 // CreateWin32LobAppFileSystemRequirementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWin32LobAppFileSystemRequirementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWin32LobAppFileSystemRequirement(), nil
 }
 // GetCheck32BitOn64System gets the check32BitOn64System property value. A value indicating whether this file or folder is for checking 32-bit app on 64-bit system
+// returns a *bool when successful
 func (m *Win32LobAppFileSystemRequirement) GetCheck32BitOn64System()(*bool) {
     val, err := m.GetBackingStore().Get("check32BitOn64System")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Win32LobAppFileSystemRequirement) GetCheck32BitOn64System()(*bool) {
     return nil
 }
 // GetDetectionType gets the detectionType property value. Contains all supported file system detection type.
+// returns a *Win32LobAppFileSystemDetectionType when successful
 func (m *Win32LobAppFileSystemRequirement) GetDetectionType()(*Win32LobAppFileSystemDetectionType) {
     val, err := m.GetBackingStore().Get("detectionType")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Win32LobAppFileSystemRequirement) GetDetectionType()(*Win32LobAppFileSy
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobAppFileSystemRequirement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Win32LobAppRequirement.GetFieldDeserializers()
     res["check32BitOn64System"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -89,6 +93,7 @@ func (m *Win32LobAppFileSystemRequirement) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetFileOrFolderName gets the fileOrFolderName property value. The file or folder name to detect Win32 Line of Business (LoB) app
+// returns a *string when successful
 func (m *Win32LobAppFileSystemRequirement) GetFileOrFolderName()(*string) {
     val, err := m.GetBackingStore().Get("fileOrFolderName")
     if err != nil {
@@ -100,6 +105,7 @@ func (m *Win32LobAppFileSystemRequirement) GetFileOrFolderName()(*string) {
     return nil
 }
 // GetPath gets the path property value. The file or folder path to detect Win32 Line of Business (LoB) app
+// returns a *string when successful
 func (m *Win32LobAppFileSystemRequirement) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
     if err != nil {
@@ -171,7 +177,6 @@ func (m *Win32LobAppFileSystemRequirement) SetPath(value *string)() {
         panic(err)
     }
 }
-// Win32LobAppFileSystemRequirementable 
 type Win32LobAppFileSystemRequirementable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Win32LobAppRequirementable

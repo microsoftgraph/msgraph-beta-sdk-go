@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AuditLogRecord 
 type AuditLogRecord struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewAuditLogRecord instantiates a new auditLogRecord and sets the default values.
+// NewAuditLogRecord instantiates a new AuditLogRecord and sets the default values.
 func NewAuditLogRecord()(*AuditLogRecord) {
     m := &AuditLogRecord{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewAuditLogRecord()(*AuditLogRecord) {
     return m
 }
 // CreateAuditLogRecordFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuditLogRecordFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditLogRecord(), nil
 }
 // GetAdministrativeUnits gets the administrativeUnits property value. The administrative units tagged to an audit log record.
+// returns a []string when successful
 func (m *AuditLogRecord) GetAdministrativeUnits()([]string) {
     val, err := m.GetBackingStore().Get("administrativeUnits")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AuditLogRecord) GetAdministrativeUnits()([]string) {
     return nil
 }
 // GetAuditData gets the auditData property value. A JSON object that contains the actual audit log data.
+// returns a AuditDataable when successful
 func (m *AuditLogRecord) GetAuditData()(AuditDataable) {
     val, err := m.GetBackingStore().Get("auditData")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AuditLogRecord) GetAuditData()(AuditDataable) {
     return nil
 }
 // GetAuditLogRecordType gets the auditLogRecordType property value. The type of operation indicated by the record. The possible values are: exchangeAdmin, exchangeItem, exchangeItemGroup, sharePoint, syntheticProbe, sharePointFileOperation, oneDrive, azureActiveDirectory, azureActiveDirectoryAccountLogon, dataCenterSecurityCmdlet, complianceDLPSharePoint, sway, complianceDLPExchange, sharePointSharingOperation, azureActiveDirectoryStsLogon, skypeForBusinessPSTNUsage, skypeForBusinessUsersBlocked, securityComplianceCenterEOPCmdlet, exchangeAggregatedOperation, powerBIAudit, crm, yammer, skypeForBusinessCmdlets, discovery, microsoftTeams, threatIntelligence, mailSubmission, microsoftFlow, aeD, microsoftStream, complianceDLPSharePointClassification, threatFinder, project, sharePointListOperation, sharePointCommentOperation, dataGovernance, kaizala, securityComplianceAlerts, threatIntelligenceUrl, securityComplianceInsights, mipLabel, workplaceAnalytics, powerAppsApp, powerAppsPlan, threatIntelligenceAtpContent, labelContentExplorer, teamsHealthcare, exchangeItemAggregated, hygieneEvent, dataInsightsRestApiAudit, informationBarrierPolicyApplication, sharePointListItemOperation, sharePointContentTypeOperation, sharePointFieldOperation, microsoftTeamsAdmin, hrSignal, microsoftTeamsDevice, microsoftTeamsAnalytics, informationWorkerProtection, campaign, dlpEndpoint, airInvestigation, quarantine, microsoftForms, applicationAudit, complianceSupervisionExchange, customerKeyServiceEncryption, officeNative, mipAutoLabelSharePointItem, mipAutoLabelSharePointPolicyLocation, microsoftTeamsShifts, secureScore, mipAutoLabelExchangeItem, cortanaBriefing, search, wdatpAlerts, powerPlatformAdminDlp, powerPlatformAdminEnvironment, mdatpAudit, sensitivityLabelPolicyMatch, sensitivityLabelAction, sensitivityLabeledFileAction, attackSim, airManualInvestigation, securityComplianceRBAC, userTraining, airAdminActionInvestigation, mstic, physicalBadgingSignal, teamsEasyApprovals, aipDiscover, aipSensitivityLabelAction, aipProtectionAction, aipFileDeleted, aipHeartBeat, mcasAlerts, onPremisesFileShareScannerDlp, onPremisesSharePointScannerDlp, exchangeSearch, sharePointSearch, privacyDataMinimization, labelAnalyticsAggregate, myAnalyticsSettings, securityComplianceUserChange, complianceDLPExchangeClassification, complianceDLPEndpoint, mipExactDataMatch, msdeResponseActions, msdeGeneralSettings, msdeIndicatorsSettings, ms365DCustomDetection, msdeRolesSettings, mapgAlerts, mapgPolicy, mapgRemediation, privacyRemediationAction, privacyDigestEmail, mipAutoLabelSimulationProgress, mipAutoLabelSimulationCompletion, mipAutoLabelProgressFeedback, dlpSensitiveInformationType, mipAutoLabelSimulationStatistics, largeContentMetadata, microsoft365Group, cdpMlInferencingResult, filteringMailMetadata, cdpClassificationMailItem, cdpClassificationDocument, officeScriptsRunAction, filteringPostMailDeliveryAction, cdpUnifiedFeedback, tenantAllowBlockList, consumptionResource, healthcareSignal, dlpImportResult, cdpCompliancePolicyExecution, multiStageDisposition, privacyDataMatch, filteringDocMetadata, filteringEmailFeatures, powerBIDlp, filteringUrlInfo, filteringAttachmentInfo, coreReportingSettings, complianceConnector, powerPlatformLockboxResourceAccessRequest, powerPlatformLockboxResourceCommand, cdpPredictiveCodingLabel, cdpCompliancePolicyUserFeedback, webpageActivityEndpoint, omePortal, cmImprovementActionChange, filteringUrlClick, mipLabelAnalyticsAuditRecord, filteringEntityEvent, filteringRuleHits, filteringMailSubmission, labelExplorer, microsoftManagedServicePlatform, powerPlatformServiceActivity, scorePlatformGenericAuditRecord, filteringTimeTravelDocMetadata, alert, alertStatus, alertIncident, incidentStatus, case, caseInvestigation, recordsManagement, privacyRemediation, dataShareOperation, cdpDlpSensitive, ehrConnector, filteringMailGradingResult, publicFolder, privacyTenantAuditHistoryRecord, aipScannerDiscoverEvent, eduDataLakeDownloadOperation, m365ComplianceConnector, microsoftGraphDataConnectOperation, microsoftPurview, filteringEmailContentFeatures, powerPagesSite, powerAppsResource, plannerPlan, plannerCopyPlan, plannerTask, plannerRoster, plannerPlanList, plannerTaskList, plannerTenantSettings, projectForTheWebProject, projectForTheWebTask, projectForTheWebRoadmap, projectForTheWebRoadmapItem, projectForTheWebProjectSettings, projectForTheWebRoadmapSettings, quarantineMetadata, microsoftTodoAudit, timeTravelFilteringDocMetadata, teamsQuarantineMetadata, sharePointAppPermissionOperation, microsoftTeamsSensitivityLabelAction, filteringTeamsMetadata, filteringTeamsUrlInfo, filteringTeamsPostDeliveryAction, mdcAssessments, mdcRegulatoryComplianceStandards, mdcRegulatoryComplianceControls, mdcRegulatoryComplianceAssessments, mdcSecurityConnectors, mdaDataSecuritySignal, vivaGoals, filteringRuntimeInfo, attackSimAdmin, microsoftGraphDataConnectConsent, filteringAtpDetonationInfo, privacyPortal, managedTenants, unifiedSimulationMatchedItem, unifiedSimulationSummary, updateQuarantineMetadata, ms365DSuppressionRule, purviewDataMapOperation, filteringUrlPostClickAction, irmUserDefinedDetectionSignal, teamsUpdates, plannerRosterSensitivityLabel, ms365DIncident, filteringDelistingMetadata, complianceDLPSharePointClassificationExtended, microsoftDefenderForIdentityAudit, supervisoryReviewDayXInsight, defenderExpertsforXDRAdmin, cdpEdgeBlockedMessage, hostedRpa, cdpContentExplorerAggregateRecord, cdpHygieneAttachmentInfo, cdpHygieneSummary, cdpPostMailDeliveryAction, cdpEmailFeatures, cdpHygieneUrlInfo, cdpUrlClick, cdpPackageManagerHygieneEvent, filteringDocScan, timeTravelFilteringDocScan, mapgOnboard, unknownFutureValue.
+// returns a *AuditLogRecordType when successful
 func (m *AuditLogRecord) GetAuditLogRecordType()(*AuditLogRecordType) {
     val, err := m.GetBackingStore().Get("auditLogRecordType")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *AuditLogRecord) GetAuditLogRecordType()(*AuditLogRecordType) {
     return nil
 }
 // GetClientIp gets the clientIp property value. The IP address of the device used when the activity was logged. The IP address is displayed in either an IPv4 or IPv6 address format.
+// returns a *string when successful
 func (m *AuditLogRecord) GetClientIp()(*string) {
     val, err := m.GetBackingStore().Get("clientIp")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *AuditLogRecord) GetClientIp()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The date and time in UTC when the user performed the activity.
+// returns a *Time when successful
 func (m *AuditLogRecord) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *AuditLogRecord) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuditLogRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["administrativeUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -208,6 +214,7 @@ func (m *AuditLogRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetObjectId gets the objectId property value. For Exchange admin audit logging, the name of the object modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Microsoft Entra activity, the name of the user account that was modified.
+// returns a *string when successful
 func (m *AuditLogRecord) GetObjectId()(*string) {
     val, err := m.GetBackingStore().Get("objectId")
     if err != nil {
@@ -219,6 +226,7 @@ func (m *AuditLogRecord) GetObjectId()(*string) {
     return nil
 }
 // GetOperation gets the operation property value. The name of the user or admin activity.
+// returns a *string when successful
 func (m *AuditLogRecord) GetOperation()(*string) {
     val, err := m.GetBackingStore().Get("operation")
     if err != nil {
@@ -230,6 +238,7 @@ func (m *AuditLogRecord) GetOperation()(*string) {
     return nil
 }
 // GetOrganizationId gets the organizationId property value. The GUID for your organization.
+// returns a *string when successful
 func (m *AuditLogRecord) GetOrganizationId()(*string) {
     val, err := m.GetBackingStore().Get("organizationId")
     if err != nil {
@@ -241,6 +250,7 @@ func (m *AuditLogRecord) GetOrganizationId()(*string) {
     return nil
 }
 // GetService gets the service property value. The Microsoft 365 service where the activity occurred.
+// returns a *string when successful
 func (m *AuditLogRecord) GetService()(*string) {
     val, err := m.GetBackingStore().Get("service")
     if err != nil {
@@ -252,6 +262,7 @@ func (m *AuditLogRecord) GetService()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The user who performed the action (specified in the Operation property) that resulted in the record being logged. Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log. Another common value for the UserId property is app@sharepoint. It indicates that the 'user' who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.
+// returns a *string when successful
 func (m *AuditLogRecord) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -263,6 +274,7 @@ func (m *AuditLogRecord) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. UPN of the user who performed the action.
+// returns a *string when successful
 func (m *AuditLogRecord) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -274,6 +286,7 @@ func (m *AuditLogRecord) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUserType gets the userType property value. The type of user that performed the operation. The possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.
+// returns a *AuditLogUserType when successful
 func (m *AuditLogRecord) GetUserType()(*AuditLogUserType) {
     val, err := m.GetBackingStore().Get("userType")
     if err != nil {
@@ -450,7 +463,6 @@ func (m *AuditLogRecord) SetUserType(value *AuditLogUserType)() {
         panic(err)
     }
 }
-// AuditLogRecordable 
 type AuditLogRecordable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

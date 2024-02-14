@@ -42,51 +42,57 @@ type AccessReviewsDecisionsItemInstanceRequestBuilderPatchRequestConfiguration s
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AcceptRecommendations provides operations to call the acceptRecommendations method.
+// returns a *AccessReviewsDecisionsItemInstanceAcceptRecommendationsRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) AcceptRecommendations()(*AccessReviewsDecisionsItemInstanceAcceptRecommendationsRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceAcceptRecommendationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ApplyDecisions provides operations to call the applyDecisions method.
+// returns a *AccessReviewsDecisionsItemInstanceApplyDecisionsRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ApplyDecisions()(*AccessReviewsDecisionsItemInstanceApplyDecisionsRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceApplyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BatchRecordDecisions provides operations to call the batchRecordDecisions method.
+// returns a *AccessReviewsDecisionsItemInstanceBatchRecordDecisionsRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) BatchRecordDecisions()(*AccessReviewsDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceBatchRecordDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewAccessReviewsDecisionsItemInstanceRequestBuilderInternal instantiates a new InstanceRequestBuilder and sets the default values.
+// NewAccessReviewsDecisionsItemInstanceRequestBuilderInternal instantiates a new AccessReviewsDecisionsItemInstanceRequestBuilder and sets the default values.
 func NewAccessReviewsDecisionsItemInstanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDecisionsItemInstanceRequestBuilder) {
     m := &AccessReviewsDecisionsItemInstanceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewAccessReviewsDecisionsItemInstanceRequestBuilder instantiates a new InstanceRequestBuilder and sets the default values.
+// NewAccessReviewsDecisionsItemInstanceRequestBuilder instantiates a new AccessReviewsDecisionsItemInstanceRequestBuilder and sets the default values.
 func NewAccessReviewsDecisionsItemInstanceRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDecisionsItemInstanceRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsDecisionsItemInstanceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContactedReviewers provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
+// returns a *AccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ContactedReviewers()(*AccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceContactedReviewersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Decisions provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.
+// returns a *AccessReviewsDecisionsItemInstanceDecisionsRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Decisions()(*AccessReviewsDecisionsItemInstanceDecisionsRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Definition provides operations to manage the definition property of the microsoft.graph.accessReviewInstance entity.
+// returns a *AccessReviewsDecisionsItemInstanceDefinitionRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Definition()(*AccessReviewsDecisionsItemInstanceDefinitionRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property instance for identityGovernance
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -95,14 +101,15 @@ func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Delete(ctx context.Co
     return nil
 }
 // Get there is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
+// returns a AccessReviewInstanceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessReviewInstanceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -114,14 +121,15 @@ func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Get(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable), nil
 }
 // Patch update the navigation property instance in identityGovernance
+// returns a AccessReviewInstanceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, requestConfiguration *AccessReviewsDecisionsItemInstanceRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAccessReviewInstanceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -133,28 +141,34 @@ func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Patch(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable), nil
 }
 // ResetDecisions provides operations to call the resetDecisions method.
+// returns a *AccessReviewsDecisionsItemInstanceResetDecisionsRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ResetDecisions()(*AccessReviewsDecisionsItemInstanceResetDecisionsRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceResetDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SendReminder provides operations to call the sendReminder method.
+// returns a *AccessReviewsDecisionsItemInstanceSendReminderRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) SendReminder()(*AccessReviewsDecisionsItemInstanceSendReminderRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceSendReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Stages provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
+// returns a *AccessReviewsDecisionsItemInstanceStagesRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Stages()(*AccessReviewsDecisionsItemInstanceStagesRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceStagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Stop provides operations to call the stop method.
+// returns a *AccessReviewsDecisionsItemInstanceStopRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) Stop()(*AccessReviewsDecisionsItemInstanceStopRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceStopRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // StopApplyDecisions provides operations to call the stopApplyDecisions method.
+// returns a *AccessReviewsDecisionsItemInstanceStopApplyDecisionsRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) StopApplyDecisions()(*AccessReviewsDecisionsItemInstanceStopApplyDecisionsRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceStopApplyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property instance for identityGovernance
+// returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -163,6 +177,7 @@ func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ToDeleteRequestInform
     return requestInfo, nil
 }
 // ToGetRequestInformation there is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
+// returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -176,8 +191,9 @@ func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property instance in identityGovernance
+// returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, requestConfiguration *AccessReviewsDecisionsItemInstanceRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -190,6 +206,7 @@ func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) ToPatchRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AccessReviewsDecisionsItemInstanceRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsDecisionsItemInstanceRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

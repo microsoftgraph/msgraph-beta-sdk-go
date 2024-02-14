@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EncryptedAwsStorageBucketFinding 
 type EncryptedAwsStorageBucketFinding struct {
     Finding
 }
-// NewEncryptedAwsStorageBucketFinding instantiates a new encryptedAwsStorageBucketFinding and sets the default values.
+// NewEncryptedAwsStorageBucketFinding instantiates a new EncryptedAwsStorageBucketFinding and sets the default values.
 func NewEncryptedAwsStorageBucketFinding()(*EncryptedAwsStorageBucketFinding) {
     m := &EncryptedAwsStorageBucketFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewEncryptedAwsStorageBucketFinding()(*EncryptedAwsStorageBucketFinding) {
     return m
 }
 // CreateEncryptedAwsStorageBucketFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEncryptedAwsStorageBucketFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEncryptedAwsStorageBucketFinding(), nil
 }
 // GetAccessibility gets the accessibility property value. The accessibility property
+// returns a *AwsAccessType when successful
 func (m *EncryptedAwsStorageBucketFinding) GetAccessibility()(*AwsAccessType) {
     val, err := m.GetBackingStore().Get("accessibility")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *EncryptedAwsStorageBucketFinding) GetAccessibility()(*AwsAccessType) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EncryptedAwsStorageBucketFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["accessibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *EncryptedAwsStorageBucketFinding) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetStorageBucket gets the storageBucket property value. The storageBucket property
+// returns a AuthorizationSystemResourceable when successful
 func (m *EncryptedAwsStorageBucketFinding) GetStorageBucket()(AuthorizationSystemResourceable) {
     val, err := m.GetBackingStore().Get("storageBucket")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *EncryptedAwsStorageBucketFinding) SetStorageBucket(value AuthorizationS
         panic(err)
     }
 }
-// EncryptedAwsStorageBucketFindingable 
 type EncryptedAwsStorageBucketFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CustomerVoiceSettings 
 type CustomerVoiceSettings struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCustomerVoiceSettings instantiates a new customerVoiceSettings and sets the default values.
+// NewCustomerVoiceSettings instantiates a new CustomerVoiceSettings and sets the default values.
 func NewCustomerVoiceSettings()(*CustomerVoiceSettings) {
     m := &CustomerVoiceSettings{
     }
@@ -19,10 +18,12 @@ func NewCustomerVoiceSettings()(*CustomerVoiceSettings) {
     return m
 }
 // CreateCustomerVoiceSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomerVoiceSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomerVoiceSettings(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CustomerVoiceSettings) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *CustomerVoiceSettings) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CustomerVoiceSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomerVoiceSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["isInOrgFormsPhishingScanEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,6 +87,7 @@ func (m *CustomerVoiceSettings) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetIsInOrgFormsPhishingScanEnabled gets the isInOrgFormsPhishingScanEnabled property value. Controls whether phishing protection is run on forms created by users, blocking the creation of forms if common phishing questions are detected.
+// returns a *bool when successful
 func (m *CustomerVoiceSettings) GetIsInOrgFormsPhishingScanEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isInOrgFormsPhishingScanEnabled")
     if err != nil {
@@ -95,6 +99,7 @@ func (m *CustomerVoiceSettings) GetIsInOrgFormsPhishingScanEnabled()(*bool) {
     return nil
 }
 // GetIsRecordIdentityByDefaultEnabled gets the isRecordIdentityByDefaultEnabled property value. Controls whether the names of users who fill out forms are recorded.
+// returns a *bool when successful
 func (m *CustomerVoiceSettings) GetIsRecordIdentityByDefaultEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRecordIdentityByDefaultEnabled")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *CustomerVoiceSettings) GetIsRecordIdentityByDefaultEnabled()(*bool) {
     return nil
 }
 // GetIsRestrictedSurveyAccessEnabled gets the isRestrictedSurveyAccessEnabled property value. Controls whether only users inside your organization can submit a response.
+// returns a *bool when successful
 func (m *CustomerVoiceSettings) GetIsRestrictedSurveyAccessEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRestrictedSurveyAccessEnabled")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *CustomerVoiceSettings) GetIsRestrictedSurveyAccessEnabled()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CustomerVoiceSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *CustomerVoiceSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// CustomerVoiceSettingsable 
 type CustomerVoiceSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

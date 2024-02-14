@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerPlan 
 type PlannerPlan struct {
     PlannerDelta
 }
-// NewPlannerPlan instantiates a new plannerPlan and sets the default values.
+// NewPlannerPlan instantiates a new PlannerPlan and sets the default values.
 func NewPlannerPlan()(*PlannerPlan) {
     m := &PlannerPlan{
         PlannerDelta: *NewPlannerDelta(),
@@ -17,10 +16,12 @@ func NewPlannerPlan()(*PlannerPlan) {
     return m
 }
 // CreatePlannerPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerPlan(), nil
 }
 // GetArchivalInfo gets the archivalInfo property value. The archivalInfo property
+// returns a PlannerArchivalInfoable when successful
 func (m *PlannerPlan) GetArchivalInfo()(PlannerArchivalInfoable) {
     val, err := m.GetBackingStore().Get("archivalInfo")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *PlannerPlan) GetArchivalInfo()(PlannerArchivalInfoable) {
     return nil
 }
 // GetBuckets gets the buckets property value. Collection of buckets in the plan. Read-only. Nullable.
+// returns a []PlannerBucketable when successful
 func (m *PlannerPlan) GetBuckets()([]PlannerBucketable) {
     val, err := m.GetBackingStore().Get("buckets")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *PlannerPlan) GetBuckets()([]PlannerBucketable) {
     return nil
 }
 // GetContainer gets the container property value. Identifies the container of the plan. Either specify all properties, or specify only the url, the containerId, and type. After it's set, this property can’t be updated. It changes when a plan is moved from one container to another, using plan move to container. Required.
+// returns a PlannerPlanContainerable when successful
 func (m *PlannerPlan) GetContainer()(PlannerPlanContainerable) {
     val, err := m.GetBackingStore().Get("container")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *PlannerPlan) GetContainer()(PlannerPlanContainerable) {
     return nil
 }
 // GetContexts gets the contexts property value. Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
+// returns a PlannerPlanContextCollectionable when successful
 func (m *PlannerPlan) GetContexts()(PlannerPlanContextCollectionable) {
     val, err := m.GetBackingStore().Get("contexts")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *PlannerPlan) GetContexts()(PlannerPlanContextCollectionable) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. Read-only. The user who created the plan.
+// returns a IdentitySetable when successful
 func (m *PlannerPlan) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *PlannerPlan) GetCreatedBy()(IdentitySetable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// returns a *Time when successful
 func (m *PlannerPlan) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *PlannerPlan) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetCreationSource gets the creationSource property value. Contains information about the origin of the plan.
+// returns a PlannerPlanCreationable when successful
 func (m *PlannerPlan) GetCreationSource()(PlannerPlanCreationable) {
     val, err := m.GetBackingStore().Get("creationSource")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *PlannerPlan) GetCreationSource()(PlannerPlanCreationable) {
     return nil
 }
 // GetDetails gets the details property value. Extra details about the plan. Read-only. Nullable.
+// returns a PlannerPlanDetailsable when successful
 func (m *PlannerPlan) GetDetails()(PlannerPlanDetailsable) {
     val, err := m.GetBackingStore().Get("details")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *PlannerPlan) GetDetails()(PlannerPlanDetailsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PlannerDelta.GetFieldDeserializers()
     res["archivalInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -262,6 +271,7 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetIsArchived gets the isArchived property value. The isArchived property
+// returns a *bool when successful
 func (m *PlannerPlan) GetIsArchived()(*bool) {
     val, err := m.GetBackingStore().Get("isArchived")
     if err != nil {
@@ -273,6 +283,7 @@ func (m *PlannerPlan) GetIsArchived()(*bool) {
     return nil
 }
 // GetOwner gets the owner property value. The owner property
+// returns a *string when successful
 func (m *PlannerPlan) GetOwner()(*string) {
     val, err := m.GetBackingStore().Get("owner")
     if err != nil {
@@ -284,6 +295,7 @@ func (m *PlannerPlan) GetOwner()(*string) {
     return nil
 }
 // GetSharedWithContainers gets the sharedWithContainers property value. List of containers the plan is shared with.
+// returns a []PlannerSharedWithContainerable when successful
 func (m *PlannerPlan) GetSharedWithContainers()([]PlannerSharedWithContainerable) {
     val, err := m.GetBackingStore().Get("sharedWithContainers")
     if err != nil {
@@ -295,6 +307,7 @@ func (m *PlannerPlan) GetSharedWithContainers()([]PlannerSharedWithContainerable
     return nil
 }
 // GetTasks gets the tasks property value. Collection of tasks in the plan. Read-only. Nullable.
+// returns a []PlannerTaskable when successful
 func (m *PlannerPlan) GetTasks()([]PlannerTaskable) {
     val, err := m.GetBackingStore().Get("tasks")
     if err != nil {
@@ -306,6 +319,7 @@ func (m *PlannerPlan) GetTasks()([]PlannerTaskable) {
     return nil
 }
 // GetTitle gets the title property value. Required. Title of the plan.
+// returns a *string when successful
 func (m *PlannerPlan) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -511,7 +525,6 @@ func (m *PlannerPlan) SetTitle(value *string)() {
         panic(err)
     }
 }
-// PlannerPlanable 
 type PlannerPlanable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PlannerDeltaable

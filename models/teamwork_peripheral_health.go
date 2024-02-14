@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TeamworkPeripheralHealth 
 type TeamworkPeripheralHealth struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTeamworkPeripheralHealth instantiates a new teamworkPeripheralHealth and sets the default values.
+// NewTeamworkPeripheralHealth instantiates a new TeamworkPeripheralHealth and sets the default values.
 func NewTeamworkPeripheralHealth()(*TeamworkPeripheralHealth) {
     m := &TeamworkPeripheralHealth{
     }
@@ -19,10 +18,12 @@ func NewTeamworkPeripheralHealth()(*TeamworkPeripheralHealth) {
     return m
 }
 // CreateTeamworkPeripheralHealthFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamworkPeripheralHealthFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkPeripheralHealth(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamworkPeripheralHealth) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TeamworkPeripheralHealth) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TeamworkPeripheralHealth) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConnection gets the connection property value. The connected state and time since the peripheral device was connected.
+// returns a TeamworkConnectionable when successful
 func (m *TeamworkPeripheralHealth) GetConnection()(TeamworkConnectionable) {
     val, err := m.GetBackingStore().Get("connection")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TeamworkPeripheralHealth) GetConnection()(TeamworkConnectionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamworkPeripheralHealth) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["connection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *TeamworkPeripheralHealth) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIsOptional gets the isOptional property value. True if the peripheral is optional. Used for health computation.
+// returns a *bool when successful
 func (m *TeamworkPeripheralHealth) GetIsOptional()(*bool) {
     val, err := m.GetBackingStore().Get("isOptional")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *TeamworkPeripheralHealth) GetIsOptional()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TeamworkPeripheralHealth) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *TeamworkPeripheralHealth) GetOdataType()(*string) {
     return nil
 }
 // GetPeripheral gets the peripheral property value. The peripheral property
+// returns a TeamworkPeripheralable when successful
 func (m *TeamworkPeripheralHealth) GetPeripheral()(TeamworkPeripheralable) {
     val, err := m.GetBackingStore().Get("peripheral")
     if err != nil {
@@ -200,7 +207,6 @@ func (m *TeamworkPeripheralHealth) SetPeripheral(value TeamworkPeripheralable)()
         panic(err)
     }
 }
-// TeamworkPeripheralHealthable 
 type TeamworkPeripheralHealthable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

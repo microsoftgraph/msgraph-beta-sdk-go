@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Tag 
 type Tag struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewTag instantiates a new tag and sets the default values.
+// NewTag instantiates a new Tag and sets the default values.
 func NewTag()(*Tag) {
     m := &Tag{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewTag()(*Tag) {
     return m
 }
 // CreateTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTag(), nil
 }
 // GetChildSelectability gets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
+// returns a *ChildSelectability when successful
 func (m *Tag) GetChildSelectability()(*ChildSelectability) {
     val, err := m.GetBackingStore().Get("childSelectability")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Tag) GetChildSelectability()(*ChildSelectability) {
     return nil
 }
 // GetChildTags gets the childTags property value. Returns the tags that are a child of a tag.
+// returns a []Tagable when successful
 func (m *Tag) GetChildTags()([]Tagable) {
     val, err := m.GetBackingStore().Get("childTags")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Tag) GetChildTags()([]Tagable) {
     return nil
 }
 // GetCreatedBy gets the createdBy property value. The user who created the tag.
+// returns a IdentitySetable when successful
 func (m *Tag) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Tag) GetCreatedBy()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099
     return nil
 }
 // GetDescription gets the description property value. The description for the tag.
+// returns a *string when successful
 func (m *Tag) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *Tag) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the tag.
+// returns a *string when successful
 func (m *Tag) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -77,6 +82,7 @@ func (m *Tag) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Tag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["childSelectability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -158,6 +164,7 @@ func (m *Tag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the tag was last modified.
+// returns a *Time when successful
 func (m *Tag) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -169,6 +176,7 @@ func (m *Tag) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     return nil
 }
 // GetParent gets the parent property value. Returns the parent tag of the specified tag.
+// returns a Tagable when successful
 func (m *Tag) GetParent()(Tagable) {
     val, err := m.GetBackingStore().Get("parent")
     if err != nil {
@@ -285,7 +293,6 @@ func (m *Tag) SetParent(value Tagable)() {
         panic(err)
     }
 }
-// Tagable 
 type Tagable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

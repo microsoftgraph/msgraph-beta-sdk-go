@@ -17,28 +17,28 @@ type ComanagedDevicesItemEnableLostModeRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewComanagedDevicesItemEnableLostModeRequestBuilderInternal instantiates a new EnableLostModeRequestBuilder and sets the default values.
+// NewComanagedDevicesItemEnableLostModeRequestBuilderInternal instantiates a new ComanagedDevicesItemEnableLostModeRequestBuilder and sets the default values.
 func NewComanagedDevicesItemEnableLostModeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemEnableLostModeRequestBuilder) {
     m := &ComanagedDevicesItemEnableLostModeRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/enableLostMode", pathParameters),
     }
     return m
 }
-// NewComanagedDevicesItemEnableLostModeRequestBuilder instantiates a new EnableLostModeRequestBuilder and sets the default values.
+// NewComanagedDevicesItemEnableLostModeRequestBuilder instantiates a new ComanagedDevicesItemEnableLostModeRequestBuilder and sets the default values.
 func NewComanagedDevicesItemEnableLostModeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComanagedDevicesItemEnableLostModeRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewComanagedDevicesItemEnableLostModeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post enable lost mode
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ComanagedDevicesItemEnableLostModeRequestBuilder) Post(ctx context.Context, body ComanagedDevicesItemEnableLostModePostRequestBodyable, requestConfiguration *ComanagedDevicesItemEnableLostModeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *ComanagedDevicesItemEnableLostModeRequestBuilder) Post(ctx context.Cont
     return nil
 }
 // ToPostRequestInformation enable lost mode
+// returns a *RequestInformation when successful
 func (m *ComanagedDevicesItemEnableLostModeRequestBuilder) ToPostRequestInformation(ctx context.Context, body ComanagedDevicesItemEnableLostModePostRequestBodyable, requestConfiguration *ComanagedDevicesItemEnableLostModeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *ComanagedDevicesItemEnableLostModeRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ComanagedDevicesItemEnableLostModeRequestBuilder when successful
 func (m *ComanagedDevicesItemEnableLostModeRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesItemEnableLostModeRequestBuilder) {
     return NewComanagedDevicesItemEnableLostModeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

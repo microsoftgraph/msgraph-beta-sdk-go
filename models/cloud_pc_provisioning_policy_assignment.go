@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcProvisioningPolicyAssignment 
 type CloudPcProvisioningPolicyAssignment struct {
     Entity
 }
-// NewCloudPcProvisioningPolicyAssignment instantiates a new cloudPcProvisioningPolicyAssignment and sets the default values.
+// NewCloudPcProvisioningPolicyAssignment instantiates a new CloudPcProvisioningPolicyAssignment and sets the default values.
 func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignment) {
     m := &CloudPcProvisioningPolicyAssignment{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCloudPcProvisioningPolicyAssignment()(*CloudPcProvisioningPolicyAssignme
     return m
 }
 // CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcProvisioningPolicyAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcProvisioningPolicyAssignment(), nil
 }
 // GetAssignedUsers gets the assignedUsers property value. The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.
+// returns a []Userable when successful
 func (m *CloudPcProvisioningPolicyAssignment) GetAssignedUsers()([]Userable) {
     val, err := m.GetBackingStore().Get("assignedUsers")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CloudPcProvisioningPolicyAssignment) GetAssignedUsers()([]Userable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignedUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -62,6 +64,7 @@ func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string
     return res
 }
 // GetTarget gets the target property value. The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
+// returns a CloudPcManagementAssignmentTargetable when successful
 func (m *CloudPcProvisioningPolicyAssignment) GetTarget()(CloudPcManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -112,7 +115,6 @@ func (m *CloudPcProvisioningPolicyAssignment) SetTarget(value CloudPcManagementA
         panic(err)
     }
 }
-// CloudPcProvisioningPolicyAssignmentable 
 type CloudPcProvisioningPolicyAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

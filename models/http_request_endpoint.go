@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HttpRequestEndpoint 
 type HttpRequestEndpoint struct {
     CustomExtensionEndpointConfiguration
 }
-// NewHttpRequestEndpoint instantiates a new httpRequestEndpoint and sets the default values.
+// NewHttpRequestEndpoint instantiates a new HttpRequestEndpoint and sets the default values.
 func NewHttpRequestEndpoint()(*HttpRequestEndpoint) {
     m := &HttpRequestEndpoint{
         CustomExtensionEndpointConfiguration: *NewCustomExtensionEndpointConfiguration(),
@@ -18,10 +17,12 @@ func NewHttpRequestEndpoint()(*HttpRequestEndpoint) {
     return m
 }
 // CreateHttpRequestEndpointFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHttpRequestEndpointFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHttpRequestEndpoint(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HttpRequestEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CustomExtensionEndpointConfiguration.GetFieldDeserializers()
     res["targetUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *HttpRequestEndpoint) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetTargetUrl gets the targetUrl property value. The HTTP endpoint that a custom extension calls.
+// returns a *string when successful
 func (m *HttpRequestEndpoint) GetTargetUrl()(*string) {
     val, err := m.GetBackingStore().Get("targetUrl")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *HttpRequestEndpoint) SetTargetUrl(value *string)() {
         panic(err)
     }
 }
-// HttpRequestEndpointable 
 type HttpRequestEndpointable interface {
     CustomExtensionEndpointConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

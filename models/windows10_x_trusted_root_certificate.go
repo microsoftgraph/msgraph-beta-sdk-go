@@ -8,7 +8,7 @@ import (
 type Windows10XTrustedRootCertificate struct {
     DeviceManagementResourceAccessProfileBase
 }
-// NewWindows10XTrustedRootCertificate instantiates a new windows10XTrustedRootCertificate and sets the default values.
+// NewWindows10XTrustedRootCertificate instantiates a new Windows10XTrustedRootCertificate and sets the default values.
 func NewWindows10XTrustedRootCertificate()(*Windows10XTrustedRootCertificate) {
     m := &Windows10XTrustedRootCertificate{
         DeviceManagementResourceAccessProfileBase: *NewDeviceManagementResourceAccessProfileBase(),
@@ -18,10 +18,12 @@ func NewWindows10XTrustedRootCertificate()(*Windows10XTrustedRootCertificate) {
     return m
 }
 // CreateWindows10XTrustedRootCertificateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindows10XTrustedRootCertificateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindows10XTrustedRootCertificate(), nil
 }
 // GetCertFileName gets the certFileName property value. File name to display in UI.
+// returns a *string when successful
 func (m *Windows10XTrustedRootCertificate) GetCertFileName()(*string) {
     val, err := m.GetBackingStore().Get("certFileName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *Windows10XTrustedRootCertificate) GetCertFileName()(*string) {
     return nil
 }
 // GetDestinationStore gets the destinationStore property value. Possible values for the Certificate Destination Store.
+// returns a *CertificateDestinationStore when successful
 func (m *Windows10XTrustedRootCertificate) GetDestinationStore()(*CertificateDestinationStore) {
     val, err := m.GetBackingStore().Get("destinationStore")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *Windows10XTrustedRootCertificate) GetDestinationStore()(*CertificateDes
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Windows10XTrustedRootCertificate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementResourceAccessProfileBase.GetFieldDeserializers()
     res["certFileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +83,7 @@ func (m *Windows10XTrustedRootCertificate) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetTrustedRootCertificate gets the trustedRootCertificate property value. Trusted Root Certificate
+// returns a []byte when successful
 func (m *Windows10XTrustedRootCertificate) GetTrustedRootCertificate()([]byte) {
     val, err := m.GetBackingStore().Get("trustedRootCertificate")
     if err != nil {
@@ -137,7 +142,6 @@ func (m *Windows10XTrustedRootCertificate) SetTrustedRootCertificate(value []byt
         panic(err)
     }
 }
-// Windows10XTrustedRootCertificateable 
 type Windows10XTrustedRootCertificateable interface {
     DeviceManagementResourceAccessProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type CloudPCConnectivityIssue struct {
     Entity
 }
-// NewCloudPCConnectivityIssue instantiates a new cloudPCConnectivityIssue and sets the default values.
+// NewCloudPCConnectivityIssue instantiates a new CloudPCConnectivityIssue and sets the default values.
 func NewCloudPCConnectivityIssue()(*CloudPCConnectivityIssue) {
     m := &CloudPCConnectivityIssue{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewCloudPCConnectivityIssue()(*CloudPCConnectivityIssue) {
     return m
 }
 // CreateCloudPCConnectivityIssueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPCConnectivityIssueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPCConnectivityIssue(), nil
 }
 // GetDeviceId gets the deviceId property value. The Intune DeviceId of the device the connection is associated with.
+// returns a *string when successful
 func (m *CloudPCConnectivityIssue) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *CloudPCConnectivityIssue) GetDeviceId()(*string) {
     return nil
 }
 // GetErrorCode gets the errorCode property value. The error code of the connectivity issue.
+// returns a *string when successful
 func (m *CloudPCConnectivityIssue) GetErrorCode()(*string) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *CloudPCConnectivityIssue) GetErrorCode()(*string) {
     return nil
 }
 // GetErrorDateTime gets the errorDateTime property value. The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.
+// returns a *Time when successful
 func (m *CloudPCConnectivityIssue) GetErrorDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("errorDateTime")
     if err != nil {
@@ -54,6 +58,7 @@ func (m *CloudPCConnectivityIssue) GetErrorDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetErrorDescription gets the errorDescription property value. The detailed description of what went wrong.
+// returns a *string when successful
 func (m *CloudPCConnectivityIssue) GetErrorDescription()(*string) {
     val, err := m.GetBackingStore().Get("errorDescription")
     if err != nil {
@@ -65,6 +70,7 @@ func (m *CloudPCConnectivityIssue) GetErrorDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,6 +136,7 @@ func (m *CloudPCConnectivityIssue) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetRecommendedAction gets the recommendedAction property value. The recommended action to fix the corresponding error.
+// returns a *string when successful
 func (m *CloudPCConnectivityIssue) GetRecommendedAction()(*string) {
     val, err := m.GetBackingStore().Get("recommendedAction")
     if err != nil {
@@ -141,6 +148,7 @@ func (m *CloudPCConnectivityIssue) GetRecommendedAction()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The unique id of user who initialize the connection.
+// returns a *string when successful
 func (m *CloudPCConnectivityIssue) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -237,7 +245,6 @@ func (m *CloudPCConnectivityIssue) SetUserId(value *string)() {
         panic(err)
     }
 }
-// CloudPCConnectivityIssueable 
 type CloudPCConnectivityIssueable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

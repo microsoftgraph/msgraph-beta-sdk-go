@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident 
 type RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident struct {
     UnifiedRoleManagementAlertIncident
 }
-// NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident instantiates a new rolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
+// NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident instantiates a new RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
 func NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident()(*RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) {
     m := &RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident{
         UnifiedRoleManagementAlertIncident: *NewUnifiedRoleManagementAlertIncident(),
@@ -19,10 +18,12 @@ func NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident()(*RolesAs
     return m
 }
 // CreateRolesAssignedOutsidePrivilegedIdentityManagementAlertIncidentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRolesAssignedOutsidePrivilegedIdentityManagementAlertIncidentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRolesAssignedOutsidePrivilegedIdentityManagementAlertIncident(), nil
 }
 // GetAssigneeDisplayName gets the assigneeDisplayName property value. Display name of the subject that the incident applies to.
+// returns a *string when successful
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssigneeDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("assigneeDisplayName")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssig
     return nil
 }
 // GetAssigneeId gets the assigneeId property value. The identifier of the subject that the incident applies to.
+// returns a *string when successful
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssigneeId()(*string) {
     val, err := m.GetBackingStore().Get("assigneeId")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssig
     return nil
 }
 // GetAssigneeUserPrincipalName gets the assigneeUserPrincipalName property value. User principal name of the subject that the incident applies to. Applies to user principals.
+// returns a *string when successful
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssigneeUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("assigneeUserPrincipalName")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssig
     return nil
 }
 // GetAssignmentCreatedDateTime gets the assignmentCreatedDateTime property value. The assignmentCreatedDateTime property
+// returns a *Time when successful
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssignmentCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("assignmentCreatedDateTime")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetAssig
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementAlertIncident.GetFieldDeserializers()
     res["assigneeDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -142,6 +147,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetField
     return res
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. The identifier for the directory role definition that's in scope of this incident.
+// returns a *string when successful
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -153,6 +159,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetRoleD
     return nil
 }
 // GetRoleDisplayName gets the roleDisplayName property value. The display name for the directory role.
+// returns a *string when successful
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetRoleDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("roleDisplayName")
     if err != nil {
@@ -164,6 +171,7 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetRoleD
     return nil
 }
 // GetRoleTemplateId gets the roleTemplateId property value. The globally unique identifier for the directory role.
+// returns a *string when successful
 func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) GetRoleTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("roleTemplateId")
     if err != nil {
@@ -273,7 +281,6 @@ func (m *RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident) SetRoleT
         panic(err)
     }
 }
-// RolesAssignedOutsidePrivilegedIdentityManagementAlertIncidentable 
 type RolesAssignedOutsidePrivilegedIdentityManagementAlertIncidentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementAlertIncidentable

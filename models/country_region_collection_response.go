@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CountryRegionCollectionResponse 
 type CountryRegionCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCountryRegionCollectionResponse instantiates a new countryRegionCollectionResponse and sets the default values.
+// NewCountryRegionCollectionResponse instantiates a new CountryRegionCollectionResponse and sets the default values.
 func NewCountryRegionCollectionResponse()(*CountryRegionCollectionResponse) {
     m := &CountryRegionCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCountryRegionCollectionResponse()(*CountryRegionCollectionResponse) {
     return m
 }
 // CreateCountryRegionCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCountryRegionCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCountryRegionCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CountryRegionCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CountryRegionCollectionResponse) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []CountryRegionable when successful
 func (m *CountryRegionCollectionResponse) GetValue()([]CountryRegionable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CountryRegionCollectionResponse) SetValue(value []CountryRegionable)() 
         panic(err)
     }
 }
-// CountryRegionCollectionResponseable 
 type CountryRegionCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

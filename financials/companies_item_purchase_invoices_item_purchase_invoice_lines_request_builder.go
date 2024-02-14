@@ -40,6 +40,7 @@ type CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderGetReque
     QueryParameters *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderGetQueryParameters
 }
 // ByPurchaseInvoiceLineId provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.purchaseInvoice entity.
+// returns a *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder when successful
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) ByPurchaseInvoiceLineId(purchaseInvoiceLineId string)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,32 +51,34 @@ func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) By
     }
     return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderInternal instantiates a new PurchaseInvoiceLinesRequestBuilder and sets the default values.
+// NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderInternal instantiates a new CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder and sets the default values.
 func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) {
     m := &CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/purchaseInvoiceLines{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/purchaseInvoiceLines{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder instantiates a new PurchaseInvoiceLinesRequestBuilder and sets the default values.
+// NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder instantiates a new CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder and sets the default values.
 func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesCountRequestBuilder when successful
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) Count()(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesCountRequestBuilder) {
     return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get purchaseInvoiceLines from financials
+// returns a PurchaseInvoiceLineCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) Get(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreatePurchaseInvoiceLineCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -87,6 +90,7 @@ func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) Ge
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineCollectionResponseable), nil
 }
 // ToGetRequestInformation get purchaseInvoiceLines from financials
+// returns a *RequestInformation when successful
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -100,6 +104,7 @@ func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder when successful
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) WithUrl(rawUrl string)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder) {
     return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

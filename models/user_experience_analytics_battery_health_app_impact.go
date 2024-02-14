@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsBatteryHealthAppImpact struct {
     Entity
 }
-// NewUserExperienceAnalyticsBatteryHealthAppImpact instantiates a new userExperienceAnalyticsBatteryHealthAppImpact and sets the default values.
+// NewUserExperienceAnalyticsBatteryHealthAppImpact instantiates a new UserExperienceAnalyticsBatteryHealthAppImpact and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthAppImpact()(*UserExperienceAnalyticsBatteryHealthAppImpact) {
     m := &UserExperienceAnalyticsBatteryHealthAppImpact{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsBatteryHealthAppImpact()(*UserExperienceAnalytics
     return m
 }
 // CreateUserExperienceAnalyticsBatteryHealthAppImpactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsBatteryHealthAppImpactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsBatteryHealthAppImpact(), nil
 }
 // GetActiveDevices gets the activeDevices property value. Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetActiveDevices()(*int32) {
     val, err := m.GetBackingStore().Get("activeDevices")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetActiveDevices()(*int3
     return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. User friendly display name for the app. Eg: Outlook
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppDisplayName()(*str
     return nil
 }
 // GetAppName gets the appName property value. App name. Eg: oltk.exe
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppName()(*string) {
     val, err := m.GetBackingStore().Get("appName")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppName()(*string) {
     return nil
 }
 // GetAppPublisher gets the appPublisher property value. App publisher. Eg: Microsoft Corporation
+// returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppPublisher()(*string) {
     val, err := m.GetBackingStore().Get("appPublisher")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetAppPublisher()(*strin
     return nil
 }
 // GetBatteryUsagePercentage gets the batteryUsagePercentage property value. The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308
+// returns a *float64 when successful
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetBatteryUsagePercentage()(*float64) {
     val, err := m.GetBackingStore().Get("batteryUsagePercentage")
     if err != nil {
@@ -75,6 +81,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetBatteryUsagePercentag
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,6 +147,7 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetFieldDeserializers()(
     return res
 }
 // GetIsForegroundApp gets the isForegroundApp property value. true if the user had active interaction with the app.
+// returns a *bool when successful
 func (m *UserExperienceAnalyticsBatteryHealthAppImpact) GetIsForegroundApp()(*bool) {
     val, err := m.GetBackingStore().Get("isForegroundApp")
     if err != nil {
@@ -236,7 +244,6 @@ func (m *UserExperienceAnalyticsBatteryHealthAppImpact) SetIsForegroundApp(value
         panic(err)
     }
 }
-// UserExperienceAnalyticsBatteryHealthAppImpactable 
 type UserExperienceAnalyticsBatteryHealthAppImpactable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

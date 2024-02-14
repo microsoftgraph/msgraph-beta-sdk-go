@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// LanguageProficiency 
 type LanguageProficiency struct {
     ItemFacet
 }
-// NewLanguageProficiency instantiates a new languageProficiency and sets the default values.
+// NewLanguageProficiency instantiates a new LanguageProficiency and sets the default values.
 func NewLanguageProficiency()(*LanguageProficiency) {
     m := &LanguageProficiency{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewLanguageProficiency()(*LanguageProficiency) {
     return m
 }
 // CreateLanguageProficiencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLanguageProficiencyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLanguageProficiency(), nil
 }
 // GetDisplayName gets the displayName property value. Contains the long-form name for the language.
+// returns a *string when successful
 func (m *LanguageProficiency) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *LanguageProficiency) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +110,7 @@ func (m *LanguageProficiency) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetProficiency gets the proficiency property value. The proficiency property
+// returns a *LanguageProficiencyLevel when successful
 func (m *LanguageProficiency) GetProficiency()(*LanguageProficiencyLevel) {
     val, err := m.GetBackingStore().Get("proficiency")
     if err != nil {
@@ -119,6 +122,7 @@ func (m *LanguageProficiency) GetProficiency()(*LanguageProficiencyLevel) {
     return nil
 }
 // GetReading gets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// returns a *LanguageProficiencyLevel when successful
 func (m *LanguageProficiency) GetReading()(*LanguageProficiencyLevel) {
     val, err := m.GetBackingStore().Get("reading")
     if err != nil {
@@ -130,6 +134,7 @@ func (m *LanguageProficiency) GetReading()(*LanguageProficiencyLevel) {
     return nil
 }
 // GetSpoken gets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// returns a *LanguageProficiencyLevel when successful
 func (m *LanguageProficiency) GetSpoken()(*LanguageProficiencyLevel) {
     val, err := m.GetBackingStore().Get("spoken")
     if err != nil {
@@ -141,6 +146,7 @@ func (m *LanguageProficiency) GetSpoken()(*LanguageProficiencyLevel) {
     return nil
 }
 // GetTag gets the tag property value. Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).
+// returns a *string when successful
 func (m *LanguageProficiency) GetTag()(*string) {
     val, err := m.GetBackingStore().Get("tag")
     if err != nil {
@@ -152,6 +158,7 @@ func (m *LanguageProficiency) GetTag()(*string) {
     return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
+// returns a *string when successful
 func (m *LanguageProficiency) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -163,6 +170,7 @@ func (m *LanguageProficiency) GetThumbnailUrl()(*string) {
     return nil
 }
 // GetWritten gets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// returns a *LanguageProficiencyLevel when successful
 func (m *LanguageProficiency) GetWritten()(*LanguageProficiencyLevel) {
     val, err := m.GetBackingStore().Get("written")
     if err != nil {
@@ -276,7 +284,6 @@ func (m *LanguageProficiency) SetWritten(value *LanguageProficiencyLevel)() {
         panic(err)
     }
 }
-// LanguageProficiencyable 
 type LanguageProficiencyable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

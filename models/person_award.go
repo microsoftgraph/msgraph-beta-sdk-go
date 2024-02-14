@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonAward 
 type PersonAward struct {
     ItemFacet
 }
-// NewPersonAward instantiates a new personAward and sets the default values.
+// NewPersonAward instantiates a new PersonAward and sets the default values.
 func NewPersonAward()(*PersonAward) {
     m := &PersonAward{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewPersonAward()(*PersonAward) {
     return m
 }
 // CreatePersonAwardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePersonAwardFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonAward(), nil
 }
 // GetDescription gets the description property value. Descpription of the award or honor.
+// returns a *string when successful
 func (m *PersonAward) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PersonAward) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Name of the award or honor.
+// returns a *string when successful
 func (m *PersonAward) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *PersonAward) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PersonAward) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +112,7 @@ func (m *PersonAward) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetIssuedDate gets the issuedDate property value. The date that the award or honor was granted.
+// returns a *DateOnly when successful
 func (m *PersonAward) GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("issuedDate")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *PersonAward) GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6
     return nil
 }
 // GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the award or honor.
+// returns a *string when successful
 func (m *PersonAward) GetIssuingAuthority()(*string) {
     val, err := m.GetBackingStore().Get("issuingAuthority")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *PersonAward) GetIssuingAuthority()(*string) {
     return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the award or honor.
+// returns a *string when successful
 func (m *PersonAward) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *PersonAward) GetThumbnailUrl()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. URL referencing the award or honor.
+// returns a *string when successful
 func (m *PersonAward) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *PersonAward) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// PersonAwardable 
 type PersonAwardable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

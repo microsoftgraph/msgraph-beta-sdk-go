@@ -32,29 +32,30 @@ type VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetRe
     // Request query parameters
     QueryParameters *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetQueryParameters
 }
-// NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal instantiates a new GetCloudPcConnectivityHistoryRequestBuilder and sets the default values.
+// NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal instantiates a new VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) {
     m := &VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/getCloudPcConnectivityHistory(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/getCloudPcConnectivityHistory(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder instantiates a new GetCloudPcConnectivityHistoryRequestBuilder and sets the default values.
+// NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder instantiates a new VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getCloudPcConnectivityHistory
-// Deprecated: This method is obsolete. Use GetAsGetCloudPcConnectivityHistoryGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder)
     return res.(VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryResponseable), nil
 }
 // GetAsGetCloudPcConnectivityHistoryGetResponse invoke function getCloudPcConnectivityHistory
+// returns a VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) GetAsGetCloudPcConnectivityHistoryGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder)
     return res.(VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getCloudPcConnectivityHistory
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

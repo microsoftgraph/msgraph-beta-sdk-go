@@ -41,28 +41,28 @@ type FilteringPoliciesFilteringPolicyItemRequestBuilderPatchRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewFilteringPoliciesFilteringPolicyItemRequestBuilderInternal instantiates a new FilteringPolicyItemRequestBuilder and sets the default values.
+// NewFilteringPoliciesFilteringPolicyItemRequestBuilderInternal instantiates a new FilteringPoliciesFilteringPolicyItemRequestBuilder and sets the default values.
 func NewFilteringPoliciesFilteringPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FilteringPoliciesFilteringPolicyItemRequestBuilder) {
     m := &FilteringPoliciesFilteringPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewFilteringPoliciesFilteringPolicyItemRequestBuilder instantiates a new FilteringPolicyItemRequestBuilder and sets the default values.
+// NewFilteringPoliciesFilteringPolicyItemRequestBuilder instantiates a new FilteringPoliciesFilteringPolicyItemRequestBuilder and sets the default values.
 func NewFilteringPoliciesFilteringPolicyItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FilteringPoliciesFilteringPolicyItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewFilteringPoliciesFilteringPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property filteringPolicies for networkAccess
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FilteringPoliciesFilteringPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -71,6 +71,8 @@ func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) Delete(ctx context.
     return nil
 }
 // Get get a filteringPolicy object.
+// returns a FilteringPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicy-get?view=graph-rest-1.0
@@ -80,8 +82,7 @@ func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) Get(ctx context.Con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateFilteringPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -93,14 +94,15 @@ func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) Get(ctx context.Con
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyable), nil
 }
 // Patch update the navigation property filteringPolicies in networkAccess
+// returns a FilteringPolicyable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyable, requestConfiguration *FilteringPoliciesFilteringPolicyItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CreateFilteringPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -112,12 +114,14 @@ func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) Patch(ctx context.C
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyable), nil
 }
 // PolicyRules provides operations to manage the policyRules property of the microsoft.graph.networkaccess.policy entity.
+// returns a *FilteringPoliciesItemPolicyRulesRequestBuilder when successful
 func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) PolicyRules()(*FilteringPoliciesItemPolicyRulesRequestBuilder) {
     return NewFilteringPoliciesItemPolicyRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property filteringPolicies for networkAccess
+// returns a *RequestInformation when successful
 func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FilteringPoliciesFilteringPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -126,6 +130,7 @@ func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) ToDeleteRequestInfo
     return requestInfo, nil
 }
 // ToGetRequestInformation get a filteringPolicy object.
+// returns a *RequestInformation when successful
 func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringPoliciesFilteringPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -139,8 +144,9 @@ func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property filteringPolicies in networkAccess
+// returns a *RequestInformation when successful
 func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyable, requestConfiguration *FilteringPoliciesFilteringPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -153,6 +159,7 @@ func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) ToPatchRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *FilteringPoliciesFilteringPolicyItemRequestBuilder when successful
 func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) WithUrl(rawUrl string)(*FilteringPoliciesFilteringPolicyItemRequestBuilder) {
     return NewFilteringPoliciesFilteringPolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

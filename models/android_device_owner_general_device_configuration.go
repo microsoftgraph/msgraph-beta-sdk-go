@@ -8,7 +8,7 @@ import (
 type AndroidDeviceOwnerGeneralDeviceConfiguration struct {
     DeviceConfiguration
 }
-// NewAndroidDeviceOwnerGeneralDeviceConfiguration instantiates a new androidDeviceOwnerGeneralDeviceConfiguration and sets the default values.
+// NewAndroidDeviceOwnerGeneralDeviceConfiguration instantiates a new AndroidDeviceOwnerGeneralDeviceConfiguration and sets the default values.
 func NewAndroidDeviceOwnerGeneralDeviceConfiguration()(*AndroidDeviceOwnerGeneralDeviceConfiguration) {
     m := &AndroidDeviceOwnerGeneralDeviceConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewAndroidDeviceOwnerGeneralDeviceConfiguration()(*AndroidDeviceOwnerGenera
     return m
 }
 // CreateAndroidDeviceOwnerGeneralDeviceConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAndroidDeviceOwnerGeneralDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerGeneralDeviceConfiguration(), nil
 }
 // GetAccountsBlockModification gets the accountsBlockModification property value. Indicates whether or not adding or removing accounts is disabled.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAccountsBlockModification()(*bool) {
     val, err := m.GetBackingStore().Get("accountsBlockModification")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAccountsBlockModificat
     return nil
 }
 // GetAndroidDeviceOwnerDelegatedScopeAppSettings gets the androidDeviceOwnerDelegatedScopeAppSettings property value. Specifies the list of managed apps with app details and its associated delegated scope(s). This collection can contain a maximum of 500 elements.
+// returns a []AndroidDeviceOwnerDelegatedScopeAppSettingable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAndroidDeviceOwnerDelegatedScopeAppSettings()([]AndroidDeviceOwnerDelegatedScopeAppSettingable) {
     val, err := m.GetBackingStore().Get("androidDeviceOwnerDelegatedScopeAppSettings")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAndroidDeviceOwnerDele
     return nil
 }
 // GetAppsAllowInstallFromUnknownSources gets the appsAllowInstallFromUnknownSources property value. Indicates whether or not the user is allowed to enable to unknown sources setting.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAllowInstallFromUnknownSources()(*bool) {
     val, err := m.GetBackingStore().Get("appsAllowInstallFromUnknownSources")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAllowInstallFromUn
     return nil
 }
 // GetAppsAutoUpdatePolicy gets the appsAutoUpdatePolicy property value. Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.
+// returns a *AndroidDeviceOwnerAppAutoUpdatePolicyType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAutoUpdatePolicy()(*AndroidDeviceOwnerAppAutoUpdatePolicyType) {
     val, err := m.GetBackingStore().Get("appsAutoUpdatePolicy")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAutoUpdatePolicy()
     return nil
 }
 // GetAppsDefaultPermissionPolicy gets the appsDefaultPermissionPolicy property value. Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
+// returns a *AndroidDeviceOwnerDefaultAppPermissionPolicyType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsDefaultPermissionPolicy()(*AndroidDeviceOwnerDefaultAppPermissionPolicyType) {
     val, err := m.GetBackingStore().Get("appsDefaultPermissionPolicy")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsDefaultPermissionP
     return nil
 }
 // GetAppsRecommendSkippingFirstUseHints gets the appsRecommendSkippingFirstUseHints property value. Whether or not to recommend all apps skip any first-time-use hints they may have added.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsRecommendSkippingFirstUseHints()(*bool) {
     val, err := m.GetBackingStore().Get("appsRecommendSkippingFirstUseHints")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsRecommendSkippingF
     return nil
 }
 // GetAzureAdSharedDeviceDataClearApps gets the azureAdSharedDeviceDataClearApps property value. A list of managed apps that will have their data cleared during a global sign-out in AAD shared device mode. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAzureAdSharedDeviceDataClearApps()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("azureAdSharedDeviceDataClearApps")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAzureAdSharedDeviceDat
     return nil
 }
 // GetBluetoothBlockConfiguration gets the bluetoothBlockConfiguration property value. Indicates whether or not to block a user from configuring bluetooth.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetBluetoothBlockConfiguration()(*bool) {
     val, err := m.GetBackingStore().Get("bluetoothBlockConfiguration")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetBluetoothBlockConfigur
     return nil
 }
 // GetBluetoothBlockContactSharing gets the bluetoothBlockContactSharing property value. Indicates whether or not to block a user from sharing contacts via bluetooth.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetBluetoothBlockContactSharing()(*bool) {
     val, err := m.GetBackingStore().Get("bluetoothBlockContactSharing")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetBluetoothBlockContactS
     return nil
 }
 // GetCameraBlocked gets the cameraBlocked property value. Indicates whether or not to disable the use of the camera.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCameraBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("cameraBlocked")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCameraBlocked()(*bool)
     return nil
 }
 // GetCellularBlockWiFiTethering gets the cellularBlockWiFiTethering property value. Indicates whether or not to block Wi-Fi tethering.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCellularBlockWiFiTethering()(*bool) {
     val, err := m.GetBackingStore().Get("cellularBlockWiFiTethering")
     if err != nil {
@@ -143,6 +155,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCellularBlockWiFiTethe
     return nil
 }
 // GetCertificateCredentialConfigurationDisabled gets the certificateCredentialConfigurationDisabled property value. Indicates whether or not to block users from any certificate credential configuration.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCertificateCredentialConfigurationDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("certificateCredentialConfigurationDisabled")
     if err != nil {
@@ -154,6 +167,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCertificateCredentialC
     return nil
 }
 // GetCrossProfilePoliciesAllowCopyPaste gets the crossProfilePoliciesAllowCopyPaste property value. Indicates whether or not text copied from one profile (personal or work) can be pasted in the other.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAllowCopyPaste()(*bool) {
     val, err := m.GetBackingStore().Get("crossProfilePoliciesAllowCopyPaste")
     if err != nil {
@@ -165,6 +179,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAl
     return nil
 }
 // GetCrossProfilePoliciesAllowDataSharing gets the crossProfilePoliciesAllowDataSharing property value. Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
+// returns a *AndroidDeviceOwnerCrossProfileDataSharing when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAllowDataSharing()(*AndroidDeviceOwnerCrossProfileDataSharing) {
     val, err := m.GetBackingStore().Get("crossProfilePoliciesAllowDataSharing")
     if err != nil {
@@ -176,6 +191,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAl
     return nil
 }
 // GetCrossProfilePoliciesShowWorkContactsInPersonalProfile gets the crossProfilePoliciesShowWorkContactsInPersonalProfile property value. Indicates whether or not contacts stored in work profile are shown in personal profile contact searches/incoming calls.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesShowWorkContactsInPersonalProfile()(*bool) {
     val, err := m.GetBackingStore().Get("crossProfilePoliciesShowWorkContactsInPersonalProfile")
     if err != nil {
@@ -187,6 +203,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesSh
     return nil
 }
 // GetDataRoamingBlocked gets the dataRoamingBlocked property value. Indicates whether or not to block a user from data roaming.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDataRoamingBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("dataRoamingBlocked")
     if err != nil {
@@ -198,6 +215,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDataRoamingBlocked()(*
     return nil
 }
 // GetDateTimeConfigurationBlocked gets the dateTimeConfigurationBlocked property value. Indicates whether or not to block the user from manually changing the date or time on the device
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDateTimeConfigurationBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("dateTimeConfigurationBlocked")
     if err != nil {
@@ -209,6 +227,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDateTimeConfigurationB
     return nil
 }
 // GetDetailedHelpText gets the detailedHelpText property value. Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.
+// returns a AndroidDeviceOwnerUserFacingMessageable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDetailedHelpText()(AndroidDeviceOwnerUserFacingMessageable) {
     val, err := m.GetBackingStore().Get("detailedHelpText")
     if err != nil {
@@ -220,6 +239,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDetailedHelpText()(And
     return nil
 }
 // GetDeviceLocationMode gets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.
+// returns a *AndroidDeviceOwnerLocationMode when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceLocationMode()(*AndroidDeviceOwnerLocationMode) {
     val, err := m.GetBackingStore().Get("deviceLocationMode")
     if err != nil {
@@ -231,6 +251,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceLocationMode()(*
     return nil
 }
 // GetDeviceOwnerLockScreenMessage gets the deviceOwnerLockScreenMessage property value. Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.
+// returns a AndroidDeviceOwnerUserFacingMessageable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceOwnerLockScreenMessage()(AndroidDeviceOwnerUserFacingMessageable) {
     val, err := m.GetBackingStore().Get("deviceOwnerLockScreenMessage")
     if err != nil {
@@ -242,6 +263,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceOwnerLockScreenM
     return nil
 }
 // GetEnrollmentProfile gets the enrollmentProfile property value. Android Device Owner Enrollment Profile types.
+// returns a *AndroidDeviceOwnerEnrollmentProfileType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetEnrollmentProfile()(*AndroidDeviceOwnerEnrollmentProfileType) {
     val, err := m.GetBackingStore().Get("enrollmentProfile")
     if err != nil {
@@ -253,6 +275,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetEnrollmentProfile()(*A
     return nil
 }
 // GetFactoryResetBlocked gets the factoryResetBlocked property value. Indicates whether or not the factory reset option in settings is disabled.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFactoryResetBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("factoryResetBlocked")
     if err != nil {
@@ -264,6 +287,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFactoryResetBlocked()(
     return nil
 }
 // GetFactoryResetDeviceAdministratorEmails gets the factoryResetDeviceAdministratorEmails property value. List of Google account emails that will be required to authenticate after a device is factory reset before it can be set up.
+// returns a []string when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFactoryResetDeviceAdministratorEmails()([]string) {
     val, err := m.GetBackingStore().Get("factoryResetDeviceAdministratorEmails")
     if err != nil {
@@ -275,6 +299,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFactoryResetDeviceAdmi
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["accountsBlockModification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -1736,6 +1761,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
     return res
 }
 // GetGlobalProxy gets the globalProxy property value. Proxy is set up directly with host, port and excluded hosts.
+// returns a AndroidDeviceOwnerGlobalProxyable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetGlobalProxy()(AndroidDeviceOwnerGlobalProxyable) {
     val, err := m.GetBackingStore().Get("globalProxy")
     if err != nil {
@@ -1747,6 +1773,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetGlobalProxy()(AndroidD
     return nil
 }
 // GetGoogleAccountsBlocked gets the googleAccountsBlocked property value. Indicates whether or not google accounts will be blocked.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetGoogleAccountsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("googleAccountsBlocked")
     if err != nil {
@@ -1758,6 +1785,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetGoogleAccountsBlocked(
     return nil
 }
 // GetKioskCustomizationDeviceSettingsBlocked gets the kioskCustomizationDeviceSettingsBlocked property value. Indicates whether a user can access the device's Settings app while in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationDeviceSettingsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("kioskCustomizationDeviceSettingsBlocked")
     if err != nil {
@@ -1769,6 +1797,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationDevi
     return nil
 }
 // GetKioskCustomizationPowerButtonActionsBlocked gets the kioskCustomizationPowerButtonActionsBlocked property value. Whether the power menu is shown when a user long presses the Power button of a device in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationPowerButtonActionsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("kioskCustomizationPowerButtonActionsBlocked")
     if err != nil {
@@ -1780,6 +1809,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationPowe
     return nil
 }
 // GetKioskCustomizationStatusBar gets the kioskCustomizationStatusBar property value. Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
+// returns a *AndroidDeviceOwnerKioskCustomizationStatusBar when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationStatusBar()(*AndroidDeviceOwnerKioskCustomizationStatusBar) {
     val, err := m.GetBackingStore().Get("kioskCustomizationStatusBar")
     if err != nil {
@@ -1791,6 +1821,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationStat
     return nil
 }
 // GetKioskCustomizationSystemErrorWarnings gets the kioskCustomizationSystemErrorWarnings property value. Indicates whether system error dialogs for crashed or unresponsive apps are shown in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSystemErrorWarnings()(*bool) {
     val, err := m.GetBackingStore().Get("kioskCustomizationSystemErrorWarnings")
     if err != nil {
@@ -1802,6 +1833,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSyst
     return nil
 }
 // GetKioskCustomizationSystemNavigation gets the kioskCustomizationSystemNavigation property value. Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.
+// returns a *AndroidDeviceOwnerKioskCustomizationSystemNavigation when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSystemNavigation()(*AndroidDeviceOwnerKioskCustomizationSystemNavigation) {
     val, err := m.GetBackingStore().Get("kioskCustomizationSystemNavigation")
     if err != nil {
@@ -1813,6 +1845,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSyst
     return nil
 }
 // GetKioskModeAppOrderEnabled gets the kioskModeAppOrderEnabled property value. Whether or not to enable app ordering in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeAppOrderEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAppOrderEnabled")
     if err != nil {
@@ -1824,6 +1857,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeAppOrderEnabl
     return nil
 }
 // GetKioskModeAppPositions gets the kioskModeAppPositions property value. The ordering of items on Kiosk Mode Managed Home Screen. This collection can contain a maximum of 500 elements.
+// returns a []AndroidDeviceOwnerKioskModeAppPositionItemable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeAppPositions()([]AndroidDeviceOwnerKioskModeAppPositionItemable) {
     val, err := m.GetBackingStore().Get("kioskModeAppPositions")
     if err != nil {
@@ -1835,6 +1869,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeAppPositions(
     return nil
 }
 // GetKioskModeApps gets the kioskModeApps property value. A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeApps()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("kioskModeApps")
     if err != nil {
@@ -1846,6 +1881,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeApps()([]AppL
     return nil
 }
 // GetKioskModeAppsInFolderOrderedByName gets the kioskModeAppsInFolderOrderedByName property value. Whether or not to alphabetize applications within a folder in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeAppsInFolderOrderedByName()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeAppsInFolderOrderedByName")
     if err != nil {
@@ -1857,6 +1893,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeAppsInFolderO
     return nil
 }
 // GetKioskModeBluetoothConfigurationEnabled gets the kioskModeBluetoothConfigurationEnabled property value. Whether or not to allow a user to configure Bluetooth settings in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeBluetoothConfigurationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeBluetoothConfigurationEnabled")
     if err != nil {
@@ -1868,6 +1905,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeBluetoothConf
     return nil
 }
 // GetKioskModeDebugMenuEasyAccessEnabled gets the kioskModeDebugMenuEasyAccessEnabled property value. Whether or not to allow a user to easy access to the debug menu in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeDebugMenuEasyAccessEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeDebugMenuEasyAccessEnabled")
     if err != nil {
@@ -1879,6 +1917,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeDebugMenuEasy
     return nil
 }
 // GetKioskModeExitCode gets the kioskModeExitCode property value. Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeExitCode()(*string) {
     val, err := m.GetBackingStore().Get("kioskModeExitCode")
     if err != nil {
@@ -1890,6 +1929,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeExitCode()(*s
     return nil
 }
 // GetKioskModeFlashlightConfigurationEnabled gets the kioskModeFlashlightConfigurationEnabled property value. Whether or not to allow a user to use the flashlight in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFlashlightConfigurationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeFlashlightConfigurationEnabled")
     if err != nil {
@@ -1901,6 +1941,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFlashlightCon
     return nil
 }
 // GetKioskModeFolderIcon gets the kioskModeFolderIcon property value. Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
+// returns a *AndroidDeviceOwnerKioskModeFolderIcon when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFolderIcon()(*AndroidDeviceOwnerKioskModeFolderIcon) {
     val, err := m.GetBackingStore().Get("kioskModeFolderIcon")
     if err != nil {
@@ -1912,6 +1953,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFolderIcon()(
     return nil
 }
 // GetKioskModeGridHeight gets the kioskModeGridHeight property value. Number of rows for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeGridHeight()(*int32) {
     val, err := m.GetBackingStore().Get("kioskModeGridHeight")
     if err != nil {
@@ -1923,6 +1965,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeGridHeight()(
     return nil
 }
 // GetKioskModeGridWidth gets the kioskModeGridWidth property value. Number of columns for Managed Home Screen grid with app ordering enabled in Kiosk Mode. Valid values 1 to 9999999
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeGridWidth()(*int32) {
     val, err := m.GetBackingStore().Get("kioskModeGridWidth")
     if err != nil {
@@ -1934,6 +1977,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeGridWidth()(*
     return nil
 }
 // GetKioskModeIconSize gets the kioskModeIconSize property value. Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.
+// returns a *AndroidDeviceOwnerKioskModeIconSize when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeIconSize()(*AndroidDeviceOwnerKioskModeIconSize) {
     val, err := m.GetBackingStore().Get("kioskModeIconSize")
     if err != nil {
@@ -1945,6 +1989,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeIconSize()(*A
     return nil
 }
 // GetKioskModeLockHomeScreen gets the kioskModeLockHomeScreen property value. Whether or not to lock home screen to the end user in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeLockHomeScreen()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeLockHomeScreen")
     if err != nil {
@@ -1956,6 +2001,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeLockHomeScree
     return nil
 }
 // GetKioskModeManagedFolders gets the kioskModeManagedFolders property value. A list of managed folders for a device in Kiosk Mode. This collection can contain a maximum of 500 elements.
+// returns a []AndroidDeviceOwnerKioskModeManagedFolderable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedFolders()([]AndroidDeviceOwnerKioskModeManagedFolderable) {
     val, err := m.GetBackingStore().Get("kioskModeManagedFolders")
     if err != nil {
@@ -1967,6 +2013,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedFolder
     return nil
 }
 // GetKioskModeManagedHomeScreenAutoSignout gets the kioskModeManagedHomeScreenAutoSignout property value. Whether or not to automatically sign-out of MHS and Shared device mode applications after inactive for Managed Home Screen.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenAutoSignout()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenAutoSignout")
     if err != nil {
@@ -1978,6 +2025,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     return nil
 }
 // GetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds gets the kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds property value. Number of seconds to give user notice before automatically signing them out for Managed Home Screen. Valid values 0 to 9999999
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds")
     if err != nil {
@@ -1989,6 +2037,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     return nil
 }
 // GetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds gets the kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds property value. Number of seconds device is inactive before automatically signing user out for Managed Home Screen. Valid values 0 to 9999999
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds")
     if err != nil {
@@ -2000,6 +2049,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     return nil
 }
 // GetKioskModeManagedHomeScreenPinComplexity gets the kioskModeManagedHomeScreenPinComplexity property value. Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.
+// returns a *KioskModeManagedHomeScreenPinComplexity when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenPinComplexity()(*KioskModeManagedHomeScreenPinComplexity) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenPinComplexity")
     if err != nil {
@@ -2011,6 +2061,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     return nil
 }
 // GetKioskModeManagedHomeScreenPinRequired gets the kioskModeManagedHomeScreenPinRequired property value. Whether or not require user to set a PIN for sign-in session for Managed Home Screen.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenPinRequired()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenPinRequired")
     if err != nil {
@@ -2022,6 +2073,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     return nil
 }
 // GetKioskModeManagedHomeScreenPinRequiredToResume gets the kioskModeManagedHomeScreenPinRequiredToResume property value. Whether or not required user to enter session PIN if screensaver has appeared for Managed Home Screen.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenPinRequiredToResume()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenPinRequiredToResume")
     if err != nil {
@@ -2033,6 +2085,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     return nil
 }
 // GetKioskModeManagedHomeScreenSignInBackground gets the kioskModeManagedHomeScreenSignInBackground property value. Custom URL background for sign-in screen for Managed Home Screen.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenSignInBackground()(*string) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenSignInBackground")
     if err != nil {
@@ -2044,6 +2097,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     return nil
 }
 // GetKioskModeManagedHomeScreenSignInBrandingLogo gets the kioskModeManagedHomeScreenSignInBrandingLogo property value. Custom URL branding logo for sign-in screen and session pin page for Managed Home Screen.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenSignInBrandingLogo()(*string) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenSignInBrandingLogo")
     if err != nil {
@@ -2055,6 +2109,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     return nil
 }
 // GetKioskModeManagedHomeScreenSignInEnabled gets the kioskModeManagedHomeScreenSignInEnabled property value. Whether or not show sign-in screen for Managed Home Screen.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenSignInEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenSignInEnabled")
     if err != nil {
@@ -2066,6 +2121,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     return nil
 }
 // GetKioskModeManagedSettingsEntryDisabled gets the kioskModeManagedSettingsEntryDisabled property value. Whether or not to display the Managed Settings entry point on the managed home screen in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedSettingsEntryDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeManagedSettingsEntryDisabled")
     if err != nil {
@@ -2077,6 +2133,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedSettin
     return nil
 }
 // GetKioskModeMediaVolumeConfigurationEnabled gets the kioskModeMediaVolumeConfigurationEnabled property value. Whether or not to allow a user to change the media volume in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeMediaVolumeConfigurationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeMediaVolumeConfigurationEnabled")
     if err != nil {
@@ -2088,6 +2145,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeMediaVolumeCo
     return nil
 }
 // GetKioskModeScreenOrientation gets the kioskModeScreenOrientation property value. Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.
+// returns a *AndroidDeviceOwnerKioskModeScreenOrientation when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenOrientation()(*AndroidDeviceOwnerKioskModeScreenOrientation) {
     val, err := m.GetBackingStore().Get("kioskModeScreenOrientation")
     if err != nil {
@@ -2099,6 +2157,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenOrienta
     return nil
 }
 // GetKioskModeScreenSaverConfigurationEnabled gets the kioskModeScreenSaverConfigurationEnabled property value. Whether or not to enable screen saver mode or not in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverConfigurationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeScreenSaverConfigurationEnabled")
     if err != nil {
@@ -2110,6 +2169,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverCo
     return nil
 }
 // GetKioskModeScreenSaverDetectMediaDisabled gets the kioskModeScreenSaverDetectMediaDisabled property value. Whether or not the device screen should show the screen saver if audio/video is playing in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverDetectMediaDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeScreenSaverDetectMediaDisabled")
     if err != nil {
@@ -2121,6 +2181,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverDe
     return nil
 }
 // GetKioskModeScreenSaverDisplayTimeInSeconds gets the kioskModeScreenSaverDisplayTimeInSeconds property value. The number of seconds that the device will display the screen saver for in Kiosk Mode. Valid values 0 to 9999999
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverDisplayTimeInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("kioskModeScreenSaverDisplayTimeInSeconds")
     if err != nil {
@@ -2132,6 +2193,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverDi
     return nil
 }
 // GetKioskModeScreenSaverImageUrl gets the kioskModeScreenSaverImageUrl property value. URL for an image that will be the device's screen saver in Kiosk Mode.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverImageUrl()(*string) {
     val, err := m.GetBackingStore().Get("kioskModeScreenSaverImageUrl")
     if err != nil {
@@ -2143,6 +2205,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverIm
     return nil
 }
 // GetKioskModeScreenSaverStartDelayInSeconds gets the kioskModeScreenSaverStartDelayInSeconds property value. The number of seconds the device needs to be inactive for before the screen saver is shown in Kiosk Mode. Valid values 1 to 9999999
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverStartDelayInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("kioskModeScreenSaverStartDelayInSeconds")
     if err != nil {
@@ -2154,6 +2217,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenSaverSt
     return nil
 }
 // GetKioskModeShowAppNotificationBadge gets the kioskModeShowAppNotificationBadge property value. Whether or not to display application notification badges in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeShowAppNotificationBadge()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeShowAppNotificationBadge")
     if err != nil {
@@ -2165,6 +2229,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeShowAppNotifi
     return nil
 }
 // GetKioskModeShowDeviceInfo gets the kioskModeShowDeviceInfo property value. Whether or not to allow a user to access basic device information.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeShowDeviceInfo()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeShowDeviceInfo")
     if err != nil {
@@ -2176,6 +2241,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeShowDeviceInf
     return nil
 }
 // GetKioskModeUseManagedHomeScreenApp gets the kioskModeUseManagedHomeScreenApp property value. Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.
+// returns a *KioskModeType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeUseManagedHomeScreenApp()(*KioskModeType) {
     val, err := m.GetBackingStore().Get("kioskModeUseManagedHomeScreenApp")
     if err != nil {
@@ -2187,6 +2253,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeUseManagedHom
     return nil
 }
 // GetKioskModeVirtualHomeButtonEnabled gets the kioskModeVirtualHomeButtonEnabled property value. Whether or not to display a virtual home button when the device is in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeButtonEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeVirtualHomeButtonEnabled")
     if err != nil {
@@ -2198,6 +2265,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeBu
     return nil
 }
 // GetKioskModeVirtualHomeButtonType gets the kioskModeVirtualHomeButtonType property value. Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.
+// returns a *AndroidDeviceOwnerVirtualHomeButtonType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeButtonType()(*AndroidDeviceOwnerVirtualHomeButtonType) {
     val, err := m.GetBackingStore().Get("kioskModeVirtualHomeButtonType")
     if err != nil {
@@ -2209,6 +2277,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeBu
     return nil
 }
 // GetKioskModeWallpaperUrl gets the kioskModeWallpaperUrl property value. URL to a publicly accessible image to use for the wallpaper when the device is in Kiosk Mode.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWallpaperUrl()(*string) {
     val, err := m.GetBackingStore().Get("kioskModeWallpaperUrl")
     if err != nil {
@@ -2220,6 +2289,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWallpaperUrl(
     return nil
 }
 // GetKioskModeWifiAllowedSsids gets the kioskModeWifiAllowedSsids property value. The restricted set of WIFI SSIDs available for the user to configure in Kiosk Mode. This collection can contain a maximum of 500 elements.
+// returns a []string when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWifiAllowedSsids()([]string) {
     val, err := m.GetBackingStore().Get("kioskModeWifiAllowedSsids")
     if err != nil {
@@ -2231,6 +2301,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWifiAllowedSs
     return nil
 }
 // GetKioskModeWiFiConfigurationEnabled gets the kioskModeWiFiConfigurationEnabled property value. Whether or not to allow a user to configure Wi-Fi settings in Kiosk Mode.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWiFiConfigurationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("kioskModeWiFiConfigurationEnabled")
     if err != nil {
@@ -2242,6 +2313,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeWiFiConfigura
     return nil
 }
 // GetLocateDeviceLostModeEnabled gets the locateDeviceLostModeEnabled property value. Indicates whether or not LocateDevice for devices with lost mode (COBO, COPE) is enabled.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetLocateDeviceLostModeEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("locateDeviceLostModeEnabled")
     if err != nil {
@@ -2253,6 +2325,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetLocateDeviceLostModeEn
     return nil
 }
 // GetLocateDeviceUserlessDisabled gets the locateDeviceUserlessDisabled property value. Indicates whether or not LocateDevice for userless (COSU) devices is disabled.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetLocateDeviceUserlessDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("locateDeviceUserlessDisabled")
     if err != nil {
@@ -2264,6 +2337,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetLocateDeviceUserlessDi
     return nil
 }
 // GetMicrophoneForceMute gets the microphoneForceMute property value. Indicates whether or not to block unmuting the microphone on the device.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrophoneForceMute()(*bool) {
     val, err := m.GetBackingStore().Get("microphoneForceMute")
     if err != nil {
@@ -2275,6 +2349,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrophoneForceMute()(
     return nil
 }
 // GetMicrosoftLauncherConfigurationEnabled gets the microsoftLauncherConfigurationEnabled property value. Indicates whether or not to you want configure Microsoft Launcher.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherConfigurationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("microsoftLauncherConfigurationEnabled")
     if err != nil {
@@ -2286,6 +2361,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherConfi
     return nil
 }
 // GetMicrosoftLauncherCustomWallpaperAllowUserModification gets the microsoftLauncherCustomWallpaperAllowUserModification property value. Indicates whether or not the user can modify the wallpaper to personalize their device.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherCustomWallpaperAllowUserModification()(*bool) {
     val, err := m.GetBackingStore().Get("microsoftLauncherCustomWallpaperAllowUserModification")
     if err != nil {
@@ -2297,6 +2373,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherCusto
     return nil
 }
 // GetMicrosoftLauncherCustomWallpaperEnabled gets the microsoftLauncherCustomWallpaperEnabled property value. Indicates whether or not to configure the wallpaper on the targeted devices.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherCustomWallpaperEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("microsoftLauncherCustomWallpaperEnabled")
     if err != nil {
@@ -2308,6 +2385,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherCusto
     return nil
 }
 // GetMicrosoftLauncherCustomWallpaperImageUrl gets the microsoftLauncherCustomWallpaperImageUrl property value. Indicates the URL for the image file to use as the wallpaper on the targeted devices.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherCustomWallpaperImageUrl()(*string) {
     val, err := m.GetBackingStore().Get("microsoftLauncherCustomWallpaperImageUrl")
     if err != nil {
@@ -2319,6 +2397,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherCusto
     return nil
 }
 // GetMicrosoftLauncherDockPresenceAllowUserModification gets the microsoftLauncherDockPresenceAllowUserModification property value. Indicates whether or not the user can modify the device dock configuration on the device.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockPresenceAllowUserModification()(*bool) {
     val, err := m.GetBackingStore().Get("microsoftLauncherDockPresenceAllowUserModification")
     if err != nil {
@@ -2330,6 +2409,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockP
     return nil
 }
 // GetMicrosoftLauncherDockPresenceConfiguration gets the microsoftLauncherDockPresenceConfiguration property value. Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.
+// returns a *MicrosoftLauncherDockPresence when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockPresenceConfiguration()(*MicrosoftLauncherDockPresence) {
     val, err := m.GetBackingStore().Get("microsoftLauncherDockPresenceConfiguration")
     if err != nil {
@@ -2341,6 +2421,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockP
     return nil
 }
 // GetMicrosoftLauncherFeedAllowUserModification gets the microsoftLauncherFeedAllowUserModification property value. Indicates whether or not the user can modify the launcher feed on the device.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherFeedAllowUserModification()(*bool) {
     val, err := m.GetBackingStore().Get("microsoftLauncherFeedAllowUserModification")
     if err != nil {
@@ -2352,6 +2433,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherFeedA
     return nil
 }
 // GetMicrosoftLauncherFeedEnabled gets the microsoftLauncherFeedEnabled property value. Indicates whether or not you want to enable the launcher feed on the device.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherFeedEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("microsoftLauncherFeedEnabled")
     if err != nil {
@@ -2363,6 +2445,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherFeedE
     return nil
 }
 // GetMicrosoftLauncherSearchBarPlacementConfiguration gets the microsoftLauncherSearchBarPlacementConfiguration property value. Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.
+// returns a *MicrosoftLauncherSearchBarPlacement when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherSearchBarPlacementConfiguration()(*MicrosoftLauncherSearchBarPlacement) {
     val, err := m.GetBackingStore().Get("microsoftLauncherSearchBarPlacementConfiguration")
     if err != nil {
@@ -2374,6 +2457,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherSearc
     return nil
 }
 // GetNetworkEscapeHatchAllowed gets the networkEscapeHatchAllowed property value. Indicates whether or not the device will allow connecting to a temporary network connection at boot time.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetNetworkEscapeHatchAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("networkEscapeHatchAllowed")
     if err != nil {
@@ -2385,6 +2469,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetNetworkEscapeHatchAllo
     return nil
 }
 // GetNfcBlockOutgoingBeam gets the nfcBlockOutgoingBeam property value. Indicates whether or not to block NFC outgoing beam.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetNfcBlockOutgoingBeam()(*bool) {
     val, err := m.GetBackingStore().Get("nfcBlockOutgoingBeam")
     if err != nil {
@@ -2396,6 +2481,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetNfcBlockOutgoingBeam()
     return nil
 }
 // GetPasswordBlockKeyguard gets the passwordBlockKeyguard property value. Indicates whether or not the keyguard is disabled.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguard()(*bool) {
     val, err := m.GetBackingStore().Get("passwordBlockKeyguard")
     if err != nil {
@@ -2407,6 +2493,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguard(
     return nil
 }
 // GetPasswordBlockKeyguardFeatures gets the passwordBlockKeyguardFeatures property value. List of device keyguard features to block. This collection can contain a maximum of 11 elements.
+// returns a []AndroidKeyguardFeature when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguardFeatures()([]AndroidKeyguardFeature) {
     val, err := m.GetBackingStore().Get("passwordBlockKeyguardFeatures")
     if err != nil {
@@ -2418,6 +2505,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordBlockKeyguardF
     return nil
 }
 // GetPasswordExpirationDays gets the passwordExpirationDays property value. Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordExpirationDays")
     if err != nil {
@@ -2429,6 +2517,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordExpirationDays
     return nil
 }
 // GetPasswordMinimumLength gets the passwordMinimumLength property value. Indicates the minimum length of the password required on the device. Valid values 4 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLength")
     if err != nil {
@@ -2440,6 +2529,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumLength(
     return nil
 }
 // GetPasswordMinimumLetterCharacters gets the passwordMinimumLetterCharacters property value. Indicates the minimum number of letter characters required for device password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumLetterCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLetterCharacters")
     if err != nil {
@@ -2451,6 +2541,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumLetterC
     return nil
 }
 // GetPasswordMinimumLowerCaseCharacters gets the passwordMinimumLowerCaseCharacters property value. Indicates the minimum number of lower case characters required for device password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumLowerCaseCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumLowerCaseCharacters")
     if err != nil {
@@ -2462,6 +2553,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumLowerCa
     return nil
 }
 // GetPasswordMinimumNonLetterCharacters gets the passwordMinimumNonLetterCharacters property value. Indicates the minimum number of non-letter characters required for device password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumNonLetterCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumNonLetterCharacters")
     if err != nil {
@@ -2473,6 +2565,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumNonLett
     return nil
 }
 // GetPasswordMinimumNumericCharacters gets the passwordMinimumNumericCharacters property value. Indicates the minimum number of numeric characters required for device password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumNumericCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumNumericCharacters")
     if err != nil {
@@ -2484,6 +2577,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumNumeric
     return nil
 }
 // GetPasswordMinimumSymbolCharacters gets the passwordMinimumSymbolCharacters property value. Indicates the minimum number of symbol characters required for device password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumSymbolCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumSymbolCharacters")
     if err != nil {
@@ -2495,6 +2589,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumSymbolC
     return nil
 }
 // GetPasswordMinimumUpperCaseCharacters gets the passwordMinimumUpperCaseCharacters property value. Indicates the minimum number of upper case letter characters required for device password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumUpperCaseCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinimumUpperCaseCharacters")
     if err != nil {
@@ -2506,6 +2601,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinimumUpperCa
     return nil
 }
 // GetPasswordMinutesOfInactivityBeforeScreenTimeout gets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinutesOfInactivityBeforeScreenTimeout()(*int32) {
     val, err := m.GetBackingStore().Get("passwordMinutesOfInactivityBeforeScreenTimeout")
     if err != nil {
@@ -2517,6 +2613,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordMinutesOfInact
     return nil
 }
 // GetPasswordPreviousPasswordCountToBlock gets the passwordPreviousPasswordCountToBlock property value. Indicates the length of password history, where the user will not be able to enter a new password that is the same as any password in the history. Valid values 0 to 24
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordPreviousPasswordCountToBlock()(*int32) {
     val, err := m.GetBackingStore().Get("passwordPreviousPasswordCountToBlock")
     if err != nil {
@@ -2528,6 +2625,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordPreviousPasswo
     return nil
 }
 // GetPasswordRequiredType gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// returns a *AndroidDeviceOwnerRequiredPasswordType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
     if err != nil {
@@ -2539,6 +2637,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequiredType()
     return nil
 }
 // GetPasswordRequireUnlock gets the passwordRequireUnlock property value. Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
+// returns a *AndroidDeviceOwnerRequiredPasswordUnlock when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock) {
     val, err := m.GetBackingStore().Get("passwordRequireUnlock")
     if err != nil {
@@ -2550,6 +2649,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequireUnlock(
     return nil
 }
 // GetPasswordSignInFailureCountBeforeFactoryReset gets the passwordSignInFailureCountBeforeFactoryReset property value. Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     val, err := m.GetBackingStore().Get("passwordSignInFailureCountBeforeFactoryReset")
     if err != nil {
@@ -2561,6 +2661,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordSignInFailureC
     return nil
 }
 // GetPersonalProfileAppsAllowInstallFromUnknownSources gets the personalProfileAppsAllowInstallFromUnknownSources property value. Indicates whether the user can install apps from unknown sources on the personal profile.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileAppsAllowInstallFromUnknownSources()(*bool) {
     val, err := m.GetBackingStore().Get("personalProfileAppsAllowInstallFromUnknownSources")
     if err != nil {
@@ -2572,6 +2673,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileAppsAll
     return nil
 }
 // GetPersonalProfileCameraBlocked gets the personalProfileCameraBlocked property value. Indicates whether to disable the use of the camera on the personal profile.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileCameraBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("personalProfileCameraBlocked")
     if err != nil {
@@ -2583,6 +2685,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileCameraB
     return nil
 }
 // GetPersonalProfilePersonalApplications gets the personalProfilePersonalApplications property value. Policy applied to applications in the personal profile. This collection can contain a maximum of 500 elements.
+// returns a []AppListItemable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePersonalApplications()([]AppListItemable) {
     val, err := m.GetBackingStore().Get("personalProfilePersonalApplications")
     if err != nil {
@@ -2594,6 +2697,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePersona
     return nil
 }
 // GetPersonalProfilePlayStoreMode gets the personalProfilePlayStoreMode property value. Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.
+// returns a *PersonalProfilePersonalPlayStoreMode when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePlayStoreMode()(*PersonalProfilePersonalPlayStoreMode) {
     val, err := m.GetBackingStore().Get("personalProfilePlayStoreMode")
     if err != nil {
@@ -2605,6 +2709,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePlaySto
     return nil
 }
 // GetPersonalProfileScreenCaptureBlocked gets the personalProfileScreenCaptureBlocked property value. Indicates whether to disable the capability to take screenshots on the personal profile.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileScreenCaptureBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("personalProfileScreenCaptureBlocked")
     if err != nil {
@@ -2616,6 +2721,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileScreenC
     return nil
 }
 // GetPlayStoreMode gets the playStoreMode property value. Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.
+// returns a *AndroidDeviceOwnerPlayStoreMode when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPlayStoreMode()(*AndroidDeviceOwnerPlayStoreMode) {
     val, err := m.GetBackingStore().Get("playStoreMode")
     if err != nil {
@@ -2627,6 +2733,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPlayStoreMode()(*Andro
     return nil
 }
 // GetScreenCaptureBlocked gets the screenCaptureBlocked property value. Indicates whether or not to disable the capability to take screenshots.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetScreenCaptureBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("screenCaptureBlocked")
     if err != nil {
@@ -2638,6 +2745,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetScreenCaptureBlocked()
     return nil
 }
 // GetSecurityCommonCriteriaModeEnabled gets the securityCommonCriteriaModeEnabled property value. Represents the security common criteria mode enabled provided to users when they attempt to modify managed settings on their device.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityCommonCriteriaModeEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("securityCommonCriteriaModeEnabled")
     if err != nil {
@@ -2649,6 +2757,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityCommonCriteria
     return nil
 }
 // GetSecurityDeveloperSettingsEnabled gets the securityDeveloperSettingsEnabled property value. Indicates whether or not the user is allowed to access developer settings like developer options and safe boot on the device.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityDeveloperSettingsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("securityDeveloperSettingsEnabled")
     if err != nil {
@@ -2660,6 +2769,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityDeveloperSetti
     return nil
 }
 // GetSecurityRequireVerifyApps gets the securityRequireVerifyApps property value. Indicates whether or not verify apps is required.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityRequireVerifyApps()(*bool) {
     val, err := m.GetBackingStore().Get("securityRequireVerifyApps")
     if err != nil {
@@ -2671,6 +2781,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSecurityRequireVerifyA
     return nil
 }
 // GetShareDeviceLocationDisabled gets the shareDeviceLocationDisabled property value. Indicates whether or not location sharing is disabled for fully managed devices (COBO), and corporate owned devices with a work profile (COPE)
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetShareDeviceLocationDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("shareDeviceLocationDisabled")
     if err != nil {
@@ -2682,6 +2793,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetShareDeviceLocationDis
     return nil
 }
 // GetShortHelpText gets the shortHelpText property value. Represents the customized short help text provided to users when they attempt to modify managed settings on their device.
+// returns a AndroidDeviceOwnerUserFacingMessageable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetShortHelpText()(AndroidDeviceOwnerUserFacingMessageable) {
     val, err := m.GetBackingStore().Get("shortHelpText")
     if err != nil {
@@ -2693,6 +2805,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetShortHelpText()(Androi
     return nil
 }
 // GetStatusBarBlocked gets the statusBarBlocked property value. Indicates whether or the status bar is disabled, including notifications, quick settings and other screen overlays.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStatusBarBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("statusBarBlocked")
     if err != nil {
@@ -2704,6 +2817,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStatusBarBlocked()(*bo
     return nil
 }
 // GetStayOnModes gets the stayOnModes property value. List of modes in which the device's display will stay powered-on. This collection can contain a maximum of 4 elements.
+// returns a []AndroidDeviceOwnerBatteryPluggedMode when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStayOnModes()([]AndroidDeviceOwnerBatteryPluggedMode) {
     val, err := m.GetBackingStore().Get("stayOnModes")
     if err != nil {
@@ -2715,6 +2829,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStayOnModes()([]Androi
     return nil
 }
 // GetStorageAllowUsb gets the storageAllowUsb property value. Indicates whether or not to allow USB mass storage.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStorageAllowUsb()(*bool) {
     val, err := m.GetBackingStore().Get("storageAllowUsb")
     if err != nil {
@@ -2726,6 +2841,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStorageAllowUsb()(*boo
     return nil
 }
 // GetStorageBlockExternalMedia gets the storageBlockExternalMedia property value. Indicates whether or not to block external media.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStorageBlockExternalMedia()(*bool) {
     val, err := m.GetBackingStore().Get("storageBlockExternalMedia")
     if err != nil {
@@ -2737,6 +2853,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStorageBlockExternalMe
     return nil
 }
 // GetStorageBlockUsbFileTransfer gets the storageBlockUsbFileTransfer property value. Indicates whether or not to block USB file transfer.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStorageBlockUsbFileTransfer()(*bool) {
     val, err := m.GetBackingStore().Get("storageBlockUsbFileTransfer")
     if err != nil {
@@ -2748,6 +2865,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetStorageBlockUsbFileTra
     return nil
 }
 // GetSystemUpdateFreezePeriods gets the systemUpdateFreezePeriods property value. Indicates the annually repeating time periods during which system updates are postponed. This collection can contain a maximum of 500 elements.
+// returns a []AndroidDeviceOwnerSystemUpdateFreezePeriodable when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateFreezePeriods()([]AndroidDeviceOwnerSystemUpdateFreezePeriodable) {
     val, err := m.GetBackingStore().Get("systemUpdateFreezePeriods")
     if err != nil {
@@ -2759,6 +2877,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateFreezePeri
     return nil
 }
 // GetSystemUpdateInstallType gets the systemUpdateInstallType property value. The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.
+// returns a *AndroidDeviceOwnerSystemUpdateInstallType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateInstallType()(*AndroidDeviceOwnerSystemUpdateInstallType) {
     val, err := m.GetBackingStore().Get("systemUpdateInstallType")
     if err != nil {
@@ -2770,6 +2889,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateInstallTyp
     return nil
 }
 // GetSystemUpdateWindowEndMinutesAfterMidnight gets the systemUpdateWindowEndMinutesAfterMidnight property value. Indicates the number of minutes after midnight that the system update window ends. Valid values 0 to 1440
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateWindowEndMinutesAfterMidnight()(*int32) {
     val, err := m.GetBackingStore().Get("systemUpdateWindowEndMinutesAfterMidnight")
     if err != nil {
@@ -2781,6 +2901,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateWindowEndM
     return nil
 }
 // GetSystemUpdateWindowStartMinutesAfterMidnight gets the systemUpdateWindowStartMinutesAfterMidnight property value. Indicates the number of minutes after midnight that the system update window starts. Valid values 0 to 1440
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateWindowStartMinutesAfterMidnight()(*int32) {
     val, err := m.GetBackingStore().Get("systemUpdateWindowStartMinutesAfterMidnight")
     if err != nil {
@@ -2792,6 +2913,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateWindowStar
     return nil
 }
 // GetSystemWindowsBlocked gets the systemWindowsBlocked property value. Whether or not to block Android system prompt windows, like toasts, phone activities, and system alerts.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemWindowsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("systemWindowsBlocked")
     if err != nil {
@@ -2803,6 +2925,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemWindowsBlocked()
     return nil
 }
 // GetUsersBlockAdd gets the usersBlockAdd property value. Indicates whether or not adding users and profiles is disabled.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetUsersBlockAdd()(*bool) {
     val, err := m.GetBackingStore().Get("usersBlockAdd")
     if err != nil {
@@ -2814,6 +2937,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetUsersBlockAdd()(*bool)
     return nil
 }
 // GetUsersBlockRemove gets the usersBlockRemove property value. Indicates whether or not to disable removing other users from the device.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetUsersBlockRemove()(*bool) {
     val, err := m.GetBackingStore().Get("usersBlockRemove")
     if err != nil {
@@ -2825,6 +2949,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetUsersBlockRemove()(*bo
     return nil
 }
 // GetVolumeBlockAdjustment gets the volumeBlockAdjustment property value. Indicates whether or not adjusting the master volume is disabled.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetVolumeBlockAdjustment()(*bool) {
     val, err := m.GetBackingStore().Get("volumeBlockAdjustment")
     if err != nil {
@@ -2836,6 +2961,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetVolumeBlockAdjustment(
     return nil
 }
 // GetVpnAlwaysOnLockdownMode gets the vpnAlwaysOnLockdownMode property value. If an always on VPN package name is specified, whether or not to lock network traffic when that VPN is disconnected.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetVpnAlwaysOnLockdownMode()(*bool) {
     val, err := m.GetBackingStore().Get("vpnAlwaysOnLockdownMode")
     if err != nil {
@@ -2847,6 +2973,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetVpnAlwaysOnLockdownMod
     return nil
 }
 // GetVpnAlwaysOnPackageIdentifier gets the vpnAlwaysOnPackageIdentifier property value. Android app package name for app that will handle an always-on VPN connection.
+// returns a *string when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetVpnAlwaysOnPackageIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("vpnAlwaysOnPackageIdentifier")
     if err != nil {
@@ -2858,6 +2985,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetVpnAlwaysOnPackageIden
     return nil
 }
 // GetWifiBlockEditConfigurations gets the wifiBlockEditConfigurations property value. Indicates whether or not to block the user from editing the wifi connection settings.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWifiBlockEditConfigurations()(*bool) {
     val, err := m.GetBackingStore().Get("wifiBlockEditConfigurations")
     if err != nil {
@@ -2869,6 +2997,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWifiBlockEditConfigura
     return nil
 }
 // GetWifiBlockEditPolicyDefinedConfigurations gets the wifiBlockEditPolicyDefinedConfigurations property value. Indicates whether or not to block the user from editing just the networks defined by the policy.
+// returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWifiBlockEditPolicyDefinedConfigurations()(*bool) {
     val, err := m.GetBackingStore().Get("wifiBlockEditPolicyDefinedConfigurations")
     if err != nil {
@@ -2880,6 +3009,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWifiBlockEditPolicyDef
     return nil
 }
 // GetWorkProfilePasswordExpirationDays gets the workProfilePasswordExpirationDays property value. Indicates the number of days that a work profile password can be set before it expires and a new password will be required. Valid values 1 to 365
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordExpirationDays")
     if err != nil {
@@ -2891,6 +3021,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordExp
     return nil
 }
 // GetWorkProfilePasswordMinimumLength gets the workProfilePasswordMinimumLength property value. Indicates the minimum length of the work profile password. Valid values 4 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumLength()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinimumLength")
     if err != nil {
@@ -2902,6 +3033,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMin
     return nil
 }
 // GetWorkProfilePasswordMinimumLetterCharacters gets the workProfilePasswordMinimumLetterCharacters property value. Indicates the minimum number of letter characters required for the work profile password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumLetterCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinimumLetterCharacters")
     if err != nil {
@@ -2913,6 +3045,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMin
     return nil
 }
 // GetWorkProfilePasswordMinimumLowerCaseCharacters gets the workProfilePasswordMinimumLowerCaseCharacters property value. Indicates the minimum number of lower-case characters required for the work profile password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumLowerCaseCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinimumLowerCaseCharacters")
     if err != nil {
@@ -2924,6 +3057,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMin
     return nil
 }
 // GetWorkProfilePasswordMinimumNonLetterCharacters gets the workProfilePasswordMinimumNonLetterCharacters property value. Indicates the minimum number of non-letter characters required for the work profile password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumNonLetterCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinimumNonLetterCharacters")
     if err != nil {
@@ -2935,6 +3069,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMin
     return nil
 }
 // GetWorkProfilePasswordMinimumNumericCharacters gets the workProfilePasswordMinimumNumericCharacters property value. Indicates the minimum number of numeric characters required for the work profile password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumNumericCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinimumNumericCharacters")
     if err != nil {
@@ -2946,6 +3081,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMin
     return nil
 }
 // GetWorkProfilePasswordMinimumSymbolCharacters gets the workProfilePasswordMinimumSymbolCharacters property value. Indicates the minimum number of symbol characters required for the work profile password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumSymbolCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinimumSymbolCharacters")
     if err != nil {
@@ -2957,6 +3093,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMin
     return nil
 }
 // GetWorkProfilePasswordMinimumUpperCaseCharacters gets the workProfilePasswordMinimumUpperCaseCharacters property value. Indicates the minimum number of upper-case letter characters required for the work profile password. Valid values 1 to 16
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMinimumUpperCaseCharacters()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordMinimumUpperCaseCharacters")
     if err != nil {
@@ -2968,6 +3105,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordMin
     return nil
 }
 // GetWorkProfilePasswordPreviousPasswordCountToBlock gets the workProfilePasswordPreviousPasswordCountToBlock property value. Indicates the length of the work profile password history, where the user will not be able to enter a new password that is the same as any password in the history. Valid values 0 to 24
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordPreviousPasswordCountToBlock()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordPreviousPasswordCountToBlock")
     if err != nil {
@@ -2979,6 +3117,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordPre
     return nil
 }
 // GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// returns a *AndroidDeviceOwnerRequiredPasswordType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("workProfilePasswordRequiredType")
     if err != nil {
@@ -2990,6 +3129,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordReq
     return nil
 }
 // GetWorkProfilePasswordRequireUnlock gets the workProfilePasswordRequireUnlock property value. Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
+// returns a *AndroidDeviceOwnerRequiredPasswordUnlock when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock) {
     val, err := m.GetBackingStore().Get("workProfilePasswordRequireUnlock")
     if err != nil {
@@ -3001,6 +3141,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordReq
     return nil
 }
 // GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset gets the workProfilePasswordSignInFailureCountBeforeFactoryReset property value. Indicates the number of times a user can enter an incorrect work profile password before the device is wiped. Valid values 4 to 11
+// returns a *int32 when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordSignInFailureCountBeforeFactoryReset()(*int32) {
     val, err := m.GetBackingStore().Get("workProfilePasswordSignInFailureCountBeforeFactoryReset")
     if err != nil {
@@ -4890,7 +5031,6 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordSig
         panic(err)
     }
 }
-// AndroidDeviceOwnerGeneralDeviceConfigurationable 
 type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

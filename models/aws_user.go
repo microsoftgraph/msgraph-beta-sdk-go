@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsUser 
 type AwsUser struct {
     AwsIdentity
 }
-// NewAwsUser instantiates a new awsUser and sets the default values.
+// NewAwsUser instantiates a new AwsUser and sets the default values.
 func NewAwsUser()(*AwsUser) {
     m := &AwsUser{
         AwsIdentity: *NewAwsIdentity(),
@@ -18,10 +17,12 @@ func NewAwsUser()(*AwsUser) {
     return m
 }
 // CreateAwsUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsUser(), nil
 }
 // GetAssumableRoles gets the assumableRoles property value. Roles assumed by the user.
+// returns a []AwsRoleable when successful
 func (m *AwsUser) GetAssumableRoles()([]AwsRoleable) {
     val, err := m.GetBackingStore().Get("assumableRoles")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AwsUser) GetAssumableRoles()([]AwsRoleable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AwsIdentity.GetFieldDeserializers()
     res["assumableRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,7 +82,6 @@ func (m *AwsUser) SetAssumableRoles(value []AwsRoleable)() {
         panic(err)
     }
 }
-// AwsUserable 
 type AwsUserable interface {
     AwsIdentityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

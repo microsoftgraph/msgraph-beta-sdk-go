@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// StaleSignInAlertIncident 
 type StaleSignInAlertIncident struct {
     UnifiedRoleManagementAlertIncident
 }
-// NewStaleSignInAlertIncident instantiates a new staleSignInAlertIncident and sets the default values.
+// NewStaleSignInAlertIncident instantiates a new StaleSignInAlertIncident and sets the default values.
 func NewStaleSignInAlertIncident()(*StaleSignInAlertIncident) {
     m := &StaleSignInAlertIncident{
         UnifiedRoleManagementAlertIncident: *NewUnifiedRoleManagementAlertIncident(),
@@ -19,10 +18,12 @@ func NewStaleSignInAlertIncident()(*StaleSignInAlertIncident) {
     return m
 }
 // CreateStaleSignInAlertIncidentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateStaleSignInAlertIncidentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStaleSignInAlertIncident(), nil
 }
 // GetAssigneeDisplayName gets the assigneeDisplayName property value. Display name of the subject that the incident applies to.
+// returns a *string when successful
 func (m *StaleSignInAlertIncident) GetAssigneeDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("assigneeDisplayName")
     if err != nil {
@@ -34,6 +35,7 @@ func (m *StaleSignInAlertIncident) GetAssigneeDisplayName()(*string) {
     return nil
 }
 // GetAssigneeId gets the assigneeId property value. The identifier of the subject that the incident applies to.
+// returns a *string when successful
 func (m *StaleSignInAlertIncident) GetAssigneeId()(*string) {
     val, err := m.GetBackingStore().Get("assigneeId")
     if err != nil {
@@ -45,6 +47,7 @@ func (m *StaleSignInAlertIncident) GetAssigneeId()(*string) {
     return nil
 }
 // GetAssigneeUserPrincipalName gets the assigneeUserPrincipalName property value. User principal name of the subject that the incident applies to. Applies to user principals.
+// returns a *string when successful
 func (m *StaleSignInAlertIncident) GetAssigneeUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("assigneeUserPrincipalName")
     if err != nil {
@@ -56,6 +59,7 @@ func (m *StaleSignInAlertIncident) GetAssigneeUserPrincipalName()(*string) {
     return nil
 }
 // GetAssignmentCreatedDateTime gets the assignmentCreatedDateTime property value. Date and time of assignment creation.
+// returns a *Time when successful
 func (m *StaleSignInAlertIncident) GetAssignmentCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("assignmentCreatedDateTime")
     if err != nil {
@@ -67,6 +71,7 @@ func (m *StaleSignInAlertIncident) GetAssignmentCreatedDateTime()(*i336074805fc8
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *StaleSignInAlertIncident) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UnifiedRoleManagementAlertIncident.GetFieldDeserializers()
     res["assigneeDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -152,6 +157,7 @@ func (m *StaleSignInAlertIncident) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetLastSignInDateTime gets the lastSignInDateTime property value. Date and time of last sign in.
+// returns a *Time when successful
 func (m *StaleSignInAlertIncident) GetLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSignInDateTime")
     if err != nil {
@@ -163,6 +169,7 @@ func (m *StaleSignInAlertIncident) GetLastSignInDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetRoleDefinitionId gets the roleDefinitionId property value. The identifier for the directory role definition that's in scope of this incident.
+// returns a *string when successful
 func (m *StaleSignInAlertIncident) GetRoleDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("roleDefinitionId")
     if err != nil {
@@ -174,6 +181,7 @@ func (m *StaleSignInAlertIncident) GetRoleDefinitionId()(*string) {
     return nil
 }
 // GetRoleDisplayName gets the roleDisplayName property value. The display name for the directory role.
+// returns a *string when successful
 func (m *StaleSignInAlertIncident) GetRoleDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("roleDisplayName")
     if err != nil {
@@ -185,6 +193,7 @@ func (m *StaleSignInAlertIncident) GetRoleDisplayName()(*string) {
     return nil
 }
 // GetRoleTemplateId gets the roleTemplateId property value. The globally unique identifier for the directory role.
+// returns a *string when successful
 func (m *StaleSignInAlertIncident) GetRoleTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("roleTemplateId")
     if err != nil {
@@ -307,7 +316,6 @@ func (m *StaleSignInAlertIncident) SetRoleTemplateId(value *string)() {
         panic(err)
     }
 }
-// StaleSignInAlertIncidentable 
 type StaleSignInAlertIncidentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UnifiedRoleManagementAlertIncidentable

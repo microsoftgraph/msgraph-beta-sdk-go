@@ -8,7 +8,7 @@ import (
 type UnsupportedGroupPolicyExtension struct {
     Entity
 }
-// NewUnsupportedGroupPolicyExtension instantiates a new unsupportedGroupPolicyExtension and sets the default values.
+// NewUnsupportedGroupPolicyExtension instantiates a new UnsupportedGroupPolicyExtension and sets the default values.
 func NewUnsupportedGroupPolicyExtension()(*UnsupportedGroupPolicyExtension) {
     m := &UnsupportedGroupPolicyExtension{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUnsupportedGroupPolicyExtension()(*UnsupportedGroupPolicyExtension) {
     return m
 }
 // CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnsupportedGroupPolicyExtensionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnsupportedGroupPolicyExtension(), nil
 }
 // GetExtensionType gets the extensionType property value. ExtensionType of the unsupported extension.
+// returns a *string when successful
 func (m *UnsupportedGroupPolicyExtension) GetExtensionType()(*string) {
     val, err := m.GetBackingStore().Get("extensionType")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UnsupportedGroupPolicyExtension) GetExtensionType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["extensionType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +79,7 @@ func (m *UnsupportedGroupPolicyExtension) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetNamespaceUrl gets the namespaceUrl property value. Namespace Url of the unsupported extension.
+// returns a *string when successful
 func (m *UnsupportedGroupPolicyExtension) GetNamespaceUrl()(*string) {
     val, err := m.GetBackingStore().Get("namespaceUrl")
     if err != nil {
@@ -87,6 +91,7 @@ func (m *UnsupportedGroupPolicyExtension) GetNamespaceUrl()(*string) {
     return nil
 }
 // GetNodeName gets the nodeName property value. Node name of the unsupported extension.
+// returns a *string when successful
 func (m *UnsupportedGroupPolicyExtension) GetNodeName()(*string) {
     val, err := m.GetBackingStore().Get("nodeName")
     if err != nil {
@@ -98,6 +103,7 @@ func (m *UnsupportedGroupPolicyExtension) GetNodeName()(*string) {
     return nil
 }
 // GetSettingScope gets the settingScope property value. Scope of the group policy setting.
+// returns a *GroupPolicySettingScope when successful
 func (m *UnsupportedGroupPolicyExtension) GetSettingScope()(*GroupPolicySettingScope) {
     val, err := m.GetBackingStore().Get("settingScope")
     if err != nil {
@@ -169,7 +175,6 @@ func (m *UnsupportedGroupPolicyExtension) SetSettingScope(value *GroupPolicySett
         panic(err)
     }
 }
-// UnsupportedGroupPolicyExtensionable 
 type UnsupportedGroupPolicyExtensionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

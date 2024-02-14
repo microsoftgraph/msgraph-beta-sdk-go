@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Office365GroupsActivityFileCounts 
 type Office365GroupsActivityFileCounts struct {
     Entity
 }
-// NewOffice365GroupsActivityFileCounts instantiates a new office365GroupsActivityFileCounts and sets the default values.
+// NewOffice365GroupsActivityFileCounts instantiates a new Office365GroupsActivityFileCounts and sets the default values.
 func NewOffice365GroupsActivityFileCounts()(*Office365GroupsActivityFileCounts) {
     m := &Office365GroupsActivityFileCounts{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewOffice365GroupsActivityFileCounts()(*Office365GroupsActivityFileCounts) 
     return m
 }
 // CreateOffice365GroupsActivityFileCountsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOffice365GroupsActivityFileCountsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOffice365GroupsActivityFileCounts(), nil
 }
 // GetActive gets the active property value. The number of files that were viewed, edited, shared, or synced in the group's SharePoint document library.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityFileCounts) GetActive()(*int64) {
     val, err := m.GetBackingStore().Get("active")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *Office365GroupsActivityFileCounts) GetActive()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["active"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +88,7 @@ func (m *Office365GroupsActivityFileCounts) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetReportDate gets the reportDate property value. The date on which a number of files were active in the group's SharePoint site.
+// returns a *DateOnly when successful
 func (m *Office365GroupsActivityFileCounts) GetReportDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("reportDate")
     if err != nil {
@@ -97,6 +100,7 @@ func (m *Office365GroupsActivityFileCounts) GetReportDate()(*i878a80d2330e89d268
     return nil
 }
 // GetReportPeriod gets the reportPeriod property value. The number of days the report covers.
+// returns a *string when successful
 func (m *Office365GroupsActivityFileCounts) GetReportPeriod()(*string) {
     val, err := m.GetBackingStore().Get("reportPeriod")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *Office365GroupsActivityFileCounts) GetReportPeriod()(*string) {
     return nil
 }
 // GetReportRefreshDate gets the reportRefreshDate property value. The latest date of the content.
+// returns a *DateOnly when successful
 func (m *Office365GroupsActivityFileCounts) GetReportRefreshDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("reportRefreshDate")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *Office365GroupsActivityFileCounts) GetReportRefreshDate()(*i878a80d2330
     return nil
 }
 // GetTotal gets the total property value. The total number of files in the group's SharePoint document library.
+// returns a *int64 when successful
 func (m *Office365GroupsActivityFileCounts) GetTotal()(*int64) {
     val, err := m.GetBackingStore().Get("total")
     if err != nil {
@@ -202,7 +208,6 @@ func (m *Office365GroupsActivityFileCounts) SetTotal(value *int64)() {
         panic(err)
     }
 }
-// Office365GroupsActivityFileCountsable 
 type Office365GroupsActivityFileCountsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

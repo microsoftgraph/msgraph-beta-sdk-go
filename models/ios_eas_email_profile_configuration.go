@@ -8,7 +8,7 @@ import (
 type IosEasEmailProfileConfiguration struct {
     EasEmailProfileConfigurationBase
 }
-// NewIosEasEmailProfileConfiguration instantiates a new iosEasEmailProfileConfiguration and sets the default values.
+// NewIosEasEmailProfileConfiguration instantiates a new IosEasEmailProfileConfiguration and sets the default values.
 func NewIosEasEmailProfileConfiguration()(*IosEasEmailProfileConfiguration) {
     m := &IosEasEmailProfileConfiguration{
         EasEmailProfileConfigurationBase: *NewEasEmailProfileConfigurationBase(),
@@ -18,10 +18,12 @@ func NewIosEasEmailProfileConfiguration()(*IosEasEmailProfileConfiguration) {
     return m
 }
 // CreateIosEasEmailProfileConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosEasEmailProfileConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosEasEmailProfileConfiguration(), nil
 }
 // GetAccountName gets the accountName property value. Account name.
+// returns a *string when successful
 func (m *IosEasEmailProfileConfiguration) GetAccountName()(*string) {
     val, err := m.GetBackingStore().Get("accountName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosEasEmailProfileConfiguration) GetAccountName()(*string) {
     return nil
 }
 // GetAuthenticationMethod gets the authenticationMethod property value. Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.
+// returns a *EasAuthenticationMethod when successful
 func (m *IosEasEmailProfileConfiguration) GetAuthenticationMethod()(*EasAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *IosEasEmailProfileConfiguration) GetAuthenticationMethod()(*EasAuthenti
     return nil
 }
 // GetBlockMovingMessagesToOtherEmailAccounts gets the blockMovingMessagesToOtherEmailAccounts property value. Indicates whether or not to block moving messages to other email accounts.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetBlockMovingMessagesToOtherEmailAccounts()(*bool) {
     val, err := m.GetBackingStore().Get("blockMovingMessagesToOtherEmailAccounts")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *IosEasEmailProfileConfiguration) GetBlockMovingMessagesToOtherEmailAcco
     return nil
 }
 // GetBlockSendingEmailFromThirdPartyApps gets the blockSendingEmailFromThirdPartyApps property value. Indicates whether or not to block sending email from third party apps.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetBlockSendingEmailFromThirdPartyApps()(*bool) {
     val, err := m.GetBackingStore().Get("blockSendingEmailFromThirdPartyApps")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *IosEasEmailProfileConfiguration) GetBlockSendingEmailFromThirdPartyApps
     return nil
 }
 // GetBlockSyncingRecentlyUsedEmailAddresses gets the blockSyncingRecentlyUsedEmailAddresses property value. Indicates whether or not to block syncing recently used email addresses, for instance - when composing new email.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetBlockSyncingRecentlyUsedEmailAddresses()(*bool) {
     val, err := m.GetBackingStore().Get("blockSyncingRecentlyUsedEmailAddresses")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *IosEasEmailProfileConfiguration) GetBlockSyncingRecentlyUsedEmailAddres
     return nil
 }
 // GetDerivedCredentialSettings gets the derivedCredentialSettings property value. Tenant level settings for the Derived Credentials to be used for authentication.
+// returns a DeviceManagementDerivedCredentialSettingsable when successful
 func (m *IosEasEmailProfileConfiguration) GetDerivedCredentialSettings()(DeviceManagementDerivedCredentialSettingsable) {
     val, err := m.GetBackingStore().Get("derivedCredentialSettings")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *IosEasEmailProfileConfiguration) GetDerivedCredentialSettings()(DeviceM
     return nil
 }
 // GetDurationOfEmailToSync gets the durationOfEmailToSync property value. Possible values for email sync duration.
+// returns a *EmailSyncDuration when successful
 func (m *IosEasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncDuration) {
     val, err := m.GetBackingStore().Get("durationOfEmailToSync")
     if err != nil {
@@ -99,6 +107,7 @@ func (m *IosEasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncD
     return nil
 }
 // GetEasServices gets the easServices property value. Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.
+// returns a *EasServices when successful
 func (m *IosEasEmailProfileConfiguration) GetEasServices()(*EasServices) {
     val, err := m.GetBackingStore().Get("easServices")
     if err != nil {
@@ -110,6 +119,7 @@ func (m *IosEasEmailProfileConfiguration) GetEasServices()(*EasServices) {
     return nil
 }
 // GetEasServicesUserOverrideEnabled gets the easServicesUserOverrideEnabled property value. Allow users to change sync settings.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetEasServicesUserOverrideEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("easServicesUserOverrideEnabled")
     if err != nil {
@@ -121,6 +131,7 @@ func (m *IosEasEmailProfileConfiguration) GetEasServicesUserOverrideEnabled()(*b
     return nil
 }
 // GetEmailAddressSource gets the emailAddressSource property value. Possible values for username source or email source.
+// returns a *UserEmailSource when successful
 func (m *IosEasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSource) {
     val, err := m.GetBackingStore().Get("emailAddressSource")
     if err != nil {
@@ -132,6 +143,7 @@ func (m *IosEasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSour
     return nil
 }
 // GetEncryptionCertificateType gets the encryptionCertificateType property value. Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
+// returns a *EmailCertificateType when successful
 func (m *IosEasEmailProfileConfiguration) GetEncryptionCertificateType()(*EmailCertificateType) {
     val, err := m.GetBackingStore().Get("encryptionCertificateType")
     if err != nil {
@@ -143,6 +155,7 @@ func (m *IosEasEmailProfileConfiguration) GetEncryptionCertificateType()(*EmailC
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosEasEmailProfileConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EasEmailProfileConfigurationBase.GetFieldDeserializers()
     res["accountName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -418,6 +431,7 @@ func (m *IosEasEmailProfileConfiguration) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetHostName gets the hostName property value. Exchange location that (URL) that the native mail app connects to.
+// returns a *string when successful
 func (m *IosEasEmailProfileConfiguration) GetHostName()(*string) {
     val, err := m.GetBackingStore().Get("hostName")
     if err != nil {
@@ -429,6 +443,7 @@ func (m *IosEasEmailProfileConfiguration) GetHostName()(*string) {
     return nil
 }
 // GetIdentityCertificate gets the identityCertificate property value. Identity certificate.
+// returns a IosCertificateProfileBaseable when successful
 func (m *IosEasEmailProfileConfiguration) GetIdentityCertificate()(IosCertificateProfileBaseable) {
     val, err := m.GetBackingStore().Get("identityCertificate")
     if err != nil {
@@ -440,6 +455,7 @@ func (m *IosEasEmailProfileConfiguration) GetIdentityCertificate()(IosCertificat
     return nil
 }
 // GetPerAppVPNProfileId gets the perAppVPNProfileId property value. Profile ID of the Per-App VPN policy to be used to access emails from the native Mail client
+// returns a *string when successful
 func (m *IosEasEmailProfileConfiguration) GetPerAppVPNProfileId()(*string) {
     val, err := m.GetBackingStore().Get("perAppVPNProfileId")
     if err != nil {
@@ -451,6 +467,7 @@ func (m *IosEasEmailProfileConfiguration) GetPerAppVPNProfileId()(*string) {
     return nil
 }
 // GetRequireSmime gets the requireSmime property value. Indicates whether or not to use S/MIME certificate.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetRequireSmime()(*bool) {
     val, err := m.GetBackingStore().Get("requireSmime")
     if err != nil {
@@ -462,6 +479,7 @@ func (m *IosEasEmailProfileConfiguration) GetRequireSmime()(*bool) {
     return nil
 }
 // GetRequireSsl gets the requireSsl property value. Indicates whether or not to use SSL.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetRequireSsl()(*bool) {
     val, err := m.GetBackingStore().Get("requireSsl")
     if err != nil {
@@ -473,6 +491,7 @@ func (m *IosEasEmailProfileConfiguration) GetRequireSsl()(*bool) {
     return nil
 }
 // GetSigningCertificateType gets the signingCertificateType property value. Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
+// returns a *EmailCertificateType when successful
 func (m *IosEasEmailProfileConfiguration) GetSigningCertificateType()(*EmailCertificateType) {
     val, err := m.GetBackingStore().Get("signingCertificateType")
     if err != nil {
@@ -484,6 +503,7 @@ func (m *IosEasEmailProfileConfiguration) GetSigningCertificateType()(*EmailCert
     return nil
 }
 // GetSmimeEnablePerMessageSwitch gets the smimeEnablePerMessageSwitch property value. Indicates whether or not to allow unencrypted emails.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetSmimeEnablePerMessageSwitch()(*bool) {
     val, err := m.GetBackingStore().Get("smimeEnablePerMessageSwitch")
     if err != nil {
@@ -495,6 +515,7 @@ func (m *IosEasEmailProfileConfiguration) GetSmimeEnablePerMessageSwitch()(*bool
     return nil
 }
 // GetSmimeEncryptByDefaultEnabled gets the smimeEncryptByDefaultEnabled property value. If set to true S/MIME encryption is enabled by default.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptByDefaultEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("smimeEncryptByDefaultEnabled")
     if err != nil {
@@ -506,6 +527,7 @@ func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptByDefaultEnabled()(*boo
     return nil
 }
 // GetSmimeEncryptByDefaultUserOverrideEnabled gets the smimeEncryptByDefaultUserOverrideEnabled property value. If set to true, the user can toggle the encryption by default setting.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptByDefaultUserOverrideEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("smimeEncryptByDefaultUserOverrideEnabled")
     if err != nil {
@@ -517,6 +539,7 @@ func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptByDefaultUserOverrideEn
     return nil
 }
 // GetSmimeEncryptionCertificate gets the smimeEncryptionCertificate property value. S/MIME encryption certificate.
+// returns a IosCertificateProfileable when successful
 func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptionCertificate()(IosCertificateProfileable) {
     val, err := m.GetBackingStore().Get("smimeEncryptionCertificate")
     if err != nil {
@@ -528,6 +551,7 @@ func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptionCertificate()(IosCer
     return nil
 }
 // GetSmimeEncryptionCertificateUserOverrideEnabled gets the smimeEncryptionCertificateUserOverrideEnabled property value. If set to true the user can select the S/MIME encryption identity.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptionCertificateUserOverrideEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("smimeEncryptionCertificateUserOverrideEnabled")
     if err != nil {
@@ -539,6 +563,7 @@ func (m *IosEasEmailProfileConfiguration) GetSmimeEncryptionCertificateUserOverr
     return nil
 }
 // GetSmimeSigningCertificate gets the smimeSigningCertificate property value. S/MIME signing certificate.
+// returns a IosCertificateProfileable when successful
 func (m *IosEasEmailProfileConfiguration) GetSmimeSigningCertificate()(IosCertificateProfileable) {
     val, err := m.GetBackingStore().Get("smimeSigningCertificate")
     if err != nil {
@@ -550,6 +575,7 @@ func (m *IosEasEmailProfileConfiguration) GetSmimeSigningCertificate()(IosCertif
     return nil
 }
 // GetSmimeSigningCertificateUserOverrideEnabled gets the smimeSigningCertificateUserOverrideEnabled property value. If set to true, the user can select the signing identity.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetSmimeSigningCertificateUserOverrideEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("smimeSigningCertificateUserOverrideEnabled")
     if err != nil {
@@ -561,6 +587,7 @@ func (m *IosEasEmailProfileConfiguration) GetSmimeSigningCertificateUserOverride
     return nil
 }
 // GetSmimeSigningEnabled gets the smimeSigningEnabled property value. If set to true S/MIME signing is enabled for this account
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetSmimeSigningEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("smimeSigningEnabled")
     if err != nil {
@@ -572,6 +599,7 @@ func (m *IosEasEmailProfileConfiguration) GetSmimeSigningEnabled()(*bool) {
     return nil
 }
 // GetSmimeSigningUserOverrideEnabled gets the smimeSigningUserOverrideEnabled property value. If set to true, the user can toggle S/MIME signing on or off.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetSmimeSigningUserOverrideEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("smimeSigningUserOverrideEnabled")
     if err != nil {
@@ -583,6 +611,7 @@ func (m *IosEasEmailProfileConfiguration) GetSmimeSigningUserOverrideEnabled()(*
     return nil
 }
 // GetUseOAuth gets the useOAuth property value. Specifies whether the connection should use OAuth for authentication.
+// returns a *bool when successful
 func (m *IosEasEmailProfileConfiguration) GetUseOAuth()(*bool) {
     val, err := m.GetBackingStore().Get("useOAuth")
     if err != nil {
@@ -958,7 +987,6 @@ func (m *IosEasEmailProfileConfiguration) SetUseOAuth(value *bool)() {
         panic(err)
     }
 }
-// IosEasEmailProfileConfigurationable 
 type IosEasEmailProfileConfigurationable interface {
     EasEmailProfileConfigurationBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileSecurityProfile 
 type FileSecurityProfile struct {
     Entity
 }
-// NewFileSecurityProfile instantiates a new fileSecurityProfile and sets the default values.
+// NewFileSecurityProfile instantiates a new FileSecurityProfile and sets the default values.
 func NewFileSecurityProfile()(*FileSecurityProfile) {
     m := &FileSecurityProfile{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewFileSecurityProfile()(*FileSecurityProfile) {
     return m
 }
 // CreateFileSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileSecurityProfile(), nil
 }
 // GetActivityGroupNames gets the activityGroupNames property value. The activityGroupNames property
+// returns a []string when successful
 func (m *FileSecurityProfile) GetActivityGroupNames()([]string) {
     val, err := m.GetBackingStore().Get("activityGroupNames")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *FileSecurityProfile) GetActivityGroupNames()([]string) {
     return nil
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
+// returns a *string when successful
 func (m *FileSecurityProfile) GetAzureSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("azureSubscriptionId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *FileSecurityProfile) GetAzureSubscriptionId()(*string) {
     return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
+// returns a *string when successful
 func (m *FileSecurityProfile) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *FileSecurityProfile) GetAzureTenantId()(*string) {
     return nil
 }
 // GetCertificateThumbprint gets the certificateThumbprint property value. The certificateThumbprint property
+// returns a *string when successful
 func (m *FileSecurityProfile) GetCertificateThumbprint()(*string) {
     val, err := m.GetBackingStore().Get("certificateThumbprint")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *FileSecurityProfile) GetCertificateThumbprint()(*string) {
     return nil
 }
 // GetExtensions gets the extensions property value. The extensions property
+// returns a []string when successful
 func (m *FileSecurityProfile) GetExtensions()([]string) {
     val, err := m.GetBackingStore().Get("extensions")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *FileSecurityProfile) GetExtensions()([]string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activityGroupNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -283,6 +289,7 @@ func (m *FileSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetFileType gets the fileType property value. The fileType property
+// returns a *string when successful
 func (m *FileSecurityProfile) GetFileType()(*string) {
     val, err := m.GetBackingStore().Get("fileType")
     if err != nil {
@@ -294,6 +301,7 @@ func (m *FileSecurityProfile) GetFileType()(*string) {
     return nil
 }
 // GetFirstSeenDateTime gets the firstSeenDateTime property value. The firstSeenDateTime property
+// returns a *Time when successful
 func (m *FileSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstSeenDateTime")
     if err != nil {
@@ -305,6 +313,7 @@ func (m *FileSecurityProfile) GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetHashes gets the hashes property value. The hashes property
+// returns a []FileHashable when successful
 func (m *FileSecurityProfile) GetHashes()([]FileHashable) {
     val, err := m.GetBackingStore().Get("hashes")
     if err != nil {
@@ -316,6 +325,7 @@ func (m *FileSecurityProfile) GetHashes()([]FileHashable) {
     return nil
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The lastSeenDateTime property
+// returns a *Time when successful
 func (m *FileSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSeenDateTime")
     if err != nil {
@@ -327,6 +337,7 @@ func (m *FileSecurityProfile) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetMalwareStates gets the malwareStates property value. The malwareStates property
+// returns a []MalwareStateable when successful
 func (m *FileSecurityProfile) GetMalwareStates()([]MalwareStateable) {
     val, err := m.GetBackingStore().Get("malwareStates")
     if err != nil {
@@ -338,6 +349,7 @@ func (m *FileSecurityProfile) GetMalwareStates()([]MalwareStateable) {
     return nil
 }
 // GetNames gets the names property value. The names property
+// returns a []string when successful
 func (m *FileSecurityProfile) GetNames()([]string) {
     val, err := m.GetBackingStore().Get("names")
     if err != nil {
@@ -349,6 +361,7 @@ func (m *FileSecurityProfile) GetNames()([]string) {
     return nil
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
+// returns a *string when successful
 func (m *FileSecurityProfile) GetRiskScore()(*string) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
@@ -360,6 +373,7 @@ func (m *FileSecurityProfile) GetRiskScore()(*string) {
     return nil
 }
 // GetSize gets the size property value. The size property
+// returns a *int64 when successful
 func (m *FileSecurityProfile) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
@@ -371,6 +385,7 @@ func (m *FileSecurityProfile) GetSize()(*int64) {
     return nil
 }
 // GetTags gets the tags property value. The tags property
+// returns a []string when successful
 func (m *FileSecurityProfile) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -382,6 +397,7 @@ func (m *FileSecurityProfile) GetTags()([]string) {
     return nil
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
+// returns a SecurityVendorInformationable when successful
 func (m *FileSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
     val, err := m.GetBackingStore().Get("vendorInformation")
     if err != nil {
@@ -393,6 +409,7 @@ func (m *FileSecurityProfile) GetVendorInformation()(SecurityVendorInformationab
     return nil
 }
 // GetVulnerabilityStates gets the vulnerabilityStates property value. The vulnerabilityStates property
+// returns a []VulnerabilityStateable when successful
 func (m *FileSecurityProfile) GetVulnerabilityStates()([]VulnerabilityStateable) {
     val, err := m.GetBackingStore().Get("vulnerabilityStates")
     if err != nil {
@@ -637,7 +654,6 @@ func (m *FileSecurityProfile) SetVulnerabilityStates(value []VulnerabilityStatea
         panic(err)
     }
 }
-// FileSecurityProfileable 
 type FileSecurityProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -24,28 +24,29 @@ type VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilderPutReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewVirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilderInternal instantiates a new ProfilePhotoRequestBuilder and sets the default values.
+// NewVirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilderInternal instantiates a new VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) {
     m := &VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/presenters/{virtualEventPresenter%2Did}/profilePhoto", pathParameters),
     }
     return m
 }
-// NewVirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder instantiates a new ProfilePhotoRequestBuilder and sets the default values.
+// NewVirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder instantiates a new VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get profilePhoto for the navigation property presenters from solutions
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -57,14 +58,15 @@ func (m *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) Get
     return res.([]byte), nil
 }
 // Put update profilePhoto for the navigation property presenters in solutions
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) Put
     return res.([]byte), nil
 }
 // ToGetRequestInformation get profilePhoto for the navigation property presenters from solutions
+// returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -86,6 +89,7 @@ func (m *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) ToG
     return requestInfo, nil
 }
 // ToPutRequestInformation update profilePhoto for the navigation property presenters in solutions
+// returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -97,6 +101,7 @@ func (m *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) ToP
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder when successful
 func (m *VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder) {
     return NewVirtualEventsTownhallsItemPresentersItemProfilePhotoRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

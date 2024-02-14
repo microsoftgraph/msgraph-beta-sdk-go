@@ -32,29 +32,30 @@ type DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderGetRequest
     // Request query parameters
     QueryParameters *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderGetQueryParameters
 }
-// NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderInternal instantiates a new GetDevicesScheduledToRetireRequestBuilder and sets the default values.
+// NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderInternal instantiates a new DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder and sets the default values.
 func NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) {
     m := &DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies/getDevicesScheduledToRetire(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies/getDevicesScheduledToRetire(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder instantiates a new GetDevicesScheduledToRetireRequestBuilder and sets the default values.
+// NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder instantiates a new DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder and sets the default values.
 func NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getDevicesScheduledToRetire
-// Deprecated: This method is obsolete. Use GetAsGetDevicesScheduledToRetireGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a DeviceCompliancePoliciesGetDevicesScheduledToRetireResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderGetRequestConfiguration)(DeviceCompliancePoliciesGetDevicesScheduledToRetireResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeviceCompliancePoliciesGetDevicesScheduledToRetireResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -66,14 +67,15 @@ func (m *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) Get(
     return res.(DeviceCompliancePoliciesGetDevicesScheduledToRetireResponseable), nil
 }
 // GetAsGetDevicesScheduledToRetireGetResponse invoke function getDevicesScheduledToRetire
+// returns a DeviceCompliancePoliciesGetDevicesScheduledToRetireGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) GetAsGetDevicesScheduledToRetireGetResponse(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderGetRequestConfiguration)(DeviceCompliancePoliciesGetDevicesScheduledToRetireGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateDeviceCompliancePoliciesGetDevicesScheduledToRetireGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,6 +87,7 @@ func (m *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) GetA
     return res.(DeviceCompliancePoliciesGetDevicesScheduledToRetireGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getDevicesScheduledToRetire
+// returns a *RequestInformation when successful
 func (m *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -98,6 +101,7 @@ func (m *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) ToGe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder when successful
 func (m *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) {
     return NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

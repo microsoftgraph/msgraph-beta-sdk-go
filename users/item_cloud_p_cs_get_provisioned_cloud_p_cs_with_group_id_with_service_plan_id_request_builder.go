@@ -14,6 +14,8 @@ type ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
 type ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -36,10 +38,10 @@ type ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilde
     // Request query parameters
     QueryParameters *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters
 }
-// NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderInternal instantiates a new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder and sets the default values.
+// NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderInternal instantiates a new ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder and sets the default values.
 func NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, groupId *string, servicePlanId *string)(*ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) {
     m := &ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudPCs/getProvisionedCloudPCs(groupId='{groupId}',servicePlanId='{servicePlanId}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudPCs/getProvisionedCloudPCs(groupId='{groupId}',servicePlanId='{servicePlanId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     if groupId != nil {
         m.BaseRequestBuilder.PathParameters["groupId"] = *groupId
@@ -49,22 +51,23 @@ func NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBui
     }
     return m
 }
-// NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder instantiates a new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder and sets the default values.
+// NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder instantiates a new ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder and sets the default values.
 func NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get invoke function getProvisionedCloudPCs
-// Deprecated: This method is obsolete. Use GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration)(ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,14 +79,15 @@ func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBu
     return res.(ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseable), nil
 }
 // GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse invoke function getProvisionedCloudPCs
+// returns a ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse(ctx context.Context, requestConfiguration *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration)(ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -95,6 +99,7 @@ func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBu
     return res.(ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getProvisionedCloudPCs
+// returns a *RequestInformation when successful
 func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -108,6 +113,7 @@ func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder when successful
 func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) {
     return NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

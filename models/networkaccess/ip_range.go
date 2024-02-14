@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IpRange 
 type IpRange struct {
     RuleDestination
 }
-// NewIpRange instantiates a new ipRange and sets the default values.
+// NewIpRange instantiates a new IpRange and sets the default values.
 func NewIpRange()(*IpRange) {
     m := &IpRange{
         RuleDestination: *NewRuleDestination(),
@@ -18,10 +17,12 @@ func NewIpRange()(*IpRange) {
     return m
 }
 // CreateIpRangeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIpRangeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpRange(), nil
 }
 // GetBeginAddress gets the beginAddress property value. Specifies the starting IP address of the IP range.
+// returns a *string when successful
 func (m *IpRange) GetBeginAddress()(*string) {
     val, err := m.GetBackingStore().Get("beginAddress")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *IpRange) GetBeginAddress()(*string) {
     return nil
 }
 // GetEndAddress gets the endAddress property value. Specifies the ending IP address of the IP range.
+// returns a *string when successful
 func (m *IpRange) GetEndAddress()(*string) {
     val, err := m.GetBackingStore().Get("endAddress")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *IpRange) GetEndAddress()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IpRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RuleDestination.GetFieldDeserializers()
     res["beginAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,7 +105,6 @@ func (m *IpRange) SetEndAddress(value *string)() {
         panic(err)
     }
 }
-// IpRangeable 
 type IpRangeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RuleDestinationable

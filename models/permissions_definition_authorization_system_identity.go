@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// PermissionsDefinitionAuthorizationSystemIdentity 
 type PermissionsDefinitionAuthorizationSystemIdentity struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewPermissionsDefinitionAuthorizationSystemIdentity instantiates a new permissionsDefinitionAuthorizationSystemIdentity and sets the default values.
+// NewPermissionsDefinitionAuthorizationSystemIdentity instantiates a new PermissionsDefinitionAuthorizationSystemIdentity and sets the default values.
 func NewPermissionsDefinitionAuthorizationSystemIdentity()(*PermissionsDefinitionAuthorizationSystemIdentity) {
     m := &PermissionsDefinitionAuthorizationSystemIdentity{
     }
@@ -19,10 +18,12 @@ func NewPermissionsDefinitionAuthorizationSystemIdentity()(*PermissionsDefinitio
     return m
 }
 // CreatePermissionsDefinitionAuthorizationSystemIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePermissionsDefinitionAuthorizationSystemIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionsDefinitionAuthorizationSystemIdentity(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetAdditionalData()(m
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetExternalId gets the externalId property value. Unique ID of the identity within the external system. Prefixed with rsn: if this is a SAML or ED user in AWS. Alternate key.
+// returns a *string when successful
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetExternalId()(*stri
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["externalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +99,7 @@ func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetFieldDeserializers
     return res
 }
 // GetIdentityType gets the identityType property value. The identityType property
+// returns a *PermissionsDefinitionIdentityType when successful
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetIdentityType()(*PermissionsDefinitionIdentityType) {
     val, err := m.GetBackingStore().Get("identityType")
     if err != nil {
@@ -106,6 +111,7 @@ func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetIdentityType()(*Pe
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetOdataType()(*strin
     return nil
 }
 // GetSource gets the source property value. The source property
+// returns a PermissionsDefinitionIdentitySourceable when successful
 func (m *PermissionsDefinitionAuthorizationSystemIdentity) GetSource()(PermissionsDefinitionIdentitySourceable) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -201,7 +208,6 @@ func (m *PermissionsDefinitionAuthorizationSystemIdentity) SetSource(value Permi
         panic(err)
     }
 }
-// PermissionsDefinitionAuthorizationSystemIdentityable 
 type PermissionsDefinitionAuthorizationSystemIdentityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

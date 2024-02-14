@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// CredentialUserRegistrationsSummary 
 type CredentialUserRegistrationsSummary struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewCredentialUserRegistrationsSummary instantiates a new credentialUserRegistrationsSummary and sets the default values.
+// NewCredentialUserRegistrationsSummary instantiates a new CredentialUserRegistrationsSummary and sets the default values.
 func NewCredentialUserRegistrationsSummary()(*CredentialUserRegistrationsSummary) {
     m := &CredentialUserRegistrationsSummary{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewCredentialUserRegistrationsSummary()(*CredentialUserRegistrationsSummary
     return m
 }
 // CreateCredentialUserRegistrationsSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCredentialUserRegistrationsSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCredentialUserRegistrationsSummary(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastRefreshedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -147,6 +148,7 @@ func (m *CredentialUserRegistrationsSummary) GetFieldDeserializers()(map[string]
     return res
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
+// returns a *Time when successful
 func (m *CredentialUserRegistrationsSummary) GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastRefreshedDateTime")
     if err != nil {
@@ -158,6 +160,7 @@ func (m *CredentialUserRegistrationsSummary) GetLastRefreshedDateTime()(*i336074
     return nil
 }
 // GetMfaAndSsprCapableUserCount gets the mfaAndSsprCapableUserCount property value. The number of users that are capable of performing multi-factor authentication or self service password reset. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CredentialUserRegistrationsSummary) GetMfaAndSsprCapableUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("mfaAndSsprCapableUserCount")
     if err != nil {
@@ -169,6 +172,7 @@ func (m *CredentialUserRegistrationsSummary) GetMfaAndSsprCapableUserCount()(*in
     return nil
 }
 // GetMfaConditionalAccessPolicyState gets the mfaConditionalAccessPolicyState property value. The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.
+// returns a *string when successful
 func (m *CredentialUserRegistrationsSummary) GetMfaConditionalAccessPolicyState()(*string) {
     val, err := m.GetBackingStore().Get("mfaConditionalAccessPolicyState")
     if err != nil {
@@ -180,6 +184,7 @@ func (m *CredentialUserRegistrationsSummary) GetMfaConditionalAccessPolicyState(
     return nil
 }
 // GetMfaExcludedUserCount gets the mfaExcludedUserCount property value. The number of users in the multi-factor authentication exclusion security group (Microsoft 365 Lighthouse - MFA exclusions). Optional. Read-only.
+// returns a *int32 when successful
 func (m *CredentialUserRegistrationsSummary) GetMfaExcludedUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("mfaExcludedUserCount")
     if err != nil {
@@ -191,6 +196,7 @@ func (m *CredentialUserRegistrationsSummary) GetMfaExcludedUserCount()(*int32) {
     return nil
 }
 // GetMfaRegisteredUserCount gets the mfaRegisteredUserCount property value. The number of users registered for multi-factor authentication. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CredentialUserRegistrationsSummary) GetMfaRegisteredUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("mfaRegisteredUserCount")
     if err != nil {
@@ -202,6 +208,7 @@ func (m *CredentialUserRegistrationsSummary) GetMfaRegisteredUserCount()(*int32)
     return nil
 }
 // GetSecurityDefaultsEnabled gets the securityDefaultsEnabled property value. A flag indicating whether Identity Security Defaults is enabled. Optional. Read-only.
+// returns a *bool when successful
 func (m *CredentialUserRegistrationsSummary) GetSecurityDefaultsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("securityDefaultsEnabled")
     if err != nil {
@@ -213,6 +220,7 @@ func (m *CredentialUserRegistrationsSummary) GetSecurityDefaultsEnabled()(*bool)
     return nil
 }
 // GetSsprEnabledUserCount gets the ssprEnabledUserCount property value. The number of users enabled for self service password reset. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CredentialUserRegistrationsSummary) GetSsprEnabledUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("ssprEnabledUserCount")
     if err != nil {
@@ -224,6 +232,7 @@ func (m *CredentialUserRegistrationsSummary) GetSsprEnabledUserCount()(*int32) {
     return nil
 }
 // GetSsprRegisteredUserCount gets the ssprRegisteredUserCount property value. The number of users registered for self service password reset. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CredentialUserRegistrationsSummary) GetSsprRegisteredUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("ssprRegisteredUserCount")
     if err != nil {
@@ -235,6 +244,7 @@ func (m *CredentialUserRegistrationsSummary) GetSsprRegisteredUserCount()(*int32
     return nil
 }
 // GetTenantDisplayName gets the tenantDisplayName property value. The display name for the managed tenant. Required. Read-only.
+// returns a *string when successful
 func (m *CredentialUserRegistrationsSummary) GetTenantDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("tenantDisplayName")
     if err != nil {
@@ -246,6 +256,7 @@ func (m *CredentialUserRegistrationsSummary) GetTenantDisplayName()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
+// returns a *string when successful
 func (m *CredentialUserRegistrationsSummary) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -257,6 +268,7 @@ func (m *CredentialUserRegistrationsSummary) GetTenantId()(*string) {
     return nil
 }
 // GetTenantLicenseType gets the tenantLicenseType property value. The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
+// returns a *string when successful
 func (m *CredentialUserRegistrationsSummary) GetTenantLicenseType()(*string) {
     val, err := m.GetBackingStore().Get("tenantLicenseType")
     if err != nil {
@@ -268,6 +280,7 @@ func (m *CredentialUserRegistrationsSummary) GetTenantLicenseType()(*string) {
     return nil
 }
 // GetTotalUserCount gets the totalUserCount property value. The total number of users in the given managed tenant. Optional. Read-only.
+// returns a *int32 when successful
 func (m *CredentialUserRegistrationsSummary) GetTotalUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalUserCount")
     if err != nil {
@@ -442,7 +455,6 @@ func (m *CredentialUserRegistrationsSummary) SetTotalUserCount(value *int32)() {
         panic(err)
     }
 }
-// CredentialUserRegistrationsSummaryable 
 type CredentialUserRegistrationsSummaryable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,21 +17,23 @@ type ItemTeamDefinitionChannelsItemMembersAddRequestBuilderPostRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemTeamDefinitionChannelsItemMembersAddRequestBuilderInternal instantiates a new AddRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsItemMembersAddRequestBuilderInternal instantiates a new ItemTeamDefinitionChannelsItemMembersAddRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemMembersAddRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemMembersAddRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/members/add", pathParameters),
     }
     return m
 }
-// NewItemTeamDefinitionChannelsItemMembersAddRequestBuilder instantiates a new AddRequestBuilder and sets the default values.
+// NewItemTeamDefinitionChannelsItemMembersAddRequestBuilder instantiates a new ItemTeamDefinitionChannelsItemMembersAddRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemMembersAddRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionChannelsItemMembersAddRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-// Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a ItemTeamDefinitionChannelsItemMembersAddResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) Post(ctx contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemTeamDefinitionChannelsItemMembersAddResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,8 @@ func (m *ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) Post(ctx contex
     return res.(ItemTeamDefinitionChannelsItemMembersAddResponseable), nil
 }
 // PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
+// returns a ItemTeamDefinitionChannelsItemMembersAddPostResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
@@ -63,8 +66,7 @@ func (m *ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) PostAsAddPostRe
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemTeamDefinitionChannelsItemMembersAddPostResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -76,6 +78,7 @@ func (m *ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) PostAsAddPostRe
     return res.(ItemTeamDefinitionChannelsItemMembersAddPostResponseable), nil
 }
 // ToPostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
+// returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamDefinitionChannelsItemMembersAddPostRequestBodyable, requestConfiguration *ItemTeamDefinitionChannelsItemMembersAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -90,6 +93,7 @@ func (m *ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) ToPostRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemTeamDefinitionChannelsItemMembersAddRequestBuilder when successful
 func (m *ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) WithUrl(rawUrl string)(*ItemTeamDefinitionChannelsItemMembersAddRequestBuilder) {
     return NewItemTeamDefinitionChannelsItemMembersAddRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

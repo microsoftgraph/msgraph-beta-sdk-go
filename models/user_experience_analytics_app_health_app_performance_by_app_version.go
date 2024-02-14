@@ -8,7 +8,7 @@ import (
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion struct {
     Entity
 }
-// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersion and sets the default values.
+// NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion and sets the default values.
 func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion()(*UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) {
     m := &UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion()(*UserExperi
     return m
 }
 // CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserExperienceAnalyticsAppHealthAppPerformanceByAppVersion(), nil
 }
 // GetAppCrashCount gets the appCrashCount property value. The number of crashes for the application. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppCrashCount()(*int32) {
     val, err := m.GetBackingStore().Get("appCrashCount")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppCrash
     return nil
 }
 // GetAppDisplayName gets the appDisplayName property value. The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppDispl
     return nil
 }
 // GetAppName gets the appName property value. The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppName()(*string) {
     val, err := m.GetBackingStore().Get("appName")
     if err != nil {
@@ -53,6 +57,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppName(
     return nil
 }
 // GetAppPublisher gets the appPublisher property value. The publisher of the application. Supports: $select, $OrderBy. Read-only.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppPublisher()(*string) {
     val, err := m.GetBackingStore().Get("appPublisher")
     if err != nil {
@@ -64,6 +69,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppPubli
     return nil
 }
 // GetAppUsageDuration gets the appUsageDuration property value. The total usage time of the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppUsageDuration()(*int32) {
     val, err := m.GetBackingStore().Get("appUsageDuration")
     if err != nil {
@@ -75,6 +81,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppUsage
     return nil
 }
 // GetAppVersion gets the appVersion property value. The version of the application.
+// returns a *string when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppVersion()(*string) {
     val, err := m.GetBackingStore().Get("appVersion")
     if err != nil {
@@ -86,6 +93,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetAppVersi
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appCrashCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -161,6 +169,7 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetFieldDes
     return res
 }
 // GetMeanTimeToFailureInMinutes gets the meanTimeToFailureInMinutes property value. The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+// returns a *int32 when successful
 func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) GetMeanTimeToFailureInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("meanTimeToFailureInMinutes")
     if err != nil {
@@ -270,7 +279,6 @@ func (m *UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion) SetMeanTime
         panic(err)
     }
 }
-// UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable 
 type UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

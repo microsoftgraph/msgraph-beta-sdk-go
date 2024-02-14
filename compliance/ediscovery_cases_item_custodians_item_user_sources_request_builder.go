@@ -48,6 +48,7 @@ type EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderPostRequestConfig
 }
 // ByUserSourceId provides operations to manage the userSources property of the microsoft.graph.ediscovery.custodian entity.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder when successful
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) ByUserSourceId(userSourceId string)(*EdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -58,25 +59,28 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) ByUserSourc
     }
     return NewEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderInternal instantiates a new UserSourcesRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderInternal instantiates a new EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) {
     m := &EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/userSources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/userSources{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder instantiates a new UserSourcesRequestBuilder and sets the default values.
+// NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder instantiates a new EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder when successful
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) Count()(*EdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemUserSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the userSource objects and their properties.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a UserSourceCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-custodian-list-usersources?view=graph-rest-1.0
@@ -86,8 +90,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) Get(ctx con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateUserSourceCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -100,6 +103,8 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) Get(ctx con
 }
 // Post create a new custodian userSource object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a UserSourceable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-custodian-post-usersources?view=graph-rest-1.0
@@ -109,8 +114,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) Post(ctx co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CreateUserSourceFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -123,6 +127,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) Post(ctx co
 }
 // ToGetRequestInformation get a list of the userSource objects and their properties.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -137,8 +142,9 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) ToGetReques
 }
 // ToPostRequestInformation create a new custodian userSource object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UserSourceable, requestConfiguration *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/userSources", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -152,6 +158,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) ToPostReque
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// returns a *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder when successful
 func (m *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

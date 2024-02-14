@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RoleMembershipGovernanceCriteria 
 type RoleMembershipGovernanceCriteria struct {
     GovernanceCriteria
 }
-// NewRoleMembershipGovernanceCriteria instantiates a new roleMembershipGovernanceCriteria and sets the default values.
+// NewRoleMembershipGovernanceCriteria instantiates a new RoleMembershipGovernanceCriteria and sets the default values.
 func NewRoleMembershipGovernanceCriteria()(*RoleMembershipGovernanceCriteria) {
     m := &RoleMembershipGovernanceCriteria{
         GovernanceCriteria: *NewGovernanceCriteria(),
@@ -18,10 +17,12 @@ func NewRoleMembershipGovernanceCriteria()(*RoleMembershipGovernanceCriteria) {
     return m
 }
 // CreateRoleMembershipGovernanceCriteriaFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRoleMembershipGovernanceCriteriaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoleMembershipGovernanceCriteria(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RoleMembershipGovernanceCriteria) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GovernanceCriteria.GetFieldDeserializers()
     res["roleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,6 +48,7 @@ func (m *RoleMembershipGovernanceCriteria) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetRoleId gets the roleId property value. The roleId property
+// returns a *string when successful
 func (m *RoleMembershipGovernanceCriteria) GetRoleId()(*string) {
     val, err := m.GetBackingStore().Get("roleId")
     if err != nil {
@@ -58,6 +60,7 @@ func (m *RoleMembershipGovernanceCriteria) GetRoleId()(*string) {
     return nil
 }
 // GetRoleTemplateId gets the roleTemplateId property value. The roleTemplateId property
+// returns a *string when successful
 func (m *RoleMembershipGovernanceCriteria) GetRoleTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("roleTemplateId")
     if err != nil {
@@ -102,7 +105,6 @@ func (m *RoleMembershipGovernanceCriteria) SetRoleTemplateId(value *string)() {
         panic(err)
     }
 }
-// RoleMembershipGovernanceCriteriaable 
 type RoleMembershipGovernanceCriteriaable interface {
     GovernanceCriteriaable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

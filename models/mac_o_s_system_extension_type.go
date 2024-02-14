@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Flag enum representing the allowed macOS system extension types.
@@ -8,18 +9,20 @@ type MacOSSystemExtensionType int
 
 const (
     // Enables driver extensions.
-    DRIVEREXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE MacOSSystemExtensionType = iota
+    DRIVEREXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE = 1
     // Enables network extensions.
-    NETWORKEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
+    NETWORKEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE = 2
     // Enables endpoint security extensions.
-    ENDPOINTSECURITYEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
+    ENDPOINTSECURITYEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE = 4
 )
 
 func (i MacOSSystemExtensionType) String() string {
     var values []string
-    for p := MacOSSystemExtensionType(1); p <= ENDPOINTSECURITYEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"driverExtensionsAllowed", "networkExtensionsAllowed", "endpointSecurityExtensionsAllowed"}[p])
+    options := []string{"driverExtensionsAllowed", "networkExtensionsAllowed", "endpointSecurityExtensionsAllowed"}
+    for p := 0; p < 3; p++ {
+        mantis := MacOSSystemExtensionType(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CustomExtensionHandler 
 type CustomExtensionHandler struct {
     Entity
 }
-// NewCustomExtensionHandler instantiates a new customExtensionHandler and sets the default values.
+// NewCustomExtensionHandler instantiates a new CustomExtensionHandler and sets the default values.
 func NewCustomExtensionHandler()(*CustomExtensionHandler) {
     m := &CustomExtensionHandler{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCustomExtensionHandler()(*CustomExtensionHandler) {
     return m
 }
 // CreateCustomExtensionHandlerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomExtensionHandlerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomExtensionHandler(), nil
 }
 // GetCustomExtension gets the customExtension property value. Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.
+// returns a CustomAccessPackageWorkflowExtensionable when successful
 func (m *CustomExtensionHandler) GetCustomExtension()(CustomAccessPackageWorkflowExtensionable) {
     val, err := m.GetBackingStore().Get("customExtension")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CustomExtensionHandler) GetCustomExtension()(CustomAccessPackageWorkflo
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["customExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *CustomExtensionHandler) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetStage gets the stage property value. Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
+// returns a *AccessPackageCustomExtensionStage when successful
 func (m *CustomExtensionHandler) GetStage()(*AccessPackageCustomExtensionStage) {
     val, err := m.GetBackingStore().Get("stage")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *CustomExtensionHandler) SetStage(value *AccessPackageCustomExtensionSta
         panic(err)
     }
 }
-// CustomExtensionHandlerable 
 type CustomExtensionHandlerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

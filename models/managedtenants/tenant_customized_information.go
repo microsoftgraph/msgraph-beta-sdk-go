@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// TenantCustomizedInformation 
 type TenantCustomizedInformation struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewTenantCustomizedInformation instantiates a new tenantCustomizedInformation and sets the default values.
+// NewTenantCustomizedInformation instantiates a new TenantCustomizedInformation and sets the default values.
 func NewTenantCustomizedInformation()(*TenantCustomizedInformation) {
     m := &TenantCustomizedInformation{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewTenantCustomizedInformation()(*TenantCustomizedInformation) {
     return m
 }
 // CreateTenantCustomizedInformationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTenantCustomizedInformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTenantCustomizedInformation(), nil
 }
 // GetContacts gets the contacts property value. The collection of contacts for the managed tenant. Optional.
+// returns a []TenantContactInformationable when successful
 func (m *TenantCustomizedInformation) GetContacts()([]TenantContactInformationable) {
     val, err := m.GetBackingStore().Get("contacts")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *TenantCustomizedInformation) GetContacts()([]TenantContactInformationab
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name for the managed tenant. Required. Read-only.
+// returns a *string when successful
 func (m *TenantCustomizedInformation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *TenantCustomizedInformation) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["contacts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,6 +97,7 @@ func (m *TenantCustomizedInformation) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.
+// returns a *string when successful
 func (m *TenantCustomizedInformation) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -105,6 +109,7 @@ func (m *TenantCustomizedInformation) GetTenantId()(*string) {
     return nil
 }
 // GetWebsite gets the website property value. The website for the managed tenant. Required.
+// returns a *string when successful
 func (m *TenantCustomizedInformation) GetWebsite()(*string) {
     val, err := m.GetBackingStore().Get("website")
     if err != nil {
@@ -181,7 +186,6 @@ func (m *TenantCustomizedInformation) SetWebsite(value *string)() {
         panic(err)
     }
 }
-// TenantCustomizedInformationable 
 type TenantCustomizedInformationable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

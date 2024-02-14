@@ -9,7 +9,7 @@ import (
 type DeviceComplianceScriptDeviceState struct {
     Entity
 }
-// NewDeviceComplianceScriptDeviceState instantiates a new deviceComplianceScriptDeviceState and sets the default values.
+// NewDeviceComplianceScriptDeviceState instantiates a new DeviceComplianceScriptDeviceState and sets the default values.
 func NewDeviceComplianceScriptDeviceState()(*DeviceComplianceScriptDeviceState) {
     m := &DeviceComplianceScriptDeviceState{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceComplianceScriptDeviceState()(*DeviceComplianceScriptDeviceState) 
     return m
 }
 // CreateDeviceComplianceScriptDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceComplianceScriptDeviceStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceComplianceScriptDeviceState(), nil
 }
 // GetDetectionState gets the detectionState property value. Indicates the type of execution status of the device management script.
+// returns a *RunState when successful
 func (m *DeviceComplianceScriptDeviceState) GetDetectionState()(*RunState) {
     val, err := m.GetBackingStore().Get("detectionState")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceComplianceScriptDeviceState) GetDetectionState()(*RunState) {
     return nil
 }
 // GetExpectedStateUpdateDateTime gets the expectedStateUpdateDateTime property value. The next timestamp of when the device compliance script is expected to execute
+// returns a *Time when successful
 func (m *DeviceComplianceScriptDeviceState) GetExpectedStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expectedStateUpdateDateTime")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *DeviceComplianceScriptDeviceState) GetExpectedStateUpdateDateTime()(*i3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["detectionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +122,7 @@ func (m *DeviceComplianceScriptDeviceState) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetLastStateUpdateDateTime gets the lastStateUpdateDateTime property value. The last timestamp of when the device compliance script executed
+// returns a *Time when successful
 func (m *DeviceComplianceScriptDeviceState) GetLastStateUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastStateUpdateDateTime")
     if err != nil {
@@ -129,6 +134,7 @@ func (m *DeviceComplianceScriptDeviceState) GetLastStateUpdateDateTime()(*i33607
     return nil
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The last time that Intune Managment Extension synced with Intune
+// returns a *Time when successful
 func (m *DeviceComplianceScriptDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -140,6 +146,7 @@ func (m *DeviceComplianceScriptDeviceState) GetLastSyncDateTime()(*i336074805fc8
     return nil
 }
 // GetManagedDevice gets the managedDevice property value. The managed device on which the device compliance script executed
+// returns a ManagedDeviceable when successful
 func (m *DeviceComplianceScriptDeviceState) GetManagedDevice()(ManagedDeviceable) {
     val, err := m.GetBackingStore().Get("managedDevice")
     if err != nil {
@@ -151,6 +158,7 @@ func (m *DeviceComplianceScriptDeviceState) GetManagedDevice()(ManagedDeviceable
     return nil
 }
 // GetScriptError gets the scriptError property value. Error from the detection script
+// returns a *string when successful
 func (m *DeviceComplianceScriptDeviceState) GetScriptError()(*string) {
     val, err := m.GetBackingStore().Get("scriptError")
     if err != nil {
@@ -162,6 +170,7 @@ func (m *DeviceComplianceScriptDeviceState) GetScriptError()(*string) {
     return nil
 }
 // GetScriptOutput gets the scriptOutput property value. Output of the detection script
+// returns a *string when successful
 func (m *DeviceComplianceScriptDeviceState) GetScriptOutput()(*string) {
     val, err := m.GetBackingStore().Get("scriptOutput")
     if err != nil {
@@ -272,7 +281,6 @@ func (m *DeviceComplianceScriptDeviceState) SetScriptOutput(value *string)() {
         panic(err)
     }
 }
-// DeviceComplianceScriptDeviceStateable 
 type DeviceComplianceScriptDeviceStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

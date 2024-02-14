@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CurrencyCollectionResponse 
 type CurrencyCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewCurrencyCollectionResponse instantiates a new currencyCollectionResponse and sets the default values.
+// NewCurrencyCollectionResponse instantiates a new CurrencyCollectionResponse and sets the default values.
 func NewCurrencyCollectionResponse()(*CurrencyCollectionResponse) {
     m := &CurrencyCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewCurrencyCollectionResponse()(*CurrencyCollectionResponse) {
     return m
 }
 // CreateCurrencyCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCurrencyCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCurrencyCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CurrencyCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *CurrencyCollectionResponse) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []Currencyable when successful
 func (m *CurrencyCollectionResponse) GetValue()([]Currencyable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *CurrencyCollectionResponse) SetValue(value []Currencyable)() {
         panic(err)
     }
 }
-// CurrencyCollectionResponseable 
 type CurrencyCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

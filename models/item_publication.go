@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemPublication 
 type ItemPublication struct {
     ItemFacet
 }
-// NewItemPublication instantiates a new itemPublication and sets the default values.
+// NewItemPublication instantiates a new ItemPublication and sets the default values.
 func NewItemPublication()(*ItemPublication) {
     m := &ItemPublication{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewItemPublication()(*ItemPublication) {
     return m
 }
 // CreateItemPublicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemPublicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemPublication(), nil
 }
 // GetDescription gets the description property value. Description of the publication.
+// returns a *string when successful
 func (m *ItemPublication) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ItemPublication) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Title of the publication.
+// returns a *string when successful
 func (m *ItemPublication) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ItemPublication) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemPublication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -109,6 +112,7 @@ func (m *ItemPublication) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetPublishedDate gets the publishedDate property value. The date that the publication was published.
+// returns a *DateOnly when successful
 func (m *ItemPublication) GetPublishedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("publishedDate")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *ItemPublication) GetPublishedDate()(*i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // GetPublisher gets the publisher property value. Publication or publisher for the publication.
+// returns a *string when successful
 func (m *ItemPublication) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *ItemPublication) GetPublisher()(*string) {
     return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. URL referencing a thumbnail of the publication.
+// returns a *string when successful
 func (m *ItemPublication) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *ItemPublication) GetThumbnailUrl()(*string) {
     return nil
 }
 // GetWebUrl gets the webUrl property value. URL referencing the publication.
+// returns a *string when successful
 func (m *ItemPublication) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *ItemPublication) SetWebUrl(value *string)() {
         panic(err)
     }
 }
-// ItemPublicationable 
 type ItemPublicationable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

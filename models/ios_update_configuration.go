@@ -8,7 +8,7 @@ import (
 type IosUpdateConfiguration struct {
     DeviceConfiguration
 }
-// NewIosUpdateConfiguration instantiates a new iosUpdateConfiguration and sets the default values.
+// NewIosUpdateConfiguration instantiates a new IosUpdateConfiguration and sets the default values.
 func NewIosUpdateConfiguration()(*IosUpdateConfiguration) {
     m := &IosUpdateConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewIosUpdateConfiguration()(*IosUpdateConfiguration) {
     return m
 }
 // CreateIosUpdateConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosUpdateConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosUpdateConfiguration(), nil
 }
 // GetActiveHoursEnd gets the activeHoursEnd property value. Active Hours End (active hours mean the time window when updates install should not happen)
+// returns a *TimeOnly when successful
 func (m *IosUpdateConfiguration) GetActiveHoursEnd()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
     val, err := m.GetBackingStore().Get("activeHoursEnd")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosUpdateConfiguration) GetActiveHoursEnd()(*i878a80d2330e89d26896388a3
     return nil
 }
 // GetActiveHoursStart gets the activeHoursStart property value. Active Hours Start (active hours mean the time window when updates install should not happen)
+// returns a *TimeOnly when successful
 func (m *IosUpdateConfiguration) GetActiveHoursStart()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
     val, err := m.GetBackingStore().Get("activeHoursStart")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *IosUpdateConfiguration) GetActiveHoursStart()(*i878a80d2330e89d26896388
     return nil
 }
 // GetCustomUpdateTimeWindows gets the customUpdateTimeWindows property value. If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.
+// returns a []CustomUpdateTimeWindowable when successful
 func (m *IosUpdateConfiguration) GetCustomUpdateTimeWindows()([]CustomUpdateTimeWindowable) {
     val, err := m.GetBackingStore().Get("customUpdateTimeWindows")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *IosUpdateConfiguration) GetCustomUpdateTimeWindows()([]CustomUpdateTime
     return nil
 }
 // GetDesiredOsVersion gets the desiredOsVersion property value. If left unspecified, devices will update to the latest version of the OS.
+// returns a *string when successful
 func (m *IosUpdateConfiguration) GetDesiredOsVersion()(*string) {
     val, err := m.GetBackingStore().Get("desiredOsVersion")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *IosUpdateConfiguration) GetDesiredOsVersion()(*string) {
     return nil
 }
 // GetEnforcedSoftwareUpdateDelayInDays gets the enforcedSoftwareUpdateDelayInDays property value. Days before software updates are visible to iOS devices ranging from 0 to 90 inclusive
+// returns a *int32 when successful
 func (m *IosUpdateConfiguration) GetEnforcedSoftwareUpdateDelayInDays()(*int32) {
     val, err := m.GetBackingStore().Get("enforcedSoftwareUpdateDelayInDays")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *IosUpdateConfiguration) GetEnforcedSoftwareUpdateDelayInDays()(*int32) 
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["activeHoursEnd"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -184,6 +191,7 @@ func (m *IosUpdateConfiguration) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetIsEnabled gets the isEnabled property value. Is setting enabled in UI
+// returns a *bool when successful
 func (m *IosUpdateConfiguration) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
@@ -195,6 +203,7 @@ func (m *IosUpdateConfiguration) GetIsEnabled()(*bool) {
     return nil
 }
 // GetScheduledInstallDays gets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
+// returns a []DayOfWeek when successful
 func (m *IosUpdateConfiguration) GetScheduledInstallDays()([]DayOfWeek) {
     val, err := m.GetBackingStore().Get("scheduledInstallDays")
     if err != nil {
@@ -206,6 +215,7 @@ func (m *IosUpdateConfiguration) GetScheduledInstallDays()([]DayOfWeek) {
     return nil
 }
 // GetUpdateScheduleType gets the updateScheduleType property value. Update schedule type for iOS software updates.
+// returns a *IosSoftwareUpdateScheduleType when successful
 func (m *IosUpdateConfiguration) GetUpdateScheduleType()(*IosSoftwareUpdateScheduleType) {
     val, err := m.GetBackingStore().Get("updateScheduleType")
     if err != nil {
@@ -217,6 +227,7 @@ func (m *IosUpdateConfiguration) GetUpdateScheduleType()(*IosSoftwareUpdateSched
     return nil
 }
 // GetUtcTimeOffsetInMinutes gets the utcTimeOffsetInMinutes property value. UTC Time Offset indicated in minutes
+// returns a *int32 when successful
 func (m *IosUpdateConfiguration) GetUtcTimeOffsetInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("utcTimeOffsetInMinutes")
     if err != nil {
@@ -359,7 +370,6 @@ func (m *IosUpdateConfiguration) SetUtcTimeOffsetInMinutes(value *int32)() {
         panic(err)
     }
 }
-// IosUpdateConfigurationable 
 type IosUpdateConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

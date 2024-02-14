@@ -17,20 +17,21 @@ type ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderPostRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal instantiates a new UndoSoftDeleteRequestBuilder and sets the default values.
+// NewItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal instantiates a new ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder and sets the default values.
 func NewItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
     m := &ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}/messages/{chatMessage%2Did}/undoSoftDelete", pathParameters),
     }
     return m
 }
-// NewItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder instantiates a new UndoSoftDeleteRequestBuilder and sets the default values.
+// NewItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder instantiates a new ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder and sets the default values.
 func NewItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) Post(ctx cont
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) Post(ctx cont
     return nil
 }
 // ToPostRequestInformation undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+// returns a *RequestInformation when successful
 func (m *ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) ToPostRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder when successful
 func (m *ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) WithUrl(rawUrl string)(*ItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder) {
     return NewItemChannelsItemMessagesItemUndoSoftDeleteRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

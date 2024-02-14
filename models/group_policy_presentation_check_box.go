@@ -8,7 +8,7 @@ import (
 type GroupPolicyPresentationCheckBox struct {
     GroupPolicyUploadedPresentation
 }
-// NewGroupPolicyPresentationCheckBox instantiates a new groupPolicyPresentationCheckBox and sets the default values.
+// NewGroupPolicyPresentationCheckBox instantiates a new GroupPolicyPresentationCheckBox and sets the default values.
 func NewGroupPolicyPresentationCheckBox()(*GroupPolicyPresentationCheckBox) {
     m := &GroupPolicyPresentationCheckBox{
         GroupPolicyUploadedPresentation: *NewGroupPolicyUploadedPresentation(),
@@ -18,10 +18,12 @@ func NewGroupPolicyPresentationCheckBox()(*GroupPolicyPresentationCheckBox) {
     return m
 }
 // CreateGroupPolicyPresentationCheckBoxFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyPresentationCheckBoxFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyPresentationCheckBox(), nil
 }
 // GetDefaultChecked gets the defaultChecked property value. Default value for the check box. The default value is false.
+// returns a *bool when successful
 func (m *GroupPolicyPresentationCheckBox) GetDefaultChecked()(*bool) {
     val, err := m.GetBackingStore().Get("defaultChecked")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *GroupPolicyPresentationCheckBox) GetDefaultChecked()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyPresentationCheckBox) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.GroupPolicyUploadedPresentation.GetFieldDeserializers()
     res["defaultChecked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,7 +71,6 @@ func (m *GroupPolicyPresentationCheckBox) SetDefaultChecked(value *bool)() {
         panic(err)
     }
 }
-// GroupPolicyPresentationCheckBoxable 
 type GroupPolicyPresentationCheckBoxable interface {
     GroupPolicyUploadedPresentationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

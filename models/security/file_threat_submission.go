@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileThreatSubmission 
 type FileThreatSubmission struct {
     ThreatSubmission
 }
-// NewFileThreatSubmission instantiates a new fileThreatSubmission and sets the default values.
+// NewFileThreatSubmission instantiates a new FileThreatSubmission and sets the default values.
 func NewFileThreatSubmission()(*FileThreatSubmission) {
     m := &FileThreatSubmission{
         ThreatSubmission: *NewThreatSubmission(),
@@ -18,6 +17,7 @@ func NewFileThreatSubmission()(*FileThreatSubmission) {
     return m
 }
 // CreateFileThreatSubmissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -42,6 +42,7 @@ func CreateFileThreatSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d
     return NewFileThreatSubmission(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ThreatSubmission.GetFieldDeserializers()
     res["fileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +58,7 @@ func (m *FileThreatSubmission) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetFileName gets the fileName property value. It specifies the file name to be submitted.
+// returns a *string when successful
 func (m *FileThreatSubmission) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
@@ -88,7 +90,6 @@ func (m *FileThreatSubmission) SetFileName(value *string)() {
         panic(err)
     }
 }
-// FileThreatSubmissionable 
 type FileThreatSubmissionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ThreatSubmissionable

@@ -6,7 +6,6 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBody 
 type CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -20,10 +19,12 @@ func NewCustomAuthenticationExtensionsValidateAuthenticationConfigurationPostReq
     return m
 }
 // CreateCustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,6 +37,7 @@ func (m *CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRe
     return val.(map[string]any)
 }
 // GetAuthenticationConfiguration gets the authenticationConfiguration property value. The authenticationConfiguration property
+// returns a CustomExtensionAuthenticationConfigurationable when successful
 func (m *CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBody) GetAuthenticationConfiguration()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionAuthenticationConfigurationable) {
     val, err := m.GetBackingStore().Get("authenticationConfiguration")
     if err != nil {
@@ -47,10 +49,12 @@ func (m *CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRe
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEndpointConfiguration gets the endpointConfiguration property value. The endpointConfiguration property
+// returns a CustomExtensionEndpointConfigurationable when successful
 func (m *CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBody) GetEndpointConfiguration()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionEndpointConfigurationable) {
     val, err := m.GetBackingStore().Get("endpointConfiguration")
     if err != nil {
@@ -62,6 +66,7 @@ func (m *CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["authenticationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -133,7 +138,6 @@ func (m *CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRe
         panic(err)
     }
 }
-// CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBodyable 
 type CustomAuthenticationExtensionsValidateAuthenticationConfigurationPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

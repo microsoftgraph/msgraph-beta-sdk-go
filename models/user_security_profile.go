@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserSecurityProfile 
 type UserSecurityProfile struct {
     Entity
 }
-// NewUserSecurityProfile instantiates a new userSecurityProfile and sets the default values.
+// NewUserSecurityProfile instantiates a new UserSecurityProfile and sets the default values.
 func NewUserSecurityProfile()(*UserSecurityProfile) {
     m := &UserSecurityProfile{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewUserSecurityProfile()(*UserSecurityProfile) {
     return m
 }
 // CreateUserSecurityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserSecurityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserSecurityProfile(), nil
 }
 // GetAccounts gets the accounts property value. The accounts property
+// returns a []UserAccountable when successful
 func (m *UserSecurityProfile) GetAccounts()([]UserAccountable) {
     val, err := m.GetBackingStore().Get("accounts")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *UserSecurityProfile) GetAccounts()([]UserAccountable) {
     return nil
 }
 // GetAzureSubscriptionId gets the azureSubscriptionId property value. The azureSubscriptionId property
+// returns a *string when successful
 func (m *UserSecurityProfile) GetAzureSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("azureSubscriptionId")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *UserSecurityProfile) GetAzureSubscriptionId()(*string) {
     return nil
 }
 // GetAzureTenantId gets the azureTenantId property value. The azureTenantId property
+// returns a *string when successful
 func (m *UserSecurityProfile) GetAzureTenantId()(*string) {
     val, err := m.GetBackingStore().Get("azureTenantId")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *UserSecurityProfile) GetAzureTenantId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *UserSecurityProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *UserSecurityProfile) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     return nil
 }
 // GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
 func (m *UserSecurityProfile) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *UserSecurityProfile) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -193,6 +199,7 @@ func (m *UserSecurityProfile) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
 func (m *UserSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -204,6 +211,7 @@ func (m *UserSecurityProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     return nil
 }
 // GetRiskScore gets the riskScore property value. The riskScore property
+// returns a *string when successful
 func (m *UserSecurityProfile) GetRiskScore()(*string) {
     val, err := m.GetBackingStore().Get("riskScore")
     if err != nil {
@@ -215,6 +223,7 @@ func (m *UserSecurityProfile) GetRiskScore()(*string) {
     return nil
 }
 // GetTags gets the tags property value. The tags property
+// returns a []string when successful
 func (m *UserSecurityProfile) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
     if err != nil {
@@ -226,6 +235,7 @@ func (m *UserSecurityProfile) GetTags()([]string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
+// returns a *string when successful
 func (m *UserSecurityProfile) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -237,6 +247,7 @@ func (m *UserSecurityProfile) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetVendorInformation gets the vendorInformation property value. The vendorInformation property
+// returns a SecurityVendorInformationable when successful
 func (m *UserSecurityProfile) GetVendorInformation()(SecurityVendorInformationable) {
     val, err := m.GetBackingStore().Get("vendorInformation")
     if err != nil {
@@ -391,7 +402,6 @@ func (m *UserSecurityProfile) SetVendorInformation(value SecurityVendorInformati
         panic(err)
     }
 }
-// UserSecurityProfileable 
 type UserSecurityProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

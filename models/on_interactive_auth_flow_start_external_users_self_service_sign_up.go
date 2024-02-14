@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp 
 type OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp struct {
     OnInteractiveAuthFlowStartHandler
 }
-// NewOnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp instantiates a new onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp and sets the default values.
+// NewOnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp instantiates a new OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp and sets the default values.
 func NewOnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp()(*OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp) {
     m := &OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp{
         OnInteractiveAuthFlowStartHandler: *NewOnInteractiveAuthFlowStartHandler(),
@@ -18,10 +17,12 @@ func NewOnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp()(*OnInteractiv
     return m
 }
 // CreateOnInteractiveAuthFlowStartExternalUsersSelfServiceSignUpFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOnInteractiveAuthFlowStartExternalUsersSelfServiceSignUpFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnInteractiveAuthFlowStartHandler.GetFieldDeserializers()
     res["isSignUpAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp) GetFieldDeser
     return res
 }
 // GetIsSignUpAllowed gets the isSignUpAllowed property value. Optional. Specifies whether the authentication flow includes an option to sign up (create account) and sign in. Default value is false meaning only sign in is enabled.
+// returns a *bool when successful
 func (m *OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp) GetIsSignUpAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isSignUpAllowed")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp) SetIsSignUpAl
         panic(err)
     }
 }
-// OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUpable 
 type OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUpable interface {
     OnInteractiveAuthFlowStartHandlerable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,7 +9,7 @@ import (
 type EmbeddedSIMDeviceState struct {
     Entity
 }
-// NewEmbeddedSIMDeviceState instantiates a new embeddedSIMDeviceState and sets the default values.
+// NewEmbeddedSIMDeviceState instantiates a new EmbeddedSIMDeviceState and sets the default values.
 func NewEmbeddedSIMDeviceState()(*EmbeddedSIMDeviceState) {
     m := &EmbeddedSIMDeviceState{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewEmbeddedSIMDeviceState()(*EmbeddedSIMDeviceState) {
     return m
 }
 // CreateEmbeddedSIMDeviceStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEmbeddedSIMDeviceStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmbeddedSIMDeviceState(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The time the embedded SIM device status was created. Generated service side.
+// returns a *Time when successful
 func (m *EmbeddedSIMDeviceState) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *EmbeddedSIMDeviceState) GetCreatedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetDeviceName gets the deviceName property value. Device name to which the subscription was provisioned e.g. DESKTOP-JOE
+// returns a *string when successful
 func (m *EmbeddedSIMDeviceState) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *EmbeddedSIMDeviceState) GetDeviceName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -128,6 +132,7 @@ func (m *EmbeddedSIMDeviceState) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetLastSyncDateTime gets the lastSyncDateTime property value. The time the embedded SIM device last checked in. Updated service side.
+// returns a *Time when successful
 func (m *EmbeddedSIMDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
     if err != nil {
@@ -139,6 +144,7 @@ func (m *EmbeddedSIMDeviceState) GetLastSyncDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The time the embedded SIM device status was last modified. Updated service side.
+// returns a *Time when successful
 func (m *EmbeddedSIMDeviceState) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -150,6 +156,7 @@ func (m *EmbeddedSIMDeviceState) GetModifiedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetState gets the state property value. Describes the various states for an embedded SIM activation code.
+// returns a *EmbeddedSIMDeviceStateValue when successful
 func (m *EmbeddedSIMDeviceState) GetState()(*EmbeddedSIMDeviceStateValue) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -161,6 +168,7 @@ func (m *EmbeddedSIMDeviceState) GetState()(*EmbeddedSIMDeviceStateValue) {
     return nil
 }
 // GetStateDetails gets the stateDetails property value. String description of the provisioning state.
+// returns a *string when successful
 func (m *EmbeddedSIMDeviceState) GetStateDetails()(*string) {
     val, err := m.GetBackingStore().Get("stateDetails")
     if err != nil {
@@ -172,6 +180,7 @@ func (m *EmbeddedSIMDeviceState) GetStateDetails()(*string) {
     return nil
 }
 // GetUniversalIntegratedCircuitCardIdentifier gets the universalIntegratedCircuitCardIdentifier property value. The Universal Integrated Circuit Card Identifier (UICCID) identifying the hardware onto which a profile is to be deployed.
+// returns a *string when successful
 func (m *EmbeddedSIMDeviceState) GetUniversalIntegratedCircuitCardIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("universalIntegratedCircuitCardIdentifier")
     if err != nil {
@@ -183,6 +192,7 @@ func (m *EmbeddedSIMDeviceState) GetUniversalIntegratedCircuitCardIdentifier()(*
     return nil
 }
 // GetUserName gets the userName property value. Username which the subscription was provisioned to e.g. joe@contoso.com
+// returns a *string when successful
 func (m *EmbeddedSIMDeviceState) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -306,7 +316,6 @@ func (m *EmbeddedSIMDeviceState) SetUserName(value *string)() {
         panic(err)
     }
 }
-// EmbeddedSIMDeviceStateable 
 type EmbeddedSIMDeviceStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

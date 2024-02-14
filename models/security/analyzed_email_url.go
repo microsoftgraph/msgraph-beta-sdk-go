@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// AnalyzedEmailUrl 
 type AnalyzedEmailUrl struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAnalyzedEmailUrl instantiates a new analyzedEmailUrl and sets the default values.
+// NewAnalyzedEmailUrl instantiates a new AnalyzedEmailUrl and sets the default values.
 func NewAnalyzedEmailUrl()(*AnalyzedEmailUrl) {
     m := &AnalyzedEmailUrl{
     }
@@ -19,10 +18,12 @@ func NewAnalyzedEmailUrl()(*AnalyzedEmailUrl) {
     return m
 }
 // CreateAnalyzedEmailUrlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAnalyzedEmailUrlFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAnalyzedEmailUrl(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AnalyzedEmailUrl) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *AnalyzedEmailUrl) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AnalyzedEmailUrl) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDetectionMethod gets the detectionMethod property value. The detectionMethod property
+// returns a *string when successful
 func (m *AnalyzedEmailUrl) GetDetectionMethod()(*string) {
     val, err := m.GetBackingStore().Get("detectionMethod")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *AnalyzedEmailUrl) GetDetectionMethod()(*string) {
     return nil
 }
 // GetDetonationDetails gets the detonationDetails property value. The detonationDetails property
+// returns a DetonationDetailsable when successful
 func (m *AnalyzedEmailUrl) GetDetonationDetails()(DetonationDetailsable) {
     val, err := m.GetBackingStore().Get("detonationDetails")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *AnalyzedEmailUrl) GetDetonationDetails()(DetonationDetailsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AnalyzedEmailUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["detectionMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *AnalyzedEmailUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AnalyzedEmailUrl) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *AnalyzedEmailUrl) GetOdataType()(*string) {
     return nil
 }
 // GetThreatType gets the threatType property value. The threatType property
+// returns a *ThreatType when successful
 func (m *AnalyzedEmailUrl) GetThreatType()(*ThreatType) {
     val, err := m.GetBackingStore().Get("threatType")
     if err != nil {
@@ -138,6 +145,7 @@ func (m *AnalyzedEmailUrl) GetThreatType()(*ThreatType) {
     return nil
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *AnalyzedEmailUrl) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -235,7 +243,6 @@ func (m *AnalyzedEmailUrl) SetUrl(value *string)() {
         panic(err)
     }
 }
-// AnalyzedEmailUrlable 
 type AnalyzedEmailUrlable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

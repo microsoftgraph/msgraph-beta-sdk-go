@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ReferenceAttachment 
 type ReferenceAttachment struct {
     Attachment
 }
-// NewReferenceAttachment instantiates a new referenceAttachment and sets the default values.
+// NewReferenceAttachment instantiates a new ReferenceAttachment and sets the default values.
 func NewReferenceAttachment()(*ReferenceAttachment) {
     m := &ReferenceAttachment{
         Attachment: *NewAttachment(),
@@ -18,10 +17,12 @@ func NewReferenceAttachment()(*ReferenceAttachment) {
     return m
 }
 // CreateReferenceAttachmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReferenceAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReferenceAttachment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReferenceAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Attachment.GetFieldDeserializers()
     res["isFolder"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -87,6 +88,7 @@ func (m *ReferenceAttachment) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetIsFolder gets the isFolder property value. Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.
+// returns a *bool when successful
 func (m *ReferenceAttachment) GetIsFolder()(*bool) {
     val, err := m.GetBackingStore().Get("isFolder")
     if err != nil {
@@ -98,6 +100,7 @@ func (m *ReferenceAttachment) GetIsFolder()(*bool) {
     return nil
 }
 // GetPermission gets the permission property value. Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
+// returns a *ReferenceAttachmentPermission when successful
 func (m *ReferenceAttachment) GetPermission()(*ReferenceAttachmentPermission) {
     val, err := m.GetBackingStore().Get("permission")
     if err != nil {
@@ -109,6 +112,7 @@ func (m *ReferenceAttachment) GetPermission()(*ReferenceAttachmentPermission) {
     return nil
 }
 // GetPreviewUrl gets the previewUrl property value. Applies to only a reference attachment of an image - URL to get a preview image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.
+// returns a *string when successful
 func (m *ReferenceAttachment) GetPreviewUrl()(*string) {
     val, err := m.GetBackingStore().Get("previewUrl")
     if err != nil {
@@ -120,6 +124,7 @@ func (m *ReferenceAttachment) GetPreviewUrl()(*string) {
     return nil
 }
 // GetProviderType gets the providerType property value. The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
+// returns a *ReferenceAttachmentProvider when successful
 func (m *ReferenceAttachment) GetProviderType()(*ReferenceAttachmentProvider) {
     val, err := m.GetBackingStore().Get("providerType")
     if err != nil {
@@ -131,6 +136,7 @@ func (m *ReferenceAttachment) GetProviderType()(*ReferenceAttachmentProvider) {
     return nil
 }
 // GetSourceUrl gets the sourceUrl property value. URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
+// returns a *string when successful
 func (m *ReferenceAttachment) GetSourceUrl()(*string) {
     val, err := m.GetBackingStore().Get("sourceUrl")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *ReferenceAttachment) GetSourceUrl()(*string) {
     return nil
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. Applies to only a reference attachment of an image - URL to get a thumbnail image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.
+// returns a *string when successful
 func (m *ReferenceAttachment) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -240,7 +247,6 @@ func (m *ReferenceAttachment) SetThumbnailUrl(value *string)() {
         panic(err)
     }
 }
-// ReferenceAttachmentable 
 type ReferenceAttachmentable interface {
     Attachmentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

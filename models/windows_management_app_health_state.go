@@ -9,7 +9,7 @@ import (
 type WindowsManagementAppHealthState struct {
     Entity
 }
-// NewWindowsManagementAppHealthState instantiates a new windowsManagementAppHealthState and sets the default values.
+// NewWindowsManagementAppHealthState instantiates a new WindowsManagementAppHealthState and sets the default values.
 func NewWindowsManagementAppHealthState()(*WindowsManagementAppHealthState) {
     m := &WindowsManagementAppHealthState{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewWindowsManagementAppHealthState()(*WindowsManagementAppHealthState) {
     return m
 }
 // CreateWindowsManagementAppHealthStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsManagementAppHealthStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsManagementAppHealthState(), nil
 }
 // GetDeviceName gets the deviceName property value. Name of the device on which Windows management app is installed.
+// returns a *string when successful
 func (m *WindowsManagementAppHealthState) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *WindowsManagementAppHealthState) GetDeviceName()(*string) {
     return nil
 }
 // GetDeviceOSVersion gets the deviceOSVersion property value. Windows 10 OS version of the device on which Windows management app is installed.
+// returns a *string when successful
 func (m *WindowsManagementAppHealthState) GetDeviceOSVersion()(*string) {
     val, err := m.GetBackingStore().Get("deviceOSVersion")
     if err != nil {
@@ -43,6 +46,7 @@ func (m *WindowsManagementAppHealthState) GetDeviceOSVersion()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +102,7 @@ func (m *WindowsManagementAppHealthState) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetHealthState gets the healthState property value. Indicates health state of the Windows management app.
+// returns a *HealthState when successful
 func (m *WindowsManagementAppHealthState) GetHealthState()(*HealthState) {
     val, err := m.GetBackingStore().Get("healthState")
     if err != nil {
@@ -109,6 +114,7 @@ func (m *WindowsManagementAppHealthState) GetHealthState()(*HealthState) {
     return nil
 }
 // GetInstalledVersion gets the installedVersion property value. Windows management app installed version.
+// returns a *string when successful
 func (m *WindowsManagementAppHealthState) GetInstalledVersion()(*string) {
     val, err := m.GetBackingStore().Get("installedVersion")
     if err != nil {
@@ -120,6 +126,7 @@ func (m *WindowsManagementAppHealthState) GetInstalledVersion()(*string) {
     return nil
 }
 // GetLastCheckInDateTime gets the lastCheckInDateTime property value. Windows management app last check-in time.
+// returns a *Time when successful
 func (m *WindowsManagementAppHealthState) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastCheckInDateTime")
     if err != nil {
@@ -204,7 +211,6 @@ func (m *WindowsManagementAppHealthState) SetLastCheckInDateTime(value *i3360748
         panic(err)
     }
 }
-// WindowsManagementAppHealthStateable 
 type WindowsManagementAppHealthStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

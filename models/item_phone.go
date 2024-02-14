@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemPhone 
 type ItemPhone struct {
     ItemFacet
 }
-// NewItemPhone instantiates a new itemPhone and sets the default values.
+// NewItemPhone instantiates a new ItemPhone and sets the default values.
 func NewItemPhone()(*ItemPhone) {
     m := &ItemPhone{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewItemPhone()(*ItemPhone) {
     return m
 }
 // CreateItemPhoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemPhoneFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemPhone(), nil
 }
 // GetDisplayName gets the displayName property value. Friendly name the user has assigned this phone number.
+// returns a *string when successful
 func (m *ItemPhone) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ItemPhone) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemPhone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,6 +70,7 @@ func (m *ItemPhone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetNumber gets the number property value. Phone number provided by the user.
+// returns a *string when successful
 func (m *ItemPhone) GetNumber()(*string) {
     val, err := m.GetBackingStore().Get("number")
     if err != nil {
@@ -79,6 +82,7 @@ func (m *ItemPhone) GetNumber()(*string) {
     return nil
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *PhoneType when successful
 func (m *ItemPhone) GetTypeEscaped()(*PhoneType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -137,7 +141,6 @@ func (m *ItemPhone) SetTypeEscaped(value *PhoneType)() {
         panic(err)
     }
 }
-// ItemPhoneable 
 type ItemPhoneable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

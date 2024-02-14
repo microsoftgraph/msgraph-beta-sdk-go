@@ -8,7 +8,7 @@ import (
 type EnrollmentConfigurationAssignment struct {
     Entity
 }
-// NewEnrollmentConfigurationAssignment instantiates a new enrollmentConfigurationAssignment and sets the default values.
+// NewEnrollmentConfigurationAssignment instantiates a new EnrollmentConfigurationAssignment and sets the default values.
 func NewEnrollmentConfigurationAssignment()(*EnrollmentConfigurationAssignment) {
     m := &EnrollmentConfigurationAssignment{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewEnrollmentConfigurationAssignment()(*EnrollmentConfigurationAssignment) 
     return m
 }
 // CreateEnrollmentConfigurationAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnrollmentConfigurationAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnrollmentConfigurationAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EnrollmentConfigurationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,6 +57,7 @@ func (m *EnrollmentConfigurationAssignment) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetSource gets the source property value. Represents source of assignment.
+// returns a *DeviceAndAppManagementAssignmentSource when successful
 func (m *EnrollmentConfigurationAssignment) GetSource()(*DeviceAndAppManagementAssignmentSource) {
     val, err := m.GetBackingStore().Get("source")
     if err != nil {
@@ -66,6 +69,7 @@ func (m *EnrollmentConfigurationAssignment) GetSource()(*DeviceAndAppManagementA
     return nil
 }
 // GetSourceId gets the sourceId property value. Identifier for resource used for deployment to a group
+// returns a *string when successful
 func (m *EnrollmentConfigurationAssignment) GetSourceId()(*string) {
     val, err := m.GetBackingStore().Get("sourceId")
     if err != nil {
@@ -77,6 +81,7 @@ func (m *EnrollmentConfigurationAssignment) GetSourceId()(*string) {
     return nil
 }
 // GetTarget gets the target property value. Represents an assignment to managed devices in the tenant
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *EnrollmentConfigurationAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -135,7 +140,6 @@ func (m *EnrollmentConfigurationAssignment) SetTarget(value DeviceAndAppManageme
         panic(err)
     }
 }
-// EnrollmentConfigurationAssignmentable 
 type EnrollmentConfigurationAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

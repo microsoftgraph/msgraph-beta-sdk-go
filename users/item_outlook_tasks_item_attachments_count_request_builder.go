@@ -24,14 +24,14 @@ type ItemOutlookTasksItemAttachmentsCountRequestBuilderGetRequestConfiguration s
     // Request query parameters
     QueryParameters *ItemOutlookTasksItemAttachmentsCountRequestBuilderGetQueryParameters
 }
-// NewItemOutlookTasksItemAttachmentsCountRequestBuilderInternal instantiates a new CountRequestBuilder and sets the default values.
+// NewItemOutlookTasksItemAttachmentsCountRequestBuilderInternal instantiates a new ItemOutlookTasksItemAttachmentsCountRequestBuilder and sets the default values.
 func NewItemOutlookTasksItemAttachmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTasksItemAttachmentsCountRequestBuilder) {
     m := &ItemOutlookTasksItemAttachmentsCountRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/tasks/{outlookTask%2Did}/attachments/$count{?%24filter}", pathParameters),
     }
     return m
 }
-// NewItemOutlookTasksItemAttachmentsCountRequestBuilder instantiates a new CountRequestBuilder and sets the default values.
+// NewItemOutlookTasksItemAttachmentsCountRequestBuilder instantiates a new ItemOutlookTasksItemAttachmentsCountRequestBuilder and sets the default values.
 func NewItemOutlookTasksItemAttachmentsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTasksItemAttachmentsCountRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -39,14 +39,15 @@ func NewItemOutlookTasksItemAttachmentsCountRequestBuilder(rawUrl string, reques
 }
 // Get get the number of the resource
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOutlookTasksItemAttachmentsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTasksItemAttachmentsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
@@ -59,6 +60,7 @@ func (m *ItemOutlookTasksItemAttachmentsCountRequestBuilder) Get(ctx context.Con
 }
 // ToGetRequestInformation get the number of the resource
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+// returns a *RequestInformation when successful
 func (m *ItemOutlookTasksItemAttachmentsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTasksItemAttachmentsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -73,6 +75,7 @@ func (m *ItemOutlookTasksItemAttachmentsCountRequestBuilder) ToGetRequestInforma
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+// returns a *ItemOutlookTasksItemAttachmentsCountRequestBuilder when successful
 func (m *ItemOutlookTasksItemAttachmentsCountRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookTasksItemAttachmentsCountRequestBuilder) {
     return NewItemOutlookTasksItemAttachmentsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

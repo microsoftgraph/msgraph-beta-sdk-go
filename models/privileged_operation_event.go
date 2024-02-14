@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedOperationEvent 
 type PrivilegedOperationEvent struct {
     Entity
 }
-// NewPrivilegedOperationEvent instantiates a new privilegedOperationEvent and sets the default values.
+// NewPrivilegedOperationEvent instantiates a new PrivilegedOperationEvent and sets the default values.
 func NewPrivilegedOperationEvent()(*PrivilegedOperationEvent) {
     m := &PrivilegedOperationEvent{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPrivilegedOperationEvent()(*PrivilegedOperationEvent) {
     return m
 }
 // CreatePrivilegedOperationEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegedOperationEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedOperationEvent(), nil
 }
 // GetAdditionalInformation gets the additionalInformation property value. The additionalInformation property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetAdditionalInformation()(*string) {
     val, err := m.GetBackingStore().Get("additionalInformation")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *PrivilegedOperationEvent) GetAdditionalInformation()(*string) {
     return nil
 }
 // GetCreationDateTime gets the creationDateTime property value. The creationDateTime property
+// returns a *Time when successful
 func (m *PrivilegedOperationEvent) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("creationDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *PrivilegedOperationEvent) GetCreationDateTime()(*i336074805fc853987abe6
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// returns a *Time when successful
 func (m *PrivilegedOperationEvent) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *PrivilegedOperationEvent) GetExpirationDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["additionalInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -199,6 +203,7 @@ func (m *PrivilegedOperationEvent) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetReferenceKey gets the referenceKey property value. The referenceKey property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetReferenceKey()(*string) {
     val, err := m.GetBackingStore().Get("referenceKey")
     if err != nil {
@@ -210,6 +215,7 @@ func (m *PrivilegedOperationEvent) GetReferenceKey()(*string) {
     return nil
 }
 // GetReferenceSystem gets the referenceSystem property value. The referenceSystem property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetReferenceSystem()(*string) {
     val, err := m.GetBackingStore().Get("referenceSystem")
     if err != nil {
@@ -221,6 +227,7 @@ func (m *PrivilegedOperationEvent) GetReferenceSystem()(*string) {
     return nil
 }
 // GetRequestorId gets the requestorId property value. The requestorId property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetRequestorId()(*string) {
     val, err := m.GetBackingStore().Get("requestorId")
     if err != nil {
@@ -232,6 +239,7 @@ func (m *PrivilegedOperationEvent) GetRequestorId()(*string) {
     return nil
 }
 // GetRequestorName gets the requestorName property value. The requestorName property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetRequestorName()(*string) {
     val, err := m.GetBackingStore().Get("requestorName")
     if err != nil {
@@ -243,6 +251,7 @@ func (m *PrivilegedOperationEvent) GetRequestorName()(*string) {
     return nil
 }
 // GetRequestType gets the requestType property value. The requestType property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetRequestType()(*string) {
     val, err := m.GetBackingStore().Get("requestType")
     if err != nil {
@@ -254,6 +263,7 @@ func (m *PrivilegedOperationEvent) GetRequestType()(*string) {
     return nil
 }
 // GetRoleId gets the roleId property value. The roleId property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetRoleId()(*string) {
     val, err := m.GetBackingStore().Get("roleId")
     if err != nil {
@@ -265,6 +275,7 @@ func (m *PrivilegedOperationEvent) GetRoleId()(*string) {
     return nil
 }
 // GetRoleName gets the roleName property value. The roleName property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetRoleName()(*string) {
     val, err := m.GetBackingStore().Get("roleName")
     if err != nil {
@@ -276,6 +287,7 @@ func (m *PrivilegedOperationEvent) GetRoleName()(*string) {
     return nil
 }
 // GetTenantId gets the tenantId property value. The tenantId property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
     if err != nil {
@@ -287,6 +299,7 @@ func (m *PrivilegedOperationEvent) GetTenantId()(*string) {
     return nil
 }
 // GetUserId gets the userId property value. The userId property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -298,6 +311,7 @@ func (m *PrivilegedOperationEvent) GetUserId()(*string) {
     return nil
 }
 // GetUserMail gets the userMail property value. The userMail property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetUserMail()(*string) {
     val, err := m.GetBackingStore().Get("userMail")
     if err != nil {
@@ -309,6 +323,7 @@ func (m *PrivilegedOperationEvent) GetUserMail()(*string) {
     return nil
 }
 // GetUserName gets the userName property value. The userName property
+// returns a *string when successful
 func (m *PrivilegedOperationEvent) GetUserName()(*string) {
     val, err := m.GetBackingStore().Get("userName")
     if err != nil {
@@ -509,7 +524,6 @@ func (m *PrivilegedOperationEvent) SetUserName(value *string)() {
         panic(err)
     }
 }
-// PrivilegedOperationEventable 
 type PrivilegedOperationEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

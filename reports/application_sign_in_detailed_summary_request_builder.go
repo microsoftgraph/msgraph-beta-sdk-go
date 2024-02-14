@@ -47,6 +47,7 @@ type ApplicationSignInDetailedSummaryRequestBuilderPostRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByApplicationSignInDetailedSummaryId provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.
+// returns a *ApplicationSignInDetailedSummaryApplicationSignInDetailedSummaryItemRequestBuilder when successful
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) ByApplicationSignInDetailedSummaryId(applicationSignInDetailedSummaryId string)(*ApplicationSignInDetailedSummaryApplicationSignInDetailedSummaryItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,7 +61,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) ByApplicationSignInDeta
 // NewApplicationSignInDetailedSummaryRequestBuilderInternal instantiates a new ApplicationSignInDetailedSummaryRequestBuilder and sets the default values.
 func NewApplicationSignInDetailedSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationSignInDetailedSummaryRequestBuilder) {
     m := &ApplicationSignInDetailedSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/applicationSignInDetailedSummary{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/applicationSignInDetailedSummary{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -71,10 +72,13 @@ func NewApplicationSignInDetailedSummaryRequestBuilder(rawUrl string, requestAda
     return NewApplicationSignInDetailedSummaryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ApplicationSignInDetailedSummaryCountRequestBuilder when successful
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Count()(*ApplicationSignInDetailedSummaryCountRequestBuilder) {
     return NewApplicationSignInDetailedSummaryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the applicationSignInDetailedSummary objects.
+// returns a ApplicationSignInDetailedSummaryCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-list-applicationsignindetailedsummary?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) Get(ctx context.Context
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateApplicationSignInDetailedSummaryCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,14 +100,15 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationSignInDetailedSummaryCollectionResponseable), nil
 }
 // Post create new navigation property to applicationSignInDetailedSummary for reports
+// returns a ApplicationSignInDetailedSummaryable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationSignInDetailedSummaryable, requestConfiguration *ApplicationSignInDetailedSummaryRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationSignInDetailedSummaryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateApplicationSignInDetailedSummaryFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -116,6 +120,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) Post(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationSignInDetailedSummaryable), nil
 }
 // ToGetRequestInformation retrieve the applicationSignInDetailedSummary objects.
+// returns a *RequestInformation when successful
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApplicationSignInDetailedSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -129,8 +134,9 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to applicationSignInDetailedSummary for reports
+// returns a *RequestInformation when successful
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApplicationSignInDetailedSummaryable, requestConfiguration *ApplicationSignInDetailedSummaryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/reports/applicationSignInDetailedSummary", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,6 +149,7 @@ func (m *ApplicationSignInDetailedSummaryRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ApplicationSignInDetailedSummaryRequestBuilder when successful
 func (m *ApplicationSignInDetailedSummaryRequestBuilder) WithUrl(rawUrl string)(*ApplicationSignInDetailedSummaryRequestBuilder) {
     return NewApplicationSignInDetailedSummaryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

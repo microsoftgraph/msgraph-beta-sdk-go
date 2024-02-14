@@ -27,28 +27,29 @@ type ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration st
     // Request query parameters
     QueryParameters *ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetQueryParameters
 }
-// NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
+// NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal instantiates a new ItemOwnedDevicesDirectoryObjectItemRequestBuilder and sets the default values.
 func NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnedDevicesDirectoryObjectItemRequestBuilder) {
     m := &ItemOwnedDevicesDirectoryObjectItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/ownedDevices/{directoryObject%2Did}{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/ownedDevices/{directoryObject%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemOwnedDevicesDirectoryObjectItemRequestBuilder instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
+// NewItemOwnedDevicesDirectoryObjectItemRequestBuilder instantiates a new ItemOwnedDevicesDirectoryObjectItemRequestBuilder and sets the default values.
 func NewItemOwnedDevicesDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOwnedDevicesDirectoryObjectItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemOwnedDevicesDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get devices owned by the user. Read-only. Nullable. Supports $expand.
+// returns a DirectoryObjectable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDirectoryObjectFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -60,14 +61,17 @@ func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) Get(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
 // GraphDevice casts the previous resource to device.
+// returns a *ItemOwnedDevicesItemGraphDeviceRequestBuilder when successful
 func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) GraphDevice()(*ItemOwnedDevicesItemGraphDeviceRequestBuilder) {
     return NewItemOwnedDevicesItemGraphDeviceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GraphEndpoint casts the previous resource to endpoint.
+// returns a *ItemOwnedDevicesItemGraphEndpointRequestBuilder when successful
 func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemOwnedDevicesItemGraphEndpointRequestBuilder) {
     return NewItemOwnedDevicesItemGraphEndpointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation devices owned by the user. Read-only. Nullable. Supports $expand.
+// returns a *RequestInformation when successful
 func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -81,6 +85,7 @@ func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemOwnedDevicesDirectoryObjectItemRequestBuilder when successful
 func (m *ItemOwnedDevicesDirectoryObjectItemRequestBuilder) WithUrl(rawUrl string)(*ItemOwnedDevicesDirectoryObjectItemRequestBuilder) {
     return NewItemOwnedDevicesDirectoryObjectItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

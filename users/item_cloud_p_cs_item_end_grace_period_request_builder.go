@@ -17,20 +17,21 @@ type ItemCloudPCsItemEndGracePeriodRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemCloudPCsItemEndGracePeriodRequestBuilderInternal instantiates a new EndGracePeriodRequestBuilder and sets the default values.
+// NewItemCloudPCsItemEndGracePeriodRequestBuilderInternal instantiates a new ItemCloudPCsItemEndGracePeriodRequestBuilder and sets the default values.
 func NewItemCloudPCsItemEndGracePeriodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCloudPCsItemEndGracePeriodRequestBuilder) {
     m := &ItemCloudPCsItemEndGracePeriodRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}/endGracePeriod", pathParameters),
     }
     return m
 }
-// NewItemCloudPCsItemEndGracePeriodRequestBuilder instantiates a new EndGracePeriodRequestBuilder and sets the default values.
+// NewItemCloudPCsItemEndGracePeriodRequestBuilder instantiates a new ItemCloudPCsItemEndGracePeriodRequestBuilder and sets the default values.
 func NewItemCloudPCsItemEndGracePeriodRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCloudPCsItemEndGracePeriodRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsItemEndGracePeriodRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post end the grace period for a specific Cloud PC. The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned. It allows users to access Cloud PCs for up to seven days before deprovisioning occurs. Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemCloudPCsItemEndGracePeriodRequestBuilder) Post(ctx context.Context,
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemCloudPCsItemEndGracePeriodRequestBuilder) Post(ctx context.Context,
     return nil
 }
 // ToPostRequestInformation end the grace period for a specific Cloud PC. The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned. It allows users to access Cloud PCs for up to seven days before deprovisioning occurs. Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
+// returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemEndGracePeriodRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemEndGracePeriodRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemCloudPCsItemEndGracePeriodRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCloudPCsItemEndGracePeriodRequestBuilder when successful
 func (m *ItemCloudPCsItemEndGracePeriodRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemEndGracePeriodRequestBuilder) {
     return NewItemCloudPCsItemEndGracePeriodRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageSubject 
 type AccessPackageSubject struct {
     Entity
 }
-// NewAccessPackageSubject instantiates a new accessPackageSubject and sets the default values.
+// NewAccessPackageSubject instantiates a new AccessPackageSubject and sets the default values.
 func NewAccessPackageSubject()(*AccessPackageSubject) {
     m := &AccessPackageSubject{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessPackageSubject()(*AccessPackageSubject) {
     return m
 }
 // CreateAccessPackageSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageSubjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageSubject(), nil
 }
 // GetAltSecId gets the altSecId property value. Not Supported.
+// returns a *string when successful
 func (m *AccessPackageSubject) GetAltSecId()(*string) {
     val, err := m.GetBackingStore().Get("altSecId")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessPackageSubject) GetAltSecId()(*string) {
     return nil
 }
 // GetCleanupScheduledDateTime gets the cleanupScheduledDateTime property value. The date and time the subject is marked to be blocked from sign in or deleted. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+// returns a *Time when successful
 func (m *AccessPackageSubject) GetCleanupScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("cleanupScheduledDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessPackageSubject) GetCleanupScheduledDateTime()(*i336074805fc853987
     return nil
 }
 // GetConnectedOrganization gets the connectedOrganization property value. The connected organization of the subject. Read-only. Nullable.
+// returns a ConnectedOrganizationable when successful
 func (m *AccessPackageSubject) GetConnectedOrganization()(ConnectedOrganizationable) {
     val, err := m.GetBackingStore().Get("connectedOrganization")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessPackageSubject) GetConnectedOrganization()(ConnectedOrganizationa
     return nil
 }
 // GetConnectedOrganizationId gets the connectedOrganizationId property value. The identifier of the connected organization of the subject.
+// returns a *string when successful
 func (m *AccessPackageSubject) GetConnectedOrganizationId()(*string) {
     val, err := m.GetBackingStore().Get("connectedOrganizationId")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessPackageSubject) GetConnectedOrganizationId()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the subject.
+// returns a *string when successful
 func (m *AccessPackageSubject) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AccessPackageSubject) GetDisplayName()(*string) {
     return nil
 }
 // GetEmail gets the email property value. The email address of the subject.
+// returns a *string when successful
 func (m *AccessPackageSubject) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *AccessPackageSubject) GetEmail()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["altSecId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -202,6 +209,7 @@ func (m *AccessPackageSubject) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetObjectId gets the objectId property value. The object identifier of the subject. null if the subject isn't yet a user in the tenant. Alternate key.
+// returns a *string when successful
 func (m *AccessPackageSubject) GetObjectId()(*string) {
     val, err := m.GetBackingStore().Get("objectId")
     if err != nil {
@@ -213,6 +221,7 @@ func (m *AccessPackageSubject) GetObjectId()(*string) {
     return nil
 }
 // GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+// returns a *string when successful
 func (m *AccessPackageSubject) GetOnPremisesSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
     if err != nil {
@@ -224,6 +233,7 @@ func (m *AccessPackageSubject) GetOnPremisesSecurityIdentifier()(*string) {
     return nil
 }
 // GetPrincipalName gets the principalName property value. The principal name, if known, of the subject.
+// returns a *string when successful
 func (m *AccessPackageSubject) GetPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("principalName")
     if err != nil {
@@ -235,6 +245,7 @@ func (m *AccessPackageSubject) GetPrincipalName()(*string) {
     return nil
 }
 // GetSubjectLifecycle gets the subjectLifecycle property value. The lifecycle of the subject user, if a guest. The possible values are: notDefined, notGoverned, governed, unknownFutureValue.
+// returns a *AccessPackageSubjectLifecycle when successful
 func (m *AccessPackageSubject) GetSubjectLifecycle()(*AccessPackageSubjectLifecycle) {
     val, err := m.GetBackingStore().Get("subjectLifecycle")
     if err != nil {
@@ -246,6 +257,7 @@ func (m *AccessPackageSubject) GetSubjectLifecycle()(*AccessPackageSubjectLifecy
     return nil
 }
 // GetTypeEscaped gets the type property value. The resource type of the subject.
+// returns a *string when successful
 func (m *AccessPackageSubject) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
@@ -408,7 +420,6 @@ func (m *AccessPackageSubject) SetTypeEscaped(value *string)() {
         panic(err)
     }
 }
-// AccessPackageSubjectable 
 type AccessPackageSubjectable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ManagedTenantAlertLog 
 type ManagedTenantAlertLog struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewManagedTenantAlertLog instantiates a new managedTenantAlertLog and sets the default values.
+// NewManagedTenantAlertLog instantiates a new ManagedTenantAlertLog and sets the default values.
 func NewManagedTenantAlertLog()(*ManagedTenantAlertLog) {
     m := &ManagedTenantAlertLog{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewManagedTenantAlertLog()(*ManagedTenantAlertLog) {
     return m
 }
 // CreateManagedTenantAlertLogFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedTenantAlertLogFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedTenantAlertLog(), nil
 }
 // GetAlert gets the alert property value. The alert property
+// returns a ManagedTenantAlertable when successful
 func (m *ManagedTenantAlertLog) GetAlert()(ManagedTenantAlertable) {
     val, err := m.GetBackingStore().Get("alert")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *ManagedTenantAlertLog) GetAlert()(ManagedTenantAlertable) {
     return nil
 }
 // GetContent gets the content property value. The content property
+// returns a AlertLogContentable when successful
 func (m *ManagedTenantAlertLog) GetContent()(AlertLogContentable) {
     val, err := m.GetBackingStore().Get("content")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *ManagedTenantAlertLog) GetContent()(AlertLogContentable) {
     return nil
 }
 // GetCreatedByUserId gets the createdByUserId property value. The createdByUserId property
+// returns a *string when successful
 func (m *ManagedTenantAlertLog) GetCreatedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("createdByUserId")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *ManagedTenantAlertLog) GetCreatedByUserId()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantAlertLog) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *ManagedTenantAlertLog) GetCreatedDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedTenantAlertLog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["alert"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -131,6 +136,7 @@ func (m *ManagedTenantAlertLog) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetLastActionByUserId gets the lastActionByUserId property value. The lastActionByUserId property
+// returns a *string when successful
 func (m *ManagedTenantAlertLog) GetLastActionByUserId()(*string) {
     val, err := m.GetBackingStore().Get("lastActionByUserId")
     if err != nil {
@@ -142,6 +148,7 @@ func (m *ManagedTenantAlertLog) GetLastActionByUserId()(*string) {
     return nil
 }
 // GetLastActionDateTime gets the lastActionDateTime property value. The lastActionDateTime property
+// returns a *Time when successful
 func (m *ManagedTenantAlertLog) GetLastActionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActionDateTime")
     if err != nil {
@@ -238,7 +245,6 @@ func (m *ManagedTenantAlertLog) SetLastActionDateTime(value *i336074805fc853987a
         panic(err)
     }
 }
-// ManagedTenantAlertLogable 
 type ManagedTenantAlertLogable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

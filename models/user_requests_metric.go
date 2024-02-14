@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserRequestsMetric 
 type UserRequestsMetric struct {
     Entity
 }
-// NewUserRequestsMetric instantiates a new userRequestsMetric and sets the default values.
+// NewUserRequestsMetric instantiates a new UserRequestsMetric and sets the default values.
 func NewUserRequestsMetric()(*UserRequestsMetric) {
     m := &UserRequestsMetric{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUserRequestsMetric()(*UserRequestsMetric) {
     return m
 }
 // CreateUserRequestsMetricFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserRequestsMetricFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserRequestsMetric(), nil
 }
 // GetFactDate gets the factDate property value. The date of the user insight.
+// returns a *DateOnly when successful
 func (m *UserRequestsMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("factDate")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UserRequestsMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserRequestsMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["factDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -56,6 +58,7 @@ func (m *UserRequestsMetric) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetRequestCount gets the requestCount property value. Number of requests to the tenant. Supports $filter (eq).
+// returns a *int64 when successful
 func (m *UserRequestsMetric) GetRequestCount()(*int64) {
     val, err := m.GetBackingStore().Get("requestCount")
     if err != nil {
@@ -100,7 +103,6 @@ func (m *UserRequestsMetric) SetRequestCount(value *int64)() {
         panic(err)
     }
 }
-// UserRequestsMetricable 
 type UserRequestsMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

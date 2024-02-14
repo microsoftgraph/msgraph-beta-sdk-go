@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// SignInPreferences 
 type SignInPreferences struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewSignInPreferences instantiates a new signInPreferences and sets the default values.
+// NewSignInPreferences instantiates a new SignInPreferences and sets the default values.
 func NewSignInPreferences()(*SignInPreferences) {
     m := &SignInPreferences{
     }
@@ -19,10 +18,12 @@ func NewSignInPreferences()(*SignInPreferences) {
     return m
 }
 // CreateSignInPreferencesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSignInPreferencesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSignInPreferences(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SignInPreferences) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *SignInPreferences) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *SignInPreferences) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SignInPreferences) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["isSystemPreferredAuthenticationMethodEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +77,7 @@ func (m *SignInPreferences) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetIsSystemPreferredAuthenticationMethodEnabled gets the isSystemPreferredAuthenticationMethodEnabled property value. Indicates whether the credential preferences of the system are enabled.
+// returns a *bool when successful
 func (m *SignInPreferences) GetIsSystemPreferredAuthenticationMethodEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSystemPreferredAuthenticationMethodEnabled")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *SignInPreferences) GetIsSystemPreferredAuthenticationMethodEnabled()(*b
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *SignInPreferences) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -96,6 +101,7 @@ func (m *SignInPreferences) GetOdataType()(*string) {
     return nil
 }
 // GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The default second-factor method used by the user when signing in. If a user is enabled for system-preferred authentication, then this value is ignored except for a few scenarios where a user is authenticating via NPS extension or ADFS adapter. Possible values are push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, and unknownFutureValue
+// returns a *UserDefaultAuthenticationMethodType when successful
 func (m *SignInPreferences) GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethodType) {
     val, err := m.GetBackingStore().Get("userPreferredMethodForSecondaryAuthentication")
     if err != nil {
@@ -167,7 +173,6 @@ func (m *SignInPreferences) SetUserPreferredMethodForSecondaryAuthentication(val
         panic(err)
     }
 }
-// SignInPreferencesable 
 type SignInPreferencesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

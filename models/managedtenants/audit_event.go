@@ -6,11 +6,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// AuditEvent 
 type AuditEvent struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewAuditEvent instantiates a new auditEvent and sets the default values.
+// NewAuditEvent instantiates a new AuditEvent and sets the default values.
 func NewAuditEvent()(*AuditEvent) {
     m := &AuditEvent{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -18,10 +17,12 @@ func NewAuditEvent()(*AuditEvent) {
     return m
 }
 // CreateAuditEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuditEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuditEvent(), nil
 }
 // GetActivity gets the activity property value. A string that uniquely represents the operation that occurred. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetActivity()(*string) {
     val, err := m.GetBackingStore().Get("activity")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *AuditEvent) GetActivity()(*string) {
     return nil
 }
 // GetActivityDateTime gets the activityDateTime property value. The time when the activity occurred. Required. Read-only.
+// returns a *Time when successful
 func (m *AuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("activityDateTime")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *AuditEvent) GetActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     return nil
 }
 // GetActivityId gets the activityId property value. The identifier of the activity request that made the audit event. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetActivityId()(*string) {
     val, err := m.GetBackingStore().Get("activityId")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *AuditEvent) GetActivityId()(*string) {
     return nil
 }
 // GetCategory gets the category property value. A category that represents a logical grouping of activities. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
@@ -66,6 +70,7 @@ func (m *AuditEvent) GetCategory()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -201,6 +206,7 @@ func (m *AuditEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetHttpVerb gets the httpVerb property value. The HTTP verb that was used when making the API request. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetHttpVerb()(*string) {
     val, err := m.GetBackingStore().Get("httpVerb")
     if err != nil {
@@ -212,6 +218,7 @@ func (m *AuditEvent) GetHttpVerb()(*string) {
     return nil
 }
 // GetInitiatedByAppId gets the initiatedByAppId property value. The identifier of the app that was used to make the request. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetInitiatedByAppId()(*string) {
     val, err := m.GetBackingStore().Get("initiatedByAppId")
     if err != nil {
@@ -223,6 +230,7 @@ func (m *AuditEvent) GetInitiatedByAppId()(*string) {
     return nil
 }
 // GetInitiatedByUpn gets the initiatedByUpn property value. The UPN of the user who initiated the activity. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetInitiatedByUpn()(*string) {
     val, err := m.GetBackingStore().Get("initiatedByUpn")
     if err != nil {
@@ -234,6 +242,7 @@ func (m *AuditEvent) GetInitiatedByUpn()(*string) {
     return nil
 }
 // GetInitiatedByUserId gets the initiatedByUserId property value. The identifier of the user who initiated the activity. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetInitiatedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("initiatedByUserId")
     if err != nil {
@@ -245,6 +254,7 @@ func (m *AuditEvent) GetInitiatedByUserId()(*string) {
     return nil
 }
 // GetIpAddress gets the ipAddress property value. The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
@@ -256,6 +266,7 @@ func (m *AuditEvent) GetIpAddress()(*string) {
     return nil
 }
 // GetRequestBody gets the requestBody property value. The raw HTTP request body. Some sensitive information may be removed.
+// returns a *string when successful
 func (m *AuditEvent) GetRequestBody()(*string) {
     val, err := m.GetBackingStore().Get("requestBody")
     if err != nil {
@@ -267,6 +278,7 @@ func (m *AuditEvent) GetRequestBody()(*string) {
     return nil
 }
 // GetRequestUrl gets the requestUrl property value. The raw HTTP request URL. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetRequestUrl()(*string) {
     val, err := m.GetBackingStore().Get("requestUrl")
     if err != nil {
@@ -278,6 +290,7 @@ func (m *AuditEvent) GetRequestUrl()(*string) {
     return nil
 }
 // GetTenantIds gets the tenantIds property value. The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetTenantIds()(*string) {
     val, err := m.GetBackingStore().Get("tenantIds")
     if err != nil {
@@ -289,6 +302,7 @@ func (m *AuditEvent) GetTenantIds()(*string) {
     return nil
 }
 // GetTenantNames gets the tenantNames property value. The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.
+// returns a *string when successful
 func (m *AuditEvent) GetTenantNames()(*string) {
     val, err := m.GetBackingStore().Get("tenantNames")
     if err != nil {
@@ -476,7 +490,6 @@ func (m *AuditEvent) SetTenantNames(value *string)() {
         panic(err)
     }
 }
-// AuditEventable 
 type AuditEventable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

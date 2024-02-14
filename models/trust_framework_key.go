@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// TrustFrameworkKey 
 type TrustFrameworkKey struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewTrustFrameworkKey instantiates a new trustFrameworkKey and sets the default values.
+// NewTrustFrameworkKey instantiates a new TrustFrameworkKey and sets the default values.
 func NewTrustFrameworkKey()(*TrustFrameworkKey) {
     m := &TrustFrameworkKey{
     }
@@ -19,10 +18,12 @@ func NewTrustFrameworkKey()(*TrustFrameworkKey) {
     return m
 }
 // CreateTrustFrameworkKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTrustFrameworkKeyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTrustFrameworkKey(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TrustFrameworkKey) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +36,12 @@ func (m *TrustFrameworkKey) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *TrustFrameworkKey) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetD gets the d property value. RSA Key - private exponent. Field can't be read back.
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetD()(*string) {
     val, err := m.GetBackingStore().Get("d")
     if err != nil {
@@ -50,6 +53,7 @@ func (m *TrustFrameworkKey) GetD()(*string) {
     return nil
 }
 // GetDp gets the dp property value. RSA Key - first exponent. Field can't be read back.
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetDp()(*string) {
     val, err := m.GetBackingStore().Get("dp")
     if err != nil {
@@ -61,6 +65,7 @@ func (m *TrustFrameworkKey) GetDp()(*string) {
     return nil
 }
 // GetDq gets the dq property value. RSA Key - second exponent. Field can't be read back.
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetDq()(*string) {
     val, err := m.GetBackingStore().Get("dq")
     if err != nil {
@@ -72,6 +77,7 @@ func (m *TrustFrameworkKey) GetDq()(*string) {
     return nil
 }
 // GetE gets the e property value. RSA Key - public exponent
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetE()(*string) {
     val, err := m.GetBackingStore().Get("e")
     if err != nil {
@@ -83,6 +89,7 @@ func (m *TrustFrameworkKey) GetE()(*string) {
     return nil
 }
 // GetExp gets the exp property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+// returns a *int64 when successful
 func (m *TrustFrameworkKey) GetExp()(*int64) {
     val, err := m.GetBackingStore().Get("exp")
     if err != nil {
@@ -94,6 +101,7 @@ func (m *TrustFrameworkKey) GetExp()(*int64) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["d"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -275,6 +283,7 @@ func (m *TrustFrameworkKey) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetK gets the k property value. Symmetric Key for oct key type. Field can't be read back.
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetK()(*string) {
     val, err := m.GetBackingStore().Get("k")
     if err != nil {
@@ -286,6 +295,7 @@ func (m *TrustFrameworkKey) GetK()(*string) {
     return nil
 }
 // GetKid gets the kid property value. The unique identifier for the key.
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetKid()(*string) {
     val, err := m.GetBackingStore().Get("kid")
     if err != nil {
@@ -297,6 +307,7 @@ func (m *TrustFrameworkKey) GetKid()(*string) {
     return nil
 }
 // GetKty gets the kty property value. The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetKty()(*string) {
     val, err := m.GetBackingStore().Get("kty")
     if err != nil {
@@ -308,6 +319,7 @@ func (m *TrustFrameworkKey) GetKty()(*string) {
     return nil
 }
 // GetN gets the n property value. RSA Key - modulus
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetN()(*string) {
     val, err := m.GetBackingStore().Get("n")
     if err != nil {
@@ -319,6 +331,7 @@ func (m *TrustFrameworkKey) GetN()(*string) {
     return nil
 }
 // GetNbf gets the nbf property value. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
+// returns a *int64 when successful
 func (m *TrustFrameworkKey) GetNbf()(*int64) {
     val, err := m.GetBackingStore().Get("nbf")
     if err != nil {
@@ -330,6 +343,7 @@ func (m *TrustFrameworkKey) GetNbf()(*int64) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -341,6 +355,7 @@ func (m *TrustFrameworkKey) GetOdataType()(*string) {
     return nil
 }
 // GetP gets the p property value. RSA Key - first prime. Field can't be read back.
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetP()(*string) {
     val, err := m.GetBackingStore().Get("p")
     if err != nil {
@@ -352,6 +367,7 @@ func (m *TrustFrameworkKey) GetP()(*string) {
     return nil
 }
 // GetQ gets the q property value. RSA Key - second prime. Field can't be read back.
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetQ()(*string) {
     val, err := m.GetBackingStore().Get("q")
     if err != nil {
@@ -363,6 +379,7 @@ func (m *TrustFrameworkKey) GetQ()(*string) {
     return nil
 }
 // GetQi gets the qi property value. RSA Key - Coefficient. Field can't be read back.
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetQi()(*string) {
     val, err := m.GetBackingStore().Get("qi")
     if err != nil {
@@ -374,6 +391,7 @@ func (m *TrustFrameworkKey) GetQi()(*string) {
     return nil
 }
 // GetUse gets the use property value. The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetUse()(*string) {
     val, err := m.GetBackingStore().Get("use")
     if err != nil {
@@ -385,6 +403,7 @@ func (m *TrustFrameworkKey) GetUse()(*string) {
     return nil
 }
 // GetX5c gets the x5c property value. The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.
+// returns a []string when successful
 func (m *TrustFrameworkKey) GetX5c()([]string) {
     val, err := m.GetBackingStore().Get("x5c")
     if err != nil {
@@ -396,6 +415,7 @@ func (m *TrustFrameworkKey) GetX5c()([]string) {
     return nil
 }
 // GetX5t gets the x5t property value. The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate RFC 5280.
+// returns a *string when successful
 func (m *TrustFrameworkKey) GetX5t()(*string) {
     val, err := m.GetBackingStore().Get("x5t")
     if err != nil {
@@ -648,7 +668,6 @@ func (m *TrustFrameworkKey) SetX5t(value *string)() {
         panic(err)
     }
 }
-// TrustFrameworkKeyable 
 type TrustFrameworkKeyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

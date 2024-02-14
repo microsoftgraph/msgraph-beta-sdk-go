@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProgramControlCollectionResponse 
 type ProgramControlCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewProgramControlCollectionResponse instantiates a new programControlCollectionResponse and sets the default values.
+// NewProgramControlCollectionResponse instantiates a new ProgramControlCollectionResponse and sets the default values.
 func NewProgramControlCollectionResponse()(*ProgramControlCollectionResponse) {
     m := &ProgramControlCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewProgramControlCollectionResponse()(*ProgramControlCollectionResponse) {
     return m
 }
 // CreateProgramControlCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProgramControlCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProgramControlCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProgramControlCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ProgramControlCollectionResponse) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ProgramControlable when successful
 func (m *ProgramControlCollectionResponse) GetValue()([]ProgramControlable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ProgramControlCollectionResponse) SetValue(value []ProgramControlable)(
         panic(err)
     }
 }
-// ProgramControlCollectionResponseable 
 type ProgramControlCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

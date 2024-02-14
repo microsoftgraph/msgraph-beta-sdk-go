@@ -9,7 +9,7 @@ import (
 type DeviceManagementDomainJoinConnector struct {
     Entity
 }
-// NewDeviceManagementDomainJoinConnector instantiates a new deviceManagementDomainJoinConnector and sets the default values.
+// NewDeviceManagementDomainJoinConnector instantiates a new DeviceManagementDomainJoinConnector and sets the default values.
 func NewDeviceManagementDomainJoinConnector()(*DeviceManagementDomainJoinConnector) {
     m := &DeviceManagementDomainJoinConnector{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDeviceManagementDomainJoinConnector()(*DeviceManagementDomainJoinConnect
     return m
 }
 // CreateDeviceManagementDomainJoinConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementDomainJoinConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementDomainJoinConnector(), nil
 }
 // GetDisplayName gets the displayName property value. The connector display name.
+// returns a *string when successful
 func (m *DeviceManagementDomainJoinConnector) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -32,6 +34,7 @@ func (m *DeviceManagementDomainJoinConnector) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementDomainJoinConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,6 +80,7 @@ func (m *DeviceManagementDomainJoinConnector) GetFieldDeserializers()(map[string
     return res
 }
 // GetLastConnectionDateTime gets the lastConnectionDateTime property value. Last time connector contacted Intune.
+// returns a *Time when successful
 func (m *DeviceManagementDomainJoinConnector) GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastConnectionDateTime")
     if err != nil {
@@ -88,6 +92,7 @@ func (m *DeviceManagementDomainJoinConnector) GetLastConnectionDateTime()(*i3360
     return nil
 }
 // GetState gets the state property value. The ODJ request states.
+// returns a *DeviceManagementDomainJoinConnectorState when successful
 func (m *DeviceManagementDomainJoinConnector) GetState()(*DeviceManagementDomainJoinConnectorState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -99,6 +104,7 @@ func (m *DeviceManagementDomainJoinConnector) GetState()(*DeviceManagementDomain
     return nil
 }
 // GetVersion gets the version property value. The version of the connector.
+// returns a *string when successful
 func (m *DeviceManagementDomainJoinConnector) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
     if err != nil {
@@ -170,7 +176,6 @@ func (m *DeviceManagementDomainJoinConnector) SetVersion(value *string)() {
         panic(err)
     }
 }
-// DeviceManagementDomainJoinConnectorable 
 type DeviceManagementDomainJoinConnectorable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

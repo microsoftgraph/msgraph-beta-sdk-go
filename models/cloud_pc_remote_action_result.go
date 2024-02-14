@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CloudPcRemoteActionResult 
 type CloudPcRemoteActionResult struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCloudPcRemoteActionResult instantiates a new cloudPcRemoteActionResult and sets the default values.
+// NewCloudPcRemoteActionResult instantiates a new CloudPcRemoteActionResult and sets the default values.
 func NewCloudPcRemoteActionResult()(*CloudPcRemoteActionResult) {
     m := &CloudPcRemoteActionResult{
     }
@@ -20,10 +19,12 @@ func NewCloudPcRemoteActionResult()(*CloudPcRemoteActionResult) {
     return m
 }
 // CreateCloudPcRemoteActionResultFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcRemoteActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcRemoteActionResult(), nil
 }
 // GetActionName gets the actionName property value. The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
+// returns a *string when successful
 func (m *CloudPcRemoteActionResult) GetActionName()(*string) {
     val, err := m.GetBackingStore().Get("actionName")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *CloudPcRemoteActionResult) GetActionName()(*string) {
     return nil
 }
 // GetActionState gets the actionState property value. State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
+// returns a *ActionState when successful
 func (m *CloudPcRemoteActionResult) GetActionState()(*ActionState) {
     val, err := m.GetBackingStore().Get("actionState")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *CloudPcRemoteActionResult) GetActionState()(*ActionState) {
     return nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloudPcRemoteActionResult) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -58,10 +61,12 @@ func (m *CloudPcRemoteActionResult) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CloudPcRemoteActionResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCloudPcId gets the cloudPcId property value. The ID of the Cloud PC device on which the remote action is performed. Read-only.
+// returns a *string when successful
 func (m *CloudPcRemoteActionResult) GetCloudPcId()(*string) {
     val, err := m.GetBackingStore().Get("cloudPcId")
     if err != nil {
@@ -73,6 +78,7 @@ func (m *CloudPcRemoteActionResult) GetCloudPcId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actionName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -158,6 +164,7 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+// returns a *Time when successful
 func (m *CloudPcRemoteActionResult) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
     if err != nil {
@@ -169,6 +176,7 @@ func (m *CloudPcRemoteActionResult) GetLastUpdatedDateTime()(*i336074805fc853987
     return nil
 }
 // GetManagedDeviceId gets the managedDeviceId property value. The ID of the Intune managed device on which the remote action is performed. Read-only.
+// returns a *string when successful
 func (m *CloudPcRemoteActionResult) GetManagedDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("managedDeviceId")
     if err != nil {
@@ -180,6 +188,7 @@ func (m *CloudPcRemoteActionResult) GetManagedDeviceId()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CloudPcRemoteActionResult) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -191,6 +200,7 @@ func (m *CloudPcRemoteActionResult) GetOdataType()(*string) {
     return nil
 }
 // GetStartDateTime gets the startDateTime property value. Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+// returns a *Time when successful
 func (m *CloudPcRemoteActionResult) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
     if err != nil {
@@ -202,6 +212,7 @@ func (m *CloudPcRemoteActionResult) GetStartDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status.
+// returns a CloudPcStatusDetailsable when successful
 func (m *CloudPcRemoteActionResult) GetStatusDetails()(CloudPcStatusDetailsable) {
     val, err := m.GetBackingStore().Get("statusDetails")
     if err != nil {
@@ -338,7 +349,6 @@ func (m *CloudPcRemoteActionResult) SetStatusDetails(value CloudPcStatusDetailsa
         panic(err)
     }
 }
-// CloudPcRemoteActionResultable 
 type CloudPcRemoteActionResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

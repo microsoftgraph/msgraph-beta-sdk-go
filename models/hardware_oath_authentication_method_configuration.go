@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HardwareOathAuthenticationMethodConfiguration 
 type HardwareOathAuthenticationMethodConfiguration struct {
     AuthenticationMethodConfiguration
 }
-// NewHardwareOathAuthenticationMethodConfiguration instantiates a new hardwareOathAuthenticationMethodConfiguration and sets the default values.
+// NewHardwareOathAuthenticationMethodConfiguration instantiates a new HardwareOathAuthenticationMethodConfiguration and sets the default values.
 func NewHardwareOathAuthenticationMethodConfiguration()(*HardwareOathAuthenticationMethodConfiguration) {
     m := &HardwareOathAuthenticationMethodConfiguration{
         AuthenticationMethodConfiguration: *NewAuthenticationMethodConfiguration(),
@@ -18,10 +17,12 @@ func NewHardwareOathAuthenticationMethodConfiguration()(*HardwareOathAuthenticat
     return m
 }
 // CreateHardwareOathAuthenticationMethodConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHardwareOathAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHardwareOathAuthenticationMethodConfiguration(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HardwareOathAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
     res["includeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -43,6 +44,7 @@ func (m *HardwareOathAuthenticationMethodConfiguration) GetFieldDeserializers()(
     return res
 }
 // GetIncludeTargets gets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
+// returns a []AuthenticationMethodTargetable when successful
 func (m *HardwareOathAuthenticationMethodConfiguration) GetIncludeTargets()([]AuthenticationMethodTargetable) {
     val, err := m.GetBackingStore().Get("includeTargets")
     if err != nil {
@@ -80,7 +82,6 @@ func (m *HardwareOathAuthenticationMethodConfiguration) SetIncludeTargets(value 
         panic(err)
     }
 }
-// HardwareOathAuthenticationMethodConfigurationable 
 type HardwareOathAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

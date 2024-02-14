@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// SoftwareUpdateCatalogEntry 
 type SoftwareUpdateCatalogEntry struct {
     CatalogEntry
 }
-// NewSoftwareUpdateCatalogEntry instantiates a new softwareUpdateCatalogEntry and sets the default values.
+// NewSoftwareUpdateCatalogEntry instantiates a new SoftwareUpdateCatalogEntry and sets the default values.
 func NewSoftwareUpdateCatalogEntry()(*SoftwareUpdateCatalogEntry) {
     m := &SoftwareUpdateCatalogEntry{
         CatalogEntry: *NewCatalogEntry(),
@@ -18,6 +17,7 @@ func NewSoftwareUpdateCatalogEntry()(*SoftwareUpdateCatalogEntry) {
     return m
 }
 // CreateSoftwareUpdateCatalogEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSoftwareUpdateCatalogEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -44,6 +44,7 @@ func CreateSoftwareUpdateCatalogEntryFromDiscriminatorValue(parseNode i878a80d23
     return NewSoftwareUpdateCatalogEntry(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SoftwareUpdateCatalogEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.CatalogEntry.GetFieldDeserializers()
     return res
@@ -56,7 +57,6 @@ func (m *SoftwareUpdateCatalogEntry) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SoftwareUpdateCatalogEntryable 
 type SoftwareUpdateCatalogEntryable interface {
     CatalogEntryable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

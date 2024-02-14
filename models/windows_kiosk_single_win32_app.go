@@ -8,7 +8,7 @@ import (
 type WindowsKioskSingleWin32App struct {
     WindowsKioskAppConfiguration
 }
-// NewWindowsKioskSingleWin32App instantiates a new windowsKioskSingleWin32App and sets the default values.
+// NewWindowsKioskSingleWin32App instantiates a new WindowsKioskSingleWin32App and sets the default values.
 func NewWindowsKioskSingleWin32App()(*WindowsKioskSingleWin32App) {
     m := &WindowsKioskSingleWin32App{
         WindowsKioskAppConfiguration: *NewWindowsKioskAppConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsKioskSingleWin32App()(*WindowsKioskSingleWin32App) {
     return m
 }
 // CreateWindowsKioskSingleWin32AppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsKioskSingleWin32AppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsKioskSingleWin32App(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsKioskSingleWin32App) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsKioskAppConfiguration.GetFieldDeserializers()
     res["win32App"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +39,7 @@ func (m *WindowsKioskSingleWin32App) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetWin32App gets the win32App property value. The win32App property
+// returns a WindowsKioskWin32Appable when successful
 func (m *WindowsKioskSingleWin32App) GetWin32App()(WindowsKioskWin32Appable) {
     val, err := m.GetBackingStore().Get("win32App")
     if err != nil {
@@ -68,7 +71,6 @@ func (m *WindowsKioskSingleWin32App) SetWin32App(value WindowsKioskWin32Appable)
         panic(err)
     }
 }
-// WindowsKioskSingleWin32Appable 
 type WindowsKioskSingleWin32Appable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsKioskAppConfigurationable

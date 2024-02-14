@@ -8,7 +8,7 @@ import (
 type ActiveDirectoryWindowsAutopilotDeploymentProfile struct {
     WindowsAutopilotDeploymentProfile
 }
-// NewActiveDirectoryWindowsAutopilotDeploymentProfile instantiates a new activeDirectoryWindowsAutopilotDeploymentProfile and sets the default values.
+// NewActiveDirectoryWindowsAutopilotDeploymentProfile instantiates a new ActiveDirectoryWindowsAutopilotDeploymentProfile and sets the default values.
 func NewActiveDirectoryWindowsAutopilotDeploymentProfile()(*ActiveDirectoryWindowsAutopilotDeploymentProfile) {
     m := &ActiveDirectoryWindowsAutopilotDeploymentProfile{
         WindowsAutopilotDeploymentProfile: *NewWindowsAutopilotDeploymentProfile(),
@@ -18,10 +18,12 @@ func NewActiveDirectoryWindowsAutopilotDeploymentProfile()(*ActiveDirectoryWindo
     return m
 }
 // CreateActiveDirectoryWindowsAutopilotDeploymentProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActiveDirectoryWindowsAutopilotDeploymentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActiveDirectoryWindowsAutopilotDeploymentProfile(), nil
 }
 // GetDomainJoinConfiguration gets the domainJoinConfiguration property value. Configuration to join Active Directory domain
+// returns a WindowsDomainJoinConfigurationable when successful
 func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) GetDomainJoinConfiguration()(WindowsDomainJoinConfigurationable) {
     val, err := m.GetBackingStore().Get("domainJoinConfiguration")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) GetDomainJoinConfigur
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsAutopilotDeploymentProfile.GetFieldDeserializers()
     res["domainJoinConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) GetFieldDeserializers
     return res
 }
 // GetHybridAzureADJoinSkipConnectivityCheck gets the hybridAzureADJoinSkipConnectivityCheck property value. The Autopilot Hybrid Azure AD join flow will continue even if it does not establish domain controller connectivity during OOBE.
+// returns a *bool when successful
 func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) GetHybridAzureADJoinSkipConnectivityCheck()(*bool) {
     val, err := m.GetBackingStore().Get("hybridAzureADJoinSkipConnectivityCheck")
     if err != nil {
@@ -102,7 +106,6 @@ func (m *ActiveDirectoryWindowsAutopilotDeploymentProfile) SetHybridAzureADJoinS
         panic(err)
     }
 }
-// ActiveDirectoryWindowsAutopilotDeploymentProfileable 
 type ActiveDirectoryWindowsAutopilotDeploymentProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsAutopilotDeploymentProfileable

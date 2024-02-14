@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// User 
 type User struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUser instantiates a new user and sets the default values.
+// NewUser instantiates a new User and sets the default values.
 func NewUser()(*User) {
     m := &User{
     }
@@ -20,10 +19,12 @@ func NewUser()(*User) {
     return m
 }
 // CreateUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUser(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *User) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *User) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *User) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. User display Name.
+// returns a *string when successful
 func (m *User) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *User) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,6 +130,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetLastAccessDateTime gets the lastAccessDateTime property value. The date and time of the most recent access.
+// returns a *Time when successful
 func (m *User) GetLastAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastAccessDateTime")
     if err != nil {
@@ -137,6 +142,7 @@ func (m *User) GetLastAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *User) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -148,6 +154,7 @@ func (m *User) GetOdataType()(*string) {
     return nil
 }
 // GetTrafficType gets the trafficType property value. The trafficType property
+// returns a *TrafficType when successful
 func (m *User) GetTrafficType()(*TrafficType) {
     val, err := m.GetBackingStore().Get("trafficType")
     if err != nil {
@@ -159,6 +166,7 @@ func (m *User) GetTrafficType()(*TrafficType) {
     return nil
 }
 // GetUserId gets the userId property value. The ID for the user.
+// returns a *string when successful
 func (m *User) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -170,6 +178,7 @@ func (m *User) GetUserId()(*string) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. A unique identifier that is associated with a user in a system or directory. Typically, this value is an email address that is used for user authentication and identification.
+// returns a *string when successful
 func (m *User) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -181,6 +190,7 @@ func (m *User) GetUserPrincipalName()(*string) {
     return nil
 }
 // GetUserType gets the userType property value. The userType property
+// returns a *UserType when successful
 func (m *User) GetUserType()(*UserType) {
     val, err := m.GetBackingStore().Get("userType")
     if err != nil {
@@ -305,7 +315,6 @@ func (m *User) SetUserType(value *UserType)() {
         panic(err)
     }
 }
-// Userable 
 type Userable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

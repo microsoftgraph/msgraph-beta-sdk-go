@@ -8,7 +8,7 @@ import (
 type WindowsDomainJoinConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsDomainJoinConfiguration instantiates a new windowsDomainJoinConfiguration and sets the default values.
+// NewWindowsDomainJoinConfiguration instantiates a new WindowsDomainJoinConfiguration and sets the default values.
 func NewWindowsDomainJoinConfiguration()(*WindowsDomainJoinConfiguration) {
     m := &WindowsDomainJoinConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsDomainJoinConfiguration()(*WindowsDomainJoinConfiguration) {
     return m
 }
 // CreateWindowsDomainJoinConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDomainJoinConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDomainJoinConfiguration(), nil
 }
 // GetActiveDirectoryDomainName gets the activeDirectoryDomainName property value. Active Directory domain name to join.
+// returns a *string when successful
 func (m *WindowsDomainJoinConfiguration) GetActiveDirectoryDomainName()(*string) {
     val, err := m.GetBackingStore().Get("activeDirectoryDomainName")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsDomainJoinConfiguration) GetActiveDirectoryDomainName()(*string)
     return nil
 }
 // GetComputerNameStaticPrefix gets the computerNameStaticPrefix property value. Fixed prefix to be used for computer name.
+// returns a *string when successful
 func (m *WindowsDomainJoinConfiguration) GetComputerNameStaticPrefix()(*string) {
     val, err := m.GetBackingStore().Get("computerNameStaticPrefix")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsDomainJoinConfiguration) GetComputerNameStaticPrefix()(*string) 
     return nil
 }
 // GetComputerNameSuffixRandomCharCount gets the computerNameSuffixRandomCharCount property value. Dynamically generated characters used as suffix for computer name. Valid values 3 to 14
+// returns a *int32 when successful
 func (m *WindowsDomainJoinConfiguration) GetComputerNameSuffixRandomCharCount()(*int32) {
     val, err := m.GetBackingStore().Get("computerNameSuffixRandomCharCount")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *WindowsDomainJoinConfiguration) GetComputerNameSuffixRandomCharCount()(
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDomainJoinConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["activeDirectoryDomainName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +121,7 @@ func (m *WindowsDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetNetworkAccessConfigurations gets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity
+// returns a []DeviceConfigurationable when successful
 func (m *WindowsDomainJoinConfiguration) GetNetworkAccessConfigurations()([]DeviceConfigurationable) {
     val, err := m.GetBackingStore().Get("networkAccessConfigurations")
     if err != nil {
@@ -127,6 +133,7 @@ func (m *WindowsDomainJoinConfiguration) GetNetworkAccessConfigurations()([]Devi
     return nil
 }
 // GetOrganizationalUnit gets the organizationalUnit property value. Organizational unit (OU) where the computer account will be created. If this parameter is NULL, the well known computer object container will be used as published in the domain.
+// returns a *string when successful
 func (m *WindowsDomainJoinConfiguration) GetOrganizationalUnit()(*string) {
     val, err := m.GetBackingStore().Get("organizationalUnit")
     if err != nil {
@@ -216,7 +223,6 @@ func (m *WindowsDomainJoinConfiguration) SetOrganizationalUnit(value *string)() 
         panic(err)
     }
 }
-// WindowsDomainJoinConfigurationable 
 type WindowsDomainJoinConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

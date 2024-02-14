@@ -17,28 +17,28 @@ type MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewMobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilderInternal instantiates a new CommitRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilderInternal instantiates a new MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder) {
     m := &MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosLobApp/contentVersions/{mobileAppContent%2Did}/files/{mobileAppContentFile%2Did}/commit", pathParameters),
     }
     return m
 }
-// NewMobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder instantiates a new CommitRequestBuilder and sets the default values.
+// NewMobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder instantiates a new MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post commits a file of a given app.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder) Post(ctx context.Context, body MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitPostRequestBodyable, requestConfiguration *MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBu
     return nil
 }
 // ToPostRequestInformation commits a file of a given app.
+// returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder) ToPostRequestInformation(ctx context.Context, body MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitPostRequestBodyable, requestConfiguration *MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder when successful
 func (m *MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder) WithUrl(rawUrl string)(*MobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder) {
     return NewMobileAppsItemGraphIosLobAppContentVersionsItemFilesItemCommitRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

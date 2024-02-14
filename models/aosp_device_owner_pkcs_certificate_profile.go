@@ -8,7 +8,7 @@ import (
 type AospDeviceOwnerPkcsCertificateProfile struct {
     AospDeviceOwnerCertificateProfileBase
 }
-// NewAospDeviceOwnerPkcsCertificateProfile instantiates a new aospDeviceOwnerPkcsCertificateProfile and sets the default values.
+// NewAospDeviceOwnerPkcsCertificateProfile instantiates a new AospDeviceOwnerPkcsCertificateProfile and sets the default values.
 func NewAospDeviceOwnerPkcsCertificateProfile()(*AospDeviceOwnerPkcsCertificateProfile) {
     m := &AospDeviceOwnerPkcsCertificateProfile{
         AospDeviceOwnerCertificateProfileBase: *NewAospDeviceOwnerCertificateProfileBase(),
@@ -18,10 +18,12 @@ func NewAospDeviceOwnerPkcsCertificateProfile()(*AospDeviceOwnerPkcsCertificateP
     return m
 }
 // CreateAospDeviceOwnerPkcsCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAospDeviceOwnerPkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAospDeviceOwnerPkcsCertificateProfile(), nil
 }
 // GetCertificateStore gets the certificateStore property value. CertificateStore types
+// returns a *CertificateStore when successful
 func (m *AospDeviceOwnerPkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *AospDeviceOwnerPkcsCertificateProfile) GetCertificateStore()(*Certifica
     return nil
 }
 // GetCertificateTemplateName gets the certificateTemplateName property value. PKCS Certificate Template Name
+// returns a *string when successful
 func (m *AospDeviceOwnerPkcsCertificateProfile) GetCertificateTemplateName()(*string) {
     val, err := m.GetBackingStore().Get("certificateTemplateName")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *AospDeviceOwnerPkcsCertificateProfile) GetCertificateTemplateName()(*st
     return nil
 }
 // GetCertificationAuthority gets the certificationAuthority property value. PKCS Certification Authority
+// returns a *string when successful
 func (m *AospDeviceOwnerPkcsCertificateProfile) GetCertificationAuthority()(*string) {
     val, err := m.GetBackingStore().Get("certificationAuthority")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *AospDeviceOwnerPkcsCertificateProfile) GetCertificationAuthority()(*str
     return nil
 }
 // GetCertificationAuthorityName gets the certificationAuthorityName property value. PKCS Certification Authority Name
+// returns a *string when successful
 func (m *AospDeviceOwnerPkcsCertificateProfile) GetCertificationAuthorityName()(*string) {
     val, err := m.GetBackingStore().Get("certificationAuthorityName")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *AospDeviceOwnerPkcsCertificateProfile) GetCertificationAuthorityName()(
     return nil
 }
 // GetCertificationAuthorityType gets the certificationAuthorityType property value. Device Management Certification Authority Types.
+// returns a *DeviceManagementCertificationAuthority when successful
 func (m *AospDeviceOwnerPkcsCertificateProfile) GetCertificationAuthorityType()(*DeviceManagementCertificationAuthority) {
     val, err := m.GetBackingStore().Get("certificationAuthorityType")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *AospDeviceOwnerPkcsCertificateProfile) GetCertificationAuthorityType()(
     return nil
 }
 // GetCustomSubjectAlternativeNames gets the customSubjectAlternativeNames property value. Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.
+// returns a []CustomSubjectAlternativeNameable when successful
 func (m *AospDeviceOwnerPkcsCertificateProfile) GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable) {
     val, err := m.GetBackingStore().Get("customSubjectAlternativeNames")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *AospDeviceOwnerPkcsCertificateProfile) GetCustomSubjectAlternativeNames
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AospDeviceOwnerPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AospDeviceOwnerCertificateProfileBase.GetFieldDeserializers()
     res["certificateStore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -195,6 +203,7 @@ func (m *AospDeviceOwnerPkcsCertificateProfile) GetFieldDeserializers()(map[stri
     return res
 }
 // GetManagedDeviceCertificateStates gets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
+// returns a []ManagedDeviceCertificateStateable when successful
 func (m *AospDeviceOwnerPkcsCertificateProfile) GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable) {
     val, err := m.GetBackingStore().Get("managedDeviceCertificateStates")
     if err != nil {
@@ -206,6 +215,7 @@ func (m *AospDeviceOwnerPkcsCertificateProfile) GetManagedDeviceCertificateState
     return nil
 }
 // GetSubjectAlternativeNameFormatString gets the subjectAlternativeNameFormatString property value. Custom String that defines the AAD Attribute.
+// returns a *string when successful
 func (m *AospDeviceOwnerPkcsCertificateProfile) GetSubjectAlternativeNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameFormatString")
     if err != nil {
@@ -217,6 +227,7 @@ func (m *AospDeviceOwnerPkcsCertificateProfile) GetSubjectAlternativeNameFormatS
     return nil
 }
 // GetSubjectNameFormatString gets the subjectNameFormatString property value. Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US
+// returns a *string when successful
 func (m *AospDeviceOwnerPkcsCertificateProfile) GetSubjectNameFormatString()(*string) {
     val, err := m.GetBackingStore().Get("subjectNameFormatString")
     if err != nil {
@@ -366,7 +377,6 @@ func (m *AospDeviceOwnerPkcsCertificateProfile) SetSubjectNameFormatString(value
         panic(err)
     }
 }
-// AospDeviceOwnerPkcsCertificateProfileable 
 type AospDeviceOwnerPkcsCertificateProfileable interface {
     AospDeviceOwnerCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

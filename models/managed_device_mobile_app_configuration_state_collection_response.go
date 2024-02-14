@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ManagedDeviceMobileAppConfigurationStateCollectionResponse 
 type ManagedDeviceMobileAppConfigurationStateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewManagedDeviceMobileAppConfigurationStateCollectionResponse instantiates a new managedDeviceMobileAppConfigurationStateCollectionResponse and sets the default values.
+// NewManagedDeviceMobileAppConfigurationStateCollectionResponse instantiates a new ManagedDeviceMobileAppConfigurationStateCollectionResponse and sets the default values.
 func NewManagedDeviceMobileAppConfigurationStateCollectionResponse()(*ManagedDeviceMobileAppConfigurationStateCollectionResponse) {
     m := &ManagedDeviceMobileAppConfigurationStateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewManagedDeviceMobileAppConfigurationStateCollectionResponse()(*ManagedDev
     return m
 }
 // CreateManagedDeviceMobileAppConfigurationStateCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateManagedDeviceMobileAppConfigurationStateCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDeviceMobileAppConfigurationStateCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedDeviceMobileAppConfigurationStateCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ManagedDeviceMobileAppConfigurationStateCollectionResponse) GetFieldDes
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ManagedDeviceMobileAppConfigurationStateable when successful
 func (m *ManagedDeviceMobileAppConfigurationStateCollectionResponse) GetValue()([]ManagedDeviceMobileAppConfigurationStateable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ManagedDeviceMobileAppConfigurationStateCollectionResponse) SetValue(va
         panic(err)
     }
 }
-// ManagedDeviceMobileAppConfigurationStateCollectionResponseable 
 type ManagedDeviceMobileAppConfigurationStateCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

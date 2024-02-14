@@ -1,6 +1,7 @@
 package models
 import (
     "errors"
+    "math"
     "strings"
 )
 // Flag enum to determine whether to delay software updates for macOS.
@@ -8,22 +9,24 @@ type MacOSSoftwareUpdateDelayPolicy int
 
 const (
     // Software update delays will not be enforced.
-    NONE_MACOSSOFTWAREUPDATEDELAYPOLICY MacOSSoftwareUpdateDelayPolicy = iota
+    NONE_MACOSSOFTWAREUPDATEDELAYPOLICY = 1
     // Force delays for OS software updates.
-    DELAYOSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY
+    DELAYOSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY = 2
     // Force delays for app software updates.
-    DELAYAPPUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY
+    DELAYAPPUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY = 4
     // Sentinel member for cases where the client cannot handle the new enum values.
-    UNKNOWNFUTUREVALUE_MACOSSOFTWAREUPDATEDELAYPOLICY
+    UNKNOWNFUTUREVALUE_MACOSSOFTWAREUPDATEDELAYPOLICY = 8
     // Force delays for major OS software updates.
-    DELAYMAJOROSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY
+    DELAYMAJOROSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY = 16
 )
 
 func (i MacOSSoftwareUpdateDelayPolicy) String() string {
     var values []string
-    for p := MacOSSoftwareUpdateDelayPolicy(1); p <= DELAYMAJOROSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY; p <<= 1 {
-        if i&p == p {
-            values = append(values, []string{"none", "delayOSUpdateVisibility", "delayAppUpdateVisibility", "unknownFutureValue", "delayMajorOsUpdateVisibility"}[p])
+    options := []string{"none", "delayOSUpdateVisibility", "delayAppUpdateVisibility", "unknownFutureValue", "delayMajorOsUpdateVisibility"}
+    for p := 0; p < 5; p++ {
+        mantis := MacOSSoftwareUpdateDelayPolicy(int(math.Pow(2, float64(p))))
+        if i&mantis == mantis {
+            values = append(values, options[p])
         }
     }
     return strings.Join(values, ",")

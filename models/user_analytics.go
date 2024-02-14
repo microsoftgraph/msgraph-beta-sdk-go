@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserAnalytics 
 type UserAnalytics struct {
     Entity
 }
-// NewUserAnalytics instantiates a new userAnalytics and sets the default values.
+// NewUserAnalytics instantiates a new UserAnalytics and sets the default values.
 func NewUserAnalytics()(*UserAnalytics) {
     m := &UserAnalytics{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUserAnalytics()(*UserAnalytics) {
     return m
 }
 // CreateUserAnalyticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserAnalyticsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserAnalytics(), nil
 }
 // GetActivityStatistics gets the activityStatistics property value. The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+// returns a []ActivityStatisticsable when successful
 func (m *UserAnalytics) GetActivityStatistics()([]ActivityStatisticsable) {
     val, err := m.GetBackingStore().Get("activityStatistics")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UserAnalytics) GetActivityStatistics()([]ActivityStatisticsable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activityStatistics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -62,6 +64,7 @@ func (m *UserAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetSettings gets the settings property value. The current settings for a user to use the analytics API.
+// returns a Settingsable when successful
 func (m *UserAnalytics) GetSettings()(Settingsable) {
     val, err := m.GetBackingStore().Get("settings")
     if err != nil {
@@ -112,7 +115,6 @@ func (m *UserAnalytics) SetSettings(value Settingsable)() {
         panic(err)
     }
 }
-// UserAnalyticsable 
 type UserAnalyticsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

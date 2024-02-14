@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// SensitivityLabel 
 type SensitivityLabel struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewSensitivityLabel instantiates a new sensitivityLabel and sets the default values.
+// NewSensitivityLabel instantiates a new SensitivityLabel and sets the default values.
 func NewSensitivityLabel()(*SensitivityLabel) {
     m := &SensitivityLabel{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewSensitivityLabel()(*SensitivityLabel) {
     return m
 }
 // CreateSensitivityLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSensitivityLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSensitivityLabel(), nil
 }
 // GetColor gets the color property value. The color that the UI should display for the label, if configured.
+// returns a *string when successful
 func (m *SensitivityLabel) GetColor()(*string) {
     val, err := m.GetBackingStore().Get("color")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *SensitivityLabel) GetColor()(*string) {
     return nil
 }
 // GetContentFormats gets the contentFormats property value. Returns the supported content formats for the label.
+// returns a []string when successful
 func (m *SensitivityLabel) GetContentFormats()([]string) {
     val, err := m.GetBackingStore().Get("contentFormats")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *SensitivityLabel) GetContentFormats()([]string) {
     return nil
 }
 // GetDescription gets the description property value. The admin-defined description for the label.
+// returns a *string when successful
 func (m *SensitivityLabel) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *SensitivityLabel) GetDescription()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -165,6 +169,7 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetHasProtection gets the hasProtection property value. Indicates whether the label has protection actions configured.
+// returns a *bool when successful
 func (m *SensitivityLabel) GetHasProtection()(*bool) {
     val, err := m.GetBackingStore().Get("hasProtection")
     if err != nil {
@@ -176,6 +181,7 @@ func (m *SensitivityLabel) GetHasProtection()(*bool) {
     return nil
 }
 // GetIsActive gets the isActive property value. Indicates whether the label is active or not. Active labels should be hidden or disabled in the UI.
+// returns a *bool when successful
 func (m *SensitivityLabel) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
     if err != nil {
@@ -187,6 +193,7 @@ func (m *SensitivityLabel) GetIsActive()(*bool) {
     return nil
 }
 // GetIsAppliable gets the isAppliable property value. Indicates whether the label can be applied to content. False if the label is a parent with child labels.
+// returns a *bool when successful
 func (m *SensitivityLabel) GetIsAppliable()(*bool) {
     val, err := m.GetBackingStore().Get("isAppliable")
     if err != nil {
@@ -198,6 +205,7 @@ func (m *SensitivityLabel) GetIsAppliable()(*bool) {
     return nil
 }
 // GetName gets the name property value. The plaintext name of the label.
+// returns a *string when successful
 func (m *SensitivityLabel) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -209,6 +217,7 @@ func (m *SensitivityLabel) GetName()(*string) {
     return nil
 }
 // GetParent gets the parent property value. The parent label associated with a child label. Null if the label has no parent.
+// returns a SensitivityLabelable when successful
 func (m *SensitivityLabel) GetParent()(SensitivityLabelable) {
     val, err := m.GetBackingStore().Get("parent")
     if err != nil {
@@ -220,6 +229,7 @@ func (m *SensitivityLabel) GetParent()(SensitivityLabelable) {
     return nil
 }
 // GetSensitivity gets the sensitivity property value. The sensitivity value of the label, where lower is less sensitive.
+// returns a *int32 when successful
 func (m *SensitivityLabel) GetSensitivity()(*int32) {
     val, err := m.GetBackingStore().Get("sensitivity")
     if err != nil {
@@ -231,6 +241,7 @@ func (m *SensitivityLabel) GetSensitivity()(*int32) {
     return nil
 }
 // GetTooltip gets the tooltip property value. The tooltip that should be displayed for the label in a UI.
+// returns a *string when successful
 func (m *SensitivityLabel) GetTooltip()(*string) {
     val, err := m.GetBackingStore().Get("tooltip")
     if err != nil {
@@ -379,7 +390,6 @@ func (m *SensitivityLabel) SetTooltip(value *string)() {
         panic(err)
     }
 }
-// SensitivityLabelable 
 type SensitivityLabelable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

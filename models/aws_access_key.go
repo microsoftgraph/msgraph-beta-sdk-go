@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsAccessKey 
 type AwsAccessKey struct {
     AwsIdentity
 }
-// NewAwsAccessKey instantiates a new awsAccessKey and sets the default values.
+// NewAwsAccessKey instantiates a new AwsAccessKey and sets the default values.
 func NewAwsAccessKey()(*AwsAccessKey) {
     m := &AwsAccessKey{
         AwsIdentity: *NewAwsIdentity(),
@@ -18,10 +17,12 @@ func NewAwsAccessKey()(*AwsAccessKey) {
     return m
 }
 // CreateAwsAccessKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsAccessKeyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsAccessKey(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsAccessKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AwsIdentity.GetFieldDeserializers()
     res["owner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *AwsAccessKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetOwner gets the owner property value. Represents the owner of the access key.
+// returns a AwsUserable when successful
 func (m *AwsAccessKey) GetOwner()(AwsUserable) {
     val, err := m.GetBackingStore().Get("owner")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *AwsAccessKey) SetOwner(value AwsUserable)() {
         panic(err)
     }
 }
-// AwsAccessKeyable 
 type AwsAccessKeyable interface {
     AwsIdentityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

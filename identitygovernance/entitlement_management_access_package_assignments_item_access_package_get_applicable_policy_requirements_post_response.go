@@ -5,7 +5,6 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponse 
 type EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
@@ -17,10 +16,12 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplica
     return m
 }
 // CreateEntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +43,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplic
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []AccessPackageAssignmentRequestRequirementsable when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageAssignmentRequestRequirementsable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -79,7 +81,6 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplic
         panic(err)
     }
 }
-// EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponseable 
 type EntitlementManagementAccessPackageAssignmentsItemAccessPackageGetApplicablePolicyRequirementsPostResponseable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

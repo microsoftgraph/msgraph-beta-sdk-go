@@ -2,7 +2,6 @@ package industrydata
 import (
     "errors"
 )
-// 
 type IndustryDataActivityStatus int
 
 const (

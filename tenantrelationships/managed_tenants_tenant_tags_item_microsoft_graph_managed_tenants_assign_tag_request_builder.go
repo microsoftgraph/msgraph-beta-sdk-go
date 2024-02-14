@@ -18,20 +18,22 @@ type ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBui
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilderInternal instantiates a new MicrosoftGraphManagedTenantsAssignTagRequestBuilder and sets the default values.
+// NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilderInternal instantiates a new ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder and sets the default values.
 func NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder) {
     m := &ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/tenantTags/{tenantTag%2Did}/microsoft.graph.managedTenants.assignTag", pathParameters),
     }
     return m
 }
-// NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder instantiates a new MicrosoftGraphManagedTenantsAssignTagRequestBuilder and sets the default values.
+// NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder instantiates a new ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder and sets the default values.
 func NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post assign the tenant tag to the specified managed tenants.
+// returns a TenantTagable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-1.0
@@ -41,8 +43,7 @@ func (m *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagReques
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CreateTenantTagFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -54,6 +55,7 @@ func (m *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagReques
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantTagable), nil
 }
 // ToPostRequestInformation assign the tenant tag to the specified managed tenants.
+// returns a *RequestInformation when successful
 func (m *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagAssignTagPostRequestBodyable, requestConfiguration *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -68,6 +70,7 @@ func (m *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder when successful
 func (m *ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder) WithUrl(rawUrl string)(*ManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder) {
     return NewManagedTenantsTenantTagsItemMicrosoftGraphManagedTenantsAssignTagRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

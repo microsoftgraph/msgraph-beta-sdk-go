@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UnifiedRbacApplication 
 type UnifiedRbacApplication struct {
     Entity
 }
-// NewUnifiedRbacApplication instantiates a new unifiedRbacApplication and sets the default values.
+// NewUnifiedRbacApplication instantiates a new UnifiedRbacApplication and sets the default values.
 func NewUnifiedRbacApplication()(*UnifiedRbacApplication) {
     m := &UnifiedRbacApplication{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewUnifiedRbacApplication()(*UnifiedRbacApplication) {
     return m
 }
 // CreateUnifiedRbacApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnifiedRbacApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRbacApplication(), nil
 }
 // GetCustomAppScopes gets the customAppScopes property value. Workload-specific scope object that represents the resources for which the principal has been granted access.
+// returns a []CustomAppScopeable when successful
 func (m *UnifiedRbacApplication) GetCustomAppScopes()([]CustomAppScopeable) {
     val, err := m.GetBackingStore().Get("customAppScopes")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *UnifiedRbacApplication) GetCustomAppScopes()([]CustomAppScopeable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedRbacApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["customAppScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +118,7 @@ func (m *UnifiedRbacApplication) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetResourceNamespaces gets the resourceNamespaces property value. Resource that represents a collection of related actions.
+// returns a []UnifiedRbacResourceNamespaceable when successful
 func (m *UnifiedRbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNamespaceable) {
     val, err := m.GetBackingStore().Get("resourceNamespaces")
     if err != nil {
@@ -127,6 +130,7 @@ func (m *UnifiedRbacApplication) GetResourceNamespaces()([]UnifiedRbacResourceNa
     return nil
 }
 // GetRoleAssignments gets the roleAssignments property value. Resource to grant access to users or groups.
+// returns a []UnifiedRoleAssignmentable when successful
 func (m *UnifiedRbacApplication) GetRoleAssignments()([]UnifiedRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("roleAssignments")
     if err != nil {
@@ -138,6 +142,7 @@ func (m *UnifiedRbacApplication) GetRoleAssignments()([]UnifiedRoleAssignmentabl
     return nil
 }
 // GetRoleDefinitions gets the roleDefinitions property value. The roles allowed by RBAC providers and the permissions assigned to the roles.
+// returns a []UnifiedRoleDefinitionable when successful
 func (m *UnifiedRbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinitions")
     if err != nil {
@@ -149,6 +154,7 @@ func (m *UnifiedRbacApplication) GetRoleDefinitions()([]UnifiedRoleDefinitionabl
     return nil
 }
 // GetTransitiveRoleAssignments gets the transitiveRoleAssignments property value. Resource to grant access to users or groups that are transitive.
+// returns a []UnifiedRoleAssignmentable when successful
 func (m *UnifiedRbacApplication) GetTransitiveRoleAssignments()([]UnifiedRoleAssignmentable) {
     val, err := m.GetBackingStore().Get("transitiveRoleAssignments")
     if err != nil {
@@ -262,7 +268,6 @@ func (m *UnifiedRbacApplication) SetTransitiveRoleAssignments(value []UnifiedRol
         panic(err)
     }
 }
-// UnifiedRbacApplicationable 
 type UnifiedRbacApplicationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

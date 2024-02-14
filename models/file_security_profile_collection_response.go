@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileSecurityProfileCollectionResponse 
 type FileSecurityProfileCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewFileSecurityProfileCollectionResponse instantiates a new fileSecurityProfileCollectionResponse and sets the default values.
+// NewFileSecurityProfileCollectionResponse instantiates a new FileSecurityProfileCollectionResponse and sets the default values.
 func NewFileSecurityProfileCollectionResponse()(*FileSecurityProfileCollectionResponse) {
     m := &FileSecurityProfileCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewFileSecurityProfileCollectionResponse()(*FileSecurityProfileCollectionRe
     return m
 }
 // CreateFileSecurityProfileCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileSecurityProfileCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileSecurityProfileCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileSecurityProfileCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *FileSecurityProfileCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []FileSecurityProfileable when successful
 func (m *FileSecurityProfileCollectionResponse) GetValue()([]FileSecurityProfileable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *FileSecurityProfileCollectionResponse) SetValue(value []FileSecurityPro
         panic(err)
     }
 }
-// FileSecurityProfileCollectionResponseable 
 type FileSecurityProfileCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

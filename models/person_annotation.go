@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PersonAnnotation 
 type PersonAnnotation struct {
     ItemFacet
 }
-// NewPersonAnnotation instantiates a new personAnnotation and sets the default values.
+// NewPersonAnnotation instantiates a new PersonAnnotation and sets the default values.
 func NewPersonAnnotation()(*PersonAnnotation) {
     m := &PersonAnnotation{
         ItemFacet: *NewItemFacet(),
@@ -18,10 +17,12 @@ func NewPersonAnnotation()(*PersonAnnotation) {
     return m
 }
 // CreatePersonAnnotationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePersonAnnotationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPersonAnnotation(), nil
 }
 // GetDetail gets the detail property value. Contains the detail of the note itself.
+// returns a ItemBodyable when successful
 func (m *PersonAnnotation) GetDetail()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("detail")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *PersonAnnotation) GetDetail()(ItemBodyable) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Contains a friendly name for the note.
+// returns a *string when successful
 func (m *PersonAnnotation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *PersonAnnotation) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PersonAnnotation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ItemFacet.GetFieldDeserializers()
     res["detail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -79,6 +82,7 @@ func (m *PersonAnnotation) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
+// returns a *string when successful
 func (m *PersonAnnotation) GetThumbnailUrl()(*string) {
     val, err := m.GetBackingStore().Get("thumbnailUrl")
     if err != nil {
@@ -136,7 +140,6 @@ func (m *PersonAnnotation) SetThumbnailUrl(value *string)() {
         panic(err)
     }
 }
-// PersonAnnotationable 
 type PersonAnnotationable interface {
     ItemFacetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

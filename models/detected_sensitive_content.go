@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DetectedSensitiveContent 
 type DetectedSensitiveContent struct {
     DetectedSensitiveContentBase
 }
-// NewDetectedSensitiveContent instantiates a new detectedSensitiveContent and sets the default values.
+// NewDetectedSensitiveContent instantiates a new DetectedSensitiveContent and sets the default values.
 func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
     m := &DetectedSensitiveContent{
         DetectedSensitiveContentBase: *NewDetectedSensitiveContentBase(),
@@ -16,6 +15,7 @@ func NewDetectedSensitiveContent()(*DetectedSensitiveContent) {
     return m
 }
 // CreateDetectedSensitiveContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDetectedSensitiveContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +38,7 @@ func CreateDetectedSensitiveContentFromDiscriminatorValue(parseNode i878a80d2330
     return NewDetectedSensitiveContent(), nil
 }
 // GetClassificationAttributes gets the classificationAttributes property value. The classificationAttributes property
+// returns a []ClassificationAttributeable when successful
 func (m *DetectedSensitiveContent) GetClassificationAttributes()([]ClassificationAttributeable) {
     val, err := m.GetBackingStore().Get("classificationAttributes")
     if err != nil {
@@ -49,6 +50,7 @@ func (m *DetectedSensitiveContent) GetClassificationAttributes()([]Classificatio
     return nil
 }
 // GetClassificationMethod gets the classificationMethod property value. The classificationMethod property
+// returns a *ClassificationMethod when successful
 func (m *DetectedSensitiveContent) GetClassificationMethod()(*ClassificationMethod) {
     val, err := m.GetBackingStore().Get("classificationMethod")
     if err != nil {
@@ -60,6 +62,7 @@ func (m *DetectedSensitiveContent) GetClassificationMethod()(*ClassificationMeth
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DetectedSensitiveContentBase.GetFieldDeserializers()
     res["classificationAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,6 +130,7 @@ func (m *DetectedSensitiveContent) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetMatches gets the matches property value. The matches property
+// returns a []SensitiveContentLocationable when successful
 func (m *DetectedSensitiveContent) GetMatches()([]SensitiveContentLocationable) {
     val, err := m.GetBackingStore().Get("matches")
     if err != nil {
@@ -138,6 +142,7 @@ func (m *DetectedSensitiveContent) GetMatches()([]SensitiveContentLocationable) 
     return nil
 }
 // GetScope gets the scope property value. The scope property
+// returns a *SensitiveTypeScope when successful
 func (m *DetectedSensitiveContent) GetScope()(*SensitiveTypeScope) {
     val, err := m.GetBackingStore().Get("scope")
     if err != nil {
@@ -149,6 +154,7 @@ func (m *DetectedSensitiveContent) GetScope()(*SensitiveTypeScope) {
     return nil
 }
 // GetSensitiveTypeSource gets the sensitiveTypeSource property value. The sensitiveTypeSource property
+// returns a *SensitiveTypeSource when successful
 func (m *DetectedSensitiveContent) GetSensitiveTypeSource()(*SensitiveTypeSource) {
     val, err := m.GetBackingStore().Get("sensitiveTypeSource")
     if err != nil {
@@ -247,7 +253,6 @@ func (m *DetectedSensitiveContent) SetSensitiveTypeSource(value *SensitiveTypeSo
         panic(err)
     }
 }
-// DetectedSensitiveContentable 
 type DetectedSensitiveContentable interface {
     DetectedSensitiveContentBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

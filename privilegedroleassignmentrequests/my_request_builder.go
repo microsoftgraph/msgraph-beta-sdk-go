@@ -14,6 +14,8 @@ type MyRequestBuilder struct {
 type MyRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
     // Order items by property values
@@ -39,7 +41,7 @@ type MyRequestBuilderGetRequestConfiguration struct {
 // NewMyRequestBuilderInternal instantiates a new MyRequestBuilder and sets the default values.
 func NewMyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MyRequestBuilder) {
     m := &MyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedRoleAssignmentRequests/my(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedRoleAssignmentRequests/my(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
@@ -50,15 +52,16 @@ func NewMyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c9
     return NewMyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function my
-// Deprecated: This method is obsolete. Use GetAsMyGetResponse instead.
+// Deprecated: This method is obsolete. Use {TypeName} instead.
+// returns a MyResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MyRequestBuilder) Get(ctx context.Context, requestConfiguration *MyRequestBuilderGetRequestConfiguration)(MyResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateMyResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -70,14 +73,15 @@ func (m *MyRequestBuilder) Get(ctx context.Context, requestConfiguration *MyRequ
     return res.(MyResponseable), nil
 }
 // GetAsMyGetResponse invoke function my
+// returns a MyGetResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MyRequestBuilder) GetAsMyGetResponse(ctx context.Context, requestConfiguration *MyRequestBuilderGetRequestConfiguration)(MyGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateMyGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -89,6 +93,7 @@ func (m *MyRequestBuilder) GetAsMyGetResponse(ctx context.Context, requestConfig
     return res.(MyGetResponseable), nil
 }
 // ToGetRequestInformation invoke function my
+// returns a *RequestInformation when successful
 func (m *MyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -102,6 +107,7 @@ func (m *MyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestC
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MyRequestBuilder when successful
 func (m *MyRequestBuilder) WithUrl(rawUrl string)(*MyRequestBuilder) {
     return NewMyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

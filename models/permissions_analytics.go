@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PermissionsAnalytics 
 type PermissionsAnalytics struct {
     Entity
 }
-// NewPermissionsAnalytics instantiates a new permissionsAnalytics and sets the default values.
+// NewPermissionsAnalytics instantiates a new PermissionsAnalytics and sets the default values.
 func NewPermissionsAnalytics()(*PermissionsAnalytics) {
     m := &PermissionsAnalytics{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPermissionsAnalytics()(*PermissionsAnalytics) {
     return m
 }
 // CreatePermissionsAnalyticsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePermissionsAnalyticsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPermissionsAnalytics(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PermissionsAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["findings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +58,7 @@ func (m *PermissionsAnalytics) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetFindings gets the findings property value. The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
+// returns a []Findingable when successful
 func (m *PermissionsAnalytics) GetFindings()([]Findingable) {
     val, err := m.GetBackingStore().Get("findings")
     if err != nil {
@@ -68,6 +70,7 @@ func (m *PermissionsAnalytics) GetFindings()([]Findingable) {
     return nil
 }
 // GetPermissionsCreepIndexDistributions gets the permissionsCreepIndexDistributions property value. Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
+// returns a []PermissionsCreepIndexDistributionable when successful
 func (m *PermissionsAnalytics) GetPermissionsCreepIndexDistributions()([]PermissionsCreepIndexDistributionable) {
     val, err := m.GetBackingStore().Get("permissionsCreepIndexDistributions")
     if err != nil {
@@ -124,7 +127,6 @@ func (m *PermissionsAnalytics) SetPermissionsCreepIndexDistributions(value []Per
         panic(err)
     }
 }
-// PermissionsAnalyticsable 
 type PermissionsAnalyticsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

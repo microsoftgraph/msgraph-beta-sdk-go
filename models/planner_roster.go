@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PlannerRoster 
 type PlannerRoster struct {
     Entity
 }
-// NewPlannerRoster instantiates a new plannerRoster and sets the default values.
+// NewPlannerRoster instantiates a new PlannerRoster and sets the default values.
 func NewPlannerRoster()(*PlannerRoster) {
     m := &PlannerRoster{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPlannerRoster()(*PlannerRoster) {
     return m
 }
 // CreatePlannerRosterFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePlannerRosterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerRoster(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerRoster) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -57,6 +58,7 @@ func (m *PlannerRoster) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetMembers gets the members property value. Retrieves the members of the plannerRoster.
+// returns a []PlannerRosterMemberable when successful
 func (m *PlannerRoster) GetMembers()([]PlannerRosterMemberable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
@@ -68,6 +70,7 @@ func (m *PlannerRoster) GetMembers()([]PlannerRosterMemberable) {
     return nil
 }
 // GetPlans gets the plans property value. Retrieves the plans contained by the plannerRoster.
+// returns a []PlannerPlanable when successful
 func (m *PlannerRoster) GetPlans()([]PlannerPlanable) {
     val, err := m.GetBackingStore().Get("plans")
     if err != nil {
@@ -124,7 +127,6 @@ func (m *PlannerRoster) SetPlans(value []PlannerPlanable)() {
         panic(err)
     }
 }
-// PlannerRosterable 
 type PlannerRosterable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

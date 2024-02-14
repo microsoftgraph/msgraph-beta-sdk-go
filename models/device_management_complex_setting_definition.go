@@ -8,7 +8,7 @@ import (
 type DeviceManagementComplexSettingDefinition struct {
     DeviceManagementSettingDefinition
 }
-// NewDeviceManagementComplexSettingDefinition instantiates a new deviceManagementComplexSettingDefinition and sets the default values.
+// NewDeviceManagementComplexSettingDefinition instantiates a new DeviceManagementComplexSettingDefinition and sets the default values.
 func NewDeviceManagementComplexSettingDefinition()(*DeviceManagementComplexSettingDefinition) {
     m := &DeviceManagementComplexSettingDefinition{
         DeviceManagementSettingDefinition: *NewDeviceManagementSettingDefinition(),
@@ -16,10 +16,12 @@ func NewDeviceManagementComplexSettingDefinition()(*DeviceManagementComplexSetti
     return m
 }
 // CreateDeviceManagementComplexSettingDefinitionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementComplexSettingDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementComplexSettingDefinition(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementComplexSettingDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceManagementSettingDefinition.GetFieldDeserializers()
     res["propertyDefinitionIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +43,7 @@ func (m *DeviceManagementComplexSettingDefinition) GetFieldDeserializers()(map[s
     return res
 }
 // GetPropertyDefinitionIds gets the propertyDefinitionIds property value. The definitions of each property of the complex setting
+// returns a []string when successful
 func (m *DeviceManagementComplexSettingDefinition) GetPropertyDefinitionIds()([]string) {
     val, err := m.GetBackingStore().Get("propertyDefinitionIds")
     if err != nil {
@@ -72,7 +75,6 @@ func (m *DeviceManagementComplexSettingDefinition) SetPropertyDefinitionIds(valu
         panic(err)
     }
 }
-// DeviceManagementComplexSettingDefinitionable 
 type DeviceManagementComplexSettingDefinitionable interface {
     DeviceManagementSettingDefinitionable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -10,7 +10,7 @@ type ComanagedDevicesSummary struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewComanagedDevicesSummary instantiates a new comanagedDevicesSummary and sets the default values.
+// NewComanagedDevicesSummary instantiates a new ComanagedDevicesSummary and sets the default values.
 func NewComanagedDevicesSummary()(*ComanagedDevicesSummary) {
     m := &ComanagedDevicesSummary{
     }
@@ -19,10 +19,12 @@ func NewComanagedDevicesSummary()(*ComanagedDevicesSummary) {
     return m
 }
 // CreateComanagedDevicesSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateComanagedDevicesSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewComanagedDevicesSummary(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ComanagedDevicesSummary) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *ComanagedDevicesSummary) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *ComanagedDevicesSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetCompliancePolicyCount gets the compliancePolicyCount property value. Number of devices with CompliancePolicy swung-over. This property is read-only.
+// returns a *int32 when successful
 func (m *ComanagedDevicesSummary) GetCompliancePolicyCount()(*int32) {
     val, err := m.GetBackingStore().Get("compliancePolicyCount")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *ComanagedDevicesSummary) GetCompliancePolicyCount()(*int32) {
     return nil
 }
 // GetConfigurationSettingsCount gets the configurationSettingsCount property value. Number of devices with ConfigurationSettings swung-over. This property is read-only.
+// returns a *int32 when successful
 func (m *ComanagedDevicesSummary) GetConfigurationSettingsCount()(*int32) {
     val, err := m.GetBackingStore().Get("configurationSettingsCount")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *ComanagedDevicesSummary) GetConfigurationSettingsCount()(*int32) {
     return nil
 }
 // GetEndpointProtectionCount gets the endpointProtectionCount property value. Number of devices with EndpointProtection swung-over. This property is read-only.
+// returns a *int32 when successful
 func (m *ComanagedDevicesSummary) GetEndpointProtectionCount()(*int32) {
     val, err := m.GetBackingStore().Get("endpointProtectionCount")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *ComanagedDevicesSummary) GetEndpointProtectionCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["compliancePolicyCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -177,6 +184,7 @@ func (m *ComanagedDevicesSummary) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetInventoryCount gets the inventoryCount property value. Number of devices with Inventory swung-over. This property is read-only.
+// returns a *int32 when successful
 func (m *ComanagedDevicesSummary) GetInventoryCount()(*int32) {
     val, err := m.GetBackingStore().Get("inventoryCount")
     if err != nil {
@@ -188,6 +196,7 @@ func (m *ComanagedDevicesSummary) GetInventoryCount()(*int32) {
     return nil
 }
 // GetModernAppsCount gets the modernAppsCount property value. Number of devices with ModernApps swung-over. This property is read-only.
+// returns a *int32 when successful
 func (m *ComanagedDevicesSummary) GetModernAppsCount()(*int32) {
     val, err := m.GetBackingStore().Get("modernAppsCount")
     if err != nil {
@@ -199,6 +208,7 @@ func (m *ComanagedDevicesSummary) GetModernAppsCount()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *ComanagedDevicesSummary) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -210,6 +220,7 @@ func (m *ComanagedDevicesSummary) GetOdataType()(*string) {
     return nil
 }
 // GetOfficeAppsCount gets the officeAppsCount property value. Number of devices with OfficeApps swung-over. This property is read-only.
+// returns a *int32 when successful
 func (m *ComanagedDevicesSummary) GetOfficeAppsCount()(*int32) {
     val, err := m.GetBackingStore().Get("officeAppsCount")
     if err != nil {
@@ -221,6 +232,7 @@ func (m *ComanagedDevicesSummary) GetOfficeAppsCount()(*int32) {
     return nil
 }
 // GetResourceAccessCount gets the resourceAccessCount property value. Number of devices with ResourceAccess swung-over. This property is read-only.
+// returns a *int32 when successful
 func (m *ComanagedDevicesSummary) GetResourceAccessCount()(*int32) {
     val, err := m.GetBackingStore().Get("resourceAccessCount")
     if err != nil {
@@ -232,6 +244,7 @@ func (m *ComanagedDevicesSummary) GetResourceAccessCount()(*int32) {
     return nil
 }
 // GetTotalComanagedCount gets the totalComanagedCount property value. Number of Co-Managed Devices. This property is read-only.
+// returns a *int32 when successful
 func (m *ComanagedDevicesSummary) GetTotalComanagedCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalComanagedCount")
     if err != nil {
@@ -243,6 +256,7 @@ func (m *ComanagedDevicesSummary) GetTotalComanagedCount()(*int32) {
     return nil
 }
 // GetWindowsUpdateForBusinessCount gets the windowsUpdateForBusinessCount property value. Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
+// returns a *int32 when successful
 func (m *ComanagedDevicesSummary) GetWindowsUpdateForBusinessCount()(*int32) {
     val, err := m.GetBackingStore().Get("windowsUpdateForBusinessCount")
     if err != nil {
@@ -350,7 +364,6 @@ func (m *ComanagedDevicesSummary) SetWindowsUpdateForBusinessCount(value *int32)
         panic(err)
     }
 }
-// ComanagedDevicesSummaryable 
 type ComanagedDevicesSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

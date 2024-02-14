@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedRoleSummary 
 type PrivilegedRoleSummary struct {
     Entity
 }
-// NewPrivilegedRoleSummary instantiates a new privilegedRoleSummary and sets the default values.
+// NewPrivilegedRoleSummary instantiates a new PrivilegedRoleSummary and sets the default values.
 func NewPrivilegedRoleSummary()(*PrivilegedRoleSummary) {
     m := &PrivilegedRoleSummary{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewPrivilegedRoleSummary()(*PrivilegedRoleSummary) {
     return m
 }
 // CreatePrivilegedRoleSummaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegedRoleSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedRoleSummary(), nil
 }
 // GetElevatedCount gets the elevatedCount property value. The elevatedCount property
+// returns a *int32 when successful
 func (m *PrivilegedRoleSummary) GetElevatedCount()(*int32) {
     val, err := m.GetBackingStore().Get("elevatedCount")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *PrivilegedRoleSummary) GetElevatedCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["elevatedCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +88,7 @@ func (m *PrivilegedRoleSummary) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetManagedCount gets the managedCount property value. The managedCount property
+// returns a *int32 when successful
 func (m *PrivilegedRoleSummary) GetManagedCount()(*int32) {
     val, err := m.GetBackingStore().Get("managedCount")
     if err != nil {
@@ -97,6 +100,7 @@ func (m *PrivilegedRoleSummary) GetManagedCount()(*int32) {
     return nil
 }
 // GetMfaEnabled gets the mfaEnabled property value. The mfaEnabled property
+// returns a *bool when successful
 func (m *PrivilegedRoleSummary) GetMfaEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("mfaEnabled")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *PrivilegedRoleSummary) GetMfaEnabled()(*bool) {
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *RoleSummaryStatus when successful
 func (m *PrivilegedRoleSummary) GetStatus()(*RoleSummaryStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *PrivilegedRoleSummary) GetStatus()(*RoleSummaryStatus) {
     return nil
 }
 // GetUsersCount gets the usersCount property value. The usersCount property
+// returns a *int32 when successful
 func (m *PrivilegedRoleSummary) GetUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("usersCount")
     if err != nil {
@@ -203,7 +209,6 @@ func (m *PrivilegedRoleSummary) SetUsersCount(value *int32)() {
         panic(err)
     }
 }
-// PrivilegedRoleSummaryable 
 type PrivilegedRoleSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

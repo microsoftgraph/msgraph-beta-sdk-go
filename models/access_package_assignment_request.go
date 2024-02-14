@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AccessPackageAssignmentRequest 
 type AccessPackageAssignmentRequest struct {
     Entity
 }
-// NewAccessPackageAssignmentRequest instantiates a new accessPackageAssignmentRequest and sets the default values.
+// NewAccessPackageAssignmentRequest instantiates a new AccessPackageAssignmentRequest and sets the default values.
 func NewAccessPackageAssignmentRequest()(*AccessPackageAssignmentRequest) {
     m := &AccessPackageAssignmentRequest{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewAccessPackageAssignmentRequest()(*AccessPackageAssignmentRequest) {
     return m
 }
 // CreateAccessPackageAssignmentRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAccessPackageAssignmentRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessPackageAssignmentRequest(), nil
 }
 // GetAccessPackage gets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
+// returns a AccessPackageable when successful
 func (m *AccessPackageAssignmentRequest) GetAccessPackage()(AccessPackageable) {
     val, err := m.GetBackingStore().Get("accessPackage")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *AccessPackageAssignmentRequest) GetAccessPackage()(AccessPackageable) {
     return nil
 }
 // GetAccessPackageAssignment gets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
+// returns a AccessPackageAssignmentable when successful
 func (m *AccessPackageAssignmentRequest) GetAccessPackageAssignment()(AccessPackageAssignmentable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignment")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *AccessPackageAssignmentRequest) GetAccessPackageAssignment()(AccessPack
     return nil
 }
 // GetAnswers gets the answers property value. Answers provided by the requestor to accessPackageQuestions asked of them at the time of request.
+// returns a []AccessPackageAnswerable when successful
 func (m *AccessPackageAssignmentRequest) GetAnswers()([]AccessPackageAnswerable) {
     val, err := m.GetBackingStore().Get("answers")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *AccessPackageAssignmentRequest) GetAnswers()([]AccessPackageAnswerable)
     return nil
 }
 // GetCompletedDate gets the completedDate property value. The date of the end of processing, either successful or failure, of a request. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *AccessPackageAssignmentRequest) GetCompletedDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDate")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *AccessPackageAssignmentRequest) GetCompletedDate()(*i336074805fc853987a
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *AccessPackageAssignmentRequest) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *AccessPackageAssignmentRequest) GetCreatedDateTime()(*i336074805fc85398
     return nil
 }
 // GetCustomExtensionCalloutInstances gets the customExtensionCalloutInstances property value. Information about all the custom extension calls that were made during the access package assignment request workflow.
+// returns a []CustomExtensionCalloutInstanceable when successful
 func (m *AccessPackageAssignmentRequest) GetCustomExtensionCalloutInstances()([]CustomExtensionCalloutInstanceable) {
     val, err := m.GetBackingStore().Get("customExtensionCalloutInstances")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *AccessPackageAssignmentRequest) GetCustomExtensionCalloutInstances()([]
     return nil
 }
 // GetCustomExtensionHandlerInstances gets the customExtensionHandlerInstances property value. A collection of custom workflow extension instances being run on an assignment request. Read-only.
+// returns a []CustomExtensionHandlerInstanceable when successful
 func (m *AccessPackageAssignmentRequest) GetCustomExtensionHandlerInstances()([]CustomExtensionHandlerInstanceable) {
     val, err := m.GetBackingStore().Get("customExtensionHandlerInstances")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *AccessPackageAssignmentRequest) GetCustomExtensionHandlerInstances()([]
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// returns a *Time when successful
 func (m *AccessPackageAssignmentRequest) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -109,6 +117,7 @@ func (m *AccessPackageAssignmentRequest) GetExpirationDateTime()(*i336074805fc85
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["accessPackage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -298,6 +307,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetIsValidationOnly gets the isValidationOnly property value. True if the request is not to be processed for assignment.
+// returns a *bool when successful
 func (m *AccessPackageAssignmentRequest) GetIsValidationOnly()(*bool) {
     val, err := m.GetBackingStore().Get("isValidationOnly")
     if err != nil {
@@ -309,6 +319,7 @@ func (m *AccessPackageAssignmentRequest) GetIsValidationOnly()(*bool) {
     return nil
 }
 // GetJustification gets the justification property value. The requestor's supplied justification.
+// returns a *string when successful
 func (m *AccessPackageAssignmentRequest) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
     if err != nil {
@@ -320,6 +331,7 @@ func (m *AccessPackageAssignmentRequest) GetJustification()(*string) {
     return nil
 }
 // GetRequestor gets the requestor property value. The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
+// returns a AccessPackageSubjectable when successful
 func (m *AccessPackageAssignmentRequest) GetRequestor()(AccessPackageSubjectable) {
     val, err := m.GetBackingStore().Get("requestor")
     if err != nil {
@@ -331,6 +343,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestor()(AccessPackageSubjectable
     return nil
 }
 // GetRequestState gets the requestState property value. One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.
+// returns a *string when successful
 func (m *AccessPackageAssignmentRequest) GetRequestState()(*string) {
     val, err := m.GetBackingStore().Get("requestState")
     if err != nil {
@@ -342,6 +355,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestState()(*string) {
     return nil
 }
 // GetRequestStatus gets the requestStatus property value. More information on the request processing status. Read-only.
+// returns a *string when successful
 func (m *AccessPackageAssignmentRequest) GetRequestStatus()(*string) {
     val, err := m.GetBackingStore().Get("requestStatus")
     if err != nil {
@@ -353,6 +367,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestStatus()(*string) {
     return nil
 }
 // GetRequestType gets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.
+// returns a *string when successful
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*string) {
     val, err := m.GetBackingStore().Get("requestType")
     if err != nil {
@@ -364,6 +379,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestType()(*string) {
     return nil
 }
 // GetSchedule gets the schedule property value. The range of dates that access is to be assigned to the requestor. Read-only.
+// returns a RequestScheduleable when successful
 func (m *AccessPackageAssignmentRequest) GetSchedule()(RequestScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
     if err != nil {
@@ -375,6 +391,7 @@ func (m *AccessPackageAssignmentRequest) GetSchedule()(RequestScheduleable) {
     return nil
 }
 // GetVerifiedCredentialsData gets the verifiedCredentialsData property value. The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.
+// returns a []VerifiedCredentialDataable when successful
 func (m *AccessPackageAssignmentRequest) GetVerifiedCredentialsData()([]VerifiedCredentialDataable) {
     val, err := m.GetBackingStore().Get("verifiedCredentialsData")
     if err != nil {
@@ -625,7 +642,6 @@ func (m *AccessPackageAssignmentRequest) SetVerifiedCredentialsData(value []Veri
         panic(err)
     }
 }
-// AccessPackageAssignmentRequestable 
 type AccessPackageAssignmentRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

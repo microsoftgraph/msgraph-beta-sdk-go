@@ -34,28 +34,29 @@ type ItemAuthenticationSignInPreferencesRequestBuilderPatchRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemAuthenticationSignInPreferencesRequestBuilderInternal instantiates a new SignInPreferencesRequestBuilder and sets the default values.
+// NewItemAuthenticationSignInPreferencesRequestBuilderInternal instantiates a new ItemAuthenticationSignInPreferencesRequestBuilder and sets the default values.
 func NewItemAuthenticationSignInPreferencesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationSignInPreferencesRequestBuilder) {
     m := &ItemAuthenticationSignInPreferencesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/signInPreferences{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/signInPreferences{?%24expand,%24select}", pathParameters),
     }
     return m
 }
-// NewItemAuthenticationSignInPreferencesRequestBuilder instantiates a new SignInPreferencesRequestBuilder and sets the default values.
+// NewItemAuthenticationSignInPreferencesRequestBuilder instantiates a new ItemAuthenticationSignInPreferencesRequestBuilder and sets the default values.
 func NewItemAuthenticationSignInPreferencesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationSignInPreferencesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationSignInPreferencesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
+// returns a SignInPreferencesable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationSignInPreferencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSignInPreferencesFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -67,14 +68,15 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) Get(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable), nil
 }
 // Patch update property signInPreferences value.
+// returns a SignInPreferencesable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable, requestConfiguration *ItemAuthenticationSignInPreferencesRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSignInPreferencesFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -86,6 +88,7 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) Patch(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable), nil
 }
 // ToGetRequestInformation the settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
+// returns a *RequestInformation when successful
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationSignInPreferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -99,8 +102,9 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // ToPatchRequestInformation update property signInPreferences value.
+// returns a *RequestInformation when successful
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable, requestConfiguration *ItemAuthenticationSignInPreferencesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/users/{user%2Did}/authentication/signInPreferences", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -113,6 +117,7 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToPatchRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemAuthenticationSignInPreferencesRequestBuilder when successful
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationSignInPreferencesRequestBuilder) {
     return NewItemAuthenticationSignInPreferencesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

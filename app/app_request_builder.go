@@ -35,13 +35,14 @@ type AppRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Calls provides operations to manage the calls property of the microsoft.graph.commsApplication entity.
+// returns a *CallsRequestBuilder when successful
 func (m *AppRequestBuilder) Calls()(*CallsRequestBuilder) {
     return NewCallsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewAppRequestBuilderInternal instantiates a new AppRequestBuilder and sets the default values.
 func NewAppRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppRequestBuilder) {
     m := &AppRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app{?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app{?%24expand,%24select}", pathParameters),
     }
     return m
 }
@@ -52,14 +53,15 @@ func NewAppRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
     return NewAppRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get app
+// returns a CommsApplicationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AppRequestBuilder) Get(ctx context.Context, requestConfiguration *AppRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCommsApplicationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -71,22 +73,25 @@ func (m *AppRequestBuilder) Get(ctx context.Context, requestConfiguration *AppRe
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable), nil
 }
 // OnlineMeetings provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
+// returns a *OnlineMeetingsRequestBuilder when successful
 func (m *AppRequestBuilder) OnlineMeetings()(*OnlineMeetingsRequestBuilder) {
     return NewOnlineMeetingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OnlineMeetingsWithJoinWebUrl provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
+// returns a *OnlineMeetingsWithJoinWebUrlRequestBuilder when successful
 func (m *AppRequestBuilder) OnlineMeetingsWithJoinWebUrl(joinWebUrl *string)(*OnlineMeetingsWithJoinWebUrlRequestBuilder) {
     return NewOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, joinWebUrl)
 }
 // Patch update app
+// returns a CommsApplicationable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AppRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable, requestConfiguration *AppRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCommsApplicationFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -98,6 +103,7 @@ func (m *AppRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba697
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable), nil
 }
 // ToGetRequestInformation get app
+// returns a *RequestInformation when successful
 func (m *AppRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -111,8 +117,9 @@ func (m *AppRequestBuilder) ToGetRequestInformation(ctx context.Context, request
     return requestInfo, nil
 }
 // ToPatchRequestInformation update app
+// returns a *RequestInformation when successful
 func (m *AppRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable, requestConfiguration *AppRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/app", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -125,6 +132,7 @@ func (m *AppRequestBuilder) ToPatchRequestInformation(ctx context.Context, body 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AppRequestBuilder when successful
 func (m *AppRequestBuilder) WithUrl(rawUrl string)(*AppRequestBuilder) {
     return NewAppRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

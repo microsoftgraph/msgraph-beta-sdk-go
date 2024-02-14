@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// Connectivity 
 type Connectivity struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewConnectivity instantiates a new connectivity and sets the default values.
+// NewConnectivity instantiates a new Connectivity and sets the default values.
 func NewConnectivity()(*Connectivity) {
     m := &Connectivity{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewConnectivity()(*Connectivity) {
     return m
 }
 // CreateConnectivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConnectivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectivity(), nil
 }
 // GetBranches gets the branches property value. Branches represent locations for connectivity.
+// returns a []BranchSiteable when successful
 func (m *Connectivity) GetBranches()([]BranchSiteable) {
     val, err := m.GetBackingStore().Get("branches")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *Connectivity) GetBranches()([]BranchSiteable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Connectivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["branches"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -85,6 +87,7 @@ func (m *Connectivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetRemoteNetworks gets the remoteNetworks property value. The remoteNetworks property
+// returns a []RemoteNetworkable when successful
 func (m *Connectivity) GetRemoteNetworks()([]RemoteNetworkable) {
     val, err := m.GetBackingStore().Get("remoteNetworks")
     if err != nil {
@@ -96,6 +99,7 @@ func (m *Connectivity) GetRemoteNetworks()([]RemoteNetworkable) {
     return nil
 }
 // GetWebCategories gets the webCategories property value. The webCategories property
+// returns a []WebCategoryable when successful
 func (m *Connectivity) GetWebCategories()([]WebCategoryable) {
     val, err := m.GetBackingStore().Get("webCategories")
     if err != nil {
@@ -171,7 +175,6 @@ func (m *Connectivity) SetWebCategories(value []WebCategoryable)() {
         panic(err)
     }
 }
-// Connectivityable 
 type Connectivityable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

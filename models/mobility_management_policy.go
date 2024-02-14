@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MobilityManagementPolicy 
 type MobilityManagementPolicy struct {
     Entity
 }
-// NewMobilityManagementPolicy instantiates a new mobilityManagementPolicy and sets the default values.
+// NewMobilityManagementPolicy instantiates a new MobilityManagementPolicy and sets the default values.
 func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
     m := &MobilityManagementPolicy{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
     return m
 }
 // CreateMobilityManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMobilityManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMobilityManagementPolicy(), nil
 }
 // GetAppliesTo gets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
+// returns a *PolicyScope when successful
 func (m *MobilityManagementPolicy) GetAppliesTo()(*PolicyScope) {
     val, err := m.GetBackingStore().Get("appliesTo")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *MobilityManagementPolicy) GetAppliesTo()(*PolicyScope) {
     return nil
 }
 // GetComplianceUrl gets the complianceUrl property value. Compliance URL of the mobility management application.
+// returns a *string when successful
 func (m *MobilityManagementPolicy) GetComplianceUrl()(*string) {
     val, err := m.GetBackingStore().Get("complianceUrl")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *MobilityManagementPolicy) GetComplianceUrl()(*string) {
     return nil
 }
 // GetDescription gets the description property value. Description of the mobility management application.
+// returns a *string when successful
 func (m *MobilityManagementPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *MobilityManagementPolicy) GetDescription()(*string) {
     return nil
 }
 // GetDiscoveryUrl gets the discoveryUrl property value. Discovery URL of the mobility management application.
+// returns a *string when successful
 func (m *MobilityManagementPolicy) GetDiscoveryUrl()(*string) {
     val, err := m.GetBackingStore().Get("discoveryUrl")
     if err != nil {
@@ -64,6 +68,7 @@ func (m *MobilityManagementPolicy) GetDiscoveryUrl()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Display name of the mobility management application.
+// returns a *string when successful
 func (m *MobilityManagementPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -75,6 +80,7 @@ func (m *MobilityManagementPolicy) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["appliesTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -166,6 +172,7 @@ func (m *MobilityManagementPolicy) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIncludedGroups gets the includedGroups property value. Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
+// returns a []Groupable when successful
 func (m *MobilityManagementPolicy) GetIncludedGroups()([]Groupable) {
     val, err := m.GetBackingStore().Get("includedGroups")
     if err != nil {
@@ -177,6 +184,7 @@ func (m *MobilityManagementPolicy) GetIncludedGroups()([]Groupable) {
     return nil
 }
 // GetIsValid gets the isValid property value. Whether policy is valid. Invalid policies may not be updated and should be deleted.
+// returns a *bool when successful
 func (m *MobilityManagementPolicy) GetIsValid()(*bool) {
     val, err := m.GetBackingStore().Get("isValid")
     if err != nil {
@@ -188,6 +196,7 @@ func (m *MobilityManagementPolicy) GetIsValid()(*bool) {
     return nil
 }
 // GetTermsOfUseUrl gets the termsOfUseUrl property value. Terms of Use URL of the mobility management application.
+// returns a *string when successful
 func (m *MobilityManagementPolicy) GetTermsOfUseUrl()(*string) {
     val, err := m.GetBackingStore().Get("termsOfUseUrl")
     if err != nil {
@@ -317,7 +326,6 @@ func (m *MobilityManagementPolicy) SetTermsOfUseUrl(value *string)() {
         panic(err)
     }
 }
-// MobilityManagementPolicyable 
 type MobilityManagementPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

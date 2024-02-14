@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// KnowledgeBaseArticle 
 type KnowledgeBaseArticle struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewKnowledgeBaseArticle instantiates a new knowledgeBaseArticle and sets the default values.
+// NewKnowledgeBaseArticle instantiates a new KnowledgeBaseArticle and sets the default values.
 func NewKnowledgeBaseArticle()(*KnowledgeBaseArticle) {
     m := &KnowledgeBaseArticle{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,10 +16,12 @@ func NewKnowledgeBaseArticle()(*KnowledgeBaseArticle) {
     return m
 }
 // CreateKnowledgeBaseArticleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateKnowledgeBaseArticleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewKnowledgeBaseArticle(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KnowledgeBaseArticle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -36,6 +37,7 @@ func (m *KnowledgeBaseArticle) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetUrl gets the url property value. The URL of the knowledge base article. Read-only.
+// returns a *string when successful
 func (m *KnowledgeBaseArticle) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
     if err != nil {
@@ -67,7 +69,6 @@ func (m *KnowledgeBaseArticle) SetUrl(value *string)() {
         panic(err)
     }
 }
-// KnowledgeBaseArticleable 
 type KnowledgeBaseArticleable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

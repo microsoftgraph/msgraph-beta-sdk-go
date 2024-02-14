@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AwsIdentityAccessManagementKeyAgeFinding 
 type AwsIdentityAccessManagementKeyAgeFinding struct {
     Finding
 }
-// NewAwsIdentityAccessManagementKeyAgeFinding instantiates a new awsIdentityAccessManagementKeyAgeFinding and sets the default values.
+// NewAwsIdentityAccessManagementKeyAgeFinding instantiates a new AwsIdentityAccessManagementKeyAgeFinding and sets the default values.
 func NewAwsIdentityAccessManagementKeyAgeFinding()(*AwsIdentityAccessManagementKeyAgeFinding) {
     m := &AwsIdentityAccessManagementKeyAgeFinding{
         Finding: *NewFinding(),
@@ -16,10 +15,12 @@ func NewAwsIdentityAccessManagementKeyAgeFinding()(*AwsIdentityAccessManagementK
     return m
 }
 // CreateAwsIdentityAccessManagementKeyAgeFindingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAwsIdentityAccessManagementKeyAgeFindingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAwsIdentityAccessManagementKeyAgeFinding(), nil
 }
 // GetAccessKey gets the accessKey property value. The accessKey property
+// returns a AwsAccessKeyable when successful
 func (m *AwsIdentityAccessManagementKeyAgeFinding) GetAccessKey()(AwsAccessKeyable) {
     val, err := m.GetBackingStore().Get("accessKey")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *AwsIdentityAccessManagementKeyAgeFinding) GetAccessKey()(AwsAccessKeyab
     return nil
 }
 // GetActionSummary gets the actionSummary property value. The actionSummary property
+// returns a ActionSummaryable when successful
 func (m *AwsIdentityAccessManagementKeyAgeFinding) GetActionSummary()(ActionSummaryable) {
     val, err := m.GetBackingStore().Get("actionSummary")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *AwsIdentityAccessManagementKeyAgeFinding) GetActionSummary()(ActionSumm
     return nil
 }
 // GetAwsAccessKeyDetails gets the awsAccessKeyDetails property value. The awsAccessKeyDetails property
+// returns a AwsAccessKeyDetailsable when successful
 func (m *AwsIdentityAccessManagementKeyAgeFinding) GetAwsAccessKeyDetails()(AwsAccessKeyDetailsable) {
     val, err := m.GetBackingStore().Get("awsAccessKeyDetails")
     if err != nil {
@@ -53,6 +56,7 @@ func (m *AwsIdentityAccessManagementKeyAgeFinding) GetAwsAccessKeyDetails()(AwsA
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AwsIdentityAccessManagementKeyAgeFinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Finding.GetFieldDeserializers()
     res["accessKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -108,6 +112,7 @@ func (m *AwsIdentityAccessManagementKeyAgeFinding) GetFieldDeserializers()(map[s
     return res
 }
 // GetPermissionsCreepIndex gets the permissionsCreepIndex property value. The permissionsCreepIndex property
+// returns a PermissionsCreepIndexable when successful
 func (m *AwsIdentityAccessManagementKeyAgeFinding) GetPermissionsCreepIndex()(PermissionsCreepIndexable) {
     val, err := m.GetBackingStore().Get("permissionsCreepIndex")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *AwsIdentityAccessManagementKeyAgeFinding) GetPermissionsCreepIndex()(Pe
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *IamStatus when successful
 func (m *AwsIdentityAccessManagementKeyAgeFinding) GetStatus()(*IamStatus) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -203,7 +209,6 @@ func (m *AwsIdentityAccessManagementKeyAgeFinding) SetStatus(value *IamStatus)()
         panic(err)
     }
 }
-// AwsIdentityAccessManagementKeyAgeFindingable 
 type AwsIdentityAccessManagementKeyAgeFindingable interface {
     Findingable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

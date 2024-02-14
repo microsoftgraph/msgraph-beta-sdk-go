@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkbookDocumentTask 
 type WorkbookDocumentTask struct {
     Entity
 }
-// NewWorkbookDocumentTask instantiates a new workbookDocumentTask and sets the default values.
+// NewWorkbookDocumentTask instantiates a new WorkbookDocumentTask and sets the default values.
 func NewWorkbookDocumentTask()(*WorkbookDocumentTask) {
     m := &WorkbookDocumentTask{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewWorkbookDocumentTask()(*WorkbookDocumentTask) {
     return m
 }
 // CreateWorkbookDocumentTaskFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkbookDocumentTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookDocumentTask(), nil
 }
 // GetAssignees gets the assignees property value. A collection of user identities the task is assigned to.
+// returns a []WorkbookEmailIdentityable when successful
 func (m *WorkbookDocumentTask) GetAssignees()([]WorkbookEmailIdentityable) {
     val, err := m.GetBackingStore().Get("assignees")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *WorkbookDocumentTask) GetAssignees()([]WorkbookEmailIdentityable) {
     return nil
 }
 // GetChanges gets the changes property value. A collection of task change histories.
+// returns a []WorkbookDocumentTaskChangeable when successful
 func (m *WorkbookDocumentTask) GetChanges()([]WorkbookDocumentTaskChangeable) {
     val, err := m.GetBackingStore().Get("changes")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *WorkbookDocumentTask) GetChanges()([]WorkbookDocumentTaskChangeable) {
     return nil
 }
 // GetComment gets the comment property value. The comment that the task is associated with.
+// returns a WorkbookCommentable when successful
 func (m *WorkbookDocumentTask) GetComment()(WorkbookCommentable) {
     val, err := m.GetBackingStore().Get("comment")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *WorkbookDocumentTask) GetComment()(WorkbookCommentable) {
     return nil
 }
 // GetCompletedBy gets the completedBy property value. The identity of the user who completed the task. Nullable.
+// returns a WorkbookEmailIdentityable when successful
 func (m *WorkbookDocumentTask) GetCompletedBy()(WorkbookEmailIdentityable) {
     val, err := m.GetBackingStore().Get("completedBy")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *WorkbookDocumentTask) GetCompletedBy()(WorkbookEmailIdentityable) {
     return nil
 }
 // GetCompletedDateTime gets the completedDateTime property value. Date and time when the task was completed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *WorkbookDocumentTask) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDateTime")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *WorkbookDocumentTask) GetCompletedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetCreatedBy gets the createdBy property value. A user identity that creates the task. Nullable.
+// returns a WorkbookEmailIdentityable when successful
 func (m *WorkbookDocumentTask) GetCreatedBy()(WorkbookEmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -87,6 +93,7 @@ func (m *WorkbookDocumentTask) GetCreatedBy()(WorkbookEmailIdentityable) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. Date and time when the task was created. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *WorkbookDocumentTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -98,6 +105,7 @@ func (m *WorkbookDocumentTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkbookDocumentTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignees"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -225,6 +233,7 @@ func (m *WorkbookDocumentTask) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetPercentComplete gets the percentComplete property value. An integer value from 0 to 100 that represents the percentage of the completion of the task. 100 means that the task is completed. Nullable.
+// returns a *int32 when successful
 func (m *WorkbookDocumentTask) GetPercentComplete()(*int32) {
     val, err := m.GetBackingStore().Get("percentComplete")
     if err != nil {
@@ -236,6 +245,7 @@ func (m *WorkbookDocumentTask) GetPercentComplete()(*int32) {
     return nil
 }
 // GetPriority gets the priority property value. An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. Nullable.
+// returns a *int32 when successful
 func (m *WorkbookDocumentTask) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -247,6 +257,7 @@ func (m *WorkbookDocumentTask) GetPriority()(*int32) {
     return nil
 }
 // GetStartAndDueDateTime gets the startAndDueDateTime property value. Start and due date of the task. Nullable.
+// returns a WorkbookDocumentTaskScheduleable when successful
 func (m *WorkbookDocumentTask) GetStartAndDueDateTime()(WorkbookDocumentTaskScheduleable) {
     val, err := m.GetBackingStore().Get("startAndDueDateTime")
     if err != nil {
@@ -258,6 +269,7 @@ func (m *WorkbookDocumentTask) GetStartAndDueDateTime()(WorkbookDocumentTaskSche
     return nil
 }
 // GetTitle gets the title property value. The title of the task.
+// returns a *string when successful
 func (m *WorkbookDocumentTask) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
     if err != nil {
@@ -431,7 +443,6 @@ func (m *WorkbookDocumentTask) SetTitle(value *string)() {
         panic(err)
     }
 }
-// WorkbookDocumentTaskable 
 type WorkbookDocumentTaskable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

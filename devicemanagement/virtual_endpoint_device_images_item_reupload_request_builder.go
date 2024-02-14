@@ -17,20 +17,21 @@ type VirtualEndpointDeviceImagesItemReuploadRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal instantiates a new ReuploadRequestBuilder and sets the default values.
+// NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal instantiates a new VirtualEndpointDeviceImagesItemReuploadRequestBuilder and sets the default values.
 func NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointDeviceImagesItemReuploadRequestBuilder) {
     m := &VirtualEndpointDeviceImagesItemReuploadRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage%2Did}/reupload", pathParameters),
     }
     return m
 }
-// NewVirtualEndpointDeviceImagesItemReuploadRequestBuilder instantiates a new ReuploadRequestBuilder and sets the default values.
+// NewVirtualEndpointDeviceImagesItemReuploadRequestBuilder instantiates a new VirtualEndpointDeviceImagesItemReuploadRequestBuilder and sets the default values.
 func NewVirtualEndpointDeviceImagesItemReuploadRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointDeviceImagesItemReuploadRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post reupload a cloudPcDeviceImage object that failed to upload.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) Post(ctx context
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) Post(ctx context
     return nil
 }
 // ToPostRequestInformation reupload a cloudPcDeviceImage object that failed to upload.
+// returns a *RequestInformation when successful
 func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesItemReuploadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VirtualEndpointDeviceImagesItemReuploadRequestBuilder when successful
 func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointDeviceImagesItemReuploadRequestBuilder) {
     return NewVirtualEndpointDeviceImagesItemReuploadRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

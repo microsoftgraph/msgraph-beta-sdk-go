@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// AuthenticationEventsFlow 
 type AuthenticationEventsFlow struct {
     Entity
 }
-// NewAuthenticationEventsFlow instantiates a new authenticationEventsFlow and sets the default values.
+// NewAuthenticationEventsFlow instantiates a new AuthenticationEventsFlow and sets the default values.
 func NewAuthenticationEventsFlow()(*AuthenticationEventsFlow) {
     m := &AuthenticationEventsFlow{
         Entity: *NewEntity(),
@@ -16,6 +15,7 @@ func NewAuthenticationEventsFlow()(*AuthenticationEventsFlow) {
     return m
 }
 // CreateAuthenticationEventsFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationEventsFlowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -38,6 +38,7 @@ func CreateAuthenticationEventsFlowFromDiscriminatorValue(parseNode i878a80d2330
     return NewAuthenticationEventsFlow(), nil
 }
 // GetConditions gets the conditions property value. The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
+// returns a AuthenticationConditionsable when successful
 func (m *AuthenticationEventsFlow) GetConditions()(AuthenticationConditionsable) {
     val, err := m.GetBackingStore().Get("conditions")
     if err != nil {
@@ -49,6 +50,7 @@ func (m *AuthenticationEventsFlow) GetConditions()(AuthenticationConditionsable)
     return nil
 }
 // GetDescription gets the description property value. The description of the events policy.
+// returns a *string when successful
 func (m *AuthenticationEventsFlow) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -60,6 +62,7 @@ func (m *AuthenticationEventsFlow) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. Required. The display name for the events policy.
+// returns a *string when successful
 func (m *AuthenticationEventsFlow) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -71,6 +74,7 @@ func (m *AuthenticationEventsFlow) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationEventsFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["conditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -116,6 +120,7 @@ func (m *AuthenticationEventsFlow) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetPriority gets the priority property value. The priority to use for each individual event of the events policy. If multiple competing listeners for an event have the same priority, one is chosen and an error is silently logged. Defaults to 500.
+// returns a *int32 when successful
 func (m *AuthenticationEventsFlow) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
     if err != nil {
@@ -186,7 +191,6 @@ func (m *AuthenticationEventsFlow) SetPriority(value *int32)() {
         panic(err)
     }
 }
-// AuthenticationEventsFlowable 
 type AuthenticationEventsFlowable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

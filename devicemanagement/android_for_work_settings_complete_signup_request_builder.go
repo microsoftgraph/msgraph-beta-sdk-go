@@ -17,28 +17,28 @@ type AndroidForWorkSettingsCompleteSignupRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewAndroidForWorkSettingsCompleteSignupRequestBuilderInternal instantiates a new CompleteSignupRequestBuilder and sets the default values.
+// NewAndroidForWorkSettingsCompleteSignupRequestBuilderInternal instantiates a new AndroidForWorkSettingsCompleteSignupRequestBuilder and sets the default values.
 func NewAndroidForWorkSettingsCompleteSignupRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkSettingsCompleteSignupRequestBuilder) {
     m := &AndroidForWorkSettingsCompleteSignupRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/androidForWorkSettings/completeSignup", pathParameters),
     }
     return m
 }
-// NewAndroidForWorkSettingsCompleteSignupRequestBuilder instantiates a new CompleteSignupRequestBuilder and sets the default values.
+// NewAndroidForWorkSettingsCompleteSignupRequestBuilder instantiates a new AndroidForWorkSettingsCompleteSignupRequestBuilder and sets the default values.
 func NewAndroidForWorkSettingsCompleteSignupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkSettingsCompleteSignupRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewAndroidForWorkSettingsCompleteSignupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action completeSignup
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AndroidForWorkSettingsCompleteSignupRequestBuilder) Post(ctx context.Context, body AndroidForWorkSettingsCompleteSignupPostRequestBodyable, requestConfiguration *AndroidForWorkSettingsCompleteSignupRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -47,6 +47,7 @@ func (m *AndroidForWorkSettingsCompleteSignupRequestBuilder) Post(ctx context.Co
     return nil
 }
 // ToPostRequestInformation invoke action completeSignup
+// returns a *RequestInformation when successful
 func (m *AndroidForWorkSettingsCompleteSignupRequestBuilder) ToPostRequestInformation(ctx context.Context, body AndroidForWorkSettingsCompleteSignupPostRequestBodyable, requestConfiguration *AndroidForWorkSettingsCompleteSignupRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -61,6 +62,7 @@ func (m *AndroidForWorkSettingsCompleteSignupRequestBuilder) ToPostRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AndroidForWorkSettingsCompleteSignupRequestBuilder when successful
 func (m *AndroidForWorkSettingsCompleteSignupRequestBuilder) WithUrl(rawUrl string)(*AndroidForWorkSettingsCompleteSignupRequestBuilder) {
     return NewAndroidForWorkSettingsCompleteSignupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -47,6 +47,7 @@ type WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderPostRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByUpdatableAssetId provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
+// returns a *WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder when successful
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) ByUpdatableAssetId(updatableAssetId string)(*WindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -57,24 +58,27 @@ func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) ByUpdatable
     }
     return NewWindowsUpdatesDeploymentAudiencesItemMembersUpdatableAssetItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
+// NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderInternal instantiates a new WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) {
     m := &WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deploymentAudiences/{deploymentAudience%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deploymentAudiences/{deploymentAudience%2Did}/members{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
+// NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder instantiates a new WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *WindowsUpdatesDeploymentAudiencesItemMembersCountRequestBuilder when successful
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) Count()(*WindowsUpdatesDeploymentAudiencesItemMembersCountRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesItemMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list the updatableAsset resources that are members of a deploymentAudience.
+// returns a UpdatableAssetCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-members?view=graph-rest-1.0
@@ -84,8 +88,7 @@ func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) Get(ctx con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatableAssetCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -97,30 +100,35 @@ func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) Get(ctx con
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetCollectionResponseable), nil
 }
 // MicrosoftGraphWindowsUpdatesEnrollAssets provides operations to call the enrollAssets method.
+// returns a *WindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder when successful
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssets()(*WindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesEnrollAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphWindowsUpdatesEnrollAssetsById provides operations to call the enrollAssetsById method.
+// returns a *WindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder when successful
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) MicrosoftGraphWindowsUpdatesEnrollAssetsById()(*WindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesEnrollAssetsByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphWindowsUpdatesUnenrollAssets provides operations to call the unenrollAssets method.
+// returns a *WindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder when successful
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssets()(*WindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesUnenrollAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphWindowsUpdatesUnenrollAssetsById provides operations to call the unenrollAssetsById method.
+// returns a *WindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder when successful
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) MicrosoftGraphWindowsUpdatesUnenrollAssetsById()(*WindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesItemMembersMicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to members for admin
+// returns a UpdatableAssetable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, requestConfiguration *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.CreateUpdatableAssetFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -132,6 +140,7 @@ func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) Post(ctx co
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
 // ToGetRequestInformation list the updatableAsset resources that are members of a deploymentAudience.
+// returns a *RequestInformation when successful
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -145,8 +154,9 @@ func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to members for admin
+// returns a *RequestInformation when successful
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable, requestConfiguration *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/admin/windows/updates/deploymentAudiences/{deploymentAudience%2Did}/members", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -159,6 +169,7 @@ func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder when successful
 func (m *WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) WithUrl(rawUrl string)(*WindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesItemMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

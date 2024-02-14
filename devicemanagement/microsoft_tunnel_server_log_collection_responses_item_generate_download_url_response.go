@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlResponse 
-// Deprecated: This class is obsolete. Use generateDownloadUrlPostResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type MicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlResponse struct {
     MicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlPostResponse
 }
@@ -17,11 +16,11 @@ func NewMicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlRespon
     return m
 }
 // CreateMicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlResponse(), nil
 }
-// MicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlResponseable 
-// Deprecated: This class is obsolete. Use generateDownloadUrlPostResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type MicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlResponseable interface {
     MicrosoftTunnelServerLogCollectionResponsesItemGenerateDownloadUrlPostResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

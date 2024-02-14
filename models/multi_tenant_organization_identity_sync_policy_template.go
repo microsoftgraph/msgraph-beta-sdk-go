@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MultiTenantOrganizationIdentitySyncPolicyTemplate 
 type MultiTenantOrganizationIdentitySyncPolicyTemplate struct {
     Entity
 }
-// NewMultiTenantOrganizationIdentitySyncPolicyTemplate instantiates a new multiTenantOrganizationIdentitySyncPolicyTemplate and sets the default values.
+// NewMultiTenantOrganizationIdentitySyncPolicyTemplate instantiates a new MultiTenantOrganizationIdentitySyncPolicyTemplate and sets the default values.
 func NewMultiTenantOrganizationIdentitySyncPolicyTemplate()(*MultiTenantOrganizationIdentitySyncPolicyTemplate) {
     m := &MultiTenantOrganizationIdentitySyncPolicyTemplate{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewMultiTenantOrganizationIdentitySyncPolicyTemplate()(*MultiTenantOrganiza
     return m
 }
 // CreateMultiTenantOrganizationIdentitySyncPolicyTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMultiTenantOrganizationIdentitySyncPolicyTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMultiTenantOrganizationIdentitySyncPolicyTemplate(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MultiTenantOrganizationIdentitySyncPolicyTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["templateApplicationLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -45,6 +46,7 @@ func (m *MultiTenantOrganizationIdentitySyncPolicyTemplate) GetFieldDeserializer
     return res
 }
 // GetTemplateApplicationLevel gets the templateApplicationLevel property value. The templateApplicationLevel property
+// returns a *TemplateApplicationLevel when successful
 func (m *MultiTenantOrganizationIdentitySyncPolicyTemplate) GetTemplateApplicationLevel()(*TemplateApplicationLevel) {
     val, err := m.GetBackingStore().Get("templateApplicationLevel")
     if err != nil {
@@ -56,6 +58,7 @@ func (m *MultiTenantOrganizationIdentitySyncPolicyTemplate) GetTemplateApplicati
     return nil
 }
 // GetUserSyncInbound gets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant.
+// returns a CrossTenantUserSyncInboundable when successful
 func (m *MultiTenantOrganizationIdentitySyncPolicyTemplate) GetUserSyncInbound()(CrossTenantUserSyncInboundable) {
     val, err := m.GetBackingStore().Get("userSyncInbound")
     if err != nil {
@@ -101,7 +104,6 @@ func (m *MultiTenantOrganizationIdentitySyncPolicyTemplate) SetUserSyncInbound(v
         panic(err)
     }
 }
-// MultiTenantOrganizationIdentitySyncPolicyTemplateable 
 type MultiTenantOrganizationIdentitySyncPolicyTemplateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -8,7 +8,7 @@ import (
 type DeviceManagementScriptUserState struct {
     Entity
 }
-// NewDeviceManagementScriptUserState instantiates a new deviceManagementScriptUserState and sets the default values.
+// NewDeviceManagementScriptUserState instantiates a new DeviceManagementScriptUserState and sets the default values.
 func NewDeviceManagementScriptUserState()(*DeviceManagementScriptUserState) {
     m := &DeviceManagementScriptUserState{
         Entity: *NewEntity(),
@@ -16,10 +16,12 @@ func NewDeviceManagementScriptUserState()(*DeviceManagementScriptUserState) {
     return m
 }
 // CreateDeviceManagementScriptUserStateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementScriptUserStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementScriptUserState(), nil
 }
 // GetDeviceRunStates gets the deviceRunStates property value. List of run states for this script across all devices of specific user.
+// returns a []DeviceManagementScriptDeviceStateable when successful
 func (m *DeviceManagementScriptUserState) GetDeviceRunStates()([]DeviceManagementScriptDeviceStateable) {
     val, err := m.GetBackingStore().Get("deviceRunStates")
     if err != nil {
@@ -31,6 +33,7 @@ func (m *DeviceManagementScriptUserState) GetDeviceRunStates()([]DeviceManagemen
     return nil
 }
 // GetErrorDeviceCount gets the errorDeviceCount property value. Error device count for specific user.
+// returns a *int32 when successful
 func (m *DeviceManagementScriptUserState) GetErrorDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("errorDeviceCount")
     if err != nil {
@@ -42,6 +45,7 @@ func (m *DeviceManagementScriptUserState) GetErrorDeviceCount()(*int32) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementScriptUserState) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["deviceRunStates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -93,6 +97,7 @@ func (m *DeviceManagementScriptUserState) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetSuccessDeviceCount gets the successDeviceCount property value. Success device count for specific user.
+// returns a *int32 when successful
 func (m *DeviceManagementScriptUserState) GetSuccessDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("successDeviceCount")
     if err != nil {
@@ -104,6 +109,7 @@ func (m *DeviceManagementScriptUserState) GetSuccessDeviceCount()(*int32) {
     return nil
 }
 // GetUserPrincipalName gets the userPrincipalName property value. User principle name of specific user.
+// returns a *string when successful
 func (m *DeviceManagementScriptUserState) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
     if err != nil {
@@ -180,7 +186,6 @@ func (m *DeviceManagementScriptUserState) SetUserPrincipalName(value *string)() 
         panic(err)
     }
 }
-// DeviceManagementScriptUserStateable 
 type DeviceManagementScriptUserStateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IpApplicationSegment 
 type IpApplicationSegment struct {
     ApplicationSegment
 }
-// NewIpApplicationSegment instantiates a new ipApplicationSegment and sets the default values.
+// NewIpApplicationSegment instantiates a new IpApplicationSegment and sets the default values.
 func NewIpApplicationSegment()(*IpApplicationSegment) {
     m := &IpApplicationSegment{
         ApplicationSegment: *NewApplicationSegment(),
@@ -18,10 +17,12 @@ func NewIpApplicationSegment()(*IpApplicationSegment) {
     return m
 }
 // CreateIpApplicationSegmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIpApplicationSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpApplicationSegment(), nil
 }
 // GetDestinationHost gets the destinationHost property value. The destinationHost property
+// returns a *string when successful
 func (m *IpApplicationSegment) GetDestinationHost()(*string) {
     val, err := m.GetBackingStore().Get("destinationHost")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *IpApplicationSegment) GetDestinationHost()(*string) {
     return nil
 }
 // GetDestinationType gets the destinationType property value. The destinationType property
+// returns a *PrivateNetworkDestinationType when successful
 func (m *IpApplicationSegment) GetDestinationType()(*PrivateNetworkDestinationType) {
     val, err := m.GetBackingStore().Get("destinationType")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *IpApplicationSegment) GetDestinationType()(*PrivateNetworkDestinationTy
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ApplicationSegment.GetFieldDeserializers()
     res["destinationHost"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,6 +108,7 @@ func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetPort gets the port property value. The port property
+// returns a *int32 when successful
 func (m *IpApplicationSegment) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
     if err != nil {
@@ -116,6 +120,7 @@ func (m *IpApplicationSegment) GetPort()(*int32) {
     return nil
 }
 // GetPorts gets the ports property value. The ports property
+// returns a []string when successful
 func (m *IpApplicationSegment) GetPorts()([]string) {
     val, err := m.GetBackingStore().Get("ports")
     if err != nil {
@@ -127,6 +132,7 @@ func (m *IpApplicationSegment) GetPorts()([]string) {
     return nil
 }
 // GetProtocol gets the protocol property value. The protocol property
+// returns a *PrivateNetworkProtocol when successful
 func (m *IpApplicationSegment) GetProtocol()(*PrivateNetworkProtocol) {
     val, err := m.GetBackingStore().Get("protocol")
     if err != nil {
@@ -212,7 +218,6 @@ func (m *IpApplicationSegment) SetProtocol(value *PrivateNetworkProtocol)() {
         panic(err)
     }
 }
-// IpApplicationSegmentable 
 type IpApplicationSegmentable interface {
     ApplicationSegmentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

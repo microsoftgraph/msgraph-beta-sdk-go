@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Note 
 type Note struct {
     OutlookItem
 }
-// NewNote instantiates a new note and sets the default values.
+// NewNote instantiates a new Note and sets the default values.
 func NewNote()(*Note) {
     m := &Note{
         OutlookItem: *NewOutlookItem(),
@@ -18,10 +17,12 @@ func NewNote()(*Note) {
     return m
 }
 // CreateNoteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNoteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNote(), nil
 }
 // GetAttachments gets the attachments property value. The attachments property
+// returns a []Attachmentable when successful
 func (m *Note) GetAttachments()([]Attachmentable) {
     val, err := m.GetBackingStore().Get("attachments")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *Note) GetAttachments()([]Attachmentable) {
     return nil
 }
 // GetBody gets the body property value. The body property
+// returns a ItemBodyable when successful
 func (m *Note) GetBody()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *Note) GetBody()(ItemBodyable) {
     return nil
 }
 // GetExtensions gets the extensions property value. The extensions property
+// returns a []Extensionable when successful
 func (m *Note) GetExtensions()([]Extensionable) {
     val, err := m.GetBackingStore().Get("extensions")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *Note) GetExtensions()([]Extensionable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Note) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OutlookItem.GetFieldDeserializers()
     res["attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -164,6 +168,7 @@ func (m *Note) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetHasAttachments gets the hasAttachments property value. The hasAttachments property
+// returns a *bool when successful
 func (m *Note) GetHasAttachments()(*bool) {
     val, err := m.GetBackingStore().Get("hasAttachments")
     if err != nil {
@@ -175,6 +180,7 @@ func (m *Note) GetHasAttachments()(*bool) {
     return nil
 }
 // GetIsDeleted gets the isDeleted property value. The isDeleted property
+// returns a *bool when successful
 func (m *Note) GetIsDeleted()(*bool) {
     val, err := m.GetBackingStore().Get("isDeleted")
     if err != nil {
@@ -186,6 +192,7 @@ func (m *Note) GetIsDeleted()(*bool) {
     return nil
 }
 // GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
+// returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *Note) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
     if err != nil {
@@ -197,6 +204,7 @@ func (m *Note) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPrope
     return nil
 }
 // GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *Note) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
     if err != nil {
@@ -208,6 +216,7 @@ func (m *Note) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPro
     return nil
 }
 // GetSubject gets the subject property value. The subject property
+// returns a *string when successful
 func (m *Note) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
     if err != nil {
@@ -354,7 +363,6 @@ func (m *Note) SetSubject(value *string)() {
         panic(err)
     }
 }
-// Noteable 
 type Noteable interface {
     OutlookItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

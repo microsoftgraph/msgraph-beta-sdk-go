@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GcpRole 
 type GcpRole struct {
     Entity
 }
-// NewGcpRole instantiates a new gcpRole and sets the default values.
+// NewGcpRole instantiates a new GcpRole and sets the default values.
 func NewGcpRole()(*GcpRole) {
     m := &GcpRole{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewGcpRole()(*GcpRole) {
     return m
 }
 // CreateGcpRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGcpRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGcpRole(), nil
 }
 // GetDisplayName gets the displayName property value. The name of the GCP role. Supports $filter and (eq,contains).
+// returns a *string when successful
 func (m *GcpRole) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *GcpRole) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalId gets the externalId property value. The ID of the GCP role as defined by GCP. Alternate key.
+// returns a *string when successful
 func (m *GcpRole) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
     if err != nil {
@@ -42,6 +44,7 @@ func (m *GcpRole) GetExternalId()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GcpRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -93,6 +96,7 @@ func (m *GcpRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetGcpRoleType gets the gcpRoleType property value. The gcpRoleType property
+// returns a *GcpRoleType when successful
 func (m *GcpRole) GetGcpRoleType()(*GcpRoleType) {
     val, err := m.GetBackingStore().Get("gcpRoleType")
     if err != nil {
@@ -104,6 +108,7 @@ func (m *GcpRole) GetGcpRoleType()(*GcpRoleType) {
     return nil
 }
 // GetScopes gets the scopes property value. Resources that an identity assigned this GCP role can perform actions on. Supports $filter and (eq).
+// returns a []GcpScopeable when successful
 func (m *GcpRole) GetScopes()([]GcpScopeable) {
     val, err := m.GetBackingStore().Get("scopes")
     if err != nil {
@@ -181,7 +186,6 @@ func (m *GcpRole) SetScopes(value []GcpScopeable)() {
         panic(err)
     }
 }
-// GcpRoleable 
 type GcpRoleable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

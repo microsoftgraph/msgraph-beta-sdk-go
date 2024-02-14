@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// StatusDetails 
 type StatusDetails struct {
     StatusBase
 }
-// NewStatusDetails instantiates a new statusDetails and sets the default values.
+// NewStatusDetails instantiates a new StatusDetails and sets the default values.
 func NewStatusDetails()(*StatusDetails) {
     m := &StatusDetails{
         StatusBase: *NewStatusBase(),
@@ -18,10 +17,12 @@ func NewStatusDetails()(*StatusDetails) {
     return m
 }
 // CreateStatusDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateStatusDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStatusDetails(), nil
 }
 // GetAdditionalDetails gets the additionalDetails property value. Additional details if there is an error.
+// returns a *string when successful
 func (m *StatusDetails) GetAdditionalDetails()(*string) {
     val, err := m.GetBackingStore().Get("additionalDetails")
     if err != nil {
@@ -33,6 +34,7 @@ func (m *StatusDetails) GetAdditionalDetails()(*string) {
     return nil
 }
 // GetErrorCategory gets the errorCategory property value. Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.
+// returns a *ProvisioningStatusErrorCategory when successful
 func (m *StatusDetails) GetErrorCategory()(*ProvisioningStatusErrorCategory) {
     val, err := m.GetBackingStore().Get("errorCategory")
     if err != nil {
@@ -44,6 +46,7 @@ func (m *StatusDetails) GetErrorCategory()(*ProvisioningStatusErrorCategory) {
     return nil
 }
 // GetErrorCode gets the errorCode property value. Unique error code if any occurred. Learn more
+// returns a *string when successful
 func (m *StatusDetails) GetErrorCode()(*string) {
     val, err := m.GetBackingStore().Get("errorCode")
     if err != nil {
@@ -55,6 +58,7 @@ func (m *StatusDetails) GetErrorCode()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *StatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.StatusBase.GetFieldDeserializers()
     res["additionalDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -110,6 +114,7 @@ func (m *StatusDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetReason gets the reason property value. Summarizes the status and describes why the status happened.
+// returns a *string when successful
 func (m *StatusDetails) GetReason()(*string) {
     val, err := m.GetBackingStore().Get("reason")
     if err != nil {
@@ -121,6 +126,7 @@ func (m *StatusDetails) GetReason()(*string) {
     return nil
 }
 // GetRecommendedAction gets the recommendedAction property value. Provides the resolution for the corresponding error.
+// returns a *string when successful
 func (m *StatusDetails) GetRecommendedAction()(*string) {
     val, err := m.GetBackingStore().Get("recommendedAction")
     if err != nil {
@@ -205,7 +211,6 @@ func (m *StatusDetails) SetRecommendedAction(value *string)() {
         panic(err)
     }
 }
-// StatusDetailsable 
 type StatusDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     StatusBaseable

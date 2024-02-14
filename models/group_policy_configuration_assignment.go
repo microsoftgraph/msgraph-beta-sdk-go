@@ -9,7 +9,7 @@ import (
 type GroupPolicyConfigurationAssignment struct {
     Entity
 }
-// NewGroupPolicyConfigurationAssignment instantiates a new groupPolicyConfigurationAssignment and sets the default values.
+// NewGroupPolicyConfigurationAssignment instantiates a new GroupPolicyConfigurationAssignment and sets the default values.
 func NewGroupPolicyConfigurationAssignment()(*GroupPolicyConfigurationAssignment) {
     m := &GroupPolicyConfigurationAssignment{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewGroupPolicyConfigurationAssignment()(*GroupPolicyConfigurationAssignment
     return m
 }
 // CreateGroupPolicyConfigurationAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGroupPolicyConfigurationAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupPolicyConfigurationAssignment(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupPolicyConfigurationAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -46,6 +48,7 @@ func (m *GroupPolicyConfigurationAssignment) GetFieldDeserializers()(map[string]
     return res
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the entity was last modified.
+// returns a *Time when successful
 func (m *GroupPolicyConfigurationAssignment) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *GroupPolicyConfigurationAssignment) GetLastModifiedDateTime()(*i3360748
     return nil
 }
 // GetTarget gets the target property value. The type of groups targeted the group policy configuration.
+// returns a DeviceAndAppManagementAssignmentTargetable when successful
 func (m *GroupPolicyConfigurationAssignment) GetTarget()(DeviceAndAppManagementAssignmentTargetable) {
     val, err := m.GetBackingStore().Get("target")
     if err != nil {
@@ -101,7 +105,6 @@ func (m *GroupPolicyConfigurationAssignment) SetTarget(value DeviceAndAppManagem
         panic(err)
     }
 }
-// GroupPolicyConfigurationAssignmentable 
 type GroupPolicyConfigurationAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

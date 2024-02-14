@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CloudPcSharedUseServicePlan 
 type CloudPcSharedUseServicePlan struct {
     Entity
 }
-// NewCloudPcSharedUseServicePlan instantiates a new cloudPcSharedUseServicePlan and sets the default values.
+// NewCloudPcSharedUseServicePlan instantiates a new CloudPcSharedUseServicePlan and sets the default values.
 func NewCloudPcSharedUseServicePlan()(*CloudPcSharedUseServicePlan) {
     m := &CloudPcSharedUseServicePlan{
         Entity: *NewEntity(),
@@ -16,10 +15,12 @@ func NewCloudPcSharedUseServicePlan()(*CloudPcSharedUseServicePlan) {
     return m
 }
 // CreateCloudPcSharedUseServicePlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloudPcSharedUseServicePlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcSharedUseServicePlan(), nil
 }
 // GetDisplayName gets the displayName property value. The display name of the shared-use service plan.
+// returns a *string when successful
 func (m *CloudPcSharedUseServicePlan) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -31,6 +32,7 @@ func (m *CloudPcSharedUseServicePlan) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcSharedUseServicePlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,6 +68,7 @@ func (m *CloudPcSharedUseServicePlan) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetTotalCount gets the totalCount property value. Total number of shared-use service plans purchased by the customer.
+// returns a *int32 when successful
 func (m *CloudPcSharedUseServicePlan) GetTotalCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalCount")
     if err != nil {
@@ -77,6 +80,7 @@ func (m *CloudPcSharedUseServicePlan) GetTotalCount()(*int32) {
     return nil
 }
 // GetUsedCount gets the usedCount property value. The number of service plans that the account uses.
+// returns a *int32 when successful
 func (m *CloudPcSharedUseServicePlan) GetUsedCount()(*int32) {
     val, err := m.GetBackingStore().Get("usedCount")
     if err != nil {
@@ -134,7 +138,6 @@ func (m *CloudPcSharedUseServicePlan) SetUsedCount(value *int32)() {
         panic(err)
     }
 }
-// CloudPcSharedUseServicePlanable 
 type CloudPcSharedUseServicePlanable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

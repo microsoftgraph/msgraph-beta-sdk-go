@@ -10,7 +10,7 @@ type AssignmentFilterSupportedProperty struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewAssignmentFilterSupportedProperty instantiates a new assignmentFilterSupportedProperty and sets the default values.
+// NewAssignmentFilterSupportedProperty instantiates a new AssignmentFilterSupportedProperty and sets the default values.
 func NewAssignmentFilterSupportedProperty()(*AssignmentFilterSupportedProperty) {
     m := &AssignmentFilterSupportedProperty{
     }
@@ -19,10 +19,12 @@ func NewAssignmentFilterSupportedProperty()(*AssignmentFilterSupportedProperty) 
     return m
 }
 // CreateAssignmentFilterSupportedPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAssignmentFilterSupportedPropertyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAssignmentFilterSupportedProperty(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AssignmentFilterSupportedProperty) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *AssignmentFilterSupportedProperty) GetAdditionalData()(map[string]any) 
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *AssignmentFilterSupportedProperty) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDataType gets the dataType property value. The data type of the property.
+// returns a *string when successful
 func (m *AssignmentFilterSupportedProperty) GetDataType()(*string) {
     val, err := m.GetBackingStore().Get("dataType")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *AssignmentFilterSupportedProperty) GetDataType()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dataType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -137,6 +142,7 @@ func (m *AssignmentFilterSupportedProperty) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetIsCollection gets the isCollection property value. Indicates whether the property is a collection type or not.
+// returns a *bool when successful
 func (m *AssignmentFilterSupportedProperty) GetIsCollection()(*bool) {
     val, err := m.GetBackingStore().Get("isCollection")
     if err != nil {
@@ -148,6 +154,7 @@ func (m *AssignmentFilterSupportedProperty) GetIsCollection()(*bool) {
     return nil
 }
 // GetName gets the name property value. Name of the property.
+// returns a *string when successful
 func (m *AssignmentFilterSupportedProperty) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
     if err != nil {
@@ -159,6 +166,7 @@ func (m *AssignmentFilterSupportedProperty) GetName()(*string) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *AssignmentFilterSupportedProperty) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -170,6 +178,7 @@ func (m *AssignmentFilterSupportedProperty) GetOdataType()(*string) {
     return nil
 }
 // GetPropertyRegexConstraint gets the propertyRegexConstraint property value. Regex string to do validation on the property value.
+// returns a *string when successful
 func (m *AssignmentFilterSupportedProperty) GetPropertyRegexConstraint()(*string) {
     val, err := m.GetBackingStore().Get("propertyRegexConstraint")
     if err != nil {
@@ -181,6 +190,7 @@ func (m *AssignmentFilterSupportedProperty) GetPropertyRegexConstraint()(*string
     return nil
 }
 // GetSupportedOperators gets the supportedOperators property value. List of all supported operators on this property.
+// returns a []AssignmentFilterOperator when successful
 func (m *AssignmentFilterSupportedProperty) GetSupportedOperators()([]AssignmentFilterOperator) {
     val, err := m.GetBackingStore().Get("supportedOperators")
     if err != nil {
@@ -192,6 +202,7 @@ func (m *AssignmentFilterSupportedProperty) GetSupportedOperators()([]Assignment
     return nil
 }
 // GetSupportedValues gets the supportedValues property value. List of all supported values for this property, empty if everything is supported.
+// returns a []string when successful
 func (m *AssignmentFilterSupportedProperty) GetSupportedValues()([]string) {
     val, err := m.GetBackingStore().Get("supportedValues")
     if err != nil {
@@ -314,7 +325,6 @@ func (m *AssignmentFilterSupportedProperty) SetSupportedValues(value []string)()
         panic(err)
     }
 }
-// AssignmentFilterSupportedPropertyable 
 type AssignmentFilterSupportedPropertyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

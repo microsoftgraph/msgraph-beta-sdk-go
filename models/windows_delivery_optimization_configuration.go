@@ -8,7 +8,7 @@ import (
 type WindowsDeliveryOptimizationConfiguration struct {
     DeviceConfiguration
 }
-// NewWindowsDeliveryOptimizationConfiguration instantiates a new windowsDeliveryOptimizationConfiguration and sets the default values.
+// NewWindowsDeliveryOptimizationConfiguration instantiates a new WindowsDeliveryOptimizationConfiguration and sets the default values.
 func NewWindowsDeliveryOptimizationConfiguration()(*WindowsDeliveryOptimizationConfiguration) {
     m := &WindowsDeliveryOptimizationConfiguration{
         DeviceConfiguration: *NewDeviceConfiguration(),
@@ -18,10 +18,12 @@ func NewWindowsDeliveryOptimizationConfiguration()(*WindowsDeliveryOptimizationC
     return m
 }
 // CreateWindowsDeliveryOptimizationConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsDeliveryOptimizationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsDeliveryOptimizationConfiguration(), nil
 }
 // GetBackgroundDownloadFromHttpDelayInSeconds gets the backgroundDownloadFromHttpDelayInSeconds property value. Specifies number of seconds to delay an HTTP source in a background download that is allowed to use peer-to-peer. Valid values 0 to 4294967295
+// returns a *int64 when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetBackgroundDownloadFromHttpDelayInSeconds()(*int64) {
     val, err := m.GetBackingStore().Get("backgroundDownloadFromHttpDelayInSeconds")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetBackgroundDownloadFromHttp
     return nil
 }
 // GetBandwidthMode gets the bandwidthMode property value. Specifies foreground and background bandwidth usage using percentages, absolutes, or hours.
+// returns a DeliveryOptimizationBandwidthable when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetBandwidthMode()(DeliveryOptimizationBandwidthable) {
     val, err := m.GetBackingStore().Get("bandwidthMode")
     if err != nil {
@@ -44,6 +47,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetBandwidthMode()(DeliveryOp
     return nil
 }
 // GetCacheServerBackgroundDownloadFallbackToHttpDelayInSeconds gets the cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds property value. Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a background download. Valid values 0 to 2592000.
+// returns a *int32 when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetCacheServerBackgroundDownloadFallbackToHttpDelayInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds")
     if err != nil {
@@ -55,6 +59,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetCacheServerBackgroundDownl
     return nil
 }
 // GetCacheServerForegroundDownloadFallbackToHttpDelayInSeconds gets the cacheServerForegroundDownloadFallbackToHttpDelayInSeconds property value. Specifies number of seconds to delay a fall back from cache servers to an HTTP source for a foreground download. Valid values 0 to 2592000.​
+// returns a *int32 when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetCacheServerForegroundDownloadFallbackToHttpDelayInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("cacheServerForegroundDownloadFallbackToHttpDelayInSeconds")
     if err != nil {
@@ -66,6 +71,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetCacheServerForegroundDownl
     return nil
 }
 // GetCacheServerHostNames gets the cacheServerHostNames property value. Specifies cache servers host names.
+// returns a []string when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetCacheServerHostNames()([]string) {
     val, err := m.GetBackingStore().Get("cacheServerHostNames")
     if err != nil {
@@ -77,6 +83,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetCacheServerHostNames()([]s
     return nil
 }
 // GetDeliveryOptimizationMode gets the deliveryOptimizationMode property value. Delivery optimization mode for peer distribution
+// returns a *WindowsDeliveryOptimizationMode when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetDeliveryOptimizationMode()(*WindowsDeliveryOptimizationMode) {
     val, err := m.GetBackingStore().Get("deliveryOptimizationMode")
     if err != nil {
@@ -88,6 +95,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetDeliveryOptimizationMode()
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DeviceConfiguration.GetFieldDeserializers()
     res["backgroundDownloadFromHttpDelayInSeconds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -269,6 +277,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetFieldDeserializers()(map[s
     return res
 }
 // GetForegroundDownloadFromHttpDelayInSeconds gets the foregroundDownloadFromHttpDelayInSeconds property value. Specifies number of seconds to delay an HTTP source in a foreground download that is allowed to use peer-to-peer (0-86400). Valid values 0 to 86400
+// returns a *int64 when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetForegroundDownloadFromHttpDelayInSeconds()(*int64) {
     val, err := m.GetBackingStore().Get("foregroundDownloadFromHttpDelayInSeconds")
     if err != nil {
@@ -280,6 +289,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetForegroundDownloadFromHttp
     return nil
 }
 // GetGroupIdSource gets the groupIdSource property value. Specifies to restrict peer selection to a specfic source.
+// returns a DeliveryOptimizationGroupIdSourceable when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetGroupIdSource()(DeliveryOptimizationGroupIdSourceable) {
     val, err := m.GetBackingStore().Get("groupIdSource")
     if err != nil {
@@ -291,6 +301,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetGroupIdSource()(DeliveryOp
     return nil
 }
 // GetMaximumCacheAgeInDays gets the maximumCacheAgeInDays property value. Specifies the maximum time in days that each file is held in the Delivery Optimization cache after downloading successfully (0-3650). Valid values 0 to 3650
+// returns a *int32 when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetMaximumCacheAgeInDays()(*int32) {
     val, err := m.GetBackingStore().Get("maximumCacheAgeInDays")
     if err != nil {
@@ -302,6 +313,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetMaximumCacheAgeInDays()(*i
     return nil
 }
 // GetMaximumCacheSize gets the maximumCacheSize property value. Specifies the maximum cache size that Delivery Optimization either as a percentage or in GB.
+// returns a DeliveryOptimizationMaxCacheSizeable when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetMaximumCacheSize()(DeliveryOptimizationMaxCacheSizeable) {
     val, err := m.GetBackingStore().Get("maximumCacheSize")
     if err != nil {
@@ -313,6 +325,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetMaximumCacheSize()(Deliver
     return nil
 }
 // GetMinimumBatteryPercentageAllowedToUpload gets the minimumBatteryPercentageAllowedToUpload property value. Specifies the minimum battery percentage to allow the device to upload data (0-100). Valid values 0 to 100
+// returns a *int32 when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumBatteryPercentageAllowedToUpload()(*int32) {
     val, err := m.GetBackingStore().Get("minimumBatteryPercentageAllowedToUpload")
     if err != nil {
@@ -324,6 +337,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumBatteryPercentageAl
     return nil
 }
 // GetMinimumDiskSizeAllowedToPeerInGigabytes gets the minimumDiskSizeAllowedToPeerInGigabytes property value. Specifies the minimum disk size in GB to use Peer Caching (1-100000). Valid values 1 to 100000
+// returns a *int32 when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumDiskSizeAllowedToPeerInGigabytes()(*int32) {
     val, err := m.GetBackingStore().Get("minimumDiskSizeAllowedToPeerInGigabytes")
     if err != nil {
@@ -335,6 +349,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumDiskSizeAllowedToPe
     return nil
 }
 // GetMinimumFileSizeToCacheInMegabytes gets the minimumFileSizeToCacheInMegabytes property value. Specifies the minimum content file size in MB enabled to use Peer Caching (1-100000). Valid values 1 to 100000
+// returns a *int32 when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumFileSizeToCacheInMegabytes()(*int32) {
     val, err := m.GetBackingStore().Get("minimumFileSizeToCacheInMegabytes")
     if err != nil {
@@ -346,6 +361,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumFileSizeToCacheInMe
     return nil
 }
 // GetMinimumRamAllowedToPeerInGigabytes gets the minimumRamAllowedToPeerInGigabytes property value. Specifies the minimum RAM size in GB to use Peer Caching (1-100000). Valid values 1 to 100000
+// returns a *int32 when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumRamAllowedToPeerInGigabytes()(*int32) {
     val, err := m.GetBackingStore().Get("minimumRamAllowedToPeerInGigabytes")
     if err != nil {
@@ -357,6 +373,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetMinimumRamAllowedToPeerInG
     return nil
 }
 // GetModifyCacheLocation gets the modifyCacheLocation property value. Specifies the drive that Delivery Optimization should use for its cache.
+// returns a *string when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetModifyCacheLocation()(*string) {
     val, err := m.GetBackingStore().Get("modifyCacheLocation")
     if err != nil {
@@ -368,6 +385,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetModifyCacheLocation()(*str
     return nil
 }
 // GetRestrictPeerSelectionBy gets the restrictPeerSelectionBy property value. Values to restrict peer selection by.
+// returns a *DeliveryOptimizationRestrictPeerSelectionByOptions when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetRestrictPeerSelectionBy()(*DeliveryOptimizationRestrictPeerSelectionByOptions) {
     val, err := m.GetBackingStore().Get("restrictPeerSelectionBy")
     if err != nil {
@@ -379,6 +397,7 @@ func (m *WindowsDeliveryOptimizationConfiguration) GetRestrictPeerSelectionBy()(
     return nil
 }
 // GetVpnPeerCaching gets the vpnPeerCaching property value. Possible values of a property
+// returns a *Enablement when successful
 func (m *WindowsDeliveryOptimizationConfiguration) GetVpnPeerCaching()(*Enablement) {
     val, err := m.GetBackingStore().Get("vpnPeerCaching")
     if err != nil {
@@ -621,7 +640,6 @@ func (m *WindowsDeliveryOptimizationConfiguration) SetVpnPeerCaching(value *Enab
         panic(err)
     }
 }
-// WindowsDeliveryOptimizationConfigurationable 
 type WindowsDeliveryOptimizationConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

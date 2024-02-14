@@ -9,7 +9,7 @@ import (
 type DataSharingConsent struct {
     Entity
 }
-// NewDataSharingConsent instantiates a new dataSharingConsent and sets the default values.
+// NewDataSharingConsent instantiates a new DataSharingConsent and sets the default values.
 func NewDataSharingConsent()(*DataSharingConsent) {
     m := &DataSharingConsent{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewDataSharingConsent()(*DataSharingConsent) {
     return m
 }
 // CreateDataSharingConsentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDataSharingConsentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDataSharingConsent(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["grantDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +88,7 @@ func (m *DataSharingConsent) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetGrantDateTime gets the grantDateTime property value. The time consent was granted for this account
+// returns a *Time when successful
 func (m *DataSharingConsent) GetGrantDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("grantDateTime")
     if err != nil {
@@ -97,6 +100,7 @@ func (m *DataSharingConsent) GetGrantDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetGranted gets the granted property value. The granted state for the data sharing consent
+// returns a *bool when successful
 func (m *DataSharingConsent) GetGranted()(*bool) {
     val, err := m.GetBackingStore().Get("granted")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *DataSharingConsent) GetGranted()(*bool) {
     return nil
 }
 // GetGrantedByUpn gets the grantedByUpn property value. The Upn of the user that granted consent for this account
+// returns a *string when successful
 func (m *DataSharingConsent) GetGrantedByUpn()(*string) {
     val, err := m.GetBackingStore().Get("grantedByUpn")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *DataSharingConsent) GetGrantedByUpn()(*string) {
     return nil
 }
 // GetGrantedByUserId gets the grantedByUserId property value. The UserId of the user that granted consent for this account
+// returns a *string when successful
 func (m *DataSharingConsent) GetGrantedByUserId()(*string) {
     val, err := m.GetBackingStore().Get("grantedByUserId")
     if err != nil {
@@ -130,6 +136,7 @@ func (m *DataSharingConsent) GetGrantedByUserId()(*string) {
     return nil
 }
 // GetServiceDisplayName gets the serviceDisplayName property value. The display name of the service work flow
+// returns a *string when successful
 func (m *DataSharingConsent) GetServiceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("serviceDisplayName")
     if err != nil {
@@ -141,6 +148,7 @@ func (m *DataSharingConsent) GetServiceDisplayName()(*string) {
     return nil
 }
 // GetTermsUrl gets the termsUrl property value. The TermsUrl for the data sharing consent
+// returns a *string when successful
 func (m *DataSharingConsent) GetTermsUrl()(*string) {
     val, err := m.GetBackingStore().Get("termsUrl")
     if err != nil {
@@ -237,7 +245,6 @@ func (m *DataSharingConsent) SetTermsUrl(value *string)() {
         panic(err)
     }
 }
-// DataSharingConsentable 
 type DataSharingConsentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

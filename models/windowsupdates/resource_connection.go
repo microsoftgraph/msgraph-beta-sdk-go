@@ -5,11 +5,10 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-// ResourceConnection 
 type ResourceConnection struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
-// NewResourceConnection instantiates a new resourceConnection and sets the default values.
+// NewResourceConnection instantiates a new ResourceConnection and sets the default values.
 func NewResourceConnection()(*ResourceConnection) {
     m := &ResourceConnection{
         Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
@@ -17,6 +16,7 @@ func NewResourceConnection()(*ResourceConnection) {
     return m
 }
 // CreateResourceConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateResourceConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -39,6 +39,7 @@ func CreateResourceConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewResourceConnection(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ResourceConnection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,6 +55,7 @@ func (m *ResourceConnection) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetState gets the state property value. The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.
+// returns a *ResourceConnectionState when successful
 func (m *ResourceConnection) GetState()(*ResourceConnectionState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -86,7 +88,6 @@ func (m *ResourceConnection) SetState(value *ResourceConnectionState)() {
         panic(err)
     }
 }
-// ResourceConnectionable 
 type ResourceConnectionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

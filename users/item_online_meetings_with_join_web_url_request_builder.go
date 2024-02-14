@@ -41,23 +41,24 @@ type ItemOnlineMeetingsWithJoinWebUrlRequestBuilderPatchRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemOnlineMeetingsWithJoinWebUrlRequestBuilderInternal instantiates a new OnlineMeetingsWithJoinWebUrlRequestBuilder and sets the default values.
+// NewItemOnlineMeetingsWithJoinWebUrlRequestBuilderInternal instantiates a new ItemOnlineMeetingsWithJoinWebUrlRequestBuilder and sets the default values.
 func NewItemOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, joinWebUrl *string)(*ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) {
     m := &ItemOnlineMeetingsWithJoinWebUrlRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings(joinWebUrl='{joinWebUrl}'){?%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", pathParameters),
     }
     if joinWebUrl != nil {
         m.BaseRequestBuilder.PathParameters["joinWebUrl"] = *joinWebUrl
     }
     return m
 }
-// NewItemOnlineMeetingsWithJoinWebUrlRequestBuilder instantiates a new OnlineMeetingsWithJoinWebUrlRequestBuilder and sets the default values.
+// NewItemOnlineMeetingsWithJoinWebUrlRequestBuilder instantiates a new ItemOnlineMeetingsWithJoinWebUrlRequestBuilder and sets the default values.
 func NewItemOnlineMeetingsWithJoinWebUrlRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete an onlineMeeting object.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
@@ -67,8 +68,7 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) Delete(ctx context.Cont
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -77,14 +77,15 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) Delete(ctx context.Cont
     return nil
 }
 // Get information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
+// returns a OnlineMeetingable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsWithJoinWebUrlRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOnlineMeetingFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -96,10 +97,13 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable), nil
 }
 // GetVirtualAppointmentJoinWebUrl provides operations to call the getVirtualAppointmentJoinWebUrl method.
+// returns a *ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilder when successful
 func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) GetVirtualAppointmentJoinWebUrl()(*ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilder) {
     return NewItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+// returns a OnlineMeetingable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
@@ -109,8 +113,7 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) Patch(ctx context.Conte
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateOnlineMeetingFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -122,16 +125,19 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) Patch(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable), nil
 }
 // SendVirtualAppointmentReminderSms provides operations to call the sendVirtualAppointmentReminderSms method.
+// returns a *ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentReminderSmsRequestBuilder when successful
 func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) SendVirtualAppointmentReminderSms()(*ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentReminderSmsRequestBuilder) {
     return NewItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentReminderSmsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SendVirtualAppointmentSms provides operations to call the sendVirtualAppointmentSms method.
+// returns a *ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilder when successful
 func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) SendVirtualAppointmentSms()(*ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilder) {
     return NewItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete an onlineMeeting object.
+// returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsWithJoinWebUrlRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/onlineMeetings(joinWebUrl='{joinWebUrl}')", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -140,6 +146,7 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) ToDeleteRequestInformat
     return requestInfo, nil
 }
 // ToGetRequestInformation information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
+// returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsWithJoinWebUrlRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -153,8 +160,9 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+// returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, requestConfiguration *ItemOnlineMeetingsWithJoinWebUrlRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/users/{user%2Did}/onlineMeetings(joinWebUrl='{joinWebUrl}')", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -167,6 +175,7 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) ToPatchRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder when successful
 func (m *ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) {
     return NewItemOnlineMeetingsWithJoinWebUrlRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

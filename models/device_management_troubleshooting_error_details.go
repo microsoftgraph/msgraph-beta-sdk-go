@@ -10,7 +10,7 @@ type DeviceManagementTroubleshootingErrorDetails struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewDeviceManagementTroubleshootingErrorDetails instantiates a new deviceManagementTroubleshootingErrorDetails and sets the default values.
+// NewDeviceManagementTroubleshootingErrorDetails instantiates a new DeviceManagementTroubleshootingErrorDetails and sets the default values.
 func NewDeviceManagementTroubleshootingErrorDetails()(*DeviceManagementTroubleshootingErrorDetails) {
     m := &DeviceManagementTroubleshootingErrorDetails{
     }
@@ -19,10 +19,12 @@ func NewDeviceManagementTroubleshootingErrorDetails()(*DeviceManagementTroublesh
     return m
 }
 // CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementTroubleshootingErrorDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementTroubleshootingErrorDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeviceManagementTroubleshootingErrorDetails) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetAdditionalData()(map[st
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *DeviceManagementTroubleshootingErrorDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetContext gets the context property value. The context property
+// returns a *string when successful
 func (m *DeviceManagementTroubleshootingErrorDetails) GetContext()(*string) {
     val, err := m.GetBackingStore().Get("context")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetContext()(*string) {
     return nil
 }
 // GetFailure gets the failure property value. The failure property
+// returns a *string when successful
 func (m *DeviceManagementTroubleshootingErrorDetails) GetFailure()(*string) {
     val, err := m.GetBackingStore().Get("failure")
     if err != nil {
@@ -61,6 +66,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFailure()(*string) {
     return nil
 }
 // GetFailureDetails gets the failureDetails property value. The detailed description of what went wrong.
+// returns a *string when successful
 func (m *DeviceManagementTroubleshootingErrorDetails) GetFailureDetails()(*string) {
     val, err := m.GetBackingStore().Get("failureDetails")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFailureDetails()(*strin
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["context"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -143,6 +150,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetFieldDeserializers()(ma
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *DeviceManagementTroubleshootingErrorDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -154,6 +162,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetOdataType()(*string) {
     return nil
 }
 // GetRemediation gets the remediation property value. The detailed description of how to remediate this issue.
+// returns a *string when successful
 func (m *DeviceManagementTroubleshootingErrorDetails) GetRemediation()(*string) {
     val, err := m.GetBackingStore().Get("remediation")
     if err != nil {
@@ -165,6 +174,7 @@ func (m *DeviceManagementTroubleshootingErrorDetails) GetRemediation()(*string) 
     return nil
 }
 // GetResources gets the resources property value. Links to helpful documentation about this failure.
+// returns a []DeviceManagementTroubleshootingErrorResourceable when successful
 func (m *DeviceManagementTroubleshootingErrorDetails) GetResources()([]DeviceManagementTroubleshootingErrorResourceable) {
     val, err := m.GetBackingStore().Get("resources")
     if err != nil {
@@ -280,7 +290,6 @@ func (m *DeviceManagementTroubleshootingErrorDetails) SetResources(value []Devic
         panic(err)
     }
 }
-// DeviceManagementTroubleshootingErrorDetailsable 
 type DeviceManagementTroubleshootingErrorDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

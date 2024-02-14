@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ChromeOSOnboardingSettingsCollectionResponse 
 type ChromeOSOnboardingSettingsCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewChromeOSOnboardingSettingsCollectionResponse instantiates a new chromeOSOnboardingSettingsCollectionResponse and sets the default values.
+// NewChromeOSOnboardingSettingsCollectionResponse instantiates a new ChromeOSOnboardingSettingsCollectionResponse and sets the default values.
 func NewChromeOSOnboardingSettingsCollectionResponse()(*ChromeOSOnboardingSettingsCollectionResponse) {
     m := &ChromeOSOnboardingSettingsCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewChromeOSOnboardingSettingsCollectionResponse()(*ChromeOSOnboardingSettin
     return m
 }
 // CreateChromeOSOnboardingSettingsCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateChromeOSOnboardingSettingsCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChromeOSOnboardingSettingsCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ChromeOSOnboardingSettingsCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *ChromeOSOnboardingSettingsCollectionResponse) GetFieldDeserializers()(m
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []ChromeOSOnboardingSettingsable when successful
 func (m *ChromeOSOnboardingSettingsCollectionResponse) GetValue()([]ChromeOSOnboardingSettingsable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *ChromeOSOnboardingSettingsCollectionResponse) SetValue(value []ChromeOS
         panic(err)
     }
 }
-// ChromeOSOnboardingSettingsCollectionResponseable 
 type ChromeOSOnboardingSettingsCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

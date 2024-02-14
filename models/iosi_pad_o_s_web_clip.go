@@ -8,7 +8,7 @@ import (
 type IosiPadOSWebClip struct {
     MobileApp
 }
-// NewIosiPadOSWebClip instantiates a new iosiPadOSWebClip and sets the default values.
+// NewIosiPadOSWebClip instantiates a new IosiPadOSWebClip and sets the default values.
 func NewIosiPadOSWebClip()(*IosiPadOSWebClip) {
     m := &IosiPadOSWebClip{
         MobileApp: *NewMobileApp(),
@@ -18,10 +18,12 @@ func NewIosiPadOSWebClip()(*IosiPadOSWebClip) {
     return m
 }
 // CreateIosiPadOSWebClipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosiPadOSWebClipFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosiPadOSWebClip(), nil
 }
 // GetAppUrl gets the appUrl property value. Indicates iOS/iPadOS web clip app URL. Example: 'https://www.contoso.com'
+// returns a *string when successful
 func (m *IosiPadOSWebClip) GetAppUrl()(*string) {
     val, err := m.GetBackingStore().Get("appUrl")
     if err != nil {
@@ -33,6 +35,7 @@ func (m *IosiPadOSWebClip) GetAppUrl()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosiPadOSWebClip) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
     res["appUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,6 +101,7 @@ func (m *IosiPadOSWebClip) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFullScreenEnabled gets the fullScreenEnabled property value. Whether or not to open the web clip as a full-screen web app. Defaults to false. If TRUE, opens the web clip as a full-screen web app. If FALSE, the web clip opens inside of another app, such as Safari or the app specified with targetApplicationBundleIdentifier.
+// returns a *bool when successful
 func (m *IosiPadOSWebClip) GetFullScreenEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("fullScreenEnabled")
     if err != nil {
@@ -109,6 +113,7 @@ func (m *IosiPadOSWebClip) GetFullScreenEnabled()(*bool) {
     return nil
 }
 // GetIgnoreManifestScope gets the ignoreManifestScope property value. Whether or not a full screen web clip can navigate to an external web site without showing the Safari UI. Defaults to false. If FALSE, the Safari UI appears when navigating away. If TRUE, the Safari UI will not be shown.
+// returns a *bool when successful
 func (m *IosiPadOSWebClip) GetIgnoreManifestScope()(*bool) {
     val, err := m.GetBackingStore().Get("ignoreManifestScope")
     if err != nil {
@@ -120,6 +125,7 @@ func (m *IosiPadOSWebClip) GetIgnoreManifestScope()(*bool) {
     return nil
 }
 // GetPreComposedIconEnabled gets the preComposedIconEnabled property value. Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding 'shine' to the icon. If FALSE, SpringBoard can add 'shine'.
+// returns a *bool when successful
 func (m *IosiPadOSWebClip) GetPreComposedIconEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("preComposedIconEnabled")
     if err != nil {
@@ -131,6 +137,7 @@ func (m *IosiPadOSWebClip) GetPreComposedIconEnabled()(*bool) {
     return nil
 }
 // GetTargetApplicationBundleIdentifier gets the targetApplicationBundleIdentifier property value. Specifies the application bundle identifier which opens the URL. Available in iOS 14 and later.
+// returns a *string when successful
 func (m *IosiPadOSWebClip) GetTargetApplicationBundleIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("targetApplicationBundleIdentifier")
     if err != nil {
@@ -142,6 +149,7 @@ func (m *IosiPadOSWebClip) GetTargetApplicationBundleIdentifier()(*string) {
     return nil
 }
 // GetUseManagedBrowser gets the useManagedBrowser property value. Whether or not to use managed browser. When TRUE, the app will be required to be opened in Microsoft Edge. When FALSE, the app will not be required to be opened in Microsoft Edge. By default, this property is set to FALSE.
+// returns a *bool when successful
 func (m *IosiPadOSWebClip) GetUseManagedBrowser()(*bool) {
     val, err := m.GetBackingStore().Get("useManagedBrowser")
     if err != nil {
@@ -238,7 +246,6 @@ func (m *IosiPadOSWebClip) SetUseManagedBrowser(value *bool)() {
         panic(err)
     }
 }
-// IosiPadOSWebClipable 
 type IosiPadOSWebClipable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

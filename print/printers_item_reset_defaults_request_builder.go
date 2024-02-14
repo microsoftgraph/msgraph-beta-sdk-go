@@ -17,14 +17,14 @@ type PrintersItemResetDefaultsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewPrintersItemResetDefaultsRequestBuilderInternal instantiates a new ResetDefaultsRequestBuilder and sets the default values.
+// NewPrintersItemResetDefaultsRequestBuilderInternal instantiates a new PrintersItemResetDefaultsRequestBuilder and sets the default values.
 func NewPrintersItemResetDefaultsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemResetDefaultsRequestBuilder) {
     m := &PrintersItemResetDefaultsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/resetDefaults", pathParameters),
     }
     return m
 }
-// NewPrintersItemResetDefaultsRequestBuilder instantiates a new ResetDefaultsRequestBuilder and sets the default values.
+// NewPrintersItemResetDefaultsRequestBuilder instantiates a new PrintersItemResetDefaultsRequestBuilder and sets the default values.
 func NewPrintersItemResetDefaultsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemResetDefaultsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -32,14 +32,14 @@ func NewPrintersItemResetDefaultsRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Post invoke action resetDefaults
 // Deprecated: The resetDefaults API is deprecated and will stop returning data on July 31, 2023. Please use the restoreFactoryDefaults API instead of this. as of 2023-06/Tasks_And_Plans
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrintersItemResetDefaultsRequestBuilder) Post(ctx context.Context, requestConfiguration *PrintersItemResetDefaultsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -49,6 +49,7 @@ func (m *PrintersItemResetDefaultsRequestBuilder) Post(ctx context.Context, requ
 }
 // ToPostRequestInformation invoke action resetDefaults
 // Deprecated: The resetDefaults API is deprecated and will stop returning data on July 31, 2023. Please use the restoreFactoryDefaults API instead of this. as of 2023-06/Tasks_And_Plans
+// returns a *RequestInformation when successful
 func (m *PrintersItemResetDefaultsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrintersItemResetDefaultsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *PrintersItemResetDefaultsRequestBuilder) ToPostRequestInformation(ctx c
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The resetDefaults API is deprecated and will stop returning data on July 31, 2023. Please use the restoreFactoryDefaults API instead of this. as of 2023-06/Tasks_And_Plans
+// returns a *PrintersItemResetDefaultsRequestBuilder when successful
 func (m *PrintersItemResetDefaultsRequestBuilder) WithUrl(rawUrl string)(*PrintersItemResetDefaultsRequestBuilder) {
     return NewPrintersItemResetDefaultsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

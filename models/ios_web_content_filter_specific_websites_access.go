@@ -8,7 +8,7 @@ import (
 type IosWebContentFilterSpecificWebsitesAccess struct {
     IosWebContentFilterBase
 }
-// NewIosWebContentFilterSpecificWebsitesAccess instantiates a new iosWebContentFilterSpecificWebsitesAccess and sets the default values.
+// NewIosWebContentFilterSpecificWebsitesAccess instantiates a new IosWebContentFilterSpecificWebsitesAccess and sets the default values.
 func NewIosWebContentFilterSpecificWebsitesAccess()(*IosWebContentFilterSpecificWebsitesAccess) {
     m := &IosWebContentFilterSpecificWebsitesAccess{
         IosWebContentFilterBase: *NewIosWebContentFilterBase(),
@@ -18,10 +18,12 @@ func NewIosWebContentFilterSpecificWebsitesAccess()(*IosWebContentFilterSpecific
     return m
 }
 // CreateIosWebContentFilterSpecificWebsitesAccessFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIosWebContentFilterSpecificWebsitesAccessFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosWebContentFilterSpecificWebsitesAccess(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosWebContentFilterSpecificWebsitesAccess) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IosWebContentFilterBase.GetFieldDeserializers()
     res["specificWebsitesOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,6 +61,7 @@ func (m *IosWebContentFilterSpecificWebsitesAccess) GetFieldDeserializers()(map[
     return res
 }
 // GetSpecificWebsitesOnly gets the specificWebsitesOnly property value. URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.
+// returns a []IosBookmarkable when successful
 func (m *IosWebContentFilterSpecificWebsitesAccess) GetSpecificWebsitesOnly()([]IosBookmarkable) {
     val, err := m.GetBackingStore().Get("specificWebsitesOnly")
     if err != nil {
@@ -70,6 +73,7 @@ func (m *IosWebContentFilterSpecificWebsitesAccess) GetSpecificWebsitesOnly()([]
     return nil
 }
 // GetWebsiteList gets the websiteList property value. URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.
+// returns a []IosBookmarkable when successful
 func (m *IosWebContentFilterSpecificWebsitesAccess) GetWebsiteList()([]IosBookmarkable) {
     val, err := m.GetBackingStore().Get("websiteList")
     if err != nil {
@@ -126,7 +130,6 @@ func (m *IosWebContentFilterSpecificWebsitesAccess) SetWebsiteList(value []IosBo
         panic(err)
     }
 }
-// IosWebContentFilterSpecificWebsitesAccessable 
 type IosWebContentFilterSpecificWebsitesAccessable interface {
     IosWebContentFilterBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivilegedRoleAssignment 
 type PrivilegedRoleAssignment struct {
     Entity
 }
-// NewPrivilegedRoleAssignment instantiates a new privilegedRoleAssignment and sets the default values.
+// NewPrivilegedRoleAssignment instantiates a new PrivilegedRoleAssignment and sets the default values.
 func NewPrivilegedRoleAssignment()(*PrivilegedRoleAssignment) {
     m := &PrivilegedRoleAssignment{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewPrivilegedRoleAssignment()(*PrivilegedRoleAssignment) {
     return m
 }
 // CreatePrivilegedRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivilegedRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivilegedRoleAssignment(), nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// returns a *Time when successful
 func (m *PrivilegedRoleAssignment) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *PrivilegedRoleAssignment) GetExpirationDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["expirationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -97,6 +99,7 @@ func (m *PrivilegedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetIsElevated gets the isElevated property value. The isElevated property
+// returns a *bool when successful
 func (m *PrivilegedRoleAssignment) GetIsElevated()(*bool) {
     val, err := m.GetBackingStore().Get("isElevated")
     if err != nil {
@@ -108,6 +111,7 @@ func (m *PrivilegedRoleAssignment) GetIsElevated()(*bool) {
     return nil
 }
 // GetResultMessage gets the resultMessage property value. The resultMessage property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignment) GetResultMessage()(*string) {
     val, err := m.GetBackingStore().Get("resultMessage")
     if err != nil {
@@ -119,6 +123,7 @@ func (m *PrivilegedRoleAssignment) GetResultMessage()(*string) {
     return nil
 }
 // GetRoleId gets the roleId property value. The roleId property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignment) GetRoleId()(*string) {
     val, err := m.GetBackingStore().Get("roleId")
     if err != nil {
@@ -130,6 +135,7 @@ func (m *PrivilegedRoleAssignment) GetRoleId()(*string) {
     return nil
 }
 // GetRoleInfo gets the roleInfo property value. The roleInfo property
+// returns a PrivilegedRoleable when successful
 func (m *PrivilegedRoleAssignment) GetRoleInfo()(PrivilegedRoleable) {
     val, err := m.GetBackingStore().Get("roleInfo")
     if err != nil {
@@ -141,6 +147,7 @@ func (m *PrivilegedRoleAssignment) GetRoleInfo()(PrivilegedRoleable) {
     return nil
 }
 // GetUserId gets the userId property value. The userId property
+// returns a *string when successful
 func (m *PrivilegedRoleAssignment) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
@@ -237,7 +244,6 @@ func (m *PrivilegedRoleAssignment) SetUserId(value *string)() {
         panic(err)
     }
 }
-// PrivilegedRoleAssignmentable 
 type PrivilegedRoleAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

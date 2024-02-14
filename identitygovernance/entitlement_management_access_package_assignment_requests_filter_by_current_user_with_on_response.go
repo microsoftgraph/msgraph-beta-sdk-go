@@ -4,8 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// EntitlementManagementAccessPackageAssignmentRequestsFilterByCurrentUserWithOnResponse 
-// Deprecated: This class is obsolete. Use filterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type EntitlementManagementAccessPackageAssignmentRequestsFilterByCurrentUserWithOnResponse struct {
     EntitlementManagementAccessPackageAssignmentRequestsFilterByCurrentUserWithOnGetResponse
 }
@@ -17,11 +16,11 @@ func NewEntitlementManagementAccessPackageAssignmentRequestsFilterByCurrentUserW
     return m
 }
 // CreateEntitlementManagementAccessPackageAssignmentRequestsFilterByCurrentUserWithOnResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEntitlementManagementAccessPackageAssignmentRequestsFilterByCurrentUserWithOnResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEntitlementManagementAccessPackageAssignmentRequestsFilterByCurrentUserWithOnResponse(), nil
 }
-// EntitlementManagementAccessPackageAssignmentRequestsFilterByCurrentUserWithOnResponseable 
-// Deprecated: This class is obsolete. Use filterByCurrentUserWithOnGetResponse instead.
+// Deprecated: This class is obsolete. Use {TypeName} instead.
 type EntitlementManagementAccessPackageAssignmentRequestsFilterByCurrentUserWithOnResponseable interface {
     EntitlementManagementAccessPackageAssignmentRequestsFilterByCurrentUserWithOnGetResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

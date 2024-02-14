@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// OperationApprovalRequestCollectionResponse 
 type OperationApprovalRequestCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewOperationApprovalRequestCollectionResponse instantiates a new operationApprovalRequestCollectionResponse and sets the default values.
+// NewOperationApprovalRequestCollectionResponse instantiates a new OperationApprovalRequestCollectionResponse and sets the default values.
 func NewOperationApprovalRequestCollectionResponse()(*OperationApprovalRequestCollectionResponse) {
     m := &OperationApprovalRequestCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewOperationApprovalRequestCollectionResponse()(*OperationApprovalRequestCo
     return m
 }
 // CreateOperationApprovalRequestCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOperationApprovalRequestCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOperationApprovalRequestCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OperationApprovalRequestCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *OperationApprovalRequestCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []OperationApprovalRequestable when successful
 func (m *OperationApprovalRequestCollectionResponse) GetValue()([]OperationApprovalRequestable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *OperationApprovalRequestCollectionResponse) SetValue(value []OperationA
         panic(err)
     }
 }
-// OperationApprovalRequestCollectionResponseable 
 type OperationApprovalRequestCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

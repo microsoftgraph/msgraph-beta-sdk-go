@@ -40,6 +40,7 @@ type ThreatIntelligenceHostsItemHostPairsRequestBuilderGetRequestConfiguration s
     QueryParameters *ThreatIntelligenceHostsItemHostPairsRequestBuilderGetQueryParameters
 }
 // ByHostPairId provides operations to manage the hostPairs property of the microsoft.graph.security.host entity.
+// returns a *ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilder when successful
 func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) ByHostPairId(hostPairId string)(*ThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,24 +51,27 @@ func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) ByHostPairId(hostPa
     }
     return NewThreatIntelligenceHostsItemHostPairsHostPairItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewThreatIntelligenceHostsItemHostPairsRequestBuilderInternal instantiates a new HostPairsRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostsItemHostPairsRequestBuilderInternal instantiates a new ThreatIntelligenceHostsItemHostPairsRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemHostPairsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemHostPairsRequestBuilder) {
     m := &ThreatIntelligenceHostsItemHostPairsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/hostPairs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/hostPairs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }
-// NewThreatIntelligenceHostsItemHostPairsRequestBuilder instantiates a new HostPairsRequestBuilder and sets the default values.
+// NewThreatIntelligenceHostsItemHostPairsRequestBuilder instantiates a new ThreatIntelligenceHostsItemHostPairsRequestBuilder and sets the default values.
 func NewThreatIntelligenceHostsItemHostPairsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligenceHostsItemHostPairsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligenceHostsItemHostPairsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Count provides operations to count the resources in the collection.
+// returns a *ThreatIntelligenceHostsItemHostPairsCountRequestBuilder when successful
 func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) Count()(*ThreatIntelligenceHostsItemHostPairsCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemHostPairsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of hostPair resources associated with a specified host, where that host is *either* the *parent* or the *child*.
+// returns a HostPairCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-hostpairs?view=graph-rest-1.0
@@ -77,8 +81,7 @@ func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) Get(ctx context.Con
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateHostPairCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -90,6 +93,7 @@ func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) Get(ctx context.Con
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairCollectionResponseable), nil
 }
 // ToGetRequestInformation get the list of hostPair resources associated with a specified host, where that host is *either* the *parent* or the *child*.
+// returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemHostPairsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -103,6 +107,7 @@ func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ThreatIntelligenceHostsItemHostPairsRequestBuilder when successful
 func (m *ThreatIntelligenceHostsItemHostPairsRequestBuilder) WithUrl(rawUrl string)(*ThreatIntelligenceHostsItemHostPairsRequestBuilder) {
     return NewThreatIntelligenceHostsItemHostPairsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -10,7 +10,7 @@ type WindowsMinimumOperatingSystem struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWindowsMinimumOperatingSystem instantiates a new windowsMinimumOperatingSystem and sets the default values.
+// NewWindowsMinimumOperatingSystem instantiates a new WindowsMinimumOperatingSystem and sets the default values.
 func NewWindowsMinimumOperatingSystem()(*WindowsMinimumOperatingSystem) {
     m := &WindowsMinimumOperatingSystem{
     }
@@ -19,10 +19,12 @@ func NewWindowsMinimumOperatingSystem()(*WindowsMinimumOperatingSystem) {
     return m
 }
 // CreateWindowsMinimumOperatingSystemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsMinimumOperatingSystemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsMinimumOperatingSystem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *WindowsMinimumOperatingSystem) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsMinimumOperatingSystem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -184,6 +188,7 @@ func (m *WindowsMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WindowsMinimumOperatingSystem) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -195,6 +200,7 @@ func (m *WindowsMinimumOperatingSystem) GetOdataType()(*string) {
     return nil
 }
 // GetV100 gets the v10_0 property value. Windows version 10.0 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV100()(*bool) {
     val, err := m.GetBackingStore().Get("v10_0")
     if err != nil {
@@ -206,6 +212,7 @@ func (m *WindowsMinimumOperatingSystem) GetV100()(*bool) {
     return nil
 }
 // GetV101607 gets the v10_1607 property value. Windows 10 1607 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV101607()(*bool) {
     val, err := m.GetBackingStore().Get("v10_1607")
     if err != nil {
@@ -217,6 +224,7 @@ func (m *WindowsMinimumOperatingSystem) GetV101607()(*bool) {
     return nil
 }
 // GetV101703 gets the v10_1703 property value. Windows 10 1703 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV101703()(*bool) {
     val, err := m.GetBackingStore().Get("v10_1703")
     if err != nil {
@@ -228,6 +236,7 @@ func (m *WindowsMinimumOperatingSystem) GetV101703()(*bool) {
     return nil
 }
 // GetV101709 gets the v10_1709 property value. Windows 10 1709 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV101709()(*bool) {
     val, err := m.GetBackingStore().Get("v10_1709")
     if err != nil {
@@ -239,6 +248,7 @@ func (m *WindowsMinimumOperatingSystem) GetV101709()(*bool) {
     return nil
 }
 // GetV101803 gets the v10_1803 property value. Windows 10 1803 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV101803()(*bool) {
     val, err := m.GetBackingStore().Get("v10_1803")
     if err != nil {
@@ -250,6 +260,7 @@ func (m *WindowsMinimumOperatingSystem) GetV101803()(*bool) {
     return nil
 }
 // GetV101809 gets the v10_1809 property value. Windows 10 1809 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV101809()(*bool) {
     val, err := m.GetBackingStore().Get("v10_1809")
     if err != nil {
@@ -261,6 +272,7 @@ func (m *WindowsMinimumOperatingSystem) GetV101809()(*bool) {
     return nil
 }
 // GetV101903 gets the v10_1903 property value. Windows 10 1903 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV101903()(*bool) {
     val, err := m.GetBackingStore().Get("v10_1903")
     if err != nil {
@@ -272,6 +284,7 @@ func (m *WindowsMinimumOperatingSystem) GetV101903()(*bool) {
     return nil
 }
 // GetV101909 gets the v10_1909 property value. Windows 10 1909 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV101909()(*bool) {
     val, err := m.GetBackingStore().Get("v10_1909")
     if err != nil {
@@ -283,6 +296,7 @@ func (m *WindowsMinimumOperatingSystem) GetV101909()(*bool) {
     return nil
 }
 // GetV102004 gets the v10_2004 property value. Windows 10 2004 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV102004()(*bool) {
     val, err := m.GetBackingStore().Get("v10_2004")
     if err != nil {
@@ -294,6 +308,7 @@ func (m *WindowsMinimumOperatingSystem) GetV102004()(*bool) {
     return nil
 }
 // GetV1021H1 gets the v10_21H1 property value. Windows 10 21H1 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV1021H1()(*bool) {
     val, err := m.GetBackingStore().Get("v10_21H1")
     if err != nil {
@@ -305,6 +320,7 @@ func (m *WindowsMinimumOperatingSystem) GetV1021H1()(*bool) {
     return nil
 }
 // GetV102H20 gets the v10_2H20 property value. Windows 10 2H20 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV102H20()(*bool) {
     val, err := m.GetBackingStore().Get("v10_2H20")
     if err != nil {
@@ -316,6 +332,7 @@ func (m *WindowsMinimumOperatingSystem) GetV102H20()(*bool) {
     return nil
 }
 // GetV80 gets the v8_0 property value. Windows version 8.0 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV80()(*bool) {
     val, err := m.GetBackingStore().Get("v8_0")
     if err != nil {
@@ -327,6 +344,7 @@ func (m *WindowsMinimumOperatingSystem) GetV80()(*bool) {
     return nil
 }
 // GetV81 gets the v8_1 property value. Windows version 8.1 or later.
+// returns a *bool when successful
 func (m *WindowsMinimumOperatingSystem) GetV81()(*bool) {
     val, err := m.GetBackingStore().Get("v8_1")
     if err != nil {
@@ -540,7 +558,6 @@ func (m *WindowsMinimumOperatingSystem) SetV81(value *bool)() {
         panic(err)
     }
 }
-// WindowsMinimumOperatingSystemable 
 type WindowsMinimumOperatingSystemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

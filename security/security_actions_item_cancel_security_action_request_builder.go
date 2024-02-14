@@ -17,20 +17,21 @@ type SecurityActionsItemCancelSecurityActionRequestBuilderPostRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewSecurityActionsItemCancelSecurityActionRequestBuilderInternal instantiates a new CancelSecurityActionRequestBuilder and sets the default values.
+// NewSecurityActionsItemCancelSecurityActionRequestBuilderInternal instantiates a new SecurityActionsItemCancelSecurityActionRequestBuilder and sets the default values.
 func NewSecurityActionsItemCancelSecurityActionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityActionsItemCancelSecurityActionRequestBuilder) {
     m := &SecurityActionsItemCancelSecurityActionRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/securityActions/{securityAction%2Did}/cancelSecurityAction", pathParameters),
     }
     return m
 }
-// NewSecurityActionsItemCancelSecurityActionRequestBuilder instantiates a new CancelSecurityActionRequestBuilder and sets the default values.
+// NewSecurityActionsItemCancelSecurityActionRequestBuilder instantiates a new SecurityActionsItemCancelSecurityActionRequestBuilder and sets the default values.
 func NewSecurityActionsItemCancelSecurityActionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityActionsItemCancelSecurityActionRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityActionsItemCancelSecurityActionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post cancel a security operation.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/securityaction-cancelsecurityaction?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *SecurityActionsItemCancelSecurityActionRequestBuilder) Post(ctx context
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *SecurityActionsItemCancelSecurityActionRequestBuilder) Post(ctx context
     return nil
 }
 // ToPostRequestInformation cancel a security operation.
+// returns a *RequestInformation when successful
 func (m *SecurityActionsItemCancelSecurityActionRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SecurityActionsItemCancelSecurityActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *SecurityActionsItemCancelSecurityActionRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *SecurityActionsItemCancelSecurityActionRequestBuilder when successful
 func (m *SecurityActionsItemCancelSecurityActionRequestBuilder) WithUrl(rawUrl string)(*SecurityActionsItemCancelSecurityActionRequestBuilder) {
     return NewSecurityActionsItemCancelSecurityActionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

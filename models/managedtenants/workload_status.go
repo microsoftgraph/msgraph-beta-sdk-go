@@ -6,12 +6,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// WorkloadStatus 
 type WorkloadStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWorkloadStatus instantiates a new workloadStatus and sets the default values.
+// NewWorkloadStatus instantiates a new WorkloadStatus and sets the default values.
 func NewWorkloadStatus()(*WorkloadStatus) {
     m := &WorkloadStatus{
     }
@@ -20,10 +19,12 @@ func NewWorkloadStatus()(*WorkloadStatus) {
     return m
 }
 // CreateWorkloadStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkloadStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkloadStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WorkloadStatus) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +37,12 @@ func (m *WorkloadStatus) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WorkloadStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetDisplayName gets the displayName property value. The display name for the workload. Required. Read-only.
+// returns a *string when successful
 func (m *WorkloadStatus) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -51,6 +54,7 @@ func (m *WorkloadStatus) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkloadStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +110,7 @@ func (m *WorkloadStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WorkloadStatus) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +122,7 @@ func (m *WorkloadStatus) GetOdataType()(*string) {
     return nil
 }
 // GetOffboardedDateTime gets the offboardedDateTime property value. The date and time the workload was offboarded. Optional. Read-only.
+// returns a *Time when successful
 func (m *WorkloadStatus) GetOffboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("offboardedDateTime")
     if err != nil {
@@ -128,6 +134,7 @@ func (m *WorkloadStatus) GetOffboardedDateTime()(*i336074805fc853987abe6f7fe3ad9
     return nil
 }
 // GetOnboardedDateTime gets the onboardedDateTime property value. The date and time the workload was onboarded. Optional. Read-only.
+// returns a *Time when successful
 func (m *WorkloadStatus) GetOnboardedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("onboardedDateTime")
     if err != nil {
@@ -139,6 +146,7 @@ func (m *WorkloadStatus) GetOnboardedDateTime()(*i336074805fc853987abe6f7fe3ad97
     return nil
 }
 // GetOnboardingStatus gets the onboardingStatus property value. The onboardingStatus property
+// returns a *WorkloadOnboardingStatus when successful
 func (m *WorkloadStatus) GetOnboardingStatus()(*WorkloadOnboardingStatus) {
     val, err := m.GetBackingStore().Get("onboardingStatus")
     if err != nil {
@@ -236,7 +244,6 @@ func (m *WorkloadStatus) SetOnboardingStatus(value *WorkloadOnboardingStatus)() 
         panic(err)
     }
 }
-// WorkloadStatusable 
 type WorkloadStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

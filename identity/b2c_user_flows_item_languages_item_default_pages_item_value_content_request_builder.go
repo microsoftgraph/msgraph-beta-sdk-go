@@ -10,12 +10,19 @@ import (
 type B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetQueryParameters get media content for the navigation property defaultPages from identity
+type B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetQueryParameters struct {
+    // Format of the content
+    Format *string `uriparametername:"%24format"`
+}
 // B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetQueryParameters
 }
 // B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderPutRequestConfiguration struct {
@@ -24,20 +31,22 @@ type B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderPutR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderInternal instantiates a new ContentRequestBuilder and sets the default values.
+// NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderInternal instantiates a new B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) {
     m := &B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}/defaultPages/{userFlowLanguagePage%2Did}/$value", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}/defaultPages/{userFlowLanguagePage%2Did}/$value{?%24format*}", pathParameters),
     }
     return m
 }
-// NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder instantiates a new ContentRequestBuilder and sets the default values.
+// NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder instantiates a new B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get media content for the navigation property defaultPages from identity
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0
@@ -47,8 +56,7 @@ func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -60,14 +68,15 @@ func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     return res.([]byte), nil
 }
 // Put update media content for the navigation property defaultPages in identity
+// returns a []byte when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", errorMapping)
     if err != nil {
@@ -79,9 +88,13 @@ func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     return res.([]byte), nil
 }
 // ToGetRequestInformation get media content for the navigation property defaultPages from identity
+// returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
@@ -89,8 +102,9 @@ func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     return requestInfo, nil
 }
 // ToPutRequestInformation update media content for the navigation property defaultPages in identity
+// returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}/defaultPages/{userFlowLanguagePage%2Did}/$value", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -100,6 +114,7 @@ func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder when successful
 func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) WithUrl(rawUrl string)(*B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) {
     return NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

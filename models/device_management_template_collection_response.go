@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagementTemplateCollectionResponse 
 type DeviceManagementTemplateCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewDeviceManagementTemplateCollectionResponse instantiates a new deviceManagementTemplateCollectionResponse and sets the default values.
+// NewDeviceManagementTemplateCollectionResponse instantiates a new DeviceManagementTemplateCollectionResponse and sets the default values.
 func NewDeviceManagementTemplateCollectionResponse()(*DeviceManagementTemplateCollectionResponse) {
     m := &DeviceManagementTemplateCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
@@ -16,10 +15,12 @@ func NewDeviceManagementTemplateCollectionResponse()(*DeviceManagementTemplateCo
     return m
 }
 // CreateDeviceManagementTemplateCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeviceManagementTemplateCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceManagementTemplateCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementTemplateCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -41,6 +42,7 @@ func (m *DeviceManagementTemplateCollectionResponse) GetFieldDeserializers()(map
     return res
 }
 // GetValue gets the value property value. The value property
+// returns a []DeviceManagementTemplateable when successful
 func (m *DeviceManagementTemplateCollectionResponse) GetValue()([]DeviceManagementTemplateable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -78,7 +80,6 @@ func (m *DeviceManagementTemplateCollectionResponse) SetValue(value []DeviceMana
         panic(err)
     }
 }
-// DeviceManagementTemplateCollectionResponseable 
 type DeviceManagementTemplateCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConnectedOrganization 
 type ConnectedOrganization struct {
     Entity
 }
-// NewConnectedOrganization instantiates a new connectedOrganization and sets the default values.
+// NewConnectedOrganization instantiates a new ConnectedOrganization and sets the default values.
 func NewConnectedOrganization()(*ConnectedOrganization) {
     m := &ConnectedOrganization{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewConnectedOrganization()(*ConnectedOrganization) {
     return m
 }
 // CreateConnectedOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConnectedOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectedOrganization(), nil
 }
 // GetCreatedBy gets the createdBy property value. UPN of the user who created this resource. Read-only.
+// returns a *string when successful
 func (m *ConnectedOrganization) GetCreatedBy()(*string) {
     val, err := m.GetBackingStore().Get("createdBy")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ConnectedOrganization) GetCreatedBy()(*string) {
     return nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *ConnectedOrganization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ConnectedOrganization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe
     return nil
 }
 // GetDescription gets the description property value. The description of the connected organization.
+// returns a *string when successful
 func (m *ConnectedOrganization) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
     if err != nil {
@@ -54,6 +57,7 @@ func (m *ConnectedOrganization) GetDescription()(*string) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The display name of the connected organization. Supports $filter (eq).
+// returns a *string when successful
 func (m *ConnectedOrganization) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -65,6 +69,7 @@ func (m *ConnectedOrganization) GetDisplayName()(*string) {
     return nil
 }
 // GetExternalSponsors gets the externalSponsors property value. The externalSponsors property
+// returns a []DirectoryObjectable when successful
 func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("externalSponsors")
     if err != nil {
@@ -76,6 +81,7 @@ func (m *ConnectedOrganization) GetExternalSponsors()([]DirectoryObjectable) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -199,6 +205,7 @@ func (m *ConnectedOrganization) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetIdentitySources gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation, or socialIdentitySource. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq 'bcfdfff4-cbc3-43f2-9000-ba7b7515054f').
+// returns a []IdentitySourceable when successful
 func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySourceable) {
     val, err := m.GetBackingStore().Get("identitySources")
     if err != nil {
@@ -210,6 +217,7 @@ func (m *ConnectedOrganization) GetIdentitySources()([]IdentitySourceable) {
     return nil
 }
 // GetInternalSponsors gets the internalSponsors property value. The internalSponsors property
+// returns a []DirectoryObjectable when successful
 func (m *ConnectedOrganization) GetInternalSponsors()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("internalSponsors")
     if err != nil {
@@ -221,6 +229,7 @@ func (m *ConnectedOrganization) GetInternalSponsors()([]DirectoryObjectable) {
     return nil
 }
 // GetModifiedBy gets the modifiedBy property value. UPN of the user who last modified this resource. Read-only.
+// returns a *string when successful
 func (m *ConnectedOrganization) GetModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("modifiedBy")
     if err != nil {
@@ -232,6 +241,7 @@ func (m *ConnectedOrganization) GetModifiedBy()(*string) {
     return nil
 }
 // GetModifiedDateTime gets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
     if err != nil {
@@ -243,6 +253,7 @@ func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7f
     return nil
 }
 // GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+// returns a *ConnectedOrganizationState when successful
 func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
     val, err := m.GetBackingStore().Get("state")
     if err != nil {
@@ -410,7 +421,6 @@ func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
         panic(err)
     }
 }
-// ConnectedOrganizationable 
 type ConnectedOrganizationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

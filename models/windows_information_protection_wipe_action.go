@@ -9,7 +9,7 @@ import (
 type WindowsInformationProtectionWipeAction struct {
     Entity
 }
-// NewWindowsInformationProtectionWipeAction instantiates a new windowsInformationProtectionWipeAction and sets the default values.
+// NewWindowsInformationProtectionWipeAction instantiates a new WindowsInformationProtectionWipeAction and sets the default values.
 func NewWindowsInformationProtectionWipeAction()(*WindowsInformationProtectionWipeAction) {
     m := &WindowsInformationProtectionWipeAction{
         Entity: *NewEntity(),
@@ -17,10 +17,12 @@ func NewWindowsInformationProtectionWipeAction()(*WindowsInformationProtectionWi
     return m
 }
 // CreateWindowsInformationProtectionWipeActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsInformationProtectionWipeActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsInformationProtectionWipeAction(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["lastCheckInDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,6 +88,7 @@ func (m *WindowsInformationProtectionWipeAction) GetFieldDeserializers()(map[str
     return res
 }
 // GetLastCheckInDateTime gets the lastCheckInDateTime property value. Last checkin time of the device that was targeted by this wipe action.
+// returns a *Time when successful
 func (m *WindowsInformationProtectionWipeAction) GetLastCheckInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastCheckInDateTime")
     if err != nil {
@@ -97,6 +100,7 @@ func (m *WindowsInformationProtectionWipeAction) GetLastCheckInDateTime()(*i3360
     return nil
 }
 // GetStatus gets the status property value. The status property
+// returns a *ActionState when successful
 func (m *WindowsInformationProtectionWipeAction) GetStatus()(*ActionState) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -108,6 +112,7 @@ func (m *WindowsInformationProtectionWipeAction) GetStatus()(*ActionState) {
     return nil
 }
 // GetTargetedDeviceMacAddress gets the targetedDeviceMacAddress property value. Targeted device Mac address.
+// returns a *string when successful
 func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceMacAddress()(*string) {
     val, err := m.GetBackingStore().Get("targetedDeviceMacAddress")
     if err != nil {
@@ -119,6 +124,7 @@ func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceMacAddress()(*
     return nil
 }
 // GetTargetedDeviceName gets the targetedDeviceName property value. Targeted device name.
+// returns a *string when successful
 func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("targetedDeviceName")
     if err != nil {
@@ -130,6 +136,7 @@ func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceName()(*string
     return nil
 }
 // GetTargetedDeviceRegistrationId gets the targetedDeviceRegistrationId property value. The DeviceRegistrationId being targeted by this wipe action.
+// returns a *string when successful
 func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceRegistrationId()(*string) {
     val, err := m.GetBackingStore().Get("targetedDeviceRegistrationId")
     if err != nil {
@@ -141,6 +148,7 @@ func (m *WindowsInformationProtectionWipeAction) GetTargetedDeviceRegistrationId
     return nil
 }
 // GetTargetedUserId gets the targetedUserId property value. The UserId being targeted by this wipe action.
+// returns a *string when successful
 func (m *WindowsInformationProtectionWipeAction) GetTargetedUserId()(*string) {
     val, err := m.GetBackingStore().Get("targetedUserId")
     if err != nil {
@@ -238,7 +246,6 @@ func (m *WindowsInformationProtectionWipeAction) SetTargetedUserId(value *string
         panic(err)
     }
 }
-// WindowsInformationProtectionWipeActionable 
 type WindowsInformationProtectionWipeActionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// InboundFlow 
 type InboundFlow struct {
     IndustryDataActivity
 }
-// NewInboundFlow instantiates a new inboundFlow and sets the default values.
+// NewInboundFlow instantiates a new InboundFlow and sets the default values.
 func NewInboundFlow()(*InboundFlow) {
     m := &InboundFlow{
         IndustryDataActivity: *NewIndustryDataActivity(),
@@ -19,6 +18,7 @@ func NewInboundFlow()(*InboundFlow) {
     return m
 }
 // CreateInboundFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInboundFlowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
@@ -41,6 +41,7 @@ func CreateInboundFlowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     return NewInboundFlow(), nil
 }
 // GetDataConnector gets the dataConnector property value. The dataConnector property
+// returns a IndustryDataConnectorable when successful
 func (m *InboundFlow) GetDataConnector()(IndustryDataConnectorable) {
     val, err := m.GetBackingStore().Get("dataConnector")
     if err != nil {
@@ -52,6 +53,7 @@ func (m *InboundFlow) GetDataConnector()(IndustryDataConnectorable) {
     return nil
 }
 // GetDataDomain gets the dataDomain property value. The dataDomain property
+// returns a *InboundDomain when successful
 func (m *InboundFlow) GetDataDomain()(*InboundDomain) {
     val, err := m.GetBackingStore().Get("dataDomain")
     if err != nil {
@@ -63,6 +65,7 @@ func (m *InboundFlow) GetDataDomain()(*InboundDomain) {
     return nil
 }
 // GetEffectiveDateTime gets the effectiveDateTime property value. The start of the time window when the flow is allowed to run. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *InboundFlow) GetEffectiveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("effectiveDateTime")
     if err != nil {
@@ -74,6 +77,7 @@ func (m *InboundFlow) GetEffectiveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetExpirationDateTime gets the expirationDateTime property value. The end of the time window when the flow is allowed to run. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
 func (m *InboundFlow) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
     if err != nil {
@@ -85,6 +89,7 @@ func (m *InboundFlow) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InboundFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.IndustryDataActivity.GetFieldDeserializers()
     res["dataConnector"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,6 +145,7 @@ func (m *InboundFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetYear gets the year property value. The year property
+// returns a YearTimePeriodDefinitionable when successful
 func (m *InboundFlow) GetYear()(YearTimePeriodDefinitionable) {
     val, err := m.GetBackingStore().Get("year")
     if err != nil {
@@ -224,7 +230,6 @@ func (m *InboundFlow) SetYear(value YearTimePeriodDefinitionable)() {
         panic(err)
     }
 }
-// InboundFlowable 
 type InboundFlowable interface {
     IndustryDataActivityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

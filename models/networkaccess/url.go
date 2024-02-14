@@ -4,11 +4,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Url 
 type Url struct {
     RuleDestination
 }
-// NewUrl instantiates a new url and sets the default values.
+// NewUrl instantiates a new Url and sets the default values.
 func NewUrl()(*Url) {
     m := &Url{
         RuleDestination: *NewRuleDestination(),
@@ -18,10 +17,12 @@ func NewUrl()(*Url) {
     return m
 }
 // CreateUrlFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUrlFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUrl(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Url) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RuleDestination.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -37,6 +38,7 @@ func (m *Url) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     return res
 }
 // GetValue gets the value property value. URL Address
+// returns a *string when successful
 func (m *Url) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
@@ -68,7 +70,6 @@ func (m *Url) SetValue(value *string)() {
         panic(err)
     }
 }
-// Urlable 
 type Urlable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RuleDestinationable

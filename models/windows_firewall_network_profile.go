@@ -10,7 +10,7 @@ type WindowsFirewallNetworkProfile struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewWindowsFirewallNetworkProfile instantiates a new windowsFirewallNetworkProfile and sets the default values.
+// NewWindowsFirewallNetworkProfile instantiates a new WindowsFirewallNetworkProfile and sets the default values.
 func NewWindowsFirewallNetworkProfile()(*WindowsFirewallNetworkProfile) {
     m := &WindowsFirewallNetworkProfile{
     }
@@ -19,10 +19,12 @@ func NewWindowsFirewallNetworkProfile()(*WindowsFirewallNetworkProfile) {
     return m
 }
 // CreateWindowsFirewallNetworkProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWindowsFirewallNetworkProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsFirewallNetworkProfile(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WindowsFirewallNetworkProfile) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +37,7 @@ func (m *WindowsFirewallNetworkProfile) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAuthorizedApplicationRulesFromGroupPolicyMerged gets the authorizedApplicationRulesFromGroupPolicyMerged property value. Configures the firewall to merge authorized application rules from group policy with those from local store instead of ignoring the local store rules. When AuthorizedApplicationRulesFromGroupPolicyNotMerged and AuthorizedApplicationRulesFromGroupPolicyMerged are both true, AuthorizedApplicationRulesFromGroupPolicyMerged takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetAuthorizedApplicationRulesFromGroupPolicyMerged()(*bool) {
     val, err := m.GetBackingStore().Get("authorizedApplicationRulesFromGroupPolicyMerged")
     if err != nil {
@@ -46,6 +49,7 @@ func (m *WindowsFirewallNetworkProfile) GetAuthorizedApplicationRulesFromGroupPo
     return nil
 }
 // GetAuthorizedApplicationRulesFromGroupPolicyNotMerged gets the authorizedApplicationRulesFromGroupPolicyNotMerged property value. Configures the firewall to prevent merging authorized application rules from group policy with those from local store instead of ignoring the local store rules. When AuthorizedApplicationRulesFromGroupPolicyNotMerged and AuthorizedApplicationRulesFromGroupPolicyMerged are both true, AuthorizedApplicationRulesFromGroupPolicyMerged takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetAuthorizedApplicationRulesFromGroupPolicyNotMerged()(*bool) {
     val, err := m.GetBackingStore().Get("authorizedApplicationRulesFromGroupPolicyNotMerged")
     if err != nil {
@@ -57,10 +61,12 @@ func (m *WindowsFirewallNetworkProfile) GetAuthorizedApplicationRulesFromGroupPo
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *WindowsFirewallNetworkProfile) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetConnectionSecurityRulesFromGroupPolicyMerged gets the connectionSecurityRulesFromGroupPolicyMerged property value. Configures the firewall to merge connection security rules from group policy with those from local store instead of ignoring the local store rules. When ConnectionSecurityRulesFromGroupPolicyNotMerged and ConnectionSecurityRulesFromGroupPolicyMerged are both true, ConnectionSecurityRulesFromGroupPolicyMerged takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetConnectionSecurityRulesFromGroupPolicyMerged()(*bool) {
     val, err := m.GetBackingStore().Get("connectionSecurityRulesFromGroupPolicyMerged")
     if err != nil {
@@ -72,6 +78,7 @@ func (m *WindowsFirewallNetworkProfile) GetConnectionSecurityRulesFromGroupPolic
     return nil
 }
 // GetConnectionSecurityRulesFromGroupPolicyNotMerged gets the connectionSecurityRulesFromGroupPolicyNotMerged property value. Configures the firewall to prevent merging connection security rules from group policy with those from local store instead of ignoring the local store rules. When ConnectionSecurityRulesFromGroupPolicyNotMerged and ConnectionSecurityRulesFromGroupPolicyMerged are both true, ConnectionSecurityRulesFromGroupPolicyMerged takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetConnectionSecurityRulesFromGroupPolicyNotMerged()(*bool) {
     val, err := m.GetBackingStore().Get("connectionSecurityRulesFromGroupPolicyNotMerged")
     if err != nil {
@@ -83,6 +90,7 @@ func (m *WindowsFirewallNetworkProfile) GetConnectionSecurityRulesFromGroupPolic
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsFirewallNetworkProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["authorizedApplicationRulesFromGroupPolicyMerged"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -328,6 +336,7 @@ func (m *WindowsFirewallNetworkProfile) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetFirewallEnabled gets the firewallEnabled property value. State Management Setting.
+// returns a *StateManagementSetting when successful
 func (m *WindowsFirewallNetworkProfile) GetFirewallEnabled()(*StateManagementSetting) {
     val, err := m.GetBackingStore().Get("firewallEnabled")
     if err != nil {
@@ -339,6 +348,7 @@ func (m *WindowsFirewallNetworkProfile) GetFirewallEnabled()(*StateManagementSet
     return nil
 }
 // GetGlobalPortRulesFromGroupPolicyMerged gets the globalPortRulesFromGroupPolicyMerged property value. Configures the firewall to merge global port rules from group policy with those from local store instead of ignoring the local store rules. When GlobalPortRulesFromGroupPolicyNotMerged and GlobalPortRulesFromGroupPolicyMerged are both true, GlobalPortRulesFromGroupPolicyMerged takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetGlobalPortRulesFromGroupPolicyMerged()(*bool) {
     val, err := m.GetBackingStore().Get("globalPortRulesFromGroupPolicyMerged")
     if err != nil {
@@ -350,6 +360,7 @@ func (m *WindowsFirewallNetworkProfile) GetGlobalPortRulesFromGroupPolicyMerged(
     return nil
 }
 // GetGlobalPortRulesFromGroupPolicyNotMerged gets the globalPortRulesFromGroupPolicyNotMerged property value. Configures the firewall to prevent merging global port rules from group policy with those from local store instead of ignoring the local store rules. When GlobalPortRulesFromGroupPolicyNotMerged and GlobalPortRulesFromGroupPolicyMerged are both true, GlobalPortRulesFromGroupPolicyMerged takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetGlobalPortRulesFromGroupPolicyNotMerged()(*bool) {
     val, err := m.GetBackingStore().Get("globalPortRulesFromGroupPolicyNotMerged")
     if err != nil {
@@ -361,6 +372,7 @@ func (m *WindowsFirewallNetworkProfile) GetGlobalPortRulesFromGroupPolicyNotMerg
     return nil
 }
 // GetInboundConnectionsBlocked gets the inboundConnectionsBlocked property value. Configures the firewall to block all incoming connections by default. When InboundConnectionsRequired and InboundConnectionsBlocked are both true, InboundConnectionsBlocked takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetInboundConnectionsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("inboundConnectionsBlocked")
     if err != nil {
@@ -372,6 +384,7 @@ func (m *WindowsFirewallNetworkProfile) GetInboundConnectionsBlocked()(*bool) {
     return nil
 }
 // GetInboundConnectionsRequired gets the inboundConnectionsRequired property value. Configures the firewall to allow all incoming connections by default. When InboundConnectionsRequired and InboundConnectionsBlocked are both true, InboundConnectionsBlocked takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetInboundConnectionsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("inboundConnectionsRequired")
     if err != nil {
@@ -383,6 +396,7 @@ func (m *WindowsFirewallNetworkProfile) GetInboundConnectionsRequired()(*bool) {
     return nil
 }
 // GetInboundNotificationsBlocked gets the inboundNotificationsBlocked property value. Prevents the firewall from displaying notifications when an application is blocked from listening on a port. When InboundNotificationsRequired and InboundNotificationsBlocked are both true, InboundNotificationsBlocked takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetInboundNotificationsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("inboundNotificationsBlocked")
     if err != nil {
@@ -394,6 +408,7 @@ func (m *WindowsFirewallNetworkProfile) GetInboundNotificationsBlocked()(*bool) 
     return nil
 }
 // GetInboundNotificationsRequired gets the inboundNotificationsRequired property value. Allows the firewall to display notifications when an application is blocked from listening on a port. When InboundNotificationsRequired and InboundNotificationsBlocked are both true, InboundNotificationsBlocked takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetInboundNotificationsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("inboundNotificationsRequired")
     if err != nil {
@@ -405,6 +420,7 @@ func (m *WindowsFirewallNetworkProfile) GetInboundNotificationsRequired()(*bool)
     return nil
 }
 // GetIncomingTrafficBlocked gets the incomingTrafficBlocked property value. Configures the firewall to block all incoming traffic regardless of other policy settings. When IncomingTrafficRequired and IncomingTrafficBlocked are both true, IncomingTrafficBlocked takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetIncomingTrafficBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("incomingTrafficBlocked")
     if err != nil {
@@ -416,6 +432,7 @@ func (m *WindowsFirewallNetworkProfile) GetIncomingTrafficBlocked()(*bool) {
     return nil
 }
 // GetIncomingTrafficRequired gets the incomingTrafficRequired property value. Configures the firewall to allow incoming traffic pursuant to other policy settings. When IncomingTrafficRequired and IncomingTrafficBlocked are both true, IncomingTrafficBlocked takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetIncomingTrafficRequired()(*bool) {
     val, err := m.GetBackingStore().Get("incomingTrafficRequired")
     if err != nil {
@@ -427,6 +444,7 @@ func (m *WindowsFirewallNetworkProfile) GetIncomingTrafficRequired()(*bool) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *WindowsFirewallNetworkProfile) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -438,6 +456,7 @@ func (m *WindowsFirewallNetworkProfile) GetOdataType()(*string) {
     return nil
 }
 // GetOutboundConnectionsBlocked gets the outboundConnectionsBlocked property value. Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetOutboundConnectionsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("outboundConnectionsBlocked")
     if err != nil {
@@ -449,6 +468,7 @@ func (m *WindowsFirewallNetworkProfile) GetOutboundConnectionsBlocked()(*bool) {
     return nil
 }
 // GetOutboundConnectionsRequired gets the outboundConnectionsRequired property value. Configures the firewall to allow all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetOutboundConnectionsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("outboundConnectionsRequired")
     if err != nil {
@@ -460,6 +480,7 @@ func (m *WindowsFirewallNetworkProfile) GetOutboundConnectionsRequired()(*bool) 
     return nil
 }
 // GetPolicyRulesFromGroupPolicyMerged gets the policyRulesFromGroupPolicyMerged property value. Configures the firewall to merge Firewall Rule policies from group policy with those from local store instead of ignoring the local store rules. When PolicyRulesFromGroupPolicyNotMerged and PolicyRulesFromGroupPolicyMerged are both true, PolicyRulesFromGroupPolicyMerged takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetPolicyRulesFromGroupPolicyMerged()(*bool) {
     val, err := m.GetBackingStore().Get("policyRulesFromGroupPolicyMerged")
     if err != nil {
@@ -471,6 +492,7 @@ func (m *WindowsFirewallNetworkProfile) GetPolicyRulesFromGroupPolicyMerged()(*b
     return nil
 }
 // GetPolicyRulesFromGroupPolicyNotMerged gets the policyRulesFromGroupPolicyNotMerged property value. Configures the firewall to prevent merging Firewall Rule policies from group policy with those from local store instead of ignoring the local store rules. When PolicyRulesFromGroupPolicyNotMerged and PolicyRulesFromGroupPolicyMerged are both true, PolicyRulesFromGroupPolicyMerged takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetPolicyRulesFromGroupPolicyNotMerged()(*bool) {
     val, err := m.GetBackingStore().Get("policyRulesFromGroupPolicyNotMerged")
     if err != nil {
@@ -482,6 +504,7 @@ func (m *WindowsFirewallNetworkProfile) GetPolicyRulesFromGroupPolicyNotMerged()
     return nil
 }
 // GetSecuredPacketExemptionAllowed gets the securedPacketExemptionAllowed property value. Configures the firewall to allow the host computer to respond to unsolicited network traffic of that traffic is secured by IPSec even when stealthModeBlocked is set to true. When SecuredPacketExemptionBlocked and SecuredPacketExemptionAllowed are both true, SecuredPacketExemptionAllowed takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetSecuredPacketExemptionAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("securedPacketExemptionAllowed")
     if err != nil {
@@ -493,6 +516,7 @@ func (m *WindowsFirewallNetworkProfile) GetSecuredPacketExemptionAllowed()(*bool
     return nil
 }
 // GetSecuredPacketExemptionBlocked gets the securedPacketExemptionBlocked property value. Configures the firewall to block the host computer to respond to unsolicited network traffic of that traffic is secured by IPSec even when stealthModeBlocked is set to true. When SecuredPacketExemptionBlocked and SecuredPacketExemptionAllowed are both true, SecuredPacketExemptionAllowed takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetSecuredPacketExemptionBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("securedPacketExemptionBlocked")
     if err != nil {
@@ -504,6 +528,7 @@ func (m *WindowsFirewallNetworkProfile) GetSecuredPacketExemptionBlocked()(*bool
     return nil
 }
 // GetStealthModeBlocked gets the stealthModeBlocked property value. Prevent the server from operating in stealth mode. When StealthModeRequired and StealthModeBlocked are both true, StealthModeBlocked takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetStealthModeBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("stealthModeBlocked")
     if err != nil {
@@ -515,6 +540,7 @@ func (m *WindowsFirewallNetworkProfile) GetStealthModeBlocked()(*bool) {
     return nil
 }
 // GetStealthModeRequired gets the stealthModeRequired property value. Allow the server to operate in stealth mode. When StealthModeRequired and StealthModeBlocked are both true, StealthModeBlocked takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetStealthModeRequired()(*bool) {
     val, err := m.GetBackingStore().Get("stealthModeRequired")
     if err != nil {
@@ -526,6 +552,7 @@ func (m *WindowsFirewallNetworkProfile) GetStealthModeRequired()(*bool) {
     return nil
 }
 // GetUnicastResponsesToMulticastBroadcastsBlocked gets the unicastResponsesToMulticastBroadcastsBlocked property value. Configures the firewall to block unicast responses to multicast broadcast traffic. When UnicastResponsesToMulticastBroadcastsRequired and UnicastResponsesToMulticastBroadcastsBlocked are both true, UnicastResponsesToMulticastBroadcastsBlocked takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetUnicastResponsesToMulticastBroadcastsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("unicastResponsesToMulticastBroadcastsBlocked")
     if err != nil {
@@ -537,6 +564,7 @@ func (m *WindowsFirewallNetworkProfile) GetUnicastResponsesToMulticastBroadcasts
     return nil
 }
 // GetUnicastResponsesToMulticastBroadcastsRequired gets the unicastResponsesToMulticastBroadcastsRequired property value. Configures the firewall to allow unicast responses to multicast broadcast traffic. When UnicastResponsesToMulticastBroadcastsRequired and UnicastResponsesToMulticastBroadcastsBlocked are both true, UnicastResponsesToMulticastBroadcastsBlocked takes priority.
+// returns a *bool when successful
 func (m *WindowsFirewallNetworkProfile) GetUnicastResponsesToMulticastBroadcastsRequired()(*bool) {
     val, err := m.GetBackingStore().Get("unicastResponsesToMulticastBroadcastsRequired")
     if err != nil {
@@ -881,7 +909,6 @@ func (m *WindowsFirewallNetworkProfile) SetUnicastResponsesToMulticastBroadcasts
         panic(err)
     }
 }
-// WindowsFirewallNetworkProfileable 
 type WindowsFirewallNetworkProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

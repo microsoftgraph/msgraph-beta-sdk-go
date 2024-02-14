@@ -17,20 +17,21 @@ type ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilderInternal instantiates a new ReapplyFiltersRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilderInternal instantiates a new ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder) {
     m := &ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tables/itemAt(index={index})/reapplyFilters", pathParameters),
     }
     return m
 }
-// NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder instantiates a new ReapplyFiltersRequestBuilder and sets the default values.
+// NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder instantiates a new ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder and sets the default values.
 func NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post reapplies all the filters currently on the table.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/table-reapplyfilters?view=graph-rest-1.0
@@ -40,8 +41,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersR
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "4XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-        "5XX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -50,6 +50,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersR
     return nil
 }
 // ToPostRequestInformation reapplies all the filters currently on the table.
+// returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -60,6 +61,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder) WithUrl(rawUrl string)(*ItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemTablesItemAtWithIndexReapplyFiltersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

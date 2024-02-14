@@ -5,12 +5,11 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// CorsConfiguration 
 type CorsConfiguration struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewCorsConfiguration instantiates a new corsConfiguration and sets the default values.
+// NewCorsConfiguration instantiates a new CorsConfiguration and sets the default values.
 func NewCorsConfiguration()(*CorsConfiguration) {
     m := &CorsConfiguration{
     }
@@ -19,10 +18,12 @@ func NewCorsConfiguration()(*CorsConfiguration) {
     return m
 }
 // CreateCorsConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCorsConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCorsConfiguration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CorsConfiguration) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,6 +36,7 @@ func (m *CorsConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAllowedHeaders gets the allowedHeaders property value. The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.
+// returns a []string when successful
 func (m *CorsConfiguration) GetAllowedHeaders()([]string) {
     val, err := m.GetBackingStore().Get("allowedHeaders")
     if err != nil {
@@ -46,6 +48,7 @@ func (m *CorsConfiguration) GetAllowedHeaders()([]string) {
     return nil
 }
 // GetAllowedMethods gets the allowedMethods property value. The HTTP request methods that the origin domain may use for a CORS request.
+// returns a []string when successful
 func (m *CorsConfiguration) GetAllowedMethods()([]string) {
     val, err := m.GetBackingStore().Get("allowedMethods")
     if err != nil {
@@ -57,6 +60,7 @@ func (m *CorsConfiguration) GetAllowedMethods()([]string) {
     return nil
 }
 // GetAllowedOrigins gets the allowedOrigins property value. The origin domains that are permitted to make a request against the service via CORS. The origin domain is the domain from which the request originates. The origin must be an exact case-sensitive match with the origin that the user age sends to the service.
+// returns a []string when successful
 func (m *CorsConfiguration) GetAllowedOrigins()([]string) {
     val, err := m.GetBackingStore().Get("allowedOrigins")
     if err != nil {
@@ -68,10 +72,12 @@ func (m *CorsConfiguration) GetAllowedOrigins()([]string) {
     return nil
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *CorsConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CorsConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowedHeaders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -155,6 +161,7 @@ func (m *CorsConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetMaxAgeInSeconds gets the maxAgeInSeconds property value. The maximum amount of time that a browser should cache the response to the preflight OPTIONS request.
+// returns a *int32 when successful
 func (m *CorsConfiguration) GetMaxAgeInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("maxAgeInSeconds")
     if err != nil {
@@ -166,6 +173,7 @@ func (m *CorsConfiguration) GetMaxAgeInSeconds()(*int32) {
     return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *CorsConfiguration) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -177,6 +185,7 @@ func (m *CorsConfiguration) GetOdataType()(*string) {
     return nil
 }
 // GetResource gets the resource property value. Resource within the application segment for which CORS permissions are granted. / grants permission for whole app segment.
+// returns a *string when successful
 func (m *CorsConfiguration) GetResource()(*string) {
     val, err := m.GetBackingStore().Get("resource")
     if err != nil {
@@ -286,7 +295,6 @@ func (m *CorsConfiguration) SetResource(value *string)() {
         panic(err)
     }
 }
-// CorsConfigurationable 
 type CorsConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

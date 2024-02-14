@@ -10,7 +10,7 @@ type BitLockerFixedDrivePolicy struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewBitLockerFixedDrivePolicy instantiates a new bitLockerFixedDrivePolicy and sets the default values.
+// NewBitLockerFixedDrivePolicy instantiates a new BitLockerFixedDrivePolicy and sets the default values.
 func NewBitLockerFixedDrivePolicy()(*BitLockerFixedDrivePolicy) {
     m := &BitLockerFixedDrivePolicy{
     }
@@ -19,10 +19,12 @@ func NewBitLockerFixedDrivePolicy()(*BitLockerFixedDrivePolicy) {
     return m
 }
 // CreateBitLockerFixedDrivePolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBitLockerFixedDrivePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBitLockerFixedDrivePolicy(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BitLockerFixedDrivePolicy) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -35,10 +37,12 @@ func (m *BitLockerFixedDrivePolicy) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *BitLockerFixedDrivePolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEncryptionMethod gets the encryptionMethod property value. Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
+// returns a *BitLockerEncryptionMethod when successful
 func (m *BitLockerFixedDrivePolicy) GetEncryptionMethod()(*BitLockerEncryptionMethod) {
     val, err := m.GetBackingStore().Get("encryptionMethod")
     if err != nil {
@@ -50,6 +54,7 @@ func (m *BitLockerFixedDrivePolicy) GetEncryptionMethod()(*BitLockerEncryptionMe
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BitLockerFixedDrivePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["encryptionMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,6 +100,7 @@ func (m *BitLockerFixedDrivePolicy) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *BitLockerFixedDrivePolicy) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -106,6 +112,7 @@ func (m *BitLockerFixedDrivePolicy) GetOdataType()(*string) {
     return nil
 }
 // GetRecoveryOptions gets the recoveryOptions property value. This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.
+// returns a BitLockerRecoveryOptionsable when successful
 func (m *BitLockerFixedDrivePolicy) GetRecoveryOptions()(BitLockerRecoveryOptionsable) {
     val, err := m.GetBackingStore().Get("recoveryOptions")
     if err != nil {
@@ -117,6 +124,7 @@ func (m *BitLockerFixedDrivePolicy) GetRecoveryOptions()(BitLockerRecoveryOption
     return nil
 }
 // GetRequireEncryptionForWriteAccess gets the requireEncryptionForWriteAccess property value. This policy setting determines whether BitLocker protection is required for fixed data drives to be writable on a computer.
+// returns a *bool when successful
 func (m *BitLockerFixedDrivePolicy) GetRequireEncryptionForWriteAccess()(*bool) {
     val, err := m.GetBackingStore().Get("requireEncryptionForWriteAccess")
     if err != nil {
@@ -201,7 +209,6 @@ func (m *BitLockerFixedDrivePolicy) SetRequireEncryptionForWriteAccess(value *bo
         panic(err)
     }
 }
-// BitLockerFixedDrivePolicyable 
 type BitLockerFixedDrivePolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

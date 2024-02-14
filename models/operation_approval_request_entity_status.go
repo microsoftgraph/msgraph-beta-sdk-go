@@ -11,7 +11,7 @@ type OperationApprovalRequestEntityStatus struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewOperationApprovalRequestEntityStatus instantiates a new operationApprovalRequestEntityStatus and sets the default values.
+// NewOperationApprovalRequestEntityStatus instantiates a new OperationApprovalRequestEntityStatus and sets the default values.
 func NewOperationApprovalRequestEntityStatus()(*OperationApprovalRequestEntityStatus) {
     m := &OperationApprovalRequestEntityStatus{
     }
@@ -20,10 +20,12 @@ func NewOperationApprovalRequestEntityStatus()(*OperationApprovalRequestEntitySt
     return m
 }
 // CreateOperationApprovalRequestEntityStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOperationApprovalRequestEntityStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOperationApprovalRequestEntityStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OperationApprovalRequestEntityStatus) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
@@ -36,10 +38,12 @@ func (m *OperationApprovalRequestEntityStatus) GetAdditionalData()(map[string]an
     return val.(map[string]any)
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
 func (m *OperationApprovalRequestEntityStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetEntityLocked gets the entityLocked property value. The status of the Entity connected to the OperationApprovalRequest in regard to changes, whether further requests are allowed or if the Entity is locked. When true, a lock is present on the Entity and no approval requests can be currently made for it. When false, the Entity is not locked and approval requests are allowed. Default value is false. Read-only. This property is read-only.
+// returns a *bool when successful
 func (m *OperationApprovalRequestEntityStatus) GetEntityLocked()(*bool) {
     val, err := m.GetBackingStore().Get("entityLocked")
     if err != nil {
@@ -51,6 +55,7 @@ func (m *OperationApprovalRequestEntityStatus) GetEntityLocked()(*bool) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OperationApprovalRequestEntityStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["entityLocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,6 +111,7 @@ func (m *OperationApprovalRequestEntityStatus) GetFieldDeserializers()(map[strin
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
 func (m *OperationApprovalRequestEntityStatus) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
@@ -117,6 +123,7 @@ func (m *OperationApprovalRequestEntityStatus) GetOdataType()(*string) {
     return nil
 }
 // GetRequestExpirationDateTime gets the requestExpirationDateTime property value. Indicates the DateTime when any action on the OperationApprovalRequest is no longer permitted. The value cannot be modified and is automatically populated when the request is created using expiration offset values defined in the service controllers. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only. This property is read-only.
+// returns a *Time when successful
 func (m *OperationApprovalRequestEntityStatus) GetRequestExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("requestExpirationDateTime")
     if err != nil {
@@ -128,6 +135,7 @@ func (m *OperationApprovalRequestEntityStatus) GetRequestExpirationDateTime()(*i
     return nil
 }
 // GetRequestId gets the requestId property value. The unique identifier of the OperationApprovalRequest. This property cannot be modified and is required when the entity status is created. Read-only. This property is read-only.
+// returns a *string when successful
 func (m *OperationApprovalRequestEntityStatus) GetRequestId()(*string) {
     val, err := m.GetBackingStore().Get("requestId")
     if err != nil {
@@ -139,6 +147,7 @@ func (m *OperationApprovalRequestEntityStatus) GetRequestId()(*string) {
     return nil
 }
 // GetRequestStatus gets the requestStatus property value. Indicates the status of the Approval Request. The status of a request will change when an action is successfully performed on it, such as when it is `approved` or `rejected`, or when the request's expiration DateTime passes and the result is `expired`.
+// returns a *OperationApprovalRequestStatus when successful
 func (m *OperationApprovalRequestEntityStatus) GetRequestStatus()(*OperationApprovalRequestStatus) {
     val, err := m.GetBackingStore().Get("requestStatus")
     if err != nil {
@@ -218,7 +227,6 @@ func (m *OperationApprovalRequestEntityStatus) SetRequestStatus(value *Operation
         panic(err)
     }
 }
-// OperationApprovalRequestEntityStatusable 
 type OperationApprovalRequestEntityStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel

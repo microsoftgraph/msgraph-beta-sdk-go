@@ -5,11 +5,10 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApprovalStep 
 type ApprovalStep struct {
     Entity
 }
-// NewApprovalStep instantiates a new approvalStep and sets the default values.
+// NewApprovalStep instantiates a new ApprovalStep and sets the default values.
 func NewApprovalStep()(*ApprovalStep) {
     m := &ApprovalStep{
         Entity: *NewEntity(),
@@ -17,10 +16,12 @@ func NewApprovalStep()(*ApprovalStep) {
     return m
 }
 // CreateApprovalStepFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApprovalStepFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApprovalStep(), nil
 }
 // GetAssignedToMe gets the assignedToMe property value. Indicates whether the step is assigned to the calling user to review. Read-only.
+// returns a *bool when successful
 func (m *ApprovalStep) GetAssignedToMe()(*bool) {
     val, err := m.GetBackingStore().Get("assignedToMe")
     if err != nil {
@@ -32,6 +33,7 @@ func (m *ApprovalStep) GetAssignedToMe()(*bool) {
     return nil
 }
 // GetDisplayName gets the displayName property value. The label provided by the policy creator to identify an approval step. Read-only.
+// returns a *string when successful
 func (m *ApprovalStep) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
@@ -43,6 +45,7 @@ func (m *ApprovalStep) GetDisplayName()(*string) {
     return nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApprovalStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["assignedToMe"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,6 +121,7 @@ func (m *ApprovalStep) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetJustification gets the justification property value. The justification associated with the approval step decision.
+// returns a *string when successful
 func (m *ApprovalStep) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
     if err != nil {
@@ -129,6 +133,7 @@ func (m *ApprovalStep) GetJustification()(*string) {
     return nil
 }
 // GetReviewedBy gets the reviewedBy property value. The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Read-only.
+// returns a Identityable when successful
 func (m *ApprovalStep) GetReviewedBy()(Identityable) {
     val, err := m.GetBackingStore().Get("reviewedBy")
     if err != nil {
@@ -140,6 +145,7 @@ func (m *ApprovalStep) GetReviewedBy()(Identityable) {
     return nil
 }
 // GetReviewedDateTime gets the reviewedDateTime property value. The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
 func (m *ApprovalStep) GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewedDateTime")
     if err != nil {
@@ -151,6 +157,7 @@ func (m *ApprovalStep) GetReviewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     return nil
 }
 // GetReviewResult gets the reviewResult property value. The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
+// returns a *string when successful
 func (m *ApprovalStep) GetReviewResult()(*string) {
     val, err := m.GetBackingStore().Get("reviewResult")
     if err != nil {
@@ -162,6 +169,7 @@ func (m *ApprovalStep) GetReviewResult()(*string) {
     return nil
 }
 // GetStatus gets the status property value. The step status. Possible values: InProgress, Initializing, Completed, Expired. Read-only.
+// returns a *string when successful
 func (m *ApprovalStep) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
     if err != nil {
@@ -271,7 +279,6 @@ func (m *ApprovalStep) SetStatus(value *string)() {
         panic(err)
     }
 }
-// ApprovalStepable 
 type ApprovalStepable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
