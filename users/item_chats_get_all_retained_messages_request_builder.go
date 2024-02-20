@@ -52,7 +52,7 @@ func NewItemChatsGetAllRetainedMessagesRequestBuilder(rawUrl string, requestAdap
     return NewItemChatsGetAllRetainedMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllRetainedMessages
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllRetainedMessagesGetResponse instead.
 // returns a ItemChatsGetAllRetainedMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsGetAllRetainedMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsGetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(ItemChatsGetAllRetainedMessagesResponseable, error) {

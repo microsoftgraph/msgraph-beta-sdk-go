@@ -31,7 +31,7 @@ func NewItemGetMemberObjectsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewItemGetMemberObjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getMemberObjects
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetMemberObjectsPostResponse instead.
 // returns a ItemGetMemberObjectsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetMemberObjectsRequestBuilder) Post(ctx context.Context, body ItemGetMemberObjectsPostRequestBodyable, requestConfiguration *ItemGetMemberObjectsRequestBuilderPostRequestConfiguration)(ItemGetMemberObjectsResponseable, error) {

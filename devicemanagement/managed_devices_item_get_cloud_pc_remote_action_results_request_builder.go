@@ -46,7 +46,7 @@ func NewManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder(rawUrl str
     return NewManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getCloudPcRemoteActionResults
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetCloudPcRemoteActionResultsGetResponse instead.
 // returns a ManagedDevicesItemGetCloudPcRemoteActionResultsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderGetRequestConfiguration)(ManagedDevicesItemGetCloudPcRemoteActionResultsResponseable, error) {

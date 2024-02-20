@@ -55,7 +55,7 @@ func NewGetCredentialUsageSummaryWithPeriodRequestBuilder(rawUrl string, request
     return NewGetCredentialUsageSummaryWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getCredentialUsageSummary
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetCredentialUsageSummaryWithPeriodGetResponse instead.
 // returns a GetCredentialUsageSummaryWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetCredentialUsageSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetCredentialUsageSummaryWithPeriodResponseable, error) {

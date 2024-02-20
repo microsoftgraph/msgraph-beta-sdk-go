@@ -49,7 +49,7 @@ func NewComanagedDevicesAppDiagnosticsWithUpnRequestBuilder(rawUrl string, reque
     return NewComanagedDevicesAppDiagnosticsWithUpnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function appDiagnostics
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsAppDiagnosticsWithUpnGetResponse instead.
 // returns a ComanagedDevicesAppDiagnosticsWithUpnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ComanagedDevicesAppDiagnosticsWithUpnRequestBuilder) Get(ctx context.Context, requestConfiguration *ComanagedDevicesAppDiagnosticsWithUpnRequestBuilderGetRequestConfiguration)(ComanagedDevicesAppDiagnosticsWithUpnResponseable, error) {

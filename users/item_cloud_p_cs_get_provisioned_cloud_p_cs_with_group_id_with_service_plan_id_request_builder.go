@@ -58,7 +58,7 @@ func NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBui
     return NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get invoke function getProvisionedCloudPCs
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse instead.
 // returns a ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration)(ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseable, error) {

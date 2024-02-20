@@ -31,7 +31,7 @@ func NewZebraFotaConnectorApproveFotaAppsRequestBuilder(rawUrl string, requestAd
     return NewZebraFotaConnectorApproveFotaAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action approveFotaApps
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsApproveFotaAppsPostResponse instead.
 // returns a ZebraFotaConnectorApproveFotaAppsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ZebraFotaConnectorApproveFotaAppsRequestBuilder) Post(ctx context.Context, requestConfiguration *ZebraFotaConnectorApproveFotaAppsRequestBuilderPostRequestConfiguration)(ZebraFotaConnectorApproveFotaAppsResponseable, error) {

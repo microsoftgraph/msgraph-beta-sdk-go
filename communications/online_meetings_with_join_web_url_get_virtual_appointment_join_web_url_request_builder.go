@@ -31,7 +31,7 @@ func NewOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilde
     return NewOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getVirtualAppointmentJoinWebUrl
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetVirtualAppointmentJoinWebUrlGetResponse instead.
 // returns a OnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(OnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlResponseable, error) {

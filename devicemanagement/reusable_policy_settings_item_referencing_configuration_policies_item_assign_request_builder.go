@@ -31,7 +31,7 @@ func NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemAssignRequ
     return NewReusablePolicySettingsItemReferencingConfigurationPoliciesItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 // returns a ReusablePolicySettingsItemReferencingConfigurationPoliciesItemAssignResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReusablePolicySettingsItemReferencingConfigurationPoliciesItemAssignRequestBuilder) Post(ctx context.Context, body ReusablePolicySettingsItemReferencingConfigurationPoliciesItemAssignPostRequestBodyable, requestConfiguration *ReusablePolicySettingsItemReferencingConfigurationPoliciesItemAssignRequestBuilderPostRequestConfiguration)(ReusablePolicySettingsItemReferencingConfigurationPoliciesItemAssignResponseable, error) {

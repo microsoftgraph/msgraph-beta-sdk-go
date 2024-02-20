@@ -46,7 +46,7 @@ func NewGetEffectivePermissionsRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewGetEffectivePermissionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getEffectivePermissions
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetEffectivePermissionsGetResponse instead.
 // returns a GetEffectivePermissionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetEffectivePermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetEffectivePermissionsRequestBuilderGetRequestConfiguration)(GetEffectivePermissionsResponseable, error) {

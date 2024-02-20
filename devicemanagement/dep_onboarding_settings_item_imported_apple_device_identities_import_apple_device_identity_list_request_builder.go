@@ -31,7 +31,7 @@ func NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportAppleDeviceI
     return NewDepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportAppleDeviceIdentityListRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action importAppleDeviceIdentityList
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsImportAppleDeviceIdentityListPostResponse instead.
 // returns a DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportAppleDeviceIdentityListResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportAppleDeviceIdentityListRequestBuilder) Post(ctx context.Context, body DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportAppleDeviceIdentityListPostRequestBodyable, requestConfiguration *DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportAppleDeviceIdentityListRequestBuilderPostRequestConfiguration)(DepOnboardingSettingsItemImportedAppleDeviceIdentitiesImportAppleDeviceIdentityListResponseable, error) {

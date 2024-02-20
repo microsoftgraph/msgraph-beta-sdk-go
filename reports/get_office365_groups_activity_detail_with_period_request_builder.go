@@ -55,7 +55,7 @@ func NewGetOffice365GroupsActivityDetailWithPeriodRequestBuilder(rawUrl string, 
     return NewGetOffice365GroupsActivityDetailWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getOffice365GroupsActivityDetail
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetOffice365GroupsActivityDetailWithPeriodGetResponse instead.
 // returns a GetOffice365GroupsActivityDetailWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetOffice365GroupsActivityDetailWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityDetailWithPeriodResponseable, error) {

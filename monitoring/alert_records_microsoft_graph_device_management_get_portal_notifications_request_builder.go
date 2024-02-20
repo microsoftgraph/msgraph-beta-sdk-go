@@ -46,7 +46,7 @@ func NewAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestB
     return NewAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getPortalNotifications
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetPortalNotificationsGetResponse instead.
 // returns a AlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsGetPortalNotificationsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetRequestConfiguration)(AlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsGetPortalNotificationsResponseable, error) {

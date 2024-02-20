@@ -52,7 +52,7 @@ func NewTasksDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewTasksDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a TasksDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TasksDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *TasksDeltaRequestBuilderGetRequestConfiguration)(TasksDeltaResponseable, error) {

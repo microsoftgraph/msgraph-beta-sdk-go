@@ -31,7 +31,7 @@ func NewSynchronizationProfilesItemUploadUrlRequestBuilder(rawUrl string, reques
     return NewSynchronizationProfilesItemUploadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function uploadUrl
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsUploadUrlGetResponse instead.
 // returns a SynchronizationProfilesItemUploadUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesItemUploadUrlRequestBuilderGetRequestConfiguration)(SynchronizationProfilesItemUploadUrlResponseable, error) {

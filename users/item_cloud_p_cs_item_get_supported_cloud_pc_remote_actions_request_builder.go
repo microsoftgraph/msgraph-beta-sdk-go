@@ -46,7 +46,7 @@ func NewItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder(rawUrl st
     return NewItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getSupportedCloudPcRemoteActions
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetSupportedCloudPcRemoteActionsGetResponse instead.
 // returns a ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderGetRequestConfiguration)(ItemCloudPCsItemGetSupportedCloudPcRemoteActionsResponseable, error) {

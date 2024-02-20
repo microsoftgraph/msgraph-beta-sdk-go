@@ -31,7 +31,7 @@ func NewMdmWindowsInformationProtectionPoliciesHasPayloadLinksRequestBuilder(raw
     return NewMdmWindowsInformationProtectionPoliciesHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action hasPayloadLinks
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsHasPayloadLinksPostResponse instead.
 // returns a MdmWindowsInformationProtectionPoliciesHasPayloadLinksResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MdmWindowsInformationProtectionPoliciesHasPayloadLinksRequestBuilder) Post(ctx context.Context, body MdmWindowsInformationProtectionPoliciesHasPayloadLinksPostRequestBodyable, requestConfiguration *MdmWindowsInformationProtectionPoliciesHasPayloadLinksRequestBuilderPostRequestConfiguration)(MdmWindowsInformationProtectionPoliciesHasPayloadLinksResponseable, error) {

@@ -31,7 +31,7 @@ func NewGroupPolicyMigrationReportsItemUpdateScopeTagsRequestBuilder(rawUrl stri
     return NewGroupPolicyMigrationReportsItemUpdateScopeTagsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action updateScopeTags
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsUpdateScopeTagsPostResponse instead.
 // returns a GroupPolicyMigrationReportsItemUpdateScopeTagsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GroupPolicyMigrationReportsItemUpdateScopeTagsRequestBuilder) Post(ctx context.Context, body GroupPolicyMigrationReportsItemUpdateScopeTagsPostRequestBodyable, requestConfiguration *GroupPolicyMigrationReportsItemUpdateScopeTagsRequestBuilderPostRequestConfiguration)(GroupPolicyMigrationReportsItemUpdateScopeTagsResponseable, error) {

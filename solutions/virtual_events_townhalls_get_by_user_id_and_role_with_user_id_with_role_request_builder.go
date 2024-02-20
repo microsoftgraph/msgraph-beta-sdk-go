@@ -58,7 +58,7 @@ func NewVirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder
     return NewVirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get invoke function getByUserIdAndRole
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse instead.
 // returns a VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleResponseable, error) {

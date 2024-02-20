@@ -46,7 +46,7 @@ func NewVirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder(rawUrl str
     return NewVirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAuditActivityTypes
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetAuditActivityTypesGetResponse instead.
 // returns a VirtualEndpointAuditEventsGetAuditActivityTypesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsGetAuditActivityTypesRequestBuilderGetRequestConfiguration)(VirtualEndpointAuditEventsGetAuditActivityTypesResponseable, error) {

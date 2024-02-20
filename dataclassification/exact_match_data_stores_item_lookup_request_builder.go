@@ -31,7 +31,7 @@ func NewExactMatchDataStoresItemLookupRequestBuilder(rawUrl string, requestAdapt
     return NewExactMatchDataStoresItemLookupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action lookup
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsLookupPostResponse instead.
 // returns a ExactMatchDataStoresItemLookupResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExactMatchDataStoresItemLookupRequestBuilder) Post(ctx context.Context, body ExactMatchDataStoresItemLookupPostRequestBodyable, requestConfiguration *ExactMatchDataStoresItemLookupRequestBuilderPostRequestConfiguration)(ExactMatchDataStoresItemLookupResponseable, error) {

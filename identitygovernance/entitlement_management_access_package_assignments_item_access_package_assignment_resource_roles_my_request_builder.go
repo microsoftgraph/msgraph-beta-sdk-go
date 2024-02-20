@@ -52,7 +52,7 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignment
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function My
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsMyGetResponse instead.
 // returns a EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesMyResponseable, error) {

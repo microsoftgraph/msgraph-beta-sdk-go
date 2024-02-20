@@ -52,7 +52,7 @@ func NewGetCredentialUserRegistrationCountRequestBuilder(rawUrl string, requestA
     return NewGetCredentialUserRegistrationCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetCredentialUserRegistrationCountGetResponse instead.
 // returns a GetCredentialUserRegistrationCountResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

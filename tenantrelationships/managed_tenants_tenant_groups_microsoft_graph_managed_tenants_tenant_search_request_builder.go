@@ -31,7 +31,7 @@ func NewManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchReques
     return NewManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action tenantSearch
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsTenantSearchPostResponse instead.
 // returns a ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchRequestBuilder) Post(ctx context.Context, body ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchPostRequestBodyable, requestConfiguration *ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchRequestBuilderPostRequestConfiguration)(ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchResponseable, error) {

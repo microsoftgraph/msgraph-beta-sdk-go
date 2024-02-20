@@ -31,7 +31,7 @@ func NewItemAddGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewItemAddGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action addGroup
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsAddGroupPostResponse instead.
 // returns a ItemAddGroupResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAddGroupRequestBuilder) Post(ctx context.Context, body ItemAddGroupPostRequestBodyable, requestConfiguration *ItemAddGroupRequestBuilderPostRequestConfiguration)(ItemAddGroupResponseable, error) {

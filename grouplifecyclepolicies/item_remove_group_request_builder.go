@@ -31,7 +31,7 @@ func NewItemRemoveGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewItemRemoveGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action removeGroup
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsRemoveGroupPostResponse instead.
 // returns a ItemRemoveGroupResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemRemoveGroupRequestBuilder) Post(ctx context.Context, body ItemRemoveGroupPostRequestBodyable, requestConfiguration *ItemRemoveGroupRequestBuilderPostRequestConfiguration)(ItemRemoveGroupResponseable, error) {

@@ -52,7 +52,7 @@ func NewItemTeamChannelsAllMessagesRequestBuilder(rawUrl string, requestAdapter 
     return NewItemTeamChannelsAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function allMessages
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsAllMessagesGetResponse instead.
 // returns a ItemTeamChannelsAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamChannelsAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamChannelsAllMessagesRequestBuilderGetRequestConfiguration)(ItemTeamChannelsAllMessagesResponseable, error) {

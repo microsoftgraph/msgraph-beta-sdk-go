@@ -52,7 +52,7 @@ func NewMyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c9
     return NewMyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function my
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsMyGetResponse instead.
 // returns a MyResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MyRequestBuilder) Get(ctx context.Context, requestConfiguration *MyRequestBuilderGetRequestConfiguration)(MyResponseable, error) {

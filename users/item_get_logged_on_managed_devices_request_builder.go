@@ -52,7 +52,7 @@ func NewItemGetLoggedOnManagedDevicesRequestBuilder(rawUrl string, requestAdapte
     return NewItemGetLoggedOnManagedDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getLoggedOnManagedDevices
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetLoggedOnManagedDevicesGetResponse instead.
 // returns a ItemGetLoggedOnManagedDevicesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetLoggedOnManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetLoggedOnManagedDevicesRequestBuilderGetRequestConfiguration)(ItemGetLoggedOnManagedDevicesResponseable, error) {

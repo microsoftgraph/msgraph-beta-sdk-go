@@ -46,7 +46,7 @@ func NewItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder(rawUrl strin
     return NewItemManagedDevicesItemGetNonCompliantSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getNonCompliantSettings
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetNonCompliantSettingsGetResponse instead.
 // returns a ItemManagedDevicesItemGetNonCompliantSettingsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilderGetRequestConfiguration)(ItemManagedDevicesItemGetNonCompliantSettingsResponseable, error) {

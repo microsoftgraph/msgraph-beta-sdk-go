@@ -52,7 +52,7 @@ func NewEntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuil
     return NewEntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function additionalAccess
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsAdditionalAccessGetResponse instead.
 // returns a EntitlementManagementAccessPackageAssignmentsAdditionalAccessResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentsAdditionalAccessResponseable, error) {

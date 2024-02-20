@@ -66,7 +66,7 @@ func (m *RecommendedHuntingQuery) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetKqlText gets the kqlText property value. The kqlText property
+// GetKqlText gets the kqlText property value. The query string.
 // returns a *string when successful
 func (m *RecommendedHuntingQuery) GetKqlText()(*string) {
     val, err := m.GetBackingStore().Get("kqlText")
@@ -123,7 +123,7 @@ func (m *RecommendedHuntingQuery) SetAdditionalData(value map[string]any)() {
 func (m *RecommendedHuntingQuery) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKqlText sets the kqlText property value. The kqlText property
+// SetKqlText sets the kqlText property value. The query string.
 func (m *RecommendedHuntingQuery) SetKqlText(value *string)() {
     err := m.GetBackingStore().Set("kqlText", value)
     if err != nil {

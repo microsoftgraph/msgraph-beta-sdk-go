@@ -53,7 +53,7 @@ func NewReportsMicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDa
     return NewReportsMicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get invoke function deviceReport
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeviceReportWithStartDateTimeWithEndDateTimeGetResponse instead.
 // returns a ReportsMicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeDeviceReportWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReportsMicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessDeviceReportWithStartDateTimeWithEndDateTimeDeviceReportWithStartDateTimeWithEndDateTimeResponseable, error) {

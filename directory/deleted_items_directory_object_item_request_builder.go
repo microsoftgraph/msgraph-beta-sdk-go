@@ -11,6 +11,13 @@ import (
 type DeletedItemsDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// DeletedItemsDirectoryObjectItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type DeletedItemsDirectoryObjectItemRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // DeletedItemsDirectoryObjectItemRequestBuilderGetQueryParameters recently deleted items. Read-only. Nullable.
 type DeletedItemsDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -49,6 +56,22 @@ func NewDeletedItemsDirectoryObjectItemRequestBuilder(rawUrl string, requestAdap
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete delete navigation property deletedItems for directory
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeletedItemsDirectoryObjectItemRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get recently deleted items. Read-only. Nullable.
 // returns a DirectoryObjectable when successful
@@ -114,6 +137,17 @@ func (m *DeletedItemsDirectoryObjectItemRequestBuilder) GraphUser()(*DeletedItem
 // returns a *DeletedItemsItemRestoreRequestBuilder when successful
 func (m *DeletedItemsDirectoryObjectItemRequestBuilder) Restore()(*DeletedItemsItemRestoreRequestBuilder) {
     return NewDeletedItemsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ToDeleteRequestInformation delete navigation property deletedItems for directory
+// returns a *RequestInformation when successful
+func (m *DeletedItemsDirectoryObjectItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsDirectoryObjectItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/directory/deletedItems/{directoryObject%2Did}", m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation recently deleted items. Read-only. Nullable.
 // returns a *RequestInformation when successful

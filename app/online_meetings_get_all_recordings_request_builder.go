@@ -52,7 +52,7 @@ func NewOnlineMeetingsGetAllRecordingsRequestBuilder(rawUrl string, requestAdapt
     return NewOnlineMeetingsGetAllRecordingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllRecordings
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllRecordingsGetResponse instead.
 // returns a OnlineMeetingsGetAllRecordingsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsGetAllRecordingsRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsGetAllRecordingsRequestBuilderGetRequestConfiguration)(OnlineMeetingsGetAllRecordingsResponseable, error) {

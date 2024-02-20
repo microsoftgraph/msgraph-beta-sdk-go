@@ -52,7 +52,7 @@ func NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder(raw
     return NewItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaRequestBuilderGetRequestConfiguration)(ItemTeamDefinitionChannelsItemMessagesItemRepliesDeltaResponseable, error) {

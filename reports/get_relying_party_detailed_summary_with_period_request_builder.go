@@ -55,7 +55,7 @@ func NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilder(rawUrl string, re
     return NewGetRelyingPartyDetailedSummaryWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getRelyingPartyDetailedSummary
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse instead.
 // returns a GetRelyingPartyDetailedSummaryWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetRelyingPartyDetailedSummaryWithPeriodResponseable, error) {

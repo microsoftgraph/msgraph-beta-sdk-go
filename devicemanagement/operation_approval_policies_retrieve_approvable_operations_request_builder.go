@@ -46,7 +46,7 @@ func NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder(rawU
     return NewOperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function retrieveApprovableOperations
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsRetrieveApprovableOperationsGetResponse instead.
 // returns a OperationApprovalPoliciesRetrieveApprovableOperationsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationApprovalPoliciesRetrieveApprovableOperationsRequestBuilderGetRequestConfiguration)(OperationApprovalPoliciesRetrieveApprovableOperationsResponseable, error) {

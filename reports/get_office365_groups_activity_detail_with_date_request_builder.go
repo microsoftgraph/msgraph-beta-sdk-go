@@ -56,7 +56,7 @@ func NewGetOffice365GroupsActivityDetailWithDateRequestBuilder(rawUrl string, re
     return NewGetOffice365GroupsActivityDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getOffice365GroupsActivityDetail
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetOffice365GroupsActivityDetailWithDateGetResponse instead.
 // returns a GetOffice365GroupsActivityDetailWithDateResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetOffice365GroupsActivityDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityDetailWithDateResponseable, error) {

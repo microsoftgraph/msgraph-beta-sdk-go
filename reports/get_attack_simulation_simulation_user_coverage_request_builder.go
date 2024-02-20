@@ -46,7 +46,7 @@ func NewGetAttackSimulationSimulationUserCoverageRequestBuilder(rawUrl string, r
     return NewGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAttackSimulationSimulationUserCoverage
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetAttackSimulationSimulationUserCoverageGetResponse instead.
 // returns a GetAttackSimulationSimulationUserCoverageResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(GetAttackSimulationSimulationUserCoverageResponseable, error) {

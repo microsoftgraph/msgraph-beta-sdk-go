@@ -31,7 +31,7 @@ func NewManagedDevicesItemGetFileVaultKeyRequestBuilder(rawUrl string, requestAd
     return NewManagedDevicesItemGetFileVaultKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getFileVaultKey
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetFileVaultKeyGetResponse instead.
 // returns a ManagedDevicesItemGetFileVaultKeyResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedDevicesItemGetFileVaultKeyRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDevicesItemGetFileVaultKeyRequestBuilderGetRequestConfiguration)(ManagedDevicesItemGetFileVaultKeyResponseable, error) {

@@ -31,7 +31,7 @@ func NewDeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBuil
     return NewDeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post update the Proprietary Device Health Script
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetGlobalScriptHighestAvailableVersionPostResponse instead.
 // returns a DeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBuilder) Post(ctx context.Context, requestConfiguration *DeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionRequestBuilderPostRequestConfiguration)(DeviceHealthScriptsItemGetGlobalScriptHighestAvailableVersionResponseable, error) {

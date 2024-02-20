@@ -46,7 +46,7 @@ func NewExportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewExportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function export
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsExportGetResponse instead.
 // returns a ExportResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExportRequestBuilder) Get(ctx context.Context, requestConfiguration *ExportRequestBuilderGetRequestConfiguration)(ExportResponseable, error) {

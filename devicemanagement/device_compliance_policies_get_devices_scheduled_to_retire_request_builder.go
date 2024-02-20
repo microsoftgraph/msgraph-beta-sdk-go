@@ -46,7 +46,7 @@ func NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder(rawUrl
     return NewDeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getDevicesScheduledToRetire
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetDevicesScheduledToRetireGetResponse instead.
 // returns a DeviceCompliancePoliciesGetDevicesScheduledToRetireResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesGetDevicesScheduledToRetireRequestBuilderGetRequestConfiguration)(DeviceCompliancePoliciesGetDevicesScheduledToRetireResponseable, error) {

@@ -31,7 +31,7 @@ func NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder(rawUrl str
     return NewTargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action hasPayloadLinks
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsHasPayloadLinksPostResponse instead.
 // returns a TargetedManagedAppConfigurationsHasPayloadLinksResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilder) Post(ctx context.Context, body TargetedManagedAppConfigurationsHasPayloadLinksPostRequestBodyable, requestConfiguration *TargetedManagedAppConfigurationsHasPayloadLinksRequestBuilderPostRequestConfiguration)(TargetedManagedAppConfigurationsHasPayloadLinksResponseable, error) {

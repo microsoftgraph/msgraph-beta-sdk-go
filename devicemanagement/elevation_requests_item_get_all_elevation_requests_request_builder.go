@@ -31,7 +31,7 @@ func NewElevationRequestsItemGetAllElevationRequestsRequestBuilder(rawUrl string
     return NewElevationRequestsItemGetAllElevationRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getAllElevationRequests
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetAllElevationRequestsPostResponse instead.
 // returns a ElevationRequestsItemGetAllElevationRequestsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ElevationRequestsItemGetAllElevationRequestsRequestBuilder) Post(ctx context.Context, requestConfiguration *ElevationRequestsItemGetAllElevationRequestsRequestBuilderPostRequestConfiguration)(ElevationRequestsItemGetAllElevationRequestsResponseable, error) {

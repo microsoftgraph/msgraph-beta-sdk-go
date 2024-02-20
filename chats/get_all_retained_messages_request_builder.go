@@ -52,7 +52,7 @@ func NewGetAllRetainedMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewGetAllRetainedMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAllRetainedMessages
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetAllRetainedMessagesGetResponse instead.
 // returns a GetAllRetainedMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetAllRetainedMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(GetAllRetainedMessagesResponseable, error) {

@@ -55,7 +55,7 @@ func NewGetOffice365ServicesUserCountsWithPeriodRequestBuilder(rawUrl string, re
     return NewGetOffice365ServicesUserCountsWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getOffice365ServicesUserCounts
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetOffice365ServicesUserCountsWithPeriodGetResponse instead.
 // returns a GetOffice365ServicesUserCountsWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetOffice365ServicesUserCountsWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365ServicesUserCountsWithPeriodResponseable, error) {

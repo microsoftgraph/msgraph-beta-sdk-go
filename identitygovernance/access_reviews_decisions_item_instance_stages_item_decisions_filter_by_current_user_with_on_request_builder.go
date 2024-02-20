@@ -55,7 +55,7 @@ func NewAccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUser
     return NewAccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function filterByCurrentUser
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnResponseable, error) {

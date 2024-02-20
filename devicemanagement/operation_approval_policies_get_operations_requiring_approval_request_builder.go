@@ -46,7 +46,7 @@ func NewOperationApprovalPoliciesGetOperationsRequiringApprovalRequestBuilder(ra
     return NewOperationApprovalPoliciesGetOperationsRequiringApprovalRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getOperationsRequiringApproval
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetOperationsRequiringApprovalGetResponse instead.
 // returns a OperationApprovalPoliciesGetOperationsRequiringApprovalResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OperationApprovalPoliciesGetOperationsRequiringApprovalRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationApprovalPoliciesGetOperationsRequiringApprovalRequestBuilderGetRequestConfiguration)(OperationApprovalPoliciesGetOperationsRequiringApprovalResponseable, error) {

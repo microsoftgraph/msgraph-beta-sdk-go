@@ -673,7 +673,7 @@ func (m *Alert) GetStatus()(*AlertStatus) {
     }
     return nil
 }
-// GetSystemTags gets the systemTags property value. The systemTags property
+// GetSystemTags gets the systemTags property value. The system tags associated with the alert
 // returns a []string when successful
 func (m *Alert) GetSystemTags()([]string) {
     val, err := m.GetBackingStore().Get("systemTags")
@@ -1127,7 +1127,7 @@ func (m *Alert) SetStatus(value *AlertStatus)() {
         panic(err)
     }
 }
-// SetSystemTags sets the systemTags property value. The systemTags property
+// SetSystemTags sets the systemTags property value. The system tags associated with the alert
 func (m *Alert) SetSystemTags(value []string)() {
     err := m.GetBackingStore().Set("systemTags", value)
     if err != nil {

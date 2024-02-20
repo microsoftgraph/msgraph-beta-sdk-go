@@ -31,7 +31,7 @@ func NewMicrosoftTunnelServerLogCollectionResponsesItemCreateDownloadUrlRequestB
     return NewMicrosoftTunnelServerLogCollectionResponsesItemCreateDownloadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action createDownloadUrl
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCreateDownloadUrlPostResponse instead.
 // returns a MicrosoftTunnelServerLogCollectionResponsesItemCreateDownloadUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MicrosoftTunnelServerLogCollectionResponsesItemCreateDownloadUrlRequestBuilder) Post(ctx context.Context, requestConfiguration *MicrosoftTunnelServerLogCollectionResponsesItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(MicrosoftTunnelServerLogCollectionResponsesItemCreateDownloadUrlResponseable, error) {

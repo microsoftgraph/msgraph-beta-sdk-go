@@ -31,7 +31,7 @@ func NewAndroidForWorkSettingsRequestSignupUrlRequestBuilder(rawUrl string, requ
     return NewAndroidForWorkSettingsRequestSignupUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action requestSignupUrl
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsRequestSignupUrlPostResponse instead.
 // returns a AndroidForWorkSettingsRequestSignupUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AndroidForWorkSettingsRequestSignupUrlRequestBuilder) Post(ctx context.Context, body AndroidForWorkSettingsRequestSignupUrlPostRequestBodyable, requestConfiguration *AndroidForWorkSettingsRequestSignupUrlRequestBuilderPostRequestConfiguration)(AndroidForWorkSettingsRequestSignupUrlResponseable, error) {

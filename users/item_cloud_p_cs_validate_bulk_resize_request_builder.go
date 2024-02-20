@@ -31,7 +31,7 @@ func NewItemCloudPCsValidateBulkResizeRequestBuilder(rawUrl string, requestAdapt
     return NewItemCloudPCsValidateBulkResizeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post validate that a set of cloudPC devices meet the requirements to be bulk resized.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsValidateBulkResizePostResponse instead.
 // returns a ItemCloudPCsValidateBulkResizeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

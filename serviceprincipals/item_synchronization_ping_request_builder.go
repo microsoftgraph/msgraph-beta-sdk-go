@@ -31,7 +31,7 @@ func NewItemSynchronizationPingRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewItemSynchronizationPingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function Ping
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsPingGetResponse instead.
 // returns a ItemSynchronizationPingResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationPingRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationPingRequestBuilderGetRequestConfiguration)(ItemSynchronizationPingResponseable, error) {

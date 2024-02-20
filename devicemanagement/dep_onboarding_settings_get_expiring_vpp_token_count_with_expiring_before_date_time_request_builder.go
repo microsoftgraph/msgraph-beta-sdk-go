@@ -34,7 +34,7 @@ func NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeR
     return NewDepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getExpiringVppTokenCount
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse instead.
 // returns a DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilderGetRequestConfiguration)(DepOnboardingSettingsGetExpiringVppTokenCountWithExpiringBeforeDateTimeResponseable, error) {

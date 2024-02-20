@@ -49,7 +49,7 @@ func NewVppTokensGetLicensesForAppWithBundleIdRequestBuilder(rawUrl string, requ
     return NewVppTokensGetLicensesForAppWithBundleIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getLicensesForApp
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetLicensesForAppWithBundleIdGetResponse instead.
 // returns a VppTokensGetLicensesForAppWithBundleIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VppTokensGetLicensesForAppWithBundleIdRequestBuilder) Get(ctx context.Context, requestConfiguration *VppTokensGetLicensesForAppWithBundleIdRequestBuilderGetRequestConfiguration)(VppTokensGetLicensesForAppWithBundleIdResponseable, error) {

@@ -31,7 +31,7 @@ func NewItemGetPasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, requ
     return NewItemGetPasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetPasswordSingleSignOnCredentialsPostResponse instead.
 // returns a ItemGetPasswordSingleSignOnCredentialsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

@@ -52,7 +52,7 @@ func NewEntitlementManagementAccessPackageCatalogsSearchRequestBuilder(rawUrl st
     return NewEntitlementManagementAccessPackageCatalogsSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function Search
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsSearchGetResponse instead.
 // returns a EntitlementManagementAccessPackageCatalogsSearchResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageCatalogsSearchRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsSearchRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageCatalogsSearchResponseable, error) {

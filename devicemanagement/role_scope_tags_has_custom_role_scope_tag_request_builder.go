@@ -31,7 +31,7 @@ func NewRoleScopeTagsHasCustomRoleScopeTagRequestBuilder(rawUrl string, requestA
     return NewRoleScopeTagsHasCustomRoleScopeTagRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function hasCustomRoleScopeTag
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsHasCustomRoleScopeTagGetResponse instead.
 // returns a RoleScopeTagsHasCustomRoleScopeTagResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleScopeTagsHasCustomRoleScopeTagRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleScopeTagsHasCustomRoleScopeTagRequestBuilderGetRequestConfiguration)(RoleScopeTagsHasCustomRoleScopeTagResponseable, error) {

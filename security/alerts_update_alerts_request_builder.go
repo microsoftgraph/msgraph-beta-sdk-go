@@ -31,7 +31,7 @@ func NewAlertsUpdateAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewAlertsUpdateAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post update multiple alerts in one request instead of multiple requests.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsUpdateAlertsPostResponse instead.
 // returns a AlertsUpdateAlertsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

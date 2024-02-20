@@ -31,7 +31,7 @@ func NewItemOutlookTaskFoldersItemTasksItemCompleteRequestBuilder(rawUrl string,
     return NewItemOutlookTaskFoldersItemTasksItemCompleteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post complete an Outlook task which sets the completedDateTime property to the current date, and the status property to completed. If you are completing a task in a recurring series, in the response, the task collection will contain the completed task in the series, and the next task in the series. The completedDateTime property represents the date when the task is finished. The time portion of completedDateTime is set to midnight UTC by default. By default, this operation (and the POST, GET, and PATCH task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCompletePostResponse instead.
 // returns a ItemOutlookTaskFoldersItemTasksItemCompleteResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

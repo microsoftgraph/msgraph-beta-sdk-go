@@ -31,7 +31,7 @@ func NewDeviceConfigurationsGetTargetedUsersAndDevicesRequestBuilder(rawUrl stri
     return NewDeviceConfigurationsGetTargetedUsersAndDevicesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getTargetedUsersAndDevices
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetTargetedUsersAndDevicesPostResponse instead.
 // returns a DeviceConfigurationsGetTargetedUsersAndDevicesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceConfigurationsGetTargetedUsersAndDevicesRequestBuilder) Post(ctx context.Context, body DeviceConfigurationsGetTargetedUsersAndDevicesPostRequestBodyable, requestConfiguration *DeviceConfigurationsGetTargetedUsersAndDevicesRequestBuilderPostRequestConfiguration)(DeviceConfigurationsGetTargetedUsersAndDevicesResponseable, error) {

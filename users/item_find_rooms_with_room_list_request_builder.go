@@ -49,7 +49,7 @@ func NewItemFindRoomsWithRoomListRequestBuilder(rawUrl string, requestAdapter i2
     return NewItemFindRoomsWithRoomListRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function findRooms
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsFindRoomsWithRoomListGetResponse instead.
 // returns a ItemFindRoomsWithRoomListResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemFindRoomsWithRoomListRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFindRoomsWithRoomListRequestBuilderGetRequestConfiguration)(ItemFindRoomsWithRoomListResponseable, error) {

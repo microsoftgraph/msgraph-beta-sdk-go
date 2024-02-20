@@ -31,7 +31,7 @@ func NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequest
     return NewDepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get exports the mobile configuration
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsExportMobileConfigGetResponse instead.
 // returns a DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilder) Get(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigRequestBuilderGetRequestConfiguration)(DepOnboardingSettingsItemEnrollmentProfilesItemExportMobileConfigResponseable, error) {

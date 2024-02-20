@@ -52,7 +52,7 @@ func NewAllMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function allMessages
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsAllMessagesGetResponse instead.
 // returns a AllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *AllMessagesRequestBuilderGetRequestConfiguration)(AllMessagesResponseable, error) {
