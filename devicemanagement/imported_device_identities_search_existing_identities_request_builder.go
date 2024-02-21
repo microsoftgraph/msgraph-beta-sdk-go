@@ -31,7 +31,7 @@ func NewImportedDeviceIdentitiesSearchExistingIdentitiesRequestBuilder(rawUrl st
     return NewImportedDeviceIdentitiesSearchExistingIdentitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action searchExistingIdentities
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsSearchExistingIdentitiesPostResponse instead.
 // returns a ImportedDeviceIdentitiesSearchExistingIdentitiesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ImportedDeviceIdentitiesSearchExistingIdentitiesRequestBuilder) Post(ctx context.Context, body ImportedDeviceIdentitiesSearchExistingIdentitiesPostRequestBodyable, requestConfiguration *ImportedDeviceIdentitiesSearchExistingIdentitiesRequestBuilderPostRequestConfiguration)(ImportedDeviceIdentitiesSearchExistingIdentitiesResponseable, error) {

@@ -31,7 +31,7 @@ func NewDepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilder(rawUr
     return NewDepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post generate a public key to use to encrypt the Apple device enrollment program token
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGenerateEncryptionPublicKeyPostResponse instead.
 // returns a DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilder) Post(ctx context.Context, requestConfiguration *DepOnboardingSettingsItemGenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration)(DepOnboardingSettingsItemGenerateEncryptionPublicKeyResponseable, error) {

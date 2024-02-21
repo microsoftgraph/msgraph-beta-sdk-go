@@ -46,7 +46,7 @@ func NewVirtualEndpointRetrieveScopedPermissionsRequestBuilder(rawUrl string, re
     return NewVirtualEndpointRetrieveScopedPermissionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function retrieveScopedPermissions
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsRetrieveScopedPermissionsGetResponse instead.
 // returns a VirtualEndpointRetrieveScopedPermissionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointRetrieveScopedPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetRequestConfiguration)(VirtualEndpointRetrieveScopedPermissionsResponseable, error) {

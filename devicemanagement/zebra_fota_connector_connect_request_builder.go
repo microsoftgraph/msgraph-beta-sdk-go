@@ -31,7 +31,7 @@ func NewZebraFotaConnectorConnectRequestBuilder(rawUrl string, requestAdapter i2
     return NewZebraFotaConnectorConnectRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action connect
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsConnectPostResponse instead.
 // returns a ZebraFotaConnectorConnectResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ZebraFotaConnectorConnectRequestBuilder) Post(ctx context.Context, requestConfiguration *ZebraFotaConnectorConnectRequestBuilderPostRequestConfiguration)(ZebraFotaConnectorConnectResponseable, error) {

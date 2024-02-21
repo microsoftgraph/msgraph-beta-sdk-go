@@ -31,7 +31,7 @@ func NewPolicyLabelsEvaluateApplicationRequestBuilder(rawUrl string, requestAdap
     return NewPolicyLabelsEvaluateApplicationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsEvaluateApplicationPostResponse instead.
 // returns a PolicyLabelsEvaluateApplicationResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

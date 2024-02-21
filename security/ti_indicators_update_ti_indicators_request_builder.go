@@ -31,7 +31,7 @@ func NewTiIndicatorsUpdateTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
     return NewTiIndicatorsUpdateTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsUpdateTiIndicatorsPostResponse instead.
 // returns a TiIndicatorsUpdateTiIndicatorsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

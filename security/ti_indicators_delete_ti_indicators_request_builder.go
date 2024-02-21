@@ -31,7 +31,7 @@ func NewTiIndicatorsDeleteTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
     return NewTiIndicatorsDeleteTiIndicatorsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsDeleteTiIndicatorsPostResponse instead.
 // returns a TiIndicatorsDeleteTiIndicatorsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

@@ -56,7 +56,7 @@ func NewGetOffice365ActiveUserDetailWithDateRequestBuilder(rawUrl string, reques
     return NewGetOffice365ActiveUserDetailWithDateRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getOffice365ActiveUserDetail
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetOffice365ActiveUserDetailWithDateGetResponse instead.
 // returns a GetOffice365ActiveUserDetailWithDateResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetOffice365ActiveUserDetailWithDateRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365ActiveUserDetailWithDateRequestBuilderGetRequestConfiguration)(GetOffice365ActiveUserDetailWithDateResponseable, error) {

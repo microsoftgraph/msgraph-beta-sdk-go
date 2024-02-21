@@ -31,7 +31,7 @@ func NewGroupPolicyMigrationReportsCreateMigrationReportRequestBuilder(rawUrl st
     return NewGroupPolicyMigrationReportsCreateMigrationReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action createMigrationReport
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCreateMigrationReportPostResponse instead.
 // returns a GroupPolicyMigrationReportsCreateMigrationReportResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GroupPolicyMigrationReportsCreateMigrationReportRequestBuilder) Post(ctx context.Context, body GroupPolicyMigrationReportsCreateMigrationReportPostRequestBodyable, requestConfiguration *GroupPolicyMigrationReportsCreateMigrationReportRequestBuilderPostRequestConfiguration)(GroupPolicyMigrationReportsCreateMigrationReportResponseable, error) {

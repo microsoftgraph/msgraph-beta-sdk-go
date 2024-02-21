@@ -31,7 +31,7 @@ func NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilder(rawUrl string, re
     return NewEmbeddedSIMActivationCodePoolsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 // returns a EmbeddedSIMActivationCodePoolsItemAssignResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilder) Post(ctx context.Context, body EmbeddedSIMActivationCodePoolsItemAssignPostRequestBodyable, requestConfiguration *EmbeddedSIMActivationCodePoolsItemAssignRequestBuilderPostRequestConfiguration)(EmbeddedSIMActivationCodePoolsItemAssignResponseable, error) {

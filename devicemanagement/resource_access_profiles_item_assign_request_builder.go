@@ -31,7 +31,7 @@ func NewResourceAccessProfilesItemAssignRequestBuilder(rawUrl string, requestAda
     return NewResourceAccessProfilesItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 // returns a ResourceAccessProfilesItemAssignResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ResourceAccessProfilesItemAssignRequestBuilder) Post(ctx context.Context, body ResourceAccessProfilesItemAssignPostRequestBodyable, requestConfiguration *ResourceAccessProfilesItemAssignRequestBuilderPostRequestConfiguration)(ResourceAccessProfilesItemAssignResponseable, error) {

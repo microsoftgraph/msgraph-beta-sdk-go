@@ -31,7 +31,7 @@ func NewCompleteSetupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewCompleteSetupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action completeSetup
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCompleteSetupPostResponse instead.
 // returns a CompleteSetupResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CompleteSetupRequestBuilder) Post(ctx context.Context, body CompleteSetupPostRequestBodyable, requestConfiguration *CompleteSetupRequestBuilderPostRequestConfiguration)(CompleteSetupResponseable, error) {

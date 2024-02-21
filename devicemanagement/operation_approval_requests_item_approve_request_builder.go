@@ -31,7 +31,7 @@ func NewOperationApprovalRequestsItemApproveRequestBuilder(rawUrl string, reques
     return NewOperationApprovalRequestsItemApproveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post approves the requested instance of an operationApprovalRequest.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsApprovePostResponse instead.
 // returns a OperationApprovalRequestsItemApproveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OperationApprovalRequestsItemApproveRequestBuilder) Post(ctx context.Context, body OperationApprovalRequestsItemApprovePostRequestBodyable, requestConfiguration *OperationApprovalRequestsItemApproveRequestBuilderPostRequestConfiguration)(OperationApprovalRequestsItemApproveResponseable, error) {

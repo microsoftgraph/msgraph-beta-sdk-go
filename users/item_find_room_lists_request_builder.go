@@ -46,7 +46,7 @@ func NewItemFindRoomListsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewItemFindRoomListsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsFindRoomListsGetResponse instead.
 // returns a ItemFindRoomListsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

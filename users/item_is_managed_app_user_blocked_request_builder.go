@@ -31,7 +31,7 @@ func NewItemIsManagedAppUserBlockedRequestBuilder(rawUrl string, requestAdapter 
     return NewItemIsManagedAppUserBlockedRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets the blocked state of a managed app user.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsIsManagedAppUserBlockedGetResponse instead.
 // returns a ItemIsManagedAppUserBlockedResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemIsManagedAppUserBlockedRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemIsManagedAppUserBlockedRequestBuilderGetRequestConfiguration)(ItemIsManagedAppUserBlockedResponseable, error) {

@@ -55,7 +55,7 @@ func NewGetRoleScopeTagsByIdsWithIdsRequestBuilder(rawUrl string, requestAdapter
     return NewGetRoleScopeTagsByIdsWithIdsRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getRoleScopeTagsByIds
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetRoleScopeTagsByIdsWithIdsGetResponse instead.
 // returns a GetRoleScopeTagsByIdsWithIdsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetRoleScopeTagsByIdsWithIdsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration)(GetRoleScopeTagsByIdsWithIdsResponseable, error) {

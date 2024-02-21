@@ -31,7 +31,7 @@ func NewIosLobAppProvisioningConfigurationsHasPayloadLinksRequestBuilder(rawUrl 
     return NewIosLobAppProvisioningConfigurationsHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action hasPayloadLinks
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsHasPayloadLinksPostResponse instead.
 // returns a IosLobAppProvisioningConfigurationsHasPayloadLinksResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IosLobAppProvisioningConfigurationsHasPayloadLinksRequestBuilder) Post(ctx context.Context, body IosLobAppProvisioningConfigurationsHasPayloadLinksPostRequestBodyable, requestConfiguration *IosLobAppProvisioningConfigurationsHasPayloadLinksRequestBuilderPostRequestConfiguration)(IosLobAppProvisioningConfigurationsHasPayloadLinksResponseable, error) {

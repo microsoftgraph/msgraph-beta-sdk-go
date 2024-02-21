@@ -49,7 +49,7 @@ func NewTemplatesItemCompareWithTemplateIdRequestBuilder(rawUrl string, requestA
     return NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function compare
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsCompareWithTemplateIdGetResponse instead.
 // returns a TemplatesItemCompareWithTemplateIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TemplatesItemCompareWithTemplateIdRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesItemCompareWithTemplateIdRequestBuilderGetRequestConfiguration)(TemplatesItemCompareWithTemplateIdResponseable, error) {

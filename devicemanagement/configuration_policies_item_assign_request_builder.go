@@ -31,7 +31,7 @@ func NewConfigurationPoliciesItemAssignRequestBuilder(rawUrl string, requestAdap
     return NewConfigurationPoliciesItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 // returns a ConfigurationPoliciesItemAssignResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConfigurationPoliciesItemAssignRequestBuilder) Post(ctx context.Context, body ConfigurationPoliciesItemAssignPostRequestBodyable, requestConfiguration *ConfigurationPoliciesItemAssignRequestBuilderPostRequestConfiguration)(ConfigurationPoliciesItemAssignResponseable, error) {

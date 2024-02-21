@@ -53,7 +53,7 @@ func NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWith
     return NewReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
 // Get invoke function webCategoryReport
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsWebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse instead.
 // returns a ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeWebCategoryReportWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeWebCategoryReportWithStartDateTimeWithEndDateTimeResponseable, error) {

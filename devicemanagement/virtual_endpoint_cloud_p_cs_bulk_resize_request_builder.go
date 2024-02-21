@@ -31,7 +31,7 @@ func NewVirtualEndpointCloudPCsBulkResizeRequestBuilder(rawUrl string, requestAd
     return NewVirtualEndpointCloudPCsBulkResizeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices can't be resized, those devices indicate 'resize failed'. The remaining devices are provisioned for the resize process.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsBulkResizePostResponse instead.
 // returns a VirtualEndpointCloudPCsBulkResizeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

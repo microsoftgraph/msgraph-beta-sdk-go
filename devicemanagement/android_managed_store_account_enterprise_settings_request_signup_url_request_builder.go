@@ -31,7 +31,7 @@ func NewAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuild
     return NewAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action requestSignupUrl
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsRequestSignupUrlPostResponse instead.
 // returns a AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilder) Post(ctx context.Context, body AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlPostRequestBodyable, requestConfiguration *AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilderPostRequestConfiguration)(AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlResponseable, error) {

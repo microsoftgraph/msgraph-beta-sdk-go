@@ -31,7 +31,7 @@ func NewMobileAppsHasPayloadLinksRequestBuilder(rawUrl string, requestAdapter i2
     return NewMobileAppsHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action hasPayloadLinks
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsHasPayloadLinksPostResponse instead.
 // returns a MobileAppsHasPayloadLinksResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsHasPayloadLinksRequestBuilder) Post(ctx context.Context, body MobileAppsHasPayloadLinksPostRequestBodyable, requestConfiguration *MobileAppsHasPayloadLinksRequestBuilderPostRequestConfiguration)(MobileAppsHasPayloadLinksResponseable, error) {

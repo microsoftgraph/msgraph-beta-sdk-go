@@ -31,7 +31,7 @@ func NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder(rawUrl st
     return NewImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action importDeviceIdentityList
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsImportDeviceIdentityListPostResponse instead.
 // returns a ImportedDeviceIdentitiesImportDeviceIdentityListResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilder) Post(ctx context.Context, body ImportedDeviceIdentitiesImportDeviceIdentityListPostRequestBodyable, requestConfiguration *ImportedDeviceIdentitiesImportDeviceIdentityListRequestBuilderPostRequestConfiguration)(ImportedDeviceIdentitiesImportDeviceIdentityListResponseable, error) {

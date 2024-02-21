@@ -31,7 +31,7 @@ func NewItemGroupLifecyclePoliciesRenewGroupRequestBuilder(rawUrl string, reques
     return NewItemGroupLifecyclePoliciesRenewGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsRenewGroupPostResponse instead.
 // returns a ItemGroupLifecyclePoliciesRenewGroupResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

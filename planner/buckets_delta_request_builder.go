@@ -52,7 +52,7 @@ func NewBucketsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewBucketsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a BucketsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BucketsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *BucketsDeltaRequestBuilderGetRequestConfiguration)(BucketsDeltaResponseable, error) {

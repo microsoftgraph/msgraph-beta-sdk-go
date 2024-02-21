@@ -31,7 +31,7 @@ func NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBui
     return NewComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action createDownloadUrl
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCreateDownloadUrlPostResponse instead.
 // returns a ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilder) Post(ctx context.Context, requestConfiguration *ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlRequestBuilderPostRequestConfiguration)(ComanagedDevicesItemLogCollectionRequestsItemCreateDownloadUrlResponseable, error) {

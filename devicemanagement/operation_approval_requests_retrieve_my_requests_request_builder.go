@@ -52,7 +52,7 @@ func NewOperationApprovalRequestsRetrieveMyRequestsRequestBuilder(rawUrl string,
     return NewOperationApprovalRequestsRetrieveMyRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function retrieveMyRequests
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsRetrieveMyRequestsGetResponse instead.
 // returns a OperationApprovalRequestsRetrieveMyRequestsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OperationApprovalRequestsRetrieveMyRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *OperationApprovalRequestsRetrieveMyRequestsRequestBuilderGetRequestConfiguration)(OperationApprovalRequestsRetrieveMyRequestsResponseable, error) {

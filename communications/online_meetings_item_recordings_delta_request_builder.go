@@ -52,7 +52,7 @@ func NewOnlineMeetingsItemRecordingsDeltaRequestBuilder(rawUrl string, requestAd
     return NewOnlineMeetingsItemRecordingsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a OnlineMeetingsItemRecordingsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemRecordingsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingsDeltaRequestBuilderGetRequestConfiguration)(OnlineMeetingsItemRecordingsDeltaResponseable, error) {

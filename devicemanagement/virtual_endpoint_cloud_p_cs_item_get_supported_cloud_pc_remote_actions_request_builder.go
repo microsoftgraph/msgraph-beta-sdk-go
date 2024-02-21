@@ -46,7 +46,7 @@ func NewVirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilde
     return NewVirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getSupportedCloudPcRemoteActions
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetSupportedCloudPcRemoteActionsGetResponse instead.
 // returns a VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsResponseable, error) {

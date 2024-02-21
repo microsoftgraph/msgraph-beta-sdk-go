@@ -42,7 +42,7 @@ func (m *OperationApprovalRequestEntityStatus) GetAdditionalData()(map[string]an
 func (m *OperationApprovalRequestEntityStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEntityLocked gets the entityLocked property value. The status of the Entity connected to the OperationApprovalRequest in regard to changes, whether further requests are allowed or if the Entity is locked. When true, a lock is present on the Entity and no approval requests can be currently made for it. When false, the Entity is not locked and approval requests are allowed. Default value is false. Read-only. This property is read-only.
+// GetEntityLocked gets the entityLocked property value. The status of the Entity connected to the OperationApprovalRequest in regard to changes, whether further requests are allowed or if the Entity is locked. When `true`, a lock is present on the Entity and no approval requests can be currently made for it. When `false`, the Entity is not locked and approval requests are allowed. Default value is `false`. Read-only. This property is read-only.
 // returns a *bool when successful
 func (m *OperationApprovalRequestEntityStatus) GetEntityLocked()(*bool) {
     val, err := m.GetBackingStore().Get("entityLocked")
@@ -192,7 +192,7 @@ func (m *OperationApprovalRequestEntityStatus) SetAdditionalData(value map[strin
 func (m *OperationApprovalRequestEntityStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEntityLocked sets the entityLocked property value. The status of the Entity connected to the OperationApprovalRequest in regard to changes, whether further requests are allowed or if the Entity is locked. When true, a lock is present on the Entity and no approval requests can be currently made for it. When false, the Entity is not locked and approval requests are allowed. Default value is false. Read-only. This property is read-only.
+// SetEntityLocked sets the entityLocked property value. The status of the Entity connected to the OperationApprovalRequest in regard to changes, whether further requests are allowed or if the Entity is locked. When `true`, a lock is present on the Entity and no approval requests can be currently made for it. When `false`, the Entity is not locked and approval requests are allowed. Default value is `false`. Read-only. This property is read-only.
 func (m *OperationApprovalRequestEntityStatus) SetEntityLocked(value *bool)() {
     err := m.GetBackingStore().Set("entityLocked", value)
     if err != nil {

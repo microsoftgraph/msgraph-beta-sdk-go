@@ -55,7 +55,7 @@ func NewGetRoleScopeTagsByResourceWithResourceRequestBuilder(rawUrl string, requ
     return NewGetRoleScopeTagsByResourceWithResourceRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getRoleScopeTagsByResource
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetRoleScopeTagsByResourceWithResourceGetResponse instead.
 // returns a GetRoleScopeTagsByResourceWithResourceResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetRoleScopeTagsByResourceWithResourceRequestBuilder) Get(ctx context.Context, requestConfiguration *GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration)(GetRoleScopeTagsByResourceWithResourceResponseable, error) {

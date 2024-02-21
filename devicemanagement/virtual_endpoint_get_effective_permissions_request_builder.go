@@ -46,7 +46,7 @@ func NewVirtualEndpointGetEffectivePermissionsRequestBuilder(rawUrl string, requ
     return NewVirtualEndpointGetEffectivePermissionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getEffectivePermissions
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetEffectivePermissionsGetResponse instead.
 // returns a VirtualEndpointGetEffectivePermissionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointGetEffectivePermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointGetEffectivePermissionsRequestBuilderGetRequestConfiguration)(VirtualEndpointGetEffectivePermissionsResponseable, error) {

@@ -31,7 +31,7 @@ func NewDeviceHealthScriptsItemUpdateGlobalScriptRequestBuilder(rawUrl string, r
     return NewDeviceHealthScriptsItemUpdateGlobalScriptRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post update the Proprietary Device Health Script
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsUpdateGlobalScriptPostResponse instead.
 // returns a DeviceHealthScriptsItemUpdateGlobalScriptResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceHealthScriptsItemUpdateGlobalScriptRequestBuilder) Post(ctx context.Context, body DeviceHealthScriptsItemUpdateGlobalScriptPostRequestBodyable, requestConfiguration *DeviceHealthScriptsItemUpdateGlobalScriptRequestBuilderPostRequestConfiguration)(DeviceHealthScriptsItemUpdateGlobalScriptResponseable, error) {

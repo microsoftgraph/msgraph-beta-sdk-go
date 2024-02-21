@@ -46,7 +46,7 @@ func NewIntentsItemGetCustomizedSettingsRequestBuilder(rawUrl string, requestAda
     return NewIntentsItemGetCustomizedSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getCustomizedSettings
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetCustomizedSettingsGetResponse instead.
 // returns a IntentsItemGetCustomizedSettingsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IntentsItemGetCustomizedSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *IntentsItemGetCustomizedSettingsRequestBuilderGetRequestConfiguration)(IntentsItemGetCustomizedSettingsResponseable, error) {

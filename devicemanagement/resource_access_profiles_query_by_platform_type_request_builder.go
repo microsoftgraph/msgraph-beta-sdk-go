@@ -31,7 +31,7 @@ func NewResourceAccessProfilesQueryByPlatformTypeRequestBuilder(rawUrl string, r
     return NewResourceAccessProfilesQueryByPlatformTypeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action queryByPlatformType
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsQueryByPlatformTypePostResponse instead.
 // returns a ResourceAccessProfilesQueryByPlatformTypeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ResourceAccessProfilesQueryByPlatformTypeRequestBuilder) Post(ctx context.Context, body ResourceAccessProfilesQueryByPlatformTypePostRequestBodyable, requestConfiguration *ResourceAccessProfilesQueryByPlatformTypeRequestBuilderPostRequestConfiguration)(ResourceAccessProfilesQueryByPlatformTypeResponseable, error) {

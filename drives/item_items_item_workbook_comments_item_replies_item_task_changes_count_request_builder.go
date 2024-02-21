@@ -31,7 +31,7 @@ func NewItemItemsItemWorkbookCommentsItemRepliesItemTaskChangesCountRequestBuild
     return NewItemItemsItemWorkbookCommentsItemRepliesItemTaskChangesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function count
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsCountGetResponse instead.
 // returns a ItemItemsItemWorkbookCommentsItemRepliesItemTaskChangesCountResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookCommentsItemRepliesItemTaskChangesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemRepliesItemTaskChangesCountRequestBuilderGetRequestConfiguration)(ItemItemsItemWorkbookCommentsItemRepliesItemTaskChangesCountResponseable, error) {

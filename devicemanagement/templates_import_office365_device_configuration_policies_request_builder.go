@@ -31,7 +31,7 @@ func NewTemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder(rawUrl
     return NewTemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action importOffice365DeviceConfigurationPolicies
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsImportOffice365DeviceConfigurationPoliciesPostResponse instead.
 // returns a TemplatesImportOffice365DeviceConfigurationPoliciesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder) Post(ctx context.Context, requestConfiguration *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration)(TemplatesImportOffice365DeviceConfigurationPoliciesResponseable, error) {

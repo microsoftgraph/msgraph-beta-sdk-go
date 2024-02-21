@@ -31,7 +31,7 @@ func NewCanSignUpRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewCanSignUpRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function canSignUp
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsCanSignUpGetResponse instead.
 // returns a CanSignUpResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CanSignUpRequestBuilder) Get(ctx context.Context, requestConfiguration *CanSignUpRequestBuilderGetRequestConfiguration)(CanSignUpResponseable, error) {

@@ -46,7 +46,7 @@ func NewItemResourcesItemRoleAssignmentsExportRequestBuilder(rawUrl string, requ
     return NewItemResourcesItemRoleAssignmentsExportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function export
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsExportGetResponse instead.
 // returns a ItemResourcesItemRoleAssignmentsExportResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemResourcesItemRoleAssignmentsExportRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemResourcesItemRoleAssignmentsExportRequestBuilderGetRequestConfiguration)(ItemResourcesItemRoleAssignmentsExportResponseable, error) {

@@ -31,7 +31,7 @@ func NewAndroidManagedAppProtectionsHasPayloadLinksRequestBuilder(rawUrl string,
     return NewAndroidManagedAppProtectionsHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action hasPayloadLinks
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsHasPayloadLinksPostResponse instead.
 // returns a AndroidManagedAppProtectionsHasPayloadLinksResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AndroidManagedAppProtectionsHasPayloadLinksRequestBuilder) Post(ctx context.Context, body AndroidManagedAppProtectionsHasPayloadLinksPostRequestBodyable, requestConfiguration *AndroidManagedAppProtectionsHasPayloadLinksRequestBuilderPostRequestConfiguration)(AndroidManagedAppProtectionsHasPayloadLinksResponseable, error) {

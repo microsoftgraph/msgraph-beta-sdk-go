@@ -46,7 +46,7 @@ func NewAssignmentFiltersItemGetSupportedPropertiesRequestBuilder(rawUrl string,
     return NewAssignmentFiltersItemGetSupportedPropertiesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getSupportedProperties
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetSupportedPropertiesGetResponse instead.
 // returns a AssignmentFiltersItemGetSupportedPropertiesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AssignmentFiltersItemGetSupportedPropertiesRequestBuilder) Get(ctx context.Context, requestConfiguration *AssignmentFiltersItemGetSupportedPropertiesRequestBuilderGetRequestConfiguration)(AssignmentFiltersItemGetSupportedPropertiesResponseable, error) {

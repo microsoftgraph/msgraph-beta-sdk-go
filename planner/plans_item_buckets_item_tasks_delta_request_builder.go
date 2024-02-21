@@ -52,7 +52,7 @@ func NewPlansItemBucketsItemTasksDeltaRequestBuilder(rawUrl string, requestAdapt
     return NewPlansItemBucketsItemTasksDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function delta
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a PlansItemBucketsItemTasksDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PlansItemBucketsItemTasksDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *PlansItemBucketsItemTasksDeltaRequestBuilderGetRequestConfiguration)(PlansItemBucketsItemTasksDeltaResponseable, error) {

@@ -31,7 +31,7 @@ func NewSynchronizationProfilesItemStartRequestBuilder(rawUrl string, requestAda
     return NewSynchronizationProfilesItemStartRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsStartPostResponse instead.
 // returns a SynchronizationProfilesItemStartResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]

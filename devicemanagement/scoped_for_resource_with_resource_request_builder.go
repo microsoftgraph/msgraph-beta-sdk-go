@@ -34,7 +34,7 @@ func NewScopedForResourceWithResourceRequestBuilder(rawUrl string, requestAdapte
     return NewScopedForResourceWithResourceRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function scopedForResource
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsScopedForResourceWithResourceGetResponse instead.
 // returns a ScopedForResourceWithResourceResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ScopedForResourceWithResourceRequestBuilder) Get(ctx context.Context, requestConfiguration *ScopedForResourceWithResourceRequestBuilderGetRequestConfiguration)(ScopedForResourceWithResourceResponseable, error) {

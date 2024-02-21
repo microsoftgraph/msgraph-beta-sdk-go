@@ -52,7 +52,7 @@ func NewGetOpenShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewGetOpenShiftsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getOpenShifts
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetOpenShiftsGetResponse instead.
 // returns a GetOpenShiftsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetOpenShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOpenShiftsRequestBuilderGetRequestConfiguration)(GetOpenShiftsResponseable, error) {

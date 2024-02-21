@@ -49,7 +49,7 @@ func NewIntentsItemCompareWithTemplateIdRequestBuilder(rawUrl string, requestAda
     return NewIntentsItemCompareWithTemplateIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function compare
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsCompareWithTemplateIdGetResponse instead.
 // returns a IntentsItemCompareWithTemplateIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IntentsItemCompareWithTemplateIdRequestBuilder) Get(ctx context.Context, requestConfiguration *IntentsItemCompareWithTemplateIdRequestBuilderGetRequestConfiguration)(IntentsItemCompareWithTemplateIdResponseable, error) {

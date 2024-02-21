@@ -31,7 +31,7 @@ func NewDeviceEnrollmentConfigurationsHasPayloadLinksRequestBuilder(rawUrl strin
     return NewDeviceEnrollmentConfigurationsHasPayloadLinksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action hasPayloadLinks
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsHasPayloadLinksPostResponse instead.
 // returns a DeviceEnrollmentConfigurationsHasPayloadLinksResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceEnrollmentConfigurationsHasPayloadLinksRequestBuilder) Post(ctx context.Context, body DeviceEnrollmentConfigurationsHasPayloadLinksPostRequestBodyable, requestConfiguration *DeviceEnrollmentConfigurationsHasPayloadLinksRequestBuilderPostRequestConfiguration)(DeviceEnrollmentConfigurationsHasPayloadLinksResponseable, error) {

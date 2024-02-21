@@ -31,7 +31,7 @@ func NewZebraFotaDeploymentsItemCancelRequestBuilder(rawUrl string, requestAdapt
     return NewZebraFotaDeploymentsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action cancel
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCancelPostResponse instead.
 // returns a ZebraFotaDeploymentsItemCancelResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ZebraFotaDeploymentsItemCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *ZebraFotaDeploymentsItemCancelRequestBuilderPostRequestConfiguration)(ZebraFotaDeploymentsItemCancelResponseable, error) {

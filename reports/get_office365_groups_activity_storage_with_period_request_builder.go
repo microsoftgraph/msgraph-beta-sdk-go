@@ -55,7 +55,7 @@ func NewGetOffice365GroupsActivityStorageWithPeriodRequestBuilder(rawUrl string,
     return NewGetOffice365GroupsActivityStorageWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function getOffice365GroupsActivityStorage
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetOffice365GroupsActivityStorageWithPeriodGetResponse instead.
 // returns a GetOffice365GroupsActivityStorageWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetOffice365GroupsActivityStorageWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOffice365GroupsActivityStorageWithPeriodRequestBuilderGetRequestConfiguration)(GetOffice365GroupsActivityStorageWithPeriodResponseable, error) {

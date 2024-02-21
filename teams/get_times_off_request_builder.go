@@ -52,7 +52,7 @@ func NewGetTimesOffRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewGetTimesOffRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getTimesOff
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetTimesOffGetResponse instead.
 // returns a GetTimesOffResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetTimesOffRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTimesOffRequestBuilderGetRequestConfiguration)(GetTimesOffResponseable, error) {

@@ -31,7 +31,7 @@ func NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsReques
     return NewMicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getHealthMetrics
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetHealthMetricsPostResponse instead.
 // returns a MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsRequestBuilder) Post(ctx context.Context, body MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsPostRequestBodyable, requestConfiguration *MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsRequestBuilderPostRequestConfiguration)(MicrosoftTunnelSitesItemMicrosoftTunnelServersItemGetHealthMetricsResponseable, error) {

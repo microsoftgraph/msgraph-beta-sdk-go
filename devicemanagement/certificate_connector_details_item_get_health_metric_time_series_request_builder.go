@@ -31,7 +31,7 @@ func NewCertificateConnectorDetailsItemGetHealthMetricTimeSeriesRequestBuilder(r
     return NewCertificateConnectorDetailsItemGetHealthMetricTimeSeriesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getHealthMetricTimeSeries
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetHealthMetricTimeSeriesPostResponse instead.
 // returns a CertificateConnectorDetailsItemGetHealthMetricTimeSeriesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CertificateConnectorDetailsItemGetHealthMetricTimeSeriesRequestBuilder) Post(ctx context.Context, body CertificateConnectorDetailsItemGetHealthMetricTimeSeriesPostRequestBodyable, requestConfiguration *CertificateConnectorDetailsItemGetHealthMetricTimeSeriesRequestBuilderPostRequestConfiguration)(CertificateConnectorDetailsItemGetHealthMetricTimeSeriesResponseable, error) {

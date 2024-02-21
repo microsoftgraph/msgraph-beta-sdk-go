@@ -46,7 +46,7 @@ func NewGetAttackSimulationRepeatOffendersRequestBuilder(rawUrl string, requestA
     return NewGetAttackSimulationRepeatOffendersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getAttackSimulationRepeatOffenders
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetAttackSimulationRepeatOffendersGetResponse instead.
 // returns a GetAttackSimulationRepeatOffendersResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetAttackSimulationRepeatOffendersRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration)(GetAttackSimulationRepeatOffendersResponseable, error) {

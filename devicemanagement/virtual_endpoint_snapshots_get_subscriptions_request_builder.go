@@ -46,7 +46,7 @@ func NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilder(rawUrl string, re
     return NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getSubscriptions
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetSubscriptionsGetResponse instead.
 // returns a VirtualEndpointSnapshotsGetSubscriptionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetRequestConfiguration)(VirtualEndpointSnapshotsGetSubscriptionsResponseable, error) {

@@ -31,7 +31,7 @@ func NewMobileAppsValidateXmlRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewMobileAppsValidateXmlRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action validateXml
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsValidateXmlPostResponse instead.
 // returns a MobileAppsValidateXmlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsValidateXmlRequestBuilder) Post(ctx context.Context, body MobileAppsValidateXmlPostRequestBodyable, requestConfiguration *MobileAppsValidateXmlRequestBuilderPostRequestConfiguration)(MobileAppsValidateXmlResponseable, error) {

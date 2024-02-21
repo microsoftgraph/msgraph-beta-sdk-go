@@ -46,7 +46,7 @@ func NewDeviceConfigurationsGetIosAvailableUpdateVersionsRequestBuilder(rawUrl s
     return NewDeviceConfigurationsGetIosAvailableUpdateVersionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getIosAvailableUpdateVersions
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetIosAvailableUpdateVersionsGetResponse instead.
 // returns a DeviceConfigurationsGetIosAvailableUpdateVersionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceConfigurationsGetIosAvailableUpdateVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationsGetIosAvailableUpdateVersionsRequestBuilderGetRequestConfiguration)(DeviceConfigurationsGetIosAvailableUpdateVersionsResponseable, error) {

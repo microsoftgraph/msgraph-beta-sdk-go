@@ -31,7 +31,7 @@ func NewDeviceConfigurationsItemAssignRequestBuilder(rawUrl string, requestAdapt
     return NewDeviceConfigurationsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 // returns a DeviceConfigurationsItemAssignResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceConfigurationsItemAssignRequestBuilder) Post(ctx context.Context, body DeviceConfigurationsItemAssignPostRequestBodyable, requestConfiguration *DeviceConfigurationsItemAssignRequestBuilderPostRequestConfiguration)(DeviceConfigurationsItemAssignResponseable, error) {

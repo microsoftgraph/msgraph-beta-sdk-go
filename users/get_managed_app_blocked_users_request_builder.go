@@ -46,7 +46,7 @@ func NewGetManagedAppBlockedUsersRequestBuilder(rawUrl string, requestAdapter i2
     return NewGetManagedAppBlockedUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getManagedAppBlockedUsers
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetManagedAppBlockedUsersGetResponse instead.
 // returns a GetManagedAppBlockedUsersResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetManagedAppBlockedUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration)(GetManagedAppBlockedUsersResponseable, error) {

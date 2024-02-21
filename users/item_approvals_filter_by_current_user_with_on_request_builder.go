@@ -55,7 +55,7 @@ func NewItemApprovalsFilterByCurrentUserWithOnRequestBuilder(rawUrl string, requ
     return NewItemApprovalsFilterByCurrentUserWithOnRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get invoke function filterByCurrentUser
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a ItemApprovalsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemApprovalsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(ItemApprovalsFilterByCurrentUserWithOnResponseable, error) {

@@ -31,7 +31,7 @@ func NewRoleScopeTagsItemAssignRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewRoleScopeTagsItemAssignRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action assign
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsAssignPostResponse instead.
 // returns a RoleScopeTagsItemAssignResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleScopeTagsItemAssignRequestBuilder) Post(ctx context.Context, body RoleScopeTagsItemAssignPostRequestBodyable, requestConfiguration *RoleScopeTagsItemAssignRequestBuilderPostRequestConfiguration)(RoleScopeTagsItemAssignResponseable, error) {

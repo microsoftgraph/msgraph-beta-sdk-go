@@ -81,7 +81,7 @@ func (m *Incident) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
     return nil
 }
-// GetCustomTags gets the customTags property value. Array of custom tags associated with an incident.
+// GetCustomTags gets the customTags property value. The collection of custom tags that are associated with an incident.
 // returns a []string when successful
 func (m *Incident) GetCustomTags()([]string) {
     val, err := m.GetBackingStore().Get("customTags")
@@ -93,7 +93,7 @@ func (m *Incident) GetCustomTags()([]string) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A rich text string describing the incident
 // returns a *string when successful
 func (m *Incident) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -391,7 +391,7 @@ func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetRecommendedActions gets the recommendedActions property value. The recommendedActions property
+// GetRecommendedActions gets the recommendedActions property value. A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
 // returns a *string when successful
 func (m *Incident) GetRecommendedActions()(*string) {
     val, err := m.GetBackingStore().Get("recommendedActions")
@@ -403,7 +403,7 @@ func (m *Incident) GetRecommendedActions()(*string) {
     }
     return nil
 }
-// GetRecommendedHuntingQueries gets the recommendedHuntingQueries property value. The recommendedHuntingQueries property
+// GetRecommendedHuntingQueries gets the recommendedHuntingQueries property value. List of hunting Kusto Query Language (KQL) queries related to the incident
 // returns a []RecommendedHuntingQueryable when successful
 func (m *Incident) GetRecommendedHuntingQueries()([]RecommendedHuntingQueryable) {
     val, err := m.GetBackingStore().Get("recommendedHuntingQueries")
@@ -451,7 +451,7 @@ func (m *Incident) GetStatus()(*IncidentStatus) {
     }
     return nil
 }
-// GetSystemTags gets the systemTags property value. The systemTags property
+// GetSystemTags gets the systemTags property value. The collection of system tags that are associated with the incident.
 // returns a []string when successful
 func (m *Incident) GetSystemTags()([]string) {
     val, err := m.GetBackingStore().Get("systemTags")
@@ -654,14 +654,14 @@ func (m *Incident) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
         panic(err)
     }
 }
-// SetCustomTags sets the customTags property value. Array of custom tags associated with an incident.
+// SetCustomTags sets the customTags property value. The collection of custom tags that are associated with an incident.
 func (m *Incident) SetCustomTags(value []string)() {
     err := m.GetBackingStore().Set("customTags", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A rich text string describing the incident
 func (m *Incident) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -703,14 +703,14 @@ func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
-// SetRecommendedActions sets the recommendedActions property value. The recommendedActions property
+// SetRecommendedActions sets the recommendedActions property value. A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
 func (m *Incident) SetRecommendedActions(value *string)() {
     err := m.GetBackingStore().Set("recommendedActions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecommendedHuntingQueries sets the recommendedHuntingQueries property value. The recommendedHuntingQueries property
+// SetRecommendedHuntingQueries sets the recommendedHuntingQueries property value. List of hunting Kusto Query Language (KQL) queries related to the incident
 func (m *Incident) SetRecommendedHuntingQueries(value []RecommendedHuntingQueryable)() {
     err := m.GetBackingStore().Set("recommendedHuntingQueries", value)
     if err != nil {
@@ -738,7 +738,7 @@ func (m *Incident) SetStatus(value *IncidentStatus)() {
         panic(err)
     }
 }
-// SetSystemTags sets the systemTags property value. The systemTags property
+// SetSystemTags sets the systemTags property value. The collection of system tags that are associated with the incident.
 func (m *Incident) SetSystemTags(value []string)() {
     err := m.GetBackingStore().Set("systemTags", value)
     if err != nil {

@@ -31,7 +31,7 @@ func NewIsSignedUpRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewIsSignedUpRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function isSignedUp
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsIsSignedUpGetResponse instead.
 // returns a IsSignedUpResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IsSignedUpRequestBuilder) Get(ctx context.Context, requestConfiguration *IsSignedUpRequestBuilderGetRequestConfiguration)(IsSignedUpResponseable, error) {

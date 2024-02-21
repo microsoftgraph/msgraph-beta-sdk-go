@@ -31,7 +31,7 @@ func NewAndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequ
     return NewAndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post generates a web token that is used in an embeddable component.
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsCreateGooglePlayWebTokenPostResponse instead.
 // returns a AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilder) Post(ctx context.Context, body AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenPostRequestBodyable, requestConfiguration *AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilderPostRequestConfiguration)(AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenResponseable, error) {

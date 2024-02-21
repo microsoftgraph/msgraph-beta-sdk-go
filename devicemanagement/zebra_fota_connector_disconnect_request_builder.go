@@ -31,7 +31,7 @@ func NewZebraFotaConnectorDisconnectRequestBuilder(rawUrl string, requestAdapter
     return NewZebraFotaConnectorDisconnectRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action disconnect
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsDisconnectPostResponse instead.
 // returns a ZebraFotaConnectorDisconnectResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ZebraFotaConnectorDisconnectRequestBuilder) Post(ctx context.Context, requestConfiguration *ZebraFotaConnectorDisconnectRequestBuilderPostRequestConfiguration)(ZebraFotaConnectorDisconnectResponseable, error) {

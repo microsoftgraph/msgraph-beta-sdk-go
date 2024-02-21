@@ -31,7 +31,7 @@ func NewPolicySetsGetPolicySetsRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewPolicySetsGetPolicySetsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action getPolicySets
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use PostAsGetPolicySetsPostResponse instead.
 // returns a PolicySetsGetPolicySetsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PolicySetsGetPolicySetsRequestBuilder) Post(ctx context.Context, body PolicySetsGetPolicySetsPostRequestBodyable, requestConfiguration *PolicySetsGetPolicySetsRequestBuilderPostRequestConfiguration)(PolicySetsGetPolicySetsResponseable, error) {

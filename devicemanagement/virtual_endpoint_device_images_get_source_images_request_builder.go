@@ -46,7 +46,7 @@ func NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilder(rawUrl string, 
     return NewVirtualEndpointDeviceImagesGetSourceImagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getSourceImages
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetSourceImagesGetResponse instead.
 // returns a VirtualEndpointDeviceImagesGetSourceImagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesGetSourceImagesRequestBuilderGetRequestConfiguration)(VirtualEndpointDeviceImagesGetSourceImagesResponseable, error) {

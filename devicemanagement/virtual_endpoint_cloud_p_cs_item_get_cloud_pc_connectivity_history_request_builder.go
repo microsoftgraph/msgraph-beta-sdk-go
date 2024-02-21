@@ -46,7 +46,7 @@ func NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder(r
     return NewVirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function getCloudPcConnectivityHistory
-// Deprecated: This method is obsolete. Use {TypeName} instead.
+// Deprecated: This method is obsolete. Use GetAsGetCloudPcConnectivityHistoryGetResponse instead.
 // returns a VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsItemGetCloudPcConnectivityHistoryResponseable, error) {
