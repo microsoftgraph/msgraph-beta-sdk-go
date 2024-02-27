@@ -109,6 +109,16 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["placeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPlaceId(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGeoCoordinates gets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
@@ -127,6 +137,18 @@ func (m *Place) GetGeoCoordinates()(OutlookGeoCoordinatesable) {
 // returns a *string when successful
 func (m *Place) GetPhone()(*string) {
     val, err := m.GetBackingStore().Get("phone")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPlaceId gets the placeId property value. An alternate immutable unique identifier of the place.
+// returns a *string when successful
+func (m *Place) GetPlaceId()(*string) {
+    val, err := m.GetBackingStore().Get("placeId")
     if err != nil {
         panic(err)
     }
@@ -165,6 +187,12 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("placeId", m.GetPlaceId())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAddress sets the address property value. The street address of the place.
@@ -195,6 +223,13 @@ func (m *Place) SetPhone(value *string)() {
         panic(err)
     }
 }
+// SetPlaceId sets the placeId property value. An alternate immutable unique identifier of the place.
+func (m *Place) SetPlaceId(value *string)() {
+    err := m.GetBackingStore().Set("placeId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Placeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -202,8 +237,10 @@ type Placeable interface {
     GetDisplayName()(*string)
     GetGeoCoordinates()(OutlookGeoCoordinatesable)
     GetPhone()(*string)
+    GetPlaceId()(*string)
     SetAddress(value PhysicalAddressable)()
     SetDisplayName(value *string)()
     SetGeoCoordinates(value OutlookGeoCoordinatesable)()
     SetPhone(value *string)()
+    SetPlaceId(value *string)()
 }

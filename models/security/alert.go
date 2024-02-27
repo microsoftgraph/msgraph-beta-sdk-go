@@ -33,7 +33,7 @@ func (m *Alert) GetActorDisplayName()(*string) {
     }
     return nil
 }
-// GetAlertPolicyId gets the alertPolicyId property value. The alertPolicyId property
+// GetAlertPolicyId gets the alertPolicyId property value. The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
 // returns a *string when successful
 func (m *Alert) GetAlertPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("alertPolicyId")
@@ -45,7 +45,7 @@ func (m *Alert) GetAlertPolicyId()(*string) {
     }
     return nil
 }
-// GetAlertWebUrl gets the alertWebUrl property value. URL for the alert page in the Microsoft 365 Defender portal.
+// GetAlertWebUrl gets the alertWebUrl property value. URL for the Microsoft 365 Defender portal alert page.
 // returns a *string when successful
 func (m *Alert) GetAlertWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("alertWebUrl")
@@ -129,7 +129,7 @@ func (m *Alert) GetDescription()(*string) {
     }
     return nil
 }
-// GetDetectionSource gets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement.
+// GetDetectionSource gets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.
 // returns a *DetectionSource when successful
 func (m *Alert) GetDetectionSource()(*DetectionSource) {
     val, err := m.GetBackingStore().Get("detectionSource")
@@ -153,7 +153,7 @@ func (m *Alert) GetDetectorId()(*string) {
     }
     return nil
 }
-// GetDetermination gets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+// GetDetermination gets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 // returns a *AlertDetermination when successful
 func (m *Alert) GetDetermination()(*AlertDetermination) {
     val, err := m.GetBackingStore().Get("determination")
@@ -589,7 +589,7 @@ func (m *Alert) GetMitreTechniques()([]string) {
     }
     return nil
 }
-// GetProductName gets the productName property value. The productName property
+// GetProductName gets the productName property value. The name of the product which published this alert.
 // returns a *string when successful
 func (m *Alert) GetProductName()(*string) {
     val, err := m.GetBackingStore().Get("productName")
@@ -673,7 +673,7 @@ func (m *Alert) GetStatus()(*AlertStatus) {
     }
     return nil
 }
-// GetSystemTags gets the systemTags property value. The system tags associated with the alert
+// GetSystemTags gets the systemTags property value. The system tags associated with the alert.
 // returns a []string when successful
 func (m *Alert) GetSystemTags()([]string) {
     val, err := m.GetBackingStore().Get("systemTags")
@@ -952,14 +952,14 @@ func (m *Alert) SetActorDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetAlertPolicyId sets the alertPolicyId property value. The alertPolicyId property
+// SetAlertPolicyId sets the alertPolicyId property value. The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.
 func (m *Alert) SetAlertPolicyId(value *string)() {
     err := m.GetBackingStore().Set("alertPolicyId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlertWebUrl sets the alertWebUrl property value. URL for the alert page in the Microsoft 365 Defender portal.
+// SetAlertWebUrl sets the alertWebUrl property value. URL for the Microsoft 365 Defender portal alert page.
 func (m *Alert) SetAlertWebUrl(value *string)() {
     err := m.GetBackingStore().Set("alertWebUrl", value)
     if err != nil {
@@ -1008,7 +1008,7 @@ func (m *Alert) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDetectionSource sets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement.
+// SetDetectionSource sets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl.
 func (m *Alert) SetDetectionSource(value *DetectionSource)() {
     err := m.GetBackingStore().Set("detectionSource", value)
     if err != nil {
@@ -1022,7 +1022,7 @@ func (m *Alert) SetDetectorId(value *string)() {
         panic(err)
     }
 }
-// SetDetermination sets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+// SetDetermination sets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 func (m *Alert) SetDetermination(value *AlertDetermination)() {
     err := m.GetBackingStore().Set("determination", value)
     if err != nil {
@@ -1078,7 +1078,7 @@ func (m *Alert) SetMitreTechniques(value []string)() {
         panic(err)
     }
 }
-// SetProductName sets the productName property value. The productName property
+// SetProductName sets the productName property value. The name of the product which published this alert.
 func (m *Alert) SetProductName(value *string)() {
     err := m.GetBackingStore().Set("productName", value)
     if err != nil {
@@ -1127,7 +1127,7 @@ func (m *Alert) SetStatus(value *AlertStatus)() {
         panic(err)
     }
 }
-// SetSystemTags sets the systemTags property value. The system tags associated with the alert
+// SetSystemTags sets the systemTags property value. The system tags associated with the alert.
 func (m *Alert) SetSystemTags(value []string)() {
     err := m.GetBackingStore().Set("systemTags", value)
     if err != nil {

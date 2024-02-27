@@ -238,6 +238,16 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["meetingTemplateId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingTemplateId(val)
+        }
+        return nil
+    }
     res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMeetingParticipantsFromDiscriminatorValue)
         if err != nil {
@@ -345,6 +355,18 @@ func (m *OnlineMeeting) GetMeetingAttendanceReport()(MeetingAttendanceReportable
     }
     if val != nil {
         return val.(MeetingAttendanceReportable)
+    }
+    return nil
+}
+// GetMeetingTemplateId gets the meetingTemplateId property value. The ID of the meeting template.
+// returns a *string when successful
+func (m *OnlineMeeting) GetMeetingTemplateId()(*string) {
+    val, err := m.GetBackingStore().Get("meetingTemplateId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -493,6 +515,12 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("meetingTemplateId", m.GetMeetingTemplateId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("participants", m.GetParticipants())
         if err != nil {
             return err
@@ -619,6 +647,13 @@ func (m *OnlineMeeting) SetMeetingAttendanceReport(value MeetingAttendanceReport
         panic(err)
     }
 }
+// SetMeetingTemplateId sets the meetingTemplateId property value. The ID of the meeting template.
+func (m *OnlineMeeting) SetMeetingTemplateId(value *string)() {
+    err := m.GetBackingStore().Set("meetingTemplateId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetParticipants sets the participants property value. The participants associated with the online meeting, including the organizer and the attendees.
 func (m *OnlineMeeting) SetParticipants(value MeetingParticipantsable)() {
     err := m.GetBackingStore().Set("participants", value)
@@ -675,6 +710,7 @@ type OnlineMeetingable interface {
     GetIsBroadcast()(*bool)
     GetJoinUrl()(*string)
     GetMeetingAttendanceReport()(MeetingAttendanceReportable)
+    GetMeetingTemplateId()(*string)
     GetParticipants()(MeetingParticipantsable)
     GetRecording()([]byte)
     GetRecordings()([]CallRecordingable)
@@ -692,6 +728,7 @@ type OnlineMeetingable interface {
     SetIsBroadcast(value *bool)()
     SetJoinUrl(value *string)()
     SetMeetingAttendanceReport(value MeetingAttendanceReportable)()
+    SetMeetingTemplateId(value *string)()
     SetParticipants(value MeetingParticipantsable)()
     SetRecording(value []byte)()
     SetRecordings(value []CallRecordingable)()

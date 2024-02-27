@@ -77,6 +77,11 @@ func (m *DirectoryRequestBuilder) DeletedItems()(*DeletedItemsRequestBuilder) {
 func (m *DirectoryRequestBuilder) DeviceLocalCredentials()(*DeviceLocalCredentialsRequestBuilder) {
     return NewDeviceLocalCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ExternalUserProfiles provides operations to manage the externalUserProfiles property of the microsoft.graph.directory entity.
+// returns a *ExternalUserProfilesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) ExternalUserProfiles()(*ExternalUserProfilesRequestBuilder) {
+    return NewExternalUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // FeatureRolloutPolicies provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.
 // returns a *FeatureRolloutPoliciesRequestBuilder when successful
 func (m *DirectoryRequestBuilder) FeatureRolloutPolicies()(*FeatureRolloutPoliciesRequestBuilder) {
@@ -146,6 +151,11 @@ func (m *DirectoryRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Directoryable), nil
+}
+// PendingExternalUserProfiles provides operations to manage the pendingExternalUserProfiles property of the microsoft.graph.directory entity.
+// returns a *PendingExternalUserProfilesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) PendingExternalUserProfiles()(*PendingExternalUserProfilesRequestBuilder) {
+    return NewPendingExternalUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Recommendations provides operations to manage the recommendations property of the microsoft.graph.directory entity.
 // returns a *RecommendationsRequestBuilder when successful

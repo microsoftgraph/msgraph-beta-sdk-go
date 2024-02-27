@@ -399,6 +399,16 @@ func (m *BookingAppointment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["isCustomerAllowedToManageBooking"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsCustomerAllowedToManageBooking(val)
+        }
+        return nil
+    }
     res["isLocationOnline"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -672,6 +682,18 @@ func (m *BookingAppointment) GetInvoiceUrl()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// returns a *bool when successful
+func (m *BookingAppointment) GetIsCustomerAllowedToManageBooking()(*bool) {
+    val, err := m.GetBackingStore().Get("isCustomerAllowedToManageBooking")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -1025,6 +1047,12 @@ func (m *BookingAppointment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteBoolValue("isCustomerAllowedToManageBooking", m.GetIsCustomerAllowedToManageBooking())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isLocationOnline", m.GetIsLocationOnline())
         if err != nil {
             return err
@@ -1287,6 +1315,13 @@ func (m *BookingAppointment) SetInvoiceUrl(value *string)() {
         panic(err)
     }
 }
+// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+func (m *BookingAppointment) SetIsCustomerAllowedToManageBooking(value *bool)() {
+    err := m.GetBackingStore().Set("isCustomerAllowedToManageBooking", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsLocationOnline sets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
 func (m *BookingAppointment) SetIsLocationOnline(value *bool)() {
     err := m.GetBackingStore().Set("isLocationOnline", value)
@@ -1443,6 +1478,7 @@ type BookingAppointmentable interface {
     GetInvoiceId()(*string)
     GetInvoiceStatus()(*BookingInvoiceStatus)
     GetInvoiceUrl()(*string)
+    GetIsCustomerAllowedToManageBooking()(*bool)
     GetIsLocationOnline()(*bool)
     GetJoinWebUrl()(*string)
     GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -1482,6 +1518,7 @@ type BookingAppointmentable interface {
     SetInvoiceId(value *string)()
     SetInvoiceStatus(value *BookingInvoiceStatus)()
     SetInvoiceUrl(value *string)()
+    SetIsCustomerAllowedToManageBooking(value *bool)()
     SetIsLocationOnline(value *bool)()
     SetJoinWebUrl(value *string)()
     SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

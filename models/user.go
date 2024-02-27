@@ -286,6 +286,18 @@ func (m *User) GetCity()(*string) {
     }
     return nil
 }
+// GetCloudClipboard gets the cloudClipboard property value. The cloudClipboard property
+// returns a CloudClipboardRootable when successful
+func (m *User) GetCloudClipboard()(CloudClipboardRootable) {
+    val, err := m.GetBackingStore().Get("cloudClipboard")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudClipboardRootable)
+    }
+    return nil
+}
 // GetCloudPCs gets the cloudPCs property value. The cloudPCs property
 // returns a []CloudPCable when successful
 func (m *User) GetCloudPCs()([]CloudPCable) {
@@ -969,6 +981,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetCity(val)
+        }
+        return nil
+    }
+    res["cloudClipboard"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudClipboardRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCloudClipboard(val.(CloudClipboardRootable))
         }
         return nil
     }
@@ -3956,6 +3978,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("cloudClipboard", m.GetCloudClipboard())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCloudPCs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPCs()))
         for i, v := range m.GetCloudPCs() {
@@ -5150,6 +5178,13 @@ func (m *User) SetCity(value *string)() {
         panic(err)
     }
 }
+// SetCloudClipboard sets the cloudClipboard property value. The cloudClipboard property
+func (m *User) SetCloudClipboard(value CloudClipboardRootable)() {
+    err := m.GetBackingStore().Set("cloudClipboard", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCloudPCs sets the cloudPCs property value. The cloudPCs property
 func (m *User) SetCloudPCs(value []CloudPCable)() {
     err := m.GetBackingStore().Set("cloudPCs", value)
@@ -6078,6 +6113,7 @@ type Userable interface {
     GetCalendarView()([]Eventable)
     GetChats()([]Chatable)
     GetCity()(*string)
+    GetCloudClipboard()(CloudClipboardRootable)
     GetCloudPCs()([]CloudPCable)
     GetCloudRealtimeCommunicationInfo()(CloudRealtimeCommunicationInfoable)
     GetCompanyName()(*string)
@@ -6229,6 +6265,7 @@ type Userable interface {
     SetCalendarView(value []Eventable)()
     SetChats(value []Chatable)()
     SetCity(value *string)()
+    SetCloudClipboard(value CloudClipboardRootable)()
     SetCloudPCs(value []CloudPCable)()
     SetCloudRealtimeCommunicationInfo(value CloudRealtimeCommunicationInfoable)()
     SetCompanyName(value *string)()

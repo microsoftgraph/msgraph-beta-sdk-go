@@ -120,6 +120,11 @@ func (m *PartnersBillingRequestBuilder) Patch(ctx context.Context, body ibc1d41e
     }
     return res.(ibc1d41e06c1155c6505b27a1d0c17b20692636238b0ddb2acdaa2b4548e4f67b.Billingable), nil
 }
+// Reconciliation provides operations to manage the reconciliation property of the microsoft.graph.partners.billing.billing entity.
+// returns a *PartnersBillingReconciliationRequestBuilder when successful
+func (m *PartnersBillingRequestBuilder) Reconciliation()(*PartnersBillingReconciliationRequestBuilder) {
+    return NewPartnersBillingReconciliationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property billing for reports
 // returns a *RequestInformation when successful
 func (m *PartnersBillingRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PartnersBillingRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

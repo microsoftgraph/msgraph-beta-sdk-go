@@ -11,7 +11,7 @@ import (
 type TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilderGetQueryParameters get dashboardCards from appCatalogs
+// TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilderGetQueryParameters dashboard cards specified in the Teams app manifest.
 type TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewTeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilder(rawUrl strin
 func (m *TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilder) Count()(*TeamsAppsItemAppDefinitionsItemDashboardCardsCountRequestBuilder) {
     return NewTeamsAppsItemAppDefinitionsItemDashboardCardsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get dashboardCards from appCatalogs
+// Get dashboard cards specified in the Teams app manifest.
 // returns a TeamsAppDashboardCardDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppDashboardCardDefinitionCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilder) Post(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppDashboardCardDefinitionable), nil
 }
-// ToGetRequestInformation get dashboardCards from appCatalogs
+// ToGetRequestInformation dashboard cards specified in the Teams app manifest.
 // returns a *RequestInformation when successful
 func (m *TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemDashboardCardsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

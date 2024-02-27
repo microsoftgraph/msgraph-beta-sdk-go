@@ -76,15 +76,15 @@ func (m *VirtualEventTownhall) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["invitedAttendees"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCommunicationsUserIdentityFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]CommunicationsUserIdentityable, len(val))
+            res := make([]Identityable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(CommunicationsUserIdentityable)
+                    res[i] = v.(Identityable)
                 }
             }
             m.SetInvitedAttendees(res)
@@ -104,14 +104,14 @@ func (m *VirtualEventTownhall) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetInvitedAttendees gets the invitedAttendees property value. The invitedAttendees property
-// returns a []CommunicationsUserIdentityable when successful
-func (m *VirtualEventTownhall) GetInvitedAttendees()([]CommunicationsUserIdentityable) {
+// returns a []Identityable when successful
+func (m *VirtualEventTownhall) GetInvitedAttendees()([]Identityable) {
     val, err := m.GetBackingStore().Get("invitedAttendees")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]CommunicationsUserIdentityable)
+        return val.([]Identityable)
     }
     return nil
 }
@@ -187,7 +187,7 @@ func (m *VirtualEventTownhall) SetCoOrganizers(value []CommunicationsUserIdentit
     }
 }
 // SetInvitedAttendees sets the invitedAttendees property value. The invitedAttendees property
-func (m *VirtualEventTownhall) SetInvitedAttendees(value []CommunicationsUserIdentityable)() {
+func (m *VirtualEventTownhall) SetInvitedAttendees(value []Identityable)() {
     err := m.GetBackingStore().Set("invitedAttendees", value)
     if err != nil {
         panic(err)
@@ -205,10 +205,10 @@ type VirtualEventTownhallable interface {
     VirtualEventable
     GetAudience()(*MeetingAudience)
     GetCoOrganizers()([]CommunicationsUserIdentityable)
-    GetInvitedAttendees()([]CommunicationsUserIdentityable)
+    GetInvitedAttendees()([]Identityable)
     GetIsInviteOnly()(*bool)
     SetAudience(value *MeetingAudience)()
     SetCoOrganizers(value []CommunicationsUserIdentityable)()
-    SetInvitedAttendees(value []CommunicationsUserIdentityable)()
+    SetInvitedAttendees(value []Identityable)()
     SetIsInviteOnly(value *bool)()
 }

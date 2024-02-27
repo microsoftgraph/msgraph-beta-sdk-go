@@ -94,7 +94,7 @@ func (m *ApplicableContent) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetMatchedDevices gets the matchedDevices property value. Collection of devices and recommendations for applicable catalog content.
+// GetMatchedDevices gets the matchedDevices property value. The matchedDevices property
 // returns a []ApplicableContentDeviceMatchable when successful
 func (m *ApplicableContent) GetMatchedDevices()([]ApplicableContentDeviceMatchable) {
     val, err := m.GetBackingStore().Get("matchedDevices")
@@ -170,7 +170,7 @@ func (m *ApplicableContent) SetCatalogEntry(value CatalogEntryable)() {
         panic(err)
     }
 }
-// SetMatchedDevices sets the matchedDevices property value. Collection of devices and recommendations for applicable catalog content.
+// SetMatchedDevices sets the matchedDevices property value. The matchedDevices property
 func (m *ApplicableContent) SetMatchedDevices(value []ApplicableContentDeviceMatchable)() {
     err := m.GetBackingStore().Set("matchedDevices", value)
     if err != nil {

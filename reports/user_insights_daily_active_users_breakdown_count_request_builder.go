@@ -40,6 +40,7 @@ func NewUserInsightsDailyActiveUsersBreakdownCountRequestBuilder(rawUrl string, 
     return NewUserInsightsDailyActiveUsersBreakdownCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated: The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserInsightsDailyActiveUsersBreakdownCountRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsDailyActiveUsersBreakdownCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -60,6 +61,7 @@ func (m *UserInsightsDailyActiveUsersBreakdownCountRequestBuilder) Get(ctx conte
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated: The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
 // returns a *RequestInformation when successful
 func (m *UserInsightsDailyActiveUsersBreakdownCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsDailyActiveUsersBreakdownCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -74,6 +76,7 @@ func (m *UserInsightsDailyActiveUsersBreakdownCountRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
 // returns a *UserInsightsDailyActiveUsersBreakdownCountRequestBuilder when successful
 func (m *UserInsightsDailyActiveUsersBreakdownCountRequestBuilder) WithUrl(rawUrl string)(*UserInsightsDailyActiveUsersBreakdownCountRequestBuilder) {
     return NewUserInsightsDailyActiveUsersBreakdownCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

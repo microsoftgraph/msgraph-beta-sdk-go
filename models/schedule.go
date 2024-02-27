@@ -95,6 +95,26 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["isCrossLocationShiftRequestApprovalRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsCrossLocationShiftRequestApprovalRequired(val)
+        }
+        return nil
+    }
+    res["isCrossLocationShiftsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsCrossLocationShiftsEnabled(val)
+        }
+        return nil
+    }
     res["offerShiftRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateOfferShiftRequestFromDiscriminatorValue)
         if err != nil {
@@ -389,6 +409,30 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
+// GetIsCrossLocationShiftRequestApprovalRequired gets the isCrossLocationShiftRequestApprovalRequired property value. Indicates whether approval is required by a manager of this schedule for cross location shift requests.
+// returns a *bool when successful
+func (m *Schedule) GetIsCrossLocationShiftRequestApprovalRequired()(*bool) {
+    val, err := m.GetBackingStore().Get("isCrossLocationShiftRequestApprovalRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsCrossLocationShiftsEnabled gets the isCrossLocationShiftsEnabled property value. Indicates whether the cross-location marketplace feature is enabled for this schedule.
+// returns a *bool when successful
+func (m *Schedule) GetIsCrossLocationShiftsEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isCrossLocationShiftsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetOfferShiftRequests gets the offerShiftRequests property value. The offer requests for shifts in the schedule.
 // returns a []OfferShiftRequestable when successful
 func (m *Schedule) GetOfferShiftRequests()([]OfferShiftRequestable) {
@@ -509,7 +553,7 @@ func (m *Schedule) GetShiftsRoleDefinitions()([]ShiftsRoleDefinitionable) {
     }
     return nil
 }
-// GetStartDayOfWeek gets the startDayOfWeek property value. Indicates the start day of the week.
+// GetStartDayOfWeek gets the startDayOfWeek property value. Indicates the start day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
 // returns a *DayOfWeek when successful
 func (m *Schedule) GetStartDayOfWeek()(*DayOfWeek) {
     val, err := m.GetBackingStore().Get("startDayOfWeek")
@@ -641,7 +685,7 @@ func (m *Schedule) GetTimeZone()(*string) {
     }
     return nil
 }
-// GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. The Ids for the workforce integrations associated with this schedule.
+// GetWorkforceIntegrationIds gets the workforceIntegrationIds property value. The IDs for the workforce integrations associated with this schedule.
 // returns a []string when successful
 func (m *Schedule) GetWorkforceIntegrationIds()([]string) {
     val, err := m.GetBackingStore().Get("workforceIntegrationIds")
@@ -679,6 +723,18 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err = writer.WriteBoolValue("enabled", m.GetEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isCrossLocationShiftRequestApprovalRequired", m.GetIsCrossLocationShiftRequestApprovalRequired())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isCrossLocationShiftsEnabled", m.GetIsCrossLocationShiftsEnabled())
         if err != nil {
             return err
         }
@@ -893,6 +949,20 @@ func (m *Schedule) SetEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetIsCrossLocationShiftRequestApprovalRequired sets the isCrossLocationShiftRequestApprovalRequired property value. Indicates whether approval is required by a manager of this schedule for cross location shift requests.
+func (m *Schedule) SetIsCrossLocationShiftRequestApprovalRequired(value *bool)() {
+    err := m.GetBackingStore().Set("isCrossLocationShiftRequestApprovalRequired", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsCrossLocationShiftsEnabled sets the isCrossLocationShiftsEnabled property value. Indicates whether the cross-location marketplace feature is enabled for this schedule.
+func (m *Schedule) SetIsCrossLocationShiftsEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isCrossLocationShiftsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOfferShiftRequests sets the offerShiftRequests property value. The offer requests for shifts in the schedule.
 func (m *Schedule) SetOfferShiftRequests(value []OfferShiftRequestable)() {
     err := m.GetBackingStore().Set("offerShiftRequests", value)
@@ -963,7 +1033,7 @@ func (m *Schedule) SetShiftsRoleDefinitions(value []ShiftsRoleDefinitionable)() 
         panic(err)
     }
 }
-// SetStartDayOfWeek sets the startDayOfWeek property value. Indicates the start day of the week.
+// SetStartDayOfWeek sets the startDayOfWeek property value. Indicates the start day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.
 func (m *Schedule) SetStartDayOfWeek(value *DayOfWeek)() {
     err := m.GetBackingStore().Set("startDayOfWeek", value)
     if err != nil {
@@ -1040,7 +1110,7 @@ func (m *Schedule) SetTimeZone(value *string)() {
         panic(err)
     }
 }
-// SetWorkforceIntegrationIds sets the workforceIntegrationIds property value. The Ids for the workforce integrations associated with this schedule.
+// SetWorkforceIntegrationIds sets the workforceIntegrationIds property value. The IDs for the workforce integrations associated with this schedule.
 func (m *Schedule) SetWorkforceIntegrationIds(value []string)() {
     err := m.GetBackingStore().Set("workforceIntegrationIds", value)
     if err != nil {
@@ -1053,6 +1123,8 @@ type Scheduleable interface {
     GetActivitiesIncludedWhenCopyingShiftsEnabled()(*bool)
     GetDayNotes()([]DayNoteable)
     GetEnabled()(*bool)
+    GetIsCrossLocationShiftRequestApprovalRequired()(*bool)
+    GetIsCrossLocationShiftsEnabled()(*bool)
     GetOfferShiftRequests()([]OfferShiftRequestable)
     GetOfferShiftRequestsEnabled()(*bool)
     GetOpenShiftChangeRequests()([]OpenShiftChangeRequestable)
@@ -1078,6 +1150,8 @@ type Scheduleable interface {
     SetActivitiesIncludedWhenCopyingShiftsEnabled(value *bool)()
     SetDayNotes(value []DayNoteable)()
     SetEnabled(value *bool)()
+    SetIsCrossLocationShiftRequestApprovalRequired(value *bool)()
+    SetIsCrossLocationShiftsEnabled(value *bool)()
     SetOfferShiftRequests(value []OfferShiftRequestable)()
     SetOfferShiftRequestsEnabled(value *bool)()
     SetOpenShiftChangeRequests(value []OpenShiftChangeRequestable)()

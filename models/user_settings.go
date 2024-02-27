@@ -119,6 +119,22 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["windows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WindowsSettingable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(WindowsSettingable)
+                }
+            }
+            m.SetWindows(res)
+        }
+        return nil
+    }
     return res
 }
 // GetItemInsights gets the itemInsights property value. The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
@@ -154,6 +170,18 @@ func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
     }
     if val != nil {
         return val.(ShiftPreferencesable)
+    }
+    return nil
+}
+// GetWindows gets the windows property value. The windows property
+// returns a []WindowsSettingable when successful
+func (m *UserSettings) GetWindows()([]WindowsSettingable) {
+    val, err := m.GetBackingStore().Get("windows")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsSettingable)
     }
     return nil
 }
@@ -195,6 +223,18 @@ func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err = writer.WriteObjectValue("shiftPreferences", m.GetShiftPreferences())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetWindows() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindows()))
+        for i, v := range m.GetWindows() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("windows", cast)
         if err != nil {
             return err
         }
@@ -243,6 +283,13 @@ func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
         panic(err)
     }
 }
+// SetWindows sets the windows property value. The windows property
+func (m *UserSettings) SetWindows(value []WindowsSettingable)() {
+    err := m.GetBackingStore().Set("windows", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type UserSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -252,10 +299,12 @@ type UserSettingsable interface {
     GetItemInsights()(UserInsightsSettingsable)
     GetRegionalAndLanguageSettings()(RegionalAndLanguageSettingsable)
     GetShiftPreferences()(ShiftPreferencesable)
+    GetWindows()([]WindowsSettingable)
     SetContactMergeSuggestions(value ContactMergeSuggestionsable)()
     SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)()
     SetContributionToContentDiscoveryDisabled(value *bool)()
     SetItemInsights(value UserInsightsSettingsable)()
     SetRegionalAndLanguageSettings(value RegionalAndLanguageSettingsable)()
     SetShiftPreferences(value ShiftPreferencesable)()
+    SetWindows(value []WindowsSettingable)()
 }

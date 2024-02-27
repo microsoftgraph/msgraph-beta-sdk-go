@@ -93,7 +93,7 @@ func (m *Incident) GetCustomTags()([]string) {
     }
     return nil
 }
-// GetDescription gets the description property value. A rich text string describing the incident
+// GetDescription gets the description property value. Description of the incident.
 // returns a *string when successful
 func (m *Incident) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -367,7 +367,7 @@ func (m *Incident) GetIncidentWebUrl()(*string) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The identity that last modified the incident.
 // returns a *string when successful
 func (m *Incident) GetLastModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
@@ -661,7 +661,7 @@ func (m *Incident) SetCustomTags(value []string)() {
         panic(err)
     }
 }
-// SetDescription sets the description property value. A rich text string describing the incident
+// SetDescription sets the description property value. Description of the incident.
 func (m *Incident) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -689,7 +689,7 @@ func (m *Incident) SetIncidentWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The identity that last modified the incident.
 func (m *Incident) SetLastModifiedBy(value *string)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {

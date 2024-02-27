@@ -40,6 +40,7 @@ type UserInsightsDailyActiveUsersBreakdownRequestBuilderGetRequestConfiguration 
     QueryParameters *UserInsightsDailyActiveUsersBreakdownRequestBuilderGetQueryParameters
 }
 // ByActiveUsersBreakdownMetricId provides operations to manage the activeUsersBreakdown property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
+// Deprecated: The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
 // returns a *UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder when successful
 func (m *UserInsightsDailyActiveUsersBreakdownRequestBuilder) ByActiveUsersBreakdownMetricId(activeUsersBreakdownMetricId string)(*UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,6 +71,7 @@ func (m *UserInsightsDailyActiveUsersBreakdownRequestBuilder) Count()(*UserInsig
     return NewUserInsightsDailyActiveUsersBreakdownCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of daily activeUsersBreakdown objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+// Deprecated: The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
 // returns a ActiveUsersBreakdownMetricCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -93,6 +95,7 @@ func (m *UserInsightsDailyActiveUsersBreakdownRequestBuilder) Get(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActiveUsersBreakdownMetricCollectionResponseable), nil
 }
 // ToGetRequestInformation get a list of daily activeUsersBreakdown objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+// Deprecated: The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
 // returns a *RequestInformation when successful
 func (m *UserInsightsDailyActiveUsersBreakdownRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsDailyActiveUsersBreakdownRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +110,7 @@ func (m *UserInsightsDailyActiveUsersBreakdownRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
 // returns a *UserInsightsDailyActiveUsersBreakdownRequestBuilder when successful
 func (m *UserInsightsDailyActiveUsersBreakdownRequestBuilder) WithUrl(rawUrl string)(*UserInsightsDailyActiveUsersBreakdownRequestBuilder) {
     return NewUserInsightsDailyActiveUsersBreakdownRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -123,6 +123,36 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["membershipRule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMembershipRule(val)
+        }
+        return nil
+    }
+    res["membershipRuleProcessingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMembershipRuleProcessingState(val)
+        }
+        return nil
+    }
+    res["membershipType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMembershipType(val)
+        }
+        return nil
+    }
     res["scopedRoleMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateScopedRoleMembershipFromDiscriminatorValue)
         if err != nil {
@@ -172,6 +202,42 @@ func (m *AdministrativeUnit) GetMembers()([]DirectoryObjectable) {
     }
     if val != nil {
         return val.([]DirectoryObjectable)
+    }
+    return nil
+}
+// GetMembershipRule gets the membershipRule property value. Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.
+// returns a *string when successful
+func (m *AdministrativeUnit) GetMembershipRule()(*string) {
+    val, err := m.GetBackingStore().Get("membershipRule")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMembershipRuleProcessingState gets the membershipRuleProcessingState property value. Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.
+// returns a *string when successful
+func (m *AdministrativeUnit) GetMembershipRuleProcessingState()(*string) {
+    val, err := m.GetBackingStore().Get("membershipRuleProcessingState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMembershipType gets the membershipType property value. Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.
+// returns a *string when successful
+func (m *AdministrativeUnit) GetMembershipType()(*string) {
+    val, err := m.GetBackingStore().Get("membershipType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -247,6 +313,24 @@ func (m *AdministrativeUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("membershipRule", m.GetMembershipRule())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("membershipRuleProcessingState", m.GetMembershipRuleProcessingState())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("membershipType", m.GetMembershipType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetScopedRoleMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetScopedRoleMembers()))
         for i, v := range m.GetScopedRoleMembers() {
@@ -302,6 +386,27 @@ func (m *AdministrativeUnit) SetMembers(value []DirectoryObjectable)() {
         panic(err)
     }
 }
+// SetMembershipRule sets the membershipRule property value. Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.
+func (m *AdministrativeUnit) SetMembershipRule(value *string)() {
+    err := m.GetBackingStore().Set("membershipRule", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMembershipRuleProcessingState sets the membershipRuleProcessingState property value. Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.
+func (m *AdministrativeUnit) SetMembershipRuleProcessingState(value *string)() {
+    err := m.GetBackingStore().Set("membershipRuleProcessingState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMembershipType sets the membershipType property value. Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.
+func (m *AdministrativeUnit) SetMembershipType(value *string)() {
+    err := m.GetBackingStore().Set("membershipType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScopedRoleMembers sets the scopedRoleMembers property value. Scoped-role members of this administrative unit.
 func (m *AdministrativeUnit) SetScopedRoleMembers(value []ScopedRoleMembershipable)() {
     err := m.GetBackingStore().Set("scopedRoleMembers", value)
@@ -324,6 +429,9 @@ type AdministrativeUnitable interface {
     GetExtensions()([]Extensionable)
     GetIsMemberManagementRestricted()(*bool)
     GetMembers()([]DirectoryObjectable)
+    GetMembershipRule()(*string)
+    GetMembershipRuleProcessingState()(*string)
+    GetMembershipType()(*string)
     GetScopedRoleMembers()([]ScopedRoleMembershipable)
     GetVisibility()(*string)
     SetDescription(value *string)()
@@ -331,6 +439,9 @@ type AdministrativeUnitable interface {
     SetExtensions(value []Extensionable)()
     SetIsMemberManagementRestricted(value *bool)()
     SetMembers(value []DirectoryObjectable)()
+    SetMembershipRule(value *string)()
+    SetMembershipRuleProcessingState(value *string)()
+    SetMembershipType(value *string)()
     SetScopedRoleMembers(value []ScopedRoleMembershipable)()
     SetVisibility(value *string)()
 }

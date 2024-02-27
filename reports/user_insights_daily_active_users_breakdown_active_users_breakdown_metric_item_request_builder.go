@@ -11,7 +11,7 @@ import (
 type UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+// UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters get activeUsersBreakdown from reports
 type UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,8 @@ func NewUserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemReque
     urlParams["request-raw-url"] = rawUrl
     return NewUserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+// Get get activeUsersBreakdown from reports
+// Deprecated: The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
 // returns a ActiveUsersBreakdownMetricable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActiveUsersBreakdownMetricable, error) {
@@ -60,7 +61,8 @@ func (m *UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActiveUsersBreakdownMetricable), nil
 }
-// ToGetRequestInformation insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+// ToGetRequestInformation get activeUsersBreakdown from reports
+// Deprecated: The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
 // returns a *RequestInformation when successful
 func (m *UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -75,6 +77,7 @@ func (m *UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs
 // returns a *UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder when successful
 func (m *UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder) WithUrl(rawUrl string)(*UserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder) {
     return NewUserInsightsDailyActiveUsersBreakdownActiveUsersBreakdownMetricItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
