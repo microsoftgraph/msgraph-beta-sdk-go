@@ -60,6 +60,7 @@ import (
     i5f794bd004f1cc95da776bcb1947ffabf97b71aae1f5c9f15255b24451e2929b "github.com/microsoftgraph/msgraph-beta-sdk-go/policies"
     i60392bb6eb86abe7a3079e3b2b1e202f7dcf3452adf026db62ec93e2fafe3957 "github.com/microsoftgraph/msgraph-beta-sdk-go/subscriptions"
     i613e9d4b5596faf0dba59087b1a65d06d17aab1ca9d69170b292a4e0d90063ab "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedapproval"
+    i64fc24bb18135374ce200dde4281c7742414b6f0b008ed5c2eab2c2787c0619e "github.com/microsoftgraph/msgraph-beta-sdk-go/placeswithplaceid"
     i65ed27543dee9887d3df7d7d883303dfead48cba6be4e357fa7d5c21332b4626 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin"
     i66f18ccab4e34309d26d1056f0e7dd8b563a5f8ee6f8d9c6e8e77c5fac50f8b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamstemplates"
     i6b96a96c52bbdff1731b8a5490cd5f342e33866e0931912944d323bc79f663e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus"
@@ -545,6 +546,11 @@ func (m *GraphBaseServiceClient) PermissionGrants()(*i48a68a7c83dc874f9d9fdf942a
 // returns a *PlacesRequestBuilder when successful
 func (m *GraphBaseServiceClient) Places()(*ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1.PlacesRequestBuilder) {
     return ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1.NewPlacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PlacesWithPlaceId provides operations to manage the collection of place entities.
+// returns a *PlacesWithPlaceIdRequestBuilder when successful
+func (m *GraphBaseServiceClient) PlacesWithPlaceId(placeId *string)(*i64fc24bb18135374ce200dde4281c7742414b6f0b008ed5c2eab2c2787c0619e.PlacesWithPlaceIdRequestBuilder) {
+    return i64fc24bb18135374ce200dde4281c7742414b6f0b008ed5c2eab2c2787c0619e.NewPlacesWithPlaceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, placeId)
 }
 // Planner provides operations to manage the planner singleton.
 // returns a *PlannerRequestBuilder when successful

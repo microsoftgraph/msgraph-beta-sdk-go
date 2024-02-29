@@ -110,11 +110,6 @@ func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventPresenterable), nil
 }
-// ProfilePhoto provides operations to manage the media for the solutionsRoot entity.
-// returns a *VirtualEventsWebinarsItemPresentersItemProfilePhotoRequestBuilder when successful
-func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilder) ProfilePhoto()(*VirtualEventsWebinarsItemPresentersItemProfilePhotoRequestBuilder) {
-    return NewVirtualEventsWebinarsItemPresentersItemProfilePhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Sessions provides operations to manage the sessions property of the microsoft.graph.virtualEventPresenter entity.
 // returns a *VirtualEventsWebinarsItemPresentersItemSessionsRequestBuilder when successful
 func (m *VirtualEventsWebinarsItemPresentersVirtualEventPresenterItemRequestBuilder) Sessions()(*VirtualEventsWebinarsItemPresentersItemSessionsRequestBuilder) {

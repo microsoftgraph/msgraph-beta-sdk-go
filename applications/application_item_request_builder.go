@@ -118,6 +118,11 @@ func (m *ApplicationItemRequestBuilder) ExtensionProperties()(*ItemExtensionProp
 func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentials()(*ItemFederatedIdentityCredentialsRequestBuilder) {
     return NewItemFederatedIdentityCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// FederatedIdentityCredentialsWithName provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
+// returns a *ItemFederatedIdentityCredentialsWithNameRequestBuilder when successful
+func (m *ApplicationItemRequestBuilder) FederatedIdentityCredentialsWithName(name *string)(*ItemFederatedIdentityCredentialsWithNameRequestBuilder) {
+    return NewItemFederatedIdentityCredentialsWithNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, name)
+}
 // Get get the properties and relationships of an application object.
 // returns a Applicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

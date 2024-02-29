@@ -101,7 +101,7 @@ func (m *UserTeamwork) GetInstalledApps()([]UserScopeTeamsAppInstallationable) {
     }
     return nil
 }
-// GetLocale gets the locale property value. Represents the chosen locale of a user in Microsoft Teams.
+// GetLocale gets the locale property value. The chosen locale of a user in Microsoft Teams.
 // returns a *string when successful
 func (m *UserTeamwork) GetLocale()(*string) {
     val, err := m.GetBackingStore().Get("locale")
@@ -113,7 +113,7 @@ func (m *UserTeamwork) GetLocale()(*string) {
     }
     return nil
 }
-// GetRegion gets the region property value. Represents the region of the user in Microsoft Teams.
+// GetRegion gets the region property value. The region of the user in Microsoft Teams.
 // returns a *string when successful
 func (m *UserTeamwork) GetRegion()(*string) {
     val, err := m.GetBackingStore().Get("region")
@@ -183,14 +183,14 @@ func (m *UserTeamwork) SetInstalledApps(value []UserScopeTeamsAppInstallationabl
         panic(err)
     }
 }
-// SetLocale sets the locale property value. Represents the chosen locale of a user in Microsoft Teams.
+// SetLocale sets the locale property value. The chosen locale of a user in Microsoft Teams.
 func (m *UserTeamwork) SetLocale(value *string)() {
     err := m.GetBackingStore().Set("locale", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegion sets the region property value. Represents the region of the user in Microsoft Teams.
+// SetRegion sets the region property value. The region of the user in Microsoft Teams.
 func (m *UserTeamwork) SetRegion(value *string)() {
     err := m.GetBackingStore().Set("region", value)
     if err != nil {

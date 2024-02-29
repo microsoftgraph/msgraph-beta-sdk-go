@@ -247,6 +247,16 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["isCustomerAllowedToManageBooking"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsCustomerAllowedToManageBooking(val)
+        }
+        return nil
+    }
     res["isHiddenFromCustomers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -379,6 +389,18 @@ func (m *BookingService) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 // returns a *bool when successful
 func (m *BookingService) GetIsAnonymousJoinEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isAnonymousJoinEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// returns a *bool when successful
+func (m *BookingService) GetIsCustomerAllowedToManageBooking()(*bool) {
+    val, err := m.GetBackingStore().Get("isCustomerAllowedToManageBooking")
     if err != nil {
         panic(err)
     }
@@ -611,6 +633,12 @@ func (m *BookingService) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteBoolValue("isCustomerAllowedToManageBooking", m.GetIsCustomerAllowedToManageBooking())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isHiddenFromCustomers", m.GetIsHiddenFromCustomers())
         if err != nil {
             return err
@@ -748,6 +776,13 @@ func (m *BookingService) SetIsAnonymousJoinEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+func (m *BookingService) SetIsCustomerAllowedToManageBooking(value *bool)() {
+    err := m.GetBackingStore().Set("isCustomerAllowedToManageBooking", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsHiddenFromCustomers sets the isHiddenFromCustomers property value. True means this service isn't available to customers for booking.
 func (m *BookingService) SetIsHiddenFromCustomers(value *bool)() {
     err := m.GetBackingStore().Set("isHiddenFromCustomers", value)
@@ -845,6 +880,7 @@ type BookingServiceable interface {
     GetDefaultReminders()([]BookingReminderable)
     GetDescription()(*string)
     GetIsAnonymousJoinEnabled()(*bool)
+    GetIsCustomerAllowedToManageBooking()(*bool)
     GetIsHiddenFromCustomers()(*bool)
     GetIsLocationOnline()(*bool)
     GetLanguageTag()(*string)
@@ -867,6 +903,7 @@ type BookingServiceable interface {
     SetDefaultReminders(value []BookingReminderable)()
     SetDescription(value *string)()
     SetIsAnonymousJoinEnabled(value *bool)()
+    SetIsCustomerAllowedToManageBooking(value *bool)()
     SetIsHiddenFromCustomers(value *bool)()
     SetIsLocationOnline(value *bool)()
     SetLanguageTag(value *string)()

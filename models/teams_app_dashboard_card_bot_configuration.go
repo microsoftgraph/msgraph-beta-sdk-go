@@ -40,7 +40,7 @@ func (m *TeamsAppDashboardCardBotConfiguration) GetAdditionalData()(map[string]a
 func (m *TeamsAppDashboardCardBotConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBotId gets the botId property value. The botId property
+// GetBotId gets the botId property value. The ID (usually a GUID) of the bot associated with the specific teamsAppDefinition. This is a unique app ID for the bot as registered with the Bot Framework.
 // returns a *string when successful
 func (m *TeamsAppDashboardCardBotConfiguration) GetBotId()(*string) {
     val, err := m.GetBackingStore().Get("botId")
@@ -123,7 +123,7 @@ func (m *TeamsAppDashboardCardBotConfiguration) SetAdditionalData(value map[stri
 func (m *TeamsAppDashboardCardBotConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBotId sets the botId property value. The botId property
+// SetBotId sets the botId property value. The ID (usually a GUID) of the bot associated with the specific teamsAppDefinition. This is a unique app ID for the bot as registered with the Bot Framework.
 func (m *TeamsAppDashboardCardBotConfiguration) SetBotId(value *string)() {
     err := m.GetBackingStore().Set("botId", value)
     if err != nil {

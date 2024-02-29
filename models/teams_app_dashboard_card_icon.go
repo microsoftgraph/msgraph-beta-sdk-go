@@ -76,7 +76,7 @@ func (m *TeamsAppDashboardCardIcon) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetIconUrl gets the iconUrl property value. The iconUrl property
+// GetIconUrl gets the iconUrl property value. The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.
 // returns a *string when successful
 func (m *TeamsAppDashboardCardIcon) GetIconUrl()(*string) {
     val, err := m.GetBackingStore().Get("iconUrl")
@@ -100,7 +100,7 @@ func (m *TeamsAppDashboardCardIcon) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOfficeUIFabricIconName gets the officeUIFabricIconName property value. The officeUIFabricIconName property
+// GetOfficeUIFabricIconName gets the officeUIFabricIconName property value. The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn't specified. For example, 'officeUIFabricIconName': 'Search'.
 // returns a *string when successful
 func (m *TeamsAppDashboardCardIcon) GetOfficeUIFabricIconName()(*string) {
     val, err := m.GetBackingStore().Get("officeUIFabricIconName")
@@ -151,7 +151,7 @@ func (m *TeamsAppDashboardCardIcon) SetAdditionalData(value map[string]any)() {
 func (m *TeamsAppDashboardCardIcon) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIconUrl sets the iconUrl property value. The iconUrl property
+// SetIconUrl sets the iconUrl property value. The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.
 func (m *TeamsAppDashboardCardIcon) SetIconUrl(value *string)() {
     err := m.GetBackingStore().Set("iconUrl", value)
     if err != nil {
@@ -165,7 +165,7 @@ func (m *TeamsAppDashboardCardIcon) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOfficeUIFabricIconName sets the officeUIFabricIconName property value. The officeUIFabricIconName property
+// SetOfficeUIFabricIconName sets the officeUIFabricIconName property value. The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn't specified. For example, 'officeUIFabricIconName': 'Search'.
 func (m *TeamsAppDashboardCardIcon) SetOfficeUIFabricIconName(value *string)() {
     err := m.GetBackingStore().Set("officeUIFabricIconName", value)
     if err != nil {

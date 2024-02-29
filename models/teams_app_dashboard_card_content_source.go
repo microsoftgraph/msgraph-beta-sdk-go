@@ -40,7 +40,7 @@ func (m *TeamsAppDashboardCardContentSource) GetAdditionalData()(map[string]any)
 func (m *TeamsAppDashboardCardContentSource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBotConfiguration gets the botConfiguration property value. The botConfiguration property
+// GetBotConfiguration gets the botConfiguration property value. The configuration for the bot source. Required if sourceType is set to bot.
 // returns a TeamsAppDashboardCardBotConfigurationable when successful
 func (m *TeamsAppDashboardCardContentSource) GetBotConfiguration()(TeamsAppDashboardCardBotConfigurationable) {
     val, err := m.GetBackingStore().Get("botConfiguration")
@@ -100,7 +100,7 @@ func (m *TeamsAppDashboardCardContentSource) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSourceType gets the sourceType property value. The sourceType property
+// GetSourceType gets the sourceType property value. Represents the type of source that powers the content of the dashboard card. The possible values are: bot, unknownFutureValue.
 // returns a *TeamsAppDashboardCardSourceType when successful
 func (m *TeamsAppDashboardCardContentSource) GetSourceType()(*TeamsAppDashboardCardSourceType) {
     val, err := m.GetBackingStore().Get("sourceType")
@@ -152,7 +152,7 @@ func (m *TeamsAppDashboardCardContentSource) SetAdditionalData(value map[string]
 func (m *TeamsAppDashboardCardContentSource) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBotConfiguration sets the botConfiguration property value. The botConfiguration property
+// SetBotConfiguration sets the botConfiguration property value. The configuration for the bot source. Required if sourceType is set to bot.
 func (m *TeamsAppDashboardCardContentSource) SetBotConfiguration(value TeamsAppDashboardCardBotConfigurationable)() {
     err := m.GetBackingStore().Set("botConfiguration", value)
     if err != nil {
@@ -166,7 +166,7 @@ func (m *TeamsAppDashboardCardContentSource) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSourceType sets the sourceType property value. The sourceType property
+// SetSourceType sets the sourceType property value. Represents the type of source that powers the content of the dashboard card. The possible values are: bot, unknownFutureValue.
 func (m *TeamsAppDashboardCardContentSource) SetSourceType(value *TeamsAppDashboardCardSourceType)() {
     err := m.GetBackingStore().Set("sourceType", value)
     if err != nil {

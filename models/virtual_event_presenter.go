@@ -46,12 +46,12 @@ func (m *VirtualEventPresenter) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["identity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCommunicationsUserIdentityFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIdentity(val.(CommunicationsUserIdentityable))
+            m.SetIdentity(val.(Identityable))
         }
         return nil
     }
@@ -62,16 +62,6 @@ func (m *VirtualEventPresenter) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetPresenterDetails(val.(VirtualEventPresenterDetailsable))
-        }
-        return nil
-    }
-    res["profilePhoto"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetByteArrayValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProfilePhoto(val)
         }
         return nil
     }
@@ -93,15 +83,15 @@ func (m *VirtualEventPresenter) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIdentity gets the identity property value. Identity information of the presenter.
-// returns a CommunicationsUserIdentityable when successful
-func (m *VirtualEventPresenter) GetIdentity()(CommunicationsUserIdentityable) {
+// GetIdentity gets the identity property value. Identity information of the presenter. The supported identites are: communicationsGuestIdentity and communicationsUserIdentity.
+// returns a Identityable when successful
+func (m *VirtualEventPresenter) GetIdentity()(Identityable) {
     val, err := m.GetBackingStore().Get("identity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(CommunicationsUserIdentityable)
+        return val.(Identityable)
     }
     return nil
 }
@@ -114,18 +104,6 @@ func (m *VirtualEventPresenter) GetPresenterDetails()(VirtualEventPresenterDetai
     }
     if val != nil {
         return val.(VirtualEventPresenterDetailsable)
-    }
-    return nil
-}
-// GetProfilePhoto gets the profilePhoto property value. The profilePhoto property
-// returns a []byte when successful
-func (m *VirtualEventPresenter) GetProfilePhoto()([]byte) {
-    val, err := m.GetBackingStore().Get("profilePhoto")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]byte)
     }
     return nil
 }
@@ -165,12 +143,6 @@ func (m *VirtualEventPresenter) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
-    {
-        err = writer.WriteByteArrayValue("profilePhoto", m.GetProfilePhoto())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSessions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSessions()))
         for i, v := range m.GetSessions() {
@@ -192,8 +164,8 @@ func (m *VirtualEventPresenter) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SetIdentity sets the identity property value. Identity information of the presenter.
-func (m *VirtualEventPresenter) SetIdentity(value CommunicationsUserIdentityable)() {
+// SetIdentity sets the identity property value. Identity information of the presenter. The supported identites are: communicationsGuestIdentity and communicationsUserIdentity.
+func (m *VirtualEventPresenter) SetIdentity(value Identityable)() {
     err := m.GetBackingStore().Set("identity", value)
     if err != nil {
         panic(err)
@@ -202,13 +174,6 @@ func (m *VirtualEventPresenter) SetIdentity(value CommunicationsUserIdentityable
 // SetPresenterDetails sets the presenterDetails property value. Other detail information of the presenter.
 func (m *VirtualEventPresenter) SetPresenterDetails(value VirtualEventPresenterDetailsable)() {
     err := m.GetBackingStore().Set("presenterDetails", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetProfilePhoto sets the profilePhoto property value. The profilePhoto property
-func (m *VirtualEventPresenter) SetProfilePhoto(value []byte)() {
-    err := m.GetBackingStore().Set("profilePhoto", value)
     if err != nil {
         panic(err)
     }
@@ -224,13 +189,11 @@ type VirtualEventPresenterable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEmail()(*string)
-    GetIdentity()(CommunicationsUserIdentityable)
+    GetIdentity()(Identityable)
     GetPresenterDetails()(VirtualEventPresenterDetailsable)
-    GetProfilePhoto()([]byte)
     GetSessions()([]VirtualEventSessionable)
     SetEmail(value *string)()
-    SetIdentity(value CommunicationsUserIdentityable)()
+    SetIdentity(value Identityable)()
     SetPresenterDetails(value VirtualEventPresenterDetailsable)()
-    SetProfilePhoto(value []byte)()
     SetSessions(value []VirtualEventSessionable)()
 }

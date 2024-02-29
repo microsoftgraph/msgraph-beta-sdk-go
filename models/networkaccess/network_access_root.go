@@ -20,6 +20,18 @@ func NewNetworkAccessRoot()(*NetworkAccessRoot) {
 func CreateNetworkAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkAccessRoot(), nil
 }
+// GetAlerts gets the alerts property value. The alerts property
+// returns a []Alertable when successful
+func (m *NetworkAccessRoot) GetAlerts()([]Alertable) {
+    val, err := m.GetBackingStore().Get("alerts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Alertable)
+    }
+    return nil
+}
 // GetConnectivity gets the connectivity property value. Connectivity represents all the connectivity components in Global Secure Access.
 // returns a Connectivityable when successful
 func (m *NetworkAccessRoot) GetConnectivity()(Connectivityable) {
@@ -36,6 +48,22 @@ func (m *NetworkAccessRoot) GetConnectivity()(Connectivityable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["alerts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAlertFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Alertable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Alertable)
+                }
+            }
+            m.SetAlerts(res)
+        }
+        return nil
+    }
     res["connectivity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConnectivityFromDiscriminatorValue)
         if err != nil {
@@ -254,6 +282,18 @@ func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if err != nil {
         return err
     }
+    if m.GetAlerts() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlerts()))
+        for i, v := range m.GetAlerts() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("alerts", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("connectivity", m.GetConnectivity())
         if err != nil {
@@ -334,6 +374,13 @@ func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
+// SetAlerts sets the alerts property value. The alerts property
+func (m *NetworkAccessRoot) SetAlerts(value []Alertable)() {
+    err := m.GetBackingStore().Set("alerts", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetConnectivity sets the connectivity property value. Connectivity represents all the connectivity components in Global Secure Access.
 func (m *NetworkAccessRoot) SetConnectivity(value Connectivityable)() {
     err := m.GetBackingStore().Set("connectivity", value)
@@ -400,6 +447,7 @@ func (m *NetworkAccessRoot) SetTenantStatus(value TenantStatusable)() {
 type NetworkAccessRootable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAlerts()([]Alertable)
     GetConnectivity()(Connectivityable)
     GetFilteringPolicies()([]FilteringPolicyable)
     GetFilteringProfiles()([]FilteringProfileable)
@@ -409,6 +457,7 @@ type NetworkAccessRootable interface {
     GetReports()(Reportsable)
     GetSettings()(Settingsable)
     GetTenantStatus()(TenantStatusable)
+    SetAlerts(value []Alertable)()
     SetConnectivity(value Connectivityable)()
     SetFilteringPolicies(value []FilteringPolicyable)()
     SetFilteringProfiles(value []FilteringProfileable)()

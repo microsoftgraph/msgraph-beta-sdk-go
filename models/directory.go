@@ -91,6 +91,18 @@ func (m *Directory) GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable)
     }
     return nil
 }
+// GetExternalUserProfiles gets the externalUserProfiles property value. Collection of external user profiles that represent collaborators in the directory.
+// returns a []ExternalUserProfileable when successful
+func (m *Directory) GetExternalUserProfiles()([]ExternalUserProfileable) {
+    val, err := m.GetBackingStore().Get("externalUserProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExternalUserProfileable)
+    }
+    return nil
+}
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The featureRolloutPolicies property
 // returns a []FeatureRolloutPolicyable when successful
 func (m *Directory) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
@@ -209,6 +221,22 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["externalUserProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateExternalUserProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ExternalUserProfileable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ExternalUserProfileable)
+                }
+            }
+            m.SetExternalUserProfiles(res)
+        }
+        return nil
+    }
     res["featureRolloutPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateFeatureRolloutPolicyFromDiscriminatorValue)
         if err != nil {
@@ -302,6 +330,22 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
                 }
             }
             m.SetOutboundSharedUserProfiles(res)
+        }
+        return nil
+    }
+    res["pendingExternalUserProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePendingExternalUserProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PendingExternalUserProfileable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PendingExternalUserProfileable)
+                }
+            }
+            m.SetPendingExternalUserProfiles(res)
         }
         return nil
     }
@@ -400,6 +444,18 @@ func (m *Directory) GetOutboundSharedUserProfiles()([]OutboundSharedUserProfilea
     }
     if val != nil {
         return val.([]OutboundSharedUserProfileable)
+    }
+    return nil
+}
+// GetPendingExternalUserProfiles gets the pendingExternalUserProfiles property value. Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
+// returns a []PendingExternalUserProfileable when successful
+func (m *Directory) GetPendingExternalUserProfiles()([]PendingExternalUserProfileable) {
+    val, err := m.GetBackingStore().Get("pendingExternalUserProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PendingExternalUserProfileable)
     }
     return nil
 }
@@ -511,6 +567,18 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetExternalUserProfiles() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalUserProfiles()))
+        for i, v := range m.GetExternalUserProfiles() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("externalUserProfiles", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetFeatureRolloutPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFeatureRolloutPolicies()))
         for i, v := range m.GetFeatureRolloutPolicies() {
@@ -579,6 +647,18 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             }
         }
         err = writer.WriteCollectionOfObjectValues("outboundSharedUserProfiles", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetPendingExternalUserProfiles() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPendingExternalUserProfiles()))
+        for i, v := range m.GetPendingExternalUserProfiles() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("pendingExternalUserProfiles", cast)
         if err != nil {
             return err
         }
@@ -663,6 +743,13 @@ func (m *Directory) SetDeviceLocalCredentials(value []DeviceLocalCredentialInfoa
         panic(err)
     }
 }
+// SetExternalUserProfiles sets the externalUserProfiles property value. Collection of external user profiles that represent collaborators in the directory.
+func (m *Directory) SetExternalUserProfiles(value []ExternalUserProfileable)() {
+    err := m.GetBackingStore().Set("externalUserProfiles", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The featureRolloutPolicies property
 func (m *Directory) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)() {
     err := m.GetBackingStore().Set("featureRolloutPolicies", value)
@@ -705,6 +792,13 @@ func (m *Directory) SetOutboundSharedUserProfiles(value []OutboundSharedUserProf
         panic(err)
     }
 }
+// SetPendingExternalUserProfiles sets the pendingExternalUserProfiles property value. Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
+func (m *Directory) SetPendingExternalUserProfiles(value []PendingExternalUserProfileable)() {
+    err := m.GetBackingStore().Set("pendingExternalUserProfiles", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecommendations sets the recommendations property value. List of recommended improvements to improve tenant posture.
 func (m *Directory) SetRecommendations(value []Recommendationable)() {
     err := m.GetBackingStore().Set("recommendations", value)
@@ -735,12 +829,14 @@ type Directoryable interface {
     GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable)
     GetDeletedItems()([]DirectoryObjectable)
     GetDeviceLocalCredentials()([]DeviceLocalCredentialInfoable)
+    GetExternalUserProfiles()([]ExternalUserProfileable)
     GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable)
     GetFederationConfigurations()([]IdentityProviderBaseable)
     GetImpactedResources()([]ImpactedResourceable)
     GetInboundSharedUserProfiles()([]InboundSharedUserProfileable)
     GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable)
     GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable)
+    GetPendingExternalUserProfiles()([]PendingExternalUserProfileable)
     GetRecommendations()([]Recommendationable)
     GetSharedEmailDomains()([]SharedEmailDomainable)
     GetSubscriptions()([]CompanySubscriptionable)
@@ -750,12 +846,14 @@ type Directoryable interface {
     SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)()
     SetDeletedItems(value []DirectoryObjectable)()
     SetDeviceLocalCredentials(value []DeviceLocalCredentialInfoable)()
+    SetExternalUserProfiles(value []ExternalUserProfileable)()
     SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)()
     SetFederationConfigurations(value []IdentityProviderBaseable)()
     SetImpactedResources(value []ImpactedResourceable)()
     SetInboundSharedUserProfiles(value []InboundSharedUserProfileable)()
     SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)()
     SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)()
+    SetPendingExternalUserProfiles(value []PendingExternalUserProfileable)()
     SetRecommendations(value []Recommendationable)()
     SetSharedEmailDomains(value []SharedEmailDomainable)()
     SetSubscriptions(value []CompanySubscriptionable)()

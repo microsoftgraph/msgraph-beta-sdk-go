@@ -12,12 +12,13 @@ const (
     UNKNOWNFUTUREVALUE_PLANNERTASKCOMPLETIONREQUIREMENTS = 4
     FORMCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS = 8
     APPROVALCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS = 16
+    COMPLETIONINHOSTEDAPP_PLANNERTASKCOMPLETIONREQUIREMENTS = 32
 )
 
 func (i PlannerTaskCompletionRequirements) String() string {
     var values []string
-    options := []string{"none", "checklistCompletion", "unknownFutureValue", "formCompletion", "approvalCompletion"}
-    for p := 0; p < 5; p++ {
+    options := []string{"none", "checklistCompletion", "unknownFutureValue", "formCompletion", "approvalCompletion", "completionInHostedApp"}
+    for p := 0; p < 6; p++ {
         mantis := PlannerTaskCompletionRequirements(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -40,6 +41,8 @@ func ParsePlannerTaskCompletionRequirements(v string) (any, error) {
                 result |= FORMCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
             case "approvalCompletion":
                 result |= APPROVALCOMPLETION_PLANNERTASKCOMPLETIONREQUIREMENTS
+            case "completionInHostedApp":
+                result |= COMPLETIONINHOSTEDAPP_PLANNERTASKCOMPLETIONREQUIREMENTS
             default:
                 return 0, errors.New("Unknown PlannerTaskCompletionRequirements value: " + v)
         }

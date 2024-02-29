@@ -64,6 +64,10 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewExtensionProperty(), nil
                     case "#microsoft.graph.externalIdentitiesPolicy":
                         return NewExternalIdentitiesPolicy(), nil
+                    case "#microsoft.graph.externalProfile":
+                        return NewExternalProfile(), nil
+                    case "#microsoft.graph.externalUserProfile":
+                        return NewExternalUserProfile(), nil
                     case "#microsoft.graph.federatedTokenValidationPolicy":
                         return NewFederatedTokenValidationPolicy(), nil
                     case "#microsoft.graph.group":
@@ -78,6 +82,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewOrganization(), nil
                     case "#microsoft.graph.orgContact":
                         return NewOrgContact(), nil
+                    case "#microsoft.graph.pendingExternalUserProfile":
+                        return NewPendingExternalUserProfile(), nil
                     case "#microsoft.graph.permissionGrantPolicy":
                         return NewPermissionGrantPolicy(), nil
                     case "#microsoft.graph.policyBase":

@@ -60,11 +60,6 @@ func (m *VirtualEventsEventsItemSessionsItemPresentersVirtualEventPresenterItemR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventPresenterable), nil
 }
-// ProfilePhoto provides operations to manage the media for the solutionsRoot entity.
-// returns a *VirtualEventsEventsItemSessionsItemPresentersItemProfilePhotoRequestBuilder when successful
-func (m *VirtualEventsEventsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder) ProfilePhoto()(*VirtualEventsEventsItemSessionsItemPresentersItemProfilePhotoRequestBuilder) {
-    return NewVirtualEventsEventsItemSessionsItemPresentersItemProfilePhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation get presenters from solutions
 // returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

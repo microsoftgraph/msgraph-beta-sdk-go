@@ -34,6 +34,11 @@ type NetworkAccessRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Alerts provides operations to manage the alerts property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+// returns a *AlertsRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) Alerts()(*AlertsRequestBuilder) {
+    return NewAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Connectivity provides operations to manage the connectivity property of the microsoft.graph.networkaccess.networkAccessRoot entity.
 // returns a *ConnectivityRequestBuilder when successful
 func (m *NetworkAccessRequestBuilder) Connectivity()(*ConnectivityRequestBuilder) {

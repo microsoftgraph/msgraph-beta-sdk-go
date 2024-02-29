@@ -598,6 +598,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewClassificationJobResponse(), nil
                     case "#microsoft.graph.cloudAppSecurityProfile":
                         return NewCloudAppSecurityProfile(), nil
+                    case "#microsoft.graph.cloudClipboardItem":
+                        return NewCloudClipboardItem(), nil
+                    case "#microsoft.graph.cloudClipboardRoot":
+                        return NewCloudClipboardRoot(), nil
                     case "#microsoft.graph.cloudPC":
                         return NewCloudPC(), nil
                     case "#microsoft.graph.cloudPcAuditEvent":
@@ -1114,6 +1118,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEducationFeedbackResourceOutcome(), nil
                     case "#microsoft.graph.educationGradingCategory":
                         return NewEducationGradingCategory(), nil
+                    case "#microsoft.graph.educationGradingScheme":
+                        return NewEducationGradingScheme(), nil
                     case "#microsoft.graph.educationModule":
                         return NewEducationModule(), nil
                     case "#microsoft.graph.educationModuleResource":
@@ -1236,6 +1242,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewExternalMeetingRegistrant(), nil
                     case "#microsoft.graph.externalMeetingRegistration":
                         return NewExternalMeetingRegistration(), nil
+                    case "#microsoft.graph.externalProfile":
+                        return NewExternalProfile(), nil
+                    case "#microsoft.graph.externalUserProfile":
+                        return NewExternalUserProfile(), nil
                     case "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow":
                         return NewExternalUsersSelfServiceSignUpEventsFlow(), nil
                     case "#microsoft.graph.featureRolloutPolicy":
@@ -2014,6 +2024,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPayloadCompatibleAssignmentFilter(), nil
                     case "#microsoft.graph.payloadResponse":
                         return NewPayloadResponse(), nil
+                    case "#microsoft.graph.pendingExternalUserProfile":
+                        return NewPendingExternalUserProfile(), nil
                     case "#microsoft.graph.peopleAdminSettings":
                         return NewPeopleAdminSettings(), nil
                     case "#microsoft.graph.permission":
@@ -3092,6 +3104,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindowsQualityUpdateProfile(), nil
                     case "#microsoft.graph.windowsQualityUpdateProfileAssignment":
                         return NewWindowsQualityUpdateProfileAssignment(), nil
+                    case "#microsoft.graph.windowsSetting":
+                        return NewWindowsSetting(), nil
+                    case "#microsoft.graph.windowsSettingInstance":
+                        return NewWindowsSettingInstance(), nil
                     case "#microsoft.graph.windowsStoreApp":
                         return NewWindowsStoreApp(), nil
                     case "#microsoft.graph.windowsUniversalAppX":

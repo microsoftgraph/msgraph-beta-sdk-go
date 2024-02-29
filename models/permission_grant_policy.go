@@ -69,6 +69,16 @@ func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["resourceScopeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseResourceScopeType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResourceScopeType(val.(*ResourceScopeType))
+        }
+        return nil
+    }
     return res
 }
 // GetIncludes gets the includes property value. Condition sets that are included in this permission grant policy. Automatically expanded on GET.
@@ -80,6 +90,18 @@ func (m *PermissionGrantPolicy) GetIncludes()([]PermissionGrantConditionSetable)
     }
     if val != nil {
         return val.([]PermissionGrantConditionSetable)
+    }
+    return nil
+}
+// GetResourceScopeType gets the resourceScopeType property value. The resource type the pre-approval policy applies to. Possible values: group for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.
+// returns a *ResourceScopeType when successful
+func (m *PermissionGrantPolicy) GetResourceScopeType()(*ResourceScopeType) {
+    val, err := m.GetBackingStore().Get("resourceScopeType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ResourceScopeType)
     }
     return nil
 }
@@ -113,6 +135,13 @@ func (m *PermissionGrantPolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetResourceScopeType() != nil {
+        cast := (*m.GetResourceScopeType()).String()
+        err = writer.WriteStringValue("resourceScopeType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetExcludes sets the excludes property value. Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
@@ -129,11 +158,20 @@ func (m *PermissionGrantPolicy) SetIncludes(value []PermissionGrantConditionSeta
         panic(err)
     }
 }
+// SetResourceScopeType sets the resourceScopeType property value. The resource type the pre-approval policy applies to. Possible values: group for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.
+func (m *PermissionGrantPolicy) SetResourceScopeType(value *ResourceScopeType)() {
+    err := m.GetBackingStore().Set("resourceScopeType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type PermissionGrantPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable
     GetExcludes()([]PermissionGrantConditionSetable)
     GetIncludes()([]PermissionGrantConditionSetable)
+    GetResourceScopeType()(*ResourceScopeType)
     SetExcludes(value []PermissionGrantConditionSetable)()
     SetIncludes(value []PermissionGrantConditionSetable)()
+    SetResourceScopeType(value *ResourceScopeType)()
 }

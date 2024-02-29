@@ -31,9 +31,12 @@ func NewItemAuthenticationMethodsItemResetPasswordRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationMethodsItemResetPasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action resetPassword
+// Post initiate a reset for the password associated with a password authentication method object. This can only be done by an administrator with appropriate permissions and can't be performed on a user's own account. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.
 // returns a PasswordResetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-1.0
 func (m *ItemAuthenticationMethodsItemResetPasswordRequestBuilder) Post(ctx context.Context, body ItemAuthenticationMethodsItemResetPasswordPostRequestBodyable, requestConfiguration *ItemAuthenticationMethodsItemResetPasswordRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordResetResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *ItemAuthenticationMethodsItemResetPasswordRequestBuilder) Post(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordResetResponseable), nil
 }
-// ToPostRequestInformation invoke action resetPassword
+// ToPostRequestInformation initiate a reset for the password associated with a password authentication method object. This can only be done by an administrator with appropriate permissions and can't be performed on a user's own account. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationMethodsItemResetPasswordRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemAuthenticationMethodsItemResetPasswordPostRequestBodyable, requestConfiguration *ItemAuthenticationMethodsItemResetPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

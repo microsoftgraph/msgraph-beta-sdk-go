@@ -21,7 +21,7 @@ func NewSchedulingGroup()(*SchedulingGroup) {
 func CreateSchedulingGroupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSchedulingGroup(), nil
 }
-// GetCode gets the code property value. The code for the schedulingGroup to represent an external identifier.
+// GetCode gets the code property value. The code for the schedulingGroup to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.
 // returns a *string when successful
 func (m *SchedulingGroup) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
@@ -147,7 +147,7 @@ func (m *SchedulingGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetCode sets the code property value. The code for the schedulingGroup to represent an external identifier.
+// SetCode sets the code property value. The code for the schedulingGroup to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.
 func (m *SchedulingGroup) SetCode(value *string)() {
     err := m.GetBackingStore().Set("code", value)
     if err != nil {

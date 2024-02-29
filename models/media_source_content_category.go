@@ -9,11 +9,16 @@ const (
     LIVESTREAM_MEDIASOURCECONTENTCATEGORY
     PRESENTATION_MEDIASOURCECONTENTCATEGORY
     SCREENRECORDING_MEDIASOURCECONTENTCATEGORY
+    STORY_MEDIASOURCECONTENTCATEGORY
+    PROFILE_MEDIASOURCECONTENTCATEGORY
+    CHAT_MEDIASOURCECONTENTCATEGORY
+    NOTE_MEDIASOURCECONTENTCATEGORY
+    COMMENT_MEDIASOURCECONTENTCATEGORY
     UNKNOWNFUTUREVALUE_MEDIASOURCECONTENTCATEGORY
 )
 
 func (i MediaSourceContentCategory) String() string {
-    return []string{"meeting", "liveStream", "presentation", "screenRecording", "unknownFutureValue"}[i]
+    return []string{"meeting", "liveStream", "presentation", "screenRecording", "story", "profile", "chat", "note", "comment", "unknownFutureValue"}[i]
 }
 func ParseMediaSourceContentCategory(v string) (any, error) {
     result := MEETING_MEDIASOURCECONTENTCATEGORY
@@ -26,6 +31,16 @@ func ParseMediaSourceContentCategory(v string) (any, error) {
             result = PRESENTATION_MEDIASOURCECONTENTCATEGORY
         case "screenRecording":
             result = SCREENRECORDING_MEDIASOURCECONTENTCATEGORY
+        case "story":
+            result = STORY_MEDIASOURCECONTENTCATEGORY
+        case "profile":
+            result = PROFILE_MEDIASOURCECONTENTCATEGORY
+        case "chat":
+            result = CHAT_MEDIASOURCECONTENTCATEGORY
+        case "note":
+            result = NOTE_MEDIASOURCECONTENTCATEGORY
+        case "comment":
+            result = COMMENT_MEDIASOURCECONTENTCATEGORY
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MEDIASOURCECONTENTCATEGORY
         default:

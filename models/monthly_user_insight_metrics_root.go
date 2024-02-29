@@ -31,7 +31,7 @@ func (m *MonthlyUserInsightMetricsRoot) GetActiveUsers()([]ActiveUsersMetricable
     }
     return nil
 }
-// GetActiveUsersBreakdown gets the activeUsersBreakdown property value. Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+// GetActiveUsersBreakdown gets the activeUsersBreakdown property value. The activeUsersBreakdown property
 // returns a []ActiveUsersBreakdownMetricable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetActiveUsersBreakdown()([]ActiveUsersBreakdownMetricable) {
     val, err := m.GetBackingStore().Get("activeUsersBreakdown")
@@ -400,7 +400,7 @@ func (m *MonthlyUserInsightMetricsRoot) SetActiveUsers(value []ActiveUsersMetric
         panic(err)
     }
 }
-// SetActiveUsersBreakdown sets the activeUsersBreakdown property value. Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+// SetActiveUsersBreakdown sets the activeUsersBreakdown property value. The activeUsersBreakdown property
 func (m *MonthlyUserInsightMetricsRoot) SetActiveUsersBreakdown(value []ActiveUsersBreakdownMetricable)() {
     err := m.GetBackingStore().Set("activeUsersBreakdown", value)
     if err != nil {

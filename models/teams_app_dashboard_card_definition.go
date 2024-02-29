@@ -19,7 +19,7 @@ func NewTeamsAppDashboardCardDefinition()(*TeamsAppDashboardCardDefinition) {
 func CreateTeamsAppDashboardCardDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsAppDashboardCardDefinition(), nil
 }
-// GetContentSource gets the contentSource property value. The contentSource property
+// GetContentSource gets the contentSource property value. The configuration for the source of the card content. Required.
 // returns a TeamsAppDashboardCardContentSourceable when successful
 func (m *TeamsAppDashboardCardDefinition) GetContentSource()(TeamsAppDashboardCardContentSourceable) {
     val, err := m.GetBackingStore().Get("contentSource")
@@ -31,7 +31,7 @@ func (m *TeamsAppDashboardCardDefinition) GetContentSource()(TeamsAppDashboardCa
     }
     return nil
 }
-// GetDefaultSize gets the defaultSize property value. The defaultSize property
+// GetDefaultSize gets the defaultSize property value. The size of the card. The possible values are: medium, large, unknownFutureValue. Required.
 // returns a *TeamsAppDashboardCardSize when successful
 func (m *TeamsAppDashboardCardDefinition) GetDefaultSize()(*TeamsAppDashboardCardSize) {
     val, err := m.GetBackingStore().Get("defaultSize")
@@ -43,7 +43,7 @@ func (m *TeamsAppDashboardCardDefinition) GetDefaultSize()(*TeamsAppDashboardCar
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description for the card. Required.
 // returns a *string when successful
 func (m *TeamsAppDashboardCardDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -55,7 +55,7 @@ func (m *TeamsAppDashboardCardDefinition) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the card. Required.
 // returns a *string when successful
 func (m *TeamsAppDashboardCardDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -133,7 +133,7 @@ func (m *TeamsAppDashboardCardDefinition) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetIcon gets the icon property value. The icon property
+// GetIcon gets the icon property value. Configuration for the display of the icon in the card picker. If neither this nor any of its properties (iconUrl and officeUIFabricIconName) are specified, the color icon of the app is used. Optional.
 // returns a TeamsAppDashboardCardIconable when successful
 func (m *TeamsAppDashboardCardDefinition) GetIcon()(TeamsAppDashboardCardIconable) {
     val, err := m.GetBackingStore().Get("icon")
@@ -145,7 +145,7 @@ func (m *TeamsAppDashboardCardDefinition) GetIcon()(TeamsAppDashboardCardIconabl
     }
     return nil
 }
-// GetPickerGroupId gets the pickerGroupId property value. The pickerGroupId property
+// GetPickerGroupId gets the pickerGroupId property value. ID for the group in the card picker. Required.
 // returns a *string when successful
 func (m *TeamsAppDashboardCardDefinition) GetPickerGroupId()(*string) {
     val, err := m.GetBackingStore().Get("pickerGroupId")
@@ -202,42 +202,42 @@ func (m *TeamsAppDashboardCardDefinition) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetContentSource sets the contentSource property value. The contentSource property
+// SetContentSource sets the contentSource property value. The configuration for the source of the card content. Required.
 func (m *TeamsAppDashboardCardDefinition) SetContentSource(value TeamsAppDashboardCardContentSourceable)() {
     err := m.GetBackingStore().Set("contentSource", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDefaultSize sets the defaultSize property value. The defaultSize property
+// SetDefaultSize sets the defaultSize property value. The size of the card. The possible values are: medium, large, unknownFutureValue. Required.
 func (m *TeamsAppDashboardCardDefinition) SetDefaultSize(value *TeamsAppDashboardCardSize)() {
     err := m.GetBackingStore().Set("defaultSize", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description for the card. Required.
 func (m *TeamsAppDashboardCardDefinition) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the card. Required.
 func (m *TeamsAppDashboardCardDefinition) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIcon sets the icon property value. The icon property
+// SetIcon sets the icon property value. Configuration for the display of the icon in the card picker. If neither this nor any of its properties (iconUrl and officeUIFabricIconName) are specified, the color icon of the app is used. Optional.
 func (m *TeamsAppDashboardCardDefinition) SetIcon(value TeamsAppDashboardCardIconable)() {
     err := m.GetBackingStore().Set("icon", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPickerGroupId sets the pickerGroupId property value. The pickerGroupId property
+// SetPickerGroupId sets the pickerGroupId property value. ID for the group in the card picker. Required.
 func (m *TeamsAppDashboardCardDefinition) SetPickerGroupId(value *string)() {
     err := m.GetBackingStore().Set("pickerGroupId", value)
     if err != nil {

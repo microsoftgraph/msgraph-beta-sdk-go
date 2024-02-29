@@ -138,6 +138,11 @@ func (m *ServicePrincipalItemRequestBuilder) Endpoints()(*ItemEndpointsRequestBu
 func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentials()(*ItemFederatedIdentityCredentialsRequestBuilder) {
     return NewItemFederatedIdentityCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// FederatedIdentityCredentialsWithName provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
+// returns a *ItemFederatedIdentityCredentialsWithNameRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentialsWithName(name *string)(*ItemFederatedIdentityCredentialsWithNameRequestBuilder) {
+    return NewItemFederatedIdentityCredentialsWithNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, name)
+}
 // Get retrieve the properties and relationships of a servicePrincipal object.
 // returns a ServicePrincipalable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

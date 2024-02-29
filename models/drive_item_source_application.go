@@ -12,11 +12,14 @@ const (
     STREAM_DRIVEITEMSOURCEAPPLICATION
     POWERPOINT_DRIVEITEMSOURCEAPPLICATION
     OFFICE_DRIVEITEMSOURCEAPPLICATION
+    LOKI_DRIVEITEMSOURCEAPPLICATION
+    LOOP_DRIVEITEMSOURCEAPPLICATION
+    OTHER_DRIVEITEMSOURCEAPPLICATION
     UNKNOWNFUTUREVALUE_DRIVEITEMSOURCEAPPLICATION
 )
 
 func (i DriveItemSourceApplication) String() string {
-    return []string{"teams", "yammer", "sharePoint", "oneDrive", "stream", "powerPoint", "office", "unknownFutureValue"}[i]
+    return []string{"teams", "yammer", "sharePoint", "oneDrive", "stream", "powerPoint", "office", "loki", "loop", "other", "unknownFutureValue"}[i]
 }
 func ParseDriveItemSourceApplication(v string) (any, error) {
     result := TEAMS_DRIVEITEMSOURCEAPPLICATION
@@ -35,6 +38,12 @@ func ParseDriveItemSourceApplication(v string) (any, error) {
             result = POWERPOINT_DRIVEITEMSOURCEAPPLICATION
         case "office":
             result = OFFICE_DRIVEITEMSOURCEAPPLICATION
+        case "loki":
+            result = LOKI_DRIVEITEMSOURCEAPPLICATION
+        case "loop":
+            result = LOOP_DRIVEITEMSOURCEAPPLICATION
+        case "other":
+            result = OTHER_DRIVEITEMSOURCEAPPLICATION
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DRIVEITEMSOURCEAPPLICATION
         default:

@@ -11,7 +11,7 @@ import (
 type AuditLogQueriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuditLogQueriesRequestBuilderGetQueryParameters get queries from security
+// AuditLogQueriesRequestBuilderGetQueryParameters get a list of auditLogQuery objects and their properties.
 type AuditLogQueriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewAuditLogQueriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *AuditLogQueriesRequestBuilder) Count()(*AuditLogQueriesCountRequestBuilder) {
     return NewAuditLogQueriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get queries from security
+// Get get a list of auditLogQuery objects and their properties.
 // returns a AuditLogQueryCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-auditcoreroot-list-auditlogqueries?view=graph-rest-1.0
 func (m *AuditLogQueriesRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditLogQueriesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditLogQueryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *AuditLogQueriesRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditLogQueryCollectionResponseable), nil
 }
-// Post create new navigation property to queries for security
+// Post create a new auditLogQuery object.
 // returns a AuditLogQueryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-auditcoreroot-post-auditlogqueries?view=graph-rest-1.0
 func (m *AuditLogQueriesRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditLogQueryable, requestConfiguration *AuditLogQueriesRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditLogQueryable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *AuditLogQueriesRequestBuilder) Post(ctx context.Context, body i084fa7ab
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditLogQueryable), nil
 }
-// ToGetRequestInformation get queries from security
+// ToGetRequestInformation get a list of auditLogQuery objects and their properties.
 // returns a *RequestInformation when successful
 func (m *AuditLogQueriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditLogQueriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *AuditLogQueriesRequestBuilder) ToGetRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to queries for security
+// ToPostRequestInformation create a new auditLogQuery object.
 // returns a *RequestInformation when successful
 func (m *AuditLogQueriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditLogQueryable, requestConfiguration *AuditLogQueriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/security/auditLog/queries", m.BaseRequestBuilder.PathParameters)
