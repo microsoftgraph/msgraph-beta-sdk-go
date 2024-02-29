@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.96.0]- 2024-02-29
+
+### Changed
+
+- Weekly generation.
+
 ## [0.95.0]- 2024-02-21
 
 ### Changed
