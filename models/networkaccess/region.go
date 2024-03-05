@@ -37,10 +37,11 @@ const (
     JAPANEAST_REGION
     JAPANWEST_REGION
     UNKNOWNFUTUREVALUE_REGION
+    KOREASOUTH_REGION
 )
 
 func (i Region) String() string {
-    return []string{"eastUS", "eastUS2", "westUS", "westUS2", "westUS3", "centralUS", "northCentralUS", "southCentralUS", "northEurope", "westEurope", "franceCentral", "germanyWestCentral", "switzerlandNorth", "ukSouth", "canadaEast", "canadaCentral", "southAfricaWest", "southAfricaNorth", "uaeNorth", "australiaEast", "westCentralUS", "centralIndia", "southEastAsia", "swedenCentral", "southIndia", "australiaSouthEast", "koreaCentral", "polandCentral", "brazilSouth", "japanEast", "japanWest", "unknownFutureValue"}[i]
+    return []string{"eastUS", "eastUS2", "westUS", "westUS2", "westUS3", "centralUS", "northCentralUS", "southCentralUS", "northEurope", "westEurope", "franceCentral", "germanyWestCentral", "switzerlandNorth", "ukSouth", "canadaEast", "canadaCentral", "southAfricaWest", "southAfricaNorth", "uaeNorth", "australiaEast", "westCentralUS", "centralIndia", "southEastAsia", "swedenCentral", "southIndia", "australiaSouthEast", "koreaCentral", "polandCentral", "brazilSouth", "japanEast", "japanWest", "unknownFutureValue", "koreaSouth"}[i]
 }
 func ParseRegion(v string) (any, error) {
     result := EASTUS_REGION
@@ -109,6 +110,8 @@ func ParseRegion(v string) (any, error) {
             result = JAPANWEST_REGION
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGION
+        case "koreaSouth":
+            result = KOREASOUTH_REGION
         default:
             return 0, errors.New("Unknown Region value: " + v)
     }

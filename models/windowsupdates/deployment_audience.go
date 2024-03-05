@@ -20,7 +20,7 @@ func NewDeploymentAudience()(*DeploymentAudience) {
 func CreateDeploymentAudienceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeploymentAudience(), nil
 }
-// GetApplicableContent gets the applicableContent property value. The applicableContent property
+// GetApplicableContent gets the applicableContent property value. Content eligible to deploy to devices in the audience. Not nullable. Read-only.
 // returns a []ApplicableContentable when successful
 func (m *DeploymentAudience) GetApplicableContent()([]ApplicableContentable) {
     val, err := m.GetBackingStore().Get("applicableContent")
@@ -154,7 +154,7 @@ func (m *DeploymentAudience) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetApplicableContent sets the applicableContent property value. The applicableContent property
+// SetApplicableContent sets the applicableContent property value. Content eligible to deploy to devices in the audience. Not nullable. Read-only.
 func (m *DeploymentAudience) SetApplicableContent(value []ApplicableContentable)() {
     err := m.GetBackingStore().Set("applicableContent", value)
     if err != nil {

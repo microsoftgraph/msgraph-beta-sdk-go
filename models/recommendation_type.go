@@ -42,10 +42,13 @@ const (
     ADALTOMSALMIGRATION_RECOMMENDATIONTYPE
     OWNERLESSAPPS_RECOMMENDATIONTYPE
     INACTIVEGUESTS_RECOMMENDATIONTYPE
+    AADGRAPHDEPRECATIONAPPLICATION_RECOMMENDATIONTYPE
+    AADGRAPHDEPRECATIONSERVICEPRINCIPAL_RECOMMENDATIONTYPE
+    MFASERVERDEPRECATION_RECOMMENDATIONTYPE
 )
 
 func (i RecommendationType) String() string {
-    return []string{"adfsAppsMigration", "enableDesktopSSO", "enablePHS", "enableProvisioning", "switchFromPerUserMFA", "tenantMFA", "thirdPartyApps", "turnOffPerUserMFA", "useAuthenticatorApp", "useMyApps", "staleApps", "staleAppCreds", "applicationCredentialExpiry", "servicePrincipalKeyExpiry", "adminMFAV2", "blockLegacyAuthentication", "integratedApps", "mfaRegistrationV2", "pwagePolicyNew", "passwordHashSync", "oneAdmin", "roleOverlap", "selfServicePasswordReset", "signinRiskPolicy", "userRiskPolicy", "verifyAppPublisher", "privateLinkForAAD", "appRoleAssignmentsGroups", "appRoleAssignmentsUsers", "managedIdentity", "overprivilegedApps", "unknownFutureValue", "longLivedCredentials", "aadConnectDeprecated", "adalToMsalMigration", "ownerlessApps", "inactiveGuests"}[i]
+    return []string{"adfsAppsMigration", "enableDesktopSSO", "enablePHS", "enableProvisioning", "switchFromPerUserMFA", "tenantMFA", "thirdPartyApps", "turnOffPerUserMFA", "useAuthenticatorApp", "useMyApps", "staleApps", "staleAppCreds", "applicationCredentialExpiry", "servicePrincipalKeyExpiry", "adminMFAV2", "blockLegacyAuthentication", "integratedApps", "mfaRegistrationV2", "pwagePolicyNew", "passwordHashSync", "oneAdmin", "roleOverlap", "selfServicePasswordReset", "signinRiskPolicy", "userRiskPolicy", "verifyAppPublisher", "privateLinkForAAD", "appRoleAssignmentsGroups", "appRoleAssignmentsUsers", "managedIdentity", "overprivilegedApps", "unknownFutureValue", "longLivedCredentials", "aadConnectDeprecated", "adalToMsalMigration", "ownerlessApps", "inactiveGuests", "aadGraphDeprecationApplication", "aadGraphDeprecationServicePrincipal", "mfaServerDeprecation"}[i]
 }
 func ParseRecommendationType(v string) (any, error) {
     result := ADFSAPPSMIGRATION_RECOMMENDATIONTYPE
@@ -124,6 +127,12 @@ func ParseRecommendationType(v string) (any, error) {
             result = OWNERLESSAPPS_RECOMMENDATIONTYPE
         case "inactiveGuests":
             result = INACTIVEGUESTS_RECOMMENDATIONTYPE
+        case "aadGraphDeprecationApplication":
+            result = AADGRAPHDEPRECATIONAPPLICATION_RECOMMENDATIONTYPE
+        case "aadGraphDeprecationServicePrincipal":
+            result = AADGRAPHDEPRECATIONSERVICEPRINCIPAL_RECOMMENDATIONTYPE
+        case "mfaServerDeprecation":
+            result = MFASERVERDEPRECATION_RECOMMENDATIONTYPE
         default:
             return 0, errors.New("Unknown RecommendationType value: " + v)
     }

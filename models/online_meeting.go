@@ -94,7 +94,7 @@ func (m *OnlineMeeting) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. The meeting end time in UTC.
+// GetEndDateTime gets the endDateTime property value. The meeting end time in UTC. Required when you create an online meeting.
 // returns a *Time when successful
 func (m *OnlineMeeting) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -418,7 +418,7 @@ func (m *OnlineMeeting) GetRegistration()(MeetingRegistrationable) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The meeting start time in UTC.
+// GetStartDateTime gets the startDateTime property value. The meeting start time in UTC. Required when you create an online meeting.
 // returns a *Time when successful
 func (m *OnlineMeeting) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -612,7 +612,7 @@ func (m *OnlineMeeting) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. The meeting end time in UTC.
+// SetEndDateTime sets the endDateTime property value. The meeting end time in UTC. Required when you create an online meeting.
 func (m *OnlineMeeting) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
@@ -682,7 +682,7 @@ func (m *OnlineMeeting) SetRegistration(value MeetingRegistrationable)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The meeting start time in UTC.
+// SetStartDateTime sets the startDateTime property value. The meeting start time in UTC. Required when you create an online meeting.
 func (m *OnlineMeeting) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

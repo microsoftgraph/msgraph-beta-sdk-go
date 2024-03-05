@@ -99,6 +99,11 @@ func (m *AlertRecordsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordCollectionResponseable), nil
 }
+// MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent provides operations to call the changeAlertRecordsPortalNotificationAsSent method.
+// returns a *AlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder when successful
+func (m *AlertRecordsRequestBuilder) MicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSent()(*AlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder) {
+    return NewAlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MicrosoftGraphDeviceManagementGetPortalNotifications provides operations to call the getPortalNotifications method.
 // returns a *AlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder when successful
 func (m *AlertRecordsRequestBuilder) MicrosoftGraphDeviceManagementGetPortalNotifications()(*AlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder) {

@@ -1752,7 +1752,7 @@ func (m *Group) GetRenewedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     }
     return nil
 }
-// GetResourceBehaviorOptions gets the resourceBehaviorOptions property value. Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.
+// GetResourceBehaviorOptions gets the resourceBehaviorOptions property value. Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). For the list of possible values, see Set Microsoft 365 group behaviors and provisioning options.
 // returns a []string when successful
 func (m *Group) GetResourceBehaviorOptions()([]string) {
     val, err := m.GetBackingStore().Get("resourceBehaviorOptions")
@@ -1764,7 +1764,7 @@ func (m *Group) GetResourceBehaviorOptions()([]string) {
     }
     return nil
 }
-// GetResourceProvisioningOptions gets the resourceProvisioningOptions property value. Specifies the group resources that are provisioned as part of Microsoft 365 group creation that isn't normally part of default group creation. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
+// GetResourceProvisioningOptions gets the resourceProvisioningOptions property value. Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
 // returns a []string when successful
 func (m *Group) GetResourceProvisioningOptions()([]string) {
     val, err := m.GetBackingStore().Get("resourceProvisioningOptions")
@@ -3041,14 +3041,14 @@ func (m *Group) SetRenewedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f30
         panic(err)
     }
 }
-// SetResourceBehaviorOptions sets the resourceBehaviorOptions property value. Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). Possible values are AllowOnlyMembersToPost, HideGroupInOutlook, SubscribeNewGroupMembers, WelcomeEmailDisabled. For more information, see Set Microsoft 365 group behaviors and provisioning options.
+// SetResourceBehaviorOptions sets the resourceBehaviorOptions property value. Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This can be set only as part of creation (POST). For the list of possible values, see Set Microsoft 365 group behaviors and provisioning options.
 func (m *Group) SetResourceBehaviorOptions(value []string)() {
     err := m.GetBackingStore().Set("resourceBehaviorOptions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceProvisioningOptions sets the resourceProvisioningOptions property value. Specifies the group resources that are provisioned as part of Microsoft 365 group creation that isn't normally part of default group creation. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
+// SetResourceProvisioningOptions sets the resourceProvisioningOptions property value. Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
 func (m *Group) SetResourceProvisioningOptions(value []string)() {
     err := m.GetBackingStore().Set("resourceProvisioningOptions", value)
     if err != nil {

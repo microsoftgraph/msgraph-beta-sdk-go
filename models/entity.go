@@ -2654,6 +2654,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTooManyGlobalAdminsAssignedToTenantAlertIncident(), nil
                     case "#microsoft.graph.training":
                         return NewTraining(), nil
+                    case "#microsoft.graph.trainingCampaign":
+                        return NewTrainingCampaign(), nil
                     case "#microsoft.graph.trainingLanguageDetail":
                         return NewTrainingLanguageDetail(), nil
                     case "#microsoft.graph.trending":

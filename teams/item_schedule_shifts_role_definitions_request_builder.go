@@ -11,7 +11,7 @@ import (
 type ItemScheduleShiftsRoleDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScheduleShiftsRoleDefinitionsRequestBuilderGetQueryParameters get shiftsRoleDefinitions from teams
+// ItemScheduleShiftsRoleDefinitionsRequestBuilderGetQueryParameters the definitions of the roles in the schedule.
 type ItemScheduleShiftsRoleDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemScheduleShiftsRoleDefinitionsRequestBuilder(rawUrl string, requestAd
 func (m *ItemScheduleShiftsRoleDefinitionsRequestBuilder) Count()(*ItemScheduleShiftsRoleDefinitionsCountRequestBuilder) {
     return NewItemScheduleShiftsRoleDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get shiftsRoleDefinitions from teams
+// Get the definitions of the roles in the schedule.
 // returns a ShiftsRoleDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemScheduleShiftsRoleDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScheduleShiftsRoleDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftsRoleDefinitionCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemScheduleShiftsRoleDefinitionsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftsRoleDefinitionable), nil
 }
-// ToGetRequestInformation get shiftsRoleDefinitions from teams
+// ToGetRequestInformation the definitions of the roles in the schedule.
 // returns a *RequestInformation when successful
 func (m *ItemScheduleShiftsRoleDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScheduleShiftsRoleDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

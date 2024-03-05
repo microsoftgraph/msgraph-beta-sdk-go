@@ -18,7 +18,7 @@ type ItemTeamScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilderGetQueryParameters get shiftsRoleDefinitions from groups
+// ItemTeamScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilderGetQueryParameters the definitions of the roles in the schedule.
 type ItemTeamScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemTeamScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBui
     }
     return nil
 }
-// Get get shiftsRoleDefinitions from groups
+// Get the definitions of the roles in the schedule.
 // returns a ShiftsRoleDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftsRoleDefinitionable, error) {
@@ -121,7 +121,7 @@ func (m *ItemTeamScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBui
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get shiftsRoleDefinitions from groups
+// ToGetRequestInformation the definitions of the roles in the schedule.
 // returns a *RequestInformation when successful
 func (m *ItemTeamScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

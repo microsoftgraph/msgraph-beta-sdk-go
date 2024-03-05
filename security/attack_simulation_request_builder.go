@@ -185,6 +185,11 @@ func (m *AttackSimulationRequestBuilder) ToPatchRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
+// TrainingCampaigns provides operations to manage the trainingCampaigns property of the microsoft.graph.attackSimulationRoot entity.
+// returns a *AttackSimulationTrainingCampaignsRequestBuilder when successful
+func (m *AttackSimulationRequestBuilder) TrainingCampaigns()(*AttackSimulationTrainingCampaignsRequestBuilder) {
+    return NewAttackSimulationTrainingCampaignsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Trainings provides operations to manage the trainings property of the microsoft.graph.attackSimulationRoot entity.
 // returns a *AttackSimulationTrainingsRequestBuilder when successful
 func (m *AttackSimulationRequestBuilder) Trainings()(*AttackSimulationTrainingsRequestBuilder) {

@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilderGetQueryParameters get shiftsRoleDefinitions from teamwork
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilderGetQueryParameters the definitions of the roles in the schedule.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefiniti
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get shiftsRoleDefinitions from teamwork
+// Get the definitions of the roles in the schedule.
 // returns a ShiftsRoleDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftsRoleDefinitionCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinit
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftsRoleDefinitionable), nil
 }
-// ToGetRequestInformation get shiftsRoleDefinitions from teamwork
+// ToGetRequestInformation the definitions of the roles in the schedule.
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
