@@ -541,7 +541,7 @@ func (m *Schedule) GetShifts()([]Shiftable) {
     }
     return nil
 }
-// GetShiftsRoleDefinitions gets the shiftsRoleDefinitions property value. The shiftsRoleDefinitions property
+// GetShiftsRoleDefinitions gets the shiftsRoleDefinitions property value. The definitions of the roles in the schedule.
 // returns a []ShiftsRoleDefinitionable when successful
 func (m *Schedule) GetShiftsRoleDefinitions()([]ShiftsRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("shiftsRoleDefinitions")
@@ -1026,7 +1026,7 @@ func (m *Schedule) SetShifts(value []Shiftable)() {
         panic(err)
     }
 }
-// SetShiftsRoleDefinitions sets the shiftsRoleDefinitions property value. The shiftsRoleDefinitions property
+// SetShiftsRoleDefinitions sets the shiftsRoleDefinitions property value. The definitions of the roles in the schedule.
 func (m *Schedule) SetShiftsRoleDefinitions(value []ShiftsRoleDefinitionable)() {
     err := m.GetBackingStore().Set("shiftsRoleDefinitions", value)
     if err != nil {

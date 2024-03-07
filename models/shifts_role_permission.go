@@ -35,7 +35,7 @@ func (m *ShiftsRolePermission) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAllowedResourceActions gets the allowedResourceActions property value. The allowedResourceActions property
+// GetAllowedResourceActions gets the allowedResourceActions property value. The permissions that are allowed for a role. Permissions that aren't in this collection are disabled.
 // returns a []string when successful
 func (m *ShiftsRolePermission) GetAllowedResourceActions()([]string) {
     val, err := m.GetBackingStore().Get("allowedResourceActions")
@@ -125,7 +125,7 @@ func (m *ShiftsRolePermission) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAllowedResourceActions sets the allowedResourceActions property value. The allowedResourceActions property
+// SetAllowedResourceActions sets the allowedResourceActions property value. The permissions that are allowed for a role. Permissions that aren't in this collection are disabled.
 func (m *ShiftsRolePermission) SetAllowedResourceActions(value []string)() {
     err := m.GetBackingStore().Set("allowedResourceActions", value)
     if err != nil {

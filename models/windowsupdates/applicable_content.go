@@ -40,7 +40,7 @@ func (m *ApplicableContent) GetAdditionalData()(map[string]any) {
 func (m *ApplicableContent) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCatalogEntry gets the catalogEntry property value. The catalogEntry property
+// GetCatalogEntry gets the catalogEntry property value. Catalog entry for the update or content.
 // returns a CatalogEntryable when successful
 func (m *ApplicableContent) GetCatalogEntry()(CatalogEntryable) {
     val, err := m.GetBackingStore().Get("catalogEntry")
@@ -49,6 +49,18 @@ func (m *ApplicableContent) GetCatalogEntry()(CatalogEntryable) {
     }
     if val != nil {
         return val.(CatalogEntryable)
+    }
+    return nil
+}
+// GetCatalogEntryId gets the catalogEntryId property value. ID of the catalog entry for the applicable content.
+// returns a *string when successful
+func (m *ApplicableContent) GetCatalogEntryId()(*string) {
+    val, err := m.GetBackingStore().Get("catalogEntryId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -63,6 +75,16 @@ func (m *ApplicableContent) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetCatalogEntry(val.(CatalogEntryable))
+        }
+        return nil
+    }
+    res["catalogEntryId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCatalogEntryId(val)
         }
         return nil
     }
@@ -94,7 +116,7 @@ func (m *ApplicableContent) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetMatchedDevices gets the matchedDevices property value. The matchedDevices property
+// GetMatchedDevices gets the matchedDevices property value. Collection of devices and recommendations for applicable catalog content.
 // returns a []ApplicableContentDeviceMatchable when successful
 func (m *ApplicableContent) GetMatchedDevices()([]ApplicableContentDeviceMatchable) {
     val, err := m.GetBackingStore().Get("matchedDevices")
@@ -122,6 +144,12 @@ func (m *ApplicableContent) GetOdataType()(*string) {
 func (m *ApplicableContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("catalogEntry", m.GetCatalogEntry())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("catalogEntryId", m.GetCatalogEntryId())
         if err != nil {
             return err
         }
@@ -163,14 +191,21 @@ func (m *ApplicableContent) SetAdditionalData(value map[string]any)() {
 func (m *ApplicableContent) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCatalogEntry sets the catalogEntry property value. The catalogEntry property
+// SetCatalogEntry sets the catalogEntry property value. Catalog entry for the update or content.
 func (m *ApplicableContent) SetCatalogEntry(value CatalogEntryable)() {
     err := m.GetBackingStore().Set("catalogEntry", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMatchedDevices sets the matchedDevices property value. The matchedDevices property
+// SetCatalogEntryId sets the catalogEntryId property value. ID of the catalog entry for the applicable content.
+func (m *ApplicableContent) SetCatalogEntryId(value *string)() {
+    err := m.GetBackingStore().Set("catalogEntryId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMatchedDevices sets the matchedDevices property value. Collection of devices and recommendations for applicable catalog content.
 func (m *ApplicableContent) SetMatchedDevices(value []ApplicableContentDeviceMatchable)() {
     err := m.GetBackingStore().Set("matchedDevices", value)
     if err != nil {
@@ -190,10 +225,12 @@ type ApplicableContentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCatalogEntry()(CatalogEntryable)
+    GetCatalogEntryId()(*string)
     GetMatchedDevices()([]ApplicableContentDeviceMatchable)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCatalogEntry(value CatalogEntryable)()
+    SetCatalogEntryId(value *string)()
     SetMatchedDevices(value []ApplicableContentDeviceMatchable)()
     SetOdataType(value *string)()
 }

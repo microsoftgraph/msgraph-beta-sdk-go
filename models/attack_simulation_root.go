@@ -147,6 +147,22 @@ func (m *AttackSimulationRoot) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["trainingCampaigns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTrainingCampaignFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TrainingCampaignable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TrainingCampaignable)
+                }
+            }
+            m.SetTrainingCampaigns(res)
+        }
+        return nil
+    }
     res["trainings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTrainingFromDiscriminatorValue)
         if err != nil {
@@ -234,6 +250,18 @@ func (m *AttackSimulationRoot) GetSimulations()([]Simulationable) {
     }
     if val != nil {
         return val.([]Simulationable)
+    }
+    return nil
+}
+// GetTrainingCampaigns gets the trainingCampaigns property value. The trainingCampaigns property
+// returns a []TrainingCampaignable when successful
+func (m *AttackSimulationRoot) GetTrainingCampaigns()([]TrainingCampaignable) {
+    val, err := m.GetBackingStore().Get("trainingCampaigns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TrainingCampaignable)
     }
     return nil
 }
@@ -339,6 +367,18 @@ func (m *AttackSimulationRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetTrainingCampaigns() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTrainingCampaigns()))
+        for i, v := range m.GetTrainingCampaigns() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("trainingCampaigns", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTrainings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTrainings()))
         for i, v := range m.GetTrainings() {
@@ -402,6 +442,13 @@ func (m *AttackSimulationRoot) SetSimulations(value []Simulationable)() {
         panic(err)
     }
 }
+// SetTrainingCampaigns sets the trainingCampaigns property value. The trainingCampaigns property
+func (m *AttackSimulationRoot) SetTrainingCampaigns(value []TrainingCampaignable)() {
+    err := m.GetBackingStore().Set("trainingCampaigns", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTrainings sets the trainings property value. Represents details about attack simulation trainings.
 func (m *AttackSimulationRoot) SetTrainings(value []Trainingable)() {
     err := m.GetBackingStore().Set("trainings", value)
@@ -419,6 +466,7 @@ type AttackSimulationRootable interface {
     GetPayloads()([]Payloadable)
     GetSimulationAutomations()([]SimulationAutomationable)
     GetSimulations()([]Simulationable)
+    GetTrainingCampaigns()([]TrainingCampaignable)
     GetTrainings()([]Trainingable)
     SetEndUserNotifications(value []EndUserNotificationable)()
     SetLandingPages(value []LandingPageable)()
@@ -427,5 +475,6 @@ type AttackSimulationRootable interface {
     SetPayloads(value []Payloadable)()
     SetSimulationAutomations(value []SimulationAutomationable)()
     SetSimulations(value []Simulationable)()
+    SetTrainingCampaigns(value []TrainingCampaignable)()
     SetTrainings(value []Trainingable)()
 }

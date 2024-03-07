@@ -3,43 +3,22 @@ package callrecords
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type PstnCallLogRow struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+    CallLogRow
 }
 // NewPstnCallLogRow instantiates a new PstnCallLogRow and sets the default values.
 func NewPstnCallLogRow()(*PstnCallLogRow) {
     m := &PstnCallLogRow{
+        CallLogRow: *NewCallLogRow(),
     }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreatePstnCallLogRowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreatePstnCallLogRowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPstnCallLogRow(), nil
-}
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// returns a map[string]any when successful
-func (m *PstnCallLogRow) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
-}
-// GetBackingStore gets the BackingStore property value. Stores model information.
-// returns a BackingStore when successful
-func (m *PstnCallLogRow) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
 }
 // GetCallDurationSource gets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
 // returns a *PstnCallDurationSource when successful
@@ -248,7 +227,7 @@ func (m *PstnCallLogRow) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res := m.CallLogRow.GetFieldDeserializers()
     res["callDurationSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePstnCallDurationSource)
         if err != nil {
@@ -419,16 +398,6 @@ func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetId(val)
-        }
-        return nil
-    }
     res["inventoryType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -449,16 +418,6 @@ func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
     res["operator"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -466,16 +425,6 @@ func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetOperator(val)
-        }
-        return nil
-    }
-    res["otherPartyCountryCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOtherPartyCountryCode(val)
         }
         return nil
     }
@@ -509,49 +458,7 @@ func (m *PstnCallLogRow) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["userDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserDisplayName(val)
-        }
-        return nil
-    }
-    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserId(val)
-        }
-        return nil
-    }
-    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserPrincipalName(val)
-        }
-        return nil
-    }
     return res
-}
-// GetId gets the id property value. Unique call identifier (GUID).
-// returns a *string when successful
-func (m *PstnCallLogRow) GetId()(*string) {
-    val, err := m.GetBackingStore().Get("id")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetInventoryType gets the inventoryType property value. User's phone number type, such as a service of toll-free number.
 // returns a *string when successful
@@ -577,34 +484,10 @@ func (m *PstnCallLogRow) GetLicenseCapability()(*string) {
     }
     return nil
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-// returns a *string when successful
-func (m *PstnCallLogRow) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOperator gets the operator property value. The telecommunications operator that provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+// GetOperator gets the operator property value. The telecommunications operator that provided PSTN services for this call. It may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
 // returns a *string when successful
 func (m *PstnCallLogRow) GetOperator()(*string) {
     val, err := m.GetBackingStore().Get("operator")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetOtherPartyCountryCode gets the otherPartyCountryCode property value. Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
-// returns a *string when successful
-func (m *PstnCallLogRow) GetOtherPartyCountryCode()(*string) {
-    val, err := m.GetBackingStore().Get("otherPartyCountryCode")
     if err != nil {
         panic(err)
     }
@@ -649,237 +532,152 @@ func (m *PstnCallLogRow) GetUsageCountryCode()(*string) {
     }
     return nil
 }
-// GetUserDisplayName gets the userDisplayName property value. Display name of the user.
-// returns a *string when successful
-func (m *PstnCallLogRow) GetUserDisplayName()(*string) {
-    val, err := m.GetBackingStore().Get("userDisplayName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetUserId gets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
-// returns a *string when successful
-func (m *PstnCallLogRow) GetUserId()(*string) {
-    val, err := m.GetBackingStore().Get("userId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-// returns a *string when successful
-func (m *PstnCallLogRow) GetUserPrincipalName()(*string) {
-    val, err := m.GetBackingStore().Get("userPrincipalName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *PstnCallLogRow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.CallLogRow.Serialize(writer)
+    if err != nil {
+        return err
+    }
     if m.GetCallDurationSource() != nil {
         cast := (*m.GetCallDurationSource()).String()
-        err := writer.WriteStringValue("callDurationSource", &cast)
+        err = writer.WriteStringValue("callDurationSource", &cast)
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("calleeNumber", m.GetCalleeNumber())
+        err = writer.WriteStringValue("calleeNumber", m.GetCalleeNumber())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("callerNumber", m.GetCallerNumber())
+        err = writer.WriteStringValue("callerNumber", m.GetCallerNumber())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("callId", m.GetCallId())
+        err = writer.WriteStringValue("callId", m.GetCallId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("callType", m.GetCallType())
+        err = writer.WriteStringValue("callType", m.GetCallType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteFloat64Value("charge", m.GetCharge())
+        err = writer.WriteFloat64Value("charge", m.GetCharge())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("clientLocalIpV4Address", m.GetClientLocalIpV4Address())
+        err = writer.WriteStringValue("clientLocalIpV4Address", m.GetClientLocalIpV4Address())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("clientLocalIpV6Address", m.GetClientLocalIpV6Address())
+        err = writer.WriteStringValue("clientLocalIpV6Address", m.GetClientLocalIpV6Address())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("clientPublicIpV4Address", m.GetClientPublicIpV4Address())
+        err = writer.WriteStringValue("clientPublicIpV4Address", m.GetClientPublicIpV4Address())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("clientPublicIpV6Address", m.GetClientPublicIpV6Address())
+        err = writer.WriteStringValue("clientPublicIpV6Address", m.GetClientPublicIpV6Address())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("conferenceId", m.GetConferenceId())
+        err = writer.WriteStringValue("conferenceId", m.GetConferenceId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteFloat64Value("connectionCharge", m.GetConnectionCharge())
+        err = writer.WriteFloat64Value("connectionCharge", m.GetConnectionCharge())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("currency", m.GetCurrency())
+        err = writer.WriteStringValue("currency", m.GetCurrency())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("destinationContext", m.GetDestinationContext())
+        err = writer.WriteStringValue("destinationContext", m.GetDestinationContext())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("destinationName", m.GetDestinationName())
+        err = writer.WriteStringValue("destinationName", m.GetDestinationName())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt32Value("duration", m.GetDuration())
+        err = writer.WriteInt32Value("duration", m.GetDuration())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
+        err = writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("id", m.GetId())
+        err = writer.WriteStringValue("inventoryType", m.GetInventoryType())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("inventoryType", m.GetInventoryType())
+        err = writer.WriteStringValue("licenseCapability", m.GetLicenseCapability())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("licenseCapability", m.GetLicenseCapability())
+        err = writer.WriteStringValue("operator", m.GetOperator())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        err = writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("operator", m.GetOperator())
+        err = writer.WriteStringValue("tenantCountryCode", m.GetTenantCountryCode())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("otherPartyCountryCode", m.GetOtherPartyCountryCode())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("tenantCountryCode", m.GetTenantCountryCode())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("usageCountryCode", m.GetUsageCountryCode())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("userDisplayName", m.GetUserDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("userId", m.GetUserId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("userPrincipalName", m.GetUserPrincipalName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        err = writer.WriteStringValue("usageCountryCode", m.GetUsageCountryCode())
         if err != nil {
             return err
         }
     }
     return nil
-}
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PstnCallLogRow) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *PstnCallLogRow) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
 }
 // SetCallDurationSource sets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
 func (m *PstnCallLogRow) SetCallDurationSource(value *PstnCallDurationSource)() {
@@ -1000,13 +798,6 @@ func (m *PstnCallLogRow) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6
         panic(err)
     }
 }
-// SetId sets the id property value. Unique call identifier (GUID).
-func (m *PstnCallLogRow) SetId(value *string)() {
-    err := m.GetBackingStore().Set("id", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetInventoryType sets the inventoryType property value. User's phone number type, such as a service of toll-free number.
 func (m *PstnCallLogRow) SetInventoryType(value *string)() {
     err := m.GetBackingStore().Set("inventoryType", value)
@@ -1021,23 +812,9 @@ func (m *PstnCallLogRow) SetLicenseCapability(value *string)() {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *PstnCallLogRow) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOperator sets the operator property value. The telecommunications operator that provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
+// SetOperator sets the operator property value. The telecommunications operator that provided PSTN services for this call. It may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
 func (m *PstnCallLogRow) SetOperator(value *string)() {
     err := m.GetBackingStore().Set("operator", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOtherPartyCountryCode sets the otherPartyCountryCode property value. Country code of the caller for an incoming call, or callee for an outgoing call. For details, see ISO 3166-1 alpha-2.
-func (m *PstnCallLogRow) SetOtherPartyCountryCode(value *string)() {
-    err := m.GetBackingStore().Set("otherPartyCountryCode", value)
     if err != nil {
         panic(err)
     }
@@ -1063,32 +840,9 @@ func (m *PstnCallLogRow) SetUsageCountryCode(value *string)() {
         panic(err)
     }
 }
-// SetUserDisplayName sets the userDisplayName property value. Display name of the user.
-func (m *PstnCallLogRow) SetUserDisplayName(value *string)() {
-    err := m.GetBackingStore().Set("userDisplayName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetUserId sets the userId property value. The unique identifier (GUID) of the user in Microsoft Entra ID. This and other user info will be null/empty for bot call types (ucapin, ucapout).
-func (m *PstnCallLogRow) SetUserId(value *string)() {
-    err := m.GetBackingStore().Set("userId", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-func (m *PstnCallLogRow) SetUserPrincipalName(value *string)() {
-    err := m.GetBackingStore().Set("userPrincipalName", value)
-    if err != nil {
-        panic(err)
-    }
-}
 type PstnCallLogRowable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    CallLogRowable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCallDurationSource()(*PstnCallDurationSource)
     GetCalleeNumber()(*string)
     GetCallerNumber()(*string)
@@ -1106,19 +860,12 @@ type PstnCallLogRowable interface {
     GetDestinationName()(*string)
     GetDuration()(*int32)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetId()(*string)
     GetInventoryType()(*string)
     GetLicenseCapability()(*string)
-    GetOdataType()(*string)
     GetOperator()(*string)
-    GetOtherPartyCountryCode()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTenantCountryCode()(*string)
     GetUsageCountryCode()(*string)
-    GetUserDisplayName()(*string)
-    GetUserId()(*string)
-    GetUserPrincipalName()(*string)
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCallDurationSource(value *PstnCallDurationSource)()
     SetCalleeNumber(value *string)()
     SetCallerNumber(value *string)()
@@ -1136,16 +883,10 @@ type PstnCallLogRowable interface {
     SetDestinationName(value *string)()
     SetDuration(value *int32)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetId(value *string)()
     SetInventoryType(value *string)()
     SetLicenseCapability(value *string)()
-    SetOdataType(value *string)()
     SetOperator(value *string)()
-    SetOtherPartyCountryCode(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetTenantCountryCode(value *string)()
     SetUsageCountryCode(value *string)()
-    SetUserDisplayName(value *string)()
-    SetUserId(value *string)()
-    SetUserPrincipalName(value *string)()
 }

@@ -19,7 +19,7 @@ func NewShiftsRoleDefinition()(*ShiftsRoleDefinition) {
 func CreateShiftsRoleDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewShiftsRoleDefinition(), nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the role.
 // returns a *string when successful
 func (m *ShiftsRoleDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -31,7 +31,7 @@ func (m *ShiftsRoleDefinition) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the role.
 // returns a *string when successful
 func (m *ShiftsRoleDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -85,7 +85,7 @@ func (m *ShiftsRoleDefinition) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetShiftsRolePermissions gets the shiftsRolePermissions property value. The shiftsRolePermissions property
+// GetShiftsRolePermissions gets the shiftsRolePermissions property value. The collection of role permissions within the role.
 // returns a []ShiftsRolePermissionable when successful
 func (m *ShiftsRoleDefinition) GetShiftsRolePermissions()([]ShiftsRolePermissionable) {
     val, err := m.GetBackingStore().Get("shiftsRolePermissions")
@@ -129,21 +129,21 @@ func (m *ShiftsRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the role.
 func (m *ShiftsRoleDefinition) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the role.
 func (m *ShiftsRoleDefinition) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShiftsRolePermissions sets the shiftsRolePermissions property value. The shiftsRolePermissions property
+// SetShiftsRolePermissions sets the shiftsRolePermissions property value. The collection of role permissions within the role.
 func (m *ShiftsRoleDefinition) SetShiftsRolePermissions(value []ShiftsRolePermissionable)() {
     err := m.GetBackingStore().Set("shiftsRolePermissions", value)
     if err != nil {

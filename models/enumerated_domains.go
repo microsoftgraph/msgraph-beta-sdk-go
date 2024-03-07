@@ -21,7 +21,7 @@ func NewEnumeratedDomains()(*EnumeratedDomains) {
 func CreateEnumeratedDomainsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnumeratedDomains(), nil
 }
-// GetDomainNames gets the domainNames property value. The domainNames property
+// GetDomainNames gets the domainNames property value. List of federated or managed root domains that Microsoft Entra ID validates.
 // returns a []string when successful
 func (m *EnumeratedDomains) GetDomainNames()([]string) {
     val, err := m.GetBackingStore().Get("domainNames")
@@ -69,7 +69,7 @@ func (m *EnumeratedDomains) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetDomainNames sets the domainNames property value. The domainNames property
+// SetDomainNames sets the domainNames property value. List of federated or managed root domains that Microsoft Entra ID validates.
 func (m *EnumeratedDomains) SetDomainNames(value []string)() {
     err := m.GetBackingStore().Set("domainNames", value)
     if err != nil {

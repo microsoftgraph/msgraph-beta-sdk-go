@@ -11,7 +11,7 @@ import (
 type ItemTeamScheduleShiftsRoleDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamScheduleShiftsRoleDefinitionsRequestBuilderGetQueryParameters get shiftsRoleDefinitions from groups
+// ItemTeamScheduleShiftsRoleDefinitionsRequestBuilderGetQueryParameters the definitions of the roles in the schedule.
 type ItemTeamScheduleShiftsRoleDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemTeamScheduleShiftsRoleDefinitionsRequestBuilder(rawUrl string, reque
 func (m *ItemTeamScheduleShiftsRoleDefinitionsRequestBuilder) Count()(*ItemTeamScheduleShiftsRoleDefinitionsCountRequestBuilder) {
     return NewItemTeamScheduleShiftsRoleDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get shiftsRoleDefinitions from groups
+// Get the definitions of the roles in the schedule.
 // returns a ShiftsRoleDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamScheduleShiftsRoleDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamScheduleShiftsRoleDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftsRoleDefinitionCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemTeamScheduleShiftsRoleDefinitionsRequestBuilder) Post(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftsRoleDefinitionable), nil
 }
-// ToGetRequestInformation get shiftsRoleDefinitions from groups
+// ToGetRequestInformation the definitions of the roles in the schedule.
 // returns a *RequestInformation when successful
 func (m *ItemTeamScheduleShiftsRoleDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleShiftsRoleDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

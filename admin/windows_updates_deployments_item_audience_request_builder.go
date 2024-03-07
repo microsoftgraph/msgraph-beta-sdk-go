@@ -41,6 +41,11 @@ type WindowsUpdatesDeploymentsItemAudienceRequestBuilderPatchRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// ApplicableContent provides operations to manage the applicableContent property of the microsoft.graph.windowsUpdates.deploymentAudience entity.
+// returns a *WindowsUpdatesDeploymentsItemAudienceApplicableContentRequestBuilder when successful
+func (m *WindowsUpdatesDeploymentsItemAudienceRequestBuilder) ApplicableContent()(*WindowsUpdatesDeploymentsItemAudienceApplicableContentRequestBuilder) {
+    return NewWindowsUpdatesDeploymentsItemAudienceApplicableContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsUpdatesDeploymentsItemAudienceRequestBuilderInternal instantiates a new WindowsUpdatesDeploymentsItemAudienceRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsItemAudienceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsItemAudienceRequestBuilder) {
     m := &WindowsUpdatesDeploymentsItemAudienceRequestBuilder{

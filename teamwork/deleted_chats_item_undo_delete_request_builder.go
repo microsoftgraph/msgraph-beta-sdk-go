@@ -30,7 +30,7 @@ func NewDeletedChatsItemUndoDeleteRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedChatsItemUndoDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restore a  deletedChat to an active chat.
+// Post restore a deletedChat to an active chat.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *DeletedChatsItemUndoDeleteRequestBuilder) Post(ctx context.Context, req
     }
     return nil
 }
-// ToPostRequestInformation restore a  deletedChat to an active chat.
+// ToPostRequestInformation restore a deletedChat to an active chat.
 // returns a *RequestInformation when successful
 func (m *DeletedChatsItemUndoDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DeletedChatsItemUndoDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

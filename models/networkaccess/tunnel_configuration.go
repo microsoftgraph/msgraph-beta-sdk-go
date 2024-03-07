@@ -84,6 +84,16 @@ func (m *TunnelConfiguration) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["zoneRedundancyPreSharedKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetZoneRedundancyPreSharedKey(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -110,6 +120,18 @@ func (m *TunnelConfiguration) GetPreSharedKey()(*string) {
     }
     return nil
 }
+// GetZoneRedundancyPreSharedKey gets the zoneRedundancyPreSharedKey property value. The zoneRedundancyPreSharedKey property
+// returns a *string when successful
+func (m *TunnelConfiguration) GetZoneRedundancyPreSharedKey()(*string) {
+    val, err := m.GetBackingStore().Get("zoneRedundancyPreSharedKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *TunnelConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -120,6 +142,12 @@ func (m *TunnelConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteStringValue("preSharedKey", m.GetPreSharedKey())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("zoneRedundancyPreSharedKey", m.GetZoneRedundancyPreSharedKey())
         if err != nil {
             return err
         }
@@ -157,6 +185,13 @@ func (m *TunnelConfiguration) SetPreSharedKey(value *string)() {
         panic(err)
     }
 }
+// SetZoneRedundancyPreSharedKey sets the zoneRedundancyPreSharedKey property value. The zoneRedundancyPreSharedKey property
+func (m *TunnelConfiguration) SetZoneRedundancyPreSharedKey(value *string)() {
+    err := m.GetBackingStore().Set("zoneRedundancyPreSharedKey", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type TunnelConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -164,7 +199,9 @@ type TunnelConfigurationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetPreSharedKey()(*string)
+    GetZoneRedundancyPreSharedKey()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetPreSharedKey(value *string)()
+    SetZoneRedundancyPreSharedKey(value *string)()
 }

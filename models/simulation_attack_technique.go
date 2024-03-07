@@ -13,10 +13,11 @@ const (
     LINKTOMALWAREFILE_SIMULATIONATTACKTECHNIQUE
     UNKNOWNFUTUREVALUE_SIMULATIONATTACKTECHNIQUE
     OAUTHCONSENTGRANT_SIMULATIONATTACKTECHNIQUE
+    PHISHTRAINING_SIMULATIONATTACKTECHNIQUE
 )
 
 func (i SimulationAttackTechnique) String() string {
-    return []string{"unknown", "credentialHarvesting", "attachmentMalware", "driveByUrl", "linkInAttachment", "linkToMalwareFile", "unknownFutureValue", "oAuthConsentGrant"}[i]
+    return []string{"unknown", "credentialHarvesting", "attachmentMalware", "driveByUrl", "linkInAttachment", "linkToMalwareFile", "unknownFutureValue", "oAuthConsentGrant", "phishTraining"}[i]
 }
 func ParseSimulationAttackTechnique(v string) (any, error) {
     result := UNKNOWN_SIMULATIONATTACKTECHNIQUE
@@ -37,6 +38,8 @@ func ParseSimulationAttackTechnique(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_SIMULATIONATTACKTECHNIQUE
         case "oAuthConsentGrant":
             result = OAUTHCONSENTGRANT_SIMULATIONATTACKTECHNIQUE
+        case "phishTraining":
+            result = PHISHTRAINING_SIMULATIONATTACKTECHNIQUE
         default:
             return 0, errors.New("Unknown SimulationAttackTechnique value: " + v)
     }

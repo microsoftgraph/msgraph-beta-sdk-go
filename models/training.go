@@ -56,6 +56,18 @@ func (m *Training) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
     return nil
 }
+// GetCustomUrl gets the customUrl property value. The customUrl property
+// returns a *string when successful
+func (m *Training) GetCustomUrl()(*string) {
+    val, err := m.GetBackingStore().Get("customUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDescription gets the description property value. The description for the training.
 // returns a *string when successful
 func (m *Training) GetDescription()(*string) {
@@ -123,6 +135,16 @@ func (m *Training) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["customUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomUrl(val)
         }
         return nil
     }
@@ -378,6 +400,12 @@ func (m *Training) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteStringValue("customUrl", m.GetCustomUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -474,6 +502,13 @@ func (m *Training) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
         panic(err)
     }
 }
+// SetCustomUrl sets the customUrl property value. The customUrl property
+func (m *Training) SetCustomUrl(value *string)() {
+    err := m.GetBackingStore().Set("customUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. The description for the training.
 func (m *Training) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -557,6 +592,7 @@ type Trainingable interface {
     GetAvailabilityStatus()(*TrainingAvailabilityStatus)
     GetCreatedBy()(EmailIdentityable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCustomUrl()(*string)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetDurationInMinutes()(*int32)
@@ -571,6 +607,7 @@ type Trainingable interface {
     SetAvailabilityStatus(value *TrainingAvailabilityStatus)()
     SetCreatedBy(value EmailIdentityable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCustomUrl(value *string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetDurationInMinutes(value *int32)()
