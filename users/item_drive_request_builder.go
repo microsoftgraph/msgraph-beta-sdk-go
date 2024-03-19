@@ -11,7 +11,7 @@ import (
 type ItemDriveRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemDriveRequestBuilderGetQueryParameters retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+// ItemDriveRequestBuilderGetQueryParameters retrieve the properties and relationships of a drive resource. A drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 type ItemDriveRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemDriveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewItemDriveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+// Get retrieve the properties and relationships of a drive resource. A drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 // returns a Driveable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -63,7 +63,7 @@ func (m *ItemDriveRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+// ToGetRequestInformation retrieve the properties and relationships of a drive resource. A drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
 // returns a *RequestInformation when successful
 func (m *ItemDriveRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDriveRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

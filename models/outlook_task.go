@@ -297,7 +297,7 @@ func (m *OutlookTask) GetHasAttachments()(*bool) {
     }
     return nil
 }
-// GetImportance gets the importance property value. The importance property
+// GetImportance gets the importance property value. The importance of the event. Possible values are: low, normal, high.
 // returns a *Importance when successful
 func (m *OutlookTask) GetImportance()(*Importance) {
     val, err := m.GetBackingStore().Get("importance")
@@ -309,7 +309,7 @@ func (m *OutlookTask) GetImportance()(*Importance) {
     }
     return nil
 }
-// GetIsReminderOn gets the isReminderOn property value. The isReminderOn property
+// GetIsReminderOn gets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
 // returns a *bool when successful
 func (m *OutlookTask) GetIsReminderOn()(*bool) {
     val, err := m.GetBackingStore().Get("isReminderOn")
@@ -333,7 +333,7 @@ func (m *OutlookTask) GetMultiValueExtendedProperties()([]MultiValueLegacyExtend
     }
     return nil
 }
-// GetOwner gets the owner property value. The owner property
+// GetOwner gets the owner property value. The name of the person who created the task.
 // returns a *string when successful
 func (m *OutlookTask) GetOwner()(*string) {
     val, err := m.GetBackingStore().Get("owner")
@@ -345,7 +345,7 @@ func (m *OutlookTask) GetOwner()(*string) {
     }
     return nil
 }
-// GetParentFolderId gets the parentFolderId property value. The parentFolderId property
+// GetParentFolderId gets the parentFolderId property value. The unique identifier for the task's parent folder.
 // returns a *string when successful
 func (m *OutlookTask) GetParentFolderId()(*string) {
     val, err := m.GetBackingStore().Get("parentFolderId")
@@ -357,7 +357,7 @@ func (m *OutlookTask) GetParentFolderId()(*string) {
     }
     return nil
 }
-// GetRecurrence gets the recurrence property value. The recurrence property
+// GetRecurrence gets the recurrence property value. The recurrence pattern for the task.
 // returns a PatternedRecurrenceable when successful
 func (m *OutlookTask) GetRecurrence()(PatternedRecurrenceable) {
     val, err := m.GetBackingStore().Get("recurrence")
@@ -369,7 +369,7 @@ func (m *OutlookTask) GetRecurrence()(PatternedRecurrenceable) {
     }
     return nil
 }
-// GetReminderDateTime gets the reminderDateTime property value. The reminderDateTime property
+// GetReminderDateTime gets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
 // returns a DateTimeTimeZoneable when successful
 func (m *OutlookTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("reminderDateTime")
@@ -381,7 +381,7 @@ func (m *OutlookTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetSensitivity gets the sensitivity property value. The sensitivity property
+// GetSensitivity gets the sensitivity property value. Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.
 // returns a *Sensitivity when successful
 func (m *OutlookTask) GetSensitivity()(*Sensitivity) {
     val, err := m.GetBackingStore().Get("sensitivity")
@@ -405,7 +405,7 @@ func (m *OutlookTask) GetSingleValueExtendedProperties()([]SingleValueLegacyExte
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The date in the specified time zone when the task is to begin.
 // returns a DateTimeTimeZoneable when successful
 func (m *OutlookTask) GetStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -417,7 +417,7 @@ func (m *OutlookTask) GetStartDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
 // returns a *TaskStatus when successful
 func (m *OutlookTask) GetStatus()(*TaskStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -429,7 +429,7 @@ func (m *OutlookTask) GetStatus()(*TaskStatus) {
     }
     return nil
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. A brief description or title of the task.
 // returns a *string when successful
 func (m *OutlookTask) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
@@ -620,14 +620,14 @@ func (m *OutlookTask) SetHasAttachments(value *bool)() {
         panic(err)
     }
 }
-// SetImportance sets the importance property value. The importance property
+// SetImportance sets the importance property value. The importance of the event. Possible values are: low, normal, high.
 func (m *OutlookTask) SetImportance(value *Importance)() {
     err := m.GetBackingStore().Set("importance", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsReminderOn sets the isReminderOn property value. The isReminderOn property
+// SetIsReminderOn sets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
 func (m *OutlookTask) SetIsReminderOn(value *bool)() {
     err := m.GetBackingStore().Set("isReminderOn", value)
     if err != nil {
@@ -641,35 +641,35 @@ func (m *OutlookTask) SetMultiValueExtendedProperties(value []MultiValueLegacyEx
         panic(err)
     }
 }
-// SetOwner sets the owner property value. The owner property
+// SetOwner sets the owner property value. The name of the person who created the task.
 func (m *OutlookTask) SetOwner(value *string)() {
     err := m.GetBackingStore().Set("owner", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParentFolderId sets the parentFolderId property value. The parentFolderId property
+// SetParentFolderId sets the parentFolderId property value. The unique identifier for the task's parent folder.
 func (m *OutlookTask) SetParentFolderId(value *string)() {
     err := m.GetBackingStore().Set("parentFolderId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecurrence sets the recurrence property value. The recurrence property
+// SetRecurrence sets the recurrence property value. The recurrence pattern for the task.
 func (m *OutlookTask) SetRecurrence(value PatternedRecurrenceable)() {
     err := m.GetBackingStore().Set("recurrence", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReminderDateTime sets the reminderDateTime property value. The reminderDateTime property
+// SetReminderDateTime sets the reminderDateTime property value. The date and time for a reminder alert of the task to occur.
 func (m *OutlookTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("reminderDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSensitivity sets the sensitivity property value. The sensitivity property
+// SetSensitivity sets the sensitivity property value. Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.
 func (m *OutlookTask) SetSensitivity(value *Sensitivity)() {
     err := m.GetBackingStore().Set("sensitivity", value)
     if err != nil {
@@ -683,21 +683,21 @@ func (m *OutlookTask) SetSingleValueExtendedProperties(value []SingleValueLegacy
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The date in the specified time zone when the task is to begin.
 func (m *OutlookTask) SetStartDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
 func (m *OutlookTask) SetStatus(value *TaskStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. A brief description or title of the task.
 func (m *OutlookTask) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
     if err != nil {

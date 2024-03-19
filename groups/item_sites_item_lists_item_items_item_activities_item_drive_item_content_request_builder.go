@@ -11,7 +11,7 @@ import (
 type ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
+// ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters get content for the navigation property driveItem from groups
 type ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters struct {
     // Format of the content
     Format *string `uriparametername:"%24format"`
@@ -45,7 +45,7 @@ func NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the content stream, if the item represents a file.
+// Get get content for the navigation property driveItem from groups
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -65,7 +65,7 @@ func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBui
     }
     return res.([]byte), nil
 }
-// Put the content stream, if the item represents a file.
+// Put update content for the navigation property driveItem in groups
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
@@ -85,7 +85,7 @@ func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBui
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToGetRequestInformation the content stream, if the item represents a file.
+// ToGetRequestInformation get content for the navigation property driveItem from groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -99,7 +99,7 @@ func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBui
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation the content stream, if the item represents a file.
+// ToPutRequestInformation update content for the navigation property driveItem in groups
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/activities/{itemActivityOLD%2Did}/driveItem/content", m.BaseRequestBuilder.PathParameters)

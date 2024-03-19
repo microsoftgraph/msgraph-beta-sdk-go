@@ -31,7 +31,7 @@ func NewPartnersBillingUsageUnbilledMicrosoftGraphPartnersBillingExportRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewPartnersBillingUsageUnbilledMicrosoftGraphPartnersBillingExportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post export the unbilled Azure usage data for a specific billing period and a given currency.
+// Post export unbilled Azure usage data for a specific billing period and currency.
 // returns a Operationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,7 +54,7 @@ func (m *PartnersBillingUsageUnbilledMicrosoftGraphPartnersBillingExportRequestB
     }
     return res.(ibc1d41e06c1155c6505b27a1d0c17b20692636238b0ddb2acdaa2b4548e4f67b.Operationable), nil
 }
-// ToPostRequestInformation export the unbilled Azure usage data for a specific billing period and a given currency.
+// ToPostRequestInformation export unbilled Azure usage data for a specific billing period and currency.
 // returns a *RequestInformation when successful
 func (m *PartnersBillingUsageUnbilledMicrosoftGraphPartnersBillingExportRequestBuilder) ToPostRequestInformation(ctx context.Context, body PartnersBillingUsageUnbilledMicrosoftGraphPartnersBillingExportExportPostRequestBodyable, requestConfiguration *PartnersBillingUsageUnbilledMicrosoftGraphPartnersBillingExportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

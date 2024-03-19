@@ -81,7 +81,7 @@ func (m *DriveItem) GetChildren()([]DriveItemable) {
     }
     return nil
 }
-// GetContent gets the content property value. The content stream, if the item represents a file.
+// GetContent gets the content property value. The content property
 // returns a []byte when successful
 func (m *DriveItem) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
@@ -1150,7 +1150,7 @@ func (m *DriveItem) SetChildren(value []DriveItemable)() {
         panic(err)
     }
 }
-// SetContent sets the content property value. The content stream, if the item represents a file.
+// SetContent sets the content property value. The content property
 func (m *DriveItem) SetContent(value []byte)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {

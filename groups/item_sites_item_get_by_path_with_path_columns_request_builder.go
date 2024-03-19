@@ -11,7 +11,7 @@ import (
 type ItemSitesItemGetByPathWithPathColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemGetByPathWithPathColumnsRequestBuilderGetQueryParameters get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [site][site].
+// ItemSitesItemGetByPathWithPathColumnsRequestBuilderGetQueryParameters the collection of column definitions reusable across lists under this site.
 type ItemSitesItemGetByPathWithPathColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -59,7 +59,7 @@ func NewItemSitesItemGetByPathWithPathColumnsRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemGetByPathWithPathColumnsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [site][site].
+// Get the collection of column definitions reusable across lists under this site.
 // returns a ColumnDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -82,7 +82,7 @@ func (m *ItemSitesItemGetByPathWithPathColumnsRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable), nil
 }
-// Post create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
+// Post create columnDefinition for a site
 // returns a ColumnDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -105,7 +105,7 @@ func (m *ItemSitesItemGetByPathWithPathColumnsRequestBuilder) Post(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable), nil
 }
-// ToGetRequestInformation get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [site][site].
+// ToGetRequestInformation the collection of column definitions reusable across lists under this site.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemGetByPathWithPathColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -119,7 +119,7 @@ func (m *ItemSitesItemGetByPathWithPathColumnsRequestBuilder) ToGetRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
+// ToPostRequestInformation create columnDefinition for a site
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemGetByPathWithPathColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemSitesItemGetByPathWithPathColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/columns", m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ItemDrivesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemDrivesRequestBuilderGetQueryParameters retrieve the list of Drive resources available for a target User, Group, or Site.
+// ItemDrivesRequestBuilderGetQueryParameters retrieve the list of drive resources available for a target user, group, or site.
 type ItemDrivesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewItemDrivesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 func (m *ItemDrivesRequestBuilder) Count()(*ItemDrivesCountRequestBuilder) {
     return NewItemDrivesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of Drive resources available for a target User, Group, or Site.
+// Get retrieve the list of drive resources available for a target user, group, or site.
 // returns a DriveCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -92,7 +92,7 @@ func (m *ItemDrivesRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve the list of Drive resources available for a target User, Group, or Site.
+// ToGetRequestInformation retrieve the list of drive resources available for a target user, group, or site.
 // returns a *RequestInformation when successful
 func (m *ItemDrivesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDrivesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

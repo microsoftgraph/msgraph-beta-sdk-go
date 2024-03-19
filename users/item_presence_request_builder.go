@@ -18,7 +18,7 @@ type ItemPresenceRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPresenceRequestBuilderGetQueryParameters set a presence status message for a user. An optional expiration date and time can be supplied.
+// ItemPresenceRequestBuilderGetQueryParameters get a user's presence information.
 type ItemPresenceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,12 +80,12 @@ func (m *ItemPresenceRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get set a presence status message for a user. An optional expiration date and time can be supplied.
+// Get get a user's presence information.
 // returns a Presenceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
 func (m *ItemPresenceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPresenceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -149,7 +149,7 @@ func (m *ItemPresenceRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation set a presence status message for a user. An optional expiration date and time can be supplied.
+// ToGetRequestInformation get a user's presence information.
 // returns a *RequestInformation when successful
 func (m *ItemPresenceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPresenceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

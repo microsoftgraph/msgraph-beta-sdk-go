@@ -36,7 +36,7 @@ func (m *DetonationDetails) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAnalysisDateTime gets the analysisDateTime property value. The analysisDateTime property
+// GetAnalysisDateTime gets the analysisDateTime property value. The time of detonation.
 // returns a *Time when successful
 func (m *DetonationDetails) GetAnalysisDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("analysisDateTime")
@@ -53,7 +53,7 @@ func (m *DetonationDetails) GetAnalysisDateTime()(*i336074805fc853987abe6f7fe3ad
 func (m *DetonationDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDetonationChain gets the detonationChain property value. The detonationChain property
+// GetDetonationChain gets the detonationChain property value. The chain of detonation.
 // returns a DetonationChainable when successful
 func (m *DetonationDetails) GetDetonationChain()(DetonationChainable) {
     val, err := m.GetBackingStore().Get("detonationChain")
@@ -65,7 +65,7 @@ func (m *DetonationDetails) GetDetonationChain()(DetonationChainable) {
     }
     return nil
 }
-// GetDetonationObservables gets the detonationObservables property value. The detonationObservables property
+// GetDetonationObservables gets the detonationObservables property value. All observables in the detonation tree.
 // returns a DetonationObservablesable when successful
 func (m *DetonationDetails) GetDetonationObservables()(DetonationObservablesable) {
     val, err := m.GetBackingStore().Get("detonationObservables")
@@ -77,7 +77,7 @@ func (m *DetonationDetails) GetDetonationObservables()(DetonationObservablesable
     }
     return nil
 }
-// GetDetonationVerdict gets the detonationVerdict property value. The detonationVerdict property
+// GetDetonationVerdict gets the detonationVerdict property value. The verdict of the detonation.
 // returns a *string when successful
 func (m *DetonationDetails) GetDetonationVerdict()(*string) {
     val, err := m.GetBackingStore().Get("detonationVerdict")
@@ -89,7 +89,7 @@ func (m *DetonationDetails) GetDetonationVerdict()(*string) {
     }
     return nil
 }
-// GetDetonationVerdictReason gets the detonationVerdictReason property value. The detonationVerdictReason property
+// GetDetonationVerdictReason gets the detonationVerdictReason property value. The reason for the verdict of the detonation.
 // returns a *string when successful
 func (m *DetonationDetails) GetDetonationVerdictReason()(*string) {
     val, err := m.GetBackingStore().Get("detonationVerdictReason")
@@ -232,7 +232,7 @@ func (m *DetonationDetails) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAnalysisDateTime sets the analysisDateTime property value. The analysisDateTime property
+// SetAnalysisDateTime sets the analysisDateTime property value. The time of detonation.
 func (m *DetonationDetails) SetAnalysisDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("analysisDateTime", value)
     if err != nil {
@@ -243,28 +243,28 @@ func (m *DetonationDetails) SetAnalysisDateTime(value *i336074805fc853987abe6f7f
 func (m *DetonationDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDetonationChain sets the detonationChain property value. The detonationChain property
+// SetDetonationChain sets the detonationChain property value. The chain of detonation.
 func (m *DetonationDetails) SetDetonationChain(value DetonationChainable)() {
     err := m.GetBackingStore().Set("detonationChain", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetonationObservables sets the detonationObservables property value. The detonationObservables property
+// SetDetonationObservables sets the detonationObservables property value. All observables in the detonation tree.
 func (m *DetonationDetails) SetDetonationObservables(value DetonationObservablesable)() {
     err := m.GetBackingStore().Set("detonationObservables", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetonationVerdict sets the detonationVerdict property value. The detonationVerdict property
+// SetDetonationVerdict sets the detonationVerdict property value. The verdict of the detonation.
 func (m *DetonationDetails) SetDetonationVerdict(value *string)() {
     err := m.GetBackingStore().Set("detonationVerdict", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetonationVerdictReason sets the detonationVerdictReason property value. The detonationVerdictReason property
+// SetDetonationVerdictReason sets the detonationVerdictReason property value. The reason for the verdict of the detonation.
 func (m *DetonationDetails) SetDetonationVerdictReason(value *string)() {
     err := m.GetBackingStore().Set("detonationVerdictReason", value)
     if err != nil {

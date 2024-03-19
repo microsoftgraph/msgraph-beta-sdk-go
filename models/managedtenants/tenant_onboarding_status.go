@@ -10,10 +10,11 @@ const (
     ACTIVE_TENANTONBOARDINGSTATUS
     INACTIVE_TENANTONBOARDINGSTATUS
     UNKNOWNFUTUREVALUE_TENANTONBOARDINGSTATUS
+    DISABLED_TENANTONBOARDINGSTATUS
 )
 
 func (i TenantOnboardingStatus) String() string {
-    return []string{"ineligible", "inProcess", "active", "inactive", "unknownFutureValue"}[i]
+    return []string{"ineligible", "inProcess", "active", "inactive", "unknownFutureValue", "disabled"}[i]
 }
 func ParseTenantOnboardingStatus(v string) (any, error) {
     result := INELIGIBLE_TENANTONBOARDINGSTATUS
@@ -28,6 +29,8 @@ func ParseTenantOnboardingStatus(v string) (any, error) {
             result = INACTIVE_TENANTONBOARDINGSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TENANTONBOARDINGSTATUS
+        case "disabled":
+            result = DISABLED_TENANTONBOARDINGSTATUS
         default:
             return 0, errors.New("Unknown TenantOnboardingStatus value: " + v)
     }

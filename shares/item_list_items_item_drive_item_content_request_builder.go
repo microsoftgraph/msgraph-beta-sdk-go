@@ -11,7 +11,7 @@ import (
 type ItemListItemsItemDriveItemContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListItemsItemDriveItemContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
+// ItemListItemsItemDriveItemContentRequestBuilderGetQueryParameters get content for the navigation property driveItem from shares
 type ItemListItemsItemDriveItemContentRequestBuilderGetQueryParameters struct {
     // Format of the content
     Format *string `uriparametername:"%24format"`
@@ -45,7 +45,7 @@ func NewItemListItemsItemDriveItemContentRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemListItemsItemDriveItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the content stream, if the item represents a file.
+// Get get content for the navigation property driveItem from shares
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListItemsItemDriveItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListItemsItemDriveItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -65,7 +65,7 @@ func (m *ItemListItemsItemDriveItemContentRequestBuilder) Get(ctx context.Contex
     }
     return res.([]byte), nil
 }
-// Put the content stream, if the item represents a file.
+// Put update content for the navigation property driveItem in shares
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListItemsItemDriveItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemListItemsItemDriveItemContentRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
@@ -85,7 +85,7 @@ func (m *ItemListItemsItemDriveItemContentRequestBuilder) Put(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToGetRequestInformation the content stream, if the item represents a file.
+// ToGetRequestInformation get content for the navigation property driveItem from shares
 // returns a *RequestInformation when successful
 func (m *ItemListItemsItemDriveItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemDriveItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -99,7 +99,7 @@ func (m *ItemListItemsItemDriveItemContentRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation the content stream, if the item represents a file.
+// ToPutRequestInformation update content for the navigation property driveItem in shares
 // returns a *RequestInformation when successful
 func (m *ItemListItemsItemDriveItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemListItemsItemDriveItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/driveItem/content", m.BaseRequestBuilder.PathParameters)

@@ -23,7 +23,7 @@ func NewServicePrincipal()(*ServicePrincipal) {
 func CreateServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipal(), nil
 }
-// GetAccountEnabled gets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
+// GetAccountEnabled gets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. If set to false, then no users are able to sign in to this app, even if they're assigned to it. Supports $filter (eq, ne, not, in).
 // returns a *bool when successful
 func (m *ServicePrincipal) GetAccountEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("accountEnabled")
@@ -35,7 +35,7 @@ func (m *ServicePrincipal) GetAccountEnabled()(*bool) {
     }
     return nil
 }
-// GetAddIns gets the addIns property value. Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
+// GetAddIns gets the addIns property value. Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.
 // returns a []AddInable when successful
 func (m *ServicePrincipal) GetAddIns()([]AddInable) {
     val, err := m.GetBackingStore().Get("addIns")
@@ -47,7 +47,7 @@ func (m *ServicePrincipal) GetAddIns()([]AddInable) {
     }
     return nil
 }
-// GetAlternativeNames gets the alternativeNames property value. Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
+// GetAlternativeNames gets the alternativeNames property value. Used to retrieve service principals by subscription, identify resource group and full resource IDs for managed identities. Supports $filter (eq, not, ge, le, startsWith).
 // returns a []string when successful
 func (m *ServicePrincipal) GetAlternativeNames()([]string) {
     val, err := m.GetBackingStore().Get("alternativeNames")
@@ -95,7 +95,7 @@ func (m *ServicePrincipal) GetAppId()(*string) {
     }
     return nil
 }
-// GetApplicationTemplateId gets the applicationTemplateId property value. Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
+// GetApplicationTemplateId gets the applicationTemplateId property value. Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne). Read-only. null if the app wasn't created from an application template.
 // returns a *string when successful
 func (m *ServicePrincipal) GetApplicationTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("applicationTemplateId")
@@ -119,7 +119,7 @@ func (m *ServicePrincipal) GetAppManagementPolicies()([]AppManagementPolicyable)
     }
     return nil
 }
-// GetAppOwnerOrganizationId gets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
+// GetAppOwnerOrganizationId gets the appOwnerOrganizationId property value. Contains the tenant ID where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
 // returns a *UUID when successful
 func (m *ServicePrincipal) GetAppOwnerOrganizationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("appOwnerOrganizationId")
@@ -167,7 +167,7 @@ func (m *ServicePrincipal) GetAppRoleAssignments()([]AppRoleAssignmentable) {
     }
     return nil
 }
-// GetAppRoles gets the appRoles property value. The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+// GetAppRoles gets the appRoles property value. The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.
 // returns a []AppRoleable when successful
 func (m *ServicePrincipal) GetAppRoles()([]AppRoleable) {
     val, err := m.GetBackingStore().Get("appRoles")
@@ -227,7 +227,7 @@ func (m *ServicePrincipal) GetDelegatedPermissionClassifications()([]DelegatedPe
     }
     return nil
 }
-// GetDescription gets the description property value. Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// GetDescription gets the description property value. Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps displays the application description in this field. The maximum allowed size is 1,024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 // returns a *string when successful
 func (m *ServicePrincipal) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -1109,7 +1109,7 @@ func (m *ServicePrincipal) GetLoginUrl()(*string) {
     }
     return nil
 }
-// GetLogoutUrl gets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
+// GetLogoutUrl gets the logoutUrl property value. Specifies the URL that the Microsoft's authorization service uses to sign out a user using OpenId Connect front-channel, back-channel, or SAML sign out protocols.
 // returns a *string when successful
 func (m *ServicePrincipal) GetLogoutUrl()(*string) {
     val, err := m.GetBackingStore().Get("logoutUrl")
@@ -1133,7 +1133,7 @@ func (m *ServicePrincipal) GetMemberOf()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetNotes gets the notes property value. Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
+// GetNotes gets the notes property value. Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1,024 characters.
 // returns a *string when successful
 func (m *ServicePrincipal) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
@@ -1181,7 +1181,7 @@ func (m *ServicePrincipal) GetOwnedObjects()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetOwners gets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// GetOwners gets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 // returns a []DirectoryObjectable when successful
 func (m *ServicePrincipal) GetOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("owners")
@@ -1229,7 +1229,7 @@ func (m *ServicePrincipal) GetPreferredSingleSignOnMode()(*string) {
     }
     return nil
 }
-// GetPreferredTokenSigningKeyEndDateTime gets the preferredTokenSigningKeyEndDateTime property value. Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
+// GetPreferredTokenSigningKeyEndDateTime gets the preferredTokenSigningKeyEndDateTime property value. Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute isn't currently supported. For details, see ServicePrincipal property differences.
 // returns a *Time when successful
 func (m *ServicePrincipal) GetPreferredTokenSigningKeyEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("preferredTokenSigningKeyEndDateTime")
@@ -1241,7 +1241,7 @@ func (m *ServicePrincipal) GetPreferredTokenSigningKeyEndDateTime()(*i336074805f
     }
     return nil
 }
-// GetPreferredTokenSigningKeyThumbprint gets the preferredTokenSigningKeyThumbprint property value. This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
+// GetPreferredTokenSigningKeyThumbprint gets the preferredTokenSigningKeyThumbprint property value. This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that aren't SAML, don't write or otherwise rely on this property.
 // returns a *string when successful
 func (m *ServicePrincipal) GetPreferredTokenSigningKeyThumbprint()(*string) {
     val, err := m.GetBackingStore().Get("preferredTokenSigningKeyThumbprint")
@@ -1253,7 +1253,7 @@ func (m *ServicePrincipal) GetPreferredTokenSigningKeyThumbprint()(*string) {
     }
     return nil
 }
-// GetPublishedPermissionScopes gets the publishedPermissionScopes property value. The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
+// GetPublishedPermissionScopes gets the publishedPermissionScopes property value. The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
 // returns a []PermissionScopeable when successful
 func (m *ServicePrincipal) GetPublishedPermissionScopes()([]PermissionScopeable) {
     val, err := m.GetBackingStore().Get("publishedPermissionScopes")
@@ -1325,7 +1325,7 @@ func (m *ServicePrincipal) GetSamlSingleSignOnSettings()(SamlSingleSignOnSetting
     }
     return nil
 }
-// GetServicePrincipalNames gets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+// GetServicePrincipalNames gets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. More values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI that is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
 // returns a []string when successful
 func (m *ServicePrincipal) GetServicePrincipalNames()([]string) {
     val, err := m.GetBackingStore().Get("servicePrincipalNames")
@@ -1337,7 +1337,7 @@ func (m *ServicePrincipal) GetServicePrincipalNames()([]string) {
     }
     return nil
 }
-// GetServicePrincipalType gets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+// GetServicePrincipalType gets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represents a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
 // returns a *string when successful
 func (m *ServicePrincipal) GetServicePrincipalType()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalType")
@@ -1349,7 +1349,7 @@ func (m *ServicePrincipal) GetServicePrincipalType()(*string) {
     }
     return nil
 }
-// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+// GetSignInAudience gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multitenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
 // returns a *string when successful
 func (m *ServicePrincipal) GetSignInAudience()(*string) {
     val, err := m.GetBackingStore().Get("signInAudience")
@@ -1433,7 +1433,7 @@ func (m *ServicePrincipal) GetTransitiveMemberOf()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetVerifiedPublisher gets the verifiedPublisher property value. Specifies the verified publisher of the application which this service principal represents.
+// GetVerifiedPublisher gets the verifiedPublisher property value. Specifies the verified publisher of the application that's linked to this service principal.
 // returns a VerifiedPublisherable when successful
 func (m *ServicePrincipal) GetVerifiedPublisher()(VerifiedPublisherable) {
     val, err := m.GetBackingStore().Get("verifiedPublisher")
@@ -1927,21 +1927,21 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
+// SetAccountEnabled sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. If set to false, then no users are able to sign in to this app, even if they're assigned to it. Supports $filter (eq, ne, not, in).
 func (m *ServicePrincipal) SetAccountEnabled(value *bool)() {
     err := m.GetBackingStore().Set("accountEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAddIns sets the addIns property value. Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
+// SetAddIns sets the addIns property value. Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.
 func (m *ServicePrincipal) SetAddIns(value []AddInable)() {
     err := m.GetBackingStore().Set("addIns", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlternativeNames sets the alternativeNames property value. Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
+// SetAlternativeNames sets the alternativeNames property value. Used to retrieve service principals by subscription, identify resource group and full resource IDs for managed identities. Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) SetAlternativeNames(value []string)() {
     err := m.GetBackingStore().Set("alternativeNames", value)
     if err != nil {
@@ -1969,7 +1969,7 @@ func (m *ServicePrincipal) SetAppId(value *string)() {
         panic(err)
     }
 }
-// SetApplicationTemplateId sets the applicationTemplateId property value. Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
+// SetApplicationTemplateId sets the applicationTemplateId property value. Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne). Read-only. null if the app wasn't created from an application template.
 func (m *ServicePrincipal) SetApplicationTemplateId(value *string)() {
     err := m.GetBackingStore().Set("applicationTemplateId", value)
     if err != nil {
@@ -1983,7 +1983,7 @@ func (m *ServicePrincipal) SetAppManagementPolicies(value []AppManagementPolicya
         panic(err)
     }
 }
-// SetAppOwnerOrganizationId sets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
+// SetAppOwnerOrganizationId sets the appOwnerOrganizationId property value. Contains the tenant ID where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
 func (m *ServicePrincipal) SetAppOwnerOrganizationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("appOwnerOrganizationId", value)
     if err != nil {
@@ -2011,7 +2011,7 @@ func (m *ServicePrincipal) SetAppRoleAssignments(value []AppRoleAssignmentable)(
         panic(err)
     }
 }
-// SetAppRoles sets the appRoles property value. The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
+// SetAppRoles sets the appRoles property value. The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.
 func (m *ServicePrincipal) SetAppRoles(value []AppRoleable)() {
     err := m.GetBackingStore().Set("appRoles", value)
     if err != nil {
@@ -2046,7 +2046,7 @@ func (m *ServicePrincipal) SetDelegatedPermissionClassifications(value []Delegat
         panic(err)
     }
 }
-// SetDescription sets the description property value. Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// SetDescription sets the description property value. Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps displays the application description in this field. The maximum allowed size is 1,024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *ServicePrincipal) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -2130,7 +2130,7 @@ func (m *ServicePrincipal) SetLoginUrl(value *string)() {
         panic(err)
     }
 }
-// SetLogoutUrl sets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
+// SetLogoutUrl sets the logoutUrl property value. Specifies the URL that the Microsoft's authorization service uses to sign out a user using OpenId Connect front-channel, back-channel, or SAML sign out protocols.
 func (m *ServicePrincipal) SetLogoutUrl(value *string)() {
     err := m.GetBackingStore().Set("logoutUrl", value)
     if err != nil {
@@ -2144,7 +2144,7 @@ func (m *ServicePrincipal) SetMemberOf(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetNotes sets the notes property value. Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.
+// SetNotes sets the notes property value. Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1,024 characters.
 func (m *ServicePrincipal) SetNotes(value *string)() {
     err := m.GetBackingStore().Set("notes", value)
     if err != nil {
@@ -2172,7 +2172,7 @@ func (m *ServicePrincipal) SetOwnedObjects(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetOwners sets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// SetOwners sets the owners property value. Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 func (m *ServicePrincipal) SetOwners(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("owners", value)
     if err != nil {
@@ -2200,21 +2200,21 @@ func (m *ServicePrincipal) SetPreferredSingleSignOnMode(value *string)() {
         panic(err)
     }
 }
-// SetPreferredTokenSigningKeyEndDateTime sets the preferredTokenSigningKeyEndDateTime property value. Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
+// SetPreferredTokenSigningKeyEndDateTime sets the preferredTokenSigningKeyEndDateTime property value. Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute isn't currently supported. For details, see ServicePrincipal property differences.
 func (m *ServicePrincipal) SetPreferredTokenSigningKeyEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("preferredTokenSigningKeyEndDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPreferredTokenSigningKeyThumbprint sets the preferredTokenSigningKeyThumbprint property value. This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
+// SetPreferredTokenSigningKeyThumbprint sets the preferredTokenSigningKeyThumbprint property value. This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that aren't SAML, don't write or otherwise rely on this property.
 func (m *ServicePrincipal) SetPreferredTokenSigningKeyThumbprint(value *string)() {
     err := m.GetBackingStore().Set("preferredTokenSigningKeyThumbprint", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPublishedPermissionScopes sets the publishedPermissionScopes property value. The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
+// SetPublishedPermissionScopes sets the publishedPermissionScopes property value. The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
 func (m *ServicePrincipal) SetPublishedPermissionScopes(value []PermissionScopeable)() {
     err := m.GetBackingStore().Set("publishedPermissionScopes", value)
     if err != nil {
@@ -2256,21 +2256,21 @@ func (m *ServicePrincipal) SetSamlSingleSignOnSettings(value SamlSingleSignOnSet
         panic(err)
     }
 }
-// SetServicePrincipalNames sets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
+// SetServicePrincipalNames sets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. More values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI that is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
 func (m *ServicePrincipal) SetServicePrincipalNames(value []string)() {
     err := m.GetBackingStore().Set("servicePrincipalNames", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServicePrincipalType sets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+// SetServicePrincipalType sets the servicePrincipalType property value. Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represents a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
 func (m *ServicePrincipal) SetServicePrincipalType(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+// SetSignInAudience sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Microsoft Entra tenant (multitenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
 func (m *ServicePrincipal) SetSignInAudience(value *string)() {
     err := m.GetBackingStore().Set("signInAudience", value)
     if err != nil {
@@ -2319,7 +2319,7 @@ func (m *ServicePrincipal) SetTransitiveMemberOf(value []DirectoryObjectable)() 
         panic(err)
     }
 }
-// SetVerifiedPublisher sets the verifiedPublisher property value. Specifies the verified publisher of the application which this service principal represents.
+// SetVerifiedPublisher sets the verifiedPublisher property value. Specifies the verified publisher of the application that's linked to this service principal.
 func (m *ServicePrincipal) SetVerifiedPublisher(value VerifiedPublisherable)() {
     err := m.GetBackingStore().Set("verifiedPublisher", value)
     if err != nil {

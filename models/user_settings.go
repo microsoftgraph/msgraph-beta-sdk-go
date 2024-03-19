@@ -173,7 +173,7 @@ func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
     }
     return nil
 }
-// GetWindows gets the windows property value. The windows property
+// GetWindows gets the windows property value. The Windows settings of the user stored in the cloud.
 // returns a []WindowsSettingable when successful
 func (m *UserSettings) GetWindows()([]WindowsSettingable) {
     val, err := m.GetBackingStore().Get("windows")
@@ -283,7 +283,7 @@ func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
         panic(err)
     }
 }
-// SetWindows sets the windows property value. The windows property
+// SetWindows sets the windows property value. The Windows settings of the user stored in the cloud.
 func (m *UserSettings) SetWindows(value []WindowsSettingable)() {
     err := m.GetBackingStore().Set("windows", value)
     if err != nil {

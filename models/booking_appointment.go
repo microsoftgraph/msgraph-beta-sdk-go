@@ -45,7 +45,7 @@ func (m *BookingAppointment) GetAnonymousJoinWebUrl()(*string) {
     }
     return nil
 }
-// GetAppointmentLabel gets the appointmentLabel property value. Custom label that can be stamped on this appointment by the user.
+// GetAppointmentLabel gets the appointmentLabel property value. The user can stamp a custom label on the appointment.
 // returns a *string when successful
 func (m *BookingAppointment) GetAppointmentLabel()(*string) {
     val, err := m.GetBackingStore().Get("appointmentLabel")
@@ -57,7 +57,7 @@ func (m *BookingAppointment) GetAppointmentLabel()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date, time and timezone when the appointment was created.
+// GetCreatedDateTime gets the createdDateTime property value. The date, time, and timezone when the appointment was created.
 // returns a *Time when successful
 func (m *BookingAppointment) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -685,7 +685,7 @@ func (m *BookingAppointment) GetInvoiceUrl()(*string) {
     }
     return nil
 }
-// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
 // returns a *bool when successful
 func (m *BookingAppointment) GetIsCustomerAllowedToManageBooking()(*bool) {
     val, err := m.GetBackingStore().Get("isCustomerAllowedToManageBooking")
@@ -697,7 +697,7 @@ func (m *BookingAppointment) GetIsCustomerAllowedToManageBooking()(*bool) {
     }
     return nil
 }
-// GetIsLocationOnline gets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
+// GetIsLocationOnline gets the isLocationOnline property value. Indicates that the appointment is held online. The default value is false.
 // returns a *bool when successful
 func (m *BookingAppointment) GetIsLocationOnline()(*bool) {
     val, err := m.GetBackingStore().Get("isLocationOnline")
@@ -829,7 +829,7 @@ func (m *BookingAppointment) GetReminders()([]BookingReminderable) {
     }
     return nil
 }
-// GetSelfServiceAppointmentId gets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+// GetSelfServiceAppointmentId gets the selfServiceAppointmentId property value. Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of customer.
 // returns a *string when successful
 func (m *BookingAppointment) GetSelfServiceAppointmentId()(*string) {
     val, err := m.GetBackingStore().Get("selfServiceAppointmentId")
@@ -1189,14 +1189,14 @@ func (m *BookingAppointment) SetAnonymousJoinWebUrl(value *string)() {
         panic(err)
     }
 }
-// SetAppointmentLabel sets the appointmentLabel property value. Custom label that can be stamped on this appointment by the user.
+// SetAppointmentLabel sets the appointmentLabel property value. The user can stamp a custom label on the appointment.
 func (m *BookingAppointment) SetAppointmentLabel(value *string)() {
     err := m.GetBackingStore().Set("appointmentLabel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date, time and timezone when the appointment was created.
+// SetCreatedDateTime sets the createdDateTime property value. The date, time, and timezone when the appointment was created.
 func (m *BookingAppointment) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -1315,14 +1315,14 @@ func (m *BookingAppointment) SetInvoiceUrl(value *string)() {
         panic(err)
     }
 }
-// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
 func (m *BookingAppointment) SetIsCustomerAllowedToManageBooking(value *bool)() {
     err := m.GetBackingStore().Set("isCustomerAllowedToManageBooking", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsLocationOnline sets the isLocationOnline property value. True indicates that the appointment will be held online. Default value is false.
+// SetIsLocationOnline sets the isLocationOnline property value. Indicates that the appointment is held online. The default value is false.
 func (m *BookingAppointment) SetIsLocationOnline(value *bool)() {
     err := m.GetBackingStore().Set("isLocationOnline", value)
     if err != nil {
@@ -1399,7 +1399,7 @@ func (m *BookingAppointment) SetReminders(value []BookingReminderable)() {
         panic(err)
     }
 }
-// SetSelfServiceAppointmentId sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+// SetSelfServiceAppointmentId sets the selfServiceAppointmentId property value. Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of customer.
 func (m *BookingAppointment) SetSelfServiceAppointmentId(value *string)() {
     err := m.GetBackingStore().Set("selfServiceAppointmentId", value)
     if err != nil {

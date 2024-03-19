@@ -136,7 +136,7 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) Get(ctx context
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) IsPublished()(*ItemSitesItemContentTypesItemIsPublishedRequestBuilder) {
     return NewItemSitesItemContentTypesItemIsPublishedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update a [content type][contentType].
+// Patch update contentType
 // returns a ContentTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -189,7 +189,7 @@ func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ToGetRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a [content type][contentType].
+// ToPatchRequestInformation update contentType
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemContentTypesContentTypeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable, requestConfiguration *ItemSitesItemContentTypesContentTypeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/contentTypes/{contentType%2Did}", m.BaseRequestBuilder.PathParameters)

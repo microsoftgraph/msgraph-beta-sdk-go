@@ -608,7 +608,7 @@ func (m *Contact) GetGivenName()(*string) {
     }
     return nil
 }
-// GetImAddresses gets the imAddresses property value. The imAddresses property
+// GetImAddresses gets the imAddresses property value. The contact's instant messaging (IM) addresses.
 // returns a []string when successful
 func (m *Contact) GetImAddresses()([]string) {
     val, err := m.GetBackingStore().Get("imAddresses")
@@ -620,7 +620,7 @@ func (m *Contact) GetImAddresses()([]string) {
     }
     return nil
 }
-// GetInitials gets the initials property value. The initials property
+// GetInitials gets the initials property value. The contact's initials.
 // returns a *string when successful
 func (m *Contact) GetInitials()(*string) {
     val, err := m.GetBackingStore().Get("initials")
@@ -644,7 +644,7 @@ func (m *Contact) GetIsFavorite()(*bool) {
     }
     return nil
 }
-// GetJobTitle gets the jobTitle property value. The jobTitle property
+// GetJobTitle gets the jobTitle property value. The contact’s job title.
 // returns a *string when successful
 func (m *Contact) GetJobTitle()(*string) {
     val, err := m.GetBackingStore().Get("jobTitle")
@@ -656,7 +656,7 @@ func (m *Contact) GetJobTitle()(*string) {
     }
     return nil
 }
-// GetManager gets the manager property value. The manager property
+// GetManager gets the manager property value. The name of the contact's manager.
 // returns a *string when successful
 func (m *Contact) GetManager()(*string) {
     val, err := m.GetBackingStore().Get("manager")
@@ -668,7 +668,7 @@ func (m *Contact) GetManager()(*string) {
     }
     return nil
 }
-// GetMiddleName gets the middleName property value. The middleName property
+// GetMiddleName gets the middleName property value. The contact's middle name.
 // returns a *string when successful
 func (m *Contact) GetMiddleName()(*string) {
     val, err := m.GetBackingStore().Get("middleName")
@@ -692,7 +692,7 @@ func (m *Contact) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPr
     }
     return nil
 }
-// GetNickName gets the nickName property value. The nickName property
+// GetNickName gets the nickName property value. The contact's nickname.
 // returns a *string when successful
 func (m *Contact) GetNickName()(*string) {
     val, err := m.GetBackingStore().Get("nickName")
@@ -704,7 +704,7 @@ func (m *Contact) GetNickName()(*string) {
     }
     return nil
 }
-// GetOfficeLocation gets the officeLocation property value. The officeLocation property
+// GetOfficeLocation gets the officeLocation property value. The location of the contact's office.
 // returns a *string when successful
 func (m *Contact) GetOfficeLocation()(*string) {
     val, err := m.GetBackingStore().Get("officeLocation")
@@ -716,7 +716,7 @@ func (m *Contact) GetOfficeLocation()(*string) {
     }
     return nil
 }
-// GetParentFolderId gets the parentFolderId property value. The parentFolderId property
+// GetParentFolderId gets the parentFolderId property value. The ID of the contact's parent folder.
 // returns a *string when successful
 func (m *Contact) GetParentFolderId()(*string) {
     val, err := m.GetBackingStore().Get("parentFolderId")
@@ -728,7 +728,7 @@ func (m *Contact) GetParentFolderId()(*string) {
     }
     return nil
 }
-// GetPersonalNotes gets the personalNotes property value. The personalNotes property
+// GetPersonalNotes gets the personalNotes property value. The user's notes about the contact.
 // returns a *string when successful
 func (m *Contact) GetPersonalNotes()(*string) {
     val, err := m.GetBackingStore().Get("personalNotes")
@@ -740,7 +740,7 @@ func (m *Contact) GetPersonalNotes()(*string) {
     }
     return nil
 }
-// GetPhones gets the phones property value. The phones property
+// GetPhones gets the phones property value. Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.
 // returns a []Phoneable when successful
 func (m *Contact) GetPhones()([]Phoneable) {
     val, err := m.GetBackingStore().Get("phones")
@@ -764,7 +764,7 @@ func (m *Contact) GetPhoto()(ProfilePhotoable) {
     }
     return nil
 }
-// GetPostalAddresses gets the postalAddresses property value. The postalAddresses property
+// GetPostalAddresses gets the postalAddresses property value. Addresses associated with the contact, for example, home address and business address.
 // returns a []PhysicalAddressable when successful
 func (m *Contact) GetPostalAddresses()([]PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("postalAddresses")
@@ -776,7 +776,7 @@ func (m *Contact) GetPostalAddresses()([]PhysicalAddressable) {
     }
     return nil
 }
-// GetProfession gets the profession property value. The profession property
+// GetProfession gets the profession property value. The contact's profession.
 // returns a *string when successful
 func (m *Contact) GetProfession()(*string) {
     val, err := m.GetBackingStore().Get("profession")
@@ -800,7 +800,7 @@ func (m *Contact) GetSingleValueExtendedProperties()([]SingleValueLegacyExtended
     }
     return nil
 }
-// GetSpouseName gets the spouseName property value. The spouseName property
+// GetSpouseName gets the spouseName property value. The name of the contact's spouse/partner.
 // returns a *string when successful
 func (m *Contact) GetSpouseName()(*string) {
     val, err := m.GetBackingStore().Get("spouseName")
@@ -812,7 +812,7 @@ func (m *Contact) GetSpouseName()(*string) {
     }
     return nil
 }
-// GetSurname gets the surname property value. The surname property
+// GetSurname gets the surname property value. The contact's surname.
 // returns a *string when successful
 func (m *Contact) GetSurname()(*string) {
     val, err := m.GetBackingStore().Get("surname")
@@ -824,7 +824,7 @@ func (m *Contact) GetSurname()(*string) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. The contact's title.
 // returns a *string when successful
 func (m *Contact) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
@@ -836,7 +836,7 @@ func (m *Contact) GetTitle()(*string) {
     }
     return nil
 }
-// GetWebsites gets the websites property value. The websites property
+// GetWebsites gets the websites property value. Web sites associated with the contact.
 // returns a []Websiteable when successful
 func (m *Contact) GetWebsites()([]Websiteable) {
     val, err := m.GetBackingStore().Get("websites")
@@ -848,7 +848,7 @@ func (m *Contact) GetWebsites()([]Websiteable) {
     }
     return nil
 }
-// GetWeddingAnniversary gets the weddingAnniversary property value. The weddingAnniversary property
+// GetWeddingAnniversary gets the weddingAnniversary property value. The contact's wedding anniversary.
 // returns a *DateOnly when successful
 func (m *Contact) GetWeddingAnniversary()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("weddingAnniversary")
@@ -860,7 +860,7 @@ func (m *Contact) GetWeddingAnniversary()(*i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// GetYomiCompanyName gets the yomiCompanyName property value. The yomiCompanyName property
+// GetYomiCompanyName gets the yomiCompanyName property value. The phonetic Japanese company name of the contact.
 // returns a *string when successful
 func (m *Contact) GetYomiCompanyName()(*string) {
     val, err := m.GetBackingStore().Get("yomiCompanyName")
@@ -872,7 +872,7 @@ func (m *Contact) GetYomiCompanyName()(*string) {
     }
     return nil
 }
-// GetYomiGivenName gets the yomiGivenName property value. The yomiGivenName property
+// GetYomiGivenName gets the yomiGivenName property value. The phonetic Japanese given name (first name) of the contact.
 // returns a *string when successful
 func (m *Contact) GetYomiGivenName()(*string) {
     val, err := m.GetBackingStore().Get("yomiGivenName")
@@ -884,7 +884,7 @@ func (m *Contact) GetYomiGivenName()(*string) {
     }
     return nil
 }
-// GetYomiSurname gets the yomiSurname property value. The yomiSurname property
+// GetYomiSurname gets the yomiSurname property value. The phonetic Japanese surname (last name)  of the contact.
 // returns a *string when successful
 func (m *Contact) GetYomiSurname()(*string) {
     val, err := m.GetBackingStore().Get("yomiSurname")
@@ -1259,14 +1259,14 @@ func (m *Contact) SetGivenName(value *string)() {
         panic(err)
     }
 }
-// SetImAddresses sets the imAddresses property value. The imAddresses property
+// SetImAddresses sets the imAddresses property value. The contact's instant messaging (IM) addresses.
 func (m *Contact) SetImAddresses(value []string)() {
     err := m.GetBackingStore().Set("imAddresses", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInitials sets the initials property value. The initials property
+// SetInitials sets the initials property value. The contact's initials.
 func (m *Contact) SetInitials(value *string)() {
     err := m.GetBackingStore().Set("initials", value)
     if err != nil {
@@ -1280,21 +1280,21 @@ func (m *Contact) SetIsFavorite(value *bool)() {
         panic(err)
     }
 }
-// SetJobTitle sets the jobTitle property value. The jobTitle property
+// SetJobTitle sets the jobTitle property value. The contact’s job title.
 func (m *Contact) SetJobTitle(value *string)() {
     err := m.GetBackingStore().Set("jobTitle", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManager sets the manager property value. The manager property
+// SetManager sets the manager property value. The name of the contact's manager.
 func (m *Contact) SetManager(value *string)() {
     err := m.GetBackingStore().Set("manager", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMiddleName sets the middleName property value. The middleName property
+// SetMiddleName sets the middleName property value. The contact's middle name.
 func (m *Contact) SetMiddleName(value *string)() {
     err := m.GetBackingStore().Set("middleName", value)
     if err != nil {
@@ -1308,35 +1308,35 @@ func (m *Contact) SetMultiValueExtendedProperties(value []MultiValueLegacyExtend
         panic(err)
     }
 }
-// SetNickName sets the nickName property value. The nickName property
+// SetNickName sets the nickName property value. The contact's nickname.
 func (m *Contact) SetNickName(value *string)() {
     err := m.GetBackingStore().Set("nickName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOfficeLocation sets the officeLocation property value. The officeLocation property
+// SetOfficeLocation sets the officeLocation property value. The location of the contact's office.
 func (m *Contact) SetOfficeLocation(value *string)() {
     err := m.GetBackingStore().Set("officeLocation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParentFolderId sets the parentFolderId property value. The parentFolderId property
+// SetParentFolderId sets the parentFolderId property value. The ID of the contact's parent folder.
 func (m *Contact) SetParentFolderId(value *string)() {
     err := m.GetBackingStore().Set("parentFolderId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPersonalNotes sets the personalNotes property value. The personalNotes property
+// SetPersonalNotes sets the personalNotes property value. The user's notes about the contact.
 func (m *Contact) SetPersonalNotes(value *string)() {
     err := m.GetBackingStore().Set("personalNotes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPhones sets the phones property value. The phones property
+// SetPhones sets the phones property value. Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.
 func (m *Contact) SetPhones(value []Phoneable)() {
     err := m.GetBackingStore().Set("phones", value)
     if err != nil {
@@ -1350,14 +1350,14 @@ func (m *Contact) SetPhoto(value ProfilePhotoable)() {
         panic(err)
     }
 }
-// SetPostalAddresses sets the postalAddresses property value. The postalAddresses property
+// SetPostalAddresses sets the postalAddresses property value. Addresses associated with the contact, for example, home address and business address.
 func (m *Contact) SetPostalAddresses(value []PhysicalAddressable)() {
     err := m.GetBackingStore().Set("postalAddresses", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProfession sets the profession property value. The profession property
+// SetProfession sets the profession property value. The contact's profession.
 func (m *Contact) SetProfession(value *string)() {
     err := m.GetBackingStore().Set("profession", value)
     if err != nil {
@@ -1371,56 +1371,56 @@ func (m *Contact) SetSingleValueExtendedProperties(value []SingleValueLegacyExte
         panic(err)
     }
 }
-// SetSpouseName sets the spouseName property value. The spouseName property
+// SetSpouseName sets the spouseName property value. The name of the contact's spouse/partner.
 func (m *Contact) SetSpouseName(value *string)() {
     err := m.GetBackingStore().Set("spouseName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSurname sets the surname property value. The surname property
+// SetSurname sets the surname property value. The contact's surname.
 func (m *Contact) SetSurname(value *string)() {
     err := m.GetBackingStore().Set("surname", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. The contact's title.
 func (m *Contact) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWebsites sets the websites property value. The websites property
+// SetWebsites sets the websites property value. Web sites associated with the contact.
 func (m *Contact) SetWebsites(value []Websiteable)() {
     err := m.GetBackingStore().Set("websites", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWeddingAnniversary sets the weddingAnniversary property value. The weddingAnniversary property
+// SetWeddingAnniversary sets the weddingAnniversary property value. The contact's wedding anniversary.
 func (m *Contact) SetWeddingAnniversary(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("weddingAnniversary", value)
     if err != nil {
         panic(err)
     }
 }
-// SetYomiCompanyName sets the yomiCompanyName property value. The yomiCompanyName property
+// SetYomiCompanyName sets the yomiCompanyName property value. The phonetic Japanese company name of the contact.
 func (m *Contact) SetYomiCompanyName(value *string)() {
     err := m.GetBackingStore().Set("yomiCompanyName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetYomiGivenName sets the yomiGivenName property value. The yomiGivenName property
+// SetYomiGivenName sets the yomiGivenName property value. The phonetic Japanese given name (first name) of the contact.
 func (m *Contact) SetYomiGivenName(value *string)() {
     err := m.GetBackingStore().Set("yomiGivenName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetYomiSurname sets the yomiSurname property value. The yomiSurname property
+// SetYomiSurname sets the yomiSurname property value. The phonetic Japanese surname (last name)  of the contact.
 func (m *Contact) SetYomiSurname(value *string)() {
     err := m.GetBackingStore().Set("yomiSurname", value)
     if err != nil {

@@ -40,7 +40,7 @@ func (m *DetonationChain) GetAdditionalData()(map[string]any) {
 func (m *DetonationChain) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetChildNodes gets the childNodes property value. The childNodes property
+// GetChildNodes gets the childNodes property value. A list of all child nodes in the chain.
 // returns a []DetonationChainable when successful
 func (m *DetonationChain) GetChildNodes()([]DetonationChainable) {
     val, err := m.GetBackingStore().Get("childNodes")
@@ -106,7 +106,7 @@ func (m *DetonationChain) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The value of the chain.
 // returns a *string when successful
 func (m *DetonationChain) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -163,7 +163,7 @@ func (m *DetonationChain) SetAdditionalData(value map[string]any)() {
 func (m *DetonationChain) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetChildNodes sets the childNodes property value. The childNodes property
+// SetChildNodes sets the childNodes property value. A list of all child nodes in the chain.
 func (m *DetonationChain) SetChildNodes(value []DetonationChainable)() {
     err := m.GetBackingStore().Set("childNodes", value)
     if err != nil {
@@ -177,7 +177,7 @@ func (m *DetonationChain) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The value of the chain.
 func (m *DetonationChain) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

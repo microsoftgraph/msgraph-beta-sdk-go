@@ -11,7 +11,7 @@ import (
 type MobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilderGetQueryParameters the list of content versions for this app.
+// MobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilderGetQueryParameters the list of content versions for this app. This property is read-only.
 type MobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewMobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilder(raw
 func (m *MobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilder) Count()(*MobileAppsItemGraphWindowsUniversalAppXContentVersionsCountRequestBuilder) {
     return NewMobileAppsItemGraphWindowsUniversalAppXContentVersionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of content versions for this app.
+// Get the list of content versions for this app. This property is read-only.
 // returns a MobileAppContentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *MobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilder) P
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentable), nil
 }
-// ToGetRequestInformation the list of content versions for this app.
+// ToGetRequestInformation the list of content versions for this app. This property is read-only.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsUniversalAppXContentVersionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

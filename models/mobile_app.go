@@ -141,7 +141,7 @@ func (m *MobileApp) GetCategories()([]MobileAppCategoryable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time the app was created.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time the app was created. This property is read-only.
 // returns a *Time when successful
 func (m *MobileApp) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -153,7 +153,7 @@ func (m *MobileApp) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f30
     }
     return nil
 }
-// GetDependentAppCount gets the dependentAppCount property value. The total number of dependencies the child app has.
+// GetDependentAppCount gets the dependentAppCount property value. The total number of dependencies the child app has. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileApp) GetDependentAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("dependentAppCount")
@@ -463,7 +463,7 @@ func (m *MobileApp) GetInformationUrl()(*string) {
     }
     return nil
 }
-// GetIsAssigned gets the isAssigned property value. The value indicating whether the app is assigned to at least one group.
+// GetIsAssigned gets the isAssigned property value. The value indicating whether the app is assigned to at least one group. This property is read-only.
 // returns a *bool when successful
 func (m *MobileApp) GetIsAssigned()(*bool) {
     val, err := m.GetBackingStore().Get("isAssigned")
@@ -499,7 +499,7 @@ func (m *MobileApp) GetLargeIcon()(MimeContentable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the app was last modified.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the app was last modified. This property is read-only.
 // returns a *Time when successful
 func (m *MobileApp) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -571,7 +571,7 @@ func (m *MobileApp) GetPublishingState()(*MobileAppPublishingState) {
     }
     return nil
 }
-// GetRelationships gets the relationships property value. List of relationships for this mobile app.
+// GetRelationships gets the relationships property value. The set of direct relationships for this app.
 // returns a []MobileAppRelationshipable when successful
 func (m *MobileApp) GetRelationships()([]MobileAppRelationshipable) {
     val, err := m.GetBackingStore().Get("relationships")
@@ -595,7 +595,7 @@ func (m *MobileApp) GetRoleScopeTagIds()([]string) {
     }
     return nil
 }
-// GetSupersededAppCount gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
+// GetSupersededAppCount gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileApp) GetSupersededAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("supersededAppCount")
@@ -607,7 +607,7 @@ func (m *MobileApp) GetSupersededAppCount()(*int32) {
     }
     return nil
 }
-// GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
+// GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileApp) GetSupersedingAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("supersedingAppCount")
@@ -619,7 +619,7 @@ func (m *MobileApp) GetSupersedingAppCount()(*int32) {
     }
     return nil
 }
-// GetUploadState gets the uploadState property value. The upload state.
+// GetUploadState gets the uploadState property value. The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileApp) GetUploadState()(*int32) {
     val, err := m.GetBackingStore().Get("uploadState")
@@ -662,18 +662,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("dependentAppCount", m.GetDependentAppCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -698,12 +686,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err = writer.WriteBoolValue("isAssigned", m.GetIsAssigned())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("isFeatured", m.GetIsFeatured())
         if err != nil {
             return err
@@ -711,12 +693,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err = writer.WriteObjectValue("largeIcon", m.GetLargeIcon())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }
@@ -770,24 +746,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
-    {
-        err = writer.WriteInt32Value("supersededAppCount", m.GetSupersededAppCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("supersedingAppCount", m.GetSupersedingAppCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("uploadState", m.GetUploadState())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetAssignments sets the assignments property value. The list of group assignments for this mobile app.
@@ -804,14 +762,14 @@ func (m *MobileApp) SetCategories(value []MobileAppCategoryable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time the app was created.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time the app was created. This property is read-only.
 func (m *MobileApp) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDependentAppCount sets the dependentAppCount property value. The total number of dependencies the child app has.
+// SetDependentAppCount sets the dependentAppCount property value. The total number of dependencies the child app has. This property is read-only.
 func (m *MobileApp) SetDependentAppCount(value *int32)() {
     err := m.GetBackingStore().Set("dependentAppCount", value)
     if err != nil {
@@ -846,7 +804,7 @@ func (m *MobileApp) SetInformationUrl(value *string)() {
         panic(err)
     }
 }
-// SetIsAssigned sets the isAssigned property value. The value indicating whether the app is assigned to at least one group.
+// SetIsAssigned sets the isAssigned property value. The value indicating whether the app is assigned to at least one group. This property is read-only.
 func (m *MobileApp) SetIsAssigned(value *bool)() {
     err := m.GetBackingStore().Set("isAssigned", value)
     if err != nil {
@@ -867,7 +825,7 @@ func (m *MobileApp) SetLargeIcon(value MimeContentable)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the app was last modified.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the app was last modified. This property is read-only.
 func (m *MobileApp) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
@@ -909,7 +867,7 @@ func (m *MobileApp) SetPublishingState(value *MobileAppPublishingState)() {
         panic(err)
     }
 }
-// SetRelationships sets the relationships property value. List of relationships for this mobile app.
+// SetRelationships sets the relationships property value. The set of direct relationships for this app.
 func (m *MobileApp) SetRelationships(value []MobileAppRelationshipable)() {
     err := m.GetBackingStore().Set("relationships", value)
     if err != nil {
@@ -923,21 +881,21 @@ func (m *MobileApp) SetRoleScopeTagIds(value []string)() {
         panic(err)
     }
 }
-// SetSupersededAppCount sets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
+// SetSupersededAppCount sets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by. This property is read-only.
 func (m *MobileApp) SetSupersededAppCount(value *int32)() {
     err := m.GetBackingStore().Set("supersededAppCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSupersedingAppCount sets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
+// SetSupersedingAppCount sets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes. This property is read-only.
 func (m *MobileApp) SetSupersedingAppCount(value *int32)() {
     err := m.GetBackingStore().Set("supersedingAppCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUploadState sets the uploadState property value. The upload state.
+// SetUploadState sets the uploadState property value. The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.
 func (m *MobileApp) SetUploadState(value *int32)() {
     err := m.GetBackingStore().Set("uploadState", value)
     if err != nil {

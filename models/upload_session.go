@@ -41,7 +41,7 @@ func (m *UploadSession) GetAdditionalData()(map[string]any) {
 func (m *UploadSession) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+// GetExpirationDateTime gets the expirationDateTime property value. The date and time in UTC that the upload session expires. The complete file must be uploaded before this expiration time is reached.
 // returns a *Time when successful
 func (m *UploadSession) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -105,7 +105,7 @@ func (m *UploadSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetNextExpectedRanges gets the nextExpectedRanges property value. When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, '{start}-{end}' (for example '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
+// GetNextExpectedRanges gets the nextExpectedRanges property value. When uploading files to document libraries, this property is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, '{start}-{end}' (for example '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
 // returns a []string when successful
 func (m *UploadSession) GetNextExpectedRanges()([]string) {
     val, err := m.GetBackingStore().Get("nextExpectedRanges")
@@ -186,14 +186,14 @@ func (m *UploadSession) SetAdditionalData(value map[string]any)() {
 func (m *UploadSession) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+// SetExpirationDateTime sets the expirationDateTime property value. The date and time in UTC that the upload session expires. The complete file must be uploaded before this expiration time is reached.
 func (m *UploadSession) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNextExpectedRanges sets the nextExpectedRanges property value. When uploading files to document libraries, this is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, '{start}-{end}' (for example '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
+// SetNextExpectedRanges sets the nextExpectedRanges property value. When uploading files to document libraries, this property is a collection of byte ranges that the server is missing for the file. These ranges are zero-indexed and of the format, '{start}-{end}' (for example '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
 func (m *UploadSession) SetNextExpectedRanges(value []string)() {
     err := m.GetBackingStore().Set("nextExpectedRanges", value)
     if err != nil {

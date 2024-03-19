@@ -11,7 +11,7 @@ import (
 type ItemContentTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContentTypesRequestBuilderGetQueryParameters get the collection of [contentType][contentType] resources in a [site][].
+// ItemContentTypesRequestBuilderGetQueryParameters the collection of content types defined for this site.
 type ItemContentTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -86,7 +86,7 @@ func NewItemContentTypesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemContentTypesRequestBuilder) Count()(*ItemContentTypesCountRequestBuilder) {
     return NewItemContentTypesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of [contentType][contentType] resources in a [site][].
+// Get the collection of content types defined for this site.
 // returns a ContentTypeCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -137,7 +137,7 @@ func (m *ItemContentTypesRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentTypeable), nil
 }
-// ToGetRequestInformation get the collection of [contentType][contentType] resources in a [site][].
+// ToGetRequestInformation the collection of content types defined for this site.
 // returns a *RequestInformation when successful
 func (m *ItemContentTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContentTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

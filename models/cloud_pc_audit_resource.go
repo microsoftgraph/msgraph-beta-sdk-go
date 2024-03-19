@@ -102,6 +102,16 @@ func (m *CloudPcAuditResource) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["resourceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResourceType(val)
+        }
+        return nil
+    }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -150,6 +160,18 @@ func (m *CloudPcAuditResource) GetResourceId()(*string) {
     }
     return nil
 }
+// GetResourceType gets the resourceType property value. The resourceType property
+// returns a *string when successful
+func (m *CloudPcAuditResource) GetResourceType()(*string) {
+    val, err := m.GetBackingStore().Get("resourceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTypeEscaped gets the type property value. The type of the audit resource.
 // returns a *string when successful
 func (m *CloudPcAuditResource) GetTypeEscaped()(*string) {
@@ -190,6 +212,12 @@ func (m *CloudPcAuditResource) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("resourceId", m.GetResourceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("resourceType", m.GetResourceType())
         if err != nil {
             return err
         }
@@ -247,6 +275,13 @@ func (m *CloudPcAuditResource) SetResourceId(value *string)() {
         panic(err)
     }
 }
+// SetResourceType sets the resourceType property value. The resourceType property
+func (m *CloudPcAuditResource) SetResourceType(value *string)() {
+    err := m.GetBackingStore().Set("resourceType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTypeEscaped sets the type property value. The type of the audit resource.
 func (m *CloudPcAuditResource) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
@@ -263,11 +298,13 @@ type CloudPcAuditResourceable interface {
     GetModifiedProperties()([]CloudPcAuditPropertyable)
     GetOdataType()(*string)
     GetResourceId()(*string)
+    GetResourceType()(*string)
     GetTypeEscaped()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetModifiedProperties(value []CloudPcAuditPropertyable)()
     SetOdataType(value *string)()
     SetResourceId(value *string)()
+    SetResourceType(value *string)()
     SetTypeEscaped(value *string)()
 }

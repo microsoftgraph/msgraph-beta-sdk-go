@@ -53,7 +53,7 @@ func (m *BookingSchedulingPolicy) GetAllowStaffSelection()(*bool) {
 func (m *BookingSchedulingPolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCustomAvailabilities gets the customAvailabilities property value. collection of custom availabilities for a given time range.
+// GetCustomAvailabilities gets the customAvailabilities property value. Custom availability of the service in a given time frame of the service.
 // returns a []BookingsAvailabilityWindowable when successful
 func (m *BookingSchedulingPolicy) GetCustomAvailabilities()([]BookingsAvailabilityWindowable) {
     val, err := m.GetBackingStore().Get("customAvailabilities")
@@ -167,7 +167,7 @@ func (m *BookingSchedulingPolicy) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetGeneralAvailability gets the generalAvailability property value. General availability 
+// GetGeneralAvailability gets the generalAvailability property value. General availability of the service defined by the scheduling policy.
 // returns a BookingsAvailabilityable when successful
 func (m *BookingSchedulingPolicy) GetGeneralAvailability()(BookingsAvailabilityable) {
     val, err := m.GetBackingStore().Get("generalAvailability")
@@ -339,14 +339,14 @@ func (m *BookingSchedulingPolicy) SetAllowStaffSelection(value *bool)() {
 func (m *BookingSchedulingPolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCustomAvailabilities sets the customAvailabilities property value. collection of custom availabilities for a given time range.
+// SetCustomAvailabilities sets the customAvailabilities property value. Custom availability of the service in a given time frame of the service.
 func (m *BookingSchedulingPolicy) SetCustomAvailabilities(value []BookingsAvailabilityWindowable)() {
     err := m.GetBackingStore().Set("customAvailabilities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGeneralAvailability sets the generalAvailability property value. General availability 
+// SetGeneralAvailability sets the generalAvailability property value. General availability of the service defined by the scheduling policy.
 func (m *BookingSchedulingPolicy) SetGeneralAvailability(value BookingsAvailabilityable)() {
     err := m.GetBackingStore().Set("generalAvailability", value)
     if err != nil {

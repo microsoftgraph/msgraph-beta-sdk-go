@@ -67,7 +67,7 @@ func (m *CloudPcOnPremisesConnection) GetAlternateResourceUrl()(*string) {
     }
     return nil
 }
-// GetConnectionType gets the connectionType property value. The connectionType property
+// GetConnectionType gets the connectionType property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.
 // returns a *CloudPcOnPremisesConnectionType when successful
 func (m *CloudPcOnPremisesConnection) GetConnectionType()(*CloudPcOnPremisesConnectionType) {
     val, err := m.GetBackingStore().Get("connectionType")
@@ -315,7 +315,7 @@ func (m *CloudPcOnPremisesConnection) GetHealthCheckStatus()(*CloudPcOnPremisesC
     }
     return nil
 }
-// GetHealthCheckStatusDetail gets the healthCheckStatusDetail property value. The healthCheckStatusDetail property
+// GetHealthCheckStatusDetail gets the healthCheckStatusDetail property value. Indicates the results of health checks performed on the on-premises connection. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 // returns a CloudPcOnPremisesConnectionStatusDetailable when successful
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetail()(CloudPcOnPremisesConnectionStatusDetailable) {
     val, err := m.GetBackingStore().Get("healthCheckStatusDetail")
@@ -327,7 +327,7 @@ func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetail()(CloudPcOnPrem
     }
     return nil
 }
-// GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. The healthCheckStatusDetails property
 // returns a CloudPcOnPremisesConnectionStatusDetailsable when successful
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetails()(CloudPcOnPremisesConnectionStatusDetailsable) {
     val, err := m.GetBackingStore().Get("healthCheckStatusDetails")
@@ -435,7 +435,7 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// GetTypeEscaped gets the type property value. The type property
 // returns a *CloudPcOnPremisesConnectionType when successful
 func (m *CloudPcOnPremisesConnection) GetTypeEscaped()(*CloudPcOnPremisesConnectionType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -631,7 +631,7 @@ func (m *CloudPcOnPremisesConnection) SetAlternateResourceUrl(value *string)() {
         panic(err)
     }
 }
-// SetConnectionType sets the connectionType property value. The connectionType property
+// SetConnectionType sets the connectionType property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) SetConnectionType(value *CloudPcOnPremisesConnectionType)() {
     err := m.GetBackingStore().Set("connectionType", value)
     if err != nil {
@@ -652,14 +652,14 @@ func (m *CloudPcOnPremisesConnection) SetHealthCheckStatus(value *CloudPcOnPremi
         panic(err)
     }
 }
-// SetHealthCheckStatusDetail sets the healthCheckStatusDetail property value. The healthCheckStatusDetail property
+// SetHealthCheckStatusDetail sets the healthCheckStatusDetail property value. Indicates the results of health checks performed on the on-premises connection. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetail(value CloudPcOnPremisesConnectionStatusDetailable)() {
     err := m.GetBackingStore().Set("healthCheckStatusDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. The healthCheckStatusDetails property
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable)() {
     err := m.GetBackingStore().Set("healthCheckStatusDetails", value)
     if err != nil {
@@ -722,7 +722,7 @@ func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// SetTypeEscaped sets the type property value. The type property
 func (m *CloudPcOnPremisesConnection) SetTypeEscaped(value *CloudPcOnPremisesConnectionType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
