@@ -40,7 +40,7 @@ func (m *DetonationObservables) GetAdditionalData()(map[string]any) {
 func (m *DetonationObservables) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContactedIps gets the contactedIps property value. The contactedIps property
+// GetContactedIps gets the contactedIps property value. The list of all contacted IPs in the detonation.
 // returns a []string when successful
 func (m *DetonationObservables) GetContactedIps()([]string) {
     val, err := m.GetBackingStore().Get("contactedIps")
@@ -52,7 +52,7 @@ func (m *DetonationObservables) GetContactedIps()([]string) {
     }
     return nil
 }
-// GetContactedUrls gets the contactedUrls property value. The contactedUrls property
+// GetContactedUrls gets the contactedUrls property value. The list of all URLs found in the detonation.
 // returns a []string when successful
 func (m *DetonationObservables) GetContactedUrls()([]string) {
     val, err := m.GetBackingStore().Get("contactedUrls")
@@ -64,7 +64,7 @@ func (m *DetonationObservables) GetContactedUrls()([]string) {
     }
     return nil
 }
-// GetDroppedfiles gets the droppedfiles property value. The droppedfiles property
+// GetDroppedfiles gets the droppedfiles property value. The list of all dropped files in the detonation.
 // returns a []string when successful
 func (m *DetonationObservables) GetDroppedfiles()([]string) {
     val, err := m.GetBackingStore().Get("droppedfiles")
@@ -197,21 +197,21 @@ func (m *DetonationObservables) SetAdditionalData(value map[string]any)() {
 func (m *DetonationObservables) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContactedIps sets the contactedIps property value. The contactedIps property
+// SetContactedIps sets the contactedIps property value. The list of all contacted IPs in the detonation.
 func (m *DetonationObservables) SetContactedIps(value []string)() {
     err := m.GetBackingStore().Set("contactedIps", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContactedUrls sets the contactedUrls property value. The contactedUrls property
+// SetContactedUrls sets the contactedUrls property value. The list of all URLs found in the detonation.
 func (m *DetonationObservables) SetContactedUrls(value []string)() {
     err := m.GetBackingStore().Set("contactedUrls", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDroppedfiles sets the droppedfiles property value. The droppedfiles property
+// SetDroppedfiles sets the droppedfiles property value. The list of all dropped files in the detonation.
 func (m *DetonationObservables) SetDroppedfiles(value []string)() {
     err := m.GetBackingStore().Set("droppedfiles", value)
     if err != nil {

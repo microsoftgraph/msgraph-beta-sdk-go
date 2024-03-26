@@ -40,7 +40,7 @@ func (m *AnalyzedEmailAuthenticationDetail) GetAdditionalData()(map[string]any) 
 func (m *AnalyzedEmailAuthenticationDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCompositeAuthentication gets the compositeAuthentication property value. The compositeAuthentication property
+// GetCompositeAuthentication gets the compositeAuthentication property value. A value used by Microsoft 365 to combine email authentication such as SPF, DKIM, and DMARC, to determine whether the message is authentic.
 // returns a *string when successful
 func (m *AnalyzedEmailAuthenticationDetail) GetCompositeAuthentication()(*string) {
     val, err := m.GetBackingStore().Get("compositeAuthentication")
@@ -52,7 +52,7 @@ func (m *AnalyzedEmailAuthenticationDetail) GetCompositeAuthentication()(*string
     }
     return nil
 }
-// GetDkim gets the dkim property value. The dkim property
+// GetDkim gets the dkim property value. DomainKeys identified mail (DKIM). Indicates whether it was pass/fail/soft fail.
 // returns a *string when successful
 func (m *AnalyzedEmailAuthenticationDetail) GetDkim()(*string) {
     val, err := m.GetBackingStore().Get("dkim")
@@ -64,7 +64,7 @@ func (m *AnalyzedEmailAuthenticationDetail) GetDkim()(*string) {
     }
     return nil
 }
-// GetDmarc gets the dmarc property value. The dmarc property
+// GetDmarc gets the dmarc property value. Domain-based Message Authentication. Indicates whether it was pass/fail/soft fail.
 // returns a *string when successful
 func (m *AnalyzedEmailAuthenticationDetail) GetDmarc()(*string) {
     val, err := m.GetBackingStore().Get("dmarc")
@@ -144,7 +144,7 @@ func (m *AnalyzedEmailAuthenticationDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSenderPolicyFramework gets the senderPolicyFramework property value. The senderPolicyFramework property
+// GetSenderPolicyFramework gets the senderPolicyFramework property value. Sender Policy Framework (SPF). Indicates whether it was pass/fail/soft fail.
 // returns a *string when successful
 func (m *AnalyzedEmailAuthenticationDetail) GetSenderPolicyFramework()(*string) {
     val, err := m.GetBackingStore().Get("senderPolicyFramework")
@@ -207,21 +207,21 @@ func (m *AnalyzedEmailAuthenticationDetail) SetAdditionalData(value map[string]a
 func (m *AnalyzedEmailAuthenticationDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCompositeAuthentication sets the compositeAuthentication property value. The compositeAuthentication property
+// SetCompositeAuthentication sets the compositeAuthentication property value. A value used by Microsoft 365 to combine email authentication such as SPF, DKIM, and DMARC, to determine whether the message is authentic.
 func (m *AnalyzedEmailAuthenticationDetail) SetCompositeAuthentication(value *string)() {
     err := m.GetBackingStore().Set("compositeAuthentication", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDkim sets the dkim property value. The dkim property
+// SetDkim sets the dkim property value. DomainKeys identified mail (DKIM). Indicates whether it was pass/fail/soft fail.
 func (m *AnalyzedEmailAuthenticationDetail) SetDkim(value *string)() {
     err := m.GetBackingStore().Set("dkim", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDmarc sets the dmarc property value. The dmarc property
+// SetDmarc sets the dmarc property value. Domain-based Message Authentication. Indicates whether it was pass/fail/soft fail.
 func (m *AnalyzedEmailAuthenticationDetail) SetDmarc(value *string)() {
     err := m.GetBackingStore().Set("dmarc", value)
     if err != nil {
@@ -235,7 +235,7 @@ func (m *AnalyzedEmailAuthenticationDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSenderPolicyFramework sets the senderPolicyFramework property value. The senderPolicyFramework property
+// SetSenderPolicyFramework sets the senderPolicyFramework property value. Sender Policy Framework (SPF). Indicates whether it was pass/fail/soft fail.
 func (m *AnalyzedEmailAuthenticationDetail) SetSenderPolicyFramework(value *string)() {
     err := m.GetBackingStore().Set("senderPolicyFramework", value)
     if err != nil {

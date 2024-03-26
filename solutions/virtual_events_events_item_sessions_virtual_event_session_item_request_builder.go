@@ -125,6 +125,16 @@ func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) P
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) Registrations()(*VirtualEventsEventsItemSessionsItemRegistrationsRequestBuilder) {
     return NewVirtualEventsEventsItemSessionsItemRegistrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RegistrationsWithEmail provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+// returns a *VirtualEventsEventsItemSessionsItemRegistrationsWithEmailRequestBuilder when successful
+func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) RegistrationsWithEmail(email *string)(*VirtualEventsEventsItemSessionsItemRegistrationsWithEmailRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemRegistrationsWithEmailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, email)
+}
+// RegistrationsWithUserId provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+// returns a *VirtualEventsEventsItemSessionsItemRegistrationsWithUserIdRequestBuilder when successful
+func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) RegistrationsWithUserId(userId *string)(*VirtualEventsEventsItemSessionsItemRegistrationsWithUserIdRequestBuilder) {
+    return NewVirtualEventsEventsItemSessionsItemRegistrationsWithUserIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userId)
+}
 // ToDeleteRequestInformation delete navigation property sessions for solutions
 // returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemSessionsVirtualEventSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

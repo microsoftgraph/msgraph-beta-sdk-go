@@ -315,6 +315,22 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["mobileAppCatalogPackages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppCatalogPackageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MobileAppCatalogPackageable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MobileAppCatalogPackageable)
+                }
+            }
+            m.SetMobileAppCatalogPackages(res)
+        }
+        return nil
+    }
     res["mobileAppCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMobileAppCategoryFromDiscriminatorValue)
         if err != nil {
@@ -669,6 +685,18 @@ func (m *DeviceAppManagement) GetMicrosoftStoreForBusinessPortalSelection()(*Mic
     }
     return nil
 }
+// GetMobileAppCatalogPackages gets the mobileAppCatalogPackages property value. MobileAppCatalogPackage entities.
+// returns a []MobileAppCatalogPackageable when successful
+func (m *DeviceAppManagement) GetMobileAppCatalogPackages()([]MobileAppCatalogPackageable) {
+    val, err := m.GetBackingStore().Get("mobileAppCatalogPackages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MobileAppCatalogPackageable)
+    }
+    return nil
+}
 // GetMobileAppCategories gets the mobileAppCategories property value. The mobile app categories.
 // returns a []MobileAppCategoryable when successful
 func (m *DeviceAppManagement) GetMobileAppCategories()([]MobileAppCategoryable) {
@@ -1006,6 +1034,18 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetMobileAppCatalogPackages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileAppCatalogPackages()))
+        for i, v := range m.GetMobileAppCatalogPackages() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mobileAppCatalogPackages", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMobileAppCategories() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileAppCategories()))
         for i, v := range m.GetMobileAppCategories() {
@@ -1271,6 +1311,13 @@ func (m *DeviceAppManagement) SetMicrosoftStoreForBusinessPortalSelection(value 
         panic(err)
     }
 }
+// SetMobileAppCatalogPackages sets the mobileAppCatalogPackages property value. MobileAppCatalogPackage entities.
+func (m *DeviceAppManagement) SetMobileAppCatalogPackages(value []MobileAppCatalogPackageable)() {
+    err := m.GetBackingStore().Set("mobileAppCatalogPackages", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMobileAppCategories sets the mobileAppCategories property value. The mobile app categories.
 func (m *DeviceAppManagement) SetMobileAppCategories(value []MobileAppCategoryable)() {
     err := m.GetBackingStore().Set("mobileAppCategories", value)
@@ -1382,6 +1429,7 @@ type DeviceAppManagementable interface {
     GetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMicrosoftStoreForBusinessPortalSelection()(*MicrosoftStoreForBusinessPortalSelectionOptions)
+    GetMobileAppCatalogPackages()([]MobileAppCatalogPackageable)
     GetMobileAppCategories()([]MobileAppCategoryable)
     GetMobileAppConfigurations()([]ManagedDeviceMobileAppConfigurationable)
     GetMobileApps()([]MobileAppable)
@@ -1412,6 +1460,7 @@ type DeviceAppManagementable interface {
     SetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMicrosoftStoreForBusinessPortalSelection(value *MicrosoftStoreForBusinessPortalSelectionOptions)()
+    SetMobileAppCatalogPackages(value []MobileAppCatalogPackageable)()
     SetMobileAppCategories(value []MobileAppCategoryable)()
     SetMobileAppConfigurations(value []ManagedDeviceMobileAppConfigurationable)()
     SetMobileApps(value []MobileAppable)()

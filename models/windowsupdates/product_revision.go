@@ -21,6 +21,18 @@ func NewProductRevision()(*ProductRevision) {
 func CreateProductRevisionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProductRevision(), nil
 }
+// GetCatalogEntry gets the catalogEntry property value. The catalogEntry property
+// returns a CatalogEntryable when successful
+func (m *ProductRevision) GetCatalogEntry()(CatalogEntryable) {
+    val, err := m.GetBackingStore().Get("catalogEntry")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CatalogEntryable)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The display name of the content. Read-only.
 // returns a *string when successful
 func (m *ProductRevision) GetDisplayName()(*string) {
@@ -37,6 +49,16 @@ func (m *ProductRevision) GetDisplayName()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProductRevision) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["catalogEntry"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCatalogEntryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCatalogEntry(val.(CatalogEntryable))
+        }
+        return nil
+    }
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -166,6 +188,12 @@ func (m *ProductRevision) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     {
+        err = writer.WriteObjectValue("catalogEntry", m.GetCatalogEntry())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -202,6 +230,13 @@ func (m *ProductRevision) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     return nil
+}
+// SetCatalogEntry sets the catalogEntry property value. The catalogEntry property
+func (m *ProductRevision) SetCatalogEntry(value CatalogEntryable)() {
+    err := m.GetBackingStore().Set("catalogEntry", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the content. Read-only.
 func (m *ProductRevision) SetDisplayName(value *string)() {
@@ -248,12 +283,14 @@ func (m *ProductRevision) SetVersion(value *string)() {
 type ProductRevisionable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCatalogEntry()(CatalogEntryable)
     GetDisplayName()(*string)
     GetKnowledgeBaseArticle()(KnowledgeBaseArticleable)
     GetOsBuild()(BuildVersionDetailsable)
     GetProduct()(*string)
     GetReleaseDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetVersion()(*string)
+    SetCatalogEntry(value CatalogEntryable)()
     SetDisplayName(value *string)()
     SetKnowledgeBaseArticle(value KnowledgeBaseArticleable)()
     SetOsBuild(value BuildVersionDetailsable)()

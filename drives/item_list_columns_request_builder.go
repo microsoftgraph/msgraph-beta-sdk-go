@@ -11,7 +11,7 @@ import (
 type ItemListColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListColumnsRequestBuilderGetQueryParameters get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
+// ItemListColumnsRequestBuilderGetQueryParameters the collection of field definitions for this list.
 type ItemListColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemListColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemListColumnsRequestBuilder) Count()(*ItemListColumnsCountRequestBuilder) {
     return NewItemListColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
+// Get the collection of field definitions for this list.
 // returns a ColumnDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -99,7 +99,7 @@ func (m *ItemListColumnsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable), nil
 }
-// Post create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+// Post create columnDefinition
 // returns a ColumnDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -122,7 +122,7 @@ func (m *ItemListColumnsRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable), nil
 }
-// ToGetRequestInformation get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
+// ToGetRequestInformation the collection of field definitions for this list.
 // returns a *RequestInformation when successful
 func (m *ItemListColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +136,7 @@ func (m *ItemListColumnsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+// ToPostRequestInformation create columnDefinition
 // returns a *RequestInformation when successful
 func (m *ItemListColumnsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemListColumnsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/drives/{drive%2Did}/list/columns", m.BaseRequestBuilder.PathParameters)

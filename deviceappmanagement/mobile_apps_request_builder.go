@@ -71,6 +71,11 @@ func NewMobileAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
+// ConvertFromMobileAppCatalogPackageWithMobileAppCatalogPackageId provides operations to call the convertFromMobileAppCatalogPackage method.
+// returns a *MobileAppsConvertFromMobileAppCatalogPackageWithMobileAppCatalogPackageIdRequestBuilder when successful
+func (m *MobileAppsRequestBuilder) ConvertFromMobileAppCatalogPackageWithMobileAppCatalogPackageId(mobileAppCatalogPackageId *string)(*MobileAppsConvertFromMobileAppCatalogPackageWithMobileAppCatalogPackageIdRequestBuilder) {
+    return NewMobileAppsConvertFromMobileAppCatalogPackageWithMobileAppCatalogPackageIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, mobileAppCatalogPackageId)
+}
 // Count provides operations to count the resources in the collection.
 // returns a *MobileAppsCountRequestBuilder when successful
 func (m *MobileAppsRequestBuilder) Count()(*MobileAppsCountRequestBuilder) {

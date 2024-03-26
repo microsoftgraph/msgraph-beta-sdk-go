@@ -96,7 +96,7 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetTargetDisplayName gets the targetDisplayName property value. The target mobile app's display name.
+// GetTargetDisplayName gets the targetDisplayName property value. The target mobile app's display name. This property is read-only.
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("targetDisplayName")
@@ -108,7 +108,7 @@ func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
     }
     return nil
 }
-// GetTargetDisplayVersion gets the targetDisplayVersion property value. The target mobile app's display version.
+// GetTargetDisplayVersion gets the targetDisplayVersion property value. The target mobile app's display version. This property is read-only.
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
     val, err := m.GetBackingStore().Get("targetDisplayVersion")
@@ -132,7 +132,7 @@ func (m *MobileAppRelationship) GetTargetId()(*string) {
     }
     return nil
 }
-// GetTargetPublisher gets the targetPublisher property value. The target mobile app's publisher.
+// GetTargetPublisher gets the targetPublisher property value. The target mobile app's publisher. This property is read-only.
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("targetPublisher")
@@ -163,25 +163,7 @@ func (m *MobileAppRelationship) Serialize(writer i878a80d2330e89d26896388a3f487e
         return err
     }
     {
-        err = writer.WriteStringValue("targetDisplayName", m.GetTargetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("targetDisplayVersion", m.GetTargetDisplayVersion())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("targetId", m.GetTargetId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("targetPublisher", m.GetTargetPublisher())
         if err != nil {
             return err
         }
@@ -195,14 +177,14 @@ func (m *MobileAppRelationship) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetTargetDisplayName sets the targetDisplayName property value. The target mobile app's display name.
+// SetTargetDisplayName sets the targetDisplayName property value. The target mobile app's display name. This property is read-only.
 func (m *MobileAppRelationship) SetTargetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("targetDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetDisplayVersion sets the targetDisplayVersion property value. The target mobile app's display version.
+// SetTargetDisplayVersion sets the targetDisplayVersion property value. The target mobile app's display version. This property is read-only.
 func (m *MobileAppRelationship) SetTargetDisplayVersion(value *string)() {
     err := m.GetBackingStore().Set("targetDisplayVersion", value)
     if err != nil {
@@ -216,7 +198,7 @@ func (m *MobileAppRelationship) SetTargetId(value *string)() {
         panic(err)
     }
 }
-// SetTargetPublisher sets the targetPublisher property value. The target mobile app's publisher.
+// SetTargetPublisher sets the targetPublisher property value. The target mobile app's publisher. This property is read-only.
 func (m *MobileAppRelationship) SetTargetPublisher(value *string)() {
     err := m.GetBackingStore().Set("targetPublisher", value)
     if err != nil {

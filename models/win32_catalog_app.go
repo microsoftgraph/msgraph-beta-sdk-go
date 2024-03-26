@@ -26,6 +26,16 @@ func CreateWin32CatalogAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32CatalogApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Win32LobApp.GetFieldDeserializers()
+    res["latestUpgradeCatalogPackage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMobileAppCatalogPackageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLatestUpgradeCatalogPackage(val.(MobileAppCatalogPackageable))
+        }
+        return nil
+    }
     res["mobileAppCatalogPackageId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -36,7 +46,29 @@ func (m *Win32CatalogApp) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["referencedCatalogPackage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMobileAppCatalogPackageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReferencedCatalogPackage(val.(MobileAppCatalogPackageable))
+        }
+        return nil
+    }
     return res
+}
+// GetLatestUpgradeCatalogPackage gets the latestUpgradeCatalogPackage property value. The latest available catalog package the app is upgradeable to. This property is read-only.
+// returns a MobileAppCatalogPackageable when successful
+func (m *Win32CatalogApp) GetLatestUpgradeCatalogPackage()(MobileAppCatalogPackageable) {
+    val, err := m.GetBackingStore().Get("latestUpgradeCatalogPackage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MobileAppCatalogPackageable)
+    }
+    return nil
 }
 // GetMobileAppCatalogPackageId gets the mobileAppCatalogPackageId property value. The mobileAppCatalogPackageId property references the mobileAppCatalogPackage entity which contains information about an application catalog package that can be deployed to Intune-managed devices
 // returns a *string when successful
@@ -50,6 +82,18 @@ func (m *Win32CatalogApp) GetMobileAppCatalogPackageId()(*string) {
     }
     return nil
 }
+// GetReferencedCatalogPackage gets the referencedCatalogPackage property value. The current catalog package the app is synced from. This property is read-only.
+// returns a MobileAppCatalogPackageable when successful
+func (m *Win32CatalogApp) GetReferencedCatalogPackage()(MobileAppCatalogPackageable) {
+    val, err := m.GetBackingStore().Get("referencedCatalogPackage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MobileAppCatalogPackageable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Win32CatalogApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Win32LobApp.Serialize(writer)
@@ -57,12 +101,31 @@ func (m *Win32CatalogApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     {
+        err = writer.WriteObjectValue("latestUpgradeCatalogPackage", m.GetLatestUpgradeCatalogPackage())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("mobileAppCatalogPackageId", m.GetMobileAppCatalogPackageId())
         if err != nil {
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("referencedCatalogPackage", m.GetReferencedCatalogPackage())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetLatestUpgradeCatalogPackage sets the latestUpgradeCatalogPackage property value. The latest available catalog package the app is upgradeable to. This property is read-only.
+func (m *Win32CatalogApp) SetLatestUpgradeCatalogPackage(value MobileAppCatalogPackageable)() {
+    err := m.GetBackingStore().Set("latestUpgradeCatalogPackage", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetMobileAppCatalogPackageId sets the mobileAppCatalogPackageId property value. The mobileAppCatalogPackageId property references the mobileAppCatalogPackage entity which contains information about an application catalog package that can be deployed to Intune-managed devices
 func (m *Win32CatalogApp) SetMobileAppCatalogPackageId(value *string)() {
@@ -71,9 +134,20 @@ func (m *Win32CatalogApp) SetMobileAppCatalogPackageId(value *string)() {
         panic(err)
     }
 }
+// SetReferencedCatalogPackage sets the referencedCatalogPackage property value. The current catalog package the app is synced from. This property is read-only.
+func (m *Win32CatalogApp) SetReferencedCatalogPackage(value MobileAppCatalogPackageable)() {
+    err := m.GetBackingStore().Set("referencedCatalogPackage", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Win32CatalogAppable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Win32LobAppable
+    GetLatestUpgradeCatalogPackage()(MobileAppCatalogPackageable)
     GetMobileAppCatalogPackageId()(*string)
+    GetReferencedCatalogPackage()(MobileAppCatalogPackageable)
+    SetLatestUpgradeCatalogPackage(value MobileAppCatalogPackageable)()
     SetMobileAppCatalogPackageId(value *string)()
+    SetReferencedCatalogPackage(value MobileAppCatalogPackageable)()
 }

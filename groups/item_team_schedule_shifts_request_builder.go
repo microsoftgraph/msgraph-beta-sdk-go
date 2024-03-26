@@ -11,7 +11,7 @@ import (
 type ItemTeamScheduleShiftsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamScheduleShiftsRequestBuilderGetQueryParameters get the list of shift instances in a schedule.
+// ItemTeamScheduleShiftsRequestBuilderGetQueryParameters the shifts in the schedule.
 type ItemTeamScheduleShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemTeamScheduleShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemTeamScheduleShiftsRequestBuilder) Count()(*ItemTeamScheduleShiftsCountRequestBuilder) {
     return NewItemTeamScheduleShiftsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of shift instances in a schedule.
+// Get the shifts in the schedule.
 // returns a ShiftCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,7 +120,7 @@ func (m *ItemTeamScheduleShiftsRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable), nil
 }
-// ToGetRequestInformation get the list of shift instances in a schedule.
+// ToGetRequestInformation the shifts in the schedule.
 // returns a *RequestInformation when successful
 func (m *ItemTeamScheduleShiftsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

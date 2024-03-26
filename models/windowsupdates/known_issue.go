@@ -1,0 +1,467 @@
+package windowsupdates
+
+import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+)
+
+type KnownIssue struct {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+}
+// NewKnownIssue instantiates a new KnownIssue and sets the default values.
+func NewKnownIssue()(*KnownIssue) {
+    m := &KnownIssue{
+        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+    }
+    return m
+}
+// CreateKnownIssueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateKnownIssueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewKnownIssue(), nil
+}
+// GetDescription gets the description property value. The description of the particular known issue.
+// returns a *string when successful
+func (m *KnownIssue) GetDescription()(*string) {
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *KnownIssue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDescription(val)
+        }
+        return nil
+    }
+    res["knownIssueHistories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateKnownIssueHistoryItemFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]KnownIssueHistoryItemable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(KnownIssueHistoryItemable)
+                }
+            }
+            m.SetKnownIssueHistories(res)
+        }
+        return nil
+    }
+    res["lastUpdatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUpdatedDateTime(val)
+        }
+        return nil
+    }
+    res["originatingKnowledgeBaseArticle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateKnowledgeBaseArticleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOriginatingKnowledgeBaseArticle(val.(KnowledgeBaseArticleable))
+        }
+        return nil
+    }
+    res["resolvedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResolvedDateTime(val)
+        }
+        return nil
+    }
+    res["resolvingKnowledgeBaseArticle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateKnowledgeBaseArticleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResolvingKnowledgeBaseArticle(val.(KnowledgeBaseArticleable))
+        }
+        return nil
+    }
+    res["safeguardHoldIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("int32")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]int32, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*int32))
+                }
+            }
+            m.SetSafeguardHoldIds(res)
+        }
+        return nil
+    }
+    res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStartDateTime(val)
+        }
+        return nil
+    }
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsReleaseHealthStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStatus(val.(*WindowsReleaseHealthStatus))
+        }
+        return nil
+    }
+    res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTitle(val)
+        }
+        return nil
+    }
+    res["webViewUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWebViewUrl(val)
+        }
+        return nil
+    }
+    return res
+}
+// GetKnownIssueHistories gets the knownIssueHistories property value. The knownIssueHistories property
+// returns a []KnownIssueHistoryItemable when successful
+func (m *KnownIssue) GetKnownIssueHistories()([]KnownIssueHistoryItemable) {
+    val, err := m.GetBackingStore().Get("knownIssueHistories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KnownIssueHistoryItemable)
+    }
+    return nil
+}
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date and time when the known issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// returns a *Time when successful
+func (m *KnownIssue) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOriginatingKnowledgeBaseArticle gets the originatingKnowledgeBaseArticle property value. Knowledge base article associated with the release when the known issue was first reported.
+// returns a KnowledgeBaseArticleable when successful
+func (m *KnownIssue) GetOriginatingKnowledgeBaseArticle()(KnowledgeBaseArticleable) {
+    val, err := m.GetBackingStore().Get("originatingKnowledgeBaseArticle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(KnowledgeBaseArticleable)
+    }
+    return nil
+}
+// GetResolvedDateTime gets the resolvedDateTime property value. The date and time when the known issue was resolved or mitigated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
+func (m *KnownIssue) GetResolvedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("resolvedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetResolvingKnowledgeBaseArticle gets the resolvingKnowledgeBaseArticle property value. Knowledge base article associated with the release when the known issue was resolved or mitigated.
+// returns a KnowledgeBaseArticleable when successful
+func (m *KnownIssue) GetResolvingKnowledgeBaseArticle()(KnowledgeBaseArticleable) {
+    val, err := m.GetBackingStore().Get("resolvingKnowledgeBaseArticle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(KnowledgeBaseArticleable)
+    }
+    return nil
+}
+// GetSafeguardHoldIds gets the safeguardHoldIds property value. The safeguardHoldIds property
+// returns a []int32 when successful
+func (m *KnownIssue) GetSafeguardHoldIds()([]int32) {
+    val, err := m.GetBackingStore().Get("safeguardHoldIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]int32)
+    }
+    return nil
+}
+// GetStartDateTime gets the startDateTime property value. The date and time when the known issue was first reported. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
+func (m *KnownIssue) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("startDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetStatus gets the status property value. The status property
+// returns a *WindowsReleaseHealthStatus when successful
+func (m *KnownIssue) GetStatus()(*WindowsReleaseHealthStatus) {
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsReleaseHealthStatus)
+    }
+    return nil
+}
+// GetTitle gets the title property value. The title of the known issue.
+// returns a *string when successful
+func (m *KnownIssue) GetTitle()(*string) {
+    val, err := m.GetBackingStore().Get("title")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetWebViewUrl gets the webViewUrl property value. The URL to the known issue in the Windows Release Health dashboard on Microsoft 365 admin center.
+// returns a *string when successful
+func (m *KnownIssue) GetWebViewUrl()(*string) {
+    val, err := m.GetBackingStore().Get("webViewUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *KnownIssue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.Entity.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetKnownIssueHistories() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKnownIssueHistories()))
+        for i, v := range m.GetKnownIssueHistories() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("knownIssueHistories", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastUpdatedDateTime", m.GetLastUpdatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("originatingKnowledgeBaseArticle", m.GetOriginatingKnowledgeBaseArticle())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("resolvedDateTime", m.GetResolvedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("resolvingKnowledgeBaseArticle", m.GetResolvingKnowledgeBaseArticle())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSafeguardHoldIds() != nil {
+        err = writer.WriteCollectionOfInt32Values("safeguardHoldIds", m.GetSafeguardHoldIds())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetStatus() != nil {
+        cast := (*m.GetStatus()).String()
+        err = writer.WriteStringValue("status", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("title", m.GetTitle())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("webViewUrl", m.GetWebViewUrl())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetDescription sets the description property value. The description of the particular known issue.
+func (m *KnownIssue) SetDescription(value *string)() {
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetKnownIssueHistories sets the knownIssueHistories property value. The knownIssueHistories property
+func (m *KnownIssue) SetKnownIssueHistories(value []KnownIssueHistoryItemable)() {
+    err := m.GetBackingStore().Set("knownIssueHistories", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date and time when the known issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+func (m *KnownIssue) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOriginatingKnowledgeBaseArticle sets the originatingKnowledgeBaseArticle property value. Knowledge base article associated with the release when the known issue was first reported.
+func (m *KnownIssue) SetOriginatingKnowledgeBaseArticle(value KnowledgeBaseArticleable)() {
+    err := m.GetBackingStore().Set("originatingKnowledgeBaseArticle", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetResolvedDateTime sets the resolvedDateTime property value. The date and time when the known issue was resolved or mitigated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *KnownIssue) SetResolvedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("resolvedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetResolvingKnowledgeBaseArticle sets the resolvingKnowledgeBaseArticle property value. Knowledge base article associated with the release when the known issue was resolved or mitigated.
+func (m *KnownIssue) SetResolvingKnowledgeBaseArticle(value KnowledgeBaseArticleable)() {
+    err := m.GetBackingStore().Set("resolvingKnowledgeBaseArticle", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSafeguardHoldIds sets the safeguardHoldIds property value. The safeguardHoldIds property
+func (m *KnownIssue) SetSafeguardHoldIds(value []int32)() {
+    err := m.GetBackingStore().Set("safeguardHoldIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetStartDateTime sets the startDateTime property value. The date and time when the known issue was first reported. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *KnownIssue) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("startDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetStatus sets the status property value. The status property
+func (m *KnownIssue) SetStatus(value *WindowsReleaseHealthStatus)() {
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTitle sets the title property value. The title of the known issue.
+func (m *KnownIssue) SetTitle(value *string)() {
+    err := m.GetBackingStore().Set("title", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWebViewUrl sets the webViewUrl property value. The URL to the known issue in the Windows Release Health dashboard on Microsoft 365 admin center.
+func (m *KnownIssue) SetWebViewUrl(value *string)() {
+    err := m.GetBackingStore().Set("webViewUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type KnownIssueable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDescription()(*string)
+    GetKnownIssueHistories()([]KnownIssueHistoryItemable)
+    GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOriginatingKnowledgeBaseArticle()(KnowledgeBaseArticleable)
+    GetResolvedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetResolvingKnowledgeBaseArticle()(KnowledgeBaseArticleable)
+    GetSafeguardHoldIds()([]int32)
+    GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetStatus()(*WindowsReleaseHealthStatus)
+    GetTitle()(*string)
+    GetWebViewUrl()(*string)
+    SetDescription(value *string)()
+    SetKnownIssueHistories(value []KnownIssueHistoryItemable)()
+    SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOriginatingKnowledgeBaseArticle(value KnowledgeBaseArticleable)()
+    SetResolvedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetResolvingKnowledgeBaseArticle(value KnowledgeBaseArticleable)()
+    SetSafeguardHoldIds(value []int32)()
+    SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetStatus(value *WindowsReleaseHealthStatus)()
+    SetTitle(value *string)()
+    SetWebViewUrl(value *string)()
+}

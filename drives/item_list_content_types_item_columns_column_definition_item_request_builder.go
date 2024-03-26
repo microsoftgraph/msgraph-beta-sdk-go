@@ -18,7 +18,7 @@ type ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+// ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
 type ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+// Delete delete columnDefinition
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -73,7 +73,7 @@ func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Dele
     }
     return nil
 }
-// Get retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+// Get retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
 // returns a ColumnDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -96,7 +96,7 @@ func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Get(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable), nil
 }
-// Patch update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+// Patch update columnDefinition
 // returns a ColumnDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -124,7 +124,7 @@ func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) Patc
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) SourceColumn()(*ItemListContentTypesItemColumnsItemSourceColumnRequestBuilder) {
     return NewItemListContentTypesItemColumnsItemSourceColumnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+// ToDeleteRequestInformation delete columnDefinition
 // returns a *RequestInformation when successful
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/drives/{drive%2Did}/list/contentTypes/{contentType%2Did}/columns/{columnDefinition%2Did}", m.BaseRequestBuilder.PathParameters)
@@ -135,7 +135,7 @@ func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToDe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+// ToGetRequestInformation retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
 // returns a *RequestInformation when successful
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,7 +149,7 @@ func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToGe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+// ToPatchRequestInformation update columnDefinition
 // returns a *RequestInformation when successful
 func (m *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionable, requestConfiguration *ItemListContentTypesItemColumnsColumnDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/drives/{drive%2Did}/list/contentTypes/{contentType%2Did}/columns/{columnDefinition%2Did}", m.BaseRequestBuilder.PathParameters)

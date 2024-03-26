@@ -46,7 +46,7 @@ func (m *WindowsUniversalAppX) GetApplicableDeviceTypes()(*WindowsDeviceType) {
     }
     return nil
 }
-// GetCommittedContainedApps gets the committedContainedApps property value. The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+// GetCommittedContainedApps gets the committedContainedApps property value. The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
 // returns a []MobileContainedAppable when successful
 func (m *WindowsUniversalAppX) GetCommittedContainedApps()([]MobileContainedAppable) {
     val, err := m.GetBackingStore().Get("committedContainedApps")
@@ -316,7 +316,7 @@ func (m *WindowsUniversalAppX) SetApplicableDeviceTypes(value *WindowsDeviceType
         panic(err)
     }
 }
-// SetCommittedContainedApps sets the committedContainedApps property value. The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+// SetCommittedContainedApps sets the committedContainedApps property value. The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
 func (m *WindowsUniversalAppX) SetCommittedContainedApps(value []MobileContainedAppable)() {
     err := m.GetBackingStore().Set("committedContainedApps", value)
     if err != nil {

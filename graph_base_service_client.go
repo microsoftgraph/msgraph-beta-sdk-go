@@ -16,6 +16,7 @@ import (
     i0f747ff1f24810ff51160697ed4229c9ca192f7b84644311b88fa3b475cc340d "github.com/microsoftgraph/msgraph-beta-sdk-go/datapolicyoperations"
     i14752cfec59ab915e7c63922270765abf65744437d9135c191cef3986f08c3bb "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments"
     i15e329825c659329448e12b30278e3a09efd68996edb65e6eb37bbba528b21d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/agreementacceptances"
+    i164b4c6703708dd1b0670a17a07a4dd64e49cb0c1cb66e50a3146217db57a57a "github.com/microsoftgraph/msgraph-beta-sdk-go/workplace"
     i178f0aa4e5987fcbfe2e98cbb6dd777ebcdcdf124dd3478d2bf40f83912ca030 "github.com/microsoftgraph/msgraph-beta-sdk-go/programcontrols"
     i19717748912ff29c95998304f534371c35864a4579ea92608b32aeecf7d18cc4 "github.com/microsoftgraph/msgraph-beta-sdk-go/messageevents"
     i1b84a2c37ba0bbd175c6da40c8679db7d04dfcb044d8421d26d024db45218e4a "github.com/microsoftgraph/msgraph-beta-sdk-go/schemaextensions"
@@ -746,4 +747,9 @@ func (m *GraphBaseServiceClient) TrustFramework()(*i312c0a09d8ded5436957205a14ad
 // returns a *UsersRequestBuilder when successful
 func (m *GraphBaseServiceClient) Users()(*icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a.UsersRequestBuilder) {
     return icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a.NewUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Workplace provides operations to manage the workplace singleton.
+// returns a *WorkplaceRequestBuilder when successful
+func (m *GraphBaseServiceClient) Workplace()(*i164b4c6703708dd1b0670a17a07a4dd64e49cb0c1cb66e50a3146217db57a57a.WorkplaceRequestBuilder) {
+    return i164b4c6703708dd1b0670a17a07a4dd64e49cb0c1cb66e50a3146217db57a57a.NewWorkplaceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

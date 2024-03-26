@@ -66,6 +66,16 @@ func (m *UserExperienceSettings) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["isHotpatchEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsHotpatchEnabled(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -87,6 +97,18 @@ func (m *UserExperienceSettings) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetIsHotpatchEnabled gets the isHotpatchEnabled property value. The isHotpatchEnabled property
+// returns a *bool when successful
+func (m *UserExperienceSettings) GetIsHotpatchEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isHotpatchEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
@@ -116,6 +138,12 @@ func (m *UserExperienceSettings) GetOfferAsOptional()(*bool) {
 func (m *UserExperienceSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("daysUntilForcedReboot", m.GetDaysUntilForcedReboot())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isHotpatchEnabled", m.GetIsHotpatchEnabled())
         if err != nil {
             return err
         }
@@ -158,6 +186,13 @@ func (m *UserExperienceSettings) SetDaysUntilForcedReboot(value *int32)() {
         panic(err)
     }
 }
+// SetIsHotpatchEnabled sets the isHotpatchEnabled property value. The isHotpatchEnabled property
+func (m *UserExperienceSettings) SetIsHotpatchEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isHotpatchEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *UserExperienceSettings) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -178,10 +213,12 @@ type UserExperienceSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDaysUntilForcedReboot()(*int32)
+    GetIsHotpatchEnabled()(*bool)
     GetOdataType()(*string)
     GetOfferAsOptional()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDaysUntilForcedReboot(value *int32)()
+    SetIsHotpatchEnabled(value *bool)()
     SetOdataType(value *string)()
     SetOfferAsOptional(value *bool)()
 }

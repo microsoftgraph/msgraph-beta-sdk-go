@@ -45,6 +45,11 @@ func NewItemItemsItemChildrenDriveItemItemRequestBuilder(rawUrl string, requestA
 func (m *ItemItemsItemChildrenDriveItemItemRequestBuilder) Content()(*ItemItemsItemChildrenItemContentRequestBuilder) {
     return NewItemItemsItemChildrenItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the drive entity.
+// returns a *ItemItemsItemChildrenItemContentStreamRequestBuilder when successful
+func (m *ItemItemsItemChildrenDriveItemItemRequestBuilder) ContentStream()(*ItemItemsItemChildrenItemContentStreamRequestBuilder) {
+    return NewItemItemsItemChildrenItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

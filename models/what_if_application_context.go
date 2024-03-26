@@ -1,0 +1,84 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+type WhatIfApplicationContext struct {
+    ConditionalAccessContext
+}
+// NewWhatIfApplicationContext instantiates a new WhatIfApplicationContext and sets the default values.
+func NewWhatIfApplicationContext()(*WhatIfApplicationContext) {
+    m := &WhatIfApplicationContext{
+        ConditionalAccessContext: *NewConditionalAccessContext(),
+    }
+    odataTypeValue := "#microsoft.graph.whatIfApplicationContext"
+    m.SetOdataType(&odataTypeValue)
+    return m
+}
+// CreateWhatIfApplicationContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateWhatIfApplicationContextFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewWhatIfApplicationContext(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *WhatIfApplicationContext) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.ConditionalAccessContext.GetFieldDeserializers()
+    res["includeApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetIncludeApplications(res)
+        }
+        return nil
+    }
+    return res
+}
+// GetIncludeApplications gets the includeApplications property value. The includeApplications property
+// returns a []string when successful
+func (m *WhatIfApplicationContext) GetIncludeApplications()([]string) {
+    val, err := m.GetBackingStore().Get("includeApplications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *WhatIfApplicationContext) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.ConditionalAccessContext.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    if m.GetIncludeApplications() != nil {
+        err = writer.WriteCollectionOfStringValues("includeApplications", m.GetIncludeApplications())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetIncludeApplications sets the includeApplications property value. The includeApplications property
+func (m *WhatIfApplicationContext) SetIncludeApplications(value []string)() {
+    err := m.GetBackingStore().Set("includeApplications", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type WhatIfApplicationContextable interface {
+    ConditionalAccessContextable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIncludeApplications()([]string)
+    SetIncludeApplications(value []string)()
+}

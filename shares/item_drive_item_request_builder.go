@@ -45,6 +45,11 @@ func NewItemDriveItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ItemDriveItemRequestBuilder) Content()(*ItemDriveItemContentRequestBuilder) {
     return NewItemDriveItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the sharedDriveItem entity.
+// returns a *ItemDriveItemContentStreamRequestBuilder when successful
+func (m *ItemDriveItemRequestBuilder) ContentStream()(*ItemDriveItemContentStreamRequestBuilder) {
+    return NewItemDriveItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get access a shared DriveItem or a collection of shared items by using a shareId or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

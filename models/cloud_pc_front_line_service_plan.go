@@ -19,6 +19,18 @@ func NewCloudPcFrontLineServicePlan()(*CloudPcFrontLineServicePlan) {
 func CreateCloudPcFrontLineServicePlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcFrontLineServicePlan(), nil
 }
+// GetAllotmentLicensesCount gets the allotmentLicensesCount property value. The allotmentLicensesCount property
+// returns a *int32 when successful
+func (m *CloudPcFrontLineServicePlan) GetAllotmentLicensesCount()(*int32) {
+    val, err := m.GetBackingStore().Get("allotmentLicensesCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
 // returns a *string when successful
 func (m *CloudPcFrontLineServicePlan) GetDisplayName()(*string) {
@@ -35,6 +47,16 @@ func (m *CloudPcFrontLineServicePlan) GetDisplayName()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcFrontLineServicePlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["allotmentLicensesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllotmentLicensesCount(val)
+        }
+        return nil
+    }
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -98,6 +120,12 @@ func (m *CloudPcFrontLineServicePlan) Serialize(writer i878a80d2330e89d26896388a
         return err
     }
     {
+        err = writer.WriteInt32Value("allotmentLicensesCount", m.GetAllotmentLicensesCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -116,6 +144,13 @@ func (m *CloudPcFrontLineServicePlan) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     return nil
+}
+// SetAllotmentLicensesCount sets the allotmentLicensesCount property value. The allotmentLicensesCount property
+func (m *CloudPcFrontLineServicePlan) SetAllotmentLicensesCount(value *int32)() {
+    err := m.GetBackingStore().Set("allotmentLicensesCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDisplayName sets the displayName property value. The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
 func (m *CloudPcFrontLineServicePlan) SetDisplayName(value *string)() {
@@ -141,9 +176,11 @@ func (m *CloudPcFrontLineServicePlan) SetUsedCount(value *int32)() {
 type CloudPcFrontLineServicePlanable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllotmentLicensesCount()(*int32)
     GetDisplayName()(*string)
     GetTotalCount()(*int32)
     GetUsedCount()(*int32)
+    SetAllotmentLicensesCount(value *int32)()
     SetDisplayName(value *string)()
     SetTotalCount(value *int32)()
     SetUsedCount(value *int32)()

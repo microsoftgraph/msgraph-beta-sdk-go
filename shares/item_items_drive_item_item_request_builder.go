@@ -45,6 +45,11 @@ func NewItemItemsDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemItemsDriveItemItemRequestBuilder) Content()(*ItemItemsItemContentRequestBuilder) {
     return NewItemItemsItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the sharedDriveItem entity.
+// returns a *ItemItemsItemContentStreamRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) ContentStream()(*ItemItemsItemContentStreamRequestBuilder) {
+    return NewItemItemsItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get all driveItems contained in the sharing root. This collection cannot be enumerated.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

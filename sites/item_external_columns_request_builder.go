@@ -11,7 +11,7 @@ import (
 type ItemExternalColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemExternalColumnsRequestBuilderGetQueryParameters the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// ItemExternalColumnsRequestBuilderGetQueryParameters the collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
 type ItemExternalColumnsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewItemExternalColumnsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemExternalColumnsRequestBuilder) Count()(*ItemExternalColumnsCountRequestBuilder) {
     return NewItemExternalColumnsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// Get the collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
 // returns a ColumnDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemExternalColumnsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemExternalColumnsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable, error) {
@@ -89,7 +89,7 @@ func (m *ItemExternalColumnsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnDefinitionCollectionResponseable), nil
 }
-// ToGetRequestInformation the collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// ToGetRequestInformation the collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
 // returns a *RequestInformation when successful
 func (m *ItemExternalColumnsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemExternalColumnsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

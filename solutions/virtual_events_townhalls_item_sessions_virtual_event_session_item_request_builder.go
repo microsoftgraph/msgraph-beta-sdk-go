@@ -125,6 +125,16 @@ func (m *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilder
 func (m *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilder) Registrations()(*VirtualEventsTownhallsItemSessionsItemRegistrationsRequestBuilder) {
     return NewVirtualEventsTownhallsItemSessionsItemRegistrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RegistrationsWithEmail provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+// returns a *VirtualEventsTownhallsItemSessionsItemRegistrationsWithEmailRequestBuilder when successful
+func (m *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilder) RegistrationsWithEmail(email *string)(*VirtualEventsTownhallsItemSessionsItemRegistrationsWithEmailRequestBuilder) {
+    return NewVirtualEventsTownhallsItemSessionsItemRegistrationsWithEmailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, email)
+}
+// RegistrationsWithUserId provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+// returns a *VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilder when successful
+func (m *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilder) RegistrationsWithUserId(userId *string)(*VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilder) {
+    return NewVirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userId)
+}
 // ToDeleteRequestInformation delete navigation property sessions for solutions
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemSessionsVirtualEventSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

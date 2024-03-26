@@ -21,7 +21,7 @@ func NewSite()(*Site) {
 func CreateSiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSite(), nil
 }
-// GetAnalytics gets the analytics property value. Analytics about the view activities that took place in this site.
+// GetAnalytics gets the analytics property value. Analytics about the view activities that took place on this site.
 // returns a ItemAnalyticsable when successful
 func (m *Site) GetAnalytics()(ItemAnalyticsable) {
     val, err := m.GetBackingStore().Get("analytics")
@@ -105,7 +105,7 @@ func (m *Site) GetDrives()([]Driveable) {
     }
     return nil
 }
-// GetExternalColumns gets the externalColumns property value. The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// GetExternalColumns gets the externalColumns property value. The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
 // returns a []ColumnDefinitionable when successful
 func (m *Site) GetExternalColumns()([]ColumnDefinitionable) {
     val, err := m.GetBackingStore().Get("externalColumns")
@@ -427,7 +427,7 @@ func (m *Site) GetIsPersonalSite()(*bool) {
     }
     return nil
 }
-// GetItems gets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
+// GetItems gets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
 // returns a []BaseItemable when successful
 func (m *Site) GetItems()([]BaseItemable) {
     val, err := m.GetBackingStore().Get("items")
@@ -475,7 +475,7 @@ func (m *Site) GetOperations()([]RichLongRunningOperationable) {
     }
     return nil
 }
-// GetPages gets the pages property value. The collection of pages in the baseSitePages list in this site.
+// GetPages gets the pages property value. The collection of pages in the baseSitePages list on this site.
 // returns a []BaseSitePageable when successful
 func (m *Site) GetPages()([]BaseSitePageable) {
     val, err := m.GetBackingStore().Get("pages")
@@ -511,7 +511,7 @@ func (m *Site) GetRecycleBin()(RecycleBinable) {
     }
     return nil
 }
-// GetRoot gets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
+// GetRoot gets the root property value. If present, provides the root site in the site collection. Read-only.
 // returns a Rootable when successful
 func (m *Site) GetRoot()(Rootable) {
     val, err := m.GetBackingStore().Get("root")
@@ -771,7 +771,7 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAnalytics sets the analytics property value. Analytics about the view activities that took place in this site.
+// SetAnalytics sets the analytics property value. Analytics about the view activities that took place on this site.
 func (m *Site) SetAnalytics(value ItemAnalyticsable)() {
     err := m.GetBackingStore().Set("analytics", value)
     if err != nil {
@@ -820,7 +820,7 @@ func (m *Site) SetDrives(value []Driveable)() {
         panic(err)
     }
 }
-// SetExternalColumns sets the externalColumns property value. The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+// SetExternalColumns sets the externalColumns property value. The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
 func (m *Site) SetExternalColumns(value []ColumnDefinitionable)() {
     err := m.GetBackingStore().Set("externalColumns", value)
     if err != nil {
@@ -841,7 +841,7 @@ func (m *Site) SetIsPersonalSite(value *bool)() {
         panic(err)
     }
 }
-// SetItems sets the items property value. Used to address any item contained in this site. This collection cannot be enumerated.
+// SetItems sets the items property value. Used to address any item contained in this site. This collection can't be enumerated.
 func (m *Site) SetItems(value []BaseItemable)() {
     err := m.GetBackingStore().Set("items", value)
     if err != nil {
@@ -869,7 +869,7 @@ func (m *Site) SetOperations(value []RichLongRunningOperationable)() {
         panic(err)
     }
 }
-// SetPages sets the pages property value. The collection of pages in the baseSitePages list in this site.
+// SetPages sets the pages property value. The collection of pages in the baseSitePages list on this site.
 func (m *Site) SetPages(value []BaseSitePageable)() {
     err := m.GetBackingStore().Set("pages", value)
     if err != nil {
@@ -890,7 +890,7 @@ func (m *Site) SetRecycleBin(value RecycleBinable)() {
         panic(err)
     }
 }
-// SetRoot sets the root property value. If present, indicates that this is the root site in the site collection. Read-only.
+// SetRoot sets the root property value. If present, provides the root site in the site collection. Read-only.
 func (m *Site) SetRoot(value Rootable)() {
     err := m.GetBackingStore().Set("root", value)
     if err != nil {

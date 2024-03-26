@@ -41,7 +41,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetail) GetAdditionalData()(map[string
 func (m *CloudPcOnPremisesConnectionStatusDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. The end time of the connection health check. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CloudPcOnPremisesConnectionStatusDetail) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -105,7 +105,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetail) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetHealthChecks gets the healthChecks property value. The healthChecks property
+// GetHealthChecks gets the healthChecks property value. All checks that are done on the connection.
 // returns a []CloudPcOnPremisesConnectionHealthCheckable when successful
 func (m *CloudPcOnPremisesConnectionStatusDetail) GetHealthChecks()([]CloudPcOnPremisesConnectionHealthCheckable) {
     val, err := m.GetBackingStore().Get("healthChecks")
@@ -129,7 +129,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The start time of the connection health check. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CloudPcOnPremisesConnectionStatusDetail) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -192,14 +192,14 @@ func (m *CloudPcOnPremisesConnectionStatusDetail) SetAdditionalData(value map[st
 func (m *CloudPcOnPremisesConnectionStatusDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. The end time of the connection health check. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcOnPremisesConnectionStatusDetail) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHealthChecks sets the healthChecks property value. The healthChecks property
+// SetHealthChecks sets the healthChecks property value. All checks that are done on the connection.
 func (m *CloudPcOnPremisesConnectionStatusDetail) SetHealthChecks(value []CloudPcOnPremisesConnectionHealthCheckable)() {
     err := m.GetBackingStore().Set("healthChecks", value)
     if err != nil {
@@ -213,7 +213,7 @@ func (m *CloudPcOnPremisesConnectionStatusDetail) SetOdataType(value *string)() 
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The start time of the connection health check. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcOnPremisesConnectionStatusDetail) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

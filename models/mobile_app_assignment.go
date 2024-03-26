@@ -112,7 +112,7 @@ func (m *MobileAppAssignment) GetSource()(*DeviceAndAppManagementAssignmentSourc
     }
     return nil
 }
-// GetSourceId gets the sourceId property value. The identifier of the source of the assignment.
+// GetSourceId gets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
 // returns a *string when successful
 func (m *MobileAppAssignment) GetSourceId()(*string) {
     val, err := m.GetBackingStore().Get("sourceId")
@@ -163,12 +163,6 @@ func (m *MobileAppAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err = writer.WriteStringValue("sourceId", m.GetSourceId())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("target", m.GetTarget())
         if err != nil {
             return err
@@ -197,7 +191,7 @@ func (m *MobileAppAssignment) SetSource(value *DeviceAndAppManagementAssignmentS
         panic(err)
     }
 }
-// SetSourceId sets the sourceId property value. The identifier of the source of the assignment.
+// SetSourceId sets the sourceId property value. The identifier of the source of the assignment. This property is read-only.
 func (m *MobileAppAssignment) SetSourceId(value *string)() {
     err := m.GetBackingStore().Set("sourceId", value)
     if err != nil {

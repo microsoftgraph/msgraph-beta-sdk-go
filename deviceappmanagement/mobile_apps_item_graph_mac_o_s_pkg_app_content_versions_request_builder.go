@@ -11,7 +11,7 @@ import (
 type MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilderGetQueryParameters the list of content versions for this app.
+// MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilderGetQueryParameters the list of content versions for this app. This property is read-only.
 type MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewMobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilder(rawUrl strin
 func (m *MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilder) Count()(*MobileAppsItemGraphMacOSPkgAppContentVersionsCountRequestBuilder) {
     return NewMobileAppsItemGraphMacOSPkgAppContentVersionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of content versions for this app.
+// Get the list of content versions for this app. This property is read-only.
 // returns a MobileAppContentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilder) Post(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentable), nil
 }
-// ToGetRequestInformation the list of content versions for this app.
+// ToGetRequestInformation the list of content versions for this app. This property is read-only.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphMacOSPkgAppContentVersionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

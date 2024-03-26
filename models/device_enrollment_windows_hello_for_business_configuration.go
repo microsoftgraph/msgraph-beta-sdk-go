@@ -34,7 +34,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetEnhancedBiomet
     }
     return nil
 }
-// GetEnhancedSignInSecurity gets the enhancedSignInSecurity property value. Setting to configure Enahcned sign-in security. Default is enabled on one secure modality (face or fingerprint)
+// GetEnhancedSignInSecurity gets the enhancedSignInSecurity property value. Setting to configure Enhanced sign-in security. Default is Not Configured
 // returns a *int32 when successful
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) GetEnhancedSignInSecurity()(*int32) {
     val, err := m.GetBackingStore().Get("enhancedSignInSecurity")
@@ -441,7 +441,7 @@ func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetEnhancedBiomet
         panic(err)
     }
 }
-// SetEnhancedSignInSecurity sets the enhancedSignInSecurity property value. Setting to configure Enahcned sign-in security. Default is enabled on one secure modality (face or fingerprint)
+// SetEnhancedSignInSecurity sets the enhancedSignInSecurity property value. Setting to configure Enhanced sign-in security. Default is Not Configured
 func (m *DeviceEnrollmentWindowsHelloForBusinessConfiguration) SetEnhancedSignInSecurity(value *int32)() {
     err := m.GetBackingStore().Set("enhancedSignInSecurity", value)
     if err != nil {

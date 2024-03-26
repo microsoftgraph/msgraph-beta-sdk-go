@@ -19,7 +19,7 @@ func NewEducationGradingScheme()(*EducationGradingScheme) {
 func CreateEducationGradingSchemeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationGradingScheme(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the grading scheme.
 // returns a *string when successful
 func (m *EducationGradingScheme) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -73,7 +73,7 @@ func (m *EducationGradingScheme) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetGrades gets the grades property value. The grades property
+// GetGrades gets the grades property value. The grades that make up the scheme.
 // returns a []EducationGradingSchemeGradeable when successful
 func (m *EducationGradingScheme) GetGrades()([]EducationGradingSchemeGradeable) {
     val, err := m.GetBackingStore().Get("grades")
@@ -85,7 +85,7 @@ func (m *EducationGradingScheme) GetGrades()([]EducationGradingSchemeGradeable) 
     }
     return nil
 }
-// GetHidePointsDuringGrading gets the hidePointsDuringGrading property value. The hidePointsDuringGrading property
+// GetHidePointsDuringGrading gets the hidePointsDuringGrading property value. The display setting for the UI. Indicates whether teachers can grade with points in addition to letter grades.
 // returns a *bool when successful
 func (m *EducationGradingScheme) GetHidePointsDuringGrading()(*bool) {
     val, err := m.GetBackingStore().Get("hidePointsDuringGrading")
@@ -129,21 +129,21 @@ func (m *EducationGradingScheme) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the grading scheme.
 func (m *EducationGradingScheme) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGrades sets the grades property value. The grades property
+// SetGrades sets the grades property value. The grades that make up the scheme.
 func (m *EducationGradingScheme) SetGrades(value []EducationGradingSchemeGradeable)() {
     err := m.GetBackingStore().Set("grades", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHidePointsDuringGrading sets the hidePointsDuringGrading property value. The hidePointsDuringGrading property
+// SetHidePointsDuringGrading sets the hidePointsDuringGrading property value. The display setting for the UI. Indicates whether teachers can grade with points in addition to letter grades.
 func (m *EducationGradingScheme) SetHidePointsDuringGrading(value *bool)() {
     err := m.GetBackingStore().Set("hidePointsDuringGrading", value)
     if err != nil {

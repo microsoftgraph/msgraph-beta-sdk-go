@@ -40,7 +40,7 @@ func (m *EducationGradingSchemeGrade) GetAdditionalData()(map[string]any) {
 func (m *EducationGradingSchemeGrade) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDefaultPercentage gets the defaultPercentage property value. The defaultPercentage property
+// GetDefaultPercentage gets the defaultPercentage property value. The midpoint of the grade range.
 // returns a *float32 when successful
 func (m *EducationGradingSchemeGrade) GetDefaultPercentage()(*float32) {
     val, err := m.GetBackingStore().Get("defaultPercentage")
@@ -52,7 +52,7 @@ func (m *EducationGradingSchemeGrade) GetDefaultPercentage()(*float32) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the grading scheme.
 // returns a *string when successful
 func (m *EducationGradingSchemeGrade) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -110,7 +110,7 @@ func (m *EducationGradingSchemeGrade) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetMinPercentage gets the minPercentage property value. The minPercentage property
+// GetMinPercentage gets the minPercentage property value. The minimum percentage of the total points needed to achieve this grade.
 // returns a *float32 when successful
 func (m *EducationGradingSchemeGrade) GetMinPercentage()(*float32) {
     val, err := m.GetBackingStore().Get("minPercentage")
@@ -179,21 +179,21 @@ func (m *EducationGradingSchemeGrade) SetAdditionalData(value map[string]any)() 
 func (m *EducationGradingSchemeGrade) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDefaultPercentage sets the defaultPercentage property value. The defaultPercentage property
+// SetDefaultPercentage sets the defaultPercentage property value. The midpoint of the grade range.
 func (m *EducationGradingSchemeGrade) SetDefaultPercentage(value *float32)() {
     err := m.GetBackingStore().Set("defaultPercentage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the grading scheme.
 func (m *EducationGradingSchemeGrade) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinPercentage sets the minPercentage property value. The minPercentage property
+// SetMinPercentage sets the minPercentage property value. The minimum percentage of the total points needed to achieve this grade.
 func (m *EducationGradingSchemeGrade) SetMinPercentage(value *float32)() {
     err := m.GetBackingStore().Set("minPercentage", value)
     if err != nil {

@@ -131,7 +131,7 @@ func (m *Application) GetCreatedOnBehalfOf()(DirectoryObjectable) {
     }
     return nil
 }
-// GetDefaultRedirectUri gets the defaultRedirectUri property value. The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Microsoft Entra ID sends the token to this redirect URI. Microsoft Entra ID also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
+// GetDefaultRedirectUri gets the defaultRedirectUri property value. The default redirect URI. If specified and there's no explicit redirect URI in the sign-in request for SAML and OIDC flows, Microsoft Entra ID sends the token to this redirect URI. Microsoft Entra ID also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
 // returns a *string when successful
 func (m *Application) GetDefaultRedirectUri()(*string) {
     val, err := m.GetBackingStore().Get("defaultRedirectUri")
@@ -143,7 +143,7 @@ func (m *Application) GetDefaultRedirectUri()(*string) {
     }
     return nil
 }
-// GetDescription gets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// GetDescription gets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1,024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 // returns a *string when successful
 func (m *Application) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -781,7 +781,7 @@ func (m *Application) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicy
     }
     return nil
 }
-// GetIdentifierUris gets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
+// GetIdentifierUris gets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
 // returns a []string when successful
 func (m *Application) GetIdentifierUris()([]string) {
     val, err := m.GetBackingStore().Get("identifierUris")
@@ -817,7 +817,7 @@ func (m *Application) GetIsDeviceOnlyAuthSupported()(*bool) {
     }
     return nil
 }
-// GetIsFallbackPublicClient gets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
+// GetIsFallbackPublicClient gets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can't determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
 // returns a *bool when successful
 func (m *Application) GetIsFallbackPublicClient()(*bool) {
     val, err := m.GetBackingStore().Get("isFallbackPublicClient")
@@ -997,7 +997,7 @@ func (m *Application) GetServiceManagementReference()(*string) {
     }
     return nil
 }
-// GetServicePrincipalLockConfiguration gets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+// GetServicePrincipalLockConfiguration gets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multitenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
 // returns a ServicePrincipalLockConfigurationable when successful
 func (m *Application) GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable) {
     val, err := m.GetBackingStore().Get("servicePrincipalLockConfiguration")
@@ -1045,7 +1045,7 @@ func (m *Application) GetSynchronization()(Synchronizationable) {
     }
     return nil
 }
-// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
+// GetTags gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
 // returns a []string when successful
 func (m *Application) GetTags()([]string) {
     val, err := m.GetBackingStore().Get("tags")
@@ -1093,7 +1093,7 @@ func (m *Application) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
     }
     return nil
 }
-// GetUniqueName gets the uniqueName property value. The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.
+// GetUniqueName gets the uniqueName property value. The unique identifier that can be assigned to an application and used as an alternate key. Immutable. Read-only.
 // returns a *string when successful
 func (m *Application) GetUniqueName()(*string) {
     val, err := m.GetBackingStore().Get("uniqueName")
@@ -1560,14 +1560,14 @@ func (m *Application) SetCreatedOnBehalfOf(value DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetDefaultRedirectUri sets the defaultRedirectUri property value. The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Microsoft Entra ID sends the token to this redirect URI. Microsoft Entra ID also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
+// SetDefaultRedirectUri sets the defaultRedirectUri property value. The default redirect URI. If specified and there's no explicit redirect URI in the sign-in request for SAML and OIDC flows, Microsoft Entra ID sends the token to this redirect URI. Microsoft Entra ID also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.
 func (m *Application) SetDefaultRedirectUri(value *string)() {
     err := m.GetBackingStore().Set("defaultRedirectUri", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+// SetDescription sets the description property value. Free text field to provide a description of the application object to end users. The maximum allowed size is 1,024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
 func (m *Application) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -1616,7 +1616,7 @@ func (m *Application) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPo
         panic(err)
     }
 }
-// SetIdentifierUris sets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
+// SetIdentifierUris sets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) SetIdentifierUris(value []string)() {
     err := m.GetBackingStore().Set("identifierUris", value)
     if err != nil {
@@ -1637,7 +1637,7 @@ func (m *Application) SetIsDeviceOnlyAuthSupported(value *bool)() {
         panic(err)
     }
 }
-// SetIsFallbackPublicClient sets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
+// SetIsFallbackPublicClient sets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can't determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
 func (m *Application) SetIsFallbackPublicClient(value *bool)() {
     err := m.GetBackingStore().Set("isFallbackPublicClient", value)
     if err != nil {
@@ -1742,7 +1742,7 @@ func (m *Application) SetServiceManagementReference(value *string)() {
         panic(err)
     }
 }
-// SetServicePrincipalLockConfiguration sets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
+// SetServicePrincipalLockConfiguration sets the servicePrincipalLockConfiguration property value. Specifies whether sensitive properties of a multitenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
 func (m *Application) SetServicePrincipalLockConfiguration(value ServicePrincipalLockConfigurationable)() {
     err := m.GetBackingStore().Set("servicePrincipalLockConfiguration", value)
     if err != nil {
@@ -1770,7 +1770,7 @@ func (m *Application) SetSynchronization(value Synchronizationable)() {
         panic(err)
     }
 }
-// SetTags sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
+// SetTags sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
 func (m *Application) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {
@@ -1798,7 +1798,7 @@ func (m *Application) SetTokenLifetimePolicies(value []TokenLifetimePolicyable)(
         panic(err)
     }
 }
-// SetUniqueName sets the uniqueName property value. The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.
+// SetUniqueName sets the uniqueName property value. The unique identifier that can be assigned to an application and used as an alternate key. Immutable. Read-only.
 func (m *Application) SetUniqueName(value *string)() {
     err := m.GetBackingStore().Set("uniqueName", value)
     if err != nil {

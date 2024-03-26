@@ -54,7 +54,7 @@ func NewAcronymsAcronymItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewAcronymsAcronymItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes an acronym object.
+// Delete delete an acronym object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -119,7 +119,7 @@ func (m *AcronymsAcronymItemRequestBuilder) Patch(ctx context.Context, body iea4
     }
     return res.(iea48ada8ff44901e797bb459ff00d73b62bd6a3bff0f3314a5377938749128cb.Acronymable), nil
 }
-// ToDeleteRequestInformation deletes an acronym object.
+// ToDeleteRequestInformation delete an acronym object.
 // returns a *RequestInformation when successful
 func (m *AcronymsAcronymItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AcronymsAcronymItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/search/acronyms/{acronym%2Did}", m.BaseRequestBuilder.PathParameters)

@@ -30,7 +30,7 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatib
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
+// Delete remove an access package from the list of access packages marked as incompatible on an accessPackage.  
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompati
     }
     return nil
 }
-// ToDeleteRequestInformation remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.  
+// ToDeleteRequestInformation remove an access package from the list of access packages marked as incompatible on an accessPackage.  
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageIncompatibleAccessPackagesItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

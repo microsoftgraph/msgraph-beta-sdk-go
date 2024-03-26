@@ -45,6 +45,11 @@ func NewItemItemsItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemReques
 func (m *ItemItemsItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemRequestBuilder) Content()(*ItemItemsItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilder) {
     return NewItemItemsItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the drive entity.
+// returns a *ItemItemsItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentStreamRequestBuilder when successful
+func (m *ItemItemsItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemRequestBuilder) ContentStream()(*ItemItemsItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentStreamRequestBuilder) {
+    return NewItemItemsItemAnalyticsItemActivityStatsItemActivitiesItemDriveItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get exposes the driveItem that was the target of this activity.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

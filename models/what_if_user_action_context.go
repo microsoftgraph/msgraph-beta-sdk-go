@@ -1,0 +1,79 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+type WhatIfUserActionContext struct {
+    ConditionalAccessContext
+}
+// NewWhatIfUserActionContext instantiates a new WhatIfUserActionContext and sets the default values.
+func NewWhatIfUserActionContext()(*WhatIfUserActionContext) {
+    m := &WhatIfUserActionContext{
+        ConditionalAccessContext: *NewConditionalAccessContext(),
+    }
+    odataTypeValue := "#microsoft.graph.whatIfUserActionContext"
+    m.SetOdataType(&odataTypeValue)
+    return m
+}
+// CreateWhatIfUserActionContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateWhatIfUserActionContextFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewWhatIfUserActionContext(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *WhatIfUserActionContext) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.ConditionalAccessContext.GetFieldDeserializers()
+    res["userAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserAction(val.(*UserAction))
+        }
+        return nil
+    }
+    return res
+}
+// GetUserAction gets the userAction property value. The userAction property
+// returns a *UserAction when successful
+func (m *WhatIfUserActionContext) GetUserAction()(*UserAction) {
+    val, err := m.GetBackingStore().Get("userAction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserAction)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *WhatIfUserActionContext) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.ConditionalAccessContext.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    if m.GetUserAction() != nil {
+        cast := (*m.GetUserAction()).String()
+        err = writer.WriteStringValue("userAction", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetUserAction sets the userAction property value. The userAction property
+func (m *WhatIfUserActionContext) SetUserAction(value *UserAction)() {
+    err := m.GetBackingStore().Set("userAction", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type WhatIfUserActionContextable interface {
+    ConditionalAccessContextable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUserAction()(*UserAction)
+    SetUserAction(value *UserAction)()
+}

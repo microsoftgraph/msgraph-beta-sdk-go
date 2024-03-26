@@ -54,7 +54,7 @@ func NewItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a linkedResource object.
+// Delete delete a linkedResource object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -119,7 +119,7 @@ func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LinkedResourceable), nil
 }
-// ToDeleteRequestInformation deletes a linkedResource object.
+// ToDeleteRequestInformation delete a linkedResource object.
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemLinkedResourcesLinkedResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/linkedResources/{linkedResource%2Did}", m.BaseRequestBuilder.PathParameters)

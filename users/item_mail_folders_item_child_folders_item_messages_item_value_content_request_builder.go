@@ -10,19 +10,12 @@ import (
 type ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetQueryParameters get media content for the navigation property messages from users
-type ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetQueryParameters struct {
-    // Format of the content
-    Format *string `uriparametername:"%24format"`
-}
 // ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetQueryParameters
 }
 // ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderPutRequestConfiguration struct {
@@ -34,7 +27,7 @@ type ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderPu
 // NewItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderInternal instantiates a new ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder and sets the default values.
 func NewItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) {
     m := &ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/$value{?%24format*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/$value", pathParameters),
     }
     return m
 }
@@ -92,9 +85,6 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
@@ -104,7 +94,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
 // ToPutRequestInformation update media content for the navigation property messages in users
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/$value", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

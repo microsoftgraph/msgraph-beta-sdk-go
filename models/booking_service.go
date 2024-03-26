@@ -397,7 +397,7 @@ func (m *BookingService) GetIsAnonymousJoinEnabled()(*bool) {
     }
     return nil
 }
-// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// GetIsCustomerAllowedToManageBooking gets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
 // returns a *bool when successful
 func (m *BookingService) GetIsCustomerAllowedToManageBooking()(*bool) {
     val, err := m.GetBackingStore().Get("isCustomerAllowedToManageBooking")
@@ -776,7 +776,7 @@ func (m *BookingService) SetIsAnonymousJoinEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. The isCustomerAllowedToManageBooking property
+// SetIsCustomerAllowedToManageBooking sets the isCustomerAllowedToManageBooking property value. Indicates that the customer can manage bookings created by the staff. The default value is false.
 func (m *BookingService) SetIsCustomerAllowedToManageBooking(value *bool)() {
     err := m.GetBackingStore().Set("isCustomerAllowedToManageBooking", value)
     if err != nil {

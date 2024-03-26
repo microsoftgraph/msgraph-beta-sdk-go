@@ -40,7 +40,7 @@ func (m *AnalyzedEmailUrl) GetAdditionalData()(map[string]any) {
 func (m *AnalyzedEmailUrl) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDetectionMethod gets the detectionMethod property value. The detectionMethod property
+// GetDetectionMethod gets the detectionMethod property value. The method used to detect threats in the URL.
 // returns a *string when successful
 func (m *AnalyzedEmailUrl) GetDetectionMethod()(*string) {
     val, err := m.GetBackingStore().Get("detectionMethod")
@@ -52,7 +52,7 @@ func (m *AnalyzedEmailUrl) GetDetectionMethod()(*string) {
     }
     return nil
 }
-// GetDetonationDetails gets the detonationDetails property value. The detonationDetails property
+// GetDetonationDetails gets the detonationDetails property value. Detonation data associated with the URL.
 // returns a DetonationDetailsable when successful
 func (m *AnalyzedEmailUrl) GetDetonationDetails()(DetonationDetailsable) {
     val, err := m.GetBackingStore().Get("detonationDetails")
@@ -132,7 +132,7 @@ func (m *AnalyzedEmailUrl) GetOdataType()(*string) {
     }
     return nil
 }
-// GetThreatType gets the threatType property value. The threatType property
+// GetThreatType gets the threatType property value. The type of threat associated with the URL. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.
 // returns a *ThreatType when successful
 func (m *AnalyzedEmailUrl) GetThreatType()(*ThreatType) {
     val, err := m.GetBackingStore().Get("threatType")
@@ -144,7 +144,7 @@ func (m *AnalyzedEmailUrl) GetThreatType()(*ThreatType) {
     }
     return nil
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. The URL that is found in the email. This is full URL string, including query parameters.
 // returns a *string when successful
 func (m *AnalyzedEmailUrl) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
@@ -208,14 +208,14 @@ func (m *AnalyzedEmailUrl) SetAdditionalData(value map[string]any)() {
 func (m *AnalyzedEmailUrl) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDetectionMethod sets the detectionMethod property value. The detectionMethod property
+// SetDetectionMethod sets the detectionMethod property value. The method used to detect threats in the URL.
 func (m *AnalyzedEmailUrl) SetDetectionMethod(value *string)() {
     err := m.GetBackingStore().Set("detectionMethod", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetonationDetails sets the detonationDetails property value. The detonationDetails property
+// SetDetonationDetails sets the detonationDetails property value. Detonation data associated with the URL.
 func (m *AnalyzedEmailUrl) SetDetonationDetails(value DetonationDetailsable)() {
     err := m.GetBackingStore().Set("detonationDetails", value)
     if err != nil {
@@ -229,14 +229,14 @@ func (m *AnalyzedEmailUrl) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetThreatType sets the threatType property value. The threatType property
+// SetThreatType sets the threatType property value. The type of threat associated with the URL. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.
 func (m *AnalyzedEmailUrl) SetThreatType(value *ThreatType)() {
     err := m.GetBackingStore().Set("threatType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. The URL that is found in the email. This is full URL string, including query parameters.
 func (m *AnalyzedEmailUrl) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

@@ -182,6 +182,16 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["insiderRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseConditionalAccessInsiderRiskLevels)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInsiderRiskLevels(val.(*ConditionalAccessInsiderRiskLevels))
+        }
+        return nil
+    }
     res["locations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessLocationsFromDiscriminatorValue)
         if err != nil {
@@ -271,6 +281,18 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetInsiderRiskLevels gets the insiderRiskLevels property value. The insiderRiskLevels property
+// returns a *ConditionalAccessInsiderRiskLevels when successful
+func (m *ConditionalAccessConditionSet) GetInsiderRiskLevels()(*ConditionalAccessInsiderRiskLevels) {
+    val, err := m.GetBackingStore().Get("insiderRiskLevels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ConditionalAccessInsiderRiskLevels)
+    }
+    return nil
 }
 // GetLocations gets the locations property value. Locations included in and excluded from the policy.
 // returns a ConditionalAccessLocationsable when successful
@@ -394,6 +416,13 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    if m.GetInsiderRiskLevels() != nil {
+        cast := (*m.GetInsiderRiskLevels()).String()
+        err := writer.WriteStringValue("insiderRiskLevels", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("locations", m.GetLocations())
         if err != nil {
@@ -497,6 +526,13 @@ func (m *ConditionalAccessConditionSet) SetDeviceStates(value ConditionalAccessD
         panic(err)
     }
 }
+// SetInsiderRiskLevels sets the insiderRiskLevels property value. The insiderRiskLevels property
+func (m *ConditionalAccessConditionSet) SetInsiderRiskLevels(value *ConditionalAccessInsiderRiskLevels)() {
+    err := m.GetBackingStore().Set("insiderRiskLevels", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLocations sets the locations property value. Locations included in and excluded from the policy.
 func (m *ConditionalAccessConditionSet) SetLocations(value ConditionalAccessLocationsable)() {
     err := m.GetBackingStore().Set("locations", value)
@@ -557,6 +593,7 @@ type ConditionalAccessConditionSetable interface {
     GetClientAppTypes()([]ConditionalAccessClientApp)
     GetDevices()(ConditionalAccessDevicesable)
     GetDeviceStates()(ConditionalAccessDeviceStatesable)
+    GetInsiderRiskLevels()(*ConditionalAccessInsiderRiskLevels)
     GetLocations()(ConditionalAccessLocationsable)
     GetOdataType()(*string)
     GetPlatforms()(ConditionalAccessPlatformsable)
@@ -571,6 +608,7 @@ type ConditionalAccessConditionSetable interface {
     SetClientAppTypes(value []ConditionalAccessClientApp)()
     SetDevices(value ConditionalAccessDevicesable)()
     SetDeviceStates(value ConditionalAccessDeviceStatesable)()
+    SetInsiderRiskLevels(value *ConditionalAccessInsiderRiskLevels)()
     SetLocations(value ConditionalAccessLocationsable)()
     SetOdataType(value *string)()
     SetPlatforms(value ConditionalAccessPlatformsable)()

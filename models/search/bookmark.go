@@ -21,7 +21,7 @@ func NewBookmark()(*Bookmark) {
 func CreateBookmarkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBookmark(), nil
 }
-// GetAvailabilityEndDateTime gets the availabilityEndDateTime property value. Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.
+// GetAvailabilityEndDateTime gets the availabilityEndDateTime property value. Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *Bookmark) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("availabilityEndDateTime")
@@ -33,7 +33,7 @@ func (m *Bookmark) GetAvailabilityEndDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetAvailabilityStartDateTime gets the availabilityStartDateTime property value. Timestamp of when the bookmark will start to appear as a search result. Set as null for always available.
+// GetAvailabilityStartDateTime gets the availabilityStartDateTime property value. Date and time when the bookmark starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *Bookmark) GetAvailabilityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("availabilityStartDateTime")
@@ -209,7 +209,7 @@ func (m *Bookmark) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetGroupIds gets the groupIds property value. List of security groups able to view this bookmark.
+// GetGroupIds gets the groupIds property value. The list of security groups that are able to view this bookmark.
 // returns a []string when successful
 func (m *Bookmark) GetGroupIds()([]string) {
     val, err := m.GetBackingStore().Get("groupIds")
@@ -221,7 +221,7 @@ func (m *Bookmark) GetGroupIds()([]string) {
     }
     return nil
 }
-// GetIsSuggested gets the isSuggested property value. True if this bookmark was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+// GetIsSuggested gets the isSuggested property value. True if this bookmark was suggested to the admin, by a user, or was mined and suggested by Microsoft. Read-only.
 // returns a *bool when successful
 func (m *Bookmark) GetIsSuggested()(*bool) {
     val, err := m.GetBackingStore().Get("isSuggested")
@@ -245,7 +245,7 @@ func (m *Bookmark) GetKeywords()(AnswerKeywordable) {
     }
     return nil
 }
-// GetLanguageTags gets the languageTags property value. A list of language names that are geographically specific and that this bookmark can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+// GetLanguageTags gets the languageTags property value. A list of geographically specific language names in which this bookmark can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.
 // returns a []string when successful
 func (m *Bookmark) GetLanguageTags()([]string) {
     val, err := m.GetBackingStore().Get("languageTags")
@@ -257,7 +257,7 @@ func (m *Bookmark) GetLanguageTags()([]string) {
     }
     return nil
 }
-// GetPlatforms gets the platforms property value. List of devices and operating systems able to view this bookmark. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+// GetPlatforms gets the platforms property value. List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
 // returns a []DevicePlatformType when successful
 func (m *Bookmark) GetPlatforms()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType) {
     val, err := m.GetBackingStore().Get("platforms")
@@ -269,7 +269,7 @@ func (m *Bookmark) GetPlatforms()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9
     }
     return nil
 }
-// GetPowerAppIds gets the powerAppIds property value. List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks, such as to enter vacation time or to report expenses on the search results page.
+// GetPowerAppIds gets the powerAppIds property value. List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks directly on the search results page, such as entering vacation time or reporting expenses.
 // returns a []string when successful
 func (m *Bookmark) GetPowerAppIds()([]string) {
     val, err := m.GetBackingStore().Get("powerAppIds")
@@ -293,7 +293,7 @@ func (m *Bookmark) GetState()(*AnswerState) {
     }
     return nil
 }
-// GetTargetedVariations gets the targetedVariations property value. Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+// GetTargetedVariations gets the targetedVariations property value. Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
 // returns a []AnswerVariantable when successful
 func (m *Bookmark) GetTargetedVariations()([]AnswerVariantable) {
     val, err := m.GetBackingStore().Get("targetedVariations")
@@ -386,14 +386,14 @@ func (m *Bookmark) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetAvailabilityEndDateTime sets the availabilityEndDateTime property value. Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.
+// SetAvailabilityEndDateTime sets the availabilityEndDateTime property value. Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Bookmark) SetAvailabilityEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("availabilityEndDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAvailabilityStartDateTime sets the availabilityStartDateTime property value. Timestamp of when the bookmark will start to appear as a search result. Set as null for always available.
+// SetAvailabilityStartDateTime sets the availabilityStartDateTime property value. Date and time when the bookmark starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *Bookmark) SetAvailabilityStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("availabilityStartDateTime", value)
     if err != nil {
@@ -407,14 +407,14 @@ func (m *Bookmark) SetCategories(value []string)() {
         panic(err)
     }
 }
-// SetGroupIds sets the groupIds property value. List of security groups able to view this bookmark.
+// SetGroupIds sets the groupIds property value. The list of security groups that are able to view this bookmark.
 func (m *Bookmark) SetGroupIds(value []string)() {
     err := m.GetBackingStore().Set("groupIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSuggested sets the isSuggested property value. True if this bookmark was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
+// SetIsSuggested sets the isSuggested property value. True if this bookmark was suggested to the admin, by a user, or was mined and suggested by Microsoft. Read-only.
 func (m *Bookmark) SetIsSuggested(value *bool)() {
     err := m.GetBackingStore().Set("isSuggested", value)
     if err != nil {
@@ -428,21 +428,21 @@ func (m *Bookmark) SetKeywords(value AnswerKeywordable)() {
         panic(err)
     }
 }
-// SetLanguageTags sets the languageTags property value. A list of language names that are geographically specific and that this bookmark can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+// SetLanguageTags sets the languageTags property value. A list of geographically specific language names in which this bookmark can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.
 func (m *Bookmark) SetLanguageTags(value []string)() {
     err := m.GetBackingStore().Set("languageTags", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPlatforms sets the platforms property value. List of devices and operating systems able to view this bookmark. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
+// SetPlatforms sets the platforms property value. List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
 func (m *Bookmark) SetPlatforms(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DevicePlatformType)() {
     err := m.GetBackingStore().Set("platforms", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPowerAppIds sets the powerAppIds property value. List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks, such as to enter vacation time or to report expenses on the search results page.
+// SetPowerAppIds sets the powerAppIds property value. List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks directly on the search results page, such as entering vacation time or reporting expenses.
 func (m *Bookmark) SetPowerAppIds(value []string)() {
     err := m.GetBackingStore().Set("powerAppIds", value)
     if err != nil {
@@ -456,7 +456,7 @@ func (m *Bookmark) SetState(value *AnswerState)() {
         panic(err)
     }
 }
-// SetTargetedVariations sets the targetedVariations property value. Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
+// SetTargetedVariations sets the targetedVariations property value. Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.
 func (m *Bookmark) SetTargetedVariations(value []AnswerVariantable)() {
     err := m.GetBackingStore().Set("targetedVariations", value)
     if err != nil {

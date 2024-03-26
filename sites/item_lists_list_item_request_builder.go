@@ -18,7 +18,7 @@ type ItemListsListItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListsListItemRequestBuilderGetQueryParameters return the metadata for a [list][].
+// ItemListsListItemRequestBuilderGetQueryParameters get the list of richLongRunningOperations associated with a list.
 type ItemListsListItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -95,12 +95,12 @@ func (m *ItemListsListItemRequestBuilder) Delete(ctx context.Context, requestCon
 func (m *ItemListsListItemRequestBuilder) Drive()(*ItemListsItemDriveRequestBuilder) {
     return NewItemListsItemDriveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get return the metadata for a [list][].
+// Get get the list of richLongRunningOperations associated with a list.
 // returns a Listable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/list-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
 func (m *ItemListsListItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -169,7 +169,7 @@ func (m *ItemListsListItemRequestBuilder) ToDeleteRequestInformation(ctx context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation return the metadata for a [list][].
+// ToGetRequestInformation get the list of richLongRunningOperations associated with a list.
 // returns a *RequestInformation when successful
 func (m *ItemListsListItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsListItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -128,6 +128,16 @@ func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) Registratio
 func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) Registrations()(*VirtualEventsWebinarsItemRegistrationsRequestBuilder) {
     return NewVirtualEventsWebinarsItemRegistrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RegistrationsWithEmail provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.
+// returns a *VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilder when successful
+func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) RegistrationsWithEmail(email *string)(*VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilder) {
+    return NewVirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, email)
+}
+// RegistrationsWithUserId provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.
+// returns a *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder when successful
+func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) RegistrationsWithUserId(userId *string)(*VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) {
+    return NewVirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userId)
+}
 // Sessions provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
 // returns a *VirtualEventsWebinarsItemSessionsRequestBuilder when successful
 func (m *VirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) Sessions()(*VirtualEventsWebinarsItemSessionsRequestBuilder) {

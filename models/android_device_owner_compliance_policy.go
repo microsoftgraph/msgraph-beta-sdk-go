@@ -496,7 +496,7 @@ func (m *AndroidDeviceOwnerCompliancePolicy) GetRequireNoPendingSystemUpdates()(
     }
     return nil
 }
-// GetSecurityRequiredAndroidSafetyNetEvaluationType gets the securityRequiredAndroidSafetyNetEvaluationType property value. Require a specific Play Integrity evaluation type for compliance.
+// GetSecurityRequiredAndroidSafetyNetEvaluationType gets the securityRequiredAndroidSafetyNetEvaluationType property value. Require a specific Play Integrity evaluation type for compliance. Possible values are: basic, hardwareBacked.
 // returns a *AndroidSafetyNetEvaluationType when successful
 func (m *AndroidDeviceOwnerCompliancePolicy) GetSecurityRequiredAndroidSafetyNetEvaluationType()(*AndroidSafetyNetEvaluationType) {
     val, err := m.GetBackingStore().Get("securityRequiredAndroidSafetyNetEvaluationType")
@@ -845,7 +845,7 @@ func (m *AndroidDeviceOwnerCompliancePolicy) SetRequireNoPendingSystemUpdates(va
         panic(err)
     }
 }
-// SetSecurityRequiredAndroidSafetyNetEvaluationType sets the securityRequiredAndroidSafetyNetEvaluationType property value. Require a specific Play Integrity evaluation type for compliance.
+// SetSecurityRequiredAndroidSafetyNetEvaluationType sets the securityRequiredAndroidSafetyNetEvaluationType property value. Require a specific Play Integrity evaluation type for compliance. Possible values are: basic, hardwareBacked.
 func (m *AndroidDeviceOwnerCompliancePolicy) SetSecurityRequiredAndroidSafetyNetEvaluationType(value *AndroidSafetyNetEvaluationType)() {
     err := m.GetBackingStore().Set("securityRequiredAndroidSafetyNetEvaluationType", value)
     if err != nil {

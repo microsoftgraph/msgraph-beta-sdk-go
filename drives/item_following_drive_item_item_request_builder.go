@@ -45,6 +45,11 @@ func NewItemFollowingDriveItemItemRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemFollowingDriveItemItemRequestBuilder) Content()(*ItemFollowingItemContentRequestBuilder) {
     return NewItemFollowingItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the drive entity.
+// returns a *ItemFollowingItemContentStreamRequestBuilder when successful
+func (m *ItemFollowingDriveItemItemRequestBuilder) ContentStream()(*ItemFollowingItemContentStreamRequestBuilder) {
+    return NewItemFollowingItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get the list of items the user is following. Only in OneDrive for Business.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

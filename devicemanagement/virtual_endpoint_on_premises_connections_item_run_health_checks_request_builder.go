@@ -30,7 +30,7 @@ func NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post run health checks on the cloudPcOnPremisesConnection object. This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+// Post run health checks on the cloudPcOnPremisesConnection object. It triggers a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) 
     }
     return nil
 }
-// ToPostRequestInformation run health checks on the cloudPcOnPremisesConnection object. This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+// ToPostRequestInformation run health checks on the cloudPcOnPremisesConnection object. It triggers a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointOnPremisesConnectionsItemRunHealthChecksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -22,7 +22,7 @@ func NewAndroidManagedStoreAppConfiguration()(*AndroidManagedStoreAppConfigurati
 func CreateAndroidManagedStoreAppConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidManagedStoreAppConfiguration(), nil
 }
-// GetAppSupportsOemConfig gets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy.
+// GetAppSupportsOemConfig gets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy. This property is read-only.
 // returns a *bool when successful
 func (m *AndroidManagedStoreAppConfiguration) GetAppSupportsOemConfig()(*bool) {
     val, err := m.GetBackingStore().Get("appSupportsOemConfig")
@@ -173,12 +173,6 @@ func (m *AndroidManagedStoreAppConfiguration) Serialize(writer i878a80d2330e89d2
         return err
     }
     {
-        err = writer.WriteBoolValue("appSupportsOemConfig", m.GetAppSupportsOemConfig())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("connectedAppsEnabled", m.GetConnectedAppsEnabled())
         if err != nil {
             return err
@@ -217,7 +211,7 @@ func (m *AndroidManagedStoreAppConfiguration) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetAppSupportsOemConfig sets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy.
+// SetAppSupportsOemConfig sets the appSupportsOemConfig property value. Whether or not this AppConfig is an OEMConfig policy. This property is read-only.
 func (m *AndroidManagedStoreAppConfiguration) SetAppSupportsOemConfig(value *bool)() {
     err := m.GetBackingStore().Set("appSupportsOemConfig", value)
     if err != nil {

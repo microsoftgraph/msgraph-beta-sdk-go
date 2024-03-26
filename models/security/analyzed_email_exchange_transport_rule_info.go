@@ -76,7 +76,7 @@ func (m *AnalyzedEmailExchangeTransportRuleInfo) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name of the Exchange transport rules (ETRs) that are part of the email.
 // returns a *string when successful
 func (m *AnalyzedEmailExchangeTransportRuleInfo) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -100,7 +100,7 @@ func (m *AnalyzedEmailExchangeTransportRuleInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRuleId gets the ruleId property value. The ruleId property
+// GetRuleId gets the ruleId property value. The ETR rule ID.
 // returns a *string when successful
 func (m *AnalyzedEmailExchangeTransportRuleInfo) GetRuleId()(*string) {
     val, err := m.GetBackingStore().Get("ruleId")
@@ -151,7 +151,7 @@ func (m *AnalyzedEmailExchangeTransportRuleInfo) SetAdditionalData(value map[str
 func (m *AnalyzedEmailExchangeTransportRuleInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name of the Exchange transport rules (ETRs) that are part of the email.
 func (m *AnalyzedEmailExchangeTransportRuleInfo) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -165,7 +165,7 @@ func (m *AnalyzedEmailExchangeTransportRuleInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRuleId sets the ruleId property value. The ruleId property
+// SetRuleId sets the ruleId property value. The ETR rule ID.
 func (m *AnalyzedEmailExchangeTransportRuleInfo) SetRuleId(value *string)() {
     err := m.GetBackingStore().Set("ruleId", value)
     if err != nil {

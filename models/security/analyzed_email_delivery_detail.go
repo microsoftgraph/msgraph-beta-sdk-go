@@ -22,7 +22,7 @@ func NewAnalyzedEmailDeliveryDetail()(*AnalyzedEmailDeliveryDetail) {
 func CreateAnalyzedEmailDeliveryDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAnalyzedEmailDeliveryDetail(), nil
 }
-// GetAction gets the action property value. The action property
+// GetAction gets the action property value. The delivery action of the email. The possible values are: unknown, deliveredToJunk, delivered, blocked, replaced, unknownFutureValue.
 // returns a *DeliveryAction when successful
 func (m *AnalyzedEmailDeliveryDetail) GetAction()(*DeliveryAction) {
     val, err := m.GetBackingStore().Get("action")
@@ -88,7 +88,7 @@ func (m *AnalyzedEmailDeliveryDetail) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetLocation gets the location property value. The location property
+// GetLocation gets the location property value. The delivery location of the email. The possible values are: unknown, inboxfolder, junkFolder, deletedFolder, quarantine, onpremexternal, failed, dropped, others, unknownFutureValue.
 // returns a *DeliveryLocation when successful
 func (m *AnalyzedEmailDeliveryDetail) GetLocation()(*DeliveryLocation) {
     val, err := m.GetBackingStore().Get("location")
@@ -142,7 +142,7 @@ func (m *AnalyzedEmailDeliveryDetail) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAction sets the action property value. The action property
+// SetAction sets the action property value. The delivery action of the email. The possible values are: unknown, deliveredToJunk, delivered, blocked, replaced, unknownFutureValue.
 func (m *AnalyzedEmailDeliveryDetail) SetAction(value *DeliveryAction)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
@@ -160,7 +160,7 @@ func (m *AnalyzedEmailDeliveryDetail) SetAdditionalData(value map[string]any)() 
 func (m *AnalyzedEmailDeliveryDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetLocation sets the location property value. The location property
+// SetLocation sets the location property value. The delivery location of the email. The possible values are: unknown, inboxfolder, junkFolder, deletedFolder, quarantine, onpremexternal, failed, dropped, others, unknownFutureValue.
 func (m *AnalyzedEmailDeliveryDetail) SetLocation(value *DeliveryLocation)() {
     err := m.GetBackingStore().Set("location", value)
     if err != nil {

@@ -86,7 +86,7 @@ func (m *AnalyzedEmailSenderDetail) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetFromAddress gets the fromAddress property value. The fromAddress property
+// GetFromAddress gets the fromAddress property value. The sender email address in the mail From header, also known as the envelope sender or the P1 sender.
 // returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetFromAddress()(*string) {
     val, err := m.GetBackingStore().Get("fromAddress")
@@ -98,7 +98,7 @@ func (m *AnalyzedEmailSenderDetail) GetFromAddress()(*string) {
     }
     return nil
 }
-// GetIpv4 gets the ipv4 property value. The ipv4 property
+// GetIpv4 gets the ipv4 property value. The IPv4 address of the last detected mail server that relayed the message.
 // returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetIpv4()(*string) {
     val, err := m.GetBackingStore().Get("ipv4")
@@ -110,7 +110,7 @@ func (m *AnalyzedEmailSenderDetail) GetIpv4()(*string) {
     }
     return nil
 }
-// GetMailFromAddress gets the mailFromAddress property value. The mailFromAddress property
+// GetMailFromAddress gets the mailFromAddress property value. The sender email address in the From header, which is visible to email recipients on their email clients. Also known as P2 sender.
 // returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetMailFromAddress()(*string) {
     val, err := m.GetBackingStore().Get("mailFromAddress")
@@ -179,21 +179,21 @@ func (m *AnalyzedEmailSenderDetail) SetAdditionalData(value map[string]any)() {
 func (m *AnalyzedEmailSenderDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFromAddress sets the fromAddress property value. The fromAddress property
+// SetFromAddress sets the fromAddress property value. The sender email address in the mail From header, also known as the envelope sender or the P1 sender.
 func (m *AnalyzedEmailSenderDetail) SetFromAddress(value *string)() {
     err := m.GetBackingStore().Set("fromAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIpv4 sets the ipv4 property value. The ipv4 property
+// SetIpv4 sets the ipv4 property value. The IPv4 address of the last detected mail server that relayed the message.
 func (m *AnalyzedEmailSenderDetail) SetIpv4(value *string)() {
     err := m.GetBackingStore().Set("ipv4", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMailFromAddress sets the mailFromAddress property value. The mailFromAddress property
+// SetMailFromAddress sets the mailFromAddress property value. The sender email address in the From header, which is visible to email recipients on their email clients. Also known as P2 sender.
 func (m *AnalyzedEmailSenderDetail) SetMailFromAddress(value *string)() {
     err := m.GetBackingStore().Set("mailFromAddress", value)
     if err != nil {

@@ -45,6 +45,11 @@ func NewItemSpecialDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ItemSpecialDriveItemItemRequestBuilder) Content()(*ItemSpecialItemContentRequestBuilder) {
     return NewItemSpecialItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the drive entity.
+// returns a *ItemSpecialItemContentStreamRequestBuilder when successful
+func (m *ItemSpecialDriveItemItemRequestBuilder) ContentStream()(*ItemSpecialItemContentStreamRequestBuilder) {
+    return NewItemSpecialItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get use the special collection to access a special folder by name. Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder. Special folders are automatically created the first time an application attempts to write to one, if it doesn't already exist. If a user deletes one, it is recreated when written to again.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
