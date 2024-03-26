@@ -45,6 +45,11 @@ func NewItemRootRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *ItemRootRequestBuilder) Content()(*ItemRootContentRequestBuilder) {
     return NewItemRootContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the drive entity.
+// returns a *ItemRootContentStreamRequestBuilder when successful
+func (m *ItemRootRequestBuilder) ContentStream()(*ItemRootContentStreamRequestBuilder) {
+    return NewItemRootContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get retrieve the metadata for a driveItem in a drive by file system path or ID.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

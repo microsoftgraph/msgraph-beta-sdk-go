@@ -68,7 +68,7 @@ func (m *CloudPcAuditEvent) GetActivityResult()(*CloudPcAuditActivityResult) {
     }
     return nil
 }
-// GetActivityType gets the activityType property value. The type of activity that was performed. Read-only.
+// GetActivityType gets the activityType property value. The type of the activity that was performed. Read-only.
 // returns a *string when successful
 func (m *CloudPcAuditEvent) GetActivityType()(*string) {
     val, err := m.GetBackingStore().Get("activityType")
@@ -116,7 +116,7 @@ func (m *CloudPcAuditEvent) GetComponentName()(*string) {
     }
     return nil
 }
-// GetCorrelationId gets the correlationId property value. The client request identifier, used to correlate activity within the system. Read-only.
+// GetCorrelationId gets the correlationId property value. The client request ID that is used to correlate activity within the system. Read-only.
 // returns a *string when successful
 func (m *CloudPcAuditEvent) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
@@ -385,7 +385,7 @@ func (m *CloudPcAuditEvent) SetActivityResult(value *CloudPcAuditActivityResult)
         panic(err)
     }
 }
-// SetActivityType sets the activityType property value. The type of activity that was performed. Read-only.
+// SetActivityType sets the activityType property value. The type of the activity that was performed. Read-only.
 func (m *CloudPcAuditEvent) SetActivityType(value *string)() {
     err := m.GetBackingStore().Set("activityType", value)
     if err != nil {
@@ -413,7 +413,7 @@ func (m *CloudPcAuditEvent) SetComponentName(value *string)() {
         panic(err)
     }
 }
-// SetCorrelationId sets the correlationId property value. The client request identifier, used to correlate activity within the system. Read-only.
+// SetCorrelationId sets the correlationId property value. The client request ID that is used to correlate activity within the system. Read-only.
 func (m *CloudPcAuditEvent) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {

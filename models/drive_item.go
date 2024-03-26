@@ -81,10 +81,22 @@ func (m *DriveItem) GetChildren()([]DriveItemable) {
     }
     return nil
 }
-// GetContent gets the content property value. The content stream, if the item represents a file.
+// GetContent gets the content property value. The content property
 // returns a []byte when successful
 func (m *DriveItem) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
+}
+// GetContentStream gets the contentStream property value. The content stream, if the item represents a file.
+// returns a []byte when successful
+func (m *DriveItem) GetContentStream()([]byte) {
+    val, err := m.GetBackingStore().Get("contentStream")
     if err != nil {
         panic(err)
     }
@@ -190,6 +202,16 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         if val != nil {
             m.SetContent(val)
+        }
+        return nil
+    }
+    res["contentStream"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentStream(val)
         }
         return nil
     }
@@ -910,6 +932,12 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteByteArrayValue("contentStream", m.GetContentStream())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("cTag", m.GetCTag())
         if err != nil {
             return err
@@ -1150,9 +1178,16 @@ func (m *DriveItem) SetChildren(value []DriveItemable)() {
         panic(err)
     }
 }
-// SetContent sets the content property value. The content stream, if the item represents a file.
+// SetContent sets the content property value. The content property
 func (m *DriveItem) SetContent(value []byte)() {
     err := m.GetBackingStore().Set("content", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetContentStream sets the contentStream property value. The content stream, if the item represents a file.
+func (m *DriveItem) SetContentStream(value []byte)() {
+    err := m.GetBackingStore().Set("contentStream", value)
     if err != nil {
         panic(err)
     }
@@ -1376,6 +1411,7 @@ type DriveItemable interface {
     GetBundle()(Bundleable)
     GetChildren()([]DriveItemable)
     GetContent()([]byte)
+    GetContentStream()([]byte)
     GetCTag()(*string)
     GetDeleted()(Deletedable)
     GetFile()(Fileable)
@@ -1412,6 +1448,7 @@ type DriveItemable interface {
     SetBundle(value Bundleable)()
     SetChildren(value []DriveItemable)()
     SetContent(value []byte)()
+    SetContentStream(value []byte)()
     SetCTag(value *string)()
     SetDeleted(value Deletedable)()
     SetFile(value Fileable)()

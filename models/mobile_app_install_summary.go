@@ -252,66 +252,6 @@ func (m *MobileAppInstallSummary) Serialize(writer i878a80d2330e89d26896388a3f48
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteInt32Value("failedDeviceCount", m.GetFailedDeviceCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("failedUserCount", m.GetFailedUserCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("installedDeviceCount", m.GetInstalledDeviceCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("installedUserCount", m.GetInstalledUserCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("notApplicableDeviceCount", m.GetNotApplicableDeviceCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("notApplicableUserCount", m.GetNotApplicableUserCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("notInstalledDeviceCount", m.GetNotInstalledDeviceCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("notInstalledUserCount", m.GetNotInstalledUserCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("pendingInstallDeviceCount", m.GetPendingInstallDeviceCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("pendingInstallUserCount", m.GetPendingInstallUserCount())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetFailedDeviceCount sets the failedDeviceCount property value. Number of Devices that have failed to install this app.

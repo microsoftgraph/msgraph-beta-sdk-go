@@ -171,7 +171,7 @@ func (m *EventMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetIsAllDay gets the isAllDay property value. The isAllDay property
+// GetIsAllDay gets the isAllDay property value. Indicates whether the event lasts the entire day. Adjusting this property requires adjusting the startDateTime and endDateTime properties of the event as well.
 // returns a *bool when successful
 func (m *EventMessage) GetIsAllDay()(*bool) {
     val, err := m.GetBackingStore().Get("isAllDay")
@@ -183,7 +183,7 @@ func (m *EventMessage) GetIsAllDay()(*bool) {
     }
     return nil
 }
-// GetIsDelegated gets the isDelegated property value. The isDelegated property
+// GetIsDelegated gets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. Default is false.
 // returns a *bool when successful
 func (m *EventMessage) GetIsDelegated()(*bool) {
     val, err := m.GetBackingStore().Get("isDelegated")
@@ -195,7 +195,7 @@ func (m *EventMessage) GetIsDelegated()(*bool) {
     }
     return nil
 }
-// GetIsOutOfDate gets the isOutOfDate property value. The isOutOfDate property
+// GetIsOutOfDate gets the isOutOfDate property value. Indicates whether this meeting request has been made out-of-date by a more recent request.
 // returns a *bool when successful
 func (m *EventMessage) GetIsOutOfDate()(*bool) {
     val, err := m.GetBackingStore().Get("isOutOfDate")
@@ -207,7 +207,7 @@ func (m *EventMessage) GetIsOutOfDate()(*bool) {
     }
     return nil
 }
-// GetLocation gets the location property value. The location property
+// GetLocation gets the location property value. The location of the requested meeting.
 // returns a Locationable when successful
 func (m *EventMessage) GetLocation()(Locationable) {
     val, err := m.GetBackingStore().Get("location")
@@ -219,7 +219,7 @@ func (m *EventMessage) GetLocation()(Locationable) {
     }
     return nil
 }
-// GetMeetingMessageType gets the meetingMessageType property value. The meetingMessageType property
+// GetMeetingMessageType gets the meetingMessageType property value. The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTentativelyAccepted, meetingDeclined.
 // returns a *MeetingMessageType when successful
 func (m *EventMessage) GetMeetingMessageType()(*MeetingMessageType) {
     val, err := m.GetBackingStore().Get("meetingMessageType")
@@ -231,7 +231,7 @@ func (m *EventMessage) GetMeetingMessageType()(*MeetingMessageType) {
     }
     return nil
 }
-// GetRecurrence gets the recurrence property value. The recurrence property
+// GetRecurrence gets the recurrence property value. The recurrence pattern of the requested meeting.
 // returns a PatternedRecurrenceable when successful
 func (m *EventMessage) GetRecurrence()(PatternedRecurrenceable) {
     val, err := m.GetBackingStore().Get("recurrence")
@@ -243,7 +243,7 @@ func (m *EventMessage) GetRecurrence()(PatternedRecurrenceable) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The start time of the requested meeting.
 // returns a DateTimeTimeZoneable when successful
 func (m *EventMessage) GetStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -255,7 +255,7 @@ func (m *EventMessage) GetStartDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The type of requested meeting: singleInstance, occurence, exception, seriesMaster.
 // returns a *EventType when successful
 func (m *EventMessage) GetTypeEscaped()(*EventType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -351,56 +351,56 @@ func (m *EventMessage) SetEvent(value Eventable)() {
         panic(err)
     }
 }
-// SetIsAllDay sets the isAllDay property value. The isAllDay property
+// SetIsAllDay sets the isAllDay property value. Indicates whether the event lasts the entire day. Adjusting this property requires adjusting the startDateTime and endDateTime properties of the event as well.
 func (m *EventMessage) SetIsAllDay(value *bool)() {
     err := m.GetBackingStore().Set("isAllDay", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsDelegated sets the isDelegated property value. The isDelegated property
+// SetIsDelegated sets the isDelegated property value. True if this meeting request is accessible to a delegate, false otherwise. Default is false.
 func (m *EventMessage) SetIsDelegated(value *bool)() {
     err := m.GetBackingStore().Set("isDelegated", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsOutOfDate sets the isOutOfDate property value. The isOutOfDate property
+// SetIsOutOfDate sets the isOutOfDate property value. Indicates whether this meeting request has been made out-of-date by a more recent request.
 func (m *EventMessage) SetIsOutOfDate(value *bool)() {
     err := m.GetBackingStore().Set("isOutOfDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocation sets the location property value. The location property
+// SetLocation sets the location property value. The location of the requested meeting.
 func (m *EventMessage) SetLocation(value Locationable)() {
     err := m.GetBackingStore().Set("location", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMeetingMessageType sets the meetingMessageType property value. The meetingMessageType property
+// SetMeetingMessageType sets the meetingMessageType property value. The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTentativelyAccepted, meetingDeclined.
 func (m *EventMessage) SetMeetingMessageType(value *MeetingMessageType)() {
     err := m.GetBackingStore().Set("meetingMessageType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecurrence sets the recurrence property value. The recurrence property
+// SetRecurrence sets the recurrence property value. The recurrence pattern of the requested meeting.
 func (m *EventMessage) SetRecurrence(value PatternedRecurrenceable)() {
     err := m.GetBackingStore().Set("recurrence", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The start time of the requested meeting.
 func (m *EventMessage) SetStartDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The type of requested meeting: singleInstance, occurence, exception, seriesMaster.
 func (m *EventMessage) SetTypeEscaped(value *EventType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type ItemTeamScheduleTimeOffReasonsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamScheduleTimeOffReasonsRequestBuilderGetQueryParameters get the list of timeOffReasons in a schedule.
+// ItemTeamScheduleTimeOffReasonsRequestBuilderGetQueryParameters the set of reasons for a time off in the schedule.
 type ItemTeamScheduleTimeOffReasonsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -74,7 +74,7 @@ func NewItemTeamScheduleTimeOffReasonsRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemTeamScheduleTimeOffReasonsRequestBuilder) Count()(*ItemTeamScheduleTimeOffReasonsCountRequestBuilder) {
     return NewItemTeamScheduleTimeOffReasonsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of timeOffReasons in a schedule.
+// Get the set of reasons for a time off in the schedule.
 // returns a TimeOffReasonCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,7 +120,7 @@ func (m *ItemTeamScheduleTimeOffReasonsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable), nil
 }
-// ToGetRequestInformation get the list of timeOffReasons in a schedule.
+// ToGetRequestInformation the set of reasons for a time off in the schedule.
 // returns a *RequestInformation when successful
 func (m *ItemTeamScheduleTimeOffReasonsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamScheduleTimeOffReasonsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

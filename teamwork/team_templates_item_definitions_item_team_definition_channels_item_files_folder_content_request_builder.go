@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilderGetQueryParameters get content for the navigation property filesFolder from teamwork
 type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilderGetQueryParameters struct {
     // Format of the content
     Format *string `uriparametername:"%24format"`
@@ -45,7 +45,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderCon
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the content stream, if the item represents a file.
+// Get get content for the navigation property filesFolder from teamwork
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -68,7 +68,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderCo
     }
     return res.([]byte), nil
 }
-// Put the content stream, if the item represents a file.
+// Put update content for the navigation property filesFolder in teamwork
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
@@ -88,7 +88,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToGetRequestInformation the content stream, if the item represents a file.
+// ToGetRequestInformation get content for the navigation property filesFolder from teamwork
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -102,7 +102,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderCo
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation the content stream, if the item represents a file.
+// ToPutRequestInformation update content for the navigation property filesFolder in teamwork
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemFilesFolderContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/filesFolder/content", m.BaseRequestBuilder.PathParameters)

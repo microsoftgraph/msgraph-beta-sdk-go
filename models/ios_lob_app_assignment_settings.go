@@ -92,7 +92,7 @@ func (m *IosLobAppAssignmentSettings) GetPreventManagedAppBackup()(*bool) {
     }
     return nil
 }
-// GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
+// GetUninstallOnDeviceRemoval gets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
 // returns a *bool when successful
 func (m *IosLobAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     val, err := m.GetBackingStore().Get("uninstallOnDeviceRemoval")
@@ -104,7 +104,7 @@ func (m *IosLobAppAssignmentSettings) GetUninstallOnDeviceRemoval()(*bool) {
     }
     return nil
 }
-// GetVpnConfigurationId gets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
+// GetVpnConfigurationId gets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
 // returns a *string when successful
 func (m *IosLobAppAssignmentSettings) GetVpnConfigurationId()(*string) {
     val, err := m.GetBackingStore().Get("vpnConfigurationId")
@@ -162,14 +162,14 @@ func (m *IosLobAppAssignmentSettings) SetPreventManagedAppBackup(value *bool)() 
         panic(err)
     }
 }
-// SetUninstallOnDeviceRemoval sets the uninstallOnDeviceRemoval property value. Whether or not to uninstall the app when device is removed from Intune.
+// SetUninstallOnDeviceRemoval sets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
 func (m *IosLobAppAssignmentSettings) SetUninstallOnDeviceRemoval(value *bool)() {
     err := m.GetBackingStore().Set("uninstallOnDeviceRemoval", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVpnConfigurationId sets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
+// SetVpnConfigurationId sets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
 func (m *IosLobAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
     err := m.GetBackingStore().Set("vpnConfigurationId", value)
     if err != nil {

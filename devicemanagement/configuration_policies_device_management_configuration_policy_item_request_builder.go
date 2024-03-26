@@ -46,6 +46,11 @@ type ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilderP
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Assign()(*ConfigurationPoliciesItemAssignRequestBuilder) {
     return NewConfigurationPoliciesItemAssignRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AssignJustInTimeConfiguration provides operations to call the assignJustInTimeConfiguration method.
+// returns a *ConfigurationPoliciesItemAssignJustInTimeConfigurationRequestBuilder when successful
+func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) AssignJustInTimeConfiguration()(*ConfigurationPoliciesItemAssignJustInTimeConfigurationRequestBuilder) {
+    return NewConfigurationPoliciesItemAssignJustInTimeConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Assignments provides operations to manage the assignments property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
 // returns a *ConfigurationPoliciesItemAssignmentsRequestBuilder when successful
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Assignments()(*ConfigurationPoliciesItemAssignmentsRequestBuilder) {
@@ -129,6 +134,11 @@ func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuil
 // returns a *ConfigurationPoliciesItemReorderRequestBuilder when successful
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Reorder()(*ConfigurationPoliciesItemReorderRequestBuilder) {
     return NewConfigurationPoliciesItemReorderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveJustInTimeConfiguration provides operations to call the retrieveJustInTimeConfiguration method.
+// returns a *ConfigurationPoliciesItemRetrieveJustInTimeConfigurationRequestBuilder when successful
+func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) RetrieveJustInTimeConfiguration()(*ConfigurationPoliciesItemRetrieveJustInTimeConfigurationRequestBuilder) {
+    return NewConfigurationPoliciesItemRetrieveJustInTimeConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetrieveLatestUpgradeDefaultBaselinePolicy provides operations to call the retrieveLatestUpgradeDefaultBaselinePolicy method.
 // returns a *ConfigurationPoliciesItemRetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder when successful

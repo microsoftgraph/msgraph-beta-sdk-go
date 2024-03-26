@@ -119,16 +119,6 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
-    res["firstImpactedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirstImpactedDateTime(val)
-        }
-        return nil
-    }
     res["relatedResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRelatedResourceFromDiscriminatorValue)
         if err != nil {
@@ -146,18 +136,6 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     return res
-}
-// GetFirstImpactedDateTime gets the firstImpactedDateTime property value. The firstImpactedDateTime property
-// returns a *Time when successful
-func (m *Alert) GetFirstImpactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("firstImpactedDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
 }
 // GetRelatedResources gets the relatedResources property value. The relatedResources property
 // returns a []RelatedResourceable when successful
@@ -208,12 +186,6 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
-    {
-        err = writer.WriteTimeValue("firstImpactedDateTime", m.GetFirstImpactedDateTime())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetRelatedResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRelatedResources()))
         for i, v := range m.GetRelatedResources() {
@@ -256,13 +228,6 @@ func (m *Alert) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetFirstImpactedDateTime sets the firstImpactedDateTime property value. The firstImpactedDateTime property
-func (m *Alert) SetFirstImpactedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("firstImpactedDateTime", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRelatedResources sets the relatedResources property value. The relatedResources property
 func (m *Alert) SetRelatedResources(value []RelatedResourceable)() {
     err := m.GetBackingStore().Set("relatedResources", value)
@@ -277,12 +242,10 @@ type Alertable interface {
     GetAlertType()(*AlertType)
     GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
-    GetFirstImpactedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRelatedResources()([]RelatedResourceable)
     SetActions(value []AlertActionable)()
     SetAlertType(value *AlertType)()
     SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
-    SetFirstImpactedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRelatedResources(value []RelatedResourceable)()
 }

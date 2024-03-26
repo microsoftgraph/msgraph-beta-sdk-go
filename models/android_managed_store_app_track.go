@@ -89,7 +89,7 @@ func (m *AndroidManagedStoreAppTrack) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTrackAlias gets the trackAlias property value. Friendly name for track.
+// GetTrackAlias gets the trackAlias property value. Friendly name for track. This property is read-only.
 // returns a *string when successful
 func (m *AndroidManagedStoreAppTrack) GetTrackAlias()(*string) {
     val, err := m.GetBackingStore().Get("trackAlias")
@@ -101,7 +101,7 @@ func (m *AndroidManagedStoreAppTrack) GetTrackAlias()(*string) {
     }
     return nil
 }
-// GetTrackId gets the trackId property value. Unique track identifier.
+// GetTrackId gets the trackId property value. Unique track identifier. This property is read-only.
 // returns a *string when successful
 func (m *AndroidManagedStoreAppTrack) GetTrackId()(*string) {
     val, err := m.GetBackingStore().Get("trackId")
@@ -117,18 +117,6 @@ func (m *AndroidManagedStoreAppTrack) GetTrackId()(*string) {
 func (m *AndroidManagedStoreAppTrack) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("trackAlias", m.GetTrackAlias())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("trackId", m.GetTrackId())
         if err != nil {
             return err
         }
@@ -159,14 +147,14 @@ func (m *AndroidManagedStoreAppTrack) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTrackAlias sets the trackAlias property value. Friendly name for track.
+// SetTrackAlias sets the trackAlias property value. Friendly name for track. This property is read-only.
 func (m *AndroidManagedStoreAppTrack) SetTrackAlias(value *string)() {
     err := m.GetBackingStore().Set("trackAlias", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTrackId sets the trackId property value. Unique track identifier.
+// SetTrackId sets the trackId property value. Unique track identifier. This property is read-only.
 func (m *AndroidManagedStoreAppTrack) SetTrackId(value *string)() {
     err := m.GetBackingStore().Set("trackId", value)
     if err != nil {

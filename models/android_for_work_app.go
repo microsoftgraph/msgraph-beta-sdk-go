@@ -22,7 +22,7 @@ func NewAndroidForWorkApp()(*AndroidForWorkApp) {
 func CreateAndroidForWorkAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidForWorkApp(), nil
 }
-// GetAppIdentifier gets the appIdentifier property value. The Identity Name.
+// GetAppIdentifier gets the appIdentifier property value. The Identity Name. This property is read-only.
 // returns a *string when successful
 func (m *AndroidForWorkApp) GetAppIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("appIdentifier")
@@ -102,7 +102,7 @@ func (m *AndroidForWorkApp) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetPackageId gets the packageId property value. The package identifier.
+// GetPackageId gets the packageId property value. The package identifier. This property is read-only.
 // returns a *string when successful
 func (m *AndroidForWorkApp) GetPackageId()(*string) {
     val, err := m.GetBackingStore().Get("packageId")
@@ -145,19 +145,7 @@ func (m *AndroidForWorkApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         return err
     }
     {
-        err = writer.WriteStringValue("appIdentifier", m.GetAppIdentifier())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("appStoreUrl", m.GetAppStoreUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("packageId", m.GetPackageId())
         if err != nil {
             return err
         }
@@ -176,7 +164,7 @@ func (m *AndroidForWorkApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetAppIdentifier sets the appIdentifier property value. The Identity Name.
+// SetAppIdentifier sets the appIdentifier property value. The Identity Name. This property is read-only.
 func (m *AndroidForWorkApp) SetAppIdentifier(value *string)() {
     err := m.GetBackingStore().Set("appIdentifier", value)
     if err != nil {
@@ -190,7 +178,7 @@ func (m *AndroidForWorkApp) SetAppStoreUrl(value *string)() {
         panic(err)
     }
 }
-// SetPackageId sets the packageId property value. The package identifier.
+// SetPackageId sets the packageId property value. The package identifier. This property is read-only.
 func (m *AndroidForWorkApp) SetPackageId(value *string)() {
     err := m.GetBackingStore().Set("packageId", value)
     if err != nil {

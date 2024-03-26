@@ -99,12 +99,12 @@ func (m *ApplicationsWithUniqueNameRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable), nil
 }
-// Patch update the properties of an application object.
+// Patch create a new application object if it doesn't exist, or update the properties of an existing application object.
 // returns a Applicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0
 func (m *ApplicationsWithUniqueNameRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, requestConfiguration *ApplicationsWithUniqueNameRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -147,7 +147,7 @@ func (m *ApplicationsWithUniqueNameRequestBuilder) ToGetRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an application object.
+// ToPatchRequestInformation create a new application object if it doesn't exist, or update the properties of an existing application object.
 // returns a *RequestInformation when successful
 func (m *ApplicationsWithUniqueNameRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, requestConfiguration *ApplicationsWithUniqueNameRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/applications(uniqueName='{uniqueName}')", m.BaseRequestBuilder.PathParameters)

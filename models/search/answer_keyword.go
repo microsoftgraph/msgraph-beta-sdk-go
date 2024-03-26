@@ -134,7 +134,7 @@ func (m *AnswerKeyword) GetOdataType()(*string) {
     }
     return nil
 }
-// GetReservedKeywords gets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.
+// GetReservedKeywords gets the reservedKeywords property value. Unique keywords that guarantee the search answer is triggered.
 // returns a []string when successful
 func (m *AnswerKeyword) GetReservedKeywords()([]string) {
     val, err := m.GetBackingStore().Get("reservedKeywords")
@@ -212,7 +212,7 @@ func (m *AnswerKeyword) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetReservedKeywords sets the reservedKeywords property value. Unique keywords that will guarantee the search answer is triggered.
+// SetReservedKeywords sets the reservedKeywords property value. Unique keywords that guarantee the search answer is triggered.
 func (m *AnswerKeyword) SetReservedKeywords(value []string)() {
     err := m.GetBackingStore().Set("reservedKeywords", value)
     if err != nil {

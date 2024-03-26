@@ -284,6 +284,16 @@ func (m *DeviceManagementSettings) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["m365AppDiagnosticsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetM365AppDiagnosticsEnabled(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -322,6 +332,18 @@ func (m *DeviceManagementSettings) GetIgnoreDevicesForUnsupportedSettingsEnabled
 // returns a *bool when successful
 func (m *DeviceManagementSettings) GetIsScheduledActionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isScheduledActionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetM365AppDiagnosticsEnabled gets the m365AppDiagnosticsEnabled property value. The property to determine if M365 App log collection is enabled for account. When TRUE it indicates that M365 app log collection is enabled for account.  When FALSE it indicates that M365 app log collection is disabled for account. Default value is FALSE
+// returns a *bool when successful
+func (m *DeviceManagementSettings) GetM365AppDiagnosticsEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("m365AppDiagnosticsEnabled")
     if err != nil {
         panic(err)
     }
@@ -425,6 +447,12 @@ func (m *DeviceManagementSettings) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteBoolValue("isScheduledActionEnabled", m.GetIsScheduledActionEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("m365AppDiagnosticsEnabled", m.GetM365AppDiagnosticsEnabled())
         if err != nil {
             return err
         }
@@ -544,6 +572,13 @@ func (m *DeviceManagementSettings) SetIsScheduledActionEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetM365AppDiagnosticsEnabled sets the m365AppDiagnosticsEnabled property value. The property to determine if M365 App log collection is enabled for account. When TRUE it indicates that M365 app log collection is enabled for account.  When FALSE it indicates that M365 app log collection is disabled for account. Default value is FALSE
+func (m *DeviceManagementSettings) SetM365AppDiagnosticsEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("m365AppDiagnosticsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DeviceManagementSettings) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -575,6 +610,7 @@ type DeviceManagementSettingsable interface {
     GetEnhancedJailBreak()(*bool)
     GetIgnoreDevicesForUnsupportedSettingsEnabled()(*bool)
     GetIsScheduledActionEnabled()(*bool)
+    GetM365AppDiagnosticsEnabled()(*bool)
     GetOdataType()(*string)
     GetSecureByDefault()(*bool)
     SetAndroidDeviceAdministratorEnrollmentEnabled(value *bool)()
@@ -590,6 +626,7 @@ type DeviceManagementSettingsable interface {
     SetEnhancedJailBreak(value *bool)()
     SetIgnoreDevicesForUnsupportedSettingsEnabled(value *bool)()
     SetIsScheduledActionEnabled(value *bool)()
+    SetM365AppDiagnosticsEnabled(value *bool)()
     SetOdataType(value *string)()
     SetSecureByDefault(value *bool)()
 }

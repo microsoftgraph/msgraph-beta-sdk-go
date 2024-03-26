@@ -116,7 +116,7 @@ func (m *MacOSPkgApp) GetIgnoreVersionDetection()(*bool) {
     }
     return nil
 }
-// GetIncludedApps gets the includedApps property value. The list of apps expected to be installed by the PKG.
+// GetIncludedApps gets the includedApps property value. The list of apps expected to be installed by the PKG. This collection can contain a maximum of 500 elements.
 // returns a []MacOSIncludedAppable when successful
 func (m *MacOSPkgApp) GetIncludedApps()([]MacOSIncludedAppable) {
     val, err := m.GetBackingStore().Get("includedApps")
@@ -251,7 +251,7 @@ func (m *MacOSPkgApp) SetIgnoreVersionDetection(value *bool)() {
         panic(err)
     }
 }
-// SetIncludedApps sets the includedApps property value. The list of apps expected to be installed by the PKG.
+// SetIncludedApps sets the includedApps property value. The list of apps expected to be installed by the PKG. This collection can contain a maximum of 500 elements.
 func (m *MacOSPkgApp) SetIncludedApps(value []MacOSIncludedAppable)() {
     err := m.GetBackingStore().Set("includedApps", value)
     if err != nil {

@@ -164,6 +164,11 @@ func (m *UserItemRequestBuilder) ContactFolders()(*ItemContactFoldersRequestBuil
 func (m *UserItemRequestBuilder) Contacts()(*ItemContactsRequestBuilder) {
     return NewItemContactsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ConvertExternalToInternalMemberUser provides operations to call the convertExternalToInternalMemberUser method.
+// returns a *ItemConvertExternalToInternalMemberUserRequestBuilder when successful
+func (m *UserItemRequestBuilder) ConvertExternalToInternalMemberUser()(*ItemConvertExternalToInternalMemberUserRequestBuilder) {
+    return NewItemConvertExternalToInternalMemberUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CreatedObjects provides operations to manage the createdObjects property of the microsoft.graph.user entity.
 // returns a *ItemCreatedObjectsRequestBuilder when successful
 func (m *UserItemRequestBuilder) CreatedObjects()(*ItemCreatedObjectsRequestBuilder) {

@@ -45,6 +45,11 @@ func NewItemTeamDefinitionPrimaryChannelFilesFolderRequestBuilder(rawUrl string,
 func (m *ItemTeamDefinitionPrimaryChannelFilesFolderRequestBuilder) Content()(*ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilder) {
     return NewItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the teamTemplateDefinition entity.
+// returns a *ItemTeamDefinitionPrimaryChannelFilesFolderContentStreamRequestBuilder when successful
+func (m *ItemTeamDefinitionPrimaryChannelFilesFolderRequestBuilder) ContentStream()(*ItemTeamDefinitionPrimaryChannelFilesFolderContentStreamRequestBuilder) {
+    return NewItemTeamDefinitionPrimaryChannelFilesFolderContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get the metadata for the location where the files of a channel are stored.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

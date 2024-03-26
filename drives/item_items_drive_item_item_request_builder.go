@@ -89,6 +89,11 @@ func NewItemItemsDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemItemsDriveItemItemRequestBuilder) Content()(*ItemItemsItemContentRequestBuilder) {
     return NewItemItemsItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the drive entity.
+// returns a *ItemItemsItemContentStreamRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) ContentStream()(*ItemItemsItemContentStreamRequestBuilder) {
+    return NewItemItemsItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Copy provides operations to call the copy method.
 // returns a *ItemItemsItemCopyRequestBuilder when successful
 func (m *ItemItemsDriveItemItemRequestBuilder) Copy()(*ItemItemsItemCopyRequestBuilder) {

@@ -45,6 +45,11 @@ func NewItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder(rawUrl strin
 func (m *ItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder) Content()(*ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) {
     return NewItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the site entity.
+// returns a *ItemListsItemItemsItemActivitiesItemDriveItemContentStreamRequestBuilder when successful
+func (m *ItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder) ContentStream()(*ItemListsItemItemsItemActivitiesItemDriveItemContentStreamRequestBuilder) {
+    return NewItemListsItemItemsItemActivitiesItemDriveItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get driveItem from sites
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

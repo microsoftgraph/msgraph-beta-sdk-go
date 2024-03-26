@@ -128,6 +128,11 @@ func (m *GroupItemRequestBuilder) Delete(ctx context.Context, requestConfigurati
     }
     return nil
 }
+// DeletePasswordSingleSignOnCredentials provides operations to call the deletePasswordSingleSignOnCredentials method.
+// returns a *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder when successful
+func (m *GroupItemRequestBuilder) DeletePasswordSingleSignOnCredentials()(*ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) {
+    return NewItemDeletePasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Drive provides operations to manage the drive property of the microsoft.graph.group entity.
 // returns a *ItemDriveRequestBuilder when successful
 func (m *GroupItemRequestBuilder) Drive()(*ItemDriveRequestBuilder) {
@@ -191,6 +196,11 @@ func (m *GroupItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestB
 func (m *GroupItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
     return NewItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetPasswordSingleSignOnCredentials provides operations to call the getPasswordSingleSignOnCredentials method.
+// returns a *ItemGetPasswordSingleSignOnCredentialsRequestBuilder when successful
+func (m *GroupItemRequestBuilder) GetPasswordSingleSignOnCredentials()(*ItemGetPasswordSingleSignOnCredentialsRequestBuilder) {
+    return NewItemGetPasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GroupLifecyclePolicies provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
 // returns a *ItemGroupLifecyclePoliciesRequestBuilder when successful
 func (m *GroupItemRequestBuilder) GroupLifecyclePolicies()(*ItemGroupLifecyclePoliciesRequestBuilder) {
@@ -221,12 +231,12 @@ func (m *GroupItemRequestBuilder) Onenote()(*ItemOnenoteRequestBuilder) {
 func (m *GroupItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder) {
     return NewItemOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a group object.
+// Patch create a new group object if it doesn't exist, or update the properties of an existing group object.You can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team.
 // returns a Groupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0
 func (m *GroupItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, requestConfiguration *GroupItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -349,7 +359,7 @@ func (m *GroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a group object.
+// ToPatchRequestInformation create a new group object if it doesn't exist, or update the properties of an existing group object.You can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see thethe Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option. Note: To create a team, first create a group then add a team to it, see create team.
 // returns a *RequestInformation when successful
 func (m *GroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, requestConfiguration *GroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/groups/{group%2Did}", m.BaseRequestBuilder.PathParameters)

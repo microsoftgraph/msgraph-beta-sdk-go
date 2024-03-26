@@ -10,19 +10,12 @@ import (
 type ItemContactsItemPhotoValueContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemContactsItemPhotoValueContentRequestBuilderGetQueryParameters get media content for the navigation property photo from users
-type ItemContactsItemPhotoValueContentRequestBuilderGetQueryParameters struct {
-    // Format of the content
-    Format *string `uriparametername:"%24format"`
-}
 // ItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemContactsItemPhotoValueContentRequestBuilderGetQueryParameters
 }
 // ItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration struct {
@@ -34,7 +27,7 @@ type ItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration stru
 // NewItemContactsItemPhotoValueContentRequestBuilderInternal instantiates a new ItemContactsItemPhotoValueContentRequestBuilder and sets the default values.
 func NewItemContactsItemPhotoValueContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemContactsItemPhotoValueContentRequestBuilder) {
     m := &ItemContactsItemPhotoValueContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/photo/$value{?%24format*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/photo/$value", pathParameters),
     }
     return m
 }
@@ -89,9 +82,6 @@ func (m *ItemContactsItemPhotoValueContentRequestBuilder) Put(ctx context.Contex
 func (m *ItemContactsItemPhotoValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
@@ -101,7 +91,7 @@ func (m *ItemContactsItemPhotoValueContentRequestBuilder) ToGetRequestInformatio
 // ToPutRequestInformation update media content for the navigation property photo in users
 // returns a *RequestInformation when successful
 func (m *ItemContactsItemPhotoValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/photo/$value", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

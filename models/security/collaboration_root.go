@@ -20,7 +20,7 @@ func NewCollaborationRoot()(*CollaborationRoot) {
 func CreateCollaborationRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCollaborationRoot(), nil
 }
-// GetAnalyzedEmails gets the analyzedEmails property value. The analyzedEmails property
+// GetAnalyzedEmails gets the analyzedEmails property value. Contains metadata for analyzed emails.
 // returns a []AnalyzedEmailable when successful
 func (m *CollaborationRoot) GetAnalyzedEmails()([]AnalyzedEmailable) {
     val, err := m.GetBackingStore().Get("analyzedEmails")
@@ -74,7 +74,7 @@ func (m *CollaborationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetAnalyzedEmails sets the analyzedEmails property value. The analyzedEmails property
+// SetAnalyzedEmails sets the analyzedEmails property value. Contains metadata for analyzed emails.
 func (m *CollaborationRoot) SetAnalyzedEmails(value []AnalyzedEmailable)() {
     err := m.GetBackingStore().Set("analyzedEmails", value)
     if err != nil {

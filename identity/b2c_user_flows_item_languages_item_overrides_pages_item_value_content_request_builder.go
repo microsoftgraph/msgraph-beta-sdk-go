@@ -10,19 +10,12 @@ import (
 type B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderGetQueryParameters get media content for the navigation property overridesPages from identity
-type B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderGetQueryParameters struct {
-    // Format of the content
-    Format *string `uriparametername:"%24format"`
-}
 // B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderGetQueryParameters
 }
 // B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderPutRequestConfiguration struct {
@@ -34,7 +27,7 @@ type B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderPu
 // NewB2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderInternal instantiates a new B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilder and sets the default values.
 func NewB2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilder) {
     m := &B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}/overridesPages/{userFlowLanguagePage%2Did}/$value{?%24format*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}/overridesPages/{userFlowLanguagePage%2Did}/$value", pathParameters),
     }
     return m
 }
@@ -92,9 +85,6 @@ func (m *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuild
 func (m *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
@@ -104,7 +94,7 @@ func (m *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuild
 // ToPutRequestInformation update media content for the navigation property overridesPages in identity
 // returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}/overridesPages/{userFlowLanguagePage%2Did}/$value", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

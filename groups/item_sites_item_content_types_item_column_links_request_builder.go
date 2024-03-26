@@ -11,7 +11,7 @@ import (
 type ItemSitesItemContentTypesItemColumnLinksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemContentTypesItemColumnLinksRequestBuilderGetQueryParameters the collection of columns that are required by this content type
+// ItemSitesItemContentTypesItemColumnLinksRequestBuilderGetQueryParameters the collection of columns that are required by this content type.
 type ItemSitesItemContentTypesItemColumnLinksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemSitesItemContentTypesItemColumnLinksRequestBuilder(rawUrl string, re
 func (m *ItemSitesItemContentTypesItemColumnLinksRequestBuilder) Count()(*ItemSitesItemContentTypesItemColumnLinksCountRequestBuilder) {
     return NewItemSitesItemContentTypesItemColumnLinksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of columns that are required by this content type
+// Get the collection of columns that are required by this content type.
 // returns a ColumnLinkCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemContentTypesItemColumnLinksRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemColumnLinksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnLinkCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemSitesItemContentTypesItemColumnLinksRequestBuilder) Post(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ColumnLinkable), nil
 }
-// ToGetRequestInformation the collection of columns that are required by this content type
+// ToGetRequestInformation the collection of columns that are required by this content type.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemContentTypesItemColumnLinksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemContentTypesItemColumnLinksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

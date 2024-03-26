@@ -45,6 +45,11 @@ func NewDeletedTeamsItemChannelsItemFilesFolderRequestBuilder(rawUrl string, req
 func (m *DeletedTeamsItemChannelsItemFilesFolderRequestBuilder) Content()(*DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the teamwork entity.
+// returns a *DeletedTeamsItemChannelsItemFilesFolderContentStreamRequestBuilder when successful
+func (m *DeletedTeamsItemChannelsItemFilesFolderRequestBuilder) ContentStream()(*DeletedTeamsItemChannelsItemFilesFolderContentStreamRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemFilesFolderContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get the metadata for the location where the files of a channel are stored.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

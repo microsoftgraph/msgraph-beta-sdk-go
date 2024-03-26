@@ -127,6 +127,11 @@ func (m *DeviceAppManagementRequestBuilder) ManagedEBooks()(*ManagedEBooksReques
 func (m *DeviceAppManagementRequestBuilder) MdmWindowsInformationProtectionPolicies()(*MdmWindowsInformationProtectionPoliciesRequestBuilder) {
     return NewMdmWindowsInformationProtectionPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MobileAppCatalogPackages provides operations to manage the mobileAppCatalogPackages property of the microsoft.graph.deviceAppManagement entity.
+// returns a *MobileAppCatalogPackagesRequestBuilder when successful
+func (m *DeviceAppManagementRequestBuilder) MobileAppCatalogPackages()(*MobileAppCatalogPackagesRequestBuilder) {
+    return NewMobileAppCatalogPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MobileAppCategories provides operations to manage the mobileAppCategories property of the microsoft.graph.deviceAppManagement entity.
 // returns a *MobileAppCategoriesRequestBuilder when successful
 func (m *DeviceAppManagementRequestBuilder) MobileAppCategories()(*MobileAppCategoriesRequestBuilder) {

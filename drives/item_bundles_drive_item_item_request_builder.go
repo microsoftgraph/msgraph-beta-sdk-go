@@ -45,6 +45,11 @@ func NewItemBundlesDriveItemItemRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ItemBundlesDriveItemItemRequestBuilder) Content()(*ItemBundlesItemContentRequestBuilder) {
     return NewItemBundlesItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the drive entity.
+// returns a *ItemBundlesItemContentStreamRequestBuilder when successful
+func (m *ItemBundlesDriveItemItemRequestBuilder) ContentStream()(*ItemBundlesItemContentStreamRequestBuilder) {
+    return NewItemBundlesItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

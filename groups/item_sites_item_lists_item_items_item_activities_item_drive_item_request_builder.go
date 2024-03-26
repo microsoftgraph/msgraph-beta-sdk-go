@@ -45,6 +45,11 @@ func NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder(raw
 func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder) Content()(*ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) {
     return NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the group entity.
+// returns a *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentStreamRequestBuilder when successful
+func (m *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder) ContentStream()(*ItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentStreamRequestBuilder) {
+    return NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get driveItem from groups
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

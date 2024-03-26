@@ -45,6 +45,11 @@ func NewItemPrimaryChannelFilesFolderRequestBuilder(rawUrl string, requestAdapte
 func (m *ItemPrimaryChannelFilesFolderRequestBuilder) Content()(*ItemPrimaryChannelFilesFolderContentRequestBuilder) {
     return NewItemPrimaryChannelFilesFolderContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ContentStream provides operations to manage the media for the team entity.
+// returns a *ItemPrimaryChannelFilesFolderContentStreamRequestBuilder when successful
+func (m *ItemPrimaryChannelFilesFolderRequestBuilder) ContentStream()(*ItemPrimaryChannelFilesFolderContentStreamRequestBuilder) {
+    return NewItemPrimaryChannelFilesFolderContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get the metadata for the location where the files of a channel are stored.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -125,6 +125,16 @@ func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder)
 func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) Registrations()(*VirtualEventsWebinarsItemSessionsItemRegistrationsRequestBuilder) {
     return NewVirtualEventsWebinarsItemSessionsItemRegistrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RegistrationsWithEmail provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+// returns a *VirtualEventsWebinarsItemSessionsItemRegistrationsWithEmailRequestBuilder when successful
+func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) RegistrationsWithEmail(email *string)(*VirtualEventsWebinarsItemSessionsItemRegistrationsWithEmailRequestBuilder) {
+    return NewVirtualEventsWebinarsItemSessionsItemRegistrationsWithEmailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, email)
+}
+// RegistrationsWithUserId provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.
+// returns a *VirtualEventsWebinarsItemSessionsItemRegistrationsWithUserIdRequestBuilder when successful
+func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) RegistrationsWithUserId(userId *string)(*VirtualEventsWebinarsItemSessionsItemRegistrationsWithUserIdRequestBuilder) {
+    return NewVirtualEventsWebinarsItemSessionsItemRegistrationsWithUserIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userId)
+}
 // ToDeleteRequestInformation delete navigation property sessions for solutions
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsVirtualEventSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

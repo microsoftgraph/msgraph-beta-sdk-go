@@ -11,7 +11,7 @@ import (
 type ItemFollowingItemContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemFollowingItemContentRequestBuilderGetQueryParameters the content stream, if the item represents a file.
+// ItemFollowingItemContentRequestBuilderGetQueryParameters get content for the navigation property following from drives
 type ItemFollowingItemContentRequestBuilderGetQueryParameters struct {
     // Format of the content
     Format *string `uriparametername:"%24format"`
@@ -45,7 +45,7 @@ func NewItemFollowingItemContentRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemFollowingItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the content stream, if the item represents a file.
+// Get get content for the navigation property following from drives
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -68,7 +68,7 @@ func (m *ItemFollowingItemContentRequestBuilder) Get(ctx context.Context, reques
     }
     return res.([]byte), nil
 }
-// Put the content stream, if the item represents a file.
+// Put update content for the navigation property following in drives
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemFollowingItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemFollowingItemContentRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
@@ -88,7 +88,7 @@ func (m *ItemFollowingItemContentRequestBuilder) Put(ctx context.Context, body [
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToGetRequestInformation the content stream, if the item represents a file.
+// ToGetRequestInformation get content for the navigation property following from drives
 // returns a *RequestInformation when successful
 func (m *ItemFollowingItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFollowingItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -102,7 +102,7 @@ func (m *ItemFollowingItemContentRequestBuilder) ToGetRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation the content stream, if the item represents a file.
+// ToPutRequestInformation update content for the navigation property following in drives
 // returns a *RequestInformation when successful
 func (m *ItemFollowingItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemFollowingItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/drives/{drive%2Did}/following/{driveItem%2Did}/content", m.BaseRequestBuilder.PathParameters)

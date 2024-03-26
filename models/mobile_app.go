@@ -595,7 +595,7 @@ func (m *MobileApp) GetRoleScopeTagIds()([]string) {
     }
     return nil
 }
-// GetSupersededAppCount gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
+// GetSupersededAppCount gets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileApp) GetSupersededAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("supersededAppCount")
@@ -607,7 +607,7 @@ func (m *MobileApp) GetSupersededAppCount()(*int32) {
     }
     return nil
 }
-// GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
+// GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileApp) GetSupersedingAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("supersedingAppCount")
@@ -662,18 +662,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("dependentAppCount", m.GetDependentAppCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -698,12 +686,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err = writer.WriteBoolValue("isAssigned", m.GetIsAssigned())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteBoolValue("isFeatured", m.GetIsFeatured())
         if err != nil {
             return err
@@ -711,12 +693,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err = writer.WriteObjectValue("largeIcon", m.GetLargeIcon())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }
@@ -766,24 +742,6 @@ func (m *MobileApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     if m.GetRoleScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("supersededAppCount", m.GetSupersededAppCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("supersedingAppCount", m.GetSupersedingAppCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("uploadState", m.GetUploadState())
         if err != nil {
             return err
         }
@@ -923,14 +881,14 @@ func (m *MobileApp) SetRoleScopeTagIds(value []string)() {
         panic(err)
     }
 }
-// SetSupersededAppCount sets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by.
+// SetSupersededAppCount sets the supersededAppCount property value. The total number of apps this app is directly or indirectly superseded by. This property is read-only.
 func (m *MobileApp) SetSupersededAppCount(value *int32)() {
     err := m.GetBackingStore().Set("supersededAppCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSupersedingAppCount sets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes.
+// SetSupersedingAppCount sets the supersedingAppCount property value. The total number of apps this app directly or indirectly supersedes. This property is read-only.
 func (m *MobileApp) SetSupersedingAppCount(value *int32)() {
     err := m.GetBackingStore().Set("supersedingAppCount", value)
     if err != nil {

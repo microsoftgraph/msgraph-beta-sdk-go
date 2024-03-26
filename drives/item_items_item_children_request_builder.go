@@ -11,7 +11,7 @@ import (
 type ItemItemsItemChildrenRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemChildrenRequestBuilderGetQueryParameters return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
+// ItemItemsItemChildrenRequestBuilderGetQueryParameters return a collection of driveItems in the children relationship of a driveItem. DriveItems with a non-null folder or package facet can have one or more child driveItems.
 type ItemItemsItemChildrenRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemItemsItemChildrenRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ItemItemsItemChildrenRequestBuilder) Count()(*ItemItemsItemChildrenCountRequestBuilder) {
     return NewItemItemsItemChildrenCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
+// Get return a collection of driveItems in the children relationship of a driveItem. DriveItems with a non-null folder or package facet can have one or more child driveItems.
 // returns a DriveItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -122,7 +122,7 @@ func (m *ItemItemsItemChildrenRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToGetRequestInformation return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
+// ToGetRequestInformation return a collection of driveItems in the children relationship of a driveItem. DriveItems with a non-null folder or package facet can have one or more child driveItems.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemChildrenRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemChildrenRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

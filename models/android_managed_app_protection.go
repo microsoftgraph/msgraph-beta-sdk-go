@@ -46,7 +46,7 @@ func (m *AndroidManagedAppProtection) GetAllowedAndroidDeviceModels()([]string) 
     }
     return nil
 }
-// GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+// GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
 // returns a *ManagedAppRemediationAction when successful
 func (m *AndroidManagedAppProtection) GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfAccountIsClockedOut")
@@ -118,7 +118,7 @@ func (m *AndroidManagedAppProtection) GetAppActionIfDeviceLockNotSet()(*ManagedA
     }
     return nil
 }
-// GetAppActionIfDevicePasscodeComplexityLessThanHigh gets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
+// GetAppActionIfDevicePasscodeComplexityLessThanHigh gets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 // returns a *ManagedAppRemediationAction when successful
 func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfDevicePasscodeComplexityLessThanHigh")
@@ -130,7 +130,7 @@ func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLess
     }
     return nil
 }
-// GetAppActionIfDevicePasscodeComplexityLessThanLow gets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
+// GetAppActionIfDevicePasscodeComplexityLessThanLow gets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 // returns a *ManagedAppRemediationAction when successful
 func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanLow()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfDevicePasscodeComplexityLessThanLow")
@@ -142,7 +142,7 @@ func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLess
     }
     return nil
 }
-// GetAppActionIfDevicePasscodeComplexityLessThanMedium gets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+// GetAppActionIfDevicePasscodeComplexityLessThanMedium gets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 // returns a *ManagedAppRemediationAction when successful
 func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLessThanMedium()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfDevicePasscodeComplexityLessThanMedium")
@@ -154,7 +154,7 @@ func (m *AndroidManagedAppProtection) GetAppActionIfDevicePasscodeComplexityLess
     }
     return nil
 }
-// GetAppActionIfSamsungKnoxAttestationRequired gets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.
+// GetAppActionIfSamsungKnoxAttestationRequired gets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured. Possible values are: block, wipe, warn.
 // returns a *ManagedAppRemediationAction when successful
 func (m *AndroidManagedAppProtection) GetAppActionIfSamsungKnoxAttestationRequired()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfSamsungKnoxAttestationRequired")
@@ -226,7 +226,7 @@ func (m *AndroidManagedAppProtection) GetConnectToVpnOnLaunch()(*bool) {
     }
     return nil
 }
-// GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
+// GetCustomBrowserDisplayName gets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 // returns a *string when successful
 func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("customBrowserDisplayName")
@@ -238,7 +238,7 @@ func (m *AndroidManagedAppProtection) GetCustomBrowserDisplayName()(*string) {
     }
     return nil
 }
-// GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
+// GetCustomBrowserPackageId gets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 // returns a *string when successful
 func (m *AndroidManagedAppProtection) GetCustomBrowserPackageId()(*string) {
     val, err := m.GetBackingStore().Get("customBrowserPackageId")
@@ -1365,7 +1365,7 @@ func (m *AndroidManagedAppProtection) SetAllowedAndroidDeviceModels(value []stri
         panic(err)
     }
 }
-// SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+// SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
 func (m *AndroidManagedAppProtection) SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfAccountIsClockedOut", value)
     if err != nil {
@@ -1407,28 +1407,28 @@ func (m *AndroidManagedAppProtection) SetAppActionIfDeviceLockNotSet(value *Mana
         panic(err)
     }
 }
-// SetAppActionIfDevicePasscodeComplexityLessThanHigh sets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action.
+// SetAppActionIfDevicePasscodeComplexityLessThanHigh sets the appActionIfDevicePasscodeComplexityLessThanHigh property value. If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfDevicePasscodeComplexityLessThanHigh", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppActionIfDevicePasscodeComplexityLessThanLow sets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action.
+// SetAppActionIfDevicePasscodeComplexityLessThanLow sets the appActionIfDevicePasscodeComplexityLessThanLow property value. If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanLow(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfDevicePasscodeComplexityLessThanLow", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppActionIfDevicePasscodeComplexityLessThanMedium sets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action.
+// SetAppActionIfDevicePasscodeComplexityLessThanMedium sets the appActionIfDevicePasscodeComplexityLessThanMedium property value. If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.
 func (m *AndroidManagedAppProtection) SetAppActionIfDevicePasscodeComplexityLessThanMedium(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfDevicePasscodeComplexityLessThanMedium", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppActionIfSamsungKnoxAttestationRequired sets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.
+// SetAppActionIfSamsungKnoxAttestationRequired sets the appActionIfSamsungKnoxAttestationRequired property value. Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block & wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured. Possible values are: block, wipe, warn.
 func (m *AndroidManagedAppProtection) SetAppActionIfSamsungKnoxAttestationRequired(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfSamsungKnoxAttestationRequired", value)
     if err != nil {
@@ -1470,14 +1470,14 @@ func (m *AndroidManagedAppProtection) SetConnectToVpnOnLaunch(value *bool)() {
         panic(err)
     }
 }
-// SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android.
+// SetCustomBrowserDisplayName sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *AndroidManagedAppProtection) SetCustomBrowserDisplayName(value *string)() {
     err := m.GetBackingStore().Set("customBrowserDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of a custom browser to open weblink on Android.
+// SetCustomBrowserPackageId sets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *AndroidManagedAppProtection) SetCustomBrowserPackageId(value *string)() {
     err := m.GetBackingStore().Set("customBrowserPackageId", value)
     if err != nil {

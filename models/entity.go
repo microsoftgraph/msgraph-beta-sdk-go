@@ -686,6 +686,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewConditionalAccessRoot(), nil
                     case "#microsoft.graph.conditionalAccessTemplate":
                         return NewConditionalAccessTemplate(), nil
+                    case "#microsoft.graph.conditionalAccessWhatIfPolicy":
+                        return NewConditionalAccessWhatIfPolicy(), nil
                     case "#microsoft.graph.configManagerCollection":
                         return NewConfigManagerCollection(), nil
                     case "#microsoft.graph.connectedOrganization":
@@ -1806,6 +1808,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMobileApp(), nil
                     case "#microsoft.graph.mobileAppAssignment":
                         return NewMobileAppAssignment(), nil
+                    case "#microsoft.graph.mobileAppCatalogPackage":
+                        return NewMobileAppCatalogPackage(), nil
                     case "#microsoft.graph.mobileAppCategory":
                         return NewMobileAppCategory(), nil
                     case "#microsoft.graph.mobileAppContent":
@@ -2926,6 +2930,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWin32CatalogApp(), nil
                     case "#microsoft.graph.win32LobApp":
                         return NewWin32LobApp(), nil
+                    case "#microsoft.graph.win32MobileAppCatalogPackage":
+                        return NewWin32MobileAppCatalogPackage(), nil
                     case "#microsoft.graph.windows10CertificateProfileBase":
                         return NewWindows10CertificateProfileBase(), nil
                     case "#microsoft.graph.windows10CompliancePolicy":
@@ -3232,6 +3238,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWorkbookWorksheetProtection(), nil
                     case "#microsoft.graph.workforceIntegration":
                         return NewWorkforceIntegration(), nil
+                    case "#microsoft.graph.workplaceSensorDevice":
+                        return NewWorkplaceSensorDevice(), nil
                     case "#microsoft.graph.workPosition":
                         return NewWorkPosition(), nil
                     case "#microsoft.graph.workspace":

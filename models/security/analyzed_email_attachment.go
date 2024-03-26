@@ -40,7 +40,7 @@ func (m *AnalyzedEmailAttachment) GetAdditionalData()(map[string]any) {
 func (m *AnalyzedEmailAttachment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDetonationDetails gets the detonationDetails property value. The detonationDetails property
+// GetDetonationDetails gets the detonationDetails property value. The detonation details of the attachment.
 // returns a DetonationDetailsable when successful
 func (m *AnalyzedEmailAttachment) GetDetonationDetails()(DetonationDetailsable) {
     val, err := m.GetBackingStore().Get("detonationDetails")
@@ -128,7 +128,7 @@ func (m *AnalyzedEmailAttachment) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetFileName gets the fileName property value. The fileName property
+// GetFileName gets the fileName property value. The name of the attachment in the email.
 // returns a *string when successful
 func (m *AnalyzedEmailAttachment) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
@@ -140,7 +140,7 @@ func (m *AnalyzedEmailAttachment) GetFileName()(*string) {
     }
     return nil
 }
-// GetFileType gets the fileType property value. The fileType property
+// GetFileType gets the fileType property value. The type of the attachment in the email.
 // returns a *string when successful
 func (m *AnalyzedEmailAttachment) GetFileType()(*string) {
     val, err := m.GetBackingStore().Get("fileType")
@@ -164,7 +164,7 @@ func (m *AnalyzedEmailAttachment) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSha256 gets the sha256 property value. The sha256 property
+// GetSha256 gets the sha256 property value. The SHA256 file hash of the attachment.
 // returns a *string when successful
 func (m *AnalyzedEmailAttachment) GetSha256()(*string) {
     val, err := m.GetBackingStore().Get("sha256")
@@ -176,7 +176,7 @@ func (m *AnalyzedEmailAttachment) GetSha256()(*string) {
     }
     return nil
 }
-// GetThreatName gets the threatName property value. The threatName property
+// GetThreatName gets the threatName property value. The threat name associated with the threat type.
 // returns a *string when successful
 func (m *AnalyzedEmailAttachment) GetThreatName()(*string) {
     val, err := m.GetBackingStore().Get("threatName")
@@ -188,7 +188,7 @@ func (m *AnalyzedEmailAttachment) GetThreatName()(*string) {
     }
     return nil
 }
-// GetThreatType gets the threatType property value. The threatType property
+// GetThreatType gets the threatType property value. The threat type associated with the attachment. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.
 // returns a *ThreatType when successful
 func (m *AnalyzedEmailAttachment) GetThreatType()(*ThreatType) {
     val, err := m.GetBackingStore().Get("threatType")
@@ -264,21 +264,21 @@ func (m *AnalyzedEmailAttachment) SetAdditionalData(value map[string]any)() {
 func (m *AnalyzedEmailAttachment) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDetonationDetails sets the detonationDetails property value. The detonationDetails property
+// SetDetonationDetails sets the detonationDetails property value. The detonation details of the attachment.
 func (m *AnalyzedEmailAttachment) SetDetonationDetails(value DetonationDetailsable)() {
     err := m.GetBackingStore().Set("detonationDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFileName sets the fileName property value. The fileName property
+// SetFileName sets the fileName property value. The name of the attachment in the email.
 func (m *AnalyzedEmailAttachment) SetFileName(value *string)() {
     err := m.GetBackingStore().Set("fileName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFileType sets the fileType property value. The fileType property
+// SetFileType sets the fileType property value. The type of the attachment in the email.
 func (m *AnalyzedEmailAttachment) SetFileType(value *string)() {
     err := m.GetBackingStore().Set("fileType", value)
     if err != nil {
@@ -292,21 +292,21 @@ func (m *AnalyzedEmailAttachment) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSha256 sets the sha256 property value. The sha256 property
+// SetSha256 sets the sha256 property value. The SHA256 file hash of the attachment.
 func (m *AnalyzedEmailAttachment) SetSha256(value *string)() {
     err := m.GetBackingStore().Set("sha256", value)
     if err != nil {
         panic(err)
     }
 }
-// SetThreatName sets the threatName property value. The threatName property
+// SetThreatName sets the threatName property value. The threat name associated with the threat type.
 func (m *AnalyzedEmailAttachment) SetThreatName(value *string)() {
     err := m.GetBackingStore().Set("threatName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetThreatType sets the threatType property value. The threatType property
+// SetThreatType sets the threatType property value. The threat type associated with the attachment. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.
 func (m *AnalyzedEmailAttachment) SetThreatType(value *ThreatType)() {
     err := m.GetBackingStore().Set("threatType", value)
     if err != nil {

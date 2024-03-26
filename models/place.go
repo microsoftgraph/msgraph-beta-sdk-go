@@ -121,7 +121,7 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetGeoCoordinates gets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
+// GetGeoCoordinates gets the geoCoordinates property value. Specifies the place location in latitude, longitude, and (optionally) altitude coordinates.
 // returns a OutlookGeoCoordinatesable when successful
 func (m *Place) GetGeoCoordinates()(OutlookGeoCoordinatesable) {
     val, err := m.GetBackingStore().Get("geoCoordinates")
@@ -145,7 +145,7 @@ func (m *Place) GetPhone()(*string) {
     }
     return nil
 }
-// GetPlaceId gets the placeId property value. An alternate immutable unique identifier of the place.
+// GetPlaceId gets the placeId property value. A unique, immutable identifier for the place. Read-only. The value of this identifier is equal to the ExternalDirectoryObjectId returned from the Get-Mailbox cmdlet.
 // returns a *string when successful
 func (m *Place) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -209,7 +209,7 @@ func (m *Place) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetGeoCoordinates sets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
+// SetGeoCoordinates sets the geoCoordinates property value. Specifies the place location in latitude, longitude, and (optionally) altitude coordinates.
 func (m *Place) SetGeoCoordinates(value OutlookGeoCoordinatesable)() {
     err := m.GetBackingStore().Set("geoCoordinates", value)
     if err != nil {
@@ -223,7 +223,7 @@ func (m *Place) SetPhone(value *string)() {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. An alternate immutable unique identifier of the place.
+// SetPlaceId sets the placeId property value. A unique, immutable identifier for the place. Read-only. The value of this identifier is equal to the ExternalDirectoryObjectId returned from the Get-Mailbox cmdlet.
 func (m *Place) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {

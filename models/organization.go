@@ -46,7 +46,7 @@ func (m *Organization) GetBranding()(OrganizationalBrandingable) {
     }
     return nil
 }
-// GetBusinessPhones gets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+// GetBusinessPhones gets the businessPhones property value. Telephone number for the organization. Although this property is a string collection, only one number can be set.
 // returns a []string when successful
 func (m *Organization) GetBusinessPhones()([]string) {
     val, err := m.GetBackingStore().Get("businessPhones")
@@ -118,7 +118,7 @@ func (m *Organization) GetCountryLetterCode()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *Organization) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -546,6 +546,16 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["tenantType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantType(val)
+        }
+        return nil
+    }
     res["verifiedDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVerifiedDomainFromDiscriminatorValue)
         if err != nil {
@@ -564,7 +574,7 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetIsMultipleDataLocationsForServicesEnabled gets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
+// GetIsMultipleDataLocationsForServicesEnabled gets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization isn't Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
 // returns a *bool when successful
 func (m *Organization) GetIsMultipleDataLocationsForServicesEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isMultipleDataLocationsForServicesEnabled")
@@ -624,7 +634,7 @@ func (m *Organization) GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+// GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null, if this object isn't synced from on-premises active directory (default).
 // returns a *bool when successful
 func (m *Organization) GetOnPremisesSyncEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("onPremisesSyncEnabled")
@@ -672,7 +682,7 @@ func (m *Organization) GetPostalCode()(*string) {
     }
     return nil
 }
-// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
+// GetPreferredLanguage gets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 code; for example, en.
 // returns a *string when successful
 func (m *Organization) GetPreferredLanguage()(*string) {
     val, err := m.GetBackingStore().Get("preferredLanguage")
@@ -777,6 +787,18 @@ func (m *Organization) GetTechnicalNotificationMails()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetTenantType gets the tenantType property value. Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
+// returns a *string when successful
+func (m *Organization) GetTenantType()(*string) {
+    val, err := m.GetBackingStore().Get("tenantType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -1010,6 +1032,12 @@ func (m *Organization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("tenantType", m.GetTenantType())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetVerifiedDomains() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVerifiedDomains()))
         for i, v := range m.GetVerifiedDomains() {
@@ -1038,7 +1066,7 @@ func (m *Organization) SetBranding(value OrganizationalBrandingable)() {
         panic(err)
     }
 }
-// SetBusinessPhones sets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
+// SetBusinessPhones sets the businessPhones property value. Telephone number for the organization. Although this property is a string collection, only one number can be set.
 func (m *Organization) SetBusinessPhones(value []string)() {
     err := m.GetBackingStore().Set("businessPhones", value)
     if err != nil {
@@ -1080,7 +1108,7 @@ func (m *Organization) SetCountryLetterCode(value *string)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the organization was created. The value can't be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Organization) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -1115,7 +1143,7 @@ func (m *Organization) SetExtensions(value []Extensionable)() {
         panic(err)
     }
 }
-// SetIsMultipleDataLocationsForServicesEnabled sets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization is not Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
+// SetIsMultipleDataLocationsForServicesEnabled sets the isMultipleDataLocationsForServicesEnabled property value. true if organization is Multi-Geo enabled; false if organization isn't Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.
 func (m *Organization) SetIsMultipleDataLocationsForServicesEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isMultipleDataLocationsForServicesEnabled", value)
     if err != nil {
@@ -1150,7 +1178,7 @@ func (m *Organization) SetOnPremisesLastSyncDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
-// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+// SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null, if this object isn't synced from on-premises active directory (default).
 func (m *Organization) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
     if err != nil {
@@ -1178,7 +1206,7 @@ func (m *Organization) SetPostalCode(value *string)() {
         panic(err)
     }
 }
-// SetPreferredLanguage sets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
+// SetPreferredLanguage sets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 code; for example, en.
 func (m *Organization) SetPreferredLanguage(value *string)() {
     err := m.GetBackingStore().Set("preferredLanguage", value)
     if err != nil {
@@ -1241,6 +1269,13 @@ func (m *Organization) SetTechnicalNotificationMails(value []string)() {
         panic(err)
     }
 }
+// SetTenantType sets the tenantType property value. Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity & access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.
+func (m *Organization) SetTenantType(value *string)() {
+    err := m.GetBackingStore().Set("tenantType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetVerifiedDomains sets the verifiedDomains property value. The collection of domains associated with this tenant. Not nullable.
 func (m *Organization) SetVerifiedDomains(value []VerifiedDomainable)() {
     err := m.GetBackingStore().Set("verifiedDomains", value)
@@ -1282,6 +1317,7 @@ type Organizationable interface {
     GetState()(*string)
     GetStreet()(*string)
     GetTechnicalNotificationMails()([]string)
+    GetTenantType()(*string)
     GetVerifiedDomains()([]VerifiedDomainable)
     SetAssignedPlans(value []AssignedPlanable)()
     SetBranding(value OrganizationalBrandingable)()
@@ -1314,5 +1350,6 @@ type Organizationable interface {
     SetState(value *string)()
     SetStreet(value *string)()
     SetTechnicalNotificationMails(value []string)()
+    SetTenantType(value *string)()
     SetVerifiedDomains(value []VerifiedDomainable)()
 }

@@ -36,7 +36,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalData()(map[string]
     }
     return val.(map[string]any)
 }
-// GetAdditionalDetail gets the additionalDetail property value. The additionalDetail property
+// GetAdditionalDetail gets the additionalDetail property value. More details about the health check or the recommended action. Read-only.
 // returns a *string when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetail()(*string) {
     val, err := m.GetBackingStore().Get("additionalDetail")
@@ -48,7 +48,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetail()(*string) 
     }
     return nil
 }
-// GetAdditionalDetails gets the additionalDetails property value. More details about the health check or the recommended action.
+// GetAdditionalDetails gets the additionalDetails property value. The additionalDetails property
 // returns a *string when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetails()(*string) {
     val, err := m.GetBackingStore().Get("additionalDetails")
@@ -346,14 +346,14 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalData(value map[str
         panic(err)
     }
 }
-// SetAdditionalDetail sets the additionalDetail property value. The additionalDetail property
+// SetAdditionalDetail sets the additionalDetail property value. More details about the health check or the recommended action. Read-only.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalDetail(value *string)() {
     err := m.GetBackingStore().Set("additionalDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAdditionalDetails sets the additionalDetails property value. More details about the health check or the recommended action.
+// SetAdditionalDetails sets the additionalDetails property value. The additionalDetails property
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalDetails(value *string)() {
     err := m.GetBackingStore().Set("additionalDetails", value)
     if err != nil {

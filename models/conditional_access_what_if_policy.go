@@ -1,0 +1,119 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+type ConditionalAccessWhatIfPolicy struct {
+    ConditionalAccessPolicy
+}
+// NewConditionalAccessWhatIfPolicy instantiates a new ConditionalAccessWhatIfPolicy and sets the default values.
+func NewConditionalAccessWhatIfPolicy()(*ConditionalAccessWhatIfPolicy) {
+    m := &ConditionalAccessWhatIfPolicy{
+        ConditionalAccessPolicy: *NewConditionalAccessPolicy(),
+    }
+    return m
+}
+// CreateConditionalAccessWhatIfPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateConditionalAccessWhatIfPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewConditionalAccessWhatIfPolicy(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *ConditionalAccessWhatIfPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.ConditionalAccessPolicy.GetFieldDeserializers()
+    res["policyApplies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPolicyApplies(val)
+        }
+        return nil
+    }
+    res["reasons"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfEnumValues(ParseConditionalAccessWhatIfReasons)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConditionalAccessWhatIfReasons, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*ConditionalAccessWhatIfReasons))
+                }
+            }
+            m.SetReasons(res)
+        }
+        return nil
+    }
+    return res
+}
+// GetPolicyApplies gets the policyApplies property value. The policyApplies property
+// returns a *bool when successful
+func (m *ConditionalAccessWhatIfPolicy) GetPolicyApplies()(*bool) {
+    val, err := m.GetBackingStore().Get("policyApplies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetReasons gets the reasons property value. The reasons property
+// returns a []ConditionalAccessWhatIfReasons when successful
+func (m *ConditionalAccessWhatIfPolicy) GetReasons()([]ConditionalAccessWhatIfReasons) {
+    val, err := m.GetBackingStore().Get("reasons")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConditionalAccessWhatIfReasons)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *ConditionalAccessWhatIfPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.ConditionalAccessPolicy.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteBoolValue("policyApplies", m.GetPolicyApplies())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetReasons() != nil {
+        err = writer.WriteCollectionOfStringValues("reasons", SerializeConditionalAccessWhatIfReasons(m.GetReasons()))
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetPolicyApplies sets the policyApplies property value. The policyApplies property
+func (m *ConditionalAccessWhatIfPolicy) SetPolicyApplies(value *bool)() {
+    err := m.GetBackingStore().Set("policyApplies", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReasons sets the reasons property value. The reasons property
+func (m *ConditionalAccessWhatIfPolicy) SetReasons(value []ConditionalAccessWhatIfReasons)() {
+    err := m.GetBackingStore().Set("reasons", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type ConditionalAccessWhatIfPolicyable interface {
+    ConditionalAccessPolicyable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPolicyApplies()(*bool)
+    GetReasons()([]ConditionalAccessWhatIfReasons)
+    SetPolicyApplies(value *bool)()
+    SetReasons(value []ConditionalAccessWhatIfReasons)()
+}

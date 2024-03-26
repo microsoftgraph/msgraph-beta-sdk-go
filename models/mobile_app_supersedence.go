@@ -58,7 +58,7 @@ func (m *MobileAppSupersedence) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetSupersededAppCount gets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app.
+// GetSupersededAppCount gets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileAppSupersedence) GetSupersededAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("supersededAppCount")
@@ -82,7 +82,7 @@ func (m *MobileAppSupersedence) GetSupersedenceType()(*MobileAppSupersedenceType
     }
     return nil
 }
-// GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app.
+// GetSupersedingAppCount gets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileAppSupersedence) GetSupersedingAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("supersedingAppCount")
@@ -100,12 +100,6 @@ func (m *MobileAppSupersedence) Serialize(writer i878a80d2330e89d26896388a3f487e
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteInt32Value("supersededAppCount", m.GetSupersededAppCount())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSupersedenceType() != nil {
         cast := (*m.GetSupersedenceType()).String()
         err = writer.WriteStringValue("supersedenceType", &cast)
@@ -113,15 +107,9 @@ func (m *MobileAppSupersedence) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
-    {
-        err = writer.WriteInt32Value("supersedingAppCount", m.GetSupersedingAppCount())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
-// SetSupersededAppCount sets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app.
+// SetSupersededAppCount sets the supersededAppCount property value. The total number of apps directly or indirectly superseded by the child app. This property is read-only.
 func (m *MobileAppSupersedence) SetSupersededAppCount(value *int32)() {
     err := m.GetBackingStore().Set("supersededAppCount", value)
     if err != nil {
@@ -135,7 +123,7 @@ func (m *MobileAppSupersedence) SetSupersedenceType(value *MobileAppSupersedence
         panic(err)
     }
 }
-// SetSupersedingAppCount sets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app.
+// SetSupersedingAppCount sets the supersedingAppCount property value. The total number of apps directly or indirectly superseding the parent app. This property is read-only.
 func (m *MobileAppSupersedence) SetSupersedingAppCount(value *int32)() {
     err := m.GetBackingStore().Set("supersedingAppCount", value)
     if err != nil {
