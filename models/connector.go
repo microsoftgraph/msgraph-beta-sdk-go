@@ -19,7 +19,7 @@ func NewConnector()(*Connector) {
 func CreateConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnector(), nil
 }
-// GetExternalIp gets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
+// GetExternalIp gets the externalIp property value. The external IP address as detected by the connector server. Read-only.
 // returns a *string when successful
 func (m *Connector) GetExternalIp()(*string) {
     val, err := m.GetBackingStore().Get("externalIp")
@@ -93,7 +93,7 @@ func (m *Connector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetMachineName gets the machineName property value. The machine name the connector is installed and running on.
+// GetMachineName gets the machineName property value. The name of the computer on which the connector is installed and runs on.
 // returns a *string when successful
 func (m *Connector) GetMachineName()(*string) {
     val, err := m.GetBackingStore().Get("machineName")
@@ -129,7 +129,7 @@ func (m *Connector) GetStatus()(*ConnectorStatus) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The version of the connector.
 // returns a *string when successful
 func (m *Connector) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
@@ -186,14 +186,14 @@ func (m *Connector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetExternalIp sets the externalIp property value. The external IP address as detected by the the connector server. Read-only.
+// SetExternalIp sets the externalIp property value. The external IP address as detected by the connector server. Read-only.
 func (m *Connector) SetExternalIp(value *string)() {
     err := m.GetBackingStore().Set("externalIp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMachineName sets the machineName property value. The machine name the connector is installed and running on.
+// SetMachineName sets the machineName property value. The name of the computer on which the connector is installed and runs on.
 func (m *Connector) SetMachineName(value *string)() {
     err := m.GetBackingStore().Set("machineName", value)
     if err != nil {
@@ -214,7 +214,7 @@ func (m *Connector) SetStatus(value *ConnectorStatus)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The version of the connector.
 func (m *Connector) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

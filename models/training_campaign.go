@@ -20,7 +20,7 @@ func NewTrainingCampaign()(*TrainingCampaign) {
 func CreateTrainingCampaignFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTrainingCampaign(), nil
 }
-// GetCampaignSchedule gets the campaignSchedule property value. The campaignSchedule property
+// GetCampaignSchedule gets the campaignSchedule property value. Details about the schedule and current status for a training campaign
 // returns a CampaignScheduleable when successful
 func (m *TrainingCampaign) GetCampaignSchedule()(CampaignScheduleable) {
     val, err := m.GetBackingStore().Get("campaignSchedule")
@@ -32,7 +32,7 @@ func (m *TrainingCampaign) GetCampaignSchedule()(CampaignScheduleable) {
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. Identity of the user who created the training campaign
 // returns a EmailIdentityable when successful
 func (m *TrainingCampaign) GetCreatedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -44,7 +44,7 @@ func (m *TrainingCampaign) GetCreatedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time of creation of the training campaign.
 // returns a *Time when successful
 func (m *TrainingCampaign) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -56,7 +56,7 @@ func (m *TrainingCampaign) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the training campaign.
 // returns a *string when successful
 func (m *TrainingCampaign) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -68,7 +68,7 @@ func (m *TrainingCampaign) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of the training campaign. Supports $filter and $orderby.
 // returns a *string when successful
 func (m *TrainingCampaign) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -80,7 +80,7 @@ func (m *TrainingCampaign) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEndUserNotificationSetting gets the endUserNotificationSetting property value. The endUserNotificationSetting property
+// GetEndUserNotificationSetting gets the endUserNotificationSetting property value. Details about the end user notification setting.
 // returns a EndUserNotificationSettingable when successful
 func (m *TrainingCampaign) GetEndUserNotificationSetting()(EndUserNotificationSettingable) {
     val, err := m.GetBackingStore().Get("endUserNotificationSetting")
@@ -92,7 +92,7 @@ func (m *TrainingCampaign) GetEndUserNotificationSetting()(EndUserNotificationSe
     }
     return nil
 }
-// GetExcludedAccountTarget gets the excludedAccountTarget property value. The excludedAccountTarget property
+// GetExcludedAccountTarget gets the excludedAccountTarget property value. Users excluded from the training campaign.
 // returns a AccountTargetContentable when successful
 func (m *TrainingCampaign) GetExcludedAccountTarget()(AccountTargetContentable) {
     val, err := m.GetBackingStore().Get("excludedAccountTarget")
@@ -230,7 +230,7 @@ func (m *TrainingCampaign) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIncludedAccountTarget gets the includedAccountTarget property value. The includedAccountTarget property
+// GetIncludedAccountTarget gets the includedAccountTarget property value. Users targeted in the training campaign.
 // returns a AccountTargetContentable when successful
 func (m *TrainingCampaign) GetIncludedAccountTarget()(AccountTargetContentable) {
     val, err := m.GetBackingStore().Get("includedAccountTarget")
@@ -242,7 +242,7 @@ func (m *TrainingCampaign) GetIncludedAccountTarget()(AccountTargetContentable) 
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the user who most recently modified the training campaign.
 // returns a EmailIdentityable when successful
 func (m *TrainingCampaign) GetLastModifiedBy()(EmailIdentityable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
@@ -254,7 +254,7 @@ func (m *TrainingCampaign) GetLastModifiedBy()(EmailIdentityable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time of the most recent modification of the training campaign.
 // returns a *Time when successful
 func (m *TrainingCampaign) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -266,7 +266,7 @@ func (m *TrainingCampaign) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe
     }
     return nil
 }
-// GetReport gets the report property value. The report property
+// GetReport gets the report property value. Report of the training campaign.
 // returns a TrainingCampaignReportable when successful
 func (m *TrainingCampaign) GetReport()(TrainingCampaignReportable) {
     val, err := m.GetBackingStore().Get("report")
@@ -278,7 +278,7 @@ func (m *TrainingCampaign) GetReport()(TrainingCampaignReportable) {
     }
     return nil
 }
-// GetTrainingSetting gets the trainingSetting property value. The trainingSetting property
+// GetTrainingSetting gets the trainingSetting property value. Details about the training settings for a training campaign.
 // returns a TrainingSettingable when successful
 func (m *TrainingCampaign) GetTrainingSetting()(TrainingSettingable) {
     val, err := m.GetBackingStore().Get("trainingSetting")
@@ -370,84 +370,84 @@ func (m *TrainingCampaign) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetCampaignSchedule sets the campaignSchedule property value. The campaignSchedule property
+// SetCampaignSchedule sets the campaignSchedule property value. Details about the schedule and current status for a training campaign
 func (m *TrainingCampaign) SetCampaignSchedule(value CampaignScheduleable)() {
     err := m.GetBackingStore().Set("campaignSchedule", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. Identity of the user who created the training campaign
 func (m *TrainingCampaign) SetCreatedBy(value EmailIdentityable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time of creation of the training campaign.
 func (m *TrainingCampaign) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the training campaign.
 func (m *TrainingCampaign) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of the training campaign. Supports $filter and $orderby.
 func (m *TrainingCampaign) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEndUserNotificationSetting sets the endUserNotificationSetting property value. The endUserNotificationSetting property
+// SetEndUserNotificationSetting sets the endUserNotificationSetting property value. Details about the end user notification setting.
 func (m *TrainingCampaign) SetEndUserNotificationSetting(value EndUserNotificationSettingable)() {
     err := m.GetBackingStore().Set("endUserNotificationSetting", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcludedAccountTarget sets the excludedAccountTarget property value. The excludedAccountTarget property
+// SetExcludedAccountTarget sets the excludedAccountTarget property value. Users excluded from the training campaign.
 func (m *TrainingCampaign) SetExcludedAccountTarget(value AccountTargetContentable)() {
     err := m.GetBackingStore().Set("excludedAccountTarget", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncludedAccountTarget sets the includedAccountTarget property value. The includedAccountTarget property
+// SetIncludedAccountTarget sets the includedAccountTarget property value. Users targeted in the training campaign.
 func (m *TrainingCampaign) SetIncludedAccountTarget(value AccountTargetContentable)() {
     err := m.GetBackingStore().Set("includedAccountTarget", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the user who most recently modified the training campaign.
 func (m *TrainingCampaign) SetLastModifiedBy(value EmailIdentityable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time of the most recent modification of the training campaign.
 func (m *TrainingCampaign) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReport sets the report property value. The report property
+// SetReport sets the report property value. Report of the training campaign.
 func (m *TrainingCampaign) SetReport(value TrainingCampaignReportable)() {
     err := m.GetBackingStore().Set("report", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTrainingSetting sets the trainingSetting property value. The trainingSetting property
+// SetTrainingSetting sets the trainingSetting property value. Details about the training settings for a training campaign.
 func (m *TrainingCampaign) SetTrainingSetting(value TrainingSettingable)() {
     err := m.GetBackingStore().Set("trainingSetting", value)
     if err != nil {

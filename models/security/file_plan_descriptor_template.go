@@ -41,8 +41,8 @@ func CreateFilePlanDescriptorTemplateFromDiscriminatorValue(parseNode i878a80d23
                         return NewDepartmentTemplate(), nil
                     case "#microsoft.graph.security.filePlanReferenceTemplate":
                         return NewFilePlanReferenceTemplate(), nil
-                    case "#microsoft.graph.security.subCategoryTemplate":
-                        return NewSubCategoryTemplate(), nil
+                    case "#microsoft.graph.security.subcategoryTemplate":
+                        return NewSubcategoryTemplate(), nil
                 }
             }
         }

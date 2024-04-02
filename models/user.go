@@ -1516,6 +1516,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["invitedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInvitedBy(val.(DirectoryObjectable))
+        }
+        return nil
+    }
     res["isLicenseReconciliationNeeded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -2724,6 +2734,18 @@ func (m *User) GetInterests()([]string) {
     }
     return nil
 }
+// GetInvitedBy gets the invitedBy property value. The invitedBy property
+// returns a DirectoryObjectable when successful
+func (m *User) GetInvitedBy()(DirectoryObjectable) {
+    val, err := m.GetBackingStore().Get("invitedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DirectoryObjectable)
+    }
+    return nil
+}
 // GetIsLicenseReconciliationNeeded gets the isLicenseReconciliationNeeded property value. Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
 // returns a *bool when successful
 func (m *User) GetIsLicenseReconciliationNeeded()(*bool) {
@@ -3732,7 +3754,7 @@ func (m *User) GetUserPrincipalName()(*string) {
     }
     return nil
 }
-// GetUserType gets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
+// GetUserType gets the userType property value. A String value that can be used to classify user types in your directory. The possible values are Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
 // returns a *string when successful
 func (m *User) GetUserType()(*string) {
     val, err := m.GetBackingStore().Get("userType")
@@ -4316,6 +4338,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     if m.GetInterests() != nil {
         err = writer.WriteCollectionOfStringValues("interests", m.GetInterests())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("invitedBy", m.GetInvitedBy())
         if err != nil {
             return err
         }
@@ -5479,6 +5507,13 @@ func (m *User) SetInterests(value []string)() {
         panic(err)
     }
 }
+// SetInvitedBy sets the invitedBy property value. The invitedBy property
+func (m *User) SetInvitedBy(value DirectoryObjectable)() {
+    err := m.GetBackingStore().Set("invitedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsLicenseReconciliationNeeded sets the isLicenseReconciliationNeeded property value. Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
 func (m *User) SetIsLicenseReconciliationNeeded(value *bool)() {
     err := m.GetBackingStore().Set("isLicenseReconciliationNeeded", value)
@@ -6067,7 +6102,7 @@ func (m *User) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// SetUserType sets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
+// SetUserType sets the userType property value. A String value that can be used to classify user types in your directory. The possible values are Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
 func (m *User) SetUserType(value *string)() {
     err := m.GetBackingStore().Set("userType", value)
     if err != nil {
@@ -6156,6 +6191,7 @@ type Userable interface {
     GetInformationProtection()(InformationProtectionable)
     GetInsights()(ItemInsightsable)
     GetInterests()([]string)
+    GetInvitedBy()(DirectoryObjectable)
     GetIsLicenseReconciliationNeeded()(*bool)
     GetIsManagementRestricted()(*bool)
     GetIsResourceAccount()(*bool)
@@ -6308,6 +6344,7 @@ type Userable interface {
     SetInformationProtection(value InformationProtectionable)()
     SetInsights(value ItemInsightsable)()
     SetInterests(value []string)()
+    SetInvitedBy(value DirectoryObjectable)()
     SetIsLicenseReconciliationNeeded(value *bool)()
     SetIsManagementRestricted(value *bool)()
     SetIsResourceAccount(value *bool)()

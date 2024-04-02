@@ -1780,6 +1780,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMessageTrace(), nil
                     case "#microsoft.graph.mfaCompletionMetric":
                         return NewMfaCompletionMetric(), nil
+                    case "#microsoft.graph.mfaFailure":
+                        return NewMfaFailure(), nil
                     case "#microsoft.graph.microsoftAccountUserConversationMember":
                         return NewMicrosoftAccountUserConversationMember(), nil
                     case "#microsoft.graph.microsoftApplicationDataAccessSettings":

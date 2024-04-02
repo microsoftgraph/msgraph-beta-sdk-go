@@ -438,7 +438,7 @@ func (m *CloudPC) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
     return nil
 }
-// GetLastRemoteActionResult gets the lastRemoteActionResult property value. The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.
+// GetLastRemoteActionResult gets the lastRemoteActionResult property value. The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, Troubleshoot.
 // returns a CloudPcRemoteActionResultable when successful
 func (m *CloudPC) GetLastRemoteActionResult()(CloudPcRemoteActionResultable) {
     val, err := m.GetBackingStore().Get("lastRemoteActionResult")
@@ -486,7 +486,7 @@ func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
     }
     return nil
 }
-// GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.
+// GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.
 // returns a *CloudPcOperatingSystem when successful
 func (m *CloudPC) GetOsVersion()(*CloudPcOperatingSystem) {
     val, err := m.GetBackingStore().Get("osVersion")
@@ -510,7 +510,7 @@ func (m *CloudPC) GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallRe
     }
     return nil
 }
-// GetPowerState gets the powerState property value. The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.
+// GetPowerState gets the powerState property value. The power state of a Cloud PC. The possible values are: running, poweredOff, unknown. This property only supports shift work Cloud PCs.
 // returns a *CloudPcPowerState when successful
 func (m *CloudPC) GetPowerState()(*CloudPcPowerState) {
     val, err := m.GetBackingStore().Get("powerState")
@@ -630,7 +630,7 @@ func (m *CloudPC) GetStatusDetails()(CloudPcStatusDetailsable) {
     }
     return nil
 }
-// GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, and unknownFutureValue.
+// GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.
 // returns a *CloudPcUserAccountType when successful
 func (m *CloudPC) GetUserAccountType()(*CloudPcUserAccountType) {
     val, err := m.GetBackingStore().Get("userAccountType")
@@ -913,7 +913,7 @@ func (m *CloudPC) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97
         panic(err)
     }
 }
-// SetLastRemoteActionResult sets the lastRemoteActionResult property value. The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.
+// SetLastRemoteActionResult sets the lastRemoteActionResult property value. The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, Troubleshoot.
 func (m *CloudPC) SetLastRemoteActionResult(value CloudPcRemoteActionResultable)() {
     err := m.GetBackingStore().Set("lastRemoteActionResult", value)
     if err != nil {
@@ -941,7 +941,7 @@ func (m *CloudPC) SetOnPremisesConnectionName(value *string)() {
         panic(err)
     }
 }
-// SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.
+// SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPC) SetOsVersion(value *CloudPcOperatingSystem)() {
     err := m.GetBackingStore().Set("osVersion", value)
     if err != nil {
@@ -955,7 +955,7 @@ func (m *CloudPC) SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInsta
         panic(err)
     }
 }
-// SetPowerState sets the powerState property value. The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.
+// SetPowerState sets the powerState property value. The power state of a Cloud PC. The possible values are: running, poweredOff, unknown. This property only supports shift work Cloud PCs.
 func (m *CloudPC) SetPowerState(value *CloudPcPowerState)() {
     err := m.GetBackingStore().Set("powerState", value)
     if err != nil {
@@ -1025,7 +1025,7 @@ func (m *CloudPC) SetStatusDetails(value CloudPcStatusDetailsable)() {
         panic(err)
     }
 }
-// SetUserAccountType sets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, and unknownFutureValue.
+// SetUserAccountType sets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.
 func (m *CloudPC) SetUserAccountType(value *CloudPcUserAccountType)() {
     err := m.GetBackingStore().Set("userAccountType", value)
     if err != nil {

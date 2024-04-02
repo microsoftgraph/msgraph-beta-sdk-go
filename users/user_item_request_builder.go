@@ -381,6 +381,11 @@ func (m *UserItemRequestBuilder) Insights()(*ItemInsightsRequestBuilder) {
 func (m *UserItemRequestBuilder) InvalidateAllRefreshTokens()(*ItemInvalidateAllRefreshTokensRequestBuilder) {
     return NewItemInvalidateAllRefreshTokensRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// InvitedBy provides operations to manage the invitedBy property of the microsoft.graph.user entity.
+// returns a *ItemInvitedByRequestBuilder when successful
+func (m *UserItemRequestBuilder) InvitedBy()(*ItemInvitedByRequestBuilder) {
+    return NewItemInvitedByRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // IsManagedAppUserBlocked provides operations to call the isManagedAppUserBlocked method.
 // returns a *ItemIsManagedAppUserBlockedRequestBuilder when successful
 func (m *UserItemRequestBuilder) IsManagedAppUserBlocked()(*ItemIsManagedAppUserBlockedRequestBuilder) {

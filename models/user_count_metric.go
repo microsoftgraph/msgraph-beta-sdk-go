@@ -67,7 +67,35 @@ func (m *UserCountMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["languages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateLanguageMetricFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]LanguageMetricable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(LanguageMetricable)
+                }
+            }
+            m.SetLanguages(res)
+        }
+        return nil
+    }
     return res
+}
+// GetLanguages gets the languages property value. The languages property
+// returns a []LanguageMetricable when successful
+func (m *UserCountMetric) GetLanguages()([]LanguageMetricable) {
+    val, err := m.GetBackingStore().Get("languages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LanguageMetricable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserCountMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -83,6 +111,18 @@ func (m *UserCountMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err = writer.WriteDateOnlyValue("factDate", m.GetFactDate())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetLanguages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLanguages()))
+        for i, v := range m.GetLanguages() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("languages", cast)
         if err != nil {
             return err
         }
@@ -103,11 +143,20 @@ func (m *UserCountMetric) SetFactDate(value *i878a80d2330e89d26896388a3f487eef27
         panic(err)
     }
 }
+// SetLanguages sets the languages property value. The languages property
+func (m *UserCountMetric) SetLanguages(value []LanguageMetricable)() {
+    err := m.GetBackingStore().Set("languages", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type UserCountMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCount()(*int64)
     GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetLanguages()([]LanguageMetricable)
     SetCount(value *int64)()
     SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetLanguages(value []LanguageMetricable)()
 }

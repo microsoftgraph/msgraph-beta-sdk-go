@@ -11,7 +11,7 @@ import (
 type AttackSimulationTrainingsItemLanguageDetailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationTrainingsItemLanguageDetailsRequestBuilderGetQueryParameters language specific details on a training.
+// AttackSimulationTrainingsItemLanguageDetailsRequestBuilderGetQueryParameters details about the language used in the training.
 type AttackSimulationTrainingsItemLanguageDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewAttackSimulationTrainingsItemLanguageDetailsRequestBuilder(rawUrl string
 func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) Count()(*AttackSimulationTrainingsItemLanguageDetailsCountRequestBuilder) {
     return NewAttackSimulationTrainingsItemLanguageDetailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get language specific details on a training.
+// Get details about the language used in the training.
 // returns a TrainingLanguageDetailCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) Post(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailable), nil
 }
-// ToGetRequestInformation language specific details on a training.
+// ToGetRequestInformation details about the language used in the training.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingsItemLanguageDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -32,18 +32,18 @@ func CreateFilePlanDescriptorBaseFromDiscriminatorValue(parseNode i878a80d2330e8
             }
             if mappingValue != nil {
                 switch *mappingValue {
-                    case "#microsoft.graph.security.appliedCategory":
-                        return NewAppliedCategory(), nil
-                    case "#microsoft.graph.security.authority":
-                        return NewAuthority(), nil
-                    case "#microsoft.graph.security.citation":
-                        return NewCitation(), nil
-                    case "#microsoft.graph.security.department":
-                        return NewDepartment(), nil
+                    case "#microsoft.graph.security.filePlanAppliedCategory":
+                        return NewFilePlanAppliedCategory(), nil
+                    case "#microsoft.graph.security.filePlanAuthority":
+                        return NewFilePlanAuthority(), nil
+                    case "#microsoft.graph.security.filePlanCitation":
+                        return NewFilePlanCitation(), nil
+                    case "#microsoft.graph.security.filePlanDepartment":
+                        return NewFilePlanDepartment(), nil
                     case "#microsoft.graph.security.filePlanReference":
                         return NewFilePlanReference(), nil
-                    case "#microsoft.graph.security.subCategory":
-                        return NewSubCategory(), nil
+                    case "#microsoft.graph.security.filePlanSubcategory":
+                        return NewFilePlanSubcategory(), nil
                 }
             }
         }

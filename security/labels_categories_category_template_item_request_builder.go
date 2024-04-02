@@ -116,10 +116,10 @@ func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) Patch(ctx context.C
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateable), nil
 }
-// SubCategories provides operations to manage the subCategories property of the microsoft.graph.security.categoryTemplate entity.
-// returns a *LabelsCategoriesItemSubCategoriesRequestBuilder when successful
-func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) SubCategories()(*LabelsCategoriesItemSubCategoriesRequestBuilder) {
-    return NewLabelsCategoriesItemSubCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// Subcategories provides operations to manage the subcategories property of the microsoft.graph.security.categoryTemplate entity.
+// returns a *LabelsCategoriesItemSubcategoriesRequestBuilder when successful
+func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) Subcategories()(*LabelsCategoriesItemSubcategoriesRequestBuilder) {
+    return NewLabelsCategoriesItemSubcategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a categoryTemplate object.
 // returns a *RequestInformation when successful

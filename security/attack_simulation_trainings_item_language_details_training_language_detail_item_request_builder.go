@@ -18,7 +18,7 @@ type AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetQueryParameters language specific details on a training.
+// AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetQueryParameters details about the language used in the training.
 type AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemR
     }
     return nil
 }
-// Get language specific details on a training.
+// Get details about the language used in the training.
 // returns a TrainingLanguageDetailable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailable, error) {
@@ -121,7 +121,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation language specific details on a training.
+// ToGetRequestInformation details about the language used in the training.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
